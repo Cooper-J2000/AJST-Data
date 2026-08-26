@@ -1,0 +1,217 @@
+{
+  "transient_id": "GRB111222A",
+  "alias": [],
+  "ra": 179.193,
+  "dec": 69.036,
+  "T0": "2011-12-22T14:51:55Z",
+  "Trigger_Instrument": "Swift/BAT",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": 47.3246195,
+          "lii": 130.09584085,
+          "flux_256": 45.842,
+          "flux_1024": 14.187,
+          "t50_start": 0.016,
+          "t90_start": -0.016,
+          "error_radius": 0.5,
+          "fluence_batse": 1.75209e-06,
+          "flux_batse_64": 31.7564,
+          "flux_256_error": 1.50999,
+          "flux_batse_256": 23.327,
+          "flnc_band_epeak": 742.99689,
+          "flnc_comp_epeak": 740.75897,
+          "flux_1024_error": 0.499947,
+          "flux_batse_1024": 7.27033,
+          "fluence_batse_error": 1.06866e-08,
+          "flux_batse_64_error": 2.14506,
+          "flux_batse_256_error": 0.965336,
+          "flux_batse_1024_error": 0.294966,
+          "flnc_band_epeak_neg_err": 47.510986,
+          "flnc_band_epeak_pos_err": 47.510986,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 45.564941,
+          "flnc_comp_epeak_pos_err": 45.564941
+        },
+        "params": {
+          "t50": {
+            "v": 0.144,
+            "err": 0.0226274,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 0.288,
+            "err": 0.0357771,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 740.75897,
+            "err": [
+              45.564941,
+              45.564941
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 4.41859e-06,
+            "err": 1.90592e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 62.3025,
+            "dt": "64ms",
+            "err": 3.53601,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB111222619",
+          "GRB 111222.619",
+          "bn111222619"
+        ],
+        "trigger_time": "2011-12-22T14:51:55.023Z"
+      },
+      "swift_grb": {
+        "other": {
+          "det_flag": "O",
+          "other_id": "346258317",
+          "target_id": "20194",
+          "bat_detection": "U",
+          "supernova_flag": "N"
+        },
+        "params": {
+          "epeak": {
+            "v": 725.0,
+            "err": null,
+            "frame": "obs",
+            "model": null
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 20194",
+          "346258317"
+        ],
+        "trigger_time": "2011-12-22T14:51:55Z"
+      },
+      "agile_mcal": {
+        "other": {
+          "BKG": 236.0,
+          "LOC": "XRT",
+          "MET": 251650315.009,
+          "PHI": 334.2,
+          "MCAL": "Y",
+          "Orbit": 24063.0,
+          "RM_AC": "Y",
+          "RM_SA": "N",
+          "THETA": 154.2,
+          "PL_DOF": 48.0,
+          "PL_FLUX": 5.22e-06,
+          "RM_MCAL": "Y",
+          "PL_RED_CHI_SQ": 1.87,
+          "BKGSUB_CTS_T50": 298.0,
+          "BKGSUB_CTS_T90": 370.0
+        },
+        "params": {
+          "t50": {
+            "v": 0.192,
+            "err": 0.016,
+            "band": "0.4-100 MeV"
+          },
+          "t90": {
+            "v": 0.256,
+            "err": 0.016,
+            "band": "0.4-100 MeV"
+          },
+          "fluence": {
+            "v": 1.338e-06,
+            "err": null,
+            "band": "0.4-10 MeV",
+            "model": "PL"
+          },
+          "spectral_index": {
+            "v": -2.93,
+            "err": [
+              0.29,
+              0.25
+            ],
+            "model": "PL"
+          }
+        },
+        "source": {
+          "url": "https://www.ssdc.asi.it/mcal2grbcat/",
+          "name": "2nd AGILE-MCAL GRB Catalog (Ursi+2022)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB111222A"
+        ],
+        "trigger_time": "2011-12-22T14:51:55Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 183479950000000000000,
+          "xrt_ra": 179.21971,
+          "comment": "IPN: GCN 12714",
+          "uvot_ra": 179.22008,
+          "xrt_dec": 69.07094,
+          "uvot_dec": 69.07094,
+          "uvot_mag": "White=19.34",
+          "xrt_gamma": 1.69898,
+          "trigger_obs": "IPN",
+          "xrt_11hr_flux": 7.99667e-13,
+          "xrt_24hr_flux": 4.8304135e-13,
+          "uvot_first_obs": 92900.0,
+          "xrt_error_radius": 2.9,
+          "uvot_error_radius": 0.51
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2011-12-22T14:51:55.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "XA": "y",
+          "IPN": "y",
+          "Error": "120",
+          "obs_date": "2011-12-22",
+          "short_grb": true,
+          "Instrument": "Fermi",
+          "GRB X-ray position": "12h39m05s +65° 50'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 111222AS"
+        ],
+        "trigger_time": null
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "transient_id": "GRB101014A",
+  "alias": [
+    "GRB 101014175"
+  ],
+  "ra": 26.5,
+  "dec": -48.540000915527344,
+  "T0": "2010-10-14T04:11:54.620000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -63.78671244,
+          "lii": 282.68350393,
+          "flux_256": 69.2877,
+          "flux_1024": 58.9579,
+          "t50_start": 13.6322,
+          "t90_start": 1.408,
+          "error_radius": 1.0,
+          "fluence_batse": 0.000104588,
+          "flux_batse_64": 36.2838,
+          "flux_256_error": 0.760848,
+          "flux_batse_256": 35.3502,
+          "flnc_band_epeak": 201.78496,
+          "flnc_comp_epeak": 286.76242,
+          "flux_1024_error": 0.41753,
+          "flux_batse_1024": 28.31,
+          "fluence_batse_error": 2.21735e-07,
+          "flux_batse_64_error": 1.50911,
+          "flux_batse_256_error": 0.759023,
+          "flux_batse_1024_error": 0.348386,
+          "flnc_band_epeak_neg_err": 5.7167511,
+          "flnc_band_epeak_pos_err": 5.7167511,
+          "flnc_best_fitting_model": "flnc_band",
+          "flnc_comp_epeak_neg_err": 5.2378845,
+          "flnc_comp_epeak_pos_err": 5.2378845
+        },
+        "params": {
+          "t50": {
+            "v": 200.131,
+            "err": 1.00177,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 449.415,
+            "err": 1.4095,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 201.78496,
+            "err": [
+              5.7167511,
+              5.7167511
+            ],
+            "frame": "obs",
+            "model": "BAND"
+          },
+          "fluence": {
+            "v": 0.000201462,
+            "err": 4.26695e-07,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 71.2221,
+            "dt": "64ms",
+            "err": 1.78605,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB101014175",
+          "GRB 101014.175",
+          "bn101014175"
+        ],
+        "trigger_time": "2010-10-14T04:11:52.622Z"
+      },
+      "fermi_lat": {
+        "other": {
+          "tl100": 1925.28003,
+          "lle_t90": 1.666,
+          "tl100_error": 52.38,
+          "trigger_met": 308722314.62,
+          "error_radius": 0.09,
+          "like_best_ts": 48.4252,
+          "like_best_fluence": 1.50657e-05,
+          "like_best_grbindex": -1.3731,
+          "ext_emission_max_ene": 14000.0,
+          "ext_emission_max_ene_t": 2750.70996,
+          "like_best_fluence_error": 1.2051e-05,
+          "like_best_grbindex_error": 0.272673
+        },
+        "params": {
+          "t90": {
+            "v": 449.415,
+            "err": 1.409,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 0.00020146,
+            "err": 4.2669e-07,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 101014.175"
+        ],
+        "trigger_time": "2010-10-14T04:11:51.999Z"
+      },
+      "agile_mcal": {
+        "other": {
+          "BKG": 256.0,
+          "LOC": "LAT",
+          "MET": 214114312.844,
+          "PHI": 240.46,
+          "MCAL": "I",
+          "Orbit": 17925.0,
+          "RM_AC": "Y",
+          "RM_SA": "Y",
+          "THETA": 60.46,
+          "f_T50": "*",
+          "f_T90": "*",
+          "l_T50": ">=",
+          "l_T90": ">=",
+          "RM_MCAL": "Y",
+          "BKGSUB_CTS_T50": -7555.0,
+          "BKGSUB_CTS_T90": -11180.0
+        },
+        "params": {
+          "t50": {
+            "v": 102.4,
+            "err": 0.512,
+            "band": "0.4-100 MeV",
+            "limit": ">="
+          },
+          "t90": {
+            "v": 212.992,
+            "err": 0.512,
+            "band": "0.4-100 MeV",
+            "limit": ">="
+          }
+        },
+        "source": {
+          "url": "https://www.ssdc.asi.it/mcal2grbcat/",
+          "name": "2nd AGILE-MCAL GRB Catalog (Ursi+2022)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB101014A"
+        ],
+        "trigger_time": "2010-10-14T04:11:52Z"
+      }
+    }
+  }
+}

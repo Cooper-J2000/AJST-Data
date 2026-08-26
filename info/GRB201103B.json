@@ -1,0 +1,194 @@
+{
+  "transient_id": "GRB201103B",
+  "alias": [],
+  "ra": 42.183333,
+  "dec": 12.133333,
+  "T0": "2020-11-03T18:06:45.360000Z",
+  "Trigger_Instrument": "AGILE",
+  "redshift": 1.105,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "L"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "t90_obs": {
+          "v": 3.904,
+          "err": 0.032,
+          "src": "agile_mcal"
+        },
+        "epeak_obs": {
+          "v": 714.0,
+          "err": null,
+          "src": "agile_mcal"
+        }
+      },
+      "sources": {
+        "agile_mcal": {
+          "alpha": {
+            "v": -0.34,
+            "err": [
+              0.25,
+              0.25
+            ]
+          },
+          "ep_rest": {
+            "v": 1502.97,
+            "err": null
+          },
+          "t90_obs": {
+            "v": 3.904,
+            "err": 0.032
+          },
+          "t90_rest": {
+            "v": 1.8546318289786223,
+            "err": 0.015201900237529693
+          },
+          "epeak_obs": {
+            "v": 714.0,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "sub_tag"
+      }
+    },
+    "catalog_data": {
+      "agile_mcal": {
+        "other": {
+          "Eb": 902.0,
+          "Ec": 430.0,
+          "BKG": 527.0,
+          "LOC": "IPN",
+          "MET": 531511604.366,
+          "PHI": 272.65,
+          "MCAL": "Y",
+          "Orbit": 70287.0,
+          "RM_AC": "Y",
+          "RM_SA": "Y",
+          "THETA": 92.65,
+          "PL_DOF": 48.0,
+          "PL_FLUX": 5.56e-06,
+          "RM_MCAL": "Y",
+          "BAND_DOF": 46.0,
+          "BAND_FLUX": 5.18e-06,
+          "PL_RED_CHI_SQ": 0.71,
+          "BKGSUB_CTS_T50": 244.0,
+          "BKGSUB_CTS_T90": 412.0,
+          "BAND_RED_CHI_SQ": 0.73
+        },
+        "params": {
+          "t50": {
+            "v": 1.088,
+            "err": 0.032,
+            "band": "0.4-100 MeV"
+          },
+          "t90": {
+            "v": 3.904,
+            "err": 0.032,
+            "band": "0.4-100 MeV"
+          },
+          "beta": {
+            "v": -2.44,
+            "err": [
+              2.44,
+              1.11
+            ],
+            "model": "BAND"
+          },
+          "alpha": {
+            "v": -0.34,
+            "err": [
+              0.25,
+              0.25
+            ],
+            "model": "BAND"
+          },
+          "epeak": {
+            "v": 714.0,
+            "err": null,
+            "frame": "obs",
+            "model": "BAND"
+          },
+          "fluence": {
+            "v": 2.02e-05,
+            "err": null,
+            "band": "0.4-10 MeV",
+            "model": "BAND"
+          },
+          "spectral_index": {
+            "v": -2.25,
+            "err": [
+              0.68,
+              0.48
+            ],
+            "model": "PL"
+          }
+        },
+        "source": {
+          "url": "https://www.ssdc.asi.it/mcal2grbcat/",
+          "name": "2nd AGILE-MCAL GRB Catalog (Ursi+2022)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB201103B"
+        ],
+        "trigger_time": "2020-11-03T18:06:44Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_ra": 42.18421,
+          "comment": "AGILE: GCN 28831",
+          "xrt_dec": 12.13822,
+          "uvot_mag": "B=20.25",
+          "uvot_vmag": 19.6,
+          "trigger_obs": "AGILE",
+          "xrt_lc_index": -2.312,
+          "xrt_11hr_flux": 0.0,
+          "xrt_24hr_flux": 0.0,
+          "xrt_first_obs": 199500.0,
+          "uvot_first_obs": 205000.0,
+          "uvot_vmag_flag": 1,
+          "xrt_error_radius": 5.3
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2020-11-03T18:06:45.360Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "XA": "y",
+          "IPN": "y",
+          "Error": "0.1",
+          "obs_date": "2020-11-03",
+          "Instrument": "AGILE",
+          "GRB X-ray position": "02h48m44s +12° 08'"
+        },
+        "params": {
+          "redshift": {
+            "v": 1.105
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

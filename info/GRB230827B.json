@@ -1,0 +1,207 @@
+{
+  "transient_id": "GRB230827B",
+  "alias": [],
+  "ra": 299.63946,
+  "dec": 54.46319,
+  "T0": "2023-08-27T06:08:30.730000Z",
+  "Trigger_Instrument": "Konus-Wind",
+  "redshift": 0.887,
+  "tag": [
+    "grb"
+  ],
+  "redshift_ref": "catalog:guidorzi2025",
+  "comment": "catalog-only: Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "lp_iso": {
+          "v": 13489628825916616000000000000000000000000000000000000,
+          "err": [
+            2250199818745672300000000000000000000000000000000000,
+            1928506403995558500000000000000000000000000000000000
+          ],
+          "src": "guidorzi2025"
+        },
+        "variability": {
+          "v": 0.155,
+          "err": 0.022,
+          "src": "guidorzi2025"
+        }
+      },
+      "sources": {
+        "guidorzi2025": {
+          "lp_iso": {
+            "v": 13489628825916616000000000000000000000000000000000000,
+            "err": [
+              2250199818745672300000000000000000000000000000000000,
+              1928506403995558500000000000000000000000000000000000
+            ]
+          },
+          "variability": {
+            "v": 0.155,
+            "err": 0.022
+          }
+        }
+      },
+      "computed": "2026-07-22"
+    },
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": 12.80955006,
+          "lii": 88.13445379,
+          "flux_256": 18.2276,
+          "flux_1024": 16.3674,
+          "t50_start": 1.536,
+          "t90_start": 0.00267208,
+          "error_radius": 0.0001,
+          "fluence_batse": 5.03606e-06,
+          "flux_batse_64": 8.38435,
+          "flux_256_error": 1.72694,
+          "flux_batse_256": 7.75076,
+          "flnc_band_epeak": 144.08403,
+          "flnc_comp_epeak": 360.573,
+          "flux_1024_error": 0.886925,
+          "flux_batse_1024": 6.30661,
+          "fluence_batse_error": 7.64817e-08,
+          "flux_batse_64_error": 1.36976,
+          "flux_batse_256_error": 0.641207,
+          "flux_batse_1024_error": 0.28947,
+          "flnc_band_epeak_neg_err": 8.4413958,
+          "flnc_band_epeak_pos_err": 8.4413958,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 36.939186,
+          "flnc_comp_epeak_pos_err": 36.939186
+        },
+        "params": {
+          "t50": {
+            "v": 4.35207,
+            "err": 0.72409,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 11.0055,
+            "err": 2.31793,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 360.573,
+            "err": [
+              36.939186,
+              36.939186
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 1.04896e-05,
+            "err": 1.46818e-07,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 21.8403,
+            "dt": "64ms",
+            "err": 3.49342,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB230827256",
+          "GRB 230827.256",
+          "bn230827256"
+        ],
+        "trigger_time": "2023-08-27T06:08:30.734Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 4037160000000000000000,
+          "xrt_ra": 299.63946,
+          "comment": "Fermi (GBM): GCN 34584",
+          "xrt_dec": 54.46319,
+          "xrt_gamma": 1.59032,
+          "trigger_obs": "Fermi",
+          "xrt_lc_index": -1.49,
+          "xrt_11hr_flux": 5.0572944e-11,
+          "xrt_24hr_flux": 1.58105079e-11,
+          "xrt_first_obs": 231300.0,
+          "xrt_error_radius": 2.6
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2023-08-27T06:08:30.730Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3",
+          "obs_date": "2023-08-27",
+          "Instrument": "Fermi",
+          "GRB X-ray position": "19h58m33s +54° 28'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "guidorzi2025": {
+        "other": {
+          "Tf": 6.56,
+          "Det": "GBM",
+          "Vf05": -0.041,
+          "Vf95": 0.035,
+          "e_Tf": 0.38,
+          "Npeaks": 3,
+          "Tf_f0.45": 2.81,
+          "Vf_f0.45": 0.064,
+          "obs_date": "2023-08-27",
+          "r_logLiso": 5,
+          "s_Vf_f0.45": 0.017
+        },
+        "params": {
+          "lp_iso": {
+            "v": 13489628825916616000000000000000000000000000000000000,
+            "err": [
+              2250199818745672300000000000000000000000000000000000,
+              1928506403995558500000000000000000000000000000000000
+            ],
+            "frame": "rest"
+          },
+          "redshift": {
+            "v": 0.887
+          },
+          "variability": {
+            "f": 0.8,
+            "v": 0.155,
+            "err": 0.022,
+            "band": "8-900 keV"
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/690/A261",
+          "name": "Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "transient_id": "GRB081024B",
+  "alias": [],
+  "ra": 322.9,
+  "dec": 21.204,
+  "T0": "2008-10-24T21:22:40.860000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 3.05,
+  "tag": [
+    "grb"
+  ],
+  "redshift_ref": "catalog:minaev2020",
+  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "sub_tag": [
+    "S"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "eiso": {
+          "v": 24400000000000000000000000000000000000000000000000000,
+          "err": 2200000000000000300000000000000000000000000000000000,
+          "src": "minaev2020"
+        },
+        "ep_rest": {
+          "v": 5690.0,
+          "err": [
+            9060.0,
+            4321.0
+          ],
+          "src": "minaev2020"
+        },
+        "t90_rest": {
+          "v": 0.16,
+          "err": null,
+          "src": "minaev2020"
+        }
+      },
+      "sources": {
+        "minaev2020": {
+          "eiso": {
+            "v": 24400000000000000000000000000000000000000000000000000,
+            "err": 2200000000000000300000000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 5690.0,
+            "err": [
+              9060.0,
+              4321.0
+            ]
+          },
+          "grb_type": "I",
+          "t90_rest": {
+            "v": 0.16,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "I",
+        "src": "minaev2020"
+      }
+    },
+    "catalog_data": {
+      "rssgrbag": {
+        "other": {
+          "ref_codes": "26,[],[],[],[],[],[],[]",
+          "opt_ag_flag": "Y?",
+          "source_flag": "o",
+          "xray_ag_flag": "Y",
+          "radio_ag_flag": "N",
+          "instrument_code": "F",
+          "radio_telescope": "VLA"
+        },
+        "params": {
+          "t90": {
+            "v": 0.8,
+            "err": null,
+            "band": null
+          },
+          "fluence": {
+            "v": 2.14e-07,
+            "err": null,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/gamma-ray-bursts/rssgrbag.html",
+          "name": "Radio-Selected GRB Afterglow Catalog (Chandra & Frail 2012)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "fermi_gbm": {
+        "other": {
+          "bii": -21.64853292,
+          "lii": 72.76221002,
+          "flux_256": 3.45279,
+          "flux_1024": 2.13985,
+          "t50_start": 0.0,
+          "t90_start": -0.064,
+          "error_radius": 0.16,
+          "fluence_batse": 2.06908e-07,
+          "flux_batse_64": 3.60282,
+          "flux_256_error": 0.283563,
+          "flux_batse_256": 1.93095,
+          "flnc_band_epeak": 1757.3969,
+          "flnc_comp_epeak": 1772.7783,
+          "flux_1024_error": 0.13614,
+          "flux_batse_1024": 1.0654,
+          "fluence_batse_error": 1.40534e-08,
+          "flux_batse_64_error": 0.563881,
+          "flux_batse_256_error": 0.256812,
+          "flux_batse_1024_error": 0.13614,
+          "flnc_band_epeak_neg_err": 1011.5259,
+          "flnc_band_epeak_pos_err": 1011.5259,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 579.50208,
+          "flnc_comp_epeak_pos_err": 579.50208
+        },
+        "params": {
+          "t50": {
+            "v": 0.384,
+            "err": 0.181019,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 0.64,
+            "err": 0.263879,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 1772.7783,
+            "err": [
+              579.50208,
+              579.50208
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 3.54701e-07,
+            "err": 2.86456e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 5.36425,
+            "dt": "64ms",
+            "err": 0.563881,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB081024891",
+          "GRB 081024.891",
+          "bn081024891"
+        ],
+        "trigger_time": "2008-10-24T21:22:40.864Z"
+      },
+      "fermi_lat": {
+        "other": {
+          "tl100": 2.02,
+          "lle_t90": 1.32,
+          "tl100_error": 0.04,
+          "trigger_met": 246576161.86,
+          "error_radius": 0.31,
+          "like_best_ts": 152.253,
+          "like_best_fluence": 1.28857e-06,
+          "like_best_grbindex": -2.3018,
+          "ext_emission_max_ene": 1700.0,
+          "ext_emission_max_ene_t": 2.12,
+          "like_best_fluence_error": 7.27054e-07,
+          "like_best_grbindex_error": 0.334068
+        },
+        "params": {
+          "t90": {
+            "v": 0.64,
+            "err": 0.264,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 3.547e-07,
+            "err": 2.8646e-08,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 081024.891"
+        ],
+        "trigger_time": "2008-10-24T21:22:39.996Z"
+      },
+      "swift_grb": {
+        "other": {
+          "det_flag": "O",
+          "other_id": "246576161",
+          "target_id": "20088",
+          "bat_detection": "U",
+          "supernova_flag": "N"
+        },
+        "params": {
+          "epeak": {
+            "v": 1583.0,
+            "err": null,
+            "frame": "obs",
+            "model": null
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 20088",
+          "246576161"
+        ],
+        "trigger_time": "2008-10-24T21:22:41Z"
+      },
+      "minaev2020": {
+        "other": {
+          "EH": 15.9,
+          "EHD": 39.6,
+          "Exp": "Fermi",
+          "Ref": "13",
+          "f_z": "PH",
+          "Type": "I",
+          "recno": 137,
+          "EHtype": "I",
+          "EHDtype": "I"
+        },
+        "params": {
+          "t90": {
+            "v": 0.16,
+            "err": null,
+            "band": null,
+            "frame": "rest"
+          },
+          "eiso": {
+            "v": 24400000000000000000000000000000000000000000000000000,
+            "err": 2200000000000000300000000000000000000000000000000000,
+            "band": null,
+            "frame": "rest"
+          },
+          "ep_rest": {
+            "v": 5690.0,
+            "err": [
+              9060.0,
+              4321.0
+            ],
+            "frame": "rest"
+          },
+          "grb_type": {
+            "v": "I"
+          },
+          "redshift": {
+            "v": 3.05
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
+          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "mpe_greiner": {
+        "other": {
+          "RA": "n",
+          "IPN": "y",
+          "Error": "9.'6",
+          "obs_date": "2008-10-24",
+          "Instrument": "Fermi",
+          "GRB X-ray position": "21h31m36s +21° 12'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

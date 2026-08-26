@@ -1,0 +1,187 @@
+{
+  "transient_id": "GRB180718B",
+  "alias": [
+    "GRB 180718763"
+  ],
+  "ra": 44.47999954223633,
+  "dec": -30.329999923706055,
+  "T0": "2018-07-18T18:18:29.460000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -62.01377804,
+          "lii": 229.61331359,
+          "flux_256": 4.35747,
+          "flux_1024": 3.6075,
+          "t50_start": 6.20809,
+          "t90_start": 1.60001,
+          "error_radius": 0.65,
+          "fluence_batse": 6.27233e-06,
+          "flux_batse_64": 3.09887,
+          "flux_256_error": 0.452697,
+          "flux_batse_256": 1.96054,
+          "flnc_band_epeak": 789.92517,
+          "flnc_comp_epeak": 805.94611,
+          "flux_1024_error": 0.221764,
+          "flux_batse_1024": 1.53856,
+          "fluence_batse_error": 2.69605e-08,
+          "flux_batse_64_error": 0.520614,
+          "flux_batse_256_error": 0.234566,
+          "flux_batse_1024_error": 0.0944085,
+          "flnc_band_epeak_neg_err": 48.79599,
+          "flnc_band_epeak_pos_err": 48.79599,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 43.718105,
+          "flnc_comp_epeak_pos_err": 43.718105
+        },
+        "params": {
+          "t50": {
+            "v": 35.3287,
+            "err": 0.923049,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 98.3059,
+            "err": 4.89095,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 805.94611,
+            "err": [
+              43.718105,
+              43.718105
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 1.48998e-05,
+            "err": 4.95578e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 6.27194,
+            "dt": "64ms",
+            "err": 0.995356,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB180718763",
+          "GRB 180718.763",
+          "bn180718763"
+        ],
+        "trigger_time": "2018-07-18T18:18:24.464Z"
+      },
+      "fermi_lat": {
+        "other": {
+          "tl100": 15.09,
+          "tl100_error": 3.205,
+          "trigger_met": 553630709.46,
+          "error_radius": 0.95,
+          "like_best_ts": 72.2406,
+          "like_best_fluence": 6.84721e-07,
+          "like_best_grbindex": -2.89512,
+          "ext_emission_max_ene": 490.0,
+          "ext_emission_max_ene_t": 2.63,
+          "like_best_fluence_error": 3.20811e-07,
+          "like_best_grbindex_error": 0.618434
+        },
+        "params": {
+          "t90": {
+            "v": 98.306,
+            "err": 4.891,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 1.49e-05,
+            "err": 4.9558e-08,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 180718.763"
+        ],
+        "trigger_time": "2018-07-18T18:18:24.002Z"
+      },
+      "agile_mcal": {
+        "other": {
+          "BKG": 427.0,
+          "LOC": "LAT",
+          "MET": 459022704.869,
+          "PHI": 233.59,
+          "MCAL": "I",
+          "Orbit": 58256.0,
+          "RM_AC": "Y",
+          "RM_SA": "Y",
+          "THETA": 53.59,
+          "f_T50": "*",
+          "f_T90": "*",
+          "l_T50": ">=",
+          "l_T90": ">=",
+          "RM_MCAL": "Y",
+          "BKGSUB_CTS_T50": 687.0,
+          "BKGSUB_CTS_T90": 1011.0
+        },
+        "params": {
+          "t50": {
+            "v": 4.608,
+            "err": 0.256,
+            "band": "0.4-100 MeV",
+            "limit": ">="
+          },
+          "t90": {
+            "v": 12.8,
+            "err": 0.256,
+            "band": "0.4-100 MeV",
+            "limit": ">="
+          }
+        },
+        "source": {
+          "url": "https://www.ssdc.asi.it/mcal2grbcat/",
+          "name": "2nd AGILE-MCAL GRB Catalog (Ursi+2022)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB180718B"
+        ],
+        "trigger_time": "2018-07-18T18:18:24Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "IPN": "y",
+          "Error": "39",
+          "obs_date": "2018-07-18",
+          "Instrument": "Fermi",
+          "GRB X-ray position": "02h58m43s -31° 30'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

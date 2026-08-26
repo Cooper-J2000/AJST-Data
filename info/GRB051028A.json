@@ -1,0 +1,139 @@
+{
+  "transient_id": "GRB051028A",
+  "alias": [],
+  "ra": 27.1625,
+  "dec": 47.816667,
+  "T0": "2005-10-28T13:36:07.159000Z",
+  "Trigger_Instrument": "HETE-2",
+  "redshift": 3.5,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "SN-lc"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "t90_obs": {
+          "v": 16.0,
+          "err": null,
+          "src": "uvot_grb"
+        }
+      },
+      "sources": {
+        "uvot_grb": {
+          "t90_obs": {
+            "v": 16.0,
+            "err": null
+          },
+          "t90_rest": {
+            "v": 3.5555555555555554,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "t90_obs:uvot_grb"
+      }
+    },
+    "catalog_data": {
+      "uvot_grb": {
+        "other": {
+          "OBJECT": "GRB051028",
+          "BAT_PIT": null,
+          "DISC_BY": "HETE2",
+          "POS_ERR": 1.0,
+          "POS_REF": "GCN4175",
+          "T90_REF": "GCN4172",
+          "TRIG_UT": "2005-301-13:36:01",
+          "TRIGTIME": 152199361.0
+        },
+        "params": {
+          "t90": {
+            "v": 16.0,
+            "err": null,
+            "band": "30-400 keV"
+          }
+        },
+        "source": {
+          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
+          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2005-10-28T13:36:01Z"
+      },
+      "swift_grb": {
+        "other": {
+          "det_flag": "O",
+          "other_id": "H3951",
+          "target_id": "20020",
+          "bat_detection": "U",
+          "supernova_flag": "N"
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 20020",
+          "H3951"
+        ],
+        "trigger_time": "2005-10-28T13:36:01.47Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 2812850000000000000000,
+          "xrt_ra": 27.06267,
+          "comment": "HETE: GCN 4172; UVOT: no detection",
+          "xrt_dec": 47.75281,
+          "uvot_mag": "UVW1>21.1; UVM2>21.4; UVW2>21.4",
+          "uvot_vmag": 20.2,
+          "xrt_gamma": 2.24216,
+          "trigger_obs": "HETE",
+          "xrt_lc_index": -1.145,
+          "xrt_11hr_flux": 9.433779e-13,
+          "xrt_24hr_flux": 3.86169e-13,
+          "uvot_first_obs": 25685.0,
+          "uvot_vmag_flag": 1,
+          "xrt_error_radius": 1.7
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 051028"
+        ],
+        "trigger_time": "2005-10-28T13:36:01.470Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "19.5'",
+          "obs_date": "2005-10-28",
+          "Instrument": "HETE",
+          "GRB X-ray position": "01h48m39s +47° 49'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

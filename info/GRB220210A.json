@@ -1,0 +1,161 @@
+{
+  "transient_id": "GRB220210A",
+  "alias": [
+    "GRB 220210998"
+  ],
+  "ra": 348.1400146484375,
+  "dec": 61.060001373291016,
+  "T0": "2022-02-10T23:56:43.370000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": 1.59422721,
+          "lii": 110.51443957,
+          "flux_256": 6.66921,
+          "flux_1024": 4.07253,
+          "t50_start": 1.536,
+          "t90_start": -0.512,
+          "error_radius": 0.02,
+          "fluence_batse": 9.20858e-07,
+          "flux_batse_64": 2.73965,
+          "flux_256_error": 0.55739,
+          "flux_batse_256": 2.28877,
+          "flnc_band_epeak": 2509.6099,
+          "flnc_comp_epeak": 2918.3845,
+          "flux_1024_error": 0.247042,
+          "flux_batse_1024": 1.66534,
+          "fluence_batse_error": 3.19629e-08,
+          "flux_batse_64_error": 0.612888,
+          "flux_batse_256_error": 0.204357,
+          "flux_batse_1024_error": 0.100995,
+          "flnc_band_epeak_neg_err": 1039.5386,
+          "flnc_band_epeak_pos_err": 1039.5386,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 1113.4677,
+          "flnc_comp_epeak_pos_err": 1113.4677
+        },
+        "params": {
+          "t50": {
+            "v": 24.832,
+            "err": 7.94838,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 43.52,
+            "err": 4.47085,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 2918.3845,
+            "err": [
+              1113.4677,
+              1113.4677
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 1.65306e-06,
+            "err": 6.16528e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 8.94548,
+            "dt": "64ms",
+            "err": 1.2764,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB220210998",
+          "GRB 220210.998",
+          "bn220210998"
+        ],
+        "trigger_time": "2022-02-10T23:56:38.371Z"
+      },
+      "fermi_lat": {
+        "other": {
+          "tl100": 6.05,
+          "lle_t90": 0.649,
+          "tl100_error": 1.995,
+          "trigger_met": 666230203.37,
+          "error_radius": 0.99,
+          "like_best_ts": 44.3373,
+          "like_best_fluence": 2.79871e-07,
+          "like_best_grbindex": -4.91643,
+          "ext_emission_max_ene": 190.0,
+          "ext_emission_max_ene_t": 0.59,
+          "like_best_fluence_error": 1.12722e-07,
+          "like_best_grbindex_error": 1.43267
+        },
+        "params": {
+          "t90": {
+            "v": 43.52,
+            "err": 4.471,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 1.6531e-06,
+            "err": 6.1653e-08,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 220210.998"
+        ],
+        "trigger_time": "2022-02-10T23:56:37.997Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "comment": "There will be no XRT/UVOT followup (GCN 31547).",
+          "other_obs": "Fermi (GBM & LAT), AGILE, Insight-HXMT/HE",
+          "trigger_obs": "BAT/GUANO",
+          "error_radius": 2.0
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2022-02-10T23:56:38.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "IPN": "y",
+          "Error": "2",
+          "obs_date": "2022-02-10",
+          "Instrument": "Swift",
+          "GRB X-ray position": "23h03m07s +61° 50'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

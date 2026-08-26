@@ -1,0 +1,220 @@
+{
+  "transient_id": "GRB140311B",
+  "alias": [],
+  "ra": 252.333,
+  "dec": 52.733,
+  "T0": "2014-03-11T21:14:29Z",
+  "Trigger_Instrument": "Swift/BAT",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": 39.56373524,
+          "lii": 80.39323555,
+          "flux_256": 4.04711,
+          "flux_1024": 3.2097,
+          "t50_start": 5.63208,
+          "t90_start": -4.3521,
+          "error_radius": 0.05,
+          "fluence_batse": 3.99634e-06,
+          "flux_batse_64": 2.39343,
+          "flux_256_error": 0.530634,
+          "flux_batse_256": 1.34415,
+          "flnc_band_epeak": 123.17291,
+          "flnc_comp_epeak": 143.06331,
+          "flux_1024_error": 0.283867,
+          "flux_batse_1024": 0.935897,
+          "fluence_batse_error": 3.41872e-08,
+          "flux_batse_64_error": 0.616388,
+          "flux_batse_256_error": 0.26214,
+          "flux_batse_1024_error": 0.106238,
+          "flnc_band_epeak_neg_err": 15.01387,
+          "flnc_band_epeak_pos_err": 15.01387,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 10.715073,
+          "flnc_comp_epeak_pos_err": 10.715073
+        },
+        "params": {
+          "t50": {
+            "v": 27.6485,
+            "err": 1.08613,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 72.1933,
+            "err": 8.76419,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 143.06331,
+            "err": [
+              10.715073,
+              10.715073
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 7.02399e-06,
+            "err": 6.74807e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 5.80908,
+            "dt": "64ms",
+            "err": 1.54872,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB140311885",
+          "GRB 140311.885",
+          "bn140311885"
+        ],
+        "trigger_time": "2014-03-11T21:14:35.646Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.8984",
+          "15_25kev": 2.295094e-08,
+          "25_50kev": 4.849204e-08,
+          "15_350kev": 4.53472e-07,
+          "50_100kev": 8.030462e-08,
+          "Image_SNR": "9.956569e+00",
+          "100_150kev": 6.957296e-08,
+          "100_350kev": 3.017314e-07,
+          "15_25kev_hi": 2.674733e-08,
+          "25_50kev_hi": 5.323785e-08,
+          "15_25kev_low": 1.93157e-08,
+          "15_350kev_hi": 5.366245e-07,
+          "25_50kev_low": 4.36989e-08,
+          "50_100kev_hi": 8.903494e-08,
+          "100_150kev_hi": 8.170159e-08,
+          "100_350kev_hi": 3.799622e-07,
+          "15_350kev_low": 3.804352e-07,
+          "50_100kev_low": 7.152214e-08,
+          "fluence_model": "PL",
+          "100_150kev_low": 5.819565e-08,
+          "100_350kev_low": 2.357113e-07,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "2.185275e+00"
+        },
+        "params": {
+          "t50": {
+            "v": 70.4,
+            "err": 1.6,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 129.6,
+            "err": 1.6,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.27231,
+            "cl": 90,
+            "err": [
+              0.15341000000000005,
+              0.15179999999999993
+            ]
+          },
+          "fluence": {
+            "v": 2.213199e-07,
+            "cl": 90,
+            "err": [
+              2.2108099999999994e-08,
+              2.1899099999999995e-08
+            ],
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 591392"
+        ],
+        "trigger_time": "2014-03-11T21:14:29.724340Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 1642175000000000000000,
+          "xrt_ra": 252.32504,
+          "comment": "Due to an observing constraint, Swift did not slew until T0+55 minutes.; UVOT: no detection",
+          "ref_bat": "GCN 15945; GCN 15979",
+          "ref_xrt": "GCN 15950; GCN 15951; GCN 15958; GCN 15963; Evans et al., 2009; MNRAS, 397, 1177",
+          "xrt_dec": 52.72425,
+          "advocate": "Judy Racusin",
+          "ref_uvot": "GCN 15972",
+          "uvot_mag": "B>20.4; U>20.2; UVW1>20.3; UVM2>20.2; UVW2>20.1; White>21.4",
+          "other_obs": "Nanshan (1m), MASTER-II, Fermi (GBM)",
+          "target_id": 591392,
+          "uvot_vmag": 20.0,
+          "xrt_gamma": 1.68422,
+          "trigger_obs": "Swift",
+          "error_radius": 1.2,
+          "xrt_lc_index": -1.663,
+          "xrt_11hr_flux": 1.4411459e-13,
+          "xrt_24hr_flux": 3.9367257e-14,
+          "xrt_first_obs": 3394.67,
+          "uvot_first_obs": 3398.0,
+          "uvot_vmag_flag": 1,
+          "xrt_error_radius": 1.5,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 70.0,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.12,
+            "cl": 90,
+            "err": 0.15
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2014-03-11T21:14:29.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3",
+          "obs_date": "2014-03-11",
+          "Instrument": "Swift",
+          "GRB X-ray position": "16h49m10s +52° 45'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

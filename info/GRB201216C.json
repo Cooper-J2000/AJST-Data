@@ -1,0 +1,448 @@
+{
+  "transient_id": "GRB201216C",
+  "alias": [],
+  "ra": 16.358333,
+  "dec": 16.533333,
+  "T0": "2020-12-16T23:07:25Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 1.1,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "L"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "alpha": {
+          "v": -1.01,
+          "err": [
+            0.03,
+            0.03
+          ],
+          "src": "liang2023"
+        },
+        "lp_iso": {
+          "v": 96000000000000000000000000000000000000000000000000000,
+          "err": [
+            9000000000000000000000000000000000000000000000000000,
+            8000000000000000000000000000000000000000000000000000
+          ],
+          "src": "liang2023"
+        },
+        "t90_obs": {
+          "v": 29.9525,
+          "err": 0.572433,
+          "src": "fermi_gbm"
+        },
+        "t90_rest": {
+          "v": 14.263095238095238,
+          "err": 0.2725871428571428,
+          "src": "fermi_gbm"
+        },
+        "spec_class": "Band",
+        "variability": {
+          "v": 0.208,
+          "err": 0.005,
+          "src": "guidorzi2025"
+        }
+      },
+      "sources": {
+        "fermi_gbm": {
+          "t90_obs": {
+            "v": 29.9525,
+            "err": 0.572433
+          },
+          "t90_rest": {
+            "v": 14.263095238095238,
+            "err": 0.2725871428571428
+          }
+        },
+        "liang2023": {
+          "alpha": {
+            "v": -1.01,
+            "err": [
+              0.03,
+              0.03
+            ]
+          },
+          "lp_iso": {
+            "v": 96000000000000000000000000000000000000000000000000000,
+            "err": [
+              9000000000000000000000000000000000000000000000000000,
+              8000000000000000000000000000000000000000000000000000
+            ]
+          },
+          "t90_obs": {
+            "v": 29.953,
+            "err": 0.572
+          },
+          "grb_type": "II",
+          "t90_rest": {
+            "v": 14.263333333333332,
+            "err": 0.27238095238095233
+          },
+          "spec_class": "Band"
+        },
+        "swift_bat": {
+          "alpha": {
+            "v": -1.43475,
+            "err": [
+              0.030140000000000056,
+              0.030050000000000132
+            ]
+          },
+          "t90_obs": {
+            "v": 48.0,
+            "err": 16.0
+          },
+          "t90_rest": {
+            "v": 22.857142857142854,
+            "err": 7.619047619047619
+          }
+        },
+        "guidorzi2025": {
+          "lp_iso": {
+            "v": 131825673855639940000000000000000000000000000000000000,
+            "err": [
+              9103205986546715000000000000000000000000000000000000,
+              8515190532749750000000000000000000000000000000000000
+            ]
+          },
+          "variability": {
+            "v": 0.208,
+            "err": 0.005
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "liang2023"
+      }
+    },
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -46.22231248,
+          "lii": 127.80090348,
+          "flux_256": 58.2121,
+          "flux_1024": 54.9948,
+          "t50_start": 12.2882,
+          "t90_start": 5.37608,
+          "error_radius": 0.001,
+          "fluence_batse": 6.45326e-05,
+          "flux_batse_64": 24.9897,
+          "flux_256_error": 1.19595,
+          "flux_batse_256": 24.0512,
+          "flux_1024_error": 0.581509,
+          "flux_batse_1024": 22.2032,
+          "fluence_batse_error": 4.26579e-08,
+          "flux_batse_64_error": 1.24034,
+          "flux_batse_256_error": 0.61327,
+          "flux_batse_1024_error": 0.300306
+        },
+        "params": {
+          "t50": {
+            "v": 14.8482,
+            "err": 0.572441,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 29.9525,
+            "err": 0.572433,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 0.000136316,
+            "err": 7.86425e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 61.4711,
+            "dt": "64ms",
+            "err": 2.44567,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB201216963",
+          "GRB 201216.963",
+          "bn201216963"
+        ],
+        "trigger_time": "2020-12-16T23:07:25.754Z"
+      },
+      "liang2023": {
+        "other": {
+          "Detectors": "(na)nbb1",
+          "Classified": "M",
+          "alpha_source": "1-s peak (no T2 row)",
+          "T90/(1+z) (s)": "14.26\\pm0.27",
+          "Averaged Spectrum": "Band",
+          "Background intervals": "(-50 to -10, 80 to 120)",
+          "T3 1-s peak Ep or Ec (keV)": "400^{+32}_{-30}"
+        },
+        "params": {
+          "t90": {
+            "v": 29.953,
+            "err": 0.572,
+            "band": "50-300 keV"
+          },
+          "beta": {
+            "v": -2.42,
+            "err": [
+              0.14,
+              0.14
+            ]
+          },
+          "alpha": {
+            "v": -1.01,
+            "err": [
+              0.03,
+              0.03
+            ]
+          },
+          "lp_iso": {
+            "v": 96000000000000000000000000000000000000000000000000000,
+            "err": [
+              9000000000000000000000000000000000000000000000000000,
+              8000000000000000000000000000000000000000000000000000
+            ],
+            "band": "1-10000 keV",
+            "frame": "rest"
+          },
+          "fluence": {
+            "v": 0.000136,
+            "err": 1e-07,
+            "band": "8 keV-40 MeV"
+          },
+          "grb_type": {
+            "v": "II"
+          },
+          "redshift": {
+            "v": 1.1
+          },
+          "spec_class": {
+            "v": "Band"
+          }
+        },
+        "source": {
+          "url": "https://arxiv.org/abs/2211.12187",
+          "name": "Liang+2023 Fermi-GBM spectral-energy sample (ApJS 266, 31)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 201216.963",
+          "bn201216963"
+        ],
+        "trigger_time": "2020-12-16T23:06:43Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.1855",
+          "z_ref": "Vielfaure et al. GCN Circ. 29077 (VLT/X-shooter)",
+          "15_25kev": 5.648069e-06,
+          "25_50kev": 1.08014e-05,
+          "z_method": "ba",
+          "15_350kev": 8.322424e-05,
+          "50_100kev": 1.598233e-05,
+          "Image_SNR": "3.914197e+01",
+          "100_150kev": 1.26993e-05,
+          "100_350kev": 5.079254e-05,
+          "15_25kev_hi": 5.858278e-06,
+          "25_50kev_hi": 1.103748e-05,
+          "15_25kev_low": 5.441392e-06,
+          "15_350kev_hi": 8.53552e-05,
+          "25_50kev_low": 1.056477e-05,
+          "50_100kev_hi": 1.625848e-05,
+          "100_150kev_hi": 1.304908e-05,
+          "100_350kev_hi": 5.286765e-05,
+          "15_350kev_low": 8.113344e-05,
+          "50_100kev_low": 1.570616e-05,
+          "fluence_model": "PL",
+          "100_150kev_low": 1.235179e-05,
+          "100_350kev_low": 4.877306e-05,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "8.381717e-01"
+        },
+        "params": {
+          "t50": {
+            "v": 16.0,
+            "err": 16.0,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 48.0,
+            "err": 16.0,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.43475,
+            "cl": 90,
+            "err": [
+              0.030140000000000056,
+              0.030050000000000132
+            ]
+          },
+          "fluence": {
+            "v": 4.513152e-05,
+            "cl": 90,
+            "err": [
+              7.301599999999991e-07,
+              7.308000000000032e-07
+            ],
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 1.1
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 1013243"
+        ],
+        "trigger_time": "2020-12-16T23:07:31.722580Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 5600000000000000000000,
+          "xrt_ra": 16.37033,
+          "comment": "Due to an observing constraint, Swift did not slew until T0+46.8 minutes.; UVOT: no detection",
+          "ref_bat": "GCN 29061; GCN 29080",
+          "ref_xrt": "GCN 29064; GCN 29067; GCN 29278; GCN 29280; Evans et al., 2009; MNRAS, 397, 1177",
+          "xrt_dec": 16.51611,
+          "advocate": "Andy Beardmore",
+          "ref_uvot": "GCN 29071",
+          "uvot_mag": "B>19.9; U>19.3; UVM2>19.3; UVW2>19.7; White>20.7",
+          "other_obs": "Fermi (GBM), VLT, FRAM-ORM (25cm), AstroSat CZTI, MAGIC, Konus-Wind. Liverpool (2.0m)",
+          "target_id": 1013243,
+          "uvot_vmag": 19.1,
+          "xrt_gamma": 2.03,
+          "trigger_obs": "Swift",
+          "error_radius": 1.0,
+          "ref_redshift": "GCN 29077 (VLT)",
+          "xrt_lc_index": -2.09,
+          "xrt_11hr_flux": 2.1505806e-12,
+          "xrt_24hr_flux": 4.574346e-13,
+          "xrt_first_obs": 2966.8,
+          "uvot_first_obs": 2970.0,
+          "uvot_vmag_flag": 1,
+          "redshift_comment": "VLT: likely redshift",
+          "xrt_error_radius": 1.4,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 48.0,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 4.5e-05,
+            "cl": 90,
+            "err": 1e-06,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 1.1
+          },
+          "peak_flux": {
+            "v": 18.0,
+            "cl": 90,
+            "dt": "1s",
+            "err": 1.1,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.43,
+            "cl": 90,
+            "err": 0.03
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2020-12-16T23:07:31.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3",
+          "obs_date": "2020-12-16",
+          "Instrument": "Swift",
+          "GRB X-ray position": "01h05m26s +16° 32'"
+        },
+        "params": {
+          "redshift": {
+            "v": 1.1
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "guidorzi2025": {
+        "other": {
+          "Tf": 24.45,
+          "Det": "BAT",
+          "Vf05": -0.009,
+          "Vf95": 0.007,
+          "e_Tf": 0.45,
+          "Npeaks": 5,
+          "Tf_f0.45": 9.6,
+          "Vf_f0.45": 0.058,
+          "obs_date": "2020-12-16",
+          "r_logLiso": 19,
+          "s_Vf_f0.45": 0.003
+        },
+        "params": {
+          "lp_iso": {
+            "v": 131825673855639940000000000000000000000000000000000000,
+            "err": [
+              9103205986546715000000000000000000000000000000000000,
+              8515190532749750000000000000000000000000000000000000
+            ],
+            "frame": "rest"
+          },
+          "redshift": {
+            "v": 1.1
+          },
+          "variability": {
+            "f": 0.8,
+            "v": 0.208,
+            "err": 0.005,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/690/A261",
+          "name": "Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

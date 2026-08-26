@@ -1,0 +1,147 @@
+{
+  "transient_id": "GRB090308",
+  "alias": [],
+  "Trigger_Instrument": "Swift/BAT",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -62.02960727,
+          "lii": 291.65785386,
+          "flux_256": 8.4962,
+          "flux_1024": 6.56274,
+          "t50_start": 0.25597,
+          "t90_start": -0.32003,
+          "error_radius": 4.8,
+          "fluence_batse": 1.0124e-06,
+          "flux_batse_64": 6.20119,
+          "flux_256_error": 0.363723,
+          "flux_batse_256": 4.77658,
+          "flnc_band_epeak": 614.69257,
+          "flnc_comp_epeak": 613.80035,
+          "flux_1024_error": 0.171499,
+          "flux_batse_1024": 3.04096,
+          "fluence_batse_error": 1.36391e-08,
+          "flux_batse_64_error": 0.714126,
+          "flux_batse_256_error": 0.340529,
+          "flux_batse_1024_error": 0.171499,
+          "flnc_band_epeak_neg_err": 62.613342,
+          "flnc_band_epeak_pos_err": 62.613342,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 60.153137,
+          "flnc_comp_epeak_pos_err": 60.153137
+        },
+        "params": {
+          "t50": {
+            "v": 0.576016,
+            "err": 0.090521,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 1.66403,
+            "err": 0.286217,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 613.80035,
+            "err": [
+              60.153137,
+              60.153137
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 2.54585e-06,
+            "err": 2.88799e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 12.3319,
+            "dt": "64ms",
+            "err": 0.714126,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB090308734",
+          "GRB 090308.734",
+          "bn090308734"
+        ],
+        "trigger_time": "2009-03-08T17:36:24.699Z"
+      },
+      "swift_grb": {
+        "other": {
+          "bat_plsl": "2.335",
+          "det_flag": "S",
+          "target_id": "345777",
+          "bat_plsl_err": "0.363",
+          "bat_detection": "Y",
+          "bat_peak_model": "PL",
+          "supernova_flag": "N",
+          "bat_fluence_model": "PL"
+        },
+        "params": {
+          "t50": {
+            "v": 10.01,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "t90": {
+            "v": 25.1,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.2e-07,
+            "err": 4.73e-08,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 0.336,
+            "dt": "1s",
+            "err": 0.12,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 345777"
+        ],
+        "trigger_time": "2009-03-08T18:01:23.441660Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "XA": "y",
+          "Error": "3",
+          "obs_date": "2009-03-08",
+          "Instrument": "Swift",
+          "GRB X-ray position": "12h14m06s -48° 53'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "transient_id": "GRB120107A",
+  "alias": [
+    "GRB 120107384"
+  ],
+  "ra": 245.00999450683594,
+  "dec": -70.58999633789062,
+  "T0": "2012-01-07T09:12:17.410000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "tag": [
+    "grb"
+  ],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -14.28819743,
+          "lii": 319.47955367,
+          "flux_256": 6.77636,
+          "flux_1024": 5.50023,
+          "t50_start": 2.432,
+          "t90_start": 0.06397,
+          "error_radius": 0.5,
+          "fluence_batse": 3.89593e-06,
+          "flux_batse_64": 4.20448,
+          "flux_256_error": 0.509178,
+          "flux_batse_256": 3.51366,
+          "flnc_band_epeak": 202.01892,
+          "flnc_comp_epeak": 228.77625,
+          "flux_1024_error": 0.237764,
+          "flux_batse_1024": 2.73694,
+          "fluence_batse_error": 2.49846e-08,
+          "flux_batse_64_error": 0.545813,
+          "flux_batse_256_error": 0.253712,
+          "flux_batse_1024_error": 0.112457,
+          "flnc_band_epeak_neg_err": 28.575836,
+          "flnc_band_epeak_pos_err": 28.575836,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 20.692871,
+          "flnc_comp_epeak_pos_err": 20.692871
+        },
+        "params": {
+          "t50": {
+            "v": 16.1923,
+            "err": 0.230769,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 23.0404,
+            "err": 0.143108,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 228.77625,
+            "err": [
+              20.692871,
+              20.692871
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 6.53199e-06,
+            "err": 4.43565e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 8.53401,
+            "dt": "64ms",
+            "err": 1.10296,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB120107384",
+          "GRB 120107.384",
+          "bn120107384"
+        ],
+        "trigger_time": "2012-01-07T09:12:15.411Z"
+      },
+      "fermi_lat": {
+        "other": {
+          "tl100": 47.51,
+          "tl100_error": 12.695,
+          "trigger_met": 347620337.41,
+          "error_radius": 0.34,
+          "like_best_ts": 53.2877,
+          "like_best_fluence": 1.00356e-06,
+          "like_best_grbindex": -2.35685,
+          "ext_emission_max_ene": 1900.0,
+          "ext_emission_max_ene_t": 7.7,
+          "like_best_fluence_error": 6.98042e-07,
+          "like_best_grbindex_error": 0.459757
+        },
+        "params": {
+          "t90": {
+            "v": 23.04,
+            "err": 0.143,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 6.532e-06,
+            "err": 4.4356e-08,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 120107.384"
+        ],
+        "trigger_time": "2012-01-07T09:12:14.996Z"
+      },
+      "swift_grb": {
+        "other": {
+          "det_flag": "O",
+          "other_id": "20203; 347620337",
+          "target_id": "20198",
+          "bat_detection": "U",
+          "supernova_flag": "N"
+        },
+        "params": {
+          "epeak": {
+            "v": 196.0,
+            "err": null,
+            "frame": "obs",
+            "model": null
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 20198",
+          "20203; 347620337"
+        ],
+        "trigger_time": "2012-01-07T09:12:15Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "IPN": "y",
+          "Error": "30",
+          "obs_date": "2012-01-07",
+          "Instrument": "Fermi",
+          "GRB X-ray position": "16h25m36s -69° 56'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

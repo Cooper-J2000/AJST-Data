@@ -1,0 +1,202 @@
+J/ApJ/746/156      Radio afterglow observations of GRBs      (Chandra+, 2012)
+================================================================================
+A radio-selected sample of gamma-ray burst afterglows.
+    Chandra P., Frail D.A.
+   <Astrophys. J., 746, 156 (2012)>
+   =2012ApJ...746..156C
+================================================================================
+ADC_Keywords: Gamma rays ; Radio continuum
+Keywords: cosmology: observations - gamma-ray burst: general - hydrodynamics -
+          radio continuum: general
+
+Abstract:
+    We present a catalog of radio afterglow observations of gamma-ray
+    bursts (GRBs) over a 14 year period from 1997 to 2011. Our sample of
+    304 afterglows consists of 2995 flux density measurements (including
+    upper limits) at frequencies between 0.6 GHz and 660 GHz, with the
+    majority of data taken at 8.5 GHz frequency band (1539 measurements).
+    We use this data set to carry out a statistical analysis of the
+    radio-selected sample. The detection rate of radio afterglows has
+    stayed unchanged almost at 31% before and after the launch of the
+    Swift satellite. The canonical long-duration GRB radio light curve at
+    8.5 GHz peaks at three to six days in the source rest frame, with a
+    median peak luminosity of 10^31^ erg/s/Hz. The peak radio luminosities
+    for short-hard bursts, X-ray flashes, and the supernova-GRB classes
+    are an order of magnitude or more fainter than this value. There are
+    clear relationships between the detectability of a radio afterglow and
+    the fluence or energy of a GRB, and the X-ray or optical brightness of
+    the afterglow. However, we find few significant correlations between
+    these same GRB and afterglow properties and the peak radio flux
+    density. We also produce synthetic light curves at centimeter and
+    millimeter bands using a range of blast wave and microphysics
+    parameters derived from multiwavelength afterglow modeling, and we use
+    them to compare to the radio sample. Finding agreement, we extrapolate
+    this behavior to predict the centimeter and millimeter behavior of
+    GRBs observed by the Expanded Very Large Array and the Atacama Large
+    Millimeter Array.
+
+Description:
+    Our compiled sample consists of 304 GRBs observed with the radio
+    telescopes between 1997 January and 2011 January, along with the 2011
+    April 28 Fermi burst, GRB 110428A. The sample consists of a total of
+    2995 flux density measurements taken between the frequencies
+    0.6-660GHz bands spanning a time range from 0.026 to 1339 days.
+    Most of the afterglows (270 in total) in our sample were observed as
+    part of the VLA radio afterglow programs, whereas 15 bursts were
+    observed by EVLA, and 19 southern bursts with the Australia Telescope
+    Compact Array (ATCA).
+
+    Radio, optical and X-ray afterglows detections (section 2.2): out of
+    the 304 bursts, 123 bursts were observed in the pre-Swift epoch from
+    1997 until 2004. The remaining 181 bursts were observed between 2005
+    and 2011 April (post-Swift epoch).
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName   Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe         80        .   This file
+table1.dat    186      304   Master table
+table4.dat     43      140   The radio peak flux densities and the time of
+                              peak for radio afterglows
+refs.dat      122       70   References
+--------------------------------------------------------------------------------
+
+See also:
+ J/ApJ/727/73   : S/N composite spectrum of GRB afterglows (Christensen+, 2011)
+ J/ApJS/195/2   : The second Swift BAT GRB catalog (BAT2) (Sakamoto+, 2011)
+ J/ApJ/720/1513 : The afterglows of Swift-era GRBs. I. (Kann+, 2010)
+ J/ApJ/701/824  : Afterglows of short and long-duration GRBs (Nysewander+, 2009)
+ J/ApJ/690/163  : The first Swift UV-Opt GRB afterglow catalog (Roming+, 2009)
+ J/ApJS/180/192 : BeppoSAX/GRBM {gamma}-ray Burst Catalog (Frontera+, 2009)
+ J/ApJS/175/179 : The BAT1 gamma-ray burst catalog (Sakamoto+, 2008)
+ J/ApJ/686/1209 : Optical properties of GRB afterglows (Melandri+, 2008)
+ J/A+A/455/813  : BeppoSAX catalog of GRB X-ray afterglows (De Pasquale+, 2006)
+ J/ApJ/609/935  : Gamma-ray burst formation rate (Yonetoku+, 2004)
+
+Byte-by-byte Description of file: table1.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units    Label  Explanations
+--------------------------------------------------------------------------------
+   1-  7  A7    ---      GRB    GRB name (YYMMDD)
+   9- 11  A3    ---    n_GRB    [m-r, ] Note(s) on GRB (1)
+  13- 17  A5    ---      Inst   [A-T, sA] Instrument code (2)
+  19- 20  I2    h        RAh    [0,23] Hour of right ascension (J2000)
+  22- 23  I2    min      RAm    Minute of right ascension (J2000)
+  25- 29  F5.2  s        RAs    Second of right ascension (J2000)
+      31  A1    ---      DE-    Sign of declination (J2000)
+  32- 33  I2    deg      DEd    [0,83] Degreee of declination (J2000)
+  35- 36  I2    arcmin   DEm    Arcminute of declination (J2000)
+  38- 41  F4.1  arcsec   DEs    Arcsecond of declination (J2000)
+  43- 44  A2    ---      X?     [XYN? ] X-ray afterglow detection? (3)
+  46- 47  A2    ---      O?     [XYN? ] Optical afterglow detection? (3)
+  49- 50  A2    ---      R?     [YN? ] Radio afterglow detection? (3)
+  52- 55  A4    ---      Tel    Radio telescope (ATCA, EVLA or VLA)
+  57- 61  A5    ---    n_Tel    [lr-v, ] Multiple observations (1)
+  63- 70  F8.2  s        T90    [0.07,1800]? Duration in the energy band of
+                                 the specific detector (T_90_)
+      72  A1    ---    l_z      Limit flag on z
+  74- 79  F6.3  ---      z      [0.009/20]? Redshift
+  81- 83  F3.1  ---      z2     ? Upper range of redshift (if filled,
+                                 "Redshift" is the lower range)
+  85- 92  E8.3  mJ/m2    S15    [6e-09,0.000283]? GRB fluences in 15-150keV
+                                 range (in erg/cm^-2^) (4)
+  94-101  E8.3  10-7J    Ebol   [1e+40,4.1e+54]? k-corrected bolometric
+                                 isotropic energy in 1-10000keV range (in erg)
+     103  A1    ---    l_FX     Limit flag on FX
+ 105-111  F7.2 10-16W/m2 FX     [0,548.6]? X-ray flux (0.3-10keV or 1.6-10keV)
+                                 at 11hr in 10^-13^erg/cm^2^/s (5)
+     113  A1    ---    l_FR     Limit flag on FR
+ 115-122  F8.2  uJy      FR     [0.08,4328]? Optical R-band (0.7um) flux density
+                                 at 11hr in {mu}Jy
+     124  A1    ---    l_Tj     Limit flag on Tj
+ 126-131  F6.3  d        Tj     [0.004/47.7]? Jet break time (t_j_)
+     133  A1    ---    u_Tj     [?] Uncertainty flag on Tj
+ 135-141  F7.3  cm-3     n      [0.001,680]? Number density (n) of the
+                                 circumburst medium
+     143  A1    ---    f_n      [i] assumed value of n (6)
+     145  A1    ---    l_theta  Limit flag on theta
+ 147-151  F5.2  deg      theta  [0.45,80.26]? Collimation angle ({theta}_j_) (7)
+     153  A1    ---    l_Ebolt  Limit flag on Ebolt
+ 155-162  E8.3  10-7J    Ebolt  [1e+40,1.38e+52]? Beaming-corrected (true)
+                                 bolometric energy (in erg) (7)
+ 164-186  A23   ---      Ref    References (see refs.dat file) (8)
+--------------------------------------------------------------------------------
+Note (1): Flag as follows:
+  l = Observed with WSRT, VLBA, Ryle, ATCA and GMRT in addition to VLA/EVLA.
+  m = Double jet break.
+  n = SN/GRB (GRB with possible SN association). See section 2.1.
+  o = SHB (short-hard burst).
+  p = XRF (X-ray flash).
+  q = Galactic transient?
+  r = Also observed with WSRT (Westerbork Synthesis Radio Telescope).
+  s = Also observed with VLBA (Very Long Baseline Array).
+  t = Also observed with the Ryle telescope.
+  u = Also observed with ATCA (Australia Telescope Compact Array).
+  v = Also observed with GMRT (Giant Metrewave Radio Telescope).
+Note (2): Instrument code as follows:
+  A = ASM;
+  B = BeppoSAX;
+  F = Fermi;
+  H = HETE;
+  I = INTEGRAL,
+  P = PCA;
+  S = Swift;
+ sA = superAGILE,
+  T = IPN Triangulation
+Note (3): Symbol "Y" indicates a detection, while "N" indicates a non-detection.
+          The symbol "X" means the burst was not observed in that particular
+          band, whereas "Y?" indicates that the observation was made but a
+          detection could not be confirmed.
+Note (4): For non Swift fluences, the available fluences have been extrapolated
+          to this energy range using formulation of Nysewander et al. (2009,
+          Cat. J/ApJ/701/824).
+Note (5): The fluxes are mentioned in 0.3-10keV energy range. However, the
+          fluxes for the BeppoSAX bursts are quoted in the energy range of
+          1.6-10 keV.
+Note (6):
+  i = The GRBs for which number densities are not available; we assume a number
+      density of 1cm^-3^.
+Note (7): We estimate the collimation angle {theta}_j_ (deg) and the
+          beaming-corrected bolometric energy (E^bol^_true_) of GRBs with
+          observed t_j_ using Frail et al. (2001ApJ...562L..55F) and Bloom
+          et al. (2003ApJ...594..674B).
+Note (8): References are in the following order: T_90_, z, fluence, bolometric
+          isotropic energy, X-ray flux at 11hr, Optical flux density at 11hr,
+          jet break time and density. If a particular cell is empty, then the
+          reference has value "[]". However, a reference value of "[]" for a
+          non-empty corresponding cell means that we have estimated the values
+          ourselves using GCN circulars.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: table4.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1-  7  A7    ---     GRB       GRB name (YYMMDDA)
+   9- 13  F5.2  GHz     Freq      [1.38,43] Frequency of the observation
+  15- 19  I5    uJy     Fm        [50,59318] Peak flux density (F_m_) (1)
+  21- 23  I3    uJy   e_Fm        [9,557]? Fm uncertainty
+  25- 29  F5.1  d       tm        [1.3,179.1] Peak time (1)
+  31- 34  F4.1  d     e_tm        [0.1,11.3]? tm uncertainty
+  36- 39  F4.1  d       tm/(1+z)  [0.6,97.6]? Rest-frame peak time (1)
+  41- 43  F3.1  d     e_tm/(1+z)  [0.1,5]? t_m_/(1+z) uncertainty
+--------------------------------------------------------------------------------
+Note (1): See section 3.5 and equation (1) for further details.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: refs.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1-  2  A2    ---     Ref       Reference code
+   4- 22  A19   ---     BibCode   Bibcode
+  24- 47  A24   ---     Aut       Author's name(s)
+  49-122  A74   ---     Comm      Comment
+--------------------------------------------------------------------------------
+
+History:
+    From electronic version of the journal
+
+================================================================================
+(End)                                     Emmanuelle Perret [CDS]    12-Sep-2013

@@ -1,0 +1,224 @@
+{
+  "transient_id": "GRB090227B",
+  "alias": [],
+  "ra": 11.8,
+  "dec": 32.2,
+  "T0": "2009-02-27T18:31:01.410000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 1.61,
+  "tag": [
+    "grb"
+  ],
+  "redshift_ref": "catalog:minaev2020",
+  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "sub_tag": [
+    "S"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "eiso": {
+          "v": 283000000000000000000000000000000000000000000000000000,
+          "err": 15000000000000000000000000000000000000000000000000000,
+          "src": "minaev2020"
+        },
+        "ep_rest": {
+          "v": 5116.0,
+          "err": [
+            392.0,
+            339.0
+          ],
+          "src": "minaev2020"
+        },
+        "t90_rest": {
+          "v": 0.49,
+          "err": null,
+          "src": "minaev2020"
+        }
+      },
+      "sources": {
+        "minaev2020": {
+          "eiso": {
+            "v": 283000000000000000000000000000000000000000000000000000,
+            "err": 15000000000000000000000000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 5116.0,
+            "err": [
+              392.0,
+              339.0
+            ]
+          },
+          "grb_type": "I",
+          "t90_rest": {
+            "v": 0.49,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "I",
+        "src": "minaev2020"
+      }
+    },
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -30.66317235,
+          "lii": 121.88966691,
+          "flux_256": 59.7169,
+          "flux_1024": 16.9104,
+          "t50_start": 0.016,
+          "t90_start": -0.016,
+          "error_radius": 1.8,
+          "fluence_batse": 1.81328e-06,
+          "flux_batse_64": 38.4254,
+          "flux_256_error": 1.06714,
+          "flux_batse_256": 23.8068,
+          "flnc_band_epeak": 2095.1877,
+          "flnc_comp_epeak": 2184.1104,
+          "flux_1024_error": 0.330249,
+          "flux_batse_1024": 6.60643,
+          "fluence_batse_error": 6.23955e-09,
+          "flux_batse_64_error": 1.48125,
+          "flux_batse_256_error": 0.615111,
+          "flux_batse_1024_error": 0.168652,
+          "flnc_band_epeak_neg_err": 99.826416,
+          "flnc_band_epeak_pos_err": 99.826416,
+          "flnc_best_fitting_model": "flnc_sbpl",
+          "flnc_comp_epeak_neg_err": 89.807861,
+          "flnc_comp_epeak_pos_err": 89.807861
+        },
+        "params": {
+          "t50": {
+            "v": 0.096,
+            "err": 0.0226274,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 0.304,
+            "err": 0.0226274,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 2095.1877,
+            "err": [
+              99.826416,
+              99.826416
+            ],
+            "frame": "obs",
+            "model": "BAND"
+          },
+          "fluence": {
+            "v": 1.10952e-05,
+            "err": 1.17907e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 111.921,
+            "dt": "64ms",
+            "err": 2.82562,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB090227772",
+          "GRB 090227.772",
+          "bn090227772"
+        ],
+        "trigger_time": "2009-02-27T18:31:01.407Z"
+      },
+      "fermi_lat": {
+        "other": {
+          "lle_t90": 1.144,
+          "tl100_error": -666.0,
+          "trigger_met": 257452263.407,
+          "error_radius": 1.8,
+          "like_best_ts": 29.5354,
+          "like_best_fluence": 1.46786e-06,
+          "like_best_grbindex": -4.9397,
+          "ext_emission_max_ene": -670.0,
+          "ext_emission_max_ene_t": -666.0,
+          "like_best_fluence_error": 9.67912e-07,
+          "like_best_grbindex_error": 1.79484
+        },
+        "params": {
+          "t90": {
+            "v": 0.304,
+            "err": 0.023,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 1.1095e-05,
+            "err": 1.1791e-08,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 090227.772"
+        ],
+        "trigger_time": "2009-02-27T18:31:01.004Z"
+      },
+      "minaev2020": {
+        "other": {
+          "EH": 5.35,
+          "EHD": 7.64,
+          "Exp": "Fermi",
+          "Ref": "13",
+          "f_z": "PH",
+          "Type": "I",
+          "recno": 146,
+          "EHtype": "I",
+          "EHDtype": "I"
+        },
+        "params": {
+          "t90": {
+            "v": 0.49,
+            "err": null,
+            "band": null,
+            "frame": "rest"
+          },
+          "eiso": {
+            "v": 283000000000000000000000000000000000000000000000000000,
+            "err": 15000000000000000000000000000000000000000000000000000,
+            "band": null,
+            "frame": "rest"
+          },
+          "ep_rest": {
+            "v": 5116.0,
+            "err": [
+              392.0,
+              339.0
+            ],
+            "frame": "rest"
+          },
+          "grb_type": {
+            "v": "I"
+          },
+          "redshift": {
+            "v": 1.61
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
+          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

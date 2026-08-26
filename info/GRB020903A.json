@@ -1,0 +1,219 @@
+{
+  "transient_id": "GRB020903A",
+  "alias": [],
+  "ra": 342.254167,
+  "dec": -20.933333,
+  "T0": "2002-09-03T10:05:37.960000Z",
+  "Trigger_Instrument": "HETE-2",
+  "redshift": 0.25,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "L"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "t90_rest": {
+          "v": 8.0,
+          "err": null,
+          "src": "minaev2020"
+        }
+      },
+      "sources": {
+        "minaev2020": {
+          "eiso": {
+            "v": 24000000000000000000000000000000000000000000000000,
+            "err": 6000000000000000000000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 3.37,
+            "err": 1.79
+          },
+          "grb_type": "II",
+          "t90_rest": {
+            "v": 8.0,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "minaev2020"
+      }
+    },
+    "catalog_data": {
+      "rssgrbag": {
+        "other": {
+          "ref_codes": "44,33,[],22,[],37,[],[]",
+          "opt_ag_flag": "Y",
+          "radio_peaks": [
+            {
+              "freq_GHz": 4.86,
+              "peak_time_d": 36.7,
+              "peak_flux_uJy": 782.0,
+              "rf_peak_time_d": 29.4,
+              "peak_time_d_err": 1.3,
+              "peak_flux_uJy_err": 28.0,
+              "rf_peak_time_d_err": 1.0
+            },
+            {
+              "freq_GHz": 1.43,
+              "peak_time_d": 91.0,
+              "peak_flux_uJy": 294.0,
+              "rf_peak_time_d": 72.8,
+              "peak_time_d_err": null,
+              "peak_flux_uJy_err": null,
+              "rf_peak_time_d_err": null
+            },
+            {
+              "freq_GHz": 8.46,
+              "peak_time_d": 23.8,
+              "peak_flux_uJy": 1058.0,
+              "rf_peak_time_d": 19.0,
+              "peak_time_d_err": null,
+              "peak_flux_uJy_err": null,
+              "rf_peak_time_d_err": null
+            }
+          ],
+          "source_flag": "n,p",
+          "opt_flux_11h": {
+            "v": 104.6,
+            "band": "R (0.7 micron)",
+            "unit": "microJy",
+            "limit": "<"
+          },
+          "xray_ag_flag": "X",
+          "radio_ag_flag": "Y",
+          "instrument_code": "H",
+          "radio_telescope": "VLA"
+        },
+        "params": {
+          "t90": {
+            "v": 13.0,
+            "err": null,
+            "band": null
+          },
+          "eiso": {
+            "v": 23000000000000000000000000000000000000000000000000,
+            "err": null,
+            "band": "1-10000 keV",
+            "frame": "rest"
+          },
+          "fluence": {
+            "v": 1.26e-08,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.25
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/gamma-ray-bursts/rssgrbag.html",
+          "name": "Radio-Selected GRB Afterglow Catalog (Chandra & Frail 2012)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "minaev2020": {
+        "other": {
+          "EH": 0.15,
+          "EHD": 0.05,
+          "Exp": "HETE-2",
+          "Ref": "2,3",
+          "Type": "II+SNph",
+          "recno": 31,
+          "EHtype": "II",
+          "EHDtype": "II"
+        },
+        "params": {
+          "t90": {
+            "v": 8.0,
+            "err": null,
+            "band": null,
+            "frame": "rest"
+          },
+          "eiso": {
+            "v": 24000000000000000000000000000000000000000000000000,
+            "err": 6000000000000000000000000000000000000000000000000,
+            "band": null,
+            "frame": "rest"
+          },
+          "ep_rest": {
+            "v": 3.37,
+            "err": 1.79,
+            "frame": "rest"
+          },
+          "grb_type": {
+            "v": "II"
+          },
+          "redshift": {
+            "v": 0.25
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
+          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "RA": "y",
+          "Error": "16'",
+          "obs_date": "2002-09-03",
+          "Instrument": "HETE",
+          "GRB X-ray position": "22h49m01s -20° 56'"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.25
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "heasarc_grbcat": {
+        "other": {
+          "region": [
+            "box"
+          ],
+          "t_other": 3.3,
+          "time_def": "Not Specified",
+          "flux_flag": "N",
+          "grbcat_id": 5545,
+          "observatories": [
+            "HETE2"
+          ],
+          "afterglow_flag": "Y"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.25,
+            "err": 0.01
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/all/grbcat.html",
+          "name": "HEASARC GRBCAT",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2002-09-03T10:05:37.900Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "transient_id": "GRB080825B",
+  "alias": [],
+  "ra": 209.283333,
+  "dec": -68.95,
+  "T0": "2008-08-25T17:46:52.487000Z",
+  "Trigger_Instrument": "Konus-Wind",
+  "redshift": 4.3,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "L"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "t90_obs": {
+          "v": 50.0,
+          "err": null,
+          "src": "uvot_grb"
+        },
+        "epeak_obs": {
+          "v": 72.0,
+          "err": null,
+          "src": "swift_grb"
+        }
+      },
+      "sources": {
+        "uvot_grb": {
+          "t90_obs": {
+            "v": 50.0,
+            "err": null
+          },
+          "t90_rest": {
+            "v": 9.433962264150944,
+            "err": null
+          }
+        },
+        "swift_grb": {
+          "ep_rest": {
+            "v": 381.59999999999997,
+            "err": null
+          },
+          "epeak_obs": {
+            "v": 72.0,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "sub_tag"
+      }
+    },
+    "catalog_data": {
+      "uvot_grb": {
+        "other": {
+          "OBJECT": "GRB080825B",
+          "BAT_PIT": null,
+          "DISC_BY": "AGILE",
+          "POS_ERR": 0.699999988079071,
+          "POS_REF": "GCN8135",
+          "T90_REF": "GCN8133",
+          "TRIG_UT": "2008-238-17:46:40",
+          "TRIGTIME": 241379200.0
+        },
+        "params": {
+          "t90": {
+            "v": 50.0,
+            "err": null,
+            "band": null
+          }
+        },
+        "source": {
+          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
+          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2008-08-25T17:46:40Z"
+      },
+      "swift_grb": {
+        "other": {
+          "det_flag": "O",
+          "target_id": "20080",
+          "redshift_ref": "2008GCN..8143....1P",
+          "bat_detection": "U",
+          "redshift_type": "G",
+          "supernova_flag": "N"
+        },
+        "params": {
+          "epeak": {
+            "v": 72.0,
+            "err": null,
+            "frame": "obs",
+            "model": null
+          },
+          "redshift": {
+            "v": 0.83,
+            "err": 0.3
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 20080"
+        ],
+        "trigger_time": "2008-08-25T17:46:40Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 2100044455100000000000,
+          "xrt_ra": 209.20246,
+          "comment": "AGILE: GCN 8133; UVOT: no detection",
+          "xrt_dec": -68.95539,
+          "uvot_mag": "B>21.2; U>20.8; UVW1>20.9; UVM2>20.8; UVW2>21.5; White>22.1",
+          "uvot_vmag": 20.5,
+          "xrt_gamma": 2.09193,
+          "trigger_obs": "AGILE",
+          "xrt_lc_index": -1.965,
+          "xrt_11hr_flux": 1.3137294e-12,
+          "xrt_24hr_flux": 2.8351472e-13,
+          "uvot_first_obs": 45000.0,
+          "uvot_vmag_flag": 1,
+          "xrt_error_radius": 2.8
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2008-08-25T17:46:40.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3'",
+          "z_flag": "ph",
+          "obs_date": "2008-08-25",
+          "Instrument": "AGILE",
+          "GRB X-ray position": "13h57m08s -68° 57'"
+        },
+        "params": {
+          "redshift": {
+            "v": 4.3
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

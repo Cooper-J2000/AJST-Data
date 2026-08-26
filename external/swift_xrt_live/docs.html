@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head> 
+    <title>UKSSDC | Swift-XRT GRB Catalogue | Documentation</title>
+    <meta name="keywords" content="Swift, GRB, XRT, light curve, documentation"/>
+    <meta name="description" lang="en" content="UKSSDC | Swift-XRT GRB Catalogue | Documentation"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv='Content-Style-Type' content='text/css'/>
+    <meta http-equiv='Content-Script-Type' content='text/javascript'/>
+    <link href="/style/autoproc_docs.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="/scripts/dropdown.js"></script>
+    <link rel="icon" href="/icons/swift.ico" type="image/x-icon"/>
+  </head>
+
+  <body>
+    <div id="holder">
+    <p style='visibility: hidden; display: none;'><a href='#mainContentPostBanner'>Skip banner and navigation tools</a>.</p>
+  <div id="swiftbanner">
+    <div id="uolbanner">
+      <a href="http://www.le.ac.uk">
+      <img class="uollogo" src="/images/uol_logo.png"
+         alt="University of Leicester logo"/></a>
+      <a href="https://le.ac.uk/physics/">School of Physics &amp; Astronomy</a>
+     
+    </div>
+
+    <a href="https://swift.gsfc.nasa.gov" id="us"><span class="hidden">US Site | </span></a>
+    <a href="https://swift.ssdc.asi.it" id="it"><span class="hidden">Italian Site | </span></a>
+    <a href="https://www.swift.ac.uk" id="uk" ><span class="hidden">UK site</span></a>
+  </div>
+
+  <div id="addressBar">
+      <form class="right search" action="/search/search.php" method="get">
+      <p>
+          <label for="searchBox">Search:</label> 
+          <input id="searchBox" type="text" name="terms"  
+	         value=""/>
+          <input type="submit" name="submit" value="?"/>
+      </p>
+      </form>
+      <span class="right">&nbsp;|&nbsp;</span>
+      <a class="right" href="/sitemap.php">site map</a>
+  <ul>
+    <li>
+      <a href="https://www.swift.ac.uk/index.php">Home</a>
+    </li>
+
+    <li>
+      <a href="https://www.swift.ac.uk/about/index.php" 
+        onmouseover="menu_open('mabout')" 
+        onmouseout="menu_closetime()">About</a>
+        <div id="mabout" 
+            onmouseover="menu_cancelclosetime()" 
+            onmouseout="menu_closetime()">
+        <a href="https://www.swift.ac.uk/about/index.php">The Swift Mission</a>
+        <a href="https://www.swift.ac.uk/about/uk.php">UK involvement</a>
+        <a href="https://www.swift.ac.uk/about/instruments.php">Instruments</a>
+        <hr/>
+        <a href="https://www.swift.ac.uk/about/grb.php">GRBs before Swift </a>
+        <a href="https://www.swift.ac.uk/about/swiftera.php">GRBs in the Swift era</a>
+        <a href="https://www.swift.ac.uk/about/swifteranongrb.php">Non-GRB science with Swift</a>
+        <a href="https://www.swift.ac.uk/about/research.php">GRB research at Leicester</a>
+        
+        <hr/>
+        <a href="https://www.swift.ac.uk/about/status.php">Spacecraft status</a>
+        <a href="https://www.swift.ac.uk/about/press.php">Swift in the press</a>
+        <a href="https://www.swift.ac.uk/about/videos.php">Swift Videos</a>
+        </div>
+    </li>
+
+   
+    <li>
+      <a href="https://www.swift.ac.uk/support/index.php"
+        onmouseover="menu_open('msupport')"
+        onmouseout="menu_closetime()">Support</a>
+
+      <div id="msupport"
+          onmouseover="menu_cancelclosetime()"
+          onmouseout="menu_closetime()">
+      <a href="https://www.swift.ac.uk/support/index.php">Helpdesk</a>
+      <a href="https://www.swift.ac.uk/support/too.php">TOO requests</a>
+      <a href="https://www.swift.ac.uk/support/gi.php">Guest Investigator program</a>
+      <a href="https://www.swift.ac.uk/sunpos.php">Target visibility checker</a>
+      <a href="https://www.swift.ac.uk/support/transientSearch">Search transient database</a>
+      </div>
+    </li>
+
+ 
+    <li>
+      <a href="https://www.swift.ac.uk/archive/index.php" 
+        onmouseover="menu_open('marchive')" 
+        onmouseout="menu_closetime()">Data Access</a>
+
+      <div id="marchive" 
+          onmouseover="menu_cancelclosetime()" 
+          onmouseout="menu_closetime()">
+      <a href="https://www.swift.ac.uk/archive/index.php">Overview</a>
+      <a href="https://www.swift.ac.uk/archive/ql.php">Quick Look</a>
+      <a href="https://www.swift.ac.uk/gcn/index.php">GCN Notices</a>
+      <a href="https://www.swift.ac.uk/swift_portal">Download obs data</a>
+      <a href="https://www.swift.ac.uk/swift_live">Search obs catalogue</a>
+       <a href="https://www.swift.ac.uk/2SXPS">The 2SXPS catalogue</a>
+      <a href="https://www.swift.ac.uk/LSXPS">The LSXPS catalogue</a>
+      </div>
+    </li>
+    
+    
+    <li>
+      <a href="https://www.swift.ac.uk/analysis/index.php" 
+        onmouseover="menu_open('manal')" 
+        onmouseout="menu_closetime()">Data Analysis</a>
+
+      <div id="manal" 
+          onmouseover="menu_cancelclosetime()" 
+          onmouseout="menu_closetime()">
+      <a href="https://www.swift.ac.uk/analysis/index.php">Data analysis overview</a>
+      <a href="https://www.swift.ac.uk/analysis/software.php">Swift software</a>
+      <hr/>
+      <a href="https://www.swift.ac.uk/user_objects/">Build XRT products</a>
+      <hr/>
+      <a href="https://www.swift.ac.uk/analysis/bat/index.php">BAT data analysis guide</a>
+      <a href="https://www.swift.ac.uk/analysis/xrt/index.php">XRT data analysis guide</a>
+      <a href="https://www.swift.ac.uk/analysis/xrt/digest_sci.php">XRT digest</a>
+      <a href="https://www.swift.ac.uk/analysis/uvot/index.php">UVOT data analysis guide</a>
+      </div>
+    </li>
+    
+    
+
+    <li>
+      <a href="https://www.swift.ac.uk/xrt_products/index.php" 
+        onmouseover="menu_open('mproducts')" 
+        onmouseout="menu_closetime()">Data Products</a>
+
+      <div id="mproducts" 
+          onmouseover="menu_cancelclosetime()" 
+          onmouseout="menu_closetime()">
+
+        <span class='menutitle'>GRBs</span>
+        <span class='menusubtitle'>Full dataset</span>
+        <a href="https://www.swift.ac.uk/xrt_products/index.php">Swift XRT products for GRBs</a>
+        <a href="https://www.swift.ac.uk/xrt_positions/">XRT positions</a>
+        <a href="https://www.swift.ac.uk/xrt_curves/">XRT light curves</a>
+        <a href="https://www.swift.ac.uk/xrt_spectra/">XRT spectra</a>
+        <a href="https://www.swift.ac.uk/xrt_live_cat/">XRT GRB catalogue</a>
+        <a href="https://www.swift.ac.uk/xrt_images/">XRT GRB images</a>
+        <a href="https://www.swift.ac.uk/burst_analyser/">Burst analyser</a>
+        <span class='menusubtitle'>Prompt data</span>
+        <a href="https://www.swift.ac.uk/grb_region/">GRB field info</a>
+        <a title="X-ray Prompt data index page" href="https://www.swift.ac.uk/sper/">XRT prompt analysis</a>
+
+        <span class='menutitle'>External triggers</span>
+        <a href="https://www.swift.ac.uk/EP/">Einstein Probe follow up</a>
+        <a href="https://www.swift.ac.uk/SVOM/">SVOM follow up</a>
+        <a href="https://www.swift.ac.uk/neutrino/">Neutrino follow up</a>
+        <a href="https://www.swift.ac.uk/LVC/">Gravitational Wave follow up</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="https://www.swift.ac.uk/results/index.php" 
+        onmouseover="menu_open('mresults')" 
+        onmouseout="menu_closetime()">Publications</a>
+
+       <div id="mresults" 
+          onmouseover="menu_cancelclosetime()" 
+          onmouseout="menu_closetime()">
+        <a href="https://www.swift.ac.uk/results/index.php">Publication index</a>
+        <a href="https://www.swift.ac.uk/results/pub.php">Published papers</a>
+        <a href="https://www.swift.ac.uk/results/sub.php">Submitted papers</a>
+        <a href="https://www.swift.ac.uk/results/spie.php">XRT instrument papers</a>
+        <a href="https://www.swift.ac.uk/results/atels.php">ATels</a>
+        <a href="https://www.swift.ac.uk/results/grbs.php">GCNs</a>
+        <a href="https://www.swift.ac.uk/results/conferences.php">Conferences</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="https://www.swift.ac.uk/links.php" 
+        onmouseover="menu_open('mlinks')" 
+        onmouseout="menu_closetime()">Links</a>
+
+      <div id="mlinks" 
+          onmouseover="menu_cancelclosetime()" 
+          onmouseout="menu_closetime()">
+      
+            Databases
+	    <a href="http://ned.ipac.caltech.edu/">NED</a>
+	    <a href="http://simbad.u-strasbg.fr/Simbad">Simbad</a>
+            <a href="http://gcn.gsfc.nasa.gov/gcn3_archive.html">GCN circulars archive</a>
+            <a href="https://swift.gsfc.nasa.gov/docs/swift/archive/grb_table/">GRB data table</a>
+	    Software &amp; Tools
+	    <a href="https://heasarc.nasa.gov/lheasoft/">Swift Software (HEASoft)</a>
+            <a href="https://heasarc.gsfc.nasa.gov/xanadu/xanadu.html">Xanadu</a>
+            <a href="https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/w3pimms/w3pimms.pl">WebPIMMS</a>
+	    Institutional Swift Sites
+	    <a href="https://swift.gsfc.nasa.gov">GSFC</a>
+	    <a href="http://www.swift.psu.edu">PSU</a>
+	    <a href="http://www.brera.inaf.it/~swift/SWIFT/">OAB</a>
+	    <a href="https://swift.ssdc.asi.it/">SSDC</a>
+	    <a href="http://www.mssl.ucl.ac.uk/general/projects/swift/SWIFT6.html">MSSL</a>
+	    <a href="http://www.swift.ac.uk">University of Leicester</a>
+                  </div>
+    </li>
+  </ul>  <br id='mainContentPostBanner' style='visibility: hidden; display: none;'/>
+  </div>
+  <p id='breadcrumb'><a href='https://www.swift.ac.uk' title='UKSSDC home'>Home</a> &gt; <a href='/xrt_products'>GRB products</a> &gt; <a href='/xrt_live_cat'>Swift-XRT GRB Catalogue</a> &gt; Documentation </p>
+
+<h1>The Swift-XRT GRB Catalogue &#8212; Online Documentation</h1>
+
+
+<h2 id="contents">Contents</h2>
+<ul title="Contents">
+  <li><a class='int' href="#overview">Overview</a></li>
+  <li><a class='int' href="#usage">Usage</a></li>
+  <li><a class='int' href="#lc">Light curve analysis</a>
+    <ul title='Light curve sections'>
+      <li><a class='int' href="#lcflare">Flare identification</a></li>
+      <li><a class='int' href="#lcfit">Fitting</a></li>
+      <li><a class='int' href="#lctypes">Classification</a></li>
+    </ul>
+  </li>
+  <li><a class='int' href="#spec">Time-resolved spectra</a></li>
+  <li><a class='int' href="#figures">Figures</a>
+    <ul title='Figure sections'>
+      <li><a class='int' href="#PDF">Probability Density Functions</a></li>
+      <li><a class='int' href="#closures">Closure Relationships</a></li>
+    </ul>
+  </li>
+  
+  <li><a class='int' href="#index">The Catalogue Index Page</a>
+    <ul title='Index page sections'>
+      <li><a class='int' href="#table">The results table</a></li>
+      <li><a class='int' href="#modtable">Modifying the table</a></li>
+    </ul>
+  </li>
+  <li><a class='int' href="#targPage">GRB-specific pages</a>
+    <ul title='Target page sections'>
+      <li><a class='int' href="#targSum">GRB Summary</a></li>
+      <li><a class='int' href="#targLC">Light curve section</a></li>
+      <li><a class='int' href="#targSpec">Spectrum section</a></li>
+      <li><a class='int' href="#targFig">Comparison section</a></li>      
+    </ul>
+  </li>
+  <li><a class='int' href="#changes">Change log</a></li>
+</ul>
+
+<hr/>
+
+<h2 id='overview'>Overview</h2>
+
+<p>
+The Swift-XRT GRB Catalogue was originally published by <a href='https://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>Evans et al. (2009)</a> (hereafter &lsquo;E09&rsquo;)
+and contained Swift-XRT results for 327 GRBs. This web-site provides a continually updated version of the data given in that paper. Specifically
+on these pages we present for each GRB detected by the Swift-XRT:
+</p>
+
+<ul title='Summary of catalogue holdings'>
+  <li>Positions</li>
+  <li>Light curve fits</li>
+  <li>Light curve classification</li>
+  <li>Spectral fits per light curve 'phase'</li>
+</ul>
+
+<p>which corresponds to Tables 5&#8212;11 of <a
+href='https://ukads.nottingham.ac.uk/doi/10.1111/j.1365-2966.2009.14913.x'>E09</a>.
+We also here provide some figures showing the  aggregate properties of
+the XRT GRB sample, comprising probability density functions of the
+parameters in the above fits, and scatter plots of the temporal vs
+spectral indices for each phase of each GRB, with regions 'permitted' by
+theory marked; these correspond to Figures 5, 6, 7a, 8a and 10 of the
+earlier paper. Furthermore, for each individual GRB we present each of
+these figures with the parameter space covered by that GRB marked on,
+showing how any given burst compares with the sample as a whole. </p>
+
+<p>The data can be accessed via the <a href='index.php'>Index table</a>, which tabulates the results for all GRBs, and via individual
+object pages, accessible via the index table, which present detailed results for a given object.</p>
+
+<p>The analysis techniques used in this online resource are largely the
+same as in <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a> with any differences detailed in the
+relevant sections below.</p>
+
+<p>This website is automatically kept up to date after every receipt of GRB data from Swift, however
+when a new GRB is detected it will not be added to this catalogue until 24 hours after the trigger, 
+as details such as light curve shape can be unclear at early times.</p>
+
+
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<hr/>
+
+<h2 id='usage'>Usage Policy</h2>
+
+<p>As with all UKSSDC products, these data may be freely used by anyone, provided appropriate credit is given.
+Where these data are used in any publication, <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>Evans et al. (2009, MNRAS, 397, 1177)</a>
+should be cited. <strong>In addition to this</strong> if the enhanced positions are used, 
+<a href="http://adsabs.harvard.edu/abs/2007A%26A...476.1401G">Goad et al. (2007, A&amp;A, 476, 1401)</a> should also be cited, and where
+the light curves are used, <a href="http://adswww.harvard.edu/abs/2007A%26A...469..379E">Evans et al. (2007, A&amp;A, 469, 379)</a> 
+should be cited. In the acknowledgments section, please use the following
+text: <em>This work made use of data supplied by the UK Swift Science Data Centre at the University of Leicester.</em>
+</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<hr/>
+
+
+<h2 id='lc'>Light curve analysis</h2>
+
+<p>
+  The light curves are taken from the <a href='/xrt_curves'>light curve repository</a>, documented in
+  Evans et al. (<a href="http://adswww.harvard.edu/abs/2007A%26A...469..379E">2007</a>, 
+  <a href='https://ukads.nottingham.ac.uk/doi/10.1111/j.1365-2966.2009.14913.x title='Evans et al 2009'>2009</a>), and in the 
+  <a href='/xrt_curves/docs.php'>online documentation</a>. A 3-step analysis process is then performed:
+</p>
+
+<ol title='Light curve analysis steps'>
+  <li>Identification of flares.</li>
+  <li>Fitting the underlying decay.</li>
+  <li>Classifying the light curve.</li>
+</ol>
+
+<p>While this process is fully automated, imperfections in the system are inevitable and from time
+to time, manual corrections may be made; these are invisible to the end user.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='lcflare'>Flare identification</h3>
+<p><strong>This procedure has been completely rewritten since <a href='https://ukads.nottingham.ac.uk/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a> was published</strong></p>
+
+<p>The automated flare identification process is an iterative procedure. The underlying light curve
+is modeled with the functional form of <a href='http://adsabs.harvard.edu/abs/2007ApJ...662.1093W'>Willingale et al. (2007)</a>; 
+if the XRT data start within 2 ks of the trigger and contain at least 10 bins (true for the majority of bursts) then
+two components are used, to reproduce the prompt and afterglow components. The time at which both of these peak is frozen at 10<sup>-5</sup> s, i.e.
+a generic point before our observations begin. From this point the following process is followed:</p>
+
+<ol title="Flare ID procedure">
+  <li>Fit the Willingale components.</li>
+  <li>Identify any times where the data lie above the model.</li>
+  <li>(Not during the first iteration:) If any such times lie immediately before/after a flare, extend that flare to include these times.</li>
+  <li>If the times do not match an existing flare, mark as a candidate new flare.</li>
+  <li>If the candidate flare with the highest significance is strong enough to be a flare (see below), mark it as such, exclude it from the data
+      and return to step 1.</li>
+  <li>If any flare was extended in this iteration, return to step 1.</li>
+</ol>
+
+<p>As is implicit in the above, this iteration continues until no new flares are found or old flares extended.</p>
+
+<p>The significance of a flare is defined as the sum of (<em>Data-model</em>)/<em>Err<sub>data</sub></em>) across the 
+time-range of interest. For a candidate to be confirmed as a real flare it must pass one of the following criteria:</p>
+
+<ul title="Flare criteria">
+  <li>Begin within 3ks of the trigger and  either:
+    <ul title='Early flare criteria'>
+      <li>Have a significance of 8, OR</li>
+      <li>Have a significance of 6 and span at least 5 light curve bins.</li>
+    </ul>
+  </li>
+  <li>Begin later than 3ks after the trigger and  either:
+    <ul title='Early flare criteria'>
+      <li>Have a significance of 10, OR</li>
+      <li>Have a significance of 8 and span at least 5 light curve bins.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>These criteria were derived largely by trial and improvement. Examining all GRB light curves up to 2011 September 
+by eye suggests that this procedure has  both false positive and false negative 
+rates of around 3%. Note that flare identification can be a rather subjective process, thus these values are indicative, rather than precise.</p>
+
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='lcfit'>Fitting the light curve</h3>
+
+<p>The light curve fitting process will be summarised below, but is largely as documented in <a href='https://ukads.nottingham.ac.uk/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a>
+with two exceptions: the threshold for adding a break is
+4-&sigma; and we do not integrate the model across the bin. The former occurs because, with a large number of light curves
+and fit attempts, the false positive rate was too high when accepting breaks at the 3-&sigma; level. The latter is purely a matter
+of computational efficiency.</p>
+
+<p>For each light curve, once the times of flares have been excluded, an unbroken power-law is fitted to the data.
+Breaks in the power-law are then added, one at a time and the curve refitted. This is continued until the light curve contains 5 breaks,
+the addition of an extra break would leave no degrees of freedom in the fit, or 2 successive breaks are added, but not justified by
+the improvement to the fit.</p>
+
+<p>To add a break, the current fit is compared to the data, and the &chi;<sup>2</sup> contribution of each run of
+data above or below the model is determined. The new break is then added at the start of the run with the largest contribution, however 
+like all the other parameters, it is free to vary. Once the new model is fitted an f-test is used to compare the new fit with the previous fit:
+the new break is only considered justified if the probability of the improvement being chance (i.e. a result of 2 new free parameters) is
+&lt;6.2 &times; 10<sup>-5</sup>, i.e. the break is required at the 4-&sigma; level. Even if the break is not necessary,
+a subsequent fit with an extra break is carried out, but is compared to the last <em>accepted</em> fit. This is because sometimes
+the f-test in the first instance simply compares two bad fits. (For example, consider a light curve which is well described by a doubly-broken
+power-law. In some cases the unbroken power-law and single-broken power-law both give poor fits, and the inclusion of the
+first break is not justified. However, the addition of the second break suddenly gives a much better fit, and the 2-break fit is justified
+at the 4-&sigma; level compared to the 0 break fit.)</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+
+<h3 id='lctypes'>Light curve classification</h3>
+
+<a href='schematic.png'><img src='schematic_small.png' style='float: right;' alt='Schematic depiction of the light curve types'/></a>
+
+<p>Each light curve is automatically classified, according to the scheme in <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a> This groups light curves
+into one of 5 categories:</p>
+<ul title='Light curve types'>
+  <li>Canonical (a)</li>
+  <li>One break: steep first (b) </li>
+  <li>One break: shallow first (c) </li>
+  <li>No breaks (d) </li>
+  <li>Oddball</li>
+</ul>
+
+<p>The first four of these are illustrated in Fig. 9 of <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a>
+reproduced to the right (<a href='schematic.png'>larger version</a>);
+the &quot;oddball&quot; category being a catch-all for any burst which
+does not fit neatly into the other groups. Classification in groups
+b&#8212;d is self-explanatory. As in our paper, a burst is considered
+canonical if it shows a flattening break, following by a later
+steepening break, however whereas in our
+paper these breaks had to change &alpha; by at least 0.5, in this work
+we relaxed this threshold to 0.3. Note that the fourth phase of the
+canonical light curve is not necessary for  a burst to be classified as
+canonical.</p>
+
+<p>As with light curve fitting, the automatic classification can occasionally be incorrect, usually due to 
+a 'curved' decay slope resulting in several power-law segments being required to fit a single phase in the 
+simple schema depicted in the figure to the right. These will be corrected manually.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+
+<hr/>
+
+<h2 id='spec'>Time-resolved spectra</h2>
+
+<div style='float: right; padding: 0; margin-left: 10px;'>
+<a href='nh_flare.png'><img src='nh_flare_small.png' style='float: right;' alt='PDF of the effect of flares on column density'/></a><br/>
+<a href='gamma_flare.png'><img src='gamma_flare_small.png' style='float: right;' alt='PDF of the effect of flares on spectral index'/></a>
+</div>
+
+<p>For each phase of the power-law decay, as determined by the light curve fitting, a spectrum is determined and fitted with an absorbed power-law.
+The absorber contains two components: the first is fixed to the Galactic value, the second is free to vary. Where a spectroscopic
+redshift of the GRB has been published, the second component is a <code>zphabs</code>, with its redshift fixed at this value, otherwise, 
+like the Galactic component, it is a <code>phabs</code>. Note that the fit results tabulated are the <em>photon indices</em>,
+that is <code>N(E)&prop;E<sup>-&Gamma;</sup></code>. In the figures however, for comparison with theory, we use the <em>energy index</em>,
+<code>F(E)&prop;E<sup>-&beta;</sup></code>, where &beta;=&Gamma;-1.</p>
+
+
+<p>Times of flaring are <strong>not</strong> excluded from these fits. Figs. 7c, 8c of <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a>, reproduced to the right, showed the 
+distribution of the change in column density or spectral index caused by removing times of flaring. This is slightly biased as not all
+GRBs have flares, but it is clear that, in the majority of cases, the effect of flares on the spectral fits is not significant. Users can
+of course build spectra for customised time regions via the &quot;Add time-sliced spectrum&quot; link on the <a href='/xrt_spectra'>spectrum
+repository</a> page for the burst of interest.</p>
+
+<p>All of the spectral files, ready for use in <code>xspec</code>, can be downloaded for each spectrum. For
+details of these files please see the <a href='/xrt_spectra'>spectrum
+repository documentation</a>.</p>
+
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+
+<hr/>
+
+<h2 id='figures'>Figures</h2>
+
+<p>On the <a href='#index' class='int'>index page</a>, and on each <a href='#targPage' class='int'>individual burst page</a>, several figures
+are shown. These are grouped into two sets: Probability Density Functions and Closure Relationships.</p>
+
+<h3 id='PDF'>Probability Density Functions</h3>
+
+<p>The Probability Density Functions, or PDFs, show the probability
+density distribution of a given fitted parameter. On this website we
+present 4 PDFs, corresponding to Figs. 5, 6, 7a and 8a of <a
+href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x'>E09</a>.
+These show, respectively, the distribution of the light curve power-law
+decay index (&alpha;), the light curve break times (T<sub>b</sub>), the
+intrinsic column density (N<sub>H</sub>)  and the spectral energy index
+(&beta;). These latter two distributions are derived only from the
+time-averaged spectral fits.</p>
+
+<p>On the individual burst pages these PDFs also show the values for that specific burst, enabling easy comparison of a
+specific GRB with the population as a whole. More information is given in the <a href='#targFig' class='int'>target page section</a> below.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='closures'>Closure Relationships</h3>
+
+<p>The Fireball model for GRB afterglow can be expressed in a series of closure relationship, relating
+the temporal decay (&alpha;) at a given time to the contemporaneous spectral energy index (&beta;). For each phase of
+each the <a href='#lctypes' class='int'>light curve types a&#8212;d</a> we provide a scatter-plot of
+(&alpha;, &beta;), corresponding to Fig. 10 in <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a>
+(except that the red and black points of panels e) and f) in that
+paper are here separated into individual plots). As in the paper, the regions permitted by the standard closure relationships are marked by the grey
+band (slow cooling, pre jet-break), blue band (post jet-break), and dark grey lines (fast cooling). These all assume no energy injection,
+however they mark the lower limit of the region permitted if energy injection is included. i.e. the addition of energy injection permits
+points with higher &beta; for a given &alpha;</p>
+
+<p>As with the PDFs, on the individual burst pages the closure relationship figures also appear, 
+with the specific GRB also marked on, to allow comparison of that burst with the sample at large.
+ More information is given in the <a href='#targFig' class='int'>target page section</a> below.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<hr/>
+
+<h2 id='index'>The Catalogue Index Page</h2>
+
+<p>The <a href='index.php'>catalogue index page</a> contains access to the individual
+burst pages, and the aggregated information pertaining to the catalogue
+of bursts as a whole. This is split into two parts, the table, and the
+figures. Additionally, the index page provides an interface to access
+individual burst pages. This can be done either by clicking on a GRB name in the table,
+or by entering the burst name or trigger number in the search box in the top section of the page.</p>
+
+<p>The table and figure sections can be hidden (or re-shown) by using the checkboxes towards
+the top of the page. Additionally, each section begins with a link to hide the section, which is 
+replaced by an option to show the section, if it is hidden.</p>
+
+
+<p>The figures presented on the index page have <a href='#figures' class='int'>already been described</a>,
+here the table is discussed.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='table'>The results table</h3>
+
+<p>The results table contains, in a single place, Tables 5&#8212;11 of <a href='http://adsabs.harvard.edu/doi/10.1111/j.1365-2966.2009.14913.x' title='Evans et al 2009'>E09</a>. All errors in this table 
+are given at the 90% confidence level. The default view of the table gives some summary information for each burst. This can be adjusted 
+as described in a moment. The GRB name links to the results page specific to that burst. If a spectroscopic redshift for the burst
+is known, this serves as a link to the publication announcing the redshift. Redshifts are entered manually, thus there may be some delay between publication
+of a value and its appearance in this table.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='#modtable'>Modifying the results table</h3>
+
+<p>A large volume of information is available through the results table; you can select which 
+details are displayed by clicking on the link: &quot;Select columns and formatting options.&quot;, at the top
+of the table section. <strong>This requires Javascript to work</strong>. Once this link is followed, a new panel 
+opens on the page, containing by default the boxes:</p>
+
+<ul title='Default control set'>
+<li>Control detail</li>
+<li>Display style</li>
+<li>Basic Options</li>
+</ul>
+
+<p>Note that the table takes a few moments to load after changes are made. For this reason, it does not reload when the options are changed; instead
+you must click on one of the &quot;Update Table&quot; buttons.</p>
+
+<h4>Control detail</h4>
+
+<p>This panel is the only one which does not affect the results table, instead affecting how you select columns (it is coloured 
+red to highlight the fact that it is different from the other panels). The options in this box determine the detail level of the table controls
+that are shown. By default only the &quot;Basic options&quot; control panel is shown, but this can be disabled/other controls enabled.
+Those panels will be detailed below. Note that there is some overlap between the controls, as will be explained below, however
+the checkboxes are &quot;aware&quot; of this and will automatically update accordingly.</p>
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Display style</h4>
+<p>This panel contains a single control which determines how the table is presented. The default option is as
+an HTML table. This can be replaced either with &quot;ASCII (inline)&quot;, in which case the HTML table in the web page
+is replaced with preformatted text embedded within the web-page; or &quot;ASCII (new page)&quot; in which case when you click on &quot;Update Table&quot;
+you are redirected to an ASCII version of the table. The ASCII data are delimited by pipes (|). The HTML and inline ASCII tables can easily 
+become much wider than the webpage, in which case they will overflow and your browser should provide scrollbars.</p>
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Basic Options</h4>
+
+<p>This panel provides high-level control over which columns are included in the table. Naturally, changing these options
+affects the columns over which finer control can be gained using the panels described below. If those panels are also visible,
+any changes made to the boxes in this panel will immediately alter the selections in those, more detailed, panels. For example, if you select 
+&quot;Time-averaged data&quot; and the &quot;Time-averaged fields&quot; panel is visible, then all of its boxes will be checked/unchecked accordingly.
+By default only the summary data are selected. The options here are fairly self-explanatory, and each of them has a corresponding 
+detailed control panel of its own, as described in the following sections.
+</p>
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Summary fields</h4>
+
+<p>This panel allows you to select which of the summary fields are included in the results table. The options are:</p>
+
+<dl title='Summary fields'>
+<dt>RA/Dec/Pos Error</dt><dd>The best XRT position. Where possible this will be an <a href='https://www.swift.ac.uk//xrt_positions?which=1'>enhanced position</a>,
+otherwise the <a href='https://www.swift.ac.uk//xrt_positions?which=2'>PSF-fitted position</a> is given.</dd>
+
+<dt>#lc breaks</dt><dd>The number of breaks in the <a href='#lcfit' class='int'>best-fitting</a> light curve.</dd>
+<dt>LC type</dt><dd>The <a href='#lctype' class='int'>light curve</a> classification.</dd>
+<dt>Galactic N<sub>H</sub></dt><dd>The Galactic column density in the direction of the burst, from
+<a href='http://adsabs.harvard.edu/cgi-bin/nph-data_query?bibcode=2005A%26A...440..775K&amp;db_key=AST&link_type=ABSTRACT&high=4e4a57f6f102543'>Kalberla et al (2005)</a>.
+Each spectral fit contains a <code>phabs</code> component with its density fixed at this value.</dd>
+<dt>LC type</dt><dd>The <a href='#lctype' class='int'>light curve</a> classification.</dd>
+<dt>Instrinsic N<sub>H</sub></dt><dd>The value of the absorption component which was free to vary. This is either a <code>phabs</code> component or, if the 
+redshift is known, a <code>zphabs</code> component with its redshift fixed.</dd>
+<dt>Redshift</dt><dd>The published spectroscopic redshift of the GRB (if it exists). Values in this column link to the publication containing the reshift.</dd>
+</dl>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Time-averaged spectral fields</h4>
+
+<p>This panel allows you to select which results of the time-averaged spectral fits are included in the table.
+As for the time-resolved spectral data, these are split into the two XRT operating modes: Windowed Timing (WT) and
+Photon Counting (PC). Note that changing the &quot;Time-averaged spectral data&quot; option in the &quot;Basic Options&quot; box will
+cause all of the items in this panel to be selected/deselected. The columns here are self-explanatory.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Select by Phase</h4>
+
+<p>This is the first of the controls affecting time-resolved data, and like the &quot;Basic Options&quot; panel, it
+offers high-level controls: selecting/deselecting options in here also changes the options which are controlled in details
+in the &quot;Light curve data&quot; and &quot;Time-resolved spectral data&quot; boxes. By (de)selecting a &quot;phase&quot;
+in this box you (de)select all of the results associated with that phase of the afterglow. Phases are defined by the light curve fit,
+with the breaks in the power-law delimiting the phases. For each phase selected in this box, the decay index; break time; column density, photon index and
+flux (WT and PC); and the associated uncertainties, will be included in the table.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Light curve parameters</h4>
+
+<p>This section allows you to select individually which of the decay indices, break times, and associated errors are reported in the table.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h4>Time-resolved spectral parameters</h4>
+
+<p>This section allows you to select individually which of the various spectral fit components and uncertainties for each light curve
+phase are reported in the table.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<hr/>
+
+<h2 id='targPage'>GRB-specific pages</h2>
+
+<p>Each GRB detected by the XRT has its own page giving a detailed view of that GRB. This page contains useful links, some summary information and
+navigation tools, and then the main results, which are divided split into three sections:
+</p>
+<ul title='GRB-specific page sections'>
+  <li><a class='int' href="#targLC">Light curve section</a></li>
+  <li><a class='int' href="#targSpec">Spectrum section</a></li>
+  <li><a class='int' href="#targFig">Comparison section</a></li>      
+</ul>
+
+<p>The navigation tools allow you to jump directly to one of these sections, or to hide some of the sections to make the page easier to read.</p>
+
+<p>The summary box contains the best-known XRT position of the GRB (an <a href='https://www.swift.ac.uk//xrt_positions?which=1'>enhanced position</a>,
+if possible, otherwise a <a href='https://www.swift.ac.uk//xrt_positions?which=2'>PSF-fitted position</a>), its corresponding Galactic coordinates,
+the number of breaks in the <a href='#lcfit' class='int'>best-fitting</a> light curve, the <a href='#lctype' class='int'>light curve</a> classification,
+and details of the time-averaged spectral fit. For the latter the PC-mode data are shown by default, unless no such spectrum exists in which case
+the WT mode values are given.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='targLC'>Light curve section</h3>
+
+<p>This section contains details of the light curve fit. Errors are given at the 90% level. The figure shows by default the best fit, that is, the fit determined by testing a range of power-law
+fits, and requiring a 4-&sigma; improvement in the fit (according to an f-test) for a new break to be kept (see <a href='#lcfit' class='int'>light curve fitting</a> for details).
+Any times which were <a href='#lcflare' class='int'>identified as flares</a> and excluded from the fit are marked with cross-hatched boxes, and dashed vertical lines
+indicate where the power-law breaks are.</p>
+
+<p>Beneath the plot some details are given, and two tables appear. The left-hand table details the parameters of the light curve fit. The right-hand table
+gives some information about each fit attempted, indicating why the best fit was so chosen. Clicking on the number of breaks in the relevant column of this table causes
+the main light curve figure, and the fit results table, to update, showing the fit and parameters for the model selected.</p>
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='targSpec'>Spectrum section</h3>
+
+<p>This section contains spectra generated for each phase of the light curve, as delimited by the break times in the best fit. Note that spectra are only created based
+on the best light-curve fit. Times of flaring were not removed from these spectra (see <a class="int" href="#spec">above</a>). The format of this section
+is identical to <a href='/xrt_spectra/docs.php#products'>that of the spectrum repository</a>, and includes figures, results tables, and a file to download with all of the 
+spectral data. Spectral fit errors are given at the 90% confidence level.</p>
+
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<h3 id='targFig'>Comparison with other bursts section</h3>
+
+<p>The last section of the GRB-specific results page shows the <a href='#figures' class='int'>figures</a> collating the results for all GRBs (as shown on the index page)
+but with the specific burst also marked independently, allowing for easy comparison of this burst with the population as a whole.
+For the  <a href='#PDF' class='int'>probability density functions</a>, the values for this burst are marked by solid vertical lines,
+with dashed vertical lines indicating the 1-&sigma; bounds on the parameter. For the temporal indices and break times, where
+there is more than one value, each value is marked by a different colour, following the <a href='#colours' class='int'>colour scheme</a> described below.
+For the spectral parameters (note that these are time-averaged spectral values), WT mode data are given in blue, and PC in red, following
+the normal XRT convention.</p>
+
+<p>For the closure relationships, the values for this specific burst are
+marked in colour; where multiple points are present,  from different
+spectral modes or because several light curve phases correspond to the
+same closure relationship plot (e.g. sometimes the steep-decay phase of
+a canonical light curve contains a break and thus two 'phases' of the light curve and hence 2 spectra)
+the colours follow the <a href='#colours' class='int'>colour scheme</a> described below. The colours are ordered by light curve phase, and 
+within that, by mode (i.e. WT<sub>1</sub>, PC<sub>1</sub>, WT<sub>2</sub>, PC<sub>2</sub> etc.). Unless the light curve is
+classified as an oddball, only the closure relationship pertaining to the specific class to which this burst belongs, are  shown. For odd-balls, 
+each closure-relationship plot is shown, with all of the light curve phases shown on each plot, following the colour scheme just described.</p>
+
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+
+<h4 id='colours'>Colour scheme</h4>
+
+<p>For the plots in the &quot;Comparison&quot; section of the GRB-specific pages, where multiple values for that GRB are marked
+on a given plot, values are coloured in the following order (the QDP colour scheme:)
+</p>
+
+<ol title='QDP colours'>
+  <li>Red</li>
+  <li>Green</li>
+  <li>Blue</li>
+  <li>Light blue</li>
+  <li>Magenta</li>
+  <li>Yellow</li>
+  <li>Orange</li>
+  <li>Yellow+Green</li>
+  <li>Green+Cyan</li>
+  <li>Blue+Cyan</li>
+  <li>Blue+Mag</li>
+  <li>Red+Mag</li>
+  <li>Dark Grey</li>
+  <li>Light Grey</li>
+</ol>
+
+
+
+
+<p class="back"><a class="int" href="#contents">Back to contents</a> | <a href="index.php">Back to catalogue</a></p>
+
+<hr/>
+
+<h2 id='changes'>Change log</h2>
+
+<dl title="List of changes made to the live catalogue">
+
+<dt>2011 December 22</dt>
+<dd>A minor bug was discovered whereby, for GRBs of known redshift, the <em>time-resolved</em> spectral fits
+were produced using an absorber at redshift 0, whereas the fit-results tables reported the absorber to
+be at the redshift of the GRB. The spectra were refitted, such that the absorber was given the GRB redshift.</dd>
+
+</dl>
+
+
+
+
+
+
+
+      <div id="footer">        <div class="validator">
+          <a href="https://validator.w3.org/check?uri=referer"><img
+            src="https://www.w3.org/Icons/valid-xhtml10"
+            alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+        </div>        <p>
+          UK Swift Science Data Centre<br/>
+          Last updated <span id='PageFootDate'></span><br/>  
+          Web page maintained by Phil Evans<br/>
+          E-mail: <a href="mailto:swifthelp@le.ac.uk">swift help</a><br/>
+          Please read our <a href='/GDPR.php'>privacy notice</a>.
+        </p>
+
+      </div>    </div>
+  </body></html>

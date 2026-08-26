@@ -1,0 +1,291 @@
+{
+  "transient_id": "GRB120422A",
+  "alias": [
+    "SN2012bz"
+  ],
+  "ra": 136.929167,
+  "dec": 14.0,
+  "T0": "2012-04-22T07:12:03Z",
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 0.283,
+  "tag": [
+    "grb",
+    "sn"
+  ],
+  "sub_tag": [
+    "SN-spec"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "alpha": {
+          "v": -1.98649,
+          "err": [
+            0.41619000000000006,
+            0.4748499999999998
+          ],
+          "src": "swift_bat"
+        },
+        "t90_obs": {
+          "v": 60.352,
+          "err": 5.727911,
+          "src": "swift_bat"
+        },
+        "t90_rest": {
+          "v": 47.03975058456742,
+          "err": 4.46446687451286,
+          "src": "swift_bat"
+        }
+      },
+      "sources": {
+        "swift_bat": {
+          "alpha": {
+            "v": -1.98649,
+            "err": [
+              0.41619000000000006,
+              0.4748499999999998
+            ]
+          },
+          "t90_obs": {
+            "v": 60.352,
+            "err": 5.727911
+          },
+          "t90_rest": {
+            "v": 47.03975058456742,
+            "err": 4.46446687451286
+          }
+        },
+        "swift_grb": {
+          "t90_obs": {
+            "v": 7.0,
+            "err": null
+          },
+          "t90_rest": {
+            "v": 5.455962587685113,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "t90_obs:swift_bat"
+      }
+    },
+    "catalog_data": {
+      "swift_bat": {
+        "other": {
+          "pcode": "0.6875",
+          "z_ref": "\"Tanvir N.R. et al. GCN Circ. 13251; Schulze S. et al. GCN Circ. 13257; *Schulze S. et al. A&A 566 A102 (2014)\"",
+          "15_25kev": 7.067156e-08,
+          "25_50kev": 9.667064e-08,
+          "z_method": "ba",
+          "15_350kev": 4.436337e-07,
+          "50_100kev": 9.758312e-08,
+          "Image_SNR": "1.020225e+01",
+          "100_150kev": 5.750486e-08,
+          "100_350kev": 1.787041e-07,
+          "15_25kev_hi": 9.151971e-08,
+          "25_50kev_hi": 1.182945e-07,
+          "15_25kev_low": 5.032162e-08,
+          "15_350kev_hi": 6.745821e-07,
+          "25_50kev_low": 7.455121e-08,
+          "50_100kev_hi": 1.399119e-07,
+          "100_150kev_hi": 1.001508e-07,
+          "100_350kev_hi": 3.70028e-07,
+          "15_350kev_low": 2.795726e-07,
+          "50_100kev_low": 5.825384e-08,
+          "fluence_model": "PL",
+          "100_150kev_low": 2.676792e-08,
+          "100_350kev_low": 6.924122e-08,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "2.148501e+00"
+        },
+        "params": {
+          "t50": {
+            "v": 49.6,
+            "err": 36.90154,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 60.352,
+            "err": 5.727911,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.98649,
+            "cl": 90,
+            "err": [
+              0.41619000000000006,
+              0.4748499999999998
+            ]
+          },
+          "fluence": {
+            "v": 3.224293e-07,
+            "cl": 90,
+            "err": [
+              9.612769999999997e-08,
+              9.01692e-08
+            ],
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.28253
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 520658"
+        ],
+        "trigger_time": "2012-04-22T07:12:03.648220Z"
+      },
+      "swift_grb": {
+        "other": {
+          "bat_plsl": "1.274",
+          "det_flag": "S",
+          "target_id": "520658",
+          "bat_plsl_err": "0.246",
+          "redshift_ref": "2012GCN..13257...1S",
+          "bat_detection": "Y",
+          "redshift_type": "S",
+          "bat_peak_model": "PL",
+          "supernova_flag": "Y",
+          "bat_fluence_model": "PL"
+        },
+        "params": {
+          "t50": {
+            "v": 3.0,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "t90": {
+            "v": 7.0,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.39e-07,
+            "err": 3.99e-08,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.283,
+            "err": null
+          },
+          "peak_flux": {
+            "v": 0.554,
+            "dt": "1s",
+            "err": 0.148,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 520658"
+        ],
+        "trigger_time": "2012-04-22T07:12:03Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 68192700000000000,
+          "xrt_ra": 136.91008,
+          "ref_bat": "GCN 13243; GCN 13246",
+          "ref_xrt": "GCN 13243; GCN 13247; GCN 13249; Evans et al., 2009; MNRAS, 397, 1177",
+          "uvot_ra": 136.91,
+          "xrt_dec": 14.01833,
+          "advocate": "Eleonora Troja",
+          "ref_uvot": "GCN 13243; GCN 13248",
+          "uvot_dec": 14.01878,
+          "uvot_mag": "B>20.7; U=19.89; UVW1=19.84; UVM2=19.21; UVW2=18.98; White=20.51",
+          "other_obs": "Gemini-North (8m), Zadko (100cm), NOT, EVLA @ 6 and 22 GHz, MPI/ESO (2.2m), VLT, Palomar (200\")",
+          "ref_radio": "GCN 13254 (EVLA)",
+          "target_id": 520658,
+          "uvot_vmag": 19.4,
+          "xrt_gamma": 2.32199,
+          "trigger_obs": "Swift",
+          "error_radius": 2.0,
+          "ref_redshift": "GCN 13251 (Gemini-North); GCN 13257 (VLT)",
+          "xrt_lc_index": -6.226,
+          "xrt_11hr_flux": 1.374254e-13,
+          "xrt_24hr_flux": 1.123796e-13,
+          "xrt_first_obs": 95.07,
+          "other_redshift": "0.283 (VLT: emission)",
+          "uvot_first_obs": 104.0,
+          "uvot_vmag_flag": 1,
+          "xrt_early_flux": 3.12e-09,
+          "redshift_comment": "Gemini-North: emission",
+          "xrt_error_radius": 1.8,
+          "uvot_error_radius": 1.0,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 5.35,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.3e-07,
+            "cl": 90,
+            "err": 4e-08,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.28
+          },
+          "peak_flux": {
+            "v": 0.6,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.2,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.19,
+            "cl": 90,
+            "err": 0.24
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2012-04-22T07:12:03.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y",
+          "Error": "3",
+          "obs_date": "2012-04-22",
+          "Instrument": "Swift",
+          "GRB X-ray position": "09h07m43s +14° 00'"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.283
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

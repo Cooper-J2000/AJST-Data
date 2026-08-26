@@ -1,0 +1,294 @@
+{
+  "transient_id": "GRB221009A",
+  "alias": [
+    "SN2022xiw"
+  ],
+  "ra": 288.2625,
+  "dec": 19.8,
+  "T0": "2022-10-09T13:16:59.990000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 0.151,
+  "tag": [
+    "grb",
+    "sn"
+  ],
+  "sub_tag": [
+    "L"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "alpha": {
+          "v": -2.06248,
+          "err": [
+            0.030999999999999694,
+            0.03100000000000014
+          ],
+          "src": "swift_bat"
+        },
+        "t90_obs": {
+          "v": 325.831,
+          "err": 6.78536,
+          "src": "fermi_gbm"
+        },
+        "t90_rest": {
+          "v": 283.0851433536056,
+          "err": 5.895186794092093,
+          "src": "fermi_gbm"
+        }
+      },
+      "sources": {
+        "fermi_gbm": {
+          "t90_obs": {
+            "v": 325.831,
+            "err": 6.78536
+          },
+          "t90_rest": {
+            "v": 283.0851433536056,
+            "err": 5.895186794092093
+          }
+        },
+        "swift_bat": {
+          "alpha": {
+            "v": -2.06248,
+            "err": [
+              0.030999999999999694,
+              0.03100000000000014
+            ]
+          },
+          "t90_obs": {
+            "v": 1104.752,
+            "err": 7.636763
+          },
+          "t90_rest": {
+            "v": 959.8192875760208,
+            "err": 6.634894005212859
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "sub_tag"
+      }
+    },
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": 4.32275526,
+          "lii": 52.95930258,
+          "flux_256": 2465.3,
+          "flux_1024": 2385.0,
+          "t50_start": 238.789,
+          "t90_start": 221.125,
+          "error_radius": 0.05,
+          "fluence_batse": 0.0105676,
+          "flux_batse_64": 1064.06,
+          "flux_256_error": 6.60851,
+          "flux_batse_256": 1034.76,
+          "flux_1024_error": 3.3266,
+          "flux_batse_1024": 995.883,
+          "fluence_batse_error": 2.20223e-05,
+          "flux_batse_64_error": 9.06331,
+          "flux_batse_256_error": 4.63616,
+          "flux_batse_1024_error": 2.3275
+        },
+        "params": {
+          "t50": {
+            "v": 158.724,
+            "err": 6.20945,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 325.831,
+            "err": 6.78536,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 0.0388355,
+            "err": 5.50196e-05,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 2496.75,
+            "dt": "64ms",
+            "err": 12.9632,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB221009553",
+          "GRB 221009.553",
+          "bn221009553"
+        ],
+        "trigger_time": "2022-10-09T13:16:59.988Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.0000",
+          "z_ref": "de Ugarte Postigo et al. GCN Circ. 32648 (VLT/X-shooter)",
+          "15_25kev": 2.77052e-05,
+          "25_50kev": 3.62044e-05,
+          "z_method": "ba",
+          "15_350kev": 0.0001575583,
+          "50_100kev": 3.467061e-05,
+          "100_150kev": 1.959483e-05,
+          "100_350kev": 5.897682e-05,
+          "15_25kev_hi": 2.863659e-05,
+          "25_50kev_hi": 3.686901e-05,
+          "15_25kev_low": 2.678992e-05,
+          "15_350kev_hi": 0.0001602697,
+          "25_50kev_low": 3.553787e-05,
+          "50_100kev_hi": 3.527861e-05,
+          "100_150kev_hi": 2.02e-05,
+          "100_350kev_hi": 6.152355e-05,
+          "15_350kev_low": 0.000154875,
+          "50_100kev_low": 3.40621e-05,
+          "fluence_model": "PL",
+          "100_150kev_low": 1.899772e-05,
+          "100_350kev_low": 5.65095e-05,
+          "Trigger_method": "image trigger"
+        },
+        "params": {
+          "t50": {
+            "v": 564.524,
+            "err": 5.751816,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 1104.752,
+            "err": 7.636763,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -2.06248,
+            "cl": 90,
+            "err": [
+              0.030999999999999694,
+              0.03100000000000014
+            ]
+          },
+          "fluence": {
+            "v": 0.0001181766,
+            "cl": 90,
+            "err": [
+              1.7405999999999948e-06,
+              1.7394999999999992e-06
+            ],
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.151
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 1126853"
+        ],
+        "trigger_time": "2022-10-09T14:10:17.995220Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 5400000000000000000000,
+          "xrt_ra": 288.26604,
+          "comment": "Originally thought to be Swift J1913.1+1946.; XRT: discovery of multiple dust-scattering X-ray rings around GRB 221009A; Detection as sudden ionospheric disturbances (SID), See GCN 32744 & 32745",
+          "ref_bat": "GCN 32632; GCN 32688",
+          "ref_xrt": "GCN 32632; GCN 32635; GCN 32651; GCN 32671; GCN 32680; GCN 33305; Evans et al., 2009; MNRAS, 397, 1177",
+          "uvot_ra": 288.2645,
+          "xrt_dec": 19.77297,
+          "advocate": "Maia Williams",
+          "ref_uvot": "GCN 32632; GCN 32656",
+          "uvot_dec": 19.7735,
+          "uvot_mag": "B=17.05; U=17.68; UVW1>18.2; UVW2>19.1; White=16.68",
+          "other_obs": "MASTER-SAAO, Fermi (GBM & LAT), Liverpool, SCT (0.28m), IPN, BOOTES-2/TELMA (60cm), OSN (0.9m), Sayan Observatory (AZT-33IK), MeerLICHT (0.6m), Nanshan (0.6m), VLT, SCT (0.36m), AGILE, REM (60cm), AMI-LA (@15.5 GHz), SAAO (1.8m), ATA (@1.5, 3, 6, 8, and 10 GHz), LOAO (1m), INTEGRAL, Solar Orbiter STIX, GROWTH-India (0.7m), SRG/ART-XC, Burke-Gaffney (0.61m), Al Khatim (0.36m), Lulin (40cm), Konus-Wind, Lick/Nickel (1m), AZT-20, NOEMA (@90 GHz), LHAASO, BlackGEM, iTelescope (T24, 0.61m), Sintez-Newton (350mm), GRBAlpha, GTC (10.4m), COATLI (50cm), LCOGT (1m), NICER, NuSTAR, eMERLIN (@1.51 GHz), SMA (@ 230.7 GHz), Konkoly (RC80), GMG (2.4m), MITSuME (50cm), ASKAP (@ 888 MHz), Lowell Discovery Telescope (4.3m), MeerKAT (@ 1.284 GHz), RTT-150 (1.5m), SIRI-2, Gemini-South, HEBS, OHP (120cm), MAXI, VLA, Pan-STARRS, Large Binocular Telescope, ALMA & ACA (@ 97.5, 145, & 203 GHz), ATCA (@ 16.7, 21.2, 33, 35, 45 & 47 GHz), LEIA, Faulkes Telescope North, Medicina (@ 8.2 GHz), GRANDMA, BOAO (1.8m), TNG (3.6m), BepiColombo-MGNS, LBT, DFOT (1.3m), James Webb Space Telescope, SARA-RM (1m), VLBA (@15.2 GHz), HST, Japanese VLBI Network (@ 6.86 and 8.45 GHz), DAMPE, Las Cumbres Observatory (2m, MuSCAT3), EVN (@ 8.3 & 5 GHz)",
+          "ref_other": "GCN 32744; GCN 32745; GCN 32762; GCN 32780; GCN 32793; GCN 32808; GCN 32819; GCN 32828; GCN 32850",
+          "ref_radio": "GCN 32653 (AMI-LA); GCN 32655 (ATA); GCN 32676 (NOEMA); GCN 32700 (eMERLIN); GCN 32707 (SMA); GCN 32736 (ASKAP); GCN 32740 (MeerKAT); GCN 32757 (VLA); GCN 32761 (ALMA & ACA); GCN 32763 (ATCA); GCN 32766 (ATCA); GCN 32791 (Medicina); GCN 32907 (VLBA); GCN 32949 (Japanese VLBI Network); GCN 33243 (EVN)",
+          "target_id": 1126853,
+          "uvot_vmag": 15.55,
+          "xrt_gamma": 1.836,
+          "trigger_obs": "Swift",
+          "error_radius": 2.4,
+          "ref_redshift": "GCN 32648 (VLT); GCN 32686 (GTC); GCN 32765 (VLT)",
+          "xrt_lc_index": -0.12493,
+          "xrt_first_obs": 91.6,
+          "other_redshift": "0.1505 (GTC: absorption)",
+          "uvot_first_obs": 179.0,
+          "xrt_early_flux": 2.51e-08,
+          "redshift_comment": "VLT: absorption & emission from host",
+          "xrt_error_radius": 3.5,
+          "uvot_error_radius": 0.61,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 1068.4,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 7.4e-05,
+            "cl": 90,
+            "err": 1e-06,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.151
+          },
+          "peak_flux": {
+            "v": 1.9,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.3,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 2.08,
+            "cl": 90,
+            "err": 0.03
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2022-10-09T14:10:17.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "RA": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3",
+          "obs_date": "2022-10-09",
+          "Instrument": "Swift",
+          "GRB X-ray position": "19h13m03s +19° 48'"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.151
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "transient_id": "GRB150101B",
+  "alias": [],
+  "ra": 188.041667,
+  "dec": -10.95,
+  "T0": "2015-01-01T15:23:34.470000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 0.134,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "S"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "eiso": {
+          "v": 2200000000000000300000000000000000000000000000000,
+          "err": 299999999999999970000000000000000000000000000000,
+          "src": "minaev2020"
+        },
+        "alpha": {
+          "v": -1.5,
+          "err": null,
+          "src": "swift_bat"
+        },
+        "ep_rest": {
+          "v": 34.0,
+          "err": 23.0,
+          "src": "minaev2020"
+        },
+        "t90_obs": {
+          "v": 0.08,
+          "err": 0.928138,
+          "src": "fermi_gbm"
+        },
+        "t90_rest": {
+          "v": 0.07054673721340389,
+          "err": 0.8184638447971782,
+          "src": "fermi_gbm"
+        },
+        "epeak_obs": {
+          "v": 28.672089,
+          "err": [
+            6.7365932,
+            6.7365932
+          ],
+          "src": "fermi_gbm"
+        }
+      },
+      "sources": {
+        "fermi_gbm": {
+          "ep_rest": {
+            "v": 32.514148926,
+            "err": [
+              7.639296688799999,
+              7.639296688799999
+            ]
+          },
+          "t90_obs": {
+            "v": 0.08,
+            "err": 0.928138
+          },
+          "t90_rest": {
+            "v": 0.07054673721340389,
+            "err": 0.8184638447971782
+          },
+          "epeak_obs": {
+            "v": 28.672089,
+            "err": [
+              6.7365932,
+              6.7365932
+            ]
+          }
+        },
+        "liang2023": {
+          "t90_obs": {
+            "v": 0.08,
+            "err": 0.928
+          },
+          "grb_type": "I",
+          "t90_rest": {
+            "v": 0.07054673721340389,
+            "err": 0.8183421516754851
+          }
+        },
+        "swift_bat": {
+          "alpha": {
+            "v": -1.5,
+            "err": null
+          },
+          "t90_obs": {
+            "v": 0.01199996,
+            "err": 0.008944237
+          },
+          "t90_rest": {
+            "v": 0.010581975308641977,
+            "err": 0.00788733421516755
+          }
+        },
+        "minaev2020": {
+          "eiso": {
+            "v": 2200000000000000300000000000000000000000000000000,
+            "err": 299999999999999970000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 34.0,
+            "err": 23.0
+          },
+          "grb_type": "I",
+          "t90_rest": {
+            "v": 0.02,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "I",
+        "src": "minaev2020"
+      }
+    },
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": 51.62494375,
+          "lii": 295.23296299,
+          "flux_256": 4.58566,
+          "flux_1024": 1.26583,
+          "t50_start": -0.016,
+          "t90_start": -0.016,
+          "error_radius": 0.04,
+          "fluence_batse": 8.80629e-08,
+          "flux_batse_64": 3.03522,
+          "flux_256_error": 0.512192,
+          "flux_batse_256": 1.03348,
+          "flnc_band_epeak": 28.672089,
+          "flnc_comp_epeak": 125.10695,
+          "flux_1024_error": 0.201114,
+          "flux_batse_1024": 0.293583,
+          "fluence_batse_error": 7.77619e-09,
+          "flux_batse_64_error": 0.498566,
+          "flux_batse_256_error": 0.156465,
+          "flux_batse_1024_error": 0.0587282,
+          "flnc_band_epeak_neg_err": 6.7365932,
+          "flnc_band_epeak_pos_err": 6.7365932,
+          "flnc_best_fitting_model": "flnc_plaw",
+          "flnc_comp_epeak_neg_err": 48.56546,
+          "flnc_comp_epeak_pos_err": 48.56546
+        },
+        "params": {
+          "t50": {
+            "v": 0.016,
+            "err": 0.0226274,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 0.08,
+            "err": 0.928138,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 28.672089,
+            "err": [
+              6.7365932,
+              6.7365932
+            ],
+            "frame": "obs",
+            "model": "BAND"
+          },
+          "fluence": {
+            "v": 2.38085e-07,
+            "err": 1.50908e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 10.4791,
+            "dt": "64ms",
+            "err": 1.34978,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB150101641",
+          "GRB 150101.641",
+          "bn150101641"
+        ],
+        "trigger_time": "2015-01-01T15:23:34.468Z"
+      },
+      "liang2023": {
+        "other": {
+          "Detectors": "n6(n7)n9b1",
+          "Classified": "Short",
+          "T90/(1+z) (s)": "0.07\\pm0.82",
+          "Averaged Spectrum": "Unconstrained",
+          "Background intervals": "(-20 to -10, 20 to 40)"
+        },
+        "params": {
+          "t90": {
+            "v": 0.08,
+            "err": 0.928,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 2.38e-07,
+            "err": 1.5e-08,
+            "band": "8 keV-40 MeV"
+          },
+          "grb_type": {
+            "v": "I"
+          },
+          "redshift": {
+            "v": 0.134
+          }
+        },
+        "source": {
+          "url": "https://arxiv.org/abs/2211.12187",
+          "name": "Liang+2023 Fermi-GBM spectral-energy sample (ApJS 266, 31)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 150101.641",
+          "bn150101641"
+        ],
+        "trigger_time": "2015-01-01T15:23:02Z"
+      },
+      "swift_bat": {
+        "other": {
+          "z_ref": "\"Levan et al. GCN Circ. 17281 (VLT); *Fong et al. (2016; arXiv:1608.08626)\"",
+          "15_25kev": 1.281297e-09,
+          "25_50kev": 1.242711e-10,
+          "z_method": "ba",
+          "15_350kev": 1.404333e-09,
+          "50_100kev": 4.852102e-12,
+          "Image_SNR": "8.527020e+00",
+          "100_150kev": 1.681202e-13,
+          "100_350kev": 1.984814e-13,
+          "15_25kev_hi": 2.193461e-09,
+          "25_50kev_hi": 2.991714e-10,
+          "15_25kev_low": 3.461386e-10,
+          "15_350kev_hi": 2.475312e-09,
+          "25_50kev_low": 7.570595e-12,
+          "50_100kev_hi": 2.326054e-11,
+          "100_150kev_hi": 1.685931e-12,
+          "100_350kev_hi": 2.207853e-12,
+          "15_350kev_low": 3.526712e-10,
+          "50_100kev_low": 4.200683e-14,
+          "fluence_model": "PL",
+          "z_uncertainty": "+0.003 -0.003",
+          "100_150kev_low": 2.229565e-16,
+          "100_350kev_low": 2.334102e-16,
+          "Trigger_method": "ground detected during slew",
+          "Image_position_err": "2.435705e+00"
+        },
+        "params": {
+          "t50": {
+            "v": 0.003999949,
+            "err": 0.005656866,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 0.01199996,
+            "err": 0.008944237,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.5,
+            "cl": 90,
+            "err": null
+          },
+          "fluence": {
+            "v": 1.409354e-09,
+            "cl": 90,
+            "err": [
+              1.0658440000000002e-09,
+              1.0566503e-09
+            ],
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.1343
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 00091964035"
+        ],
+        "trigger_time": "2015-01-01T15:23:34.459Z"
+      },
+      "minaev2020": {
+        "other": {
+          "EH": 3.91,
+          "EHD": 28.89,
+          "Exp": "Fermi",
+          "Ref": "14",
+          "Type": "I",
+          "recno": 263,
+          "EHtype": "I",
+          "EHDtype": "I"
+        },
+        "params": {
+          "t90": {
+            "v": 0.02,
+            "err": null,
+            "band": null,
+            "frame": "rest"
+          },
+          "eiso": {
+            "v": 2200000000000000300000000000000000000000000000000,
+            "err": 299999999999999970000000000000000000000000000000,
+            "band": null,
+            "frame": "rest"
+          },
+          "ep_rest": {
+            "v": 34.0,
+            "err": 23.0,
+            "frame": "rest"
+          },
+          "grb_type": {
+            "v": "I"
+          },
+          "redshift": {
+            "v": 0.093
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
+          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 492098000000000000000,
+          "xrt_ra": 188.02054,
+          "comment": "Swift J123205.1-105602",
+          "ref_bat": "GCN 17267",
+          "ref_xrt": "GCN 17268; Evans et al., 2009; MNRAS, 397, 1177",
+          "xrt_dec": -10.93356,
+          "advocate": "Jay Cummings",
+          "ref_uvot": "GCN 17268",
+          "uvot_mag": "White=18.44",
+          "other_obs": "Fermi (GBM), GTC (10.4m), XMM-Newton, Gemini-South, INTEGRAL",
+          "xrt_gamma": 2.30384,
+          "trigger_obs": "Ground Analysis 20464",
+          "error_radius": 2.5,
+          "ref_redshift": "GCN 17278 (GTC)",
+          "xrt_lc_index": 0.2437,
+          "xrt_11hr_flux": 2.79218292e-13,
+          "xrt_24hr_flux": 3.3767884e-13,
+          "xrt_first_obs": 139200.0,
+          "redshift_comment": "GTC: emission from host",
+          "xrt_error_radius": 1.8,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 0.018,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.3e-08,
+            "cl": 90,
+            "err": 6e-09,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.093
+          },
+          "spectral_index": {
+            "v": 3.3,
+            "cl": 90,
+            "err": 0.5
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2015-01-01T15:23:00.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "XA": "y?",
+          "IPN": "y",
+          "Error": "3",
+          "z_flag": "h",
+          "obs_date": "2015-01-01",
+          "short_grb": true,
+          "Instrument": "Swift",
+          "GRB X-ray position": "12h32m10s -10° 57'"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.134
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 150101BS"
+        ],
+        "trigger_time": null
+      }
+    }
+  }
+}

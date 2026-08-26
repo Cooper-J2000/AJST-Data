@@ -1,0 +1,384 @@
+{
+  "transient_id": "GRB081126",
+  "alias": [],
+  "ra": 323.51495361328125,
+  "dec": 48.71063995361328,
+  "T0": "2008-11-26T21:34:10Z",
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 2.4,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 0.5,
+  "pos_ref": "SGA (UVOTGRB)",
+  "redshift_ref": "catalog:swift_grb",
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "catalog_data": {
+      "rssgrbag": {
+        "other": {
+          "ref_codes": "46,[],46,[],[],26,[],[]",
+          "opt_ag_flag": "Y",
+          "opt_flux_11h": {
+            "v": 4.4,
+            "band": "R (0.7 micron)",
+            "unit": "microJy"
+          },
+          "xray_ag_flag": "Y",
+          "radio_ag_flag": "N",
+          "xray_flux_11h": {
+            "v": 6.6e-13,
+            "band": "0.3-10 keV",
+            "unit": "erg/s/cm^2"
+          },
+          "instrument_code": "S, T",
+          "radio_telescope": "VLA"
+        },
+        "params": {
+          "t90": {
+            "v": 58.0,
+            "err": null,
+            "band": null
+          },
+          "fluence": {
+            "v": 3.45e-06,
+            "err": null,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/gamma-ray-bursts/rssgrbag.html",
+          "name": "Radio-Selected GRB Afterglow Catalog (Chandra & Frail 2012)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "uvot_grb": {
+        "other": {
+          "OBJECT": "GRB081126",
+          "BAT_PIT": "PL",
+          "DISC_BY": "Swift",
+          "POS_ERR": 0.5,
+          "POS_REF": "SGA",
+          "T90_REF": "SGA",
+          "TRIG_UT": "2008-331-21:34:10",
+          "TRIGTIME": 249428050.0
+        },
+        "params": {
+          "t90": {
+            "v": 54.0,
+            "err": null,
+            "band": "15-350 keV"
+          },
+          "fluence": {
+            "v": 3.299999889350147e-06,
+            "cl": 90,
+            "err": 1.0000000116860974e-07,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 3.700000047683716,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.20000000298023224,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.2699999809265137,
+            "cl": 90,
+            "err": 0.05999999865889549
+          }
+        },
+        "source": {
+          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
+          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2008-11-26T21:34:10Z"
+      },
+      "fermi_gbm": {
+        "other": {
+          "bii": -2.29311105,
+          "lii": 92.85131466,
+          "flux_256": 7.18697,
+          "flux_1024": 6.49587,
+          "t50_start": 0.76797,
+          "t90_start": -18.0483,
+          "error_radius": 0.0,
+          "fluence_batse": 5.37481e-06,
+          "flux_batse_64": 4.27514,
+          "flux_256_error": 0.387329,
+          "flux_batse_256": 3.72211,
+          "flnc_band_epeak": 329.1077,
+          "flnc_comp_epeak": 330.26505,
+          "flux_1024_error": 0.191858,
+          "flux_batse_1024": 3.3409,
+          "fluence_batse_error": 3.21865e-08,
+          "flux_batse_64_error": 0.814635,
+          "flux_batse_256_error": 0.388494,
+          "flux_batse_1024_error": 0.192373,
+          "flnc_band_epeak_neg_err": 20.971954,
+          "flnc_band_epeak_pos_err": 20.971954,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 22.195496,
+          "flnc_comp_epeak_pos_err": 22.195496
+        },
+        "params": {
+          "t50": {
+            "v": 31.2325,
+            "err": 0.36205,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 54.1449,
+            "err": 0.923039,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 330.26505,
+            "err": [
+              22.195496,
+              22.195496
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 1.14486e-05,
+            "err": 6.66146e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 7.76654,
+            "dt": "64ms",
+            "err": 0.814635,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB081126899",
+          "GRB 081126.899",
+          "bn081126899"
+        ],
+        "trigger_time": "2008-11-26T21:34:09.065Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.6797",
+          "15_25kev": 3.30794e-07,
+          "25_50kev": 7.280104e-07,
+          "15_350kev": 7.401974e-06,
+          "50_100kev": 1.262227e-06,
+          "Image_SNR": "3.991988e+01",
+          "100_150kev": 1.13255e-06,
+          "100_350kev": 5.080864e-06,
+          "15_25kev_hi": 3.543379e-07,
+          "25_50kev_hi": 7.574912e-07,
+          "15_25kev_low": 3.078702e-07,
+          "15_350kev_hi": 7.900375e-06,
+          "25_50kev_low": 6.983893e-07,
+          "50_100kev_hi": 1.310804e-06,
+          "100_150kev_hi": 1.203864e-06,
+          "100_350kev_hi": 5.559524e-06,
+          "15_350kev_low": 6.929431e-06,
+          "50_100kev_low": 1.213466e-06,
+          "fluence_model": "PL",
+          "100_150kev_low": 1.062815e-06,
+          "100_350kev_low": 4.63295e-06,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "8.267047e-01"
+        },
+        "params": {
+          "t50": {
+            "v": 31.44,
+            "err": 0.4528664,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 57.648,
+            "err": 5.846673,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.20609,
+            "cl": 90,
+            "err": [
+              0.06261000000000005,
+              0.062269999999999825
+            ]
+          },
+          "fluence": {
+            "v": 3.453565e-06,
+            "cl": 90,
+            "err": [
+              1.2383600000000013e-07,
+              1.2353899999999977e-07
+            ],
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 335647"
+        ],
+        "trigger_time": "2008-11-26T21:34:10.280820Z"
+      },
+      "swift_grb": {
+        "other": {
+          "bat_plsl": "1.206",
+          "det_flag": "B",
+          "other_id": "249428050",
+          "target_id": "335647",
+          "bat_plsl_err": "0.063",
+          "redshift_ref": "2008GCN..8564....1H",
+          "bat_detection": "Y",
+          "redshift_type": "PL",
+          "bat_peak_model": "PL",
+          "supernova_flag": "N",
+          "bat_fluence_model": "PL"
+        },
+        "params": {
+          "t50": {
+            "v": 31.44,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "t90": {
+            "v": 57.65,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "epeak": {
+            "v": 315.0,
+            "err": null,
+            "frame": "obs",
+            "model": null
+          },
+          "fluence": {
+            "v": 3.45e-06,
+            "err": 1.24e-07,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 2.4,
+            "err": null
+          },
+          "peak_flux": {
+            "v": 3.71,
+            "dt": "1s",
+            "err": 0.201,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 335647",
+          "249428050"
+        ],
+        "trigger_time": "2008-11-26T21:34:10.280820Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 4936950000000000000000,
+          "xrt_ra": 323.51513,
+          "ref_bat": "GCN 8554; GCN 8557",
+          "ref_xrt": "GCN 8554; GCN 8556; GCN 8561; Evans et al., 2009; MNRAS, 397, 1177",
+          "uvot_ra": 323.51496,
+          "xrt_dec": 48.71039,
+          "advocate": "Raffaella Margutti",
+          "ref_uvot": "GCN 8554; GCN 8559",
+          "uvot_dec": 48.71064,
+          "uvot_mag": "U=18.17; B=20.20; UVW1>20.0; UVM2>19.6; UVW2>20.0; White=18.82",
+          "other_obs": "Mt. Terskol (Z-600), Konus-Wind, Crni Vrh Observatory (60cm), Fermi",
+          "ref_other": "GCN Report 184.1",
+          "target_id": 335647,
+          "uvot_vmag": 19.29,
+          "xrt_gamma": 2.05246,
+          "trigger_obs": "Swift",
+          "error_radius": 1.0,
+          "xrt_lc_index": -3.011,
+          "xrt_11hr_flux": 8.830035e-13,
+          "xrt_24hr_flux": 3.465918e-13,
+          "xrt_first_obs": 65.72,
+          "uvot_first_obs": 56.0,
+          "xrt_early_flux": 7.07e-10,
+          "xrt_error_radius": 1.4,
+          "uvot_error_radius": 0.5,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 54.0,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 3.3e-06,
+            "cl": 90,
+            "err": 1e-07,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 3.7,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.2,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.27,
+            "cl": 90,
+            "err": 0.06
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 081126"
+        ],
+        "trigger_time": "2008-11-26T21:34:10.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "RA": "n",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3",
+          "obs_date": "2008-11-26",
+          "Instrument": "Swift",
+          "GRB X-ray position": "21h34m10s +48° 43'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

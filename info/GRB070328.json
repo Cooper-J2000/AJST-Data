@@ -1,0 +1,525 @@
+{
+  "transient_id": "GRB070328",
+  "alias": [],
+  "ra": 65.11533,
+  "dec": -34.06683,
+  "T0": "2007-03-28T03:53:49.993000Z",
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 2.0627,
+  "tag": [
+    "grb"
+  ],
+  "redshift_ref": "catalog:minaev2020",
+  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "sub_tag": [
+    "L"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "eiso": {
+          "v": 777000000000000000000000000000000000000000000000000000,
+          "err": 85000000000000000000000000000000000000000000000000000,
+          "src": "konus_wind"
+        },
+        "lp_iso": {
+          "v": 217000000000000000000000000000000000000000000000000000,
+          "err": 34000000000000000000000000000000000000000000000000000,
+          "src": "konus_wind"
+        },
+        "ep_rest": {
+          "v": 1182.2022,
+          "err": [
+            180.6993,
+            143.9469
+          ],
+          "src": "konus_wind"
+        },
+        "t90_rest": {
+          "v": 17.6,
+          "err": null,
+          "src": "minaev2020"
+        },
+        "epeak_obs": {
+          "v": 386.0,
+          "err": [
+            59.0,
+            47.0
+          ],
+          "src": "konus_wind"
+        },
+        "variability": {
+          "v": 0.152,
+          "err": 0.005,
+          "src": "guidorzi2025"
+        }
+      },
+      "sources": {
+        "konus_wind": {
+          "eiso": {
+            "v": 777000000000000000000000000000000000000000000000000000,
+            "err": 85000000000000000000000000000000000000000000000000000
+          },
+          "lp_iso": {
+            "v": 217000000000000000000000000000000000000000000000000000,
+            "err": 34000000000000000000000000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 1182.2022,
+            "err": [
+              180.6993,
+              143.9469
+            ]
+          },
+          "epeak_obs": {
+            "v": 386.0,
+            "err": [
+              59.0,
+              47.0
+            ]
+          }
+        },
+        "minaev2020": {
+          "eiso": {
+            "v": 777000000000000000000000000000000000000000000000000000,
+            "err": 85000000000000000000000000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 1182.0,
+            "err": [
+              181.0,
+              144.0
+            ]
+          },
+          "grb_type": "II",
+          "t90_rest": {
+            "v": 17.6,
+            "err": null
+          }
+        },
+        "guidorzi2025": {
+          "lp_iso": {
+            "v": 214289060112007370000000000000000000000000000000000000,
+            "err": [
+              36899583038952430000000000000000000000000000000000000,
+              31479038497731804000000000000000000000000000000000000
+            ]
+          },
+          "variability": {
+            "v": 0.152,
+            "err": 0.005
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "minaev2020"
+      }
+    },
+    "catalog_data": {
+      "uvot_grb": {
+        "other": {
+          "OBJECT": "GRB070328",
+          "BAT_PIT": "PL",
+          "DISC_BY": "Swift",
+          "POS_ERR": 1.399999976158142,
+          "POS_REF": "SGA",
+          "T90_REF": "SGA",
+          "TRIG_UT": "2007-087-03:53:53",
+          "TRIGTIME": 196746833.0
+        },
+        "params": {
+          "t90": {
+            "v": 75.30000305175781,
+            "err": null,
+            "band": "15-350 keV"
+          },
+          "fluence": {
+            "v": 9.059999683813658e-06,
+            "cl": 90,
+            "err": 1.7899999704695801e-07,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 4.21999979019165,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.23999999463558197,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.2400000095367432,
+            "cl": 90,
+            "err": 0.03999999910593033
+          }
+        },
+        "source": {
+          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
+          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2007-03-28T03:53:53Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.6094",
+          "z_ref": "\"Krühler et al. A&A 581 A125 (2015); *Schulze et al. ApJ 808 73 (2015)\"",
+          "15_25kev": 8.840708e-07,
+          "25_50kev": 1.937434e-06,
+          "z_method": "he",
+          "15_350kev": 1.952617e-05,
+          "50_100kev": 3.343236e-06,
+          "Image_SNR": "5.722820e+01",
+          "100_150kev": 2.988871e-06,
+          "100_350kev": 1.336155e-05,
+          "15_25kev_hi": 9.233089e-07,
+          "25_50kev_hi": 1.987179e-06,
+          "15_25kev_low": 8.455845e-07,
+          "15_350kev_hi": 2.020398e-05,
+          "25_50kev_low": 1.88763e-06,
+          "50_100kev_hi": 3.410806e-06,
+          "100_150kev_hi": 3.086577e-06,
+          "100_350kev_hi": 1.402578e-05,
+          "15_350kev_low": 1.886719e-05,
+          "50_100kev_low": 3.275495e-06,
+          "fluence_model": "PL",
+          "100_150kev_low": 2.892058e-06,
+          "100_350kev_low": 1.272e-05,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "6.424744e-01"
+        },
+        "params": {
+          "t50": {
+            "v": 17.968,
+            "err": 0.7656318,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 72.116,
+            "err": 8.483028,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.21295,
+            "cl": 90,
+            "err": [
+              0.036149999999999904,
+              0.035989999999999966
+            ]
+          },
+          "fluence": {
+            "v": 9.153497e-06,
+            "cl": 90,
+            "err": [
+              1.7575799999999934e-07,
+              1.7555099999999977e-07
+            ],
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 2.06
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 272773"
+        ],
+        "trigger_time": "2007-03-28T03:53:53.155520Z"
+      },
+      "swift_grb": {
+        "other": {
+          "bat_plsl": "1.213",
+          "det_flag": "B",
+          "target_id": "272773",
+          "bat_plsl_err": "0.036",
+          "redshift_ref": "2012ApJ...752...62J",
+          "bat_detection": "Y",
+          "redshift_type": "SL",
+          "bat_peak_model": "PL",
+          "supernova_flag": "N",
+          "bat_fluence_model": "PL"
+        },
+        "params": {
+          "t50": {
+            "v": 17.97,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "t90": {
+            "v": 72.12,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 9.15e-06,
+            "err": 1.76e-07,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 3.5,
+            "err": null
+          },
+          "peak_flux": {
+            "v": 4.22,
+            "dt": "1s",
+            "err": 0.222,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 272773"
+        ],
+        "trigger_time": "2007-03-28T03:53:53.155520Z"
+      },
+      "konus_wind": {
+        "other": {
+          "S": 72.0,
+          "Det": "S1",
+          "E_S": 8.0,
+          "T50": 16.88,
+          "T90": 53.798,
+          "e_S": 7.8,
+          "n_z": "s",
+          "Flim": 1.7,
+          "Fp64": 7.6,
+          "Inst": "SwiftBAT",
+          "T100": 94.246,
+          "Type": "II",
+          "Zmax": 3.66,
+          "Angle": 35.6,
+          "e_T50": 0.454,
+          "e_T90": 12.901,
+          "E_Fp64": 1.5,
+          "Fp1024": 5.4,
+          "e_Fp64": 1.5,
+          "z_type": "spectroscopic",
+          "E_Fp1024": 0.58,
+          "e_Fp1024": 0.58,
+          "spec_beta": -2.0,
+          "spec_alpha": -0.8,
+          "spec_DeltaT": 41.216,
+          "spec_tstart": 0.0
+        },
+        "params": {
+          "eiso": {
+            "v": 777000000000000000000000000000000000000000000000000000,
+            "err": 85000000000000000000000000000000000000000000000000000,
+            "band": "1-10000 keV",
+            "frame": "rest"
+          },
+          "epeak": {
+            "v": 386.0,
+            "err": [
+              59.0,
+              47.0
+            ],
+            "frame": "obs",
+            "model": "BAND"
+          },
+          "lp_iso": {
+            "v": 217000000000000000000000000000000000000000000000000000,
+            "err": 34000000000000000000000000000000000000000000000000000,
+            "band": "1-10000 keV",
+            "frame": "rest"
+          },
+          "redshift": {
+            "v": 2.0627
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJ/908/83",
+          "name": "Konus-Wind GRB Catalog with redshifts (Tsvetkova+2017/2021)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2007-03-28T03:53:49.993Z"
+      },
+      "minaev2020": {
+        "other": {
+          "EH": 0.83,
+          "EHD": 0.2,
+          "Exp": "Konus-Wind",
+          "Ref": "1",
+          "Type": "II",
+          "recno": 104,
+          "EHtype": "II",
+          "EHDtype": "II"
+        },
+        "params": {
+          "t90": {
+            "v": 17.6,
+            "err": null,
+            "band": null,
+            "frame": "rest"
+          },
+          "eiso": {
+            "v": 777000000000000000000000000000000000000000000000000000,
+            "err": 85000000000000000000000000000000000000000000000000000,
+            "band": null,
+            "frame": "rest"
+          },
+          "ep_rest": {
+            "v": 1182.0,
+            "err": [
+              181.0,
+              144.0
+            ],
+            "frame": "rest"
+          },
+          "grb_type": {
+            "v": "II"
+          },
+          "redshift": {
+            "v": 2.0627
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
+          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 2494620000000000000000,
+          "xrt_ra": 65.11533,
+          "comment": "UVOT: no detection",
+          "ref_bat": "GCN 6224; GCN 6225; arXiv:0707.4626",
+          "ref_xrt": "GCN 6224; GCN 6227; Evans et al., 2009; MNRAS, 397, 1177",
+          "xrt_dec": -34.06686,
+          "advocate": "Craig Markwardt",
+          "ref_uvot": "GCN 6224; GCN 6229",
+          "uvot_mag": "B>20.8; U>20.4; UVW1>20.7; UVM2>21.6; UVW2>21.5; White>21.1",
+          "other_obs": "Konus-Wind, Suzaku",
+          "ref_other": "GCN Report 42.1, GCN Report 42.2, GCN Report 42.3",
+          "target_id": 272773,
+          "uvot_vmag": 20.7,
+          "xrt_gamma": 2.14125,
+          "trigger_obs": "Swift",
+          "error_radius": 1.0,
+          "xrt_lc_index": -1.343,
+          "xrt_11hr_flux": 2.3185578e-12,
+          "xrt_24hr_flux": 7.212816e-13,
+          "xrt_first_obs": 88.29,
+          "uvot_first_obs": 98.0,
+          "uvot_vmag_flag": 1,
+          "xrt_early_flux": 2.57e-09,
+          "xrt_error_radius": 1.4,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 75.3,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 9.06e-06,
+            "cl": 90,
+            "err": 1.79e-07,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 4.22,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.24,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.24,
+            "cl": 90,
+            "err": 0.04
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 070328"
+        ],
+        "trigger_time": "2007-03-28T03:53:53.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3'",
+          "obs_date": "2007-03-28",
+          "Instrument": "Swift",
+          "GRB X-ray position": "04h20m28s -34° 04'"
+        },
+        "params": {
+          "redshift": {
+            "v": 2.0627
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "guidorzi2025": {
+        "other": {
+          "Tf": 35.0,
+          "Det": "BAT",
+          "Vf05": -0.01,
+          "Vf95": 0.007,
+          "e_Tf": 1.0,
+          "Npeaks": 5,
+          "Tf_f0.45": 13.25,
+          "Vf_f0.45": 0.057,
+          "obs_date": "2007-03-28",
+          "r_logLiso": 3,
+          "s_Vf_f0.45": 0.004
+        },
+        "params": {
+          "lp_iso": {
+            "v": 214289060112007370000000000000000000000000000000000000,
+            "err": [
+              36899583038952430000000000000000000000000000000000000,
+              31479038497731804000000000000000000000000000000000000
+            ],
+            "frame": "rest"
+          },
+          "redshift": {
+            "v": 2.0627
+          },
+          "variability": {
+            "f": 0.8,
+            "v": 0.152,
+            "err": 0.005,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/690/A261",
+          "name": "Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}

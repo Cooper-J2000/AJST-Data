@@ -1,0 +1,273 @@
+{
+  "transient_id": "GRB130702A",
+  "alias": [
+    "SN2013dx"
+  ],
+  "ra": 228.15,
+  "dec": 16.583333,
+  "T0": "2013-07-02T00:05:23.079000Z",
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 0.15,
+  "tag": [
+    "grb",
+    "sn"
+  ],
+  "sub_tag": [
+    "SN-spec",
+    "XRF"
+  ],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "derived": {
+      "best": {
+        "eiso": {
+          "v": 640000000000000050000000000000000000000000000000000,
+          "err": 130000000000000000000000000000000000000000000000000,
+          "src": "minaev2020"
+        },
+        "ep_rest": {
+          "v": 17.2,
+          "err": 5.7,
+          "src": "minaev2020"
+        },
+        "t90_obs": {
+          "v": 58.881,
+          "err": 6.192,
+          "src": "liang2023"
+        },
+        "t90_rest": {
+          "v": 51.200869565217396,
+          "err": 5.384347826086957,
+          "src": "liang2023"
+        }
+      },
+      "sources": {
+        "fermi_lat": {
+          "eiso": {
+            "v": 194911000000000000000000000000000000000000000000000,
+            "err": 91542500000000000000000000000000000000000000000000
+          },
+          "t90_obs": {
+            "v": 58.881,
+            "err": 6.192
+          },
+          "t90_rest": {
+            "v": 51.200869565217396,
+            "err": 5.384347826086957
+          }
+        },
+        "liang2023": {
+          "t90_obs": {
+            "v": 58.881,
+            "err": 6.192
+          },
+          "grb_type": "II",
+          "t90_rest": {
+            "v": 51.200869565217396,
+            "err": 5.384347826086957
+          }
+        },
+        "minaev2020": {
+          "eiso": {
+            "v": 640000000000000050000000000000000000000000000000000,
+            "err": 130000000000000000000000000000000000000000000000000
+          },
+          "ep_rest": {
+            "v": 17.2,
+            "err": 5.7
+          },
+          "grb_type": "II",
+          "t90_rest": {
+            "v": 51.4,
+            "err": null
+          }
+        }
+      },
+      "computed": "2026-07-22",
+      "grb_type": {
+        "v": "II",
+        "src": "minaev2020"
+      }
+    },
+    "catalog_data": {
+      "fermi_lat": {
+        "other": {
+          "tl100": 1010.97998,
+          "tl100_error": 121.885,
+          "trigger_met": 394416326.08,
+          "error_radius": 0.62,
+          "like_best_ts": 26.2686,
+          "like_best_fluence": 6.02746e-06,
+          "like_best_grbindex": -1.96988,
+          "ext_emission_max_ene": 1700.0,
+          "ext_emission_max_ene_t": 272.29001,
+          "like_best_fluence_error": 4.95884e-06,
+          "like_best_grbindex_error": 0.341529
+        },
+        "params": {
+          "t90": {
+            "v": 58.881,
+            "err": 6.192,
+            "band": "50-300 keV"
+          },
+          "eiso": {
+            "v": 194911000000000000000000000000000000000000000000000,
+            "err": 91542500000000000000000000000000000000000000000000,
+            "band": "100 MeV-10 GeV",
+            "frame": "rest"
+          },
+          "fluence": {
+            "v": 5.7156e-06,
+            "err": 1.2069e-07,
+            "band": "10-1000 keV"
+          },
+          "redshift": {
+            "v": 0.145
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 130702.004"
+        ],
+        "trigger_time": "2013-07-02T00:05:22.998Z"
+      },
+      "liang2023": {
+        "other": {
+          "Detectors": "n6n7(n8)b1",
+          "Classified": "S",
+          "T90/(1+z) (s)": "51.42\\pm5.41",
+          "Averaged Spectrum": "\\nodata",
+          "Background intervals": "(-100 to -10, 100 to 200)"
+        },
+        "params": {
+          "t90": {
+            "v": 58.881,
+            "err": 6.192,
+            "band": "50-300 keV"
+          },
+          "fluence": {
+            "v": 5.72e-06,
+            "err": 1.2e-07,
+            "band": "8 keV-40 MeV"
+          },
+          "grb_type": {
+            "v": "II"
+          },
+          "redshift": {
+            "v": 0.145
+          }
+        },
+        "source": {
+          "url": "https://arxiv.org/abs/2211.12187",
+          "name": "Liang+2023 Fermi-GBM spectral-energy sample (ApJS 266, 31)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 130702.004",
+          "bn130702004"
+        ],
+        "trigger_time": "2013-07-02T00:05:46Z"
+      },
+      "minaev2020": {
+        "other": {
+          "EH": 0.21,
+          "EHD": 0.03,
+          "Exp": "Swift",
+          "Ref": "2,44",
+          "Type": "II+SNsp",
+          "recno": 223,
+          "EHtype": "II",
+          "EHDtype": "II"
+        },
+        "params": {
+          "t90": {
+            "v": 51.4,
+            "err": null,
+            "band": null,
+            "frame": "rest"
+          },
+          "eiso": {
+            "v": 640000000000000050000000000000000000000000000000000,
+            "err": 130000000000000000000000000000000000000000000000000,
+            "band": null,
+            "frame": "rest"
+          },
+          "ep_rest": {
+            "v": 17.2,
+            "err": 5.7,
+            "frame": "rest"
+          },
+          "grb_type": {
+            "v": "II"
+          },
+          "redshift": {
+            "v": 0.145
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
+          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 585523000000000000000,
+          "xrt_ra": 217.31158,
+          "comment": "Fermi: GCN 14972",
+          "uvot_ra": 217.31154,
+          "xrt_dec": 15.77392,
+          "uvot_dec": 15.77403,
+          "uvot_mag": "U=18.48; UVW1=19.29; UVM2=19.67; UVW2=19.26; White=18.26",
+          "xrt_gamma": 1.98886,
+          "trigger_obs": "Fermi",
+          "xrt_lc_index": -1.056,
+          "xrt_11hr_flux": 2.5411032e-11,
+          "xrt_24hr_flux": 1.114812e-11,
+          "xrt_first_obs": 89100.0,
+          "uvot_first_obs": 89111.0,
+          "xrt_error_radius": 1.5,
+          "uvot_error_radius": 0.5
+        },
+        "params": {},
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2013-07-02T00:05:23.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "RA": "y",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "412",
+          "obs_date": "2013-07-02",
+          "Instrument": "Fermi",
+          "GRB X-ray position": "15h12m36s +16° 35'"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.145
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    }
+  }
+}
