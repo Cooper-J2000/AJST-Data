@@ -4,10 +4,12 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 
 ## 目录结构
 
-- `info/`：每个暂现源一个 JSON（基本参数、坐标、红移、目录合并数据等），共 1440 个源
-- `lc/`：每个暂现源一个 CSV（多波段光变曲线数据点）
+- `info/`：每个暂现源一个 JSON（基本参数、坐标、红移、目录合并数据等），共 2794 个源（2026-09）
+- `lc/`：每个暂现源一个 CSV（多波段光变曲线数据点），共 2514 个（2026-09）；纯信息源可无 CSV
 - `spectra/`：每个暂现源一个子目录，存放公开光谱（统一 JSON 格式）
 - `filters.json`：滤光片/波段定义（银消改正用）
+- `tags.json`：主/副标签索引
+- `tmplibrary/`：光变模板库（ChromaShift 派生数据，`library.json` 为其目录）
 - `galaxy_extinction.py`：银河系消光改正工具脚本
 - `gcn/archive/`：GCN circular 存档（45315 个 JSON，**不随仓库发布**，可自行再生成，见下文）
 - `external/`：外部 GRB 目录与文献样本，每个子目录含 `README.md`（来源与逐列说明）、`parse.py`（解析脚本）、`normalized.jsonl`（规范化产物，输出契约见 `external/SCHEMA.md`）：
@@ -35,6 +37,12 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 | `saxgrbmgrb` | BeppoSAX/GRBM GRB 目录（HEASARC `saxgrbmgrb`） |
 
 - 其余文档：`部分数据说明及导入记录.md`、`数据统一列定义.md`、`external/SCHEMA.md`、`external/统计关系样本添加指南.md`、`external/导入说明_grbcata_source_2.md`
+
+## 数据契约与贡献
+
+- **`SCHEMA.md`：数据格式的唯一权威定义**（info JSON 字段契约、lc CSV 24 列契约、命名规范、null 约定）。
+- **`CONTRIBUTING.md`：校验 / 扩充 / 提交流程**——任何人或外部 agent 都可参与：
+  `python3 tools/validate.py` 零依赖全量校验（CI 自动运行），扩充按 SCHEMA 契约，提交走 Pull Request。
 
 ## 接入方法
 
