@@ -26,7 +26,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": "e6e2f1239de281c3ef8362ffba96eb212347a7bea631f0971f2b7cde376ba02d",
    "row_ledger": {
@@ -132,11 +132,38 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 33.048,
+    "engine_distance": {
+     "d_L_Mpc": 40.7,
+     "d_L_err_Mpc": 2.36,
+     "kind": "measured",
+     "z": 0.009783,
+     "z_err": null,
+     "mu": 33.048,
+     "cosmology": null,
+     "source": "NGC 4993, from a distance indicator rather than from the redshift.  Adopted value is the surface brightness fluctuation distance: Cantiello et al. 2018, ApJL 854, L31, DOI 10.3847/2041-8213/aaad64, \"For the preferred F110W passband we derive a distance modulus of (m - M) = 33.05 +- 0.08 +- 0.10 mag, or a linear distance d = 40.7 +- 1.4 +- 1.9 Mpc (random and systematic errors, respectively)\".  d_L_err_Mpc is the two terms added in quadrature, sqrt(1.4^2 + 1.9^2) = 2.3601 Mpc, quoted here as 2.36 because the sources print one significant figure in each term and more digits would be a false claim about how well the error is known.  The combination matters because `Distance` carries one error and quoting the systematic term alone would drop the random one and understate the budget by 0.025 mag of distance modulus; the two components are 0.075 and 0.101 mag separately.  A virtually identical F160W result is quoted in the same paper. Why SBF and not the numbers this manifest adopted until now: at z = 0.0098 the Hubble flow is not a distance (the host's peculiar velocity alone is 307 +- 230 km/s against a flow of ~2900, which is what the z < 0.02 guard in snredshift/distance.py is for), and four electromagnetic determinations plus one gravitational one exist, all agreeing on 40-42 Mpc --\n  SBF   Cantiello+ 2018  40.7 +- 1.4 +- 1.9   <- adopted, most precise\n  GCLF  Lee et al. 2018, ApJL 859, L6, 41.65 +- 3.00\n  FP    Im et al. 2018, ApJL 855, L3, DOI 10.3847/2041-8213/aa9367, angular\n        diameter 37.7 +- 8.7 Mpc\n  combined redshift + FP  Hjorth et al. 2017, ApJL 848, L31,\n        DOI 10.3847/2041-8213/aa9110, \"The combined redshift and FP distance\n        is D_NGC4993 = 41.0 +- 3.1 Mpc\"\n  GW standard siren  Hjorth et al. 2017 Table 2, 43.8 +2.9/-6.9 Mpc\nThe previously adopted 41.0 +- 3.1 is the *least* precise of the four electromagnetic ones (0.164 mag of distance modulus against SBF's 0.125), and this manifest's own note called its error \"the largest single term in any shipped template's budget\" while quoting the better number as a cross-check. Changing it moves DM by -0.016 mag and the distance error term from 0.164 to 0.125 mag, and docs/VALIDATION.md section A checks that term as `V-A5` (the modulus and both printed error terms) and `V-A6` (the single number carried here) -- the two rows that are this distance in full, and that are the reason the quadrature sum is asserted in a test rather than only stated here. Still not a Hubble-flow distance and still not treated as one: the same Hjorth paper gives v_CMB = 3231 +- 53 km/s for the NGC 4993 group, four times the heliocentric recession rate, so what a redshift-derived distance would give here is mostly the group motion."
+    },
+    "counterpart_id": "GRB170817A",
+    "ok": true,
+    "catalog": 33.201,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.009783,
+    "delta": -0.153,
+    "cause": "距离来源不同",
+    "detail": "引擎 distance.kind=measured（d_L=40.70 Mpc）vs 库 gext_distmod=Planck18.distmod(z)（反解 43.67 Mpc）",
+    "secondary": [
+     {
+      "cause": "参考系项",
+      "detail": "CMB 参考系改正：z_cmb − z_helio = +0.001049"
+     }
+    ],
+    "alert": "CA-13"
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
-    "catalog_rows": null,
+    "catalog_rows": [],
     "filter_vendor": null
    },
    "deleted": null,
@@ -163,7 +190,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": null,
    "row_ledger": null,
@@ -307,7 +334,23 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 34.0018,
+    "engine_distance": {
+     "d_L_Mpc": 63.14705967849536,
+     "d_L_err_Mpc": null,
+     "kind": "cosmological",
+     "z": 0.0141,
+     "z_err": null,
+     "mu": 34.0018,
+     "cosmology": "Planck18",
+     "source": ""
+    },
+    "counterpart_id": null,
+    "ok": false,
+    "code": "TL_NO_COUNTERPART",
+    "message": "该模板在库内没有对应源，Δμ 无对照（不是 0）"
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
@@ -331,7 +374,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": null,
    "row_ledger": null,
@@ -421,7 +464,23 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 38.0071,
+    "engine_distance": {
+     "d_L_Mpc": 399.4114691849516,
+     "d_L_err_Mpc": null,
+     "kind": "cosmological",
+     "z": 0.0848,
+     "z_err": null,
+     "mu": 38.0071,
+     "cosmology": "Planck18",
+     "source": ""
+    },
+    "counterpart_id": null,
+    "ok": false,
+    "code": "TL_NO_COUNTERPART",
+    "message": "该模板在库内没有对应源，Δμ 无对照（不是 0）"
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
@@ -445,7 +504,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": "5cdf20e07f0d56cf65fb1d1d9d3bb056f1d019e5a9d70d14f8379557aa075c0c",
    "row_ledger": {
@@ -531,11 +590,32 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 39.7125,
+    "engine_distance": {
+     "d_L_Mpc": 875.9727525070398,
+     "d_L_err_Mpc": null,
+     "kind": "cosmological",
+     "z": 0.17556209291581526,
+     "z_err": 0.002,
+     "mu": 39.7125,
+     "cosmology": "Planck18",
+     "source": ""
+    },
+    "counterpart_id": "EP250108a",
+    "ok": true,
+    "catalog": 39.718,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.176,
+    "delta": -0.0055,
+    "cause": "口径项",
+    "detail": "宇宙学距离口径（350 km/s 本征速度项 + CMB 参考系，z_cmb=0.1755621）",
+    "secondary": []
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
-    "catalog_rows": null,
+    "catalog_rows": [],
     "filter_vendor": null
    },
    "deleted": null,
@@ -562,7 +642,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": null,
    "row_ledger": null,
@@ -674,7 +754,33 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 35.9711,
+    "engine_distance": {
+     "d_L_Mpc": 156.391009206534,
+     "d_L_err_Mpc": null,
+     "kind": "cosmological",
+     "z": 0.0344,
+     "z_err": null,
+     "mu": 35.9711,
+     "cosmology": "Planck18",
+     "source": ""
+    },
+    "counterpart_id": "EP260321a",
+    "ok": true,
+    "catalog": 35.965,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.0343,
+    "delta": 0.0061,
+    "cause": "z 值不同",
+    "detail": "模板 z=0.0344 vs 库 z=0.0343（Planck18.distmod 差 0.0065 mag）",
+    "secondary": [
+     {
+      "cause": "口径项",
+      "detail": "宇宙学距离口径（350 km/s 本征速度项）"
+     }
+    ]
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
@@ -698,7 +804,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": null,
    "row_ledger": null,
@@ -738,7 +844,33 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 32.8585,
+    "engine_distance": {
+     "d_L_Mpc": 37.3,
+     "d_L_err_Mpc": 2.6,
+     "kind": "redshift-velocity-field",
+     "z": 0.0087,
+     "z_err": null,
+     "mu": 32.8585,
+     "cosmology": null,
+     "source": "The kind is `redshift-velocity-field` and not `measured`, which is the whole content of this paragraph.  Read off Clocchiatti et al. 2011, AJ 141, 163, DOI 10.1088/0004-6256/141/5/163, which is the publishing source of this table (see `provenance`): \"The distance to ESO 184-G082 was taken to be 37.3 +- 2.6 Mpc, as computed by the NED database from the redshift measured by Foley et al. 2006, a Hubble constant of 74.2 km/s/Mpc (Riess et al. 2009), and the model of the local velocity field given by Mould et al. 2000.\"  So this is a redshift-derived distance with a velocity-field correction, quoted with its error -- which is what makes the distance term of the error budget real rather than zero (2.6/37.3 = 7.0 % in fractional distance, i.e. 0.151 mag of distance modulus).  That 7 % is independently confirmed inside the same paper: both flux columns of its Table 3 carry the footnote \"Uncertainty does not include the ~7 % uncertainty in the distance\", which is the same 2.6/37.3 and the reason a distance error has to travel with the distance.  The host is the one this paper names, ESO 184-G82; the two catalogue strings v1 carried for it (ES024014.1-251413, E186-G210) were not reconciled against a catalogue in this build, so they are not repeated here."
+    },
+    "counterpart_id": "GRB980425A",
+    "ok": true,
+    "catalog": 32.894,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.0085,
+    "delta": -0.0355,
+    "cause": "距离来源不同",
+    "detail": "引擎 distance.kind=redshift-velocity-field（d_L=37.30 Mpc）vs 库 gext_distmod=Planck18.distmod(z)（反解 37.91 Mpc）",
+    "secondary": [
+     {
+      "cause": "z 值不同",
+      "detail": "模板 z=0.0087 vs 库 z=0.0085（Planck18.distmod 差 0.0508 mag）"
+     }
+    ]
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
@@ -762,7 +894,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
    "row_ledger": {
@@ -818,11 +950,42 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 30.24,
+    "engine_distance": {
+     "d_L_Mpc": 11.168632477805588,
+     "d_L_err_Mpc": 2.417372305337284,
+     "kind": "measured-secondary",
+     "z": 0.0022016,
+     "z_err": null,
+     "mu": 30.24,
+     "cosmology": null,
+     "source": "The kind is `measured-secondary` and not `measured`, and the difference is not cosmetic: `measured` means a primary distance indicator in the vocabulary `snredshift.distance` defines (TRGB, Cepheids, RR Lyrae, SBF, the fundamental plane, a standard siren), and a Tully-Fisher modulus is calibrated against those rather than independent of them, so its calibration uncertainty is already inside the quoted error.  No Cepheid or TRGB determination for M74 could be found in this round, so this is the best available *and* a secondary one; a caller who needs only primary determinations should filter on `kind`. Gal-Yam et al. 2002, MNRAS 332, L73, DOI 10.1046/j.1365-8711.2002.05535.x: \"Tully (1988), mu = 30.24 for H0 = 65\" -- a distance modulus for M74 adopted verbatim from that line.  mu_err is deliberately NOT a statistical error: half the gap to the other published modulus for this host -- GCN 1238 (Berger et al.) writes \"Given the distance modulus of M74 of 29.3\" -- so mu_err = (30.24 - 29.30)/2 = 0.47, a declared spread between two literature values (11.2 Mpc against 7.2 Mpc) rather than a sigma, and it is documented as such so no reader mistakes it for one.  The cosmological branch is not an option here and needs no allow_low_z flag: at z = 0.0022 the peculiar-velocity guard (0.02) refuses it outright, which is the guard doing its job -- 660 km/s of host/halo motion is not a Hubble-flow measurement, and a cosmological distance at this redshift would be the model pretending to be data."
+    },
+    "counterpart_id": "SN2002ap",
+    "ok": true,
+    "catalog": 29.948,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.0022,
+    "delta": 0.292,
+    "cause": "距离来源不同",
+    "detail": "引擎 distance.kind=measured-secondary（d_L=11.17 Mpc）vs 库 gext_distmod=Planck18.distmod(z)（反解 9.76 Mpc）",
+    "secondary": [
+     {
+      "cause": "z 值不同",
+      "detail": "模板 z=0.0022016 vs 库 z=0.0022（Planck18.distmod 差 0.0016 mag）"
+     },
+     {
+      "cause": "参考系项",
+      "detail": "CMB 参考系改正：z_cmb − z_helio = -0.000993"
+     }
+    ],
+    "alert": "CA-13"
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
-    "catalog_rows": null,
+    "catalog_rows": [],
     "filter_vendor": null
    },
    "deleted": null,
@@ -849,7 +1012,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": "c968890d1b06cd134715750337886c20e22833d226185b0b7e1ff1a07c5735d0",
    "row_ledger": {
@@ -957,11 +1120,32 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 35.8444,
+    "engine_distance": {
+     "d_L_Mpc": 147.53051958814962,
+     "d_L_err_Mpc": null,
+     "kind": "cosmological",
+     "z": 0.032496132616115725,
+     "z_err": null,
+     "mu": 35.8444,
+     "cosmology": "Planck18",
+     "source": ""
+    },
+    "counterpart_id": "GRB060218A",
+    "ok": true,
+    "catalog": 35.885,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.0331,
+    "delta": -0.0406,
+    "cause": "口径项",
+    "detail": "宇宙学距离口径（350 km/s 本征速度项 + CMB 参考系，z_cmb=0.0324961）",
+    "secondary": []
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
-    "catalog_rows": null,
+    "catalog_rows": [],
     "filter_vendor": null
    },
    "deleted": null,
@@ -988,7 +1172,7 @@
     "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
     "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
-    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+    "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
    "rows_sha256": null,
    "row_ledger": null,
@@ -1030,7 +1214,33 @@
      }
     }
    },
-   "mu": null,
+   "mu": {
+    "engine": 37.1846,
+    "engine_distance": {
+     "d_L_Mpc": 273.47330069552254,
+     "d_L_err_Mpc": null,
+     "kind": "cosmological",
+     "z": 0.0591,
+     "z_err": 0.0001,
+     "mu": 37.1846,
+     "cosmology": "Planck18",
+     "source": ""
+    },
+    "counterpart_id": "GRB100316D",
+    "ok": true,
+    "catalog": 37.219,
+    "catalog_source": "transients.gext_distmod",
+    "catalog_redshift": 0.06,
+    "delta": -0.0344,
+    "cause": "z 值不同",
+    "detail": "模板 z=0.0591 vs 库 z=0.06（Planck18.distmod 差 -0.0342 mag）",
+    "secondary": [
+     {
+      "cause": "口径项",
+      "detail": "宇宙学距离口径（350 km/s 本征速度项）"
+     }
+    ]
+   },
    "state": "fresh",
    "stale_because": {
     "engine_inputs": [],
