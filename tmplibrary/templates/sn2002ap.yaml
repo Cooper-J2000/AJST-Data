@@ -1,0 +1,240 @@
+schema: chromashift-template-1
+id: sn2002ap
+label: "SN 2002ap (type Ic-BL / hypernova in M74)"
+object_class: core-collapse-BL-Ic
+
+redshift:
+  value: 0.0022016
+  error: 0.0000067
+  error_kind: line-precision
+  frame: heliocentric
+  source: >-
+    GCN 1248 (Klose, Guenther & Woitas for the TLS Tautenburg 2-m echelle team,
+    R = 70 000): "we detect an absorption feature at a heliocentric velocity of
+    (660 +- 2) km/s what we attribute to redshifted NaI D1 at the velocity of the
+    host".  The host Na I D absorption is this template's redshift:
+    z = v/c = 660/299792.458 = 0.0022016, the quote's +-2 km/s giving
+    +-0.0000067, and the frame is the GCN's own word, heliocentric.  At 660 km/s
+    the relativistic inversion differs from v/c by 2.2e-6 -- inside the quoted
+    error -- so the non-relativistic reading is the one the circular itself makes.
+    v1 carried 0.002 with no source behind it; this is the spectroscopic value,
+    error and frame, quoted rather than transcribed.
+
+    The +-2 km/s is a 1-sigma, on the evidence the circular itself gives: a printed
+    uncertainty on one absorption-line centroid from an R = 70 000 echelle spectrum,
+    which is 2/299792.458 = 6.7e-6, the smallest spectroscopic precision of any template
+    here. It is also independent of the peculiar-velocity term, being a
+    wavelength-solution residual rather than a motion (docs/VERIFICATION.md sect. 13
+    works why those are separate unknowns). It enters no error budget and cannot: this
+    template's distance is Tully-Fisher, so it is not computed from this redshift, and
+    `Distance.distance_error_mag` adds the 350 km/s velocity term only for
+    `kind: cosmological`.
+  position:
+    # SN 2002ap, in M74 (NGC 628).  The host is the line of sight: the redshift comes
+    # from the host's Na I D absorption, so the host's position is the right direction
+    # to project the observer's motion onto, and the supernova sits 258" west and 108"
+    # south of the galaxy centre -- 4.6e-7 rad, i.e. 6e-10 in this correction, which is
+    # not a thing to argue about.  Cross-checked against astropy's name resolver, which
+    # returns the same entry.
+    ra_deg: 24.099375
+    dec_deg: 15.753667
+    frame: ICRS
+    epoch: J2000
+    uncertainty_arcsec: 1.0
+    source: >-
+      SIMBAD (CDS) record for SN 2002ap, ICRS ep=J2000, quoting
+      `01 36 23.85 +15 45 13.2` at quality D with an error ellipse of
+      [1000 1000 90] mas, reference 2002IAUC.7810....1N -- IAU Circular 7810, the
+      discovery announcement by Y. Li (Wise Observatory) for the supernova in M74.
+      The 1" carried here is the round number above that 0.09" major axis, not a
+      measurement of this template's table.  Read from SIMBAD on 2026-09-26; the
+      discovery paper (Mazzali et al. 2002, ApJ 572, L61,
+      DOI 10.1086/341838) was not read for a position, so this is the circular's
+      number as curated by SIMBAD and not an independent re-measurement.
+
+distance:
+  kind: measured-secondary
+  mu: 30.24
+  mu_err: 0.47
+  source: >-
+    The kind is `measured-secondary` and not `measured`, and the difference is not
+    cosmetic: `measured` means a primary distance indicator in the vocabulary
+    `snredshift.distance` defines (TRGB, Cepheids, RR Lyrae, SBF, the fundamental
+    plane, a standard siren), and a Tully-Fisher modulus is calibrated against those
+    rather than independent of them, so its calibration uncertainty is already inside
+    the quoted error.  No Cepheid or TRGB determination for M74 could be found in this
+    round, so this is the best available *and* a secondary one; a caller who needs only
+    primary determinations should filter on `kind`.
+    Gal-Yam et al. 2002, MNRAS 332, L73, DOI 10.1046/j.1365-8711.2002.05535.x:
+    "Tully (1988), mu = 30.24 for H0 = 65" -- a distance modulus for M74 adopted
+    verbatim from that line.  mu_err is deliberately NOT a statistical error:
+    half the gap to the other published modulus for this host -- GCN 1238 (Berger
+    et al.) writes "Given the distance modulus of M74 of 29.3" -- so
+    mu_err = (30.24 - 29.30)/2 = 0.47, a declared spread between two literature
+    values (11.2 Mpc against 7.2 Mpc) rather than a sigma, and it is documented
+    as such so no reader mistakes it for one.  The cosmological branch is not an
+    option here and needs no allow_low_z flag: at z = 0.0022 the peculiar-velocity
+    guard (0.02) refuses it outright, which is the guard doing its job -- 660 km/s
+    of host/halo motion is not a Hubble-flow measurement, and a cosmological
+    distance at this redshift would be the model pretending to be data.
+
+photometry:
+  file: sn2002ap_raw.csv
+  layout: long
+  time:
+    column: time
+    unit: mjd
+    frame: observer
+    epoch_zero:
+      kind: first_point
+      source: >-
+        The vendored table's first row, which is also its minimum time: B =
+        14.417 +- 0.023 at MJD 52304.17 (source column: 2003PASP..115.1220F).
+        t = 0 is therefore a table fact, not an invented date -- and no 0.40 d
+        offset is invented on top of it, which is what v1's origin did and no
+        source ever supported.  Cross-check, not input: Gal-Yam et al. place
+        B maximum on Feb 7.1 UT (+2/-1.3 d), about eight days after this zero
+        point, which is where the curve's own brightest B row should land.
+  band:
+    column: band
+    map:
+      U: U
+      B: B
+      V: V
+      R: R
+      I: I
+    system_map:
+      U: johnson-cousins
+      B: johnson-cousins
+      V: johnson-cousins
+      R: johnson-cousins
+      I: johnson-cousins
+  value:
+    column: magnitude
+    error_column: e_magnitude
+    unit: mag
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [T, true, "1", y]
+    require_error: false
+
+validity:
+  t_min_days: 0.0
+  t_max_days: 520.4
+  require_min_bands: 2
+  require_min_epochs: 3
+  notes: >-
+    t_min/t_max are rest-frame days: the build dilates observer-frame times by
+    (1+z) before the strict test (`t_rest < t_min`, `t_rest > t_max`).  t = 0 is
+    the first row (by construction of first_point), which dilation leaves at
+    exactly 0 -- immune to a strict `<` -- while the last detection row sits at
+    +521.43 d observer, i.e. 520.2845 d at z = 0.0022016, so the bounds pad just
+    past those (0.0, 520.4; tail pad 0.1155 d).  This is a heterogeneous
+    compilation by nature -- 14 distinct source-column combinations across 1855
+    rows (Foley 2003 PASP, Gal-Yam 2002 MNRAS, Pian 2003 MNRAS, Yoder 2003 ApJ,
+    Bloom 2014 ApJS, Tomita 2006 ApJ, VSNET, the Sternberg catalogue, and 53 rows
+    reading "Unknown,?") -- so the table brings its own expected losses, all of
+    them countable in advance: 137 `C` (clear/unfiltered) rows that no filter
+    registry can map, duplicate epochs where overlapping reductions re-tabulate
+    the same night (the build's per-band epoch merge reports them, and the mixed
+    quoted/missing error bars inside those groups are counted separately as
+    error-bar-discarded-by-epoch-merge), 1026 rows without error bars (hence
+    require_error: false -- requiring them would delete half the table on a coin
+    flip), and exactly one upper-limit row: the `upperlimit` column is empty on
+    1854 of the 1855 rows and reads `y` on one, Tomita's I-band point at MJD
+    52866.49, 21.5 mag, which carries no error bar either.  The flag gate removes
+    that row on the flag before the time gate ever sees it, which is why t_max
+    above is set by the last *detection* row instead -- and why the surface holds
+    no upper limit at all.
+    `window_bands: [B, V, R, I]` is gone.  Its purpose was to hold the window at
+    I's last epoch (391.2 d) and drop U, which stops at 38.84 d; under the
+    per-epoch rule U is simply a node over those 38.84 d and the surface carries
+    it.  `qc.audit` now reads `span_days` 0 -- 520.285 d (V reaches 520.28, R
+    513.04, B 519.29, I 391.52, U 38.84), five nodes, and `t_valid`
+    0 -- 512.322 d with 513.04 d thick and 7.25 d thin -- the thin part being the
+    stretch past I's last epoch, where fewer than `require_min_bands: 3` bands are
+    nodes and the surface refuses rather than answering from two anchors.
+    `qc.excluded_bands` is empty: every cleaned band is a node somewhere.  One
+    property of the five belongs in the manifest rather than only in the sidecar:
+    every one of them has a raw intra-band colour term over the 0.15 mag cap (R
+    0.3911, B 0.2842, I 0.2303, V 0.1882 mag in `colour_term_size_mag`) and every
+    one is on the surface anyway, because B6 corrected all five nodes down to final
+    residuals of 1.3e-4 mag and below, and the admission rule drops only bands B6
+    refuses -- `not_corrected` and `band_admission.excluded` are both empty.  That
+    is the intended reading of the cap rather than a breach of it, but it is also
+    why a caller should treat this unfolded surface as B6-corrected throughout:
+    over a 512-day window the fit is doing real work, and those quoted colour
+    terms are the size of the bias it had to remove, not the size of what is left.
+    The count that actually matters for a 1855-row, 520-day light curve is
+    therefore the t_max paragraph above, not the node list: 1026 of the rows carry
+    no error bar at all, and 5 Tomita rows land on a (time, band) epoch another
+    stream already tabulated -- the per-band epoch merge collapses them, their
+    magnitudes agreeing to 0.01-0.03 mag -- so the surface holds fewer independent
+    epochs than the row count suggests, and the per-band merge ledger in the QC is
+    where that is visible.
+
+    `require_min_bands` moved from 3 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 3 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [0, 391.2] against a union span of
+    [0, 520.3], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: unknown
+  host_removed: unknown
+  source: >-
+    The table carries no extinction flag of any kind (columns: event, time,
+    magnitude, e_magnitude, upperlimit, band, instrument, telescope, source), so
+    what its 14 source streams did to their photometry cannot be read off the
+    rows: both states stay `unknown`.  The literature is on the record and is
+    quoted here without being promoted into a declaration.  Galactic, from
+    Gal-Yam et al. 2002: per-band corrections A_U = 0.387, A_B = 0.307,
+    A_V = 0.236, A_R = 0.190, A_I = 0.138 (A_V = 0.236 is E(B-V) = 0.076 under
+    R_V = 3.1 -- the sky's foreground, not this table's provenance).  Host, from
+    GCN 1248: from "an equivalent width of (30 +- 5) milli-Angstrom" they derive
+    "a reddening in the supernova host of E(B-V) = (0.008 +- 0.002) mag",
+    "in agreement with A_V (host) = (0.025 +- 0.005) magnitudes" -- i.e. the host
+    term is small but NOT zero, which is exactly the case `unknown` protects: a
+    table that quietly removed it and a table that quietly kept it are
+    indistinguishable here, and declaring either direction would be an invention.
+
+stretch:
+  supported: false
+  note: "No stretch law exists for core-collapse Ic-BL / hypernova light curves (THEORY S5); `supported: false` refuses the parameter rather than defaulting it to a value measured on another class."
+
+provenance:
+  grade: system-per-band-declared
+  citations:
+    - "Gal-Yam et al. 2002, \"Supernova 2002ap: the first month\", MNRAS 332, L73-L77, DOI 10.1046/j.1365-8711.2002.05535.x.  Distance modulus, B-maximum anchor and the per-band extinction figures; read in full.  (Journal reference confirmed against Crossref this build: L73, not the L77 sometimes seen for the same paper's last page.)"
+    - "GCN 1248 (Klose, Guenther & Woitas et al. 2002): host redshift from the (660 +- 2) km/s Na I D absorption and the host E(B-V)/A_V estimates from the (30 +- 5) mA equivalent width; read in full."
+    - "GCN 1238 (Berger et al. 2002): the competing distance modulus for M74, \"Given the distance modulus of M74 of 29.3\" -- the far side of mu_err's half-gap; read in full."
+    - "Tomita et al. 2006, \"The Optical/Near-Infrared Light Curves of SN 2002ap for the First 1.5 Years after Discovery\", ApJ 644, 400-408, DOI 10.1086/503554.  Publisher of the 74 B/V/R/I rows appended to the vendored table (source column 2006ApJ...644..400T) -- the late-time tail those rows trace is what now sets t_max, at 520.2845 d rest.  Its 46 J/H/K rows are NOT vendored (see the caveat on the missing magnitude-system statement); read in full."
+    - "table source column: 14 combinations of ADS bibliography codes (2003PASP..115.1220F, 2002MNRAS.332L..73G, 2003MNRAS.340..375P, 2003ApJ...592..467Y, 2014ApJS..213...19B, 2006ApJ...644..400T, VSNET 2003, Sternberg Supernova Light Curve Catalogue, SUSPECT) plus 53 rows reading \"Unknown,?\" (as compiled in the AJST catalogue)."
+  caveats:
+    - "Classification: Gal-Yam's title class and the \"type Id\" wording in the early reports sit between Ib/Ic-BL; object_class records core-collapse-BL-Ic as the settled reading of the modern literature, and the hypernovae caveat travels with it."
+    - "mu_err = 0.47 is half the gap between two published moduli (30.24 vs 29.30), NOT a statistical error -- stated in `distance.source` and repeated here so it cannot be mistaken downstream for a 1-sigma distance error."
+    - "137 `C` (clear/unfiltered) rows are rejected as unmapped-band: no response curve can be named for an unfiltered channel, and inventing one would fabricate the very band integrals this package exists to refuse."
+    - "The paper does not restate a magnitude system for its photometry (no Vega/AB statement in the text as read); Johnson-Cousins UBVRI declared Vega is the convention of that filter set and this manifest's declared choice, flagged as one."
+    - "Tomita et al. 2006 also tabulate J, H and K (46 rows: J 15, H 19, K 12), and those rows are deliberately NOT vendored: the paper as read states no magnitude system for them -- no Vega, no 2MASS, no AB -- so appending them would have put near-infrared points on this table's declared Vega UBVRI scale on the strength of a filter name alone.  46 rows were dropped rather than 46 rows invented onto the wrong zero point; the B/V/R/I rows from the same table carry the same filter-set convention as the rest of the compilation and are appended."
+    - "Five appended Tomita rows land on a (time, band) epoch another stream already tabulated -- V@52437.61, B@52438.60, R@52439.60, I@52441.60, I@52443.60 -- with magnitudes agreeing to 0.01-0.03 mag; the per-band epoch merge collapses them and reports them as duplicate-epoch-merged, which is the honest reading (two reductions of one night, not two nights).  Two further Tomita R rows (52525.41, 52533.54) fall on the same night as an existing R epoch but 0.46 and 0.57 d away from it, differing by 0.13 and 0.29 mag; exact (time, band) equality is the merge criterion, so those stay as separate epochs and the surface carries both.  A reader comparing this table against the pre-append compilation should expect the epoch count to grow by less than the row count."
+
+notes: >-
+  v1 kept this object's photometry in 2002ap_inter.csv, a pre-interpolated file
+  that no branch could reach -- an orphan produced by the v1 elif-chain, and one
+  of the two reasons the extension point was rebuilt as manifest-plus-build.  The
+  raw table (1855 rows) is vendored as it stands: no sentinel magnitudes (values
+  run 12.04-22.8), no hand-pruned outliers, no de-duplicated epochs -- the
+  loader's gates do the rejecting, per band, with reasons the QC can print.
+  The 12.04-22.8 range is the union over the whole table, not over any one
+  band, and it widened on append rather than by editing a value: 12.04 is Bloom's
+  I-band maximum epoch and 22.8 is a Tomita B-band point at MJD 52823.6 carrying
+  a 1.36 mag error, well past where the earlier compilations stop.  The fainter
+  end of that range is also the least certain part of the light curve, which is
+  exactly why the appended tail needed a longer window to be usable at all.

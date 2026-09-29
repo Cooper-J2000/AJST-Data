@@ -1,0 +1,194 @@
+schema: chromashift-template-1
+id: sn2010bh
+label: "SN 2010bh / XRF 100316D (Ic-BL supernova with a nearby X-ray flash)"
+object_class: core-collapse-BL-Ic
+
+redshift:
+  value: 0.0591
+  error: 0.0001
+  error_kind: line-scatter
+  source: >-
+    Cano et al. 2011, ApJ 740, 41, DOI 10.1088/0004-637X/740/1/41
+    (arXiv:1104.5141), introduction: "The redshift was measured to be
+    z = 0.0591 +- 0.0001 (Vergani et al. 2010a; Starling et al. 2011; Chornock
+    et al. 2010)" -- Cano et al. are repeating those three groups' measurement,
+    so they are the ultimate origin of the digits quoted here.  Adopted verbatim,
+    error included.  The paper states no reference frame, so `frame` stays
+    undeclared rather than assumed.  Cross-check in the same paper: "For this
+    cosmology a redshift of z = 0.0591 corresponds to a luminosity distance of
+    d_L = 261 Mpc and a distance modulus of 37.08" -- a self-consistent pair
+    (mu(261 Mpc) = 37.083), used only as a cross-check in docs/VALIDATION.md,
+    never as an input.
+
+    Where the +-0.0001 comes from, since Cano+2011 only repeat it: Starling et al.
+    2011, MNRAS 411, 2792, DOI 10.1111/j.1365-2966.2010.17879.x (arXiv:1004.2919), the
+    Swift discovery paper, carry the same number in the abstract and in the body, where
+    it reads "From the 12 brightest lines we measure the redshift z = 0.0591 +- 0.0001".
+    So it too is a scatter among narrow lines rather than a single-line centroid error
+    -- but unlike Sollerman+2006's it is *small*, 30 km/s, tight enough that twelve
+    lines agree to it and an order of magnitude below the 150 km/s the 350 km/s floor
+    contributes at this redshift. A line-to-line scatter and a bulk peculiar velocity
+    are independent unknowns, so the two would combine in quadrature; they are not
+    combined, because the effect is 0.0002 mag on this template's 0.0429, below every
+    precision this repository reports. The rule is recorded in
+    docs/VERIFICATION.md sect. 13; the arithmetic is not worth a schema change.
+
+distance:
+  kind: cosmological
+  source: >-
+    z = 0.0591 sits well above the peculiar-velocity guard (0.02), so the
+    cosmological branch is the defensible one; the default cosmology is used and
+    named in every result's provenance block via `constants.DEFAULT_COSMOLOGY_NAME`.
+    The pair quoted under `redshift` (d_L = 261 Mpc, mu = 37.08) is a cross-check,
+    not an input: Cano et al. derived it under their own adopted cosmology, and
+    docs/VALIDATION.md compares this build's distance against that number rather
+    than borrowing theirs -- borrowing would smuggle a second cosmology into a
+    package that has exactly one, and the disagreement would then be invisible.
+
+photometry:
+  file: sn2010bh.csv
+  layout: long
+  time:
+    column: time
+    unit: mjd
+    frame: observer
+    epoch_zero:
+      kind: fixed
+      value: 55271.531134
+      source: >-
+        The Swift trigger: "XRF 100316D was detected by Swift on the 16th March,
+        2010 at 12:44:50 UT" (Cano et al. 2011, ApJ 740, 41), i.e.
+        2010-03-16 12:44:50 UT = MJD 55271.531134.  The table lands on it: its
+        earliest row sits at t = +0.46600026 d and its last at t = +57.35800026 d,
+        both relative to this instant, so t = 0 is the burst, not a fit.
+  band:
+    column: band
+    map:
+      B: B
+      V: V
+      R_c: Rc
+      i: i
+      z: z
+    system_map:
+      B: vega
+      V: vega
+      R_c: vega
+      i: ab
+      z: ab
+  value:
+    column: magnitude
+    error_column: e_magnitude
+    unit: mag
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [T, true, "1", y]
+    require_error: true
+
+validity:
+  t_min_days: 0.4399
+  t_max_days: 54.16
+  require_min_bands: 2
+  require_min_epochs: 3
+  notes: >-
+    t_min/t_max are rest-frame days: the build dilates observer-frame times by
+    (1+z) before the strict test (`t_rest < t_min`, `t_rest > t_max`).  The
+    declared span tracks the paper's own 69-row table (t = 0 is the Swift trigger;
+    earliest row +0.46600026 d, latest +57.35800026 d observer), which at
+    z = 0.0591 dilates to 0.4399965 ... 54.15730 d; the bounds pad just past
+    those (0.4399, 54.16; pads 9.65e-5 d and 2.7e-3 d) so an exact-equality float
+    cannot drop the first or last row -- boundary precision, not science, and
+    flagged as such.  Declared as the observer literals (0.466, 57.36), the same
+    strict test would reject the opening rows, which dilate below their own t_min.
+    Either way it is the table's span, not the span the surface has nodes over.
+    `window_bands: [B]` is gone, and so is the argument it supported: that B's
+    coverage (0.56 -- 32.02 d) is the widest interval three bands can span here,
+    that R_c and i both open earlier and close later so they span B's interval,
+    and that pinning R_c or i instead would leave two bands against a
+    `require_min_bands: 3` floor.  Under the per-epoch rule that question has no
+    answer to give: B is a node over its own 31.5 d, R_c and i over their own
+    53.7 and 53.5, and V -- which could not span a window opening at B's first
+    epoch and used to leave for that reason -- is a node for 29.0 d.
+    `qc.audit` now reads `span_days` 0.44 -- 54.157 d, five nodes (z, i, Rc, V,
+    B), `band_active_days` Rc 53.72 and i 53.48, B 31.49, V 29.04, z 4.72, and
+    `t_valid` 0.452 -- 33.446 d with 33.31 d thick and 20.40 d thin.  The thin 20
+    days are the price of the union span: past 33.4 d only i and Rc are still
+    measuring and `require_min_bands: 3` is not met, so the tail to day 54 is
+    refused rather than answered from two anchors.  `qc.excluded_bands` is empty
+    -- every cleaned band is a node somewhere -- and the two the old rule dropped
+    as window losses (V, z) are on the surface for 29.0 and 4.7 d of it.
+    Two properties of what is carried belong here rather than only in the
+    sidecar.  R_c and z are `mono` nodes (`mode_by_band`), so a prediction
+    quoted in either is the delta-band limit and the surface's curve-backed count
+    is three, not five.  And B's raw colour term is 0.1851 mag, over the 0.15 mag
+    cap: B is on the surface only because B6 corrected that node by 0.0905 dex to
+    a final residual of 2.2e-4 mag, and the admission rule drops only what B6
+    refuses, so the cap is not being bent -- `colour_term_size_mag` and
+    `final_residual_mag` in the sidecar carry both halves of that argument.
+
+    `require_min_bands` moved from 3 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 3 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [0.4523, 33.45] against a union span of
+    [0.44, 54.16], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: true
+  host_removed: false
+  source: >-
+    Three statements inside one paper describe (essentially) the same light-curve
+    magnitudes and do not agree, so all three are recorded here instead of being
+    averaged into one.  (1) Table 2 -- "Ground-based Photometry", the very rows
+    vendored here -- carries the panel note "All magnitudes have been corrected
+    for foreground extinction."  (Table 1's HST panel and Table 3's panel carry
+    the same sentence.)  The Milky Way term was removed -> mw_removed: true.
+    (2) The paper's analysis products apply more: the Figure 1 caption says "All
+    of the SN 2010bh light curves have been corrected for foreground and host
+    extinction", section III.1 says the image-subtracted light curves "have been
+    corrected for foreground and host extinction (see Section 4)", and the
+    abstract estimates what was applied there -- "We estimate the rest-frame
+    extinction of this event from our optical data to be E(B-V) = 0.18 +- 0.08
+    mag", which section IV then uses: "Using the value E(B-V) = 0.18 +- 0.08 mag,
+    we have calculated the absolute magnitudes for SN 2010bh".  (3) Table 4's
+    footnote says the opposite of its apparent column: "Apparent magnitudes are
+    not corrected for foreground or host extinction.  Absolute magnitudes are
+    extinction corrected (foreground & host)."  Table 4's peak apparent
+    magnitudes are read off the same light curves as (1), so (1) and (3) cannot
+    both be true of them.  The declarations follow (1): it is the note attached
+    to the exact rows this manifest vendors -> mw_removed: true,
+    host_removed: false -- nothing in the paper says the Table 2 rows had the
+    host term applied; section IV instead decomposes the dust used for the
+    absolute magnitudes (Schlegel foreground E(B-V) = 0.117; Starling et al.
+    combined 0.178; implying a rest-frame host E(B-V) = 0.061).  The conflict is
+    flagged for the delivery report, not settled here: no gate and no formula
+    depends on it, but every point this template makes inherits whichever
+    reading is wrong.
+
+stretch:
+  supported: false
+  note: "No stretch law exists for core-collapse Ic-BL light curves (THEORY S5); `supported: false` refuses the parameter rather than defaulting it to a value measured on another class."
+
+provenance:
+  grade: system-per-band-declared
+  citations:
+    - "Cano et al. 2011, \"XRF 100316D/SN 2010bh and the nature of gamma-ray burst supernovae\", ApJ 740, 41, DOI 10.1088/0004-637X/740/1/41, arXiv:1104.5141.  Redshift, trigger epoch, the 69-row table itself and every extinction statement come from this one paper; read in full."
+    - "Venue cross-check: the vendored table's own source column is 2011ApJ...740...41C on 69 of 69 rows -- the bibcode resolves to the same ApJ 740, 41 record (DOI above), so table and paper are the same object, not a re-compilation of it."
+  caveats:
+    - "Table 2 states its system row by row in a `Calibrated to` column (Vega or AB); the vendored CSV dropped that column, so `system_map` re-declares it from the paper, cross-tabulated row by row: B, V, R_c are Vega (50 rows: B 14, V 11, R_c 25), i and z are AB (19 rows: i 16 from FTS/GS, z 3 from GS).  The AB rows therefore get no Vega->AB shift -- declaring them Vega-like would double-convert the table against its own statement by +0.335 mag (i) and +0.495 mag (z)."
+    - "`vega` and `johnson-cousins` are the same gate for these rows: both are VEGA_LIKE in systems.py and the shift comes from the band record, not the label (B -0.145, V -0.022, Rc +0.176; registry grade DOC, carried in provenance).  `R_c` resolves to the curve-less `Rc` record (OSN/Johnson.Cousins_R2); a non-zero offset on a curve-less record is the registry's documented nominal guess, reported by the audit's grade rather than refused."
+    - "The extinction declarations conflict inside the source (three passages that cannot all be true of the same light-curve magnitudes); see `reddening.source` for all three quotes and the reasoning that chose mw: true / host: false rather than the reverse."
+    - "The z band carries exactly three epochs -- exactly require_min_epochs: 3.  The floor is stated, not tuned to fit it: one bad row and that band leaves the surface, and the QC would show it as excluded rather than the window quietly moving."
+
+notes: >-
+  The vendored table is the paper's own photometry machine-read as it stands:
+  69 rows, one bibcode, no missing error bars, no sentinel magnitudes, and an
+  `upperlimit` column that exists and is empty -- declared anyway, so that a
+  future row flagged `y` is rejected by the flag gate instead of being plotted
+  as a measurement (undeclared columns are invisible to the QC, which is what
+  made v1's `mag = 30` sentinels survivable).

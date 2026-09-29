@@ -1,0 +1,175 @@
+schema: chromashift-template-1
+id: ep250108a
+label: "EP250108a (X-ray flashed optical transient, blue and fast)"
+object_class: EP-XRF
+
+redshift:
+  value: 0.176
+  error: 0.002
+  error_kind: line-scatter
+  frame: heliocentric
+  source: >-
+    Read off the discovery paper this table's own reference column names, Li, Zhu,
+    Zou et al. 2025, "An extremely soft and weak fast X-ray transient associated with
+    a luminous supernova", arXiv:2504.17034: "detected by the Einstein Probe (EP) in
+    the soft X-ray band at redshift z = 0.176", with the spectroscopic redshift
+    attributed there to Zhu et al. 2025, TNS AstroNote 17 (VLT/X-shooter).  The
+    supernova's own template fit is quoted in the same paper as z = 0.17 +- 0.01
+    (Keck/LRIS, matched with GELATO and Superfit), which agrees.  The host's own narrow
+    emission lines give the better of the paper's two measurements, and the one that
+    matches the adopted value: "Spectra revealed strong, narrow emission lines from the
+    host, allowing for a measurement of z = 0.176 +- 0.002" (sect. 0.5), and +-0.002 is
+    the error adopted here.  It is a 1-sigma by the paper's own statement rather than
+    by the shape of the print -- Table 1's caption reads "Errors represent the 1sigma
+    uncertainties" -- which is the test docs/VERIFICATION.md sect. 13 applies before any
+    quoted +- is treated as a standard deviation.  The +-0.01 is not the number carried:
+    at 3000 km/s it is a template-matching tolerance, not a measurement precision, and
+    carrying it would have overstated this template's distance uncertainty fivefold.
+    Recorded, not propagated: 0.002 in z is 600 km/s and would enter
+    `Distance.distance_error_mag` in quadrature with the 350 km/s floor for +0.0006
+    mag, which is why sect. 13 declines to fold it in.  Graded below the other three templates' redshifts:
+    the number was read off the source, but the only identifier the source carries in
+    arXiv's own record is the auto-assigned `10.48550/...`, which certifies no
+    refereeing -- so it is quoted here as read, and kept out of test expectations.
+    v1 carried the same 0.176 with no source at all.
+  position:
+    # EP250108a = SN 2025kg.  This is the EP/WXT trigger position, and its 2.2' error
+    # radius is carried into the correction's error budget rather than rounded away: it
+    # is 6.4e-4 rad, worth 7.9e-7 in z_p, which is 0.15 % of the 5e-4 line-of-sight
+    # term and therefore not negligible next to it.  The optical counterpart sits on a
+    # faint host (r ~ 23.2) that the same paper gives no astrometric position for, so
+    # the trigger position is what there is.
+    ra_deg: 55.623
+    dec_deg: -22.509
+    frame: ICRS
+    epoch: J2000
+    uncertainty_arcsec: 132.0
+    source: >-
+      Srinivasaragavan et al. 2025, arXiv:2504.17516v1, section II.1, read in full:
+      "The WXT on EP triggered on EP 250108a on UT 2025-01-08 12:30:28.34, at a
+      location alpha (J2000) = 55.623 degrees and delta (J2000) = -22.509 degrees,
+      with an uncertainty radius of 2.2 arcminutes [90]" -- [90] being the GCN.
+      arXiv:2504.17034 (Li, Zhu, Zou et al., the discovery paper this template's
+      reference column already names) is the same event but quotes no position in its
+      abstract, so it is not the source of this coordinate.
+
+distance:
+  kind: cosmological
+  source: >-
+    z = 0.176 is far above the peculiar-velocity guard, so a cosmological luminosity
+    distance is the right choice and the default cosmology is used and named: it is
+    `constants.DEFAULT_COSMOLOGY_NAME`, whose value the build records in every result's
+    provenance block.  Its
+    error term is therefore the peculiar-velocity floor alone (350 km/s over c z, i.e.
+    0.014 mag), not a distance-indicator error: at this redshift the Hubble flow is
+    defensible, which is what makes the guard's z < 0.02 refusal meaningful rather
+    than arbitrary.
+
+photometry:
+  file: EP250108a.csv
+  layout: long
+  time:
+    column: time
+    unit: s
+    frame: observer
+    epoch_zero:
+      kind: fixed
+      value: 0.0
+      source: "Seconds since the trigger, as tabulated in the compiled table."
+  band:
+    column: band
+    map:
+      Mephisto-u: Mephisto-u
+      Mephisto-v: Mephisto-v
+      Mephisto-g: Mephisto-g
+      Mephisto-r: Mephisto-r
+      Mephisto-i: Mephisto-i
+      Mephisto-z: Mephisto-z
+      q: q
+      uvot-u: uvot-u
+      uvot-uvw1: uvot-uvw1
+      uvot-uvw2: uvot-uvw2
+  value:
+    column: flux
+    error_column: eflux
+    unit: mag
+    system_column: system
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [y, T, true, "1"]
+    discard_column: discard
+    discard_true_values: [y, T, true, "1"]
+    require_error: false
+
+validity:
+  t_min_days: 0.5
+  t_max_days: 52.0
+  require_min_bands: 2
+  require_min_epochs: 4
+  notes: >-
+    Deliberately includes Mephisto and `q` bands, which the filter registry carries
+    as `type: guess` nominal wavelengths with no response curve.  They can only enter
+    as delta-bands, so this template is the case that exercises the mono path and
+    shows what its warning means in practice: a prediction in those bands has no
+    colour term at all, measured or otherwise.
+    There is no `window_bands` here and the knob is gone, which removes the
+    deadlock the previous note argued at length.  The old rule intersected the
+    bands' coverages and needed two anchors that every other band could span; here
+    the anchors that cannot be refused are the mono `type: guess` columns, and the
+    one whose red edge is latest (Mephisto-g, 43.37 d) anchored a window that no
+    band could span, which is exactly the kind of silent narrowing the knob invited.
+    Under the per-epoch rule the question dissolves: each band is a node over its
+    own coverage, so a late-starting column contributes where it has data instead of
+    shortening everything else.
+    What the sidecar records for the surface built that way: `span_days`
+    0.825 -- 43.367 d, nine nodes (z, B, V, g, Mephisto-g/i/r/u/v), and
+    `band_active_days` in which Mephisto-g holds for 42.54 d, Mephisto-r 40.00,
+    z 41.88, g 41.37, Mephisto-i 11.13, B 9.43, V 9.45, and Mephisto-u and
+    Mephisto-v 2.60 each.  `t_valid` is 0.825 -- 42.815 d with 42.27 d thick and
+    0.28 d thin, so the 33-day decline the old count-first window could not reach
+    is now inside the surface, and the four B/UVOT columns the old window had cut
+    at either edge are in it too.
+    `qc.excluded_bands` is [H, I, J, R, i, q, r, uvot-u, uvot-uvw1, uvot-uvw2]
+    and the reasons split two ways.  I, R, i and r are `colour-term-above-max`
+    (0.771, 0.238, 0.161 and 0.396 mag), with B6 refusing to repair those nodes.
+    H (1 row), J (1), q (2), uvot-u (2), uvot-uvw1 (1) and uvot-uvw2 (1) are
+    `too-few-epochs-for-a-node`: one or two points cannot pin a node anywhere, and
+    `q` is one of the curve-less columns besides.  V and g are on the surface *and*
+    in `unfold.not_corrected`, which is the documented pair of facts -- B6 refused
+    the node, so it kept its delta-band value and the mismatch it leaves is
+    published in `unfold_residual_mag` and budgeted as `sed_residual`.
+reddening:
+  mw_removed: false
+  host_removed: unknown
+  source: >-
+    Read off the table itself: the `Gext_corr` column is `n` for all 299 rows, i.e.
+    the compiling source states that Galactic extinction was NOT removed.  The
+    surface built from this table therefore already contains the Milky Way term, and
+    passing `mw_E_B_V` to `predict` would apply it a second time.  Nothing in the
+    table speaks to host dust in the same way, so `host_removed` is unknown rather
+    than false.
+stretch:
+  supported: false
+  note: "No stretch law exists for this class; it is too young to have one."
+
+provenance:
+  grade: mixed-band-quality
+  citations:
+    - "table reference column: 10.48550/arXiv.2504.17034 (as compiled in the AJST catalogue)"
+    - "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))"
+  caveats:
+    - "Mephisto-u/v/g/r/i/z and `q` are nominal-wavelength guesses in the registry
+       (no T(nu)); every band-integrated quantity is unavailable for them by
+       construction."
+    - "The table's own `system` column says AB for all 299 rows, so no Vega->AB shift
+       is applied here."
+    - "`Gext_corr: n` means the compiled magnitudes are *not* corrected for Galactic
+       extinction.  That dust is therefore inside this template's surface, not
+       outside it: the remedy is a corrected table (or a build that subtracts the
+       term before inverting), not a `reddening=` argument at prediction time, which
+       would count the same extinction twice."
+
+notes: >-
+  v1's branch for this object read a pre-interpolated file that was 99% NaN.  The
+  raw table has 299 rows and a real time column in seconds; the only genuinely
+  limiting thing about it is the filter knowledge.

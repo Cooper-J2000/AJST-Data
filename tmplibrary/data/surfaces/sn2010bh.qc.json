@@ -1,0 +1,278 @@
+{
+ "audit": {
+  "file": "data/raw/sn2010bh.csv",
+  "file_sha256": "15da5491836e884861dfec9ee8388f22eaa02723705b122465b9778a060f2c35",
+  "rows_in": 69,
+  "rejections": {},
+  "band_epochs": {
+   "B": 14,
+   "Rc": 25,
+   "V": 11,
+   "i": 16,
+   "z": 3
+  },
+  "rows_kept": 69,
+  "time_frame": {
+   "declared": "observer",
+   "dilation_applied": true,
+   "one_plus_z_template": 1.0591,
+   "n_epochs": 69
+  },
+  "systems": {
+   "systems_touched": [
+    "B:vega:-0.145",
+    "Rc:vega:+0.176",
+    "V:vega:-0.022"
+   ],
+   "max_shift_mag": 0.176,
+   "n_values_shifted": 3,
+   "grade": "DOC"
+  },
+  "systems_detail": [
+   {
+    "band": "B",
+    "system": "vega",
+    "shift_mag": -0.145,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "Rc",
+    "system": "vega",
+    "shift_mag": 0.176,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "V",
+    "system": "vega",
+    "shift_mag": -0.022,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   }
+  ],
+  "rows_out": 69,
+  "span_days": [
+   0.4399964686992906,
+   54.15730361628413
+  ],
+  "node_bands": [
+   "B",
+   "Rc",
+   "V",
+   "i",
+   "z"
+  ],
+  "node_epochs": {
+   "z": 3,
+   "i": 16,
+   "Rc": 25,
+   "V": 11,
+   "B": 14
+  },
+  "band_active_days": {
+   "z": 4.7234,
+   "i": 53.4843,
+   "Rc": 53.7173,
+   "V": 29.0378,
+   "B": 31.4878
+  },
+  "thin_epoch_days": 0.2242,
+  "thick_epoch_days": 53.4931
+ },
+ "bands": [
+  "z",
+  "i",
+  "Rc",
+  "V",
+  "B"
+ ],
+ "n_time_nodes": 307,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": true,
+  "host_removed": false,
+  "source": "Three statements inside one paper describe (essentially) the same light-curve magnitudes and do not agree, so all three are recorded here instead of being averaged into one.  (1) Table 2 -- \"Ground-based Photometry\", the very rows vendored here -- carries the panel note \"All magnitudes have been corrected for foreground extinction.\"  (Table 1's HST panel and Table 3's panel carry the same sentence.)  The Milky Way term was removed -> mw_removed: true. (2) The paper's analysis products apply more: the Figure 1 caption says \"All of the SN 2010bh light curves have been corrected for foreground and host extinction\", section III.1 says the image-subtracted light curves \"have been corrected for foreground and host extinction (see Section 4)\", and the abstract estimates what was applied there -- \"We estimate the rest-frame extinction of this event from our optical data to be E(B-V) = 0.18 +- 0.08 mag\", which section IV then uses: \"Using the value E(B-V) = 0.18 +- 0.08 mag, we have calculated the absolute magnitudes for SN 2010bh\".  (3) Table 4's footnote says the opposite of its apparent column: \"Apparent magnitudes are not corrected for foreground or host extinction.  Absolute magnitudes are extinction corrected (foreground & host).\"  Table 4's peak apparent magnitudes are read off the same light curves as (1), so (1) and (3) cannot both be true of them.  The declarations follow (1): it is the note attached to the exact rows this manifest vendors -> mw_removed: true, host_removed: false -- nothing in the paper says the Table 2 rows had the host term applied; section IV instead decomposes the dust used for the absolute magnitudes (Schlegel foreground E(B-V) = 0.117; Starling et al. combined 0.178; implying a rest-frame host E(B-V) = 0.061).  The conflict is flagged for the delivery report, not settled here: no gate and no formula depends on it, but every point this template makes inherits whichever reading is wrong."
+ },
+ "t_valid_days": [
+  0.4437732603155826,
+  53.71258640355162
+ ],
+ "t_union_days": [
+  0.4399964686992906,
+  54.15730361628413
+ ],
+ "nu_valid_Hz": [
+  283364740979741.1,
+  858135654777837.8
+ ],
+ "nu_valid_lambda_A": [
+  3493.5,
+  10579.7
+ ],
+ "pivot_nu_Hz": {
+  "z": 353698422665098.4,
+  "i": 422812477739828.1,
+  "Rc": 485847661836093.2,
+  "V": 574672793244070.5,
+  "B": 718847578507375.5
+ },
+ "per_band_epochs": {
+  "z": 3,
+  "i": 16,
+  "Rc": 25,
+  "V": 11,
+  "B": 14
+ },
+ "mode_by_band": {
+  "z": "band",
+  "i": "band",
+  "Rc": "mono",
+  "V": "band",
+  "B": "band"
+ },
+ "excluded_bands": [],
+ "excluded_reasons": {},
+ "unfold": {
+  "iterations": 3,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.06752919,
+   0.00140789,
+   4.211e-05
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "z": -2.511,
+   "i": -2.731,
+   "V": -2.155,
+   "B": -2.23
+  },
+  "gain_spread_mag_per_dex": {
+   "z": 0.264,
+   "i": 1.007,
+   "V": 0.66,
+   "B": 0.901
+  },
+  "cross_talk_mag_per_dex": {
+   "z": {
+    "i": -0.01,
+    "V": 0.0,
+    "B": 0.0
+   },
+   "i": {
+    "z": -0.036,
+    "V": -0.049,
+    "B": 0.004
+   },
+   "V": {
+    "z": 0.0,
+    "i": -0.001,
+    "B": -0.108
+   },
+   "B": {
+    "z": 0.0,
+    "i": 0.001,
+    "V": -0.368
+   }
+  },
+  "jacobian_condition": 1.3,
+  "node_correction_dex": {
+   "z": 0.0007,
+   "i": 0.0312,
+   "V": 0.0263,
+   "B": 0.0715
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "B": 0.0062,
+   "V": 0.0032,
+   "i": 0.003,
+   "z": 0.0001
+  },
+  "quoted_photometric_error_rms_mag": {
+   "B": 0.0848,
+   "V": 0.039,
+   "i": 0.0486,
+   "z": 0.064
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [
+   "Rc"
+  ],
+  "corrected_bands": [
+   "B",
+   "V",
+   "i",
+   "z"
+  ],
+  "not_corrected": {},
+  "colour_term_size_mag": {
+   "B": 0.1175,
+   "V": 0.0561,
+   "i": 0.0598,
+   "z": 0.002
+  },
+  "final_residual_mag": {
+   "B": 0.017785,
+   "V": 0.006051,
+   "i": 0.00745,
+   "z": 9.4e-05
+  },
+  "max_colour_term_mag": 0.1175,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {},
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [],
+   "rounds": []
+  }
+ },
+ "template": {
+  "id": "sn2010bh",
+  "label": "SN 2010bh / XRF 100316D (Ic-BL supernova with a nearby X-ray flash)",
+  "object_class": "core-collapse-BL-Ic",
+  "z": 0.0591,
+  "z_source": "Cano et al. 2011, ApJ 740, 41, DOI 10.1088/0004-637X/740/1/41 (arXiv:1104.5141), introduction: \"The redshift was measured to be z = 0.0591 +- 0.0001 (Vergani et al. 2010a; Starling et al. 2011; Chornock et al. 2010)\" -- Cano et al. are repeating those three groups' measurement, so they are the ultimate origin of the digits quoted here.  Adopted verbatim, error included.  The paper states no reference frame, so `frame` stays undeclared rather than assumed.  Cross-check in the same paper: \"For this cosmology a redshift of z = 0.0591 corresponds to a luminosity distance of d_L = 261 Mpc and a distance modulus of 37.08\" -- a self-consistent pair (mu(261 Mpc) = 37.083), used only as a cross-check in docs/VALIDATION.md, never as an input.\nWhere the +-0.0001 comes from, since Cano+2011 only repeat it: Starling et al. 2011, MNRAS 411, 2792, DOI 10.1111/j.1365-2966.2010.17879.x (arXiv:1004.2919), the Swift discovery paper, carry the same number in the abstract and in the body, where it reads \"From the 12 brightest lines we measure the redshift z = 0.0591 +- 0.0001\". So it too is a scatter among narrow lines rather than a single-line centroid error -- but unlike Sollerman+2006's it is *small*, 30 km/s, tight enough that twelve lines agree to it and an order of magnitude below the 150 km/s the 350 km/s floor contributes at this redshift. A line-to-line scatter and a bulk peculiar velocity are independent unknowns, so the two would combine in quadrature; they are not combined, because the effect is 0.0002 mag on this template's 0.0429, below every precision this repository reports. The rule is recorded in docs/VERIFICATION.md sect. 13; the arithmetic is not worth a schema change.",
+  "z_error": 0.0001,
+  "redshift_frame": "unspecified",
+  "redshift_cmb": null,
+  "distance": {
+   "kind": "cosmological",
+   "source": "z = 0.0591 sits well above the peculiar-velocity guard (0.02), so the cosmological branch is the defensible one; the default cosmology is used and named in every result's provenance block via `constants.DEFAULT_COSMOLOGY_NAME`. The pair quoted under `redshift` (d_L = 261 Mpc, mu = 37.08) is a cross-check, not an input: Cano et al. derived it under their own adopted cosmology, and docs/VALIDATION.md compares this build's distance against that number rather than borrowing theirs -- borrowing would smuggle a second cosmology into a package that has exactly one, and the disagreement would then be invisible."
+  },
+  "manifest": "templates/sn2010bh.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": true,
+   "host_removed": false,
+   "source": "Three statements inside one paper describe (essentially) the same light-curve magnitudes and do not agree, so all three are recorded here instead of being averaged into one.  (1) Table 2 -- \"Ground-based Photometry\", the very rows vendored here -- carries the panel note \"All magnitudes have been corrected for foreground extinction.\"  (Table 1's HST panel and Table 3's panel carry the same sentence.)  The Milky Way term was removed -> mw_removed: true. (2) The paper's analysis products apply more: the Figure 1 caption says \"All of the SN 2010bh light curves have been corrected for foreground and host extinction\", section III.1 says the image-subtracted light curves \"have been corrected for foreground and host extinction (see Section 4)\", and the abstract estimates what was applied there -- \"We estimate the rest-frame extinction of this event from our optical data to be E(B-V) = 0.18 +- 0.08 mag\", which section IV then uses: \"Using the value E(B-V) = 0.18 +- 0.08 mag, we have calculated the absolute magnitudes for SN 2010bh\".  (3) Table 4's footnote says the opposite of its apparent column: \"Apparent magnitudes are not corrected for foreground or host extinction.  Absolute magnitudes are extinction corrected (foreground & host).\"  Table 4's peak apparent magnitudes are read off the same light curves as (1), so (1) and (3) cannot both be true of them.  The declarations follow (1): it is the note attached to the exact rows this manifest vendors -> mw_removed: true, host_removed: false -- nothing in the paper says the Table 2 rows had the host term applied; section IV instead decomposes the dust used for the absolute magnitudes (Schlegel foreground E(B-V) = 0.117; Starling et al. combined 0.178; implying a rest-frame host E(B-V) = 0.061).  The conflict is flagged for the delivery report, not settled here: no gate and no formula depends on it, but every point this template makes inherits whichever reading is wrong."
+  },
+  "citations": [
+   "Cano et al. 2011, \"XRF 100316D/SN 2010bh and the nature of gamma-ray burst supernovae\", ApJ 740, 41, DOI 10.1088/0004-637X/740/1/41, arXiv:1104.5141.  Redshift, trigger epoch, the 69-row table itself and every extinction statement come from this one paper; read in full.",
+   "Venue cross-check: the vendored table's own source column is 2011ApJ...740...41C on 69 of 69 rows -- the bibcode resolves to the same ApJ 740, 41 record (DOI above), so table and paper are the same object, not a re-compilation of it."
+  ],
+  "grade": "system-per-band-declared"
+ },
+ "manifest_sha256": "55024a0eb981c626bdf7f5f85697ddef2c22e1c1e1acdd15d70ed9b789c17ab0",
+ "inputs_sha256": {
+  "manifest": "55024a0eb981c626bdf7f5f85697ddef2c22e1c1e1acdd15d70ed9b789c17ab0",
+  "photometry": "15da5491836e884861dfec9ee8388f22eaa02723705b122465b9778a060f2c35",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "sn2010bh.npz"
+}

@@ -1,0 +1,1043 @@
+{
+ "schema": "ajst-tmplib-2",
+ "engine": {
+  "name": "chromashift",
+  "version": "1.0.0",
+  "code_sha256": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8",
+  "cosmology": "Planck18"
+ },
+ "filters": {
+  "source_sha256": "d11ca10ab94705845fb5e7369856666ed9b345bfd48bfa59120d1f23d277b393",
+  "checked_utc": "2026-09-27T16:28:31Z"
+ },
+ "templates": {
+  "at2017gfo": {
+   "origin": "catalog-derived",
+   "transient_id": null,
+   "label": "AT 2017gfo / GW170817 (kilonova)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "afe09860a27f95ec47d85fa358d5f490889137eb97b7e5ebcbd8396d15d28eb5",
+   "inputs_sha256": {
+    "manifest": "263578b4a1b6758dc868a8f9b7250b3c0f19af7d0462af985dbb845b928060f8",
+    "photometry": "afe09860a27f95ec47d85fa358d5f490889137eb97b7e5ebcbd8396d15d28eb5",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": "e6e2f1239de281c3ef8362ffba96eb212347a7bea631f0971f2b7cde376ba02d",
+   "row_ledger": {
+    "total": 345,
+    "kept": 285,
+    "csv_rows": 345,
+    "rejected": {
+     "nonmag": 0,
+     "unmapped_band": 0,
+     "band_deselected": 0,
+     "gext_missing": 0,
+     "mag_system_missing": 0,
+     "missing_value": 0,
+     "upperlimit": 60,
+     "discard": 0
+    }
+   },
+   "in_domain": {
+    "total": 525,
+    "answered": 456,
+    "by_band": {
+     "B": {
+      "n": 15,
+      "ok": 14,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "H": {
+      "n": 47,
+      "ok": 47,
+      "reason": null,
+      "reasons": {}
+     },
+     "J": {
+      "n": 44,
+      "ok": 44,
+      "reason": null,
+      "reasons": {}
+     },
+     "K": {
+      "n": 22,
+      "ok": 22,
+      "reason": null,
+      "reasons": {}
+     },
+     "Ks": {
+      "n": 62,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 62
+      }
+     },
+     "V": {
+      "n": 38,
+      "ok": 35,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 3
+      }
+     },
+     "Y": {
+      "n": 21,
+      "ok": 21,
+      "reason": null,
+      "reasons": {}
+     },
+     "g": {
+      "n": 53,
+      "ok": 53,
+      "reason": null,
+      "reasons": {}
+     },
+     "i": {
+      "n": 73,
+      "ok": 71,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 2
+      }
+     },
+     "r": {
+      "n": 91,
+      "ok": 91,
+      "reason": null,
+      "reasons": {}
+     },
+     "y": {
+      "n": 5,
+      "ok": 5,
+      "reason": null,
+      "reasons": {}
+     },
+     "z": {
+      "n": 54,
+      "ok": 53,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null,
+   "extract": {
+    "transient_id": "GRB170817A",
+    "rowset": "raw",
+    "null_system_policy": "drop",
+    "declarations": [],
+    "bands": null
+   }
+  },
+  "at2018cow": {
+   "origin": "shipped",
+   "transient_id": null,
+   "label": "AT 2018cow / SN 2018cow (Fast Blue Optical Transient in CGCG 137-068)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "a1cf9d6c4096d5787bfc613bcb70ff81f5b043c7e95db6ef27a2bd0eb7b4a124",
+   "inputs_sha256": {
+    "manifest": "e025fd8c98f748978e36a2ee5fe576f17331c1e3c509cce422f2777c7d2918e9",
+    "photometry": "a1cf9d6c4096d5787bfc613bcb70ff81f5b043c7e95db6ef27a2bd0eb7b4a124",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": null,
+   "row_ledger": null,
+   "in_domain": {
+    "total": 962,
+    "answered": 957,
+    "by_band": {
+     "B": {
+      "n": 69,
+      "ok": 69,
+      "reason": null,
+      "reasons": {}
+     },
+     "H": {
+      "n": 42,
+      "ok": 42,
+      "reason": null,
+      "reasons": {}
+     },
+     "I": {
+      "n": 26,
+      "ok": 26,
+      "reason": null,
+      "reasons": {}
+     },
+     "J": {
+      "n": 11,
+      "ok": 11,
+      "reason": null,
+      "reasons": {}
+     },
+     "K": {
+      "n": 2,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 2
+      }
+     },
+     "Ks": {
+      "n": 5,
+      "ok": 5,
+      "reason": null,
+      "reasons": {}
+     },
+     "R": {
+      "n": 29,
+      "ok": 29,
+      "reason": null,
+      "reasons": {}
+     },
+     "U": {
+      "n": 31,
+      "ok": 31,
+      "reason": null,
+      "reasons": {}
+     },
+     "V": {
+      "n": 70,
+      "ok": 70,
+      "reason": null,
+      "reasons": {}
+     },
+     "atlas-orange": {
+      "n": 1,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "g": {
+      "n": 101,
+      "ok": 101,
+      "reason": null,
+      "reasons": {}
+     },
+     "i": {
+      "n": 93,
+      "ok": 92,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     },
+     "r": {
+      "n": 150,
+      "ok": 150,
+      "reason": null,
+      "reasons": {}
+     },
+     "u": {
+      "n": 61,
+      "ok": 61,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-b": {
+      "n": 10,
+      "ok": 10,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-u": {
+      "n": 49,
+      "ok": 49,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-uvm2": {
+      "n": 46,
+      "ok": 46,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-uvw1": {
+      "n": 52,
+      "ok": 52,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-uvw2": {
+      "n": 60,
+      "ok": 60,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-v": {
+      "n": 9,
+      "ok": 9,
+      "reason": null,
+      "reasons": {}
+     },
+     "z": {
+      "n": 45,
+      "ok": 44,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null
+  },
+  "at2025ulz": {
+   "origin": "shipped",
+   "transient_id": null,
+   "label": "AT 2025ulz / ZTF 25abjmnps (young stripped-envelope Type IIb supernova coincident with the sub-threshold trigger S250818k)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "407a17cf74cf3f09d955f73975bf878e2e49b1809d3a3f3acdacf8932adb1ee6",
+   "inputs_sha256": {
+    "manifest": "483600ff37e389cd6fb7d6d3a21be9b0f7cd2195246bf02c2e188ec57754d28c",
+    "photometry": "407a17cf74cf3f09d955f73975bf878e2e49b1809d3a3f3acdacf8932adb1ee6",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": null,
+   "row_ledger": null,
+   "in_domain": {
+    "total": 201,
+    "answered": 188,
+    "by_band": {
+     "F110W": {
+      "n": 2,
+      "ok": 2,
+      "reason": null,
+      "reasons": {}
+     },
+     "F160W": {
+      "n": 2,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 2
+      }
+     },
+     "F336W": {
+      "n": 1,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "F606W": {
+      "n": 1,
+      "ok": 1,
+      "reason": null,
+      "reasons": {}
+     },
+     "I": {
+      "n": 1,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "J": {
+      "n": 2,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 2
+      }
+     },
+     "g": {
+      "n": 47,
+      "ok": 44,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 3
+      }
+     },
+     "i": {
+      "n": 59,
+      "ok": 56,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 3
+      }
+     },
+     "r": {
+      "n": 56,
+      "ok": 56,
+      "reason": null,
+      "reasons": {}
+     },
+     "u": {
+      "n": 1,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "z": {
+      "n": 29,
+      "ok": 29,
+      "reason": null,
+      "reasons": {}
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null
+  },
+  "ep250108a": {
+   "origin": "catalog-derived",
+   "transient_id": null,
+   "label": "EP250108a (X-ray flashed optical transient, blue and fast)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "f14f1baadebf5d0e7f7f8d7a7e8bab93fa676811f267350d4c29776d1b382595",
+   "inputs_sha256": {
+    "manifest": "875ae6aee7c4e0850315331f41afe0d13b4ab63427e71475f8d0ba54caffe8b7",
+    "photometry": "f14f1baadebf5d0e7f7f8d7a7e8bab93fa676811f267350d4c29776d1b382595",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": "5cdf20e07f0d56cf65fb1d1d9d3bb056f1d019e5a9d70d14f8379557aa075c0c",
+   "row_ledger": {
+    "total": 328,
+    "kept": 309,
+    "csv_rows": 312,
+    "rejected": {
+     "nonmag": 2,
+     "unmapped_band": 0,
+     "band_deselected": 0,
+     "gext_missing": 0,
+     "mag_system_missing": 14,
+     "missing_value": 0,
+     "upperlimit": 3,
+     "discard": 0
+    }
+   },
+   "in_domain": {
+    "total": 75,
+    "answered": 70,
+    "by_band": {
+     "Mephisto-g": {
+      "n": 26,
+      "ok": 25,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     },
+     "Mephisto-i": {
+      "n": 10,
+      "ok": 10,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-r": {
+      "n": 25,
+      "ok": 25,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-u": {
+      "n": 4,
+      "ok": 4,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-v": {
+      "n": 4,
+      "ok": 4,
+      "reason": null,
+      "reasons": {}
+     },
+     "q": {
+      "n": 2,
+      "ok": 2,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-u": {
+      "n": 2,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 2
+      }
+     },
+     "uvot-uvw1": {
+      "n": 1,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "uvot-uvw2": {
+      "n": 1,
+      "ok": 0,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null,
+   "extract": {
+    "transient_id": "EP250108a",
+    "rowset": "raw",
+    "null_system_policy": "drop",
+    "declarations": [],
+    "bands": null
+   }
+  },
+  "ep260321a": {
+   "origin": "shipped",
+   "transient_id": null,
+   "label": "EP 260321a / SN 2026gzf (archetypal thermal X-ray shock breakout in SDSS J095942.88+002506.2)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "096210fa227d0811742693f5bfadfd0e3a6798d2496980412eb1a4f7103a6c1f",
+   "inputs_sha256": {
+    "manifest": "9abc25f7d46a970baf69fdc58ea7ac90f9c9cb2480613cd989809a2a4491f9ea",
+    "photometry": "096210fa227d0811742693f5bfadfd0e3a6798d2496980412eb1a4f7103a6c1f",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": null,
+   "row_ledger": null,
+   "in_domain": {
+    "total": 533,
+    "answered": 530,
+    "by_band": {
+     "B": {
+      "n": 14,
+      "ok": 14,
+      "reason": null,
+      "reasons": {}
+     },
+     "I": {
+      "n": 15,
+      "ok": 15,
+      "reason": null,
+      "reasons": {}
+     },
+     "J": {
+      "n": 11,
+      "ok": 11,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-g": {
+      "n": 17,
+      "ok": 17,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-i": {
+      "n": 13,
+      "ok": 13,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-r": {
+      "n": 14,
+      "ok": 14,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-u": {
+      "n": 8,
+      "ok": 8,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-v": {
+      "n": 11,
+      "ok": 11,
+      "reason": null,
+      "reasons": {}
+     },
+     "Mephisto-z": {
+      "n": 8,
+      "ok": 8,
+      "reason": null,
+      "reasons": {}
+     },
+     "R": {
+      "n": 27,
+      "ok": 26,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     },
+     "V": {
+      "n": 14,
+      "ok": 14,
+      "reason": null,
+      "reasons": {}
+     },
+     "g": {
+      "n": 128,
+      "ok": 127,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     },
+     "i": {
+      "n": 94,
+      "ok": 94,
+      "reason": null,
+      "reasons": {}
+     },
+     "r": {
+      "n": 136,
+      "ok": 135,
+      "reason": "not-on-surface",
+      "reasons": {
+       "not-on-surface": 1
+      }
+     },
+     "u": {
+      "n": 7,
+      "ok": 7,
+      "reason": null,
+      "reasons": {}
+     },
+     "z": {
+      "n": 16,
+      "ok": 16,
+      "reason": null,
+      "reasons": {}
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null
+  },
+  "sn1998bw": {
+   "origin": "shipped",
+   "transient_id": null,
+   "label": "SN 1998bw / GRB 980425 (broad-lined Ic SNe, nearby)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "8496d5c6d6aba359c7eb819fcbd4c7c1ce59e382724fd5f8c29073aabd591208",
+   "inputs_sha256": {
+    "manifest": "2b67d80191bb3d481dd7a2e093671b59464292325e5e4422c23b919e4b4120c3",
+    "photometry": "8496d5c6d6aba359c7eb819fcbd4c7c1ce59e382724fd5f8c29073aabd591208",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": null,
+   "row_ledger": null,
+   "in_domain": {
+    "total": 2059,
+    "answered": 2059,
+    "by_band": {
+     "B": {
+      "n": 495,
+      "ok": 495,
+      "reason": null,
+      "reasons": {}
+     },
+     "I": {
+      "n": 495,
+      "ok": 495,
+      "reason": null,
+      "reasons": {}
+     },
+     "R": {
+      "n": 495,
+      "ok": 495,
+      "reason": null,
+      "reasons": {}
+     },
+     "U": {
+      "n": 79,
+      "ok": 79,
+      "reason": null,
+      "reasons": {}
+     },
+     "V": {
+      "n": 495,
+      "ok": 495,
+      "reason": null,
+      "reasons": {}
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null
+  },
+  "sn2002ap": {
+   "origin": "catalog-derived",
+   "transient_id": null,
+   "label": "SN 2002ap (type Ic-BL / hypernova in M74)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "75974e5a8d4637fbbe79a89c326cd7d1b879ef667b96efd7dc22e1dfccbc5396",
+   "inputs_sha256": {
+    "manifest": "ed9007a3c13c6108f253c500b8826e50062bdb9ccaaf98e62ba9335cba33dcac",
+    "photometry": "75974e5a8d4637fbbe79a89c326cd7d1b879ef667b96efd7dc22e1dfccbc5396",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "row_ledger": {
+    "total": 6,
+    "kept": 0,
+    "csv_rows": 0,
+    "rejected": {
+     "nonmag": 1,
+     "unmapped_band": 0,
+     "band_deselected": 0,
+     "gext_missing": 0,
+     "mag_system_missing": 5,
+     "missing_value": 0,
+     "upperlimit": 0,
+     "discard": 0
+    }
+   },
+   "in_domain": {
+    "total": 1717,
+    "answered": 1716,
+    "by_band": {
+     "B": {
+      "n": 243,
+      "ok": 243,
+      "reason": null,
+      "reasons": {}
+     },
+     "I": {
+      "n": 258,
+      "ok": 258,
+      "reason": null,
+      "reasons": {}
+     },
+     "R": {
+      "n": 354,
+      "ok": 354,
+      "reason": null,
+      "reasons": {}
+     },
+     "U": {
+      "n": 105,
+      "ok": 105,
+      "reason": null,
+      "reasons": {}
+     },
+     "V": {
+      "n": 757,
+      "ok": 756,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null,
+   "extract": {
+    "transient_id": "SN2002ap",
+    "rowset": "raw",
+    "null_system_policy": "drop",
+    "declarations": [],
+    "bands": null
+   }
+  },
+  "sn2006aj": {
+   "origin": "catalog-derived",
+   "transient_id": null,
+   "label": "SN 2006aj / GRB 060218 (type Ic-BL associated with a low-luminosity GRB)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "c198dbc3954ec34966d24d0391050dc79b419aa8a7809e45294035d69ea5d758",
+   "inputs_sha256": {
+    "manifest": "55add157627633df0c8356972702a2b811a088584f97ecfec1de7213e797c995",
+    "photometry": "c198dbc3954ec34966d24d0391050dc79b419aa8a7809e45294035d69ea5d758",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": "c968890d1b06cd134715750337886c20e22833d226185b0b7e1ff1a07c5735d0",
+   "row_ledger": {
+    "total": 5373,
+    "kept": 1286,
+    "csv_rows": 1345,
+    "rejected": {
+     "nonmag": 3996,
+     "unmapped_band": 0,
+     "band_deselected": 0,
+     "gext_missing": 0,
+     "mag_system_missing": 32,
+     "missing_value": 0,
+     "upperlimit": 33,
+     "discard": 26
+    }
+   },
+   "in_domain": {
+    "total": 424,
+    "answered": 415,
+    "by_band": {
+     "B": {
+      "n": 88,
+      "ok": 87,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "H": {
+      "n": 6,
+      "ok": 5,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "J": {
+      "n": 6,
+      "ok": 5,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "Ks": {
+      "n": 5,
+      "ok": 4,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "U": {
+      "n": 62,
+      "ok": 61,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "V": {
+      "n": 83,
+      "ok": 82,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "i": {
+      "n": 21,
+      "ok": 20,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     },
+     "r": {
+      "n": 22,
+      "ok": 21,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 1
+      }
+     },
+     "uvot-uvm2": {
+      "n": 40,
+      "ok": 40,
+      "reason": null,
+      "reasons": {}
+     },
+     "uvot-uvw1": {
+      "n": 36,
+      "ok": 35,
+      "reason": "error:E_DOMAIN",
+      "reasons": {
+       "error:E_DOMAIN": 1
+      }
+     },
+     "uvot-uvw2": {
+      "n": 55,
+      "ok": 55,
+      "reason": null,
+      "reasons": {}
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null,
+   "extract": {
+    "transient_id": "GRB060218A",
+    "rowset": "raw",
+    "null_system_policy": "drop",
+    "declarations": [],
+    "bands": null
+   }
+  },
+  "sn2010bh": {
+   "origin": "shipped",
+   "transient_id": null,
+   "label": "SN 2010bh / XRF 100316D (Ic-BL supernova with a nearby X-ray flash)",
+   "created_at": "2026-09-27T16:28:31Z",
+   "created_by": "tmplib-p0-init",
+   "rowset": null,
+   "declarations": [],
+   "csv_sha256": "15da5491836e884861dfec9ee8388f22eaa02723705b122465b9778a060f2c35",
+   "inputs_sha256": {
+    "manifest": "55024a0eb981c626bdf7f5f85697ddef2c22e1c1e1acdd15d70ed9b789c17ab0",
+    "photometry": "15da5491836e884861dfec9ee8388f22eaa02723705b122465b9778a060f2c35",
+    "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+    "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+    "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+    "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+   },
+   "rows_sha256": null,
+   "row_ledger": null,
+   "in_domain": {
+    "total": 69,
+    "answered": 67,
+    "by_band": {
+     "B": {
+      "n": 14,
+      "ok": 14,
+      "reason": null,
+      "reasons": {}
+     },
+     "Rc": {
+      "n": 25,
+      "ok": 23,
+      "reason": "out-of-t_valid",
+      "reasons": {
+       "out-of-t_valid": 2
+      }
+     },
+     "V": {
+      "n": 11,
+      "ok": 11,
+      "reason": null,
+      "reasons": {}
+     },
+     "i": {
+      "n": 16,
+      "ok": 16,
+      "reason": null,
+      "reasons": {}
+     },
+     "z": {
+      "n": 3,
+      "ok": 3,
+      "reason": null,
+      "reasons": {}
+     }
+    }
+   },
+   "mu": null,
+   "state": "fresh",
+   "stale_because": {
+    "engine_inputs": [],
+    "catalog_rows": null,
+    "filter_vendor": null
+   },
+   "deleted": null
+  }
+ }
+}

@@ -1,0 +1,213 @@
+schema: chromashift-template-1
+id: at2018cow
+label: "AT 2018cow / SN 2018cow (Fast Blue Optical Transient in CGCG 137-068)"
+object_class: fast-blue-optical-transient
+
+redshift:
+  value: 0.0141
+  source: >-
+    Perley et al. 2019, MNRAS 484, 1031, DOI 10.1093/mnras/sty3420 (read in
+    full), discovery paragraph: "coincident with the galaxy CGCG 137-068
+    (z = 0.0141, d = 60 Mpc ...; Abolfathi+2018)" -- SDSS's redshift, quoted
+    by Perley et al.; adopted verbatim, with no error quoted (so none is
+    invented) and no reference frame stated (so `frame` stays undeclared).
+    Cross-check: Prentice et al. 2018, ApJL 865, L3,
+    DOI 10.3847/2041-8213/aadd90 quote the spectrum behind it -- "shows the
+    galaxy to be star-forming with nebular emission lines at a redshift of
+    z = 0.014145" -- a difference of 0.000045 (0.32 % in z, 0.007 mag in
+    distance modulus) that changes no decision here.  Prentice et al. was read
+    selectively, not end-to-end: grade S_DOC, a cross-check only, never an
+    input.
+
+distance:
+  kind: cosmological
+  allow_low_z: true
+  source: >-
+    z = 0.0141 sits below the 0.02 peculiar-velocity guard, so the
+    cosmological branch needs `allow_low_z: true` to exist at all -- declared
+    openly rather than routed around, because the alternatives are both
+    worse: the host has no measured distance indicator, and the two distances
+    that exist are cosmology-derived (Perley et al.'s d = 60 Mpc under their
+    footnote "We assume h = 0.7, Omega_M = 0.3, Omega_Lambda = 0.7"; Prentice
+    et al.'s "distance of 66 +/- 5 Mpc" under H0 = 73, Omega_m = 0.27,
+    Omega_Lambda = 0.73), so `kind: measured` would be a fiction.  The honest
+    cost of the branch is its floor: the project's 350 km/s peculiar velocity
+    against cz = 4227 km/s is delta_d/d = 0.083, i.e. sigma_mu = 0.18 mag --
+    and the two published distances already differ by 5 log10(66/60) = 0.21
+    mag, more than that floor, so no cosmology inside this package can be the
+    smaller error term at this redshift.  The default cosmology is used and
+    named in every result's provenance via
+    `constants.DEFAULT_COSMOLOGY_NAME`; the 60-vs-66 Mpc spread is recorded
+    in docs/VALIDATION.md as a cross-check, never averaged into the
+    declaration.
+
+photometry:
+  file: at2018cow.csv
+  layout: long
+  system: ab
+  time:
+    column: time
+    unit: mjd
+    frame: observer
+    epoch_zero:
+      kind: fixed
+      value: 58285.441
+      source: >-
+        Perley et al. 2019 (DOI 10.1093/mnras/sty3420), discovery paragraph:
+        "The first detection of the transient was an image taken at
+        2018-06-16 10:35:02 UT (MJD 58285.441), appearing as a strikingly
+        bright (14.7 +/- 0.1 mag in the ATLAS o-band) optical source" --
+        adopted verbatim; the table lands on it (first row 58281.3162 =
+        t -4.1248 d, last 58366.9107 = t +81.4697 d), and the text's own
+        pre-explosion stamps appear as table rows (o limit at MJD 58281.48,
+        i at 58282.172, g at 58284.13), so t = 0 is the discovery epoch, not
+        a fit.  Prentice et al. 2018 date the same exposure "2018-06-16
+        10:35:38 UT Modified Julian Date (MJD) 58285.44141" -- the printed
+        stamps differ by 0.00041 d (~35 s), i.e. 36 s between the two stated
+        clock times, for what both papers call the first detection; the texts
+        cannot reconcile it, Perley et al. is used because it also publishes
+        the vendored table, and 0.00041 d moves every t by far less than any
+        cadence in this table -- flagged, not averaged.
+  band:
+    column: band
+    map:
+      B: B
+      U: U
+      V: V
+      R: R
+      I: I
+      u: u
+      g: g
+      r: r
+      i: i
+      z: z
+      J: J
+      H: H
+      K: K
+      Ks: Ks
+      o: atlas-orange
+      UVM2: uvot-uvm2
+      UVW1: uvot-uvw1
+      UVW2: uvot-uvw2
+      UVU: uvot-u
+      UVB: uvot-b
+      UVV: uvot-v
+  value:
+    column: abmag
+    error_column: e_mag
+    unit: mag
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [T, true, "1", y]
+    require_error: true
+
+validity:
+  t_min_days: -4.0675
+  t_max_days: 80.34
+  require_min_bands: 2
+  require_min_epochs: 3
+  notes: >-
+    t_min/t_max are rest-frame days: the build dilates observer-frame times by
+    (1+z) before the strict test (`t_rest < t_min`, `t_rest > t_max`).  The
+    declared span tracks the vendored table's own range relative to epoch_zero
+    (t = 0 is the first detection): first row t = -4.1248 d (a pre-explosion
+    reference frame), last +81.4697 d observer -- at z = 0.0141 those dilate to
+    -4.0674468 ... 80.3369 d, and the bounds pad just past the dilated ends
+    (-4.0675, 80.34; pads 5.3e-5 d and 3.1e-3 d) so an exact-equality float
+    cannot silently drop the first or last row -- boundary precision, not
+    science, and flagged as such.  The observer literals (-4.13, 81.47) would
+    also have cleared the gate -- dilation shrinks both ends toward zero -- but
+    they named a coordinate the gate never reads; this declaration is in the
+    frame the test uses.  require_error: true holds mechanically: the four empty
+    e_mag cells are exactly the four upperlimit=y rows, which the flag gate
+    removes first, leaving 965 rows that all carry errors.
+    What changed for this template in the per-epoch round is the one number a
+    caller has to read before trusting the span, and it is not a rounding: the
+    union of the bands' coverages runs 0.744 -- 80.326 d, which is more than twice
+    the 31.4 d the old `[J, Ks]` window carried, and fitting a 20-band SED across
+    all of it is harder than fitting an 11-band one across 31 d.  Eight bands were
+    refused in the first admission round (I 0.173, u 0.169, z 0.183, U 0.392,
+    uvot-u 0.429, uvot-uvm2 0.438, uvot-uvw1 0.279, uvot-uvw2 0.927 mag) and three
+    more as their neighbours went with them (B 0.427, g 0.163, uvot-b 0.307), then
+    V (0.268) and R (0.156).  The survivors are Ks, H, J, i, r and uvot-v, and
+    the price is stated here because it is a real loss: **every optical and UV node
+    is gone**, so the surface's frequency coverage is 1.62 -- 5.65e14 Hz and a
+    request at 4.82e14 x 1.41 is refused rather than answered.  `qc.excluded_bands`
+    lists all fifteen with the colour term that refused each; K (2 rows) and
+    atlas-orange (1) are `too-few-epochs-for-a-node` instead.
+    The span the surface publishes is `t_valid` 1.685 -- 43.851 d, 42.19 d thick
+    and 37.39 d thin: r measures to 80.33 d and i to 60.62, but past 43.85 d only
+    those two remain and `require_min_bands: 3` is not met, so the tail is refused
+    rather than fitted from two anchors.  `band_active_days` reads H 42.19, r
+    78.65, i 59.88, J 34.61, Ks 31.61, uvot-v 9.94.  A caller who wants the
+    80-day point estimate has no surface for it, and the reason is the colour cap
+    rather than the time window -- which is the trade this manifest is now making
+    by construction instead of by declaration.
+
+    `require_min_bands` moved from 3 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 3 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [1.685, 80.33] against a union span of
+    [0.7435, 80.34], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: false
+  host_removed: false
+  source: >-
+    mw_removed: false -- the table's own caption says "No correction for
+    Galactic extinction has been applied." (Perley et al. 2019, caption of
+    the machine-readable table this CSV is vendored from; see the 969-vs-949
+    caveat in provenance for how much of the CSV that caption provably
+    covers), so the Milky Way term is still in every value.  The paper
+    corrects it elsewhere, in its early-SED work: "Galactic extinction is
+    corrected using the Fitzpatrick attenuation curve and E(B-V) = 0.07
+    [Schlafly2011]" -- that sentence is about the coeval SEDs, not the
+    tabulated rows.  host_removed: false -- "We assume no extinction in the
+    host galaxy." (same sentence): the paper sets the host term to zero
+    rather than removing a measured one, and zero-removal is `false` in this
+    manifest's vocabulary -- `true` would claim a correction that never
+    happened, and `unknown` would hide a value the source pins at zero.
+    Tension to flag, not resolve: Prentice et al. 2018 publish their
+    photometry of this same object already MW-corrected -- "We corrected for
+    Milky Way (MW) extinction of E(B-V) = 0.08 mag ... using a Cardelli
+    R_V = 3.1 extinction law" -- a different E(B-V) (0.08 vs 0.07) AND the
+    opposite handling (removed vs left in).  Rows from the two publications
+    cannot share one surface without deciding per row which convention it
+    carries; this manifest vendors only Perley et al.'s rows and declares
+    their convention.
+
+stretch:
+  supported: false
+  note: "No stretch law exists for fast-blue optical transients (THEORY S5 covers Ibc SNe only); `supported: false` refuses the parameter rather than defaulting it to a value measured on another class."
+
+provenance:
+  grade: system-declared-ab
+  citations:
+    - "Perley et al. 2019, \"The Fast, Luminous Ultraviolet Transient AT2018cow: Extreme Supernova, or Disruption of a Star by an Intermediate-Mass Black Hole?\", MNRAS 484, 1031, DOI 10.1093/mnras/sty3420.  Publisher of the vendored table; redshift/distance stamp, discovery epoch, the table caption and both extinction sentences all come from it; read in full (S_OK)."
+    - "Prentice et al. 2018, \"The Cow: discovery of a luminous, hot and rapidly evolving transient\", ApJL 865, L3, DOI 10.3847/2041-8213/aadd90 -- cross-checks only (MJD 58285.44141, z = 0.014145, 66 +/- 5 Mpc, MW E(B-V) = 0.08 correction); read selectively, the quoted paragraphs and not the whole paper: grade S_DOC, kept out of every input and every test."
+  caveats:
+    - "The vendored CSV carries two magnitude columns, `mag` and `abmag`, differing on 617 of 969 rows; `abmag` is the declared value.  Evidence, not preference: the paper's printed table header reads \"MJD & Instrument & Filter & AB magnitude\"; the per-band median of (abmag - mag) reproduces published Vega->AB offsets where the native system is Vega (B -0.14 vs registry -0.145, V -0.02 vs -0.022, U +0.69 vs +0.699, R +0.17 vs +0.176, H +1.38 vs +1.379, UVU +1.02 = uvot-u 1.02, UVM2 +1.69 = uvot-uvm2 1.69, J/H/Ks within 0.04 of their registry values) and is exactly 0.000 on all g, r, i and o rows (AB-native surveys).  `mag` is left unused and no transformation between the two columns is asserted -- the paper's caption does not document how `abmag` was produced."
+    - "Two bands resist that story and are flagged rather than reconciled: u shows a uniform +0.05 where the registry's SDSS u offset is +0.878, and z a uniform -0.02 where the registry's SDSS z offset is +0.495.  Either those two `mag` inputs were already near-AB (with `abmag` a small undocumented correction) or `abmag` for u (61 rows) and z (45 rows) is not on a standard AB zero point; nothing in the paper's text or the CSV settles which, and every u and z node this template publishes inherits the doubt."
+    - "Declaring the whole table AB also means no band is pushed through a Vega->AB lookup -- including `o`, whose atlas-orange record carries the registry's 0.0 not-computed marker (systems.py: offset_needs_a_value); a per-band Vega-like declaration for it would have stopped the build, and would have been the wrong claim anyway."
+    - "The paper's caption promises \"a machine-readable table of all 949 photometric data points\"; the vendored CSV holds 969 (+20, 2.1 %).  The row-level source column does not reconcile it either (940 empty, 17 Prentice+2018, 10 ZTF, 2 ATEL11738 -- no split of those gives both 949 and 969).  Whether 949 is a typo for 969 or the vendor appended rows cannot be settled from the material read; rows are vendored as they stand, the mismatch is flagged here and in docs/VALIDATION.md, and it bounds how much of the table the caption's extinction sentence can be claimed to cover."
+    - "`F172` (3 rows) is not in the band map: no registry record carries that name, so the rows leave as unmapped-band by declaration rather than being folded into a band they are not.  The window's other losses (`o`, `K`, `Ks`) and the three colour-term refusals (U, uvot-uvm2, uvot-uvw2) are accounted for in `validity.notes`, and `qc.excluded_bands` names every band the surface does not carry."
+    - "The class itself is contested in the source: Perley et al. retain the AT designation arguing \"a SN association is not definite\", while the transient was redesignated SN2018cow on broad-lined features; `object_class: fast-blue-optical-transient` records the shared descriptor rather than picking that fight."
+
+notes: >-
+  v1's 2018cow light curve (2018cow_inter.csv) carried `mag = 30` sentinel
+  rows for non-detections -- magnitudes no instrument produces, invisible to
+  any gate that only checks presence.  This table has none: largest value
+  22.98 (abmag), no empty value cells, so no sentinel declaration is needed.
+  What it has instead is a real `upperlimit` column (`y`/`n`) whose four `y`
+  rows are pre-explosion non-detections -- three of them quoted verbatim in
+  the discovery paragraph (o > 20.2 at MJD 58281.48, i > 19.5 at 58282.172,
+  g > 18.9 at 58284.13) plus an r = 20.22 row at MJD 58281.3162 that the
+  paragraph does not mention -- and all four are declared so the flag gate
+  rejects them as measurements instead of plotting them as points.

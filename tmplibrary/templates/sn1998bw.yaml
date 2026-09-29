@@ -1,0 +1,199 @@
+schema: chromashift-template-1
+id: sn1998bw
+label: "SN 1998bw / GRB 980425 (broad-lined Ic SNe, nearby)"
+object_class: core-collapse-BL-Ic
+
+redshift:
+  value: 0.0087
+  source: >-
+    As used by the publishing source of this table: Clocchiatti et al. 2011, AJ 141,
+    163, DOI 10.1088/0004-6256/141/5/163, section 3 -- "the K-corrections, which, at
+    the redshift of ESO184-G82 (Foley et al. 2006, z = 0.0087,) are expected to be
+    small, but still variable in time".  The same paper's distance (below) is said to
+    be computed from that redshift, so the table's phase axis, its K-corrections and
+    its distance are all on one value; adopting it keeps this manifest internally
+    consistent with the source it came from.  v1 hard-coded 0.0085 with no stated
+    source.  The frame is not stated by either text and is therefore left undeclared
+    rather than guessed: for this template the distance is measured, so z enters only
+    through the (1+z) factors, where 0.0002 in z is 2e-4 mag -- a seventh of one
+    percent of the 0.151 mag the distance error contributes.
+  error: null
+
+distance:
+  kind: redshift-velocity-field
+  d_L_Mpc: 37.3
+  d_L_err_Mpc: 2.6
+  source: >-
+    The kind is `redshift-velocity-field` and not `measured`, which is the whole
+    content of this paragraph.  Read off Clocchiatti et al. 2011, AJ 141, 163,
+    DOI 10.1088/0004-6256/141/5/163,
+    which is the publishing source of this table (see `provenance`): "The distance to
+    ESO 184-G082 was taken to be 37.3 +- 2.6 Mpc, as computed by the NED database from
+    the redshift measured by Foley et al. 2006, a Hubble constant of 74.2 km/s/Mpc
+    (Riess et al. 2009), and the model of the local velocity field given by Mould et
+    al. 2000."  So this is a redshift-derived distance with a velocity-field
+    correction, quoted with its error -- which is what makes the distance term of the
+    error budget real rather than zero (2.6/37.3 = 7.0 % in fractional distance, i.e.
+    0.151 mag of distance modulus).  That 7 % is independently confirmed inside the
+    same paper: both flux columns of its Table 3 carry the footnote "Uncertainty
+    does not include the ~7 % uncertainty in the distance", which is the same 2.6/37.3
+    and the reason a distance error has to travel with the distance.  The host is the
+    one this paper names, ESO 184-G82; the two catalogue strings v1 carried for it
+    (ES024014.1-251413, E186-G210) were not reconciled against a catalogue in this
+    build, so they are not repeated here.
+
+photometry:
+  file: SN980425_intrinsic_lc.csv
+  layout: wide
+  system: johnson-cousins
+  time:
+    column: time
+    unit: day
+    frame: rest
+    epoch_zero:
+      kind: fixed
+      value: 0.0
+      source: >-
+        Stated by the publishing table itself.  Clocchiatti et al. 2011, AJ 141, 163,
+        DOI 10.1088/0004-6256/141/5/163, Table 3 caption: "Intrinsic Light Curve of
+        SN 1998bw.  JD -- Mean Julian Date minus 2450000.  Phase -- Rest frame days
+        after gamma-ray burst."  So t = 0 is the GRB 980425 trigger, not maximum light
+        and not explosion, and the axis is already in the rest frame -- which is what
+        `frame: rest` above declares, and why the build must not divide it by (1+z).
+        The surface agrees with the paper's own phase language: its V-band maximum
+        lands at phase ~16 d, and the paper describes its coverage as spanning "from
+        about 15 days before up to more than 500 days after maximum light", with the
+        CTIO series starting "~40 days after the GRB (about a month after maximum
+        light)".  A table zeroed on maximum light instead of on the trigger would put
+        the same rows ~16 d earlier -- and 16 d is most of this object's rise time --
+        so aligning this template against another event's phases is out of domain even
+        though its own zero point is now sourced.
+  value:
+    unit: mag
+    bands:
+      U0: {column: U0,  error_column: U0err, system: johnson-cousins, filter: U}
+      B0: {column: B0,  error_column: B0err, system: johnson-cousins, filter: B}
+      V0: {column: V0,  error_column: V0err, system: johnson-cousins, filter: V}
+      Rc: {column: Rc,  error_column: Rcerr, system: johnson-cousins, filter: R}
+      Ic: {column: Ic,  error_column: Icerr, system: johnson-cousins, filter: I}
+  flags:
+    require_error: true
+
+validity:
+  t_min_days: 8.0
+  t_max_days: 500.0
+  require_min_bands: 2
+  require_min_epochs: 3
+  notes: >-
+    `window_bands` is gone, and the argument it supported -- that U has to be
+    excluded so the nickel tail can be carried -- is now made by the rule itself
+    rather than by a declaration.  U is a node over its own 77.56 d: the four
+    optical bands measure the full 489.9 d and U stops at ~day 86, which is the
+    finite span of that column and exactly what the publishing paper's abstract
+    reports ("reach ~86 rest frame days after the GRB with U band coverage, and
+    ~498 rest frame days after the GRB without U").  Under an intersection rule
+    that disagreement cost the template its first 78 days or its fifth node; under
+    a per-epoch rule U is simply inactive after day 86, and the answer in U is
+    refused there rather than invented from the optical nodes.
+    What the sidecar records: `span_days` 8.5 -- 498.4 d, five nodes (B, I, R, U,
+    V), `band_active_days` 489.90 for each of the four optical bands and 77.56 for
+    U, `t_valid` 8.5 -- 498.4 d with 0.00 d thin.  So this is the one template the
+    change costs nothing: the node set is constant over the whole span, U is on
+    the surface for the first quarter of it, and `qc.excluded_bands` is empty.
+    The one prediction a caller should not make from the U node is a *band
+    integral* in U: U has a response curve, so it is `mode: band` and its colour
+    term is measured (0.1102 mag, the largest corrected on the surface), but the
+    node is only fitted over its own 77.56 d and a U prediction past day 86 is out
+    of the per-epoch frequency coverage rather than in it.
+
+    `require_min_bands` moved from 4 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 4 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [8.5, 498.4] against a union span of
+    [8.5, 498.4], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: true
+  host_removed: true
+  source: >-
+    Answered from the publishing table rather than inferred from its file name.
+    Clocchiatti et al. 2011, AJ 141, 163, DOI 10.1088/0004-6256/141/5/163, section 3:
+    "Using the computed reddening and K corrections unreddened and transformed to the
+    rest frame the photometry of SN 1998bw given in Table 2.  The results, fitted with
+    low-degree piecewise polinomial and/or spline fits to provide daily sampling, are
+    presented in Table 3."  What was removed is stated too: "it is reasonable to assume
+    a typical Milky Way extinction law to unredden the lights curves presented here.
+    We take as a model the extinction curve of Cardelli, Clayton, & Mathis 1989 with
+    R_V = 3.1", computed "a time dependent extinction in each passbands using the
+    excellent series of spectra of Patat et al. 2001".  Note the shape of that
+    declaration: it is *one* screen fitted to the observed spectra, so it absorbs the
+    Galactic, the host and any circumstellar term together rather than reporting them
+    separately -- which is why both flags are `true` and neither is a per-component
+    measurement.  The paper's own grounds for that choice: "The Galactic dust towards
+    ESO184-G82 contributes A_V ~ 0.2, according to Schlegel, Finkbeiner & Davis 1998",
+    while "Patat et al. 2001 ... did not find Na D absorption lines neither at the
+    redshift of ESO184-G82 nor zero, and set upper limits to the extinction consistent
+    even with the higher estimate".  The practical consequence for a caller: the table
+    is already de-reddened, so adding a `Reddening` here is adding a second term;
+    `predict` detects that state and warns, and `meta["table_reddening"]` echoes what
+    was already removed.  Worth noting how close this came to being read wrong: the
+    paper's Table 3 prints its columns as U0, B0, V0, Rc0, Ic0, while the compiled CSV
+    in data/raw spells the last two Rc and Ic.  The subscript that says "unreddened"
+    was dropped for exactly the two columns whose names then look like ordinary
+    Cousins magnitudes -- which is why the declaration is quoted from the paper here
+    and never inferred from a file name or a column header.
+stretch:
+  supported: false
+  note: >-
+    No stretch law is asserted for broad-lined Ic SNe.  s is a free model choice
+    here, not a prediction: see docs/THEORY.md S5.
+
+provenance:
+  grade: publishing-table-read
+  citations:
+    - "table + distance + reddening: Clocchiatti et al. 2011, AJ 141, 163, \"The ultimate\n       light curve of SN 1998bw/GRB 980425\", DOI 10.1088/0004-6256/141/5/163.  This is the\n       publishing source of data/raw/SN980425_intrinsic_lc.csv: its Table 3 is that file\n       (same 16 columns, same values row for row), and every block above is quoted from\n       it.  Read via arXiv:1106.1695."
+    - "v1 source: AJST-enrich/SN_redshift/ks_correction.py (branch '1998bw')"
+    - "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))"
+    - "Photon-counting SN K-correction: Nugent, Kim & Perlmutter 2002, PASP 114, 803,\n       DOI 10.1086/341707.  Cited for the method, not by equation: its equations\n       were not read off a proof here"
+  table_columns_dropped:
+    - "F_UBV(RI)c, F_BV(RI)c: total UBVRI/UBVRIc fluxes in mJy.  Not f_nu in a named
+       band, so they cannot enter a band-integrated surface; using them as
+       magnitudes (as v1's `16.4 - 2.5log10(flux)` did, applied to Johnson mags) is
+       a unit error."
+  caveats:
+    - "What the grade covers: the table's identity, its phase axis and its zero point,
+       its distance, and its reddening state -- all read off the publishing paper.
+       What it does not: the Vega -> AB offsets this build applies to these
+       Johnson/Kron-Cousins columns, which come from the vendored registry and stay
+       graded S_DOC, and the R/I band-key substitution recorded in `notes`."
+    - "This template's surface is de-reddened, so unlike the other three it is not
+       comparable against a raw observed light curve without adding the extinction
+       back.  docs/VALIDATION.md therefore compares it against its own publishing
+       table (identity and coverage), not against a published magnitude, and says why."
+
+notes: >-
+  v1 read this table's Johnson/Cousins magnitudes through an AB zero point and used
+  3.720e14 Hz for the I band (8058 A, 7.8 % from the 8739 A pivot the response curve
+  gives).  Both errors are
+  impossible here: the system is declared per band and converted with a recorded
+  offset, and the pivot frequency comes from the response curve.
+
+  Declared band-key substitution: the table's columns are Cousins Rc and Ic, and they
+  are mapped to the registry keys `R` and `I`, which are Generic/Johnson records that
+  carry response curves (23 and 26 points).  The Cousins keys `Rc` and `Ic` exist but
+  have no curve, so mapping to them would force those two bands into the delta-band
+  limit.  The cost of the choice is a pivot that is not the Cousins pivot: `R` sits at
+  6899.0 A against `Rc`'s registry mean 6535.2 A, 363.8 A redward (0.0235 in log10 nu),
+  while `I` at 8739.0 A is itself 85.8 A blueward of `Ic`'s 8824.7 A (-0.0042 in log10
+  nu) -- the two substitutions go in opposite directions.  The rest-frame nodes on the
+  surface are these pivots divided by (1+z): 6839.5 A and 8663.6 A.  The benefit is a
+  band-integrated colour term instead of none, and the Vega->AB offsets are identical
+  for the two spellings (R/Rc 0.176, I/Ic 0.417), so the photometric scale is
+  unaffected by the substitution -- only the band shape is.

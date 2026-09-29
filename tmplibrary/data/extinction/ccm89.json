@@ -1,0 +1,73 @@
+{
+  "law": "ccm89",
+  "reference": "Cardelli, Clayton & Mathis 1989, ApJ 345, 245, DOI 10.1086/167900",
+  "grade": "DOC",
+  "verified": true,
+  "source": "Evaluated at runtime by dust_extinction 1.7 (parameter_averages.CCM89), the astropy-affiliated implementation of Cardelli+1989; this file is the audited copy of that same fit, transcribed from two independent open implementations that agree digit-for-digit -- dust_extinction 1.7 (re-read from the installed source: NIR L124-127, optical np.polyval L130-137, NUV L139-146, far-NUV L148-151, Rv_range/x_range L87-88) and extinction 0.4.8 (_extinction.pyx L38-97). It supplies the domain this build enforces, the provenance every result reports and the pins the suite checks the package against; it is NOT re-read from the paper's pages, which are not retrievable here.",
+  "ordering_note": "dust_extinction passes the optical coefficients to np.polyval in DESCENDING powers; the lists below are ASCENDING (c[k] multiplies y**k), i.e. reversed. That reversal is the transcription trap recorded under transcription_warning.",
+  "v_wavelength_A": 5494.5,
+  "check_wavelengths_A": {
+    "V": 5494.5,
+    "B": 4400.0,
+    "bump": 2175.0,
+    "bump_red_compare": 2700.0,
+    "bump_blue_compare": 1500.0
+  },
+  "x_range": [0.3, 8.0],
+  "r_v_range": [2.0, 6.0],
+  "x_nir_optical": 1.1,
+  "x_optical_uv": 3.3,
+  "nir": {
+    "form": "a = a_coef * x**exponent, b = b_coef * x**exponent",
+    "exponent": 1.61,
+    "a_coef": 0.574,
+    "b_coef": -0.527
+  },
+  "optical": {
+    "form": "polynomials in y = x - y_offset, coefficients in ascending order",
+    "y_offset": 1.82,
+    "a_coeffs": [1.0, 0.17699, -0.50447, -0.02427, 0.72085, 0.01979, -0.7753, 0.32999],
+    "b_coeffs": [0.0, 1.41338, 2.28305, 1.07233, -5.38434, -0.62251, 5.3026, -2.09002]
+  },
+  "uv": {
+    "form": "a = constant + linear*x + feature/((x-x0)**2 + gamma_sq); b likewise",
+    "a": { "constant": 1.752, "linear": -0.316, "feature": -0.104, "x0": 4.67, "gamma_sq": 0.341 },
+    "b": { "constant": -3.09, "linear": 1.825, "feature": 1.206, "x0": 4.62, "gamma_sq": 0.263 }
+  },
+  "far_uv": {
+    "form": "added to the uv branch for x >= x_from; polynomial in y = x - y_offset, ascending",
+    "x_from": 5.9,
+    "y_offset": 5.9,
+    "a_coeffs": [0.0, 0.0, -0.04473, -0.009779],
+    "b_coeffs": [0.0, 0.0, 0.213, 0.1207]
+  },
+  "normalisation": "A(V)/A(V) = 1 at x = 1/0.54945 micron^-1 for every R_V: the optical b polynomial has zero constant term and the a polynomial equals 1 there.",
+  "structural_oracles": {
+    "how_to_read": "These are checkable without the paper's tables, because each is a property the fit is *defined* to have, or a discontinuity only a transcription error creates. tests/test_extinction.py asserts these; it does not assert a tabulated a(x) or b(x).",
+    "a_v_normalisation": "a(x_V) + b(x_V)/R_V = 1 for R_V = 3.1 (and any R_V) -- an independent check, since it is the definition of A(V), and it fails at once if the polynomial coefficient order is inverted",
+    "uv_bump": "A(2175 A)/A(V) > A(2700 A)/A(V) and > A(1500 A)/A(V): the 2175 A feature is the (x - 4.67)^-2 term, so it IS applied, unlike in a smooth-only parameterisation",
+    "branch_steps": "the piecewise fit is continuous to ~3e-4 mag at x = 1.1 and ~2e-4 at x = 3.3; a mis-copied coefficient shows up as a step of order 0.1 mag or more. The far-NUV addition joins at x = 5.9 with zero discontinuity by construction, since its polynomial has no constant or linear term. The fourth join is x = 8.0 -- the domain's blue edge, 1250 A -- and it leaves 1.8191e-04 mag between the sides: 3.3368593254 on the <=8 branch, 3.3366774201 on the >8 branch (the latter is the segment this file does not transcribe, see excluded.fuv_x_gt_8). dust_extinction 1.7 and this build both give x = 8.0 to the <=8 side and agree there exactly; extinction 0.4.8 gives it to the >8 side, so a reader comparing the 1250 A endpoint against that package sees 1.8191e-04 mag (0.182 mmag), which is branch ownership, not a transcription error.",
+    "optical_monotonic": "A(x)/A(V) decreases monotonically with wavelength across the optical branch, which is what the V normalisation plus a positive R_V-dependent b term require"
+  },
+  "self_checks": {
+    "how_to_read": "Regression PINS, not oracles: these are the numbers this transcription produces, recorded so that editing a coefficient cannot pass silently. A wrong digit in the paper's own table would be reproduced faithfully here; only a re-read of ApJ 345, 245 could catch that. Each extremum names its own location, because the maximum over the domain is NOT the 2175 A bump: it sits at the blue edge (x = 8.0) and is 0.151758 mag above A_2175A_over_A_V, i.e. about 15 % in flux.",
+    "R_v": 3.1,
+    "A_V_over_A_V": 1.0000012,
+    "A_B_over_A_V_at_4400A": 1.3245213,
+    "A_6500A_over_A_V": 0.8274710,
+    "A_2175A_over_A_V": 3.1851013,
+    "max_over_range_at_x_max": 3.3368593,
+    "max_over_range_at_x_max_wavelength_A": 1250.0,
+    "min_over_range_at_x_min": 0.0581505,
+    "min_over_range_at_x_min_wavelength_A": 33333.3333
+  },
+  "transcription_warning": "The Horner rendering of the optical b polynomial in one secondary write-up places its constant term last, which reads as b(x_V) = 1.41338 and gives A(B)/A(V) = 1.71 instead of 1.32. The b polynomial has NO constant term; 1.41338 multiplies y. This file records the ordering that reproduces A(V)/A(V) = 1.",
+  "excluded": {
+    "fuv_x_gt_8": "CCM89's 8 < x <= 10 and x <= 11 segments exist in the implementations above but reach 1000 A, bluer than any band this project builds; requests beyond x = 8 raise rather than extrapolate. 1250-33333 A is the parameterisation's own inverse-micron domain (x = 8.0 down to x = 0.3), not the paper's claim: CCM89's abstract quotes a 0.125-3.5 micron window, whose red end lies beyond x = 0.3, and the 3.3-3.5 micron tail is therefore refused here as out of domain even though the abstract includes it.",
+    "24_knot_spline_table": "Referred to in secondary descriptions as an interpolated a(x), b(x) table; zero of the 24 knots could be read from any retrievable source, so none is transcribed. The analytic branches above are complete over x_range.",
+    "u_equals_lambda_minus_0p5359_nir_form": "A functional form attributed to CCM89 in some write-ups that neither implementation above uses; unverified, so not used.",
+    "natural_cubic_spline_uv_method": "Belongs to Fitzpatrick & Sneden 1999, not CCM89. Attributing it to CCM89 is a law mix-up.",
+    "upsilon_4p59_gamma_90_bump": "A Draine-style bump parameterisation with those constants could not be confirmed in any open source and is not CCM89's own.",
+    "ccm_1990_erratum": "An erratum at ApJ 356, 319 is sometimes cited; Crossref carries no correction link to the 1989 record and no such paper was found, so nothing is assumed to have changed."
+  }
+}

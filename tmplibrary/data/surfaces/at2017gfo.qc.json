@@ -1,0 +1,502 @@
+{
+ "audit": {
+  "file": "data/raw/grb170817A_1d.csv",
+  "file_sha256": "afe09860a27f95ec47d85fa358d5f490889137eb97b7e5ebcbd8396d15d28eb5",
+  "rows_in": 584,
+  "rejections": {
+   "H": {
+    "duplicate-epoch-merged": 3
+   },
+   "column:I": {
+    "excluded-by-only": 32
+   },
+   "J": {
+    "duplicate-epoch-merged": 3
+   },
+   "Ks": {
+    "duplicate-epoch-merged": 4,
+    "colour-term-above-max": 58
+   },
+   "column:R": {
+    "excluded-by-only": 27
+   },
+   "r": {
+    "duplicate-epoch-merged": 1
+   },
+   "z": {
+    "duplicate-epoch-merged": 2
+   },
+   "B": {
+    "colour-term-above-max": 30
+   },
+   "": {
+    "admission-step-undone": 1
+   },
+   "V": {
+    "colour-term-above-max": 38
+   }
+  },
+  "band_epochs": {
+   "B": 15,
+   "H": 44,
+   "J": 41,
+   "K": 22,
+   "Ks": 58,
+   "V": 38,
+   "Y": 21,
+   "g": 53,
+   "i": 73,
+   "r": 90,
+   "y": 5,
+   "z": 52
+  },
+  "rows_kept": 584,
+  "time_frame": {
+   "declared": "observer",
+   "dilation_applied": true,
+   "one_plus_z_template": 1.009783,
+   "n_epochs": 584
+  },
+  "error_bars": {
+   "B": 11,
+   "H": 11,
+   "J": 11,
+   "K": 11,
+   "Ks": 11,
+   "V": 11,
+   "Y": 11,
+   "g": 11,
+   "i": 11,
+   "r": 11,
+   "y": 11,
+   "z": 11
+  },
+  "pivot_frequency_check": {
+   "B": {
+    "table_nu_Hz": 682600000000000.0,
+    "registry_nu_Hz": 678734376836347.4,
+    "rel_diff": 0.00566
+   },
+   "H": {
+    "table_nu_Hz": 181700000000000.0,
+    "registry_nu_Hz": 181748056748246.47,
+    "rel_diff": 0.00026
+   },
+   "J": {
+    "table_nu_Hz": 241800000000000.0,
+    "registry_nu_Hz": 241902852044001.06,
+    "rel_diff": 0.00043
+   },
+   "K": {
+    "table_nu_Hz": 136900000000000.0,
+    "registry_nu_Hz": 136207386642435.25,
+    "rel_diff": 0.00506
+   },
+   "Ks": {
+    "table_nu_Hz": 139400000000000.0,
+    "registry_nu_Hz": 138545181002663.66,
+    "rel_diff": 0.00613
+   },
+   "V": {
+    "table_nu_Hz": 555200000000000.0,
+    "registry_nu_Hz": 542604846798291.5,
+    "rel_diff": 0.02269
+   },
+   "Y": {
+    "table_nu_Hz": 293900000000000.0,
+    "registry_nu_Hz": 290919415817564.25,
+    "rel_diff": 0.01014
+   },
+   "g": {
+    "table_nu_Hz": 623300000000000.0,
+    "registry_nu_Hz": 633165384971009.6,
+    "rel_diff": 0.01583
+   },
+   "i": {
+    "table_nu_Hz": 392900000000000.0,
+    "registry_nu_Hz": 399218655216531.2,
+    "rel_diff": 0.01608
+   },
+   "r": {
+    "table_nu_Hz": 482000000000000.0,
+    "registry_nu_Hz": 483947204342710.4,
+    "rel_diff": 0.00404
+   },
+   "y": {
+    "table_nu_Hz": 311600000000000.0,
+    "registry_nu_Hz": 311842034201547.8,
+    "rel_diff": 0.00078
+   },
+   "z": {
+    "table_nu_Hz": 331300000000000.0,
+    "registry_nu_Hz": 333961309286279.3,
+    "rel_diff": 0.00803
+   }
+  },
+  "systems": {
+   "systems_touched": [],
+   "max_shift_mag": 0.0
+  },
+  "systems_detail": [],
+  "rows_out": 512,
+  "span_days": [
+   0.44564030093594365,
+   19.274438171369493
+  ],
+  "node_bands": [
+   "H",
+   "J",
+   "K",
+   "Y",
+   "g",
+   "i",
+   "r",
+   "y",
+   "z"
+  ],
+  "node_epochs": {
+   "K": 22,
+   "H": 44,
+   "J": 41,
+   "Y": 21,
+   "y": 5,
+   "z": 52,
+   "i": 73,
+   "r": 90,
+   "g": 53
+  },
+  "band_active_days": {
+   "K": 16.9015,
+   "H": 13.9666,
+   "J": 10.8895,
+   "Y": 9.8601,
+   "y": 5.976,
+   "z": 18.811,
+   "i": 9.9323,
+   "r": 11.8645,
+   "g": 6.9255
+  },
+  "thin_epoch_days": 0.9561,
+  "thick_epoch_days": 17.8727
+ },
+ "bands": [
+  "K",
+  "H",
+  "J",
+  "Y",
+  "y",
+  "z",
+  "i",
+  "r",
+  "g"
+ ],
+ "n_time_nodes": 544,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": "unknown",
+  "host_removed": "unknown",
+  "source": "The compiled table (grb170817A_1d.csv) has no column stating whether either extinction component was removed.  Its `source` column carries ADS bibliography codes and one Transient Name Server entry -- publications, not reduction steps -- and none of those references was re-read in this build, so nothing here can say whether a given row is as observed or de-reddened.  Different references inside one table can also disagree with each other on this point, so a row-level state column would be needed to do better than a table-level declaration.  Both states are therefore declared unknown: a `Reddening` passed to `predict` against this surface warns that it cannot be checked, which is the honest answer rather than a guess."
+ },
+ "t_valid_days": [
+  0.45722694876027814,
+  18.27105427601772
+ ],
+ "t_union_days": [
+  0.44564030093594365,
+  19.274438171369493
+ ],
+ "nu_valid_Hz": [
+  137539903505958.2,
+  833954070569184.8
+ ],
+ "nu_valid_lambda_A": [
+  3594.8,
+  21796.8
+ ],
+ "pivot_nu_Hz": {
+  "K": 137539903505958.2,
+  "H": 183526097987414.6,
+  "J": 244269387645547.56,
+  "Y": 293765480462507.5,
+  "y": 314892784822141.56,
+  "z": 337228452775027.0,
+  "i": 403124211320514.56,
+  "r": 488681659842795.2,
+  "g": 639359641932181.1
+ },
+ "per_band_epochs": {
+  "K": 22,
+  "H": 44,
+  "J": 41,
+  "Y": 21,
+  "y": 5,
+  "z": 52,
+  "i": 73,
+  "r": 90,
+  "g": 53
+ },
+ "mode_by_band": {
+  "K": "mono",
+  "H": "band",
+  "J": "band",
+  "Y": "mono",
+  "y": "mono",
+  "z": "band",
+  "i": "band",
+  "r": "band",
+  "g": "band"
+ },
+ "excluded_bands": [
+  "B",
+  "Ks",
+  "V"
+ ],
+ "excluded_reasons": {
+  "B": {
+   "colour-term-above-max": 30
+  },
+  "Ks": {
+   "colour-term-above-max": 58
+  },
+  "V": {
+   "colour-term-above-max": 38
+  }
+ },
+ "unfold": {
+  "iterations": 4,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.15081223,
+   0.00316241,
+   0.00019594,
+   4.12e-06
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "H": -2.396,
+   "J": -2.216,
+   "z": -1.719,
+   "i": -2.173,
+   "r": -2.242,
+   "g": -2.346
+  },
+  "gain_spread_mag_per_dex": {
+   "H": 0.171,
+   "J": 0.235,
+   "z": 1.214,
+   "i": 0.273,
+   "r": 0.545,
+   "g": 1.048
+  },
+  "cross_talk_mag_per_dex": {
+   "H": {
+    "J": -0.058,
+    "z": -0.0,
+    "i": -0.0,
+    "r": 0.0,
+    "g": 0.0
+   },
+   "J": {
+    "H": -0.105,
+    "z": -0.001,
+    "i": 0.004,
+    "r": 0.0,
+    "g": 0.0
+   },
+   "z": {
+    "H": 0.005,
+    "J": 0.003,
+    "i": -0.253,
+    "r": 0.018,
+    "g": 0.0
+   },
+   "i": {
+    "H": 0.0,
+    "J": 0.0,
+    "z": -0.254,
+    "r": -0.162,
+    "g": 0.012
+   },
+   "r": {
+    "H": -0.0,
+    "J": 0.0,
+    "z": 0.052,
+    "i": -0.252,
+    "g": -0.056
+   },
+   "g": {
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.034,
+    "r": -0.186
+   }
+  },
+  "jacobian_condition": 1.5,
+  "node_correction_dex": {
+   "H": 0.0104,
+   "J": 0.0303,
+   "z": 0.0967,
+   "i": 0.0713,
+   "r": 0.0444,
+   "g": 0.1514
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "H": 0.0021,
+   "J": 0.0047,
+   "g": 0.0059,
+   "i": 0.0053,
+   "r": 0.0047,
+   "z": 0.0139
+  },
+  "quoted_photometric_error_rms_mag": {
+   "H": 0.1468,
+   "J": 0.1344,
+   "g": 0.1467,
+   "i": 0.0854,
+   "r": 0.1104,
+   "z": 0.1405
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [
+   "K",
+   "Y",
+   "y"
+  ],
+  "corrected_bands": [
+   "H",
+   "J",
+   "g",
+   "i",
+   "r",
+   "z"
+  ],
+  "not_corrected": {},
+  "colour_term_size_mag": {
+   "H": 0.0265,
+   "J": 0.0809,
+   "g": 0.2542,
+   "i": 0.1449,
+   "r": 0.0933,
+   "z": 0.1941
+  },
+  "final_residual_mag": {
+   "H": 0.006146,
+   "J": 0.014445,
+   "g": 0.024757,
+   "i": 0.01664,
+   "r": 0.023876,
+   "z": 0.039189
+  },
+  "max_colour_term_mag": 0.2542,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {
+    "Ks": 0.544626,
+    "V": 0.280788,
+    "B": 0.70395
+   },
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [
+    "B"
+   ],
+   "rounds": [
+    {
+     "excluded": {
+      "B": 1.16085
+     },
+     "raw_colour_term_mag": {
+      "B": 0.5912
+     }
+    },
+    {
+     "undone_as_harmful": "B",
+     "bands_it_pushed_out": [
+      "g"
+     ]
+    },
+    {
+     "excluded": {
+      "Ks": 0.544626
+     },
+     "raw_colour_term_mag": {
+      "Ks": 0.6801
+     }
+    },
+    {
+     "excluded": {
+      "V": 0.280788
+     },
+     "raw_colour_term_mag": {
+      "V": 0.4234
+     }
+    },
+    {
+     "excluded": {
+      "B": 0.70395
+     },
+     "raw_colour_term_mag": {
+      "B": 0.7873
+     }
+    }
+   ]
+  }
+ },
+ "template": {
+  "id": "at2017gfo",
+  "label": "AT 2017gfo / GW170817 (kilonova)",
+  "object_class": "kilonova",
+  "z": 0.009783,
+  "z_source": "Hjorth et al. 2017, ApJL 848, L31, DOI 10.3847/2041-8213/aa9110: \"Based on our MUSE/VLT measurement of the heliocentric redshift (z_helio = 0.009783 +- 0.000023) we infer the systemic recession velocity of the NGC 4993 group of galaxies in the cosmic microwave background (CMB) frame to be v_CMB = 3231 +- 53 km/s.\"  The AJST compilation carried 0.009731 with no stated source; the difference is 0.000052 in z, i.e. 0.5 % in (1+z), which is noise next to the 0.16 mag the distance error alone contributes -- but the sourced value is the one to keep. The same paper's derived cosmic redshift is z_cosmic = 0.00980 +- 0.00079, i.e. the value with the peculiar velocity taken out, which is the one a Hubble-flow distance would use; this manifest keeps the *measured* distance below instead, so the heliocentric value is the right frame for its (1+z).\nThe +-0.000023 is a 1-sigma MUSE centroid precision, 6.9 km/s, and is independent of the peculiar-velocity term for the reason docs/VERIFICATION.md sect. 13 gives: a centroid residual is a wavelength-solution quantity, while a peculiar motion shifts every line equally and so cannot be seen in a spectrum at all.  It enters no error budget and cannot: the distance below is the SBF measurement, not a function of this redshift, which is also why the 350 km/s velocity-dispersion term does not apply to it -- `Distance.distance_error_mag` adds that term only for `kind: cosmological`, which is correct, since a measured distance never asked the Hubble flow.  Worth setting beside it: the same paper's v_CMB = 3231 +- 53 km/s carries a *larger* uncertainty than the +-23 km/s on the heliocentric value, because the extra is the uncertainty in the NGC 4993 group velocity; that belongs to the frame conversion, not to the measurement of the line.",
+  "z_error": 2.3e-05,
+  "redshift_frame": "heliocentric",
+  "redshift_cmb": {
+   "z_helio": 0.009783,
+   "z_cmb": 0.010831607621497152,
+   "z_cmb_error": 2.3002926761581198e-05,
+   "z_p": -0.0010373712234468737,
+   "second_order": 5.380695276178317e-07,
+   "position_term": 2.9902986343293634e-09,
+   "dipole_term": 3.6692050471796724e-07,
+   "rule_version": "chromashift-cmb-frame-1"
+  },
+  "distance": {
+   "kind": "measured",
+   "d_L_Mpc": 40.7,
+   "d_L_err_Mpc": 2.36,
+   "source": "NGC 4993, from a distance indicator rather than from the redshift.  Adopted value is the surface brightness fluctuation distance: Cantiello et al. 2018, ApJL 854, L31, DOI 10.3847/2041-8213/aaad64, \"For the preferred F110W passband we derive a distance modulus of (m - M) = 33.05 +- 0.08 +- 0.10 mag, or a linear distance d = 40.7 +- 1.4 +- 1.9 Mpc (random and systematic errors, respectively)\".  d_L_err_Mpc is the two terms added in quadrature, sqrt(1.4^2 + 1.9^2) = 2.3601 Mpc, quoted here as 2.36 because the sources print one significant figure in each term and more digits would be a false claim about how well the error is known.  The combination matters because `Distance` carries one error and quoting the systematic term alone would drop the random one and understate the budget by 0.025 mag of distance modulus; the two components are 0.075 and 0.101 mag separately.  A virtually identical F160W result is quoted in the same paper. Why SBF and not the numbers this manifest adopted until now: at z = 0.0098 the Hubble flow is not a distance (the host's peculiar velocity alone is 307 +- 230 km/s against a flow of ~2900, which is what the z < 0.02 guard in snredshift/distance.py is for), and four electromagnetic determinations plus one gravitational one exist, all agreeing on 40-42 Mpc --\n  SBF   Cantiello+ 2018  40.7 +- 1.4 +- 1.9   <- adopted, most precise\n  GCLF  Lee et al. 2018, ApJL 859, L6, 41.65 +- 3.00\n  FP    Im et al. 2018, ApJL 855, L3, DOI 10.3847/2041-8213/aa9367, angular\n        diameter 37.7 +- 8.7 Mpc\n  combined redshift + FP  Hjorth et al. 2017, ApJL 848, L31,\n        DOI 10.3847/2041-8213/aa9110, \"The combined redshift and FP distance\n        is D_NGC4993 = 41.0 +- 3.1 Mpc\"\n  GW standard siren  Hjorth et al. 2017 Table 2, 43.8 +2.9/-6.9 Mpc\nThe previously adopted 41.0 +- 3.1 is the *least* precise of the four electromagnetic ones (0.164 mag of distance modulus against SBF's 0.125), and this manifest's own note called its error \"the largest single term in any shipped template's budget\" while quoting the better number as a cross-check. Changing it moves DM by -0.016 mag and the distance error term from 0.164 to 0.125 mag, and docs/VALIDATION.md section A checks that term as `V-A5` (the modulus and both printed error terms) and `V-A6` (the single number carried here) -- the two rows that are this distance in full, and that are the reason the quadrature sum is asserted in a test rather than only stated here. Still not a Hubble-flow distance and still not treated as one: the same Hjorth paper gives v_CMB = 3231 +- 53 km/s for the NGC 4993 group, four times the heliocentric recession rate, so what a redshift-derived distance would give here is mostly the group motion."
+  },
+  "manifest": "templates/at2017gfo.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": "unknown",
+   "host_removed": "unknown",
+   "source": "The compiled table (grb170817A_1d.csv) has no column stating whether either extinction component was removed.  Its `source` column carries ADS bibliography codes and one Transient Name Server entry -- publications, not reduction steps -- and none of those references was re-read in this build, so nothing here can say whether a given row is as observed or de-reddened.  Different references inside one table can also disagree with each other on this point, so a row-level state column would be needed to do better than a table-level declaration.  Both states are therefore declared unknown: a `Reddening` passed to `predict` against this surface warns that it cannot be checked, which is the honest answer rather than a guess."
+  },
+  "citations": [
+   "redshift + distance (comparison anchor only, never photometry): Hjorth et al.\n       2017, ApJL 848, L31, DOI 10.3847/2041-8213/aa9110 (z_helio, v_pec, Table 2's\n       redshift/Fundamental Plane/combined/GW distances); cross-checked against the\n       surface brightness fluctuation distance of Cantiello et al. 2018, ApJL 854, L31,\n       DOI 10.3847/2041-8213/aaad64",
+   "table source column: Transient Name Server and per-instrument references, as compiled in the AJST catalogue",
+   "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))"
+  ],
+  "grade": "system-declared-ab"
+ },
+ "manifest_sha256": "263578b4a1b6758dc868a8f9b7250b3c0f19af7d0462af985dbb845b928060f8",
+ "inputs_sha256": {
+  "manifest": "263578b4a1b6758dc868a8f9b7250b3c0f19af7d0462af985dbb845b928060f8",
+  "photometry": "afe09860a27f95ec47d85fa358d5f490889137eb97b7e5ebcbd8396d15d28eb5",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "at2017gfo.npz"
+}

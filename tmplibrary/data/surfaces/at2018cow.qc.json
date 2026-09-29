@@ -1,0 +1,789 @@
+{
+ "audit": {
+  "file": "data/raw/at2018cow.csv",
+  "file_sha256": "a1cf9d6c4096d5787bfc613bcb70ff81f5b043c7e95db6ef27a2bd0eb7b4a124",
+  "rows_in": 969,
+  "rejections": {
+   "table": {
+    "upper-limit": 4
+   },
+   "column:F172": {
+    "unmapped-band": 3
+   },
+   "uvot-uvm2": {
+    "colour-term-above-max": 46
+   },
+   "U": {
+    "colour-term-above-max": 31
+   },
+   "uvot-u": {
+    "colour-term-above-max": 49
+   },
+   "I": {
+    "colour-term-above-max": 26
+   },
+   "K": {
+    "too-few-epochs-for-a-node": 2
+   },
+   "atlas-orange": {
+    "too-few-epochs-for-a-node": 1
+   }
+  },
+  "band_epochs": {
+   "B": 69,
+   "H": 42,
+   "I": 26,
+   "J": 11,
+   "K": 2,
+   "Ks": 5,
+   "R": 29,
+   "U": 31,
+   "uvot-b": 10,
+   "uvot-uvm2": 46,
+   "uvot-u": 49,
+   "uvot-v": 9,
+   "uvot-uvw1": 52,
+   "uvot-uvw2": 60,
+   "V": 70,
+   "g": 101,
+   "i": 93,
+   "atlas-orange": 1,
+   "r": 150,
+   "u": 61,
+   "z": 45
+  },
+  "rows_kept": 965,
+  "time_frame": {
+   "declared": "observer",
+   "dilation_applied": true,
+   "one_plus_z_template": 1.0141,
+   "n_epochs": 965
+  },
+  "systems": {
+   "systems_touched": [],
+   "max_shift_mag": 0.0
+  },
+  "systems_detail": [],
+  "rows_out": 962,
+  "span_days": [
+   0.7435164184999654,
+   80.33694901883588
+  ],
+  "node_bands": [
+   "B",
+   "H",
+   "J",
+   "Ks",
+   "R",
+   "V",
+   "g",
+   "i",
+   "r",
+   "u",
+   "uvot-b",
+   "uvot-uvw1",
+   "uvot-uvw2",
+   "uvot-v",
+   "z"
+  ],
+  "node_epochs": {
+   "Ks": 5,
+   "H": 42,
+   "J": 11,
+   "z": 45,
+   "i": 93,
+   "R": 29,
+   "r": 150,
+   "V": 70,
+   "uvot-v": 9,
+   "g": 101,
+   "B": 69,
+   "uvot-b": 10,
+   "u": 61,
+   "uvot-uvw1": 52,
+   "uvot-uvw2": 60
+  },
+  "band_active_days": {
+   "Ks": 31.6138,
+   "H": 42.188,
+   "J": 34.6029,
+   "z": 78.6642,
+   "i": 59.8783,
+   "R": 36.2283,
+   "r": 78.6556,
+   "V": 44.7788,
+   "uvot-v": 9.9241,
+   "g": 78.6613,
+   "B": 44.6318,
+   "uvot-b": 9.8179,
+   "u": 57.3334,
+   "uvot-uvw1": 65.429,
+   "uvot-uvw2": 65.1022
+  },
+  "thin_epoch_days": 0.9322,
+  "thick_epoch_days": 78.6613
+ },
+ "bands": [
+  "Ks",
+  "H",
+  "J",
+  "z",
+  "i",
+  "R",
+  "r",
+  "V",
+  "uvot-v",
+  "g",
+  "B",
+  "uvot-b",
+  "u",
+  "uvot-uvw1",
+  "uvot-uvw2"
+ ],
+ "n_time_nodes": 1024,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": false,
+  "host_removed": false,
+  "source": "mw_removed: false -- the table's own caption says \"No correction for Galactic extinction has been applied.\" (Perley et al. 2019, caption of the machine-readable table this CSV is vendored from; see the 969-vs-949 caveat in provenance for how much of the CSV that caption provably covers), so the Milky Way term is still in every value.  The paper corrects it elsewhere, in its early-SED work: \"Galactic extinction is corrected using the Fitzpatrick attenuation curve and E(B-V) = 0.07 [Schlafly2011]\" -- that sentence is about the coeval SEDs, not the tabulated rows.  host_removed: false -- \"We assume no extinction in the host galaxy.\" (same sentence): the paper sets the host term to zero rather than removing a measured one, and zero-removal is `false` in this manifest's vocabulary -- `true` would claim a correction that never happened, and `unknown` would hide a value the source pins at zero. Tension to flag, not resolve: Prentice et al. 2018 publish their photometry of this same object already MW-corrected -- \"We corrected for Milky Way (MW) extinction of E(B-V) = 0.08 mag ... using a Cardelli R_V = 3.1 extinction law\" -- a different E(B-V) (0.08 vs 0.07) AND the opposite handling (removed vs left in).  Rows from the two publications cannot share one surface without deciding per row which convention it carries; this manifest vendors only Perley et al.'s rows and declares their convention."
+ },
+ "t_valid_days": [
+  1.6852381421975753,
+  80.33103244256014
+ ],
+ "t_union_days": [
+  0.7435164184999654,
+  80.33694901883588
+ ],
+ "nu_valid_Hz": [
+  126727608027428.1,
+  1903101616329315.5
+ ],
+ "nu_valid_lambda_A": [
+  1575.3,
+  23656.4
+ ],
+ "pivot_nu_Hz": {
+  "Ks": 140498668054801.22,
+  "H": 184310704348396.75,
+  "J": 245313682257821.47,
+  "z": 338670163747215.9,
+  "i": 404847638255084.25,
+  "R": 440670774158445.44,
+  "r": 490770859923942.56,
+  "V": 550255575138147.44,
+  "uvot-v": 559387810180161.44,
+  "g": 642093016899100.9,
+  "B": 688304531549739.9,
+  "uvot-b": 695935253939734.2,
+  "u": 852315907260554.9,
+  "uvot-uvw1": 1146778095152435.5,
+  "uvot-uvw2": 1441230852162900.0
+ },
+ "per_band_epochs": {
+  "Ks": 5,
+  "H": 42,
+  "J": 11,
+  "z": 45,
+  "i": 93,
+  "R": 29,
+  "r": 150,
+  "V": 70,
+  "uvot-v": 9,
+  "g": 101,
+  "B": 69,
+  "uvot-b": 10,
+  "u": 61,
+  "uvot-uvw1": 52,
+  "uvot-uvw2": 60
+ },
+ "mode_by_band": {
+  "Ks": "band",
+  "H": "band",
+  "J": "band",
+  "z": "band",
+  "i": "band",
+  "R": "band",
+  "r": "band",
+  "V": "band",
+  "uvot-v": "band",
+  "g": "band",
+  "B": "band",
+  "uvot-b": "band",
+  "u": "band",
+  "uvot-uvw1": "band",
+  "uvot-uvw2": "band"
+ },
+ "excluded_bands": [
+  "I",
+  "K",
+  "U",
+  "atlas-orange",
+  "uvot-u",
+  "uvot-uvm2"
+ ],
+ "excluded_reasons": {
+  "I": {
+   "colour-term-above-max": 26
+  },
+  "K": {
+   "too-few-epochs-for-a-node": 2
+  },
+  "U": {
+   "colour-term-above-max": 31
+  },
+  "atlas-orange": {
+   "too-few-epochs-for-a-node": 1
+  },
+  "uvot-u": {
+   "colour-term-above-max": 49
+  },
+  "uvot-uvm2": {
+   "colour-term-above-max": 46
+  }
+ },
+ "unfold": {
+  "iterations": 13,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.15302873,
+   0.07509985,
+   0.03099709,
+   0.01906948,
+   0.01173178,
+   0.00672153,
+   0.00380804,
+   0.0021763,
+   0.00118517,
+   0.00062582,
+   0.00032488,
+   0.00016948,
+   9.986e-05
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "Ks": -2.496,
+   "H": -2.398,
+   "J": -2.331,
+   "z": -2.202,
+   "i": -1.697,
+   "R": -0.748,
+   "r": -1.524,
+   "V": -1.617,
+   "uvot-v": -1.222,
+   "g": -1.152,
+   "B": -1.315,
+   "uvot-b": -1.071,
+   "u": -2.279,
+   "uvot-uvw1": -1.666,
+   "uvot-uvw2": -2.738
+  },
+  "gain_spread_mag_per_dex": {
+   "Ks": 0.032,
+   "H": 0.128,
+   "J": 0.064,
+   "z": 0.799,
+   "i": 0.762,
+   "R": 0.169,
+   "r": 0.96,
+   "V": 1.233,
+   "uvot-v": 0.959,
+   "g": 1.973,
+   "B": 3.395,
+   "uvot-b": 2.031,
+   "u": 0.208,
+   "uvot-uvw1": 1.633,
+   "uvot-uvw2": 2.637
+  },
+  "cross_talk_mag_per_dex": {
+   "Ks": {
+    "H": 0.0,
+    "J": -0.009,
+    "z": -0.002,
+    "i": 0.0,
+    "R": 0.0,
+    "r": 0.0,
+    "V": 0.0,
+    "uvot-v": 0.0,
+    "g": 0.0,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "H": {
+    "Ks": -0.035,
+    "J": -0.064,
+    "z": -0.0,
+    "i": 0.0,
+    "R": 0.0,
+    "r": 0.0,
+    "V": 0.0,
+    "uvot-v": 0.0,
+    "g": 0.0,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "J": {
+    "Ks": 0.009,
+    "H": -0.06,
+    "z": -0.136,
+    "i": 0.034,
+    "R": 0.0,
+    "r": 0.0,
+    "V": 0.0,
+    "uvot-v": 0.0,
+    "g": 0.0,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "z": {
+    "Ks": 0.0,
+    "H": 0.016,
+    "J": -0.08,
+    "i": -0.207,
+    "R": 0.044,
+    "r": -0.007,
+    "V": 0.0,
+    "uvot-v": 0.0,
+    "g": 0.0,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "i": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.002,
+    "z": -0.239,
+    "R": -0.529,
+    "r": -0.006,
+    "V": 0.001,
+    "uvot-v": 0.001,
+    "g": 0.0,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "R": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.001,
+    "z": -0.134,
+    "i": -0.659,
+    "r": -0.744,
+    "V": -0.228,
+    "uvot-v": -0.013,
+    "g": 0.005,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "r": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.002,
+    "i": -0.0,
+    "R": -0.392,
+    "V": -0.526,
+    "uvot-v": -0.008,
+    "g": 0.022,
+    "B": 0.0,
+    "uvot-b": 0.0,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "V": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": -0.002,
+    "R": 0.014,
+    "r": -0.433,
+    "uvot-v": -0.403,
+    "g": -0.5,
+    "B": 0.078,
+    "uvot-b": 0.001,
+    "u": 0.001,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "uvot-v": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.002,
+    "R": 0.026,
+    "r": -0.177,
+    "V": -0.701,
+    "g": -0.337,
+    "B": 0.048,
+    "uvot-b": 0.003,
+    "u": 0.0,
+    "uvot-uvw1": 0.0,
+    "uvot-uvw2": 0.0
+   },
+   "g": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": -0.0,
+    "i": -0.003,
+    "R": 0.0,
+    "r": 0.043,
+    "V": -0.321,
+    "uvot-v": -0.195,
+    "B": -0.533,
+    "uvot-b": -0.198,
+    "u": -0.13,
+    "uvot-uvw1": 0.006,
+    "uvot-uvw2": 0.0
+   },
+   "B": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.0,
+    "R": 0.0,
+    "r": 0.009,
+    "V": -0.075,
+    "uvot-v": -0.05,
+    "g": -0.61,
+    "uvot-b": -0.503,
+    "u": -0.392,
+    "uvot-uvw1": 0.026,
+    "uvot-uvw2": 0.0
+   },
+   "uvot-b": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.0,
+    "R": 0.0,
+    "r": -0.0,
+    "V": 0.0,
+    "uvot-v": -0.008,
+    "g": -0.668,
+    "B": -0.209,
+    "u": -0.371,
+    "uvot-uvw1": 0.028,
+    "uvot-uvw2": 0.0
+   },
+   "u": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.0,
+    "R": 0.0,
+    "r": 0.001,
+    "V": 0.0,
+    "uvot-v": 0.0,
+    "g": 0.016,
+    "B": -0.064,
+    "uvot-b": -0.053,
+    "uvot-uvw1": -0.115,
+    "uvot-uvw2": 0.012
+   },
+   "uvot-uvw1": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.0,
+    "R": 0.0,
+    "r": -0.006,
+    "V": -0.003,
+    "uvot-v": -0.0,
+    "g": -0.002,
+    "B": 0.01,
+    "uvot-b": 0.002,
+    "u": -0.344,
+    "uvot-uvw2": -0.478
+   },
+   "uvot-uvw2": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "z": 0.0,
+    "i": 0.0,
+    "R": 0.0,
+    "r": 0.0,
+    "V": -0.0,
+    "uvot-v": -0.0,
+    "g": -0.006,
+    "B": 0.004,
+    "uvot-b": -0.0,
+    "u": -0.246,
+    "uvot-uvw1": 0.486
+   }
+  },
+  "jacobian_condition": 11.0,
+  "node_correction_dex": {
+   "Ks": 0.0006,
+   "H": 0.007,
+   "J": 0.0067,
+   "z": 0.0239,
+   "i": 0.081,
+   "R": 0.23,
+   "r": 0.1047,
+   "V": 0.208,
+   "uvot-v": 0.1711,
+   "g": 0.1373,
+   "B": 0.1792,
+   "uvot-b": 0.1928,
+   "u": 0.0161,
+   "uvot-uvw1": 0.0893,
+   "uvot-uvw2": 0.0972
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "B": 0.0276,
+   "H": 0.0006,
+   "J": 0.0006,
+   "Ks": 0.0,
+   "R": 0.0278,
+   "V": 0.0242,
+   "g": 0.0078,
+   "i": 0.0101,
+   "r": 0.0181,
+   "u": 0.0042,
+   "uvot-b": 0.0488,
+   "uvot-uvw1": 0.0136,
+   "uvot-uvw2": 0.0118,
+   "uvot-v": 0.0587,
+   "z": 0.0023
+  },
+  "quoted_photometric_error_rms_mag": {
+   "B": 0.0426,
+   "H": 0.0644,
+   "J": 0.0403,
+   "Ks": 0.03,
+   "R": 0.0425,
+   "V": 0.044,
+   "g": 0.0405,
+   "i": 0.0452,
+   "r": 0.0464,
+   "u": 0.065,
+   "uvot-b": 0.0474,
+   "uvot-uvw1": 0.1899,
+   "uvot-uvw2": 0.2343,
+   "uvot-v": 0.067,
+   "z": 0.0548
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [],
+  "corrected_bands": [
+   "B",
+   "H",
+   "J",
+   "Ks",
+   "R",
+   "V",
+   "g",
+   "i",
+   "r",
+   "u",
+   "uvot-b",
+   "uvot-uvw1",
+   "uvot-uvw2",
+   "uvot-v",
+   "z"
+  ],
+  "not_corrected": {
+   "R": {
+    "reason": "node-controls-own-band-weakly",
+    "advisory": true,
+    "diagonal_gain": 0.738,
+    "off_diagonal_gain": 1.785,
+    "colour_term_mag": 0.1393
+   },
+   "r": {
+    "reason": "overlapping-bands-not-identifiable",
+    "advisory": true,
+    "diagonal_gain": 1.604,
+    "off_diagonal_gain": 0.951,
+    "colour_term_mag": 0.0578
+   },
+   "V": {
+    "reason": "overlapping-bands-not-identifiable",
+    "advisory": true,
+    "diagonal_gain": 1.272,
+    "off_diagonal_gain": 1.432,
+    "colour_term_mag": 0.0792
+   },
+   "uvot-v": {
+    "reason": "overlapping-bands-not-identifiable",
+    "advisory": true,
+    "diagonal_gain": 1.393,
+    "off_diagonal_gain": 1.293,
+    "colour_term_mag": 0.0564
+   },
+   "g": {
+    "reason": "overlapping-bands-not-identifiable",
+    "advisory": true,
+    "diagonal_gain": 1.207,
+    "off_diagonal_gain": 1.429,
+    "colour_term_mag": 0.0562
+   },
+   "B": {
+    "reason": "node-controls-own-band-weakly",
+    "advisory": true,
+    "diagonal_gain": 0.949,
+    "off_diagonal_gain": 1.666,
+    "colour_term_mag": 0.078
+   },
+   "uvot-b": {
+    "reason": "overlapping-bands-not-identifiable",
+    "advisory": true,
+    "diagonal_gain": 1.337,
+    "off_diagonal_gain": 1.284,
+    "colour_term_mag": 0.0688
+   }
+  },
+  "colour_term_size_mag": {
+   "B": 0.078,
+   "H": 0.0176,
+   "J": 0.0158,
+   "Ks": 0.0013,
+   "R": 0.1393,
+   "V": 0.0792,
+   "g": 0.0562,
+   "i": 0.0668,
+   "r": 0.0578,
+   "u": 0.0369,
+   "uvot-b": 0.0688,
+   "uvot-uvw1": 0.2388,
+   "uvot-uvw2": 0.2504,
+   "uvot-v": 0.0564,
+   "z": 0.0606
+  },
+  "final_residual_mag": {
+   "B": 0.076418,
+   "H": 0.001622,
+   "J": 0.000914,
+   "Ks": 2.1e-05,
+   "R": 0.093246,
+   "V": 0.050516,
+   "g": 0.020929,
+   "i": 0.037152,
+   "r": 0.058282,
+   "u": 0.010215,
+   "uvot-b": 0.082766,
+   "uvot-uvw1": 0.058631,
+   "uvot-uvw2": 0.052378,
+   "uvot-v": 0.090884,
+   "z": 0.005646
+  },
+  "max_colour_term_mag": 0.2504,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {
+    "uvot-uvm2": 0.789454,
+    "U": 0.488618,
+    "uvot-u": 0.417898,
+    "I": 0.305082
+   },
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [],
+   "rounds": [
+    {
+     "excluded": {
+      "uvot-uvm2": 0.789454
+     },
+     "raw_colour_term_mag": {
+      "uvot-uvm2": 0.4383
+     }
+    },
+    {
+     "excluded": {
+      "U": 0.488618
+     },
+     "raw_colour_term_mag": {
+      "U": 0.3919
+     }
+    },
+    {
+     "excluded": {
+      "uvot-u": 0.417898
+     },
+     "raw_colour_term_mag": {
+      "uvot-u": 0.4288
+     }
+    },
+    {
+     "excluded": {
+      "I": 0.305082
+     },
+     "raw_colour_term_mag": {
+      "I": 0.173
+     }
+    }
+   ]
+  }
+ },
+ "template": {
+  "id": "at2018cow",
+  "label": "AT 2018cow / SN 2018cow (Fast Blue Optical Transient in CGCG 137-068)",
+  "object_class": "fast-blue-optical-transient",
+  "z": 0.0141,
+  "z_source": "Perley et al. 2019, MNRAS 484, 1031, DOI 10.1093/mnras/sty3420 (read in full), discovery paragraph: \"coincident with the galaxy CGCG 137-068 (z = 0.0141, d = 60 Mpc ...; Abolfathi+2018)\" -- SDSS's redshift, quoted by Perley et al.; adopted verbatim, with no error quoted (so none is invented) and no reference frame stated (so `frame` stays undeclared). Cross-check: Prentice et al. 2018, ApJL 865, L3, DOI 10.3847/2041-8213/aadd90 quote the spectrum behind it -- \"shows the galaxy to be star-forming with nebular emission lines at a redshift of z = 0.014145\" -- a difference of 0.000045 (0.32 % in z, 0.007 mag in distance modulus) that changes no decision here.  Prentice et al. was read selectively, not end-to-end: grade S_DOC, a cross-check only, never an input.",
+  "z_error": null,
+  "redshift_frame": "unspecified",
+  "redshift_cmb": null,
+  "distance": {
+   "kind": "cosmological",
+   "allow_low_z": true,
+   "source": "z = 0.0141 sits below the 0.02 peculiar-velocity guard, so the cosmological branch needs `allow_low_z: true` to exist at all -- declared openly rather than routed around, because the alternatives are both worse: the host has no measured distance indicator, and the two distances that exist are cosmology-derived (Perley et al.'s d = 60 Mpc under their footnote \"We assume h = 0.7, Omega_M = 0.3, Omega_Lambda = 0.7\"; Prentice et al.'s \"distance of 66 +/- 5 Mpc\" under H0 = 73, Omega_m = 0.27, Omega_Lambda = 0.73), so `kind: measured` would be a fiction.  The honest cost of the branch is its floor: the project's 350 km/s peculiar velocity against cz = 4227 km/s is delta_d/d = 0.083, i.e. sigma_mu = 0.18 mag -- and the two published distances already differ by 5 log10(66/60) = 0.21 mag, more than that floor, so no cosmology inside this package can be the smaller error term at this redshift.  The default cosmology is used and named in every result's provenance via `constants.DEFAULT_COSMOLOGY_NAME`; the 60-vs-66 Mpc spread is recorded in docs/VALIDATION.md as a cross-check, never averaged into the declaration."
+  },
+  "manifest": "templates/at2018cow.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": false,
+   "host_removed": false,
+   "source": "mw_removed: false -- the table's own caption says \"No correction for Galactic extinction has been applied.\" (Perley et al. 2019, caption of the machine-readable table this CSV is vendored from; see the 969-vs-949 caveat in provenance for how much of the CSV that caption provably covers), so the Milky Way term is still in every value.  The paper corrects it elsewhere, in its early-SED work: \"Galactic extinction is corrected using the Fitzpatrick attenuation curve and E(B-V) = 0.07 [Schlafly2011]\" -- that sentence is about the coeval SEDs, not the tabulated rows.  host_removed: false -- \"We assume no extinction in the host galaxy.\" (same sentence): the paper sets the host term to zero rather than removing a measured one, and zero-removal is `false` in this manifest's vocabulary -- `true` would claim a correction that never happened, and `unknown` would hide a value the source pins at zero. Tension to flag, not resolve: Prentice et al. 2018 publish their photometry of this same object already MW-corrected -- \"We corrected for Milky Way (MW) extinction of E(B-V) = 0.08 mag ... using a Cardelli R_V = 3.1 extinction law\" -- a different E(B-V) (0.08 vs 0.07) AND the opposite handling (removed vs left in).  Rows from the two publications cannot share one surface without deciding per row which convention it carries; this manifest vendors only Perley et al.'s rows and declares their convention."
+  },
+  "citations": [
+   "Perley et al. 2019, \"The Fast, Luminous Ultraviolet Transient AT2018cow: Extreme Supernova, or Disruption of a Star by an Intermediate-Mass Black Hole?\", MNRAS 484, 1031, DOI 10.1093/mnras/sty3420.  Publisher of the vendored table; redshift/distance stamp, discovery epoch, the table caption and both extinction sentences all come from it; read in full (S_OK).",
+   "Prentice et al. 2018, \"The Cow: discovery of a luminous, hot and rapidly evolving transient\", ApJL 865, L3, DOI 10.3847/2041-8213/aadd90 -- cross-checks only (MJD 58285.44141, z = 0.014145, 66 +/- 5 Mpc, MW E(B-V) = 0.08 correction); read selectively, the quoted paragraphs and not the whole paper: grade S_DOC, kept out of every input and every test."
+  ],
+  "grade": "system-declared-ab"
+ },
+ "manifest_sha256": "e025fd8c98f748978e36a2ee5fe576f17331c1e3c509cce422f2777c7d2918e9",
+ "inputs_sha256": {
+  "manifest": "e025fd8c98f748978e36a2ee5fe576f17331c1e3c509cce422f2777c7d2918e9",
+  "photometry": "a1cf9d6c4096d5787bfc613bcb70ff81f5b043c7e95db6ef27a2bd0eb7b4a124",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "at2018cow.npz"
+}

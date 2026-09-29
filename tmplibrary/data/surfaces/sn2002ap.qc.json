@@ -1,0 +1,362 @@
+{
+ "audit": {
+  "file": "data/raw/sn2002ap_raw.csv",
+  "file_sha256": "75974e5a8d4637fbbe79a89c326cd7d1b879ef667b96efd7dc22e1dfccbc5396",
+  "rows_in": 1855,
+  "rejections": {
+   "table": {
+    "upper-limit": 1
+   },
+   "B": {
+    "duplicate-epoch-merged": 83,
+    "error-bar-discarded-by-epoch-merge": 78
+   },
+   "column:C": {
+    "unmapped-band": 137
+   },
+   "I": {
+    "duplicate-epoch-merged": 86,
+    "error-bar-discarded-by-epoch-merge": 81
+   },
+   "R": {
+    "duplicate-epoch-merged": 95,
+    "error-bar-discarded-by-epoch-merge": 81
+   },
+   "U": {
+    "duplicate-epoch-merged": 36,
+    "error-bar-discarded-by-epoch-merge": 34
+   },
+   "V": {
+    "duplicate-epoch-merged": 504,
+    "error-bar-discarded-by-epoch-merge": 391
+   }
+  },
+  "band_epochs": {
+   "B": 160,
+   "I": 172,
+   "R": 259,
+   "U": 69,
+   "V": 253
+  },
+  "rows_kept": 1854,
+  "time_frame": {
+   "declared": "observer",
+   "dilation_applied": true,
+   "one_plus_z_template": 1.0022016,
+   "n_epochs": 1854
+  },
+  "error_bars": {
+   "B": 1025,
+   "I": 1025,
+   "R": 1025,
+   "U": 1025,
+   "V": 1025
+  },
+  "systems": {
+   "systems_touched": [
+    "B:johnson-cousins:-0.145",
+    "I:johnson-cousins:+0.417",
+    "R:johnson-cousins:+0.176",
+    "U:johnson-cousins:+0.699",
+    "V:johnson-cousins:-0.022"
+   ],
+   "max_shift_mag": 0.699,
+   "n_values_shifted": 5,
+   "grade": "DOC"
+  },
+  "systems_detail": [
+   {
+    "band": "B",
+    "system": "johnson-cousins",
+    "shift_mag": -0.145,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "I",
+    "system": "johnson-cousins",
+    "shift_mag": 0.417,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "R",
+    "system": "johnson-cousins",
+    "shift_mag": 0.176,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "U",
+    "system": "johnson-cousins",
+    "shift_mag": 0.699,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "V",
+    "system": "johnson-cousins",
+    "shift_mag": -0.022,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   }
+  ],
+  "rows_out": 913,
+  "span_days": [
+   0.0,
+   520.2845415533164
+  ],
+  "node_bands": [
+   "B",
+   "I",
+   "R",
+   "U",
+   "V"
+  ],
+  "node_epochs": {
+   "I": 172,
+   "R": 259,
+   "V": 253,
+   "B": 160,
+   "U": 69
+  },
+  "band_active_days": {
+   "I": 391.5224,
+   "R": 513.0379,
+   "V": 520.2845,
+   "B": 519.2867,
+   "U": 38.8425
+  },
+  "thin_epoch_days": 0.9978,
+  "thick_epoch_days": 519.2867
+ },
+ "bands": [
+  "I",
+  "R",
+  "V",
+  "B",
+  "U"
+ ],
+ "n_time_nodes": 659,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": "unknown",
+  "host_removed": "unknown",
+  "source": "The table carries no extinction flag of any kind (columns: event, time, magnitude, e_magnitude, upperlimit, band, instrument, telescope, source), so what its 14 source streams did to their photometry cannot be read off the rows: both states stay `unknown`.  The literature is on the record and is quoted here without being promoted into a declaration.  Galactic, from Gal-Yam et al. 2002: per-band corrections A_U = 0.387, A_B = 0.307, A_V = 0.236, A_R = 0.190, A_I = 0.138 (A_V = 0.236 is E(B-V) = 0.076 under R_V = 3.1 -- the sky's foreground, not this table's provenance).  Host, from GCN 1248: from \"an equivalent width of (30 +- 5) milli-Angstrom\" they derive \"a reddening in the supernova host of E(B-V) = (0.008 +- 0.002) mag\", \"in agreement with A_V (host) = (0.025 +- 0.005) magnitudes\" -- i.e. the host term is small but NOT zero, which is exactly the case `unknown` protects: a table that quietly removed it and a table that quietly kept it are indistinguishable here, and declaring either direction would be an invention."
+ },
+ "t_valid_days": [
+  0.0,
+  518.288935080527
+ ],
+ "t_union_days": [
+  0.0,
+  520.2845415533164
+ ],
+ "nu_valid_Hz": [
+  250377067562944.03,
+  1001508270251776.1
+ ],
+ "nu_valid_lambda_A": [
+  2993.4,
+  11973.6
+ ],
+ "pivot_nu_Hz": {
+  "I": 343806727364226.3,
+  "R": 435500399304637.25,
+  "V": 543799445629002.6,
+  "B": 680228678440390.2,
+  "U": 852430521796263.1
+ },
+ "per_band_epochs": {
+  "I": 172,
+  "R": 259,
+  "V": 253,
+  "B": 160,
+  "U": 69
+ },
+ "mode_by_band": {
+  "I": "band",
+  "R": "band",
+  "V": "band",
+  "B": "band",
+  "U": "band"
+ },
+ "excluded_bands": [],
+ "excluded_reasons": {},
+ "unfold": {
+  "iterations": 5,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.21201593,
+   0.04233623,
+   0.00545853,
+   0.00029197,
+   1.449e-05
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "I": -2.348,
+   "R": -1.863,
+   "V": -2.123,
+   "B": -1.949,
+   "U": -2.177
+  },
+  "gain_spread_mag_per_dex": {
+   "I": 1.053,
+   "R": 0.677,
+   "V": 0.311,
+   "B": 1.661,
+   "U": 0.486
+  },
+  "cross_talk_mag_per_dex": {
+   "I": {
+    "R": -0.1,
+    "V": -0.034,
+    "B": 0.0,
+    "U": 0.0
+   },
+   "R": {
+    "I": -0.262,
+    "V": -0.46,
+    "B": 0.026,
+    "U": 0.0
+   },
+   "V": {
+    "I": 0.022,
+    "R": -0.244,
+    "B": -0.169,
+    "U": 0.011
+   },
+   "B": {
+    "I": 0.0,
+    "R": 0.061,
+    "V": -0.397,
+    "U": -0.079
+   },
+   "U": {
+    "I": 0.0,
+    "R": 0.0,
+    "V": 0.074,
+    "B": -0.379
+   }
+  },
+  "jacobian_condition": 1.7,
+  "node_correction_dex": {
+   "I": 0.065,
+   "R": 0.2179,
+   "V": 0.1054,
+   "B": 0.085,
+   "U": 0.0636
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "B": 0.0069,
+   "I": 0.0061,
+   "R": 0.0155,
+   "U": 0.0033,
+   "V": 0.006
+  },
+  "quoted_photometric_error_rms_mag": {
+   "B": 0.2513,
+   "I": 0.034,
+   "R": 0.0437,
+   "U": 0.0678,
+   "V": 0.037
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [],
+  "corrected_bands": [
+   "B",
+   "I",
+   "R",
+   "U",
+   "V"
+  ],
+  "not_corrected": {},
+  "colour_term_size_mag": {
+   "B": 0.1542,
+   "I": 0.0988,
+   "R": 0.3955,
+   "U": 0.1585,
+   "V": 0.1882
+  },
+  "final_residual_mag": {
+   "B": 0.043577,
+   "I": 0.032957,
+   "R": 0.118019,
+   "U": 0.008343,
+   "V": 0.036392
+  },
+  "max_colour_term_mag": 0.3955,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {},
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [],
+   "rounds": []
+  }
+ },
+ "template": {
+  "id": "sn2002ap",
+  "label": "SN 2002ap (type Ic-BL / hypernova in M74)",
+  "object_class": "core-collapse-BL-Ic",
+  "z": 0.0022016,
+  "z_source": "GCN 1248 (Klose, Guenther & Woitas for the TLS Tautenburg 2-m echelle team, R = 70 000): \"we detect an absorption feature at a heliocentric velocity of (660 +- 2) km/s what we attribute to redshifted NaI D1 at the velocity of the host\".  The host Na I D absorption is this template's redshift: z = v/c = 660/299792.458 = 0.0022016, the quote's +-2 km/s giving +-0.0000067, and the frame is the GCN's own word, heliocentric.  At 660 km/s the relativistic inversion differs from v/c by 2.2e-6 -- inside the quoted error -- so the non-relativistic reading is the one the circular itself makes. v1 carried 0.002 with no source behind it; this is the spectroscopic value, error and frame, quoted rather than transcribed.\nThe +-2 km/s is a 1-sigma, on the evidence the circular itself gives: a printed uncertainty on one absorption-line centroid from an R = 70 000 echelle spectrum, which is 2/299792.458 = 6.7e-6, the smallest spectroscopic precision of any template here. It is also independent of the peculiar-velocity term, being a wavelength-solution residual rather than a motion (docs/VERIFICATION.md sect. 13 works why those are separate unknowns). It enters no error budget and cannot: this template's distance is Tully-Fisher, so it is not computed from this redshift, and `Distance.distance_error_mag` adds the 350 km/s velocity term only for `kind: cosmological`.",
+  "z_error": 6.7e-06,
+  "redshift_frame": "heliocentric",
+  "redshift_cmb": {
+   "z_helio": 0.0022016,
+   "z_cmb": 0.0012083555444308836,
+   "z_cmb_error": 6.710042207343124e-06,
+   "z_p": 0.0009920457116331693,
+   "second_order": 4.920773469848806e-07,
+   "position_term": 5.980597268658727e-09,
+   "dipole_term": 3.6692050471796724e-07,
+   "rule_version": "chromashift-cmb-frame-1"
+  },
+  "distance": {
+   "kind": "measured-secondary",
+   "mu": 30.24,
+   "mu_err": 0.47,
+   "source": "The kind is `measured-secondary` and not `measured`, and the difference is not cosmetic: `measured` means a primary distance indicator in the vocabulary `snredshift.distance` defines (TRGB, Cepheids, RR Lyrae, SBF, the fundamental plane, a standard siren), and a Tully-Fisher modulus is calibrated against those rather than independent of them, so its calibration uncertainty is already inside the quoted error.  No Cepheid or TRGB determination for M74 could be found in this round, so this is the best available *and* a secondary one; a caller who needs only primary determinations should filter on `kind`. Gal-Yam et al. 2002, MNRAS 332, L73, DOI 10.1046/j.1365-8711.2002.05535.x: \"Tully (1988), mu = 30.24 for H0 = 65\" -- a distance modulus for M74 adopted verbatim from that line.  mu_err is deliberately NOT a statistical error: half the gap to the other published modulus for this host -- GCN 1238 (Berger et al.) writes \"Given the distance modulus of M74 of 29.3\" -- so mu_err = (30.24 - 29.30)/2 = 0.47, a declared spread between two literature values (11.2 Mpc against 7.2 Mpc) rather than a sigma, and it is documented as such so no reader mistakes it for one.  The cosmological branch is not an option here and needs no allow_low_z flag: at z = 0.0022 the peculiar-velocity guard (0.02) refuses it outright, which is the guard doing its job -- 660 km/s of host/halo motion is not a Hubble-flow measurement, and a cosmological distance at this redshift would be the model pretending to be data."
+  },
+  "manifest": "templates/sn2002ap.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": "unknown",
+   "host_removed": "unknown",
+   "source": "The table carries no extinction flag of any kind (columns: event, time, magnitude, e_magnitude, upperlimit, band, instrument, telescope, source), so what its 14 source streams did to their photometry cannot be read off the rows: both states stay `unknown`.  The literature is on the record and is quoted here without being promoted into a declaration.  Galactic, from Gal-Yam et al. 2002: per-band corrections A_U = 0.387, A_B = 0.307, A_V = 0.236, A_R = 0.190, A_I = 0.138 (A_V = 0.236 is E(B-V) = 0.076 under R_V = 3.1 -- the sky's foreground, not this table's provenance).  Host, from GCN 1248: from \"an equivalent width of (30 +- 5) milli-Angstrom\" they derive \"a reddening in the supernova host of E(B-V) = (0.008 +- 0.002) mag\", \"in agreement with A_V (host) = (0.025 +- 0.005) magnitudes\" -- i.e. the host term is small but NOT zero, which is exactly the case `unknown` protects: a table that quietly removed it and a table that quietly kept it are indistinguishable here, and declaring either direction would be an invention."
+  },
+  "citations": [
+   "Gal-Yam et al. 2002, \"Supernova 2002ap: the first month\", MNRAS 332, L73-L77, DOI 10.1046/j.1365-8711.2002.05535.x.  Distance modulus, B-maximum anchor and the per-band extinction figures; read in full.  (Journal reference confirmed against Crossref this build: L73, not the L77 sometimes seen for the same paper's last page.)",
+   "GCN 1248 (Klose, Guenther & Woitas et al. 2002): host redshift from the (660 +- 2) km/s Na I D absorption and the host E(B-V)/A_V estimates from the (30 +- 5) mA equivalent width; read in full.",
+   "GCN 1238 (Berger et al. 2002): the competing distance modulus for M74, \"Given the distance modulus of M74 of 29.3\" -- the far side of mu_err's half-gap; read in full.",
+   "Tomita et al. 2006, \"The Optical/Near-Infrared Light Curves of SN 2002ap for the First 1.5 Years after Discovery\", ApJ 644, 400-408, DOI 10.1086/503554.  Publisher of the 74 B/V/R/I rows appended to the vendored table (source column 2006ApJ...644..400T) -- the late-time tail those rows trace is what now sets t_max, at 520.2845 d rest.  Its 46 J/H/K rows are NOT vendored (see the caveat on the missing magnitude-system statement); read in full.",
+   "table source column: 14 combinations of ADS bibliography codes (2003PASP..115.1220F, 2002MNRAS.332L..73G, 2003MNRAS.340..375P, 2003ApJ...592..467Y, 2014ApJS..213...19B, 2006ApJ...644..400T, VSNET 2003, Sternberg Supernova Light Curve Catalogue, SUSPECT) plus 53 rows reading \"Unknown,?\" (as compiled in the AJST catalogue)."
+  ],
+  "grade": "system-per-band-declared"
+ },
+ "manifest_sha256": "ed9007a3c13c6108f253c500b8826e50062bdb9ccaaf98e62ba9335cba33dcac",
+ "inputs_sha256": {
+  "manifest": "ed9007a3c13c6108f253c500b8826e50062bdb9ccaaf98e62ba9335cba33dcac",
+  "photometry": "75974e5a8d4637fbbe79a89c326cd7d1b879ef667b96efd7dc22e1dfccbc5396",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "sn2002ap.npz"
+}

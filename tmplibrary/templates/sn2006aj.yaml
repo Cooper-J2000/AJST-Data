@@ -1,0 +1,231 @@
+schema: chromashift-template-1
+id: sn2006aj
+label: "SN 2006aj / GRB 060218 (type Ic-BL associated with a low-luminosity GRB)"
+object_class: core-collapse-BL-Ic
+
+redshift:
+  value: 0.0331
+  frame: heliocentric
+  source: >-
+    Sollerman et al. 2006, A&A 454, 503, DOI 10.1051/0004-6361:20065226, section 2:
+    "From the narrow emission lines from the host galaxy we derive a redshift of
+    z = 0.0331 +- 0.0007."  Adopted here because it is the value the same paper's
+    distance and absolute magnitudes were derived with, which is what
+    docs/VALIDATION.md section A re-derives.  v1 carried 0.033 in its module and
+    0.0343 in the notebook that consumed it, both without a stated source; 0.033
+    agrees with the published value to the 2 decimals it quotes, 0.0343 does not.
+    Independent cross-check: Mirabal et al. 2006, ApJ 643, L99,
+    DOI 10.1086/505177, "The weighted mean heliocentric redshift derived from the
+    emission lines is z = 0.03345 +- 0.00006" -- 0.5 sigma of the adopted value,
+    which is where a redshift enters the error budget at this distance: 0.00035 in
+    z is 1.08 % in d_L, i.e. 0.023 mag.
+
+    What that +-0.0007 actually is, because it is not a measurement precision and
+    reading it as one would be the mistake this repository exists to prevent. Sect. 3.2
+    of the same paper: "We derived the redshift by measuring the positions of the [O
+    II] line, the [O III] lines as well as Halpha and Hbeta at all 4 epochs, and
+    conclude z = 0.0331 +- 0.0007." Its own Table 1 gives those positions: [O II]
+    3853.42 A -> z = 0.0338, and Hbeta, [O III] 4958.91, [O III] 5006.84 and Halpha
+    -> 0.0328. So the quoted +-0.0007 spans the disagreement between the [O II] and the
+    Balmer lines: it measures how well the narrow lines pin the *systemic* velocity of
+    the star-forming gas, and is 1.5x the sample scatter of those five values. It is
+    not a centroid error either -- sect. 2.2 gives 3 A per pixel, so a line centroid is
+    good to ~0.1 pixel = 0.3 A = 1.4e-4 in z, five times tighter than 0.0007, and
+    Mirabal+2006 measured the same lines to +-0.00006. 0.0007 in z is 210 km/s, which
+    is why it reads like a velocity; it is not one. A line-of-sight scatter about the
+    systemic velocity and the galaxy's bulk motion relative to the CMB are separate
+    unknowns -- a bulk motion shifts every line equally, so it cannot appear in the
+    scatter among them -- and the bulk motion is handled where it belongs, by the CMB
+    frame declared above, where it comes to 175.3 km/s. The error is recorded here and
+    deliberately *not* folded into `Distance.distance_error_mag`: the 350 km/s term
+    there is already a line-of-sight velocity dispersion, so adding 210 km/s of the
+    same class of quantity counts one unknown twice, raising this template's distance
+    error from 0.0780 to 0.0893 mag for no new information. docs/VERIFICATION.md
+    sect. 13 works the comparison for all four templates.
+  error: 0.0007
+  error_kind: unestablished
+  position:
+    # SN 2006aj = GRB 060218, host SDSS J032139.68+165201.7.  The SN and the GRB are
+    # within an arcsecond or two of each other and of the host, so the direction is the
+    # host's to the precision this correction needs.  SIMBAD independently reports the
+    # galactic position of the same object as l = 166.9256, b = -32.8804, and the
+    # correction below is computed from the equatorial form and checked against that.
+    ra_deg: 50.415292
+    dec_deg: 16.867297
+    frame: ICRS
+    epoch: J2000
+    uncertainty_arcsec: 1.0
+    source: >-
+      SIMBAD (CDS) record for SN 2006aj, ICRS ep=J2000, quoting
+      `03 21 39.670 +16 52 02.27` with an error ellipse of [1000 1000 90] mas,
+      reference 2009ApJ...690..163R; the same position appears in the GCN series
+      (2006GCN.8674....2S) that SIMBAD lists, and to 0.2" in the Wikipedia infobox.
+      Read from SIMBAD on 2026-09-26.  Not re-measured here: this is a curated
+      position for a 2006 event whose arcseconds are 6e-9 of the correction.
+
+distance:
+  kind: cosmological
+  allow_low_z: false
+  source: >-
+    z = 0.0331 is above the peculiar-velocity guard (0.02), so a cosmological
+    luminosity distance is defensible; the default cosmology is used and named in
+    every result's provenance block, and it is `constants.DEFAULT_COSMOLOGY_NAME`
+    that the build reads.  Note that this is *not* the distance the comparison above
+    uses: Sollerman et al. 2006 state "a cosmology where
+    H_0 = 70 km/s/Mpc, Omega_Lambda = 0.7 and Omega_m = 0.3, this corresponds to a
+    luminosity distance of 145.4 Mpc", so docs/VALIDATION.md section A passes that
+    paper's own cosmology as an explicit `Distance` instead of inheriting this
+    default.  The two differ by 0.073 mag of distance modulus, which is the price of
+    an unstated H0 and the reason a distance never travels without its provenance.
+
+photometry:
+  file: sn2006aj.csv
+  layout: long
+  time:
+    column: time
+    unit: mjd
+    frame: observer
+    epoch_zero:
+      kind: first_point
+      source: >-
+        The earliest tabulated epoch.  The GRB 060218 trigger MJD was not restated
+        in the compiled table, so no absolute epoch is claimed; t = 0 is therefore
+        an internal reference, valid for shape and K-corrections but not for
+        aligning this template against another event.
+  band:
+    column: band
+    map:
+      U: U
+      B: B
+      V: V
+      UVW2: uvot-uvw2
+      UVW1: uvot-uvw1
+      UVM2: uvot-uvm2
+      "r'": r
+      "i'": i
+      J: J
+      H: H
+      Ks: Ks
+    system_map:
+      U: johnson-cousins
+      B: johnson-cousins
+      V: johnson-cousins
+      UVW2: ab
+      UVW1: ab
+      UVM2: ab
+      "r'": sdss
+      "i'": sdss
+      J: vega
+      H: vega
+      Ks: vega
+  value:
+    column: magnitude
+    error_column: e_magnitude
+    unit: mag
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [T, true, "1", y]
+    require_error: false
+
+validity:
+  t_min_days: 0.0
+  t_max_days: 160.0
+  require_min_bands: 2
+  require_min_epochs: 3
+  notes: >-
+    rest days is refused as out of domain rather than extrapolated.  `window_bands`
+    is gone, and with it the trade the previous note argued: that the count-first
+    window (7.77 d over nine bands) was preferable to the declared [U, V] one
+    (31.4 d over three), and that nothing could be done about the 68 % of the
+    table's epochs outside either.  Under the per-epoch rule there is no window to
+    choose between -- every band is a node over its own coverage and the surface
+    spans the union -- so the question the declaration was trading against is the
+    one the cap decides.
+    What that costs and buys is legible in the sidecar.  `span_days` 0 -- 34.815 d;
+    eight nodes (Ks, H, J, i, r, V, B, U); `band_active_days` V 33.30, B 31.98,
+    r 30.96, i 29.05, U 31.38, and Ks, H and J 9.67 each.  The three near-IR bands
+    open at 9.67 d, which is the old count-first window's blue edge, and they are
+    nodes for its first third instead of setting its boundary -- so a prediction
+    in Ks is answered over 9.67 -- 19.3 d where it used to be refused everywhere,
+    and in r over 0 -- 31 d where it used to be refused beyond 13.5.  `t_valid` is
+    0.008 -- 33.261 d with 33.30 d thick and 1.51 d thin.
+    `qc.excluded_bands` is [uvot-uvm2, uvot-uvw1, uvot-uvw2] and all three are
+    `colour-term-above-max` (0.869, 0.212 and 1.476 mag): B6 refused to repair
+    those nodes.  The nine bands the old count-first window kept are all on the
+    surface, and the three the declared [U, V] window kept are three of them, so
+    the declaration that was chosen to buy 23.6 extra days bought them for
+    nothing measurable once the days stopped being a choice.  A caller should read
+    the per-band coverage above rather than assume the near-IR bands are
+    underdetermined: they are nodes for a third of the event and not for the rest,
+    and the boundary is the data's.
+
+    `require_min_bands` moved from 3 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 3 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [0.00755, 33.26] against a union span of
+    [0, 34.82], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: unknown
+  host_removed: unknown
+  source: >-
+    The compiled table (sn2006aj.csv) carries no extinction column; its `source`
+    column holds ADS bibliography codes plus one archive name (CfA Supernova
+    Archive), which says where the numbers came from but not what was done to them.
+    What the *literature* says about this line of sight is on the record, though:
+    Sollerman et al. 2006, A&A 454, 503, DOI 10.1051/0004-6361:20065226, section 3
+    give "the Galactic extinction of E(B-V)=0.14" from the Schlegel maps, argue the
+    host term is low from the host SED and the Balmer decrement, and then "adopt a
+    total extinction of E(B-V) = 0.14 mag" -- i.e. at that level the Galactic and the
+    adopted total figure coincide, so the host term they assume is ~0.  That is a
+    statement about the sky, not about this table's provenance, so the declaration
+    stays `unknown`: the compilation neither confirms nor denies that it removed
+    anything.  docs/VALIDATION.md section B records the one thing the comparison does
+    constrain: read as it stands, the table's brightest V row sits 0.045 mag from the
+    published peak, whereas a table that had already been de-reddened by
+    A_V = 3.1 x 0.14 would sit 0.389 mag from it.  The evidence therefore says this
+    table has *not* had the dust taken off it.  That is an inference from a magnitude
+    comparison, not a provenance statement, so it is kept labelled as one and not
+    promoted into the declaration above.
+stretch:
+  supported: false
+  note: "See docs/THEORY.md S5: no verified stretch law for this class."
+
+provenance:
+  grade: system-per-band-declared
+  citations:
+    - "redshift, distance and published peak/absolute magnitudes (comparison anchors\n       only, never photometry): Sollerman et al. 2006, A&A 454, 503,\n       DOI 10.1051/0004-6361:20065226; redshift cross-checked against Mirabal et al.\n       2006, ApJ 643, L99, DOI 10.1086/505177"
+    - "table source column: 2014Ap&SS.354...89B (as compiled in the AJST catalogue)"
+    - "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))"
+  caveats:
+    - "The compiling table carries no photometric-system column, so the systems in
+       system_map are the analyst's declaration (Johnson-Cousins for UBV, AB for
+       UVOT and the Sloan primed bands, Vega for the near-IR).  Each one is written
+       into the build audit with the magnitude of the shift applied; a template
+       whose system is wrong shifts by a band-dependent constant, which is why the
+       declaration is mandatory rather than defaulted."
+    - "Swift/UVOT zero points are published in both AB and Vega conventions
+       depending on the pipeline, so UVW/UVM here is the weakest declaration in
+       this manifest."
+    - "Worse for V than that sentence admits: one `system_map` entry covers every row
+       that names itself V, and this table's V rows come from two instruments whose
+       published zero points differ -- 43 are Swift/UVOT (AB by convention), while the
+       brightest, which sets the peak docs/VALIDATION.md section B compares, is a
+       CfA-archive ground-based row.  The schema has no per-instrument system key, so
+       the declaration is a compromise here rather than a fact.  The term it can be
+       wrong by is that band's Vega->AB shift -- 0.022 mag for V, smaller than the
+       +- 0.05 the anchor itself quotes, which is why it is recorded instead of
+       corrected."
+
+notes: >-
+  v1 consumed a pre-interpolated 2006aj_inter.csv (5001 rows, 59% of them NaN) and
+  fitted an unconstrained cubic griddata to scattered points, which is what
+  generated those NaNs between the data.  Here the raw 474 rows are the input and
+  the interpolant is monotone-preserving in log L_nu.

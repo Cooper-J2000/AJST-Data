@@ -1,0 +1,182 @@
+schema: chromashift-template-1
+id: ep260321a
+label: "EP 260321a / SN 2026gzf (archetypal thermal X-ray shock breakout in SDSS J095942.88+002506.2)"
+object_class: EP-shock-breakout
+
+redshift:
+  value: 0.0344
+  source: >-
+    Yuan et al. 2026, arXiv:2606.10014v2 (read in full), discovery:
+    "An autonomous observation by EP's Follow-up X-ray Telescope (FXT) was
+    triggered and started from T_det+215 s, further localizing this uncataloged
+    source to a position consistent with the galaxy SDSS J095942.88+002506.2
+    at a redshift of z=0.0344 (see Ref. [49])" -- adopted verbatim; no error
+    and no reference frame is stated, so `frame` stays undeclared.  The paper
+    attributes the number to its own Ref. [49], which was not read: the
+    adoption is this paper's, and this paper was read in full.  Cross-checks,
+    never inputs: the same paper elsewhere rounds it -- "For EP260321a at
+    z=0.034 (luminosity distance D_L ~ 150 Mpc), we compute the maximum volume
+    ..." -- and GCN 44070's title says "the z=0.034 galaxy"; the 0.0004
+    difference (1.2 % in z) changes no decision here.
+
+distance:
+  kind: cosmological
+  source: >-
+    z = 0.0344 is above the 0.02 peculiar-velocity guard, so no `allow_low_z`
+    flag is needed.  The paper's "D_L ~ 150 Mpc" follows from (its rounded)
+    redshift under a cosmology that sentence does not state -- it is not an
+    independent distance indicator, so `kind: measured` would be fiction; it is
+    kept as the cross-check above (docs/VALIDATION.md) and never an input.
+    The default cosmology is used and named in every result's provenance via
+    `constants.DEFAULT_COSMOLOGY_NAME`.
+
+photometry:
+  file: EP260321a.csv
+  layout: long
+  time:
+    column: time
+    unit: s
+    frame: observer
+    epoch_zero:
+      kind: fixed
+      value: 0.0
+      source: >-
+        Yuan et al. 2026 (arXiv:2606.10014v2), Materials and Methods and the
+        Table 5 caption: "Epochs are computed relative to
+        T_0 = 2026-03-21T12:16:08 UTC" -- the WXT onset, pinned by the
+        discovery section: "WXT had in fact captured the onset of the
+        transient at T_0 = 2026-03-21T12:16:08 (T_det - 850 s) in the
+        preceding survey observation", with the trigger itself "on 21 March
+        2026 at 12:30:18 UTC (T_det)" (ObsID 11900654211).  The vendored
+        `time` column is already seconds since that instant (first row
+        2434.7 s = 40.6 min), and the paper's own optical cross-check agrees:
+        "Only 40 min after T_0, the 0.7 m Thai Robotic Telescope began
+        detecting the optical counterpart of EP260321a in the R band" -- that
+        row is the CSV's first (telescope TRT-SBO, band R, time 2434.7).
+        epoch_zero is therefore a fixed 0.0 s: a no-op by declaration, not by
+        omission.
+  band:
+    column: band
+    map:
+      R: R
+      r: r
+      g: g
+      i: i
+      I: I
+      B: B
+      V: V
+      z: z
+      u: u
+      J: J
+      Mephisto-u: Mephisto-u
+      Mephisto-v: Mephisto-v
+      Mephisto-g: Mephisto-g
+      Mephisto-r: Mephisto-r
+      Mephisto-i: Mephisto-i
+      Mephisto-z: Mephisto-z
+  value:
+    column: flux
+    error_column: eflux
+    unit: mag
+    system_column: system
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [y, T, true, "1"]
+    discard_column: discard
+    discard_true_values: [y, T, true, "1"]
+    require_error: true
+
+validity:
+  t_min_days: 0.0272
+  t_max_days: 68.213
+  require_min_bands: 2
+  require_min_epochs: 4
+  notes: >-
+    t_min/t_max are rest-frame days: the build dilates observer-frame times by
+    (1+z) before the strict test (`t_rest < t_min`, `t_rest > t_max`), and the
+    vendored column is seconds since T_0 (2434.7 ... 6096314.9 s =
+    0.028179 ... 70.5592 d observer), which at z = 0.0344 dilates to
+    0.027242 ... 68.212684 d; the bounds pad just past those (0.0272, 68.213;
+    margins 4.2e-5 d and 3.2e-4 d) so an exact-equality float cannot drop the
+    first or last row -- boundary precision, not science.  Declared as the
+    observer numbers (0.028, 70.56), the same strict test would reject the
+    table's opening rows, which dilate below their own t_min.  `require_min_epochs`
+    counts epochs inside a band's *own* coverage, so the census is the per-band one
+    `audit.node_epochs` records: table-wide the 16 bands run from 6 (u, after its
+    one same-second pair merges) to 135 (r), and every one of them clears the floor
+    of 4 over its own span, so no band is a count straggler.
+    `upperlimit` and `discard` exist but every value is `n`, so the flag gates
+    reject nothing as things stand; require_error holds mechanically -- all 533
+    `eflux` cells are positive.
+    The `[J, Mephisto-u]` window declaration is gone, and the two sentences that
+    argued for it -- that the extra 3.4 d of rise is worth the node, and that
+    Mephisto-z leaves the surface for it -- are superseded by a rule with no knob
+    in it.  Each band is now a node over its own coverage, so Mephisto-z is on the
+    surface (38.63 d of it) instead of being dropped for not spanning, and J's
+    blue edge is no longer what opens the window: the union of the sixteen
+    coverages is `span_days` 0.055 -- 59.105 d and `t_valid` is 0.057 -- 44.594 d of
+    it, 44.54 d thick and 14.51 d thin.
+    The node set is eight bands -- J, z, Mephisto-z, Mephisto-g/i/r/u/v -- and
+    `band_active_days` is the readable version of the same fact: Mephisto-g 44.54,
+    Mephisto-r 44.53, Mephisto-i 44.53, z 44.11, Mephisto-z 38.63, J 35.07,
+    Mephisto-v 26.12, Mephisto-u 26.10.  Four of the eight are curve-less `type:
+    guess` columns, so they are `mono` nodes and a prediction in them is the
+    delta-band limit; `mode_by_band` says which and `residual_not_checked_mono`
+    names them.
+    `qc.excluded_bands` is [B, I, R, V, g, i, r, u] and all eight are
+    `colour-term-above-max` -- 0.244, 0.319, 0.179, 0.184, 0.479, 0.405, 0.375 and
+    0.240 mag in `unfold.band_admission.excluded` -- because B6 refused to repair
+    those nodes.  B, I, R, V and u were window losses under the old declaration
+    and admission refusals now; their data did not change, the fit did, and the
+    sidecar says which reason applies.  J is the one curve-backed node that
+    survives (colour term 0.106 mag, corrected by 0.0468 dex to 1.5e-4 mag) and `z`
+    is the one B6 refused inside the cap (0.121 mag), so it is on the surface with
+    its offset published in `unfold_residual_mag`.  So a band-integrated
+    prediction from this template is available in J alone and a second, larger
+    answer in z; the rest are delta-band limits.  That is a property of the data
+    and the cap, and the per-epoch rule did not change it -- it only stopped the
+    window from hiding four more columns behind a dropped one.
+reddening:
+  mw_removed: false
+  host_removed: unknown
+  source: >-
+    mw_removed: false -- read off the table itself: the `Gext_corr` column is
+    `n` for all 533 rows, i.e. Galactic extinction was NOT removed from the
+    tabulated magnitudes (the same evidence, and the same reading, as shipped
+    ep250108a), and the paper measures the term it left in: "Along the line of
+    sight of EP260321a/SN 2026gzf, the Galactic extinction is E(B-V) = 0.021
+    mag".  The surface therefore already contains the Milky Way term, and
+    passing `mw_E_B_V` to `predict` would apply it a second time.
+    host_removed: unknown -- neither the table nor the paper's photometry
+    section states any host-galaxy correction applied to these rows, and
+    silence is not a measurement.
+
+stretch:
+  supported: false
+  note: "No stretch law exists for shock-breakout transients (THEORY S5: core-collapse, GRB-SNe, kilonovae and EP/XRF transients have no measured width-luminosity law); `supported: false` refuses the parameter rather than defaulting it to a value measured on another class."
+
+provenance:
+  grade: mixed-band-quality
+  citations:
+    - "Yuan et al. 2026, \"X-rays breaking out of pre-explosion ejecta mark a supernova's first light\", arXiv:2606.10014v2.  Publisher of the vendored table (395 of 533 rows); the redshift sentence, the T_0/onset definitions, the Galactic-extinction sentence and the shock-breakout claim all come from it; read in full (S_OK)."
+    - "Rastinejad et al. 2026, arXiv:2606.10011v2: publisher of the 118 rows appended to the vendored table (r 38, i 33, g 31, u 7, z 5, J 4, from IOO, LSST, SEDM, WINTER and ZTF).  They densify the follow-up rather than extend it -- 68152 ... 4291816 s, entirely inside the discovery table's own 2434.7 ... 6096314.9 s -- and on the same seconds-since-T_0 axis, which is why they concatenate into one table with no re-origining; they are also the only source of `u` in this table, and the only reason that band can be named in the registry map at all.  Accepted (ApJL) with no journal DOI assigned yet, so the arXiv identifier is the only one this repository asserts for it: writing the DOI arXiv mints for every paper it hosts would assert a publisher-assigned DOI this one does not have, and `tests/test_docs.py` pins that distinction.  Read in full."
+    - "GCN circulars 44070, 44081, 44084, 44087, 44089, 44091, 44105 and 44171 (18 rows) plus two blank reference cells: row-level provenance exactly as vendored; none was read, so none is cited for any decision: grade S_UNVER."
+  caveats:
+    - "The value columns are named `flux`/`eflux` but hold magnitudes: the table's own `flux_unit` column says `mag` on all 533 rows and the values run 16.46 ... 21.24; declared as `unit: mag`."
+    - "The table's own `system` column says AB on all 533 rows, so no Vega->AB shift is applied anywhere -- including the eleven J rows, whose registry record would move them 0.938 mag if they were Vega-native NIR magnitudes.  The column is declared as-is; nothing read states those rows' zero point independently."
+    - "Mephisto-u/v/g/r/i/z are `type: guess` nominal wavelengths in the registry (no response curve), exactly as shipped ep250108a declares them: they can only enter as delta-bands, so every band-integrated quantity is unavailable for them by construction, and a prediction in those bands carries no colour term at all, measured or otherwise."
+    - "The class claim is the paper's own: \"Its X-ray spectrum, best modeled with blackbody, establishes it as the long-sought archetypal shock breakout\", its abstract \"the archetypal thermal soft X-ray shock breakout of a core-collapse supernova from a pre-explosion shell\" -- `object_class: EP-shock-breakout` records that claim, not an independent taxonomy."
+    - "`etime` (415 of the 533 rows; the 118 appended rows leave it empty) and `weight` (all 1) have no schema home: unused, noted here rather than ignored, while `time_unit` (all `s`) and `flux_unit` (all `mag`) simply corroborate the declared `time.unit` and `value.unit`."
+    - "Two appended rows collide exactly on (time, band) with another appended row and merge at B2 rather than becoming two epochs of one band: `u` at 2636910.4 s (LSST, 20.52 and 20.47) and `r` at 3435678.4 s (ZTF, 17.98 and 18.12).  Both groups disagree by 0.05-0.14 mag, which is why they are merged rather than averaged into a fictitious single measurement, and the per-band merge ledger in the QC reports them; the same test also merges the large pre-existing duplicate groups in g, i and r that the discovery table already carried."
+
+notes: >-
+  No sentinel values (largest `flux` 21.24, no empty value cells) and no missing
+  or non-positive errors, so
+  `require_error: true` costs nothing.  The table's duplicate epochs are not
+  zero, though: the two same-second (time, band) pairs named in the caveats
+  merge at B2, and the merge is reported per band rather than hidden.  What the
+  table has instead of a limit flag is a real
+  `upperlimit` column and a real `discard` column whose 533 values each are
+  all `n`: both are declared so the gates exist and would catch a limit or a
+  discard any future re-export introduces, even though nothing in this table
+  trips them today.

@@ -1,0 +1,324 @@
+{
+ "audit": {
+  "file": "data/raw/SN980425_intrinsic_lc.csv",
+  "file_sha256": "8496d5c6d6aba359c7eb819fcbd4c7c1ce59e382724fd5f8c29073aabd591208",
+  "rows_in": 495,
+  "rejections": {
+   "U": {
+    "non-finite": 416
+   }
+  },
+  "band_epochs": {
+   "U": 79,
+   "B": 495,
+   "V": 495,
+   "R": 495,
+   "I": 495
+  },
+  "rows_kept": 495,
+  "time_frame": {
+   "declared": "rest",
+   "dilation_applied": false,
+   "one_plus_z_template": 1.0087,
+   "n_epochs": 495
+  },
+  "error_bars": {
+   "U": 416
+  },
+  "systems": {
+   "systems_touched": [
+    "B:johnson-cousins:-0.145",
+    "I:johnson-cousins:+0.417",
+    "R:johnson-cousins:+0.176",
+    "U:johnson-cousins:+0.699",
+    "V:johnson-cousins:-0.022"
+   ],
+   "max_shift_mag": 0.699,
+   "n_values_shifted": 5,
+   "grade": "DOC"
+  },
+  "systems_detail": [
+   {
+    "band": "U",
+    "system": "johnson-cousins",
+    "shift_mag": 0.699,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "B",
+    "system": "johnson-cousins",
+    "shift_mag": -0.145,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "V",
+    "system": "johnson-cousins",
+    "shift_mag": -0.022,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "R",
+    "system": "johnson-cousins",
+    "shift_mag": 0.176,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "I",
+    "system": "johnson-cousins",
+    "shift_mag": 0.417,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   }
+  ],
+  "rows_out": 2059,
+  "span_days": [
+   8.5,
+   498.4
+  ],
+  "node_bands": [
+   "B",
+   "I",
+   "R",
+   "U",
+   "V"
+  ],
+  "node_epochs": {
+   "I": 495,
+   "R": 495,
+   "V": 495,
+   "B": 495,
+   "U": 79
+  },
+  "band_active_days": {
+   "I": 489.9,
+   "R": 489.9,
+   "V": 489.9,
+   "B": 489.9,
+   "U": 77.556
+  },
+  "thin_epoch_days": 0.0,
+  "thick_epoch_days": 489.9
+ },
+ "bands": [
+  "I",
+  "R",
+  "V",
+  "B",
+  "U"
+ ],
+ "n_time_nodes": 733,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": true,
+  "host_removed": true,
+  "source": "Answered from the publishing table rather than inferred from its file name. Clocchiatti et al. 2011, AJ 141, 163, DOI 10.1088/0004-6256/141/5/163, section 3: \"Using the computed reddening and K corrections unreddened and transformed to the rest frame the photometry of SN 1998bw given in Table 2.  The results, fitted with low-degree piecewise polinomial and/or spline fits to provide daily sampling, are presented in Table 3.\"  What was removed is stated too: \"it is reasonable to assume a typical Milky Way extinction law to unredden the lights curves presented here. We take as a model the extinction curve of Cardelli, Clayton, & Mathis 1989 with R_V = 3.1\", computed \"a time dependent extinction in each passbands using the excellent series of spectra of Patat et al. 2001\".  Note the shape of that declaration: it is *one* screen fitted to the observed spectra, so it absorbs the Galactic, the host and any circumstellar term together rather than reporting them separately -- which is why both flags are `true` and neither is a per-component measurement.  The paper's own grounds for that choice: \"The Galactic dust towards ESO184-G82 contributes A_V ~ 0.2, according to Schlegel, Finkbeiner & Davis 1998\", while \"Patat et al. 2001 ... did not find Na D absorption lines neither at the redshift of ESO184-G82 nor zero, and set upper limits to the extinction consistent even with the higher estimate\".  The practical consequence for a caller: the table is already de-reddened, so adding a `Reddening` here is adding a second term; `predict` detects that state and warns, and `meta[\"table_reddening\"]` echoes what was already removed.  Worth noting how close this came to being read wrong: the paper's Table 3 prints its columns as U0, B0, V0, Rc0, Ic0, while the compiled CSV in data/raw spells the last two Rc and Ic.  The subscript that says \"unreddened\" was dropped for exactly the two columns whose names then look like ordinary Cousins magnitudes -- which is why the declaration is quoted from the paper here and never inferred from a file name or a column header."
+ },
+ "t_valid_days": [
+  8.5,
+  498.4
+ ],
+ "t_union_days": [
+  8.5,
+  498.4
+ ],
+ "nu_valid_Hz": [
+  252000543653833.3,
+  1008002174615333.2
+ ],
+ "nu_valid_lambda_A": [
+  2974.1,
+  11896.5
+ ],
+ "pivot_nu_Hz": {
+  "I": 346036013006060.94,
+  "R": 438324238135907.56,
+  "V": 547325508965436.6,
+  "B": 684639365914823.5,
+  "U": 857957787470994.4
+ },
+ "per_band_epochs": {
+  "I": 495,
+  "R": 495,
+  "V": 495,
+  "B": 495,
+  "U": 79
+ },
+ "mode_by_band": {
+  "I": "band",
+  "R": "band",
+  "V": "band",
+  "B": "band",
+  "U": "band"
+ },
+ "excluded_bands": [],
+ "excluded_reasons": {},
+ "unfold": {
+  "iterations": 4,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.05713549,
+   0.00548856,
+   0.00101227,
+   7.096e-05
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "I": -2.349,
+   "R": -1.902,
+   "V": -2.127,
+   "B": -2.62,
+   "U": -2.301
+  },
+  "gain_spread_mag_per_dex": {
+   "I": 0.506,
+   "R": 0.285,
+   "V": 0.136,
+   "B": 0.766,
+   "U": 0.153
+  },
+  "cross_talk_mag_per_dex": {
+   "I": {
+    "R": 0.08,
+    "V": -0.01,
+    "B": 0.0,
+    "U": 0.0
+   },
+   "R": {
+    "I": -0.296,
+    "V": -0.464,
+    "B": 0.05,
+    "U": 0.0
+   },
+   "V": {
+    "I": 0.05,
+    "R": -0.23,
+    "B": -0.146,
+    "U": 0.003
+   },
+   "B": {
+    "I": 0.0,
+    "R": -0.053,
+    "V": 0.049,
+    "U": -0.021
+   },
+   "U": {
+    "I": 0.0,
+    "R": 0.0,
+    "V": 0.032,
+    "B": -0.224
+   }
+  },
+  "jacobian_condition": 1.6,
+  "node_correction_dex": {
+   "I": 0.0114,
+   "R": 0.0621,
+   "V": 0.0245,
+   "B": 0.024,
+   "U": 0.0122
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "B": 0.0013,
+   "I": 0.0004,
+   "R": 0.0027,
+   "U": 0.0001,
+   "V": 0.004
+  },
+  "quoted_photometric_error_rms_mag": {
+   "B": 0.0156,
+   "I": 0.0459,
+   "R": 0.218,
+   "U": 0.0336,
+   "V": 0.0172
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [],
+  "corrected_bands": [
+   "B",
+   "I",
+   "R",
+   "U",
+   "V"
+  ],
+  "not_corrected": {},
+  "colour_term_size_mag": {
+   "B": 0.039,
+   "I": 0.0273,
+   "R": 0.1102,
+   "U": 0.03,
+   "V": 0.0459
+  },
+  "final_residual_mag": {
+   "B": 0.00317,
+   "I": 0.000802,
+   "R": 0.004828,
+   "U": 0.00029,
+   "V": 0.007994
+  },
+  "max_colour_term_mag": 0.1102,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {},
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [],
+   "rounds": []
+  }
+ },
+ "template": {
+  "id": "sn1998bw",
+  "label": "SN 1998bw / GRB 980425 (broad-lined Ic SNe, nearby)",
+  "object_class": "core-collapse-BL-Ic",
+  "z": 0.0087,
+  "z_source": "As used by the publishing source of this table: Clocchiatti et al. 2011, AJ 141, 163, DOI 10.1088/0004-6256/141/5/163, section 3 -- \"the K-corrections, which, at the redshift of ESO184-G82 (Foley et al. 2006, z = 0.0087,) are expected to be small, but still variable in time\".  The same paper's distance (below) is said to be computed from that redshift, so the table's phase axis, its K-corrections and its distance are all on one value; adopting it keeps this manifest internally consistent with the source it came from.  v1 hard-coded 0.0085 with no stated source.  The frame is not stated by either text and is therefore left undeclared rather than guessed: for this template the distance is measured, so z enters only through the (1+z) factors, where 0.0002 in z is 2e-4 mag -- a seventh of one percent of the 0.151 mag the distance error contributes.",
+  "z_error": null,
+  "redshift_frame": "unspecified",
+  "redshift_cmb": null,
+  "distance": {
+   "kind": "redshift-velocity-field",
+   "d_L_Mpc": 37.3,
+   "d_L_err_Mpc": 2.6,
+   "source": "The kind is `redshift-velocity-field` and not `measured`, which is the whole content of this paragraph.  Read off Clocchiatti et al. 2011, AJ 141, 163, DOI 10.1088/0004-6256/141/5/163, which is the publishing source of this table (see `provenance`): \"The distance to ESO 184-G082 was taken to be 37.3 +- 2.6 Mpc, as computed by the NED database from the redshift measured by Foley et al. 2006, a Hubble constant of 74.2 km/s/Mpc (Riess et al. 2009), and the model of the local velocity field given by Mould et al. 2000.\"  So this is a redshift-derived distance with a velocity-field correction, quoted with its error -- which is what makes the distance term of the error budget real rather than zero (2.6/37.3 = 7.0 % in fractional distance, i.e. 0.151 mag of distance modulus).  That 7 % is independently confirmed inside the same paper: both flux columns of its Table 3 carry the footnote \"Uncertainty does not include the ~7 % uncertainty in the distance\", which is the same 2.6/37.3 and the reason a distance error has to travel with the distance.  The host is the one this paper names, ESO 184-G82; the two catalogue strings v1 carried for it (ES024014.1-251413, E186-G210) were not reconciled against a catalogue in this build, so they are not repeated here."
+  },
+  "manifest": "templates/sn1998bw.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": true,
+   "host_removed": true,
+   "source": "Answered from the publishing table rather than inferred from its file name. Clocchiatti et al. 2011, AJ 141, 163, DOI 10.1088/0004-6256/141/5/163, section 3: \"Using the computed reddening and K corrections unreddened and transformed to the rest frame the photometry of SN 1998bw given in Table 2.  The results, fitted with low-degree piecewise polinomial and/or spline fits to provide daily sampling, are presented in Table 3.\"  What was removed is stated too: \"it is reasonable to assume a typical Milky Way extinction law to unredden the lights curves presented here. We take as a model the extinction curve of Cardelli, Clayton, & Mathis 1989 with R_V = 3.1\", computed \"a time dependent extinction in each passbands using the excellent series of spectra of Patat et al. 2001\".  Note the shape of that declaration: it is *one* screen fitted to the observed spectra, so it absorbs the Galactic, the host and any circumstellar term together rather than reporting them separately -- which is why both flags are `true` and neither is a per-component measurement.  The paper's own grounds for that choice: \"The Galactic dust towards ESO184-G82 contributes A_V ~ 0.2, according to Schlegel, Finkbeiner & Davis 1998\", while \"Patat et al. 2001 ... did not find Na D absorption lines neither at the redshift of ESO184-G82 nor zero, and set upper limits to the extinction consistent even with the higher estimate\".  The practical consequence for a caller: the table is already de-reddened, so adding a `Reddening` here is adding a second term; `predict` detects that state and warns, and `meta[\"table_reddening\"]` echoes what was already removed.  Worth noting how close this came to being read wrong: the paper's Table 3 prints its columns as U0, B0, V0, Rc0, Ic0, while the compiled CSV in data/raw spells the last two Rc and Ic.  The subscript that says \"unreddened\" was dropped for exactly the two columns whose names then look like ordinary Cousins magnitudes -- which is why the declaration is quoted from the paper here and never inferred from a file name or a column header."
+  },
+  "citations": [
+   "table + distance + reddening: Clocchiatti et al. 2011, AJ 141, 163, \"The ultimate\n       light curve of SN 1998bw/GRB 980425\", DOI 10.1088/0004-6256/141/5/163.  This is the\n       publishing source of data/raw/SN980425_intrinsic_lc.csv: its Table 3 is that file\n       (same 16 columns, same values row for row), and every block above is quoted from\n       it.  Read via arXiv:1106.1695.",
+   "v1 source: AJST-enrich/SN_redshift/ks_correction.py (branch '1998bw')",
+   "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))",
+   "Photon-counting SN K-correction: Nugent, Kim & Perlmutter 2002, PASP 114, 803,\n       DOI 10.1086/341707.  Cited for the method, not by equation: its equations\n       were not read off a proof here"
+  ],
+  "grade": "publishing-table-read"
+ },
+ "manifest_sha256": "2b67d80191bb3d481dd7a2e093671b59464292325e5e4422c23b919e4b4120c3",
+ "inputs_sha256": {
+  "manifest": "2b67d80191bb3d481dd7a2e093671b59464292325e5e4422c23b919e4b4120c3",
+  "photometry": "8496d5c6d6aba359c7eb819fcbd4c7c1ce59e382724fd5f8c29073aabd591208",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "sn1998bw.npz"
+}

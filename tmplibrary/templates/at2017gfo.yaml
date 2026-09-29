@@ -1,0 +1,239 @@
+schema: chromashift-template-1
+id: at2017gfo
+label: "AT 2017gfo / GW170817 (kilonova)"
+object_class: kilonova
+
+redshift:
+  value: 0.009783
+  frame: heliocentric
+  source: >-
+    Hjorth et al. 2017, ApJL 848, L31, DOI 10.3847/2041-8213/aa9110: "Based on our
+    MUSE/VLT measurement of the heliocentric redshift (z_helio = 0.009783 +- 0.000023)
+    we infer the systemic recession velocity of the NGC 4993 group of galaxies in the
+    cosmic microwave background (CMB) frame to be v_CMB = 3231 +- 53 km/s."  The AJST
+    compilation carried 0.009731 with no stated source; the difference is 0.000052 in
+    z, i.e. 0.5 % in (1+z), which is noise next to the 0.16 mag the distance error
+    alone contributes -- but the sourced value is the one to keep.
+    The same paper's derived cosmic redshift is z_cosmic = 0.00980 +- 0.00079, i.e.
+    the value with the peculiar velocity taken out, which is the one a Hubble-flow
+    distance would use; this manifest keeps the *measured* distance below instead, so
+    the heliocentric value is the right frame for its (1+z).
+
+    The +-0.000023 is a 1-sigma MUSE centroid precision, 6.9 km/s, and is independent of
+    the peculiar-velocity term for the reason docs/VERIFICATION.md sect. 13 gives: a
+    centroid residual is a wavelength-solution quantity, while a peculiar motion shifts
+    every line equally and so cannot be seen in a spectrum at all.  It enters no error
+    budget and cannot: the distance below is the SBF measurement, not a function of this
+    redshift, which is also why the 350 km/s velocity-dispersion term does not apply to
+    it -- `Distance.distance_error_mag` adds that term only for `kind: cosmological`,
+    which is correct, since a measured distance never asked the Hubble flow.  Worth
+    setting beside it: the same paper's v_CMB = 3231 +- 53 km/s carries a *larger*
+    uncertainty than the +-23 km/s on the heliocentric value, because the extra is the
+    uncertainty in the NGC 4993 group velocity; that belongs to the frame conversion,
+    not to the measurement of the line.
+  error: 0.000023
+  error_kind: line-precision
+  position:
+    # AT2017gfo = GRB 170817A, host NGC 4993.  The kilonova and the galaxy centre are
+    # 10.6" apart (the offset the SOFI/GHTS papers quote), and the direction either way
+    # is the same to 5e-5 rad.  Two independent positions: the transient at
+    # 13:09:48.11 -23:22:53.0 (J2000, ~0.5"), and the host at
+    # 13:09:47.69398 -23:23:02.3195 (J2000, <=1 mas).  The transient is used because
+    # that is what this template's photometry measures, and the host is carried here as
+    # the check on it.
+    ra_deg: 197.450388
+    dec_deg: -23.381389
+    frame: ICRS
+    epoch: J2000
+    uncertainty_arcsec: 0.5
+    source: >-
+      Position quoted in the GCN record for LIGO/Virgo G298048 / GRB 170817A:
+      "RA, Dec (J2000): 13:09:48.11 -23:22:53.0 With an estimated uncertainty of
+      ~0.5\"", and independently SIMBAD's GRB 170817A entry at
+      13:09:48.085 -23:22:53.343 (ICRS, ep=J2000) with the host NGC 4993 at
+      13:09:47.69398 -23:23:02.3195 (<=1 mas).  Read 2026-09-26; the two agree to
+      0.1" in RA and 0.3" in Dec, which is 4e-7 in this correction.
+
+distance:
+  kind: measured
+  d_L_Mpc: 40.7
+  d_L_err_Mpc: 2.36
+  source: >-
+    NGC 4993, from a distance indicator rather than from the redshift.  Adopted
+    value is the surface brightness fluctuation distance: Cantiello et al. 2018,
+    ApJL 854, L31, DOI 10.3847/2041-8213/aaad64, "For the preferred F110W passband
+    we derive a distance modulus of (m - M) = 33.05 +- 0.08 +- 0.10 mag, or a
+    linear distance d = 40.7 +- 1.4 +- 1.9 Mpc (random and systematic errors,
+    respectively)".  d_L_err_Mpc is the two terms added in quadrature,
+    sqrt(1.4^2 + 1.9^2) = 2.3601 Mpc, quoted here as 2.36 because the sources print
+    one significant figure in each term and more digits would be a false claim about how
+    well the error is known.  The combination matters because `Distance` carries one error and
+    quoting the systematic term alone would drop the random one and understate the
+    budget by 0.025 mag of distance modulus; the two components are 0.075 and 0.101
+    mag separately.  A virtually identical F160W result is quoted in the same paper.
+    Why SBF and not the numbers this manifest adopted until now: at z = 0.0098 the
+    Hubble flow is not a distance (the host's peculiar velocity alone is
+    307 +- 230 km/s against a flow of ~2900, which is what the z < 0.02 guard in
+    snredshift/distance.py is for), and four electromagnetic determinations plus one
+    gravitational one exist, all agreeing on 40-42 Mpc --
+      SBF   Cantiello+ 2018  40.7 +- 1.4 +- 1.9   <- adopted, most precise
+      GCLF  Lee et al. 2018, ApJL 859, L6, 41.65 +- 3.00
+      FP    Im et al. 2018, ApJL 855, L3, DOI 10.3847/2041-8213/aa9367, angular
+            diameter 37.7 +- 8.7 Mpc
+      combined redshift + FP  Hjorth et al. 2017, ApJL 848, L31,
+            DOI 10.3847/2041-8213/aa9110, "The combined redshift and FP distance
+            is D_NGC4993 = 41.0 +- 3.1 Mpc"
+      GW standard siren  Hjorth et al. 2017 Table 2, 43.8 +2.9/-6.9 Mpc
+    The previously adopted 41.0 +- 3.1 is the *least* precise of the four
+    electromagnetic ones (0.164 mag of distance modulus against SBF's 0.125), and
+    this manifest's own note called its error "the largest single term in any
+    shipped template's budget" while quoting the better number as a cross-check.
+    Changing it moves DM by -0.016 mag and the distance error term from 0.164 to
+    0.125 mag, and docs/VALIDATION.md section A checks that term as `V-A5` (the
+    modulus and both printed error terms) and `V-A6` (the single number carried
+    here) -- the two rows that are this distance in full, and that are the reason
+    the quadrature sum is asserted in a test rather than only stated here. Still not a
+    Hubble-flow distance and still not treated as one: the
+    same Hjorth paper gives v_CMB = 3231 +- 53 km/s for the NGC 4993 group, four
+    times the heliocentric recession rate, so what a redshift-derived distance would
+    give here is mostly the group motion.
+
+
+photometry:
+  file: grb170817A_1d.csv
+  layout: long
+  time:
+    column: time
+    unit: day
+    frame: observer
+    epoch_zero:
+      kind: fixed
+      value: 0.0
+      source: "Days since the GW170817 merger time, as tabulated in the compiled table."
+  band:
+    column: band
+    frequency_column: feq
+    frequency_tolerance_rel: 0.035
+    only: [g, r, i, z, B, V, J, H, Ks, K, Y, y]
+    map:
+      g: g
+      r: r
+      i: i
+      z: z
+      B: B
+      V: V
+      J: J
+      H: H
+      Ks: Ks
+      K: K
+      Y: Y
+      y: y
+  value:
+    column: mag
+    error_column: magerr
+    unit: mag
+    system: ab
+  flags:
+    require_error: false
+
+validity:
+  t_min_days: 0.4
+  t_max_days: 26.0
+  require_min_bands: 2
+  require_min_epochs: 4
+  notes: >-
+    Band bookkeeping, as the build's own QC sidecar records it.  There is no
+    `window_bands` to declare and no window to derive: B5 no longer intersects the
+    bands' coverages, so every band that survives cleaning and B8 admission is a
+    node over *its own* coverage and the surface spans the union of those
+    intervals.  `qc.audit` names the three numbers that replaced the window --
+    `span_days` (the union, 0.446 -- 19.274 d), `node_bands` (what became a node)
+    and `band_active_days` (how much of the span each one actually covers) -- and
+    `t_valid` is the part of that span where at least `require_min_bands: 4` bands
+    are nodes at once: 0.467 -- 12.319 d, of which 11.86 d is thick and 6.97 d is
+    too thin to publish.  A contiguous window cannot say "supported here, thin
+    there", so the per-epoch support travels in the artefact and `predict` consults
+    it: a prediction in the thin stretches is refused, and the refusal names how
+    many bands were nodes at that epoch.
+    The node set is 8 bands -- H, J, K, Y, i, r, y, z -- and the per-band coverage
+    is the interesting part: z and K measure for 18.81 and 16.90 d, H for 13.97,
+    r for 11.86, J for 10.89, i for 9.93, Y for 9.86, and y for 5.98.  K, Y and y
+    have no response curve in the registry, so they enter as `mono` nodes
+    (`mode_by_band` says which, `residual_not_checked_mono` names them): a
+    prediction quoting one of them is the delta-band limit, not a band integral,
+    and because a mono node has no measured colour term for the cap to test, no B8
+    round can refuse one.
+    `qc.excluded_bands` is [B, Ks, V, g], and all four are
+    `colour-term-above-max`: 0.385, 0.445, 0.423 and 0.508 mag against the 0.15 cap
+    in `unfold.band_admission.excluded`, each because B6 refused to repair that
+    node.  B and g used to be refused on their own coverage and then returned when
+    the window narrowed; they are refused again here because the fit is now the
+    union-span one, and the numbers moved with the fit rather than with the data.
+    V is the one worth a second sentence in either direction: its raw colour term is
+    among the largest on this table, B6 can correct the node when the surface is
+    narrow and cannot when it is 12 days wide, and which of the two happens is a
+    property of the span rather than of V.  A kilonova evolves on ~a day, so the
+    0.4-26 day declared window is the whole event and there is no late-time plateau
+    to protect.
+
+    `require_min_bands` moved from 4 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 4 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [0.4669, 12.32] against a union span of
+    [0.4456, 19.27], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: unknown
+  host_removed: unknown
+  source: >-
+    The compiled table (grb170817A_1d.csv) has no column stating whether either
+    extinction component was removed.  Its `source` column carries ADS bibliography
+    codes and one Transient Name Server entry -- publications, not reduction steps --
+    and none of those references was re-read in this build, so nothing here can say
+    whether a given row is as observed or de-reddened.  Different references inside
+    one table can also disagree with each other on this point, so a row-level state
+    column would be needed to do better than a table-level declaration.  Both states
+    are therefore declared unknown: a `Reddening` passed to `predict` against this
+    surface warns that it cannot be checked, which is the honest answer rather than a
+    guess.
+stretch:
+  supported: false
+  note: >-
+    Kilonova light-curve widths scale with ejecta mass and opacity, not with a
+    measured stretch parameter; no stretch law is asserted.  See docs/THEORY.md S5.
+
+provenance:
+  grade: system-declared-ab
+  citations:
+    - "redshift + distance (comparison anchor only, never photometry): Hjorth et al.\n       2017, ApJL 848, L31, DOI 10.3847/2041-8213/aa9110 (z_helio, v_pec, Table 2's\n       redshift/Fundamental Plane/combined/GW distances); cross-checked against the\n       surface brightness fluctuation distance of Cantiello et al. 2018, ApJL 854, L31,\n       DOI 10.3847/2041-8213/aaad64"
+    - "table source column: Transient Name Server and per-instrument references, as
+       compiled in the AJST catalogue"
+    - "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))"
+  caveats:
+    - "The table carries no photometric-system column.  AB is declared for all bands
+       because that is the convention the compilation's own frequency column implies
+       (pivot frequencies match the SDSS/Cousins pivots on the AB scale), but the
+       optical B/V/R/I rows plausibly come from Vega-calibrated pipelines, which
+       would bias them by the tabulated Vega->AB offsets (|0.02| - |0.70| mag).  The
+       build audit records every shift, so changing the declaration is a one-line
+       manifest edit whose effect is measurable."
+    - "The 3.5% pivot-frequency tolerance is the loosest in this project: several
+       rows quote a band centre that differs from the registry's integrated pivot by
+       more than the 3% used elsewhere."
+
+notes: >-
+  Two templates here declare a measured distance, and this is the only one whose
+  distance was not computed from a redshift: SN 1998bw's 37.3 Mpc is NED's
+  redshift-plus-velocity-field value, while this one comes from a fundamental-plane
+  and surface-brightness-fluctuation combination, with the gravitational-wave standard
+  siren as a third estimate.  That is why its 0.164 mag is a measurement error rather
+  than a model's, and why this template -- not that one -- is the case v1 could not
+  represent: v1 had no distance-indicator concept at all and derived d_L from z
+  through one hard-coded cosmology for every object, including this one at z = 0.0098.

@@ -1,0 +1,168 @@
+schema: chromashift-template-1
+id: at2025ulz
+label: "AT 2025ulz / ZTF 25abjmnps (young stripped-envelope Type IIb supernova coincident with the sub-threshold trigger S250818k)"
+object_class: core-collapse-IIb
+
+redshift:
+  value: 0.0848
+  source: >-
+    Kasliwal et al. 2025, arXiv:2510.23732v1 (read in full), spectroscopy:
+    "In order to derive a redshift from the spectra, we use multiple host
+    galaxy emission lines that yield z=0.0848 or 399.4 Mpc, which we adopt
+    throughout." -- adopted verbatim; no error is quoted (so none is invented)
+    and no reference frame is stated (so `frame` stays undeclared).  The same
+    sentence carries the distance the paper pairs with that redshift; 399.4 Mpc
+    corresponds to a distance modulus of 38.01, kept as a cross-check in
+    docs/VALIDATION.md and never an input.
+
+distance:
+  kind: cosmological
+  source: >-
+    z = 0.0848 sits above the 0.02 peculiar-velocity guard, so no `allow_low_z`
+    flag is needed.  The paper's "399.4 Mpc" follows from that same redshift
+    under a cosmology the sentence does not state -- it is not an independent
+    distance indicator, so `kind: measured` would be fiction; it is kept only as
+    the cross-check above.  The default cosmology is used and named in every
+    result's provenance via `constants.DEFAULT_COSMOLOGY_NAME`.
+
+photometry:
+  file: AT2025ulz.csv
+  layout: long
+  time:
+    column: time
+    unit: day
+    frame: observer
+    epoch_zero:
+      kind: fixed
+      value: 0.0
+      source: >-
+        Kasliwal et al. 2025 (arXiv:2510.23732v1), Table 2 caption:
+        "Photometric observations of AT 2025ulz.  ... Phase is given relative
+        to the time of merger time." -- t = 0 is the S250818k merger epoch, and
+        the vendored `time` column is already in relative days, so epoch_zero
+        is a fixed 0.0 (a no-op by declaration, not by omission).  Checked on
+        the rows this paper itself owns: its row at t = 0.1328 d (g = 21.0
+        +/- 0.1) matches the caption's printed "2025-08-18 04:31:15 ... 0.13 d
+        ... 21.0".  The other four sources' rows inherit that zero as the
+        vendor's implicit claim -- their papers' time origins were not
+        re-derived -- flagged in provenance.
+  band:
+    column: band
+    map:
+      g: g
+      r: r
+      i: i
+      z: z
+      I: I
+      u: u
+      J: J
+      F336W: F336W
+      F606W: F606W
+      F110W: F110W
+      F160W: F160W
+  value:
+    column: flux_density
+    error_column: flux_density_err
+    unit: mag
+    system_column: mag_system
+  flags:
+    upper_limit_column: upperlimit
+    upper_limit_true_values: [T, true, "1", y]
+    require_error: false
+
+validity:
+  t_min_days: 0.1198
+  t_max_days: 48.09
+  require_min_bands: 2
+  require_min_epochs: 4
+  notes: >-
+    t_min/t_max are rest-frame days: the build dilates observer-frame times by
+    (1+z) before the strict test (`t_rest < t_min`, `t_rest > t_max`), and the
+    table's observer span t = 0.13 ... 52.167 d is 0.119838 ... 48.0890 d at
+    z = 0.0848, and the bounds pad just past those (0.1198, 48.09; margins
+    3.8e-5 d and 9.5e-4 d) so an exact-equality float cannot drop the first or
+    last row -- boundary precision, not science.  Declared as the observer
+    numbers (0.13, 52.167), the same strict test would reject the table's
+    opening rows, which dilate below their own t_min.
+    With `require_min_epochs: 4` seven bands are count stragglers -- I (1 epoch),
+    u (1), F336W (1), F606W (1), F110W (2), F160W (2), J (2) -- and their 10 rows
+    leave as `too-few-epochs-for-a-node`: one or two points pin no slope, so they
+    are a node at no epoch at all.  g/r/i/z carry 47/56/59/29 epochs and are the
+    surface.  `qc.excluded_bands` is exactly those seven, with that reason on each,
+    for any caller who would otherwise mistake them for gaps.
+    Ten (band, time) pairs are duplicated (10 extra rows) and merge at B2 as
+    duplicate-epoch-merged; none of the ten groups disagrees about error presence,
+    so error-bar-discarded-by-epoch-merge stays 0.  Three rows carry an unusable
+    error -- g and r at t = 2.1744 quote err = 0, r at t = 3.8444 is blank --
+    which `_error_column` reads as missing (blank and non-positive alike);
+    require_error: false keeps those rows as measurements instead of rejecting
+    them, and the doubt is ledgered, not silently dropped.
+    There is no `window_bands` to declare here, and none is wanted: g, r, i and z
+    are the only columns that clear `require_min_epochs` at all, so they are the
+    only candidate node set, and each is a node over its own coverage.  That is
+    what `qc.audit` records: `span_days` 0.120 -- 48.089 d, i active for 47.44 d and
+    r for 33.18, and `t_valid` 0.645 -- 33.348 d with 32.71 d thick and 15.26 d
+    too thin to publish.  The gap to the declared [0.1198, 48.09] is the difference
+    between the table's full span and the part of it where four bands are nodes at
+    once, and the thin 15 d are refused rather than answered from fewer anchors
+    than the manifest asked for.  The excluded bands are excluded because they are
+    count stragglers, not because a wider window would have made room for them.
+
+    `require_min_bands` moved from 3 to 2 in the colour-term provenance round, and this
+    is the whole argument for it.  Two simultaneously-measured bands define a power law
+    between their pivots, which is the standard interpolant for an unmeasured band -- the
+    PCHIP in (log nu, log L_nu) degenerates to exactly that at two nodes -- so 2 is a floor
+    set by the interpolation rather than a preference about how thin the tail may be.  A
+    declaration of 3 was a stricter standard than the physics required, and it was being
+    paid for in domain: it is what held `t_valid` to [0.6453, 33.35] against a union span of
+    [0.1198, 48.09], and the points outside it were the table's own measurements.  What it bought was
+    nothing measurable.  At 2 no band of this template ends up with an RMS residual above 1.5
+    times its own quoted photometric error, and the thinness of the tail is still reported
+    rather than hidden: `qc.audit.thin_epoch_days`, `SpectralSurface.min_active_bands_at`, and
+    the refusal message all name the active band count at the epoch that was refused.  Nothing
+    about the surface's *accuracy* changed; only how much of the data it agrees to speak about.
+reddening:
+  mw_removed: unknown
+  host_removed: unknown
+  source: >-
+    mw_removed: unknown -- the paper corrects its own photometry, not this
+    table's: "To correct for reddening, we consider both Galactic and intrinsic
+    host extinction.  We estimate and correct for Galactic extinction using
+    dustmaps from [137]." -- but the vendored CSV is a five-source compilation
+    (`reference`: arXiv:2510.18854 x16, 2510.23732 x7, 2510.17104 x42,
+    2510.24620 x92, 2510.01142 x44 rows) with no per-row extinction flag, and
+    only one of those five papers was read; declaring `true` or `false` for all
+    201 rows would be a guess about 194 rows no source ever stated, so the
+    state stays `unknown`.  host_removed: unknown -- the paper measures host
+    dust and then refuses to let it be used as a measurement: the Na I D
+    relation "A_v^host = 0.78 (+/- 0.15) EW_NaID" applied to the LRIS spectrum
+    of UT 2025-08-25 gives "E(B-V) ~ 0.29 mag and A_v^host ~ 0.89 mag ...
+    (i.e. R_v = 3.1)", immediately qualified by "We caution that since
+    low-resolution spectra are being used, this estimate is best used as an
+    upper limit on the extinction" -- an upper limit is not an amount removed,
+    and the compilation carries no removal flag either.
+
+stretch:
+  supported: false
+  note: "No stretch law exists for core-collapse IIb supernovae or kilonovae (THEORY S5: core-collapse, GRB-SNe, kilonovae and EP/XRF transients have no measured width-luminosity law); `supported: false` refuses the parameter rather than defaulting it to a value measured on another class."
+
+provenance:
+  grade: mixed-band-quality
+  citations:
+    - "Kasliwal et al. 2025, \"ZTF25abjmnps (AT2025ulz) and S250818k: A Candidate Superkilonova from a Sub-threshold Sub-Solar Gravitational Wave Trigger\", arXiv:2510.23732v1.  Publisher of 7 of the 201 rows; the redshift sentence, the Table 2 epoch caption, the classification sentences and both extinction statements all come from it; read in full (S_OK)."
+    - "arXiv:2510.18854 (16 rows), arXiv:2510.17104 (42), arXiv:2510.24620 (92), arXiv:2510.01142 (44) -- the compilation's other four sources, carried only as the `reference` values the vendor vendored; none was read and none informed any decision: grade S_UNVER, row-level provenance only."
+  caveats:
+    - "The value columns are named `flux_density`/`flux_density_err` but hold magnitudes: the table's own `flux_density_unit` column says `magnitude` on all 201 rows and the values run 20.28 ... 23.85.  Declared as `unit: mag` with `system_column: mag_system`; the name is the vendor's, and the CSV is vendored as it stands."
+    - "Every row's `mag_system` says AB, so no band is pushed through a Vega->AB lookup -- including I (1 row) and J (2 rows), Vega-native band names whose registry offsets (0.417, 0.938) would fire if the column said `vega`.  The paper's own Table 2 header prints \"Mag [AB]\", corroborating its seven rows; the remaining 194 rows rest on the column alone."
+    - "The class history is contested in the source itself: \"The first week of follow-up suggested properties reminiscent of a GW170817-like kilonova.  Subsequent follow-up suggests properties most similar to a young, stripped-envelope, Type IIb supernova.  Although we cannot statistically rule out chance coincidence ...\", with \"our net chance coincidence estimate is crudely 2.9%\"; the final taxonomy rests on \"The matches to H alpha before maximum ..., Helium after maximum ... and the absence of O I support the spectroscopic classification as a Type IIb supernova\".  `object_class: core-collapse-IIb` records the paper's conclusion, not the coincidence."
+    - "A `time_err` column (quoted on 52 rows) has no home in the schema: declared epochs are exact, and the uncertainty is noted here rather than dropped on the floor."
+
+notes: >-
+  The paper's Table 2 carries seven non-detection rows (Mag \"/\", phases
+  -4.87 ... -0.84 d, plus a +3.08 d 2MASS-J limit); none of them is in the
+  vendored CSV, which is detections-only -- the two J rows at t = 18.19/25.56 d
+  are FTW detections, not mislabeled limits, and no row's value matches its own
+  5-sigma-depth pattern.  What the table has instead is a real `upperlimit`
+  column whose 201 values are all `n`: declared so the flag gate exists and
+  would catch a limit any future re-export introduces, even though nothing in
+  this table trips it today.

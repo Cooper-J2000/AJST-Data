@@ -1,0 +1,508 @@
+{
+ "audit": {
+  "file": "data/raw/sn2006aj.csv",
+  "file_sha256": "c198dbc3954ec34966d24d0391050dc79b419aa8a7809e45294035d69ea5d758",
+  "rows_in": 474,
+  "rejections": {
+   "table": {
+    "upper-limit": 50
+   },
+   "uvot-uvm2": {
+    "colour-term-above-max": 40
+   },
+   "uvot-uvw2": {
+    "colour-term-above-max": 55
+   }
+  },
+  "band_epochs": {
+   "B": 88,
+   "H": 6,
+   "J": 6,
+   "Ks": 5,
+   "U": 62,
+   "uvot-uvm2": 40,
+   "uvot-uvw1": 36,
+   "uvot-uvw2": 55,
+   "V": 83,
+   "i": 21,
+   "r": 22
+  },
+  "rows_kept": 424,
+  "time_frame": {
+   "declared": "observer",
+   "dilation_applied": true,
+   "one_plus_z_template": 1.0331,
+   "n_epochs": 424
+  },
+  "systems": {
+   "systems_touched": [
+    "B:johnson-cousins:-0.145",
+    "H:vega:+1.379",
+    "J:vega:+0.938",
+    "Ks:vega:+1.860",
+    "U:johnson-cousins:+0.699",
+    "V:johnson-cousins:-0.022"
+   ],
+   "max_shift_mag": 1.86,
+   "n_values_shifted": 6,
+   "grade": "DOC"
+  },
+  "systems_detail": [
+   {
+    "band": "B",
+    "system": "johnson-cousins",
+    "shift_mag": -0.145,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "H",
+    "system": "vega",
+    "shift_mag": 1.379,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "J",
+    "system": "vega",
+    "shift_mag": 0.938,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "Ks",
+    "system": "vega",
+    "shift_mag": 1.86,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "U",
+    "system": "johnson-cousins",
+    "shift_mag": 0.699,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   },
+   {
+    "band": "V",
+    "system": "johnson-cousins",
+    "shift_mag": -0.022,
+    "direction": "m_AB = m_Vega + shift",
+    "grade": "DOC",
+    "n_values": 1
+   }
+  ],
+  "rows_out": 424,
+  "span_days": [
+   0.0,
+   34.815390572063734
+  ],
+  "node_bands": [
+   "B",
+   "H",
+   "J",
+   "Ks",
+   "U",
+   "V",
+   "i",
+   "r",
+   "uvot-uvw1"
+  ],
+  "node_epochs": {
+   "Ks": 5,
+   "H": 6,
+   "J": 6,
+   "i": 21,
+   "r": 22,
+   "V": 83,
+   "B": 88,
+   "U": 62,
+   "uvot-uvw1": 36
+  },
+  "band_active_days": {
+   "Ks": 9.6691,
+   "H": 9.6691,
+   "J": 9.6691,
+   "i": 29.0468,
+   "r": 30.9649,
+   "V": 33.3035,
+   "B": 31.9814,
+   "U": 31.3815,
+   "uvot-uvw1": 21.6715
+  },
+  "thin_epoch_days": 0.0024,
+  "thick_epoch_days": 34.813
+ },
+ "bands": [
+  "Ks",
+  "H",
+  "J",
+  "i",
+  "r",
+  "V",
+  "B",
+  "U",
+  "uvot-uvw1"
+ ],
+ "n_time_nodes": 556,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": "unknown",
+  "host_removed": "unknown",
+  "source": "The compiled table (sn2006aj.csv) carries no extinction column; its `source` column holds ADS bibliography codes plus one archive name (CfA Supernova Archive), which says where the numbers came from but not what was done to them. What the *literature* says about this line of sight is on the record, though: Sollerman et al. 2006, A&A 454, 503, DOI 10.1051/0004-6361:20065226, section 3 give \"the Galactic extinction of E(B-V)=0.14\" from the Schlegel maps, argue the host term is low from the host SED and the Balmer decrement, and then \"adopt a total extinction of E(B-V) = 0.14 mag\" -- i.e. at that level the Galactic and the adopted total figure coincide, so the host term they assume is ~0.  That is a statement about the sky, not about this table's provenance, so the declaration stays `unknown`: the compilation neither confirms nor denies that it removed anything.  docs/VALIDATION.md section B records the one thing the comparison does constrain: read as it stands, the table's brightest V row sits 0.045 mag from the published peak, whereas a table that had already been de-reddened by A_V = 3.1 x 0.14 would sit 0.389 mag from it.  The evidence therefore says this table has *not* had the dust taken off it.  That is an inference from a magnitude comparison, not a provenance statement, so it is kept labelled as one and not promoted into the declaration above."
+ },
+ "t_valid_days": [
+  0.002613493366833687,
+  34.81315458328869
+ ],
+ "t_union_days": [
+  0.0,
+  34.815390572063734
+ ],
+ "nu_valid_Hz": [
+  129101954297540.62,
+  1938757794921423.5
+ ],
+ "nu_valid_lambda_A": [
+  1546.3,
+  23221.4
+ ],
+ "pivot_nu_Hz": {
+  "Ks": 143131026493851.8,
+  "H": 187763917426613.4,
+  "J": 249909836446657.47,
+  "i": 412432792704198.3,
+  "r": 499965856806454.06,
+  "V": 560565067227314.9,
+  "B": 701200484709630.4,
+  "U": 878711401047173.9,
+  "uvot-uvw1": 1168263928707209.2
+ },
+ "per_band_epochs": {
+  "Ks": 5,
+  "H": 6,
+  "J": 6,
+  "i": 21,
+  "r": 22,
+  "V": 83,
+  "B": 88,
+  "U": 62,
+  "uvot-uvw1": 36
+ },
+ "mode_by_band": {
+  "Ks": "band",
+  "H": "band",
+  "J": "band",
+  "i": "band",
+  "r": "band",
+  "V": "band",
+  "B": "band",
+  "U": "band",
+  "uvot-uvw1": "band"
+ },
+ "excluded_bands": [
+  "uvot-uvm2",
+  "uvot-uvw2"
+ ],
+ "excluded_reasons": {
+  "uvot-uvm2": {
+   "colour-term-above-max": 40
+  },
+  "uvot-uvw2": {
+   "colour-term-above-max": 55
+  }
+ },
+ "unfold": {
+  "iterations": 5,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.14995167,
+   0.01474578,
+   0.00158139,
+   0.00024252,
+   1.461e-05
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "Ks": -2.501,
+   "H": -2.389,
+   "J": -2.366,
+   "i": -2.396,
+   "r": -1.794,
+   "V": -1.98,
+   "B": -2.035,
+   "U": -2.346,
+   "uvot-uvw1": -4.505
+  },
+  "gain_spread_mag_per_dex": {
+   "Ks": 0.186,
+   "H": 0.05,
+   "J": 0.07,
+   "i": 0.348,
+   "r": 0.814,
+   "V": 1.268,
+   "B": 0.465,
+   "U": 0.88,
+   "uvot-uvw1": 2.729
+  },
+  "cross_talk_mag_per_dex": {
+   "Ks": {
+    "H": 0.018,
+    "J": 0.003,
+    "i": 0.0,
+    "r": 0.0,
+    "V": 0.0,
+    "B": 0.0,
+    "U": 0.0,
+    "uvot-uvw1": 0.0
+   },
+   "H": {
+    "Ks": -0.028,
+    "J": -0.105,
+    "i": 0.009,
+    "r": 0.003,
+    "V": 0.0,
+    "B": 0.0,
+    "U": 0.0,
+    "uvot-uvw1": 0.0
+   },
+   "J": {
+    "Ks": 0.013,
+    "H": -0.076,
+    "i": -0.079,
+    "r": 0.014,
+    "V": 0.001,
+    "B": 0.0,
+    "U": 0.0,
+    "uvot-uvw1": 0.0
+   },
+   "i": {
+    "Ks": 0.0,
+    "H": 0.003,
+    "J": -0.016,
+    "r": -0.053,
+    "V": -0.028,
+    "B": 0.0,
+    "U": 0.0,
+    "uvot-uvw1": 0.0
+   },
+   "r": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": -0.011,
+    "i": -0.173,
+    "V": -0.44,
+    "B": -0.0,
+    "U": 0.0,
+    "uvot-uvw1": 0.0
+   },
+   "V": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.001,
+    "i": 0.006,
+    "r": -0.277,
+    "B": -0.12,
+    "U": 0.005,
+    "uvot-uvw1": 0.0
+   },
+   "B": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "i": 0.0,
+    "r": 0.043,
+    "V": -0.291,
+    "U": -0.257,
+    "uvot-uvw1": 0.02
+   },
+   "U": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "i": 0.0,
+    "r": 0.0,
+    "V": 0.029,
+    "B": -0.09,
+    "uvot-uvw1": -0.102
+   },
+   "uvot-uvw1": {
+    "Ks": 0.0,
+    "H": 0.0,
+    "J": 0.0,
+    "i": 0.0,
+    "r": 0.001,
+    "V": -0.004,
+    "B": -0.796,
+    "U": 2.325
+   }
+  },
+  "jacobian_condition": 3.1,
+  "node_correction_dex": {
+   "Ks": 0.0043,
+   "H": 0.0112,
+   "J": 0.0086,
+   "i": 0.0086,
+   "r": 0.0447,
+   "V": 0.0791,
+   "B": 0.1297,
+   "U": 0.0356,
+   "uvot-uvw1": 0.1486
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "B": 0.0067,
+   "H": 0.0008,
+   "J": 0.0008,
+   "Ks": 0.0002,
+   "U": 0.0048,
+   "V": 0.0072,
+   "i": 0.0009,
+   "r": 0.0079,
+   "uvot-uvw1": 0.0267
+  },
+  "quoted_photometric_error_rms_mag": {
+   "B": 0.1206,
+   "H": 0.0811,
+   "J": 0.0738,
+   "Ks": 0.1068,
+   "U": 0.1495,
+   "V": 0.1134,
+   "i": 0.0663,
+   "r": 0.0399,
+   "uvot-uvw1": 0.157
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [],
+  "corrected_bands": [
+   "B",
+   "H",
+   "J",
+   "Ks",
+   "U",
+   "V",
+   "i",
+   "r",
+   "uvot-uvw1"
+  ],
+  "not_corrected": {
+   "uvot-uvw1": {
+    "reason": "overlapping-bands-not-identifiable",
+    "advisory": true,
+    "diagonal_gain": 4.089,
+    "off_diagonal_gain": 3.126,
+    "colour_term_mag": 0.618
+   }
+  },
+  "colour_term_size_mag": {
+   "B": 0.2147,
+   "H": 0.0259,
+   "J": 0.0177,
+   "Ks": 0.0103,
+   "U": 0.1375,
+   "V": 0.1245,
+   "i": 0.0122,
+   "r": 0.0804,
+   "uvot-uvw1": 0.618
+  },
+  "final_residual_mag": {
+   "B": 0.042307,
+   "H": 0.001051,
+   "J": 0.001331,
+   "Ks": 0.000317,
+   "U": 0.011588,
+   "V": 0.031251,
+   "i": 0.001788,
+   "r": 0.021989,
+   "uvot-uvw1": 0.051391
+  },
+  "max_colour_term_mag": 0.618,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {
+    "uvot-uvm2": 1.824131,
+    "uvot-uvw2": 0.170262
+   },
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [],
+   "rounds": [
+    {
+     "excluded": {
+      "uvot-uvm2": 1.824131
+     },
+     "raw_colour_term_mag": {
+      "uvot-uvm2": 0.8694
+     }
+    },
+    {
+     "excluded": {
+      "uvot-uvw2": 0.170262
+     },
+     "raw_colour_term_mag": {
+      "uvot-uvw2": 0.2439
+     }
+    }
+   ]
+  }
+ },
+ "template": {
+  "id": "sn2006aj",
+  "label": "SN 2006aj / GRB 060218 (type Ic-BL associated with a low-luminosity GRB)",
+  "object_class": "core-collapse-BL-Ic",
+  "z": 0.0331,
+  "z_source": "Sollerman et al. 2006, A&A 454, 503, DOI 10.1051/0004-6361:20065226, section 2: \"From the narrow emission lines from the host galaxy we derive a redshift of z = 0.0331 +- 0.0007.\"  Adopted here because it is the value the same paper's distance and absolute magnitudes were derived with, which is what docs/VALIDATION.md section A re-derives.  v1 carried 0.033 in its module and 0.0343 in the notebook that consumed it, both without a stated source; 0.033 agrees with the published value to the 2 decimals it quotes, 0.0343 does not. Independent cross-check: Mirabal et al. 2006, ApJ 643, L99, DOI 10.1086/505177, \"The weighted mean heliocentric redshift derived from the emission lines is z = 0.03345 +- 0.00006\" -- 0.5 sigma of the adopted value, which is where a redshift enters the error budget at this distance: 0.00035 in z is 1.08 % in d_L, i.e. 0.023 mag.\nWhat that +-0.0007 actually is, because it is not a measurement precision and reading it as one would be the mistake this repository exists to prevent. Sect. 3.2 of the same paper: \"We derived the redshift by measuring the positions of the [O II] line, the [O III] lines as well as Halpha and Hbeta at all 4 epochs, and conclude z = 0.0331 +- 0.0007.\" Its own Table 1 gives those positions: [O II] 3853.42 A -> z = 0.0338, and Hbeta, [O III] 4958.91, [O III] 5006.84 and Halpha -> 0.0328. So the quoted +-0.0007 spans the disagreement between the [O II] and the Balmer lines: it measures how well the narrow lines pin the *systemic* velocity of the star-forming gas, and is 1.5x the sample scatter of those five values. It is not a centroid error either -- sect. 2.2 gives 3 A per pixel, so a line centroid is good to ~0.1 pixel = 0.3 A = 1.4e-4 in z, five times tighter than 0.0007, and Mirabal+2006 measured the same lines to +-0.00006. 0.0007 in z is 210 km/s, which is why it reads like a velocity; it is not one. A line-of-sight scatter about the systemic velocity and the galaxy's bulk motion relative to the CMB are separate unknowns -- a bulk motion shifts every line equally, so it cannot appear in the scatter among them -- and the bulk motion is handled where it belongs, by the CMB frame declared above, where it comes to 175.3 km/s. The error is recorded here and deliberately *not* folded into `Distance.distance_error_mag`: the 350 km/s term there is already a line-of-sight velocity dispersion, so adding 210 km/s of the same class of quantity counts one unknown twice, raising this template's distance error from 0.0780 to 0.0893 mag for no new information. docs/VERIFICATION.md sect. 13 works the comparison for all four templates.",
+  "z_error": 0.0007,
+  "redshift_frame": "heliocentric",
+  "redshift_cmb": {
+   "z_helio": 0.0331,
+   "z_cmb": 0.032496132616115725,
+   "z_cmb_error": 0.0007000000961902965,
+   "z_p": 0.0005848616423909654,
+   "second_order": 1.7103157037012875e-07,
+   "position_term": 5.980597268658727e-09,
+   "dipole_term": 3.6692050471796724e-07,
+   "rule_version": "chromashift-cmb-frame-1"
+  },
+  "distance": {
+   "kind": "cosmological",
+   "allow_low_z": false,
+   "source": "z = 0.0331 is above the peculiar-velocity guard (0.02), so a cosmological luminosity distance is defensible; the default cosmology is used and named in every result's provenance block, and it is `constants.DEFAULT_COSMOLOGY_NAME` that the build reads.  Note that this is *not* the distance the comparison above uses: Sollerman et al. 2006 state \"a cosmology where H_0 = 70 km/s/Mpc, Omega_Lambda = 0.7 and Omega_m = 0.3, this corresponds to a luminosity distance of 145.4 Mpc\", so docs/VALIDATION.md section A passes that paper's own cosmology as an explicit `Distance` instead of inheriting this default.  The two differ by 0.073 mag of distance modulus, which is the price of an unstated H0 and the reason a distance never travels without its provenance."
+  },
+  "manifest": "templates/sn2006aj.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": "unknown",
+   "host_removed": "unknown",
+   "source": "The compiled table (sn2006aj.csv) carries no extinction column; its `source` column holds ADS bibliography codes plus one archive name (CfA Supernova Archive), which says where the numbers came from but not what was done to them. What the *literature* says about this line of sight is on the record, though: Sollerman et al. 2006, A&A 454, 503, DOI 10.1051/0004-6361:20065226, section 3 give \"the Galactic extinction of E(B-V)=0.14\" from the Schlegel maps, argue the host term is low from the host SED and the Balmer decrement, and then \"adopt a total extinction of E(B-V) = 0.14 mag\" -- i.e. at that level the Galactic and the adopted total figure coincide, so the host term they assume is ~0.  That is a statement about the sky, not about this table's provenance, so the declaration stays `unknown`: the compilation neither confirms nor denies that it removed anything.  docs/VALIDATION.md section B records the one thing the comparison does constrain: read as it stands, the table's brightest V row sits 0.045 mag from the published peak, whereas a table that had already been de-reddened by A_V = 3.1 x 0.14 would sit 0.389 mag from it.  The evidence therefore says this table has *not* had the dust taken off it.  That is an inference from a magnitude comparison, not a provenance statement, so it is kept labelled as one and not promoted into the declaration above."
+  },
+  "citations": [
+   "redshift, distance and published peak/absolute magnitudes (comparison anchors\n       only, never photometry): Sollerman et al. 2006, A&A 454, 503,\n       DOI 10.1051/0004-6361:20065226; redshift cross-checked against Mirabal et al.\n       2006, ApJ 643, L99, DOI 10.1086/505177",
+   "table source column: 2014Ap&SS.354...89B (as compiled in the AJST catalogue)",
+   "K-correction formalism: Hogg, Baldry, Blanton & Eisenstein 2002, \"The K\n       correction\", arXiv:astro-ph/0210394.  Never refereed, so it has no journal ref\n       and no DOI: cite the arXiv id. Equations used: 2 (m_R = M_Q + DM + K_QR),\n       3 (DM = 5 log10(D_L/10 pc)), 6 (L_nu = 4 pi D_L^2 f_nu / (1+z))"
+  ],
+  "grade": "system-per-band-declared"
+ },
+ "manifest_sha256": "55add157627633df0c8356972702a2b811a088584f97ecfec1de7213e797c995",
+ "inputs_sha256": {
+  "manifest": "55add157627633df0c8356972702a2b811a088584f97ecfec1de7213e797c995",
+  "photometry": "c198dbc3954ec34966d24d0391050dc79b419aa8a7809e45294035d69ea5d758",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "sn2006aj.npz"
+}

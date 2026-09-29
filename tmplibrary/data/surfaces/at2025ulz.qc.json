@@ -1,0 +1,319 @@
+{
+ "audit": {
+  "file": "data/raw/AT2025ulz.csv",
+  "file_sha256": "407a17cf74cf3f09d955f73975bf878e2e49b1809d3a3f3acdacf8932adb1ee6",
+  "rows_in": 201,
+  "rejections": {
+   "g": {
+    "duplicate-epoch-merged": 1
+   },
+   "r": {
+    "duplicate-epoch-merged": 3
+   },
+   "z": {
+    "duplicate-epoch-merged": 6
+   },
+   "F110W": {
+    "too-few-epochs-for-a-node": 2
+   },
+   "F160W": {
+    "too-few-epochs-for-a-node": 2
+   },
+   "F336W": {
+    "too-few-epochs-for-a-node": 1
+   },
+   "F606W": {
+    "too-few-epochs-for-a-node": 1
+   },
+   "I": {
+    "too-few-epochs-for-a-node": 1
+   },
+   "J": {
+    "too-few-epochs-for-a-node": 2
+   },
+   "u": {
+    "too-few-epochs-for-a-node": 1
+   }
+  },
+  "band_epochs": {
+   "F110W": 2,
+   "F160W": 2,
+   "F336W": 1,
+   "F606W": 1,
+   "I": 1,
+   "J": 2,
+   "g": 46,
+   "i": 59,
+   "r": 53,
+   "u": 1,
+   "z": 23
+  },
+  "rows_kept": 201,
+  "time_frame": {
+   "declared": "observer",
+   "dilation_applied": true,
+   "one_plus_z_template": 1.0848,
+   "n_epochs": 201
+  },
+  "error_bars": {
+   "F110W": 3,
+   "F160W": 3,
+   "F336W": 3,
+   "F606W": 3,
+   "I": 3,
+   "J": 3,
+   "g": 3,
+   "i": 3,
+   "r": 3,
+   "u": 3,
+   "z": 3
+  },
+  "systems": {
+   "systems_touched": [],
+   "max_shift_mag": 0.0
+  },
+  "systems_detail": [],
+  "rows_out": 191,
+  "span_days": [
+   0.1198377581120944,
+   48.08904867256637
+  ],
+  "node_bands": [
+   "g",
+   "i",
+   "r",
+   "z"
+  ],
+  "node_epochs": {
+   "z": 23,
+   "i": 59,
+   "r": 53,
+   "g": 46
+  },
+  "band_active_days": {
+   "z": 32.6421,
+   "i": 47.4447,
+   "r": 33.183,
+   "g": 33.6786
+  },
+  "thin_epoch_days": 14.3388,
+  "thick_epoch_days": 33.6304
+ },
+ "bands": [
+  "z",
+  "i",
+  "r",
+  "g"
+ ],
+ "n_time_nodes": 382,
+ "table_reddening": {
+  "declared": true,
+  "mw_removed": "unknown",
+  "host_removed": "unknown",
+  "source": "mw_removed: unknown -- the paper corrects its own photometry, not this table's: \"To correct for reddening, we consider both Galactic and intrinsic host extinction.  We estimate and correct for Galactic extinction using dustmaps from [137].\" -- but the vendored CSV is a five-source compilation (`reference`: arXiv:2510.18854 x16, 2510.23732 x7, 2510.17104 x42, 2510.24620 x92, 2510.01142 x44 rows) with no per-row extinction flag, and only one of those five papers was read; declaring `true` or `false` for all 201 rows would be a guess about 194 rows no source ever stated, so the state stays `unknown`.  host_removed: unknown -- the paper measures host dust and then refuses to let it be used as a measurement: the Na I D relation \"A_v^host = 0.78 (+/- 0.15) EW_NaID\" applied to the LRIS spectrum of UT 2025-08-25 gives \"E(B-V) ~ 0.29 mag and A_v^host ~ 0.89 mag ... (i.e. R_v = 3.1)\", immediately qualified by \"We caution that since low-resolution spectra are being used, this estimate is best used as an upper limit on the extinction\" -- an upper limit is not an amount removed, and the compilation carries no removal flag either."
+ },
+ "t_valid_days": [
+  0.16998525073746315,
+  33.74815634218289
+ ],
+ "t_union_days": [
+  0.1198377581120944,
+  48.08904867256637
+ ],
+ "nu_valid_Hz": [
+  290240837517536.75,
+  895908700932231.5
+ ],
+ "nu_valid_lambda_A": [
+  3346.2,
+  10329.1
+ ],
+ "pivot_nu_Hz": {
+  "z": 362281228313755.8,
+  "i": 433072397178893.0,
+  "r": 524985927270972.2,
+  "g": 686857809616551.2
+ },
+ "per_band_epochs": {
+  "z": 23,
+  "i": 59,
+  "r": 53,
+  "g": 46
+ },
+ "mode_by_band": {
+  "z": "band",
+  "i": "band",
+  "r": "band",
+  "g": "band"
+ },
+ "excluded_bands": [
+  "F110W",
+  "F160W",
+  "F336W",
+  "F606W",
+  "I",
+  "J",
+  "u"
+ ],
+ "excluded_reasons": {
+  "F110W": {
+   "too-few-epochs-for-a-node": 2
+  },
+  "F160W": {
+   "too-few-epochs-for-a-node": 2
+  },
+  "F336W": {
+   "too-few-epochs-for-a-node": 1
+  },
+  "F606W": {
+   "too-few-epochs-for-a-node": 1
+  },
+  "I": {
+   "too-few-epochs-for-a-node": 1
+  },
+  "J": {
+   "too-few-epochs-for-a-node": 2
+  },
+  "u": {
+   "too-few-epochs-for-a-node": 1
+  }
+ },
+ "unfold": {
+  "iterations": 4,
+  "converged": true,
+  "correction_model": "per-epoch, penalised second difference in time",
+  "smoothing_lambda_mag2": 0.03,
+  "step_tolerance_dex": 0.0001,
+  "step_history_dex": [
+   0.0466168,
+   0.00658447,
+   0.00034352,
+   2.34e-06
+  ],
+  "total_correction_cap_dex": 1.0,
+  "epochs_at_correction_cap": 0,
+  "gain_definition": "dM_band / d(log10 L_nu at the node), finite difference on the assembled surface; -2.5 is the delta-band limit",
+  "gains_mag_per_dex": {
+   "z": -2.335,
+   "i": -2.233,
+   "r": -2.242,
+   "g": -2.403
+  },
+  "gain_spread_mag_per_dex": {
+   "z": 0.876,
+   "i": 0.487,
+   "r": 0.348,
+   "g": 1.408
+  },
+  "cross_talk_mag_per_dex": {
+   "z": {
+    "i": -0.148,
+    "r": -0.019,
+    "g": 0.0
+   },
+   "i": {
+    "z": -0.115,
+    "r": -0.15,
+    "g": 0.012
+   },
+   "r": {
+    "z": 0.013,
+    "i": -0.2,
+    "g": -0.073
+   },
+   "g": {
+    "z": 0.0,
+    "i": -0.023,
+    "r": 0.004
+   }
+  },
+  "jacobian_condition": 1.2,
+  "node_correction_dex": {
+   "z": 0.0333,
+   "i": 0.0373,
+   "r": 0.0467,
+   "g": 0.037
+  },
+  "corrections_over_warning_dex": {},
+  "residual_rms_mag": {
+   "g": 0.0037,
+   "i": 0.006,
+   "r": 0.005,
+   "z": 0.0054
+  },
+  "quoted_photometric_error_rms_mag": {
+   "g": 0.1657,
+   "i": 0.1695,
+   "r": 0.1604,
+   "z": 0.1474
+  },
+  "residual_vs_error_factor": 1.5,
+  "residual_above_photometric_error": {},
+  "residual_not_checked_mono": [],
+  "corrected_bands": [
+   "g",
+   "i",
+   "r",
+   "z"
+  ],
+  "not_corrected": {},
+  "colour_term_size_mag": {
+   "g": 0.1014,
+   "i": 0.0847,
+   "r": 0.101,
+   "z": 0.066
+  },
+  "final_residual_mag": {
+   "g": 0.009592,
+   "i": 0.021805,
+   "r": 0.013315,
+   "z": 0.01577
+  },
+  "max_colour_term_mag": 0.1014,
+  "band_admission": {
+   "max_colour_term_mag": 0.15,
+   "excluded": {},
+   "tested_on": "final_residual_mag (the misfit that survives B6)",
+   "rule": "one departure at a time, worst excess first, undone when it pushed a band that was inside the cap outside it",
+   "departures_undone_as_harmful": [],
+   "rounds": []
+  }
+ },
+ "template": {
+  "id": "at2025ulz",
+  "label": "AT 2025ulz / ZTF 25abjmnps (young stripped-envelope Type IIb supernova coincident with the sub-threshold trigger S250818k)",
+  "object_class": "core-collapse-IIb",
+  "z": 0.0848,
+  "z_source": "Kasliwal et al. 2025, arXiv:2510.23732v1 (read in full), spectroscopy: \"In order to derive a redshift from the spectra, we use multiple host galaxy emission lines that yield z=0.0848 or 399.4 Mpc, which we adopt throughout.\" -- adopted verbatim; no error is quoted (so none is invented) and no reference frame is stated (so `frame` stays undeclared).  The same sentence carries the distance the paper pairs with that redshift; 399.4 Mpc corresponds to a distance modulus of 38.01, kept as a cross-check in docs/VALIDATION.md and never an input.",
+  "z_error": null,
+  "redshift_frame": "unspecified",
+  "redshift_cmb": null,
+  "distance": {
+   "kind": "cosmological",
+   "source": "z = 0.0848 sits above the 0.02 peculiar-velocity guard, so no `allow_low_z` flag is needed.  The paper's \"399.4 Mpc\" follows from that same redshift under a cosmology the sentence does not state -- it is not an independent distance indicator, so `kind: measured` would be fiction; it is kept only as the cross-check above.  The default cosmology is used and named in every result's provenance via `constants.DEFAULT_COSMOLOGY_NAME`."
+  },
+  "manifest": "templates/at2025ulz.yaml",
+  "stretch_supported": false,
+  "table_reddening": {
+   "declared": true,
+   "mw_removed": "unknown",
+   "host_removed": "unknown",
+   "source": "mw_removed: unknown -- the paper corrects its own photometry, not this table's: \"To correct for reddening, we consider both Galactic and intrinsic host extinction.  We estimate and correct for Galactic extinction using dustmaps from [137].\" -- but the vendored CSV is a five-source compilation (`reference`: arXiv:2510.18854 x16, 2510.23732 x7, 2510.17104 x42, 2510.24620 x92, 2510.01142 x44 rows) with no per-row extinction flag, and only one of those five papers was read; declaring `true` or `false` for all 201 rows would be a guess about 194 rows no source ever stated, so the state stays `unknown`.  host_removed: unknown -- the paper measures host dust and then refuses to let it be used as a measurement: the Na I D relation \"A_v^host = 0.78 (+/- 0.15) EW_NaID\" applied to the LRIS spectrum of UT 2025-08-25 gives \"E(B-V) ~ 0.29 mag and A_v^host ~ 0.89 mag ... (i.e. R_v = 3.1)\", immediately qualified by \"We caution that since low-resolution spectra are being used, this estimate is best used as an upper limit on the extinction\" -- an upper limit is not an amount removed, and the compilation carries no removal flag either."
+  },
+  "citations": [
+   "Kasliwal et al. 2025, \"ZTF25abjmnps (AT2025ulz) and S250818k: A Candidate Superkilonova from a Sub-threshold Sub-Solar Gravitational Wave Trigger\", arXiv:2510.23732v1.  Publisher of 7 of the 201 rows; the redshift sentence, the Table 2 epoch caption, the classification sentences and both extinction statements all come from it; read in full (S_OK).",
+   "arXiv:2510.18854 (16 rows), arXiv:2510.17104 (42), arXiv:2510.24620 (92), arXiv:2510.01142 (44) -- the compilation's other four sources, carried only as the `reference` values the vendor vendored; none was read and none informed any decision: grade S_UNVER, row-level provenance only."
+  ],
+  "grade": "mixed-band-quality"
+ },
+ "manifest_sha256": "483600ff37e389cd6fb7d6d3a21be9b0f7cd2195246bf02c2e188ec57754d28c",
+ "inputs_sha256": {
+  "manifest": "483600ff37e389cd6fb7d6d3a21be9b0f7cd2195246bf02c2e188ec57754d28c",
+  "photometry": "407a17cf74cf3f09d955f73975bf878e2e49b1809d3a3f3acdacf8932adb1ee6",
+  "filter_index": "25ada9ddd278dd3e79e49f3891f865f2d379ef3bc1c800d37ddafc2951f15350",
+  "filter_curves": "fb4353b60a93795e2d589587dc371d586826df3455c9548eefc76f0da577fe89",
+  "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
+  "code": "50a30461fa06bfa80b8fe04790188a7bd75b47ab744b10dcb4df075b31581db8"
+ },
+ "surface_file": "at2025ulz.npz"
+}
