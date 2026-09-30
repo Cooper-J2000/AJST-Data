@@ -8,7 +8,10 @@
 > `info` keys are ALWAYS present — missing values are explicit `null`, never omitted
 > keys. Lists (`alias`/`tag`/`sub_tag`/`articles`) are always arrays (possibly empty).
 > Times: `T0` is ISO8601 UTC; lc `time` is seconds relative to T0; `mjd` is the
-> authoritative absolute time. Run `tools/validate.py` before submitting.
+> authoritative absolute time. Bands: every `lc` `band` is either a `filters.json`
+> key (optical/UV/IR) or a numeric+unit string — `4.86GHz` (radio frequency) /
+> `10keV` (X-ray, monochromatic Fν at 10 keV); see §3.1. Run `tools/validate.py`
+> before submitting.
 
 ## 1. 目录结构与命名
 
@@ -87,7 +90,7 @@
 | `time_err` | float | 否 | 时间误差（如半曝光时间） |
 | `time_unit` | str | 是 | `s`/`sec`、`m`/`min`、`h`/`hour`、`d`/`day` |
 | `mjd` | float | 否 | 权威绝对时间（T0 + time 换算；T0 为空时为空） |
-| `band` | str | 是 | 波段标识（滤光片 id 见 `filters.json`） |
+| `band` | str | 是 | 波段标识，见 §3.1（`filters.json` 键，或频率 / 能量串） |
 | `flux_density` | float | 是 | 原始流量密度值（或星等值） |
 | `flux_density_err` | float | 否 | 原始误差（1σ） |
 | `flux_density_unit` | str | 是 | `mJy`、`uJy`、`cgs`(erg/cm²/s/Hz)、`magnitude` |
@@ -107,6 +110,24 @@
 | `reference` | str | 否 | 文献引用或数据源 |
 | `comment` | str | 否 | 备注 |
 | `source` | str | 否 | 录入来源（账户名 / 管线标识） |
+
+### 3.1 `band` 两条车道
+
+`band` 的值只有两类，解析端用同一个正则识别（代码仓库 `backend/fitting/jobs.py` 的
+`_FREQ_BAND_RE`；大小写不敏感，容许内部空格）：
+
+| 车道 | 取值 | 示例 | 进 `filters.json`？ |
+|---|---|---|---|
+| 一：光学 / UV / IR | `filters.json` 中已有的波段键 | `r`、`V`、`J` | 是（新波段须在同一 PR 中按其现有格式补充定义） |
+| 二：射电 / 亚毫米 | 「数字 + 单位」串，单位 `Hz`/`kHz`/`MHz`/`GHz`/`THz` | `4.86GHz`、`250GHz` | 否 |
+| 二′：X 射线 | 「数字 + 单位」串，单位 `eV`/`keV`/`MeV`/`GeV`（光子能量） | `10keV` | 否 |
+
+- 库内惯例**无空格**（写 `4.86GHz`，不写 `4.86 GHz`）；同一源内保持一致。
+- 同一波段的**不同发表值**（`4.8GHz` / `4.86GHz` / `4.9GHz`）是不同文献的不同测量，
+  **不得**互相归一化或合并。
+- X 射线行语义：能量串（如 `10keV`）表示 **10 keV 处的单色流量密度 Fν**，**不是**能段
+  积分流量；单位由该行 `flux_density_unit` 给出（库内 Swift/XRT 的 `10keV` 行多为 `Jy`，
+  来源 UKSSDC Swift Burst Analyser）。
 
 ## 4. `filters.json` / `tags.json`
 
