@@ -36,13 +36,40 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 | `rssgrbag` | 射电遴选 GRB 余辉目录（Chandra & Frail 2012, ApJ 746, 156） |
 | `saxgrbmgrb` | BeppoSAX/GRBM GRB 目录（HEASARC `saxgrbmgrb`） |
 
-- 其余文档：`部分数据说明及导入记录.md`、`数据统一列定义.md`、`external/SCHEMA.md`、`external/统计关系样本添加指南.md`、`external/导入说明_grbcata_source_2.md`
+- 其余文档：`数据审核提示词.md`、`部分数据说明及导入记录.md`、`数据统一列定义.md`、`external/SCHEMA.md`、`external/统计关系样本添加指南.md`、`external/导入说明_grbcata_source_2.md`
 
 ## 数据契约与贡献
 
-- **`SCHEMA.md`：数据格式的唯一权威定义**（info JSON 字段契约、lc CSV 24 列契约、命名规范、null 约定）。
-- **`CONTRIBUTING.md`：校验 / 扩充 / 提交流程**——任何人或外部 agent 都可参与：
-  `python3 tools/validate.py` 零依赖全量校验（CI 自动运行），扩充按 SCHEMA 契约，提交走 Pull Request。
+| 文件 | 作用 |
+|---|---|
+| **`SCHEMA.md`** | 数据格式的唯一权威定义（info JSON 字段契约、lc CSV 24 列契约、命名规范、`null` 约定）。 |
+| **`CONTRIBUTING.md`** | 校验 / 扩充 / 提交流程：`python3 tools/validate.py` 零依赖全量校验（CI 自动运行），扩充按 SCHEMA 契约，提交走 Pull Request。 |
+| **`数据审核提示词.md`** | **逐源数据审核任务的提示词**：整段发给你的 agent（Claude Code / Cursor / ZCode 等）即可开工，详见下节。 |
+
+效力：`SCHEMA.md` / `CONTRIBUTING.md`（数据与流程契约）高于 `数据审核提示词.md`（任务提示词）；冲突时以契约文件为准，并欢迎就提示词本身提 Issue / PR。
+
+## 用你自己的 agent 参与数据审核（外部贡献推荐入口）
+
+本库最核心的工作，是把 2794 个源**逐个从「未核实」变成「已核实」**（见文末免责声明）。任何合作者都可以用自己的 agent 来做这件事，不必了解后端代码：
+
+1. clone / fork 本仓库；
+2. 把 **`数据审核提示词.md`** 里的「提示词本体」整段发给你的 agent（该文件开头有给人看的使用说明）；
+3. 按提示词约定完成单源复核，**一个源一个 PR** 回交上游。
+
+agent 会先跟你确认**审核人姓名**与**本批源列表**，之后才开工。几个关键约定（完整版见提示词本体）：
+
+- 库中已有数据一律视为「未核实」，不盲目相信；原有行同样逐行核对；
+- 每个数值都必须在本次会话中从来源原文实际核对得出，**严禁臆造 / 内插 / 估算 / 凭模型记忆填写**；
+- 复核后的整张光变表统一用同一个标准 T0；`T0` 本身不改，真实爆发时刻的偏差写入 `T0_offset`（秒，后移为正、提前为负）；
+- 星等就存星等（`flux_density_unit=magnitude`），不做单位换算、不做消光改正，后端派生列（`Gext_*` 系列）一律留空；
+- 开 PR 前必须发起一个**无利益关联的独立子代理**核查数据真实性，核查结论写入 PR 说明；
+- 提交前 `python3 tools/validate.py` 必须 0 错误（CI 会重跑）。
+
+直链（方便 `curl` 或在 Issue 里贴给别人的 agent）：
+
+```
+https://raw.githubusercontent.com/Cooper-J2000/AJST-Data/main/%E6%95%B0%E6%8D%AE%E5%AE%A1%E6%A0%B8%E6%8F%90%E7%A4%BA%E8%AF%8D.md
+```
 
 ## 接入方法
 
@@ -72,7 +99,7 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 
 **重要**：本数据库的数据批量抓取自已公开发表的文章与 GCN 通告，并继承了 [Dainotti 2024](https://academic.oup.com/mnras/article/533/4/4023/7697178?login=true) 等研究项目的既有数据。目前**尚未完成逐条人工审核**，作者计划用约一年时间完成全部条目的质量审核。**在此之前，请勿将本数据直接用于严肃科学研究。**
 
-欢迎社区对数据的贡献，项目作者不胜感激。
+欢迎社区对数据的贡献，项目作者不胜感激。想参与逐源审核的合作者（包括让自己的 agent 来做），直接从 [`数据审核提示词.md`](数据审核提示词.md) 开始。
 
 ## 许可
 

@@ -5,9 +5,19 @@
 > to this repository. The data contract is [SCHEMA.md](SCHEMA.md); validate with
 > `python3 tools/validate.py` (stdlib-only) and submit via pull request.
 
-## 1. 三种工作方式
+## 1. 四种工作方式（审核 / 校验 / 扩充 / 提交）
 
-### 1.1 校验（validate）
+### 1.1 审核（audit）——外部贡献推荐入口
+
+当前最有价值的贡献形式。库中已有数据一律视为「未核实」，逐源复核、把源从「未核实」变成「已核实」是项目最核心的工作。
+
+把 [`数据审核提示词.md`](数据审核提示词.md) 里的「提示词本体」整段发给你的 agent（Claude Code / Cursor / ZCode 等），它会先与你确认**审核人姓名**与**本批源列表**，然后按约定完成单源复核：
+
+身份核验 → T0 口径统一 → 逐行溯源核对与补充 → 去重 → 元数据与 `extra_data.audit` 标记 → `tools/validate.py` → **独立子代理真实性核查** → 单源 Pull Request。
+
+要点：一源一 PR；数值必须本次从来源原文实际核对得出，严禁臆造/内插/估算；派生列（`Gext_*`）一律留空；拿不准就停下来问。契约（`SCHEMA.md` 与本文件）效力高于该提示词。
+
+### 1.2 校验（validate）
 
 ```bash
 git clone https://github.com/Cooper-J2000/AJST-Data.git
@@ -18,7 +28,7 @@ python3 tools/validate.py
 零第三方依赖，任意 Python 3 环境可跑。发现错误请提 Issue 或直接 PR 修复。
 `--strict` 模式把值域警告（如非法 `y/n` 取值）也算失败。
 
-### 1.2 扩充（extend）
+### 1.3 扩充（extend）
 
 新增一个暂现源 = 新增一对文件：
 
@@ -31,7 +41,7 @@ python3 tools/validate.py
 
 修改已有条目同理：直接改对应文件，保证改完仍过校验。
 
-### 1.3 提交（submit）
+### 1.4 提交（submit）
 
 1. Fork 本仓库，在分支上提交，发起 Pull Request。
 2. Commit 信息格式：`data: <中文或英文简述>`，例如
