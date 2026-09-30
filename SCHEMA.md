@@ -128,6 +128,7 @@
 - X 射线行语义：能量串（如 `10keV`）表示 **10 keV 处的单色流量密度 Fν**，**不是**能段
   积分流量；单位由该行 `flux_density_unit` 给出（库内 Swift/XRT 的 `10keV` 行多为 `Jy`，
   来源 UKSSDC Swift Burst Analyser）。
+- `tools/validate.py` 逐行检查 `band`：为空、或不在上述两条车道内 → **错误**（见 §5）。
 
 ## 4. `filters.json` / `tags.json`
 
@@ -141,4 +142,7 @@ python3 tools/validate.py            # 全量校验，结构性错误 → 退出
 python3 tools/validate.py --strict   # 值域警告也算失败
 ```
 
-GitHub Actions 会对每个 push / PR 自动运行同一脚本（`.github/workflows/validate.yml`）。
+- `lc` 的 `band` 逐行检查是否落在 §3.1 的两条车道内、是否为空：越界算**错误**
+  （`filters.json` 缺失/损坏时只报根因一次并跳过车道一判定，不逐行报错）。
+- GitHub Actions 会对每个 push / PR 自动运行同一脚本（`.github/workflows/validate.yml`），
+  跑的是非 `--strict` 模式 —— 因此 band 越界会直接让 PR 变红。

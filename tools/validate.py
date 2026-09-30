@@ -8,7 +8,8 @@
 
 校验范围（契约全文见 SCHEMA.md）：
   - info/*.json   必备键、字段类型、transient_id 与文件名一致、T0 为 ISO8601
-  - lc/*.csv      表头恰为 24 列规范、每行 24 字段、time 数值、y/n 列取值
+  - lc/*.csv      表头恰为 24 列规范、每行 24 字段、time 数值、y/n 列取值、
+                  band 落在两条车道内（filters.json 键，或频率/能量串，见 SCHEMA.md §3.1）
   - 互引完整性    lc 文件必须有同名 info（孤儿 CSV 报错）；info 可无 lc（纯信息源合法）
   - filters.json / tags.json 顶层形状
 """
@@ -29,6 +30,14 @@ LC_HEADER = [
     'flux_density_Gextcor_unit', 'weights', 'discard', 'telescope',
     'instrument', 'reference', 'comment', 'source',
 ]
+
+# lc 的 band 两条车道（契约见 SCHEMA.md §3.1）：车道一 = filters.json 的键；
+# 车道二/二′ = 「数字 + 单位」串（射电 Hz–THz、X 射线光子能量 eV–GeV）。
+# 本正则必须与代码仓库 backend/fitting/jobs.py 的 _FREQ_BAND_RE 保持一致，改动时两边同步。
+BAND_FREQ_RE = re.compile(
+    r'^\s*(\d+(?:\.\d+)?)\s*(Hz|kHz|MHz|GHz|THz|eV|keV|MeV|GeV)\s*$',
+    re.IGNORECASE)
+BAND_COL = LC_HEADER.index('band')
 
 # info JSON 规范字段集（v2.30 起键恒在，空值显式为 null）
 INFO_REQUIRED = {
@@ -137,7 +146,7 @@ def check_info(path):
                 err(f'{name}: host_galaxy.derived 应为对象')
 
 
-def check_lc(path):
+def check_lc(path, band_keys):
     name = os.path.basename(path)
     try:
         with open(path, newline='', encoding='utf-8') as f:
@@ -151,7 +160,8 @@ def check_lc(path):
     if rows[0] != LC_HEADER:
         err(f'{name}: 表头与 24 列规范不一致（见 SCHEMA.md）')
         return
-    n_bad_width = n_bad_time = 0
+    n_bad_width = n_bad_time = n_empty_band = n_bad_band = 0
+    bad_band_ex = []
     for i, row in enumerate(rows[1:], start=2):
         if len(row) != len(LC_HEADER):
             n_bad_width += 1
@@ -164,15 +174,51 @@ def check_lc(path):
             v = row[LC_HEADER.index(col)]
             if v not in ('y', 'n', ''):
                 warn(f'{name}:{i}: {col}={v!r} 应为 y/n')
+        # band 两条车道（SCHEMA.md §3.1）；filters.json 不可用时只判频率/能量串车道
+        b = row[BAND_COL].strip()
+        if not b:
+            n_empty_band += 1
+        elif band_keys and b not in band_keys and not BAND_FREQ_RE.match(b):
+            n_bad_band += 1
+            if len(bad_band_ex) < 3:
+                bad_band_ex.append(b)
     if n_bad_width:
         err(f'{name}: {n_bad_width} 行字段数 ≠ 24')
     if n_bad_time:
         warn(f'{name}: {n_bad_time} 行 time 非数值')
+    if n_empty_band:
+        err(f'{name}: {n_empty_band} 行 band 为空（SCHEMA.md §3 band 为必填）')
+    if n_bad_band:
+        err(f'{name}: {n_bad_band} 行 band 不在两条车道内（应为 filters.json 的键，或频率/能量串'
+            f'如 4.86GHz、10keV；见 SCHEMA.md §3.1）｜示例：' + '、'.join(bad_band_ex))
 
 
 def main():
     strict = '--strict' in sys.argv
     quiet = '--quiet' in sys.argv
+
+    # filters.json 先加载：lc 的 band 校验要用它的键集（车道一）
+    band_keys = set()
+    fj = os.path.join(ROOT, 'filters.json')
+    if not os.path.exists(fj):
+        err('filters.json: 缺失（band 车道一无法校验）')
+    else:
+        try:
+            with open(fj, encoding='utf-8') as f:
+                d = json.load(f)
+            if not isinstance(d, dict) or not d:
+                err('filters.json: 应为非空对象')
+            else:
+                band_keys = set(d)
+                for k, v in d.items():
+                    if not isinstance(v, dict) or not _is_num(v.get('wavelength')):
+                        err(f'filters.json: {k} 缺数值 wavelength')
+                        break
+        except Exception as e:
+            err(f'filters.json: 解析失败（{e}）')
+    if not band_keys:
+        warn('filters.json 不可用 → lc 的 band 一律跳过车道一判定（根因已单独报错，'
+             '避免逐行洪水）；修好 filters.json 后重跑')
 
     info_dir = os.path.join(ROOT, 'info')
     lc_dir = os.path.join(ROOT, 'lc')
@@ -183,7 +229,7 @@ def main():
     for f in info_files:
         check_info(os.path.join(info_dir, f))
     for f in lc_files:
-        check_lc(os.path.join(lc_dir, f))
+        check_lc(os.path.join(lc_dir, f), band_keys)
 
     # 互引：lc 必须有同名 info（反向不要求 —— 纯信息源合法）
     info_ids = {os.path.splitext(f)[0] for f in info_files}
@@ -191,20 +237,7 @@ def main():
         if os.path.splitext(f)[0] not in info_ids:
             err(f'lc/{f}: 孤儿光变文件（无同名 info JSON）')
 
-    # filters.json / tags.json 顶层形状
-    fj = os.path.join(ROOT, 'filters.json')
-    if os.path.exists(fj):
-        try:
-            d = json.load(open(fj, encoding='utf-8'))
-            if not isinstance(d, dict) or not d:
-                err('filters.json: 应为非空对象')
-            else:
-                for k, v in d.items():
-                    if not isinstance(v, dict) or not _is_num(v.get('wavelength')):
-                        err(f'filters.json: {k} 缺数值 wavelength')
-                        break
-        except Exception as e:
-            err(f'filters.json: 解析失败（{e}）')
+    # tags.json 顶层形状
     tj = os.path.join(ROOT, 'tags.json')
     if os.path.exists(tj):
         try:
