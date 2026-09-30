@@ -11,11 +11,13 @@
 
 当前最有价值的贡献形式。库中已有数据一律视为「未核实」，逐源复核、把源从「未核实」变成「已核实」是项目最核心的工作。
 
-把 [`数据审核提示词.md`](数据审核提示词.md) 里的「提示词本体」整段发给你的 agent（Claude Code / Cursor / ZCode 等），它会先与你确认**审核人姓名**与**本批源列表**，然后按约定完成单源复核：
+把 [`数据审核提示词.md`](数据审核提示词.md) 里的「提示词本体」整段发给你的 agent（Claude Code / Cursor / ZCode 等），它会先与你确认**审核人姓名**，再用队列工具挑源、开 draft PR 认领，然后按约定完成单源复核：
 
-身份核验 → T0 口径统一 → 逐行溯源核对与补充 → 去重 → 元数据与 `extra_data.audit` 标记 → `tools/validate.py` → **独立子代理真实性核查** → 单源 Pull Request。
+挑源 + 认领 → 身份核验 → T0 口径统一 → 逐行溯源核对与补充 → 去重 → 元数据与 `extra_data.audit` 标记 → `tools/validate.py` → **独立子代理真实性核查** → 单源 Pull Request。
 
-要点：一源一 PR；数值必须本次从来源原文实际核对得出，严禁臆造/内插/估算；派生列（`Gext_*`）一律留空；拿不准就停下来问。契约（`SCHEMA.md` 与本文件）效力高于该提示词。
+**并行查重（多个合作方同时审核时必做）**：`python3 tools/audit_queue.py --limit 20` 挑源、`--bucket 1/4` 分片；`--live` 的实时查询是判据，离线读 [`audit/state.tsv`](audit/state.tsv)（只能**排除已占用**、不能**确认空闲**；契约见 [`audit/README.md`](audit/README.md)）。开工即开 `claim: <源ID>` draft PR —— 一个源同时只应有一个未过期认领（普通源 14 天 / 巨源 30 天）。
+
+要点：一源一 PR；数值必须本次从来源原文实际核对得出，严禁臆造/内插/估算；派生列（`Gext_*`）一律留空；拿不准就停下来问。契约（`SCHEMA.md`、本文件、`audit/README.md`）效力高于该提示词。
 
 ### 1.2 校验（validate）
 

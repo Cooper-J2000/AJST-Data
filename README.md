@@ -36,6 +36,8 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 | `rssgrbag` | 射电遴选 GRB 余辉目录（Chandra & Frail 2012, ApJ 746, 156） |
 | `saxgrbmgrb` | BeppoSAX/GRBM GRB 目录（HEASARC `saxgrbmgrb`） |
 
+- `tools/`：零依赖命令行工具（`validate.py` 数据校验、`audit_queue.py` 审核队列与认领）
+- `audit/`：认领快照 `state.tsv`（机器生成，**勿手改**；契约见 `audit/README.md`）
 - 其余文档：`数据审核提示词.md`、`部分数据说明及导入记录.md`、`数据统一列定义.md`、`external/SCHEMA.md`、`external/统计关系样本添加指南.md`、`external/导入说明_grbcata_source_2.md`
 
 ## 数据契约与贡献
@@ -45,8 +47,10 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 | **`SCHEMA.md`** | 数据格式的唯一权威定义（info JSON 字段契约、lc CSV 24 列契约、命名规范、`null` 约定）。 |
 | **`CONTRIBUTING.md`** | 校验 / 扩充 / 提交流程：`python3 tools/validate.py` 零依赖全量校验（CI 自动运行），扩充按 SCHEMA 契约，提交走 Pull Request。 |
 | **`数据审核提示词.md`** | **逐源数据审核任务的提示词**：整段发给你的 agent（Claude Code / Cursor / ZCode 等）即可开工，详见下节。 |
+| **`audit/README.md`** | 认领快照 `audit/state.tsv` 的契约与读取规则——多方并行审核时的查重依据。 |
+| **`tools/audit_queue.py`** | 审核队列工具：挑源（`--limit`）、确定性分片（`--bucket 1/4`）、查单源状态（`--id`）、实时查重（`--live`）。 |
 
-效力：`SCHEMA.md` / `CONTRIBUTING.md`（数据与流程契约）高于 `数据审核提示词.md`（任务提示词）；冲突时以契约文件为准，并欢迎就提示词本身提 Issue / PR。
+效力：`SCHEMA.md` / `CONTRIBUTING.md` / `audit/README.md`（数据与流程契约）高于 `数据审核提示词.md`（任务提示词）；冲突时以契约文件为准，并欢迎就提示词本身提 Issue / PR。
 
 ## 用你自己的 agent 参与数据审核（外部贡献推荐入口）
 
@@ -54,15 +58,24 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 
 1. clone / fork 本仓库；
 2. 把 **`数据审核提示词.md`** 里的「提示词本体」整段发给你的 agent（该文件开头有给人看的使用说明）；
-3. 按提示词约定完成单源复核，**一个源一个 PR** 回交上游。
+3. 让 agent 先挑源并认领，别和其他合作方撞车：
+   ```bash
+   python3 tools/audit_queue.py --limit 20     # 可认领队列（小源在前）
+   python3 tools/audit_queue.py --bucket 1/4   # 多人并行时用确定性分片，彼此不重叠
+   python3 tools/audit_queue.py --live         # 实时查重（判据）
+   ```
+   开工即开 draft PR（标题 `claim: <源ID>`）。离线时读 `audit/state.tsv`，但它只能**排除已占用**、
+   不能**确认空闲**（快照最长滞后 24 小时，超过 3 天即过期）；
+4. 按提示词约定完成单源复核，**一个源一个 PR** 回交上游。
 
-agent 会先跟你确认**审核人姓名**与**本批源列表**，之后才开工。几个关键约定（完整版见提示词本体）：
+agent 会先跟你确认**审核人姓名**，再用队列工具挑源、开 `claim:` draft PR 认领，之后才开工。几个关键约定（完整版见提示词本体）：
 
 - 库中已有数据一律视为「未核实」，不盲目相信；原有行同样逐行核对；
 - 每个数值都必须在本次会话中从来源原文实际核对得出，**严禁臆造 / 内插 / 估算 / 凭模型记忆填写**；
 - 复核后的整张光变表统一用同一个标准 T0；`T0` 本身不改，真实爆发时刻的偏差写入 `T0_offset`（秒，后移为正、提前为负）；
 - 星等就存星等（`flux_density_unit=magnitude`），不做单位换算、不做消光改正，后端派生列（`Gext_*` 系列）一律留空；
 - `band` 只有两条车道：光学 / UV / IR 用 `filters.json` 里已有的键；射电 / 亚毫米写物理频率串（如 `4.86GHz`、`250GHz`，**不进** `filters.json`，原文不同发表值不得归一化合并）。**X 射线行（`band` 为能量串，如 `10keV`）暂不在审核范围——不改、不删、不新增，逐行核对时跳过并保持原样**；
+- 开工先认领（`claim: <源ID>` draft PR）：一个源同时只应有一个未过期认领，普通源 14 天、`lc` 超 1000 行的巨源 30 天；遇到别人未过期的认领先评论询问并等 48 小时再接手；
 - 开 PR 前必须发起一个**无利益关联的独立子代理**核查数据真实性，核查结论写入 PR 说明；
 - 提交前 `python3 tools/validate.py` 必须 0 错误（CI 会重跑）。
 

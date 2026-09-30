@@ -1,0 +1,47 @@
+name: audit-snapshot
+
+# 每日生成认领快照 audit/state.tsv：把"某个源有人在做"从 GitHub PR 落成仓库里可离线读的文件。
+#
+# 安全设计：脚本在 gh 取数失败时非零退出且**原子写**（先写临时文件再 os.replace），
+# 所以这一步失败只会让 workflow 变红，绝不会用空文件把所有人的认领"释放"掉。
+#
+# 触发器刻意不含 on: push —— 用 GITHUB_TOKEN 推的提交本来也不会再触发 workflow，
+# 不把循环的可能性留在配置里。
+on:
+  schedule:
+    - cron: '20 4 * * *' # 04:20 UTC = 12:20 CST
+  workflow_dispatch:
+
+permissions:
+  contents: write # 提交 audit/state.tsv
+  pull-requests: read # 读 open PR 列表
+
+concurrency:
+  group: audit-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 生成快照（取数失败则保留旧文件）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/audit_queue.py --emit-snapshot
+
+      - name: 内容有变化才提交
+        run: |
+          if git diff --quiet -- audit/state.tsv; then
+            echo "快照无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name  "ajst-audit-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add audit/state.tsv
+          git commit -m "audit: 认领快照（$(date -u +%Y-%m-%dT%H:%MZ)）"
+          git push
