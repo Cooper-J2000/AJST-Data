@@ -6,7 +6,10 @@
 ## `state.tsv` 是什么
 
 - **谁生成**：`.github/workflows/audit-snapshot.yml` 每日 04:20 UTC（12:20 CST）自动运行
-  `python3 tools/audit_queue.py --emit-snapshot`；本地也可随时重建。
+  `python3 tools/audit_queue.py --emit-snapshot`；本地也可随时重建。正常情况下
+  **每天会产生一条 1 行的小提交**（`snapshot_at` 每天都变）——这是刻意保留的"心跳"：
+  文件停更就说明 Action 挂了，工具对超过 3 天的快照告警正是据此判定。工作流里那步
+  "内容有变化才提交"只用于防同一分钟内重复运行。
 - **为什么需要**：`reviewed` 状态在 `info/*.json` 的 `extra_data.audit` 里，`free` 是默认态，
   但 `claimed` / `in-review` 只活在 GitHub 的 open PR 上。没有 `gh`/API 访问的协作者
   （或没登录）看到的将是"全部未审核"，于是重复挑同一个源。
