@@ -3,25 +3,34 @@
   "alias": [],
   "ra": 263.6848,
   "dec": -37.9446,
-  "T0": "2007-03-09T02:07:52Z",
-  "T0_ref": null,
+  "T0": "2007-03-09T10:01:03Z",
+  "T0_ref": "GCN 6182",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 150,
+  "pos_ref": "GCN 6182",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "INTEGRAL/IBAS 触发的长暴（IBIS/ISGRI，持续约 40 s，Higgins+2017 引 IBAS T90≈22 s），T0=10:01:03 UT（GCN 6182：\"The burst was detected on March 9 at 10:01:03 UT\"）；原 bot T0=2007-03-09T02:07:52Z 与 Trigger_Instrument=Swift/UVOT 在全部六条相关 GCN 中均无支持，判定为 bot 提取错误（UVOT/XRT 仅为后随观测），已修正。ra/dec=263.6848/-37.9446 与 GCN 6182 定位逐字一致（2.5′=150″，90% c.l.），保留；位于银道面拥挤场，红移未测。Swift XRT 候选余辉（17h34m39.1s −37°55′48.2″，~5″）经 GCN 6369 后续非检测确认，但非触发定位，不改 ra/dec。UVOT 六波段上限未做银消改正（E(B−V)=1.46 mag，GCN 6185），见 lc/GRB070309.csv；无射电跟踪通告。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 INTEGRAL/IBAS 触发时刻（IBIS/ISGRI 检测，2007-03-09T10:01:03 UT，GCN 6182）；原值 2007-03-09T02:07:52Z 无出处且有误，已修订",
+    "t0_basis": "GCN 6182",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
