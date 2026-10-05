@@ -3,27 +3,32 @@
   "alias": [],
   "ra": 21.022,
   "dec": 25.007,
-  "T0": "2000-10-05T03:26:14Z",
-  "T0_ref": null,
+  "T0": "2000-10-05T03:25:09Z",
+  "T0_ref": "GCN 838",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1155,
+  "pos_ref": "GCN 838",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IPN 暴（Ulysses/Konus-Wind/NEAR 三角定位，GCN 838）。原 T0=2000-10-05T03:26:14Z 为 bot 值（t0_basis=meta_trigger）且无可溯源出处（恰为 GCN 842 中 CONCAM 帧 ut0325 的起始时刻 12374s，疑为误取），与 GCN 838（12309 s UT）矛盾，审核修正为 2000-10-05T03:25:09Z。Ulysses 持续约 5s，25-100 keV 流量约 2E-6 erg/cm2（GCN 838），时长处于长短分界之外但无更细分类依据，sub_tag 保持空。ra/dec 与 GCN 838 误差盒中心一致，保留；pos_error=1155 角秒为该盒（约155 平方角分细长盒）的外接半径近似。光学：CONCAM 全天相机（Kitt Peak，无滤光片）爆前/爆后各一帧 120s 曝光未发现光学对应体，单帧极限约目视 4 等（GCN 842），见 lc/GRB001005.csv。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 GCN 838 触发时刻（原 bot 值 2000-10-05T03:26:14Z 无可溯源依据）",
+    "t0_basis": "GCN 838",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
