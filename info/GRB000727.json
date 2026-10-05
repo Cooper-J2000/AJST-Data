@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB000727",
   "alias": [],
-  "ra": 176.3621,
-  "dec": 17.3725,
-  "T0": "2000-07-27T00:00:00Z",
-  "T0_ref": null,
+  "ra": 176.2939,
+  "dec": 17.4096,
+  "T0": "2000-07-27T19:42:36Z",
+  "T0_ref": "GCN 754",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -12,18 +12,25 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 648,
+  "pos_ref": "GCN 754",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "IPN 暴（Ulysses/Konus-Wind/NEAR 三角定位，GCN 754；无 BATSE 触发，BATSE 已于 2000-05 停观测）。原 T0=2000-07-27T00:00:00Z 为名字日期占位值（t0_basis=name_date），修正为触发时刻 2000-07-27T19:42:36Z（GCN 754：70956 s UT；Konus 触发 70955.931 s，Mazets+2002 表1）。Konus T90=0.80s（15-1000 keV，Mazets+2002），起始为典型短硬峰，约 7s 后出现幂律谱延伸辐射第二峰（短暴+延伸辐射），Ulysses 报道总持续约 10s（GCN 754）；据此补 sub_tag=sgrb。原 ra/dec=176.3621/17.3725 实为 GCN 755 中光学候选体位置（11:45:26.90 +17:22:20.9，R=20.7±0.3），作者明言 likely just a red star，非 OT；已改用 GCN 754 IPN 误差盒中心，pos_error 为该盒外接半径近似（细长盒约 21.6x1.2 角分）。光学：USNO NOFS 1.0m（Cousins R）未确认 OT（GCN 755）。Ouyed+2011（ApJ 729,60）将该暴作为短硬暴样本对其能谱建模。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 GCN 754 触发时刻（原 bot 值 2000-07-27T00:00:00Z 为名字日期占位）",
+    "t0_basis": "GCN 754",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [
     {
@@ -32,6 +39,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2011ApJ...729...60O",
       "bibtex": "@ARTICLE{2011ApJ...729...60O,\n       author = {{Ouyed}, Rachid and {Staff}, Jan and {Jaikumar}, Prashanth},\n        title = \"{Quark-novae in Low-mass X-ray Binaries with Massive Neutron Stars: A Universal Model for Short-hard Gamma-ray Bursts}\",\n      journal = {\\apj},\n     keywords = {binaries: close, gamma-ray burst: general, stars: evolution, stars: neutron, supernovae: general, Astrophysics - High Energy Astrophysical Phenomena, High Energy Physics - Phenomenology},\n         year = 2011,\n        month = mar,\n       volume = {729},\n       number = {1},\n          eid = {60},\n        pages = {60},\n          doi = {10.1088/0004-637X/729/1/60},\narchivePrefix = {arXiv},\n       eprint = {1004.3378},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011ApJ...729...60O},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Mazets+2002",
+      "title": "Konus catalog of short GRBs",
+      "url": "https://arxiv.org/abs/astro-ph/0209219",
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
