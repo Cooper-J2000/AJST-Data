@@ -1,26 +1,30 @@
 {
   "transient_id": "GRB081009",
   "alias": [
-    "GRB81009.0",
-    "GRB 081009140"
+    "GRB081009140",
+    "GRB 081009.140",
+    "GRB 081009140",
+    "bn081009140"
   ],
   "ra": 251.57000732421875,
   "dec": 18.920000076293945,
   "T0": "2008-10-09T03:20:59.060000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "2FLGC/fermilgrb trigger_met=245215259.06 s 的天真换算值（纪元 2001-01-01T00:00:00 UTC，未扣闰秒，见 T0_offset）",
+  "T0_offset": -0.997,
+  "T0_offset_ref": "GCN 8374; Fermi GBM catalog (fermigbrst, bn081009140) trigger_time=MJD 54748.139560912=2008-10-09T03:20:58.063 UTC; Ajello+2019 (2FLGC)",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1008,
+  "pos_ref": "2FLGC (Ajello+2019), fermilgrb error_radius=0.28 deg (LAT transient factory 定位)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy@2026-10-05：(1) T0 原值 2008-10-09T03:20:59.060Z 系 bot 将 Fermi MET trigger_met=245215259.06 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006-01-01 生效的 1 闰秒，偏晚约 1 s；证据：GCN 8374 'At 03:20:58 UT on 9 October 2008, the Fermi GBM triggered and located GRB 081009 (trigger 245215259 / 081009140)'；fermigbrst bn081009140 trigger_time=MJD 54748.139560912=03:20:58.063 UTC；脚本核验 245215259.06 s 天真换算=03:20:59.060、扣 1 闰秒=03:20:58.060；2FLGC 同行 UT 列 03:20:58 与 MET 245215259.060 并列，官方口径已扣闰秒。处置：按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-0.997 s（提前为负）。(2) pos_error 原为 null：fermilgrb error_radius=0.28 单位为度（LAT transient factory 定位，external/fermi_lat/README.md 原文），换算 0.28°=1008″ 填入；ra/dec=251.57/18.92 与 pos_ref 同源、可由 W3Browse 行 '16 46 16.8|+18 55 12' 换算复现，无跨通告拼接；GBM 地面定位 RA 251.1, Dec +17.1 (GCN 8374) 与 GBM 目录终值 250.5/18.4 (fermigbrst) 为另一定位口径，不冲突。(3) 红移：2FLGC 表红移列 '-'、fermilgrb redshift=null、GCN 无红移通告，保持 null。(4) sub_tag 增补 lgrb：T90=41.3446±0.263879 s (50-300 keV)>2 s，2FLGC 归类 '(L)'。(5) 身份：Fermi GBM trigger 245215259/081009140=GRB 081009；同日另一 GBM 触发 bn081009690（16:33:37.338 UT，RA 64.6, Dec 14.2）为另一事件且无通告，未混淆；仓内无重复条目。(6) 测光：GCN 当日仅 8374（GBM 探测通告），无任何光学/射电后随观测与红移通告，Swift 当日无触发（swiftgrbba/swift_grb 无记录），heasarc_grbcat 无条目；Rubtsov+2012 与 2FLGC 均仅伽马能段分析、无余辉测光——无任何可入库波段测光，不建 lc。(7) alias 删除 'GRB81009.0'（fermilgrb gcn_name 字段截断伪名，W3Browse 原行该字段值即 'GRB81009.0'），增补 GRB081009140/GRB 081009.140/bn081009140。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -131,6 +135,13 @@
         ],
         "trigger_time": "2008-10-09T03:20:58.001Z"
       }
+    },
+    "t0_note": "真实触发时刻 2008-10-09T03:20:58.063 UTC（Fermi GBM 目录 fermigbrst bn081009140，MJD 54748.139560912；GCN 8374=03:20:58 UT；2FLGC 表 UT 列=03:20:58），比库中 T0 提前 0.997 s，故 T0_offset=-0.997 s（后移为正、提前为负），T0 本身不改、不得用于改写光变时间轴。注：2FLGC/fermilgrb 自带 trigger_time=2008-10-09T03:20:58.001Z 与 GBM 目录差 0.062 s，系该表自身口径，未采用。",
+    "t0_basis": "库中 T0=2008-10-09T03:20:59.060Z 来自 2FLGC/fermilgrb trigger_met=245215259.06 s 的天真换算（纪元 2001-01-01T00:00:00 UTC，未扣 2006-01-01 生效的 1 闰秒）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
   "articles": [
@@ -140,6 +151,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2012MNRAS.421L..14R",
       "bibtex": "@ARTICLE{2012MNRAS.421L..14R,\n       author = {{Rubtsov}, G.~I. and {Pshirkov}, M.~S. and {Tinyakov}, P.~G.},\n        title = \"{Gamma-ray burst observations by Fermi Large Area Telescope revisited: new candidates found}\",\n      journal = {\\mnras},\n     keywords = {methods: statistical, gamma-ray burst: general, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2012,\n        month = mar,\n       volume = {421},\n       number = {1},\n        pages = {L14-L18},\n          doi = {10.1111/j.1745-3933.2011.01197.x},\narchivePrefix = {arXiv},\n       eprint = {1104.5476},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012MNRAS.421L..14R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
