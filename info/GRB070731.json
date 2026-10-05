@@ -3,25 +3,32 @@
   "alias": [],
   "ra": 328.581,
   "dec": -15.74,
-  "T0": "2007-07-31T09:33:22Z",
-  "T0_ref": null,
+  "T0": "2007-07-31T09:33:22.676340Z",
+  "T0_ref": "GCN 6691; external/swift_bat (trigger 286574)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 114.0,
   "pos_ref": "GCN 6691",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT trigger #286574，T90(15-350keV)=2.9±0.2 s（GCN 6691；单峰，T+3 s 结束），处于短/长分界之上，不标 sgrb（GROND 表虽列为 Short GRB，见 PR 待决）。触发期间 TDRSS 服务中断 42 分钟，无实时通告；因月球约束飞船未 slew，无 XRT/UVOT 跟踪观测，无余辉定位与红移。GROND 后续观测无光学/近红外余辉探测（Yoldaş+2008）。ra/dec=328.581/-15.740 为 GCN 6691 BAT 地面定位（1.9′=114″，90% 包含半径），保留；库内 swift_bat/swift_grb 目录图像定位 328.584/-15.743 在误差内一致。T0 采用库内 swift_bat 与 swift_grb 目录一致给出的触发时刻 09:33:22.676340Z（GCN 6691 证实触发号；原 bot 值 09:33:22Z 为其截断）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-06 审核补全：external/swift_bat 与 external/swift_grb 均为 2007-07-31T09:33:22.676340Z（GCN 6691 证实 trigger #286574），原 bot 值 09:33:22Z 为其秒级截断、出处补注",
+    "t0_basis": "GCN 6691; external/swift_bat (trigger 286574)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-06"
+    }
   },
   "articles": [],
   "host_galaxy": null
