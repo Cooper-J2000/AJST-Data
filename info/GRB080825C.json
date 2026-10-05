@@ -1,24 +1,27 @@
 {
   "transient_id": "GRB080825C",
   "alias": [
-    "GRB 080825593"
+    "GRB 080825593",
+    "GRB080825593",
+    "GRB 080825.593",
+    "bn080825593"
   ],
   "ra": 234.8300018310547,
   "dec": -3.8399999141693115,
   "T0": "2008-08-25T14:13:49.110000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "Fermi/GBM trigger 241366429 (bn080825593 / GRB 080825.593); GCN 8141; 库中 T0 值为 2FLGC trigger_met 241366429.11 s 的未扣闰秒换算，真实触发时刻见 T0_offset 与 comment",
+  "T0_offset": -1.005,
+  "T0_offset_ref": "FERMIGBRST bn080825593 TJD 54703.59291788 = 2008-08-25T14:13:48.105Z（GCN 8141 亦记 14:13:48 UT 整秒；真实触发时刻比库中 T0 提前 1.005 s，提前为负）",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2340,
+  "pos_ref": "2FLGC (Ajello+2019, ApJ 878, 52), HEASARC FERMILGRB：RA 15h39m19.2s, Dec -03d50m24s, error_radius 0.65 deg",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)；2026-10-05 fsy 审核核验。身份确证：Fermi/GBM trigger 241366429 = bn080825593 = GRB 080825.593，GCN 8141/8183/8184 主题行与 FERMILGRB gcn_name 均用官方名 GRB080825C，C 后缀非 GCN 主题行笔误。当日仅两个暴：080825B（SuperAGILE/AGILE，17:46:40 UT，RA 209.2, Dec -69.0，GCN 8133/8140/8158）与本源，时刻差 3.5 h、位置相距约 67 度（脚本化 haversine 复算 67.3°），互不重复；GCN 当日页面注明 'Due to a naming confusion, there is no \"A\" burst'，不存在 GRB 080825A。T0：原值 14:13:49.110Z 为 2FLGC trigger_met 241366429.11 s 的 MET→UTC 直接换算（未扣 2006-01-01 闰秒）；GBM 触发目录 TJD 54703.59291788 = 14:13:48.105Z，GCN 8141 与 Abdo+2009 均以 14:13:48 UT（T0）为准（2FLGC 自带 UTC 列为 14:13:48.003），真实触发时刻比库中 T0 提前 1.005 s，按'提前为负'约定写 T0_offset=-1.005，库中 T0 不改；GBM 目录名 080825.593（日分数 0.5929≈14:13:49.1）与触发时刻自洽（注：未扣/已扣闰秒两种口径取整 3 位后同为 .593，目录名不足以区分口径，此条仅作旁证）。定位：ra/dec=234.83/-3.84 复现自 FERMILGRB 表 15h39m19.2s, -03d50m24s（LAT transient factory，error_radius 0.65 deg=2340 arcsec，补 pos_error/pos_ref），与 GCN 8141 GBM 地面定位 RA=232.2,Dec=-4.9（1σ 1.5 deg）及 GCN 8183 LAT 定位 RA,Dec=233.96,-4.72（90% 半径 1.5 deg）一致。tag=lgrb 依据：T90=21.0 s（50-300 keV，GBM 目录）/27 s（8-1000 keV，Abdo+2009）/22 s（GCN 8141），GCN 8184 报 hard-to-soft 谱演化。红移无测量（Abdo+2009 明确 'The lack of a redshift measurement'）。光学/射电：因定位误差大，GCN 与文献均无任何光学/射电/X 射线后随观测或上限记录（Abdo+2009：'the lack of observations at X-ray or optical wavelengths, due to the poor GRB localization'；LAT 高能余辉搜索至 T0+13 ks 无显著发现），本源无 lc 文件属正常，未新增测光行。",
   "sub_tag": [
     "lgrb"
   ],
@@ -187,6 +190,13 @@
         ],
         "trigger_time": "2008-08-25T14:13:48Z"
       }
+    },
+    "t0_basis": "库中 T0=2008-08-25T14:13:49.110000Z 为 2FLGC trigger_met 241366429.11 s (Fermi MET, 纪元 2001-01-01T00:00 UTC) 的未扣闰秒直接换算；权威触发时刻取 GBM 触发目录 FERMIGBRST bn080825593: TJD 54703.59291788 = MJD 54703.59291788 = 2008-08-25T14:13:48.105Z（GCN 8141 与 Abdo+2009 均记 14:13:48 UT；2FLGC 自带 UTC 列 14:13:48.003 为另一口径）",
+    "t0_note": "真实触发比库中 T0 提前约 1.005 s（未扣 2006-01-01 闰秒所致），按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-1.005 s（提前为负）；无光变表，不涉及时间轴改写",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
   "articles": [
@@ -210,6 +220,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2021Galax...9...68W",
       "bibtex": "@ARTICLE{2021Galax...9...68W,\n       author = {{Wang}, Kai and {Dai}, Zi-Gao},\n        title = \"{The Low-Energy Spectral Index of Gamma-Ray Burst Prompt Emission from Internal Shocks}\",\n      journal = {Galaxies},\n     keywords = {gamma rays bursts, radiation mechanisms, non-thermal, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2021,\n        month = sep,\n       volume = {9},\n       number = {3},\n          eid = {68},\n        pages = {68},\n          doi = {10.3390/galaxies9030068},\narchivePrefix = {arXiv},\n       eprint = {2109.07681},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021Galax...9...68W},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
