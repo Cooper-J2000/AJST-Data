@@ -3,25 +3,32 @@
   "alias": [],
   "ra": null,
   "dec": null,
-  "T0": "2001-09-20T00:00:00Z",
+  "T0": null,
   "T0_ref": null,
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "HETE-2 触发 #1759（通告记为 GRB 010920?，问号为原文所有）。本条目与触发 #1759 的对应关系系依据命名惯例推断：同日第二触发 #1760 被记为 GRB 010920B?（GCN 1094），无后缀名即指 #1759。HETE 官方 GCN 汇编不含 #1759/#1760 的触发通告，触发时刻与定位均无法溯源，故 T0 与 ra/dec 保持空（原 bot T0=2001-09-20T00:00:00Z 为名字日期占位值，已移除）、tag 按库内名称补 grb。光学：Caltech-NRAO-CARA 用 Palomar 5m Hale 望远镜（LFC）在触发后 59 分钟起拍两帧 Sloan r'（各 3 分钟，即触发后 59-65 分钟），覆盖 #1759 已报告的全部定位区域，与 DPOSS F 板比对未见新源，深度 R~20.5（GCN 1093），见 lc/GRB010920.csv（time 相对未知 T0，故 mjd 留空）。另：#1760（GRB 010920B?）的候选光学源经后续观测证实为主带小行星（GCN 1094/1095），与本条目无关。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 置空（fsy 2026-10-05 审核）：HETE trigger #1759 无触发通告，触发时刻无法溯源；原 bot 值 2001-09-20T00:00:00Z 为名字日期占位",
+    "t0_basis": "none",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
