@@ -4,22 +4,22 @@
     "GRB90217.0",
     "GRB 090217206"
   ],
-  "ra": 205.00999450683594,
-  "dec": -8.390000343322754,
+  "ra": 205.01,
+  "dec": -8.39,
   "T0": "2009-02-17T04:56:44.560000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "2FLGC fermilgrb trigger_met=256539404.56s (HEASARC W3Browse)",
+  "T0_offset": -2.002,
+  "T0_offset_ref": "GCN 8902; HEASARC fermigbrst trigger_time MJD 54879.206048122",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 8903",
+  "pos_error": 1656,
+  "pos_ref": "2FLGC (Ajello+2019)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核（fsy 2026-10-05）。原 comment：'由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'（实际未建 lc）。问题→证据→修正：(1) T0：库中 2009-02-17T04:56:44.560Z 系 2FLGC trigger_met=256539404.56s 按 2001-01-01 纪元直接换算、漏扣 2006-01-01 与 2009-01-01 两个闰秒，偏晚 2s；GBM 实际触发 04:56:42.56 UT（GCN 8902），fermigbrst 目录 MJD 54879.206048122=04:56:42.5577，脚本复核差值 -2.002259s，故按《数据审核提示词》§3.2 不改 T0、记 T0_offset=-2.002s。(2) 坐标：ra/dec 原 float32 近似 205.00999/-8.39000 已写作精确值 205.01/-8.39，实为 2FLGC 精化位置（13h40m02.4s -08d23m24s，error_radius 0.46°），原 pos_ref 所引 GCN 8903 给出 204.9/-8.4（90% 0.52°）无法复现现值（相差 0.109°），pos_ref 改指 2FLGC (Ajello+2019)，pos_error=1656″=0.46°；GCN 8902 之 GBM 在地定位 211.9/-2.8（1° 1σ）备查，GCN 8905 IPN 误差盒中心 204.865/-7.442（7.2 平方度）与 LAT 圆一致。(3) alias 'GRB90217.0' 为 fermilgrb gcn_name 10 字符截断伪名，保留备查。(4) 身份：Fermi/GBM 触发 256539404/bn090217206，T90≈33.3s（50-300 keV）为长暴；LAT/GBM 同日联合探测，Konus-Wind、Suzaku WAM、IPN 佐证同一事件；Swift 无 BAT 触发仅 XRT 后随（GCN 8907，3 个 X 射线源均非余辉，X 射线数据按规则不入库）；当日无其他 GRB，无重复条目。(5) 测光：无任何已发表光学/NIR/射电逐点测光（GCN 仅 6 则均为伽马；GRBOX/ADS 检索仅 Cutini+2010 与 Ohno 2010 两篇 Fermi 会议文献；McBreen+2010 四个 GRB 不含本源），LAT/LLE 光变为伽马射线能段不入 lc，故不建 lc 文件。红移：无任何实测红移记录，保持 null。",
   "sub_tag": [
     "lgrb"
   ],
@@ -178,8 +178,58 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "t0_basis": "库中 T0=2009-02-17T04:56:44.560000Z 源自 2FLGC(fermilgrb) trigger_met=256539404.56s 按 2001-01-01 纪元的 naive 换算（external/fermi_lat/fermilgrb_w3browse_full.txt 原始行）；真实触发时刻以 GBM 为准：GCN 8902 'At 04:56:42.56 UT on 17 February 2009'，fermigbrst 目录 trigger_time MJD 54879.206048122=2009-02-17T04:56:42.5577Z（external/fermi_gbm/heasarc_fermigbrst.tdat.gz 原始行）。",
+    "t0_note": "Fermi MET→UTC 需扣除 2001 纪元以来跳秒（2006-01-01、2009-01-01 各 1s，共 2s）；bot 漏扣致 T0 偏晚。脚本复核：GBM 目录 UTC 04:56:42.5577 − 库中 T0 04:56:44.56 = -2.002259s，取 T0_offset=-2.002（GCN 8902 四舍五入口径为 -2.000）。2FLGC 表内 time 列 04:56:42.003 与 GBM 触发时刻差 0.555s，为该目录自身口径，仅存于 catalog_data；T0_offset 不改写光变时间轴（本源无 lc）。Suzaku WAM 04:56:42.98、IPN ~04:56:42 独立佐证。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8902",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8902.gcn3",
+      "title": "GRB 090217: Fermi GBM detection",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8903",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8903.gcn3",
+      "title": "GRB090217: Fermi-LAT Detection",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8905",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8905.gcn3",
+      "title": "IPN localization of GRB 090217",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8906",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8906.gcn3",
+      "title": "Konus-Wind observation of GRB 090217",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8907",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8907.gcn3",
+      "title": "GRB090217: XRT analysis",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8908",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8908.gcn3",
+      "title": "GRB 090217: Suzaku WAM observation of the prompt emission",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
