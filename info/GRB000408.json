@@ -1,32 +1,42 @@
 {
   "transient_id": "GRB000408",
   "alias": [],
-  "ra": 137.325,
-  "dec": 66.581,
-  "T0": "2000-04-09T16:15:00Z",
-  "T0_ref": null,
+  "ra": 137.289,
+  "dec": 66.589,
+  "T0": "2000-04-08T02:35:48Z",
+  "T0_ref": "GCN 626",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 310,
+  "pos_ref": "Hurley+2011, ApJS 196, 1, Table 2",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [
-    "sgrb"
-  ],
+  "comment": "IPN 定位的 BATSE 暴（trigger 8069；Ulysses/BATSE/NEAR 三角定位）。原 T0=2000-04-09T16:15:00Z 为 bot 值（t0_basis=meta_trigger）且无可溯源出处，与 GCN 626（2000-04-08 9348s UT=02:35:48）、Hurley+2011 表1 及 Boer+2001 TAROT 日志矛盾，审核修正为 2000-04-08T02:35:48Z。Ulysses T90=2.5s（GCN 626），处于长短暴分界附近，原 sub_tag=sgrb 缺乏依据，移除。ra/dec 更新为 Hurley+2011 表2 最终 IPN 误差盒中心（细长平行四边形盒，两对角线约 10.3 与 7.2 角分，pos_error=310 角秒为其外接半径即长对角线之半）；原值 137.325/66.581 为 GCN 632 精化盒中心，已被终版取代。光学：USNO 两个深曝光组 blink 巡视误差盒未发现可信 OT，R约21.5 上限（GCN 633），见 lc/GRB000408.csv。",
+  "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 GCN 626 触发时刻（原 bot 值 2000-04-09T16:15:00Z 无可溯源依据）",
+    "t0_basis": "GCN 626",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Hurley+2011",
+      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
+      "title": "The Interplanetary Network Supplement to the BATSE 5B Catalog of Cosmic Gamma-Ray Bursts",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
