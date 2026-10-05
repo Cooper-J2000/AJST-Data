@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB031111B",
-  "alias": [],
+  "alias": [
+    "GRB031111BX"
+  ],
   "ra": 59.77,
   "dec": 34.605,
-  "T0": "2003-11-11T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2003-11-11T19:51:27Z",
+  "T0_ref": "HEASARC HETE2GRB H2925",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 900,
+  "pos_ref": "catalog:mpe_greiner",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "GRB031111B = HETE-2 触发 H2925（GCN 2453 标题），2003-11-11T19:51:27 UTC 由 WXM 触发（时标 13.28 s，2-25 keV）；MIT HETE 页 UTC=20031111_195127 与 HEASARC HETE2GRB MJD 52954.8273958333 一致。同日主暴 GRB031111(=A, H2924, 16:45:13 UT, INTEGRAL/IPN, 约71.8/18.1) 为不同事件，勿混淆；GCN 2524 把主暴误差盒写作 H2925 系笔误（其引 GCN 2443 实为 H2924）。定位：HETE-2 WXM 地面误差圆（直径 30 分），ra/dec 与 MPE Greiner 表 GRB 031111BX（03h59m05s +34°36'，Error 15 分）一致；pos_error=900 角秒为该圆误差半径，库值 dec 34.605 与 MPE 34.600 差 18 角秒，远小于误差，保留。性质：FREGATE 自动拟合 Epeak 约 40 keV（自注可能偏高）、25-100 keV 流量 1.321e-06 erg/cm2、持续 35.4 s，HETE 组注记 Nice little XRF，故 sub_tag=XRF。光学：京都 0.25m 无滤光 CCD 巡视误差圆中心约 14% 无新源，极限约 17.2（USNO-A2.0 红星等标度），见 lc/GRB031111B.csv（GCN 2453）。",
+  "sub_tag": [
+    "XRF"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 HETE-2 触发 H2925 实际触发时刻 19:51:27 UT（原 bot 值为名字日期占位 00:00 UT，t0_basis=name_date）",
+    "t0_basis": "HEASARC HETE2GRB H2925",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
