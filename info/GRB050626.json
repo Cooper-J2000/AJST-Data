@@ -1,28 +1,50 @@
 {
   "transient_id": "GRB050626",
   "alias": [],
-  "ra": 186.755,
-  "dec": -63.1372,
-  "T0": "2005-06-26T00:00:00Z",
-  "T0_ref": null,
+  "ra": 186.741,
+  "dec": -63.137,
+  "T0": "2005-06-26T03:45:16Z",
+  "T0_ref": "GCN 3552",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 81,
+  "pos_ref": "Vianello+2009, A&A 495, 1005, Table 2",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "INTEGRAL/IBAS 触发（Alert 2587，20-200 keV，T0=03:45:16 UT，GCN 3552；原 bot T0 为名字日期占位值，Trigger_Instrument=Swift/XRT 有误——XRT 仅是后续跟踪）。原坐标 186.755/-63.1372 实为 Swift/XRT 在 INTEGRAL 误差圆内找到的稳定 X 射线源（GCN 3564，原文明确 unlikely to be the afterglow），非暴位置，已改为 Vianello+2009（A&A 495, 1005）表2 精化 ISGRI 定位 186.741/-63.137（误差 1.35′=81″）；GCN 3552 发现定位为 186.7445/-63.1342（120″，90% c.l.）。T90 约 52-56 s（Vianello+2009 表2：56 s；Higgins+2017 表5 引 IBAS：52 s），长暴，补 sub_tag=lgrb；GCN 3552 曾 preliminary 提示 X-ray rich，无后续定量分类，不标 XRR。无红移；X 射线（GCN 3564 三段上限）与光学跟踪均未发现余辉：MOA 0.6m 在 XRT 源位置处极限约 R~20 但时刻仅\"约 4 小时后\"、深度随位置 R~14-20.5 变化（GCN 3565），不满足可溯源 lc 行要求，不入 lc。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 INTEGRAL IBAS 触发时刻 2005-06-26T03:45:16 UT（GCN 3552，Alert Number 2587）；Vianello+2009 表2 列出 03:46:07 UT 系其编目时刻",
+    "t0_basis": "GCN 3552",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Vianello+2009",
+      "url": "https://www.aanda.org/articles/aa/full_html/2009/09/aa11251-08/aa11251-08.html",
+      "title": "The INTEGRAL/IBIS GRB sample: spectra and time histories",
+      "source": "fsy"
+    },
+    {
+      "name": "Higgins+2017",
+      "url": "https://arxiv.org/abs/1705.06744",
+      "title": "Constraining the high-redshift GRB rate with Swift-BAT and INTEGRAL",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
