@@ -1,27 +1,34 @@
 {
   "transient_id": "GRB020705",
   "alias": [],
-  "ra": 273.722,
-  "dec": -12.194,
-  "T0": "2002-07-05T20:59:57Z",
-  "T0_ref": null,
+  "ra": null,
+  "dec": null,
+  "T0": "2002-07-05T10:10:24Z",
+  "T0_ref": "HEASARC GRBCAT (ipngrb 3183)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IPN 暴：Ulysses、Konus-Wind、Mars Odyssey 三星均记录流量增长（rate increase），IPN 确认为宇宙事件（HEASARC ipngrb 事件 3183，时间参考卫星 Konus-Wind）。GRBCAT（id 5506）将 GRB 020705 名称赋予该 IPN 事件，地球穿越时（Earth Crossing Time）MJD 52460.4238888889=2002-07-05T10:10:24Z，本条目 T0 据此修正；原 bot T0=2002-07-05T20:59:57Z 实为 GCN 1446 观测结束时刻（20:00:35-20:59:57 UT），系误取，已移除。IPN 三角定位无公开坐标（GRBCAT 无 ra/dec，coord_flag=-1；arXiv 全文检索无文献定位），故 ra/dec/pos_error 置空；原 bot 值 273.722/-12.194 无可溯源出处（与 HETE WXM 位置 273.776/-12.093 亦不符），已移除。名称混淆警示：GCN 1446（CrAO 0.64m+SBIG ST-8 于 2002-07-05 20:00:35-20:59:57 UT 观测，极限 V~18.0，未见余辉）所称 GRB020705 实为 HETE trigger 2093（07:47:50.2 UT；20:00:35 减 12.2h 与之吻合），而 hete2gcn 目录官方标注该触发 Definitely not a GRB（位置匹配已知 X 射线源），与 IPN 事件 3183（同日 10:10:24 UT）非同一事件；GRBCAT 余辉表仍将 GCN 1446 关联至本条目。因该光学极限对应 HETE2093 定位场而非本暴误差盒，故未建 lc。T90/能谱无公开资料（Konus 短暴 IPN 目录 arXiv:2203.08738 无此事件），sub_tag 留空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 IPN 事件 3183 地球穿越时 10:10:24 UT（HEASARC GRBCAT/ipngrb）；原 bot 值 2002-07-05T20:59:57Z 为 GCN 1446 观测结束时刻，系误取",
+    "t0_basis": "HEASARC GRBCAT (ipngrb 3183)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
