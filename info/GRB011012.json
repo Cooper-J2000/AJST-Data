@@ -3,25 +3,32 @@
   "alias": [],
   "ra": null,
   "dec": null,
-  "T0": "2001-10-12T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2001-10-12T07:40:30Z",
+  "T0_ref": "HEASARC GRB catalog (grbcat id 5318)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "HEASARC grbcat(id 5318)记 GRB 011012 为 IPN 探测, ECT=MJD 52194.3197916667 即 2001-10-12T07:40:30 UT, 无坐标(coord_flag=-1)、无 T90/流量, 参考文献为 ipngrb catalog(2003)。同日 HETE-2 trigger #1793(09:33:25.81 UT, WXM 在轨定位 RA39.165 Dec+41.991, 误差 240 角分直径)被地面分析判定 'Definitely not a GRB...Invalid trigger due to operational error'; GCN 1105/1106 对其误差框的 Palomar 200 英寸 R 波段跟踪(触发后约 12/45 分钟)未见新源, 唯一变源(2:37:18.2 +42:02:56)被认定'likely simply a variable star and unrelated'; 第二历元极限 R~23。SIMBAD 交叉名 'HETE Trigger 1793' 与 grbcat 时刻相差约 1h53m, 身份存疑, 故坐标/pos_error 保持 null, alias 不收 HETE 名。无 T90 证据, 不定 sgrb/lgrb。原 bot T0=2001-10-12T00:00:00Z 为名字日期占位值, 已修正。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 HEASARC grbcat 记录的 IPN 地球穿越时刻(ECT, MJD 52194.3197916667 = 2001-10-12T07:40:30 UTC); 同日 HETE-2 trigger #1793(09:33:25.81 UT)已被地面分析判定非 GRB, 勿混淆",
+    "t0_basis": "HEASARC GRB catalog (grbcat id 5318)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
