@@ -20,7 +20,7 @@
   "pos_ref": "HEASARC fermilgrb (2FLGC, Axelsson+2019)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "bot 由 Fermi LAT 2FLGC (HEASARC fermilgrb) 光变数据导入新建。审核 fsy 2026-10-05: (1) 身份=Fermi/GBM 触发 240792050 (bn080818945 / GRB 080818.945); GCN 8116 原文即命名 'GRB 080818B', fermilgrb.gcn_name 同; 当日另一暴 GRB 080818.579 (GCN 8110, 13:54:24.84 UT) 与本条目无混淆, 库中无 GRB080818A 条目, 本条目非重复。(2) T0 原为 bot 按 trigger_met=240792050.08 s 直接换算的 22:40:50.080Z, 未扣 2006-01-01 跳秒, 比 GBM 目录触发时刻晚 1.001 s; 依 SCHEMA §3.2 不改 T0, 以 T0_offset=-1.001 s 记录 (GBM 目录: MJD 54696.945012489 = 22:40:49.079Z; GCN 8116 记 22:40:49 UT)。(3) ra/dec=109.46/+15.0 为 2FLGC LAT 瞬变工厂定位, 补 pos_error=1692″ (表值 error_radius=0.47 deg, 表文档定义为 LAT transient factory localization error); GBM 地面定位 RA=98.1, Dec=+7.4 (±7.7° 统计, 另有 2-3° 系统, GCN 8116) 精度较差仅记于此。(4) T90=13.376±0.41 s (50-300 keV, GBM 目录) 为长暴, 补 sub_tag=lgrb。(5) 无红移/宿主记录; 无任何光学/射电/X 射线后续观测报道 (Swift 未观测, swiftgrbba 查无; 当日仅 GBM 两条 GCN), 故不建 lc; LAT 光子级/光变数据属 X/γ 射线, 按规则不入 lc。注: external/fermi_lat/README.md 将 2FLGC 论文署名为 'Ajello et al. 2019', 首作者实为 Axelsson (arXiv:1906.11403), 外部目录不在本 PR 范围, 仅提示。",
+  "comment": "bot 由 Fermi LAT 2FLGC (HEASARC fermilgrb) 光变数据导入新建。审核 fsy 2026-10-05: (1) 身份=Fermi/GBM 触发 240792050 (bn080818945 / GRB 080818.945); GCN 8116 原文即命名 'GRB 080818B', fermilgrb.gcn_name 同; 当日另一暴 GRB 080818.579 (GCN 8110, 13:54:24.84 UT) 与本条目无混淆, 库中无 GRB080818A 条目, 本条目非重复。(2) T0 原为 bot 按 trigger_met=240792050.08 s 直接换算的 22:40:50.080Z, 未扣 2006-01-01 跳秒, 比 GBM 目录触发时刻晚 1.001 s; 依《数据审核提示词》§3.2 不改 T0, 以 T0_offset=-1.001 s 记录 (GBM 目录: MJD 54696.945012489 = 22:40:49.079Z; GCN 8116 记 22:40:49 UT)。(3) ra/dec=109.46/+15.0 为 2FLGC LAT 瞬变工厂定位, 补 pos_error=1692″ (表值 error_radius=0.47 deg, 表文档定义为 LAT transient factory localization error); GBM 地面定位 RA=98.1, Dec=+7.4 (±7.7° 统计, 另有 2-3° 系统, GCN 8116) 精度较差仅记于此。(4) T90=13.376±0.41 s (50-300 keV, GBM 目录) 为长暴, 补 sub_tag=lgrb。(5) 无红移/宿主记录; 无任何光学/射电/X 射线后续观测报道 (Swift 未观测, swiftgrbba 查无; 当日仅 GBM 两条 GCN), 故不建 lc; LAT 光子级/光变数据属 X/γ 射线, 按规则不入 lc。注: external/fermi_lat/README.md 将 2FLGC 论文署名为 'Ajello et al. 2019', 首作者实为 Axelsson (arXiv:1906.11403), 外部目录不在本 PR 范围, 仅提示。",
   "sub_tag": [
     "lgrb"
   ],
@@ -65,7 +65,7 @@
       }
     },
     "t0_basis": "bot T0=2008-08-18T22:40:50.080Z 为 2FLGC 表 trigger_met=240792050.08 s (Fermi MET, 纪元 2001-01-01T00:00 UTC) 的直接换算 (240792050.08-2786*86400=当日 81650.08 s), 未扣 2006-01-01 的 1 个跳秒; 权威触发时刻取 HEASARC fermigbrst: MJD 54696.945012489 = 22:40:49.079Z (von Kienlin+2014 目录值; GCN 8116 记 22:40:49 UT; 2FLGC 表 time=MJD 54696.9450116 = 22:40:49.002Z 为另一口径)",
-    "t0_note": "真实触发比库中 T0 早 1.001 s (恰为 2006 年跳秒+1ms 舍入), 按 SCHEMA §3.2 不改 T0, 记 T0_offset=-1.001 s (提前为负); 无光变表, 不涉及时间轴改写",
+    "t0_note": "真实触发比库中 T0 早 1.001 s (恰为 2006 年跳秒+1ms 舍入), 按《数据审核提示词》§3.2 不改 T0, 记 T0_offset=-1.001 s (提前为负); 无光变表, 不涉及时间轴改写",
     "audit": {
       "status": "reviewed",
       "auditor": "fsy",
