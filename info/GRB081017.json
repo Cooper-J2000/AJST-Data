@@ -1,28 +1,59 @@
 {
   "transient_id": "GRB081017",
-  "alias": [],
+  "alias": [
+    "BAT 331964",
+    "Swift 331964"
+  ],
   "ra": 230.209,
   "dec": -32.79,
   "T0": "2008-10-17T23:38:12Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "GCN 8388",
+  "T0_offset": 0.817,
+  "T0_offset_ref": "batgrbproduct trigger 331964 (http://gcn.gsfc.nasa.gov/notices_s/331964/BA/): UTC 2008-10-17T23:38:12.816960",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 138.0,
   "pos_ref": "GCN 8390",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy, 2026-10-05）：bot 原值 T0=2008-10-17T23:38:12Z（meta_trigger，秒级截断）、Swift/BAT、ra=230.209 dec=-32.79 pos_error=138″、pos_ref=GCN 8390、tag 空。复核：GCN 8388 证实 Swift/BAT 于 2008-10-17 23:38:12 UT 触发（trigger=331964），GCN 当日列表仅此一事件，仓内无重复条目；GCN 8390 证实地面定位 RA,Dec=230.209,-32.790 deg、误差 2.3'=138″，ra/dec/pos_error 均可从 GCN 8390 原文复现，无跨通告拼接（GCN 8388 onboard 位置 230.180,-32.815/3′ 为 bot 未采用的粗定位，MPE Greiner 表一致）。本源非 Fermi 事件（HEASARC fermigbrst/fermilgrb 当日 0 行），T0 由 GCN 直接给 UT，无 MET→UTC 漏扣闰秒问题；batgrbproduct 精确触发时刻 23:38:12.816960 UTC（仓内 swift_bat/swift_grb 目录同值），库中 T0 为秒级截断，故按规则不改 T0，记 T0_offset=+0.817 s（真实触发晚于 T0，后移为正）。补 tag=grb；sub_tag=lgrb 依据 GCN 8390 T90=320±50 s (15-350 keV)；alias 补 BAT 331964（swift_bat 表）与 Swift 331964（swift_grb 表）。无红移任何报道，redshift=null 正确。因距太阳过近 Swift 未定点，无 XRT/UVOT 数据（GCN 8388）；REM 仅给组合上限 R>17.0、H>15.5（10 s/30 s 曝光序列，无逐帧时刻，GCN 8389），无其他光学/射电测光，故不建 lc 文件。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 GCN 8388 所报 Swift/BAT 触发时刻的秒级截断（23:38:12 UT）；batgrbproduct 精确值为 23:38:12.816960 UTC，偏移 +0.817 s 记入 T0_offset，未改 T0",
+    "t0_basis": "GCN 8388: Swift/BAT triggered GRB 081017 at 23:38:12 UT (trigger=331964)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 8388",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8388.gcn3",
+      "title": "GRB 081017: Swift detection of a burst",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8389",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8389.gcn3",
+      "title": "GRB 081017: REM early observations",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 8390",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/8390.gcn3",
+      "title": "GRB 081017, Swift-BAT refined analysis",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
