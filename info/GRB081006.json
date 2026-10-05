@@ -1,26 +1,30 @@
 {
   "transient_id": "GRB081006",
   "alias": [
-    "GRB 081006604",
-    "GRB81006.0"
+    "GRB 081006",
+    "GRB081006604",
+    "GRB 081006.604",
+    "bn081006604"
   ],
   "ra": 135.0,
   "dec": -61.95000076293945,
   "T0": "2008-10-06T14:29:35.170000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "2FLGC/fermilgrb trigger_met=244996175.17 s 的天真换算值（纪元 2001-01-01T00:00:00 UTC，未扣闰秒，见 T0_offset）",
+  "T0_offset": -0.997,
+  "T0_offset_ref": "GCN 8341; Fermi GBM catalog (fermigbrst, bn081006604) trigger_time=MJD 54745.603867738=2008-10-06T14:29:34.173 UTC; Ackermann+2013 (1FLGC)",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1368,
+  "pos_ref": "2FLGC (Ajello+2019), fermilgrb error_radius=0.38 deg (LAT Transient-class 定位)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy@2026-10-05：(1) T0 原值 2008-10-06T14:29:35.170Z 系 bot 将 Fermi MET trigger_met=244996175.17 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006-01-01 生效的 1 闰秒，偏晚约 1 s；证据：GCN 8341 'At 14:29:34 UT on 6 October 2008 (trigger 244996175 / 081006.604)'；fermigbrst bn081006604 trigger_time=MJD 54745.603867738=14:29:34.173 UTC；脚本核验 244996175.173 s 天真换算=14:29:35.173、扣 1 闰秒=14:29:34.173；1FLGC Table 2 列 '2008-10-06 14:29:34.1 / MET 244996175.173'。处置：按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-0.997 s（提前为负）。(2) pos_error 原为 null：fermilgrb error_radius=0.38 单位为度（LAT Transient-class 定位，表说明原文 'localization error from LAT transient factory analysis (deg)'），换算 0.38°=1368″ 填入；ra/dec=135.0/-61.95 与 pos_ref 同源、可复现（09:00:00.0, -61:57:00），无跨通告拼接；GBM 地面定位 RA 142.4, Dec -67.4 (GCN 8341) 为另一定位口径，不冲突。(3) 红移：1FLGC Table 2 redshift 列为 '-'、fermilgrb redshift=null，GCN 无红移通告，保持 null。(4) sub_tag 增补 lgrb：T90=6.4±0.9 s (50-300 keV)>2 s，1FLGC 归类 'L'。(5) 身份：Fermi GBM trigger 244996175/081006.604=GRB 081006；同日 GRB 081006B (081006.872, 20:55:35 UT, GCN 8342) 为另一事件，未混淆；仓内无重复条目。(6) 测光：GCN 当日仅 8341/8342（均为 GBM 探测通告），无任何光学/射电后随观测与红移通告，Swift 当日无触发（swiftgrbba 无记录），grbcat 无条目，arXiv 无该源文献——无任何波段余辉测光，不建 lc。(7) alias 删除 'GRB81006.0'（fermilgrb gcn_name 字段截断伪名），增补 GRB 081006/GRB081006604/GRB 081006.604/bn081006604。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -60,8 +64,28 @@
         ],
         "trigger_time": "2008-10-06T14:29:33.996Z"
       }
+    },
+    "t0_basis": "库中 T0=2008-10-06T14:29:35.170Z 来自 2FLGC/fermilgrb trigger_met=244996175.17 s 的天真换算（纪元 2001-01-01T00:00:00 UTC，未扣 2006-01-01 生效的 1 闰秒）",
+    "t0_note": "真实触发时刻 2008-10-06T14:29:34.173 UTC（Fermi GBM 目录 fermigbrst bn081006604，MJD 54745.603867738；GCN 8341=14:29:34 UT；1FLGC=14:29:34.1 / MET 244996175.173），比库中 T0 提前 0.997 s，故 T0_offset=-0.997 s（后移为正、提前为负），T0 本身不改、不得用于改写光变时间轴。注：2FLGC/fermilgrb 自带 trigger_time=2008-10-06T14:29:33.996Z 与 GBM 目录差 0.177 s，系该表自身口径，未采用。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second Fermi-LAT Gamma-Ray Burst Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "fsy"
+    },
+    {
+      "name": "Ackermann+2013",
+      "title": "The First Fermi-LAT Gamma-Ray Burst Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2013ApJS..209...11A",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
