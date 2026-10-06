@@ -1,25 +1,29 @@
 {
   "transient_id": "GRB101107A",
   "alias": [
-    "GRB 101107011"
+    "GRB 101107A",
+    "GRB101107011",
+    "bn101107011"
   ],
-  "ra": 170.27000427246094,
-  "dec": 23.8799991607666,
+  "ra": 170.27,
+  "dec": 23.88,
   "T0": "2010-11-07T00:16:27.120000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "Fermi GBM trigger 310781787 / bn101107011 (GCN/Fermi notices GRB_TIME 985.12 SOD {00:16:25.12} UT 2010-11-07; FERMIGBRST MJD 55507.011401821)；库内 T0 系 bot 由 2FLGC trigger_met 310781787.12 漏扣闰秒直换，实际触发提前 2.0027s，见 T0_offset",
+  "T0_offset": -2.0027,
+  "T0_offset_ref": "FERMIGBRST MJD 55507.011401821 = 00:16:25.117334 UTC（锚，-2.0026660s）+ GCN/Fermi notice 985.12 SOD {00:16:25.12} UT（trigger 310781787）+ IceCube GRBweb T0=0:16:25.117 UTC；bot 由 2FLGC trigger_met 310781787.12 自纪元 2001-01-01T00:00:00 UTC 直换漏扣闰秒得 T0=00:16:27.120",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 720,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC), error_radius 0.2 deg (LAT transient factory)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (fsy, 2026-10-05)：bot 由 Fermi MET 310781787.12 (2FLGC trigger_met) 自纪元 2001-01-01T00:00:00 UTC 直换（漏扣闰秒，2010 年累计 2 跳秒=2006-01-01、2009-01-01）得 T0=00:16:27.120，按规不改 T0，记 T0_offset=-2.0027s（真实触发提前约 2.0s = 闰秒 2.0s + 2FLGC trigger_met 0.01s 精度圆整差 0.0027s：FERMIGBRST 锚值对应 SI MET 310781787.117334）。本源 2FLGC trigger_met 与 GBM 触发历元一致（MET 独立换算扣 2 跳秒得 00:16:25.120 UTC，与锚 00:16:25.117334 相差 0.0027s，属 0.01s 精度圆整），无 GRB100724B 型历元差。互洽验证：(1) MET 独立换算后扣 2 次闰秒得 00:16:25.120 UTC；(2) FERMIGBRST 目录 trigger_time MJD 55507.011401821=00:16:25.117334 UTC（HEASARC fermigbrst TAP 实查），取为锚：-2.0026660s→-2.0027；(3) GCN/Fermi 通告（gcn.gsfc.nasa.gov/other/310781787.fermi 实查）5 条记录 TRIGGER_NUM=310781787，GRB_TIME 均为 '985.12 SOD {00:16:25.12} UT'、GRB_DATE 15507 TJD 10/11/07，且 985.12 加 2 闰秒对应 SI MET SOD，MET 取整 310781787 即触发号，自洽；(4) IceCube GRBweb（GRB101107A* 页）T0=0:16:25.117 UTC、ra/dec=168.33/22.43，独立相容；(5) 2FLGC（本地快照 fermilgrb_w3browse_full.txt 与 HEASARC fermilgrb TAP 实查同值）time 列 MJD 55507.0114005=00:16:25.0032 UTC、sexagesimal 11 21 04.8 +23 52 48=170.27/23.88、error_radius 0.2deg、gcn_name 列=GRB101107A，其 time 列与 FERMIGBRST 锚相差 0.114s，不采为锚（FERMIGBRST/GCN 通告/GRBweb 三方一致，以 FERMIGBRST 为准）。GCN Circulars 检索：无任何正式通告——MPE Fermi-GBM GCN 通告汇总表（www.mpe.mpg.de/~jcg/fermi_gcn.html 实查）2010-10-24（GCN 11378）至 2010-11-12（GCN 11403）之间无本源条目，gcn.gsfc.nasa.gov/other/101107A.gcn3 返回 404（该页按有通告的源生成），Web 检索亦无结果；仅有 GBM 自动 GCN/Fermi 通告（ Alert/Flight Position/Ground Position 共 5 条，Ground Position 给出 175.530/13.790 (6.97deg) 与 161.690/20.540 (9.14deg) 两个自动化初定位，与最终目录地面定位 168.33/22.43/4.09deg 相距 11.02deg/6.46deg，属自动化与精化定位的正常差异）。触发仪器核实为 Fermi/GBM（GCN/Fermi 通告；HEASARC SWIFTGRB 表 2010-11-06 至 11-08 无任何 Swift 触发条目实查）。ra/dec 为 float32 噪声值，清洗为 2FLGC 原值 170.27/23.88（fermilgrb 表 sexagesimal 11 21 04.8 +23 52 48 精确换算同值）；pos_error=0.2deg×3600=720arcsec（2FLGC ERR/fermilgrb error_radius 0.2 deg，LAT transient factory 定位）；GBM 目录地面定位 168.33/22.43/4.09deg（FERMIGBRST，error_radius 单位为度）与之相距 2.30deg，在 GBM 统计+系统差内相容，SIMBAD 坐标 11 13 12.0 +22 24 00（168.30/22.40，2014ApJS..211...13V 2nd GBM catalog）即取 GBM 目录定位。sub_tag 补 lgrb：T90=375.814±8.444s（50-300 keV，FERMIGBRST；2FLGC GBM_CAT_T90 同值）。alias 清洗：删 'GRB 101107011'（含空格拼接伪形，FERMIGBRST 官方名为无空格 'GRB101107011'），保留通报名 'GRB 101107A'（2FLGC gcn_name 列 + SIMBAD 主标识符）与触发号 'bn101107011'（FERMIGBRST trigger_name + SIMBAD 'Fermi bn101107011'）；bot name_alt 中插点衍生形 'GRB 101107.011' 无目录/GCN 背书（2FLGC/FERMIGBRST name=GRB101107011 无点无空格；SIMBAD 标识符仅 'GRB 101107A' 与 'Fermi bn101107011'），不采信。邻近源区分：FERMIGBRST 表 MJD 55505.5-55509.5（2010-11-05 至 11-09）仅 bn101107011 一个 GBM 触发；SIMBAD 检索 'GRB 101107'（不带 A）直接重定向至本对象（Fermi bn101107011=GRB 101107A），无独立无后缀源；'GRB 101103'、'GRB 101106A'、'GRB 101108A' 均非本触发（本库亦无这些源条目），MPE Greiner 表 2010-11 月条目自 GRB 101112A（11-12）起、11-05 至 11-09 无任何条目。光学/射电/X 射线逐帧数据：无——3+5 条 GCN 通告全部为瞬发伽马段自动通告，无任何后续观测通告；本地快照 liang2023/wang2022/minaev2020/Konus-Wind(J_ApJ_908_83)/AGILE-MCAL/GRBSN webtool/MPE Greiner 表均无本源条目（逐仓 grep 实查）；SIMBAD 11 条文献均为伽马段统计目录类论文（如 Golkhou+2015/2016、Bhat+2016、von Kienlin+2014/2020），无光学/射电测光 -> 不建 lc。无红移（2FLGC REDSHIFT 为 null 占位，SIMBAD Redshift=~，无 GCN 报道）。articles 经 Crossref 核实新增 3 条（Ajello+2019 10.3847/1538-4357/ab1d4e、von Kienlin+2020 10.3847/1538-4357/ab7a18、von Kienlin+2014 10.1088/0067-0049/211/1/13，均返回一致标题/期刊/卷页）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -130,8 +134,35 @@
         ],
         "trigger_time": "2010-11-07T00:16:25.003Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "bibtex": "@ARTICLE{Ajello2019,\n       author = {Ajello, M. and Arimoto, M. and Axelsson, M. and Baldini, L. and Barbiellini, G. and Bastieri, D. and Bellazzini, R. and Bhat, P. and others},\n        title = \"A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog\",\n      journal = {The Astrophysical Journal},\n         year = 2019,\n        volume = {878},\n         pages = {52},\n          doi = {10.3847/1538-4357/ab1d4e},\n}",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "bibtex": "@ARTICLE{vonKienlin2020,\n       author = {von Kienlin, A. and Meegan, C. and Paciesas, W. and Bhat, P. and Bissaldi, E. and Briggs, M. and Burns, E. and Cleveland, W. and others},\n        title = \"The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data\",\n      journal = {The Astrophysical Journal},\n         year = 2020,\n        volume = {893},\n         pages = {46},\n          doi = {10.3847/1538-4357/ab7a18},\n}",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2014",
+      "title": "The Second Fermi GBM Gamma-Ray Burst Catalog: The First Four Years",
+      "url": "https://doi.org/10.1088/0067-0049/211/1/13",
+      "bibtex": "@ARTICLE{vonKienlin2014,\n       author = {von Kienlin, A. and Meegan, C. and Paciesas, W. and Bhat, P. and Bissaldi, E. and Briggs, M. and Burgess, J. and Byrne, D. and others},\n        title = \"The Second Fermi GBM Gamma-Ray Burst Catalog: The First Four Years\",\n      journal = {The Astrophysical Journal Supplement Series},\n         year = 2014,\n        volume = {211},\n         pages = {13},\n          doi = {10.1088/0067-0049/211/1/13},\n}",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
