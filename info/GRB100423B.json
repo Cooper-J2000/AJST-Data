@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB100423B",
   "alias": [
-    "GRB 100423244"
+    "GRB 100423B",
+    "GRB 100423.244",
+    "GRB100423244",
+    "bn100423244"
   ],
-  "ra": 120.18000030517578,
-  "dec": 13.359999656677246,
+  "ra": 120.18,
+  "dec": 13.36,
   "T0": "2010-04-23T05:51:27.750000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "Fermi GBM trigger 293694687 / bn100423244 (GCN 10659)",
+  "T0_offset": -2.0,
+  "T0_offset_ref": "GCN 10659 (05:51:25.75 UT) + FERMIGBRST MJD 55309.244048036; bot MET 直换漏扣闰秒",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 684,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC), error_radius 0.19 deg (LAT)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (fsy, 2026-10-05)：bot 由 Fermi MET 293694687.75 自纪元 2001-01-01T00:00:00 UTC 直换（漏扣闰秒）得 T0=05:51:27.750，按规不改 T0，记 T0_offset=-2.0s（真实触发提前 2s，bot 直换偏晚 2s）；三路互洽：(1) MET 独立换算后扣 2006-01-01、2009-01-01 两次闰秒共 2s 得 05:51:25.750；(2) FERMIGBRST 目录 trigger_time MJD 55309.244048036=05:51:25.750 UTC；(3) GCN 10659 原文 'At 05:51:25.75 UT on 23 April 2010, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 100423B (trigger 293694687 / 100423244)'。另 2FLGC 表内 time=2010-04-23T05:51:25.004 与 FERMIGBRST 差 0.746s，属目录间口径差异，未采用。ra/dec 为 float32 噪声值，清洗为 2FLGC 原值 120.18/13.36（W3Browse sexagesimal 08 00 43.2 +13 21 36）；pos_error=0.19deg×3600=684arcsec（2FLGC error_radius，LAT transient factory 定位）。该 LAT 定位与 GBM 地面定位（RA=119.7, DEC=5.8, 1.5deg 1σ 统计误差、另含 2–3deg 系统误差，GCN 10659）相差约 7.6deg，为弱探测（like_best_ts=31.15）下两仪器定位差异，身份由触发时刻与 2FLGC gcn_name='GRB100423B' 锚定，未采信几何交叉。触发仪器核实为 Fermi/GBM（GCN 10659；LAT 偏轴 40deg 有伴随探测但非触发仪器）。T90：GBM 目录 16.5±2.2s（50-300 keV）、GCN 10659 初步值 21.6±1.1s（8-1000 keV），均远大于 2s，补 sub_tag=lgrb。alias 清洗：原 'GRB 100423244' 为无点拼接伪形，规范化为目录原形 'GRB 100423.244'（2FLGC name_alt），并保留 FERMIGBRST 官方名 'GRB100423244'、触发号 'bn100423244' 与 GCN 通报名 'GRB 100423B'。GCN 通告归档检索：抓取 GCN 10500–11650（2010-03 至 2011-02）全文逐一检索，提及本源者仅 GCN 10659 一条；同日 GRB 100423A 为 Swift 触发（GCN 10651，trigger 420247），与本源无关，未混入。无红移；GCN 与已核实的已发表文献中均未发现本源的光学/射电逐帧测光或上限，故未建 lc。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    },
     "catalog_data": {
       "fermi_lat": {
         "other": {
@@ -115,6 +125,25 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "source": "fsy"
+    },
+    {
+      "name": "Ursi+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac3df7",
+      "title": "The Second AGILE MCAL Gamma-Ray Burst Catalog: 13 yr of Observations",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
