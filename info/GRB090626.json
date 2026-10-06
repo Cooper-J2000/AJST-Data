@@ -1,25 +1,26 @@
 {
   "transient_id": "GRB090626",
   "alias": [
-    "GRB90626.0",
-    "GRB 090626189"
+    "GRB 090626189",
+    "GRB 090626",
+    "bn090626189"
   ],
-  "ra": 170.19000244140625,
-  "dec": -33.560001373291016,
+  "ra": 170.19,
+  "dec": -33.56,
   "T0": "2009-06-26T04:32:10.880000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "Fermi LAT 2FLGC trigger_met=267683530.880s 按 2001-01-01 纪元换算值（含 2s 闰秒未扣偏移，见 T0_offset）",
+  "T0_offset": -2.0,
+  "T0_offset_ref": "GCN 9579: 'At 04:32:08.88 UT on 26 June 2009'；Fermi GBM 目录 (fermigbrst) trigger_time MJD 55008.188991668 = 2009-06-26T04:32:08.880Z",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1044,
+  "pos_ref": "Fermi LAT 2nd GRB Catalog (2FLGC, Ajello+2019), HEASARC fermilgrb（W3Browse 行 '11 20 45.6 / -33 33 36' → 170.19/-33.56；error_radius 0.29 deg=1044″，统计误差；与 GCN 9584 LAT 定位 170.01/-33.50±0.32 deg 相距 0.16 deg）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。2026-10-05 fsy 审核链：(1) 原值 T0=2009-06-26T04:32:10.880Z 系 2FLGC trigger_met=267683530.880s 漏扣 2 闰秒的直接换算（bot 系统性错误）；证据：GCN 9579 原文 04:32:08.88 UT + GBM 目录 MJD 55008.188991668（实算差 <0.1ms）；修正：按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-2.000s（提前为负）。(2) 原坐标 170.19000244140625/-33.560001373291016 为 2FLGC 坐标 170.19/-33.56 的 float32 噪声，已清理；补 pos_error=1044″（fermilgrb error_radius 0.29 deg，单位为度）。(3) alias 中 'GRB90626.0' 系 2FLGC gcn_name 截断伪名，删除；补 'GRB 090626'、'bn090626189'。(4) 身份核验：Fermi/GBM 触发（trigger 267683530/090626189，GCN 9579），2FLGC 坐标与 GCN 9584 LAT 定位（170.01/-33.50±0.32 deg）相距 0.16 deg、位于其 95% 误差圆内；IPN 误差框（GCN 9588，中心 170.419/-33.051，0.363 平方度）与 LAT 定位一致，同日另一触发 bn090626707（16:58:45.464 UT，136.44/+14.44）与本源无关。T90≈49-70 s → lgrb 维持。无已知红移与光学/射电余辉（当日仅 5 条 GCN，均为伽马射线数据），redshift 保持 null，不建 lc（无逐帧光学/射电数据可入库）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -151,8 +152,46 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "t0_basis": "2FLGC trigger_met=267683530.880s（GPS 计时）按 2001-01-01T00:00 UTC 纪元直接换算得 2009-06-26T04:32:10.880Z（即库中 T0），漏扣 2006/2009 年初累计的 2 跳秒；扣除后为 2009-06-26T04:32:08.880Z（MJD 55008.188991667），与 GCN 9579 原文（'At 04:32:08.88 UT on 26 June 2009'）、Fermi GBM 目录 trigger_time MJD 55008.188991668（仓内 external/fermi_gbm 快照，md5=7cbda2ca5cbcd5db329be6a83ef08d69）及 GCN 9588/9629 一致。",
+    "t0_note": "按《数据审核提示词》§3.2，T0 保持原值不改；真实触发时刻较库中 T0 提前 2.000 s，记 T0_offset=-2.000（后移为正、提前为负）。T0_offset 为纯元数据，不改写光变时间轴（本源无 lc，不涉及）。bot 的 fermi_gbm 触发时刻换算（trigger_time 04:32:08.880Z）与 LAT 表 trigger_time 04:32:08.002Z 均为快照原文值，catalog_data 原样保留，其中 GBM 值即正确 UTC。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "vonKienlin+2009 (GCN 9579)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9579.gcn3",
+      "title": "GRB 090626: Fermi GBM detection",
+      "source": "fsy"
+    },
+    {
+      "name": "Piron+2009 (GCN 9584)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9584.gcn3",
+      "title": "Fermi LAT observations of GRB 090626",
+      "source": "fsy"
+    },
+    {
+      "name": "Golenetskii+2009 (GCN 9588)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9588.gcn3",
+      "title": "GRB 090626: IPN localization",
+      "source": "fsy"
+    },
+    {
+      "name": "Palshin+2009 (GCN 9595)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9595.gcn3",
+      "title": "Konus-Wind observation of GRB 090626",
+      "source": "fsy"
+    },
+    {
+      "name": "Noda+2009 (GCN 9629)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9629.gcn3",
+      "title": "GRB 090626: Suzaku WAM observation of the prompt emission",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
