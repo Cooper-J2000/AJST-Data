@@ -1,25 +1,29 @@
 {
   "transient_id": "GRB101014A",
   "alias": [
-    "GRB 101014175"
+    "GRB 101014A",
+    "GRB101014175",
+    "bn101014175"
   ],
   "ra": 26.5,
-  "dec": -48.540000915527344,
+  "dec": -48.54,
   "T0": "2010-10-14T04:11:54.620000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "Fermi GBM trigger 308722314 / bn101014175 (GCN 11341; FERMIGBRST MJD 55483.174914604)",
+  "T0_offset": -1.9982,
+  "T0_offset_ref": "FERMIGBRST MJD 55483.174914604 = 04:11:52.6218 UTC + GCN 11341 04:11:52.62 UT (trigger 308722314) + 2FLGC FITS GRBDATE 2010-10-14 04:11:52（整秒截断）；bot 由 2FLGC trigger_met 308722314.62 直换漏扣闰秒",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 324,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC), error_radius 0.09 deg (LAT transient factory)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (fsy, 2026-10-05)：bot 由 Fermi MET 308722314.62 (2FLGC trigger_met) 自纪元 2001-01-01T00:00:00 UTC 直换（漏扣闰秒）得 T0=04:11:54.620，按规不改 T0，记 T0_offset=-1.9982s（真实触发提前约 2.0s = 闰秒 2.0s + 2FLGC trigger_met 0.01s 精度圆整差 -0.0018s：FERMIGBRST 锚值对应 SI MET 308722314.6218）；本源 2FLGC trigger_met 与 GBM 触发历元一致，无 GRB100724B 型历元差。互洽验证：(1) MET 独立换算后扣 2006-01-01、2009-01-01 两次闰秒共 2s 得 04:11:52.620 UTC；(2) FERMIGBRST 目录 trigger_time MJD 55483.174914604=04:11:52.6218 UTC（本地快照与 HEASARC fermigbrst/fermigtrig TAP 实查同值），取为锚：-1.998214s；(3) GCN 11341 原文 'At 04:11:52.62 UT on 14 October 2010, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 101014A (trigger 308722314 / 101014175)'，且 04:11:52.62 加 2 闰秒 = SI MET 308722314.62，取整即触发号 308722314，自洽；GCN 11349 亦报本源（其文中 LAT 探测段落记 'also detected by GBM at 04:11:52.62 UT, 14 October 2010'，并引 'GBM trigger 308722314'——两处相邻原文，此处意引）同证；(4) 2FLGC FITS (gll_2flgc_dr1.fits) GRBDATE=2010-10-14 04:11:52（整秒截断）与 GCN 相容；(5) AGILE-MCAL 目录 MET 214114312.844（历元 2004-01-01 UTC）换算 04:11:52.844 UTC，独立仪器相容（晚 0.22s）；(6) fermilgrb 表 time 列原文 2010-10-14 04:11:51.999 与同表 trigger_met 列自差 2.621s（远超 2 跳秒口径），且与 GCN/FERMIGBRST 矛盾，系该列异常，不采信（fermilgrb gcn_name 列=GRB101014A 仍用于锚定身份）；GCN 11342 Konus-Wind T0=04:11:55.250 UT 系 Konus 自身触发时刻（晚 2.63s），非 GBM 触发时刻，不采为 T0 证据。GCN 通告归档（gcn.nasa.gov 全文检索 + gcn.gsfc.nasa.gov/other/101014A.gcn3）实查共 3 条（11341、11342、11349），全部为瞬发伽马段（Fermi GBM、Konus-Wind、Fermi LAT；GCN 11341 另记 INTEGRAL SPI-ACS 独立探测），未检索到光学/射电/X 射线逐帧测光或上限（SWIFTGRB 表 2010-10-14 当日无 Swift 触发条目；liang2023/wang2022/GRBSN webtool 快照均无此源）-> 不建 lc。ra/dec 为 float32 噪声值，清洗为 2FLGC 原值 26.5/-48.54（gll_2flgc_dr1.fits RA=26.5 DEC=-48.54；fermilgrb 表 sexagesimal 01 46 00.0 -48 32 24 精确换算同值）；pos_error=0.09deg×3600=324arcsec（2FLGC ERR/fermilgrb error_radius 0.0900 deg，LAT transient factory 定位；GBM 地面定位 RA 26.94/Dec -51.07/1.0deg 统计差另含 2-3 deg 系统差（GCN 11341）与之相距约 2.55 deg，在系统差内相容，SIMBAD 坐标即取 GBM 地面定位 01 47 45.6 -51 04 12）。触发仪器核实为 Fermi/GBM（GCN 11341；fermigtrig 表 trigger_type=GRB、localization_source='Fermi, GBM'；SWIFTGRB 表 2010-10-14 当日无 Swift 触发条目）。T90=449.415±1.4095s（50-300 keV，FERMIGBRST；2FLGC GBMT90=449.415 同值；GCN 11341 'T90 of about 450 s (50-300 keV)'），补 sub_tag=lgrb。alias 清洗：删 'GRB 101014175'（含空格拼接伪形，FERMIGBRST 官方名为无空格 'GRB101014175'），保留触发号 'bn101014175' 与通报名 'GRB 101014A'（3 条 GCN 用名 + fermilgrb gcn_name + SIMBAD 标识符）；bot name_alt 中插点衍生形 'GRB 101014.175' 无目录/GCN 背书（2FLGC FITS GRBNAME=101014175 无点分形；SIMBAD 标识符仅 'GRB 101014A' 与 'Fermi bn101014175'），不采信。邻近源区分：FERMIGBRST 表 2010-10-14 当日（MJD 55483）GBM 触发仅 bn101014175 一个；'GRB 101011A' 系 2010-10-11 Fermi 触发（bn101011707，RA 03 13 -65 59，SIMBAD 实查），'GRB 101016A' 系 2010-10-16 Fermi 触发（bn101016243，RA 133.04/Dec -4.62，FERMIGBRST），与本源（10-14，RA 26.5/Dec -48.54）日期与坐标均不同；GCN/SIMBAD/目录中均无 'GRB 101014B' 条目，也无独立的 'GRB 101014'（不带后缀）条目（SIMBAD 检索 'GRB 101014' 直接重定向至 GRB 101014A）。无红移（2FLGC REDSHIFT=0.0 为占位值，3 条 GCN 均未报道红移/距离）。articles 经 Crossref 核实新增 3 条（Ajello+2019 10.3847/1538-4357/ab1d4e、von Kienlin+2020 10.3847/1538-4357/ab7a18、Ursi+2022 10.3847/1538-4357/ac3df7，均返回一致标题/期刊/卷页）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -174,8 +178,35 @@
         ],
         "trigger_time": "2010-10-14T04:11:52Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "bibtex": "@ARTICLE{2019ApJ...878...52A,\n       author = {{{Ajello}, M.} and {{Arimoto}, M.} and {{Axelsson}, M.} and {{Baldini}, L.} and {{Barbiellini}, G.} and {{Bastieri}, D.} and {{Bellazzini}, R.} and {{Bhat}, P. N.} and {{Bissaldi}, E.} and {{Blandford}, R. D.} and {{Bonino}, R.} and {{Bonnell}, J.} and {{Bottacini}, E.} and {{Bregeon}, J.} and {{Bruel}, P.} and {{Buehler}, R.} and {{Cameron}, R. A.} and {{Caputo}, R.} and {{Caraveo}, P. A.} and {{Cavazzuti}, E.} and {{Chen}, S.} and {{Cheung}, C. C.} and {{Chiaro}, G.} and {{Ciprini}, S.} and {{Costantin}, D.} and {{Crnogorcevic}, M.} and {{Cutini}, S.} and {{Dainotti}, M.} and {{D’Ammando}, F.} and {{Torre Luque}, P. de la} and {{Palma}, F. de} and {{Desai}, A.} and {{Desiante}, R.} and {{Lalla}, N. Di} and {{Venere}, L. Di} and {{Dirirsa}, F. Fana} and {{Fegan}, S. J.} and {{Franckowiak}, A.} and {{Fukazawa}, Y.} and {{Funk}, S.} and {{Fusco}, P.} and {{Gargano}, F.} and {{Gasparrini}, D.} and {{Giglietto}, N.} and {{Giordano}, F.} and {{Giroletti}, M.} and {{Green}, D.} and {{Grenier}, I. A.} and {{Grove}, J. E.} and {{Guiriec}, S.} and {{Hays}, E.} and {{Hewitt}, J. W.} and {{Horan}, D.} and {{Jóhannesson}, G.} and {{Kocevski}, D.} and {{Kuss}, M.} and {{Latronico}, L.} and {{Li}, J.} and {{Longo}, F.} and {{Loparco}, F.} and {{Lovellette}, M. N.} and {{Lubrano}, P.} and {{Maldera}, S.} and {{Manfreda}, A.} and {{Martí-Devesa}, G.} and {{Mazziotta}, M. N.} and {{Mereu}, I.} and {{Meyer}, M.} and {{Michelson}, P. F.} and {{Mirabal}, N.} and {{Mitthumsiri}, W.} and {{Mizuno}, T.} and {{Monzani}, M. E.} and {{Moretti}, E.} and {{Morselli}, A.} and {{Moskalenko}, I. V.} and {{Negro}, M.} and {{Nuss}, E.} and {{Ohno}, M.} and {{Omodei}, N.} and {{Orienti}, M.} and {{Orlando}, E.} and {{Palatiello}, M.} and {{Paliya}, V. S.} and {{Paneque}, D.} and {{Persic}, M.} and {{Pesce-Rollins}, M.} and {{Petrosian}, V.} and {{Piron}, F.} and {{Poolakkil}, S.} and {{Poon}, H.} and {{Porter}, T. A.} and {{Principe}, G.} and {{Racusin}, J. L.} and {{Rainò}, S.} and {{Rando}, R.} and {{Razzano}, M.} and {{Razzaque}, S.} and {{Reimer}, A.} and {{Reimer}, O.} and {{Reposeur}, T.} and {{Ryde}, F.} and {{Serini}, D.} and {{Sgrò}, C.} and {{Siskind}, E. J.} and {{Sonbas}, E.} and {{Spandre}, G.} and {{Spinelli}, P.} and {{Suson}, D. J.} and {{Tajima}, H.} and {{Takahashi}, M.} and {{Tak}, D.} and {{Thayer}, J. B.} and {{Torres}, D. F.} and {{Troja}, E.} and {{Valverde}, J.} and {{Veres}, P.} and {{Vianello}, G.} and {{von Kienlin}, A.} and {{Wood}, K.} and {{Yassine}, M.} and {{Zhu}, S.} and {{Zimmer}, S.}},\n        title = \"A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog\",\n      journal = {\\apj},\n         year = 2019,\n       volume = {878},\n        pages = {52},\n          doi = {10.3847/1538-4357/ab1d4e},\n}",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "bibtex": "@ARTICLE{2020ApJ...893...46V,\n       author = {{{von Kienlin}, A.} and {{Meegan}, C. A.} and {{Paciesas}, W. S.} and {{Bhat}, P. N.} and {{Bissaldi}, E.} and {{Briggs}, M. S.} and {{Burns}, E.} and {{Cleveland}, W. H.} and {{Gibby}, M. H.} and {{Giles}, M. M.} and {{Goldstein}, A.} and {{Hamburg}, R.} and {{Hui}, C. M.} and {{Kocevski}, D.} and {{Mailyan}, B.} and {{Malacaria}, C.} and {{Poolakkil}, S.} and {{Preece}, R. D.} and {{Roberts}, O. J.} and {{Veres}, P.} and {{Wilson-Hodge}, C. A.}},\n        title = \"The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data\",\n      journal = {\\apj},\n         year = 2020,\n       volume = {893},\n        pages = {46},\n          doi = {10.3847/1538-4357/ab7a18},\n}",
+      "source": "fsy"
+    },
+    {
+      "name": "Ursi+2022",
+      "title": "The Second AGILE MCAL Gamma-Ray Burst Catalog: 13 yr of Observations",
+      "url": "https://doi.org/10.3847/1538-4357/ac3df7",
+      "bibtex": "@ARTICLE{2022ApJ...925..152U,\n       author = {{{Ursi}, A.} and {{Romani}, M.} and {{Verrecchia}, F.} and {{Pittori}, C.} and {{Tavani}, M.} and {{Marisaldi}, M.} and {{Galli}, M.} and {{Labanti}, C.} and {{Parmiggiani}, N.} and {{Bulgarelli}, A.} and {{Addis}, A.} and {{Baroncelli}, L.} and {{Cardillo}, M.} and {{Casentini}, C.} and {{Cattaneo}, P.~W.} and {{Chen}, A.} and {{Di Piano}, A.} and {{Fuschino}, F.} and {{Longo}, F.} and {{Lucarelli}, F.} and {{Morselli}, A.} and {{Piano}, G.} and {{Vercellone}, S.}},\n        title = \"The Second AGILE MCAL Gamma-Ray Burst Catalog: 13 yr of Observations\",\n      journal = {\\apj},\n         year = 2022,\n       volume = {925},\n        pages = {152},\n          doi = {10.3847/1538-4357/ac3df7},\n}",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
