@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB080121",
-  "alias": [],
-  "ra": 137.1932,
-  "dec": 41.8559,
+  "alias": [
+    "Swift 20061",
+    "BAT 301491"
+  ],
+  "ra": 137.235,
+  "dec": 41.841,
   "T0": "2008-01-21T21:29:55.561000Z",
-  "T0_ref": null,
+  "T0_ref": "Swift/BAT trigger #301491 (GCN 7209; external/swift_bat 与 external/swift_grb 目录 trigger_time)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 0.046,
-  "tag": [],
-  "pos_error": 3.5,
-  "pos_ref": "GCN 7214",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 7209",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "审核链（fsy@2026-10-05）：① 原值 ra=137.1932/dec=41.8559/pos_error=3.5″/pos_ref=GCN 7214 有误——GCN 7214 的增强 XRT 定位（137.15169, +41.84639）已被 GCN 7215 正式撤回（'not the position of the GRB afterglow. This source is a serendipitous source'），且经核对原 ra/dec 实为 GCN 7224 中 BAT 误差圆内一颗'no fading behaviour'的暗随机源坐标（09h08m46.36s +41d51'21.1″=137.19317°, +41.85586°），均非余辉定位。修正为 GCN 7209 的 BAT ground-calculated 定位 RA 137.235, Dec +41.841，误差 3 arcmin=180″（90% 置信），external/uvot_grb 目录 POS_ERR=180.0 相互印证。② 原值 redshift=0.046（redshift_ref=gcn_llm:circulars_meta）为 GCN 7210 中 BAT 误差圆内两颗 SDSS 候选宿主星系（z=0.045322/0.046041）及 Yue+2018 假设语气推算值（'If … are indeed at a redshift of ~0.046'），非实测 GRB 红移，改为 null；候选星系记录于此备查。③ T0=2008-01-21T21:29:55.561Z 与 Swift trigger #301491 触发时刻一致（GCN 7209：'At 21:29:55 on Jan 21, 2008'；swift_bat/swift_grb/uvot_grb 三目录逐毫秒一致），保留并补 T0_ref。④ tag/sub_tag 原为空，补 grb/sgrb：GCN 7209 明言 'weak short GRB'，T90=0.7±0.2 s（GCN 7209）、0.32 s（15-350 keV，BAT 目录）、0.192 s（15-150 keV，Swift 目录），均 <2 s。⑤ 新增 alias 来自 swift_grb（Swift 20061）与 swift_bat（BAT 301491）目录 name_alt。⑥ 新增 lc：GCN 7217 UVOT coadd 3σ 上限 3 行（white/v/uvm2）；GCN 7224 的 XRT X 射线上限（3.7E-14 erg/cm²/s, 0.3-10 keV）按规则不入库。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT trigger #301491 真实触发时刻，与 GCN 7209 及仓内 swift_bat/swift_grb/uvot_grb 目录一致；原 t0_basis=meta_trigger 经核为正确",
+    "t0_basis": "trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [
     {
