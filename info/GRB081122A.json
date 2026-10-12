@@ -1,25 +1,30 @@
 {
   "transient_id": "GRB081122A",
   "alias": [
-    "GRB 081122520"
+    "GRB 081122520",
+    "GRB081122520",
+    "GRB 081122.520",
+    "bn081122520"
   ],
-  "ra": 338.82000732421875,
-  "dec": 37.56999969482422,
+  "ra": 338.82,
+  "dec": 37.57,
   "T0": "2008-11-22T12:28:13.210000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "2FLGC trigger_met 249049693.21 的 naive MET→UTC 换算（未扣闰秒，见 extra_data.t0_note）",
+  "T0_offset": -0.999,
+  "T0_offset_ref": "GCN 8549 (12:28:12.21 UT); Fermi GBM 目录 trigger_time MJD 54792.519585779 = 2008-11-22T12:28:12.211 UTC",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 972,
+  "pos_ref": "Fermi 2FLGC (HEASARC fermilgrb): Error_Radius = 0.27 deg = 972 arcsec",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "审核链——原值：T0=2008-11-22T12:28:13.210、ra/dec=338.82000732/37.56999969（2FLGC FITS float32 原值）、pos_error=null、alias 仅 GRB 081122520、sub_tag=[]。问题：(1) T0 为 trigger_met 249049693.21 按 2001-01-01 纪元未扣 2006-01-01 跳秒（2008-11 累计 1 s）的 naive 换算，比真实触发晚 0.999 s；(2) pos_error 缺失，2FLGC Error_Radius=0.27 度（非角秒）=972″；(3) ra/dec 含 float32 噪声。证据：GCN 8549『At 12:28:12.21 UT … triggered and located GRB 081122 (trigger 249049693 / 081122520)』；fermigbrst 行 MJD 54792.519585779=12:28:12.211 UTC；fermilgrb 行『22 35 16.8|+37 34 12|0.2700』=338.82/37.57/0.27 deg。修正：按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-0.999 s（真实触发提前为负）；pos_error=972″，pos_ref=2FLGC；ra/dec 复现圆整为 338.82/37.57；alias 补 GBM 目录名；sub_tag 加 lgrb（GBM 目录 T90=23.3 s，GCN 约 26 s，明确为长暴）。定位说明：坐标保留 2FLGC 的 LAT 定位（0.27 deg）；GBM 目录终版定位为 339.1/+40.0/1.0 deg，GCN 8549 初步定位为 338.7/+38.4/1.2 deg，均未采用。文献：Lin+2022 列为毫透镜次级候选；Zhao+2025 复检结论为六个候选均不符合透镜解释。该源无光学/射电逐点测光（当日唯一通告为纯伽马触发通告 GCN 8549），未建 lc。审核人 fsy，2026-10-05。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -130,6 +135,13 @@
         ],
         "trigger_time": "2008-11-22T12:28:11.997Z"
       }
+    },
+    "t0_basis": "GCN 8549 + Fermi GBM 目录（fermigbrst，MJD 54792.519585779）；二者一致给出真实触发 2008-11-22T12:28:12.21 UTC",
+    "t0_note": "库中 T0=2008-11-22T12:28:13.210 为 bot 对 2FLGC trigger_met=249049693.21 按 2001-01-01T00:00:00 UTC 纪元直接换算、未扣除 2006-01-01 跳秒（2008-11 累计 1 s）所得（naive 换算=12:28:13.210，与库中 T0 逐位一致），比真实触发时刻晚 0.999 s。按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-0.999 s（提前为负），不改写光变时间轴。注：2FLGC 表内 UTC 字段为 12:28:11.997，与 GBM 目录（12.211）相差 0.214 s，属目录间口径差异；T0_offset 采用 GCN 8549/GBM 目录口径（GCN 只给到 0.01 s，按其值偏移为 -1.000）。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
   "articles": [
@@ -153,6 +165,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...992...78Z",
       "bibtex": "@ARTICLE{2025ApJ...992...78Z,\n       author = {{Zhao}, Yu and {Peng}, Zhao-Yang and {Chen}, Jia-Ming and {Yin}, Yue and {Li}, Ting},\n        title = \"{A Reidentification of Six Candidate Gravitationally Lensed Gamma-Ray Bursts}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, 629, High Energy Astrophysical Phenomena},\n         year = 2025,\n        month = oct,\n       volume = {992},\n       number = {1},\n          eid = {78},\n        pages = {78},\n          doi = {10.3847/1538-4357/ae00c6},\narchivePrefix = {arXiv},\n       eprint = {2508.21413},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025ApJ...992...78Z},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second Fermi-LAT Gamma-Ray Burst Catalog (2FLGC)",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
