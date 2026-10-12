@@ -4,25 +4,55 @@
   "ra": 318.484,
   "dec": 62.578,
   "T0": "2009-07-05T05:44:53Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "T0_ref": "GCN 9616",
+  "T0_offset": -2002.0,
+  "T0_offset_ref": "GCN 9615",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [],
   "pos_error": 180.0,
   "pos_ref": "GCN 9615",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（fsy 2026-10-05）：bot 原值 T0=2009-07-05T05:44:53Z、t0_basis=meta_trigger。问题：该时刻并非触发时刻，而是 GCN 9616 所载 PAIRITEL 观测起始时刻（'Observations began at 2009-07-05 05:44:53 UT, ~33 minutes after the Swift trigger'），属'观测时刻当触发时刻'bot 错误。证据：GCN 9615 明确 BAT 于 2009-07-05 05:11:31 UT 触发（trigger=356516），真实触发时刻比库中 T0 早 2002 s，故按《数据审核提示词》§3.2 不改 T0、记 T0_offset=-2002（提前为负，依据 GCN 9615）。另：GCN 9618 后续分析认定 'BAT trigger 356516 is not a GRB'（仅 3.1σ 涨落，XRT/UVOT/PAIRITEL 均无非探测以外的发现），Swift BAT GRB 目录（HEASARC swiftgrbba，MJD 55000-55030 区间实测连续覆盖但无此源）与官方 BAT GRB catalog（batgrbcat 无 GRB090705 页）均不含该源，Swift 主数据库标记 'unconfirmed BAT trigger'（grb_flag=N）；当日 MJD 55017 无 Fermi GBM/LAT 触发（fermigbrst/fermilgrb 查证）。该条目应视为已撤回的 Swift 候选触发而非确认 GRB，是否除名或加专用受控标签待维护者裁决（见 PR 待决事项）。坐标 RA,Dec=318.484,+62.578（3′，90% 含纳）已逐字核验于 GCN 9615 原文，无误。光学：UVOT finding chart（White，T_trig+357s 起 150s）'typical 3-sigma upper limit about 19.6 mag' 但仅覆盖误差圆 25% 且原文无逐帧时刻，PAIRITEL J/H/Ks 极限仅称 'down to the 2MASS limits' 无具体数值——均不入 lc；GCN 9617 XRT 非探测为 X 射线数据不入库。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "库中 T0 实为 GCN 9616 所载 PAIRITEL 观测起始时刻（bot 误作触发时刻）；真实 Swift/BAT 触发时刻为 2009-07-05T05:11:31Z（GCN 9615），比 T0 早 2002 s，记 T0_offset=-2002。T0_offset 为纯元数据，不改写光变时间轴。",
+    "t0_basis": "followup_obs_start (PAIRITEL, GCN 9616); true BAT trigger 2009-07-05T05:11:31Z per GCN 9615, see T0_offset",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ukwatta+2009 (GCN 9615)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9615.gcn3",
+      "title": "GRB 090705: Swift detection of a possible burst",
+      "source": "fsy"
+    },
+    {
+      "name": "Morgan+2009 (GCN 9616)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9616.gcn3",
+      "title": "GRB 090705: PAIRITEL NIR Observations",
+      "source": "fsy"
+    },
+    {
+      "name": "DElia+2009 (GCN 9617)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9617.gcn3",
+      "title": "Possible GRB090705: Swift-XRT observations",
+      "source": "fsy"
+    },
+    {
+      "name": "Barthelmy+2009 (GCN 9618)",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/9618.gcn3",
+      "title": "Swift-BAT trigger 356516 is not a GRB",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
