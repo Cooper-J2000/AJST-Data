@@ -1,29 +1,36 @@
 {
   "transient_id": "GRB050925",
   "alias": [],
-  "ra": 303.445,
-  "dec": 34.334,
-  "T0": "2005-09-26T02:44:26Z",
-  "T0_ref": null,
+  "ra": 303.476,
+  "dec": 34.332,
+  "T0": "2005-09-25T09:04:33Z",
+  "T0_ref": "GCN 4034",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 90,
+  "pos_ref": "GCN 4037",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 短暴（trigger 156838），T0=09:04:33 UT（GCN 4034：\"At 09:04:33 UT, Swift-BAT triggered and located GRB050925\"），T90=0.068±0.027 s（GCN 4037），sgrb 标签成立；银纬 b=-0.1°，方向消光 A_V=7.05 mag（GCN 4034）；BAT 谱黑体拟合 kT=15.4±1.5 keV，形似 SGR 小耀发（GCN 4037），Sakamoto+2011 深度 INTEGRAL 监测亦指出其可能与 H II 区 W 58 成协、性质未定；XRT/UVOT/光学/射电均未探测到余辉（GCN 4038/4039/4043/4057），无红移测量。ra/dec 为 GCN 4037 地面精化定位（303.476/+34.332，1.5′=90″，90%），初始 GCN 4034 定位为 303.445/+34.334（3′）。原 bot T0=2005-09-26T02:44:26Z 无出处且与 GCN 4034 触发记录矛盾（源名日期 09-25 反而正确），已废弃。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "原 t0（2005-09-26T02:44:26Z，meta_trigger）无出处且与 GCN 4034 触发记录矛盾，已废弃；现 T0 为 BAT 触发时刻 2005-09-25T09:04:33 UT，Swift BAT 目录精化值 09:04:33.628160 UT（external/swift_bat）；源名日期 09-25 与触发日期一致，无 GRB050925B 条目",
+    "t0_basis": "GCN 4034",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [
     {
