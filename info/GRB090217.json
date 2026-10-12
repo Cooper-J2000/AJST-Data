@@ -21,7 +21,8 @@
   "redshift_ref": null,
   "comment": "审核（fsy 2026-10-05）。原 comment：'由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'（实际未建 lc）。问题→证据→修正：(1) T0：库中 2009-02-17T04:56:44.560Z 系 2FLGC trigger_met=256539404.56s 按 2001-01-01 纪元直接换算、漏扣 2006-01-01 与 2009-01-01 两个闰秒，偏晚 2s；GBM 实际触发 04:56:42.56 UT（GCN 8902），fermigbrst 目录 MJD 54879.206048122=04:56:42.5577，脚本复核差值 -2.002259s，故按《数据审核提示词》§3.2 不改 T0、记 T0_offset=-2.002s。(2) 坐标：ra/dec 原 float32 近似 205.00999/-8.39000 已写作精确值 205.01/-8.39，实为 2FLGC 精化位置（13h40m02.4s -08d23m24s，error_radius 0.46°），原 pos_ref 所引 GCN 8903 给出 204.9/-8.4（90% 0.52°）无法复现现值（相差 0.109°），pos_ref 改指 2FLGC (Ajello+2019)，pos_error=1656″=0.46°；GCN 8902 之 GBM 在地定位 211.9/-2.8（1° 1σ）备查，GCN 8905 IPN 误差盒中心 204.865/-7.442（7.2 平方度）与 LAT 圆一致。(3) alias 'GRB90217.0' 为 fermilgrb gcn_name 10 字符截断伪名，保留备查。(4) 身份：Fermi/GBM 触发 256539404/bn090217206，T90≈33.3s（50-300 keV）为长暴；LAT/GBM 同日联合探测，Konus-Wind、Suzaku WAM、IPN 佐证同一事件；Swift 无 BAT 触发仅 XRT 后随（GCN 8907，3 个 X 射线源均非余辉，X 射线数据按规则不入库）；当日无其他 GRB，无重复条目。(5) 测光：无任何已发表光学/NIR/射电逐点测光（GCN 仅 6 则均为伽马；GRBOX/ADS 检索仅 Cutini+2010 与 Ohno 2010 两篇 Fermi 会议文献；McBreen+2010 四个 GRB 不含本源），LAT/LLE 光变为伽马射线能段不入 lc，故不建 lc 文件。红移：无任何实测红移记录，保持 null。",
   "sub_tag": [
-    "lgrb"
+    "lgrb",
+    "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {

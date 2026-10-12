@@ -24,7 +24,8 @@
   "redshift_ref": null,
   "comment": "审核链（fsy 2026-10-05）：[原值] T0=2009-02-28T04:53:22.920000Z、ra/dec=98.5999984741211/-28.790000915527344（float32）、pos_error=null、pos_ref=null、alias=['GRB 090228204']、sub_tag=[]、comment='由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'。[问题] ①T0 系 bot 将 2FLGC trigger_met=257489602.92 按 2001-01-01 纪元直接换算且漏扣 2 个闰秒（2006-01-01、2009-01-01）所得，脚本复算逐毫秒吻合（naive=04:53:22.920000），偏晚 2.009 s；真实触发时刻 2009-02-28T04:53:20.911Z（FERMIGBRST MJD 54890.203714253；GCN 8918 原文 'At 04:53:20.91 UT'；该 trigger_met 本身为连续 MET，扣除 2 闰秒即 04:53:20.92，与 GBM 目录 04:53:20.911 自洽）。依《数据审核提示词》§3.2 不改 T0，记 T0_offset=-2.009。②ra/dec 为 float32 噪声值，还原为编目精确值 98.6/-28.79；pos_error 缺失：2FLGC error_radius=0.21 为度（TAP_SCHEMA unit=degree），按库内 arcsec 口径换算填 756″。③alias 'GRB 090228204' 为 bot 拼接伪名（规范名：fermigbrst name='GRB090228204'、bn='bn090228204'、2FLGC name_alt='GRB 090228.204'、fermilgrb gcn_name='GRB090228A'），已替换。④原 comment 称'光变数据导入'，实为 2FLGC/AGILE-MCAL 编目元数据（tl100、trigger_met、t90、fluence 等）导入，予以澄清。[身份] Fermi/GBM 触发 090228204（trigger MET 257489602），GCN 8918 原名 'GRB 090228'；同日 23:25:01.02 UT 另有 GRB090228B（trigger 257556303/090228976，RA=356.5 DEC=+36.1，GCN 8927）为两次独立触发，本条目坐标（98.6/-28.79 对 356.5/+36.1）与时刻互证无混淆无重复，库内无 GRB090228B 条目。LAT 高能辐射经 Akerlof+2010 匹配滤波分析确证（'High energy emission is detected with great confidence for one event, GRB 090228A'）。AGILE-MCAL 亦独立记录本源（CDS 表 2 触发时刻 2009-02-28 04:53:20.90，t50=0.040/t90=0.064 s，0.4-100 MeV）。[分类] GCN 8918 'the bright short GRB 090228'，T90(8-1000 keV)≈0.8 s，FERMIGBRST t90(50-300 keV)=0.448 s，故 sub_tag 增补 sgrb。[红移] 2FLGC redshift=null，无红移。[lc] 全部通告与文献均无本源光学/射电余辉测光（GCN 当日仅 GBM 通告 8918/8927；HEASARC swiftgrb 无触发记录，查询有效性已用已知源验证；Konus-Wind 两目录无本源），故无 lc 文件；LAT/GBM 伽马射线光变属高能能段不在 lc 范围。",
   "sub_tag": [
-    "sgrb"
+    "sgrb",
+    "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {

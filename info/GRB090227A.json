@@ -24,7 +24,8 @@
   "redshift_ref": null,
   "comment": "审核链（fsy 2026-10-05）：[原值] T0=2009-02-27T07:25:59Z、pos_error=null、alias=['GRB 090227310']、sub_tag=[]。[问题] ①T0 系 bot 将 2FLGC trigger_met=257412359.0 按 2001-01-01 纪元直接换算且漏扣 2 个闰秒（2006-01-01、2009-01-01）所得，脚本复算逐毫秒吻合，偏晚 1.997 s；真实触发时刻 2009-02-27T07:25:57.003Z（GCN 8917 原文、FERMIGBRST MJD 54889.309687536、2FLGC Table 2 三方一致；Suzaku WAM T0=07:25:56.862，GCN 8935，互相印证）。依《数据审核提示词》§3.2 不改 T0，记 T0_offset=-1.997。②pos_error 缺失：2FLGC Loc. Err.=0.34 为度（TAP_SCHEMA 声明 unit=degree；Table 2 列头 'Deg.'），按库内 arcsec 口径换算填 pos_error=1224″（=0.34°）。③alias 'GRB 090227310' 为 bot 拼接伪名（目录原名 'GRB090227310'/'GRB 090227.310'/bn090227310，GCN 名 'GRB090227A'，fermilgrb.gcn_name 与 2FLGC 附录A 'the GRB name as it appeared in the corresponding GCN'），已替换为规范名。[身份] Fermi/GBM 触发 090227310（trigger 257412359），GCN 名 GRB090227A；与同日 GRB090227B（bn090227772，trigger 257452263，18:31:01.41 UT，dec=+32.2，z=1.61）为两次独立触发，库内两文件各自正确，无混淆无重复。[分类] 2FLGC Table 3 记 CLASS=(L)（long），GCN 8917 T90(8-1000 keV)≈50 s，GCN 8935 称 'The long GRB 090227A'，故 sub_tag 增补 lgrb。[红移] 2FLGC Table 2 Redshift 列为 '-'，无红移。[lc] 全部通告与文献均无本源光学/射电余辉测光（GCN 当日仅 GBM/WAM 通告），故无 lc 文件；LAT/GBM 光变属伽马射线能段不在 lc 范围。原 comment '光变数据导入' 实为编目元数据（tl100=201.4 s、lle_t90=9.9 s 等）导入，予以澄清。",
   "sub_tag": [
-    "lgrb"
+    "lgrb",
+    "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {

@@ -22,7 +22,9 @@
   "redshift_type": null,
   "redshift_ref": null,
   "comment": "Fermi GBM 触发暴（trigger 288758733 / bn100225115，GCN 10449），Trigger_Instrument 无误；LAT 于 T0 后约 22 s 才探测到（GCN 10450：'At 02:45:53 (UT) ... detected gamma rays'，观测时刻≠触发时刻），LAT 数据仅目录值。bot T0=2010-02-25T02:45:33.15Z 系由 MET 288758733.15 直除 86400 漏扣 2 跳秒（2006-01-01、2009-01-01）所得，三路互洽证实真实触发为 02:45:31.15 UT（GCN 10449 原文 'At 02:45:31.15 UT'；FERMIGBRST MJD 55252.114943829=02:45:31.147；MET−2s=02:45:31.15），不改 T0，记 T0_offset=-2.0。ra/dec 为 2FLGC 位置（FERMILGRB 行 20h47m43.2s/-60°30′36″=311.93/-60.51），原库值含 float32 噪声已清理为目录原值；pos_error 取同行 error_radius 0.34°（LAT transient factory 定位误差，度→角秒 ×3600=1224″）；GCN 10450 的 LAT 初步定位 310.3/-59.4（68% 包含半径 0.9°）仅供参考。alias 清洗：删除空格无点拼接伪形 'GRB 100225115'，补 GCN 名 'GRB 100225A'（GCN 10449/10450）与目录规范形 GRB100225115 / GRB 100225.115 / bn100225115。本源 GCN 共 2 条（10449、10450），无光学/射电后续观测与逐帧测光，不建 lc。",
-  "sub_tag": [],
+  "sub_tag": [
+    "Fermi-LAT"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "audit": {
