@@ -1,10 +1,16 @@
 {
   "transient_id": "GRB090227B",
-  "alias": [],
+  "alias": [
+    "GRB090227B",
+    "GRB 090227B",
+    "GRB090227772",
+    "GRB 090227.772",
+    "bn090227772"
+  ],
   "ra": 11.8,
   "dec": 32.2,
   "T0": "2009-02-27T18:31:01.410000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 8921 ('At 18:31:01.41 UT on 27 February 2009, the Fermi Gamma-Ray Burst Monitor triggered and located the short and bright GRB 090227B (trigger 257452263 / 090227772)')；HEASARC FERMIGBRST bn090227772 trigger_time=MJD 54889.771544061=2009-02-27T18:31:01.407Z",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,11 +18,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "catalog:minaev2020",
-  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "pos_error": 6480,
+  "pos_ref": "2FLGC (Ajello+2019) / HEASARC fermilgrb name GRB090227772：ra=00h47m12.0s(11.8°), dec=+32d12m00s(32.2°), error_radius=1.8°=6480″（对无 LAT 探测的暴该目录列 GBM 定位，与 FERMIGBRST ra=11.8/dec=32.2/1.8° 一致）；GCN 8921 地面定位 RA=11.81, DEC=+32.17（1.77°，统计 1σ）舍入后即 11.8/32.2；IPN 误差盒（GCN 8925，中心 13.499/+28.401，1.531 平方度）与 GBM 定位相容",
+  "redshift_type": "est",
+  "redshift_ref": "Muccino+2013 (arXiv:1205.6600) 原文 'We deduce a theoretical cosmological redshift z=1.61±0.14'（理论反推，非实测）；Minaev+2020 Table A1 (recno 146, f_z='PH') 转录",
+  "comment": "审核链（fsy 2026-10-05）：[原值] T0=2009-02-27T18:31:01.410000Z、T0_ref=null、pos_error=null、pos_ref=null、redshift_type=null、redshift_ref='catalog:minaev2020'、alias=[]。[T0 复核] GCN 8921 原文 'At 18:31:01.41 UT on 27 February 2009, the Fermi Gamma-Ray Burst Monitor triggered and located the short and bright GRB 090227B (trigger 257452263 / 090227772)' 与库中 T0 一致；HEASARC FERMIGBRST bn090227772 trigger_time=MJD 54889.771544061=2009-02-27T18:31:01.407Z 互证（3 ms 为 GCN 舍入）。脚本复核：trigger_met=257452263.407 若按 2001-01-01 纪元直接换算得 18:31:03.407，恰漏扣 2006-01-01 与 2009-01-01 两个闰秒——本源 bot 未犯此错（T0 取自 UTC 而非 MET 直算），故依《数据审核提示词》§3.2 不改 T0、不记 T0_offset；2FLGC 的 time 列 18:31:01.004 与 GBM 触发时刻差 0.403 s（该目录自列口径），Konus-Wind 独立触发 T0=18:30:59.079（GCN 8926）系不同仪器各自触发时刻，均不作 T0 依据。[问题与修正] ①pos_error/pos_ref 缺失：坐标 11.8/32.2 精确复现 2FLGC（fermilgrb name GRB090227772）ra=00h47m12.0s、dec=+32d12m00s、error_radius=1.8°，填 pos_error=6480″（=1.8°）、pos_ref=2FLGC；GCN 8921 地面定位 RA=11.81、DEC=+32.17（1.77°）舍入后即 11.8/32.2；IPN 误差盒（GCN 8925，Konus-WAM×Konus-SPI-ACS 环交截，中心 13.499/+28.401，1.531 平方度）与 GBM 定位相容。②redshift=1.61 非实测：Muccino+2013 原文 'We deduce a theoretical cosmological redshift z=1.61±0.14'（由 Ep,i–Eiso 关系/火球壳模型理论反推），无任何光谱或测光红移测量；Minaev+2020 Table A1（recno 146）仅转录该值并标 f_z='PH'（VizieR ReadMe：'Flag on z indicating the redshift is photometric'，实为转引误标）。数值保留，redshift_type 填 'est'（估计值），redshift_ref 改指原始出处 Muccino+2013。[身份] Fermi/GBM 触发 090227772（trigger 257452263），短而亮暴：T90=0.304s、T50=0.096s（50–300 keV），注量 1.11e-5 erg/cm²（10–1000 keV）；INTEGRAL SPI-ACS 独立探测（GCN 8921/8925），Konus-Wind 触发并参与 IPN 三角测量（GCN 8925/8926），Suzaku-WAM 参与 IPN；与同日 GRB090227A（bn090227310，trigger 257412359，07:25:57.00 UT，长暴，另一条目）为不同事件，无重复条目；fermilgrb.gcn_name='GRB090227B' 完整无截断伪名；Minaev+2020 分类 Type I（EH=5.35、EHD=7.64），sub_tag 'sgrb' 维持。[测光] 当日 GCN 仅 5 则（8917/8921/8925/8926/8935）均为伽马射线通报，无光学/NIR/射电逐点测光或上限发表；Muccino+2013 与 Oliveira+2014 为纯理论文章；无 Swift 触发/后随；HEASARC GRBCAT 覆盖止于 2005 年（max MJD 53438）无本源行。故不建 lc 文件；GBM/LLE 伽马光变不入库（伽马/X 射线不在测光范围）。",
   "sub_tag": [
     "sgrb"
   ],
@@ -225,6 +231,13 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "t0_note": "库中 T0=2009-02-27T18:31:01.410000Z 与 GCN 8921 '18:31:01.41 UT' 及 FERMIGBRST MJD 54889.771544061=2009-02-27T18:31:01.407Z 一致（3 ms 为 GCN 舍入），T0 正确；trigger_met=257452263.407 若按 2001-01-01 纪元直接换算得 18:31:03.407（漏扣 2006-01-01 与 2009-01-01 两个闰秒），本源 bot 未犯此错，无需 T0_offset。",
+    "t0_basis": "GCN 8921 / fermigbrst_trigger_time",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
   "articles": [
