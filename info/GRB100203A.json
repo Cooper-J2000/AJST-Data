@@ -1,28 +1,47 @@
 {
   "transient_id": "GRB100203A",
-  "alias": [],
+  "alias": [
+    "Swift 411011",
+    "BAT 411011"
+  ],
   "ra": 96.225,
   "dec": 4.793,
   "T0": "2010-02-03T18:31:07Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10360",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 120.0,
   "pos_ref": "GCN 10360",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy 2026-10-05）：身份——Swift/BAT 地面分析触发（trigger 411011，'detected onboard at a significance too low to trigger an automated response'），GCN 当日列表（gcn.gsfc.nasa.gov/other/100203.gcn3）仅 10360、10368 两篇且均为本源，同日无其他事件、无重复条目与撤回候选；HEASARC swiftgrb（target_id=411011）、GSFC BAT 目录（Trig_ID 411011）、swiftgrbba、UKSSDC TDRSS、MPE 表互证。T0——bot 原值 2010-02-03T18:31:07Z（t0_basis=meta_trigger）与 GCN 10360 原文 'At 18:31:07 UTC on Feb-03-2010, BAT triggered on GRB 100203A.' 一致，HEASARC swiftgrb trigger_time=2010-02-03T18:31:07 及 UKSSDC TDRSS（TRIGTIME 286914667 s / TRIG_UT 2010-034-18:31:07）相合，予以确认，T0_ref=GCN 10360。跳秒排查：本源非 Fermi 事件，Swift 侧无 Fermi 式 MET 漏扣闰秒问题；仓内全目录对照显示 TDRSS TRIGTIME 直换与触发 UTC 一致（仓内 578 个 rate 类事件中 568 个 |Δ|≤1.5 s，离群者均为多触发/特殊事件，含 GRB090423）；GSFC BAT 目录对 ground detected 暴另记 Trig_time_UTC=2010-02-03T18:31:04.903，与本 T0 差 −2.097 s，但同为 ground detected 的 GRB101201A 差号相反（+2.378 s），证明该差值系地面分析暴的触发时刻口径差异（地面检测信号时刻 vs 星上触发候选时刻）而非跳秒，故不记 T0_offset（如维护者倾向目录历元可另议 T0_offset=-2.097）；TDRSS TRIGTIME 为整秒，亚秒精度缺失 ≤1 s，相对 10 s 尺度光变结构无影响。Trigger_Instrument——bot 原值 'Swift/XRT' 有误：XRT 随访 3.85 ks 未探测（GCN 10368 'No source has been detected'），触发票为 BAT，已改 'Swift/BAT'。坐标——ra/dec=96.225/+4.793 与 GCN 10360 原文逐字一致（换算 6h24m54s 吻合，GCN 印刷 47'33\" 为其自身舍入），pos_error=120″=2 arcmin (90% containment) 正确，pos_ref=GCN 10360 正确；BAT 目录精化位置 96.2446/+4.788504 与之角距 72″（脚本复核），在 2' 内自洽；银坐标复算 (l,b)=(205.63,-3.69) 复现 GCN '205.629, -3.690'。tag/sub_tag——补 tag=grb；GCN 10360 'appears to be a faint, soft, long GRB, we cannot completely discount the possibility of it being a Galactic transient'，据此加 sub_tag=lgrb 并保留银河系暂现源可能性的告诫。红移无任何测定，留空。alias——补 HEASARC swiftgrb 目录名 'Swift 411011' 与 GSFC BAT 目录名 'BAT 411011'。光学/射电——UVOT uvm2 3σ 上限 >21.27 mag（窗口 92604–103268 s、总曝光 3915 s、未做银消光改正 E(B-V)=0.55）已入 lc；XRT 3σ 计数率上限 6e-3 ct/s 属 X 射线，按规不入 lc；无任何射电观测报告，无射电行。文献：GSFC 在线 BAT 目录（第三版，Lien+2016, arXiv:1606.01956）登记入 articles。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "库中 T0=2010-02-03T18:31:07Z 为 Swift/BAT 地面分析触发（trigger 411011）的星上触发时刻：GCN 10360 原文、HEASARC swiftgrb trigger_time、UKSSDC TDRSS（TRIGTIME 286914667 s / TRIG_UT 2010-034-18:31:07）三者一致。GSFC BAT 目录 Trig_time_UTC=2010-02-03T18:31:04.903 与之差 -2.097 s，经全目录对照确认为 ground detected 暴的触发时刻口径差异（对照 GRB101201A 为 +2.378 s，568/578 个 rate 类事件 |Δ|≤1.5 s（离群为多触发/特殊事件）），非跳秒问题，故 T0 维持不变、不记 T0_offset。TDRSS TRIGTIME 为整秒，亚秒精度缺失 ≤1 s。",
+    "t0_basis": "GCN 10360（Swift/BAT ground analysis, trigger 411011）；HEASARC swiftgrb trigger_time=2010-02-03T18:31:07；UKSSDC TDRSS TRIGTIME=286914667 / TRIG_UT=2010-034-18:31:07",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Lien+2016",
+      "url": "https://arxiv.org/abs/1606.01956",
+      "title": "The Third Swift Burst Alert Telescope Gamma-Ray Burst Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
