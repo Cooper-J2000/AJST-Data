@@ -1,27 +1,34 @@
 {
   "transient_id": "GRB050817",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2005-08-18T06:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "HETE J1900.1-2455"
+  ],
+  "ra": 285.028,
+  "dec": -24.93,
+  "T0": "2005-08-17T12:19:58Z",
+  "T0_ref": "GCN 3819",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_ref": "GCN 3819",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift-BAT 触发 150823，GCN 3819 初报为 GRB050817（T0=12:19:58 UT，单峰约 4 s）；GCN 3824 依软谱（黑体 kT~3 keV、>25 keV 无显著辐射）及地面精定位 (285.021,-24.907)（未附误差半径）距吸积毫秒脉冲星 HETE J1900.1-2455 仅 1.1 角分，判定为该源的热核（I 型）X 射线暴并正式撤回 GRB 命名（\"we retract the GRB designation for Swift Trigger 150823\"）。tag 留空：tags.json 词表无 X 射线暴类目，维护者如增设类目可回填。原 bot t0=2005-08-18T06:00Z 无触发依据，疑为误取 GCN 3819 所述 XRT/UVOT 可观测开始时刻，已废弃。定位取 GCN 3819 在机值 285.028/-24.930（2′=120″，90% containment）。光学跟踪均未发现新源：Ellinbank 0.32m 单帧 R(Cousins) 极限 16（GCN 3820，见 lc/GRB050817.csv）；Mt John 0.6m MOA-red 极限 18.5（GCN 3823，filters.json 无该自定义滤光片键故不入 lc）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 Swift-BAT 触发时刻（trigger=150823，2005-08-17 12:19:58 UT，GCN 3819，GCN 3824 复述一致）；原 bot 值 2005-08-18T06:00:00Z 无触发依据，系误取 XRT/UVOT 可观测窗口时刻，已废弃",
+    "t0_basis": "GCN 3819",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
