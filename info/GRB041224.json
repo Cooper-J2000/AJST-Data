@@ -3,25 +3,34 @@
   "alias": [],
   "ra": 56.2,
   "dec": -6.656,
-  "T0": "2004-12-25T01:06:00Z",
-  "T0_ref": null,
+  "T0": "2004-12-24T20:20:57Z",
+  "T0_ref": "GCN 2908",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 420.0,
   "pos_ref": "GCN 2908",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 软暴。T0 更正为 BAT 触发时刻 2004-12-24T20:20:57Z（GCN 2908：\"At 20:20:57 UT, the Swift Burst Alert Telescope (BAT) triggered\"；Swift BAT 目录 trigger 00100703 给出 20:20:57.698840 UTC）；原 bot T0=2004-12-25T01:06:00Z 系误取 GCN 2911 中 REM 近红外观测开始时刻（触发后约 5 小时），且与源名日期（12-24）矛盾。ra/dec=56.2/-6.656 与 GCN 2908 BAT 地面定位逐字吻合（7′=420″，3σ），保留；BAT 目录精化位置 56.19341/-6.66233（90% 半径约 119″）差异远小于误差，不改库值。T90=177.6±19.3 s（Swift BAT 目录），补 sub_tag=lgrb。多峰软暴，总持续约 50 s（15-350 keV，GCN 2908）。无红移测定。光学：REM J/H/K 与 2MASS 比对无新源但无定量极限（GCN 2911）；ROTSE-III 单帧极限约 17.2、首小时叠加 18.5（USNO A2.0 校准，GCN 2912）；BOOTES-2 爆后 3s/63s 两帧未过滤极限 8.5/8.5（全月照，GCN 2961），见 lc/GRB041224.csv。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核更正为 BAT 触发时刻（GCN 2908 原文 20:20:57 UT；Swift BAT 目录 20:20:57.698840 UTC，trigger 00100703）。审核前 t0=2004-12-25T01:06:00Z 为误取 GCN 2911 中 REM 观测开始时刻（触发后约 5 小时）",
+    "t0_basis": "GCN 2908",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
