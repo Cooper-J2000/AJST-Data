@@ -51,6 +51,14 @@ INFO_NULLABLE_STR = ['T0_ref', 'T0_offset_ref', 'Trigger_Instrument',
                      'redshift_type', 'redshift_ref', 'pos_ref', 'comment']
 INFO_NULLABLE_NUM = ['ra', 'dec', 'T0_offset', 'redshift', 'pos_error']
 
+# 别名伪形（导入管线产物：「日期+触发序列」拼接 / 10 字符截断；见《数据审核提示词》§3.10）
+ALIAS_JUNK_RE = re.compile(r'^GRB ?\d{9}$|^GRB ?\d{5,6}\.\d+$')
+# 受控取值（见 SCHEMA.md §2；2026-10-12 新增，按警告级检查）
+REDSHIFT_TYPES = {'spec', 'phot', 'upperlimit', 'spec-host', 'value', 'est'}
+POS_ERROR_CONF = {'90', '68', '3sigma', '1sigma'}
+# 别名伪形普查：逐项收集、最后汇总成一条警告（避免逐源刷屏）
+alias_junk = []
+
 errors = []
 warnings = []
 
@@ -117,6 +125,24 @@ def check_info(path):
             for i, v in enumerate(d[key]):
                 if not isinstance(v, str):
                     err(f'{name}: {key}[{i}] 应为字符串，实为 {v!r}')
+
+    # 别名格式（警告级，见《数据审核提示词》§3.10）
+    al = d.get('alias')
+    if isinstance(al, list):
+        for v in al:
+            if isinstance(v, str):
+                if not v.strip():
+                    warn(f'{name}: alias 含空字符串（只收录有出处的名字）')
+                elif ALIAS_JUNK_RE.match(v):
+                    alias_junk.append(f'{name}:{v}')
+
+    # 受控取值（警告级，见 SCHEMA.md §2）
+    rt = d.get('redshift_type')
+    if rt is not None and rt not in REDSHIFT_TYPES:
+        warn(f'{name}: redshift_type={rt!r} 不在受控取值 {sorted(REDSHIFT_TYPES)} 内')
+    pc = d.get('pos_error_confidence')
+    if pc is not None and pc not in POS_ERROR_CONF:
+        warn(f'{name}: pos_error_confidence={pc!r} 不在受控取值 {sorted(POS_ERROR_CONF)} 内')
 
     if 'pos_error_unit' in d and d['pos_error_unit'] is not None \
             and not isinstance(d['pos_error_unit'], str):
@@ -248,6 +274,10 @@ def main():
                 err('tags.json: 应为 [{name, kind, ...}] 数组')
         except Exception as e:
             err(f'tags.json: 解析失败（{e}）')
+
+    if alias_junk:
+        warn(f'alias 伪形普查：{len(alias_junk)} 项（例：{", ".join(alias_junk[:3])} …）——'
+             f'「日期+触发序列」拼接形/截断形不应作为别名，见《数据审核提示词》§3.10 与 Issue #69')
 
     if not quiet:
         for m in errors:

@@ -35,7 +35,7 @@
 | 键 | 类型 | 空值 | 说明 |
 |---|---|---|---|
 | `transient_id` | string | 必填 | 源 id，与文件名一致；只允许字母数字 |
-| `alias` | string[] | `[]` | 别名列表 |
+| `alias` | string[] | `[]` | 别名列表；只收录**真实有出处**的名字（SIMBAD/TNS/GCN 用名、官方目录名），禁止空串与「日期+触发序列」拼接伪形（详见《数据审核提示词》§3.10） |
 | `ra` | number\|null | `null` | 赤经，十进制度，[0, 360]，J2000 |
 | `dec` | number\|null | `null` | 赤纬，十进制度，[-90, 90]，J2000 |
 | `T0` | string\|null | `null` | 参考时刻（触发/发现/峰值等），ISO8601 UTC（如 `2023-01-22T09:21:36Z`） |
@@ -44,9 +44,10 @@
 | `T0_offset_ref` | string\|null | `null` | T0 偏移量的引用 |
 | `Trigger_Instrument` | string\|null | `null` | 触发仪器（如 `Swift/BAT`、`IPN`） |
 | `redshift` | number\|null | `null` | 红移 |
-| `redshift_type` | string\|null | `null` | 红移类型（如 `spec`/`phot`） |
+| `redshift_type` | string\|null | `null` | 红移类型，受控取值见下 |
 | `redshift_ref` | string\|null | `null` | 红移引用 |
 | `pos_error` | number\|null | `null` | 定位误差半径 |
+| `pos_error_confidence` | string\|null | `null` | 定位误差的置信水平，受控取值：`90`（90% 包含半径）、`68`、`3sigma`、`1sigma`。**可选键**（2026-10-12 新增）：来源明确给出则填，未给出留空（或省略）并在 `comment` 写「来源未标注置信水平」。惯例：高能卫星探测器（Swift/Fermi/IPN）通常 90%，光学设备通常 1σ |
 | `pos_error_unit` | string | 默认 `"arcsec"` | 定位误差单位 |
 | `pos_ref` | string\|null | `null` | 定位引用 |
 | `comment` | string\|null | `null` | 备注 |
@@ -55,6 +56,17 @@
 | `extra_data` | object\|null | `null` | 自由扩展字段（入库来源、抓取标记等），不做 schema 约束 |
 | `articles` | object[] | `[]` | 研究文章，见 §2.1 |
 | `host_galaxy` | object\|null | `null` | 宿主星系，见 §2.2 |
+
+**`redshift_type` 受控取值**（2026-10-12 新增；校验器按**警告级**检查）：
+
+| 取值 | 含义 |
+|---|---|
+| `spec` | 光谱红移 |
+| `phot` | 测光红移（**测光红移统一写 `phot`**；历史写法 `phot_z` 已废止并已归并） |
+| `upperlimit` | 红移上限 |
+| `spec-host` | 由宿主星系光谱得到的红移 |
+| `value` | 早期导入只记了数值、未区分类型（历史存量，审核时逐步改判） |
+| `est` | 估计值 / 理论推导值（**非实测**；必须在 `comment` 注明推导来源与性质。2026-10-12 维护者在评估是否保留该取值） |
 
 ### 2.1 `articles[]` 元素
 
@@ -94,7 +106,7 @@
 | `flux_density` | float | 是 | 原始流量密度值（或星等值） |
 | `flux_density_err` | float | 否 | 原始误差（1σ） |
 | `flux_density_unit` | str | 是 | `mJy`、`uJy`、`cgs`(erg/cm²/s/Hz)、`magnitude` |
-| `mag_system` | str | 条件必填 | `AB`/`Vega`；`flux_density_unit=magnitude` 时必填 |
+| `mag_system` | str | 条件必填 | `AB`/`Vega`；`flux_density_unit=magnitude` 时必填；**原文未声明星等系统时留空**并在 `comment` 注明（惯例可推定时须写明推定依据）。2026-10-12 修订 |
 | `Gext_corr` | str | 否 | `y`/`n`，是否已做银河系消光改正，缺省 `n` |
 | `upperlimit` | str | 否 | `y`/`n`，是否上限（非探测），缺省 `n` |
 | `Gext_Alambda` | float | 否 | 银河系消光量，由后端消光程序给出 |
@@ -144,5 +156,9 @@ python3 tools/validate.py --strict   # 值域警告也算失败
 
 - `lc` 的 `band` 逐行检查是否落在 §3.1 的两条车道内、是否为空：越界算**错误**
   （`filters.json` 缺失/损坏时只报根因一次并跳过车道一判定，不逐行报错）。
+- **警告级检查**（2026-10-12 新增，`--strict` 下算失败）：
+  - `info.alias` 含空字符串、或含「日期+触发序列」拼接形/10 字符截断形（别名伪形；逐项收集后**汇总成一条警告**，存量见 Issue #69）；
+  - `info.redshift_type` 不在 §2 的受控取值集内；
+  - `info.pos_error_confidence` 不在受控取值 `{90, 68, 3sigma, 1sigma}` 内。
 - GitHub Actions 会对每个 push / PR 自动运行同一脚本（`.github/workflows/validate.yml`），
   跑的是非 `--strict` 模式 —— 因此 band 越界会直接让 PR 变红。
