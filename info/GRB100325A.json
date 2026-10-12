@@ -1,24 +1,24 @@
 {
   "transient_id": "GRB100325A",
   "alias": [
-    "GRB 100325275"
+    "GRB 100325.275"
   ],
-  "ra": 330.260009765625,
-  "dec": -26.989999771118164,
+  "ra": 330.26,
+  "dec": -26.99,
   "T0": "2010-03-25T06:36:10.030000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "Fermi GBM trigger 291191770（MET 291191770.03，2FLGC trigger_met）",
+  "T0_offset": -2.0,
+  "T0_offset_ref": "GCN 10546；FERMIGBRST trigger_time MJD 55280.275092861",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3132,
+  "pos_ref": "Fermi LAT 2FLGC（fermilgrb error_radius 0.87 度）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "Fermi GBM 触发暴（trigger 291191770/100325275），由 Fermi LAT 2FLGC 光变数据导入新建（Ajello+2019, ApJ 878, 52, DOI 10.3847/1538-4357/ab1d4e）。触发仪器 Fermi/GBM 正确：GCN 10546 原文 \"the Fermi Gamma-Ray Burst Monitor triggered and located GRB 100325A (trigger 291191770/100325275)\"，LAT 为同一暴的后续弱探测（~>4σ，4 光子 >100 MeV，最高光子能量略高于 800 MeV，GCN 10548），bot 未误归属。T0：bot 由 2FLGC trigger_met=291191770.03（MET 纪元 2001-01-01T00:00:00 UTC）直换得 2010-03-25T06:36:10.030，漏扣 2006-01-01 与 2009-01-01 两次闰秒，偏晚 2 s；三路互洽：独立换算 MET−2 s 得 06:36:08.03，GCN 10546 与 10548 原文均记 \"At 06:36:08.02 UT on 25 March 2010\"，FERMIGBRST 目录 trigger_time（MJD 55280.275092861）换算为 06:36:08.023（fermilgrb trigger_time 记 06:36:08.001，0.01–0.03 s 为目录秒内舍入）。T0 维持，记 T0_offset=-2.0 s。坐标：bot 原值 330.260009765625/-26.989999771118164 存 float32 噪声，2FLGC（fermilgrb）原值 RA=22h01m02.4s=330.26、Dec=-26°59'24\"=-26.99，清为目录原值；error_radius 0.87 为度（fermilgrb 表列单位为度），×3600=3132 角秒入 pos_error。GBM 通告初始地面定位 332.3/-28.6（1.5 度 1σ 统计误差，另加 2–3 度系统误差，GCN 10546）与最终 GBM 目录定位 330.24/-26.47（0.9 度，external FERMIGBRST 快照）一致，后者与 GCN 10548 的 LAT 地面定位（RA,Dec=330.24,-26.47，90% 0.9 度）相同；MPE Greiner 表本暴行 22h00m58s -26°28'（54′=0.9 度，Instrument=Fermi）与之互洽。alias：bot 的 \"GRB 100325275\" 为空格无点拼接伪形，规范化为规范形 \"GRB 100325.275\"；gcn_name \"GRB100325A\" 恰 10 字符、非截断伪名（与 transient_id 一致）；bn100325275 为 FERMIGBRST 规范触发名。红移 null 正确（无红移/宿主星系证认发表）。\n另：本源相关通告共 2 条（GCN 10546 GBM 探测、GCN 10548 LAT 探测），归档页全部收录且均已逐条核阅；两条均为伽马段内容，无光学/射电测光或上限，故不新建 lc/GRB100325A.csv；亦无 Swift 等其他卫星跟踪定位。与邻近暴 GRB100319A（Swift 触发，SGR 1833-0832）、GRB100316A/B/C/D、GRB100324A 等无混淆：本暴触发时刻、坐标与 GBM trigger 编号独立自洽，库中不存在 \"GRB100325\"（不带 A）源。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -146,8 +146,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
