@@ -38,6 +38,30 @@ BAND_FREQ_RE = re.compile(
     r'^\s*(\d+(?:\.\d+)?)\s*(Hz|kHz|MHz|GHz|THz|eV|keV|MeV|GeV)\s*$',
     re.IGNORECASE)
 BAND_COL = LC_HEADER.index('band')
+TIME_COL = LC_HEADER.index('time')
+MJD_COL = LC_HEADER.index('mjd')
+TIME_UNIT_COL = LC_HEADER.index('time_unit')
+# time_unit → 秒（SCHEMA.md §3）
+TIME_UNIT_FACTOR = {'s': 1.0, 'sec': 1.0, 'm': 60.0, 'min': 60.0,
+                    'h': 3600.0, 'hour': 3600.0, 'd': 86400.0, 'day': 86400.0}
+MJD_OFFSET = 40587.0          # datetime.timestamp()/86400 → MJD
+MJD_CONSIST_TOL_S = 1.0       # 与三层验收 L3 不变量同一容差
+
+
+def t0_to_mjd(iso):
+    """ISO8601 UTC（如 2016-01-19T12:15:00Z）→ MJD；非法/空值返回 None"""
+    if not isinstance(iso, str) or not iso:
+        return None
+    s = iso.strip().replace('Z', '+00:00')
+    try:
+        dt = datetime.fromisoformat(s)
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        from datetime import timezone
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.timestamp() / 86400.0 + MJD_OFFSET
+
 
 # info JSON 规范字段集（v2.30 起键恒在，空值显式为 null）
 INFO_REQUIRED = {
@@ -172,8 +196,9 @@ def check_info(path):
                 err(f'{name}: host_galaxy.derived 应为对象')
 
 
-def check_lc(path, band_keys):
+def check_lc(path, band_keys, t0_by_id=None):
     name = os.path.basename(path)
+    mjd0 = t0_to_mjd((t0_by_id or {}).get(name[:-4]))
     try:
         with open(path, newline='', encoding='utf-8') as f:
             rows = list(csv.reader(f))
@@ -187,15 +212,31 @@ def check_lc(path, band_keys):
         err(f'{name}: 表头与 24 列规范不一致（见 SCHEMA.md）')
         return
     n_bad_width = n_bad_time = n_empty_band = n_bad_band = 0
+    n_mjd_drift = 0
+    mjd_drift_ex = []
     bad_band_ex = []
     for i, row in enumerate(rows[1:], start=2):
         if len(row) != len(LC_HEADER):
             n_bad_width += 1
             continue
         try:
-            float(row[0])
+            float(row[TIME_COL])
         except ValueError:
             n_bad_time += 1
+        # mjd ↔ T0+time 自洽（《数据审核提示词》§3.2 / SCHEMA.md §3；警告级、按文件聚合）
+        if mjd0 is not None and row[MJD_COL].strip() and row[TIME_COL].strip():
+            try:
+                f_t = TIME_UNIT_FACTOR.get(row[TIME_UNIT_COL].strip(), 1.0)
+                drift = abs(float(row[TIME_COL]) * f_t
+                            - (float(row[MJD_COL]) - mjd0) * 86400.0)
+                if drift > MJD_CONSIST_TOL_S:
+                    n_mjd_drift += 1
+                    if len(mjd_drift_ex) < 3:
+                        mjd_drift_ex.append(f'行{i}(mjd={row[MJD_COL].strip()}, '
+                                            f'time={row[TIME_COL].strip()}'
+                                            f'{row[TIME_UNIT_COL].strip()}, 差 {drift:.1f}s)')
+            except ValueError:
+                pass
         for col in ('Gext_corr', 'upperlimit', 'discard'):
             v = row[LC_HEADER.index(col)]
             if v not in ('y', 'n', ''):
@@ -217,6 +258,10 @@ def check_lc(path, band_keys):
     if n_bad_band:
         err(f'{name}: {n_bad_band} 行 band 不在两条车道内（应为 filters.json 的键，或频率/能量串'
             f'如 4.86GHz、10keV；见 SCHEMA.md §3.1）｜示例：' + '、'.join(bad_band_ex))
+    if n_mjd_drift:
+        warn(f'{name}: {n_mjd_drift} 行 mjd 与 T0+time 不自洽（差 > {MJD_CONSIST_TOL_S:g} s）'
+             f'—— 由 T0+time 换算的 mjd 须保留 7 位小数（4–5 位小数的舍入就会超过 1 s，'
+             f'见 SCHEMA.md §3 / 《数据审核提示词》§3.2）｜示例：' + '；'.join(mjd_drift_ex))
 
 
 def main():
@@ -252,10 +297,16 @@ def main():
     lc_files = sorted(f for f in os.listdir(lc_dir) if f.endswith('.csv')) \
         if os.path.isdir(lc_dir) else []
 
+    t0_by_id = {}
     for f in info_files:
-        check_info(os.path.join(info_dir, f))
+        p = os.path.join(info_dir, f)
+        check_info(p)
+        try:
+            t0_by_id[os.path.splitext(f)[0]] = json.load(open(p, encoding='utf-8')).get('T0')
+        except Exception:
+            pass          # 解析失败已由 check_info 报错
     for f in lc_files:
-        check_lc(os.path.join(lc_dir, f), band_keys)
+        check_lc(os.path.join(lc_dir, f), band_keys, t0_by_id)
 
     # 互引：lc 必须有同名 info（反向不要求 —— 纯信息源合法）
     info_ids = {os.path.splitext(f)[0] for f in info_files}

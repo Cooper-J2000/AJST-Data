@@ -8,7 +8,8 @@
 > `info` keys are ALWAYS present — missing values are explicit `null`, never omitted
 > keys. Lists (`alias`/`tag`/`sub_tag`/`articles`) are always arrays (possibly empty).
 > Times: `T0` is ISO8601 UTC; lc `time` is seconds relative to T0; `mjd` is the
-> authoritative absolute time. Bands: every `lc` `band` is either a `filters.json`
+> authoritative absolute time (**由 `T0 + time` 换算时保留 7 位小数**，避免 4–5 位小数的
+> 舍入破坏与 `time` 的自洽；直接来自来源的 `mjd` 按来源精度写)。Bands: every `lc` `band` is either a `filters.json`
 > key (optical/UV/IR) or a numeric+unit string — `4.86GHz` (radio frequency) /
 > `10keV` (X-ray, monochromatic Fν at 10 keV); see §3.1. Run `tools/validate.py`
 > before submitting.
@@ -101,7 +102,7 @@
 | `time` | float | 是 | 观测中心时间，相对 T0 |
 | `time_err` | float | 否 | 时间误差（如半曝光时间） |
 | `time_unit` | str | 是 | `s`/`sec`、`m`/`min`、`h`/`hour`、`d`/`day` |
-| `mjd` | float | 否 | 权威绝对时间（T0 + time 换算；T0 为空时为空） |
+| `mjd` | float | 否 | 权威绝对时间（T0 + time 换算；T0 为空时为空）；**换算时计算并保留 7 位小数**（见 §1 顶部说明）；若直接来自来源则按来源精度写 |
 | `band` | str | 是 | 波段标识，见 §3.1（`filters.json` 键，或频率 / 能量串） |
 | `flux_density` | float | 是 | 原始流量密度值（或星等值） |
 | `flux_density_err` | float | 否 | 原始误差（1σ） |
@@ -159,6 +160,9 @@ python3 tools/validate.py --strict   # 值域警告也算失败
 - **警告级检查**（2026-10-12 新增，`--strict` 下算失败）：
   - `info.alias` 含空字符串、或含「日期+触发序列」拼接形/10 字符截断形（别名伪形；逐项收集后**汇总成一条警告**，存量见 Issue #69）；
   - `info.redshift_type` 不在 §2 的受控取值集内；
-  - `info.pos_error_confidence` 不在受控取值 `{90, 68, 3sigma, 1sigma}` 内。
+  - `info.pos_error_confidence` 不在受控取值 `{90, 68, 3sigma, 1sigma}` 内；
+  - `lc` 的 `mjd` 与 `T0 + time` 不自洽（差 > 1 s；逐文件**汇总成一条警告**）—— 通常意味着换算出的
+    `mjd` 只写了 4–5 位小数（舍入即达秒级），见 §3 `mjd` 的 7 位小数要求。该容差与三层验收的
+    L3 不变量（`test_time_agrees_with_mjd_and_t0`）一致，把问题拦在 PR 阶段而不是入库之后。
 - GitHub Actions 会对每个 push / PR 自动运行同一脚本（`.github/workflows/validate.yml`），
   跑的是非 `--strict` 模式 —— 因此 band 越界会直接让 PR 变红。
