@@ -4,24 +4,33 @@
   "ra": 289.25,
   "dec": -17.12,
   "T0": "2010-09-17T05:03:25Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 11288",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 126.0,
   "pos_ref": "GCN 11289",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发 #434360（GCN 11288：trigger 434360 at 05:03:25 UT）。T0=2010-09-17T05:03:25Z 为 TDRSS TRIGTIME 整秒口径，维持 bot 值不变；Swift BAT 目录（external/swift_bat 快照）触发时刻 2010-09-17T05:03:25.783360Z，亚秒截断差异按先例（GRB100319A）不记 offset。坐标：GCN 11289 BAT 精化定位 RA/Dec = 289.250/-17.120 deg（J2000 19h17m00.1s, -17d07'12.1\"），90% 包含误差 2.1 角分 = 126 角秒，与 ra/dec/pos_error 一致。T90 = 66±22 s（15-350 keV，含系统误差，GCN 11289），据此补 sub_tag lgrb；fluence 8.6±1.2E-7 erg/cm2（15-150 keV）。无 XRT/UVOT 数据：GCN 11288 明确因月亮约束未 slew（no XRT or UVOT data）。光学：TAROT La Silla 25cm 机器人望远镜于触发后 261 s 开始观测（通告后 15 s），叠加帧窗口 t0+261–531 s 未在 BAT 精化定位处发现 OT，极限 R > 14.1（USNO-B1 近邻星定标，未做银消改正；银消 R 约 0.3 mag，Schlegel+1998；GCN 11293），见 lc/GRB100917A.csv 单行上限。红移：本次打开的全部三条相关 GCN（11288/11289/11293）均未报告红移，redshift 保持空。身份经触发号 #434360 与触发时刻、坐标三重自洽确认，库中不存在无后缀的 GRB100917 条目，不涉及同日其他暴（100906A 等）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核确认维持不变：GCN 11288 记触发 #434360 于 05:03:25 UT（TDRSS 整秒口径）；Swift BAT 目录值 05:03:25.783360Z 的亚秒差异按先例不记 offset",
+    "t0_basis": "GCN 11288",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
