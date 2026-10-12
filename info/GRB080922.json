@@ -4,28 +4,33 @@
   "ra": 270.838,
   "dec": -22.509,
   "T0": "2008-09-22T14:54:00Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "T0_ref": "GCN 8282（Swift TOO 观测起始 2008-09-22 14:54 UT；bot 误作触发时刻，按规则保留为库中 T0，真实触发见 T0_offset）",
+  "T0_offset": -13824.0,
+  "T0_offset_ref": "GCN 8281：INTEGRAL/IBAS（IBIS/ISGRI）触发 2008-09-22T11:03:36 UT；真实触发比库中 T0 提前 3h50m24s=13824 s，提前为负",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_ref": "GCN 8281（IBAS 定位，误差 2 arcmin，90% c.l.）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（fsy，2026-10-05）：① 原值：T0=2008-09-22T14:54:00Z、Trigger_Instrument=Swift/UVOT、pos_error/pos_ref 空。② 问题：T0 实为 GCN 8282 的 Swift TOO 观测起始时刻，非触发时刻；触发仪器误标 Swift/UVOT；定位误差缺失。③ 证据：GCN 8281 原文 'detected by IBAS in IBIS/ISGRI data at 11:03:36 UT'，RA 270.838、Dec -22.509、误差 2′(90% c.l.)；GCN 8282 原文 'At 2008-09-22 14:54UT Swift performed a TOO observation'；HEASARC swiftgrb 目录 trigger_time 2008-09-22T11:03:36 与坐标互证；当日无其他事件（GCN 列表仅 4 通告同源，fermigbrst 当日 0 触发）。④ 处置：按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-13824 s（提前为负）；Trigger_Instrument 改 INTEGRAL/IBIS（UVOT 不触发 GRB，bot 显然把 UVOT 上限通告 GCN 8283 当成了触发来源）；pos_error=120″、pos_ref=GCN 8281；ra/dec 与 GCN 8281 一致不动。无余辉/无实测红移（XRT、UVOT 均只给上限），redshift 保持 null。时长约 60 s 长暴（GCN 8281），sub_tag=lgrb 维持。T0_offset 为纯元数据，未改写光变时间轴。新增 lc：GCN 8283 UVOT coadd 3σ 上限 6 行（uvot-v/b/u/uvw1/uvm2/uvw2）+ GCN 8289 宫崎大学 30cm 无滤光片上限 2 行；GCN 8282 的 XRT 0.3-10 keV 上限（2.55E-13 erg/cm2/s）属 X 射线数据，按规则不入库。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "库中 T0 保留为 bot 采样的 Swift TOO 观测起始（GCN 8282，14:54 UT），非真实触发；真实触发为 INTEGRAL/IBAS 2008-09-22T11:03:36Z（GCN 8281），偏移见 T0_offset=-13824 s",
+    "t0_basis": "audit_meta_trigger_offset（GCN 8281）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
