@@ -1,25 +1,31 @@
 {
   "transient_id": "GRB090227A",
   "alias": [
-    "GRB 090227310"
+    "GRB 090227A",
+    "GRB090227A",
+    "GRB090227310",
+    "GRB 090227.310",
+    "bn090227310"
   ],
   "ra": 4.559999942779541,
   "dec": -44.630001068115234,
   "T0": "2009-02-27T07:25:59Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "保留 bot 原值：由 2FLGC trigger_met 257412359.0 直接换算所得（漏扣 2 闰秒，偏晚 1.997 s）；真实触发时刻 2009-02-27T07:25:57.003Z 见 T0_offset_ref",
+  "T0_offset": -1.997,
+  "T0_offset_ref": "GCN 8917 ('At 07:25:57.00 UT on 27 February 2009, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 090227 (trigger 257412359 / 090227310)')；HEASARC FERMIGBRST bn090227310 trigger_time=MJD 54889.309687536=2009-02-27T07:25:57.003Z；2FLGC (Ajello+2019) Table 2 同值。库T0=07:25:59.000Z 为 MET 漏扣 2 闰秒（2006、2009 年元旦）换算：07:25:59.000-07:25:57.003=1.997 s，真实时刻更早故取负",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1224,
+  "pos_ref": "2FLGC (Ajello+2019) Table 2 / HEASARC fermilgrb name GRB090227310：ra=4.56, dec=-44.63, Loc. Err.=0.34 deg（LAT Transient Factory 似然定位，0.34°=1224″）；GBM 地面定位 RA=3.2, DEC=-43.1（1.2 度半径，GCN 8917）与其一致",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [],
+  "comment": "审核链（fsy 2026-10-05）：[原值] T0=2009-02-27T07:25:59Z、pos_error=null、alias=['GRB 090227310']、sub_tag=[]。[问题] ①T0 系 bot 将 2FLGC trigger_met=257412359.0 按 2001-01-01 纪元直接换算且漏扣 2 个闰秒（2006-01-01、2009-01-01）所得，脚本复算逐毫秒吻合，偏晚 1.997 s；真实触发时刻 2009-02-27T07:25:57.003Z（GCN 8917 原文、FERMIGBRST MJD 54889.309687536、2FLGC Table 2 三方一致；Suzaku WAM T0=07:25:56.862，GCN 8935，互相印证）。依《数据审核提示词》§3.2 不改 T0，记 T0_offset=-1.997。②pos_error 缺失：2FLGC Loc. Err.=0.34 为度（TAP_SCHEMA 声明 unit=degree；Table 2 列头 'Deg.'），按库内 arcsec 口径换算填 pos_error=1224″（=0.34°）。③alias 'GRB 090227310' 为 bot 拼接伪名（目录原名 'GRB090227310'/'GRB 090227.310'/bn090227310，GCN 名 'GRB090227A'，fermilgrb.gcn_name 与 2FLGC 附录A 'the GRB name as it appeared in the corresponding GCN'），已替换为规范名。[身份] Fermi/GBM 触发 090227310（trigger 257412359），GCN 名 GRB090227A；与同日 GRB090227B（bn090227772，trigger 257452263，18:31:01.41 UT，dec=+32.2，z=1.61）为两次独立触发，库内两文件各自正确，无混淆无重复。[分类] 2FLGC Table 3 记 CLASS=(L)（long），GCN 8917 T90(8-1000 keV)≈50 s，GCN 8935 称 'The long GRB 090227A'，故 sub_tag 增补 lgrb。[红移] 2FLGC Table 2 Redshift 列为 '-'，无红移。[lc] 全部通告与文献均无本源光学/射电余辉测光（GCN 当日仅 GBM/WAM 通告），故无 lc 文件；LAT/GBM 光变属伽马射线能段不在 lc 范围。原 comment '光变数据导入' 实为编目元数据（tl100=201.4 s、lle_t90=9.9 s 等）导入，予以澄清。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -131,8 +137,22 @@
         ],
         "trigger_time": "2009-02-27T07:25:57.000Z"
       }
+    },
+    "t0_note": "库中 T0 为 bot 由 2FLGC trigger_met 257412359.0 按 2001-01-01 纪元直接换算所得，漏扣 2006 与 2009 两个闰秒，偏晚 1.997 s；真实触发时刻 2009-02-27T07:25:57.003Z（GCN 8917 / FERMIGBRST / 2FLGC Table 2）。T0_offset=-1.997 仅为元数据，不改写光变时间轴。",
+    "t0_basis": "fermigbrst_trigger_time",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second Fermi-LAT Gamma-Ray Burst Catalog",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
