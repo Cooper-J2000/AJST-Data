@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB080408A",
-  "alias": [],
-  "ra": 114.678,
-  "dec": 33.305,
-  "T0": "2008-04-08T23:22:39Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080408"
+  ],
+  "ra": 114.66547,
+  "dec": 33.30341,
+  "T0": "2008-04-08T18:12:48Z",
+  "T0_ref": "GCN 7571",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "SuperAGILE",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 8.6,
   "pos_ref": "GCN 7576",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "重复条目警告：本条与 info/GRB080408.json 为同一事件（SuperAGILE GRB 080408，GCN 7571），建议删除本文件并入 GRB080408（删除流程待维护者裁决，故本 PR 仅在本条目内修正并标记）。审核链：①bot 原 T0=2008-04-08T23:22:39Z（t0_basis=meta_trigger）实为 GROND 首历元观测起始时刻（GCN 7581：'Observations started at 23:22:39 UT on April 8th, 2008'），非触发时刻，修正为 SuperAGILE 触发时刻 2008-04-08T18:12:48Z（GCN 7571；HEASARC swiftgrbba trigger_time=18:12:48 同证；仓内 swift_grb 目录同值）。②bot 原 ra/dec=(114.678,33.305) 为 SuperAGILE 定位（误差 3′），但 pos_error=8.6 角秒实为 Swift-XRT 精化位置误差（GCN 7576），口径混用；已改用 XRT 精化位置 114.66547/+33.30341（8.6″，90% 包含半径），距 SuperAGILE 原位 38.1″、在其 3′ 误差圆内。③bot 原 Trigger_Instrument=Swift/BAT 无据：BAT 从未触发本暴，当日 BAT 触发的是另一事件 GRB 080409（trigger=308812，RA 84.333/+5.085，GCN 7573，库中另有独立条目）；本暴由 SuperAGILE 触发（GCN 7571），Swift 仅 ToO 后随。④T90 约 20 s（20-60 keV，单脉冲，GCN 7571；uvot_grb 目录 t90=20.0）→ lgrb。⑤GROND 七波段同时探测仅给出红移上限 z<3.5（GCN 7581），不入 redshift 字段。⑥除 GCN 9188 主题行的笔误（正文实为对 GRB 090408 的观测，勘误见 GCN 9192；gcn.nasa.gov 事件索引因此残留一个伪 'GRB 080408A' 事件页）外，无任何来源以 '080408A' 命名本暴（GCN Report 127.1 亦称 'SuperAGILE GRB 080408'）。本条不建 lc：GROND/UVOT 光学数据全部归属 GRB080408（其中 UVOT b/u/uvw1 三波段 3σ 上限 GCN 7577、GROND 两历元 GCN 7581），XRT 0.010±0.004 ct/s 为 X 射线计数率不入库；AGILE GRID 在该时位无显著 E>100 MeV 辐射（GCN 7572）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 SuperAGILE 触发时刻（原 bot 值 2008-04-08T23:22:39Z 为 GROND 首历元观测起始时刻，GCN 7581）；本条为 GRB080408 的重复条目",
+    "t0_basis": "GCN 7571",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
