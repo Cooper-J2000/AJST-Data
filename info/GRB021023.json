@@ -1,27 +1,34 @@
 {
   "transient_id": "GRB021023",
   "alias": [],
-  "ra": 111.16454,
-  "dec": -16.18244,
-  "T0": "2002-10-23T07:24:39Z",
-  "T0_ref": null,
+  "ra": 111.22929,
+  "dec": -16.28099,
+  "T0": "2002-10-23T02:53:45Z",
+  "T0_ref": "GCN 1653",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 667.2,
+  "pos_ref": "GCN 1653",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IPN 暴（Ulysses/Mars Odyssey-HEND/HETE-FREGATE/Konus-Wind 三角定位，GCN 1653）。原 T0=2002-10-23T07:24:39Z（t0_basis=meta_trigger）无出处，恰为 GCN 1657 中 K 波段候选源 OBJ1 的 RA 字符串 07:24:39.49，疑为 bot 误取；审核修正为 GCN 1653 的 10425 s（当天秒数 UT）=2002-10-23T02:53:45Z，GCN/IPN 定位通告同作 GRB_TIME: 10425.00 SOD {02:53:45.00} UT。原 ra/dec=111.16454/-16.18244 即 GCN 1657 候选源 OBJ1（07:24:39.49,-16:10:56.8）位置，位于 IPN 误差盒外，GCN 1659 复核认定其可能为亮星 FW CMa（66″）鬼像、全盒相对 2MASS 无新源；已改用 GCN 1653 误差盒中心 7h24m55.03s/-16°16′51.55″（=111.22929/-16.28099，通告小数 111.2293/-16.2809 一致）。pos_error=667.2 角秒为 GCN/IPN 通告给出的 3σ 外接圆半径（11.12 角分，盒约 55 平方角分），与四角算得最大角距约 668 角秒相符。HEASARC grbcat（id 5576）T0=15:43:53Z 引 HETE 触发 2417，经 HETE 官方触发汇总页核为当日 15:43:53 的 Data corruption 伪触发；本暴在 GCN 1653 中仅由 HETE-FREGATE 参与三角定位而非 HETE 触发，故与该伪触发无关，不采用。Ulysses 持续约 15 s，25-100 keV 流量积分约 4.1E-6 erg/cm2、峰值流量约 6.8E-7 erg/cm2/s（0.50 s，GCN 1653）；无 T90，不设 sub_tag。光学：FLWO 1.2m STELIRCam 于爆后 2.4 天巡 J/Ks，误差盒内无新源，极限 J≈16.0、K≈15.6（GCN 1659），见 lc/GRB021023.csv。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 GCN 1653 触发时刻（10425 s SOD=02:53:45 UT）；原 bot 值 2002-10-23T07:24:39Z 无可溯源依据，疑为 GCN 1657 中 K 波段候选源 OBJ1 的 RA 字符串 07:24:39.49 误取",
+    "t0_basis": "GCN 1653",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
