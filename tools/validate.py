@@ -11,6 +11,7 @@
   - lc/*.csv      表头恰为 24 列规范、每行 24 字段、time 数值、y/n 列取值、
                   band 落在两条车道内（filters.json 键，或频率/能量串，见 SCHEMA.md §3.1）
   - 互引完整性    lc 文件必须有同名 info（孤儿 CSV 报错）；info 可无 lc（纯信息源合法）
+  - audit/leads/ 线索卡命名/status/目标源/已审核残留（**警告级**，不改变数据校验判定）
   - filters.json / tags.json 顶层形状
 """
 import csv
@@ -46,6 +47,12 @@ TIME_UNIT_FACTOR = {'s': 1.0, 'sec': 1.0, 'm': 60.0, 'min': 60.0,
                     'h': 3600.0, 'hour': 3600.0, 'd': 86400.0, 'day': 86400.0}
 MJD_OFFSET = 40587.0          # datetime.timestamp()/86400 → MJD
 MJD_CONSIST_TOL_S = 1.0       # 与三层验收 L3 不变量同一容差
+
+# audit/leads/：多目标文献线索卡（人工维护，不参与审核状态机；契约见 audit/leads/README.md）
+LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
+LEAD_KEYS = ('source_id', 'status', 'paper', 'pr', 'helper', 'date')
+LEAD_STATUS = {'extracted', 'mention-only'}
+LEAD_KEY_RE = re.compile(r'^\s*[-*]?\s*([A-Za-z_]+)\s*[:：]\s*(.+?)\s*$')
 
 
 def t0_to_mjd(iso):
@@ -264,6 +271,48 @@ def check_lc(path, band_keys, t0_by_id=None):
              f'见 SCHEMA.md §3 / 《数据审核提示词》§3.2）｜示例：' + '；'.join(mjd_drift_ex))
 
 
+def check_leads(info_ids, reviewed_ids):
+    """线索卡一致性（警告级）：文件名=source_id、status 合法、目标源存在、已审核源不留卡。"""
+    if not os.path.isdir(LEADS_DIR):
+        return
+    seen = {}
+    for fn in sorted(os.listdir(LEADS_DIR)):
+        if not fn.endswith('.md') or fn.lower() == 'readme.md':
+            continue
+        path = os.path.join(LEADS_DIR, fn)
+        rel = f'audit/leads/{fn}'
+        sid = fn[:-3]
+        meta = {}
+        try:
+            with open(path, encoding='utf-8') as f:
+                for ln in f:
+                    if ln.startswith('##'):        # 元数据区到此结束
+                        break
+                    m = LEAD_KEY_RE.match(ln)
+                    if m and m.group(1) in LEAD_KEYS and m.group(1) not in meta:
+                        meta[m.group(1)] = m.group(2)
+        except OSError as e:
+            err(f'{rel}: 读取失败（{e}）')
+            continue
+        if meta.get('source_id') != sid:
+            warn(f'{rel}: source_id={meta.get("source_id")!r} 与文件名（源 id={sid!r}）不一致')
+        if sid not in info_ids:
+            warn(f'{rel}: 目标源 info/{sid}.json 不存在 —— 新源应改开 new-source Issue'
+                 f'（《数据审核提示词》§3.11）')
+        st = (meta.get('status') or '').strip()
+        if st not in LEAD_STATUS:
+            warn(f'{rel}: status={st!r} 应为 extracted / mention-only')
+        elif st == 'extracted' and not (meta.get('paper') or '').strip():
+            warn(f'{rel}: status=extracted 但缺 paper 出处')
+        seen.setdefault(sid, []).append(fn)
+        if sid in reviewed_ids:
+            warn(f'{rel}: 源 {sid} 已是 reviewed，线索卡应在其审核 PR 中删除（§3.11）')
+    for sid, fns in seen.items():
+        if len(fns) > 1:
+            warn(f'audit/leads/: 源 {sid} 有 {len(fns)} 张线索卡'
+                 f'（{", ".join(fns)}）—— 每源一张，冲突时合并')
+
+
 def main():
     strict = '--strict' in sys.argv
     quiet = '--quiet' in sys.argv
@@ -298,11 +347,18 @@ def main():
         if os.path.isdir(lc_dir) else []
 
     t0_by_id = {}
+    reviewed_ids = set()
     for f in info_files:
         p = os.path.join(info_dir, f)
         check_info(p)
+        sid = os.path.splitext(f)[0]
         try:
-            t0_by_id[os.path.splitext(f)[0]] = json.load(open(p, encoding='utf-8')).get('T0')
+            with open(p, encoding='utf-8') as fh:
+                d = json.load(fh)
+            t0_by_id[sid] = d.get('T0')
+            audit = (d.get('extra_data') or {}).get('audit') or {}
+            if isinstance(audit, dict) and str(audit.get('status') or '').strip().lower() == 'reviewed':
+                reviewed_ids.add(sid)
         except Exception:
             pass          # 解析失败已由 check_info 报错
     for f in lc_files:
@@ -313,6 +369,9 @@ def main():
     for f in lc_files:
         if os.path.splitext(f)[0] not in info_ids:
             err(f'lc/{f}: 孤儿光变文件（无同名 info JSON）')
+
+    # 线索卡一致性（警告级；多目标文献交接，见《数据审核提示词》§3.11）
+    check_leads(info_ids, reviewed_ids)
 
     # tags.json 顶层形状
     tj = os.path.join(ROOT, 'tags.json')
