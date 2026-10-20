@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB130828A",
   "alias": [
-    "GRB 130828306"
+    "GRB 130828A",
+    "bn130828306"
   ],
-  "ra": 259.7200012207031,
-  "dec": 28.209999084472656,
-  "T0": "2013-08-28T07:20:03.150000Z",
-  "T0_ref": null,
+  "ra": 259.72,
+  "dec": 28.21,
+  "T0": "2013-08-28T07:20:00.153Z",
+  "T0_ref": "GCN 15129（07:20:00.15 UT；trigger 399367203 / 130828.306）；HEASARC FERMIGBRST bn130828306 trigger_time MJD 56532.305557332 = 2013-08-28T07:20:00.1535 UTC（Bhat+2016 表5 同 .1535；T0 取 1 ms 精度写 .153）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +15,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1044,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) 表2；HEASARC FERMILGRB error_radius=0.29 deg（90% containment, statistical only，LAT transient factory）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (fsy, 2026-10-21)：(1) 身份：Fermi/GBM 触发 399367203 / 130828.306（GCN 15129），Fermi-LAT 同时探测（GCN 15128），2FLGC gcn_name=GRB130828A（Ajello+2019 表2 / HEASARC FERMILGRB）；AGILE-MCAL 与 IPN 亦探测（GCN 15132/15138）。alias 清洗：删 'GRB 130828306'（无出处的日期+触发序列拼接伪形），保留 GCN 名 'GRB 130828A' 与 FERMIGBRST trigger_name 'bn130828306'（SIMBAD 别名 'Fermi bn130828306'）。(2) T0：bot 原值 2013-08-28T07:20:03.150Z 系由 2FLGC trigger_met=399367203.15 s 自 2001-01-01 直换、未扣 2006/2009/2012 三次跳秒（共 3 s），比 GBM 触发晚 3.000 s；按 §3.8「目录换算口径差不算偏移」直接修正 T0=2013-08-28T07:20:00.153Z（FERMIGBRST bn130828306 trigger_time MJD 56532.305557332=07:20:00.1535；GCN 15129 记 07:20:00.15；Bhat+2016 表5 记 07:20:00.1535），T0_offset 留空。(3) 位置：ra/dec=259.72/28.21 取自 2FLGC 表2（原值为 float32 噪声，已清洗）；pos_error=0.29deg×3600=1044arcsec，pos_error_confidence=90（2FLGC 论文 §4.1 明示 LAT 定位误差为 90% containment, statistical only）。GBM 地面定位 RA=258.14, Dec=+29.76（1σ 统计 1.0deg，另有 2–3deg 系统差，GCN 15129）；LAT 通告定位 259.83/+28.00（0.3deg, 68% containment, GCN 15128）；IPN 3σ 误差盒 28 arcmin²（GCN 15138）。Swift/XRT：GCN 15135 的 4.1″ 源经 GCN 15206 判定为 Seyfert 1.9 星系 SDSS J171855.44+275947.4，非余辉；GCN 15206 另在 IPN 盒内报 3σ 边缘源 RA=17:19:09.24, Dec=+28:13:14.05（8″），可能为 X 射线余辉但未确证（后续 5157 s 未探测），SIMBAD 采用该坐标；本条 ra/dec 仍保留 2FLGC LAT 定位，候选位置在此备查。(4) T90=136.962±0.923 s（50–300 keV，FERMIGBRST；2FLGC gbm_cat_t90 同值）；GCN 15129 预估值 159±23 s。来源未明示长/短暴分类（Bhat+2016 表5 的 'L' 指 Fermi-LAT 探测，不是长暴），故未加 lgrb。(5) 未发现光学/射电测光；X 射线/伽马数据不在审核范围，不建 lc（本源无 lc 文件）。无红移（SIMBAD Redshift=~）、无宿主。(6) 版本：2FLGC 出版社 PDF（IOP）被 bot 验证码拦截，未能取得 VoR；数值据 arXiv:1906.11403v1 表2 与仓内 HEASARC FERMILGRB 快照（error_radius=0.29deg、RA/Dec 同）核对。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -231,8 +233,26 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "fsy"
+    },
+    {
+      "name": "Bhat+2016",
+      "title": "The Third Fermi GBM Gamma-Ray Burst Catalog: The First Six Years",
+      "url": "https://doi.org/10.3847/0067-0049/223/2/28",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
