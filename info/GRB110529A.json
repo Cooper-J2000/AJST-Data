@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB110529A",
   "alias": [
-    "GRB 110529034"
+    "GRB 110529A",
+    "GRB110529A",
+    "bn110529034"
   ],
-  "ra": 118.33000183105469,
-  "dec": 67.91000366210938,
-  "T0": "2011-05-29T00:48:44.870000Z",
-  "T0_ref": null,
+  "ra": 118.33,
+  "dec": 67.91,
+  "T0": "2011-05-29T00:48:42.871Z",
+  "T0_ref": "GCN 12047（'At 00:48:42.87 UT on 29 May 2011, the Fermi Gamma-Ray Burst Monitor triggered' … 'GRB 110529A (trigger 110529034 / 110529034)'）；FERMIGBRST bn110529034 trigger_time=2011-05-29T00:48:42.871Z（采用目录 1 ms 精度；GCN 作 42.87，差 1 ms 为舍入）；1FLGC（Ackermann+2013）§B.32 'triggered the GBM at T0=00:48:42.87 UT'",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +16,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 5400,
+  "pos_ref": "GCN 12047（'RA = 118.33, DEC = 67.91 (J2000 degrees …), with an uncertainty of 1.5 degrees (radius, 1-sigma containment, statistical only; there is additionally a systematic error which is currently estimated to be 2 to 3 degrees)'）；2FLGC（Ajello+2019）表 2 同值（R.A.=118.33, Dec.=67.91, Loc. Err.=1.50°, Loc. GCN=FGGC/FERMIGBRST）；2FLGC/HEASARC FERMILGRB error_radius=1.5°=5400″",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核链（fsy 2026-10-20）：[原值] T0=2011-05-29T00:48:44.870000Z、T0_ref=null、pos_error=null、pos_ref=null、pos_error_confidence 缺键、alias=['GRB 110529034']、sub_tag=['Fermi-LAT']、articles=[]、host_galaxy=null、comment='由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'。[T0 复核] GCN 12047 原文 'At 00:48:42.87 UT on 29 May 2011, the Fermi Gamma-Ray Burst Monitor triggered … GRB 110529A (trigger 110529034 / 110529034)'；FERMIGBRST bn110529034 trigger_time=2011-05-29T00:48:42.871Z（1 ms 为 GCN 舍入）；1FLGC §B.32 'triggered the GBM at T0=00:48:42.87 UT'；Suzaku-WAM（GCN 12061）42.855、AGILE-MCAL 目录 trigger_time=2011-05-29T00:48:42Z，均与 GBM 相容。原 T0=44.870 系 trigger_met=328322924.87 按 2001-01-01 纪元直接换算、漏扣 2006-01-01 与 2009-01-01 两个闰秒（44.870−2=42.870，Issue #67），故修正 T0=2011-05-29T00:48:42.871Z（FERMIGBRST 1 ms 精度；GCN 12047 作 42.87）；与错误值差 1.999 s（即漏扣 2 个闰秒，另 1 ms 为取整）属元数据换算错误而非爆发相对触发的真实偏移，T0_offset 保持 null（GBM t90_start=−0.128 s，无 >1 s 前兆）。2FLGC 表 2 的 time 为 2011-05-29 00:48:42（整秒精度；机读 FITS GRBDATE=2011-05-29 00:48:42，HEASARC ASCII 作 41.996），比 GBM 早约 0.87 s，属该目录自列口径，只作交叉验证（§3.8）；Konus-Wind 独立触发 T0=00:48:40.249（GCN 12045）早 2.62 s，系不同仪器各自触发时刻（与 GRB090227B 的 Konus 提前约 2.3 s 同类），不作 T0/T0_offset 依据。[定位] 原坐标 118.33000183105469/67.91000366210938 为 2FLGC 机读表 RA/Dec 的 float32 残渣（FITS row 49: RA=118.33000183105469, DEC=67.91000366210938），来源值即 118.33/67.91（2FLGC 表 2；GCN 12047；SIMBAD 07 53 19.2 +67 54 36），去噪后写 118.33/67.91。2FLGC 表 2 Loc. Err.=1.50°、Loc. GCN=FGGC（=FERMIGBRST），即 GBM 定位；GCN 12047 明确 '1.5 degrees (radius, 1-sigma containment, statistical only; there is additionally a systematic error which is currently estimated to be 2 to 3 degrees)'，故 pos_error=5400″（=1.5°）、pos_error_confidence='1sigma'；SIMBAD 将同一误差记为 90% 置信（E [5400000 5400000 90]），以 GCN 原文 1σ 为准。系统误差 2–3° 未计入 pos_error，仅记于此。[别名/身份] GBM trigger 110529034（bn110529034）= GRB 110529A，与同日 bn110529262（06:17:41.014）、bn110529811（19:27:12.763）为不同事件；库内仅此一条，无重复条目。原 alias 'GRB 110529034' 属「日期+触发序列」拼接伪形（§3.10），删除；收入 'GRB 110529A'（GCN 12047/SIMBAD）、'GRB110529A'（2FLGC/HEASARC gcn_name）、'bn110529034'（SIMBAD 标识/FERMIGBRST trigger_name）。2FLGC 内部 name/GBM_assoc_key=GRB110529034 与 FERMIGBRST 的 'GRB 110529.034' 亦为触发序列形，不收入 alias。[分类] sub_tag 补 'sgrb'：GCN 12047 称 'short'、T90≈0.41 s；GCN 12045 'short hard'；2FLGC T90=0.512 s 并明言 GRB 110529A 属 LLE-only 且为短暴；'Fermi-LAT' 保留（GCN 12044 LLE 探测、2FLGC 收录）。[红移/宿主] 2FLGC 表 2 Redshift 列 '−'、机读 FITS REDSHIFT=0（缺失），1FLGC/2FLGC 正文均未给红移，SIMBAD Redshift 为空；无宿主确证，redshift/redshift_type/redshift_ref 与 host_galaxy 保持 null。[测光检索] 无光学/UV/IR/射电余辉测光可入库：GCN 全文检索 '110529A' 仅 4 则（12044 Fermi-LAT LLE、12045 Konus-Wind、12047 Fermi-GBM、12061 Suzaku-WAM），全为伽马 prompt，无光学/射电通报；1FLGC §B.32 与 2FLGC 均只述 LAT/LLE 伽马辐射，无余辉；2FLGC 机读表 LC_* 为 LAT 伽马光变，不属测光范围；GRBSN webtool 无本源目录；TNS 检索 'GRB 110529A' 无结果（可能需登录）；SIMBAD 所列 27 条文献全为伽马射线 prompt/统计/种群/IPN 研究（含 2017ApJS 229,31），无余辉测光文献。故不建 lc/GRB110529A.csv。伽马/X 射线数据不在审核范围。[版本] 2FLGC VoR PDF 经 IOP 时遭 bot 防护（302→validate.perfdrive.com）不可得；改用仓内 FSSC DR1 机读目录 gll_2flgc_dr1.fits + HEASARC W3Browse 全表 + arXiv:1906.11403 表 2（定位/误差/红移三者一致，时间列见上）；1FLGC 仅作交叉验证，用 arXiv:1303.2908v1 全文（VoR ApJS 209,11 未取）。[取数日期] 2026-10-20。",
   "sub_tag": [
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -212,8 +215,27 @@
         ],
         "trigger_time": "2011-05-29T00:48:42Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-20"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "fsy"
+    },
+    {
+      "name": "Ackermann+2013",
+      "title": "The First Fermi-LAT Gamma-Ray Burst Catalog",
+      "url": "https://doi.org/10.1088/0067-0049/209/1/11",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
