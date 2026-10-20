@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB140124A",
   "alias": [
-    "GRB 140124527"
+    "GRB 140124A",
+    "bn140124527"
   ],
-  "ra": 59.27000045776367,
-  "dec": 36.86000061035156,
-  "T0": "2014-01-24T12:38:34.190000Z",
-  "T0_ref": null,
+  "ra": 59.27,
+  "dec": 36.86,
+  "T0": "2014-01-24T12:38:31.193Z",
+  "T0_ref": "Fermi GBM trigger bn140124527（FERMIGBRST trigger_time 2014-01-24T12:38:31.193Z；2FLGC trigger_met 412259914.19 扣 2006/2009/2012 三次闰秒后为 12:38:31.190，二者一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1188,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC), error_radius 0.33 deg（LAT，90% 包含半径，统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (fsy, 2026-10-21)：身份由 Fermi GBM 触发 bn140124527 锚定（2FLGC gcn_name=GRB140124A、gbm_cat_name=GRB140124527，触发时刻 2014-01-24 12:38:31.19 UTC 一致）。T0 修正：bot 由 2FLGC trigger_met 412259914.19 自 MET 纪元 2001-01-01T00:00:00 UTC 直换、漏扣 2006-01-01/2009-01-01/2012-07-01 三次闰秒，得 12:38:34.190，偏晚 2.997 s；按 §3.2/§3.8（目录换算口径差不是爆发时刻偏移）改为 FERMIGBRST trigger_time 2014-01-24T12:38:31.193Z，T0_offset 留空。三路互洽：(1) MET−3 s=12:38:31.190；(2) 2FLGC FITS GRBDATE 2014-01-24 12:38:31（整秒）；(3) Issue #67 记录的官方通告页 UTC 12:38:31.190（该页 https://gcn.gsfc.nasa.gov/other/140124527.fermi 已随 legacy 服务关闭，2026-10-21 实测 404）。位置取 2FLGC LAT 定位 RA=59.27、Dec=36.86（W3Browse sexagesimal 03 57 04.8 +36 51 36；bot 原值 59.27000045776367/36.86000061035156 为 float32 噪声，已清洗），error_radius 0.33 deg ×3600 = 1188 arcsec，置信水平 90%（Ajello+2019 §4.1：90% containment, statistical only）。GBM 目录定位 64.18/+38.48（1σ 2.02 deg，external FERMIGBRST 快照）精度较低未采用；LAT 与 GBM 目录位置相距约 4.2 deg，属 GBM 定位误差（1σ 统计 2.02 deg，另有系统误差）范围，身份未依几何交叉判定。T90=121.5±5.8 s（50–300 keV，FERMIGBRST），2FLGC 表 3 分类列为 (L)，故补 sub_tag=lgrb。alias 清洗：原 \"GRB 140124527\" 为「日期+触发序列」无点拼接伪形（bot 导入产物，见 Issue #69），删除；保留 2FLGC gcn_name \"GRB 140124A\" 与 FERMIGBRST trigger_name \"bn140124527\"；2FLGC name_alt \"GRB 140124.527\" 为日分数插点衍生形、无通告背书，未收入。GCN：逐条检索 circulars 15730–15880（含 15759 与 15760 之间无缺号区间），无本源 circular，GBM 与 LAT 均未发通告；未发现 Swift/Konus-Wind/AGILE MCAL 等其他仪器探测（external 快照检索）。无红移与宿主星系支持，均留空；无光学/射电测光或上限，未建 lc。另：2FLGC 论文 arXiv 版 Table 2 该行 Dec 印为 1.47°，与目录 FITS/W3Browse 的 36.86° 及 GBM 位置矛盾，判为论文笔误，以目录值为准（未改 extra_data.catalog_data 快照，供维护者知悉）。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -132,8 +135,26 @@
         ],
         "trigger_time": "2014-01-24T12:38:31.001Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
