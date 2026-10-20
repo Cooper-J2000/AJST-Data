@@ -17,7 +17,9 @@
 
 **并行查重（多个合作方同时审核时必做）**：`python3 tools/audit_queue.py --limit 20` 挑源、`--bucket 1/4` 分片；`--live` 的实时查询是判据，离线读 [`audit/state.tsv`](audit/state.tsv)（只能**排除已占用**、不能**确认空闲**；契约见 [`audit/README.md`](audit/README.md)）。开工即开 `claim: <源ID>` draft PR —— 一个源同时只应有一个未过期认领（普通源 14 天 / 巨源 30 天）。
 
-要点：一源一 PR；数值必须本次从来源原文实际核对得出，严禁臆造/内插/估算；派生列（`Gext_*`）一律留空；拿不准就停下来问。契约（`SCHEMA.md`、本文件、`audit/README.md`）效力高于该提示词。
+**多目标文献**：一篇文献涉及多个库内源时，除自己那一源照常走流程，还要为其他源写 `audit/leads/<源ID>.md` 线索卡随同一 PR 提交（只写信息、不写状态，**不改变目标源的 free/claimed/reviewed 判定**）；挑源时用 `--id` 或 `--leads` 查看这些卡。格式见 [`audit/leads/README.md`](audit/leads/README.md)。
+
+要点：一源一 PR；数值必须本次从来源原文实际核对得出，严禁臆造/内插/估算；**以正式发表版（VoR）为准，arXiv 只在确实拿不到 VoR 时替代**，补充材料/机读表必须实际取到核对；派生列（`Gext_*`）一律留空；拿不准就停下来问。契约（`SCHEMA.md`、本文件、`audit/README.md`、`audit/leads/README.md`）效力高于该提示词。
 
 ### 1.2 校验（validate）
 
