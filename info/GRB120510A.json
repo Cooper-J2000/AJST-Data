@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB120510A",
-  "alias": [],
+  "alias": [
+    "GRB 120510A"
+  ],
   "ra": 44.285,
   "dec": 72.85,
   "T0": "2012-05-10T08:47:44Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 13282（MAXI/GSC 扫描过境中心 UT 2012-05-10T08:47:44）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "MAXI/GSC",
@@ -12,11 +14,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 600,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 13282（02 57 08.60, +72 51 00.8 J2000；统计 10′@90% + 系统 6′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（fsy，2026-10-21）：MAXI/GSC 于 2012-05-10T08:47:44 UT（42 s 扫描过境中心）探测到 X 射线暂现，持续约 27 s；(R.A., Dec)=(+44.285, +72.850)°=(02 57 08.60, +72 51 00.8)(J2000)，统计误差 10′（90% 置信）另加系统误差 6′；4–10 keV 初步流量 330±40 mCrab（GCN 13282）。MAXI 目录列表时间 08:48:06（=过境中心+22 s，接近 42 s 过境半宽）与 GCN 不同，T0 按触发仪器 GCN 取 08:47:44；目录流量 1.53±0.12×10^-8 erg/cm2/s（maxi.riken.jp/grbs/120510a/，2026-10-21 实查）。Konus-Wind 探测为长暴，总持续时间约 130 s，注量 3.82±0.26×10^-6 erg/cm2（20–1200 keV），幂律光子指数 2.05±0.24（GCN 13295），据此 sub_tag=lgrb。MASTER II 于 T0+24146.64 s（2012-05-10T15:30:10.64 UT）起首个 180 s 曝光，5σ 光学上限约 18.6 mag，原文未给波段口径与星等系统（GCN 13283；MASTER II 为无滤光片宽场相机，band 记 G）。Swift/XRT 在 T0+21.4–33.0 ks 观测到的暗源（RA, Dec=44.04666, +72.88692）与恒星 HD 17785（uvw2=11.85±0.02 mag）位置相符，非余辉（GCN 13284），X 射线数据不在本次审核范围。无红移测量，无其他光学/射电测光。alias 补 GCN 与 SIMBAD 主标识用名 GRB 120510A（带空格；本库 id 为无空格形）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,7 +28,12 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
+    }
   },
   "articles": [],
   "host_galaxy": null
