@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB110123A",
   "alias": [
-    "GRB 110123804"
+    "GRB 110123A",
+    "bn110123804"
   ],
-  "ra": 240.61000061035156,
-  "dec": 28.3700008392334,
-  "T0": "2011-01-23T19:17:47.050000Z",
-  "T0_ref": null,
+  "ra": 240.61,
+  "dec": 28.37,
+  "T0": "2011-01-23T19:17:45.030Z",
+  "T0_ref": "GCN 11600 (Fermi GBM trigger 317503067 / 110123804)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +15,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 792,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2 (90% containment, statistical); HEASARC FERMILGRB error_radius 0.22 deg",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核 (fsy, 2026-10-20)：Fermi LAT 2FLGC 导入源（Ajello+2019, ApJ 878, 52）。身份：2FLGC Table 2 的 GCN 名 110123A，GBM trigger 317503067 / 110123804；GCN 11600 原文 'At 19:17:45.03 UT on 23 January 2011, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 110123A (trigger 317503067 / 110123804)'。T0：bot 原值 2011-01-23T19:17:47.050Z 系将 2FLGC trigger_met 317503067.05 自 2001-01-01 直换、漏扣 2011 年前累计 2 次闰秒（2006-01-01、2009-01-01），故晚 2.02 s；按触发仪器官方 GCN 11600 改为 2011-01-23T19:17:45.03Z（0.01 s 精度；字段写 .030Z 仅为 ISO8601 解析要求）。交叉验证：FERMIGBRST trigger_time MJD 55584.803993571 = 19:17:45.0445 UTC（仓内快照 2026-07-21），与 GCN 差 0.0145 s；2FLGC Table 2 时间列 19:17:45（秒级）。T0_offset 不设：2 s 为 MET 换算口径差而非真实触发偏移，其余差 <60 ms。坐标：LAT LTF 定位 RA=240.61, Dec=+28.37（J2000；2FLGC Table 2 与 HEASARC FERMILGRB 一致，float32 残渣已去除），pos_error=0.22 deg=792 arcsec，置信水平 90%（Ajello+2019 §3.6.4 原文 'the (90% containment, statistical only) uncertainty in LAT detections'）；GBM 定位 RA=247.0, Dec=+28.0、1.64 deg（1σ 统计）另加 2–3 deg 系统误差（GCN 11600），未采用。alias：删除拼接伪形 'GRB 110123804'；保留 GCN 名 'GRB 110123A'，新增 FERMIGBRST trigger_name 'bn110123804'；2FLGC name_alt 'GRB 110123.804' 属日期+触发序列形态（validate 伪形正则，Issue #69），未收录。红移：2FLGC Table 2 红移列空（'−-'），GCN 11600 无红移，TNS 无此对象（2026-10-20 查询），保持 null；host_galaxy 无确证宿主，保持 null。其他量（不参与判定）：T90=17.856±0.810 s（50–300 keV，FERMIGBRST）；GCN 11600 初步值 17.9±0.8 s（50–300 keV）。fluence=1.9037e-5±6.0e-8 erg/cm²（10–1000 keV，FERMIGBRST）；GCN 11600 初步值 (2.61±0.03)e-5 erg/cm²（10–1000 keV）。lc：库内 0 行；本次检索 GCN 事件档案（仅 11600）、GCN selected_2011、TNS、GRBOX、GRBSN webtool、仓内 external/ 及 arXiv 检索，未发现该源光学/UV/IR/射电余辉测光表，故不新建 lc（2026-10-20）。VoR：IOP 文章页不提供全文、PDF 下载被 Captcha 拦截（2026-10-20），改用 arXiv:1906.11403v1，并与 HEASARC FERMILGRB 目录互证。",
   "sub_tag": [
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "fermi_lat": {
@@ -61,8 +63,20 @@
         ],
         "trigger_time": "2011-01-23T19:17:45.004Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-20"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
