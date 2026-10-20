@@ -4,29 +4,65 @@
   "ra": 85.297,
   "dec": 32.442,
   "T0": "2011-08-15T09:40:57Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 12277",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "IPN",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": "GCN 12282",
+  "pos_ref": "GCN 12277",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IPN 暴（GCN 12277：SuperAGILE 编码视场外、Konus-Wind、MESSENGER GRNS、Odyssey HEND、RHESSI、Suzaku WAM、Swift/BAT 视场外符合探测；IPN 3σ 误差框面积 195 arcmin²，中心 85.297/+32.442，四角 85.183/+32.409、85.464/+32.753、85.130/+32.113、85.411/+32.474）。T0=2011-08-15T09:40:57Z 取 GCN 12277 的 34857 s UT（整秒）；Konus-Wind 触发 09:40:55.971（GCN 12278）、Suzaku WAM 09:40:57.524（GCN 12280）为各仪器触发时刻，与 IPN 参考时刻相差 <1.5 s，统一采用 IPN 时刻，未设 T0_offset。Swift 未触发：BAT 在编码视场外（GCN 12277），XRT 208–216 ks 观测无源（3σ 上限 2.4e-3 count/s；UKSSDC XRT 页记 not detected），故 Trigger_Instrument 由 Swift/XRT 改为 IPN。原 pos_ref=GCN 12282 实为 XRT/UVOT 复算通告，坐标取自 GCN 12277，已改；pos_error 留空：IPN 给的是非圆形 3σ 框，无单一误差半径（HEASARC SWIFTGRB pos_err=2517.6″ 与框对角线一致，不是半径）。Swift ToO 实际执行 2011-08-17 19:36:17–22:57:31（HEASARC SWIFTGRB，Donato+2012）。UVOT white 1.9 ks、208–216 ks 内无新源，3σ 极限 21.64 mag（UVOT photometric system，Vega；未做银消改正，E(B-V)=0.02；GCN 12282），见 lc/GRB110815A.csv。GCN 110815 索引仅 12277/12278/12280/12282；SIMBAD 仅 GRB 110815A、无红移，TNS 无条目，本次检索未见其他光学/红外/射电数据。sub_tag=lgrb 依 GCN 12277 标题 long/intense 与 GCN 12280 T90≈13 s。Swift 目录 name_alt 'Swift 20177' 为 ToO target_id，非正式名，未入 alias。extra_data 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，本次改为 GCN 12277 出处。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2011-08-15T09:40:57Z 取 GCN 12277 的 34857 s UT（IPN 三角定位参考时刻；Swift 未触发，ToO 观测以 IPN trigger 为参考）",
+    "t0_basis": "GCN 12277",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-20"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 12277",
+      "title": "IPN triangulation of GRB110815A (long, intense)",
+      "url": "https://gcn.nasa.gov/circulars/12277",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12278",
+      "title": "Konus-Wind observation of GRB 110815A",
+      "url": "https://gcn.nasa.gov/circulars/12278",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12280",
+      "title": "GRB 110815A : Suzaku WAM observation of the prompt emission",
+      "url": "https://gcn.nasa.gov/circulars/12280",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12282",
+      "title": "GRB 110815A: Swift-XRT and UVOT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/12282",
+      "source": "fsy"
+    },
+    {
+      "name": "Breeveld+2011",
+      "title": "An Updated Ultraviolet Calibration for the Swift/UVOT",
+      "url": "https://arxiv.org/abs/1102.4717",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
