@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB120821A",
-  "alias": [],
-  "ra": 255.25762,
-  "dec": -40.51365,
-  "T0": "2012-08-21T23:47:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 120821A"
+  ],
+  "ra": 255.2692,
+  "dec": -40.5212,
+  "T0": "2012-08-21T13:23:45Z",
+  "T0_ref": "GCN 13696",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
-  "pos_error": 6.7,
-  "pos_ref": "GCN 13699",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 120,
+  "pos_ref": "GCN 13696",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 修正：原 bot 值 2012-08-21T23:47:00Z 实为 GCN 13697 所述 GROND 观测起始 UT（23:47 UT，触发后 10.4 h），非触发时刻；本暴由 INTEGRAL IBAS 在 IBIS/ISGRI 数据中于 2012-08-21 13:23:45 UT 触发（trigger #6266，GCN 13696），T0 据此更正（external/swift_grb 快照 trigger_time 同值互证）。Trigger_Instrument 原为 Swift/UVOT（仅是后续跟踪仪器），改为 INTEGRAL/IBIS。坐标采用 GCN 13696 IBAS 精化定位 255.2692/-40.5212（2′，90% c.l.）；原 ra/dec=255.25762/-40.51365（pos_error=6.7″，90%，GCN 13699）为 INTEGRAL 误差圆内一颗极暗弱、低显著性 X 射线源的位置，原文明确尚不能判断其是否衰减、非确认余辉，故改列于此备查。GCN 13696 记暴持续约 12 s（long GRB），据此补 sub_tag=lgrb。光学/红外：GROND g'r'i'z'JHK 未探测（GCN 13697，未给数值极限，不入 lc）；Swift/UVOT u/w1/m2 三段 3σ 上限已入 lc（GCN 13698）。X 射线（GCN 13699）：XRT 0.3–10 keV 观测流量 (2.7±1.2)e-13 erg/cm2/s、未吸收 (5.5±2.5)e-12 erg/cm2/s（假定光子指数 2，未改正银吸收），暂不入库。无红移。别名 GRB 120821A 为 GCN 用名。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-21 审核修正为 GCN 13696 INTEGRAL/IBAS 触发时刻（原 bot 值 2012-08-21T23:47:00Z 为 GCN 13697 GROND 观测起始 UT，非触发时刻）",
+    "t0_basis": "GCN 13696",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
+    }
   },
   "articles": [],
   "host_galaxy": null
