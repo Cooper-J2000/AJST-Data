@@ -6,7 +6,7 @@
   "ra": 53.82,
   "dec": -35.23,
   "T0": "2012-05-26T07:16:40.770000Z",
-  "T0_ref": "Fermi GBM trigger 120526303 官方通告页 GRB_TIME 26200.77 SOD = 2012-05-26T07:16:40.77Z（https://gcn.gsfc.nasa.gov/other/359709402.fermi）；FERMIGBRST trigger_time MJD 56073.303249647 = 07:16:40.7695Z（HEASARC W3Browse 快照，取数 2026-07-21）",
+  "T0_ref": "Fermi GBM trigger 120526303 官方通告页 GRB_TIME 26200.77 SOD = 2012-05-26T07:16:40.77Z（https://gcn.gsfc.nasa.gov/other/359709402.fermi）；FERMIGBRST trigger_time MJD 56073.303249647 = 07:16:40.7695Z（HEASARC tdat 在线转储，取数 2026-10-21；仓内快照 normalized.jsonl 同值记 2012-05-26T07:16:40.770Z，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -19,7 +19,7 @@
   "pos_ref": "2FLGC（Ajello+2019）机读表 gll_2flgc_dr1.fits：RA 53.82, Dec -35.23, ERR=0.11 deg（90% 包含半径，统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "审核（fsy 2026-10-21）。原 comment：'由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'（实际未建 lc）。(1) T0：原 T0=2012-05-26T07:16:42.760Z 系 2FLGC trigger_met=359709402.76s 按 2001-01-01 纪元直换、漏扣 2006-01-01 与 2009-01-01 两个闰秒（Issue #67 同类系统性问题），偏晚 1.99s；GBM 实际触发 07:16:40.77 UT（官方通告页 GRB_TIME 26200.77 SOD；FERMIGBRST trigger_time MJD 56073.303249647=07:16:40.7695），2FLGC 机读表 GRBDATE=2012-05-26 07:16:40 亦一致；已直接改正 T0，属换算口径差，按 §3.8 不记 T0_offset。(2) 坐标：原 ra/dec=53.81999969482422/-35.22999954223633 为 float32 残渣（Issue #69），按 2FLGC 写 53.82/-35.23；原 pos_error 空，补 0.11 deg=396″（90% 包含半径、统计误差）。(3) alias：原 'GRB 120526303' 属 §3.10 禁止的日期+触发序列拼接伪形，已删；该串实为 2FLGC/FERMIGBRST 目录主名（FITS GRBNAME=120526303）与点分写法均为同一伪形，不在 alias 重复收录，仅保留 SIMBAD/FERMIGBRST 均收录的 GBM 触发名 'bn120526303'（2FLGC gcn_name=120526A 即本条目 id）。(4) 无 GCN Circular（GCN GRB 归档 2008–2023 无 120526A）；T0 证据链＝触发仪器官方通告页＋FERMIGBRST 两路互证（取数 2026-10-21）。(5) 目录位置冲突：FERMIGBRST/SIMBAD 给 66.28/-32.23（1.04°），与 LAT 定位相距约 11°；官方通告页最终 GBM 定位 53.86/-33.24（5.09°）与 LAT 一致，故采信 LAT 定位，冲突报维护者（catalog_data 未改）。(6) 2FLGC W3Browse time=07:16:39.996 与机读表 GRBDATE=07:16:40 相差 0.77s（目录内不一致），报维护者。(7) VoR（IOP/DOI）PDF 被 bot 验证拦截，数值以随文发布的机读表 gll_2flgc_dr1.fits（仓内快照）＋arXiv:1906.11403 正文（90% 包含定义）核对。",
+  "comment": "审核（fsy 2026-10-21）。原 comment：'由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'（实际未建 lc）。(1) T0：原 T0=2012-05-26T07:16:42.760Z 系 2FLGC trigger_met=359709402.76s 按 2001-01-01 纪元直换、漏扣 2006-01-01 与 2009-01-01 两个闰秒（Issue #67 同类系统性问题），偏晚 1.99s；GBM 实际触发 07:16:40.77 UT（官方通告页 GRB_TIME 26200.77 SOD；FERMIGBRST trigger_time MJD 56073.303249647=07:16:40.7695），2FLGC 机读表 GRBDATE=2012-05-26 07:16:40 亦一致；已直接改正 T0，属换算口径差，按 §3.8 不记 T0_offset。(2) 坐标：原 ra/dec=53.81999969482422/-35.22999954223633 为 float32 残渣（Issue #69），按 2FLGC 写 53.82/-35.23；原 pos_error 空，补 0.11 deg=396″（90% 包含半径、统计误差）。(3) alias：原 'GRB 120526303' 属 §3.10 禁止的日期+触发序列拼接伪形，已删；该串实为 2FLGC/FERMIGBRST 目录主名（FITS GRBNAME=120526303）与点分写法均为同一伪形，不在 alias 重复收录，仅保留 SIMBAD/FERMIGBRST 均收录的 GBM 触发名 'bn120526303'（2FLGC gcn_name=120526A 即本条目 id）。(4) 无 GCN Circular（GCN GRB 归档 2008–2023 无 120526A）；T0 证据链＝触发仪器官方通告页＋FERMIGBRST 两路互证（取数 2026-10-21）。(5) 目录位置冲突：FERMIGBRST/SIMBAD 给 66.28/-32.23（1.04°），与 LAT 定位相距约 11°；官方通告页最终 GBM 定位 53.86/-33.24（5.09°）与 LAT 一致，故采信 LAT 定位，冲突报维护者（catalog_data 未改）。(6) 2FLGC W3Browse time=07:16:39.996 比官方触发 07:16:40.7695 早 0.77s（机读表 GRBDATE 仅给到整秒 07:16:40，无法分辨），目录内时间口径不一致，报维护者。(7) VoR（IOP/DOI）PDF 被 bot 验证拦截，数值以随文发布的机读表 gll_2flgc_dr1.fits（仓内快照）＋arXiv:1906.11403 正文（90% 包含定义）核对。",
   "sub_tag": [
     "Fermi-LAT"
   ],
