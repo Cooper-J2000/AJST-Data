@@ -1,29 +1,36 @@
 {
   "transient_id": "GRB110518A",
   "alias": [
-    "GRB 110518860"
+    "GRB 110518A"
   ],
-  "ra": 67.19000244140625,
-  "dec": -34.27000045776367,
-  "T0": "2011-05-18T20:38:12Z",
-  "T0_ref": null,
+  "ra": 67.19,
+  "dec": -34.27,
+  "T0": "2011-05-18T20:38:10.767Z",
+  "T0_ref": "GCN 12019（Konus-Wind T0=74290.767 s UT = 2011-05-18T20:38:10.767Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Konus-Wind",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 684.0,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2：RA/Dec=67.19/-34.27、error_radius=0.19 deg（LAT transient factory，90% 包含半径，统计误差）；FITS RA=67.19000244140625/DEC=-34.27000045776367（float32 原值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (fsy, 2026-10-20)：身份核验——本暴为 IPN 定位暴（GCN 12018：中心 67.180/-34.195，3σ 盒 536 平方角分，最大跨度 1.5 deg，约 20:38:14 UT），Konus-Wind 于 T0=74290.767 s UT（20:38:10.767）触发（GCN 12019）；2FLGC（Ajello+2019, ApJ 878, 52）Table 2 给出 2011-05-18 20:38:10、MET 327443892.000、RA/Dec=67.19/-34.27、误差 0.19 deg，Table 3 分类 (L)、T90=35.00 s；FITS gll_2flgc_dr1.fits 该行 GRBDATE=2011-05-18 20:38:10、GRBMET=327443892.0、RA=67.19000244140625、DEC=-34.27000045776367。GBM 未触发：2FLGC §4.1 原文把本暴列入 'six GRBs were reported by the IPN'（并明言 10 个 LAT 探测暴未触发 GBM）；HEASARC FERMIGTRIG TAP 实查 2011-05-18 20:38 附近（MJD 55699.5–55700.5）0 行，2011 年 5 月触发表中 05-17 与 05-19 之间无记录；FERMIGBRST 无 bn110518860；gcn.nasa.gov 检索 '110518A' 仅 12018（IPN）与 12019（Konus-Wind）两条，无 GBM/Fermi circular。故 Trigger_Instrument 由 bot 的 'Fermi/GBM' 改为 'Konus-Wind'（GCN 12019）；2FLGC 的 IPN 归类与 LAT 探测（LTF TS=41.998，IRF=P8_TRANSIENT010E）保留在 sub_tag=Fermi-LAT。T0：bot 原值 20:38:12 系把 2FLGC trigger_met=327443892.000 按 2001-01-01 直换、漏扣 2006-01-01 与 2009-01-01 两次闰秒（2 s）；2FLGC Table 2 同行 UT=20:38:10 即扣闰秒后的整秒值（FITS GRBDATE 亦为整秒 20:38:10；HEASARC W3Browse 在线表 time=20:38:10.003 与 FITS 相差 3 ms，属目录换算差，不采为锚），Konus-Wind GCN 12019 给出同秒的亚秒值 20:38:10.767。按 §3.2/§3.8，取触发仪器 Konus-Wind 的 ms 精度 T0=2011-05-18T20:38:10.767Z；旧值 20:38:12 与真值差 1.233 s，属 MET→UTC 口径差而非真实爆发提前/滞后，按 2026-10-12 规则直接改进 T0，不写 T0_offset（T0_offset=null）。坐标：2FLGC 原值 67.19/-34.27（W3Browse 04 28 45.6 -34 16 12；FITS 为 float32 67.19000244140625/-34.27000045776367），bot 存值为 float32 噪声，已清洗；pos_error=0.19 deg×3600=684 arcsec（2FLGC Table 2/FITS ERR=0.19 deg，LAT transient factory，90% 包含半径、统计误差，见 2FLGC §4.1），pos_error_confidence=90；IPN 3σ 盒中心 67.180/-34.195（GCN 12018）与 LAT 位置相差约 0.08 deg，在 LAT 0.19 deg 误差与 IPN 盒 1.5 deg 尺度内相容。alias：删 'GRB 110518860'（与 2FLGC 内部 GRBNAME=GRB110518860 仅差一个空格，属拼接伪形，无 GCN/SIMBAD 背书；2FLGC 的 GCNNAME=110518A、SIMBAD 唯一标识符为 'GRB 110518A'），补 'GRB 110518A'；2FLGC NAME_ALT='GRB 110518.860' 系 GBM 触发名式样，本暴未触发 GBM 且无 GCN 使用，不收录。tag=grb，sub_tag 保留 Fermi-LAT 并补 lgrb（2FLGC Table 3 分类 (L)；GCN 12019 'long bright'、总时长约 35 s）。T90=35.00 s（50–300 keV，2FLGC Table 3/FITS GBMT90；误差栏为空/NaN；GCN 12019 总时长约 35 s）。红移：2FLGC REDSHIFT=0.0 为占位值，SIMBAD Redshift=~，两条 GCN 均未报道，保持 null；无确证宿主，host_galaxy=null。光学/UV/IR/射电：GCN 检索仅 12018/12019 两条伽马段通告，无光学/射电；TNS 无 GRB 110518A 对象页（404，2026-10-20 实查）；SIMBAD 所列 5 条文献（2 条 GCN、2FLGC、Wang+2020 ApJ 893,77 统计样本、Mao+2020 ApJ 898,14 高能谱）题录显示为样本统计/高能谱研究，未见余辉测光表；GRBSN webtool 与仓内 external/（fermi_lat、fermi_gbm、mpe_greiner 等）逐仓检索无光学/射电条目；Fraija+2026（arXiv:2511.23426）对本暴仅见 Figure A6 模型参数图，无该源测光表，按规不读图。故无真实测光，不建 lc/GRB110518A.csv。2FLGC VoR（DOI 10.3847/1538-4357/ab1d4e）PDF 受出版社 captcha 拦截（2026-10-20 实试），表值以 arXiv:1906.11403 的 Table 2/3 与 FSSC/HEASARC 的 gll_2flgc_dr1.fits、fermilgrb_w3browse_full.txt 三方核对，数值一致，未使用 VoR 独有数据。catalog_data 保持原样（其 trigger_time=2011-05-18T20:38:10.003Z 与 trigger_met=327443892.0 仅作交叉验证）。articles 登记实际使用的 Ajello+2019（DOI 10.3847/1538-4357/ab1d4e）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-20"
+    },
     "catalog_data": {
       "fermi_lat": {
         "other": {
@@ -76,6 +83,13 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
