@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB120919B",
   "alias": [
-    "GRB 120919052"
+    "GRB 120919B"
   ],
-  "ra": 302.7300109863281,
-  "dec": -37.72999954223633,
-  "T0": "2012-09-19T01:14:26.070000Z",
-  "T0_ref": null,
+  "ra": 302.73,
+  "dec": -37.73,
+  "T0": "2012-09-19T01:14:23.066Z",
+  "T0_ref": "FERMIGBRST（HEASARC，trigger 369710066，trigger_time 2012-09-19T01:14:23.066Z）；GCN 13788 记 about 4463 s UT（01:14:23）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +14,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 504,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，90% 包含、统计误差；gll_2flgc_dr1.fits 机读表复核）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy 2026-10-21：(1) 身份=Fermi/GBM 触发 369710066 的 GRB 120919B（GCN 13788：GBM、Konus-Wind、MESSENGER、INTEGRAL SPI-ACS、Mars Odyssey/HEND 观测，IPN 三角定位）；LAT 探测（2FLGC，TS=28.7）。同日 GRB 120919A 为 07:24:41 UT 的 Swift/BAT 暴（RA 213.4、Dec -46.3），时刻与位置均不同，非重复条目。(2) T0 原值 2012-09-19T01:14:26.070Z 系把 2FLGC MET 369710066.07 直接当 UTC（漏扣 3 闰秒，Issue #67），改为 FERMIGBRST trigger_time=2012-09-19T01:14:23.066Z（GCN 13788 记 about 4463 s UT=01:14:23，相符）；2FLGC 的 trigger_time 01:14:23.001 与采纳值差 65 ms，备查。(3) 位置取 2FLGC Table 2 的 LAT LTF 定位 RA=302.73、Dec=-37.73、误差 0.14°（90% 包含、统计误差，Ajello+2019 §3.6.4；机读表 gll_2flgc_dr1.fits 复核；出版社 IOP 页反爬，正文口径据 arXiv:1906.11403），即 pos_error=504 arcsec；该点在 IPN 3σ 箱内（箱中心 302.633、-37.490，最大尺寸 1.57°，GCN 13788）。(4) alias 移除导入的日期+触发序列拼接形 GRB 120919052（2FLGC GRBNAME=120919052），收 GCN 用名 GRB 120919B。(5) sub_tag 补 lgrb：T90=118.018±0.362 s（50–300 keV，FERMIGBRST/2FLGC；GCN 13788 称 long-duration）。(6) 新增 MASTER-ICATE 无滤光片 prompt 上限两行（GCN 13792）：5 s 单帧 5σ 极限 11.7 mag、45 s 累计 12.5 mag；曝光起点按原文指向时刻 2012-09-19 01:15:18 UT 计，中点/半宽为约定口径；原文另报 ~2σ 边缘源（赤纬写作 +37:31:48，疑为 -37 笔误），非探测，未入库。(7) 本条目原无 lc；高能（GBM/LAT）光变为能量串波段，不在审核范围，未入库。T0_offset 不设（无真实爆发时刻相对触发的显著偏移）。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -149,8 +151,38 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 13788",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/13788.gcn3",
+      "title": "IPN Triangulation of long GRB 120919B",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 13789",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/13789.gcn3",
+      "title": "Konus-Wind observation of GRB 120919B",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 13792",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/13792.gcn3",
+      "title": "GRB 120919B: MASTER prompt optical observations",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
