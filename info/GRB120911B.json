@@ -5,8 +5,8 @@
   ],
   "ra": 172.66,
   "dec": -37.5,
-  "T0": "2012-09-11T06:26:15Z",
-  "T0_ref": "GCN 13755（IPN，23175 s UT = 06:26:15）；GCN 13756（Fermi-LAT）同",
+  "T0": "2012-09-11T06:26:12.213Z",
+  "T0_ref": "GCN 13758（Konus-Wind trigger T0=23172.213 s UT = 06:26:12.213）；2FLGC Table 2 记 06:26:12 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -19,7 +19,7 @@
   "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，90% 包含，统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy 2026-10-21：(1) 身份=IPN 发现并三角定位的 GRB 120911B（GCN 13755；GCN 13756 明言 IPN detected），Fermi/LAT 探测（2FLGC gcn_name=120911B、GRBNAME=120911268），AGILE/MCAL、Konus-Wind、INTEGRAL SPI-ACS、Mars Odyssey/HEND 亦观测；Fermi/GBM 未触发（GCN 13756/13757，2FLGC GBMT05=0），故 Trigger_Instrument 由 Fermi/GBM 改为 IPN。当日另有 GRB 120911A（Swift/BAT 07:08:33 UT，RA 357.966、Dec +63.09），时刻与位置均不同，非重复条目。(2) T0 取 GCN 13755 的 23175 s UT = 2012-09-11T06:26:15Z（GCN 13756 同；原文作 about）。2FLGC Table 2 记 06:26:12（MET 369037575 = 23172 s UT + 3 闰秒，换算自洽），与 Konus-Wind 触发 T0=23172.213 s（06:26:12.213，GCN 13758）一致，比采纳的 IPN 时刻早约 2.8 s，备查（PR 报告）；GBM 地面分析 T0=06:25:14 为前兆起始（GCN 13757），不采用。(3) 位置取 2FLGC Table 2 最终 LTF 定位 RA=172.66、Dec=-37.50、误差 0.60°（90% 包含、统计误差，Ajello+2019 §4.1；2FLGC FSSC 机读表 gll_2flgc_dr1.fits 2026-10-21 复核，与 W3Browse 快照一致；出版社 IOP 页反爬，正文口径据 arXiv:1906.11403，数值以机读表为准），即 pos_error=2160 arcsec；GCN 13756 早期定位 172.03、-37.51（0.3°、68%）与 IPN 3σ 箱中心 172.146、-37.696（GCN 13755）备查。(4) alias 移除导入的日期+触发序列拼接形 GRB 120911268，收 GCN 用名 GRB 120911B；2FLGC 主键 120911268（HEASARC 显示 GRB 120911.268）属触发序列形态，按 §3.10 不入 alias。(5) sub_tag 补 lgrb：GCN 13755/13758 称 long-duration，T90≈69 s（GCN 13757；2FLGC GBMT90=69）。(6) 本条目无 lc 数据；GCN 检索（2026-10-21）该暴仅 13755–13758 四条 Circular，无光学/射电测光可补；LAT/GBM 高能光变为能量串波段，不在审核范围，未入库。",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy 2026-10-21：(1) 身份=IPN 发现并三角定位的 GRB 120911B（GCN 13755；GCN 13756 明言 IPN detected），Fermi/LAT 探测（2FLGC gcn_name=120911B、GRBNAME=120911268），AGILE/MCAL、Konus-Wind、INTEGRAL SPI-ACS、Mars Odyssey/HEND 亦观测；Fermi/GBM 未触发（GCN 13756/13757，2FLGC GBMT05=0），故 Trigger_Instrument 由 Fermi/GBM 改为 IPN。当日另有 GRB 120911A（Swift/BAT 07:08:33 UT，RA 357.966、Dec +63.09），时刻与位置均不同，非重复条目。(2) T0 取触发仪器 Konus-Wind 的官方 GCN 13758 触发时刻 2012-09-11T06:26:12.213Z（T0=23172.213 s UT）；2FLGC Table 2 记 06:26:12（MET 369037575 = 23172 s UT + 3 闰秒，换算自洽）与之相符。GCN 13755/13756 的 06:26:15 为 IPN 三角定位的 about 时刻（IPN 非触发仪器），相差约 2.8 s，不采用并备查；GBM 地面分析 T0=06:25:14 为前兆起始（GCN 13757），不采用。(3) 位置取 2FLGC Table 2 最终 LTF 定位 RA=172.66、Dec=-37.50、误差 0.60°（90% 包含、统计误差，Ajello+2019 §4.1；2FLGC FSSC 机读表 gll_2flgc_dr1.fits 2026-10-21 复核，与 W3Browse 快照一致；出版社 IOP 页反爬，正文口径据 arXiv:1906.11403，数值以机读表为准），即 pos_error=2160 arcsec；GCN 13756 早期定位 172.03、-37.51（0.3°、68%）与 IPN 3σ 箱中心 172.146、-37.696（GCN 13755）备查。(4) alias 移除导入的日期+触发序列拼接形 GRB 120911268，收 GCN 用名 GRB 120911B；2FLGC 主键 120911268（HEASARC 显示 GRB 120911.268）属触发序列形态，按 §3.10 不入 alias。(5) sub_tag 补 lgrb：GCN 13755/13758 称 long-duration，T90≈69 s（GCN 13757；2FLGC GBMT90=69）。(6) 本条目无 lc 数据；GCN 检索（2026-10-21）该暴仅 13755–13758 四条 Circular，无光学/射电测光可补；LAT/GBM 高能光变为能量串波段，不在审核范围，未入库。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
