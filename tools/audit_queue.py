@@ -16,10 +16,14 @@
   free        以上都不是 → 可认领
   带 `?` 后缀 认领信息来自过期快照，未实时确认（只作"可能被占用"用）
 
+线索卡（`audit/leads/<源ID>.md`，人工维护）**只读取、只展示**：它记录别人审别的文献时
+顺带发现的同一目标的资料，**不参与上面的状态机**——有线索卡不等于被认领，更不等于已审核。
+
 用法 / Usage:
   python3 tools/audit_queue.py --limit 20              # 可认领队列（代价升序）
   python3 tools/audit_queue.py --bucket 1/4 --limit 50 # 确定性分片，多人互不重叠
-  python3 tools/audit_queue.py --id GRB130427A         # 单源状态与依据
+  python3 tools/audit_queue.py --id GRB130427A         # 单源状态与依据（含线索卡）
+  python3 tools/audit_queue.py --leads                 # 列出全部线索卡（多目标文献交接）
   python3 tools/audit_queue.py --pack 3 --limit 9      # 按批打包（3 源/批）
   python3 tools/audit_queue.py --live                  # 实时查 gh（判据）
   python3 tools/audit_queue.py --emit-snapshot         # 原子写 audit/state.tsv
@@ -41,6 +45,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INFO_DIR = os.path.join(ROOT, 'info')
 LC_DIR = os.path.join(ROOT, 'lc')
 SNAPSHOT = os.path.join(ROOT, 'audit', 'state.tsv')
+LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
 
 SNAPSHOT_STALE_DAYS = 3     # 快照超过这个天数即视为过期（工具会告警）
 CLAIM_TTL_DAYS = 14         # 普通源的认领软过期
@@ -161,6 +166,42 @@ def make_published_filter():
                        or fnmatch.fnmatch(f'lc/{sid}.csv', p) for p in pats)
 
     return _pub, f'.gitignore 模式（{len(pats)} 条）'
+
+
+# ─── 线索卡（audit/leads/，人工维护，不参与状态机）────────────────────────────
+LEAD_KEYS = ('source_id', 'status', 'paper', 'pr', 'helper', 'date')
+LEAD_KEY_RE = re.compile(r'^\s*[-*]?\s*([A-Za-z_]+)\s*[:：]\s*(.+?)\s*$')
+
+
+def load_leads(dirpath=None):
+    """→ {source_id: {rel, status, paper, pr, helper, date, ...}}
+
+    文件名即源 id（`audit/leads/<源ID>.md`）。只解析第一个 `##` 标题之前的 key: value 行，
+    格式契约见 `audit/leads/README.md`。工具必须离线可用，坏文件不抛异常，只记 parse_error。
+    """
+    out = {}
+    d = dirpath or LEADS_DIR
+    if not os.path.isdir(d):
+        return out
+    for fn in sorted(os.listdir(d)):
+        if not fn.endswith('.md') or fn.lower() == 'readme.md':
+            continue
+        sid = fn[:-3]
+        meta = {'rel': f'audit/leads/{fn}', 'file': os.path.join(d, fn)}
+        try:
+            with open(meta['file'], encoding='utf-8') as fh:
+                for ln in fh:
+                    if ln.startswith('##'):      # 元数据区到此结束
+                        break
+                    m = LEAD_KEY_RE.match(ln)
+                    if m and m.group(1) in LEAD_KEYS and m.group(1) not in meta:
+                        meta[m.group(1)] = m.group(2).strip()
+        except OSError as e:
+            meta['parse_error'] = str(e)
+        if meta.get('source_id') and meta['source_id'] != sid:
+            meta['mismatch'] = f'source_id={meta["source_id"]}≠文件名'
+        out[sid] = meta
+    return out
 
 
 # ─── 认领快照 ────────────────────────────────────────────────────────────────
@@ -368,7 +409,8 @@ def source_note(snap, claims, live, live_err, extra=()):
     return lines
 
 
-def cmd_list(args, sources, resolved, snap, claims, live_err):
+def cmd_list(args, sources, resolved, snap, claims, live_err, leads=None):
+    leads = leads or {}
     free = [s for s, r in resolved.items() if r['claimable'] == 'yes']
     takeover = [s for s, r in resolved.items() if r['claimable'] == 'takeover']
     key = (lambda s: (resolved[s]['rows'], s)) if args.sort == 'rows' else (lambda s: s)
@@ -390,17 +432,20 @@ def cmd_list(args, sources, resolved, snap, claims, live_err):
             'claimed_total': sum(1 for r in resolved.values()
                                  if r['state'] not in (FREE, REVIEWED)),
             'available_total': total_free,
-            'available': [{'id': s, 'rows': resolved[s]['rows']} for s in free],
+            'available': [{'id': s, 'rows': resolved[s]['rows'],
+                           'has_lead': s in leads} for s in free],
             'takeover': [{'id': s, 'rows': resolved[s]['rows'],
                           'state': resolved[s]['state'],
+                          'has_lead': s in leads,
                           'basis': resolved[s]['basis']} for s in takeover[:20]],
+            'leads_total': len(leads),
         }, ensure_ascii=False, indent=2))
         return 0
 
     extra = [f'源范围：{args.pub_note}'] if getattr(args, 'pub_note', None) else []
     for ln in source_note(snap, claims, args.live and not live_err, live_err, extra=extra):
         print(f'# {ln}')
-    print('# 列：源ID / lc行数 / 状态 / 认领人 / 起始 / PR / 依据')
+    print('# 列：源ID / lc行数 / 状态 / 认领人 / 起始 / PR / 依据（`+lead` = 有线索卡，务必先读）')
     print(f'# 可认领合计 {total_free} 个源'
           + (f'（分片 {args.bucket[0]}/{args.bucket[1]}）' if args.bucket else '')
           + (f'；本页显示 {len(free)} 个' if args.limit else ''))
@@ -410,28 +455,32 @@ def cmd_list(args, sources, resolved, snap, claims, live_err):
             rows_sum = sum(resolved[s]['rows'] for s in grp)
             print(f'\n# pack {i // args.pack + 1}（{len(grp)} 源，{rows_sum} 行）')
             for s in grp:
-                print(render_row(s, resolved))
+                print(render_row(s, resolved, leads))
     else:
         for s in free:
-            print(render_row(s, resolved))
+            print(render_row(s, resolved, leads))
 
     if takeover:
         print(f'\n# 可接手（原认领已软过期 {CLAIM_TTL_DAYS}/{GIANT_TTL_DAYS} 天；'
               f'先在该 PR 评论询问并等 48 小时）：{len(takeover)} 个')
         for s in takeover[:20]:
-            print(render_row(s, resolved))
+            print(render_row(s, resolved, leads))
     return 0
 
 
-def render_row(sid, resolved):
+def render_row(sid, resolved, leads=None):
     r = resolved[sid]
     c = r['claim'] or {}
+    lead = ''
+    if leads and sid in leads:
+        lead = f' +lead({leads[sid].get("status") or "?"})'
     return (f'{sid:<28} {r["rows"]:>7} {r["state"]:<14} '
             f'{(c.get("holder") or "-"):<20} {(c.get("since") or "-"):<11} '
-            f'{(c.get("pr") or "-"):<10} {r["basis"]}')
+            f'{(c.get("pr") or "-"):<10} {r["basis"]}{lead}')
 
 
-def cmd_id(args, sources, resolved, snap, claims, live, live_err):
+def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None):
+    leads = leads or {}
     extra = [f'源范围：{args.pub_note}'] if getattr(args, 'pub_note', None) else []
     sid = args.id
     if sid not in sources and sid not in resolved:
@@ -457,9 +506,45 @@ def cmd_id(args, sources, resolved, snap, claims, live, live_err):
             print('  接手流程        : 在该 PR 上评论询问 → 等 48 小时 → 无响应即可接手，并在自己的 PR 里说明')
     if c and c.get('state', '').endswith('?'):
         print('  ⚠ 快照已过期：该占用未实时确认，请用 --live 或 gh pr list 复核后再决定')
+    lead = leads.get(sid)
+    if lead:
+        print(f'  线索卡         : {lead["rel"]}'
+              f'（status={lead.get("status") or "?"}'
+              + (f'，{lead["pr"]}' if lead.get('pr') else '')
+              + (f'，{lead.get("paper") or ""}' if lead.get('paper') else '') + '）')
+        print('  → 必读：线索只是待核对清单，不改变本源的 free/claimed 判定；仍须自己认领、'
+              '自己打开原文核验。审完（或否证）在**你自己的数据 PR** 里 git rm 该文件')
+        if lead.get('mismatch'):
+            print(f'  ⚠ 线索卡元数据异常：{lead["mismatch"]}')
+        if r['state'] == REVIEWED:
+            print('  ⚠ 该源已是 reviewed，线索卡应已在该源审核 PR 中删除 → 维护者清理')
+        if lead.get('parse_error'):
+            print(f'  ⚠ 线索卡读取失败：{lead["parse_error"]}')
     for ln in source_note(snap, claims, live and not live_err, live_err, extra=extra):
         if ln.startswith(('⚠', '提示', '源范围')):
             print(f'  · {ln}')
+    return 0
+
+
+def cmd_leads(args, sources, resolved, leads):
+    """列出全部线索卡（人工维护；只读，不影响源状态）。"""
+    if not leads:
+        print('# 无线索卡（audit/leads/ 为空或不存在）')
+        return 0
+    print(f'# 线索卡 {len(leads)} 张（人工维护；不影响源状态，契约见 audit/leads/README.md）')
+    print('# 列：源ID / 源状态 / 线索status / 出处 / 提出人 / 日期 / PR')
+    for sid in sorted(leads):
+        l = leads[sid]
+        st = (resolved.get(sid) or {}).get('state', 'unknown')
+        print(f'{sid:<24} {st:<12} {(l.get("status") or "?"):<13} '
+              f'{(l.get("paper") or "-")[:38]:<38} {(l.get("helper") or "-"):<18} '
+              f'{(l.get("date") or "-"):<11} {l.get("pr") or "-"}')
+        if l.get('mismatch'):
+            print(f'  ⚠ 文件名与 source_id 不一致：{l["mismatch"]}')
+        if sid not in sources:
+            print('  ⚠ 目标源不在仓库内 —— 新源应改开 new-source Issue（提示词 §3.11）')
+        if st == REVIEWED:
+            print('  ⚠ 源已 reviewed，线索卡应在其审核 PR 中删除')
     return 0
 
 
@@ -533,6 +618,8 @@ def main(argv=None):
     ap.add_argument('--sort', choices=['rows', 'id'], default='rows',
                     help='排序：rows=按代价升序（默认），id=按源名')
     ap.add_argument('--include-all', action='store_true', help='列出所有源（含已审核/被占用）')
+    ap.add_argument('--leads', action='store_true',
+                    help='列出全部线索卡 audit/leads/（多目标文献交接；不影响源状态）')
     ap.add_argument('--include-unpublished', action='store_true',
                     help='纳入未发布/未跟踪源（默认只列公开仓库里有的源）')
     ap.add_argument('--format', choices=['plain', 'json'], default='plain')
@@ -588,18 +675,21 @@ def main(argv=None):
                 print(f'# ⚠ --live 失败，退回快照：{e}', file=sys.stderr)
 
     resolved = resolve(sources, claims, snap)
+    leads = load_leads()
     if args.include_all:
         order = sorted(resolved, key=lambda s: (resolved[s]['state'], resolved[s]['rows'], s))
         for s in order:
-            print(render_row(s, resolved))
+            print(render_row(s, resolved, leads))
         return 0
+    if args.leads:
+        return cmd_leads(args, all_sources, resolved, leads)
     if args.id:
         if args.id not in sources and args.id in all_sources:
             print(f'源 {args.id} 存在但未发布（.gitignore 排除）→ 不在审核队列范围'
                   f'（如需纳入请加 --include-unpublished）', file=sys.stderr)
             return 5
-        return cmd_id(args, sources, resolved, snap, claims, args.live, live_err)
-    return cmd_list(args, sources, resolved, snap, claims, live_err)
+        return cmd_id(args, sources, resolved, snap, claims, args.live, live_err, leads)
+    return cmd_list(args, sources, resolved, snap, claims, live_err, leads)
 
 
 if __name__ == '__main__':
