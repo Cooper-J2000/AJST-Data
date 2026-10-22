@@ -1,28 +1,54 @@
 {
   "transient_id": "GRB120227A",
-  "alias": [],
+  "alias": [
+    "GRB 120227A",
+    "bn120227391"
+  ],
   "ra": 84.76,
   "dec": 8.5,
-  "T0": "2012-02-27T09:22:46Z",
-  "T0_ref": null,
+  "T0": "2012-02-27T09:22:45.971Z",
+  "T0_ref": "3FLGC (Bhat+2016, ApJS 223, 28) 表5：09:22:45.9705 UT；HEASARC FERMIGBRST bn120227391 trigger_time=MJD 55984.390809844=2012-02-27T09:22:45.9705Z（仓库归一化快照记 09:22:45.971Z）；GCN 12992 记 09:22:46 UT（整数秒舍入）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 22788,
+  "pos_error_confidence": null,
+  "pos_ref": "HEASARC FERMIGBRST bn120227391：ra=84.76, dec=8.5, error_radius=6.33°（=22788″）；3FLGC (Bhat+2016) 表5：84.8, +8.5, 6.3°；SIMBAD 05 39 12.0 +08 30 00（引 2FLGC 坐标）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy 2026-10-22）：[身份] Fermi/GBM 触发 bn120227391（trigger 352027367），INTEGRAL SPI-ACS 另触发 6478（GCN 12992）；SIMBAD 将 GRB 120227A 与 Fermi bn120227391 等同（05 39 12.0 +08 30 00）。[T0] 3FLGC（Bhat+2016）表5 与 HEASARC FERMIGBRST 均给 09:22:45.9705 UT（MJD 55984.390809844；归一化快照记 09:22:45.971Z），GCN 12992 记整数秒 09:22:46；T0 由 09:22:46Z 精化为 09:22:45.971Z（29 ms 为整数秒舍入，非真实偏移，不记 T0_offset）。脚本复核：MET 352027367 按 2001-01-01 直算得 09:22:47，扣 2006/2009 两个闰秒后为 09:22:45——本源未犯 Issue #67 的漏扣闰秒错误。[定位] FERMIGBRST ra=84.76, dec=8.5, error_radius=6.33°（3FLGC 表5 取整 84.8/+8.5/6.3；SIMBAD 同），pos_error=6.33°=22788″；目录与 GCN 12992 均只称 statistical error region、未标置信水平，pos_error_confidence 留空。[物理] T90=19.71±1.72 s（50–300 keV，FERMIGBRST），长暴，sub_tag=lgrb；无红移测量（SIMBAD 无 z，GCN 无光谱通告）。[lc] 原库无 lc；新增 GCN 12992 的 RAPTOR 触发期间 unfiltered 10 s 图像 3σ 上限 V≈10.3（Tycho-2 V 定标），中点 09:22:45.6 UT=T0−0.371 s；未检索到该源其他光学/射电测光，未检索到 X 射线数据。[别名] 目录名 GRB120227391 / GRB 120227.391 属“日期+触发序列”拼接形（Issue #69），仅在 comment 记录，不入 alias。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-22"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "vonKienlin+2014",
+      "url": "https://doi.org/10.1088/0067-0049/211/1/13",
+      "title": "The 2nd Fermi GBM Gamma-Ray Burst Catalog: The First Four Years",
+      "source": "fsy"
+    },
+    {
+      "name": "Bhat+2016",
+      "url": "https://doi.org/10.3847/0067-0049/223/2/28",
+      "title": "The 3rd Fermi GBM Gamma-Ray Burst Catalog: The First Six Years",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
