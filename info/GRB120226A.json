@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB120226A",
   "alias": [
-    "GRB 120226871"
+    "GRB120226871",
+    "bn120226871"
   ],
-  "ra": 302.9700012207031,
-  "dec": 48.97999954223633,
-  "T0": "2012-02-26T20:54:19.030000Z",
-  "T0_ref": null,
+  "ra": 302.97,
+  "dec": 48.98,
+  "T0": "2012-02-26T20:54:17.030Z",
+  "T0_ref": "GCN 12995（Fermi GBM trigger 351982459 / 120226871，20:54:17.03 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +15,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2448,
+  "pos_ref": "2FLGC (Ajello+2019) LTF 定位，error_radius=0.68°（90% 统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核（fsy 2026-10-22）。身份：Fermi/GBM 触发 351982459 / 120226871，GCN 12995 记 20:54:17.03 UT；IPN（GCN 12993）联合 GBM、INTEGRAL SPI-ACS、Konus-Wind、MESSENGER、Mars Odyssey、Swift-BAT、RHESSI、Suzaku-WAM 三角定位，确认为同一长暴；AGILE-MCAL 亦探测（T90≥21.5 s）。T0：原值 2012-02-26T20:54:19.030Z 系 2FLGC trigger_met=351982459.03 s 按 2001-01-01 纪元直换、漏扣 2006-01-01 与 2009-01-01 两次闰秒（+2 s），偏晚；按 GCN 12995 改为 20:54:17.030Z；FERMIGBRST trigger_time MJD 55983.871030401=20:54:17.027、2FLGC 表1 记 20:54:17，互洽。属纪元换算差，不记 T0_offset（§3.2/§3.8，Issue #67）。坐标：保留 2FLGC 表1 LTF 定位 302.97/+48.98（原值 302.9700012207031/48.97999954223633 为 float32 噪声，清为 302.97/48.98），error_radius=0.68°（90% 统计误差）→ pos_error=2448″、pos_error_confidence=90。GCN 12989 的初始 LAT 定位 305.30/+40.75（0.36° 90%）已被 GCN 12995 撤回（PSR J2021+4026 污染，距该定位 0.31°），不采用；2FLGC 的 P8 LTF 重分析仍列本源为 LAT 探测（LTF TS=37、LLE 12σ）。IPN 3σ 盒中心 302.930/+48.665（面积 1.2 deg²、最大尺寸 6.1°，四角见 GCN 12993；MPE Greiner 表同列 20h11m43s +48°40′、366′×12′）与 2FLGC 定位相距 0.316°，2FLGC 点距盒边约 0.012°（44″，在 0.68° 误差内），二者一致；GBM 目录位置 302.93/+48.665、error 6.01° 与 IPN 盒中心/最大尺寸吻合，系采用 IPN 而非独立 GBM 定位；GBM 最终地面定位 300.36/+42.04（1.57° 统计）偏离 IPN 中心 6.87°，未采用。ROTSE 匹配滤波定位 300.05/+48.81（~0.5°）距 IPN 中心 1.905°、在盒外，原文称信号太弱不能称确证，不采用。分类：2FLGC 表2 CLASS=(L)，T90=52.99±0.57 s（50–300 keV；GCN 12995 的 prelim 57±2 s），GCN 12993/12996 均称 long，补 lgrb；Fermi-LAT 副标签保留（2FLGC 列为 LAT 探测）。alias：原 “GRB 120226871” 为空格拼接伪形，改为 FERMIGBRST trigger_name “GRB120226871” 与 GBM 名 “bn120226871”；2FLGC 内部名 “GRB 120226.871” 仅记此备查，不入 alias。无光学/射电测光或上限（5 条 GCN 均为伽马段，2FLGC/GBM/Konus 无光学数据），不建 lc；Swift TOO 已申请（GCN 12989），Swift-XRT live 目录（2026-07 快照）无本源条目、GCN 亦无 XRT 通告，X 射线数据暂不处理。红移无测定，保持 null；无宿主星系。articles 登记 Ajello+2019（arXiv:1906.11403；IOP VoR 被 Radware 验证页拦截，数值取自 arXiv v1 并与仓内 FERMILGRB 快照核对）与 GCN 12989/12993/12994/12995/12996。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -213,8 +215,51 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-22"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12989",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/12989.gcn3",
+      "title": "GRB 120226A: Fermi-LAT detection of a burst",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12993",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/12993.gcn3",
+      "title": "IPN Triangulation of GRB 120226A",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12994",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/12994.gcn3",
+      "title": "GRB 120226A: Fermi-LAT data analysis",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12995",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/12995.gcn3",
+      "title": "GRB 120226A: Fermi-GBM and Fermi-LAT detections; LAT position retraction",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 12996",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/12996.gcn3",
+      "title": "Konus-Wind observation of GRB 120226A",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
