@@ -3,26 +3,42 @@
   "alias": [],
   "ra": 172.387,
   "dec": -20.351,
-  "T0": "2002-05-25T00:41:00Z",
-  "T0_ref": null,
+  "T0": "2002-05-25T05:36:04Z",
+  "T0_ref": "GCN 1395",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 351,
+  "pos_ref": "GCN 1395",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "IPN 暴（Ulysses/Konus-Wind/Mars Odyssey-HEND 三角定位，GCN 1395）。原 T0=2002-05-25T00:41:00Z 为 bot 值（t0_basis=meta_trigger）且无可溯源出处，与 GCN 1395（2002-05-25 20164s UT=05:36:04）及 HEASARC GRB 目录（020525C：2002-05-25T05:36:04.000Z 地球穿越时）矛盾，审核修正。Ulysses 观测持续约 25s（GCN 1395），rssgrbag 目录（Chandra & Frail 2012）T90=25.0s，据此补 sub_tag=lgrb。ra/dec 为 GCN 1395 IPN 误差盒中心（11h29m32.93s -20°21′05.28″），pos_error=351 角秒为其外接半径（平行四边形盒对角线约 4.6′/11.7′，面积 25.4 平方角分，与原文约 25 平方角分一致；MPE 目录记 5′x5′ 盒）；GCN 1395 原文注明误差盒或可改进，其后未见更精化定位（IPN 补编 arXiv:1004.1650 覆盖期止于 2002-04）。HEASARC GRB 目录同日另列 020525A/B（03:47:54 UT 与 04:26:54.6 UT，后者 T90=0.18s），本条目对应 020525C（afterglow=Y）。光学：NOFS 1.0m 与 Ellinbank 0.3m 未滤光巡视整个误差盒未见新源（GCN 1397），Morehead 0.6m 覆盖约 95% 误差盒无暂现源（GCN 1398），见 lc/GRB020525.csv；rssgrbag 记 VLA 射电跟踪，光学与射电余辉均未探测，X 射线未观测。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-05 审核修正为 GCN 1395 触发时刻（原 bot 值 2002-05-25T00:41:00Z 无可溯源出处）",
+    "t0_basis": "GCN 1395",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-05"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Chandra & Frail 2012",
+      "url": "https://ui.adsabs.harvard.edu/abs/2012ApJ...746..156C/abstract",
+      "title": "Radio-Selected Gamma-Ray Burst Afterglow Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
