@@ -20,7 +20,7 @@
   "pos_error": 1224,
   "pos_error_unit": "arcsec",
   "pos_error_confidence": "90",
-  "pos_ref": "HEASARC FERMILGRB (2FLGC) 行 GRB120107384: ra=16 20 02.4, dec=-70 35 24, error_radius=0.34 deg（Ajello+2019, ApJ 878, 52, LTF 定位；90% containment, statistical only）；GCN 12822 匹配滤波/似然定位 246.40/246.31,-69.93（~0.5°）为早版分析，未采用",
+  "pos_ref": "HEASARC FERMILGRB (2FLGC) 行 GRB120107384: ra=16 20 02.4, dec=-70 35 24, error_radius=0.34 deg（Ajello+2019, ApJ 878, 52, LTF 定位；90% containment, statistical only）；GCN 12822 早版匹配滤波定位 246.40/-69.93（~0.5°）与似然定位 246.31/-69.93 未采用",
   "redshift_type": null,
   "redshift_ref": null,
   "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。2026-10-22 fsy 审核：(1) 身份=GRB 120107A（GBM trigger 120107384/347620337；2FLGC GRB120107384）；GCN 12822/12823/12824/12826/12828 为同一事件，库内无重复条目。(2) 原 T0=2012-01-07T09:12:17.410Z 为 2FLGC trigger_met 347620337.41 s 未扣 2 闰秒的直换值（偏晚 2 s），按 Issue #67 直接改正为 2012-01-07T09:12:15.411Z；属历元换算问题，不记 T0_offset。(3) 位置取 2FLGC LTF 245.01/-70.59（error_radius 0.34°=1224″，90% containment, statistical only），清除 float32 残渣；FERMIGBRST/SwiftGRB 的 246.4/-69.93（0.5°）与 GCN 12822 早版匹配滤波/似然定位 246.40/246.31,-69.93 逐位相同，属转引而非独立定位，与 2FLGC 相距 0.81°。(4) 2FLGC Table 3 CLASS=(L)，补 sub_tag lgrb；T90=23.04±0.14 s（50-300 keV，FERMIGBRST/2FLGC）。(5) GCN 12822/12823/12824/12826/12828 与 Zheng+2012 均无光学/射电测光，未建 lc。alias 收录 2FLGC/FERMIGBRST 官方触发名。",
