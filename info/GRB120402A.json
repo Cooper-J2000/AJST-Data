@@ -1,28 +1,61 @@
 {
   "transient_id": "GRB120402A",
-  "alias": [],
+  "alias": [
+    "GRB 120402A"
+  ],
   "ra": 314.326,
   "dec": 19.258,
-  "T0": "2012-04-03T01:47:42Z",
-  "T0_ref": null,
+  "T0": "2012-04-02T22:49:22.884260Z",
+  "T0_ref": "GCN 13190; Swift/BAT trigger 519207 refined analysis（https://gcn.gsfc.nasa.gov/notices_s/519207/BA/ 给出 UTC 2012-04-02T22:49:22.884260，含 UTCF 改正）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [],
   "pos_error": 180.0,
   "pos_ref": "GCN 13190",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发 519207（GCN 13190，6.6σ，单峰约 5 s）初报为 GRB 120402A，在机定位 314.326/+19.258（3′，90%）；XRT 451 s 数据无源，UVOT 150 s White 找星图无候选（典型 3σ 极限 19.6 mag，子图仅覆盖误差圆 25%）。GCN 13202 依 Cyg X-1 掩模加权光变（15–50 keV 单对称脉冲约 4 s，与触发同时）判定该触发为 Cyg X-1 耀发经旁瓣误触发，明确 \"was not GRB 120402A\"，故本条目为已撤回的非 GRB 触发：不设 tag/sub_tag，无红移与宿主。原 bot T0=2012-04-03T01:47:42Z 系误取 GCN 13196 所述 MASTER 跟踪起始时刻（原文 \"10700 sec after GRB time at 2012-04-03 01:47:42.444 UT\"，即触发后 10700 s 的观测起始；该文正文误写 GRB120402B，观测位置仍为 120402A 的 Swift 误差框），现按 BAT 精分析 UTC（含 UTCF 改正）修正为 2012-04-02T22:49:22.884260。BAT 精分析 T90=2.05 s（15–350 keV）仅存档，不作短暴分类。lc 三行为误差框内非探测上限（GCN 13190/13196/13200）。SIMBAD 另列 3 篇样本统计类引用（Wang+2020; Kaneko+2015; Matsumoto+2020），本次未取用数据。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-22 审核修正为 Swift/BAT 触发 519207 时刻 2012-04-02T22:49:22.884260 UTC（GCN 13190；BAT 精分析含 UTCF 改正）；原 bot 值 2012-04-03T01:47:42Z 系误取 GCN 13196 所述 MASTER 观测起始时刻（触发后 10700 s），已废弃",
+    "t0_basis": "GCN 13190 + Swift/BAT trigger 519207 refined analysis",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-22"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 13190",
+      "url": "https://gcn.nasa.gov/circulars/13190",
+      "title": "GRB 120402A: Swift detection of a possible burst or noise",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 13196",
+      "url": "https://gcn.nasa.gov/circulars/13196",
+      "title": "GRB 120402A: MASTER follow up observations",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 13200",
+      "url": "https://gcn.nasa.gov/circulars/13200",
+      "title": "GRB 120402A: optical upper limit",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 13202",
+      "url": "https://gcn.nasa.gov/circulars/13202",
+      "title": "BAT trigger 519207 was a burst from Cyg X-1, was not GRB 120402A",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
