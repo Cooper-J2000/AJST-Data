@@ -6,10 +6,10 @@
   ],
   "ra": 57.35,
   "dec": -56.41,
-  "T0": "2012-03-16T00:11:04.560000Z",
-  "T0_ref": "HEASARC FERMILGRB (2FLGC) trigger_met=353549464.56 的直换值（未扣闰秒，见 T0_offset）",
-  "T0_offset": -2.0006,
-  "T0_offset_ref": "GCN 13085 触发时刻 2012-03-16T00:11:02.56 UT；HEASARC FERMIGBRST（4th GBM catalog）trigger_time MJD 56002.007668512 = 2012-03-16T00:11:02.5594；2FLGC MET 直换漏扣 2 跳秒",
+  "T0": "2012-03-16T00:11:02.559400Z",
+  "T0_ref": "FERMIGBRST bn120316008 trigger_time MJD 56002.007668512 = 2012-03-16T00:11:02.5594Z；GCN 13085 记 00:11:02.56 UT；2FLGC trigger_met=353549464.56 直换（未扣 2 闰秒）得 04.560 备查",
+  "T0_offset": null,
+  "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
@@ -20,7 +20,7 @@
   "pos_ref": "Ajello+2019 (2FLGC) / HEASARC FERMILGRB: ra=57.35, dec=-56.41, error_radius=0.31 deg（LAT Transient Factory，90% 包含半径、仅统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（fsy 2026-10-22）：身份——Fermi GBM 触发 120316008 / bn120316008 = GRB 120316A（GCN 13070、13073、13074、13085、13088；HEASARC FERMIGBRST name=GRB120316008、trigger_name=bn120316008；FERMILGRB gcn_name=GRB120316A），坐标、T0、触发仪器互证一致。T0——库中 2012-03-16T00:11:04.560Z 为 2FLGC trigger_met=353549464.56 自 2001-01-01T00:00:00 UTC 直换（漏扣 2006-01-01、2009-01-01 两次闰秒）；真实 GBM 触发 2012-03-16T00:11:02.5594 UTC（GCN 13085 记 00:11:02.56 UT；FERMIGBRST trigger_time MJD 56002.007668512），按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-2.0006 s；2FLGC/FERMILGRB time 列另给 LAT 触发 2012-03-16T00:11:01.997（早于 GBM 0.56 s），库以触发仪器 GBM 时刻为准。定位——ra/dec=57.35/-56.41 取自 FERMILGRB（2FLGC）LAT Transient Factory 定位，error_radius=0.31 deg（2FLGC 定位误差为 90% 包含半径、仅统计误差，见 Ajello+2019：On average, the (90% containment, statistical only) uncertainty in LAT detections is 0.36 deg），bot 存值为 float32 残渣（57.349998474121094 / -56.40999984741211），已回归目录原值，并补 pos_error=1116、pos_error_confidence=90、pos_ref。IPN 三角定位（GCN 13073：RA 57.016 Dec -56.288，3σ 1.07 deg²；FERMIGBRST ra/dec/error_radius=57.016/-56.288/0.584 deg 同值）与 LAT 定位相距约 0.22 deg，在误差范围内，保留更紧的 LAT 定位。alias——删除无点拼接伪形 GRB 120316008（§3.10、Issue #69），保留目录官方名 GRB120316008 与 GBM 触发名 bn120316008；带点形 GRB 120316.008 无出处，不采信。红移——FERMILGRB redshift 为空（NaN），GCN 与检索文献均无红移。sub_tag——T90=26.6244±0.362 s（50-300 keV，FERMIGBRST / 4th GBM catalog）>2 s，lgrb 成立；LAT 探测（2FLGC）→ Fermi-LAT。测光——gcn.gsfc.nasa.gov/other/120316A.gcn3 与 gcn.nasa.gov 全文检索（120316A、353549464）仅 5 篇通告（13070/13073/13074/13085/13088），均属伽马段；OpenAlex 全文检索仅 5 篇（含上述通告与 arXiv:1203.5113 顺带提及），TNS 无此对象（404），未发现任何光学/射电逐点测光或上限；2FLGC 的 LAT 伽马光变属伽马能段，不入 lc。故不建 lc。",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（fsy 2026-10-22）：身份——Fermi GBM 触发 120316008 / bn120316008 = GRB 120316A（GCN 13070、13073、13074、13085、13088；HEASARC FERMIGBRST name=GRB120316008、trigger_name=bn120316008；FERMILGRB gcn_name=GRB120316A），坐标、T0、触发仪器互证一致。T0——库中 2012-03-16T00:11:04.560Z 为 2FLGC trigger_met=353549464.56 自 2001-01-01T00:00:00 UTC 直换（漏扣 2006-01-01、2009-01-01 两次闰秒）；真实 GBM 触发 2012-03-16T00:11:02.5594 UTC（GCN 13085 记 00:11:02.56 UT；FERMIGBRST trigger_time MJD 56002.007668512），按 §3.2/§3.8 直接改进 T0=02.5594，T0_offset 留空（换算口径差，不是真实爆发相对触发的偏移）；2FLGC time 列另给 LAT 触发 2012-03-16T00:11:01.997（早于 GBM 0.56 s），备查。定位——ra/dec=57.35/-56.41 取自 FERMILGRB（2FLGC）LAT Transient Factory 定位，error_radius=0.31 deg（2FLGC 定位误差为 90% 包含半径、仅统计误差，见 Ajello+2019：On average, the (90% containment, statistical only) uncertainty in LAT detections is 0.36 deg），bot 存值为 float32 残渣（57.349998474121094 / -56.40999984741211），已回归目录原值，并补 pos_error=1116、pos_error_confidence=90、pos_ref。IPN 三角定位（GCN 13073：RA 57.016 Dec -56.288，3σ 1.07 deg²；FERMIGBRST ra/dec/error_radius=57.016/-56.288/0.584 deg 同值）与 LAT 定位相距约 0.22 deg，在误差范围内，保留更紧的 LAT 定位。alias——删除无点拼接伪形 GRB 120316008（§3.10、Issue #69），保留目录官方名 GRB120316008 与 GBM 触发名 bn120316008；带点形 GRB 120316.008 无出处，不采信。红移——FERMILGRB redshift 为空（NaN），GCN 与检索文献均无红移。sub_tag——T90=26.6244±0.362 s（50-300 keV，FERMIGBRST / 4th GBM catalog）>2 s，lgrb 成立；LAT 探测（2FLGC）→ Fermi-LAT。测光——gcn.gsfc.nasa.gov/other/120316A.gcn3 与 gcn.nasa.gov 全文检索（120316A、353549464）仅 5 篇通告（13070/13073/13074/13085/13088），均属伽马段；OpenAlex 全文检索仅 5 篇（含上述通告与 arXiv:1203.5113 顺带提及），TNS 无此对象（404），未发现任何光学/射电逐点测光或上限；2FLGC 的 LAT 伽马光变属伽马能段，不入 lc。故不建 lc。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
