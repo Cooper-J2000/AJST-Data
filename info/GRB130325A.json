@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB130325A",
   "alias": [
-    "GRB 130325203"
+    "GRB 130325A",
+    "bn130325203"
   ],
-  "ra": 122.97000122070312,
-  "dec": -19.149999618530273,
-  "T0": "2013-03-25T04:51:57.300000Z",
-  "T0_ref": null,
+  "ra": 122.97,
+  "dec": -19.15,
+  "T0": "2013-03-25T04:51:54.300Z",
+  "T0_ref": "GCN 14329（Fermi/GBM trigger 385879917 / 130325203，04:51:54.30 UT）；FERMIGBRST bn130325203 trigger_time 2013-03-25T04:51:54.298Z；2FLGC Table 2 记 04:51:53.997",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 648,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，ERR=0.18°，90% 包含、统计误差）；GCN 14332 LAT 0.25°/68% 与 GBM 2.15°/1σ 备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy 2026-10-21：(1) 身份=Fermi/GBM 触发 385879917 / 130325203 的 GRB 130325A（GCN 14329：04:51:54.30 UT，GBM 定位 130.71/-21.12，2.15° 1σ，T90=9.7 s；GCN 14332 LAT 定位 122.78/-18.90，0.25°/68%；GCN 14338 Konus-Wind 称 long GRB，触发 04:51:56.880，持续约 8 s）。2FLGC LAT 定位 122.97/-19.15，ERR=0.18°，LAT 分类 (L)。库内无同事件重复条目。(2) T0：原值 2013-03-25T04:51:57.300Z 系 2FLGC MET 385879917.30 自 2001-01-01 直换、未扣 2006/2009/2012 三次闰秒（3.0 s）；GCN 14329 给 04:51:54.30，FERMIGBRST 54.298，2FLGC 53.997（比采纳值早 0.30 s，备查）；T0 取 GCN 14329 的 .30（触发仪器官方 GCN），T0_ref 已填，T0_offset 留空（目录换算口径差）。(3) 位置取 2FLGC Table 2 的 LAT LTF 定位 122.97/-19.15，误差 0.18°=648″（90% 包含、统计误差，Ajello+2019 §4.1；机读表 gll_2flgc_dr1.fits 复核）；GBM 130.71/-21.12（2.15° 1σ）与 LAT 通告 122.78/-18.90（0.25° 68%，GCN 14332）备查。(4) alias 移除导入的日期+触发序列拼接形 GRB 130325203，收 GCN 用名 GRB 130325A 与 FERMIGBRST trigger_name bn130325203；2FLGC 机器名 130325.203 属伪形，不入 alias。(5) sub_tag 补 lgrb：2FLGC Table 3 该行 CLASS=(L)，GCN 14338 亦称 long GRB；尽管 GBM T90=9.7 s，按来源分类取 lgrb（不按 T90 自行判类）。(6) 无 lc：GCN 14336 仅为 Swift tiled 观测通告，未报余辉候选；LAT 光变为能量串波段，不在审核范围、未入库；无红移测量。(7) 版本：2FLGC IOP VoR 被反爬，数值据 arXiv:1906.11403 Table 2/3 与仓内机读表核对；GCN 14329/14332/14338 已实际打开。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -149,8 +152,44 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 14329",
+      "url": "https://gcn.nasa.gov/circulars/14329",
+      "title": "GRB 130325A: Fermi GBM detection",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 14332",
+      "url": "https://gcn.nasa.gov/circulars/14332",
+      "title": "GRB 130325A: Fermi LAT detection",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 14338",
+      "url": "https://gcn.nasa.gov/circulars/14338",
+      "title": "Konus-Wind observation of GRB 130325A",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
