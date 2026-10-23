@@ -1,28 +1,65 @@
 {
   "transient_id": "GRB141118A",
-  "alias": [],
-  "ra": 156.522055,
-  "dec": 18.569044,
-  "T0": "2014-11-18T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 141118A"
+  ],
+  "ra": 158.12,
+  "dec": 19.76,
+  "T0": "2014-11-18T16:15:50.310Z",
+  "T0_ref": "GCN 17094 + FERMIGBRST (bn141118678)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
-  "redshift": 0.108,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 7884,
+  "pos_ref": "FERMIGBRST (bn141118678) + GCN 17094",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "长暴（GCN 17074 原文 'A long-duration GRB'；GBM T90≈4.4 s，50-300 keV）。定位：Fermi/GBM 在机定位 RA,Dec=158.1,+19.8，不确定度 2.2°（半径，1σ 包含、仅统计误差，另有 2–3° 系统误差）（GCN 17094）；FERMIGBRST 官方目录最终定位 RA,Dec=158.12,+19.76、error_radius=2.19°（置信水平据 GCN 17094 的 1σ 表述记 1sigma；本条目采用目录值）；IPN 三角定位 3σ 误差盒（GCN 17073）中心 RA=156.874、Dec=19.079、面积 2890 平方角分（external/mpe_greiner 快照同记 IPN 定位 156.875,+19.083），误差盒为环形/非圆，无法以单一半径表示，故 pos_error 取 GBM 值。原库 ra/dec=156.522055,+18.569044 与 redshift=0.108 系 GCN 17079 中光学暂现体 iPTF14hvs（Ia 型超新星，宿主 SDSS J102605.09+183411.6，photoZ≈0.1）的坐标与红移，该文明确结论 'iPTF14hvs is not related to the GRB'，故审核更正坐标并置 redshift=null。原 T0=2014-11-18T00:00:00Z 为导入管线占位残留（整点零时）；bot 时间基准标记 t0_basis=meta_trigger、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\" 无从验证，2026-10-24 审核按 §3.10 改写，原值保留于此备查。新 T0 取触发仪器 Fermi/GBM 触发时刻 16:15:50.31 UT（GCN 17094；FERMIGBRST trigger_time=16:15:50.310Z 一致）；Konus-Wind 触发 T0=58548.540 s UT=16:15:48.540（GCN 17074），与 GBM 相差 1.77 s 属星间光行时/各自触发定义差异，非本设备触发前辐射，不写 T0_offset。物理量：T90=4.352±0.572 s（50-300 keV，FERMIGBRST）；T90≈4.4 s（50-300 keV，GCN 17094）；fluence=(3.3±0.2)e-6 erg/cm^2（10-1000 keV，GCN 17094）＝(3.29828±0.00028)e-6 erg/cm^2（FERMIGBRST）；fluence=2.3(-0.5,+1.4)e-6 erg/cm^2（20 keV-10 MeV，GCN 17074）；Epeak=286±34 keV（CPL，GCN 17094）；Ep=165(-55,+198) keV（CPL，20 keV-15 MeV，GCN 17074）；1-s 峰值光子流量 6.5±0.3 ph/cm^2/s（10-1000 keV，GCN 17094）；64-ms 峰值能量流量 1.6(-0.4,+1.0)e-6 erg/cm^2/s（20 keV-10 MeV，GCN 17074）；Fermi/LAT 视场角 74°，未探测（GCN 17094）。触发号 438020153/141118678。Konus-Wind 亦触发（GCN 17074），Swift 仅在编码视场外探测（GCN 17073）。iPTF P48 光学跟随（GCN 17079，GBM 触发后约 18.41 h 起，20 视场共 145 deg^2）仅检出无关 SN iPTF14hvs（host-subtracted：+18.41 h R=19.92±0.14 AB、+19.06 h R=20.03±0.08 AB，Mould R，SDSS 定标），非本源测光，不入 lc。alias 'GRB 141118A' 出处：GCN 17073/17074/17079/17094 与 external/mpe_greiner 快照均用此名；GBM 目录名 141118678/GRB 141118.678 属「日期+触发序列」伪形（Issue #69），只记于此不进 alias。测光检索（2026-10-24）：仓内 gcn/archive 全文 45889 篇命中本源 4 篇（17073 IPN 定位、17074 Konus-Wind、17079 iPTF 光学、17094 Fermi GBM；17079 仅含无关 SN 测光，无 GRB 余辉测光或上限）；external/rssgrbag 0 条、grbsn_webtool 无此事件；external/fermi_gbm（bn141118678）与 mpe_greiner（IPN 定位）条目仅用于身份与 T0/定位互证，非测光源；swift_grb（止于 2012-12）与 heasarc_grbcat（止于 2005-03）不覆盖 2014 年；ADS/SciX API 检索 4 命中（均上述 GCN，无可引用测光表）；arXiv API 0 命中；OpenAlex 3 条（同 GCN）；Crossref 0 条；TNS 不适用（GRB，非 AT/SN/CV 类）→ 无可用测光，补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "t0_basis": "GCN 17094 + fermi_gbm",
+    "t0_note": "T0=2014-11-18T16:15:50.310Z 取触发仪器 Fermi/GBM 触发时刻（GCN 17094 原文 16:15:50.31 UT；FERMIGBRST 目录 trigger_time 一致），原 bot 标记 meta_trigger 已按 §3.10 改写，原值见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Hurley+2014",
+      "url": "https://gcn.nasa.gov/circulars/17073",
+      "title": "GRB 141118A: IPN Triangulation",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Golenetskii+2014",
+      "url": "https://gcn.nasa.gov/circulars/17074",
+      "title": "GRB 141118A: Konus-Wind observation",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Singer+2014",
+      "url": "https://gcn.nasa.gov/circulars/17079",
+      "title": "GRB 141118A: iPTF Optical Observations",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Jenke+2014",
+      "url": "https://gcn.nasa.gov/circulars/17094",
+      "title": "GRB 141118A: Fermi GBM Detection",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
