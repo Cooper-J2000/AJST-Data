@@ -1,28 +1,67 @@
 {
   "transient_id": "GRB141118A",
-  "alias": [],
-  "ra": 156.522055,
-  "dec": 18.569044,
-  "T0": "2014-11-18T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 141118.678",
+    "GRB141118678",
+    "bn141118678"
+  ],
+  "ra": 158.12,
+  "dec": 19.76,
+  "T0": "2014-11-18T16:15:50.310Z",
+  "T0_ref": "GCN 17094（Jenke, Fermi GBM team）：'At 16:15:50.31'；Fermi GBM catalog (fermigbrst, bn141118678) trigger_time=2014-11-18T16:15:50.310 UTC（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
-  "redshift": 0.108,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 7884,
+  "pos_ref": "fermigbrst bn141118678 定位 158.12/+19.76（error_radius=2.19°）；GCN 17094 同源 158.1/+19.8（2.2°，1σ 仅统计，另 2-3° 系统误差）",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) **定位与红移更正（关键）**：原 ra/dec=156.522055/+18.569044 与原 redshift=0.108 均取自光学暂源 **iPTF14hvs**——GCN 17079（iPTF）给出了完全相同的坐标（156.522055/+18.569044）与红移（窄发射线 z=0.108；SNID 判为 z~0.11 的 Ia 型超新星、峰后数周），并明确结论「We conclude that iPTF14hvs is not related to the GRB」；GCN 17094（GBM team）亦确认该候选为与 GRB 无关的 fading SNe。**原记录把无关超新星的位置与红移当成了 GRB 的**，均予更正：定位改为 GBM 地面定位 158.12/+19.76（pos_error=2.19°=7884″；GCN 17094 原文 2.2°、1σ 仅统计另有 2-3° 系统误差，故 pos_error_confidence=1sigma）；红移置 null（GRB 本体无任何红移测定）。iPTF14hvs 的测光（R=19.92±0.14 @ +18.41 h、R=20.03±0.08 @ +19.06 h，Mould R/AB）属无关超新星，不入 lc。(2) **T0 更正**：原值 2014-11-18T00:00:00Z（占位午夜值，无任何来源）改为 **16:15:50.310Z**——GCN 17094 'At 16:15:50.31'+ fermigbrst trigger_time 亚秒值；Konus-Wind 触发 16:15:48.540（GCN 17074，早 1.770 s，跨航天器口径差）备查。(3) Trigger_Instrument 'Konus-Wind' 改为 'Fermi/GBM'：GBM 船载触发并给地面定位（GCN 17094，trigger 438020153）；Konus-Wind 同时触发（早 1.77 s）；Swift-BAT 在编码视场外观测（GCN 17073）；另 RHESSI/Odyssey-HEND/GRS/MESSENGER 参与 IPN 联测。(4) tag 空补 grb；sub_tag 空补 **lgrb**：GCN 17074 明确称 'A long-duration GRB 141118A'（GBM T90≈4.4 s 单峰，fermigbrst 4.352 s，按 §3.9 以来源表述为准）。(5) 身份：Fermi GBM trigger bn141118678（GRB 141118.678）=IPN 联测事件（GCN 17073，16:15:50 UT）=Konus-Wind 触发事件（GCN 17074）；仓内无重复条目；GBM 同日仅此一触发。(6) 测光检索（2026-10-24）：gcn/archive 全文 4 篇（17073/17074/17079/17094）——唯一光学暂源 iPTF14hvs 已被原文否证为 GRB 对应体（超新星），其测光不入库；无射电测光；仓内 rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；ADS 本会话无 token 未查 → 无可用测光，未补行，不建 lc。(7) alias 原为空，补 GRB 141118.678 / GRB141118678 / bn141118678（GCN 17094 与 fermigbrst 的官方名形；iPTF14hvs 非 GRB 别名，不收）。GBM Epeak=286±34 keV、fluence=(3.3±0.2)e-6 erg/cm²（10-1000 keV，GCN 17094）、Konus Ep=165(+198,-55) keV、fluence=2.3e-6 erg/cm²（20 keV-10 MeV，GCN 17074）等 SCHEMA 外物理量记此备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 17073",
+      "title": "IPN Triangulation of GRB 141118A",
+      "url": "https://gcn.nasa.gov/circulars/17073",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17074",
+      "title": "Konus-Wind observation of GRB 141118A",
+      "url": "https://gcn.nasa.gov/circulars/17074",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17079",
+      "title": "GRB 141118A: iPTF Optical Observations",
+      "url": "https://gcn.nasa.gov/circulars/17079",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17094",
+      "title": "GRB 141118A: Fermi GBM Detection",
+      "url": "https://gcn.nasa.gov/circulars/17094",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
