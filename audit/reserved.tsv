@@ -1,0 +1,111 @@
+# audit/reserved.tsv — 维护者预留台账（**人工维护；外部协作者只读**）
+#
+# 用途：把一批源暂时自留，使其**不进入可认领队列**，外部合作者不得认领/审核。
+# 机制：`tools/audit_queue.py` 读取本文件，派生 `reserved` 状态 → 不出现在
+#       --limit / --bucket / --pack 的候选里，--id 必显示预留与截止日。
+# 与 audit/state.tsv 的分工：state.tsv 是**机器生成**的 PR 认领快照（勿手改）；
+#       本文件是**人写**的权威预留（只由维护者改），不进 state.tsv。
+# 与 audit/leads/ 的分工：线索卡不参与状态机；本文件**参与**（reserved 是一个状态）。
+# 铁律：预留状态**不写进** info/*.json（认领/预留一律不进数据文件）。
+#
+# 列（TAB 分隔）：source_id  holder  since  until  reason  ref
+#   holder  预留人，`人名@角色`（外部只读，不接受 PR 改这一列）
+#   until   截止日 YYYY-MM-DD；到期后工具标 reserved-expired 并可走 48 h 沟通接手
+#           （**不要留空**：无截止日＝硬锁，会把源永久占死）
+#   ref     关联记录（Issue/PR/内部批次），可空
+#
+# 续期：改 until 一行提交即可。撤销：删掉该行。已 reviewed 的行应删除。
+source_id	holder	since	until	reason	ref
+GRB021004A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB021211A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB030418	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB030723	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB041219A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB050319A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB050401A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB050502A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB050801A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB050820A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB050904A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB051109A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB051111A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060111B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060117	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060124A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060206A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060210A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060418A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060510B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060526A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060605A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060607A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060729A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060814A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060904B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB060927A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB061007A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB061121A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB061126A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB070616	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB071003A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB071010B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080310A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080319B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080603A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080607A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080810A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080905B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB080928A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB081008A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB081203A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB090102A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB090715B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB090727	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB091024A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB100901A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB100902A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB100906A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB110102A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB110119A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB110205A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB110422A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB111103B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB111123A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB121011A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB121217A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB130427A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB130907A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB130925A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB131231A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB140102A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB140108A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB140206A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB140512A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB151021A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB160625B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB180325A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB180418A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB180720B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB190106A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB190530A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB190829A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB191016A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB200412B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB200901A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB201015A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB201216C	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB201223A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB210204A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB210504A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB210619B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB210905A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB211211A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB220101A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB220623A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB230116D	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB230307A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB230812B	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB230903A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB231106A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB250502A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	
+GRB990123A	ajst@maintainer	2026-10-24	2026-11-23	enrich批次20261023（维护者自留）	

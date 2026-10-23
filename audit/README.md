@@ -1,4 +1,4 @@
-# `audit/` —— 审核认领快照（机器生成，**勿手改**）与线索卡（人工维护）
+# `audit/` —— 认领快照（机器生成）· 维护者预留（人工维护）· 线索卡（人工维护）
 
 `state.tsv` 只做一件事：让"某个源已经有人在审"对所有协作者可见。多个外部 agent 并行审核时，
 这是避免重复劳动的**唯一可见层**——因为 `claimed`（有人在做）这个状态不在数据文件里，只在 PR 上。
@@ -22,7 +22,7 @@
 | 列 | 含义 |
 |---|---|
 | `source_id` | 源 id（与 `info/<id>.json` 同名） |
-| `state` | `claimed`＝open **draft** PR（认领中）；`in-review`＝open 正式 PR；`stale-claim` / `stale-pr`＝超过 TTL 未更新，可接手 |
+| `state` | `claimed`＝open **draft** PR（认领中）；`in-review`＝open 正式 PR；`stale-claim` / `stale-pr`＝超过 TTL 未更新，可接手。`reserved`（维护者预留）**不写入本文件**，见 `reserved.tsv` |
 | `holder` | PR 作者（GitHub login） |
 | `since` / `updated` | PR 创建 / 最后更新日期 |
 | `pr` | PR 编号（同一源多条用逗号分隔） |
@@ -42,11 +42,44 @@ gh pr list --search "in:title <源ID>"       # 或手查
 工具在三处会提醒你：文件不存在、`snapshot_at` 超过 **3 天**（视为过期，占用记录标 `?`）时，
 输出头部会告警并拒绝把快照当作"空闲"的证据。
 
+## `reserved.tsv` —— 维护者预留（人工维护，**参与**状态机）
+
+维护者要把一批源**暂时自留**时，写进 `audit/reserved.tsv`——不是开 draft PR，更不是改
+`info/*.json`。被预留的源由 `audit_queue.py` 派生为 `reserved` 状态：**不进入**
+`--limit` / `--bucket` / `--pack` 候选，`--id <源ID>` 必显示预留人与截止日，`--reserved` 列全部。
+
+| 列 | 含义 |
+|---|---|
+| `source_id` | 源 id（与 `info/<id>.json` 同名；允许写尚未入库的源，工具会标「尚未入库」） |
+| `holder` | 预留人，`人名@角色`（如 `ajst@maintainer`）；`?`＝该行缺字段，预留仍生效 |
+| `since` / `until` | 预留起始 / **截止日**（`until` 必填：无截止日＝硬锁） |
+| `reason` | 为什么自留（外部协作者看到的就是这句） |
+| `ref` | 关联记录（Issue / PR / 内部批次），可空 |
+
+规则：
+
+- **外部协作者：不得认领、不得开 `claim: <源ID>` PR、不得改这个文件。** 确需推进就在 Issue 里说明理由。
+- **到期**：`until` 过后派生为 `reserved-expired`，可认领性降为 `takeover` —— 走与过期认领相同的
+  **48 小时沟通**协议（先在相关 Issue/PR 留言再接手）。
+- **台账问题只告警**：缺 `holder`、重复、`until` 非法 → `--reserved` 末尾列出、`validate.py` 警告；
+  缺 `holder` 的行按 `?` **保留**（fail-closed：坏行不等于放人）。
+- 续期＝改 `until` 一行；撤销＝删行；源已 `reviewed` 的残留行由 `validate.py` 警告、维护者清理。
+- **不写进 `info/*.json`**：预留是协调状态，不是数据；进了数据文件，每次预留都会变成一次数据 diff。
+- **不进 `state.tsv`**：后者是 PR 认领的**派生产物**（机器生成，勿手改），`reserved` 是人写的权威记录；
+  快照头部只带 `reserved=N` 计数，避免只看快照的人把自留源当 `free`。
+- **PR 守卫（警告级）**：`python3 tools/audit_queue.py --check-reserved --base origin/main`
+  在 PR 里检查改动是否触及自留源，命中就打 `::warning::` 注解——**不阻断**。
+
+与 `leads/` 的区别：线索卡**不参与**状态机（有卡 ≠ 有人在做）；预留**参与**（`reserved` 是一个状态）。
+
 ## 不要做的事
+
 
 - **不要手改 `state.tsv`**：它是派生产物，下次运行即被覆盖；审核 PR 里出现对它的改动会被要求撤掉。
 - 不要把它当数据源入库（数据在 `info/`、`lc/`）。
 - 不要把 `leads/` 里的卡当成认领记录或核验结果：有卡 ≠ 有人在做，卡里的数值也未经核验。
+- 不要把 `reserved.tsv` 当成"谁在审"的记录：它是维护者的**授权性预留**；外部协作者开工的唯一方式是
+  开 `claim: <源ID>` draft PR。也不要用 draft PR 去占用一批源（那会把 PR 列表淹掉）。
 
 ## `leads/` —— 多目标文献线索卡（人工维护）
 

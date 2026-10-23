@@ -13,6 +13,9 @@
   claimed     有 open draft PR 改了该源（"开工即开 draft claim PR"）
   stale-pr / stale-claim
               上述 PR 超过 TTL 无更新（巨源 30 天，其余 14 天）——软过期，可接手
+  reserved    维护者自留（`audit/reserved.tsv`，人工维护，不是 PR 认领）→ **不得认领**
+  reserved-expired
+              预留已过 `until` → 软过期，按 48 h 沟通协议可接手
   free        以上都不是 → 可认领
   带 `?` 后缀 认领信息来自过期快照，未实时确认（只作"可能被占用"用）
 
@@ -24,6 +27,8 @@
   python3 tools/audit_queue.py --bucket 1/4 --limit 50 # 确定性分片，多人互不重叠
   python3 tools/audit_queue.py --id GRB130427A         # 单源状态与依据（含线索卡）
   python3 tools/audit_queue.py --leads                 # 列出全部线索卡（多目标文献交接）
+  python3 tools/audit_queue.py --reserved              # 列出维护者预留（自留源，外部不得认领）
+  python3 tools/audit_queue.py --check-reserved        # PR 守卫：改动文件是否触及自留源（警告级）
   python3 tools/audit_queue.py --pack 3 --limit 9      # 按批打包（3 源/批）
   python3 tools/audit_queue.py --live                  # 实时查 gh（判据）
   python3 tools/audit_queue.py --emit-snapshot         # 原子写 audit/state.tsv
@@ -46,6 +51,7 @@ INFO_DIR = os.path.join(ROOT, 'info')
 LC_DIR = os.path.join(ROOT, 'lc')
 SNAPSHOT = os.path.join(ROOT, 'audit', 'state.tsv')
 LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
+RESERVED_TSV = os.path.join(ROOT, 'audit', 'reserved.tsv')
 
 SNAPSHOT_STALE_DAYS = 3     # 快照超过这个天数即视为过期（工具会告警）
 CLAIM_TTL_DAYS = 14         # 普通源的认领软过期
@@ -56,6 +62,8 @@ GH_TIMEOUT = 60
 REVIEWED = 'reviewed'
 IN_REVIEW = 'in-review'
 CLAIMED = 'claimed'
+RESERVED = 'reserved'
+RESERVED_EXPIRED = 'reserved-expired'
 FREE = 'free'
 
 GH_JSON_FIELDS = 'number,title,isDraft,files,createdAt,updatedAt,author'
@@ -241,6 +249,62 @@ def load_snapshot(path=SNAPSHOT):
         meta['fresh'] = age <= SNAPSHOT_STALE_DAYS
     return meta
 
+# ─── 维护者预留台账（audit/reserved.tsv，人工维护）───────────────────────────
+RESERVED_COLS = ('source_id', 'holder', 'since', 'until', 'reason', 'ref')
+
+
+def load_reserved(path=None):
+    """→ {'path','exists','rows':{sid:rec},'errors':[...],'unreadable':str}
+
+    维护者自留台账：被预留的源**不进入可认领队列**（`claimable='no'`）。
+    与 `audit/leads/` 相反，它**参与**状态机（`reserved` 是一个状态），但**不写进**
+    `info/*.json`（认领/预留状态一律不进数据文件）。
+    容错优先：坏行只记 errors，绝不抛异常，也绝不因此把源当成 free。
+    """
+    path = path or RESERVED_TSV
+    meta = {'path': path, 'exists': os.path.exists(path), 'rows': {}, 'errors': []}
+    if not meta['exists']:
+        return meta
+    try:
+        with open(path, encoding='utf-8') as fh:
+            lines = fh.read().splitlines()
+    except OSError as e:
+        meta['unreadable'] = str(e)
+        return meta
+    seen_cols = False
+    for n, ln in enumerate(lines, 1):
+        if not ln.strip() or ln.lstrip().startswith('#'):
+            continue
+        parts = [p.strip() for p in ln.split('\t')]
+        if not seen_cols and parts[0] == 'source_id':      # 列名行（可选）
+            seen_cols = True
+            continue
+        seen_cols = True
+        sid = parts[0]
+        if not sid:
+            meta['errors'].append(f'第 {n} 行：首列为空，已忽略')
+            continue
+        rec: dict = dict(zip(RESERVED_COLS, parts + [''] * max(0, len(RESERVED_COLS) - len(parts))))
+        rec['line'] = n
+        if not rec.get('holder'):
+            # 缺 holder 但源 ID 在 → **保留预留**（fail-closed）：坏行不能等于放人
+            rec['holder'] = '?'
+            meta['errors'].append(f'第 {n} 行：{sid} 缺 holder（占位 ?），预留仍然生效')
+        if sid in meta['rows']:
+            meta['errors'].append(f'第 {n} 行：{sid} 重复，保留先出现的一行')
+            continue
+        until = parse_iso(rec.get('until'))
+        rec['until_dt'] = until
+        rec['expired'] = bool(until and days_since(until) > 0)
+        rec['days_left'] = (round((until - now_utc()).total_seconds() / 86400.0, 1)
+                            if until else None)
+        if not until:
+            meta['errors'].append(f'第 {n} 行：{sid} 的 until={rec.get("until")!r} 缺失/非法'
+                                  f' → 按不过期处理（硬锁），请补截止日')
+        meta['rows'][sid] = rec
+    return meta
+
+
 
 # ─── GitHub 侧认领信息 ───────────────────────────────────────────────────────
 def gh_open_prs(repo=None, timeout=GH_TIMEOUT):
@@ -340,17 +404,41 @@ def claims_from_prs(prs, sources):
 
 
 # ─── 状态合成 ────────────────────────────────────────────────────────────────
-def resolve(sources, claims, snap):
+def resolve(sources, claims, snap, reserved=None):
     """→ {id: {state, basis, claim, claimable, rows}}；claimable ∈ {yes, takeover, no}
 
+    优先级：`reviewed`（已完成）> `reserved`（维护者自留）> 认领（PR/快照）> `free`。
     claims 非 None 时（--live 成功）**以实时查询为唯一判据**，完全不看快照。
+    台账里可能有尚未入库的源：照样派生状态（rows=0），避免预留"看不见"。
     """
+    rsv = (reserved or {}).get('rows') or {}
     out = {}
-    for sid, src in sources.items():
+    work = dict(sources)
+    for sid, rec in rsv.items():
+        work.setdefault(sid, {'id': sid, 'rows': 0, 'audit': None, 'audit_status': ''})
+    for sid, src in work.items():
         rows = src['rows']
         if src['audit_status'] == REVIEWED:
             out[sid] = {'state': REVIEWED, 'basis': 'info.extra_data.audit.status=reviewed',
                         'claim': None, 'claimable': 'no', 'rows': rows}
+            continue
+        r = rsv.get(sid)
+        if r:
+            # 预留优先于认领：维护者自留是授权行为，不是排队；同时暴露冲突以免静默。
+            c0 = (claims or {}).get(sid) if claims is not None else None
+            note = ''
+            if c0:
+                note = f'；⚠ 同时有 open PR {c0["pr"]}（{c0["holder"]}），需协调'
+            elif claims is None and snap.get('exists') and snap['rows'].get(sid):
+                note = f'；⚠ 快照里也有占用记录（{snap["rows"][sid].get("pr") or "?"}）'
+            stale = bool(r.get('expired'))
+            basis = (f'维护者自留（{r.get("reason") or "未写原因"}；'
+                     f'{"已于 " + str(r.get("until") or "?") + " 到期" if stale else "至 " + str(r.get("until") or "?")}'
+                     f'；{r.get("holder")}）' + note
+                     + ('；⚠ 该源尚未入库' if sid not in sources else ''))
+            out[sid] = {'state': RESERVED_EXPIRED if stale else RESERVED, 'basis': basis,
+                        'claim': c0, 'claimable': 'takeover' if stale else 'no',
+                        'rows': rows, 'reserved': r}
             continue
         claim, basis, conf = None, '', True
         if claims is not None:
@@ -443,6 +531,8 @@ def cmd_list(args, sources, resolved, snap, claims, live_err, leads=None):
         return 0
 
     extra = [f'源范围：{args.pub_note}'] if getattr(args, 'pub_note', None) else []
+    if getattr(args, 'reserved_note', None):
+        extra.append(args.reserved_note)
     for ln in source_note(snap, claims, args.live and not live_err, live_err, extra=extra):
         print(f'# {ln}')
     print('# 列：源ID / lc行数 / 状态 / 认领人 / 起始 / PR / 依据（`+lead` = 有线索卡，务必先读）')
@@ -461,8 +551,8 @@ def cmd_list(args, sources, resolved, snap, claims, live_err, leads=None):
             print(render_row(s, resolved, leads))
 
     if takeover:
-        print(f'\n# 可接手（原认领已软过期 {CLAIM_TTL_DAYS}/{GIANT_TTL_DAYS} 天；'
-              f'先在该 PR 评论询问并等 48 小时）：{len(takeover)} 个')
+        print(f'\n# 可接手（认领超 {CLAIM_TTL_DAYS}/{GIANT_TTL_DAYS} 天，或维护者预留已过 until；'
+              f'先在该 PR/Issue 评论询问并等 48 小时）：{len(takeover)} 个')
         for s in takeover[:20]:
             print(render_row(s, resolved, leads))
     return 0
@@ -474,7 +564,7 @@ def render_row(sid, resolved, leads=None):
     lead = ''
     if leads and sid in leads:
         lead = f' +lead({leads[sid].get("status") or "?"})'
-    return (f'{sid:<28} {r["rows"]:>7} {r["state"]:<14} '
+    return (f'{sid:<28} {r["rows"]:>7} {r["state"]:<17} '
             f'{(c.get("holder") or "-"):<20} {(c.get("since") or "-"):<11} '
             f'{(c.get("pr") or "-"):<10} {r["basis"]}{lead}')
 
@@ -482,6 +572,8 @@ def render_row(sid, resolved, leads=None):
 def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None):
     leads = leads or {}
     extra = [f'源范围：{args.pub_note}'] if getattr(args, 'pub_note', None) else []
+    if getattr(args, 'reserved_note', None):
+        extra.append(args.reserved_note)
     sid = args.id
     if sid not in sources and sid not in resolved:
         print(f'未找到源 {sid}（info/{sid}.json 不存在）', file=sys.stderr)
@@ -495,6 +587,15 @@ def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None):
     print(f'  状态           : {r["state"]}')
     print(f'  依据           : {r["basis"]}')
     print(f'  可否认领        : {r["claimable"]}')
+    rr = r.get('reserved')
+    if rr:
+        left = rr.get('days_left')
+        print(f'  维护者预留      : {rr.get("holder")}（{rr.get("reason") or "未写原因"}）')
+        print(f'  预留截止        : {rr.get("until") or "?"}'
+              + (f'（**已过期 {abs(left):.1f} 天**，需先沟通）' if rr.get('expired') and left is not None
+                 else (f'（还剩 {left:.1f} 天）' if left is not None else '（无截止日，硬锁）')))
+        print('  → 该源由维护者自留：**不要认领、不要开 claim PR**；'
+              '确需推进请在 Issue 里说明理由并等维护者答复（公平性靠这条，不靠自觉）')
     c = r.get('claim')
     if c:
         ttl = c.get('ttl') or ttl_days(r['rows'])
@@ -548,8 +649,97 @@ def cmd_leads(args, sources, resolved, leads):
     return 0
 
 
+# ─── 维护者预留：摘要 / 列表 / PR 守卫 ────────────────────────────────────────
+def reserved_note(reserved, sources=None):
+    """一行摘要（进队列与单源输出的头部注释）。台账不存在/为空时返回 ''。"""
+    if not reserved or not reserved.get('exists'):
+        return ''
+    rows = reserved.get('rows') or {}
+    if not rows:
+        return ''
+    exp = sum(1 for r in rows.values() if r.get('expired'))
+    outside = (len([s for s in rows if s not in sources]) if sources is not None else 0)
+    txt = (f'维护者预留：{len(rows)} 个源（audit/reserved.tsv'
+           + (f'，其中 {exp} 个已过期' if exp else '')
+           + (f'，{outside} 个尚未入库' if outside else '')
+           + '）→ 这些源不进入可认领队列，外部协作者不得认领')
+    if reserved.get('errors'):
+        txt += f'；⚠ 台账有 {len(reserved["errors"])} 处问题（--reserved 查看）'
+    if reserved.get('unreadable'):
+        txt += f'；⚠ 台账读取失败：{reserved["unreadable"]}'
+    return txt
+
+
+def cmd_reserved(args, reserved, sources=None):
+    """列出维护者预留台账（人工维护；参与状态机，但不写进数据文件）。"""
+    if not reserved.get('exists'):
+        print(f'# 无预留台账（audit/reserved.tsv 不存在）→ 当前无源被预留')
+        return 0
+    rows = reserved.get('rows') or {}
+    print(f'# 维护者预留 {len(rows)} 个源（契约见 audit/README.md；外部协作者不得认领这些源）')
+    if not rows:
+        print('# 台账为空')
+    print('# 列：源ID / 状态 / 预留人 / 起始 / 截止 / 剩余 / 原因')
+    for sid in sorted(rows, key=lambda s_: (bool(rows[s_].get('expired')),
+                                            str(rows[s_].get('until') or ''), s_)):
+        r = rows[sid]
+        left = r.get('days_left')
+        try:
+            left_txt = '已过期' if r.get('expired') else (f'{left:.1f} 天' if left is not None else '-')
+        except (TypeError, ValueError):
+            left_txt = '?'
+        print(f'{sid:<24} {(RESERVED_EXPIRED if r.get("expired") else RESERVED):<17} '
+              f'{(r.get("holder") or "?"):<20} {(r.get("since") or "-"):<11} '
+              f'{(r.get("until") or "-"):<11} {left_txt:<10} {r.get("reason") or ""}')
+        if sources is not None and sid not in sources:
+            print('  ⚠ 该源尚未入库（预留仍生效，入库后自动接管）')
+        if r.get('expired'):
+            print('  → 已过 until：续期（改 until）或删掉该行；接手方按 48 h 沟通协议处理')
+    for e in reserved.get('errors') or []:
+        print(f'  ⚠ {e}')
+    return 0
+
+
+def cmd_check_reserved(args, reserved):
+    """PR 守卫（警告级，**永不失败**）：本 PR 改动的 info/lc 是否触及维护者自留源。"""
+    rows = (reserved or {}).get('rows') or {}
+    if not rows:
+        print('无维护者预留 → 跳过')
+        return 0
+    base = getattr(args, 'base', None) or 'origin/main'
+    try:
+        p = subprocess.run(['git', '-C', ROOT, 'diff', '--name-only', f'{base}...HEAD'],
+                           capture_output=True, text=True, timeout=120)
+        if p.returncode != 0 or not (p.stdout or '').strip():
+            p = subprocess.run(['git', '-C', ROOT, 'diff', '--name-only', base],
+                               capture_output=True, text=True, timeout=120)
+        if p.returncode != 0:
+            err_lines = [l for l in (p.stderr or '').strip().splitlines() if l.strip()]
+            key = [l for l in err_lines if l.startswith(('fatal', 'error'))]
+            raise RuntimeError((key or err_lines or ['git diff 失败'])[-1][:200])
+        changed = (p.stdout or '').split()
+    except (OSError, subprocess.SubprocessError, RuntimeError) as e:
+        print(f'::notice::无法计算改动文件（{e}）→ 预留守卫跳过（不阻断）')
+        return 0
+    hit = {}
+    for path in changed:
+        m = PR_FILE_RE.match(path)
+        if m and m.group(1) in rows:
+            hit.setdefault(m.group(1), []).append(path)
+    if not hit:
+        print(f'预留守卫：改动文件未触及 {len(rows)} 个维护者自留源 → 通过')
+        return 0
+    for sid in sorted(hit):
+        r = rows[sid]
+        print(f'::warning::{sid} 是维护者自留源（{r.get("holder")}，'
+              f'{r.get("reason") or "未写原因"}，至 {r.get("until") or "?"}），'
+              f'本 PR 改动了 {", ".join(hit[sid])}；若非维护者本人发起，请改审其他源')
+    print(f'预留守卫：{len(hit)} 个自留源被本 PR 改动（警告级，不阻断）：{", ".join(sorted(hit))}')
+    return 0
+
+
 # ─── 快照生成 ────────────────────────────────────────────────────────────────
-def render_snapshot(sources, claims, repo):
+def render_snapshot(sources, claims, repo, reserved=None):
     ts = now_utc().strftime('%Y-%m-%dT%H:%M:%SZ')
     reviewed = sum(1 for s in sources.values() if s['audit_status'] == REVIEWED)
     lines = [
@@ -562,6 +752,7 @@ def render_snapshot(sources, claims, repo):
         f'# repo={repo or ""}',
         f'# open_sources={len(claims)}',
         f'# reviewed={reviewed}/{len(sources)}',
+        f'# reserved={len((reserved or {}).get("rows") or {})}',
         '# 状态：claimed=open draft PR；in-review=open 正式 PR；stale-*=超过 TTL 未更新（可接手）',
         '# 只列"仓库文件里看不到"的占用状态；reviewed 见各 info/*.json，free 即未列出者',
         '\t'.join(['source_id', 'state', 'holder', 'since', 'updated', 'pr']),
@@ -595,13 +786,15 @@ def cmd_emit(args, sources, repo):
         print(f'[ERROR] 取 open PR 失败，快照未改动：{e}', file=sys.stderr)
         return 2
     claims = claims_from_prs(prs, sources)
-    text = render_snapshot(sources, claims, repo)
+    reserved = load_reserved()
+    text = render_snapshot(sources, claims, repo, reserved)
     try:
         atomic_write(args.out or SNAPSHOT, text)
     except OSError as e:
         print(f'[ERROR] 写入失败：{e}', file=sys.stderr)
         return 3
     print(f'已写入 {args.out or SNAPSHOT}：{len(claims)} 个占用源，'
+          f'{len((reserved or {}).get("rows") or {})} 个维护者预留（只记数量，不入快照），'
           f'{sum(1 for s in sources.values() if s["audit_status"] == REVIEWED)}/'
           f'{len(sources)} 已审核', file=sys.stderr)
     return 0
@@ -620,6 +813,11 @@ def main(argv=None):
     ap.add_argument('--include-all', action='store_true', help='列出所有源（含已审核/被占用）')
     ap.add_argument('--leads', action='store_true',
                     help='列出全部线索卡 audit/leads/（多目标文献交接；不影响源状态）')
+    ap.add_argument('--reserved', action='store_true',
+                    help='列出维护者预留 audit/reserved.tsv（自留源；外部协作者不得认领）')
+    ap.add_argument('--check-reserved', action='store_true',
+                    help='PR 守卫：改动文件是否触及自留源（警告级，永不失败）')
+    ap.add_argument('--base', metavar='REF', help='配合 --check-reserved 指定比对基线（默认 origin/main）')
     ap.add_argument('--include-unpublished', action='store_true',
                     help='纳入未发布/未跟踪源（默认只列公开仓库里有的源）')
     ap.add_argument('--format', choices=['plain', 'json'], default='plain')
@@ -674,8 +872,10 @@ def main(argv=None):
             if args.live:
                 print(f'# ⚠ --live 失败，退回快照：{e}', file=sys.stderr)
 
-    resolved = resolve(sources, claims, snap)
+    reserved = load_reserved()
+    resolved = resolve(sources, claims, snap, reserved)
     leads = load_leads()
+    args.reserved_note = reserved_note(reserved, sources)
     if args.include_all:
         order = sorted(resolved, key=lambda s: (resolved[s]['state'], resolved[s]['rows'], s))
         for s in order:
@@ -683,6 +883,10 @@ def main(argv=None):
         return 0
     if args.leads:
         return cmd_leads(args, all_sources, resolved, leads)
+    if args.reserved:
+        return cmd_reserved(args, reserved, sources)
+    if args.check_reserved:
+        return cmd_check_reserved(args, reserved)
     if args.id:
         if args.id not in sources and args.id in all_sources:
             print(f'源 {args.id} 存在但未发布（.gitignore 排除）→ 不在审核队列范围'

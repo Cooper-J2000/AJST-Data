@@ -15,3 +15,9 @@ jobs:
           python-version: '3.x'
       - name: Validate data files
         run: python3 tools/validate.py
+      # 警告级守卫：PR 改到维护者自留源（audit/reserved.tsv）只打 ::warning:: 注解，永不失败。
+      - name: Reserved-source guard (warning only, never fails)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}" || true
+          python3 tools/audit_queue.py --check-reserved --base "origin/${{ github.base_ref }}" || true

@@ -12,6 +12,7 @@
                   band 落在两条车道内（filters.json 键，或频率/能量串，见 SCHEMA.md §3.1）
   - 互引完整性    lc 文件必须有同名 info（孤儿 CSV 报错）；info 可无 lc（纯信息源合法）
   - audit/leads/ 线索卡命名/status/目标源/已审核残留（**警告级**，不改变数据校验判定）
+  - audit/reserved.tsv 维护者预留台账：字段/重复/截止日/已审核残留/未入库源（**警告级**）
   - filters.json / tags.json 顶层形状
 """
 import csv
@@ -50,6 +51,8 @@ MJD_CONSIST_TOL_S = 1.0       # 与三层验收 L3 不变量同一容差
 
 # audit/leads/：多目标文献线索卡（人工维护，不参与审核状态机；契约见 audit/leads/README.md）
 LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
+RESERVED_TSV = os.path.join(ROOT, 'audit', 'reserved.tsv')
+RESERVED_COLS = ('source_id', 'holder', 'since', 'until', 'reason', 'ref')
 LEAD_KEYS = ('source_id', 'status', 'paper', 'pr', 'helper', 'date')
 LEAD_STATUS = {'extracted', 'mention-only'}
 LEAD_KEY_RE = re.compile(r'^\s*[-*]?\s*([A-Za-z_]+)\s*[:：]\s*(.+?)\s*$')
@@ -313,6 +316,56 @@ def check_leads(info_ids, reviewed_ids):
                  f'（{", ".join(fns)}）—— 每源一张，冲突时合并')
 
 
+def check_reserved(info_ids, reviewed_ids):
+    """维护者预留台账（警告级）：字段完整、不重复、未到期、不留已审核源。
+
+    契约见 audit/README.md。台账是**人写**的权威记录（不是派生物），所以这里只警告不改；
+    缺 holder 的行在 audit_queue.py 里按 `?` 保留（fail-closed），这里只提示补全。
+    """
+    if not os.path.exists(RESERVED_TSV):
+        return
+    rel = 'audit/reserved.tsv'
+    try:
+        with open(RESERVED_TSV, encoding='utf-8') as fh:
+            lines = fh.read().splitlines()
+    except OSError as e:
+        warn(f'{rel}: 读取失败（{e}）')
+        return
+    today = datetime.now().date()
+    seen = set()
+    for n, ln in enumerate(lines, 1):
+        if not ln.strip() or ln.lstrip().startswith('#'):
+            continue
+        cols = [c.strip() for c in ln.split('\t')]
+        if cols[0] == 'source_id':
+            continue
+        sid = cols[0]
+        if not sid:
+            warn(f'{rel}:{n}: 首列为空')
+            continue
+        if sid in seen:
+            warn(f'{rel}:{n}: 源 {sid} 重复出现（一行一源）')
+            continue
+        seen.add(sid)
+        row = dict(zip(RESERVED_COLS, cols + [''] * max(0, len(RESERVED_COLS) - len(cols))))
+        if not row['holder']:
+            warn(f'{rel}:{n}: {sid} 缺 holder（工具按 `?` 保留，仍然是自留态）')
+        if not row['until']:
+            warn(f'{rel}:{n}: {sid} 缺 until —— 无截止日的预留会变成硬锁，请补日期')
+        else:
+            try:
+                u = datetime.strptime(row['until'][:10], '%Y-%m-%d').date()
+            except ValueError:
+                warn(f'{rel}:{n}: {sid} 的 until={row["until"]!r} 不是 YYYY-MM-DD')
+                u = None
+            if u is not None and u < today:
+                warn(f'{rel}:{n}: {sid} 的预留已于 {u} 到期 → 续期（改 until）或删掉该行')
+        if sid in reviewed_ids:
+            warn(f'{rel}:{n}: 源 {sid} 已是 reviewed，预留行应删除')
+        if sid not in info_ids:
+            warn(f'{rel}:{n}: 源 {sid} 尚未入库（预留仍生效，入库后自动接管）')
+
+
 def main():
     strict = '--strict' in sys.argv
     quiet = '--quiet' in sys.argv
@@ -372,6 +425,9 @@ def main():
 
     # 线索卡一致性（警告级；多目标文献交接，见《数据审核提示词》§3.11）
     check_leads(info_ids, reviewed_ids)
+
+    # 维护者预留台账（警告级；见 audit/README.md 的 reserved.tsv 小节）
+    check_reserved(info_ids, reviewed_ids)
 
     # tags.json 顶层形状
     tj = os.path.join(ROOT, 'tags.json')
