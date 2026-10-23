@@ -1,28 +1,47 @@
 {
   "transient_id": "GRB140414A",
-  "alias": [],
+  "alias": [
+    "GRB 140414AS"
+  ],
   "ra": 195.31,
   "dec": 56.902,
-  "T0": "2014-04-14T06:06:29Z",
-  "T0_ref": null,
+  "T0": "2014-04-14T06:06:28.744Z",
+  "T0_ref": "Swift/BAT 官方目录（ground detected during slew）亚秒值 2014-04-14T06:06:28.744Z；GCN 16110 整秒值 06:06:29 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 240,
   "pos_ref": "GCN 16110",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "短暴（SHB，GCN 16110/16111；Dichiara+2020 归 Group c: observed during slew）。GCN 16110 原文措辞 \"IPN spacecraft triggered on GRB 140414A\" 与 BAT slew 地面检出语境不符，仓内 gcn/archive 全文检索本源仅 5 篇（16110-16114）且均非 IPN Circular，疑为原文笔误/模板残留；触发仪器按 Swift/BAT（swift_bat/swiftgrbba/mpe_greiner 快照均归 Swift）。并列定位：Swift/BAT 官方目录地面定位 RA,Dec=195.3348,+56.91161（Image_position_err≈1.75′，SNR≈13.7；Dichiara+2020 Table 1 列 90% 误差 1.7′），本条目保留 GCN 16110 mosaic 定位 195.310,+56.902。物理量：T90=0.7±0.1 s（GCN 16111，15-350 keV）；T90=0.496±0.068 s（swift_bat 官方目录，15-350 keV；Dichiara+2020 同值）；fluence=(1.22±0.10)e-7 erg/cm^2（GCN 16111，0.7 s 内，90%；能段 15-150 keV 为 BAT 精化分析标准口径，swiftgrbba 快照同）；fluence=(1.242±0.012)e-7 erg/cm^2（swift_bat 官方目录，15-150 keV，90%）；photon index=0.74±0.18（GCN 16111，PL）。XRT 无余辉检出（GCN 16113，3σ<2.3e-2 cts/s，非标准处理；X 射线不在审核范围）；UVOT 无检出（GCN 16114）。同日异源警示：Fermi/GBM 的 GRB 140414693（T0=16:38:38 UTC，RA 45.7,Dec 13.8）与 AGILE-MCAL 目录（Ursi+2022）的 \"GRB 140414A\"（T0=22:25:35 UTC）均非本源，不得按名合并。alias \"GRB 140414AS\" 出处：MPE/Greiner 定位总表（仓内快照 external/mpe_greiner；该表短暴在名称后加 S，README 列说明）。测光检索（2026-10-24）：仓内 gcn/archive 全文（取自 gcn.nasa.gov 官方打包，当日下载）45889 篇，命中本源 5 篇（16110/16111/16112/16113/16114），其中 2 篇含光学上限、已入库 2 行；external/rssgrbag 无记录；external/grbsn_webtool 无此事件；external/swift_grb（止于 2012-12）与 heasarc_grbcat（止于 2005-03）不覆盖 2014 年；arXiv API 元数据检索 0 命中；OpenAlex 命中 6 条（5 条即上述 GCN + arXiv:2512.08778，后者为 PBH 样本研究、无测光）；Dichiara+2020（MNRAS 492, 5011，取 arXiv:1912.08698 互证）Table 1 仅目录级参数、无测光表；TNS 不适用（GRB，非 AT/SN 类）。→ 无其他可用测光，本审核新增 2 行（Swift/UVOT white、TNG r 上限）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Dichiara+2020",
+      "url": "https://doi.org/10.1093/mnras/staa124",
+      "title": "Short gamma-ray bursts within 200 Mpc",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
