@@ -1,28 +1,28 @@
 {
   "transient_id": "GRB111210B",
-  "alias": [
-    "GRB 111210359"
-  ],
-  "ra": 122.51000213623047,
-  "dec": 44.09000015258789,
-  "T0": "2011-12-10T08:37:41Z",
-  "T0_ref": null,
+  "alias": [],
+  "ra": 122.51,
+  "dec": 44.09,
+  "T0": "2011-12-10T08:37:39Z",
+  "T0_ref": "Ajello+2019 (2FLGC) Table 2; HEASARC FERMILGRB time column (IPN trigger, private communication)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "IPN",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2952,
+  "pos_ref": "Ajello+2019 (2FLGC) Table 2; HEASARC FERMILGRB error_radius=0.82 deg (LAT transient factory, 0.82 deg = 2952 arcsec)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "2FLGC 源 GRB111210359（gcn_name GRB 111210B；LAT 探测，Table 2 的 Loc. GCN 栏为 '-'）。2FLGC 论文（ApJ 878, 52；arXiv:1906.11403 会议版）明确 GRB 100213C 与 GRB 111210B 'were reported only by the IPN through private communication' 且不提供时长；库内 FERMIGBRST 快照（4345 行）无 111210359，2FLGC gbm_cat_name=0，故 Trigger_Instrument 由 Fermi/GBM 改为 IPN（同类 IPN-only 源 GRB100213C 现记 Fermi/LAT，口径待维护者统一）。T0：原 2011-12-10T08:37:41Z 为 2FLGC trigger_met 345199061.0 按 2001-01-01 纪元直换、漏扣 2 闰秒（+2 s，Issue #67），按 Table 2 UT 08:37:39 修正为 2011-12-10T08:37:39Z（HEASARC time 列 08:37:39.003 为毫秒级变体、FITS GRBDATE 为 08:37:39，差 3 ms，未补亚秒）；属历元换算口径差，不设 T0_offset。位置：Table 2 / HEASARC fermilgrb RA 122.51 Dec 44.09、Loc. Err. 0.82°=2952″（LAT transient factory；来源未标注置信水平，pos_error_confidence 留空）。分类：Table 3 CLASS=(L)，其 TGBM,95=TGBM,90=60.00 s 为带 * 的非 GBM 占位值（论文明确 IPN-only 不给时长），据此 sub_tag 增 lgrb；extra_data.params.t90=60 s 亦为该占位值、非实测（catalog_data 只读未改）。红移：Table 2 红移栏 '-'，留空。测光：GCN 12400-12900 无 111210B 通告，未检索到光学/射电测光或上限，不建 lc。alias 删除伪形 'GRB 111210359'（日期+触发序列，Issue #69）。ra/dec 由 float32 残渣规范为 122.51/44.09。VoR（IOP PDF）被 Radware 验证码拦截，Table 2/3 数值取自 arXiv:1906.11403 会议版并与 HEASARC 目录快照核对一致。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "catalog_data": {
       "fermi_lat": {
@@ -57,8 +57,26 @@
         ],
         "trigger_time": "2011-12-10T08:37:39.003Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-22"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "fsy"
+    },
+    {
+      "name": "Axelsson+2019",
+      "title": "A decade of Gamma-Ray Bursts observed by Fermi-LAT: The 2nd GRB catalog",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
