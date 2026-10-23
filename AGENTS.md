@@ -10,7 +10,11 @@
 2. 契约补充：`SCHEMA.md`、`CONTRIBUTING.md`、`audit/README.md`、`audit/leads/README.md`、`filters.json`、`tags.json`；
 3. `python3 tools/audit_queue.py --id <源ID>` 查状态：`reserved` = 维护者自留，**不得认领、不得开 claim PR**；
 4. 开工第一件事开 `claim: <源ID>` **draft** PR；审核与子代理核查通过后转正式，标题改 `data: 审核 <源ID>（一句话摘要）`；
-5. PR 正文按 `.github/PULL_REQUEST_TEMPLATE.md` 填（对应提示词 §5 七要素）。
+5. PR 正文按 `.github/PULL_REQUEST_TEMPLATE.md` 填（对应提示词 §5 七要素）；
+6. **每交付一个源后**：`git fetch origin main && git log --oneline HEAD..origin/main`。有变动先
+   `git pull --rebase origin main` 再挑下一个源；新提交若碰到你刚提交的源、或你下一个要审的源，
+   先读改动再动手。维护者会直接改 `info/`、`lc/`、`tools/` 与文档，这条保证**我方改动在你的下一次任务里一定可见**
+   （提示词 §2 第 9 条 / §5 第 7 条，2026-10-24 新增）。PR 页面上也会有一条「分支落后」的 CI 警告，落后多少提交、落后哪几个，都在那里。
 
 ## 最常被违反的 5 条（细节见提示词）
 
