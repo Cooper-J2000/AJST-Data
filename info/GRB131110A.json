@@ -1,28 +1,63 @@
 {
   "transient_id": "GRB131110A",
-  "alias": [],
+  "alias": [
+    "GRB 131110A"
+  ],
   "ra": 69.268,
   "dec": -17.259,
-  "T0": "2013-11-10T11:53:21.543000Z",
-  "T0_ref": null,
+  "T0": "2013-11-10T11:53:11Z",
+  "T0_ref": "GCN 15483",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 15483",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 48,
+  "pos_ref": "GCN 15487",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 131110A（Swift/BAT 斜扫期地面分析发现；BAT 目录 trig 00020326002，GCN 15487 称观测号 20327；SIMBAD 仅有此名）。位置取 GCN 15487 精化位置 69.268, -17.259（90% 包含半径 0.8 arcmin），与 BAT 目录 69.26810, -17.25875（±0.8398 arcmin，90%）一致。T0 取 GCN 15483 事件时刻 2013-11-10T11:53:11Z（Swift GRB 目录同值 11:53:11.000）；BAT 目录 Trig_time_UTC=2013-11-10T11:53:21.543（MET 405777212.8）按该目录说明为 T100 起点（较事件晚 10.543 s），未采用。原 T0=2013-11-10T11:53:21.543000Z、t0_note=『t0 为触发日 00:00 UT（名字日期）』（原 t0_basis=name_date）与来源不符，已更正。T90=76.8±1.6 s（15-150 keV，BAT 目录）；GCN 15487 给 T90≈100±10 s。时均谱 PL 光子指数 Γ=1.67（90% 误差 -0.095/+0.094，BAT 目录）；GCN 15487 给 1.61±0.09。注量 15-150 keV 3.44e-6 erg/cm2（90% 误差 -1.94e-7/+1.95e-7，BAT 目录）；GCN 15487 给 (3.53±0.10)e-6 erg/cm2（原文单位写作 ergs/cm^2/sec，疑笔误）。1 s 峰值流量 15-150 keV 0.888 ph/cm2/s（BAT 目录）。XRT 无探测（0.3-10 keV 3σ 上限 3.6e-3 count/s）；UVOT 无探测 white>20.2、v>18.6、u>19.2（3σ，GCN 15488；该通告正文误写 GRB 131011A，应为 131110A）。无红移报道。来源未明确给出 lgrb/sgrb 分类，sub_tag 留空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 为 GCN 15483 给出的事件时刻（Swift/BAT 地面分析）；BAT 目录 trig 00020326002 的 11:53:21.543 为该目录定义的 T100 起点，较此晚 10.543 s。原值『t0 为触发日 00:00 UT（名字日期）』有误，已更正",
+    "t0_basis": "GCN 15483",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 15483",
+      "url": "https://gcn.nasa.gov/circulars/15483",
+      "title": "GRB 131110A found in ground analysis of BAT slew event data",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 15487",
+      "url": "https://gcn.nasa.gov/circulars/15487",
+      "title": "GRB 131110A BAT refined analysis",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 15488",
+      "url": "https://gcn.nasa.gov/circulars/15488",
+      "title": "GRB 131110A: Swift-XRT and UVOT upper limits",
+      "source": "fsy"
+    },
+    {
+      "name": "Lien+2016",
+      "url": "https://doi.org/10.3847/0004-637X/829/1/7",
+      "title": "The Third Swift Burst Alert Telescope Gamma-Ray Burst Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
