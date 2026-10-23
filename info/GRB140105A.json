@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB140105A",
-  "alias": [],
+  "alias": [
+    "GRB 140105.065",
+    "GRB140105065",
+    "bn140105065"
+  ],
   "ra": 208.22,
   "dec": 50.17,
-  "T0": "2014-01-05T01:33:01Z",
-  "T0_ref": null,
+  "T0": "2014-01-05T01:33:01.014Z",
+  "T0_ref": "Fermi GBM catalog (fermigbrst, bn140105065) trigger_time=2014-01-05T01:33:01.014 UTC（仓内快照 external/fermi_gbm 取数 2026-07-21；2026-10-24 在线 HEASARC 全库转储同值复核）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 21852,
+  "pos_ref": "fermigbrst bn140105065 error_radius=6.07 deg（GBM 统计定位误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2014-01-05T01:33:01Z（整秒）改为 01:33:01.014Z——fermigbrst bn140105065 trigger_time 亚秒值（GBM 官方目录，仓内快照；在线 HEASARC 转储 2026-10-24 复核同值：MJD 56662.064595066=01:33:01.014 UTC）。按《数据审核提示词》§3.2/§3.8 「只在亚秒不同时以触发仪器亚秒值为准」。T0_ref 已填。(2) pos_error 原为 null：fermigbrst error_radius=6.07（度）换算 6.07°=21852″ 填入（GBM 弱定位，统计误差大）；ra/dec=208.22/+50.17 即 fermigbrst 定位（库内原值未动，在线转储同值）；来源未标注置信水平。(3) tag 空补 grb；sub_tag 不加 sgrb/lgrb：T90=1.088±0.466 s（50-300 keV）虽 <2 s，但误差近半、目录无长短分类列，按 §3.9 分类以来源为准、不得自算。Fermi-LAT 未探测（fermilgrb 快照无此源），sub_tag 不含 Fermi-LAT。(4) 红移：fermigbrst 无 redshift，GCN 无该源通告（2026-10-24 检索 query=140105，0 条），保持 null。(5) 身份：Fermi GBM trigger bn140105065（GRB 140105.065）；同日 bn140105748（17:56:32.642 UT，定位 252.88/+19.03，err 3.95°）为另一事件，未混淆；仓内无重复条目；fermilgrb/swift_bat/swiftgrbba/grbcat/konus 快照均无此源。(6) 测光：无任何波段余辉测光报告，不建 lc（仓内无 lc 文件）。(7) alias 原为空，补 GRB 140105.065（fermigbrst name_alt 原形）/GRB140105065（fermigbrst name 原形）/bn140105065（fermigbrst trigger_name）。注：GBM-only 无 GCN 通告源的第二路互证——官方通告页 gcn.gsfc.nasa.gov/other/bn140105065.fermi 已 404（2026-10-24），改用在线 HEASARC fermigbrst 全库转储逐值复核（同值），取数日期见 T0_ref。fluence=6.43106e-07 erg/cm²（10-1000 keV）等 SCHEMA 外物理量记此备查。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
   "articles": [],
   "host_galaxy": null
