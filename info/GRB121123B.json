@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB121123B",
   "alias": [
-    "GRB 121123442"
+    "GRB 121123B",
+    "GRB 121123.442",
+    "GRB121123442",
+    "bn121123442"
   ],
-  "ra": 28.6200008392334,
-  "dec": -24.059999465942383,
-  "T0": "2012-11-23T10:35:58.710000Z",
-  "T0_ref": null,
+  "ra": 28.62,
+  "dec": -24.06,
+  "T0": "2012-11-23T10:35:55.712Z",
+  "T0_ref": "Fermi GBM catalog (FERMIGBRST) bn121123442 trigger_time MJD 56254.441617033 = 2012-11-23T10:35:55.712 UTC；2FLGC (Ajello+2019) Table 2 同一事件：2012-11-23 10:35:55、MET 375359758.710（原 T0 2012-11-23T10:35:58.710 系 MET 按 2001-01-01 纪元直接换算、未扣 2012 年累计 3 闰秒，见 comment）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +17,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1800,
+  "pos_error_confidence": null,
+  "pos_ref": "2FLGC (Ajello+2019) Table 2：RA 28.62、Dec -24.06、Loc. Err. 0.50 deg = 1800 arcsec（LAT LTF 定位）；FERMIGBRST error_radius=1.61 deg（GBM 定位，未采用）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy 2026-10-21：身份=Fermi GBM trigger 375359758 / 121123442（2FLGC gcn_name GRB 121123B；AGILE MCAL 2nd catalog 同名 GRB121123B）。GCN 存档与 MPE GBM 索引未见本触发器的 Circular（同日仅 121123A / GCN 13985），故按 §4 用两路官方目录互证：FERMIGBRST（bn121123442，trigger_time MJD 56254.441617033 = 2012-11-23T10:35:55.712 UTC）与 2FLGC（Table 2：2012-11-23 10:35:55、MET 375359758.710、RA 28.62/Dec -24.06、Loc. Err. 0.50 deg；Table 3 CLASS=(L)）。T0 原值 2012-11-23T10:35:58.710 为 MET 直接换算、未扣 2012 年累计 3 闰秒，偏晚 2.998 s，已按官方目录改正（换算口径差，不记 T0_offset）。ra/dec 原含 float32 噪声，按目录值改为 28.62/-24.06；pos_error 原 null，按 2FLGC 0.50 deg=1800 arcsec 补；2FLGC 未标注定位误差置信水平，pos_error_confidence 留空（GBM 目录 error_radius=1.61 deg 未采用）。alias 原「GRB 121123442」为日期+触发序列拼接伪形，改为有出处的 GRB 121123B/GRB 121123.442/GRB121123442/bn121123442（2FLGC name_alt/GRBNAME 与 FERMIGBRST trigger_name 原值）。sub_tag 补 lgrb（2FLGC Table 3 CLASS L）。redshift 与宿主：2FLGC Table 2 红移列为「-」，无其他测量，保持 null。无 lc 文件；2FLGC 仅有 LAT 光变向量（100 MeV–100 GeV），不含可入库的光学/射电测光，未新增任何行。材料：VoR（IOP DOI 10.3847/1538-4357/ab1d4e）遭 Radware 反爬拦截、DESY 镜像 JS challenge、Stanford 2FLGC.tar 连接被拒；改用 arXiv:1906.11403v1（2019-06-28 draft）核 Table 2/3，并与仓内 HEASARC 快照（fermilgrb_w3browse_full.txt 231 行、gll_2flgc_dr1.fits 228 行）逐值核对一致。另记：extra_data.catalog_data.agile_mcal.trigger_time=2012-11-23T10:35:59Z 为归一化截断，CDS J/ApJ/925/152 table2 原值 10:35:59.87（目录快照未改动）。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -115,8 +120,20 @@
         ],
         "trigger_time": "2012-11-23T10:35:59Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second Fermi-LAT Gamma-Ray Burst Catalog",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
