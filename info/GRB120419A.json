@@ -1,28 +1,46 @@
 {
   "transient_id": "GRB120419A",
-  "alias": [],
+  "alias": [
+    "GRB 120419A"
+  ],
   "ra": 187.38762,
   "dec": -63.00791,
-  "T0": "2012-04-19T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2012-04-19T12:56:25Z",
+  "T0_ref": "GCN 13241",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 4.5,
   "pos_ref": "GCN 13242",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "INTEGRAL/IBAS 触发的长暴（IBIS/ISGRI，持续约 20 s，GCN 13241），T0=2012-04-19T12:56:25Z；原 bot T0=2012-04-19T00:00:00Z 为按名称日期填充的占位值，已修正。ra/dec=187.38762/-63.00791 与 GCN 13242 的 Swift/XRT 候选余辉位置逐字一致（4.5″）；该文未标注置信水平（按 Swift/XRT 惯例约 90%），故 pos_error_confidence 留空。GCN 15210 后续观测确认该 X 射线源已变暗，确认为余辉。无光谱红移；GROND 与 UVOT 均未探测到光学余辉，仅有上限，见 lc/GRB120419A.csv。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-22 审核修正为 INTEGRAL/IBAS 触发时刻 2012-04-19T12:56:25Z（IBIS/ISGRI 检测，GCN 13241）；原值 2012-04-19T00:00:00Z 为按名称日期填充的占位值",
+    "t0_basis": "GCN 13241",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-22"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
