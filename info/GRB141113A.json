@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB141113A",
   "alias": [
-    "GRB 141113346"
+    "GRB 141113A",
+    "bn141113346"
   ],
-  "ra": 182.32000732421875,
-  "dec": 77.37999725341797,
-  "T0": "2014-11-13T08:17:46.500000Z",
-  "T0_ref": null,
+  "ra": 182.32,
+  "dec": 77.38,
+  "T0": "2014-11-13T08:17:43.503Z",
+  "T0_ref": "FERMIGBRST（HEASARC）bn141113346 trigger_time（MJD 56974.345642393）=2014-11-13T08:17:43.503Z；Tierney+2021 Table 1 GBM T0 MET=437559466.503 扣 3 闰秒后一致；2FLGC 记 2014-11-13T08:17:43.002（比采纳值早 0.501 s，备查）；无 GCN Circular（官方触发通告页 gcn.gsfc.nasa.gov/other/141113346.fermi 于 2026-10-24 404），按 §4 用 FERMIGBRST + 2FLGC 两路官方目录互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2556,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，ERR=0.71°，90% 包含、统计误差，Ajello+2019 §3.6.4；fermilgrb_w3browse_full.txt 2026-10-24 复核）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode 2026-10-24：(1) 身份=Fermi/GBM 触发 141113346（FERMIGBRST bn141113346）；GBM 定位 RA=171.02、Dec=80.26（12.15°）；2FLGC LAT 定位 RA=182.32、Dec=77.38，ERR=0.71°，LAT 分类 (S)。无 GCN Circular，按 §4 用 FERMIGBRST + 2FLGC 两路官方目录互证。库内无同事件重复条目。(2) T0：原值 2014-11-13T08:17:46.500000Z 系 bot 将 2FLGC trigger_met=437559466.5 自 2001-01-01 直换、未扣 2006/2009/2012 三次闰秒（+3.0 s，Issue #67 同型）；FERMIGBRST trigger_time（MJD 56974.345642393）=08:17:43.503，Tierney+2021 Table 1 GBM MET=437559466.503 扣 3 闰秒后同为 08:17:43.503，2FLGC 记 08:17:43.002（比采纳值早 0.501 s，备查）；lc 为空，直接改 T0 为触发时刻，T0_offset 留空（目录换算口径差）。(3) 位置：原 ra/dec 为 float32 残渣（182.32000732421875/77.37999725341797），还原 2FLGC 编目值 182.32/77.38；pos_error=0.71°=2556″（90% 包含、统计误差，Ajello+2019 §3.6.4；来源未另标注置信水平者以论文 §3.6.4 为准）。(4) alias：移除 bot 拼接伪形 GRB 141113346，收 2FLGC GCN_NAME 用名 GRB 141113A 与 FERMIGBRST trigger_name bn141113346；小数日名 GRB 141113.346 仅机读表机械构造形态（沿 GRB141221B 先例），不入 alias。(5) sub_tag 补 sgrb：2FLGC Table 3 该行 CLASS=(S)，Tierney+2021 短暴样本收录。(6) 测光检索（2026-10-24）：仓内 gcn/archive 全文 45889 篇按 141113/141113346/GRB 141113A/141113.346/bn141113346 检索 0 命中（对照 141102A 5 篇、141109A 19 篇，区间覆盖正常）；external/rssgrbag 0 行、grbsn_webtool 无此事件、其余目录级快照（mpe_greiner/konus_wind/swift_bat/uvot_grb/heasarc_grbcat/swiftgrbba/agile_mcal/saxgrbmgrb/batse）0（uvot_grb 1 个命中为浮点数位串假阳性；swift_grb 止于 2012-12、heasarc_grbcat 止于 2005-03，不覆盖本事件）；ADS/SciX 命中 2 篇：Tierney+2021（短暴样本谱分析，Table 1–4 仅时长/定位/谱参数，无余辉测光表）、HAWC 2019（仅图中列出、无表）；OpenAlex 4 条=同一文献集、Crossref 无相关、arXiv API 0；TNS 不适用（GRB）。结论：无可用测光，新增 0 行。(7) 物理量（FERMIGBRST，10–1000 keV）：T90=0.448±0.500 s（50–300 keV）、T50=0.320±0.231 s（50–300 keV）、fluence=1.474e-07±1.923e-08 erg/cm²、peak_flux=4.114±0.719 ph/cm²/s（64 ms）、Epeak=176.9±66.7 keV（BAND，best flnc_plaw）。(8) 版本：2FLGC IOP VoR 被反爬（Radware captcha），据 arXiv:1906.11403 与仓内机读表（fermilgrb_w3browse_full.txt、gll_2flgc_dr1.fits）核对；Tierney+2021 同（arXiv:2103.15355）；FERMIGBRST 取仓内快照。",
   "sub_tag": [
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -132,8 +135,26 @@
         ],
         "trigger_time": "2014-11-13T08:17:43.002Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Tierney+2021",
+      "url": "https://doi.org/10.3847/1538-4357/ac26ba",
+      "title": "Prevalence of Extra Power-Law Spectral Components in Short Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
