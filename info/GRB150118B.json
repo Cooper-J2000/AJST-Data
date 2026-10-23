@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB150118B",
   "alias": [
-    "GRB 150118409"
+    "GRB 150118.409",
+    "GRB150118409",
+    "bn150118409"
   ],
   "ra": 240.22999572753906,
   "dec": -35.93000030517578,
-  "T0": "2015-01-18T09:48:20.770000Z",
-  "T0_ref": null,
+  "T0": "2015-01-18T09:48:17.774Z",
+  "T0_ref": "GCN 17308（Stanbro, Fermi GBM team）：'At 09:48:17.77 UT'；Fermi GBM catalog (fermigbrst, bn150118409) trigger_time=2015-01-18T09:48:17.774 UTC（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +16,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2016,
+  "pos_ref": "2FLGC (Ajello+2019), fermilgrb error_radius=0.56 deg（LAT Transient-class 定位终值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2015-01-18T09:48:20.77Z 系 bot 将 fermilgrb trigger_met=443267300.77 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006/2009/2012-07 生效的 3 个闰秒，偏晚 2.996 s；证据：GCN 17308 'At 09:48:17.77 UT'；fermigbrst bn150118409 trigger_time=09:48:17.774Z；443267300.77 s 天真换算=09:48:20.770Z 与原 T0 完全一致（bug 复现）；2FLGC/fermilgrb 自带 trigger_time=09:48:17.001Z 与 GBM 目录差 0.773 s（该表自身口径，未采用）；Konus-Wind 触发 09:48:22.394 UT（GCN 17344，晚 GBM 4.620 s——多集暴，KW 触发于后段集，跨航天器口径差）。T0 按《数据审核提示词》§3.8 锚定 GCN 通告并取 GBM 官方目录亚秒值。(2) pos_error 原为 null：fermilgrb error_radius=0.56（度）换算 0.56°=2016″ 填入；ra/dec=240.23/-35.93 与 pos_ref 同源（2FLGC 终值，库内原值未动）；来源未标注置信水平。GCN 17307 初报 LAT 定位 240.24/-35.75（0.5°，90% 仅统计）与仓内 fermigbrst 行定位（240.24/-35.75，err 0.5°）同值（GBM 行采初报 LAT 定位的已知模式），与 2FLGC 终值差约 0.18°（在两者误差内互恰）；库内取目录终值（§4 更新时间裁定），初报值记此备查。触发时暴源距 LAT 视轴 ~60°，ARR 再指向后 ~150 s 内被地球遮挡，T0+2500 s 才重入视场（GCN 17307）。(3) 红移：fermigbrst/fermilgrb 均无 redshift，GCN 四篇无红移报告，保持 null。(4) sub_tag 增补 **lgrb**：GCN 17342 'The long-duration, bright GRB 150118B'、GCN 17344 'The long-duration, hard-spectrum, intense GRB'；GBM T90≈40 s（50-300 keV）/目录 40.193±0.572 s，以来源表述为准（§3.9）。(5) 身份：Fermi GBM trigger bn150118409（GRB 150118.409）=Fermi-LAT 探测事件（GCN 17307，gcn 名 GRB 150118B）=IPN 多方联测事件（GCN 17342：Fermi GBM+MESSENGER+Odyssey HEND/GRS+Konus-Wind+Swift-BAT+INTEGRAL SPI-ACS）；同日仓内无兄弟条目（GBM bn150118927 为 22:14 UT 另一事件，未入库）；仓内无重复条目。(6) 测光检索（2026-10-24）：gcn/archive 全文 4 篇（17307/17308/17342/17344，均高能参数，无光学/射电测光）；仓内 rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；ADS 本会话无 token 未查 → 无可用测光，未补行，不建 lc。(7) alias：删 'GRB 150118409'（「日期+触发序列」空格拼接伪形，导入管线产物），补 GRB 150118.409（两目录 name_alt 原形）/GRB150118409（fermigbrst name 原形）/bn150118409（fermigbrst trigger_name）。GBM Epeak=755±14 keV、fluence=(1.5±0.007)e-4 erg/cm²（10-1000 keV，GCN 17308）、Konus fluence=1.87e-4 erg/cm²（20 keV-10 MeV，GCN 17344）等 SCHEMA 外物理量记此备查。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -150,8 +153,44 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 17307",
+      "title": "GRB 150118B: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/17307",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17308",
+      "title": "GRB 150118B: Fermi GBM Detection",
+      "url": "https://gcn.nasa.gov/circulars/17308",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17342",
+      "title": "IPN Triangulation of GRB 150118B (long/intense)",
+      "url": "https://gcn.nasa.gov/circulars/17342",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17344",
+      "title": "Konus-Wind observation of GRB 150118B",
+      "url": "https://gcn.nasa.gov/circulars/17344",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
