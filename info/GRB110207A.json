@@ -1,30 +1,62 @@
 {
   "transient_id": "GRB110207A",
-  "alias": [],
+  "alias": [
+    "GRB 110207A",
+    "bn110207470",
+    "BAT 444912",
+    "Swift 444912"
+  ],
   "ra": 12.54,
   "dec": -10.79,
-  "T0": "2011-02-07T11:17:20Z",
-  "T0_ref": null,
+  "T0": "2011-02-07T11:17:20.015680Z",
+  "T0_ref": "GCN 11658（Swift/BAT trigger 444912，11:17:20 UT）；batgrbproduct trigger 444912 UTC 2011-02-07T11:17:20.015680 [includes UTCF correction]（https://gcn.gsfc.nasa.gov/notices_s/444912/BA/）；仓内 external/swift_bat trigger 444912 Trig_time_UTC 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 78.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 11664",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy, 2026-10-20）：bot 原值 T0=2011-02-07T11:17:20Z（extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'、src='gcn_llm_extract'、bot_created=true）、Trigger_Instrument='Fermi/GBM'、ra=12.54/dec=-10.79、pos_error=78″、pos_ref='GCN 11664'、alias=[]、comment=null、articles=[]，均在下方逐项复核。身份：GCN 11658（Swift 首发通告）'At 11:17:20 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 110207A (trigger=444912)'；GCN 11671（Fermi GBM）'At 11:17:20.29 UT ... GRB 110207A (trigger 318770242/ 110207470), which was also detected by the Swift/BAT'，且 GBM 地面定位与 Swift 位置一致；GCN Report 321.1（2011-02-21）综合 BAT/XRT/GBM/WAM/MASTER/TAROT 为同一事件。库内 info/ 仅 GRB110207A.json 一个 110207 条目，无重复建档；FERMIGBRST 当日另一触发 bn110207959（2011-02-07T23:00:26.406，RA 179.0/Dec -58.43，T90 7.68 s）位置不同，非同一事件。T0：按 §3.8 优先级①（触发仪器官方通告/产品页），GCN 11658 与 Report 321.1 只给整秒 11:17:20，Swift 官方 batgrbproduct trigger 444912 给出 'BAT Trigger Time: 318770246.656 [s; MET]'、'UTC: 2011-02-07T11:17:20.015680 [includes UTCF correction]'（TDRSS scaled map message），仓内 external/swift_bat summary_general.txt（Trig_time_UTC=2011-02-07T11:17:20.015680）与 external/swift_grb 同值，故按来源亚秒精度写 T0=2011-02-07T11:17:20.015680Z。各仪器亚秒差（均 |Δ|<1 s，按 §3.2 直接并入 T0，不记 T0_offset）：GBM GCN 11671 11:17:20.29（晚 0.2713 s；FERMIGBRST bn110207470 trigger_time MJD 55599.470373696=11:17:20.287 同证）、Suzaku WAM GCN 11695 11:17:20.05（早 0.0343 s）、AGILE MCAL 表 11:17:20（整秒）；Swift 自动通告（MPE Greiner 页 grb110207A.html 转载的 GCN/SWIFT Notice：BAT POS Notice GRB_TIME 11:17:19.75、BAT LC Notice 11:17:20.01、Report 321.1 图注 T0=11:17:20.0）为快速/近似值，不采为锚。GBM t90_start=-1.024 s 为相对 GBM 触发时刻的 T90 区间起点（换算到本库 T0 为 -0.753 s），<1 s 且属 T90 定义而非触发时刻修订，按 §3.2 不记 T0_offset。Trigger_Instrument 由 Fermi/GBM 改为 Swift/BAT：BAT 444912 触发早于 GBM 0.27 s、本源以 Swift 命名且定位取 BAT，按 §3.8「有 Swift 则以 Swift 为准」。坐标：GCN 11664 'RA, Dec = 12.540, -10.790 deg ... uncertainty of 1.3 arcmin, (radius, sys+stat, 90% containment)' → pos_error=78″（1.3′×60）、pos_error_confidence=90；batgrbproduct 地面定位 12.5396884/-10.7899518、±1.2504′（估计 90%）与 ±0.4755′（形式 1σ）；SIMBAD 00 50 09.50 -10 47 23.8（=12.5396/-10.7899），均与 12.54/-10.79 一致；未采用 GCN 11658 星上定位 12.542/-10.806（3′，90%）。alias：'GRB 110207A'（GCN/SIMBAD 用名）、'bn110207470'（FERMIGBRST trigger_name；SIMBAD 标识符 'Fermi bn110207470'）、'BAT 444912'（swift_bat Trig_ID）、'Swift 444912'（swift_grb target_id）；FERMIGBRST name 列 'GRB110207470'（GBM 官方名形态）因 §3.10 九位「日期+触发序列」伪形规则（validate 警告）未收入。tag=grb、sub_tag=lgrb：Greiner+2024 表 5 明确把本源分类为 'L'（长暴），T90=80.3±16.2 s（15-350 keV，GCN 11664/Report 321.1）、37.888±2.290 s（50-300 keV，FERMIGBRST bn110207470）、约 39 s（GCN 11671）；Suzaku WAM T90≈2.9 s 属 50 keV-5 MeV 不同能段，不作分类依据；未见来源间长短暴分类冲突。红移：7 条 GCN 与 Report 321.1 均未报道红移；swift_bat GRBlist_redshift_BAT.txt 无本源；SIMBAD Redshift 为空 → redshift=null。不入 schema 的量：BAT 注量 1.6±0.1×10^-6 erg/cm²（15-150 keV，90% CL，GCN 11664）、BAT 1 s 峰值光子流量 1.1±0.1 ph/cm²/s（15-150 keV，GCN 11664）；GBM 注量 4.4±0.6×10^-6 erg/cm²（10-1000 keV，GCN 11671），FERMIGBRST fluence 2.48608×10^-6±3.748×10^-8 erg/cm²（10-1000 keV，目录值）；XRT 3σ 上限 7.6×10^-14 erg/cm²/s（0.3-10 keV，GCN 11680）与 2.0×10^-3 cts/s（GCN Report 321.1）。光学/NIR：GROND（Greiner+2024, A&A 691, A158 表 2：T−T0=13.48 h、光学 12 min/NIR 13 min，g′>22.5、r′>22.4、i′>21.6、z′>21.4、J>19.3、H>18.9、K>17.9，AB、未做银消改正，表 5 该次 Det.=n；VoR 不可得，本次按 arXiv:2410.14441v1 表 2 取值）、MASTER（GCN 11660，4 行 3σ 上限）与 TAROT（GCN 11667，R>19.8，t0+6.62-7.79 h co-add 窗口），已建 lc/GRB110207A.csv 12 行；无 UVOT（月球约束至 2011-02-08 13:20 UT，GCN 11658；Report 321.1 无 UVOT 节）、无射电观测；红外仅上述 GROND JHK 上限，无其他独立红外数据。检索范围（2026-10-20）：GCN 日索引 110207-110216 与 gcn3_arch_old116-200（约 GCN 11500-20000）主题扫描，本源仅 11658/11660/11664/11667/11671/11680/11695 七条及 Report 321.1；arXiv API 元数据检索（题目/摘要等）'GRB 110207A'/'110207A' 均 0 条（全文检索不开放）；SIMBAD 38 条引用标题逐条核对：命中的光学/NIR 数据源为 Greiner+2024（GROND 样本 I，A&A 691, A158；VoR 三入口 403、CDS/VizieR 遭 Anubis 拦截、ADS 接口 405，故按 arXiv:2410.14441v1 逐值核对，见上），Becerra+2023（MNRAS 525, 3262；本次读 arXiv 2308.07882）为 TAROT/COATLI/RATIR 样本统计，其表 3 仅列样本属性（z/E-B-V/T90）而无本源测光行，不作数据来源，其余为目录/统计/时频分析类（2FLGC、GBM 第 3/4 版、BAT 第 3 版、AGILE MCAL 第 2 版、IPN 等）；仓内 external/ 中 fermi_gbm、swift_bat、swift_grb、agile_mcal、mpe_greiner 有本源条目，uvot_grb、grbsn_webtool、konus_wind、liang2023、guidorzi2025、heasarc_grbcat 等无；TNS /object/GRB110207A 返回 404（无对象页）；ADS 接口返回 405 不可达（未能在 ADS 逐篇核对，改由 SIMBAD 引用表覆盖）→ 除上述 GROND、MASTER、TAROT 外未发现其他余辉测光。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 取 Swift/BAT 触发时刻（batgrbproduct trigger 444912 UTC 2011-02-07T11:17:20.015680，含 UTCF 改正）；Fermi/GBM 触发 11:17:20.29 晚 0.271 s，详见 comment",
+    "t0_basis": "swift_bat_trigger_utc",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-20"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Lien+2016",
+      "title": "The Third Swift Burst Alert Telescope Gamma-Ray Burst Catalog",
+      "url": "https://doi.org/10.3847/0004-637X/829/1/7",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "source": "fsy"
+    },
+    {
+      "name": "Greiner+2024",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
