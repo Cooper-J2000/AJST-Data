@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB141113A",
   "alias": [
-    "GRB 141113346"
+    "GRB 141113.346",
+    "GRB141113346",
+    "bn141113346"
   ],
   "ra": 182.32000732421875,
   "dec": 77.37999725341797,
-  "T0": "2014-11-13T08:17:46.500000Z",
-  "T0_ref": null,
+  "T0": "2014-11-13T08:17:43.503Z",
+  "T0_ref": "Fermi GBM catalog (fermigbrst, bn141113346) trigger_time=2014-11-13T08:17:43.503 UTC（仓内快照 external/fermi_gbm，取数 2026-07-21；无 GCN 通告，两目录互证：fermigbrst + fermilgrb）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2556,
+  "pos_ref": "2FLGC (Ajello+2019), fermilgrb error_radius=0.71 deg（LAT Transient-class 定位）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2014-11-13T08:17:46.50Z 系 bot 将 fermilgrb trigger_met=437559466.5 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006/2009/2012-07 生效的 3 个闰秒，偏晚 2.997 s；证据：fermigbrst bn141113346 trigger_time=2014-11-13T08:17:43.503Z（GBM 官方目录，仓内快照）；437559466.5 s 天真换算=08:17:46.500Z 与原 T0 完全一致（bug 复现）；2FLGC/fermilgrb 自带 trigger_time=08:17:43.002Z 与 GBM 目录差 0.501 s（该表自身口径，未采用）。T0 按《数据审核提示词》§3.8 取 GBM 官方目录值（无 GCN 通告）。(2) pos_error 原为 null：fermilgrb error_radius=0.71（度）换算 0.71°=2556″ 填入；ra/dec=182.32/+77.38 与 pos_ref 同源（LAT 定位，库内原值未动）；来源未标注置信水平。GBM 定位 171.02/+80.26（error_radius=12.15°，极弱定位，fermigbrst）与 LAT 定位角距约 3.6°，远在 GBM 12.15° 误差内，互恰；以 2FLGC 官方定位为准。(3) 红移：fermigbrst/fermilgrb 均无 redshift，GCN 无该源通告（2026-10-24 gcn/archive 全文检索 GRB 141113A/141113.346/bn141113346 均 0 篇），保持 null。(4) sub_tag 维持 Fermi-LAT；不加 sgrb：GBM T90=0.448 s（50-300 keV）虽 <2 s，但无来源作正式长短分类，按 §3.9 不得自算。(5) 身份：Fermi GBM trigger bn141113346（GRB 141113.346）=2FLGC GRB 141113A（fermilgrb gcn_name）；仓内无重复条目；swift_bat/swiftgrbba/grbcat/konus_wind 快照均无此源。(6) 测光检索（2026-10-24）：gcn/archive 全文各名形 0 篇；仓内 rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；ADS 本会话无 token 未查 → 无可用测光，未补行，不建 lc。(7) alias：删 'GRB 141113346'（「日期+触发序列」空格拼接伪形，导入管线产物），补 GRB 141113.346（两目录 name_alt 原形）/GRB141113346（fermigbrst name 原形）/bn141113346（fermigbrst trigger_name）。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -132,8 +134,20 @@
         ],
         "trigger_time": "2014-11-13T08:17:43.002Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
