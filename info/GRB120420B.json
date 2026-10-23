@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB120420B",
   "alias": [
-    "GRB 120420858"
+    "GRB 120420B"
   ],
-  "ra": 108.7699966430664,
-  "dec": 15.170000076293945,
-  "T0": "2012-04-20T20:35:15.070000Z",
-  "T0_ref": null,
+  "ra": 108.77,
+  "dec": 15.17,
+  "T0": "2012-04-20T20:35:13.070500Z",
+  "T0_ref": "von Kienlin+2014, ApJS 211, 13, Table 6 (FERMIGBRST trigger bn120420858)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +14,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1044,
+  "pos_error_confidence": "90",
+  "pos_ref": "2FLGC (Ajello+2019)，LAT 90% 包含半径 0.29 deg",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "身份：Fermi GBM 触发 bn120420858（2nd GBM 目录表 6 名 GRB 120420B）= 2FLGC 的 GRB 120420858（2FLGC 表 2、FITS GCNNAME=120420B）。T0 采用 GBM 官方目录表 6 触发时刻 2012-04-20T20:35:13.0705Z（von Kienlin+2014；HEASARC FERMIGBRST MJD 56037.857790167=20:35:13.070，一致至 ms）；库中原值 20:35:15.070 系把 MET 356646915.070 直接当作 UTC 而未计 2006、2009 年两次闰秒（+2 s），已更正。2FLGC 的 LAT 触发时刻为 20:35:13.004（比 GBM 早 66.5 ms，亚秒差按 §3.2 不入 T0_offset）。定位取 2FLGC LAT 定位 RA=108.77、Dec=+15.17，误差半径 0.29 deg（90% 包含，statistical only；=1044 arcsec）；GBM 定位 RA=109.3、Dec=+10.8、误差 1.1 deg（表 6 注：1σ），精度较低未采用。GBM T90=254.913±4.222 s（50–300 keV，FERMIGBRST）；LAT 100 MeV–100 GeV 注量=1.03816e-05±6.65985e-06 erg/cm2、T_LAT,100=406.34±13.955 s（2FLGC）。无红移记录（FITS REDSHIFT=0 视为空）。本条目无 lc 行；2FLGC 机读表含 LAT 光变（能量串波段），按能量串行暂不审核的规则未新增。GCN Circular：GCN 归档与 13230–13320 号逐条检索未见该事件，证据链为 GBM 官方目录 + 2FLGC 两路。alias 仅保留 GCN 名 GRB 120420B；GBM 触发名 GRB120420858 与 2FLGC 论文用名 GRB 120420.858 属日期+编号形，按 §3.10 不列入 alias。2FLGC Table 3 该行 CLASS=(L)，据此补 sub_tag=lgrb。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -132,8 +134,24 @@
         ],
         "trigger_time": "2012-04-20T20:35:13.004Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-21"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "von Kienlin+2014",
+      "title": "The 2nd Fermi GBM Gamma-Ray Burst Catalog: The First Four Years",
+      "url": "https://doi.org/10.1088/0067-0049/211/1/13"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e"
+    }
+  ],
   "host_galaxy": null
 }
