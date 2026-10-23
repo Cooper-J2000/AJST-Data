@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB110921B",
   "alias": [
-    "GRB 110921912"
+    "GRB 110921B",
+    "GRB110921B",
+    "bn110921912",
+    "Fermi bn110921912"
   ],
-  "ra": 5.769999980926514,
-  "dec": -26.59000015258789,
-  "T0": "2011-09-21T21:52:47.090000Z",
-  "T0_ref": null,
+  "ra": 5.77,
+  "dec": -26.59,
+  "T0": "2011-09-21T21:52:45.090Z",
+  "T0_ref": "GCN 12390 ('At 21:52:45.09 UT on 21 09 2011, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 110921B (trigger 338334767 / 110921.912)')；HEASARC FERMIGBRST bn110921912 trigger_time=MJD 55825.911633009=2011-09-21T21:52:45.092Z（目录精确值 45.09198，GCN 45.09 为 10 ms 取舍）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +17,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1404,
+  "pos_error_confidence": "90",
+  "pos_ref": "2FLGC (Ajello+2019) Table 2 / HEASARC FERMILGRB name GRB110921912：ra=00h23m04.8s(5.77°)、dec=-26°35'24\"(-26.59°)、error_radius=0.39°(90% containment, statistical only)；IPN 3σ 误差盒（Hurley+2017 表6，VizieR J/ApJS/229/31）中心 5.875/-26.565、面积 0.052 deg²，与 LAT 位置差 0.10°，独立确认；GBM 定位见 comment",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核链（fsy 2026-10-20）：[原值] T0=2011-09-21T21:52:47.090000Z、T0_ref=null、pos_error=null、pos_ref=null、alias=['GRB 110921912']、sub_tag=['Fermi-LAT']、comment='由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)'。[身份] Fermi/GBM 触发 338334767 / 110921.912（GCN 12390）即 GRB 110921B；2FLGC（Ajello+2019）name=GRB110921912、gcn_name=GRB110921B（无空格）、gbm_cat_name=GRB110921912；SIMBAD 收录 GRB 110921B = Fermi bn110921912。Trigger_Instrument=Fermi/GBM 正确。[T0] GCN 12390 原文 'At 21:52:45.09 UT on 21 09 2011, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 110921B (trigger 338334767 / 110921.912)'；FERMIGBRST 快照 bn110921912 trigger_time=MJD 55825.911633009=2011-09-21T21:52:45.092Z（目录精确值 45.09198，GCN 45.09 为 10 ms 取舍）；2FLGC 论文 Table 2 与 FITS GRBDATE 均打印 21:52:45，HEASARC time 列 21:52:44.996（早 0.094 s，目录自差）；IPN 表2（Hurley+2017）亦记 21:52:45。原 T0 47.090 恰为 MET 338334767.09 按 2001-01-01 直接换算、未扣 2005-12-31 与 2008-12-31 两个闰秒（audit/README 所述 Issue #67 的 Fermi 系问题），故改正为 45.090Z；这是换算改正，不是真实爆发相对触发的偏移，T0_offset 不填（0.094 s 也远小于 1 s 阈值且属目录口径差）。[坐标] 2FLGC LAT 定位 ra=5.77°、dec=-26.59°（float32 残渣已清洗），error_radius=0.39°=1404″；论文正文明确 LAT 定位误差为 90% containment、statistical only（FITS 与 HEASARC 快照一致），故 pos_error=1404″、pos_error_confidence='90'、pos_ref=2FLGC。GBM on-ground 定位 RA=17.95°、Dec=-27.74°（GCN 12390；1.0° radius，1σ statistical，另有 2-3° systematic；FERMIGBRST 17.97/-27.75、error_radius=1.0°）与 LAT 位置相差约 10.9°，但 IPN 3σ 误差盒（Hurley+2017 表6，VizieR J/ApJS/229/31）中心 5.875/-26.565、面积 0.052 deg²，与 LAT 位置仅差 0.10°，独立确认 LAT 定位；GBM 的 3σ 误差面积达 527 deg²（GBM/IPN 面积比 10100），其 10.9° 偏离系定位差而非另一事件。本源按 2FLGC 导入且 LAT 定位精度更高，采用 2FLGC 位置，GBM 位置并列备查。[alias] 删除伪形 'GRB 110921912'（日期+触发序列拼接）；新增 'GRB 110921B'（GCN/2FLGC gcn_name/SIMBAD）、'GRB110921B'（2FLGC gcn_name 无空格形）、'bn110921912'（FERMIGBRST trigger_name）、'Fermi bn110921912'（SIMBAD）。目录原名 'GRB110921912'、'GRB 110921.912' 为真实目录标识但符合别名伪形正则，未收入 alias，在此备查。[标签] tag='grb'；sub_tag=['lgrb','Fermi-LAT']：'lgrb' 依 2FLGC 表3 CLASS=L（该表按 GBM 50-300 keV 的 TGBM,90=26.88 s>2 s 判为长暴，GBM 值取自 FGGC），'Fermi-LAT' 因 2FLGC 有 LAT 探测保留。T90=17.664±0.345 s（50-300 keV，FERMIGBRST/2FLGC 目录值；GCN 12390 记 about 17 s）；2FLGC 表3 另给 TGBM,90=26.88 s（取自 FGGC，同能段、目录版本不同），与目录值均 >2 s，不影响长暴分类；fluence=3.6311e-05±7.8966e-08 erg/cm²（10-1000 keV，2FLGC/GBM；GCN 12390 preliminary 为 (3.881±0.054)e-05 erg/cm²，时段与拟合口径不同，均列出备查）。[红移] 2FLGC redshift=0（缺失标记）；GCN 12390、SIMBAD、TNS 均无红移，保持 null；无宿主依据，host_galaxy=null。[测光] GCN 检索 '110921B' 仅 12390（GBM 通报），无光学/UV/IR/射电余辉通报；SIMBAD 17 篇参考文献均为 GBM/LAT 目录、瞬发谱或统计研究，无余辉测光；TNS 搜索无记录；GRBSN webtool 与 HEASARC GRBCAT 快照无本源；Swift/XRT 目录无本源。故不建 lc/GRB110921B.csv；2FLGC 的 LAT 光变为伽马射线，不入库。[文献] articles 登记实际使用的 Ajello+2019（2FLGC，ApJ 878, 52，DOI 10.3847/1538-4357/ab1d4e）与 Hurley+2017（IPN 补充，ApJS 229, 31，DOI 10.3847/1538-4365/229/2/31；表6 经 VizieR J/ApJS/229/31 取用）；2FLGC 的 VoR（IOP）被 bot 验证拦截、OpenAlex 仅 arXiv 绿色 OA，故按 arXiv:1906.11403 v1 核对，并以 HEASARC FERMILGRB 快照（2026-07-21 取数）复核同一行，数值一致。在线来源（GCN/SIMBAD/TNS/VizieR）取数日期 2026-10-20。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -62,8 +67,26 @@
         ],
         "trigger_time": "2011-09-21T21:52:44.996Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-20"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://arxiv.org/abs/1906.11403",
+      "source": "fsy"
+    },
+    {
+      "name": "Hurley+2017",
+      "title": "The Interplanetary Network supplement to the second Fermi GBM catalog of cosmic Gamma-Ray bursts",
+      "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/ApJS/229/31/table6",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
