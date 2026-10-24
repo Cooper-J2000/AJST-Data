@@ -91,7 +91,8 @@ gh pr list --search "in:title <源ID>"       # 或手查
 - **审核前必查**：`grep <源ID> audit/denied.tsv`（或 `python3 tools/audit_queue.py --id <源ID>`，
   命中会直接回「已被否证」）。命中就停手，不要认领、不要开 PR、不要重建。
 - **源复活＝报警**：`validate.py` 发现 denied 里的源又出现 `info/` 或 `lc/` 文件就警告——那说明
-  导入管线把源重建了（排除机制尚未接入管线，见 Issue #183 第 3 条），应按 `evidence` 再否证一次。
+  源被重新导入或误恢复了（`bot_created` 是一次性建库，库没有常态化导入管线；见 Issue #183），
+  应按 `evidence` 再否证一次。
 - **不参与状态机**：它没有 `info` 文件，本来就不在可认领队列里；`audit_queue.py --denied` 只读展示。
 - **删除要留得下判据**：`evidence` / `decided_by` / `date` / `ref` 缺一项就告警。只写「已删除」
   的记录等于没写——下一个人还得从头查一遍 GCN。

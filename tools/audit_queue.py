@@ -378,7 +378,7 @@ def cmd_denied(args, denied):
     for e in denied.get('errors') or []:
         print(f'  ⚠ {e}', file=sys.stderr)
     print('→ 这些源已从库中删除：**不要认领、不要审核、不要重建**；若 info/ 里又出现同名文件，'
-          '说明导入管线把源重建了（见 Issue #183）')
+          '说明源被重新导入或误恢复了（库没有常态化导入管线，见 Issue #183）')
     return 0
 
 
@@ -716,7 +716,7 @@ def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None, de
         if drow.get('evidence'):
             print(f'  判据            : {drow["evidence"]}')
         print('  → **不要认领、不要审核、不要重建这个源**。若 info/ 里又出现同名文件，'
-              '说明导入管线把它重建了，按上面的判据重新否证（见 Issue #183）')
+              '说明源被重新导入或误恢复了，按上面的判据再否证一次（见 Issue #183）')
         return 0
     if sid not in sources and sid not in resolved:
         print(f'未找到源 {sid}（info/{sid}.json 不存在）', file=sys.stderr)
