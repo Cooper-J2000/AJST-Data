@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB200415A",
   "alias": [
-    "GRB 200415367"
+    "GRB 200415A",
+    "bn200415367"
   ],
-  "ra": 11.079999923706055,
-  "dec": -25.0,
-  "T0": "2020-04-15T08:48:10.560000Z",
-  "T0_ref": null,
+  "ra": 11.885,
+  "dec": -25.263,
+  "T0": "2020-04-15T08:48:05.560000Z",
+  "T0_ref": "GCN 27587: 'At 08:48:05.56 UT on 15 April 2020, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 200415A (trigger 608633290 / 200415367)'；GCN 27586 (LAT) 'T0 = 08:48:05.56 UT'；HEASARC FERMIGBRST bn200415367 trigger_time=MJD 58954.366731062=2020-04-15T08:48:05.564Z；Roberts+2021 'On April 15th 2020 at 08:48:05.563746 UTC, the Gamma-ray Burst Monitor (GBM) onboard the Fermi Gamma-Ray Space Telescope' 被触发",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +15,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 27586",
+  "pos_error": 432,
+  "pos_ref": "HEASARC FERMIGBRST bn200415367（仓内 external/fermi_gbm 快照，2026-07-21）ra=11.885, dec=-25.263, error_radius=0.12 deg；该位置=Svinkin+2021 (Nature 589, 211) 最终 IPN 3σ 误差椭圆中心（R.A. 11.885, Dec. -25.263）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "磁星巨耀发（MGF）证据（分类待维护者裁决，见 PR 待决）：Svinkin+2021（Nature 589, 211，DOI 10.1038/s41586-020-03076-9）——最终 IPN 3σ 误差椭圆（中心 11.885/-25.263，轴 6.25×4.07 arcmin，面积 20 arcmin²）覆盖 NGC 253（玉夫座星系）中心区，Eiso≈1.3×10^46 erg（D=3.5 Mpc），光变/能谱/能量与 SGR 1806-20 巨耀发一致；Roberts+2021（Nature 589, 207，DOI 10.1038/s41586-020-03077-8）同结论；Burns+2021（ApJL 907, L28，DOI 10.3847/2041-8213/abd8c8）把本暴列为 4 个近距(<5 Mpc) MGF 样本之一（051103/070201/070222/200415A），其方法给出巨耀发 vs 并合解释贝叶斯因子 ~6000:1（数值见 GCN 35038 转述）\n版本来源备注：本 comment 中引自 Svinkin+2021 与 Roberts+2021 的数值取自其 arXiv 版（arXiv:2101.05104v1 / 2101.05146v1；两文 Nature VoR 付费墙未能取得，已尝试 nature.com 页面与 LSU 机构库）；Schosser+2025 数值取自 arXiv:2303.05922 摘要；Burns+2021 题录经 Crossref 核验（ApJL 907, L28）。\n反方：Schosser+2025（MNRAS 537, 1430，DOI 10.1093/mnras/staf067）模拟显示 15.7% 的巡天中至少有一个短 GRB 可伪装成 MGF，认为现有判据不能唯一证认——故 tag 暂维持 grb，未按 §3.7 改 sgr。\nT0 口径：bot 原值 2020-04-15T08:48:10.560000Z 系 2FLGC fermilgrb trigger_met=608633290.56 s 按纪元 2001-01-01T00:00:00 UTC 直加、未扣 2005/2008/2012/2015/2016 共 5 次闰秒的换算产物（偏晚恰 5.000 s，Issue #67/#109 模式），本次按 GBM 团队 GCN 与 FERMIGBRST 改为 08:48:05.56 UT；闰秒换算口径差不构成真实爆发偏移，不记 T0_offset。备查：Konus-Wind 触发时刻 T0=08:48:01.401 UT（GCN 27596，比 GBM 早 4.16 s）；2FLGC fermilgrb trigger_time=2020-04-15T08:48:04.997Z 与上级目录存在亚秒-秒级自差（§3.8 衍生目录只作交叉验证）。\n定位沿革（全部留档）：GBM 实时定位 GCN 27579（RA=6.1, Dec=-32.0，stat 2.0°，偏差大）→ BALROG GCN 27580（RA=10.8±6.4, Dec=-26.3±4.7，另估 +1° 系统差）→ Fermi-LAT GCN 27586（RA,Dec=11.0,-25.1，r=0.5°，90% 仅统计）→ 初步 IPN 框 GCN 27585（中心 11.960/-25.937，3σ）→ 改进 IPN 框 GCN 27595（中心 11.874/-25.194，3σ，274 arcmin²，NGC 253 大部在框内）→ LAT 更新 GCN 27597（RA,Dec=11.07,-25.02，r=0.38°/68%、0.59°/90% 仅统计，等值线向 IPN 框方向拉长）→ 最终 IPN 椭圆（Svinkin+2021，即 FERMIGBRST 采用值）。bot 原 ra=11.079999923706055/dec=-25.0（float32 残渣）实为 2FLGC LAT 定位（11.08/-25.0，error_radius 0.56），已弃用；pos_error=432 arcsec＝FERMIGBRST error_radius 0.12 deg（目录未标注置信水平，pos_error_confidence 留空）。\nFERMIGBRST name_alt 官方名形：GRB200415367 / GRB 200415.367 / bn200415367（前两者属 Issue #69 伪形范畴不入 alias，bn 形已入）。\n物理量备查（§3.9，不参与判定）：T90=0.144±0.036 s、t50=0.064±0.023 s（50-300 keV，FERMIGBRST）；fluence=(5.014±0.016)E-6 erg/cm²（10-1000 keV，FERMIGBRST；GCN 27587 (5.2±0.1)E-6；Konus-Wind 8.1(+0.9,-0.8)E-6，20 keV-10 MeV，GCN 27596）；峰值光子流量（64ms，10-1000 keV）=73.7±2.1 ph/cm²/s（FERMIGBRST）；Epeak=945±29 keV（CPL，FERMIGBRST；GCN 27587 950±40 keV）；Eiso≈(1.22±0.03)×10^46 erg（1 keV-10 MeV，D=3.5 Mpc，GCN 27587；Konus-Wind ~1.3×10^46 erg，GCN 27596）。\n宿主：NGC 253（D≈3.5 Mpc，Svinkin+2021/Roberts+2021，随机对齐概率 ~1/200000）；redshift 字段不填（文献均用距离口径）。sub_tag Fermi-LAT 属实：GCN 27586（>100 MeV 边际探测，0-500 s 光子流量 (3.4±2.1)×10^-6 ph/cm²/s，谱指数 -1.7±0.3，最高能光子 1.7 GeV@触发后 284 s），2FLGC TS=30.6；正式发表分析见 Fermi-LAT Collaboration (NatAs 5, 385, 2021，DOI 10.1038/s41550-020-01287-8)。\n导入来源更正：原 comment「由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)」失实——Ajello+2019 为 1FLGC（覆盖 2008-2018-08），不含本源（2020 年触发）；本条目实际由 extra_data.catalog_data 的 FERMIGBRST 与 FERMILGRB(2FLGC) 目录快照（2026-07-21 取）导入，且未导入任何光变数据（lc 原为空）。\n零测光检索留证（2026-10-25）：仓内 gcn/archive 全文命中 15 篇（13 篇本源 GCN：27579/27580/27585/27586/27587/27590/27595/27596/27597/27599/27622/27627/27629，与 GCN 站 subject:\"GRB 200415A\" 13 篇一致；另 30949/35038 仅提及；光学相关仅 27590/27599，射电 0 篇）；external/rssgrbag（Chandra&Frail 2012，止于 2012 年）与 external/grbsn_webtool 均无本源。文献：ADS/SciX 无 token，按回退链走 OpenAlex（命中 110 条）+ arXiv API（12 条）+ Crossref（DOI 核验），全部为谱/时域/分类/建模类；唯一含测光数据的是 Roberts+2021（VLA 1-2 GHz 4×非探测，Ext. Data Table 2，VoR 付费墙、已试 nature.com 与 LSU 机构库未取得，取自 arXiv:2101.05146v1）与 GCN 27599（MASTER 无滤光片上限）——共补 5 行（4 射电 1σ RMS + 1 光学上限）。Li+2022（MNRAS 517, 3881，DOI 10.1093/mnras/stac2924）付费墙且无 arXiv 版，未能核实（其建模引用的射电非探测约束待 VoR 可得时复核）。TNS：非 AT/SN 类源，略过。MASTER GCN 27590 的 12 条无滤光片上限（Tmid-T0≈60036-64105 s，18.0-18.9 mag）各 tile 位于 Dec -58°~-62°，距源 ≥25°，非源位置上限，不入库；GCN 27599 内 AT2020hok（15.8 mag）为 NGC 253 内持久 XMM X 射线源/疑似球状星团（原文称无光变），非本暂现源。",
   "sub_tag": [
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -152,6 +154,11 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
     }
   },
   "articles": [
@@ -231,7 +238,22 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.1430S",
       "bibtex": "@ARTICLE{2025MNRAS.537.1430S,\n       author = {{Sch{\\\"o}sser}, Elisa C. and {Burgess}, J. Michael and {Greiner}, Jochen},\n        title = \"{Misidentification of short GRBs as magnetars in nearby galaxies}\",\n      journal = {\\mnras},\n     keywords = {Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2025,\n        month = feb,\n       volume = {537},\n       number = {2},\n        pages = {1430-1443},\n          doi = {10.1093/mnras/staf067},\narchivePrefix = {arXiv},\n       eprint = {2303.05922},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.1430S},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Fermi-LATCollab+2021",
+      "title": "High-energy emission from a magnetar giant flare in the Sculptor galaxy",
+      "url": "https://doi.org/10.1038/s41550-020-01287-8",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Burns+2021",
+      "title": "Identification of a Local Sample of Gamma-Ray Bursts Consistent with a Magnetar Giant Flare Origin",
+      "url": "https://doi.org/10.3847/2041-8213/abd8c8",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "comment": "NGC 253（玉夫座星系，星暴星系）；文献距离 D≈3.5 Mpc；IPN 最终定位椭圆覆盖星系中心区，随机对齐概率 ~1/200000（Svinkin+2021）；红移未登记（两 Nature 论文均用距离口径）",
+    "source": "Svinkin+2021, Nature 589, 211 (DOI 10.1038/s41586-020-03076-9); Roberts+2021, Nature 589, 207 (DOI 10.1038/s41586-020-03077-8)"
+  }
 }
