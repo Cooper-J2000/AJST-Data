@@ -1,28 +1,86 @@
 {
   "transient_id": "GRB160424A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2016-04-24T11:49:06Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 160424.492",
+    "bn160424492",
+    "BAT 683906"
+  ],
+  "ra": 319.482,
+  "dec": -60.408,
+  "T0": "2016-04-24T11:49:07.348Z",
+  "T0_ref": "GCN 19335（Lien et al., Swift team）：'At 11:49:07 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160424A (trigger=683906)'（整秒）；Swift/BAT 官方目录（swift.gsfc.nasa.gov BAT GRB Catalog，仓内 external/swift_bat 快照 summary_general.txt 行 GRB160424A，取数 2026-07-21）trigger_time=2016-04-24T11:49:07.348300 UTC；整数秒一致，按 §3.2/§3.8 取触发仪器目录亚秒值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 72,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 19338 (Krimm et al., Swift-BAT refined analysis): RA, Dec = 319.482, -60.408 deg，1.2 arcmin (radius, sys+stat, 90% containment) = 72 arcsec",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发的长 GRB，无已发表光学/射电余辉探测。审核 Rusty-Harpoon@zcode（2026-10-24）：(1) 身份与触发：GCN 19335 'At 11:49:07 UT, the Swift BAT triggered and located GRB 160424A (trigger=683906)'；同暴亦被 Fermi/GBM 触发（trigger 483191350 / 160424492，GCN 19340，11:49:06.48 UT；仓内 fermi_gbm 快照 trigger_time=2016-04-24T11:49:06.477Z，MET 483191350 天真换算=11:49:10.477、扣 2015-07 生效的 4 个闰秒=11:49:06.477，快照已正确扣闰，无 Issue #109 问题）、Konus-Wind 触发（T0=42546.397 s UT=11:49:06.397，GCN 19342）、INTEGRAL SPI-ACS 独立探测（GCN 19340）；mpe_greiner 快照 IPN=y。(2) T0：原值 2016-04-24T11:49:06Z 系 bot 写入（t0_basis=meta_trigger，Issue #68 已证该标记不可信），偏早 1.348 s。按 §3.8 锚定触发仪器 Swift/BAT 并取其官方目录亚秒值 → T0=2016-04-24T11:49:07.348Z。GBM/Konus 触发时刻（06.477/06.397）与 BAT 差 0.871/0.951 s，系各仪器自身触阈不同，记此备查。(3) 坐标：原为 null。采用 BAT 地面精化定位（GCN 19338）RA,Dec=319.482,-60.408，1.2′=72″（sys+stat，90% containment）。备查：BAT 在轨定位 319.481,-60.405，3′（90%，GCN 19335）；XRT 精化 319.48505,-60.41481（标称 3.8″，90% containment，GCN 19336），但星跟踪器未正确锁定、姿态解不确定，位置不确定约 50″（GCN 19339），不作为主定位；swift_bat 快照行 319.4846,-60.40811（Image_position_err 1.13′，SNR 25.5）与 GCN 略异（目录更新版本）；fermi_gbm 快照 319.485,-60.6148、error_radius=0.00105°（该误差列疑为管线伪值，目录快照只读不改，见 PR 说明）。(4) 触发仪器：原 'Swift/UVOT' 系误标——UVOT 为后随观测仪器（GCN 19337 即 UVOT 上限通告），实际触发仪器为 Swift/BAT，已改。(5) tag/sub_tag：grb/lgrb——GCN 19342 明称 'The long-duration GRB 160424A'；BAT T90=6.3±1.0 s（GCN 19338；swift_bat 快照 6.464±0.952 s，15-350 keV）、GBM T90≈7.6 s（GCN 19340；fermi_gbm 快照 6.592±0.923 s，50-300 keV）。(6) 红移：无任何来源给红移，保持 null。(7) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文检索 '160424A' 命中 7 篇（19335-19340、19342；相邻 GCN 19334/19341/19343 为对照——19334/19343 属相邻暴 160422A/160425A、19341 为 LIGO 通告，均与本源无关，检索词有效）；唯一定量光学数据 = GCN 19337 UVOT White finding chart 上限（补 1 行）；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录，external/konus_wind（Tsvetkova 样本表）/uvot_grb/fermi_lat/liang2023/wang2022/guidorzi2025/minaev2020/agile_mcal/saxgrbmgrb/batse/heasarc_grbcat 快照均无该源记录（grep '160424' 0 命中）；ADS/SciX（api.adsabs.harvard.edu，token 检索）全文 'GRB 160424A' 命中 7 篇（=上述 7 篇 GCN，无本地缺件）、触发号 683906/160424492/483191350 全文检索 0 有效命中（仅机器学习等无关假阳性）；OpenAlex 6 命中（同为 GCN）、arXiv API 0 命中；GCN 站 gcn.nasa.gov/circulars/19337 在线核对与本地全文一致（2026-10-24）；TNS 不适用（GRB 非 AT/SN/CV 类）→ 除 GCN 19337 上限外无可用测光，共补 1 行。(8) alias：补 GRB160424492 / GRB 160424.492 / bn160424492（fermi_gbm 快照 name_alt 原形）与 BAT 683906（swift_bat 快照 name_alt 原形）。(9) t0_basis/t0_note 原值：t0_basis='meta_trigger'、t0_note='t0 为 meta trigger-time（真实触发时刻）'（bot 写入，经核实失真，已按 §3.10 改写，原值留此）。(10) prompt 参数多来源并列：fluence BAT 1.2±0.1e-6 erg/cm2（15-150 keV，GCN 19338）/GBM 2.6±0.2e-6（10-1000 keV，GCN 19340）/Konus 1.59(-0.35,+0.60)e-6（20 keV-10 MeV，GCN 19342）；1 s 峰光子流量 5.1±0.4 ph/cm2/s（15-150 keV，GCN 19338）；Epeak=220±30 keV（GBM CPL，GCN 19340）/Konus 133(-40,+134) keV；E(B-V)=0.03（GCN 19337）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 683906）：GCN 19335 整秒 11:49:07 UT + Swift/BAT 官方目录亚秒值 11:49:07.348300 UTC（external/swift_bat 快照）",
+    "t0_basis": "GCN 19335 + swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 19335",
+      "title": "GRB 160424A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/19335",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19336",
+      "title": "GRB 160424A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/19336",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19337",
+      "title": "GRB 160424A: Swift/UVOT Upper Limit",
+      "url": "https://gcn.nasa.gov/circulars/19337",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19338",
+      "title": "GRB 160424A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/19338",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19339",
+      "title": "GRB 160424A - XRT position uncertain",
+      "url": "https://gcn.nasa.gov/circulars/19339",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19340",
+      "title": "GRB 160424A: Fermi GBM observation",
+      "url": "https://gcn.nasa.gov/circulars/19340",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19342",
+      "title": "Konus-Wind observation of GRB 160424A",
+      "url": "https://gcn.nasa.gov/circulars/19342",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "mag_system": null
 }
