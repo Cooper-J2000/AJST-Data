@@ -55,6 +55,9 @@ PAPER_DIR = os.path.join(LEADS_DIR, 'papers')   # 文献级索引卡：一篇多
 RCARD_MIN_WARN = 5          # 同一 PR 新增源级卡 ≥ 此数且无文献级卡 → 提示改用文献级卡（§3.11）
 PAPER_KEYS = ('paper_key', 'paper', 'date', 'helper', 'sources', 'out_of_repo')
 RESERVED_TSV = os.path.join(ROOT, 'audit', 'reserved.tsv')
+DENIED_TSV = os.path.join(ROOT, 'audit', 'denied.tsv')   # 已否证源清单（人写、工具只读）
+DENIED_COLS = ('source_id', 'reason_code', 'evidence', 'decided_by', 'date', 'ref')
+DENIED_REASONS = ('retracted', 'duplicate', 'noise', 'other')
 
 SNAPSHOT_STALE_DAYS = 3     # 快照超过这个天数即视为过期（工具会告警）
 CLAIM_TTL_DAYS = 14         # 普通源的认领软过期
@@ -306,6 +309,77 @@ def load_snapshot(path=SNAPSHOT):
 
 # ─── 维护者预留台账（audit/reserved.tsv，人工维护）───────────────────────────
 RESERVED_COLS = ('source_id', 'holder', 'since', 'until', 'reason', 'ref')
+
+
+def load_denied(path=None):
+    """→ {'path','exists','rows':{sid:rec},'errors':[...]}
+
+    已否证源清单（audit/denied.tsv）：维护者裁定删除的源。**不参与**状态机——它们根本
+    不该有 info 文件，所以也不会进可认领队列；这张表的作用是让人在重建/复审时立刻知道
+    「这个源已经被否证过，判据是什么」，见 Issue #183。
+    容错优先：坏行只记 errors，绝不抛异常。
+    """
+    path = path or DENIED_TSV
+    meta = {'path': path, 'exists': os.path.exists(path), 'rows': {}, 'errors': []}
+    if not meta['exists']:
+        return meta
+    try:
+        with open(path, encoding='utf-8') as fh:
+            lines = fh.read().splitlines()
+    except OSError as e:
+        meta['unreadable'] = str(e)
+        return meta
+    for n, ln in enumerate(lines, 1):
+        if not ln.strip() or ln.lstrip().startswith('#'):
+            continue
+        parts = [p.strip() for p in ln.split('\t')]
+        if parts[0] == 'source_id':
+            continue
+        sid = parts[0]
+        if not sid:
+            meta['errors'].append(f'第 {n} 行：首列为空，已忽略')
+            continue
+        rec: dict = dict(zip(DENIED_COLS, parts + [''] * max(0, len(DENIED_COLS) - len(parts))))
+        rec['line'] = n
+        if sid in meta['rows']:
+            meta['errors'].append(f'第 {n} 行：{sid} 重复，保留先出现的一行')
+            continue
+        meta['rows'][sid] = rec
+    return meta
+
+
+def denied_note(denied):
+    """一行摘要：denied.tsv 是否在用。"""
+    if not denied or not denied.get('exists'):
+        return ''
+    n = len(denied.get('rows') or {})
+    if not n:
+        return '已否证源清单：audit/denied.tsv 存在但为空'
+    return f'已否证源清单：{n} 个源（audit/denied.tsv，删除后不得重建，见 Issue #183）'
+
+
+def cmd_denied(args, denied):
+    """列出已否证源（只读）。"""
+    rows = denied.get('rows') or {}
+    if not denied.get('exists'):
+        print(f'{denied["path"]} 不存在 → 还没有任何已否证源', file=sys.stderr)
+        return 4
+    if not rows:
+        print('已否证源清单：0 个源')
+        return 0
+    print(f'已否证源清单（{len(rows)} 个，{denied["path"]}）')
+    for sid in sorted(rows):
+        r = rows[sid]
+        print(f'{sid}\t{r.get("reason_code") or "?"}\t{r.get("date") or "?"}\t{r.get("ref") or "—"}')
+        if r.get('evidence'):
+            print(f'    判据：{r["evidence"]}')
+        if r.get('decided_by'):
+            print(f'    裁定人：{r["decided_by"]}')
+    for e in denied.get('errors') or []:
+        print(f'  ⚠ {e}', file=sys.stderr)
+    print('→ 这些源已从库中删除：**不要认领、不要审核、不要重建**；若 info/ 里又出现同名文件，'
+          '说明导入管线把源重建了（见 Issue #183）')
+    return 0
 
 
 def load_reserved(path=None):
@@ -624,14 +698,30 @@ def render_row(sid, resolved, leads=None):
             f'{(c.get("pr") or "-"):<10} {r["basis"]}{lead}')
 
 
-def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None):
+def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None, denied=None):
     leads = leads or {}
+    denied = denied or {}
     extra = [f'源范围：{args.pub_note}'] if getattr(args, 'pub_note', None) else []
     if getattr(args, 'reserved_note', None):
         extra.append(args.reserved_note)
+    if getattr(args, 'denied_note', None):
+        extra.append(args.denied_note)
     sid = args.id
+    drow = (denied.get('rows') or {}).get(sid)
+    if drow:
+        print(f'源 {sid}：**已被否证**（不在库中，也不该被重建）')
+        print(f'  原因代码        : {drow.get("reason_code") or "?"}')
+        print(f'  裁定人/日期     : {drow.get("decided_by") or "?"} / {drow.get("date") or "?"}')
+        print(f'  关联            : {drow.get("ref") or "—"}')
+        if drow.get('evidence'):
+            print(f'  判据            : {drow["evidence"]}')
+        print('  → **不要认领、不要审核、不要重建这个源**。若 info/ 里又出现同名文件，'
+              '说明导入管线把它重建了，按上面的判据重新否证（见 Issue #183）')
+        return 0
     if sid not in sources and sid not in resolved:
         print(f'未找到源 {sid}（info/{sid}.json 不存在）', file=sys.stderr)
+        print(f'提示：先查 audit/denied.tsv（python3 tools/audit_queue.py --denied）——'
+              f'若已被否证，说明删得对，不要重建', file=sys.stderr)
         return 4
     r = resolved.get(sid) or {'state': FREE, 'rows': 0, 'basis': '—', 'claim': None,
                               'claimable': 'yes'}
@@ -986,6 +1076,8 @@ def main(argv=None):
                     help='PR 守卫：本 PR 新增线索卡的规模/形态（警告级，永不失败）')
     ap.add_argument('--reserved', action='store_true',
                     help='列出维护者预留 audit/reserved.tsv（自留源；外部协作者不得认领）')
+    ap.add_argument('--denied', action='store_true',
+                    help='列出已否证源 audit/denied.tsv（已删除的源；不得重建，见 Issue #183）')
     ap.add_argument('--check-reserved', action='store_true',
                     help='PR 守卫：改动文件是否触及自留源（警告级，永不失败）')
     ap.add_argument('--base', metavar='REF', help='配合 --check-reserved 指定比对基线（默认 origin/main）')
@@ -1044,10 +1136,12 @@ def main(argv=None):
                 print(f'# ⚠ --live 失败，退回快照：{e}', file=sys.stderr)
 
     reserved = load_reserved()
+    denied = load_denied()
     resolved = resolve(sources, claims, snap, reserved)
     leads = load_leads()
     papers = load_paper_cards()
     args.reserved_note = reserved_note(reserved, sources)
+    args.denied_note = denied_note(denied)
     if args.include_all:
         order = sorted(resolved, key=lambda s: (resolved[s]['state'], resolved[s]['rows'], s))
         for s in order:
@@ -1061,6 +1155,8 @@ def main(argv=None):
         return cmd_check_leads(args, sources, resolved, leads, papers)
     if args.reserved:
         return cmd_reserved(args, reserved, sources)
+    if args.denied:
+        return cmd_denied(args, denied)
     if args.check_reserved:
         return cmd_check_reserved(args, reserved)
     if args.id:
@@ -1068,7 +1164,7 @@ def main(argv=None):
             print(f'源 {args.id} 存在但未发布（.gitignore 排除）→ 不在审核队列范围'
                   f'（如需纳入请加 --include-unpublished）', file=sys.stderr)
             return 5
-        return cmd_id(args, sources, resolved, snap, claims, args.live, live_err, leads)
+        return cmd_id(args, sources, resolved, snap, claims, args.live, live_err, leads, denied)
     return cmd_list(args, sources, resolved, snap, claims, live_err, leads)
 
 
