@@ -1,28 +1,67 @@
 {
   "transient_id": "GRB200224B",
-  "alias": [],
+  "alias": [
+    "GRB 200224B",
+    "GRB200224212",
+    "bn200224212"
+  ],
   "ra": 177.9,
-  "dec": -28.9,
-  "T0": "2020-02-24T12:16:00Z",
-  "T0_ref": null,
+  "dec": -28.87,
+  "T0": "2020-02-24T05:05:49.279Z",
+  "T0_ref": "GCN 27174 原文 At 05:05:49 UT on 24 Feb 2020（GBM 触发 604213554）；FERMIGBRST bn200224212 行 trigger_time MJD 58903.212375913 = 2020-02-24T05:05:49.279Z（external/fermi_gbm 快照，astropy 已扣闰秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 3.08,
+  "pos_ref": "GCN 27174（RA=177.9, Dec=-28.9, statistical uncertainty 3.1 度）；FERMIGBRST bn200224212 行 ra=177.9, dec=-28.87, error_radius=3.08 度（external/fermi_gbm 快照，晚于 GCN 初报，取目录值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核链（wa1kmoon@zcode 2026-10-25）：[原值] T0=2020-02-24T12:16:00Z（t0_note 称 meta trigger-time）、ra/dec=177.9/-28.9、pos_error=null、Trigger_Instrument=Fermi、tag/sub_tag=[]、alias=[]、articles=[]、无 lc。[问题与修正] ①T0 系 bot 误植：12:16:00 为 DDOTI/OAN 观测窗口的结束时刻（GCN 27215 原文「from 2020-02-24 06:47 to 2020-02-24 12:16 UTC」），并非触发时刻，t0_note 的 meta trigger-time 说法不成立；真实触发时刻 2020-02-24T05:05:49.279Z——GBM 触发 604213554（GCN 27174 原文 At 05:05:49 UT），FERMIGBRST bn200224212 行 trigger_time MJD 58903.212375913 = 2020-02-24T05:05:49.279Z（external/fermi_gbm 快照），据提示词 §3.2 直接改写，原值留此备查。②ra/dec=177.9/-28.9 即 GCN 27174 初报形（RA = 177.9, Dec = -28.9），非 float32 污染；dec 按目录值精化为 -28.87，ra 目录值同为 177.9 不变。③pos_error 取 FERMIGBRST error_radius=3.08 度（晚于 GCN 初报 3.1 度，按 §4 目录晚于 Circular 者为准），pos_error_unit 相应记 deg；置信水平：tdat 列定义 Uncertainty in the Position、GCN 27174 称 statistical uncertainty、库内 fermi_gbm README 记「统计 1σ」，填 1sigma（GRB090227B 同例）。④Trigger_Instrument 细化为 Fermi/GBM；GCN 27174 判 likely LONG、FERMIGBRST T90=299.525±2.862 s（50-300 keV）→ sub_tag=lgrb。⑤同日划界：200224A=Swift/BAT 触发 958141，2020-02-24T03:24:49.304Z（ra 248.74 dec 41.67，有光学余辉，见 GCN 27173/27176/27189）；200224C=GBM 触发 604231129，09:58:44.567Z（短暴，IPN GCN 27183）；本源与之互不相干；更名依据 GCN 27181（该日 8 篇通告曾因序列分配器离线统标 A）。⑥alias：GRB200224212=FERMIGBRST name 字段原名（GCN 27174/27181 亦用 200224212）；bn200224212=trigger_name 与 GBM 数据目录名；parse.py 自拼三位小数形 GRB 200224.212 不收（前例裁定）。测光检索（2026-10-25）：仓内 gcn/archive 45889 篇 python+grep 双路全档扫描，本源相关 4 篇（27174 定位、27181 更名、27175 MASTER-OAFA 上限表、27215 DDOTI 上限，均已入 articles；2 篇含光学数值，6 条上限全部入 lc）；同日 200224A 的 8 篇光学通告（27172/27176/27177/27182/27189/27191/27222/27240）均指向 Swift 位置 16h35m +41°37′，与本源无关；external/rssgrbag 无记录；external/grbsn_webtool 无该事件；GCN 站核对 27174 内容与档案一致；ADS/SciX 无 API token 未查（历史实测 401）；arXiv API 兜底（all:200224B / GRB200224B / 200224212）0 命中 → 检出的 6 条上限已入库，本 PR 新增 6 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "库中 T0 原为 2020-02-24T12:16:00Z，系 bot 误植的 DDOTI/OAN 观测窗口结束时刻（GCN 27215），非触发时刻；真实触发时刻 2020-02-24T05:05:49.279Z（GBM 触发 604213554，GCN 27174；FERMIGBRST MJD 58903.212375913），2026-10-25 审核改写，原值见 comment。",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 27174",
+      "url": "https://gcn.nasa.gov/circulars/27174",
+      "title": "GRB 200224B: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27175",
+      "url": "https://gcn.nasa.gov/circulars/27175",
+      "title": "Fermi  trigger No 604213554: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27181",
+      "url": "https://gcn.nasa.gov/circulars/27181",
+      "title": "Correction in name: GRB 200224B and GRB 200224C (not GRB 200224A)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27215",
+      "url": "https://gcn.nasa.gov/circulars/27215",
+      "title": "GRB 200224B: DDOTI/OAN optical observations report",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
