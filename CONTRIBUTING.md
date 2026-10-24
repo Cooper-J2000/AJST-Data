@@ -19,7 +19,7 @@
 
 **维护者自留的源不得认领**：`--id <源ID>` 显示 `reserved`（台账 [`audit/reserved.tsv`](audit/reserved.tsv)，`--reserved` 可列全部）时，不要开工、不要开 `claim:` PR；到期变 `reserved-expired` 后按 48 小时沟通协议处理。自留是维护者的授权性预留，不是排队，也不进 `state.tsv`。
 
-**多目标文献**：一篇文献涉及多个库内源时，除自己那一源照常走流程，还要为其他源写 `audit/leads/<源ID>.md` 线索卡随同一 PR 提交（只写信息、不写状态，**不改变目标源的 free/claimed/reviewed 判定**）；挑源时用 `--id` 或 `--leads` 查看这些卡。格式见 [`audit/leads/README.md`](audit/leads/README.md)。
+**多目标文献**：一篇文献涉及多个库内源时，除自己那一源照常走流程，只能为**过了增量门槛**的其他源写 `audit/leads/<源ID>.md` 源级卡（只写信息、不写状态，**不改变目标源的 free/claimed/reviewed 判定**）；覆盖 ≥3 个库内源的文献先建一张 `audit/leads/papers/<paper_key>.md` 文献级索引卡（一篇一张，只做索引、不代替源级卡）。纯「汇总表转引 GCN」的行不开源级卡（2026-10-24 起）。挑源时用 `--id` / `--leads` / `--paper <key>` 查看。格式见 [`audit/leads/README.md`](audit/leads/README.md) 与 [`audit/leads/papers/README.md`](audit/leads/papers/README.md)。
 
 要点：一源一 PR；数值必须本次从来源原文实际核对得出，严禁臆造/内插/估算；**以正式发表版（VoR）为准，arXiv 只在确实拿不到 VoR 时替代**，补充材料/机读表必须实际取到核对；派生列（`Gext_*`）一律留空；拿不准就停下来问。契约（`SCHEMA.md`、本文件、`audit/README.md`、`audit/leads/README.md`）效力高于该提示词。
 

@@ -51,6 +51,9 @@ INFO_DIR = os.path.join(ROOT, 'info')
 LC_DIR = os.path.join(ROOT, 'lc')
 SNAPSHOT = os.path.join(ROOT, 'audit', 'state.tsv')
 LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
+PAPER_DIR = os.path.join(LEADS_DIR, 'papers')   # 文献级索引卡：一篇多源文献一张，不参与状态机
+RCARD_MIN_WARN = 5          # 同一 PR 新增源级卡 ≥ 此数且无文献级卡 → 提示改用文献级卡（§3.11）
+PAPER_KEYS = ('paper_key', 'paper', 'date', 'helper', 'sources', 'out_of_repo')
 RESERVED_TSV = os.path.join(ROOT, 'audit', 'reserved.tsv')
 
 SNAPSHOT_STALE_DAYS = 3     # 快照超过这个天数即视为过期（工具会告警）
@@ -209,6 +212,58 @@ def load_leads(dirpath=None):
         if meta.get('source_id') and meta['source_id'] != sid:
             meta['mismatch'] = f'source_id={meta["source_id"]}≠文件名'
         out[sid] = meta
+    return out
+
+
+def split_ids(v):
+    """把 `sources: GRB1, GRB2` 这类单元格拆成 id 列表；'无'/'-'/'' 视为空。"""
+    raw = str(v or '')
+    return [x.strip() for x in re.split(r'[,，;；\s]+', raw)
+            if x.strip() and x.strip() not in ('无', '-', '—', 'none')]
+
+
+def load_paper_cards(dirpath=None):
+    """→ {paper_key: {rel, file, paper, date, helper, sources[], out_of_repo[]}}
+
+    文献级索引卡 `audit/leads/papers/<paper_key>.md`：一篇多源文献一张，只承载索引，
+    不参与状态机、不代替源级线索卡。只解析第一个 `##` 标题之前的 key: value 行；
+    `sources:` 缺失时退回解析「涉及源一览」表格的第一列。坏文件不抛异常。
+    契约见 `audit/leads/papers/README.md`。
+    """
+    out = {}
+    d = dirpath or PAPER_DIR
+    if not os.path.isdir(d):
+        return out
+    for fn in sorted(os.listdir(d)):
+        if not fn.endswith('.md') or fn.lower() == 'readme.md':
+            continue
+        key = fn[:-3]
+        meta = {'rel': f'audit/leads/papers/{fn}', 'file': os.path.join(d, fn),
+                'sources': [], 'out_of_repo': []}
+        try:
+            with open(meta['file'], encoding='utf-8') as fh:
+                txt = fh.read()
+        except OSError as e:
+            meta['parse_error'] = str(e)
+            out[key] = meta
+            continue
+        head, _, body = txt.partition('\n##')
+        for ln in head.splitlines():
+            if ln.startswith('##'):
+                break
+            m = LEAD_KEY_RE.match(ln)
+            if m and m.group(1) in PAPER_KEYS and m.group(1) not in meta:
+                meta[m.group(1)] = m.group(2).strip()
+        meta['sources'] = split_ids(meta.get('sources'))
+        meta['out_of_repo'] = split_ids(meta.get('out_of_repo'))
+        if not meta['sources']:
+            for ln in body.splitlines():          # 退回表格：| 源 | 表号 | ...
+                cells = [c.strip() for c in ln.strip().strip('|').split('|')]
+                if len(cells) >= 2 and re.fullmatch(r'[A-Za-z]{2,6}\d{6}[A-Za-z]?', cells[0]):
+                    meta['sources'].append(cells[0])
+        if meta.get('paper_key') and meta['paper_key'] != key:
+            meta['mismatch'] = f'paper_key={meta["paper_key"]}≠文件名'
+        out[key] = meta
     return out
 
 
@@ -632,8 +687,13 @@ def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None):
     return 0
 
 
-def cmd_leads(args, sources, resolved, leads):
+def cmd_leads(args, sources, resolved, leads, papers=None):
     """列出全部线索卡（人工维护；只读，不影响源状态）。"""
+    papers = load_paper_cards() if papers is None else papers
+    in_paper = {}
+    for k, p in papers.items():
+        for s in p['sources']:
+            in_paper.setdefault(s, []).append(k)
     if not leads:
         print('# 无线索卡（audit/leads/ 为空或不存在）')
         return 0
@@ -647,10 +707,112 @@ def cmd_leads(args, sources, resolved, leads):
               f'{(l.get("date") or "-"):<11} {l.get("pr") or "-"}')
         if l.get('mismatch'):
             print(f'  ⚠ 文件名与 source_id 不一致：{l["mismatch"]}')
+        if sid in in_paper:
+            print(f'  · 已登记于文献级卡：{", ".join(in_paper[sid])}')
         if sid not in sources:
             print('  ⚠ 目标源不在仓库内 —— 新源应改开 new-source Issue（提示词 §3.11）')
         if st == REVIEWED:
             print('  ⚠ 源已 reviewed，线索卡应在其审核 PR 中删除')
+    if papers:
+        print(f'\n# 文献级索引卡 {len(papers)} 张（audit/leads/papers/；--paper <paper_key> 展开）')
+        print('# 列：paper_key / 涉及源 / 已有源级卡 / 出处')
+        for k in sorted(papers):
+            p = papers[k]
+            have = sum(1 for s in p['sources'] if s in leads)
+            print(f'{k:<30} {len(p["sources"]):>4} 源 {have:>4} 张卡   {(p.get("paper") or "-")[:56]}')
+            if p.get('mismatch'):
+                print(f'  ⚠ {p["mismatch"]}')
+            for s in p['out_of_repo']:
+                print(f'  · 库外源 {s}（应走 new-source Issue，不建卡）')
+    return 0
+
+
+def cmd_paper(args, sources, resolved, leads, papers):
+    """展开一张文献级索引卡：它登记了哪些源、各自有没有源级卡、源现在是什么状态。"""
+    key = (args.paper or '').strip()
+    p = papers.get(key)
+    if not p:
+        cand = [k for k in papers if key and key.lower() != k.lower() and key.lower() in k.lower()]
+        print(f'没有 paper_key={key!r} 的文献级卡', file=sys.stderr)
+        print(f'现有：{", ".join(sorted(papers)) or "（无）"}', file=sys.stderr)
+        if cand:
+            print(f'相近：{", ".join(cand)}', file=sys.stderr)
+        return 5
+    print(f'# 文献级卡 {p["rel"]}')
+    for k in ('paper_key', 'paper', 'date', 'helper'):
+        if p.get(k):
+            print(f'{k:<10}: {p[k]}')
+    print(f'{"涉及源":<10}: {len(p["sources"])} 个'
+          f'（其中 {sum(1 for s in p["sources"] if s in leads)} 个已有源级卡）')
+    print('\n# 列：源ID / 源状态 / 源级卡 / status')
+    for sid in p['sources']:
+        st = (resolved.get(sid) or {}).get('state', 'unknown')
+        c = leads.get(sid)
+        print(f'{sid:<24} {st:<12} {(c["rel"] if c else "（无源级卡）"):<36} '
+              f'{(c.get("status") if c else "-")}')
+    missing = [s for s in p['sources'] if s not in sources]
+    if missing:
+        print(f'\n⚠ 库内不存在：{", ".join(missing)}（新源应走 new-source Issue，不建卡）')
+    if p.get('mismatch'):
+        print(f'⚠ {p["mismatch"]}')
+    return 0
+
+
+def cmd_check_leads(args, sources, resolved, leads, papers):
+    """PR 守卫（警告级，**永不失败**）：线索卡规模/形态是否按 §3.11 收敛到文献级卡。
+
+    只在 PR 里跑：判据是**本 PR 新增**的卡，避免拿历史欠账（如 Ershova+2020 已合并的
+    45 张源级卡）天天刷警告。
+    """
+    base = getattr(args, 'base', None) or 'origin/main'
+    try:
+        p = subprocess.run(['git', '-C', ROOT, 'diff', '--name-status', f'{base}...HEAD',
+                            '--', 'audit/leads'], capture_output=True, text=True, timeout=120)
+        if p.returncode != 0:
+            p = subprocess.run(['git', '-C', ROOT, 'diff', '--name-status', base,
+                                '--', 'audit/leads'], capture_output=True, text=True, timeout=120)
+        if p.returncode != 0:
+            err = [l for l in (p.stderr or '').strip().splitlines() if l.strip()]
+            raise RuntimeError((err or ['git diff 失败'])[-1][:200])
+        lines = [ln for ln in (p.stdout or '').splitlines() if ln.strip()]
+    except (OSError, subprocess.SubprocessError, RuntimeError) as e:
+        print(f'::notice::无法计算 audit/leads 改动（{e}）→ 线索卡守卫跳过（不阻断）')
+        return 0
+    added_src, added_paper = [], []
+    for ln in lines:
+        parts = ln.split('\t')
+        if len(parts) < 2:
+            continue
+        status, path = parts[0][:1], parts[-1]
+        if not path.endswith('.md') or os.path.basename(path).lower() == 'readme.md':
+            continue
+        if '/papers/' in path:
+            if status == 'A':
+                added_paper.append(path)
+        elif status == 'A':
+            added_src.append(path)
+    if not added_src and not added_paper:
+        print(f'线索卡守卫：本 PR 未新增线索卡（{len(lines)} 处 audit/leads 改动）→ 通过')
+        return 0
+    print(f'线索卡守卫：新增源级卡 {len(added_src)} 张、文献级卡 {len(added_paper)} 张')
+    if len(added_src) >= RCARD_MIN_WARN and not added_paper:
+        print(f'::warning::本 PR 新增 {len(added_src)} 张源级线索卡但没有文献级卡 —— 一篇多源文献应先用 '
+              f'`audit/leads/papers/<paper_key>.md` 收敛（《数据审核提示词》§3.11；增量门槛见 '
+              f'audit/leads/README.md）。已合并的历史卡不追溯。')
+    trans = []
+    for path in added_src:
+        try:
+            txt = open(os.path.join(ROOT, path), encoding='utf-8').read()
+        except OSError:
+            continue
+        if 'mention-only' in txt and any(k in txt for k in
+                                         ('转引', '汇总表', '仅确认行存在', '未逐字段提取')):
+            trans.append(os.path.basename(path)[:-3])
+    if len(trans) >= 3:
+        print(f'::warning::{len(trans)} 张新增源级卡自述为「转引/汇总表」性质'
+              f'（{", ".join(sorted(trans)[:6])}{" …" if len(trans) > 6 else ""}）——按 §3.11 增量门槛'
+              f'这类不该开源级卡，把行信息写进文献级卡即可')
+    print('线索卡守卫：警告级，不阻断')
     return 0
 
 
@@ -818,6 +980,10 @@ def main(argv=None):
     ap.add_argument('--include-all', action='store_true', help='列出所有源（含已审核/被占用）')
     ap.add_argument('--leads', action='store_true',
                     help='列出全部线索卡 audit/leads/（多目标文献交接；不影响源状态）')
+    ap.add_argument('--paper', metavar='PAPER_KEY',
+                    help='展开一张文献级索引卡 audit/leads/papers/<paper_key>.md')
+    ap.add_argument('--check-leads', action='store_true',
+                    help='PR 守卫：本 PR 新增线索卡的规模/形态（警告级，永不失败）')
     ap.add_argument('--reserved', action='store_true',
                     help='列出维护者预留 audit/reserved.tsv（自留源；外部协作者不得认领）')
     ap.add_argument('--check-reserved', action='store_true',
@@ -880,6 +1046,7 @@ def main(argv=None):
     reserved = load_reserved()
     resolved = resolve(sources, claims, snap, reserved)
     leads = load_leads()
+    papers = load_paper_cards()
     args.reserved_note = reserved_note(reserved, sources)
     if args.include_all:
         order = sorted(resolved, key=lambda s: (resolved[s]['state'], resolved[s]['rows'], s))
@@ -887,7 +1054,11 @@ def main(argv=None):
             print(render_row(s, resolved, leads))
         return 0
     if args.leads:
-        return cmd_leads(args, all_sources, resolved, leads)
+        return cmd_leads(args, all_sources, resolved, leads, papers)
+    if args.paper:
+        return cmd_paper(args, sources, resolved, leads, papers)
+    if args.check_leads:
+        return cmd_check_leads(args, sources, resolved, leads, papers)
     if args.reserved:
         return cmd_reserved(args, reserved, sources)
     if args.check_reserved:
