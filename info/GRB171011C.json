@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB171011C",
   "alias": [
-    "GRB 171011810"
+    "GRB 171011C",
+    "GRB 171011.810",
+    "bn171011810"
   ],
-  "ra": 168.47999572753906,
-  "dec": 10.029999732971191,
-  "T0": "2017-10-11T19:26:32.950000Z",
-  "T0_ref": null,
+  "ra": 168.48,
+  "dec": 10.03,
+  "T0": "2017-10-11T19:26:27.946Z",
+  "T0_ref": "FERMIGBRST bn171011810 trigger_time=2017-10-11T19:26:27.946Z（仓内 external/fermi_gbm 快照，取数 2026-07-21；原始 tdat MJD 58037.810045671 同值）；2FLGC 表 2 自带 UTC 列 2017-10-11 19:26:27、MET 529442792.950（Ajello+2019），MET 扣 2017-01-01 起累计 5 次闰秒 = 19:26:27.950，整数秒自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +16,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2952.0,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2：R.A.=168.48, Dec.=+10.03（J2000），Loc. Err.=0.82 deg（LAT LTF 似然定位）；HEASARC fermilgrb 快照（external/fermi_lat）ra=168.48, dec=10.03, error_radius=0.82 deg 同值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。2026-10-24 Rusty-Harpoon@zcode 审核。身份确证：Fermi/GBM trigger 529442792.950 / bn171011810（FERMIGBRST，external/fermi_gbm 快照）= 2FLGC 表 2 行 171011C（R.A.=168.48, Dec.=+10.03，Loc. Err.=0.82°，Ajello+2019）= FERMILGRB 目录行 name=GRB171011810 / GCN_NAME=GRB171011C（external/fermi_lat 快照）；本暴无任何 GCN Circular（gcn/archive 全文与 ADS 检索均 0 命中，GCN_NAME 系 2FLGC 目录内定名），Martinez-Castellanos 2019（arXiv:1908.06122 图 1）亦以 GRB 171011C 称之并列为 Fermi-LAT 探测的短暴之一。当日另有 GRB 171011A（Swift/BAT trigger 778154，18:32:47 UT，RA,Dec=236.77,−10.06，GCN 21993/21994/21996/22006）与 GRB 171011B（Konus-Wind T0=01:05:31.430 UT，GCN 22005；IPN GCN 21998；Insight-HXMT 2017-10-11T01:05:36 UT，GCN 22026；CALET GCN 22022；AGILE-MCAL 快照 01:05:37 UT，158.87/+1.65），FERMIGBRST 当日另有一触发 GRB171011162（03:52:44.786 UT）——三者时标、坐标均与本源（19:26:27.9 UT，168.48/+10.03）不同，未混淆。T0：原值 2017-10-11T19:26:32.950000Z 为 2FLGC trigger_met 529442792.950 s（Fermi MET 纪元 2001-01-01T00:00 UTC）未扣 2017-01-01 起累计 5 次闰秒的直接换算（Issue #109 同族），已修正；现值取 FERMIGBRST 目录毫秒值 2017-10-11T19:26:27.946Z；2FLGC 表 2 UTC 列 19:26:27、MET 扣 5 闰秒 = 19:26:27.950，自洽；fermilgrb 快照 trigger_time=2017-10-11T19:26:26.998 为另一目录口径（早 0.948 s，备查，差值 ≥60 ms 已在 PR 说明报告）。T0_offset 未记：GBM T05 起于 T0−0.45 s（2FLGC 表 3 T_GBM,05=−0.45；FERMIGBRST t90_start=−0.448），亚秒级不满足 |T0_offset|>1 s 门槛（§3.2）。定位（并列）：2FLGC 表 2 LAT LTF 定位 R.A.=168.48, Dec.=+10.03、Loc. Err.=0.82°（本条目采用；info 原 ra/dec 168.47999572753906/10.029999732971191 为 float32 残渣，已按发表值修正）；FERMIGBRST 快照 GBM 船载定位 RA=177.04, Dec=+26.93（15.96° 半径）；LAT LTF TS：表 2 印刷值 36、fermilgrb 快照 51.78（疑目录版本差异，备查）。pos_error_confidence=90：Ajello+2019 §IV.1 明示 LAT 定位误差为『(90% containment, statistical only)』（VoR（IOP）被反爬拦下，据 arXiv:1906.11403 核对；坐标/误差数值另经 HEASARC fermilgrb 快照独立核对）。分类：2FLGC 表 3 本暴标 (S)（T_GBM,05=−0.45、T_GBM,95=0.03、T_GBM,90=0.48 s），FERMIGBRST T90=0.48±0.935 s（50-300 keV）一致，补 sub_tag=sgrb；2FLGC 表 4 本暴无 EXT 行（仅 GBM 区间 (−0.4–0.0 s) 瞬变分析），Chang+2024 SGRB-EE 样本亦不含本暴，不加 EE。物理量：T90=0.48±0.935 s、T50=0.064±0.358 s（均 50-300 keV，FERMIGBRST）；fluence=(1.03833±0.14495)e-7 erg/cm²、peak_flux=4.78±0.64 ph/cm²/s（64 ms，10-1000 keV，FERMIGBRST）；2FLGC 表 3：T_LAT,0=0.1 s、T_LAT,1=42.7 s、T_LAT,100=40±20 s（>100 MeV 发射至 T0+42.7 s）；表 6：GBM 时间窗内最高能光子 0.51 GeV @ T0−0.09 s（P=1.00）、time-resolved 0.16 GeV @ T0+42.72 s（P=0.99）；表 4：GBM 区间 LAT 瞬变分析 3 事件（预期 3.0）、谱指数 −2.2±0.7；表 2：θ=43.2°、ζ=52.7°、ARR=0（未重指向）。redshift：2FLGC 表 2 该行为「−」，各文献亦无测定，保持 null。alias：GRB 171011C（2FLGC gcn_name/FERMILGRB name 列、Martinez-Castellanos 2019 图 1）、GRB 171011.810（2FLGC/FERMIGBRST 点号形，external/fermi_gbm 与 external/fermi_lat 快照 name_alt）、bn171011810（FERMIGBRST bn 形，external/fermi_gbm 快照 name_alt）；bot 拼接形「GRB 171011810」（日期+触发序列空格形）按 Issue #69/§3.10 移除（FERMIGBRST name_alt 的无空格 9 位形 'GRB171011810' 同为拼接伪形，不收）。测光检索（2026-10-24）：仓内 gcn/archive 45889 篇全文（find+xargs grep；检索词 'GRB 171011C'/'GRB171011C'/'171011810'/'171011.810'/'529442792'）命中 0 篇，泛词 '171011' 命中 10 篇均属同日 GRB 171011A/B（Swift-BAT/MASTER/TAROT、Konus/CALET/Insight-HXMT/IPN 通告）或时间戳/坐标假阳性（GCN 33006/35910/37687），对照组 'GRB 171011A'/'GRB 171011B' 各命中 4 篇，检索通道有效；external 快照：rssgrbag 光变 0 行、grbsn_webtool 无此事件、uvot_grb 0、heasarc_grbcat 0、konus_wind/batse/saxgrbmgrb 0、swift 系列命中均为同日 171011A（本源非 Swift 触发）、agile_mcal 仅 A/B 两行、mpe_greiner 仅 A、fermi_gbm/fermi_lat 仅目录级参数；ADS 检索 q=(abs:\"GRB 171011C\" OR title:\"GRB 171011C\" OR full:\"GRB 171011C\" OR abs:\"GRB171011C\" OR full:\"GRB171011C\") 命中 1 条 = Martinez-Castellanos 2019（arXiv:1908.06122，HAWC GW 对应体搜索，图 1 仅列 2FLGC 短暴谱，无数表）；触发号变体（full:\"171011810\"/\"bn171011810\"/\"171011.810\"）检索 0 命中；OpenAlex 检索 2 条（均为该 HAWC 文的重复记录）；arXiv API 0 条；TNS 不适用（GRB 目录名，无 AT/SN 命名）。结论：本暴为 2FLGC 最弱 LAT 短暴之一（fluence 1.04e-7 erg/cm²），无任何后续观测通告，无可用测光，补 0 行。",
   "sub_tag": [
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -63,6 +66,20 @@
       }
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Martinez+2019",
+      "url": "https://arxiv.org/abs/1908.06122",
+      "title": "Search for very-high-energy gamma-ray counterparts of gravitational waves with HAWC",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
