@@ -1,26 +1,29 @@
 {
   "transient_id": "GRB170329A",
   "alias": [
-    "GRB 170329387"
+    "GRB 170329A",
+    "GRB 170329.387",
+    "bn170329387"
   ],
-  "ra": 356.67999267578125,
-  "dec": 9.770000457763672,
-  "T0": "2017-03-29T09:17:11.940000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "ra": 356.68,
+  "dec": 9.77,
+  "T0": "2017-03-29T09:17:06.939Z",
+  "T0_ref": "GCN 20943 + FERMIGBRST (heasarc FERMIGBRST trigger_time)",
+  "T0_offset": -3.844,
+  "T0_offset_ref": "GCN 20952 (Konus-Wind trigger 09:17:03.095 UT)",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 20942",
+  "pos_error": 2160,
+  "pos_ref": "Ajello+2019 (2FLGC); GCN 20942",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。T0 修正：原值 2017-03-29T09:17:11.940000Z 系 2FLGC trigger_met=512471831.94 未扣闰秒的直换产物（Issue #109 同型，2017-01-01 起累计 5 次闰秒，+5 s），现取触发仪器 GBM 官方目录 FERMIGBRST 触发时刻 2017-03-29T09:17:06.939Z；GCN 20943（GBM 团队）与 GCN 20942（LAT 团队）均记 09:17:06.94 UT；2FLGC 表 2 UTC 列 09:17:06、MET 512471831.940 扣 5 次闰秒=09:17:06.940（与 FERMIGBRST 差 1 ms，MET 舍入）；FERMILGRB 快照 trigger_time=09:17:06.000Z（整秒一致）。Konus-Wind 触发 T0=33423.095 s UT=09:17:03.095（GCN 20952）、AGILE-MCAL 触发 09:17:10.679（快照 MET 417863830.679 自 2004-01-01 纪元换算）均为另一仪器的触发时刻，不采用；T0_offset=-3.844 s 记 Konus-Wind 于 GBM 自动触发前 3.844 s 已触发（GCN 20952），按提示词 §3.2 典型情形记负值（|offset|>1 s）。身份链：Fermi/GBM trigger 512471831/170329387（GCN 20943）=Fermi-LAT 探测（GCN 20942）=2FLGC 表 2 行 170329A=AstroSat CZTI（GCN 20951，峰计数 09:17:08.940 UT=触发后 2 s）=Konus-Wind（GCN 20952）=AGILE-MCAL GRB170329A（Ursi+2022 快照，LOC=LAT，触发时刻同暴、无撞名）=IPN（MPE Greiner 表 IPN=y，X 射线位置 23h46m24s +09°48'=RA 356.6,Dec +9.8，与 LAT 一致）。坐标取 2FLGC 表 2 发表值 RA=356.68 Dec=+9.77（原值 356.67999267578125/9.770000457763672 为 float32 残渣）、Loc. Err.=0.60°=2160″；GCN 20942 LAT 在轨定位 RA,Dec=356.6,9.8、r=0.6°（90% containment, statistical only），故 pos_error_confidence=90。别名出处：GRB 170329A=GCN 标准名（GCN 20942/20943/20951/20952 subject），GRB 170329.387=2FLGC/fermi_lat 快照 name_alt 点号形，bn170329387=GBM 触发号 bn 形（fermi_gbm 快照 name_alt）；bot 拼接伪形「GRB 170329387」（9 位触发号空格形）已删（Issue #69/63247a4 判例）。分类：长暴（2FLGC 时标表 (L)；GCN 20943 T90=33.5 s；GCN 20952 原文 long-duration）。T90(GBM)=33.536±6.149 s（50-300 keV，FERMIGBRST；GCN 20943 记 33.5 s）；T90(CZTI)=14.1 s（40-200 keV，GCN 20951）；Konus-Wind 光变总时长 ~7 s（20 keV-10 MeV，GCN 20952）；fluence(GBM)=(1.45±0.04)e-05 erg/cm²（10-1000 keV，GCN 20943）与 FERMIGBRST 1.10705e-05±3.84449e-08（同能段）并列；fluence(Konus-Wind)=1.47(+0.22,-0.18)e-05 erg/cm²（20 keV-10 MeV，GCN 20952）；Epeak：GCN 20943 记 799±86 keV（CPL），FERMIGBRST flnc_comp Epeak=914.95±84.37 keV（Band 模型 902.99±81.18 keV），Konus-Wind Ep=688(+153,-109) keV（GCN 20952，90% 置信）；LAT：1 ks 内 >37 光子 >100 MeV、最高能量光子 0.8 GeV 于 GBM 触发后 4 s（GCN 20942）；2FLGC like_best_ts=91.2、T_L100=48.47±6.95 s、ext_emission_max_ene=780 MeV @ 触发后 4.11 s（fermi_lat 快照）。测光检索（2026-10-24）：仓内 gcn/archive 45889 篇全文，检索词变体「GRB 170329A」「GRB170329A」「170329387」「512471831」命中 4 篇（GCN 20942/20943/20951/20952，全为 γ 射线探测通告，无光学/XRT/射电测光或上限）；广义「170329」另中 GCN 20978（GRB 170325A 的观测日期）与 GCN 35418（GRB 231222B 的毫秒时间戳），均假阳性已排除；对照组「GRB 170325A」4 篇、「GRB 231222B」4 篇、「512471831」2 篇，通道有效。external 快照：rssgrbag（Chandra & Frail 2012 射电光变 140 行）、grbsn_webtool、uvot_grb/swift 各快照均无本源记录（Swift 未触发未观测），konus_wind 快照（Tsvetkova+2017/2021 带红移样本 317 行）不含本源，fermi_gbm/fermi_lat/agile_mcal/mpe_greiner 仅目录参数。ADS/SciX 检索（API，2026-10-24）：q=(abs:\"GRB 170329A\" OR title:\"GRB 170329A\" OR full:\"GRB 170329A\") 命中 4 条=上述 4 篇 GCN；变体「170329387」2 条、「170329.387」2 条、「GRB170329A」1 条、「bn170329387」0 条；abs/title「170329A」4 条同前——无任何期刊文献、无测光表 → 无可用测光，补 0 行。Ajello+2019（2FLGC，ApJ 878,52）VoR 被 IOP Radware 反爬拦下（validate.perfdrive.com 验证码页），表 2 数值据 arXiv:1906.11403（ar5iv HTML）核对。X 射线：无 XRT 观测，库内无 X 射线行。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -192,8 +195,45 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20942",
+      "url": "https://gcn.nasa.gov/circulars/20942",
+      "title": "GRB 170329A: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20943",
+      "url": "https://gcn.nasa.gov/circulars/20943",
+      "title": "GRB 170329A: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20951",
+      "url": "https://gcn.nasa.gov/circulars/20951",
+      "title": "GRB 170329A: AstroSat CZTI detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20952",
+      "url": "https://gcn.nasa.gov/circulars/20952",
+      "title": "Konus-Wind observation of GRB 170329A",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

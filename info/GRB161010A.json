@@ -1,28 +1,77 @@
 {
   "transient_id": "GRB161010A",
-  "alias": [],
+  "alias": [
+    "GRB 161010A"
+  ],
   "ra": 275.21435,
   "dec": -28.78515,
   "T0": "2016-10-10T13:36:32Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 20021（INTEGRAL/IBIS-IBAS 触发时刻 2016-10-10 13:36:32 UT，秒级精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.9,
   "pos_ref": "GCN 20025",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "触发：INTEGRAL/IBIS-IBAS 于 2016-10-10 13:36:32 UT 触发（GCN 20021）；bot 原标 Trigger_Instrument=Swift/XRT 系误标——Swift 为 INTEGRAL 触发后的 ToO 跟随观测（GCN 20022），非触发仪器，已改 INTEGRAL/IBIS。T0 取 INTEGRAL 触发时刻 13:36:32 UT（GCN 20021，只写来源秒级精度）；Konus-Wind T0=48993.832 s UT=13:36:33.832（GCN 20027）、CALET CGBM 触发 13:36:31.69（GCN 20033）并列备查。bot 原值：extra_data.t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，无从验证，2026-10-24 按 GCN 20021 改写，T0 数值本身与 GCN 20021 一致、未改。定位：主用 Swift-XRT enhanced 275.21435,-28.78515 ±2.9 arcsec（radius, 90% confidence，GCN 20025）；UVOT preliminary 275.21364,-28.78519 ±~1 arcsec（90% confidence，GCN 20034）与 INTEGRAL 精化位置 275.2178,-28.7868 ±1.5 arcmin（90% c.l.，GCN 20021）并列备查。物理量：T90(CALET SGM, 40-1000 keV)=4.9±0.5 s（GCN 20033）；Konus 单次多峰 episode 起始于 T0-4.7 s、总持续约 22 s（GCN 20027）；INTEGRAL 持续约 30 s，peak flux >6 ph/cm2/s（20-200 keV, 1 s 积分）、fluence >4e-6 erg/cm2（遥测饱和，均为下限；GCN 20021）；Konus fluence(20 keV-10 MeV)=3.36(-0.38,+0.40)e-5 erg/cm2、64-ms peak flux=1.07±0.26e-5 erg/cm2/s、Ep=205(-39,+56) keV、Band 谱 alpha=-1.10(-0.19,+0.23)/beta=-2.17(-0.21,+0.13)（GCN 20027）；XRT 谱 NH=3.1(+0.9,-0.6)e21 cm^-2（银河前景 2.5e21）、光子指数 1.78(+0.18,-0.17)，XRT 光变衰减指数 alpha=1.36(+0.22,-0.21)（GCN 20025）。红移：全部 6 篇 GCN 与正式文献均未给出。alias「GRB 161010A」为 GCN 通告标准名（GCN 20021 等 6 篇），与 external/swiftgrbba、external/mpe_greiner 快照 name 一致。测光检索（2026-10-24）：仓内 gcn/archive 全文检索「161010A」命中 6 篇（20021/20022/20025/20027/20033/20034，全文均已核对，仅 GCN 20034 含光学测光表，补 4 行 uvot-u）；external/ 快照 grep：swiftgrbba、mpe_greiner 命中（目录级参数，无光变表），uvot_grb 命中为浮点假阳性（GRB 100728B dec 数字串），rssgrbag/grbsn_webtool/konus_wind/heasarc_grbcat 无记录；ADS 检索 q=\"GRB 161010A\" 命中 6（全部为 GCN）、q=full:(\"GRB161010A\") 命中 1 篇正式发表文献（Parmiggiani+2023, ApJ 945, 106，AGILE 反常检测样本类，IOP 反爬 VoR 不可达、arXiv 无版，未能核实，未见本源测光线索）、q=abs:(\"GRB161010A\") 0、q=title:(\"161010A\") 6；GCN 站（gcn.nasa.gov）检索 6 篇与本地一致；arXiv API all:\"GRB 161010A\" 0 命中；OpenAlex 5 命中（GCN）；TNS 不适用（GRB 类）→ 除 GCN 20034 的 4 行外无其他可用测光，X 射线测光（Swift-XRT，swift_xrt_live 快照在列）暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 = INTEGRAL/IBIS-IBAS 触发时刻（GCN 20021）；Konus-Wind 与 CALET 触发时刻并列见 comment",
+    "t0_basis": "GCN 20021（触发仪器官方 GCN Circular）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 20021",
+      "title": "GRB 161010A: a long GRB detected by INTEGRAL",
+      "url": "https://gcn.nasa.gov/circulars/20021",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20022",
+      "title": "GRB 161010A: Swift ToO observations",
+      "url": "https://gcn.nasa.gov/circulars/20022",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20025",
+      "title": "GRB 161010A: Swift-XRT afterglow detection",
+      "url": "https://gcn.nasa.gov/circulars/20025",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20027",
+      "title": "Konus-Wind observation of GRB 161010A",
+      "url": "https://gcn.nasa.gov/circulars/20027",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20033",
+      "title": "GRB 161010A: CALET Gamma-Ray Burst Monitor detection",
+      "url": "https://gcn.nasa.gov/circulars/20033",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20034",
+      "title": "GRB 161010A: Swift/UVOT Possible Detection",
+      "url": "https://gcn.nasa.gov/circulars/20034",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

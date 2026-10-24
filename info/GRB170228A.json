@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB170228A",
   "alias": [
-    "GRB 170228794"
+    "GRB 170228A",
+    "GRB 170228.794",
+    "bn170228794"
   ],
-  "ra": 239.66000366210938,
-  "dec": -6.489999771118164,
-  "T0": "2017-02-28T19:03:05.710000Z",
-  "T0_ref": null,
+  "ra": 239.55,
+  "dec": -3.59,
+  "T0": "2017-02-28T19:03:00.710Z",
+  "T0_ref": "GCN 20786（Fermi GBM 触发通告：19:03:00.71 UT on 28 February 2017，trigger 510001385/170228794）；GCN 20785（Fermi-LAT 团队，同值）；FERMIGBRST trigger_time=2017-02-28T19:03:00.710Z（trigger_met=510001385.71 扣 2017 年起累计 UTC 闰秒 5 s 直换一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +16,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1080,
+  "pos_ref": "GCN 20785：RA,Dec=239.55,-3.59（J2000），error radius 0.3 deg（90% 包含半径，仅统计误差）；FERMIGBRST（heasarc_fermigbrst）error_radius=0.3 deg 同值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。身份：GRB 170228A = Fermi/GBM 触发 510001385（=170228794，GCN 20786），Fermi-LAT 同步探测（GCN 20785），AstroSat/CZTI（GCN 20788）与 Konus-Wind（GCN 20806）亦探测；同日另一事件 GRB 170228B（GBM 触发 509999585，18:32:56 UT 起，GCN 20792/20803；对应库外 GBM 触发 170228773，18:33:00.364 UT）与本源无关，勿混。T0 修正：原 T0=2017-02-28T19:03:05.710Z 为 2FLGC trigger_met=510001385.71 未扣闰秒直换（同 Issue #109 口径），触发仪器 GBM 给出 2017-02-28T19:03:00.71 UT（GCN 20786；GCN 20785、FERMIGBRST 一致；2017-01-01 起 UTC 闰秒累计 5 s），已改。Konus-Wind 自身触发时刻 19:03:04.788 UT（GCN 20806）为其探测器准直扫过该源的时刻，非本源 T0；Wang+2025 正文写「detected at 2017-02-28T19:03:00.17 (UTC) by Fermi/GBM」，亚秒与触发仪器值 00.71 不一致，整数秒一致，以 GBM 为准。位置：采用 FERMIGBRST/GCN 20785 定位 RA,Dec=239.55,-3.59（0.3 deg，90%，仅统计误差）；2FLGC（fermilgrb）目录行位置 RA,Dec=239.66,-6.49、error_radius=2.02 deg 保留备查（原 info 位置即取自此）。物理量（多来源并列）：T90=60.673±2.111 s、T50=14.8482±1.30536 s（50-300 keV，FERMIGBRST/2FLGC）；GBM 预备分析 T90≈62 s，T0–T0+18.8 s 时间平均谱 Band Epeak=755±76 keV，fluence=(2.23±0.06)e-5 erg/cm2（10-1000 keV），1 s 峰值光子流量 10.2±0.2 ph/cm2/s（自 T0+1.0 s 起，GCN 20786）；Konus-Wind fluence=4.99(-0.99,+1.51)e-5 erg/cm2（20 keV-10 MeV），Ep=1017(-317,+657) keV（GCN 20806）；CZTI 主峰 19:03:02.71 UT（触发后约 2 s）、其 T90=14.1 s（GCN 20788）；LAT 探测约 20 个 >100 MeV 光子，最高 5 GeV（触发后 130 s）（GCN 20785）。分类：Wang+2025 将其列为 type IL（类似 GRB 211211A/230307A 的三段型：前驱+主暴+延展发射）最佳候选；Zhu+2025、Tan+2025 的机器学习分类亦涉及本源。alias 出处：GRB 170228A 为 GCN 用名（20785/20786/20788/20806 subject）；GRB 170228.794 为 FERMIGBRST name_alt 点号形（2FLGC fermi_lat name_alt 同）；bn170228794 为 FERMIGBRST name_alt bn 形；原 alias「GRB 170228794」（空格+9 位触发号拼接伪形，导入产物）已按提示词 §3.10 删除。测光检索（2026-10-24）：仓内 gcn/archive 全文检索（变体：GRB 170228A/GRB170228A/170228794/510001385）命中 6 篇——20785（LAT）、20786（GBM）、20788（CZTI）、20806（Konus-Wind）为本源，均仅伽马射线探测，无光学/近红外/射电测光或上限；20792、20803 为同日 GRB 170228B（非本源）。external 快照 swift_grb/uvot_grb/swiftgrbba/konus_wind/agile_mcal/saxgrbmgrb/batse/heasarc_grbcat/rssgrbag（含 lightcurve.jsonl）/grbsn_webtool/minaev2020/liang2023/wang2022/guidorzi2025 检索「170228」均 0 命中（Swift 未触发/未观测：GCN 20785 称已申请 Swift ToO，但无任何 Swift 通告）。ADS（2026-10-24，api.adsabs.harvard.edu）：abs+title 检索「GRB 170228A」7 命中（4 篇 GCN + Wang+2025/Tan+2025/Zhu+2025）；full 检索（「GRB 170228A」OR「GRB170228A」OR「510001385」）12 命中，另 5 篇（2025MNRAS.540L...6Q、2025ApJ...982..148Q、2021JApA...42...93M、2026ApJ...996...76L、2026ApJ..1003..142Z）均为样本/分类/仪器研究；叠加 afterglow/photometry/optical 限定 6 命中，全部为上述样本类文章，无 dedicated follow-up。Wang+2025（arXiv v1 全文，IOP VoR 反爬验证码不可得）明确写明「there is no publicly available follow-up observation for this GRB, so the redshift is unmeasured」。TNS 不适用（无 AT/SN 命名）。结论：该源无任何已发表测光，补 0 行。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -147,6 +150,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
   "articles": [
@@ -172,5 +180,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

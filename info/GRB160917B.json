@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB160917B",
   "alias": [
-    "GRB 160917456"
+    "GRB 160917.456",
+    "bn160917456"
   ],
   "ra": 201.36000061035156,
   "dec": 20.93000030517578,
-  "T0": "2016-09-17T10:56:15.859000Z",
-  "T0_ref": null,
+  "T0": "2016-09-17T10:56:11.859Z",
+  "T0_ref": "FERMIGBRST（HEASARC Fermi GBM Burst Catalog）trigger_time 2016-09-17T10:56:11.859Z；=2FLGC trigger_met 495802575.859 扣 4 s 闰秒（2015-07-01 起累计 4 s，Issue #109）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +15,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 13428,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "FERMIGBRST（HEASARC，ra/dec 与 error_radius 3.73°=13428″；文档载明 ERROR_RADIUS 为统计 1σ，系统误差未含）；FERMILGRB 同值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。T0 修正：原值 2016-09-17T10:56:15.859000Z 系 2FLGC trigger_met=495802575.859 未扣闰秒的直换产物（Issue #109 同型，+4 s；2015-07-01 起累计闰秒 4 s），现取触发仪器 GBM 官方目录 FERMIGBRST 触发时刻 2016-09-17T10:56:11.859Z（=MET 扣 4 s，精确一致）；Lomonosov BDRG 通告 GCN 19992 给 10:56:12.00 UT（舍入一致）；FERMILGRB/2FLGC trigger_time=10:56:11.003Z 为 LAT 目录值（同整秒、亚秒差 0.856 s，不采用）。定位：ra/dec 取 FERMIGBRST（与 FERMILGRB 同值），error_radius=3.73°=13428″，FERMIGBRST 文档载明该值为统计 1σ（系统误差未含；该文档自述引自 von Kienlin+2014 脚注 22），故 pos_error_confidence=1sigma；FERMILGRB 文档称 Error_Radius 为 LAT Transient Factory 定位误差，但 Ajello+2019 说明 LLE-only 事件（本源 LLE 探测、lle_t90=6.448 s）无独立定位计算时取最佳可用定位，两表同值 3.73°；Ajello+2019 的「90% containment, statistical only」表述仅针对 LAT 独立定位，不适用本源。身份：GRB 160917B=Fermi GBM trigger 495802575（bn160917456）；同日 GRB 160917A 系 Swift/BAT 触发 712505、GBM 触发 495804623（GCN 19932），为另一事件，数据勿混；Lomonosov BDRG 于 2016-09-17T10:56:12 UT 独立触发本源（GCN 19992：单峰、总时长 ~10 s、200–1600 keV，自称匹配 Fermi trigger 495802575），身份互证；GCN 20154（GRB 161106A）正文将触发号误写为 495802575（沿用 GCN 19992 文句的笔误，161106A 实际触发 2016-11-06T11:57:55 UT，非本源事件）。别名出处：GRB 160917.456=FERMIGBRST/FERMILGRB（2FLGC）目录 name_alt 点号形；bn160917456=FERMIGBRST name_alt bn 形（GBM 触发号）；原导入别名「GRB 160917456」为「日期+触发序列」拼接伪形（Issue #69 第 1 类），按维护者 2026-10-24 口径删除。物理量：T90(GBM)=14.5922±1.44818 s、T50=3.07205±0.362039 s（50–300 keV，FERMIGBRST）；T90(LAT LLE)=6.448 s（2FLGC/FERMILGRB）；fluence(GBM)=5.35555e-06±2.52664e-08 erg/cm²（10–1000 keV，FERMIGBRST）；Epeak(CPL)=785.92+94.27/−94.27 keV（观测系，FERMIGBRST）；peak_flux(GBM, 64 ms)=6.76326±0.984908 ph/cm²/s（10–1000 keV，FERMIGBRST）。测光检索（2026-10-24）：仓内 gcn/archive 全文（45889 篇）多变体检索「160917B」「160917456」「495802575」「GRB 160917」，命中 14 篇，其中 13 篇为同日异源 GRB 160917A，仅 GCN 19992 属本源且无测光数值（LC 仅为 jpg 图链，未从图读数）；external 快照：rssgrbag 光变与 grbsn_webtool 事件集无本源记录，swift 系/uvot_grb/konus_wind/agile_mcal/saxgrbmgrb/batse/mpe_greiner/heasarc_grbcat 无本源（Swift 当日仅观测 160917A），fermi_gbm/fermi_lat 仅目录参数；ADS/SciX 检索 full/abs「GRB 160917B」命中 1 条（GCN 19992 本身，与本地一致、无撤下缺件），「160917456」「495802575（−GCN）」「160917.456」均 0 命中，Lomonosov BDRG 仪器文献 23 篇无一提及本源；GCN 站在线复核 19992 可达且与本地一致；TNS 不适用（本源非 AT/SN 类）。结论：无任何可用测光、亦无带时间锚点的上限，补 0 行。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -127,8 +129,26 @@
         ],
         "trigger_time": "2016-09-17T10:56:11.003Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19992",
+      "title": "GRB 160917B: Lomonosov BDRG gamma ray discovery",
+      "url": "https://gcn.nasa.gov/circulars/19992",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
