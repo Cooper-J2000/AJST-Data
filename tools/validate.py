@@ -54,6 +54,9 @@ LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
 PAPER_DIR = os.path.join(LEADS_DIR, 'papers')     # 文献级索引卡：一篇多源文献一张
 RESERVED_TSV = os.path.join(ROOT, 'audit', 'reserved.tsv')
 RESERVED_COLS = ('source_id', 'holder', 'since', 'until', 'reason', 'ref')
+DENIED_TSV = os.path.join(ROOT, 'audit', 'denied.tsv')      # 已否证源清单（人写、工具只读）
+DENIED_COLS = ('source_id', 'reason_code', 'evidence', 'decided_by', 'date', 'ref')
+DENIED_REASONS = ('retracted', 'duplicate', 'noise', 'other')
 LEAD_KEYS = ('source_id', 'status', 'paper', 'pr', 'helper', 'date')
 PAPER_KEYS = ('paper_key', 'paper', 'date', 'helper', 'sources', 'out_of_repo')
 LEAD_STATUS = {'extracted', 'mention-only'}
@@ -457,6 +460,54 @@ def check_reserved(info_ids, reviewed_ids):
             warn(f'{rel}:{n}: 源 {sid} 尚未入库（预留仍生效，入库后自动接管）')
 
 
+def check_denied(info_ids, lc_ids):
+    """已否证源清单（警告级）：字段完整、reason_code 合法、不重复、源不得复活。
+
+    契约见 audit/README.md 的「denied.tsv」小节，背景见 Issue #183。
+    核心判据只有一条：**denied 里的源不得再出现 info/lc 文件**——出现了说明导入管线把它
+    重建了，这时要按 evidence 重新否证，而不是当成新源从头审。
+    """
+    if not os.path.exists(DENIED_TSV):
+        return
+    rel = 'audit/denied.tsv'
+    try:
+        with open(DENIED_TSV, encoding='utf-8') as fh:
+            lines = fh.read().splitlines()
+    except OSError as e:
+        warn(f'{rel}: 读取失败（{e}）')
+        return
+    seen = set()
+    for n, ln in enumerate(lines, 1):
+        if not ln.strip() or ln.lstrip().startswith('#'):
+            continue
+        cols = [c.strip() for c in ln.split('\t')]
+        if cols[0] == 'source_id':
+            continue
+        sid = cols[0]
+        if not sid:
+            warn(f'{rel}:{n}: 首列为空')
+            continue
+        if sid in seen:
+            warn(f'{rel}:{n}: 源 {sid} 重复出现（一行一源）')
+            continue
+        seen.add(sid)
+        row = dict(zip(DENIED_COLS, cols + [''] * max(0, len(DENIED_COLS) - len(cols))))
+        if row['reason_code'] not in DENIED_REASONS:
+            warn(f'{rel}:{n}: {sid} 的 reason_code={row["reason_code"]!r} 不在 '
+                 f'{"|".join(DENIED_REASONS)} 之内')
+        for k in ('evidence', 'decided_by', 'date', 'ref'):
+            if not row[k]:
+                warn(f'{rel}:{n}: {sid} 缺 {k}（否证必须留得下判据与裁定人）')
+        if row['date']:
+            try:
+                datetime.strptime(row['date'][:10], '%Y-%m-%d')
+            except ValueError:
+                warn(f'{rel}:{n}: {sid} 的 date={row["date"]!r} 不是 YYYY-MM-DD')
+        if sid in info_ids or sid in lc_ids:
+            warn(f'{rel}:{n}: 源 {sid} 已被否证（{row["reason_code"]}，{row["ref"]}），'
+                 f'但 info/lc 文件又出现了 → 导入管线重建？按 evidence 重新否证，不要从头审核')
+
+
 def main():
     strict = '--strict' in sys.argv
     quiet = '--quiet' in sys.argv
@@ -520,6 +571,8 @@ def main():
 
     # 维护者预留台账（警告级；见 audit/README.md 的 reserved.tsv 小节）
     check_reserved(info_ids, reviewed_ids)
+    # 已否证源清单（警告级；见 audit/README.md 的 denied.tsv 小节与 Issue #183）
+    check_denied(info_ids, {os.path.splitext(f)[0] for f in lc_files})
     check_zero_lc_evidence(reviewed_ids)
 
     # tags.json 顶层形状

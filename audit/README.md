@@ -72,6 +72,30 @@ gh pr list --search "in:title <源ID>"       # 或手查
 
 与 `leads/` 的区别：线索卡**不参与**状态机（有卡 ≠ 有人在做）；预留**参与**（`reserved` 是一个状态）。
 
+## `denied.tsv` —— 已否证源（人工维护，**不参与**状态机）
+
+维护者裁定**删除**的源写进 `audit/denied.tsv`：触发或探测已被官方撤回、与另一源重复、或本就是
+噪声涨落。它们已从 `info/` 与 `lc/` 删除，**不该再存在**——这张表的作用是让人在导入/复审时
+立刻知道「这个源已经被否证过、判据是什么」，而不是重新审一遍已被推翻的天体记录（Issue #183）。
+
+| 列 | 含义 |
+|---|---|
+| `source_id` | 被否证的源 id（已删除，不应再出现 `info/<id>.json`） |
+| `reason_code` | `retracted`（触发/探测被官方撤回）\| `duplicate`（并入另一源）\| `noise`（噪声涨落）\| `other` |
+| `evidence` | 判据：GCN 号 + 原文结论 / DOI / commit，必须能独立复核 |
+| `decided_by` / `date` | 裁定人与日期 |
+| `ref` | 关联 PR / commit / Issue |
+
+规则：
+
+- **审核前必查**：`grep <源ID> audit/denied.tsv`（或 `python3 tools/audit_queue.py --id <源ID>`，
+  命中会直接回「已被否证」）。命中就停手，不要认领、不要开 PR、不要重建。
+- **源复活＝报警**：`validate.py` 发现 denied 里的源又出现 `info/` 或 `lc/` 文件就警告——那说明
+  导入管线把源重建了（排除机制尚未接入管线，见 Issue #183 第 3 条），应按 `evidence` 再否证一次。
+- **不参与状态机**：它没有 `info` 文件，本来就不在可认领队列里；`audit_queue.py --denied` 只读展示。
+- **删除要留得下判据**：`evidence` / `decided_by` / `date` / `ref` 缺一项就告警。只写「已删除」
+  的记录等于没写——下一个人还得从头查一遍 GCN。
+
 ## 不要做的事
 
 

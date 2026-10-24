@@ -1,0 +1,17 @@
+# 已否证源清单（denylist）—— 维护者裁定删除的源，**导入与审核前都要先查这张表**。
+# 契约见 audit/README.md 的「denied.tsv」小节；提案与背景见 Issue #183。
+#
+# 列：source_id  reason_code  evidence  decided_by  date  ref
+# reason_code ∈ retracted（触发/探测被官方撤回）| duplicate（并入另一源）| noise（噪声涨落）| other
+#
+# 用法：
+#   grep <源ID> audit/denied.tsv          # 审核前必做，命中就停手，不要重新审一个已被否证的天体记录
+#   python3 tools/audit_queue.py --denied # 列出全部
+#   python3 tools/validate.py             # 若 denied 源又出现 info/<id>.json → 警告
+#
+# 一行一源；本表由维护者手写、工具只读，**不参与** free/claimed/reviewed 状态机。
+# 源被删掉后 info/ 与 lc/ 都不该再存在；若重新出现，说明导入管线把它重建了（见 Issue #183 第 3 条）。
+source_id	reason_code	evidence	decided_by	date	ref
+GRB171013A	noise	GCN 22007 载 BAT trigger 778435「possible burst」（00:22:20 UT）；GCN 22010 官方结论「BAT trigger 778435 is not a GRB … caused by a noise fluctuation」（15-350 keV 显著性仅 4.3σ；XRT 6.5 ks、UVOT 均无探测）	Cooper-J2000	2026-10-24	PR #178
+GRB090705	retracted	GCN 9618 认定「BAT trigger 356516 is not a GRB」（仅 3.1σ 涨落）；batgrbcat 无此源，Swift 主库标记 unconfirmed BAT trigger（grb_flag=N）	Cooper-J2000	2026-10-12	commit 8589f633
+GRB080408	duplicate	重复条目，已并入 GRB080408A（8 行 GROND 光变随之迁移）	Cooper-J2000	2026-10-12	commit 8589f633
