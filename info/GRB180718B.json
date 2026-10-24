@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB180718B",
   "alias": [
-    "GRB 180718763"
+    "GRB 180718.763"
   ],
   "ra": 44.47999954223633,
   "dec": -30.329999923706055,
-  "T0": "2018-07-18T18:18:29.460000Z",
-  "T0_ref": null,
+  "T0": "2018-07-18T18:18:24.464Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2018-07-18T18:18:24.464Z（GBM trigger 553630709 / 180718763）；GCN 22961/22965 均记 18:18:24.46 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +14,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.95,
+  "pos_error_confidence": null,
+  "pos_ref": "HEASARC FERMILGRB 快照（2FLGC，Ajello+2019）：ra=44.48, dec=-30.33, error_radius=0.95 deg",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52, arXiv:1906.11403；注：arXiv API 题录页仅列 4 位联系作者 Axelsson/Bissaldi/Omodei/Vianello，VoR 作者表 123 位首作 Ajello——勿据 arXiv 题录误判归属，Crossref/INSPIRE 已核）。【T0 修正】原值 2018-07-18T18:18:29.460000Z 为 bot 对 HEASARC FERMILGRB trigger_met=553630709.46 的天真换算（少扣 2017-01-01 起的 5 个闰秒；python 复算 naive UTC=2018-07-18T18:18:29.460000 与原值逐位一致），正确 UTC=2018-07-18T18:18:24.460；现采纳触发仪器目录 FERMIGBRST 的亚秒值 18:18:24.464Z。FERMILGRB(2FLGC) 表 trigger_time=2018-07-18T18:18:24.002Z 为 LAT 口径，差 0.462 s 备查。【定位口径澄清】ra/dec 为 2FLGC LAT 精化定位（Ajello+2019，HEASARC FERMILGRB 快照 error_radius=0.95 deg；FERMILGRB 文档记 ERROR_RADIUS 为 'localization error from LAT transient factory analysis'，未标注置信水平，故 pos_error_confidence 留空）；GCN 22961 LAT 初报定位 RA,Dec=44.68,-31.5（r=0.65 deg, 90% containment, statistical error only）；GBM 目录位置 44.677,-31.503（r=0.65 deg）与 GCN 22965 'GBM on-ground location consistent with the LAT position' 一致，疑为吸收初报定位；MPE Greiner 表行 44.679,-31.5（Error 39′, IPN=y）同初报口径。2FLGC 精化位置与初报位置相距约 1.2 deg，在各自误差内勉强相容。【备查】GBM T90=98.306±4.891 s（50-300 keV）；fluence=(2.6±0.1)e-05 erg/cm2（GCN 22965，10-1000 keV）/ 1.48998e-05±4.95578e-08（FERMIGBRST 目录值）；Epeak=761±78 keV（CPL，GCN 22965）；GCN 22961：最高能光子 300 MeV 于触发后 17 s；2FLGC ext_emission_max_ene=490 MeV @ +2.63 s。2FLGC 的 LAT 光变数据为高能光子光变（GeV 量级），不落光学/射电测光两车道，不入 lc。【alias 更正】原 'GRB 180718763' 为导入管线拼接伪形，改为官方 GBM 触发名 'GRB 180718.763'（FERMIGBRST/FERMILGRB name_alt；GCN 22961/22965 记 trigger 553630709 / 180718763）。【X 射线】Swift-XRT 观测（GCN 23031，T0+38.9–50.6 ks）发现 4 个未编目 X 射线源、均不能确认为余辉，UVOT 未见新光学源；X 射线数据暂不处理。【测光检索（2026-10-24）】仓内 gcn/archive/archive.json 45889 篇全文扫描（'180718' 命中 12 篇，其中本暴 5 篇：GCN 22961/22962/22965/22971/23031，仅 22971 含光学数值）、external/rssgrbag 140 行 0 命中、external/grbsn_webtool 63 事件无该源、external/uvot_grb 与 heasarc_grbcat/konus_wind/swift 快照无该源记录；arXiv API（all:'GRB 180718B' / '180718.763' / bn180718763 及 abs 检索）命中 0 篇；ADS/SciX 无 API token 未查（本机实测无鉴权不可用）；GCN 站按名搜索已知失效，本地快照覆盖至 2026-10-22，等价于 GCN 站全量 Circular 检索 → 仅 GCN 22971 一个可用光学上限，本 PR 补 1 行。",
   "sub_tag": [
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -192,8 +193,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
