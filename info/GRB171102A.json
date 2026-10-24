@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB171102A",
   "alias": [
-    "GRB 171102107"
+    "GRB 171102.107",
+    "bn171102107"
   ],
-  "ra": 187.72000122070312,
-  "dec": 54.0099983215332,
-  "T0": "2017-11-02T02:33:40.990000Z",
-  "T0_ref": null,
+  "ra": 187.72,
+  "dec": 54.01,
+  "T0": "2017-11-02T02:33:35.990Z",
+  "T0_ref": "GCN 22083（Fermi GBM 触发时刻 02:33:35.99 UT，trigger 531282820/171102107）；FERMIGBRST 官方目录 trigger_time=2017-11-02T02:33:35.989Z 互证；2FLGC VoR（Ajello+2019）表 2 trigger UT 02:33:35 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2952,
+  "pos_error_confidence": "90",
+  "pos_ref": "HEASARC FERMILGRB 目录 2FLGC LTF 定位 RA,Dec=187.72,+54.01（error_radius 0.82 deg=2952″；仓内快照 retrieved 2026-07-21，HEASARC 在线行 2026-10-24 核验一致；Ajello+2019 VoR 表 2 同值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（2026-10-24，Rusty-Harpoon@zcode）。身份：GRB 171102A = Fermi/GBM 触发 531282820（=171102107，bn171102107），触发时刻 02:33:35.99 UT（GCN 22083）；Fermi-LAT（GCN 22081）、IPN（GCN 22091）、Konus-Wind（GCN 22094）、CALET CGBM（GCN 22111）与 INTEGRAL SPI-ACS（trigger #7955，GCN 22111）互证，Swift/BAT 亦探测但在编码视场外（GCN 22091）；FERMILGRB 目录 gcn_name=GRB171102A。同日异源：GRB 171102B = Swift/BAT 触发（15:20:29 UT，RA,Dec=288.1,+22.4，GCN 22082–22093），其 XRT/UVOT/RATIR/MITSuME/Nanshan/TShAO/AbAO 后续均属 B，与本源无关，勿混。T0：原 T0=2017-11-02T02:33:40.990000Z 为 2FLGC trigger_met=531282820.99 未扣闰秒直换（MET 纪元 2001-01-01 UTC；2017-01-01 起 UTC 闰秒累计 5 s；同 Issue #109 口径），已改；GBM 官方值 02:33:35.99 UT（GCN 22083）与 FERMIGBRST trigger_time=02:33:35.989Z、2FLGC VoR 表 2 trigger UT 02:33:35 一致；FERMILGRB 目录 time 列 MJD 58059.1066551（=02:33:35.00 UT，HEASARC 在线行 2026-10-24 核验）与其自身 trigger_met 自差 0.989 s，弃用备查（仓内快照 fermi_lat.trigger_time=2017-11-02T02:33:35.001Z 即该列换算值）。位置：采用 2FLGC LTF 定位（error_radius 0.82 deg=2952″，90% 包含半径、仅统计误差，据 Ajello+2019 §4.1「On average, the (90% containment, statistical only) uncertainty in LAT detections …」，VoR（IOP HTML）原文核验；HEASARC FERMILGRB 在线行 ra/dec=187.72,+54.01、error_radius=0.82 与仓内快照一致）。并列备查：LAT 在线最佳定位 RA,Dec=188.41,+53.63（0.57 deg，90% 仅统计，GCN 22081，与 LTF 定位相距 ~0.56°）；IPN 3σ 误差盒中心 188.823,+54.288、面积 11.5 平方度（GCN 22091）；FERMIGBRST 目录 error_radius=0.92 deg（仓内快照）；MPE Greiner 表 IPN=y、Error=49（≈49′，与 2FLGC LTF error_radius 0.82° 同量级）、「GRB X-ray position 12h30m55s +54°02′」。原 info ra/dec 的 float32 残渣（187.72000122070312/54.0099983215332）按来源精度改写为 187.72/54.01。分类：lgrb（GCN 22091 称 long-duration、GCN 22094 称 long-duration, intense；FERMIGBRST T90=48.38 s）。物理量（多来源并列）：T90=35 s（50-300 keV，预备，GCN 22083）= 48.3848±0.572433 s（50-300 keV，FERMIGBRST）= 21.9±0.3 s（40-1000 keV，CALET SGM，GCN 22111）；Konus-Wind 光变双 episode、总时长 ~28 s（GCN 22094）；CALET SGM precursor T-2–T+2 s、主暴 T+30–T+60 s（GCN 22111）；fluence=(2.88±0.05)e-5 erg/cm2（10-1000 keV，T0+20.48–56.32 s，GCN 22083）= (2.91673±0.00003)e-5 erg/cm2（10-1000 keV，FERMIGBRST）= 2.96(-0.32,+0.27)e-5 erg/cm2（20 keV-10 MeV，Konus-Wind，GCN 22094）；Epeak=171±6 keV（Band，GCN 22083）= 162.44649±5.549408 keV（Band，FERMIGBRST）= 174(-12,+16) keV（Band，20 keV-15 MeV，Konus-Wind，GCN 22094）；1 s 峰值光子流量 28.7±0.3 ph/cm2/s（10-1000 keV，自 T0+49.2 s 起，GCN 22083）；64 ms 峰值光子流量 38.0556±1.66826 ph/cm2/s（10-1000 keV，FERMIGBRST）；64 ms 峰值能量流量 5.87(-0.95,+0.96)e-6 erg/cm2/s（20 keV-10 MeV，自 Konus T0+14.608 s 起，GCN 22094；Konus 自身触发 T0=9247.579 s UT=02:34:07.579，晚于 GBM 触发 31.59 s）；LAT：500 s 内 >17 光子（>100 MeV），最高能光子 500 MeV 于 GBM 触发后 ~328 s（GCN 22081）；GBM 触发时与 LAT boresight 夹角 43°（GCN 22081/22083）；ARR 因高峰值流量自动请求并执行（GCN 22083）；2FLGC tl100=366.07999±9.84 s、like_best_ts=38.4674（FERMILGRB 快照）。GCN 22111 原文笔误：「Yassine et al., GCN circ. 21615」应为 GCN 22081。alias 出处：GRB 171102.107 为 FERMIGBRST/2FLGC name_alt 点号形；bn171102107 为 FERMIGBRST name_alt bn 形；原 alias「GRB 171102107」（空格+9 位触发号拼接伪形，导入产物）已按《数据审核提示词》§3.10 删除（FERMIGBRST name 列原值 GRB171102107 备查）。测光检索（2026-10-24）：仓内 gcn/archive 45 889 篇全文检索（变体 \"GRB 171102A\"/\"GRB171102A\"/\"171102107\"/\"531282820\"/\"171102.107\"，对照组验证检索词有效）：命中本源相关 5 篇——22081（Fermi-LAT 探测）、22083（GBM 探测）、22091（IPN 三角定位）、22094（Konus-Wind）、22111（CALET CGBM）——全部为伽马射线探测/定位通告，无光学/NIR/射电测光或上限；GCN 22081 提到「A Swift ToO has been requested」，但库内无任何 Swift 对本源的后续通告；\"GRB 171102\" 前缀全文命中恰 15 篇 = 本源 5 篇 + 同日异源 GRB 171102B 的 22082/22084/22085/22086/22087/22088/22089/22090/22092/22093（逐篇核对正文均不含 \"171102A\"）。external 快照：rssgrbag（lightcurve.jsonl 140 行）、grbsn_webtool、konus_wind、agile_mcal、saxgrbmgrb、batse、heasarc_grbcat、swift_grb（末条 2012-12-29）、uvot_grb（末条 2010-12-25）、minaev2020/liang2023/wang2022/guidorzi2025 均无本源记录（swift_grb/uvot_grb/heasarc_grbcat 年代不覆盖 2017-11）；mpe_greiner 表有本源行（IPN 定位，见上）。GCN 站：gcn.nasa.gov/circulars/22081、/22083 在线回读与仓内全文一致（2026-10-24）；gcn.gsfc.nasa.gov/other/GRB171102A.fermi 返回 404。ADS（api.adsabs.harvard.edu，2026-10-24）：q=\"GRB 171102A\" 命中 5 篇（即上述 GCN）、q=\"GRB171102A\" 与 q=\"171102107\" 均 0 命中、q=full:\"GRB 171102A\" 命中 5 篇（同上），无任何正式文献给出本源测光表。结论：无可用测光（含上限），lc 保持 0 行。TNS 不适用（GRB，非 AT/SN/CV 类）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -149,8 +152,50 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Yassine+2017",
+      "url": "https://gcn.nasa.gov/circulars/22081",
+      "title": "GRB 171102A: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Stanbro+2017",
+      "url": "https://gcn.nasa.gov/circulars/22083",
+      "title": "GRB 171102A: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Kozlova+2017",
+      "url": "https://gcn.nasa.gov/circulars/22091",
+      "title": "IPN Triangulation of GRB 171102A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Tsvetkova+2017",
+      "url": "https://gcn.nasa.gov/circulars/22094",
+      "title": "Konus-Wind observation of GRB 171102A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Kawakubo+2017",
+      "url": "https://gcn.nasa.gov/circulars/22111",
+      "title": "GRB 171102A CALET Gamma-Ray Burst Monitor detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
