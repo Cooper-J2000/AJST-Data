@@ -1,26 +1,27 @@
 {
   "transient_id": "GRB180526A",
   "alias": [
-    "GRB 180526461"
+    "GRB 180526.461"
   ],
-  "ra": 108.4800033569336,
-  "dec": 3.640000104904175,
-  "T0": "2018-05-26T11:04:14Z",
-  "T0_ref": null,
+  "ra": 108.48,
+  "dec": 3.64,
+  "T0": "2018-05-26T11:03:36.006Z",
+  "T0_ref": "GCN 22746（Kozlova+2018，Konus-Wind 团队）：'triggered Konus-Wind at T0=39816.006 s UT (11:03:36.006)'；Konus-Wind 为触发仪器（GCN 22745 IPN 通告列 Konus-Wind/INTEGRAL SPI-ACS/Mars-Odyssey HEND/AstroSat CZTI 探测；GCN 22744 CALET 通告亦引 'Konus-Wind trigger time on 11:03:36.006'；Ajello+2019 §4.1 列本暴为 6 个由 IPN 通告、未触发 GBM 的 LAT 暴之一）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Konus-Wind",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 972,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT 定位 ERR=0.27°=972″，90% 包含、统计误差，Ajello+2019 §4.1；FERMILGRB 表 fermilgrb_w3browse_full.txt 2026-10-24 复核：07 13 55.2 +03 38 24）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode 2026-10-24：(1) 身份=长暴 GRB 180526A：Konus-Wind 触发（GCN 22746，Kozlova+2018），IPN 三角定位（GCN 22745，Hurley+2018：Konus-Wind、INTEGRAL SPI-ACS、Mars-Odyssey HEND、AstroSat CZTI 于 ~39814 s UT (11:03:34) 探测，3σ 误差框中心 RA=108.576°/Dec=+3.677°（07h14m18s +03d40'36\"）、面积 1.2 平方度、长轴 1.97°、短轴 1°），AstroSat CZTI 亦探测（GCN 22742：40-200 keV，探测时刻 11:04:09 UT、最强峰 11:04:20.50 UT、累积计数率 T90=23.8 s），CALET CGBM 触发于 11:03:36.200 UTC（GCN 22744，CGBM T90=56.9±2.8 s；因 ISS 实时通信中断未发实时 GCN notice）；Fermi/LAT 同步探测（2FLGC gcn_name=GRB180526A，tl100=1139.69、TS=51.42，FERMILGRB 表），LAT 定位 108.48/+3.64 落在 IPN 误差框内。Ajello+2019 §4.1：169 个 likelihood 探测中 10 个未触发 GBM、其中 6 个由 IPN 通告（GRB 090427A/110518A/120911B/140825A/160702A/180526A），本暴在列；FERMIGBRST 快照 bn18052* 逐日枚举无 bn180526* 条目（邻近日期 bn180524416/bn180525151/bn180528371 等齐全，对照组有效）——三路独立佐证 GBM 未触发。同日无异源混淆（ADS 'GRB 180526B' 0 命中）。库内无同事件重复条目。(2) Trigger_Instrument：原值 'Fermi/GBM' 有误，改 Konus-Wind（触发仪器，GCN 22746）；LAT 为同步探测（非触发）仪器，sub_tag 保留 Fermi-LAT。(3) T0：原值 2018-05-26T11:04:14Z 系 bot 将 2FLGC trigger_met=549025454.0 自 2001-01-01 纪元直换、未扣 2017-01-01 生效的 5 个闰秒（Issue #67/#109 同族），天真换算=2018-05-26T11:04:14.000 与原值完全一致（bug 复现）；现取触发仪器 Konus-Wind 的 T0=39816.006 s UT=2018-05-26T11:03:36.006Z（GCN 22746）；FERMILGRB/2FLGC 自带 trigger_time=2018-05-26T11:04:09.002Z（晚 33.0 s，备查——该值与 GCN 22742 AstroSat CZTI 探测时刻 11:04:09 UT 相合，应为 2FLGC 对未触发 GBM 的暴采用的非 GBM 参考时刻，非触发仪器值）；GCN 22745 IPN 'at about 39814 s UT (11:03:34)'。lc 为空，直接改 T0 为触发时刻，T0_offset 留空（目录参考点差异，非真实爆发偏移）。(4) 位置：原 ra/dec 为 float32 残渣（108.4800033569336/3.640000104904175），还原 FERMILGRB 表发布精度 108.48/+3.64（07 13 55.2 +03 38 24）；pos_error 原为 null，补 FERMILGRB error_radius=0.27°=972″，confidence=90（Ajello+2019 §4.1：'the (90% containment, statistical only) uncertainty in LAT detections is 0.36°'）。(5) alias：删拼接伪形 'GRB 180526461'（Issue #69/维护者判例），收 'GRB 180526.461'（2FLGC/fermilgrb name_alt 点号形；快照 name_alt 另含伪值 '0'，不收；GBM 未触发、FERMIGBRST 无条目，故无 bn 形可收）。(6) 其他量值并列：T90=87 s（能段标签 50-300 keV 系快照 params.t90.band 标注；该行无 GBM 条目，溯源偏弱，备查）（FERMILGRB/2FLGC，与 GCN 22746 Konus 'total duration of ~87 s' 一致）vs CGBM T90=56.9±2.8 s（40-1000 keV，SGM 数据，GCN 22744）vs CZTI T90=23.8 s（40-200 keV 累积计数率，GCN 22742）；Konus-Wind 注量 1.12(±0.13)e-04 erg/cm²、64-ms 峰能流 1.61(+0.29/-0.28)e-05 erg/cm²/s（均 20 keV-10 MeV，峰自 T0+42.048 s 起），时间平均谱 Band 模型 alpha=-1.11(+0.15/-0.13)、beta=-2.23(+0.14/-0.24)、Ep=207(+38/-31) keV（T0 至 T0+76.032 s，chi2=76/69 dof），峰谱 alpha=-0.52(+0.19/-0.17)、beta=-2.49(+0.20/-0.31)、Ep=224(+27/-25) keV（T0+41.216 至 T0+43.264 s，chi2=56/58 dof）（GCN 22746，误差 90% c.l.，数值初步）；INTEGRAL SPI-ACS 触发号 #8067（GCN 22744）；LAT 快照 ext_emission_max_ene=2200 MeV（时刻 1308.09 s，2FLGC 口径）。Ajello+2019 取自 arXiv:1906.11403（v1，该文仅此版）；VoR（IOP DOI 10.3847/1538-4357/ab1d4e）被出版社反爬拦截（Radware botmanager，2026-10-24 实测）。(7) 测光检索（2026-10-24）：仓内 gcn/archive 全文检索 '180526' 命中 4 篇，各变体（'GRB 180526A'/'180526461'/'180526.461'/'549025454'）单独复核均无额外命中（对照组 'GRB 180720B' 33 篇、'GRB 180703A' 13 篇，验证有效）；4 篇（GCN 22742/22744/22745/22746）均只报伽马波段探测、触发与 IPN 定位，无光学/射电测光或上限；ADS abs 命中 4 篇（同上 4 GCN，GCN 站无 ADS 命中而本地缺件的通告）、full 命中 6 篇（另 Ajello+2019 2FLGC 只给总结参数与图版光变，无可引用测光表；Fraija+2026, MNRAS, DOI 10.1093/mnras/staf1970（arXiv:2511.23426）仅 Figure A8/A11 图版提及，无数表，已留文献级索引卡 audit/leads/papers/fraija2026.md）；external/rssgrbag（射电光变 140 行）0 命中、grbsn_webtool 无本事件、fermi_gbm/konus_wind/uvot_grb/swift_bat/swiftgrbba/swift_xrt_live/agile_mcal/saxgrbmgrb/batse 均 0 命中（fermi_lat 快照含本源 FERMILGRB 目录行本身，无测光——2026-10-24 独立核查更正；此前把该行所在快照误列入 0 命中清单）；grbsn_webtool 无本事件、atse/guidorzi2025/liang2023/minaev2020/wang2022 快照均无 180526 记录（swift_grb 止于 2012-12-31、heasarc_grbcat 止于 2005-03-09，早于本源，不适用）；TNS 不适用（GRB 类，无 AT/SN 命名）→ 无可用测光，补 0 行。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -74,8 +75,21 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
