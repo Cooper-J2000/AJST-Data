@@ -69,7 +69,7 @@
 ## 工具
 
 ```bash
-python3 tools/validate.py                        # 卡格式/命名/登记源存在性/一源多卡（警告级）
+python3 tools/validate.py                        # 卡格式/命名/登记源存在性/同 DOI 重复（警告级）
 python3 tools/audit_queue.py --leads             # 全部源级卡 + 文献级卡摘要
 python3 tools/audit_queue.py --paper ershhova2020  # 展开一张文献级卡（含各源当前状态）
 python3 tools/audit_queue.py --check-leads --base origin/main  # PR 守卫：新增卡规模/形态（警告级）

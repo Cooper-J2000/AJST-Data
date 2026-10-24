@@ -336,6 +336,7 @@ def check_paper_cards(info_ids):
     if not os.path.isdir(PAPER_DIR):
         return
     seen = {}
+    dois = {}
     for fn in sorted(os.listdir(PAPER_DIR)):
         if not fn.endswith('.md') or fn.lower() == 'readme.md':
             continue
@@ -359,6 +360,8 @@ def check_paper_cards(info_ids):
         for k in ('paper', 'date'):
             if not (meta.get(k) or '').strip():
                 warn(f'{rel}: 缺 {k}（文献级卡必填 paper_key / paper / date）')
+        for doi in re.findall(r'10\.\d{4,}/[^\s）)，,;；]+', meta.get('paper') or ''):
+            dois.setdefault(doi.rstrip('.'), []).append(key)
         srcs = _split_ids(meta.get('sources'))
         if not srcs:
             warn(f'{rel}: 缺 sources:（列出该文涉及的库内源，逗号分隔）—— 工具靠它反查'
@@ -368,10 +371,12 @@ def check_paper_cards(info_ids):
                 warn(f'{rel}: 登记的源 {sid} 不在 info/ —— 库外新源应改开 new-source Issue，'
                      f'不写进文献级卡')
             seen.setdefault(sid, []).append(key)
-    for sid, keys in seen.items():
+    # 一个源被多篇**不同**文献覆盖是正常的（Ershova+2020 与 Fraija+2026 会提到同一批暴），
+    # 只有「同一篇文献出现两张卡」才是重复——按 DOI 判，不按源判。
+    for doi, keys in dois.items():
         if len(keys) > 1:
-            warn(f'audit/leads/papers/: 源 {sid} 同时登记在 {len(keys)} 张文献级卡'
-                 f'（{", ".join(keys)}）—— 一源一篇主文献卡，其余并入或删去')
+            warn(f'audit/leads/papers/: 同一篇文献（DOI {doi}）有 {len(keys)} 张文献级卡'
+                 f'（{", ".join(sorted(set(keys)))}）—— 一篇一张，请合并')
 
 
 def check_zero_lc_evidence(reviewed_ids):
