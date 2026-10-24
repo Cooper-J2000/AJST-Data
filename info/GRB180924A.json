@@ -1,28 +1,76 @@
 {
   "transient_id": "GRB180924A",
-  "alias": [],
-  "ra": 49.2002,
-  "dec": -58.5321,
-  "T0": "2018-09-25T07:14:30Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 180924A",
+    "BAT 863186"
+  ],
+  "ra": 49.19945,
+  "dec": -58.53258,
+  "T0": "2018-09-24T15:22:22.386320Z",
+  "T0_ref": "GCN 23261（At 15:22:22 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 180924A, trigger=863186，整秒）+ Swift/BAT 官方目录亚秒值 2018-09-24T15:22:22.386320Z（external/swift_bat 快照 trigger 863186）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
   "pos_ref": "GCN 23262",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（wa1kmoon@zcode，2026-10-24）。【身份】Swift/BAT 触发 GRB 180924A（trigger 863186，GCN 23261：At 15:22:22 UT the Swift BAT triggered and located GRB 180924A）；BAT 在轨定位 (49.161,-58.505) r=3′（90% 含系统差，GCN 23261）、地面精化 (49.207,-58.524) r=1.4′（90%，GCN 23264）；主定位取 Swift-XRT 天测改正位置 (49.19945,-58.53258) r=1.7″（90% confidence，GCN 23262，官方自动产品）；XRT 快报增强定位 (49.2002,-58.5321) r=2.2″（90%，GCN 23261）——原库 ra/dec 即此值而 pos_error 取 23262 的 1.7″，两处混拼，已统一为 GCN 23262（与 pos_ref/pos_error 同源）；swift_xrt_live 快照现值 (49.19946,-58.53254) r=2.1″（后续精化，备查不采用）；源名日期 09-24 与触发日期 2018-09-24 一致，无跨 0 点问题；同日仓内无其他 180924 命名暴，GCN 全文亦无撞名。【T0 修正】bot 原值 2018-09-25T07:14:30Z 系误取 MASTER-OAFA 指向观测时刻（GCN 23267：57128 sec after trigger time at 2018-09-25 07:14:30 UT），非触发时刻（Issue #84 同型：观测时刻误作 T0，同 GRB160611A/GRB120402A 先例），偏晚 15 h 52 m 8 s；现取触发仪器 Swift/BAT 官方目录亚秒值 2018-09-24T15:22:22.386320Z（external/swift_bat 快照 trigger 863186，MET 559495364.032），GCN 23261 整秒 15:22:22 UT 一致。bot 的 t0_basis/t0_note 原值：t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"（§3.10 改写，原值留此）。【tag/sub_tag】tag=grb（Swift/BAT 触发 GRB，GCN 23261）；T90=95.1±10.9 s（15-350 keV，GCN 23264）属长暴典型值，但来源未作 lgrb/sgrb 分类表述，按 §3.9 不以 T90 自行归类，sub_tag 留空。【其他物理量并列】fluence=1.4±0.1×10⁻⁶ erg/cm²（15-150 keV，GCN 23264；swift_bat 目录 15-350 keV 1.36136×10⁻⁶）；T90=94.8±11.8 s（swift_bat 目录快照）与 GCN 23264 的 95.1±10.9 s 并列；1-s peak photon flux=0.6±0.1 ph/cm²/s（15-150 keV，T+2.73 s，GCN 23264）；BAT 时谱 photon index=1.94±0.14（GCN 23264）；XRT：WT 谱 Γ=1.96(+0.14/-0.13)、NH=1.0(±0.4)×10²¹ cm⁻²（超银河值 2.0×10²⁰），光变初始衰减 α=2.23(+0.11/-0.09)、T+485 s 处变陡后 α=0.70(+0.06/-0.05)（GCN 23266）；XRT 快报 2.5 s 像初始流量 1.35×10⁻⁹ erg/cm²/s（0.2-10 keV，GCN 23261）；本源位于 TESS 相机 3 Sector 2 视场内（GCN 23261）。【红移】无任何来源给出，保持 null。【alias 出处】GRB 180924A＝GCN 23261-23277 标准 GCN 用名（空格形）；BAT 863186＝swift_bat 官方目录 name_alt 原形。【测光检索留证（2026-10-24）】仓内 gcn/archive（45 589 篇）python 全文三路扫描（\"180924A\"/trigger 号 \"863186\"/坐标 \"49.199\"+\"-58.53\"）命中 6 篇：23261/23262/23264/23266/23267/23277（grep 直查 0 命中，python 扫描为实测路径），其中 2 篇含光学上限数值：GCN 23277（Swift/UVOT 6 行 3σ 上限）与 GCN 23267（MASTER-OAFA 无源检出、亮于 19.3m unfiltered），共 7 行已入新建 lc；external/rssgrbag lightcurve.jsonl 0 行、external/grbsn_webtool 63 事件无此源；external/swift_grb、uvot_grb、heasarc_grbcat 快照记录止于 2018 年前，未覆盖本源（身份互证用 swift_bat + swift_xrt_live 快照）；GCN 站在线核对 23261 与仓内全文一致；ADS/SciX 无 token 不可用（SciX API 无凭证实测返回 202 空响应）；arXiv API 兜底（\"GRB 180924A\"/\"180924A\"/\"863186\"）均 0 篇；TNS 不适用（GRB 非 AT/SN/CV 类）。GCN 23261 的 UVOT finding chart 段「typical 3-sigma upper limit ~19.6 mag」为典型值描述（无精确窗口），被 GCN 23277 精确表取代，不入库。【X 射线】新建 lc 无 X 射线行；发现 Swift-XRT 数据（GCN 23266 及 UKSSDC Burst Analyser），按 §3.3 不入库。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 863186）：GCN 23261 整秒 15:22:22 UT + Swift/BAT 官方目录亚秒值 2018-09-24T15:22:22.386320Z（external/swift_bat 快照）；bot 原值 2018-09-25T07:14:30Z 系误取 MASTER-OAFA 指向观测时刻，已修正（原值见 comment）",
+    "t0_basis": "GCN 23261 + swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 23261",
+      "title": "GRB 180924A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/23261",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23262",
+      "title": "GRB 180924A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/23262",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23264",
+      "title": "GRB 180924A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/23264",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23266",
+      "title": "GRB 180924A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/23266",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23267",
+      "title": "GRB 180924A: MASTER inspection",
+      "url": "https://gcn.nasa.gov/circulars/23267",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23277",
+      "title": "GRB 180924A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/23277",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
