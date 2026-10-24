@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB180703B",
   "alias": [
-    "GRB 180703949"
+    "GRB 180703.949",
+    "GRB180703949",
+    "bn180703949",
+    "GRB 180703BS"
   ],
   "ra": 96.91999816894531,
   "dec": -29.8799991607666,
-  "T0": "2018-07-03T22:46:56.320000Z",
-  "T0_ref": null,
+  "T0": "2018-07-03T22:46:51.317Z",
+  "T0_ref": "GCN 22897（Poolakkil & Meegan, Fermi GBM team）：'At 22:46:51.32 UT'；Fermi GBM catalog (fermigbrst, bn180703949) trigger_time=2018-07-03T22:46:51.317 UTC（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +17,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 22884",
+  "pos_error": 1440,
+  "pos_ref": "GCN 22884 (Fermi-LAT team): RA=96.92, Dec=-29.88, 0.4 deg (90% containment, statistical only)（=2FLGC 终值/fermigbrst 行同位同误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2018-07-03T22:46:56.32Z 系 bot 将 fermilgrb trigger_met=552350816.32 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006/2009/2012-07/2015-07/2017-01 生效的 **5** 个闰秒，偏晚 4.997 s；证据：GCN 22897/22884 均 'At 22:46:51.32 UT'；fermigbrst trigger_time=22:46:51.317Z；552350816.32 s 天真换算=22:46:56.320Z 与原 T0 一致（bug 复现）；2FLGC/fermilgrb 自带 trigger_time=22:46:51.001Z 与 GBM 目录差 0.316 s（该表自身口径，未采用）。Konus-Wind 触发 22:46:48.633（GCN 22914，早 2.684 s）；CALET CGBM 触发 22:46:51.183（GCN 22888，早 0.134 s）。(2) pos_error 原为 null：GCN 22884 明示 LAT 定位 96.92/-29.88（0.4°，90% 包含仅统计），换算 0.4°=1440″ 填入，pos_error_confidence=90（原文明确）；ra/dec=96.92/-29.88 即该定位（库内原值未动；fermigbrst/fermilgrb 同位）。(3) sub_tag 维持空（**来源分类冲突**）：Greiner 表名称 'GRB 180703BS'（S 后缀=短暴，见仓内 mpe_greiner README 脚注）与 GBM T90≈1.6 s（GCN 22897）/Konus ~2.0 s（GCN 22914）支持短暴；但 GCN 22932（CALET 深入分析）实测谱滞后 43±30 ms（68% CL），明言 'more consistent with lags of long rather than short GRBs'。两路证据冲突，按《数据审核提示词》§3.9 sub_tag 留空，冲突详情报 PR 待决事项。(4) 红移：无任何来源给红移，保持 null。(5) 身份：Fermi GBM trigger bn180703949（GRB 180703.949，trigger 552350816）=Fermi-LAT 探测（GCN 22884，视轴 30°）=CALET CGBM 探测（GCN 22888/22932/23058）=IPN 多方三角（GCN 22908：Odyssey-HEND/Konus-Wind/GBM/INTEGRAL/Swift-BAT/GRS-Odyssey）；同日仓内 GRB 180703A（21:01:40 UT，另有 lc）为独立事件；仓内无重复条目。(6) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文 7 篇（22884/22888/22897/22908/22914/22932/23058，均高能参数，无光学/射电测光）；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；GCN 站检索对字母名失效（实测，以全文档案为准）；ADS/SciX 检索不可用（2026-10-24 实测两 API 均 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 'GRB 180703B' 0 命中（export.arxiv.org，2026-10-24）→ 无可用测光，未补行，不建 lc。(7) alias：删 'GRB 180703949'（「日期+触发序列」空格拼接伪形，导入管线产物），补 GRB 180703.949（两目录 name_alt 原形）/GRB180703949（fermigbrst name 原形）/bn180703949（fermigbrst trigger_name）/GRB 180703BS（Greiner 表官方名，S 后缀=其表内短暴标记）。GBM Epeak=138±3 keV、fluence=8.281e-6 erg/cm²（10-1000 keV，GCN 22897）、Konus Ep=131(-9,+11) keV、fluence=6.4e-6 erg/cm²（20 keV-2 MeV，GCN 22914）、CALET Ep=143 keV、fluence=5.98e-6 erg/cm²（30-1000 keV，GCN 22932）等 SCHEMA 外物理量记此备查。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -152,8 +155,57 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 22884",
+      "title": "GRB 180703B: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/22884",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22888",
+      "title": "GRB 180703B: CALET Gamma-Ray Burst Monitor detection",
+      "url": "https://gcn.nasa.gov/circulars/22888",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22897",
+      "title": "GRB 180703B: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/22897",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22908",
+      "title": "IPN Triangulation of GRB 180703B",
+      "url": "https://gcn.nasa.gov/circulars/22908",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22914",
+      "title": "Konus-Wind observation of GRB 180703B",
+      "url": "https://gcn.nasa.gov/circulars/22914",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22932",
+      "title": "GRB 180703B: further analysis of CGBM data",
+      "url": "https://gcn.nasa.gov/circulars/22932",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23058",
+      "title": "GRB 180703B: CALET CAL gamma-ray analysis",
+      "url": "https://gcn.nasa.gov/circulars/23058",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
