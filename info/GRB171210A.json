@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB171210A",
   "alias": [
-    "GRB 171210493"
+    "GRB 171210.493",
+    "bn171210493"
   ],
-  "ra": 335.2900085449219,
-  "dec": 24.440000534057617,
-  "T0": "2017-12-10T11:49:20.260000Z",
-  "T0_ref": null,
+  "ra": 335.29,
+  "dec": 24.44,
+  "T0": "2017-12-10T11:49:15.261Z",
+  "T0_ref": "FERMIGBRST（bn171210493）触发时刻；GCN 22233（GBM）/22228（LAT）/22238（MASTER）一致给 11:49:15.26 UT（整数秒一致，取触发仪器 GBM 目录亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +15,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 540,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 22228",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 目录数据导入新建 (Ajello+2019)。T0：原值 2017-12-10T11:49:20.260000Z 系 2FLGC trigger_met=534599360.26 未扣闰秒直换（MET 纪元 2001-01-01，2017-01-01 起累计 5 闰秒，Issue #109 族，+5 s），现改为触发仪器 GBM 的 FERMIGBRST 亚秒触发时刻 11:49:15.261Z；GCN 22233（GBM）与 GCN 22228（LAT）均记 11:49:15.26 UT，MASTER GCN 22238 亦记 t_trigger=11:49:15.26 UT（整数秒一致）；MET 534599360.26 扣 5 次闰秒=11:49:15.260，与 FERMIGBRST 差 1 ms（MET 舍入）；FERMILGRB/2FLGC 快照 trigger_time=11:49:14.998Z 亚秒不同（−0.263 s），以触发仪器 GBM 目录为准；Konus-Wind 自触发 T0=42556.704 s UT=11:49:16.704（GCN 22244）、CALET/CGBM 自触发 11:49:17.22（GCN 22267）为各仪器自身触发时刻，不与 GBM T0 矛盾。定位：原 ra/dec=335.2900085449219/24.440000534057617 为 GCN 22228/2FLGC 值 335.29/24.44 的 float32 残渣，规范为 335.29/24.44；pos_error=540″（0.15 deg，90% 包含、仅统计误差，GCN 22228 在轨定位，pos_error_confidence=90）；GBM on-ground 定位与 LAT 一致（GCN 22233）；2FLGC error_radius=0.32° 并列备查；MPE 表 GRB X-ray position 22h21m14s +24°26′、Error 10、IPN 标记（单位与置信水平未注明）。别名：原 'GRB 171210493' 为「日期+9 位触发号」拼接伪形（空格形），删除；改收快照 name_alt 点号形 'GRB 171210.493'（FERMIGBRST 与 FERMILGRB/2FLGC）与 bn 形 'bn171210493'（FERMIGBRST）。物理量多来源并列：T90=143.107±2.57283 s（50-300 keV，FERMIGBRST）；GCN 22233 约 143 s；Konus-Wind 单脉冲总时长 ~186.6 s（20 keV-10 MeV，GCN 22244，光变始于其触发前 ~6.1 s）；CALET SGM T90=47.4±2.5 s（40-1000 keV，GCN 22267）。fluence=8.07645e-05±9.13401e-08 erg/cm2（10-1000 keV，FERMIGBRST）；GCN 22233 (7.33±0.08)e-05；Konus 1.15(+0.11,-0.10)e-4（20 keV-10 MeV）。1-s 峰光子流量 16.7±0.36 ph/cm2/s（T0+6.46 s 起，10-1000 keV，GCN 22233）；FERMIGBRST 64 ms 峰值 18.8995±1.52242 ph/cm2/s。Epeak(BAND)=138.8564(+3.27/-3.27) keV（FERMIGBRST）；GCN 22233 145±3 keV；Konus 时平均谱 158(+16/-14) keV（20 keV-10 MeV）。LAT：LLE T90=8.2 s、T_L100=1512.19±71.87 s（2FLGC）；最高能光子 12 GeV 于 GBM 触发后 1400 s（GCN 22228）、2FLGC ext_emission_max_ene_t=1374.49 s；like_best_ts=65.35；高峰值流量触发 ARR 自主重指向（GCN 22228/22233）。Swift（X 射线不入 lc）：XRT 两历元 PC 观测（T0+34.7-46.3 ks 共 5.0 ks；T0+563.0-662.2 ks 共 4.4 ks）检出 5 个未编目 X 射线源但均不变暗、无一可判为余辉（GCN 22235/22261，结论 we have not detected the GRB afterglow）；UVOT 同步观测未发现新源、与 DSS 比对无新源、未给极限星等（GCN 22235）。测光检索（2026-10-24）：仓内 gcn/archive 全文检索（'GRB 171210A'/'171210A'/'171210493'/'171210.493' 多变体，对照组同日 GRB 171212B 命中有效）命中本暴 8 篇通告（22228/22232/22233/22235/22238/22244/22261/22267），GCN 站核对 22220-22275 全部主题确认无本地缺件（8 篇即全部）；external 快照：mpe_greiner 仅有目录参数条目，rssgrbag/grbsn_webtool/uvot_grb/konus_wind/swift_grb/heasarc_grbcat 无记录（swift_bat 命中 '5.171210e-01' 为浮点串假阳性）；ADS/SciX q=(abs/title/full:\"GRB 171210A\") 命中 14 条=上述 8 GCN + 6 论文（He+2022 A&A 657 A111、Tak+2023 ApJ 949 110、Macera+2025 A&A 700 A88、Duan+2020 ApJ 890 90、Berti+2019 ICRC 36 634、Yi+2025 arXiv 2510.18207，均 Fermi prompt/LAT 谱学样本类，无可引用光学/射电测光表），无空格形+触发号 '171210493' 另命中 3 条（Li+2021 ApJS 253 43、Hao+2020 arXiv 2002.08734、2025A&A 700 A96，同类）；TNS 不适用（GRB 非 AT/SN 类）。结论：唯一有明确时间锚点的测光为 GCN 22238 的 MASTER-IAC 无滤光片上限 20.4m（单张 180 s，巡天起始 19:08:16 UT），补 1 行；叠加极限 21m 无时间锚点，仅记 comment。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -150,8 +152,59 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog"
+    },
+    {
+      "name": "Bissaldi+2017",
+      "url": "https://gcn.nasa.gov/circulars/22228",
+      "title": "GRB 171210A: Fermi-LAT detection"
+    },
+    {
+      "name": "Poolakkil+2017",
+      "url": "https://gcn.nasa.gov/circulars/22233",
+      "title": "GRB 171210A: Fermi GBM detection"
+    },
+    {
+      "name": "Evans+2017",
+      "url": "https://gcn.nasa.gov/circulars/22232",
+      "title": "GRB 171210A: Swift ToO observations"
+    },
+    {
+      "name": "Burrows+2017",
+      "url": "https://gcn.nasa.gov/circulars/22235",
+      "title": "GRB 171210A: Swift-XRT and UVOT observations"
+    },
+    {
+      "name": "Tyurina+2017",
+      "url": "https://gcn.nasa.gov/circulars/22238",
+      "title": "GRB 171210A: MASTER-Net optical observations"
+    },
+    {
+      "name": "Kozlova+2017",
+      "url": "https://gcn.nasa.gov/circulars/22244",
+      "title": "Konus-Wind observation of GRB 171210A"
+    },
+    {
+      "name": "DAvanzo+2017",
+      "url": "https://gcn.nasa.gov/circulars/22261",
+      "title": "GRB 171210A: Further Swift-XRT observations"
+    },
+    {
+      "name": "Matsukawa+2017",
+      "url": "https://gcn.nasa.gov/circulars/22267",
+      "title": "GRB 171210A CALET Gamma-Ray Burst Monitor detection"
+    }
+  ],
   "host_galaxy": null
 }
