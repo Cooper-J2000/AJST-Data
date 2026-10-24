@@ -1,28 +1,70 @@
 {
   "transient_id": "GRB160826A",
-  "alias": [],
-  "ra": 183.114,
-  "dec": -67.66411,
-  "T0": "2016-08-26T06:12:38Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 160826A",
+    "BAT 709907"
+  ],
+  "ra": 183.1127,
+  "dec": -67.6639,
+  "T0": "2016-08-26T06:12:38.274100Z",
+  "T0_ref": "GCN 19866（Mingo et al., Swift team）：'At 06:12:38 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒）；Swift/BAT 官方目录快照 Trig_time_UTC=2016-08-26T06:12:38.274100 UTC（external/swift_bat，trigger 709907，亚秒值）；互证：GCN 19866 XRT 起测 06:14:20.8 UT = T0+102.5 s，反算 T0≈06:12:38.3，与目录亚秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.5,
-  "pos_ref": "GCN 19868",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 19868 (Swift-XRT refined analysis): RA=183.1127, Dec=-67.6639, 3.5 arcsec (radius, 90% confidence)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-24）：(1) 身份：Swift/BAT trigger 709907 于 2016-08-26T06:12:38 UT 触发（GCN 19866）；GCN 19866/19868/19871/19872 四篇通告均属本源（XRT 余辉精化定位与 BAT 精化定位互相印证），无异源混淆。(2) T0 原值 2016-08-26T06:12:38Z（整秒）补亚秒为 06:12:38.274100（swift_bat 官方目录 Trig_time_UTC；GCN 19866 整秒一致；XRT 起测时刻 06:14:20.8 UT − 102.5 s = 06:12:38.3 互证）；原 bot t0_basis/t0_note 改写前原值：t0_basis=meta_trigger；t0_note='t0 为 meta trigger-time（真实触发时刻）'。Trigger_Instrument 原值 'Swift' 细化为 'Swift/BAT'（GCN 19866 明确 BAT triggered）。(3) 定位备查：BAT 星上 183.074/−67.689（3′，90% 含系统差，GCN 19866）；BAT 精化 183.120/−67.664（2.6′ sys+stat，90%，GCN 19872；swift_bat 快照 183.1348/−67.65477、2.75′ 与 GCN 略异，目录口径备查）；XRT 初测 183.11400/−67.66411（3.8″，90%，GCN 19866）——原库 ra/dec 即此初测值，本次更新为 GCN 19868 精化值；UKSSDC XRT live 目录 enhanced 定位 183.11307/−67.66429（2.0″，90%，快照 2026-07-21）备查。(4) SCHEMA 外物理量并列：T90=52.6±14.5 s（15-350 keV，GCN 19872）=52.616±14.393 s（swift_bat 快照）；fluence=4.9±0.9×10⁻⁷ erg/cm²（15-150 keV，GCN 19872；swiftgrbba 快照同）；1-s 峰光子流量 0.4±0.1 ph/cm²/s（15-150 keV，自 T+4.64 s 起）；BAT 谱指数（PL）1.54±0.29；部分编码 100%；XRT：N_H=9.1(+3.3,−2.7)×10²¹ cm⁻²（超银向值 4.6×10²¹）、Γ=1.68(+0.31,−0.28)、衰减 α=1.64(+0.06,−0.05)（GCN 19868）；XRT 首测流量 5.77×10⁻¹⁰ erg/cm²/s（0.2-10 keV，2.5 s 图像，GCN 19866）；T+24 h 预报流量 1.2×10⁻¹⁴（未吸收 1.7×10⁻¹⁴）erg/cm²/s（GCN 19868）。E(B-V)=0.47（GCN 19866/19871，Schlegel et al. 1998）。红移：无任何来源给出，保持 null。T90>2 s 但通告未作正式长短分类，sub_tag 按 §3.9 不自算、留空。(5) 别名出处：'GRB 160826A'（GCN 19866 subject / swiftgrbba name / MPE Greiner 表用名）；'BAT 709907'（GCN 19866 trigger=709907；swift_bat 目录 Trig_ID，GRB151004A 'BAT 657564' 同形先例）。(6) 测光增补（lc/GRB160826A.csv，9 行上限）：GCN 19871 UVOT 全表（white_FC>21.1、u_FC>19.8、white>22.1、v>19.8、b>20.2、u>19.8、uvw1>19.0、uvm2>19.3、uvw2>19.9；均 3σ、Vega（UVOT 光度系统，原文引 Breeveld et al. 2011）、未银消改正（E(B-V)=0.47）；T_start/T_stop 窗口中点/半宽为约定口径；FC 行与其对应滤光片 coadd 行为同滤光片不同累计窗口的独立发表测量，均保留）；swiftgrbba 快照 uvot_mag='B>20.2; U>19.8; UVW1>19.0; UVM2>19.3; UVW2>19.9; White>22.1' 与 coadd 行一致（不含 FC 行）。(7) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文检索 4 篇命中（19866/19868/19871/19872，subject 自含源名，检索词有效）；'160826' 另命中 29081-29083 三篇，核对为 GRB 201218A/IceCube-201209A 通告内数字串，假阳性；触发号 '709907' 命中 3 篇即上述通告、无额外命中；external/rssgrbag/lightcurve.jsonl、grbsn_webtool/SourceData、uvot_grb、heasarc_grbcat、swift_grb、fermi_lat 均 0 命中（swift_xrt_live 1 行目录级参数，非测光）；GCN 站（gcn.nasa.gov/circulars）检索 '160826A' 4 篇，与本地一一对应、无缺件；ADS/SciX abs: 检索 4 命中（均为上述 4 篇 GCN）、full: 检索 20 命中（正文实质相关仅 1 篇：Xin+2026, ApJ 1008, 181，X 射线喷流拐折样本，对本源仅给 XRT 光变 BPL 拟合参数（tb、α1、α2），无光学/UV 测光表，其余 19 篇为触发号等数字串假阳性；IOP VoR 页面被 Radware 验证码拦截，全文经 arXiv:2608.07060 核对）；OpenAlex 3 命中（同 GCN）、Crossref 无实质命中；TNS 不适用（GRB 类）。结论：已发表光学/UV 数据仅 GCN 19871 UVOT 上限 → 补 9 行；Xin+2026 的 X 射线数据不入库（X 射线暂不审核）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2016-08-26T06:12:38.274100Z 为 Swift/BAT 星上触发时刻（trigger 709907）：swift_bat 官方目录 Trig_time_UTC；GCN 19866 整秒一致；XRT 起测 06:14:20.8 UT = T0+102.5 s 反算互证",
+    "t0_basis": "GCN 19866（Mingo et al., Swift team）'At 06:12:38 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒）+ Swift/BAT 官方目录快照 Trig_time_UTC=2016-08-26T06:12:38.274100 UTC（external/swift_bat，亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 19866",
+      "url": "https://gcn.nasa.gov/circulars/19866",
+      "title": "GRB 160826A: Swift detection of a burst",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19868",
+      "url": "https://gcn.nasa.gov/circulars/19868",
+      "title": "GRB 160826A: Swift-XRT refined Analysis",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19871",
+      "url": "https://gcn.nasa.gov/circulars/19871",
+      "title": "GRB 160826A: Swift/UVOT Upper Limits",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19872",
+      "url": "https://gcn.nasa.gov/circulars/19872",
+      "title": "GRB 160826A: Swift-BAT refined analysis",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Xin+2026",
+      "url": "https://doi.org/10.3847/1538-4357/ae9877",
+      "title": "Constraining Circumburst Environments of GRBs with Jet Break Features in X-Ray Afterglows",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
