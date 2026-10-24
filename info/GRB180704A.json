@@ -1,28 +1,95 @@
 {
   "transient_id": "GRB180704A",
-  "alias": [],
+  "alias": [
+    "BAT 846088"
+  ],
   "ra": 32.66048,
   "dec": 69.96408,
-  "T0": "2018-07-04T05:37:23Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "T0": "2018-07-04T05:36:42.855940Z",
+  "T0_ref": "Swift/BAT 官方目录快照 trigger_time=2018-07-04T05:36:42.855940 UTC（external/swift_bat，trigger 846088）；GCN 22885（Sonbas et al., Swift team）\"At 05:36:42 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 180704A\"（整秒一致）",
+  "T0_offset": -20.6,
+  "T0_offset_ref": "GCN 22918（Konus-Wind 于 T0(BAT)-20.602 s＝05:36:22.254 UT 触发）；GCN 22894（BAT 精化光变首峰起于 ~T-21 s，互证）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.5,
   "pos_ref": "GCN 22890",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) **T0 更正**：原值 2018-07-04T05:37:23Z 系 bot 误把 MASTER 观测起始时刻当触发时刻（GCN 22886：MASTER-IAC 于 05:37:23 UT 开始观测，自述 \"41 sec after trigger time\"；extra_data 原值 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=\"meta_trigger\" 即此误植，已在 extra_data 改写、原值留此备查）。本暴为 Swift/BAT 触发（GCN 22885：\"At 05:36:42 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 180704A (trigger=846088)\"），T0 改为 2018-07-04T05:36:42.855940Z：整秒锚 GCN 22885，亚秒取触发仪器 Swift/BAT 官方目录快照（external/swift_bat；§3.2/§3.8 触发仪器亚秒值为准）。互证：XRT 于 06:26:11.9 UT（触发后 2969.1 s，GCN 22887）开始观测，反算触发 05:36:42.8；AstroSat/CZTI 最强峰 05:36:43.500 UT（GCN 22901）。(2) **T0_offset=-20.6 s**：Konus-Wind 于 05:36:22.254 UT 触发（早于 BAT 触发 20.602 s，GCN 22918），GCN 22894 BAT 精化光变首峰亦起于 ~T-21 s，互证为自动触发 T0 之前的真实爆发辐射（§3.2 取负值）；Konus 自述 waiting mode 可能在 T0(KW)-62 s 处另有前锋，记此备查。(3) **Trigger_Instrument**：Swift/UVOT → Swift/BAT（GCN 22885 明确 BAT 触发；UVOT 是后续观测设备，原值为导入误植；参考 GRB150513A/GRB151004A 同类改法）。(4) 定位：ra/dec=32.66048/+69.96408、pos_error=1.5″ 维持 GCN 22890 enhanced Swift-XRT position（radius 1.5 arcsec、90% confidence 原文明确），补 pos_error_confidence=90。备查：BAT 地面精化定位 32.605/+69.965（1.3′ sys+stat 90%，GCN 22894）；BAT 船载初定位 32.638/+69.948（3′ 90%，GCN 22885）；XRT 初步增强定位 32.6592/+69.9641（2.1″ 90%，GCN 22887）。(5) tag=grb；sub_tag=lgrb（GCN 22901 \"detection of a long GRB 180704A\"、GCN 22918 \"The long GRB 180704A\" 有明确长短分类表述，按 §3.9 采来源分类）。T90=19.7±1.4 s（15-350 keV，GCN 22894）/26 s（CZTI 40-200 keV，GCN 22901）、BAT 谱 PL 光子指数 1.22±0.10、fluence=(6.2±0.4)e-6 erg/cm²（15-150 keV，GCN 22894）、Konus fluence=(1.8±0.1)e-5 erg/cm²（20 keV-10 MeV，GCN 22918）等 SCHEMA 外物理量记此备查。(6) 红移：无任何实测，维持 null。银消 E(B-V)=0.87（Schlegel+1998，GCN 22893）、Galactic NH=4.92e21 cm^-2（Willingale+2013，GCN 22887/22895）记此备查。(7) 测光检索（2026-10-24，§3.3 留证）：仓内 gcn/archive 全文 9 篇（22885/22886/22887/22890/22893/22894/22895/22901/22918；其中 2 篇含光学上限：22886 MASTER-IAC 14.2 mag 5σ、22893 UVOT 7 波段 3σ）；external/rssgrbag/lightcurve.jsonl 0 行、external/grbsn_webtool/SourceData 无该事件；GCN 站检索 9 篇（gcn.nasa.gov/circulars?query=180704A，与仓内一致）；ADS/SciX 不可用（api.adsabs.harvard.edu 401 无 token、api.scixplorer.org 被 WAF challenge 拦截、scixplorer.org 网页 SPA 无渲染内容，本机实测）；arXiv API 兜底检索 \"GRB 180704A\"/\"GRB 180704\"/\"180704A\"（export.arxiv.org，API 仅覆盖题录元数据）0 命中 → 补 8 行上限（UVOT 7 行＋MASTER-IAC 1 行），本 PR 新增 8 行。(8) alias 补 \"BAT 846088\"（swift_bat 目录 name_alt 原形）。(9) X 射线：XRT 谱/光变结果（GCN 22887/22895）不入库（§3.3 暂不处理），lc 无 X 射线行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "审核更正（2026-10-24）：t0 改为 Swift/BAT 触发时刻 05:36:42.855940Z；原 bot 值 2018-07-04T05:37:23Z 为 MASTER 观测起始时刻误植（原 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=\"meta_trigger\"，详见 comment）",
+    "t0_basis": "swift_bat 目录快照 trigger_time（external/swift_bat）＋GCN 22885（整秒一致）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 22885",
+      "title": "GRB 180704A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/22885",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22886",
+      "title": "GRB 180704A: MASTER optical observation",
+      "url": "https://gcn.nasa.gov/circulars/22886",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22887",
+      "title": "GRB 180704A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/22887",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22890",
+      "title": "GRB 180704A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/22890",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22893",
+      "title": "GRB 180704A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/22893",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22894",
+      "title": "GRB 180704A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/22894",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22895",
+      "title": "GRB 180704A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/22895",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22901",
+      "title": "GRB 180704A: AstroSat CZTI detection",
+      "url": "https://gcn.nasa.gov/circulars/22901",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 22918",
+      "title": "Konus-Wind observation of GRB 180704A",
+      "url": "https://gcn.nasa.gov/circulars/22918",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
