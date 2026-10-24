@@ -464,7 +464,7 @@ def check_denied(info_ids, lc_ids):
     """已否证源清单（警告级）：字段完整、reason_code 合法、不重复、源不得复活。
 
     契约见 audit/README.md 的「denied.tsv」小节，背景见 Issue #183。
-    核心判据只有一条：**denied 里的源不得再出现 info/lc 文件**——出现了说明导入管线把它
+    核心判据只有一条：**denied 里的源不得再出现 info/lc 文件**——出现了说明源被重新导入/误恢复
     重建了，这时要按 evidence 重新否证，而不是当成新源从头审。
     """
     if not os.path.exists(DENIED_TSV):
@@ -505,7 +505,7 @@ def check_denied(info_ids, lc_ids):
                 warn(f'{rel}:{n}: {sid} 的 date={row["date"]!r} 不是 YYYY-MM-DD')
         if sid in info_ids or sid in lc_ids:
             warn(f'{rel}:{n}: 源 {sid} 已被否证（{row["reason_code"]}，{row["ref"]}），'
-                 f'但 info/lc 文件又出现了 → 导入管线重建？按 evidence 重新否证，不要从头审核')
+                 f'但 info/lc 文件又出现了 → 被重新导入/误恢复？按 evidence 再否证一次，不要从头审核')
 
 
 def main():
