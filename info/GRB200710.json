@@ -1,28 +1,53 @@
 {
   "transient_id": "GRB200710",
-  "alias": [],
+  "alias": [
+    "GRB 200710A",
+    "bn200710036"
+  ],
   "ra": 77.88,
   "dec": 3.98,
-  "T0": "2020-07-10T00:52:07Z",
-  "T0_ref": null,
+  "T0": "2020-07-10T00:52:07.073Z",
+  "T0_ref": "GCN 28073（Fermi GBM Team，触发 00:52:07 UT）；FERMIGBRST bn200710036 trigger_time 2020-07-10T00:52:07.073Z（仓内 external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 16.6,
+  "pos_ref": "GCN 28073",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "身份修正：原导入 Trigger_Instrument=Swift/BAT 有误。Swift/BAT GRB 目录快照（仓内 external/swift_bat，1668 条，2004–2025）2020-07-10 无任何触发；GCN 28073（Fermi GBM Team，2020-07-10）证实本源为 Fermi/GBM 触发（trigger 616035132.072806 / bn200710036），分类 likely SHORT GRB，地面定位 RA=77.9°, Dec=4.0°（J2000，统计误差 16.6°），与库内 ra/dec=77.88/3.98（GBM 目录值，GCN 值为其 1 位小数舍入）一致。T0：GCN 28073 给 00:52:07 UT（整秒，即原 T0）；按触发仪器官方目录 FERMIGBRST（仓内 external/fermi_gbm 快照，bn200710036）补亚秒为 00:52:07.073Z，两来源整秒一致。pos_error=16.6° 取自 GCN 28073，来源未标注置信水平（原文仅称 statistical uncertainty）。非 SCHEMA 量（均自仓内 external/fermi_gbm 快照 bn200710036）：T90=0.288±1.31356 s（50–300 keV）；fluence=8.48776e-08±2.377e-08 erg/cm²（10–1000 keV）；peak_flux=6.52466±0.944502 ph/cm²/s（10–1000 keV，64 ms）；Epeak=442815.0±428242.59 eV（BAND，obs frame，误差与中心值同量级，谱形基本无约束）。测光检索（2026-10-25）：仓内 gcn/archive 本地未获取，经 GCN 网站检索——事件页 grb-200710a 与 grb-200710 合计仅 1 篇相关 Circular（28073，自动定位通告，无任何后随观测）；仓内 external 快照 rssgrbag（光变表）/grbsn_webtool（63 事件）/swift_xrt_live/uvot_grb/swiftgrbba/fermi_lat/swift_bat 均无 200710 记录，fermi_gbm 仅上述目录条目（无测光）；网络文献检索（Google 索引覆盖 arXiv/期刊；SciX 网页为 JS 应用，文本抓取不可达）命中 1 篇：Wang & Ma 2026, ApJ 1003, 168（arXiv:2604.13879）表 3，系统计转引（参数取自 IceCube GRBweb，红移 0.50 为原文带†的假定值，不采纳），无任何测光；TNS 检索无该源。结论：无可用测光，补 0 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 28073",
+      "url": "https://gcn.nasa.gov/circulars/28073",
+      "title": "GRB 200710A: Fermi GBM Final Real-time Localization",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Wang+2026",
+      "url": "https://arxiv.org/abs/2604.13879",
+      "title": "Correlation between Ultrahigh-Energy Neutrino KM3-230213A and Gamma-Ray Bursts",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
