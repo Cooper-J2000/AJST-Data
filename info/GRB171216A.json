@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB171216A",
-  "alias": [],
-  "ra": 211.9924,
-  "dec": -50.4851,
-  "T0": "2017-12-16T14:25:47Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 171216A",
+    "BAT 797441"
+  ],
+  "ra": 211.99069,
+  "dec": -50.48474,
+  "T0": "2017-12-16T03:06:59.453420Z",
+  "T0_ref": "GCN 22256（Swift/BAT trigger=797441，触发时刻 03:06:59 UT）；亚秒值取 Swift/BAT 官方目录 2017-12-16T03:06:59.453420Z（external/swift_bat 快照，整秒与 GCN 22256 一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.5,
   "pos_ref": "GCN 22257",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "T0 更正：原 bot 值 2017-12-16T14:25:47Z 为同日异源 GRB 171216B 的 Konus-Wind/INTEGRAL/HEND 探测时刻（GCN 22263 原文 \"detected ... at about 51947 s UT (14:25:47)\"），系跨源串扰误植；更正为 Swift/BAT 触发时刻（trigger=797441）。原 extra_data t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\" 失真，已按提示词 §3.10 改写，原值保留于此。坐标同步 GCN 22257 加强位置（原 ra/dec 211.9924/-50.4851 为 GCN 22256 初步加强位置，pos_error 2.1 arcsec；22257 天测改正后 1.5 arcsec，90% 置信）。alias：\"GRB 171216A\" 为 GCN 用名；\"BAT 797441\" 据 external/swift_bat 快照 name_alt。物理量并列：T90=30.0±7.5 s（15-350 keV，GCN 22259；BAT 目录 30.08±7.586 s）；fluence=4.8±1.0e-7 erg/cm2（15-150 keV，90%，GCN 22259）；1-s 峰值光子流量 0.8±0.2 ph/cm2/s（15-150 keV，GCN 22259）；Galactic NH=2.84e21 cm^-2（GCN 22256）；E(B-V)=0.26（Schlegel+1998，GCN 22262）。XRT 探测到余辉（GCN 22260：早期衰减 α=2.9，T+456 s 拐折后 α=0.86）；UVOT 未探测到光学余辉（GCN 22262，已入库 8 行上限），距 XRT 位置约 10\" 有亮源可能影响。无红移测定。测光检索留证（2026-10-24）：仓内 gcn/archive 全文检索 \"171216A\"/\"GRB 171216A\"/触发号 \"797441\" → 5 篇（22256/22257/22259/22260/22262，均已在库或本次入库；22262 为唯一含光学数值者）；external/rssgrbag 光变快照与 grbsn_webtool 事件集均无该事件记录；ADS 检索查询串 \"GRB 171216A\" 与 \"171216A\" 各命中 5 条（2017GCN.22256/22257/22259/22260/22262，全部为 GCN Circular，无正式发表文献）；GCN 站序列 22258/22261 经查为其他暴（171205A/171210A）；TNS 不适用（GRB 类）→ 补 GCN 22262 UVOT 上限 8 行，其余无可入库测光。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger=797441）；亚秒值 03:06:59.453420 取自 Swift/BAT 官方目录，整秒与 GCN 22256 一致；原 bot 值 2017-12-16T14:25:47Z 为同日 GRB 171216B 的 Konus-Wind 探测时刻串扰（GCN 22263），已更正并保留于 comment",
+    "t0_basis": "swift_bat_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
   "articles": [],
   "host_galaxy": null
