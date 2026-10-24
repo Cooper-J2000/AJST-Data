@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB170306B",
   "alias": [
-    "GRB 170306588"
+    "GRB 170306.588",
+    "bn170306588"
   ],
-  "ra": 154.5399932861328,
-  "dec": 51.54999923706055,
-  "T0": "2017-03-06T14:07:27.270000Z",
-  "T0_ref": null,
+  "ra": 154.62,
+  "dec": 51.59,
+  "T0": "2017-03-06T14:07:22.273Z",
+  "T0_ref": "FERMIGBRST（bn170306588）触发时刻；GCN 20826（LAT）/20827（GBM）一致给 14:07:22.27 UT（整数秒一致，取触发仪器 GBM 目录亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +15,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 2196,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 20826",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 目录数据导入新建 (Ajello+2019)，无测光行入库。T0：原值 2017-03-06T14:07:27.270000Z 系 2FLGC trigger_met=510502047.27 未扣闰秒直换（MET 纪元 2001-01-01，2017-01-01 起累计 5 闰秒，Issue #109 族），现改为触发仪器 GBM 的 FERMIGBRST 亚秒触发时刻 14:07:22.273Z；GCN 20826（LAT）与 GCN 20827（GBM）均给 14:07:22.27 UT（整数秒一致）；FERMILGRB trigger_time=14:07:22.002Z 亚秒不同，以触发仪器 GBM 目录为准；Konus-Wind 自触发 14:07:30.920 UT（GCN 20831）、POLAR 自触发 14:07:20.0 UT（GCN 20839）为各仪器自身触发时刻，不与 GBM T0 矛盾。定位：原 ra/dec=154.5399932861328/51.54999923706055 实为 2FLGC/FERMILGRB 目录值 154.54/51.55（float32 残渣，误差半径 0.71 deg）但原 pos_ref 误标 GCN 20826；现改用 GCN 20826 的 LAT 精确定位 154.62/51.59（0.61 deg，90% 包含，仅统计误差），与仓内 FERMIGBRST 快照（154.62/51.59，±0.6 deg）一致；MPE 表 154.65/51.633（误差 39′，IPN 标记）并列备查。别名：原 'GRB 170306588' 为「日期+9 位触发号」拼接伪形（空格形），删除；改收快照 name_alt 点号形 'GRB 170306.588'（FERMIGBRST 与 FERMILGRB/2FLGC）与 bn 形 'bn170306588'（FERMIGBRST）。物理量多来源并列：T90=18.9444±0.923046 s（50-300 keV，FERMIGBRST）；GCN 20827 给 ~18.7 s；Konus-Wind ~25 s（20 keV-10 MeV，GCN 20831）；POLAR 25.0±1.0 s（15-300 keV，GCN 20839）。fluence=2.69204e-5±7.17294e-8 erg/cm2（10-1000 keV，FERMIGBRST）；GCN 20827 (3.07±0.06)e-5；Konus (3.4±0.4)e-5（20 keV-10 MeV）。1-s 峰光子流量 12.4±0.3 ph/cm2/s（T0+8.7 s 起，10-1000 keV，GCN 20827）；FERMIGBRST 64 ms 峰值 15.1841±1.23802 ph/cm2/s。LAT：T_L100=50.37±9.85 s、延伸辐射最高光子 500 MeV 于 T0+43.25 s（2FLGC 快照）；GCN 20826：300 s 内 >10 个 >100 MeV 光子，最高 500 MeV 于 GBM 触发后 46 s；高峰值流量触发自主重指向（ARR）。X 射线（不入 lc）：Swift 铺格 XRT 观测（T0+17.4 ks 至 T0+29.9 ks，全 PC 模式）未发现未编目 X 射线源，3σ 上限 0.007-0.021 ct/s ≈ 2.9e-13 至 8.5e-13 erg/cm2/s（0.3-10 keV，GCN 20830）；无 UVOT 通告。测光检索（2026-10-24）：仓内 gcn/archive 全文检索（'GRB 170306B'/'GRB170306B'/'170306588'/'170306' 多变体，对照组同日 GRB 170306A 命中有效）命中本暴 6 篇通告（20825/20826/20827/20830/20831/20839），另 9 篇为同日 GRB 170306A（8 篇）与 GRB 181125A 假阳性（1 篇）；6 篇均无光学/红外测光；GCN 站核对邻近号 20824-20842 主题，无本地缺件；external 快照：fermi_gbm/fermi_lat/mpe_greiner 仅目录参数，rssgrbag/grbsn_webtool/uvot_grb/swift_grb/heasarc_grbcat 无记录；ADS q=(abs:(\"GRB 170306B\") OR title:(\"GRB 170306B\") OR full:(\"GRB 170306B\")) 命中 7 篇= 上述 6 GCN + Berti+2019（ICRC 36, 634，MAGIC VHE 样本表 1 仅列 T0/T90/观测时长 22 min，无测光，VHE 能段超出库 band 两车道不入库）；无空格变体与触发号 510502047 检索 0 命中；TNS 不适用（GRB 非 AT/SN 类）。结论：无可用光学测光，补 0 行。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -133,8 +135,54 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog"
+    },
+    {
+      "name": "Omodei+2017",
+      "url": "https://gcn.nasa.gov/circulars/20826",
+      "title": "GRB 170306B: Fermi-LAT detection"
+    },
+    {
+      "name": "Veres+2017",
+      "url": "https://gcn.nasa.gov/circulars/20827",
+      "title": "GRB 170306B: Fermi GBM detection"
+    },
+    {
+      "name": "Evans+2017",
+      "url": "https://gcn.nasa.gov/circulars/20825",
+      "title": "GRB 170306B: Tiled Swift observations"
+    },
+    {
+      "name": "DElia+2017",
+      "url": "https://gcn.nasa.gov/circulars/20830",
+      "title": "GRB 170306B: Swift-XRT observations"
+    },
+    {
+      "name": "Frederiks+2017",
+      "url": "https://gcn.nasa.gov/circulars/20831",
+      "title": "Konus-Wind observation of GRB 170306B"
+    },
+    {
+      "name": "Xiao+2017",
+      "url": "https://gcn.nasa.gov/circulars/20839",
+      "title": "GRB 170306B: POLAR observation"
+    },
+    {
+      "name": "Berti+2019",
+      "url": "https://doi.org/10.22323/1.358.0634",
+      "title": "Searching for GRBs at VHE with MAGIC: the status before CTA"
+    }
+  ],
   "host_galaxy": null
 }
