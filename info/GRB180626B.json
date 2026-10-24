@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB180626B",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2018-06-26T08:21:16Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 180626B",
+    "GRB180626B",
+    "GRB 180626BS"
+  ],
+  "ra": 214.555,
+  "dec": 12.412,
+  "T0": "2018-06-26T01:47:22.786Z",
+  "T0_ref": "GCN 22866",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Konus-Wind",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 22863",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "短暴。触发仪器 Konus-Wind：T0=6442.786 s UT=2018-06-26T01:47:22.786Z（GCN 22866；Ioffe 官方页面 www.ioffe.ru/LEA/GRBs/GRB180626_T06442/ 同值互证）。原库 T0=2018-06-26T08:21:16Z 系同日异源 T0 污染——恰为同日 GRB 180626A 的 Swift/BAT 触发时刻（trigger 844615，GCN 22862），审核修正并保留原值于此。另被 Mars-Odyssey(HEND)、INTEGRAL SPI-ACS 与 Swift/BAT（编码视场外，无在轨触发号）探测，IPN 三角定位（GCN 22863）。位置：ra/dec 为 IPN 3σ 误差盒中心（RA 214.555, Dec +12.412, J2000），盒面积 4.7 平方度、最长维 17.2°、最短维 29′；盒非圆形，单一半径无法忠实表达，pos_error 留空；与短暴 GRB 180626C（GCN 22864）定位不一致。GCN 22866（Konus-Wind，全部误差为 90% 置信、初步值）：单脉冲光变，自 ~T0-0.1 s 起、总时长 ~0.3 s，辐射可见至 ~2 MeV；20 keV–10 MeV 流量 7.69(-1.24,+1.35)E-7 erg/cm2；16 ms 峰值流量 7.35(-2.79,+3.01)E-6 erg/cm2/s（自 T0+0.004 s 起）；时均谱（T0–T0+0.192 s）20 keV–4 MeV 用截止幂律拟合 alpha=-0.13(-0.54,+0.73)、Ep=218(-43,+60) keV。别名 GRB 180626BS 出处：external/mpe_greiner 快照 name_alt（该目录记 IPN 定位 RA 214.5542/Dec +12.4167，与 GCN 22863 中心一致）。测光检索（2026-10-24）：仓内 gcn/archive 全文检索 'GRB 180626B'/'GRB180626B'/'180626' 共命中 22 篇，涉本暴仅 3 篇（GCN 22863/22866/22878，其余为同日 180626A/C）；external/rssgrbag、grbsn_webtool、uvot_grb、heasarc_grbcat、fermi_gbm、swift_bat、konus_wind 快照均无本暴测光记录（mpe_greiner 有条目但无光变）；ADS 检索 q=\"GRB 180626B\" 与 q=180626B 各命中 4 篇（2018GCN.22863....1H、2018GCN.22864....1S、2018GCN.22866....1K、2018GCN.22878....1L，均为 GCN 通告、无期刊文献给出本暴测光）；GCN 站 circulars/22878 全文与本地存档一致；TNS 不适用（非 AT/SN/CV 类）。可用测光仅 GCN 22878 GOTO 非探测上限 1 条，已入库（见 lc/GRB180626B.csv）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-24 审核修正为 Konus-Wind 触发时刻 6442.786 s UT（GCN 22866；Ioffe 官方页面同值互证）；原 bot 值 2018-06-26T08:21:16Z 为同日 GRB 180626A 的 Swift/BAT 触发时刻（同日异源 T0 污染）",
+    "t0_basis": "GCN 22866",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
   "articles": [],
   "host_galaxy": null
