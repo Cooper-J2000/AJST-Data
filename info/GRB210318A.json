@@ -1,28 +1,71 @@
 {
   "transient_id": "GRB210318A",
-  "alias": [],
-  "ra": 33.9263,
-  "dec": -37.7772,
-  "T0": "2021-03-18T17:56:12Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1037339"
+  ],
+  "ra": 33.92621,
+  "dec": -37.77693,
+  "T0": "2021-03-18T03:54:31.681Z",
+  "T0_ref": "GCN 29662（Swift/BAT triggered at 03:54:31 UT，trigger 1037339）；HEASARC Swift/BAT 目录快照 trigger_time=2021-03-18T03:54:31.681240Z（swiftgrbbA 快照 03:54:31.000Z 与 GCN 整秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.4,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 29670",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-25）：[身份] Swift/BAT trigger 1037339，GCN 29662 记触发 03:54:31 UT（整秒），HEASARC Swift/BAT 目录快照 trigger_time=2021-03-18T03:54:31.681240Z，swiftgrbbA 快照 03:54:31.000Z，三源互证；swift_xrt_live 快照位置 33.92617/-37.77681（2.7″）与 GCN 29670 一致。同日 GRB 210318B 为另一 Swift 触发（trigger 1037335，03:08:33 UT，GCN 29663）；GCN 29663/29664/29666/29668/29675/29695 均属 210318B，已划界。[T0] 原库 T0=2021-03-18T17:56:12Z（bot 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）实为 GCN 29665 中 MASTER-SAAO 指向时刻（trigger 后 50501 s，03:54:31+50501 s=17:56:12），系 bot 误植，已更正为 Swift/BAT 触发时刻 2021-03-18T03:54:31.681Z；全档案检索该时刻仅 GCN 29665（本源）与 GCN 36365（无关 Fermi 暴）命中。[定位] 原坐标 33.9263/-37.7772 为 GCN 29662 增强 XRT 位置（3.2″，90%），与 pos_ref=GCN 29670（2.4″）不自洽，已改为 GCN 29670 精化位置 33.92621/-37.77693（radius，90% confidence，原文明示）。[分类] tag=grb（GCN 29662）；T90=48.00±22.63 s（15–350 keV，GCN 29672）、fluence=6.4±1.3e-7 erg/cm2（15–150 keV，GCN 29672）仅备查；各 GCN 未给长短分类，sub_tag 留空（不以 T90 自算）。[别名] BAT 1037339 取自 HEASARC Swift/BAT 目录快照 name_alt 字段。[测光检索（2026-10-25）] 仓内 gcn/archive 45 589 篇全文双路检索（grep+python）：命中本源 6 篇（29662/29665/29670/29671/29672/29706，其中 29665 与 29706 含光学上限数值）；external/rssgrbag 无记录；external/grbsn_webtool 无该事件；GCN 站（gcn.nasa.gov）6 篇，与仓内一致；ADS API 无 token（实测 401），SciX 网页端为 JS 应用未获结果；arXiv API 兜底（all:「210318A」「GRB 210318A」「1037339」）均 0 篇 → 有明确时间锚点的上限 6 行（GCN 29706 UVOT 5 行 + GCN 29665 MASTER-SAAO 1 行）已入 lc，本 PR 新增 6 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1037339）；原 bot 值 2021-03-18T17:56:12Z 系 GCN 29665 MASTER-SAAO 指向时刻误植，原值保留于 comment",
+    "t0_basis": "GCN 29662 + swift_bat 快照 trigger_time",
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "wa1kmoon@zcode", "date": "2026-10-25"}
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Troja+2021",
+      "url": "https://gcn.nasa.gov/circulars/29662",
+      "title": "GRB 210318A: Swift detection of a burst",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Lipunov+2021",
+      "url": "https://gcn.nasa.gov/circulars/29665",
+      "title": "Swift GRB 210318A: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Osborne+2021",
+      "url": "https://gcn.nasa.gov/circulars/29670",
+      "title": "GRB 210318A: Enhanced Swift-XRT position",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Sbarufatti+2021",
+      "url": "https://gcn.nasa.gov/circulars/29671",
+      "title": "GRB 210318A: Swift-XRT refined Analysis",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Sakamoto+2021",
+      "url": "https://gcn.nasa.gov/circulars/29672",
+      "title": "GRB 210318A: Swift-BAT refined analysis",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Siegel+2021",
+      "url": "https://gcn.nasa.gov/circulars/29706",
+      "title": "GRB 210318A: Swift/UVOT Upper Limits",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
