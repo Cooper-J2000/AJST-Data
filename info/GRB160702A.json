@@ -1,26 +1,27 @@
 {
   "transient_id": "GRB160702A",
   "alias": [
-    "GRB 160702516"
+    "GRB 160702.516"
   ],
-  "ra": 231.08999633789062,
-  "dec": 9.069999694824219,
-  "T0": "2016-07-02T12:22:28Z",
-  "T0_ref": null,
+  "ra": 231.09,
+  "dec": 9.07,
+  "T0": "2016-07-02T12:22:24.054Z",
+  "T0_ref": "GCN 19667（Frederiks+2016，Konus-Wind 团队）：'The short GRB 160702A ... triggered Konus-Wind at T0=44544.054 s UT (12:22:24.054)'；Konus-Wind 为触发仪器（GCN 19666 IPN 通告列 Konus-Wind/INTEGRAL SPI-ACS/HEND/Swift-BAT 探测，Ajello+2019 §4.1 列本暴为 6 个由 IPN 通告、未触发 GBM 的 LAT 暴之一）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Konus-Wind",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 756,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，ERR=0.21°=756″，90% 包含、统计误差，Ajello+2019 §4.1；FERMILGRB 行 fermilgrb_w3browse_full.txt 2026-10-24 复核）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode 2026-10-24：(1) 身份=短暴 GRB 160702A：Konus-Wind 触发（GCN 19667，Frederiks+2016），IPN 三角定位（GCN 19666，Hurley+2016：Konus-Wind、INTEGRAL SPI-ACS、Mars-Odyssey HEND、Swift-BAT 探测，BAT 在编码视场外；3σ 误差框中心 RA=230.889°/Dec=+8.715°（15h23m33s +08d42'54\"）、面积 1320 平方角分、长轴 1.194°、短轴 22′；原文笔误 '1320 sq. arcsin' 应为 sq. arcmin），MPE Greiner 表 X 射线位置 15h23m33s +08°43′（72×22）与 IPN 框中心一致；Fermi/LAT 同步探测（2FLGC gcn_name=GRB160702A，tl100=274.06、TS=33.09，FERMILGRB 表）。Ajello+2019 §4.1：169 个 likelihood 探测中 10 个未触发 GBM、其中 6 个由 IPN 通告，本暴在列；Tang+2021 亦排除本暴的 GBM 分析（'its GBM data is not archived in the GBM catalog'）；FERMIGBRST 快照含 2016-07 多个触发行但无 2016-07-02 条目——三路独立佐证 GBM 未触发。LAT LTF 定位 231.09/+9.07 落在 IPN 误差框内。库内无同事件重复条目。(2) Trigger_Instrument：原值 'Fermi/GBM' 有误，改 Konus-Wind（触发仪器，GCN 19667）；LAT 为同步探测（非触发）仪器，sub_tag 保留 Fermi-LAT。(3) T0：原值 2016-07-02T12:22:28Z 系 bot 将 2FLGC trigger_met=489154948.0 自 2001-01-01 纪元直换、未扣 2006/2009/2012-07/2015-07 生效的 4 个闰秒（Issue #67/#109 同族，现第 8 例实锤），天真换算=2016-07-02T12:22:28.000 与原值完全一致（bug 复现）；现取触发仪器 Konus-Wind 的 T0=44544.054 s UT=2016-07-02T12:22:24.054Z（GCN 19667）；FERMILGRB/2FLGC 自带 trigger_time=2016-07-02T12:22:24.004Z（早 0.050 s，备查，差值 <60 ms）；GCN 19666 'at about 44544 s UT (12:22:24)'。lc 为空，直接改 T0 为触发时刻，T0_offset 留空（目录换算口径差，非真实爆发偏移）。(4) 位置：原 ra/dec 为 float32 残渣（231.08999633789062/9.069999694824219），还原 FERMILGRB 表发布精度 231.09/+9.07（15 24 21.6 +09 04 12）；pos_error 原为 null，补 FERMILGRB error_radius=0.21°=756″，confidence=90（Ajello+2019 §4.1：LAT 定位误差为 90% containment、statistical only）。(5) alias：删拼接伪形 'GRB 160702516'（Issue #69/维护者 2026-10 判例），收 'GRB 160702.516'（2FLGC/fermilgrb name_alt 点号形；快照 name_alt 另含伪值 '0'，不收；GBM 未触发、FERMIGBRST 无条目，故无 bn 形可收）。(6) 其他量值并列：T90=0.2 s（50-300 keV，FERMILGRB/2FLGC）vs GCN 19667 总持续 ~200 ms；Konus-Wind 注量 (2.5±0.7)e-06 erg/cm²、16-ms 峰能流 (3.0±0.4)e-05 erg/cm²（20 keV-10 MeV，峰自 T0-0.016 起），CPL 谱 alpha=-0.28(+0.48/-0.35)、Ep=782(+308/-186) keV（T0 至 T0+0.128 s，20 keV-10 MeV）、chi2=32.3/31 dof（GCN 19667，误差 90% c.l.）；LAT 高能辐射 T0+~1900 s 才出现、持续 ~300 s（Ajello+2019 §5.8，与快照 ext_emission_max_ene_t=1941.52 s 相合）。(7) 测光检索（2026-10-24）：仓内 gcn/archive 全文检索（'GRB 160702A'/'160702A'/'160702516'/'160702.516'/'489154948'/'160702' 多变体；对照组 'GRB 160625A' 命中 9 篇、验证有效）命中 2 篇（GCN 19666/19667，均只报 IPN 定位与 Konus-Wind 伽马光变/谱结果，无光学/射电测光或上限）+1 篇假阳性（GCN 28991，GRB 201203A 通告）；external/rssgrbag（光变 140 行）0 命中、grbsn_webtool 无本事件、uvot_grb/swift_bat/swiftgrbba/swift_xrt_live/agile_mcal/saxgrbmgrb/batse/konus_wind/guidorzi2025/liang2023/minaev2020/wang2022 快照均无 160702 记录（swift_grb 止于 2012-12-29、heasarc_grbcat 止于 2005-03-09，早于本源，不适用）；GCN 站 circulars 检索 160702A 共 2 篇（无缺件）；ADS abs/title 命中 2 篇（即 2 篇 GCN）、full 命中 6 篇（除 2 篇 GCN 外：Ajello+2019 2FLGC 只给总结参数与图版光变，无可引用测光表；Fermi-LAT Collaboration 2021, Nat Astron 5, 385, DOI 10.1038/s41550-020-01287-8 仅 Extended Data Fig. 7 图注提及本暴，无表；Kimura+2019, ApJL 887, L16 仅一句理论提及；Tang+2021, ApJ 922, 255 明确排除本暴）；TNS 不适用（GRB 类，无 AT/SN 命名）→ 无可用测光，补 0 行。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -74,8 +75,27 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Tang+2021",
+      "url": "https://doi.org/10.3847/1538-4357/ac26ba",
+      "title": "Prevalence of Extra Power-Law Spectral Components in Short Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
