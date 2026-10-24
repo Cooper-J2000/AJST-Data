@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB150820A",
   "alias": [
-    "GRB 150820880"
+    "GRB 150820.880",
+    "GRB150820880",
+    "bn150820880"
   ],
   "ra": 258.6499938964844,
   "dec": -48.33000183105469,
-  "T0": "2015-08-20T21:07:19.642000Z",
-  "T0_ref": null,
+  "T0": "2015-08-20T21:07:15.642Z",
+  "T0_ref": "Fermi GBM catalog (fermigbrst, bn150820880) trigger_time=2015-08-20T21:07:15.642 UTC（仓内快照 external/fermi_gbm，取数 2026-07-21；无 GCN 通告，两目录互证：fermigbrst + fermilgrb）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 55260,
+  "pos_ref": "fermigbrst bn150820880 error_radius=15.35 deg（GBM 统计定位误差，极弱定位；fermilgrb 同值 15.3）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2015-08-20T21:07:19.642Z 系 bot 将 fermilgrb trigger_met=461797639.642 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006/2009/2012-07/2015-07 生效的 **4** 个闰秒，偏晚 4.000 s；证据：fermigbrst bn150820880 trigger_time=2015-08-20T21:07:15.642Z；461797639.642 s 天真换算=21:07:19.642Z 与原 T0 完全一致（bug 复现）；2FLGC/fermilgrb 自带 trigger_time=21:07:14.998Z 与 GBM 目录差 0.644 s（该表自身口径，未采用）。T0 按《数据审核提示词》§3.8 取 GBM 官方目录值（无 GCN 通告，GBM-only 型两路互证）。(2) pos_error 原为 null：fermigbrst error_radius=15.35（度，极弱统计定位）换算 15.35°=55260″ 填入；ra/dec=258.65/-48.33 与 fermigbrst 行定位一致（库内原值未动；fermilgrb 同位 err 15.3）；来源未标注置信水平。如此大的误差半径意味着本源实际定位仅具粗略指向意义，记此备查。(3) 红移：fermigbrst/fermilgrb 均无 redshift，GCN 无该源通告（2026-10-24 gcn/archive 全文检索 GRB 150820A/150820.880/bn150820880 均 0 篇），保持 null。(4) sub_tag 维持 Fermi-LAT（2FLGC 收录）；不加 lgrb/sgrb：GBM T90=5.888 s（50-300 keV）无来源作正式长短分类，按 §3.9 不得自算。(5) 身份：Fermi GBM trigger bn150820880（GRB 150820.880）=2FLGC GRB 150820A（fermilgrb gcn_name）；仓内无重复条目；当日仓内仅本源；swift_bat/swiftgrbba/grbcat/konus_wind 快照均无此源。(6) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文各名形 0 篇；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；GCN 站检索对字母名失效（实测，以全文档案为准）；ADS/SciX 检索不可用（2026-10-24 实测两 API 均 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 'GRB 150820A' 0 命中（export.arxiv.org，2026-10-24）→ 无可用测光，未补行，不建 lc。(7) alias：删 'GRB 150820880'（「日期+触发序列」空格拼接伪形，导入管线产物），补 GRB 150820.880（两目录 name_alt 原形）/GRB150820880（fermigbrst name 原形）/bn150820880（fermigbrst trigger_name）。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -127,8 +129,20 @@
         ],
         "trigger_time": "2015-08-20T21:07:14.998Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
