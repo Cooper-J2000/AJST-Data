@@ -1,28 +1,83 @@
 {
   "transient_id": "GRB200425A",
-  "alias": [],
-  "ra": 85.2198,
-  "dec": -13.4352,
-  "T0": "2020-04-25T17:01:17Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 200425A",
+    "BAT 967774",
+    "Swift 967774"
+  ],
+  "ra": 85.2195,
+  "dec": -13.43511,
+  "T0": "2020-04-25T00:16:21.762420Z",
+  "T0_ref": "GCN 27638（Bernardini et al., Swift team）：'At 00:16:21 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200425A (trigger=967774)'（整秒）；Swift/BAT 官方目录快照 trigger_time=2020-04-25T00:16:21.762420 UTC（swift.gsfc.nasa.gov/results/batgrbcat，仓内 external/swift_bat，取数 2026-07-21；亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.6,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 27639",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发的 GRB，无已发表光学余辉探测（lc 共 15 行、全部为上限）。审核 Rusty-Harpoon@zcode（2026-10-25）：(1) 身份与触发：GCN 27638 'At 00:16:21 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200425A (trigger=967774)'；BAT 在轨定位 85.241,-13.459（3′，90% 含系统性，GCN 27638）、地面精化 85.217,-13.399（2.0′，sys+stat，90%，GCN 27650）；仓内 swift_bat / swiftgrbba / swift_xrt_live（85.21953,-13.43511）/ mpe_greiner（IPN=y）快照一致；注意与同日 IceCube-200425A（高能中微子候选，RA 100.10 Dec +53.57，2020-04-25T23:26:46 UT，GCN 27651–27658）无关——相隔 >60°、晚 23 h；与 SGR 1935+2154（4 月 27–28 日暴发活动，GCN 27657+）亦无关；相邻 GCN 27636/27637/27640/27642/27648 属 GRB 200424A、27644 属 GRB 200425B（GBM 定位）、27649 属 IceCube alert，检索词有效。(2) T0：原值 2020-04-25T17:01:17Z 系 Issue #84 模式残留——恰为 MASTER-SAAO 指向时刻（GCN 27645 'was pointed ... 60241 sec after notice time and 60296 sec after trigger time at 2020-04-25 17:01:17 UT'，17:01:17−60296 s=00:16:21），并非触发时刻；bot 的 t0_basis='meta_trigger' 失真（Issue #68 模式）。修正为 T0=2020-04-25T00:16:21.762420Z：GCN 27638 整秒 'At 00:16:21 UT'；Swift/BAT 官方目录快照（swift.gsfc.nasa.gov/results/batgrbcat，仓内 external/swift_bat，取数 2026-07-21）trigger_time=2020-04-25T00:16:21.762420Z，整数秒一致，按 §3.2/§3.8 取触发仪器目录亚秒值；GCN 27638 内证：XRT 'began observing the field at 00:17:52.2 UT, 90.5 seconds after the BAT trigger'（00:17:52.2−00:16:21.762=90.44≈90.5，Swift 管线相对亚秒触发计时）。(3) 坐标：原 ra/dec=85.2198/-13.4352 为 GCN 27638 XRT promptly-downlinked 位置（2.9″，90%），与原 pos_error=1.6″（GCN 27639 之值）错配；统一采用 GCN 27639 XRT 精化位置 ra=85.21950、dec=-13.43511，pos_error=1.6 arcsec，pos_error_confidence=90（GCN 27639 原文明示 'an uncertainty of 1.6 arcsec (radius, 90% confidence)'）；原值留此备查。(4) 触发仪器：原 'Swift' 改 'Swift/BAT'（GCN 27638）。(5) tag/sub_tag：tag=grb；T90=81.0±21.7 s（15-350 keV，GCN 27650；swift_bat 快照 81.0±21.66 s；swiftgrbba 81 s）——无来源明示 long/short 分类，按 §3.9 不以 T90 自行分类，sub_tag 留空。红移：无任何来源给值，保持 null。(6) prompt 参数（§3.9 非 SCHEMA 量记此）：fluence=1.2±0.2×10⁻⁶ erg/cm²（15-150 keV，GCN 27650）；1 s 峰光子流量=0.7±0.2 ph/cm²/s（15-150 keV，T+2.41 s 起，GCN 27650）；BAT 谱指数=1.30±0.21（GCN 27650）；E(B-V)=0.16（GCN 27638/27643，Schlegel et al. 1998）。(7) 测光检索（2026-10-25，按 §3.3 留证）：仓内 gcn/archive 全文检索 '200425A' 命中 13 篇——7 篇属本源（27638/27639/27641/27643/27645/27646/27650，其中 3 篇含光学/UV 上限：27643/27645/27646；27641/27650 为 X 射线/伽马），6 篇属同日中微子事件 IceCube-200425A（27651/27652/27654/27655/27656/27658，与本源无关）；external/rssgrbag/lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无该源目录；external 目录级快照命中 swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live（仅身份/T0 互证、无光变表），uvot_grb/fermi_gbm/fermi_lat/konus_wind/heasarc_grbcat/liang2023/wang2022/guidorzi2025/minaev2020/agile_mcal/saxgrbmgrb/batse/swift_grb（表覆盖至 2012）均无命中；外部：GCN 站在线核对 4 篇（gcn.nasa.gov/circulars/27638、27643、27645、27646）与仓内全文一致（2026-10-25）；无 ADS token，按回退链：OpenAlex 命中 5（4=上述 GCN 通告；1=Yang+2023 arXiv:2308.00638 千新星论文——全文仅 1 处提及 200425A 且系 GRB 200415A 笔误，其引文 [40]=Yang+2020 ApJ 899,106 为 200415A 论文，无本源数据）、arXiv API 0 命中、Crossref 题录检索 0 专属命中、web 检索（GCN 归档列表）无额外文献；TNS 不适用（GRB 非 AT/SN/CV 类）→ 可用测光=GCN 27643（UVOT 9 行）+GCN 27645（MASTER 4 行）+GCN 27646（LCO 2 行），共补 15 行（全为上限）。(8) alias：补 'GRB 200425A'（GCN 用名）、'BAT 967774'（swift_bat 快照 name_alt 原形）、'Swift 967774'（GCN 27638 trigger=967774 / swift.ac.uk 编号 00967774）。(9) t0_basis/t0_note 原值：t0_basis='meta_trigger'、t0_note='t0 为 meta trigger-time（真实触发时刻）'（bot 写入，经核实失真，已按 §3.10 改写，原值留此）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 967774）：GCN 27638 整秒 00:16:21 UT + Swift/BAT 官方目录亚秒值 2020-04-25T00:16:21.762420 UTC（external/swift_bat 快照）",
+    "t0_basis": "GCN 27638 + swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 27638",
+      "title": "GRB 200425A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/27638",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 27639",
+      "title": "GRB 200425A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/27639",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 27641",
+      "title": "GRB 200425A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/27641",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 27643",
+      "title": "GRB 200425A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/27643",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 27645",
+      "title": "Swift GRB 200425A: Global MASTER-Net observations report",
+      "url": "https://gcn.nasa.gov/circulars/27645",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 27646",
+      "title": "GRB 200425A: LCO Optical Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/27646",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 27650",
+      "title": "GRB 200425A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/27650",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
