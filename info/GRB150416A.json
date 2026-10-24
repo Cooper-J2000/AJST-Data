@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB150416A",
   "alias": [
-    "GRB 150416773"
+    "GRB150416773",
+    "GRB 150416.773",
+    "bn150416773"
   ],
   "ra": 58.75,
-  "dec": 52.959999084472656,
-  "T0": "2015-04-16T18:33:28.965000Z",
-  "T0_ref": null,
+  "dec": 52.96,
+  "T0": "2015-04-16T18:33:25.965Z",
+  "T0_ref": "GCN 17717（GBM 触发 18:33:25.97 UT，与亚秒取整一致）+ FERMIGBRST trigger_time 亚秒值 2015-04-16T18:33:25.965Z",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +16,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 6948,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "GCN 17717 + FERMIGBRST",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019, ApJ 878, 52；bot 原注保留)。身份：Fermi/GBM trigger 450902008/150416773（GCN 17717），LAT LLE 同时探测（GCN 17711）；FERMIGBRST 坐标 RA=58.75, Dec=52.96 与 GBM 地面定位 RA=58.8, Dec=53.0 (GCN 17717) 一致；2FLGC 同点（58.75, 52.96）。T0：原值 2015-04-16T18:33:28.965000Z 为 Fermi MET 450902008.965 未扣 2001 年以来 3 次闰秒（2006/2009/2012）的直换结果（Issue #67 同型），2026-10-24 审核改按 FERMIGBRST trigger_time 取 2015-04-16T18:33:25.965Z（GCN 17717 厘秒值 18:33:25.97 与取整一致）；catalog_data.fermi_lat（2FLGC）trigger_time=2015-04-16T18:33:24.998Z 与 GBM 值差 0.967 s，并列备查，触发仪器 GBM 为准。原文笔误：GCN 17711 首句 \"At 18:33:32 UT on April 15th, 2015\" 日期应为 April 16，且 18:33:32 为 LLE 探测时刻、非触发时刻。定位：GBM 地面定位 RA=58.8, Dec=53.0 (J2000)，1.9° 半径（1-sigma containment，仅统计误差；另有 2–3° 系统误差，GCN 17717）；FERMIGBRST error_radius=1.93 deg≈6948″；原 dec=52.959999084472656 为 float32 残渣（Issue #69），改 52.96。物理量并列：T90=33.28±3.67 s（50–300 keV，FERMIGBRST）；T90≈33 s（GCN 17717）；T50=8.45±0.92 s（FERMIGBRST）；LLE T90=22.356 s（2FLGC）；fluence=(6.2375±0.0059)e-6 erg/cm²（10–1000 keV，FERMIGBRST 最终值）vs (1.4±0.04)e-5 erg/cm²（10–1000 keV，T0+0–34.8 s，GCN 17717 初值）；Epeak=317±47 keV（BAND，FERMIGBRST 最终值）vs 940±160 keV（BAND，GCN 17717 初值）；1-s 峰光子流量=3.8±0.2 ph/cm²/s（10–1000 keV，自 T0+12.8 s 起，GCN 17717）vs 64-ms 峰流量=5.45±0.98 ph/cm²/s（10–1000 keV，FERMIGBRST）；LAT LLE 于 50 s 内 >25 计数超出背景（GCN 17711），GBM 发射期间爆发方向距 LAT 视轴 68°、无 >100 MeV 观测（GCN 17711）。alias 出处：GRB150416773=FERMIGBRST trigger_name；GRB 150416.773=目录 name_alt（2FLGC/FERMIGBRST）；bn150416773=FERMIGBRST bn 名（HAWC Alfaro+2017 表 2/5/6 行名）。原 alias \"GRB 150416773\"（带空格）为管线拼接伪形、无文献背书，按 §3.10 置换。测光检索（2026-10-24）：仓内 gcn/archive 全文 45889 篇命中 4 篇（'GRB 150416A'/'150416'/'450902008'），其中涉本暴 2 篇（17711/17717，均无测光数值；另 2 篇为假阳性：16290 subject 系 '150416A→140516A' ops 改正、4866 数字串巧合同名）；GCN 站逐篇验证 17712–17716（HTTP 200；校准件 17848 已撤下=404）均属 GRB 150413A / Swift trigger 638217 撤回通告，与本暴无关、无缺件；external/rssgrbag、external/grbsn_webtool 无本暴记录；external/fermi_gbm、fermi_lat normalized.jsonl 各 1 条目录级条目（身份/T0 互证）；external/swift_grb（止于 2012-12）与 heasarc_grbcat（止于 2005-03）不覆盖 2015；ADS/SciX API（2026-10-24，token 认证）7 命中：涉本暴 GCN 2 篇（如上）+ GCN 16290 假阳性 + Alfaro+2017（ApJ 843, 88；IOP VoR 页反爬拦截，取 arXiv:1705.01551 互证；其表 2/5/6 给 bn150416773 的 1 GeV 处 E^-2 谱归一化上限 cm^-2 s^-1 keV^-1，搜索时长 T90/3T90/10T90、z=0.3 与 z=1.0 两套假设，1GeV 属能量串车道，按 §3.3 不入库）+ de León 2017（ICRC 35, 753；arXiv:1708.03645，HAWC 数据质量检查，无上限/测量值）+ Zuo & Zou 2026（arXiv:2609.14411，Fermi 暴瞬发谱样本表，目录级参数）+ Patel 2025 莱斯特大学博士论文（全文不可达：figshare API 403、机构库页面空响应、ADS DOI 截断，列入未能核实）；arXiv API 1 命中（ICRC 文）；OpenAlex 7 条与 ADS 一致；TNS 不适用（GRB，非 AT/SN/CV 类）→ 无可用测光，本次 0 行新增。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -127,8 +130,26 @@
         ],
         "trigger_time": "2015-04-16T18:33:24.998Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Alfaro+2017",
+      "url": "https://doi.org/10.3847/1538-4357/aa756f",
+      "title": "Search for Very-high-energy Emission from Gamma-Ray Bursts Using the First 18 Months of Data from the HAWC Gamma-Ray Observatory",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
