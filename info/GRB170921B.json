@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB170921B",
   "alias": [
-    "GRB 170921168"
+    "GRB 170921.168",
+    "bn170921168"
   ],
-  "ra": 123.93000030517578,
-  "dec": 52.66999816894531,
-  "T0": "2017-09-21T04:02:16.510000Z",
-  "T0_ref": null,
+  "ra": 123.93,
+  "dec": 52.67,
+  "T0": "2017-09-21T04:02:11.510Z",
+  "T0_ref": "GCN 21902（Fermi GBM 触发时刻 04:02:11.51 UT，trigger 527659336/170921168）；FERMIGBRST 官方目录 trigger_time=2017-09-21T04:02:11.511Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 936,
+  "pos_error_confidence": "90",
+  "pos_ref": "HEASARC FERMILGRB 目录 2FLGC LTF 定位 RA,Dec=123.93,+52.67（error_radius 0.26 deg；仓内快照 retrieved 2026-07-21）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（2026-10-24，Rusty-Harpoon@zcode）。身份：GRB 170921B = Fermi/GBM 触发 527659336（=170921168，bn170921168），触发时刻 04:02:11.51 UT（GCN 21902）；IPN（GCN 21918）、AstroSat/CZTI（GCN 21922）、Konus-Wind（GCN 21926）互证。同日异源：GRB 170921A = Swift/BAT 触发 773509（14:28:48 UT，GCN 21901/21912）、GRB 170921C = Insight-HXMT HEB170921030（00:43:37 UT，GCN 21919；原名误写 21A，GCN 21925 更正）——均与本源无关，勿混。T0：原 T0=2017-09-21T04:02:16.510000Z 为 2FLGC trigger_met=527659336.51 未扣闰秒直换（MET 纪元 2001-01-01 UTC；2017-01-01 起 UTC 闰秒累计 5 s；同 Issue #109 口径），已改；GBM 官方值 04:02:11.51 UT（GCN 21902）与 FERMIGBRST trigger_time=04:02:11.511Z 一致；FERMILGRB 目录 UTC 列 04:02:11.003 与其自身 MET 列（527659336.51 → 04:02:11.51 UTC）自差 0.507 s，弃用备查。位置：采用 2FLGC LTF 定位（error_radius 0.26 deg=936″，90% 包含半径、仅统计误差，据 Ajello+2019 §IV.1「the (90% containment, statistical only) uncertainty in LAT detections」；HEASARC FERMILGRB 文档仅述「The localization error from LAT transient factory analysis (deg)」未标置信水平；VoR（IOP）页面反爬不可得，定义性陈述取自 arXiv v1（1906.11403，2026-10-24 独立核查更正——该文仅 v1 无 v2））。并列备查：GBM 地面定位 RA,Dec=134.38,+46.46（1.6 deg，1σ 仅统计，GCN 21902）；IPN 3σ 误差盒中心 132.375,+57.057、面积 8.7 平方度（GCN 21918）；FERMIGBRST 目录行 ra/dec=132.375,+57.057、error_radius=1.0 deg（与 IPN 盒中心同值）；MPE Greiner 表「GRB X-ray position 08h49m30s +57°03'」即 IPN 中心。原 info ra/dec 的 float32 残渣（123.93000030517578/52.66999816894531）按来源精度改写为 123.93/52.67（FERMILGRB 行原始值 08h15m43.2s +52°40'12\"）。分类：lgrb（GCN 21918/21926 均称 long-duration；GBM 目录 T90=39.36 s）；CZTI GCN 21922 原文称「short GRB 170921B」与其自测 T90=30.5 s 及 GBM/Konus 长暴表述矛盾，原文用词存疑，本库按触发仪器 GBM 与 Konus 分类记 lgrb。物理量（多来源并列）：T90=34 s（50-300 keV，预备，GCN 21902）= 39.361±4.481 s（FERMIGBRST）= 30.5 s（CZTI，GCN 21922）；fluence=(5.4±0.1)e-5 erg/cm2（10-1000 keV，T0–T0+30 s，GCN 21902）= (6.56399±0.03263)e-5 erg/cm2（10-1000 keV，FERMIGBRST）= 5.44±0.22e-5 erg/cm2（20 keV-10 MeV，Konus-Wind，GCN 21926）；Epeak=100±10 keV（Band，预备，GCN 21902）= 88.39±3.54 keV（Band，FERMIGBRST flnc_band_epeak）= 138(-6,+7) keV（CPL，Konus-Wind）；1 s 峰值光子流量 38.7±0.6 ph/cm2/s（10-1000 keV，自 T0+8.1 s 起，GCN 21902）；64 ms 峰值能量流量 6.75(-1.20,+1.21)e-6 erg/cm2/s（20 keV-10 MeV，Konus-Wind，GCN 21926）；GBM 触发时与 LAT boresight 夹角 101°（GCN 21902，LAT 未指向）；2FLGC LTF tl100=156.9 s、like_best_ts=28.35（FERMILGRB 快照）。alias 出处：GRB 170921.168 为 FERMIGBRST/2FLGC name_alt 点号形；bn170921168 为 FERMIGBRST name_alt bn 形；原 alias「GRB 170921168」（空格+9 位触发号拼接伪形，导入产物）已按《数据审核提示词》§3.10 删除（FERMIGBRST name 列原值 GRB170921168 备查）。测光检索（2026-10-24）：仓内 gcn/archive 45 889 篇全文检索（变体 170921B/170921168/170921/527659336）：命中本源相关 5 篇——21902（GBM 探测）、21918（IPN）、21922（CZTI）、21925（同日异源更名更正，牵涉本源命名）、21926（Konus-Wind）——全部为伽马射线探测/定位通告，无光学/NIR/射电测光或上限；其余 170921 命中均为同日异源：GRB 170921A 的 21901/21903/21904/21905/21906/21907/21909/21910/21912/21913/21915/21951 与 GRB 2402xx 的 35833/35834/35835（数字误配）。external 快照：rssgrbag（lightcurve.jsonl 140 行）、grbsn_webtool（无 170921 事件）、swift_bat（命中为 GRB 170921A trigger 773509）、swift_grb、swiftgrbba、uvot_grb、swift_xrt_live、heasarc_grbcat、konus_wind、agile_mcal、saxgrbmgrb、batse、minaev2020/liang2023/wang2022/guidorzi2025 均无本源记录。GCN 站：逐暴页 gcn.gsfc.nasa.gov/other/GRB170921B.gcn3 返回 404；gcn.nasa.gov 站内检索页无法按源名过滤（返回全库列表）。ADS（api.adsabs.harvard.edu，2026-10-24）：q=(\"GRB 170921B\" OR \"GRB170921B\")、abs:、title: 各命中 4 篇 GCN（21902/21918/21922/21926）；full: 命中 10 条（上述 4 篇 GCN + 6 条伽马样本/统计论文：2021JApA...42...93M、2023ApJ...949..110T、2021ApJS..253...43L、2025A&A...700A..96A、2025arXiv251018207Y、2019ICRC...36..634B），均无本源测光表。结论：无可用测光（含上限），lc 保持 0 行。TNS 不适用（GRB，非 AT/SN/CV 类）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -78,8 +81,50 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Bissaldi+2017",
+      "url": "https://gcn.nasa.gov/circulars/21902",
+      "title": "GRB 170921B: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Hurley+2017",
+      "url": "https://gcn.nasa.gov/circulars/21918",
+      "title": "IPN Triangulation of GRB 170921B",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Sharma+2017",
+      "url": "https://gcn.nasa.gov/circulars/21922",
+      "title": "GRB 170921B: AstroSat CZTI detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Zhang+2017",
+      "url": "https://gcn.nasa.gov/circulars/21925",
+      "title": "Correction to GCN Circular 21919: GRB 170921C: Insight-HXMT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Kozlova+2017",
+      "url": "https://gcn.nasa.gov/circulars/21926",
+      "title": "Konus-Wind observation of GRB 170921B",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
