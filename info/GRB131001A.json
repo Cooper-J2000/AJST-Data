@@ -4,25 +4,52 @@
   "ra": 8.304,
   "dec": 25.557,
   "T0": "2013-10-01T05:37:24Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 15281（Cummings, Swift-BAT team）：'At 2013-10-01T05:37:24, while Swift was slewing, GRB 131001A occurred.'（整秒精度，地面分析发现）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 96.0,
-  "pos_ref": "GCN 15293",
+  "pos_ref": "GCN 15293 (Swift-BAT refined analysis): RA=8.304, Dec=+25.557, uncertainty 1.6 arcmin (radius, sys+stat, 90% containment)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) 定位核对：ra/dec=8.304/+25.557、pos_error=96″（1.6′）与 GCN 15293 BAT 精化定位逐值一致（原文 'an uncertainty of 1.6 arcmin, (radius, sys+stat, 90% containment)'），无需改动；补 pos_error_confidence=90（原文明确给出 90% 包含）与 pos_ref。GCN 15281 初报位置 8.302/+25.557（1.8′，90%）为粗定位，已被 15293 精化取代。仓内 swift_bat 快照位置 8.2980/+25.5557（无误差列）与 GCN 15293 差约 20″（实测 20.1″），为目录再精化值，备查。(2) T0：保持 2013-10-01T05:37:24Z（整秒）——锚定 GCN 15281 原文整秒值（地面分析触发，无亚秒）；swift_bat 快照 trigger_time=05:37:22.903Z 与之差 1.097 s（≥60 ms，已在 PR 说明报告），系目录管线对地面分析触发的重新定标口径，未采用；T0_ref 已填。(3) Trigger_Instrument 'Swift' 细化为 'Swift/BAT'：GCN 15281 'detected in ground analysis of Swift-BAT data'（触发即 BAT，地面分析发现；swiftgrbba trigger_obs='Ground Analysis 20297'）。(4) tag 空补 grb；sub_tag 不加 lgrb/sgrb：T90=4.9±0.3 s（15-350 keV，GCN 15293，含系统误差）虽 >2 s，但 GCN 15281/15293 均未作正式长短分类（光变为单 FRED 峰），按《数据审核提示词》§3.9 分类以来源为准、不得自算。(5) 红移：保持 null——GCN 15288 XRT 与 UVOT 均无探测，无任何红移报告。UVOT u>20.94（3σ，窗口 79990–86246 s、总曝光 972 s）为有时间锚点的上限，按《数据审核提示词》§3.3（2026-10-24 裁定）已入 lc（1 行，uvot-u，见 lc/GRB131001A.csv）；XRT 3σ 上限 0.01 ct/s 为 X 射线行，不入库、记此备查。(6) 测光：GCN 15288 的 UVOT u 波段 3σ 上限已按 §3.3 时间锚点规则入库（lc 1 行）；除此之外无非探测之外的测光，仓内原无该源 lc 文件，本 PR 新建（1 行）。(7) alias 维持空：GCN 用名即 GRB 131001A（本库 id）；swift_bat 快照 name_alt 'BAT 00082217006' 为地面分析触发的目录编号形式，出处单一且形似管线产物，暂不收录；swiftgrbba trigger_obs 记 Ground Analysis 20297（TOO source ID）。Epeak=55±14 keV、fluence=(4.9±0.6)e-7 erg/cm²（15-150 keV）等 SCHEMA 外物理量记此备查（GCN 15293）。测光检索（2026-10-24）：仓内 rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录、gcn/archive 全文 3 篇（15281/15288/15293；15288 含 UVOT 上限→lc 1 行）；GCN 站检索对字母名/分数名已实测失效（故以全文档案为准）；ADS/SciX 检索不可用（2026-10-24 实测 api.adsabs.harvard.org 与 api.scixplorer.org 均返回 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 0 命中 → 无可用测光，未补行。补充审核（2026-10-24，GCN 全文检索复核）：gcn/archive 全文检索确认本源恰有 3 篇 GCN（15281/15288/15293，均已登记并逐字核对），无遗漏；仓内 rssgrbag 0 行、grbsn_webtool 无该源目录；ADS/SciX 401 不可用（实测，本会话无 token）；arXiv API 兜底 0 命中 → 无可用测光，未补行（此前站点检索 query=131001 返回 0 系站点索引对字母名不敏感，全文档案可检得全部 3 篇）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 15281",
+      "title": "GRB 131001A detected in ground analysis of Swift-BAT data",
+      "url": "https://gcn.nasa.gov/circulars/15281",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 15288",
+      "title": "GRB 131001A: Swift UVOT and XRT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/15288",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 15293",
+      "title": "GRB 131001A, Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/15293",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
