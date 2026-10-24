@@ -1,28 +1,76 @@
 {
   "transient_id": "GRB160716A",
-  "alias": [],
-  "ra": 190.43632,
-  "dec": -61.3508,
-  "T0": "2016-07-16T01:08:30Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 160716A",
+    "BAT 704572"
+  ],
+  "ra": 190.43749,
+  "dec": -61.35098,
+  "T0": "2016-07-16T01:08:30.026020Z",
+  "T0_ref": "GCN 19716（Hagen et al., Swift team）：'At 01:08:30 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160716A (trigger=704572)'（整秒）；Swift/BAT 官方目录（仓内 external/swift_bat 快照，HEASARC swiftgrbbat）trigger_time=2016-07-16T01:08:30.026020 UTC；整数秒一致，按 §3.2/§3.8 取触发仪器目录亚秒值。备查：external/swiftgrbba 快照 trigger_time=2016-07-16T01:08:30.000Z（整秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.1,
   "pos_ref": "GCN 19717",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发的 GRB。审核 Rusty-Harpoon@zcode（2026-10-24）：(1) 身份与触发：GCN 19716 'At 01:08:30 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160716A (trigger=704572)'；BAT 在轨定位 190.544,-61.366（3′，90%，GCN 19716）、地面精化 190.502,-61.364（2.0′，90%，GCN 19719；swift_bat 快照 190.5024,-61.36451）；swiftgrbba/mpe_greiner 快照同名 GRB 160716A、target_id=704572，身份无歧义。(2) T0：原值 2016-07-16T01:08:30Z（bot 写入，t0_basis=meta_trigger）整秒正确；按 §3.2/§3.8 取触发仪器 Swift/BAT 官方目录亚秒值 → T0=2016-07-16T01:08:30.026020Z（external/swift_bat 快照；swiftgrbba 快照 01:08:30.000Z 整秒备查）。(3) 坐标：原 ra/dec=190.43632,-61.35080 系 GCN 19716 XRT 初始定位（4.0″，90% containment），而 pos_ref/pos_error 已是 GCN 19717 数值、坐标却未同步，本次改为 GCN 19717 enhanced XRT position RA,Dec=190.43749,-61.35098（2.1″，radius，90% confidence，astrometrically corrected，Goad+2007/Evans+2009 方法）；备查：swiftgrbba 快照 xrt_ra/dec=190.43758,-61.35097（error_radius 2.0″）。(4) 触发仪器：原 'Swift' 泛称，触发仪器为 BAT（GCN 19716），改 'Swift/BAT'。(5) tag/sub_tag：grb；BAT T90=6.39±0.57 s（15-350 keV，GCN 19719；swift_bat 快照 6.392±0.575）偏短，但无任何来源明确给出 short/long 分类，sub_tag 按规则不自行判定、留空（见 PR 待决事项）。(6) 红移：无任何来源给红移，保持 null。(7) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文检索 'GRB 160716A' 命中 6 篇、无空格变体 'GRB160716A' 仓内 0 命中（仅 ADS 命中 1 篇 arXiv 样本表）（19716-19719、19721、19742）、裸变体 '160716' 命中 7 篇（多出 19722=Fermi GBM trigger 160716523 撤报通告，非本源）、触发号 '704572' 命中 4 篇（均在上述 6 篇内）；对照组 GCN 19715/19720/19723 均为相邻事件（Swift 704327、GRB 160714A、GBM 160720418），检索词有效；6 篇即该事件全部通告（ADS bibstem:GCN title/abs 检索 6 命中，与本地一致；gcn.nasa.gov/circulars/19716、19721、19742 在线核对与本地全文逐字一致，2026-10-24）。有测光者 2 篇：GCN 19721（Swift/UVOT，white 探测 3 点 + 6 波段 3σ 上限，补 9 行）、GCN 19742（TAROT La Silla，R 波段上限 3 点，补 3 行），共补 12 行；external/rssgrbag/lightcurve.jsonl（140 行/74 源射电光变）0 命中、grbsn_webtool/SourceData 无该源目录；external/swift_grb（872 源，覆盖至 2012-12）、external/uvot_grb（626 源，覆盖至 2010-12）年代不覆盖 2016 年、无该源记录；external/swiftgrbba/swift_bat/mpe_greiner 仅目录级参数（swiftgrbba 记 UVOT 上限 White>19.93/B>18.95/U>19.63/UVW1>17.48/UVM2>17.10/UVW2>17.52，与 GCN 19721 一致）。ADS/SciX（api.adsabs.harvard.edu，token 检索）full:'GRB 160716A' 6 命中（=上述 6 篇 GCN）、abs/title OR full 变体 7 命中（另 1 篇为 arXiv:2609.25672 样本表 mention-only，无测光）；OpenAlex 4 命中（同为 GCN）；Crossref 0 直接命中；TNS 不适用（GRB 非 AT/SN/CV 类）。(8) alias：补 'GRB 160716A'（GCN eventId 标准名）与 'BAT 704572'（external/swift_bat 快照 name_alt 原形）；无 Fermi 触发、快照无 bn/点号形，不臆造。(9) t0_basis/t0_note 原值：t0_basis='meta_trigger'、t0_note='t0 为 meta trigger-time（真实触发时刻）'（bot 写入，Issue #68 已证该标记不可信，已按 §3.10 改写为可核验表述，原值留此）。(10) prompt 参数多来源并列：T90=6.39±0.57 s（15-350 keV，GCN 19719）/6.392±0.575（swift_bat 快照）；fluence=1.8±0.3e-7 erg/cm²（15-150 keV，GCN 19719）/1.818331e-07（swift_bat 快照）；1 s 峰光子流量 0.8±0.2 ph/cm²/s（15-150 keV，T+0.95 s 起，GCN 19719）；时间平均谱光子指数 2.29±0.30（GCN 19719）；XRT 谱吸收柱 2.7(+1.9,-1.4)e22 cm⁻²（超银河值 9.6e21，GCN 19718）、XRT 光变衰减指数 alpha=0.87(+0.15,-0.13)（GCN 19718）；银消 E(B-V)=1.47（Schlegel et al. 1998，GCN 19721）；银经纬 l=301.8222、b=+1.4859（GCN 19742）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 704572）：GCN 19716 整秒 01:08:30 UT + Swift/BAT 官方目录亚秒值 01:08:30.026020 UTC（external/swift_bat 快照）",
+    "t0_basis": "GCN 19716 + swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 19716",
+      "title": "GRB 160716A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/19716",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19717",
+      "title": "GRB 160716A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/19717",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19718",
+      "title": "GRB 160716A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/19718",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19719",
+      "title": "GRB 160716A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/19719",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19721",
+      "title": "GRB 160716A: Swift/UVOT Detection",
+      "url": "https://gcn.nasa.gov/circulars/19721",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19742",
+      "title": "GRB 160716A: TAROT La Silla observatory optical observations",
+      "url": "https://gcn.nasa.gov/circulars/19742",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
