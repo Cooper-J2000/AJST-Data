@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB170524B",
-  "alias": [],
-  "ra": 90.864,
-  "dec": -17.086,
+  "alias": [
+    "GRB 170524B",
+    "BAT 00753445006"
+  ],
+  "ra": 90.86872,
+  "dec": -17.08297,
   "T0": "2017-05-24T10:40:40Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "T0_ref": "GCN 21142（Swift/BAT 触发时刻 2017-05-24T10:40:40 UT，trigger=754265，整秒精度原文未给亚秒）；swiftgrbba 快照同值",
+  "T0_offset": -1.525,
+  "T0_offset_ref": "GCN 21148（Konus-Wind 触发时刻 10:40:38.475 UT，早于 BAT 触发 1.525 s）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 21142",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 0.4,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 21168（UVOT 精化余辉定位，0.4″ 90%）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "长暴（T90=46.4±1.6 s，GCN 21142，15-350 keV 原始光变估计；Konus-Wind 亦判 long GRB、总时长约 24 s，GCN 21148）。触发：Swift/BAT 于 2017-05-24T10:40:40 UT 触发（trigger=754265，GCN 21142；在轨分析因预排 slew 被截断，定位由 T+2 至 T+101 s 地面分析得出）；swiftgrbba 快照同值 10:40:40.000Z；swift_bat 快照（官方 BAT 目录，Trigger_method=ground detected during slew）记 trigger_time=2017-05-24T10:40:59.20Z，与 GCN 相差 19.2 s（目录口径存疑，并列备查；按 §4 优先级取触发仪器官方 GCN 21142）。T0_offset=-1.525 s：Konus-Wind 于 10:40:38.475 UT 触发（GCN 21148），早于 BAT 触发时刻 1.525 s，表明 BAT 自动触发前已有辐射（依 GRB170329A 先例）。定位：原 bot 值 RA,Dec=90.864,-17.086、误差 180″（3′，90% 含系统差，GCN 21142 BAT 地面定位）保留备查；本条目改用 GCN 21168 UVOT 精化余辉定位 RA,Dec=90.86872,-17.08297、0.4″（90%）；XRT 增强定位 90.86806,-17.08282、2.3″（90%，GCN 21150）并列备查。物理量：fluence=(6.6±0.2)e-6 erg/cm^2（15-150 keV，90%）、1 s 峰值光子流量 0.3 ph/cm^2/s（15-150 keV，T+6.70 s 处）（均 GCN 21142）；fluence=(5.7±0.4)e-5 erg/cm^2、64 ms 峰值能量流量 (1.44±0.10)e-5 erg/cm^2/s（20 keV-10 MeV，90%，GCN 21148）；T50=27.2±1.6 s（15-350 keV，swift_bat 快照）。同暴被 CALET、Konus-Wind、INTEGRAL SPI-ACS 探测（GCN 21142）；Fermi/GBM 与 LAT 未触发（fermi_gbm/fermi_lat 快照无本源条目）。GCN 21147 正文将本暴误写作 'GRB170525B'（原文笔误，其引用的 GCN #21142 即本暴）。alias：'GRB 170524B'（GCN 通告 subject 与 swiftgrbba/mpe_greiner 快照标准用名）；'BAT 00753445006'（swift_bat 快照 name_alt 原形，BAT 地面分析通告号）。测光检索（2026-10-24）：仓内 gcn/archive 全文（gcn.nasa.gov 官方打包，45889 篇）检索 '170524B' 与 '170524'，命中本源 6 篇（21142/21144/21147/21148/21150/21168），其中 GCN 21168 含 UVOT white 测光 2 点（已入库 2 行）、GCN 21147 含 MASTER-OAFA 光学上限 1 点（已入库 1 行；同通告 19.9 mag 上限无明确时间锚点，仅记于此）；external/rssgrbag 无记录；external/grbsn_webtool 无此事件；external/swift_grb（止于 2012-12）、heasarc_grbcat（止于 2005-03）、uvot_grb（止于 2010-12）不覆盖 2017 年；external/swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live/konus_wind 快照仅目录级参数、无测光表。ADS/SciX API 检索（2026-10-24，token 认证）：查询串 abs:\"GRB 170524B\" OR title:\"GRB 170524B\" 与 abs:\"GRB170524B\" OR title:\"GRB170524B\" OR full:(\"GRB 170524B\") 各 6 命中，均为上述 6 篇 GCN，无正式发表文献含本源测光；arXiv API 0 命中；OpenAlex 3 命中（同为 GCN）；Crossref 检索无本源文献；TNS 不适用（GRB，非 AT/SN 类）→ 新增测光 3 行（Swift/UVOT white 2 行 + MASTER-OAFA G 上限 1 行）。X 射线数据（GCN 21150/21168 Swift/XRT）不在审核范围，未入库。原 bot 时间基准标记（t0_basis=meta_trigger、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"）已按《数据审核提示词》§3.10 改写，原值保留于此备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2017-05-24T10:40:40Z 为 Swift/BAT 触发时刻（GCN 21142，整秒精度）；Konus-Wind 触发早 1.525 s 记入 T0_offset（GCN 21148）；原 bot 标记 meta_trigger 已按 §3.10 改写，原值见 comment",
+    "t0_basis": "GCN 21142",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
   "articles": [],
   "host_galaxy": null
