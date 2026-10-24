@@ -1,28 +1,79 @@
 {
   "transient_id": "GRB141205A",
-  "alias": [],
+  "alias": [
+    "BAT 620534",
+    "GRB 141205.337",
+    "GRB141205337",
+    "bn141205337"
+  ],
   "ra": 92.859,
   "dec": 37.876,
-  "T0": "2014-12-05T17:55:00Z",
-  "T0_ref": null,
+  "T0": "2014-12-05T08:05:17.172Z",
+  "T0_ref": "Swift/BAT 官方目录快照 trigger_time=2014-12-05T08:05:17.172 UTC（external/swift_bat）；GCN 17137（Cummings）'At 08:05:17, BAT triggered'（整秒）；GCN 17143（GBM）'At 08:05:17.49 UT'；fermigbrst bn141205337 trigger_time=08:05:17.491（整数秒一致，亚秒矛盾以 Swift 为准）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 120.0,
-  "pos_ref": "GCN 17140",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 120,
+  "pos_ref": "GCN 17140 (Swift-BAT refined analysis): RA=92.859, Dec=+37.876, 2 arcmin radius（41% coded；仓内 swift_bat/swiftgrbba 同值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) **T0 更正（关键）**：原值 2014-12-05T17:55:00Z 实为 XRT 观测窗口的**结束时刻**（GCN 17141：XRT 观测 14:44–17:55 UT），非爆发时刻，系导入管线误取。更正为 **08:05:17.172Z**（swift_bat 官方目录亚秒值；GCN 17137 整秒 08:05:17；GBM 目录 08:05:17.491/通告 08:05:17.49，整数秒一致、亚秒矛盾，按《数据审核提示词》§3.2「有 Swift 以 Swift 为准」）。(2) Trigger_Instrument 'Swift' 细化为 'Swift/BAT'（GCN 17137：BAT triggered，trigger 620534，船载未发现、地面分析定位）。(3) 定位核对：ra/dec=92.859/+37.876、pos_error=120″（2′）与 GCN 17140 BAT 精化定位逐值一致，无需改动；补 pos_ref；原文未标注置信水平（comment 记，pos_error_confidence 留空）。GBM 初报定位与 BAT 定位相距 14.0°（GCN 17137 原文，GBM 4.4° 1σ 误差口径）；仓内 fermigbrst bn141205337 行定位 92.859/+37.876（err 0.033°≈2′）即采 BAT 精化定位（外部定位采用模式，其误差列非 GBM 自身定位误差），备查。(4) tag 空补 grb；sub_tag 空补 **sgrb**：GCN 17137 标题 'Short hard GRB'、GCN 17141 'short/hard GRB'；T90=1.1±0.2 s（BAT 15-150 keV，GCN 17140）/≈1.5 s（GBM 50-300 keV，GCN 17143），以来源表述为准（§3.9）。(5) 红移：无任何来源给红移（UVOT/光学均无探测），保持 null；E(B-V)=0.24（Schlegel+1998，GCN 17144）备查。(6) **测光增补（lc/GRB141205A.csv，4 行上限）**：UVOT white>21.7/v>20.1/u>20.7（3σ，Vega——UVOT 光度系统据 Breeveld et al. 2011，原文所引；未银消改正；窗口中点/半宽为约定口径，GCN 17144）；Nanshan 1m R>20.4（3σ，原文未声明系统，120s/200s 序列窗口 17:26:18–21:26:52 UT 约定口径，GCN 17142）。XRT 3σ 上限 2.8e-3 ct/s（GCN 17141）为 X 射线，按 §3.3 不入库，记此备查。测光检索（2026-10-24）：gcn/archive 全文 6 篇（17137/17140/17141/17142/17143/17144；2 篇含光学上限→lc 4 行）；仓内 rssgrbag 0 行、grbsn_webtool 无该源目录；ADS/SciX 检索不可用（2026-10-24 实测 api.adsabs.harvard.org 与 api.scixplorer.org 均返回 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 0 命中。(7) alias 原为空，补 BAT 620534（GCN 17137/swift_bat name_alt）与 GRB 141205.337/GRB141205337/bn141205337（GCN 17143 与 fermigbrst 的 GBM 官方名形——本暴 GBM 亦触发）。GBM 谱指数 -0.23±0.39（GCN 17143）等 SCHEMA 外物理量记此备查。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 17137",
+      "title": "GRB 141205A Short hard GRB found in ground analysis of BAT data",
+      "url": "https://gcn.nasa.gov/circulars/17137",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17140",
+      "title": "GRB 141205A Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/17140",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17141",
+      "title": "GRB 141205A: XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/17141",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17142",
+      "title": "GRB 141205A: Nanshan optical upper limit",
+      "url": "https://gcn.nasa.gov/circulars/17142",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17143",
+      "title": "GRB 141205A: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/17143",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17144",
+      "title": "GRB 141205A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/17144",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
