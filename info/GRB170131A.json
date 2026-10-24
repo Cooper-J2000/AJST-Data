@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB170131A",
-  "alias": [],
-  "ra": 341.3994,
-  "dec": 64.009,
-  "T0": "2017-01-31T23:15:13Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 170131A",
+    "GRB 170131.969",
+    "bn170131969"
+  ],
+  "ra": 341.447,
+  "dec": 64.006,
+  "T0": "2017-01-31T23:14:59.360Z",
+  "T0_ref": "GCN 20572（Fermi/GBM 团队官方 Circular：\"At 23:14:59.36 UT on January 31st 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170131A (trigger 507597304 /170131969)\"）；external/fermi_gbm 快照（FERMIGBRST）trigger_time=2017-01-31T23:14:59.358Z 一致；GCN 给 23:14:59.36（两位小数），本库存 .360 同值（取数 2026-10-24）；触发号 MET 507597304.36 扣 2017-01-01 起累计 5 次闰秒直换自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -13,18 +17,67 @@
     "grb"
   ],
   "pos_error": 180.0,
-  "pos_ref": "GCN 20570",
+  "pos_ref": "GCN 20570（Swift/BAT on-board 定位 RA,Dec=341.447,64.006，误差 3 arcmin 半径，90% containment 含系统误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "2026-10-24 Rusty-Harpoon@zcode 审核。身份确认：Fermi/GBM trigger 507597304 / 170131969（GCN 20572）= Swift/BAT ground processing（Swift Trigger #736107，GCN 20570，BAT 地面分析与 GBM 定位同位）= Konus-Wind 同刻触发（GCN 20570 提及）= POLAR（GCN 20600，其 T0=23:14:59.00 UT 与 GBM 整秒一致）= external 快照 mpe_greiner（IPN=y）/swift_bat（BAT 736107）/swiftgrbba（target_id 736107）/fermi_gbm（bn170131969）同源。T0：原值 2017-01-31T23:15:13Z 为 Swift/BAT 触发时刻（GCN 20570；bot t0_basis=meta_trigger 无从溯源），本暴由 GBM 首先触发并定位（23:14:59.36 UT，早于 BAT 触发 13.64 s；BAT 光变 ~30 s FRED 结构起于 ~T-20、与 GBM 触发时刻一致，GCN 20570），按 §3.8 优先级取触发仪器 GBM 官方 Circular 值 23:14:59.36 UT（本库存 23:14:59.360Z，同值）；POLAR 23:14:59.00 与之整秒一致，亚秒取触发仪器值；触发号 MET 507597304.36 按 Fermi MET 纪元 2001-01-01T00:00Z 直换再扣 2017-01-01 起累计 5 次闰秒 = 23:14:59.36 UT 自洽（Issue #109 同族口径）；GBM 官方目录快照 23:14:59.358Z 一致（取数 2026-10-24）。定位（并列）：Swift/BAT on-board RA,Dec=341.447,+64.006（3′ 半径，90% containment 含系统误差，GCN 20570；本条目采用）；GBM 地面定位与 BAT 相容（GCN 20572）；Swift-XRT 铺格观测（T0+78.4~96.6 ks，PC 4.9 ks，GCN 20573）检出 1 个未编目 X 射线源（Source 1：341.3994,+64.0090，误差 5.8″ 90%，距 BAT 定位 75″，低于 RASS 极限、无明确衰减迹象，团队明言 cannot confirm this as the afterglow）——info 原 ra/dec 341.3994/64.009 即该未确认候选源坐标（与原 pos_ref=GCN 20570 的 BAT 定位不自洽），已改回 BAT 定位；候选源信息备查，X 射线数据暂不处理。分类：T90≈23 s（GCN 20572，50-300 keV）/21.88 s（POLAR，自 T0-1.21 s 起，GCN 20600）/23.0404±5.97098 s（FERMIGBRST），无来源给出显式 lgrb/sgrb 分类，sub_tag 留空。物理量：T90=23.0404±5.97098 s、T50=14.3362±1.44818 s（50-300 keV，FERMIGBRST）；fluence=(5.00579±0.01914)e-6 erg/cm²、peak_flux=7.25712±1.13741 ph/cm²/s（64 ms，10-1000 keV）、Epeak=211.65±33.77 keV（CPL，FERMIGBRST）；GCN 20572（T0-1.0~T0+18.4 s）：fluence=(4.56±0.27)e-6 erg/cm²（10-1000 keV）、Epeak=209±34 keV（CPL）、1-s peak photon flux=4.9±0.3 ph/s/cm²（自 T0+15.4 s 起）；POLAR（GCN 20600，~20-500 keV）：1-s 峰值计数率 888.4 cnt/s（自 T0+16.00 s 起）、总计数 ~7085 cnt、入射角 θ=76.5°、φ=22.2°。redshift：各文献均无测定，保持 null。测光检索（2026-10-24）：仓内 gcn/archive 45889 篇全文（find+xargs grep；检索词 \"GRB 170131A\"/\"GRB170131A\"/\"170131A\"/触发号 \"507597304\"/\"736107\"/\"170131969\"）命中 6 篇 = GCN 20570/20571/20572/20573/20574/20600（触发号检索另命中 GCN 10742，系 createdOn 毫秒时间戳假阳性；对照组 \"GRB 170114B\" 命中多篇，检索通道有效）；ADS 检索 q=\"GRB 170131A\"（abs）命中 6 条、q=full:\"170131A\" 命中 7 条 = 同 6 篇 GCN + Kole+2020（A&A 644, A124，POLAR 偏振目录），与本地存档逐条一致、无缺件；Kole+2020 表 1 仅给本暴 γ 射线谱拟合（Band/CPL 参数）与 POLAR/GBM/BAT 三仪器交叉定标时段拟合，无测光表（VoR 被 A&A DataDome 反爬拦截：doi.org→aanda.org 403，改用 arXiv:2009.04871 核对，仅作检索结论、未取数值）；TNS 不适用（GRB 类，非 AT/SN/CV）；external 快照 rssgrbag 光变 0、grbsn_webtool 无此事件、uvot_grb/swift_grb/heasarc_grbcat 0，swiftgrbba/swift_bat/mpe_greiner/fermi_gbm/konus_wind 仅目录级参数。结论：唯一可用测光为 GCN 20574 UVOT UVW2 上限，补 1 行。alias：GRB 170131A（全部 GCN 主题行与 swift_bat/mpe_greiner/swiftgrbba 快照目录名）、GRB 170131.969（FERMIGBRST 点号形，external/fermi_gbm 快照 name_alt）、bn170131969（FERMIGBRST bn 形，同快照）；「GRB 170131969」/「GRB170131969」日期+触发序列拼接形按 Issue #69/§3.10 不收；swift_bat 快照 name_alt「BAT 736107」为 Swift 触发号编号（GCN 20570 记 Swift Trigger #736107），非本库收录形态，未收。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 507597304）：GCN 20572 给 23:14:59.36 UT，GBM 官方目录快照 23:14:59.358Z 一致；原 bot 注记 t0_basis=meta_trigger 对应原 T0 2017-01-31T23:15:13Z（Swift/BAT 触发时刻，GCN 20570），已失真，原值见 comment",
+    "t0_basis": "GCN 20572 + fermi_gbm",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 20570",
+      "title": "GRB 170131A detected in Swift/BAT ground processing",
+      "url": "https://gcn.nasa.gov/circulars/20570",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20571",
+      "title": "GRB 170131A: Swift ToO observations",
+      "url": "https://gcn.nasa.gov/circulars/20571",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20572",
+      "title": "GRB 170131A: Fermi GBM observation",
+      "url": "https://gcn.nasa.gov/circulars/20572",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20573",
+      "title": "GRB 170131A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/20573",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20574",
+      "title": "GRB 170131A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/20574",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20600",
+      "title": "GRB 170131A: POLAR Observation",
+      "url": "https://gcn.nasa.gov/circulars/20600",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Kole+2020",
+      "title": "The POLAR gamma-ray burst polarization catalog",
+      "url": "https://doi.org/10.1051/0004-6361/202037915",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
