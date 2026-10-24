@@ -583,6 +583,11 @@ def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None):
     src = sources.get(sid) or {}
     print(f'源 {sid}')
     print(f'  lc 行数        : {r["rows"]}')
+    if not r['rows']:
+        print('  ⚠ 零测光       : 《数据审核提示词》§3.3（2026-10-24）要求先检索仓内快照'
+              '（gcn/archive 全文 / external/rssgrbag / external/grbsn_webtool）')
+        print('                   再查 GCN 站 / ADS 或 SciX / TNS，并在 comment 里留证：'
+              '检索日期 + 入口与篇数 + 结论 + 补了几行')
     print(f'  审核标记        : {json.dumps(src.get("audit"), ensure_ascii=False) if src.get("audit") else "（无）"}')
     print(f'  状态           : {r["state"]}')
     print(f'  依据           : {r["basis"]}')
