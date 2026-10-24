@@ -4,25 +4,58 @@
   "ra": 61.589,
   "dec": 21.743,
   "T0": "2017-01-17T03:37:48Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 20480",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 20480",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "pos_error_confidence": "90",
+  "comment": "Swift/BAT waiting-mode 图像触发 #733426-#733430（GCN 20480，D. M. Palmer, LANL）：BAT 船载定位 RA,Dec=61.589,+21.743（3′ 半径、90% 含系统误差），最高显著度仅 6.5σ，原文明言「the reality and category of this source are uncertain」；持续数分钟以上的时长长于通常 GRB，但银纬 b≈-22 离银道面远、不似银河系暂现源。T0=2017-01-17T03:37:48Z 与 GCN 20480（触发仪器官方通告）一致，GCN 20481/20482/20484 的 XRT/UVOT 跟进均以此为 T0 历元；原 bot 注记无从验证，已改写（原值「t0_note: t0 为 meta trigger-time（真实触发时刻）」）。无亚秒精度来源（边缘 waiting-mode 触发未入 swift_bat 精化目录快照），按来源精度保留整秒。Trigger_Instrument 原库作 Swift/XRT 系误标：XRT 仅 ToO 跟进（GCN 20481/20482），据 GCN 20480 改为 Swift/BAT；XRT 在 BAT 位置 296″ 内无 X 射线源（0.3-10 keV 上限 1.3e-13–1.8e-13 erg/cm2/s，GCN 20482，X 射线数据不入库）。Swift 触发号 #733426-#733430（GCN 20480），无目录背书的别名形态，alias 保持空。测光检索（2026-10-24）：仓内 gcn/archive 全文 grep「GRB 170117A」4 篇（GCN 20480/20481/20482/20484，即全部命中；20483 为 GRB 170115B）、「GRB170117A」0 篇、触发号 733426 仅 20480；external 快照：mpe_greiner 1 条（目录级，trigger_time=null，无光变）、swift_bat（快照年代覆盖 2004-12 至 2025-06）0 条、swift_grb（2004-2012，年代不覆盖）、heasarc_grbcat/uvot_grb/fermi_gbm/rssgrbag/grbsn_webtool 均 0 条；ADS 查询 q=\"GRB 170117A\" 命中 3 篇，q=abs:(\"GRB 170117A\" OR \"GRB170117A\") OR title:(\"GRB 170117A\") OR full:(\"GRB 170117A\") 命中 3 篇（均即 GCN 20481/20482/20484，无同行评审文献）；GCN 站 circulars/20480、/20484 在线可达（200，对照不存在编号 404）；arXiv API 0 篇；OpenAlex title 检索 2 篇（同 GCN）；Crossref bibliographic 检索无相关命中；TNS 不适用（无 AT/SN/CV 命名）。结论：无已发表测光文献；唯一有时间锚点的测光为 GCN 20484 UVOT white 上限，补 1 行。定位 3′ 为 GCN 20480 船载值，原文标注 90% containment，无后续精化定位。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-24 核实为 Swift/BAT 触发时刻（GCN 20480 原文 2017-01-17 03:37:48 UT，Swift-XRT/UVOT 通告同历元）；原 bot 注记已失效，原值见 comment",
+    "t0_basis": "GCN 20480",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 20480",
+      "title": "Swift Trigger #733426: possible detection of a burst or transient",
+      "url": "https://gcn.nasa.gov/circulars/20480",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20481",
+      "title": "GRB 170117A: Swift ToO observations",
+      "url": "https://gcn.nasa.gov/circulars/20481",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20482",
+      "title": "GRB 170117A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/20482",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20484",
+      "title": "GRB 170117A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/20484",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
