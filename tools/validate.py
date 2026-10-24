@@ -316,6 +316,38 @@ def check_leads(info_ids, reviewed_ids):
                  f'（{", ".join(fns)}）—— 每源一张，冲突时合并')
 
 
+ZERO_LC_EVIDENCE_KEYS = ('测光检索', '检索未命中', '未检索到', 'no photometry',
+                         'no usable photometry', '无可用测光')
+
+
+def check_zero_lc_evidence(reviewed_ids):
+    """零测光源的检索留证（警告级，§3.3）。
+
+    reviewed 且 `lc/<id>.csv` 不存在、`comment` 里又没有任何检索留证痕迹的源 → 警告。
+    只看 reviewed：未审的源本来就该有空表，不告警。2026-10-24 之前审核的属历史欠账，
+    不要求回溯（提示语里写清）；新审核必须按 §3.3 留证。
+    """
+    lc_dir = os.path.join(ROOT, 'lc')
+    info_dir = os.path.join(ROOT, 'info')
+    missing = []
+    for sid in sorted(reviewed_ids):
+        if os.path.exists(os.path.join(lc_dir, f'{sid}.csv')):
+            continue
+        try:
+            d = json.load(open(os.path.join(info_dir, f'{sid}.json'), encoding='utf-8'))
+        except Exception:
+            continue
+        c = str(d.get('comment') or '')
+        if any(k in c for k in ZERO_LC_EVIDENCE_KEYS):
+            continue
+        missing.append(sid)
+    if missing:
+        warn(f'零测光留证普查：{len(missing)} 个已 reviewed 的源既无 lc、comment 里也没有测光检索记录'
+             f'（例：{", ".join(missing[:3])} …）——《数据审核提示词》§3.3 要求零测光源按'
+             f'「检索日期 / 入口与篇数 / 结论 / 补了几行」留证；2026-10-24 前审核的不回溯，'
+             f'之后新审核的必须有')
+
+
 def check_reserved(info_ids, reviewed_ids):
     """维护者预留台账（警告级）：字段完整、不重复、未到期、不留已审核源。
 
@@ -428,6 +460,7 @@ def main():
 
     # 维护者预留台账（警告级；见 audit/README.md 的 reserved.tsv 小节）
     check_reserved(info_ids, reviewed_ids)
+    check_zero_lc_evidence(reviewed_ids)
 
     # tags.json 顶层形状
     tj = os.path.join(ROOT, 'tags.json')
