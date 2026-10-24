@@ -1,28 +1,69 @@
 {
   "transient_id": "GRB151004A",
-  "alias": [],
+  "alias": [
+    "BAT 657564"
+  ],
   "ra": 213.63218,
   "dec": -64.93914,
-  "T0": "2015-10-04T18:09:04Z",
-  "T0_ref": null,
+  "T0": "2015-10-04T18:09:04.774100Z",
+  "T0_ref": "GCN 18389（Cenko et al., Swift team）：'At 18:09:04 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒）；Swift/BAT 官方目录快照 trigger_time=2015-10-04T18:09:04.774100 UTC（external/swift_bat，亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 7.0,
-  "pos_ref": "GCN 18396",
+  "pos_ref": "GCN 18396 (Swift team): XRT 余辉天体测量校正位置 RA=213.63218, Dec=-64.93914, 7.0 arcsec (radius, 90% confidence)（衰减经 GCN 18423 第二历元确认）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) 身份与性质：BAT 图像触发 657564（GCN 18389 'a probable GRB'，地球临边约束 T0+56.9 min 后才可转向）；GCN 18396 在 BAT 误差圈内检出 X 射线源并给出天体测量校正位置 213.63218/-64.93914（7.0″，90%）；GCN 18423 第二历元（T0+885–932 ks）该源消失（4.8e-3→<1.5e-3 ct/s），衰减确认其为 X 射线余辉——**库内原 ra/dec 与 pos_error=7″ 即该 XRT 余辉位置，正确保留**，补 pos_ref 与 pos_error_confidence=90（原文明确）。GCN 18396 曾因低银纬（b=-3.47°）提示不能排除银河系起源，余辉确认后按 GRB 处置（tag 空补 grb）。BAT 精化定位 213.613/-64.956（2.3′ sys+stat 90%，GCN 18396）为粗定位备查。(2) T0 原值 2015-10-04T18:09:04Z（整秒）补亚秒为 **18:09:04.774100Z**（swift_bat 官方目录亚秒值；GCN 18389 整秒一致；§3.2 触发仪器亚秒值）。(3) Trigger_Instrument 'Swift/UVOT' 更正为 **'Swift/BAT'**：GCN 18389 明确 BAT triggered（图像触发）；UVOT 为后随观测。(4) sub_tag 不加 lgrb/sgrb：T90=128.40±17.77 s（15-350 keV，GCN 18396）虽 >2 s，但通告未作正式长短分类（仅称与 GRB 性质一致），按 §3.9 不得自算。BAT 谱指数 1.95±0.23、fluence=1.0e-6 erg/cm²（15-150 keV）记此备查（GCN 18396）。(5) 红移：无任何来源给红移，保持 null。(6) **测光增补（lc/GRB151004A.csv，8 行上限）**：GCN 18393 UVOT 全表（white_FC>20、white>20.3、v>18.7、b>19.2、u>18.9、uvw1>19.0、uvm2>19.3、uvw2>19.1；均 3σ、Vega（UVOT 光度系统，Breeveld+2011 原文所引）、未银消改正（E(B-V)=1.03 重消光）、T_start/T_stop 窗口中点/半宽约定口径）——全部有时间锚点，按 §3.3（2026-10-24 裁定）入库。XRT 流量（4.8e-3 ct/s 等）为 X 射线不入库，记 comment 备查（GCN 18396/18423）。(7) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文 5 篇（18389/18391/18393/18396/18423）；其中 1 篇含光学/UV 上限（18393）→lc 8 行；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；GCN 站检索对字母名失效（实测，以全文档案为准）；ADS/SciX 检索不可用（2026-10-24 实测两 API 均 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 'GRB 151004A' 0 命中（export.arxiv.org，2026-10-24）。(8) alias 原为空，补 BAT 657564（GCN 18389/swift_bat name_alt 原形）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 18389",
+      "title": "Swift Trigger 657564: a probable GRB",
+      "url": "https://gcn.nasa.gov/circulars/18389",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 18391",
+      "title": "Swift Trigger 657564: XRT prompt analysis",
+      "url": "https://gcn.nasa.gov/circulars/18391",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 18393",
+      "title": "Trigger 657564 / GRB 151004A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/18393",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 18396",
+      "title": "Trigger 657564 / GRB 151004A: Swift BAT and XRT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/18396",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 18423",
+      "title": "GRB 151004A: Swift-XRT follow-up observations",
+      "url": "https://gcn.nasa.gov/circulars/18423",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
