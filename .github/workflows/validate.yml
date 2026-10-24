@@ -30,3 +30,11 @@ jobs:
           GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           GITHUB_BASE_REF: ${{ github.base_ref }}
         run: python3 tools/check_branch_freshness.py
+      # 警告级守卫：同一个源被多个 open PR 同时触碰（认领挤占），永不失败。
+      # 判据是实时 PR 状态，不是每日生成的 audit/state.tsv 快照（快照滞后会让 agent 把已认领的源当 free）。
+      - name: Duplicate claim guard (warning only, never fails)
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
+        run: python3 tools/check_duplicate_claim.py
