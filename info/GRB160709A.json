@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB160709A",
   "alias": [
-    "GRB 160709826"
+    "GRB 160709.826",
+    "BAT 703769",
+    "bn160709826"
   ],
-  "ra": 236.11000061035156,
-  "dec": -28.510000228881836,
-  "T0": "2016-07-09T19:49:07.510000Z",
-  "T0_ref": null,
+  "ra": 236.11,
+  "dec": -28.51,
+  "T0": "2016-07-09T19:49:03.512Z",
+  "T0_ref": "GCN 19676（Jenke, Fermi GBM team）：'At 19:49:03.50 UT on 09 July 2016, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 160709A (trigger 489786547 / 160709826)'；Fermi GBM catalog (fermigbrst, bn160709826) trigger_time=2016-07-09T19:49:03.512 UTC（仓内快照，取数 2026-07-21），取 GBM 官方目录亚秒值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,17 +16,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 19675",
+  "pos_error": 972,
+  "pos_error_confidence": "90",
+  "pos_ref": "HEASARC FERMILGRB (2FLGC 上游表，Ajello+2019)：RA=236.11 Dec=-28.51 error_radius=0.27 deg（2026-10-24 在线复核；仓内快照取数 2026-07-21）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode（2026-10-24）：(1) T0 原值 2016-07-09T19:49:07.510000Z 系 bot 将 fermilgrb trigger_met=489786547.51 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2015-07-01 生效的 4 个闰秒，偏晚 4.000 s（Issue #109 同型）；证据：GCN 19676 'At 19:49:03.50 UT'；fermigbrst bn160709826 trigger_time=19:49:03.512Z；489786547.51 s 天真换算=19:49:07.510Z 与原 T0 完全一致（bug 复现）；fermilgrb/2FLGC 自带 trigger_time=19:49:03.003Z 与 GBM 目录差 0.509 s（该表自身口径，未采用）；Swift/BAT 地面分析 19:49:03.464Z（GCN 19681）与 GBM 整秒一致、亚秒差 0.048 s，按 §3.2 取触发仪器 GBM 亚秒值。(2) 坐标：原值 236.11000061035156/-28.510000228881836 为 236.11/-28.51 的 float32 舍入残渣（Issue #69 同类），已去除；FERMILGRB 在线复核（2026-10-24）RA=236.11 Dec=-28.51 error_radius=0.27 deg；Ajello+2019 称 LAT 定位平均为 90% containment（statistical only），故 pos_error_confidence=90；GCN 19675 LAT 在轨快速定位 RA,Dec=236.110,-28.500（0.18 deg，90% containment，statistical error only）；Swift/BAT 地面定位 235.996,-28.188（2.4 arcmin，90%，GCN 19681）在 LAT 误差圆外约 0.33 deg、通告自注不能排除两处为独立事件，但 FERMILGRB/2FLGC 与 Swift BAT 目录均归并为同一源，Konus-Wind（GCN 19677）/CALET（GCN 19701）/Astrosat CZTI（GCN 19740）亦按同一暴报道。(3) 别名：删 'GRB 160709826'（「日期+触发序列」空格拼接伪形，导入管线产物）；补 GRB 160709.826（fermigbrst/fermilgrb name_alt 原形，点号形）、bn160709826（fermigbrst trigger_name/trigger 号）、BAT 703769（swift_bat name_alt，GCN 19681 通告族触发号）；MPE Greiner 表用名 'GRB 160709AS'（mpe_greiner name_alt）未收录，记此备查。(4) 测光检索（2026-10-24）：仓内 gcn/archive 全文命中 10 篇（19674/19675/19676/19677/19678/19679/19681/19682/19701/19740，触发号检索另命中 19675/19676，对照组即此 10 篇 subject 自含源名，检索词有效）；external/rssgrbag 0 命中、external/grbsn_webtool 无该事件（仅 SN2020bvc 光谱文件数字假阳性）、external/uvot_grb 0 命中；ADS abs: 检索 13 命中（10 篇 GCN 与本地存档一一对应、无缺件，+ Tak+2019/Aldrich+2024/Augusto & Navia 2018）、full: 检索 16 命中（两形态合并去重）（另 Tang+2021、Ershova+2020、arXiv 2026 预印本）；已打开核对：Tak+2019 为 prompt γ 谱分析无测光表、Aldrich+2024 为 LAT 光子变异性研究、Tang+2021 为 13 个短暴谱样本、Augusto & Navia 2018 的地面 GeV 检出对象为 GRB 160609A/160625B 非本源、Ershova+2020（Astronomy Reports 64, 126）Table 20 转引本源首帧上限 W 18.8 (20)（ΔT_trigger=105 s，与 GCN 19678 同一次测量）；TNS 不适用（GRB 类，非 AT/SN/CV）；结论：无已发表光学对应体探测，仅 MASTER 3 条时间锚定上限 → lc 补 3 行（GCN 19678 两条、GCN 19682 一条）。(5) X 射线发现暂不处理：GCN 19679 Swift-XRT tiling（T0+20.7 ks 至 T0+39.1 ks，7 tile 共 3.3 ks）无未编目 X 射线源，场内 3σ 上限 0.01–0.06 ct/s（0.3–10 keV 流量 4.3e-13–2.2e-12 erg/cm²/s，假设典型 GRB 谱）。(6) SCHEMA 外物理量并列备查：T90=5.44±0.45 s（50–300 keV，FERMIGBRST）；~5.6 s（50–300 keV，GCN 19676）；4.8±1.6 s（15–350 keV，GCN 19681）；Konus-Wind 主脉冲 ~0.4 s（GCN 19677）；CALET SGM 0.38±0.04 s（600–3000 keV，GCN 19701）；CZTI 0.45 s（GCN 19740）；fluence(GBM)=2.28175e-06±1.13375e-08 erg/cm²（10–1000 keV，FERMIGBRST）；GBM Epeak=2211±131 keV（CPL，GCN 19676）；Konus Ep=2554(-509,+664) keV、fluence=(1.5±0.3)e-05 erg/cm²（20 keV–10 MeV，GCN 19677）；LAT 100 MeV 以上 100 s 内 >30 光子、最高 ~1 GeV（GCN 19675）。",
   "sub_tag": [
     "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -253,6 +261,18 @@
     }
   },
   "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ershova+2020",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "source": "Rusty-Harpoon@zcode"
+    },
     {
       "name": "Tak+2019",
       "title": "Multiple Components in the Broadband ensuremathgamma-Ray Emission of the Short GRB 160709A",
