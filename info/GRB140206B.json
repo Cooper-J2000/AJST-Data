@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB140206B",
   "alias": [
-    "GRB 140206275"
+    "GRB 140206.275",
+    "GRB140206275",
+    "bn140206275"
   ],
   "ra": 315.239990234375,
   "dec": -8.789999961853027,
-  "T0": "2014-02-06T06:36:15.840000Z",
-  "T0_ref": null,
+  "T0": "2014-02-06T06:36:12.843Z",
+  "T0_ref": "GCN 15790（von Kienlin, Fermi GBM team）：'At 06:36:12.84 UT'；Fermi GBM catalog (fermigbrst, bn140206275) trigger_time=2014-02-06T06:36:12.843 UTC（仓内快照 external/fermi_gbm，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 288,
+  "pos_ref": "2FLGC (Ajello+2019), fermilgrb error_radius=0.08 deg (LAT Transient-class 定位)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2014-02-06T06:36:15.84Z 系 bot 将 fermilgrb trigger_met=413361375.84 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006/2009/2012-07 生效的 3 个闰秒，偏晚 3.000 s；证据：fermigbrst bn140206275 trigger_time=2014-02-06T06:36:12.843Z（GBM 官方目录，仓内快照）；413361375.84 s 天真换算=06:36:15.840Z 与原 T0 完全一致（bug 复现）；2FLGC/fermilgrb 自带 trigger_time=2014-02-06T06:36:12.001Z 与 GBM 目录差 0.842 s，系该表自身口径，未采用。T0 按《数据审核提示词》§3.8 锚定优先级取 GBM 官方目录值（无 GCN 通告，GBM-only 源两路互证：fermigbrst + fermilgrb）。(2) pos_error 原为 null：fermilgrb error_radius=0.08 单位为度（表说明原文 'localization error from LAT transient factory analysis (deg)'），换算 0.08°=288″ 填入；ra/dec=315.24/-8.79 与 pos_ref 同源（LAT 定位，库内原值未动）；来源未标注置信水平。GBM 定位 315.26/-8.52（error_radius=0.23°）与 LAT 定位角距约 0.27°，小于两者误差半径之和（0.31°），互恰。(3) 红移：fermigbrst/fermilgrb 均无 redshift，GCN 无该源通告（2026-10-24 检索 query=140206.275，0 条），保持 null。(4) sub_tag 维持 Fermi-LAT，不加 lgrb/sgrb：T90=146.69±4.42 s（50-300 keV）虽 >2 s，但目录无长短分类列，按《数据审核提示词》§3.9 分类以来源为准、不得自算。(5) 身份：Fermi GBM trigger bn140206275（GRB 140206.275）=2FLGC GRB 140206B（原表 gcn_name=GRB 140206B）；同日 GRB 140206A（Swift/BAT trigger 585834，07:17:20 UT，145.32/+66.76，另对应 GBM bn140206304）为另一事件，位置相差约 110°，未混淆；仓内无重复条目。(6) 测光检索（2026-10-24）：仓内 rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录、gcn/archive 未随仓分发（本地无，以 GCN 站点检索替代）；GCN 站 query=140206.275 0 篇；ADS/SciX 检索不可用（2026-10-24 实测 api.adsabs.harvard.org 与 api.scixplorer.org 均返回 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 0 命中。→ 无可用测光，不建 lc（仓内无该源 lc 文件；同日 GRB140206A 的 lc 文件属 A 事件，与本源无关）。(7) alias：删 'GRB 140206275'（「日期+触发序列」空格拼接伪形，导入管线产物），补 GRB 140206.275（两目录 name_alt 原形）/GRB140206275（fermigbrst name 原形）/bn140206275（fermigbrst trigger_name）。补充审核（2026-10-24，GCN 全文检索修正）：本源实有 4 篇 GCN（15790/15791/15804/17421），此前「GCN 无该源通告」表述有误（站点检索失灵，已改用 gcn/archive 全文档案复核）。GCN 15790（GBM team）：T0 06:36:12.84 UT（与目录 12.843 一致，T0_ref 升级锚定本通告）；GBM 地面定位 314.6/-6.6、误差 1.9°（1σ 仅统计，另 2–3° 系统）——注意仓内 fermigbrst 行的 315.26/-8.52（err 0.23°）实为 GCN 15791 初报 LAT 地面定位（GBM 行采用更优定位），真正 GBM 通告定位为 314.6/-6.6；T90≈120 s、Epeak=296.6±7.3 keV。GCN 15791（LAT team）：初报 LAT 定位 315.26/-8.51（0.23°，90% 仅统计），与 2FLGC 终值 315.24/-8.79（0.08°）为同一仪器先后两版分析；库内 ra/dec 维持 2FLGC 终值（§4 更新时间裁定），初报值记此备查；25+ 光子 >100 MeV、最高 3.5 GeV@T0+460 s；近太阳 8.2°，Swift 无法跟进。GCN 15804（Konus-Wind）：其触发时刻 06:36:09.061 UT 早 GBM 3.782 s（跨航天器触发口径差，非 T0 分歧），T90 两段多峰、fluence(20 keV-10 MeV)=1.52e-4 erg/cm²。GCN 17421（iPTF）：2015 年三个暂源候选（iPTF15gz/hb/gv，另见 17415/17417）因无衰退被否证为本源对应体，其测光不入 lc。测光检索（2026-10-24）：gcn/archive 全文 4 篇（均无本源光学/射电测光）；仓内 rssgrbag 0 行、grbsn_webtool 无该源目录；ADS/SciX 检索不可用（2026-10-24 实测 api.adsabs.harvard.org 与 api.scixplorer.org 均返回 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 0 命中 → 无可用测光，未补行。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -133,8 +135,44 @@
         ],
         "trigger_time": "2014-02-06T06:36:12.001Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 15790",
+      "title": "GRB 140206B: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/15790",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 15791",
+      "title": "GRB 140206B: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/15791",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 15804",
+      "title": "Konus-Wind observation of GRB 140206B",
+      "url": "https://gcn.nasa.gov/circulars/15804",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17421",
+      "title": "GRB 140206B: Continued iPTF Observations",
+      "url": "https://gcn.nasa.gov/circulars/17421",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
