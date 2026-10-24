@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB141102A",
   "alias": [
-    "GRB 141102536"
+    "GRB 141102.536",
+    "GRB141102536",
+    "bn141102536",
+    "BAT 617313"
   ],
-  "ra": 209.07000732421875,
-  "dec": -46.72999954223633,
-  "T0": "2014-11-02T12:51:42.260000Z",
-  "T0_ref": null,
+  "ra": 208.614,
+  "dec": -47.1,
+  "T0": "2014-11-02T12:51:39.265Z",
+  "T0_ref": "Swift/BAT 官方目录快照 trigger_time=2014-11-02T12:51:39.265 UTC（external/swift_bat）；GCN 17021（GBM）'At 12:51:39.26 UT'；fermigbrst bn141102536 trigger_time=12:51:39.263（差 2 ms）；GCN 17020（Swift）整秒 '12:51:40 UT' 为取整口径",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +17,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 240,
+  "pos_ref": "GCN 17020 (Swift-BAT ground analysis): RA=208.614, Dec=-47.100, 4 arcmin radius, 90% containment（仓内 swiftgrbba 快照同值 err 4.0′、mpe_greiner 同源）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) **定位升级**：原 ra/dec=209.07/-46.73 系 2FLGC/fermilgrb LAT 定位（error_radius=0.68°，弱探测），更正为 Swift/BAT 地面分析定位 **208.614/-47.100（4′=240″，90% 包含，GCN 17020 原文明确给出）**——误差半径由 2448″ 降至 240″。GCN 17022 初报 LAT 定位 208.6/-47.7（0.6°，90% 仅统计）与 BAT 定位相容（角距 0.60°，恰在 LAT 误差半径边缘内），2FLGC 终值（209.07/-46.73，0.68°）与初报差 1.02°，超各自误差半径及其平方和（0.91°）、仅在线性和（1.28°）内——两版 LAT 定位互差偏大，故本库不采 LAT 定位而采 BAT 地面定位；仓内 fermigbrst 行定位 208.614/-47.1 即 BAT 地面定位（其 error_radius=0.001°=3.6″ 与 GCN 17020 自述的 4′/90% 不符，系目录行采用外部定位后误差列失真，本库不采信该误差值）。(2) T0 原值 2014-11-02T12:51:42.26Z 系 bot 将 fermilgrb trigger_met=436625502.26 s 天真换算漏扣 3 闰秒（相对闰秒修正值 12:51:39.260 偏晚 3.000 s（相对所采 Swift 目录值 12:51:39.265 偏晚 2.995 s）；436625502.26 s 天真换算=12:51:42.260Z 与原值一致，bug 复现）。按《数据审核提示词》§3.2/§3.8「有 Swift 则以 Swift 为准」取 swift_bat 官方目录亚秒值 12:51:39.265；GBM 目录 12:51:39.263 与之差 2 ms；GCN 17021 给 12:51:39.26；GCN 17020 的整秒 12:51:40 为取整口径，均一致。Konus-Wind 触发 12:51:36.656（GCN 17024，早 2.609 s，其触发于最強 0.6 s 子峰，跨航天器口径差）。(3) sub_tag 增补 **sgrb**：GCN 17022 明确称 'the short GRB 141102A'，GCN 17020 称 'A possibly short burst'；T90=2.5±0.4 s（BAT 15-150 keV）/2.62 s（GBM 50-300 keV）虽略超 2 s 阈（多峰结构），分类以来源表述为准（§3.9）。(4) 身份与谱线排除：Swift/BAT 地面分析发现（船载未发现；GCN 17020，BAT trigger 617313；仓内 swiftgrbba target_id=617313 同）+ Fermi/GBM 船载触发（bn141102536，GCN 17021）+ LAT 弱探测（GCN 17022，触发后 ~300 s 内，57° 视轴偏角）+ Konus-Wind（GCN 17024）同一事件；GCN 17025 澄清 Konus 所称 T-80 s 'precursor' 实为已知源 GX 354-0 的软暴（BAT trigger 617315），非本暴前兆——已在身份判断中排除。同日 GBM bn141102112（02:41 UT）、bn141102779（18:41 UT）为另两事件，未混淆。注意仓内 swift_bat 快照 name_alt 'BAT 617316' 与 GCN/swiftgrbba 的 617313 不一致（见 PR 待决事项）。(5) 红移：无任何来源给红移，保持 null。Swift TOO 因近太阳 39 天不可行（GCN 17020），无 XRT/UVOT 后随。(6) 测光检索（2026-10-24）：gcn/archive 全文 5 篇（17020/17021/17022/17024/17025，均高能参数与通告，无光学/射电测光——近太阳约束无后随观测）；仓内 rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；ADS/SciX 检索不可用（2026-10-24 实测 api.adsabs.harvard.org 与 api.scixplorer.org 均返回 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 0 命中 → 无可用测光，未补行，不建 lc。(7) alias：删 'GRB 141102536'（空格拼接伪形），补 GRB 141102.536（两目录 name_alt 原形）/GRB141102536（fermigbrst name 原形）/bn141102536（fermigbrst trigger_name）/BAT 617313（GCN 17020 与 swiftgrbba target_id 原形）。BAT 谱指数 1.3±0.5、fluence=3.7e-7 erg/cm²（GCN 17020）、GBM Epeak=770±243 keV（GCN 17021）、Konus 最强子峰 fluence=1.43e-6 erg/cm²（20 keV-10 MeV，GCN 17024）等 SCHEMA 外物理量记此备查。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -210,8 +214,51 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 17020",
+      "title": "GRB 141102A found in ground analysis of BAT data",
+      "url": "https://gcn.nasa.gov/circulars/17020",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17021",
+      "title": "GRB 141102A: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/17021",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17022",
+      "title": "GRB 141102A: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/17022",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17024",
+      "title": "Konus-Wind observation of GRB 141102A",
+      "url": "https://gcn.nasa.gov/circulars/17024",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 17025",
+      "title": "GRB 141102A possible precursor was another, known source",
+      "url": "https://gcn.nasa.gov/circulars/17025",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
