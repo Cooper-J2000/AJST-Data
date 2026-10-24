@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB160503A",
   "alias": [
-    "GRB 160503567"
+    "GRB 160503.567",
+    "bn160503567"
   ],
-  "ra": 358.989990234375,
-  "dec": -1.2400000095367432,
-  "T0": "2016-05-03T13:36:36Z",
-  "T0_ref": null,
+  "ra": 358.99,
+  "dec": -1.24,
+  "T0": "2016-05-03T13:36:32.008Z",
+  "T0_ref": "GCN 19380（Mailyan & Toelge, Fermi/GBM Team）：'At 13:36:32.008 UT on 03 May 2016, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 160503A (trigger 483975396 / 160503567)'；FERMIGBRST（HEASARC）bn160503567 trigger_time=2016-05-03T13:36:32.008Z（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +15,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3168,
+  "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，ERR=0.88°，90% 包含、统计误差，Ajello+2019 §4.1；fermilgrb_w3browse_full.txt 2026-10-24 复核）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode 2026-10-24：(1) 身份=Fermi/GBM 触发 483975396（GCN 19380 'trigger 483975396 / 160503567'；FERMIGBRST bn160503567），LAT 同步探测（GCN 19379，Omodei+2016）；GCN 19379 笔误写作 'trigger 483975395'，以 GCN 19380 与 FERMIGBRST 为准。2FLGC LAT LTF 定位 RA=358.99、Dec=-1.24（FERMILGRB 表 23 55 57.6 -01 14 24），ERR=0.88°=3168″；GBM 地面定位 RA=0.54、Dec=-1.93、r=0.52°（FERMIGBRST；GCN 19379 的 LAT 在地定位亦给 0.54/-1.93、0.52° 90% statistical only）；MPE Greiner 表 X 射线位置 00h02m10s -01°56′（±32′）与 GBM 定位相合。库内无同事件重复条目。(2) T0：原值 2016-05-03T13:36:36Z 系 bot 将 2FLGC trigger_met=483975396.0 自 2001-01-01 纪元直换、未扣 2006/2009/2012-07/2015-07 生效的 4 个闰秒（Issue #67/#109 同族），天真换算=13:36:36.000 与原值完全一致（bug 复现）；现取 GCN 19380 触发时刻 13:36:32.008，与 FERMIGBRST trigger_time 一致；2FLGC/fermilgrb 自带 trigger_time=2016-05-03T13:36:31.997Z（早 0.011 s，备查）；lc 为空，直接改 T0 为触发时刻，T0_offset 留空（目录换算口径差，非真实爆发偏移）。(3) 位置：原 ra/dec 为 float32 残渣（358.989990234375/-1.2400000095367432），还原 FERMILGRB 表发布精度 358.99/-1.24；pos_error 原为 null，补 FERMILGRB error_radius=0.88°=3168″，confidence=90（Ajello+2019 §4.1：LAT 定位误差为 90% containment、statistical only）。(4) alias：删拼接伪形 'GRB 160503567'（Issue #69/维护者 2026-10 判例），收 'GRB 160503.567'（2FLGC/fermilgrb name_alt）与 'bn160503567'（FERMIGBRST trigger_name）。(5) 其他量值并列：T90=28.672±1.493 s（50-300 keV，FERMIGBRST），GCN 19380 初步值≈59.4 s（50-300 keV）；Epeak=138.25±23.27 keV（CPL，FERMIGBRST）vs GCN 19380 138.7±33.5 keV；注量 (2.127±0.052)e-06 erg/cm²（10-1000 keV，FERMIGBRST）vs GCN 19380 (2.15±0.25)e-06；LAT 25° 离轴、>10 ks 探测、无 GeV 事件（GCN 19379）。(6) 测光检索（2026-10-24）：仓内 gcn/archive 全文检索（'GRB 160503A'/'GRB160503A'/'483975396'/'160503' 多变体，对照组验证有效）命中 2 篇（GCN 19379/19380，均只报 GBM/LAT 伽马光变与谱结果，无光学/射电测光或上限）；GCN 站 circulars 检索 160503A/160503567 共 2 篇（totalItems=2，无缺件）；ADS abs 命中 2 篇、full 命中 5 篇（除上 2 篇外：Ajello+2019 2FLGC 目录本身只给总结参数与图版光变（Figure 3/6/9），无可引用测光表；Alfaro+2017, ApJ 843, 88（HAWC）明言 GRB 160503A 因供电问题未被观测、无法分析，无上限；Lowell+2017, ApJ 848, 119（COSI）仅将 GRB 160503A 用作去系统效应的无偏振模拟，无观测数据）；external/rssgrbag、grbsn_webtool、uvot_grb、swift_bat、swiftgrbba、swift_xrt_live 等快照均无 160503 记录（swift_grb 止于 2012-12、heasarc_grbcat 止于 2005-03，早于本源，不适用）；TNS 不适用（GRB 类）→ 无可用测光，补 0 行。GCN 19379 称 'A Swift ToO has been requested'，但 GCN 站与 ADS 均无 Swift 观测通告或数据记录。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -77,8 +78,21 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
