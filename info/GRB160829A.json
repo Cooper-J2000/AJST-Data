@@ -1,25 +1,29 @@
 {
   "transient_id": "GRB160829A",
   "alias": [
-    "GRB 160829334"
+    "GRB 160829A",
+    "GRB 160829.334",
+    "bn160829334"
   ],
-  "ra": 201.72000122070312,
-  "dec": -56.779998779296875,
-  "T0": "2016-08-29T08:01:41.650000Z",
-  "T0_ref": null,
+  "ra": 201.72,
+  "dec": -56.78,
+  "T0": "2016-08-29T08:01:37.643Z",
+  "T0_ref": "GCN 19882（Hamburg et al., Fermi GBM team）：'At 08:01:37.64 UT ... triggered'；FERMIGBRST（HEASARC）trigger_time=2016-08-29T08:01:37.643Z（仓内快照，取数 2026-07-21）；2FLGC trigger_met=494150501.65 扣 4 闰秒后=08:01:37.650，与采纳值差 7 ms（2FLGC MET 舍入口径）；Ajello+2019 Table 2 本源行 UT=08:01:37、MET=494150501.650（同表 UT 列与 MET 列自差 4 s，佐证漏闰秒），详见 comment (2)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": null,
+  "redshift": 4.373,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 19879",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "pos_error": 360,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019 (2FLGC) Table 2：LTF 定位 201.72/−56.78，ERR=0.1°=360″（90% 包含、统计误差，Ajello+2019 §4.1；仓内 external/fermi_lat 快照 gll_2flgc_dr1.fits 复核）；GCN 19879 在轨定位 201.7/−56.77、0.12°=432″（90% 包含、仅统计误差）并列备查",
+  "redshift_type": "est",
+  "redshift_ref": "Ruffini+2018 (arXiv:1802.07552)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode（2026-10-24）：(1) 身份=Fermi/GBM 触发 494150501/160829334（GCN 19882，GBM 团队），Fermi-LAT 在轨探测（GCN 19879，标题即称 short GRB）；Swift ToO 跟进（GCN 19880/19883：XRT 0.3–10 keV 在 T0+37.4–61.4 ks 未探测，3σ 计数率上限 2.6e-3 ct/s——X 射线数据不入库）。库内无同事件重复条目。(2) T0：原值 2016-08-29T08:01:41.650000Z 系 bot 将 2FLGC trigger_met=494150501.65 自 2001-01-01T00:00:00 UTC 纪元直换、漏扣 2006/2009/2012-07/2015-07 生效的 **4** 个闰秒，偏晚 4.000 s（Issue #67/#109 同型；天真换算复现=08:01:41.650，与原 T0 完全一致）；现取触发仪器 GBM 官方目录 FERMIGBRST trigger_time=08:01:37.643Z；GCN 19882 给 08:01:37.64 UT（舍入一致）；Ajello+2019 Table 2 本源行 UT=2016-08-29 08:01:37、MET=494150501.650（同表 UT 列已扣闰秒、MET 列未扣，自差 4 s，佐证修正方向）；2FLGC/fermilgrb 自带 trigger_time=08:01:36.998Z 比采纳值早 0.645 s（该表自身口径，备查未采用）；T0_offset 留空（目录换算口径差不算偏移）。(3) 定位：ra/dec 由 float32 残渣还原 2FLGC 编目值 201.72/−56.78（external/fermi_lat 快照，源自 gll_2flgc_dr1.fits）；pos_error=0.1°=360″（90% 包含、统计误差，Ajello+2019 §4.1 明文 'the (90% containment, statistical only) uncertainty in LAT detections'）；GCN 19879 在轨定位 201.7/−56.77、r=0.12°=432″（90% 包含、statistical error only，原文明确）；GBM 地面定位 200.891/−55.883、r=0.45°（FERMIGBRST）；MPE Greiner 表 13h26m48s −56°46′≈201.7/−56.77。(4) 红移：无实测红移；Ruffini+2018（arXiv:1802.07552，未经评审、查 OpenAlex/Crossref 确无正式发表版）fireshell 模型理论推演 z=4.373±0.99，故 redshift_type=est（非实测），同文并给 Eiso=(2.56±0.22)×10^52 erg、Ep,i=(0.92±0.34) MeV、baryon load B=1.59±0.10（同为模型推演值）。(5) 分类：短暴——2FLGC Table 3 CLASS=(S)（Ajello+2019）；GCN 19879 标题 'Fermi-LAT detection of a short GRB'；Tang+2021（ApJ 922, 255）§3 将本源列为 LAT 目录 17 个短暴之一（因 GBM T90 内无 >100 MeV 光子被其谱分析样本排除，无本源数据）。(6) alias：'GRB 160829A'=GCN 19879/19880/19882/19883 subject 用名；'GRB 160829.334'=2FLGC/FERMIGBRST name_alt 点号形（仓内快照 external/fermi_lat、external/fermi_gbm）；'bn160829334'=FERMIGBRST name_alt bn 形；删拼接伪形 'GRB 160829334'（快照 name_alt 含此形，按 Issue #69 与 63247a4 口径不收，出处记此备查）。(7) 测光检索（2026-10-24）：仓内 gcn/archive 45889 篇全文命中 4 篇（19879/19880/19882/19883，均无光学/其他测光表；19883 仅为 X 射线计数率上限）；external/rssgrbag 0 行、external/grbsn_webtool 无本源事件、external/uvot_grb、external/swift_grb、external/heasarc_grbcat 无记录（后三目录年代/内容不含本源，如实注明）；ADS 检索（abs/title/full='GRB 160829A' 及 full='160829334'，2026-10-24）命中 7 条=4 GCN（同上，本地已有全文）+Tang+2021（无本源测光数据）+Ruffini+2018（理论推演，无测光）+Martinez-Castellanos+2019（HAWC GW 对应体搜索会议文，本源仅作 Fig. 2 灵敏度图参考谱，非对其观测、无上限）；GCN 站命中与 ADS bibstem GCN 集合一致、无本地缺件；TNS 不适用（GRB 非 AT/SN/CV 类）。结论：无任何已发表测光或可入库上限，补 0 行，lc 保持空。",
   "sub_tag": [
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -148,8 +152,56 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 19879",
+      "title": "GRB 160829A: Fermi-LAT detection of a short GRB",
+      "url": "https://gcn.nasa.gov/circulars/19879",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19880",
+      "title": "GRB 160829A: Swift ToO observations",
+      "url": "https://gcn.nasa.gov/circulars/19880",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19882",
+      "title": "GRB 160829A: Fermi GBM Detection",
+      "url": "https://gcn.nasa.gov/circulars/19882",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19883",
+      "title": "GRB 160829A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/19883",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Tang+2021",
+      "url": "https://doi.org/10.3847/1538-4357/ac26ba",
+      "title": "Prevalence of Extra Power-Law Spectral Components in Short Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ruffini+2018",
+      "url": "https://arxiv.org/abs/1802.07552",
+      "title": "On the Short GRB GeV emission from a Kerr Black hole",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
