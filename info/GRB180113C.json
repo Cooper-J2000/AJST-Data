@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB180113C",
   "alias": [
-    "GRB 180113418"
+    "GRB 180113.418",
+    "bn180113418"
   ],
-  "ra": 174.6300048828125,
-  "dec": -64.73999786376953,
-  "T0": "2018-01-13T10:02:10.407000Z",
-  "T0_ref": null,
+  "ra": 174.63,
+  "dec": -64.74,
+  "T0": "2018-01-13T10:02:05.407Z",
+  "T0_ref": "FERMIGBRST（HEASARC Fermi GBM Burst Catalog）trigger_time；GCN 22334",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3600,
+  "pos_ref": "GCN 22334（GBM 地面定位 1°，1σ containment、statistical only）；FERMIGBRST（HEASARC）；Ajello+2019（2FLGC）表 2（Loc.=FGGC）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。T0 修正：原值 2018-01-13T10:02:10.407000Z 系 2FLGC trigger_met=537530530.407 未扣闰秒的直换产物（MET 纪元 2001-01-01 UTC；2017-01-01 起 UTC 闰秒累计 5 s，Issue #109 同型，+5 s），现取触发仪器 GBM 官方目录 FERMIGBRST 触发时刻 2018-01-13T10:02:05.407Z；MET 537530530.407 扣 5 s 闰秒后即得该值（自洽），GCN 22334 给 10:02:05.41 UT（舍入一致）；FERMILGRB/2FLGC trigger_time=10:02:04.998Z（与 FERMIGBRST 差 0.409 s，取触发仪器官方值）；Insight-HXMT/HE 触发 T0=10:02:07.50 UT（GCN 22343）、Konus-Wind 触发 T0=36129.524 s UT=10:02:09.524（GCN 22351）均为其他仪器的触发时刻，不采用；IPN 亦给约 36125 s UT（GCN 22349，与 GBM 一致）。坐标取 2FLGC 表 2 的 FGGC（Fermi-GBM 在线目录）定位 RA=174.63 Dec=-64.74、Loc.Err=1.00°=3600″（本源为 LLE-only 检测、LTF TS 空白，表 2 注明 LLE-only 源定位取自 GBM；与 FERMIGBRST 快照及在线行一致；GCN 22334 地面定位 RA=174.6 Dec=-64.7、误差 1°（半径，1σ containment、statistical only），故 pos_error_confidence=1sigma；Ajello+2019 §4.1 的 90% containment 陈述针对 LAT LTF 定位（均值 0.36°），不适用于本 FGGC 定位）；ra/dec 原值 174.6300048828125/-64.73999786376953 为 float32 残渣，按来源精度改写（Issue #69 口径）。GCN 22334 原文年份笔误「13 January 2008」（应为 2018）；GCN 22351 引注笔误：将其 GBM 探测通告写作 GCN 22344（实为 22334）。IPN 3σ 误差盒中心 (175.300, -63.261)、面积 2174 平方角分、最长径 2.67°/最短 13.8′（GCN 22349）。别名出处：GRB 180113.418=FERMIGBRST/2FLGC 目录用名（快照 name_alt 点号形，替代原空格拼接伪形 GRB 180113418）；bn180113418=GBM 触发号（trigger 537530530）。物理量并列：T90(GBM)=24.5765±0.362053 s（50–300 keV，FERMIGBRST）；T90≈24.6 s（GCN 22334）；T90(HXMT/HE)=22.05 s、自 T0(HXMT)+4.17 s 起（CsI 记录能段约 80–800 keV，GCN 22343）；T90(LAT LLE)=23.693 s（2FLGC）；fluence(GBM)=1.6311e-04±5.76291e-08 erg/cm²（10–1000 keV，FERMIGBRST）；fluence=(6.838±0.017)e-05 erg/cm²（T0+3.1–34.8 s，10–1000 keV，GCN 22334 初步值）；fluence(Konus-Wind)=(2.9±0.1)e-04 erg/cm²（20 keV–10 MeV，GCN 22351，90% 置信）；Epeak(BAND)=261.30194±6.19 keV（obs frame，FERMIGBRST）；Epeak(BAND)=307±4 keV（T0+3.1–34.8 s，GCN 22334 初步值）；Epeak(BAND)=368(-22,+24) keV（20 keV–15 MeV，GCN 22351，90% 置信）；1 s 峰光子流量 26.3±0.3 ph/cm²/s（自 T0+10 s 起，10–1000 keV，GCN 22334）；64 ms 峰能量流量 (3.1±0.3)e-05 erg/cm²/s（自 T0(Konus)+6.400 s 起，20 keV–10 MeV，GCN 22351）；长暴（GCN 22349/22351 原文 long-duration）。测光检索（2026-10-24）：仓内 gcn/archive 45889 篇全文检索变体 GRB 180113C/GRB180113C/180113418/537530530/HEB180113418/180113.418（对照组验证检索词有效），命中本源 4 篇（GCN 22334/22343/22349/22351；GRB 180113 前缀另 13 篇均属同日异源 180113A/B，逐篇核对不涉本源），全部为伽马射线探测/定位通告，无光学/NIR/射电测光或上限；external 快照逐目录 grep：rssgrbag/grbsn_webtool/konus_wind/agile_mcal/swift_grb/heasarc_grbcat/uvot_grb 无本源记录，swift_bat/swiftgrbba 仅含同日 180113A，mpe_greiner 仅 IPN 定位行（已用于互证），fermi_gbm/fermi_lat 仅目录参数；GCN 站在线回读 4 篇均 200（无撤下缺件），gcn.gsfc.nasa.gov/other/GRB180113C.fermi 404；ADS（api.adsabs.harvard.edu，2026-10-24）：abs 检索 \"GRB 180113C\" 命中 4 篇（即上述 GCN）、full:\"GRB 180113C\" 命中 5 篇、full:\"180113418\" 命中 1 篇、\"180113C\" 命中 4 篇——非 GCN 命中仅 Leone+2025（A&A 701, A50，CCF 时延方法文；VoR 被 A&A 站反爬拦截，取 arXiv:2506.04014 v1 PDF 实际打开核对：本源仅作方法演示样本——GBM/HXMT 事件文件随机拆分并人为注入 1 s 时延的 MC 验证，无任何本源测光或天体物理量）；结论：无可入库测光（含上限），lc 保持 0 行；TNS 不适用（本源非 AT/SN/CV 类）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -144,8 +146,51 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Leone+2025",
+      "url": "https://doi.org/10.1051/0004-6361/202453054",
+      "title": "Time domain astrophysics with transient sources: Delay estimate via Cross Correlation Function techniques",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 22334",
+      "url": "https://gcn.nasa.gov/circulars/22334",
+      "title": "GRB 180113C: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 22343",
+      "url": "https://gcn.nasa.gov/circulars/22343",
+      "title": "GRB 180113C: Insight-HXMT/HE observation",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 22349",
+      "url": "https://gcn.nasa.gov/circulars/22349",
+      "title": "IPN Triangulation of GRB 180113C",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 22351",
+      "url": "https://gcn.nasa.gov/circulars/22351",
+      "title": "Konus-Wind observation of GRB 180113C",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
