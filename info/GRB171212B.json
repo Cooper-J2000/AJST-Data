@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB171212B",
   "alias": [
-    "GRB 171212434"
+    "GRB 171212.434",
+    "bn171212434"
   ],
-  "ra": 39.41999816894531,
-  "dec": -70.62999725341797,
-  "T0": "2017-12-12T10:24:23.510000Z",
-  "T0_ref": null,
+  "ra": 39.42,
+  "dec": -70.63,
+  "T0": "2017-12-12T10:24:18.513Z",
+  "T0_ref": "GCN 22247 / GCN 22249（Fermi GBM 触发时刻 10:24:18.51 UT，trigger 534767063/171212434）；FERMIGBRST 官方目录 trigger_time=2017-12-12T10:24:18.513Z（触发仪器亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 22247",
+  "pos_error": 1548,
+  "pos_error_confidence": "90",
+  "pos_ref": "HEASARC FERMILGRB 目录 2FLGC LTF 定位 RA,Dec=39.42,-70.63（error_radius 0.43 deg；仓内快照 retrieved 2026-07-21；Ajello+2019 Table 2 本行同值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（2026-10-24，Rusty-Harpoon@zcode）。身份：GRB 171212B = Fermi/GBM 触发 534767063（=171212434，bn171212434），触发时刻 10:24:18.51 UT（GCN 22249）；Fermi-LAT 同暴探测（GCN 22247，LAT on-ground 定位 RA,Dec=39.44,-70.62、误差半径 0.39 deg、90% 包含仅统计误差；与 LAT boresight 夹角 11°；最高能光子 931 MeV 于触发后 544 s）。同日异源：GRB 171212A = Swift 触发（Swift J1935.7+2036，GCN 22243/22245/22246/22248/22251/22253）、GRB 171212C = Konus-Wind 22:53:41.759 UT 触发、CALET 探测（GCN 22285）——均与本源无关，勿混。T0：原 T0=2017-12-12T10:24:23.510000Z 为 2FLGC trigger_met=534767063.51 未扣闰秒直换（MET 纪元 2001-01-01 UTC；2017-01-01 起 UTC 闰秒累计 5 s；同 Issue #109 口径），已改；GBM 官方值 10:24:18.51 UT（GCN 22247/22249）与 FERMIGBRST trigger_time=10:24:18.513Z 一致；Ajello+2019 Table 2 本行 UT 列亦为 2017-12-12 10:24:18（MET 534767063.510）；FERMILGRB 目录 UTC 列 10:24:18.003 与其自身 MET 列（→10:24:18.51 UTC）自差 0.507 s，弃用备查（同族于 GRB170921B 审核 PR 待决①）。位置：采用 2FLGC LTF 定位 RA,Dec=39.42,-70.63（error_radius 0.43 deg=1548″，90% 包含半径、仅统计误差，据 Ajello+2019（2FLGC，ApJ 878,52）§4.1「On average, the (90% containment, statistical only) uncertainty in LAT detections is 0.36°」与 Table 2 列说明「The localization error (column 6) is the error obtained from the LTF analysis」；VoR（IOP）页面反爬不可得，陈述取自 arXiv v1（1906.11403，2026-10-24 实际打开核对））。并列备查：GCN 22247 LAT on-ground 39.44,-70.62（0.39 deg，90% 仅统计）；FERMIGBRST 目录行 ra/dec=39.44,-70.62、error_radius=0.39 deg；MPE Greiner 表「GRB X-ray position 02h37m46s -70°37'」、Error 23′、IPN 标记 y（与 GCN 22247 LAT 定位一致）。原 info ra/dec 的 float32 残渣（39.41999816894531/-70.62999725341797）按来源精度改写为 39.42/-70.63（FERMILGRB 行原始值 02h37m40.8s -70°37'48\"）。分类：lgrb（Ajello+2019 Table 3 本行 class=(L)，L=TGBM,90>2 s；GBM T90≈32 s）。物理量（多来源并列，不参与判定）：T90=32 s（50-300 keV，预备，GCN 22249）= 32.001±1.379 s（FERMIGBRST/2FLGC）；T50=16.896±0.572 s（FERMIGBRST）；fluence=(5.744±0.3)e-6 erg/cm2（10-1000 keV，T0–T0+32 s，GCN 22249）= 5.0312e-6±6.8e-8 erg/cm2（10-1000 keV，FERMIGBRST）；Epeak=74±9 keV（Band，预备，GCN 22249）= 64.04±8.32 keV（Band，FERMIGBRST flnc_band_epeak）；1 s 峰值光子流量 5.0±0.3 ph/cm2/s（10-1000 keV，自 T0+27 s 起，GCN 22249）；64 ms 峰值光子流量 8.50±1.48 ph/cm2/s（10-1000 keV，FERMIGBRST）；LAT T100=380.35±128.73 s、LTF TS=25.50、最强延伸辐射光子 610 MeV @497 s（FERMILGRB 快照）；GBM 触发时与 LAT boresight 夹角 11°（GCN 22247）。alias 出处：GRB 171212.434 为 FERMIGBRST/2FLGC name_alt 点号形；bn171212434 为 FERMIGBRST name_alt bn 形；原 alias「GRB 171212434」（空格+9 位触发号拼接伪形，导入产物）已按《数据审核提示词》§3.10 删除（FERMIGBRST name 列原值 GRB171212434 备查）。测光检索（2026-10-24）：仓内 gcn/archive 45 889 篇全文检索（变体 GRB 171212B/GRB171212B/171212434/534767063/171212）：命中本源相关 2 篇——22247（Fermi-LAT 探测）、22249（Fermi GBM 观测）——均为伽马射线探测/定位通告，无光学/NIR/射电测光或上限；其余 171212 命中均为同日异源（GRB 171212A 的 22243/22245/22246/22248/22251/22253；GRB 171212C 的 22285）与无关数字误配（36014，Fermi 触发 733808041 的 MASTER 报告）。external 快照：rssgrbag（lightcurve.jsonl，0 命中）、grbsn_webtool（无 171212 事件）、swift_bat/swift_grb/swiftgrbba/uvot_grb/swift_xrt_live/heasarc_grbcat/konus_wind/agile_mcal/saxgrbmgrb/batse/minaev2020/liang2023/wang2022/guidorzi2025 均无本源记录。GCN 站：gcn.nasa.gov/circulars/22247 与 /22249 均在线（HTTP 200，2026-10-24）；gcn.gsfc.nasa.gov/other/GRB171212B.gcn3 返回 404。ADS（api.adsabs.harvard.edu，2026-10-24）：q=(\"GRB 171212B\" OR \"GRB171212B\")、abs:、title: 各命中 2 篇（22247/22249）；full: 命中 2 条（同前）；目录名变体 \"GRB 171212434\"/\"GRB 171212.434\"/\"171212434\" 各 0 篇。结论：无可用测光（含上限），lc 保持 0 行。TNS 不适用（GRB，非 AT/SN/CV 类）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -149,8 +152,32 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Kocevski+2017",
+      "url": "https://gcn.nasa.gov/circulars/22247",
+      "title": "GRB 171212B: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Bissaldi+2017",
+      "url": "https://gcn.nasa.gov/circulars/22249",
+      "title": "GRB 171212B: Fermi GBM observation",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
