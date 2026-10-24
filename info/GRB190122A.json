@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB190122A",
   "alias": [
-    "GRB 190122305"
+    "GRB 190122305",
+    "bn190122305"
   ],
-  "ra": 258.7099914550781,
-  "dec": 48.119998931884766,
-  "T0": "2019-01-22T07:19:12.570000Z",
-  "T0_ref": null,
+  "ra": 258.71,
+  "dec": 48.12,
+  "T0": "2019-01-22T07:19:07.574Z",
+  "T0_ref": "GCN 23768; FERMIGBRST (HEASARC, external/fermi_gbm)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 0.91,
   "pos_ref": "GCN 23767",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "T0 经 fsy@zcode 2026-10-25 审核修正：原 bot 值 2019-01-22T07:19:12.570000Z 系 Fermi MET 569834352.57 裸换算（漏扣 2001 历元至 2019 年累计 5 闰秒，Issue #67）；GBM 触发时刻 2019-01-22T07:19:07.574Z（FERMIGBRST 官方目录 trigger_time，HEASARC；GCN 23768 GBM 团队通告 07:19:07.57 UT 一致；MET−5 s=07:19:07.570 复算互证；GBM 命名 190122305 尾数 305=当日秒数/86.4≈304.9 亦相符）。2FLGC/FERMILGRB trigger_time 07:19:06.997Z（LAT 系口径，差 0.577 s）、Konus-Wind 自触发 T0=07:19:07.426 UT（GCN 23783，差 0.148 s）均备查。ra/dec 清理 float32 残渣为 258.71/+48.12（GCN 23767 LAT 在轨定位 RA,Dec=258.71,48.12 J2000）；pos_error=0.91 deg（90% containment，statistical error only，GCN 23767）。alias：GRB 190122305＝GBM/FERMIGBRST 目录名（GCN 23767/23783 引 190122305），bn190122305＝GBM trigger name（FERMIGBRST name_alt）。身份：GRB 190122A＝Fermi GBM trigger 569834352 / 190122305（GCN 23768），LAT 探测（GCN 23767），Konus-Wind 交叉验证（GCN 23783），无 Swift/光学/X 射线后续；条目由 Fermi LAT 目录数据导入新建（HEASARC FERMILGRB/2FLGC，快照见 extra_data.catalog_data.fermi_lat）。测光检索（2026-10-25）：仓内 gcn/archive 本地未获取，经 GCN 网站事件页检索 3 篇（23767/23768/23783，均仅伽马射线，无任何光学/X 射线/射电测光或上限）；仓内 external/rssgrbag（140 行射电光变）0 命中、external/grbsn_webtool（63 事件）无该事件、external 其余快照为目录级参数（fermi_gbm/fermi_lat/mpe_greiner 已入 catalog_data）；外部文献经搜索引擎限定 arxiv.org 与 ADS（ui.adsabs.harvard.edu）站域检索（ADS/SciX 站内直连因网络中断未跑通）：arXiv 命中样本文章 1 篇（Zuo & Zou 2026, arXiv 2609.14411，促发谱高能截止样本，含 GRB 190122A 促发谱拟合，无测光），ADS 命中 GCN 通告 1 篇（2019GCN.23768....1B）；TNS 不适用（无 AT/SN 命名）→ 无可用测光，补 0 行。",
   "sub_tag": [
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -150,8 +151,39 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Axelsson2019",
+      "url": "https://gcn.nasa.gov/circulars/23767",
+      "title": "GRB 190122A: Fermi-LAT detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Bissaldi2019",
+      "url": "https://gcn.nasa.gov/circulars/23768",
+      "title": "GRB 190122A: Fermi GBM observation",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Svinkin2019",
+      "url": "https://gcn.nasa.gov/circulars/23783",
+      "title": "Konus-Wind observation of GRB 190122A",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Zuo2026",
+      "url": "https://arxiv.org/abs/2609.14411",
+      "title": "High-energy spectral cutoffs in the prompt emission of Fermi gamma-ray bursts",
+      "source": "fsy@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
