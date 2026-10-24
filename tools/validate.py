@@ -51,9 +51,11 @@ MJD_CONSIST_TOL_S = 1.0       # 与三层验收 L3 不变量同一容差
 
 # audit/leads/：多目标文献线索卡（人工维护，不参与审核状态机；契约见 audit/leads/README.md）
 LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
+PAPER_DIR = os.path.join(LEADS_DIR, 'papers')     # 文献级索引卡：一篇多源文献一张
 RESERVED_TSV = os.path.join(ROOT, 'audit', 'reserved.tsv')
 RESERVED_COLS = ('source_id', 'holder', 'since', 'until', 'reason', 'ref')
 LEAD_KEYS = ('source_id', 'status', 'paper', 'pr', 'helper', 'date')
+PAPER_KEYS = ('paper_key', 'paper', 'date', 'helper', 'sources', 'out_of_repo')
 LEAD_STATUS = {'extracted', 'mention-only'}
 LEAD_KEY_RE = re.compile(r'^\s*[-*]?\s*([A-Za-z_]+)\s*[:：]\s*(.+?)\s*$')
 
@@ -320,6 +322,58 @@ ZERO_LC_EVIDENCE_KEYS = ('测光检索', '检索未命中', '未检索到', 'no 
                          'no usable photometry', '无可用测光')
 
 
+def _split_ids(v):
+    return [x.strip() for x in re.split(r'[,，;；\s]+', str(v or ''))
+            if x.strip() and x.strip() not in ('无', '-', '—', 'none')]
+
+
+def check_paper_cards(info_ids):
+    """文献级索引卡（警告级，§3.11）：命名/必填键/登记源存在性/一源多卡。
+
+    契约见 `audit/leads/papers/README.md`。文献级卡只承载索引，不参与状态机，
+    也不代替源级线索卡；这里只保证它能被工具可靠解析。
+    """
+    if not os.path.isdir(PAPER_DIR):
+        return
+    seen = {}
+    for fn in sorted(os.listdir(PAPER_DIR)):
+        if not fn.endswith('.md') or fn.lower() == 'readme.md':
+            continue
+        path = os.path.join(PAPER_DIR, fn)
+        rel = f'audit/leads/papers/{fn}'
+        key = fn[:-3]
+        meta = {}
+        try:
+            with open(path, encoding='utf-8') as fh:
+                for ln in fh:
+                    if ln.startswith('##'):
+                        break
+                    m = LEAD_KEY_RE.match(ln)
+                    if m and m.group(1) in PAPER_KEYS and m.group(1) not in meta:
+                        meta[m.group(1)] = m.group(2)
+        except OSError as e:
+            err(f'{rel}: 读取失败（{e}）')
+            continue
+        if meta.get('paper_key') != key:
+            warn(f'{rel}: paper_key={meta.get("paper_key")!r} 与文件名（{key!r}）不一致')
+        for k in ('paper', 'date'):
+            if not (meta.get(k) or '').strip():
+                warn(f'{rel}: 缺 {k}（文献级卡必填 paper_key / paper / date）')
+        srcs = _split_ids(meta.get('sources'))
+        if not srcs:
+            warn(f'{rel}: 缺 sources:（列出该文涉及的库内源，逗号分隔）—— 工具靠它反查'
+                 f'「某源被哪篇多源文献提到」')
+        for sid in srcs:
+            if sid not in info_ids:
+                warn(f'{rel}: 登记的源 {sid} 不在 info/ —— 库外新源应改开 new-source Issue，'
+                     f'不写进文献级卡')
+            seen.setdefault(sid, []).append(key)
+    for sid, keys in seen.items():
+        if len(keys) > 1:
+            warn(f'audit/leads/papers/: 源 {sid} 同时登记在 {len(keys)} 张文献级卡'
+                 f'（{", ".join(keys)}）—— 一源一篇主文献卡，其余并入或删去')
+
+
 def check_zero_lc_evidence(reviewed_ids):
     """零测光源的检索留证（警告级，§3.3）。
 
@@ -457,6 +511,7 @@ def main():
 
     # 线索卡一致性（警告级；多目标文献交接，见《数据审核提示词》§3.11）
     check_leads(info_ids, reviewed_ids)
+    check_paper_cards(info_ids)
 
     # 维护者预留台账（警告级；见 audit/README.md 的 reserved.tsv 小节）
     check_reserved(info_ids, reviewed_ids)

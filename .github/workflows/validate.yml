@@ -30,6 +30,13 @@ jobs:
           GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           GITHUB_BASE_REF: ${{ github.base_ref }}
         run: python3 tools/check_branch_freshness.py
+      # 警告级守卫：本 PR 新增线索卡的规模/形态（§3.11 增量门槛 + 文献级卡），永不失败。
+      # 只在 PR 里跑：判据是本 PR **新增**的卡，历史欠账（如 Ershova+2020 的 45 张）不刷警告。
+      - name: Lead-card guard (warning only, never fails)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}" || true
+          python3 tools/audit_queue.py --check-leads --base "origin/${{ github.base_ref }}" || true
       # 警告级守卫：同一个源被多个 open PR 同时触碰（认领挤占），永不失败。
       # 判据是实时 PR 状态，不是每日生成的 audit/state.tsv 快照（快照滞后会让 agent 把已认领的源当 free）。
       - name: Duplicate claim guard (warning only, never fails)

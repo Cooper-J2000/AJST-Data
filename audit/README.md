@@ -90,6 +90,11 @@ gh pr list --search "in:title <源ID>"       # 或手查
   `info/*.json` 的 `extra_data.audit` 与改动了 `info/<id>`、`lc/<id>` 的 open PR。
 - 所以写卡**绝不能**碰目标源的 `info/lc`、不能写它的 `audit` 标记、不能把它的 ID 放进 PR 标题
   （否则会被当成认领，误占他人的工作入口）。
+- **增量门槛**：只写「库内 GCN/目录检索拿不到的量、不同口径、新正式文献引用」；纯汇总表转引 GCN 的行
+  不开源级卡（2026-10-24 起）。判据见 [`leads/README.md`](leads/README.md)。
+- **多源文献（≥3 个库内源）先建文献级索引卡** `leads/papers/<paper_key>.md`（一篇一张），
+  它只做索引、不代替源级卡；契约见 [`leads/papers/README.md`](leads/papers/README.md)，
+  查看 `python3 tools/audit_queue.py --paper <paper_key>`。
 - 接手的审核员仍须自己打开原文逐值核验；审完（或否证）在**自己的 PR** 里删掉这张卡。
 - 格式、模板与硬性禁令：见 [`leads/README.md`](leads/README.md)。
 - 查看：`python3 tools/audit_queue.py --leads`；单源：`--id <源ID>`；队列里带 `+lead` 标记。
