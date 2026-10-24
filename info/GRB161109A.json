@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB161109A",
   "alias": [
-    "GRB 161109263"
+    "GRB 161109A",
+    "GRB 161109.263",
+    "bn161109263"
   ],
-  "ra": 157.85000610351562,
-  "dec": 61.83000183105469,
-  "T0": "2016-11-09T06:18:49.660000Z",
-  "T0_ref": null,
+  "ra": 157.85,
+  "dec": 61.83,
+  "T0": "2016-11-09T06:18:45.665Z",
+  "T0_ref": "GCN 20156（Fermi GBM 团队通告 06:18:45.66 UT）+ GCN 20155（LAT 团队同值）；亚秒取 FERMIGBRST 触发仪器官方目录 trigger_time（external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +16,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 20155",
+  "pos_error": 1404,
+  "pos_error_confidence": "90",
+  "pos_ref": "Ajello+2019 (2FLGC) LTF 定位 + GCN 20155 并列",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode 2026-10-24: (1) 身份=Fermi/GBM 触发 161109263（bn161109263，trigger MET=500365129.66；GCN 20156 通告正文 trigger 号作 '50036512/161109263' 漏一位数字，应为 500365129，以 2FLGC/Ajello+2019 Table 2 MET=500365129.660 确证）；LAT 仅在轨探测（GCN 20155）。独立探测互证：Lomonosov BDRG（GCN 20165）、CALET CGBM 06:18:40.56、Konus-Wind 06:18:43.284（GCN 20171，各系其仪器自身触发时刻）。GCN 20165 写 Lomonosov 触发 '06:11:45 UT'，较 GBM 触发早 7 分钟且与其自引 GCN 20155 矛盾，判为通告笔误（应为 06:18:45）。(2) T0 修正：原值 2016-11-09T06:18:49.660000Z 系 bot 将 2FLGC trigger_met=500365129.66 自 2001-01-01 纪元直换、漏扣 4 个闰秒（2006/2009/2012-07/2015-07），偏晚 4.000 s；天真换算复现=06:18:49.660 与原值一致（Issue #67/#109 同型）。新值 2016-11-09T06:18:45.665Z 取 FERMIGBRST 触发仪器官方目录 trigger_time（external/fermi_gbm 快照）；GCN 20155（LAT 团队）与 GCN 20156（GBM 团队）均载 'At 06:18:45.66 UT'；Ajello+2019 Table 2 本源行 UT=06:18:45 与 MET=500365129.660 同表自差 4 s，佐证修正方向。2FLGC 自带 trigger_time=06:18:44.997 比采纳值早 0.668 s（该表自身口径，备查未采用）。无 T0_offset（各来源差均属换算口径差/闰秒 bug，无爆发早于自动触发的证据）。(3) 定位：ra/dec 原值 157.85000610351562/61.83000183105469 为 float32 残渣，还原 2FLGC 编目值 157.85/61.83（external/fermi_lat 快照，源自 gll_2flgc_dr1.fits）。补 pos_error=1404″（=0.39°，2FLGC LTF 定位误差；Ajello+2019 §4.1 明文 LAT 探测定位不确定度为 '(90% containment, statistical only)'，均值 0.36°、范围 0.04°–2.0°）→ pos_error_confidence=90。GCN 20155 LAT 在轨定位 157.86/61.80、r=0.26°=936″（90%，statistical error only）并列备查；MPE Greiner 表 X 射线位置 10h31m26s +61°48′（=157.858/61.80，表值 Error=16）一致。(4) alias：删 9 位拼接伪形 'GRB 161109263'（Issue #69/63247a4 口径；fermi_gbm 快照 name_alt 含此形）；收 'GRB 161109A'（GCN 20155–20171 subject 用名、2FLGC 目录名）、'GRB 161109.263'（FERMIGBRST/2FLGC name_alt 点号形，external/fermi_gbm、fermi_lat 快照）、'bn161109263'（FERMIGBRST name_alt bn 形，external/fermi_gbm 快照）。(5) sub_tag 补 lgrb：2FLGC Table 3 本源行 CLASS=(L)（Ajello+2019）；GCN 20171 明文 'The long-duration GRB 161109A'；T90=23.5524±1.37862 s（50–300 keV，FERMIGBRST）。(6) 物理量多来源并列：T90=23.5524±1.37862 s（50–300 keV，FERMIGBRST）=23.552±1.379 s（2FLGC）=24.8±2.3 s（40–1000 keV，CALET SGM，GCN 20171）；T50=6.40011±0.572448 s（50–300 keV，FERMIGBRST）；fluence=2.09168e-5±6.00811e-8 erg/cm²（10–1000 keV，FERMIGBRST）=2.0917e-5±6.0081e-8（2FLGC）；peak_flux=18.6845±1.32537 ph/cm²/s（10–1000 keV，64 ms，FERMIGBRST）；Epeak=250.6(+20.6/−20.6) keV（BAND 模型，obs frame，FERMIGBRST；GCN 20156 初值 250±16 keV）。GCN 20156 通告初值：fluence=(2.30±0.04)e-5 erg/cm²（T0–T0+30 s）、1 s 峰值光子流量 16.7±0.3 ph/s/cm²（T0+17 s 起）——初步值，与目录终值并列备查。LAT：>100 MeV 光子 >60 颗、>1 GeV 约 4 颗（T0+400–1800 s）、最高能量光子 3.5 GeV @ T0+600 s（GCN 20155）；2FLGC ext_emission_max_ene=3400 MeV @ T0+594.81 s、tl100=467.55±162.51 s。(7) 红移：所有来源均未给出红移，留 null。(8) 测光检索留证（§3.3 四要素）：检索日期 2026-10-24；入口与命中数——仓内 gcn/archive 全文（45889 篇）'161109A' 命中 7 篇（20155/20156/20158/20164/20165/20169/20171，subject 自含源名，检索词有效）、'161109' subject 级检索仅此 7 篇、'161109263' 命中 1 篇（20156）；external/rssgrbag（140 行）0 行、grbsn_webtool 无本源（'161109' 命中为 GRB080319B/GRB190114C 光谱浮点数字串假阳性）、uvot_grb 无记录（命中为 GRB070809 float32 坐标假阳性）、fermi_lat/fermi_gbm/mpe_greiner 为目录级参数、konus_wind/swift_grb/heasarc_grbcat 无记录；GCN 站 7 篇均在线（HTTP 200）与本地一一对应、无缺件无撤下；ADS（api.adsabs.harvard.edu，查询串 abs:\"GRB 161109A\" OR title:同、full:\"GRB 161109A\"、full:\"161109.263\" OR full:\"bn161109263\"）命中 7/7/1，前两者=同 7 GCN（本地已有全文），后者为无关数字串假阳性；OpenAlex 5 命中（同 GCN）；arXiv API 0 命中；Crossref 模糊匹配均为无关多暴文献；TNS 不适用（GRB 类）。结论：无任何已发表光学/测光表（Ajello+2019 2FLGC 经 arXiv:1906.11403v1 全文核对——VoR 被 IOP 反爬，本源仅有伽马目录参数）；可用测光仅 GCN 20169 Swift/UVOT u 波段 3σ 上限 3 行 → 补 3 行。GCN 20164 的 XRT 3 个未编目 X 射线源（计数率，无一被判定为余辉）为 X 射线数据，按 §3.3 不入库。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -148,8 +152,62 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 20155",
+      "url": "https://gcn.nasa.gov/circulars/20155",
+      "title": "GRB 161109A: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20156",
+      "url": "https://gcn.nasa.gov/circulars/20156",
+      "title": "GRB 161109A: Fermi GBM observation",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20158",
+      "url": "https://gcn.nasa.gov/circulars/20158",
+      "title": "GRB 161109A: Tiled Swift observations",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20164",
+      "url": "https://gcn.nasa.gov/circulars/20164",
+      "title": "GRB 161109A: Swift-XRT observations",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20165",
+      "url": "https://gcn.nasa.gov/circulars/20165",
+      "title": "GRB 161109A: Lomonosov BDRG gamma ray discovery",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20169",
+      "url": "https://gcn.nasa.gov/circulars/20169",
+      "title": "GRB 161109A: Swift/UVOT Upper Limits",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 20171",
+      "url": "https://gcn.nasa.gov/circulars/20171",
+      "title": "GRB 161109A: CALET Gamma-Ray Burst Monitor detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
