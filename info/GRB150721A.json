@@ -1,28 +1,53 @@
 {
   "transient_id": "GRB150721A",
-  "alias": [],
+  "alias": [
+    "GRB 150721.242",
+    "GRB150721242",
+    "bn150721242"
+  ],
   "ra": 334.1,
   "dec": 7.8,
-  "T0": "2015-07-21T05:49:08Z",
-  "T0_ref": null,
+  "T0": "2015-07-21T05:49:08.934Z",
+  "T0_ref": "GCN 18041（Bissaldi, Connaughton & von Kienlin, Fermi GBM team）：'At 05:49:08.93 UT'；Fermi GBM catalog (fermigbrst, bn150721242) trigger_time=2015-07-21T05:49:08.934 UTC（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 5400,
+  "pos_ref": "GCN 18041 (Fermi GBM team): RA=334.1, DEC=+7.8, 1.5 degrees (radius, 1-sigma containment, statistical only；另 2-3° 系统误差)（仓内 fermigbrst 行 334.14/+7.76 同源略精）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2015-07-21T05:49:08Z（整秒截断）补亚秒为 **05:49:08.934Z**（GCN 18041 'At 05:49:08.93 UT' + fermigbrst trigger_time 亚秒值，§3.2 触发仪器亚秒值；两者 4 ms 内一致）。(2) pos_error 原为 null：GCN 18041 明示 GBM 地面定位误差 1.5°（1σ 仅统计，另 2-3° 系统误差），换算 1.5°=5400″ 填入，pos_error_confidence=1sigma（原文明确）；ra/dec=334.1/+7.8 即 GCN 18041 定位（库内原值未动）；仓内 fermigbrst 行 334.14/+7.76（err 1.5°）同源略精，记此备查。触发引发 ARR 再指向（初始视轴偏角 63°）；INTEGRAL SPI-ACS 独立探测。(3) tag 空补 grb；sub_tag 维持空：fermilgrb 无此源（LAT 未探测，故无 Fermi-LAT）；GBM T90≈20 s（GCN 18041）/目录 18.432±… s（50-300 keV）虽 >2 s，但无来源作正式长短分类，按 §3.9 不得自算。(4) 红移：无任何来源给红移，保持 null。(5) 身份：Fermi GBM trigger bn150721242（GRB 150721.242，trigger 459150552）；同日 GBM bn150721431（10:21:06 UT，err 29.32°）与 bn150721732（17:34:29 UT）为另两事件，未混淆；仓内无重复条目；swift_bat/swiftgrbba/fermilgrb/grbcat/konus_wind 快照均无此源。(6) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文 2 篇（18041/18105）；其中 GCN 18105（iPTF P48，12 场 87 deg²）检出 5 个光学暂源候选（iPTF15bua/bub/buc/bud/btz，各 2 点 R 波段 Mould/AB 测光，+5.0–6.0 h），原文结论「likely nuclear associations and lack of fading, 不视为余辉候选」——**全部否证，其测光不属于本源、不入库**，记此备查；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；GCN 站检索对字母名失效（实测，以全文档案为准）；ADS/SciX 检索不可用（2026-10-24 实测两 API 均 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 'GRB 150721A' 0 命中（export.arxiv.org，2026-10-24）→ 无可用测光，未补行，不建 lc。(7) alias 原为空，补 GRB 150721.242（两目录 name_alt 原形）/GRB150721242（fermigbrst name 原形）/bn150721242（fermigbrst trigger_name；GCN 18041 trigger 459150552/150721242）。GBM SBPL 拟合 break energy=45.7±2.3 keV（GCN 18041）等 SCHEMA 外物理量记此备查。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 18041",
+      "title": "GRB 150721A: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/18041",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 18105",
+      "title": "GRB 150721A (Fermi GBM Trigger 459150552): iPTF P48 Observations",
+      "url": "https://gcn.nasa.gov/circulars/18105",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
