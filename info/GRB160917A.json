@@ -5,8 +5,8 @@
   ],
   "ra": 295.6679992675781,
   "dec": 46.40299987792969,
-  "T0": "2016-09-17T11:30:23.286000Z",
-  "T0_ref": null,
+  "T0": "2016-09-17T11:30:19.286Z",
+  "T0_ref": "FERMIGBRST (fermi_gbm, bn160917479) trigger_time=2016-09-17T11:30:19.286Z（仓内快照，retrieved 2026-07-21），与 GCN 19932 原文 \"At 11:30:19.286 UT on 17 September 2016, the Fermi Gamma-Ray Burst Monitor\" 逐位一致；fermi_lat(2FLGC) 同源行 trigger_time=11:30:19.002Z（该表自身口径，差 0.284 s，未采用）。原值 11:30:23.286000Z 系 2FLGC trigger_met=495804623.286 s 以 2001-01-01 纪元直接换算、漏扣 2015-07-01 起生效的 4 个闰秒所致（Issue #109 同族，维护者 2026-10-24 复核）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -18,7 +18,7 @@
   "pos_ref": "GCN 19927",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。【维护者裁定 2026-10-24（PR #130 报备的 Issue #109 同族残留）】T0 由 11:30:23.286Z 改为 11:30:19.286Z：原值＝2FLGC trigger_met 495804623.286 s 天真换算（复现逐位一致），扣 4 闰秒后与 FERMIGBRST 目录及 GCN 19932 一致；lc 20 行 time 相对量同步 +4.000 s（mjd 绝对量不变，逐行复算 Δ<1 ms）。本次只收闰秒残留，不构成完整审核（extra_data.audit 仍为空）：GCN 19926 显示 Swift/BAT 亦触发（swift_bat 快照 trigger_time=2016-09-17T11:30:19.349940Z），全审时须按 §3.2 复议触发仪器与 T0 锚点",
   "sub_tag": [
     "Fermi-LAT"
   ],
