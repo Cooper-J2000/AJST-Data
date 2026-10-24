@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB160314B",
   "alias": [
-    "GRB 160314929"
+    "GRB 160314.929",
+    "bn160314929"
   ],
   "ra": 167.77999877929688,
   "dec": 45.709999084472656,
-  "T0": "2016-03-14T22:17:57.730000Z",
-  "T0_ref": null,
+  "T0": "2016-03-14T22:17:53.734Z",
+  "T0_ref": "GCN 19198（Hui, Fermi GBM team）：'At 22:17:53.73 UT on 14 March 2016'；FERMIGBRST (fermigbrst, bn160314929) trigger_time=2016-03-14T22:17:53.734 UTC（仓内快照 retrieved 2026-07-21；2026-10-24 HEASARC TAP 复核 trigger_time=MJD 57461.929094146 = 2016-03-14T22:17:53.734214 UTC）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +15,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2844,
+  "pos_ref": "FERMILGRB (heasarc fermilgrb, 2FLGC 导入行)：RA=167.78, Dec=+45.71, error_radius=0.79 deg（文档：'localization error from LAT transient factory analysis'，未标注置信水平；仓内快照 retrieved 2026-07-21，2026-10-24 HEASARC TAP 复核一致）；GCN 19197（Fermi-LAT team）：best LAT on-ground location RA=167.56, Dec=+45.67, 0.65 deg（90% containment, statistical error only），FERMIGBRST 行同值；库内 ra/dec 取 FERMILGRB 行，两定位相距约 0.16° 非冲突",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode（2026-10-24）：(1) T0 原值 2016-03-14T22:17:57.730000Z 系 bot 将 fermilgrb trigger_met=479686677.73 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2015-07-01 起生效的 4 个闰秒，偏晚 4.000 s（Issue #109 同族）；证据：GCN 19198（Hui, Fermi GBM team）'At 22:17:53.73 UT on 14 March 2016'；fermigbrst bn160314929 trigger_time=2016-03-14T22:17:53.734Z；479686677.73 s 天真换算=2016-03-14T22:17:57.730000Z 与原 T0 完全一致（bug 复现），扣 4 s=22:17:53.730Z 与目录/GCN 一致；2FLGC/fermilgrb 自带 trigger_time=2016-03-14T22:17:52.996Z 与 GBM 目录差 0.738 s（该表自身口径，未采用）；GCN 19197（LAT 通告）body 记 trigger 479686676，比 GBM 通告 19198 与两目录的 479686677 少 1，系通告实时值笔误族口径，以目录为准，记此备查。T0 按《数据审核提示词》§3.8 取触发仪器官方目录亚秒值。(2) pos_error 原为 null：ra/dec=167.78/+45.71 即 FERMILGRB 行定位（error_radius 0.79 deg，HEASARC 文档：'localization error from LAT transient factory analysis (deg)'，未标注置信水平），换算 2844″；GCN 19197（Fermi-LAT team，人工核实）明示更精的 best LAT on-ground location RA=167.56, Dec=+45.67、0.65 deg（90% containment, statistical error only），FERMIGBRST 行同值（167.56/45.67/0.65），MPE Greiner 表同位（11h10m14s +45°40'，Error 39′=0.65°）；两定位相距约 0.16°，远小于误差圆，非冲突，库内 ra/dec 未动，多值并列备查。(3) 身份：Fermi GBM trigger bn160314929（GRB 160314.929，trigger 479686677.73）=2FLGC GRB 160314B（fermilgrb gcn_name）；GCN 19197/19198 均用名 GRB 160314B；同日 GRB 160314A 为另事件（Swift/BAT 2016-03-14T11:32:51 UT，trigger 679120，RA/Dec 112.78/+17.0，相距约 54°），非同源；仓内无重复条目。(4) Trigger_Instrument 维持 Fermi/GBM：GBM 触发（GCN 19198）；LAT 探测到高能辐射（GCN 19197）但触发时正出 SAA、T0+约 30 s 才恢复采数，最高能光子 900 MeV 于 T0+约 630 s；sub_tag 维持 Fermi-LAT，语义以 2FLGC 收录为准（like_best_ts=28.4）并记此备查。(5) 不加 lgrb/sgrb：无来源作正式长短分类；GBM T90 约 100 s（GCN 19198）/98.56±5.43 s（50-300 keV，两目录一致）、T50=13.57±2.06 s，记此备查。(6) 红移：无任何来源给红移，保持 null。(7) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文 45 889 篇按 '160314B'/'160314929'/'160314.929'/'47968667' 检索共 2 篇（GCN 19197/19198，均仅高能参数，无光学/射电测光；对照组同日 GRB 160314A 各通告正常命中，检索词有效）；external/rssgrbag/lightcurve.jsonl（140 行）0 命中、grbsn_webtool/SourceData 无该源目录、uvot_grb 0 记录（swift_grb 止于 2012-12、heasarc_grbcat 止于 2005-03，不覆盖本源）；ADS/SciX（api.adsabs.harvard.edu）：'GRB 160314B'（abs+title+full）2 命中即上述两 GCN，'160314929'/'160314.929'（abs/full）0 命中；arXiv API 0 命中（export.arxiv.org）、OpenAlex 2 命中（同两 GCN）、Crossref 无相关命中；TNS 不适用（无 AT/SN 命名）→ 无任何可用光学/射电测光，未补行，不建 lc。(8) alias：删 'GRB 160314929'（「日期+触发序列」空格拼接伪形，Issue #69 第 1 类，63247a4 裁定口径），补 GRB 160314.929（fermi_gbm/fermi_lat name_alt 点号形）/bn160314929（fermigbrst trigger_name）。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -148,8 +149,32 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 19198",
+      "title": "GRB 160314B: Fermi GBM observation",
+      "url": "https://gcn.nasa.gov/circulars/19198",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 19197",
+      "title": "GRB 160314B: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/19197",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
