@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB160101B",
   "alias": [
-    "GRB 160101215"
+    "GRB 160101.215",
+    "GRB160101215",
+    "bn160101215"
   ],
   "ra": 1.3600000143051147,
   "dec": 55.22999954223633,
-  "T0": "2016-01-01T05:10:16.860000Z",
-  "T0_ref": null,
+  "T0": "2016-01-01T05:10:12.860Z",
+  "T0_ref": "GCN 18798（Veres & von Kienlin, Fermi GBM team）：'At 05:10:12.86 UT'；Fermi GBM catalog (fermigbrst, bn160101215) trigger_time=2016-01-01T05:10:12.860 UTC（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 4932,
+  "pos_ref": "GCN 18798 (Fermi GBM team): RA=1.4, DEC=+55.2, 1.4 degrees (radius, 1-sigma containment, statistical only；另有 core-plus-tail 系统误差模型，90% 暴 <3.7°，Connaughton et al. 2015, ApJS, 216, 32)（仓内 fermigbrst 行 1.36/+55.23 err 1.37° 同源略精）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-24）：(1) T0 原值 2016-01-01T05:10:16.86Z 系 bot 将 fermilgrb trigger_met=473317816.86 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006/2009/2012-07/2015-07 生效的 **4** 个闰秒，偏晚 4.000 s；证据：GCN 18798 'At 05:10:12.86 UT'；fermigbrst bn160101215 trigger_time=05:10:12.860Z；473317816.86 s 天真换算=05:10:16.860Z 与原 T0 完全一致（bug 复现）；2FLGC/fermilgrb 自带 trigger_time=05:10:12.003Z 与 GBM 目录差 0.857 s（该表自身口径，未采用）；GCN 18799（LAT 通告）自记 05:10:11 UT 与 trigger 473317815，与其 GBM 通告 18798 的 473317816 差 1 s，均系通告实时值笔误族口径，以目录为准，记此备查。T0 按《数据审核提示词》§3.8 锚定 GCN 通告并取 GBM 官方目录亚秒值。(2) pos_error 原为 null：GCN 18798 明示 1.4°（1σ 仅统计）+ core-plus-tail 系统误差模型（90% 暴 <3.7°，小尾 >10°，Connaughton+2015），换算取仓内 fermigbrst 行同源略精值 1.37°=4932″，pos_error_confidence=1sigma（原文明确）；ra/dec=1.36/+55.23 即该定位（库内原值未动）。LAT 无独立定位（见下），fermilgrb 行同位同误差（沿用 GBM 定位）。(3) sub_tag 维持 Fermi-LAT，语义以目录收录为准并记此备查：GCN 18799 明确仅 **LLE 级**探测（10 s 内 >100 计数，<100 MeV 低能光子），标准 >100 MeV 似然分析无显著超出、无 LAT 定位；触发时 GBM 位置在 LAT 视轴 9° 内、视场内持续至 ~T0+1500 s。(4) 红移：无任何来源给红移，保持 null。(5) sub_tag 不加 lgrb/sgrb：GBM T90≈6.9 s（GCN 18798）/目录 22.013±1.619 s（50-300 keV）两值差异大且无来源作正式长短分类，按 §3.9 不得自算；两值均记此备查。(6) 身份：Fermi GBM trigger bn160101215（GRB 160101.215，trigger 473317816）=2FLGC GRB 160101B（fermilgrb gcn_name）；同日仓内 GRB 160101A 为另事件（Swift/BAT 00:43:52 UT，另有 lc 文件，非本源）；同日 GBM bn160101030（00:43:53.6 UT）对应 A 事件；仓内无重复条目。(7) 测光检索（2026-10-24，按 §3.3 留证）：仓内 gcn/archive 全文 2 篇（18798/18799，均高能参数，无光学/射电测光）；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该源目录；GCN 站检索对字母名失效（实测，以全文档案为准）；ADS/SciX 检索不可用（2026-10-24 实测两 API 均 401 Missing Authorization，本会话无 token）；arXiv API 兜底检索 'GRB 160101B' 0 命中（export.arxiv.org，2026-10-24）→ 无可用测光，未补行，不建 lc。(8) alias：删 'GRB 160101215'（「日期+触发序列」空格拼接伪形，导入管线产物），补 GRB 160101.215（两目录 name_alt 原形）/GRB160101215（fermigbrst name 原形）/bn160101215（fermigbrst trigger_name）。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -131,8 +133,33 @@
         ],
         "trigger_time": "2016-01-01T05:10:12.003Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "GCN 18798",
+      "title": "GRB 160101B: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/18798",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 18799",
+      "title": "GRB 160101B: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/18799",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...878...52A",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
