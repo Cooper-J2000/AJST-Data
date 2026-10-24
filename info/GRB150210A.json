@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB150210A",
   "alias": [
-    "GRB 150210935"
+    "GRB 150210935",
+    "bn150210935"
   ],
   "ra": 112.27999877929688,
   "dec": 13.569999694824219,
-  "T0": "2015-02-10T22:26:27.290000Z",
-  "T0_ref": null,
+  "T0": "2015-02-10T22:26:24.283Z",
+  "T0_ref": "GCN 17432 + FERMIGBRST (heasarc FERMIGBRST trigger_time)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1548,
+  "pos_ref": "Ajello+2019 (2FLGC); HEASARC FERMILGRB",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。T0 修正：原值 2015-02-10T22:26:27.290000Z 系 2FLGC trigger_met=445299987.29 未扣闰秒的直换产物（Issue #67 同型，+3 s），现取触发仪器 GBM 官方目录 FERMIGBRST 触发时刻 2015-02-10T22:26:24.283Z；GCN 17432 给 22:26:24.28 UT（舍入一致）；FERMILGRB/2FLGC trigger_time=22:26:24.000Z（整秒一致）；MET 445299987.29 扣 2006/2009/2012 三次闰秒共 3 s 后=22:26:24.29，与 FERMIGBRST 差 7 ms（2FLGC MET 舍入）；Konus-Wind 触发 T0=80787.209 s UT=22:26:27.209（GCN 17440）为另一仪器的触发时刻，不采用。坐标取 2FLGC LTF 定位 RA=112.28 Dec=+13.57、Error_Radius=0.43°=1548″（FERMILGRB 表）；Ajello+2019 称 LAT 定位平均为 (90% containment, statistical only)，故 pos_error_confidence=90；GCN 17438 在轨定位 (112.15, 13.27) r=0.33°（90%，statistical only）；GBM 定位 (112.9, 12.4) r=2.2°（GCN 17432，1σ containment、statistical only，另估系统误差 2–3°）；IPN 3σ 误差盒中心 (111.853, 13.832)、面积 3.6 平方度（GCN 17439）。别名出处：GRB 150210935=FERMIGBRST/2FLGC 目录用名，bn150210935=GBM 触发号（trigger 445299987）。T90(GBM)=31.2939±0.602382 s（50–300 keV，FERMIGBRST）；T90(LAT LLE)=2.521 s（2FLGC）；fluence(GBM)=2.21987e-05 erg/cm²（10–1000 keV，FERMIGBRST）；长暴（GCN 17439/17440 原文 long-duration）。MASTER OT J072940.10+141425.5（GCN 17446、ATel 7050）经 PESSTO 分类为 II 型超新星（ATel 7052，表 z=0.026；该文正文一处写 z=0.26 系笔误），系 LAT 误差盒内机会超新星、与 GRB 无关，不得据此填本源红移；Ershova+2020 亦判其为与 GRB 无关的光学变源；Jiang+2023（MNRAS 518, 6243）将其误作 GRB 150210A 的成协 SN（Nuessle+2024, ApJ 974, 120 又转引），与原始通告矛盾。Swift-XRT 镶嵌观测（T0+66.9–95.4 ks）无未编目 X 射线源，0.3–10 keV 场流量上限 1.5–3.3e-13 erg/cm²/s（GCN 17453）——X 射线数据不入库。测光检索（2026-10-24）：仓内 gcn/archive 全文命中 7 篇（GCN 17432/17438/17439/17440/17441/17446/17453，检索词经对照暴验证有效，与 ADS 命中清单一致、无撤下缺件）；external 快照：rssgrbag/grbsn_webtool 无此事件记录，fermi_gbm/fermi_lat/mpe_greiner/konus_wind 仅目录参数（konus_wind 快照未覆盖本源，swift_grb/heasarc_grbcat 年代不覆盖）；ADS/SciX abs+full 检索命中 11/13 条：7 GCN + ATel 7050/7052（机会 SN 分类，非 GRB 测光）+ Ershova+2020（ARep 64, 126，VoR 已取，150210A 节无测光表）+ Jiang+2023（MNRAS 518, 6243，OUP VoR 403 不可达且无 arXiv 版，仅 prompt 谱学样本）+ Nuessle+2024（ApJ 974, 120，仅 progenitor 分类表）+ arXiv 2609.14411（仅 prompt 谱参数）；结论：唯一可入库测光为 GCN 17446 的 MASTER-Kislovodsk 无滤光片上限 17.5m（有绝对时刻锚点），补 1 行；TNS 不适用（本源非 AT/SN 类）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -150,8 +152,81 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ershova+2020",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Jiang+2023",
+      "url": "https://doi.org/10.1093/mnras/stac3504",
+      "title": "Outliers in the Ep,z-Egamma relation of Fermi-GBM long-duration gamma-ray bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Nuessle+2024",
+      "url": "https://doi.org/10.3847/1538-4357/ad6a56",
+      "title": "GRB Progenitor Classification from Gamma-Ray Burst Prompt and Afterglow Observations",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17432",
+      "url": "https://gcn.nasa.gov/circulars/17432",
+      "title": "GRB 150210A: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17438",
+      "url": "https://gcn.nasa.gov/circulars/17438",
+      "title": "GRB 150210A: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17439",
+      "url": "https://gcn.nasa.gov/circulars/17439",
+      "title": "IPN Triangulation of GRB 150210A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17440",
+      "url": "https://gcn.nasa.gov/circulars/17440",
+      "title": "Konus-Wind observation of GRB 150210A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17441",
+      "url": "https://gcn.nasa.gov/circulars/17441",
+      "title": "GRB 150210A: Tiled Swift observations",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17446",
+      "url": "https://gcn.nasa.gov/circulars/17446",
+      "title": "GRB 150210A: MASTER SN detection during LAT error box inspection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 17453",
+      "url": "https://gcn.nasa.gov/circulars/17453",
+      "title": "GRB 150210A: Swift-XRT observations",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
