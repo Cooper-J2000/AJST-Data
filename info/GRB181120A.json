@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB181120A",
   "alias": [
-    "GRB 181120265"
+    "GRB 181120A",
+    "GRB 181120.265",
+    "bn181120265"
   ],
-  "ra": 20.742000579833984,
-  "dec": 3.805999994277954,
-  "T0": "2018-11-20T06:21:24.084000Z",
-  "T0_ref": null,
+  "ra": 20.742083,
+  "dec": 3.806111,
+  "T0": "2018-11-20T06:21:19.084Z",
+  "T0_ref": "GCN 23428（'At 06:21:19.08 UT on 20 November 2018, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 181120A (trigger 564387684 / 181120265)'，整数秒一致时取触发仪器亚秒值）；FERMIGBRST trigger_time=2018-11-20T06:21:19.084Z",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +16,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.711,
+  "pos_ref": "Fermi/LAT 2FLGC（FERMILGRB W3Browse 行 GRB181120265：RA 01h22m58.1s Dec +03°48'22\"，error_radius 0.711 deg；仓内快照 external/fermi_lat/fermilgrb_w3browse_full.txt 第130行）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 FERMILGRB（2FLGC，Fermi/LAT 第二 GRB 目录，HEASARC 在线表 2022-06-22 版）光变数据导入新建；该行为 Ajello+2019（ApJ 878, 52, arXiv:1906.11403）流程的延伸补充行（论文原目录仅覆盖至 2018-08-04，不含本源）。T0 修正（2026-10-25）：原库值 2018-11-20T06:21:24.084000Z 系 2FLGC trigger_met=564387684.084 s 按 2001-01-01 纪元未扣闰秒直换（2001-01-01 至 2018-11-20 间 5 次闰秒，偏晚 5.000 s），已修正为 GBM 官方触发时刻 06:21:19.084 UTC；2FLGC time 列给 06:21:18.996，与 GBM 触发差 0.088 s（亚秒级口径差，不记 T0_offset，以触发仪器 GBM 目录值为准）。位置备查：原库 ra/dec（20.74200058, 3.80600）为 float32 舍入残渣，已按快照原始精度改写（01h22m58.1s +03°48'22\"）；2FLGC error_radius=0.711 deg，HEASARC 字段文档（W3Browse）未标注置信水平；GCN 23427 初始 LAT on-ground 位置 RA=20.38 Dec=4.17、误差 1 deg（90% containment，仅统计误差），与 2FLGC 位置相差约 0.44 deg（在其误差圆内）；GBM on-ground 位置与 LAT 一致（GCN 23428）；MPE Greiner 表 'X-ray position 01h21m31s +04°10'、Error 60 实为 GCN 23427 LAT 位置（1 deg）的转录。alias 出处：GRB 181120A=GCN eventId 与 2FLGC gcn_name；GRB 181120.265、bn181120265=FERMIGBRST/2FLGC name_alt；原 alias「GRB 181120265」为日期+触发序列拼接伪形（Issue #69 口径），已移除。物理量备查（非测光）：T90=17.3736±0.7992 s（50-300 keV，FERMIGBRST）；GCN 23428 初报（T0-0.5 s～T0+16.9 s）：fluence=(4.60±0.191)e-6 erg/cm2（10-1000 keV）、1 s 峰值光子流 11.5±0.3 ph/s/cm2（10-1000 keV）、Epeak=158±14 keV、幂律指数 -0.95±0.08；LAT（GCN 23427）：>100 MeV 光子流 (2.2±0.7)e-6 ph/cm2/s（T0+3000～6000 s）、光子指数 4.0±0.9、最高能光子 410 MeV（T0+5530 s）。零测光检索（2026-10-25）：仓内 gcn/archive 全文 45889 篇，命中 2 篇（GCN 23427/23428，均无光学/射电测光数值；对照组「181120B」0 篇）；external 快照 rssgrbag/grbsn_webtool/swift_grb/swiftgrbba/swift_xrt_live/uvot_grb/heasarc_grbcat/konus_wind 等均无本源；GCN 站检索 query=181120A totalItems=2（同上两篇，GCN 23427 所报 Swift ToO 请求无后续结果通告）；ADS 多变体检索（title:\"181120A\"、\"GRB 181120A\"、\"GRB181120A\"/\"181120265\"/\"181120.265\" 组合）命中 2 篇（2018GCN.23427....1B、2018GCN.23428....1F，均非正式文献），无正式发表测光表 → 无可用光学/IR/射电测光，补 0 行。",
   "sub_tag": [
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -148,8 +150,26 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Bissaldi+2018",
+      "url": "https://gcn.nasa.gov/circulars/23427",
+      "title": "GRB 181120A: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Fletcher+2018",
+      "url": "https://gcn.nasa.gov/circulars/23428",
+      "title": "GRB 181120A: Fermi GBM observation",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
