@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB180221A",
-  "alias": [],
+  "alias": [
+    "GRB 180221A",
+    "BAT 811074"
+  ],
   "ra": 326.77306,
   "dec": -72.86947,
-  "T0": "2018-02-21T06:35:01Z",
-  "T0_ref": null,
+  "T0": "2018-02-21T06:30:44.832320Z",
+  "T0_ref": "GCN 22427（Swift/BAT trigger=811074，触发时刻 06:30:44 UT）；亚秒值取 Swift/BAT 官方目录 2018-02-21T06:30:44.832320Z（external/swift_bat 快照，整秒与 GCN 22427 一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 174.0,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.2,
   "pos_ref": "GCN 22432",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "T0 更正：原 bot 值 2018-02-21T06:35:01Z 为 MASTER-OAFA 指向观测的开始时刻（GCN 22428 原文 \"257 sec after trigger time at 2018-02-21 06:35:01 UT\"），系观测时刻误植为 T0；更正为 Swift/BAT 触发时刻（trigger=811074）。原 extra_data t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\" 失真，已按提示词 §3.10 改写，原值保留于此。坐标：ra/dec 为 GCN 22432 Swift/XRT 加强位置（90% 置信 2.2 arcsec）；原 pos_error 174 arcsec 系 BAT 地面定位误差（2.9 arcmin，90%）与 XRT 坐标不匹配，已改为 XRT 位置的 2.2 arcsec。BAT 星上位置 RA,Dec=326.772,-72.868（3 arcmin，90%）、BAT 地面位置 326.787,-72.891（2.9 arcmin，90%）并列备查（GCN 22427/22432）。身份与性质：Swift/BAT 触发 811074，边缘显著性（星上 7.01σ，SAA 附近，GCN 22427 原文 \"we cannot confirm that this is an actual GRB\"）；GCN 22432 精化分析：BAT 脉冲不做背景扣除时图像显著性降至 ~3.5σ，与噪声涨落一致，BAT 数据本身难以确证；但 Swift/XRT 在 BAT 误差圈内探测到暗弱衰减源（0.3-10 keV 峰值计数率 0.035 c/s，PL 衰减 α=0.57±0.31）。无权威撤回，保留条目；触发真实性存疑记此备查。物理量并列：T90=11.0±3.2 s（15-350 keV，external/swift_bat 快照 BAT 目录）；T90 约 20 s（GCN 22427 星上）；fluence=5.70e-7 erg/cm2（15-150 keV，90%，BAT 目录）；Galactic NH=3.98e20 cm^-2（GCN 22432）；partial coding 31%（GCN 22432）。同日异源：GRB 180221B 为 CALET/CGBM 与 Insight-HXMT/HE 探测的另一事件（T0 约 12:30 UT，GCN 22438/22456），与本源无关，检索命中已剔除。测光检索留证（2026-10-24）：仓内 gcn/archive 全文检索 \"180221A\"/\"811074\" → 3 篇（22427/22428/22432，均逐篇核对；\"180221\" 变体另命中 22438/22456，核对为同日异源 GRB 180221B，非本源）；external/rssgrbag 光变快照与 grbsn_webtool 事件集均无该事件记录；external/swift_bat 快照有该源（name_alt \"BAT 811074\"，含触发时刻/T90/fluence）；GCN 站搜索 \"180221A\"/\"811074\"/\"GRB180221A\" → 各命中 3/2/1 篇，并集即仓内 3 篇，无遗漏；ADS 检索查询串 \"GRB 180221A\" 与 \"811074\" → 命中 2 条（2018GCN.22427....1S、2018GCN.22432....1B，均为 GCN Circular，无正式发表文献）；TNS 不适用（GRB 类）→ 补 GCN 22428 MASTER-OAFA 无滤光片上限 1 行；GCN 22432 UVOT white 3σ 上限 21.4 mag 只给观测序列起始（T0+2950 s）未给曝光窗口/时长，中点不可恢复，不入库仅记 comment；GCN 22428 coadd（310 s）上限 19.5 mag 未给叠加窗口起止，同样不入库仅记 comment。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger=811074）；亚秒值 06:30:44.832320 取自 Swift/BAT 官方目录，整秒与 GCN 22427 一致；原 bot 值 2018-02-21T06:35:01Z 为 MASTER-OAFA 指向观测开始时刻（GCN 22428），已更正并保留于 comment",
+    "t0_basis": "swift_bat_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    }
   },
   "articles": [],
   "host_galaxy": null
