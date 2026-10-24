@@ -1,29 +1,37 @@
 {
   "transient_id": "GRB180210A",
   "alias": [
-    "GRB 180210517"
+    "GRB 180210.517",
+    "bn180210517"
   ],
-  "ra": 1.8300000429153442,
-  "dec": 18.489999771118164,
-  "T0": "2018-02-10T12:24:43.550000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "ra": 1.84177,
+  "dec": 18.55274,
+  "T0": "2018-02-10T12:24:38.550Z",
+  "T0_ref": "GCN 22407（Fermi/GBM 触发时刻 12:24:38.55 UT）",
+  "T0_offset": -6.0,
+  "T0_offset_ref": "GCN 22415（Konus-Wind：光变自 ~T0-6 s 起有辐射，原文为约值）",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 1.7,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 22413",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "T0 改判：原值 2018-02-10T12:24:43.550000Z 系 2FLGC trigger_met=539958283.55 未扣闰秒直换（2017-01-01 起 UTC 闰秒累计 5 s，Issue #109），按触发仪器 Fermi/GBM 官方通告改判 12:24:38.55 UT（GCN 22407）；备查：FERMIGBRST trigger_time=12:24:38.548（差 2 ms）、Konus-Wind T0=12:24:38.454（GCN 22415）、Insight-HXMT 12:24:38.55（GCN 22450）、swiftgrbba trigger_time=12:24:38.550。T0_offset=-6 s 系 Konus-Wind 观测到多峰光变自 ~T0-6 s 起有辐射（GCN 22415，原文为约值，精度受限）。定位改判：原 ra/dec=1.83/18.49（float32 残留值，与 pos_ref GCN 22413 不符，疑为 2FLGC LAT 定位残留）改为 Swift-XRT enhanced position RA=1.84177, Dec=+18.55274，误差 1.7 arcsec（半径，90% 置信，GCN 22413）；备查：Fermi-LAT on-ground RA,Dec=1.80,18.35（0.18 deg，90%，GCN 22408）、GBM on-ground RA=3.33,Dec=21.01（1.5 deg，1-sigma 统计，GCN 22407）。物理量：T90=38.912±0.724 s（50-300 keV，FERMIGBRST；GCN 22407 给约 40 s）、fluence=(4.21±0.04)e-5 erg/cm2（10-1000 keV，GCN 22407；Konus-Wind 4.81(-0.30,+0.36)e-5，20 keV-10 MeV，GCN 22415；HXMT (4.5±0.2)e-5，200-5000 keV，GCN 22450；2FLGC 4.4195e-5）、Epeak=145±3 keV（Band，GCN 22407）、1-s 峰光子流量 16.7±0.3 ph/cm2/s（自 T0+24 s 起，10-1000 keV，GCN 22407）、LAT 最高光子 4 GeV 位于 T0+363 s（GCN 22408）、XRT 衰减指数 1.57(+0.36,-0.28)、吸收柱密度 3.6(+1.7,-1.4)e21 cm-2（GCN 22413）。alias：GRB 180210.517 与 bn180210517 取自 FERMIGBRST/FERMILGRB 快照 name_alt 字段；原库 alias「GRB 180210517」为日期+触发号拼接伪形，已移除。分类：Konus-Wind 通告称 long-duration（GCN 22415），sub_tag 增 lgrb。测光检索（2026-10-24）：仓内 gcn/archive 全文命中 7 篇（GCN 22407/22408/22409/22412/22413/22415/22450，均无光学/射电测光或上限；22413 为 Swift-XRT X 射线余辉探测，UVOT 仅用于增强定位对齐、未报星等）、external/rssgrbag 0 行、external/grbsn_webtool 无该事件、external/uvot_grb 无该源；ADS 查询「GRB 180210A」命中 7 篇（全部为上述 GCN，无正式发表文献）、「GRB180210A」「180210517」各 0 篇 → 无可用测光，补 0 行。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-24"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -174,6 +182,37 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Bissaldi+2018",
+      "url": "https://gcn.nasa.gov/circulars/22407",
+      "title": "GRB 180210A: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Dirirsa+2018",
+      "url": "https://gcn.nasa.gov/circulars/22408",
+      "title": "GRB 180210A: Fermi-LAT detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Beardmore+2018",
+      "url": "https://gcn.nasa.gov/circulars/22413",
+      "title": "GRB 180210A: Swift-XRT afterglow detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Svinkin+2018",
+      "url": "https://gcn.nasa.gov/circulars/22415",
+      "title": "Konus-Wind observation of GRB 180210A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Lu+2018",
+      "url": "https://gcn.nasa.gov/circulars/22450",
+      "title": "GRB 180210A: Insight-HXMT/HE observation",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
