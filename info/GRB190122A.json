@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB190122A",
   "alias": [
-    "GRB 190122305"
+    "GRB 190122.305",
+    "bn190122305"
   ],
-  "ra": 258.7099914550781,
-  "dec": 48.119998931884766,
-  "T0": "2019-01-22T07:19:12.570000Z",
-  "T0_ref": null,
+  "ra": 258.71,
+  "dec": 48.12,
+  "T0": "2019-01-22T07:19:07.570Z",
+  "T0_ref": "GCN 23768（GBM 触发仪器通告 \"At 07:19:07.57 UT on 22 January 2019 ... triggered and located GRB 190122A\"）；FERMIGBRST 目录 trigger_time=2019-01-22T07:19:07.574Z 整数秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +15,17 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 23767",
+  "pos_error": 0.91,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 23767（LAT 地面定位 RA,Dec=258.71,48.12, 误差半径 0.91 deg, 90% containment, 仅统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。T0 修正（2026-10-25）：原库值 2019-01-22T07:19:12.570000Z 系 2FLGC trigger_met=569834352.57 未扣闰秒直换 UTC（Fermi MET 自 2001-01-01T00:00:00 UTC 连续计数、不加闰秒，至 2019-01 累计 5 次闰秒：2005-12-31/2008-12-31/2012-06-30/2015-06-30/2016-12-31，原值偏晚 +5.00 s，Issue #67 同类管线残留）；据 GCN 23768 改为 07:19:07.57。亚秒口径备查：FERMIGBRST 目录 trigger_time=07:19:07.574Z（整数秒一致）；Konus-Wind 触发 07:19:07.426 UT（GCN 23783，独立仪器亚秒略异）；LAT 快照 trigger_time=2019-01-22T07:19:06.997Z 为 LAT/LLE 自身触发时刻（早 GBM 0.577 s，不作本源 T0）。alias：GRB 190122.305、bn190122305（出处：仓内 fermi_gbm 快照 name_alt 字段，2FLGC name_alt 亦含点号形）；原 alias「GRB 190122305」为「日期+触发序列」拼接伪形已删。定位：GCN 23767 LAT 地面定位 ra,dec=258.71,48.12（J2000），0.91 deg（90% containment，仅统计误差）；原库 ra/dec 258.7099914550781/48.119998931884766 为 float32 残渣（Issue #69 同类）已修为通告原值；Greiner 表（MPE 快照）17h14m50s +48°07'（Error 55′，IPN=y）与 LAT 定位一致；GBM 地面定位与 LAT 位置一致（GCN 23768，未给数值）。分类：GCN 23783 明言「The long-duration GRB 190122A」，sub_tag 加 lgrb。T90=54.016±3.338 s（50-300 keV，FERMIGBRST）；~54 s（50-300 keV，GCN 23768）；~67 s（20 keV-10 MeV，GCN 23783）。fluence=6.7809e-6±4.05e-8 erg/cm²（10-1000 keV，FERMIGBRST）；(3.95±0.10)e-7 erg/cm²（10-1000 keV，T0+0.8~T0+22.3 s 谱窗口，GCN 23768）；3.52(-0.74/+0.85)e-5 erg/cm²（20 keV-10 MeV，GCN 23783）。peak_flux=8.946±1.255 ph/cm²/s（10-1000 keV，64 ms bin，FERMIGBRST）；1 s 峰值光子流量 6.3±0.3 ph/cm²/s（10-1000 keV，自 T0+5.6 s 起，GCN 23768）。时间平均谱（T0+0.8~T0+22.3 s）幂律光子指数 -1.59±0.01（GCN 23768）；最高能光子 310 MeV（~T0+820 s，GCN 23767）。零测光检索（2026-10-25）：仓内 gcn/archive 全文检索（查询串「190122305」「GRB 190122」「GRB190122」「190122.305」）命中 4 篇，其中本源 3 篇（GCN 23767 LAT / 23768 GBM / 23783 Konus，均高能，无光学/射电测光或上限），另 1 篇 GCN 23791 为同日异源 GRB 190122B；external/rssgrbag（140 行光变）与 external/grbsn_webtool（63 事件）均无本源，fermi_gbm/fermi_lat/mpe_greiner 快照仅目录级参数；GCN 站事件页 gcn.nasa.gov/circulars/events/grb-190122a 共 3 篇（与仓内一致）；ADS（api.adsabs.harvard.edu）查询串 \"GRB 190122A\" 命中 3 篇（即上述 3 篇 GCN，均 NOT REFEREED），\"190122305\"/\"bn190122305\"/\"190122.305\"/full:\"190122A\" AND property:REFEREED 均 0 命中；TNS 不适用（GRB，无 AT/SN 名）→ 无可用光学/射电测光或带时间锚点的上限，lc 不建（0 行）。同日异源排查：GRB 190122B（AstroSat CZTI 探测，峰值 16:57:02.5 UT，GCN 23791）为独立事件，与本源（07:19:07.57 UT 触发）无关。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -150,8 +153,38 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Longo+2019 (GCN 23767)",
+      "title": "GRB 190122A: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/23767",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Bissaldi+2019 (GCN 23768)",
+      "title": "GRB 190122A: Fermi GBM observation",
+      "url": "https://gcn.nasa.gov/circulars/23768",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Svinkin+2019 (GCN 23783)",
+      "title": "Konus-Wind observation of GRB 190122A",
+      "url": "https://gcn.nasa.gov/circulars/23783",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
