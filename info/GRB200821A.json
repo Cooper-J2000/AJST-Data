@@ -1,28 +1,55 @@
 {
   "transient_id": "GRB200821A",
-  "alias": [],
+  "alias": [
+    "GRB200821.55"
+  ],
   "ra": 353.60212,
   "dec": -48.27456,
-  "T0": "2020-08-21T17:29:45Z",
-  "T0_ref": null,
+  "T0": "2020-08-21T13:15:05Z",
+  "T0_ref": "GCN 28278（Swift/BAT 触发时刻，原文仅整数秒精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [],
-  "pos_error": 180.0,
+  "pos_error": 0.83,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 28278",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发 992444（GCN 28278：2020-08-21T13:15:05 UT 触发；BAT on-board 定位 RA,Dec=353.570,-48.277，误差 3 角分半径、90% 包含含系统差；BAT 光变为约 20 s 内的一串短峰，峰计数率约 1200 counts/s（15-350 keV），峰值在触发后约 9 s）。GCN 28282（Swift Team 官方地面分析）：BAT 图像显著性降至 4.5σ（15-350 keV），掩码加权光变无显著信号；XRT 1.8 ks PC 数据确认 BAT 误差圆内无 X 射线对应源（3σ 上限 8e-3 counts/s）；官方结论「this trigger was due to detector noise」——触发被权威否定，本条目建议维护者删除并录入 audit/denied.tsv（见 PR 待决事项①）。[T0] 原 T0=2020-08-21T17:29:45Z（bot，t0_basis=meta_trigger）实为 GCN 28280 中 MASTER-SAAO 的指向时刻（「was pointed to the Swift GRB200821.55 ... at 2020-08-21 17:29:45 UT」，该文自述指向在触发后 15279 s，反算得 13:15:06 UT，与 BAT 通告差 1 s，取触发仪器原值）；已改为 GCN 28278 的 BAT 触发时刻 13:15:05 UT（原文仅整数秒精度）。原 extra_data.t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」已失效，原值留此备查。[定位] ra/dec 为 GCN 28278 的 UVOT 精化定位（U 滤光片 finding chart，触发后 310 s 起曝光 250 s，候选余辉 90% 置信误差半径 0.83 角秒，距 BAT 误差圆心 77.5 角秒）；原 pos_error=180.0 角秒（BAT on-board 3 角分，90%）与该坐标混拼，已按 UVOT 定位改为 0.83 角秒、置信水平 90%（90% 与 3 角分两值均出自 GCN 28278 原文）。GCN 28278 同时注明该 UVOT 候选「may be due to the known DSS source」，非确认余辉。alias「GRB200821.55」为 GCN 28280 原文用名（MASTER 命名，subject 字段逐字）。测光检索留证（2026-10-25）：① 仓内 gcn/archive 45889 篇全文双路检索（grep + python 逐篇扫描）「200821A」「992444」「200821.55」，命中 3 篇：28278（Swift 检测通告）、28280（MASTER-SAAO 非探测，C 滤光片即无滤光片，Tmid-T0=15370 s、曝光 180 s，两上限 19.3/17.9 mag）、28282（否定通告）；② external 各快照（swift_bat、swift_grb、swiftgrbba、swift_xrt_live、uvot_grb、heasarc_grbcat、mpe_greiner、fermi_gbm、konus_wind、saxgrbmgrb、batse、agile_mcal、fermi_lat、rssgrbag、grbsn_webtool）检索均无该源记录（grbsn_webtool 两处命中为 XRT 光变数据文件中的数字串 992444 假阳性，已逐一打开核实；Swift 官方目录不收被否定的触发）；③ GCN 站 gcn.nasa.gov/circulars/28278、28280、28282 均返回 200；④ ADS/SciX API 无 token（实测 401）未能检索；arXiv API 兜底检索「GRB 200821A」「GRB200821A」「992444」命中 0 篇。结论：无任何独立探测证据（MASTER 仅上限、UVOT 候选疑为 DSS 已知源、XRT 无对应源），无可用测光；MASTER 上限所锚定对象为已否定的噪声触发，故不建 lc 行（随 GRB171013A 处置先例 PR #178），本 PR 新增 0 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 wa1kmoon@zcode 2026-10-25 审核修正为 GCN 28278 的 Swift/BAT 触发时刻（原 bot 值 2020-08-21T17:29:45Z 为 GCN 28280 中 MASTER-SAAO 的指向时刻），原值见 comment",
+    "t0_basis": "GCN 28278",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 28278",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/28278.gcn3",
+      "title": "Swift Trigger 992444: a possible GRB 200821A",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28280",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/28280.gcn3",
+      "title": "Swift GRB200821.55: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28282",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/28282.gcn3",
+      "title": "Swift Trigger 992444 is due to detector noise",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
