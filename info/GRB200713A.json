@@ -1,28 +1,64 @@
 {
   "transient_id": "GRB200713A",
-  "alias": [],
-  "ra": 76.9492,
-  "dec": -32.8144,
-  "T0": "2020-07-13T22:10:47Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 200713A",
+    "BAT 982201"
+  ],
+  "ra": 76.9499,
+  "dec": -32.81475,
+  "T0": "2020-07-13T11:42:54.723580Z",
+  "T0_ref": "GCN 28088（At 11:42:54 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200713A, trigger=982201，整秒）+ Swift/BAT 官方目录亚秒值 2020-07-13T11:42:54.723580Z（external/swift_bat 快照 trigger 982201）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.1,
   "pos_ref": "GCN 28089",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（wa1kmoon@zcode，2026-10-25）。【身份】Swift/BAT 触发 GRB 200713A（trigger 982201，GCN 28088：At 11:42:54 UT the Swift BAT triggered and located GRB 200713A）；BAT 在轨定位 (76.962,-32.825) r=3′（90% 含系统差，GCN 28088）、地面精化 (76.941,-32.846) r=2.8′（90%，GCN 28096）；主定位取 Swift-XRT 天测改正位置 (76.94990,-32.81475) r=2.1″（radius, 90% confidence，GCN 28089，官方自动产品）；XRT 快报增强定位 (76.9492,-32.8144) r=2.7″（90%，GCN 28088）——原库 ra/dec 即此值而 pos_error 取 28089 的 2.1″，两处混拼，已统一为 GCN 28089（与 pos_ref/pos_error 同源）；swift_xrt_live 快照现值 (76.94976,-32.8148) r=2.2″、swiftgrbba 快照 xrt_ra/dec (76.94979,-32.81478) r=1.5″（后续精化，备查不采用）；源名日期 07-13 与触发日期 2020-07-13 一致，无跨 0 点问题；同日仓内无其他 200713 命名暴；GCN 28090「Fermi trigger No 616370565（Fermi GRB200713.92，误差框 15h11m33.60s,-32d35m24.0s R=11.84）」系同日另一事件、未入库，仅日期相邻，与本源无关（已逐篇核对 subject 与正文用名）。【T0 修正】bot 原值 2020-07-13T22:10:47Z 系误取 MASTER-IAC 对 Fermi trigger 616370565 误差框的指向观测时刻（GCN 28090：…487 sec after trigger time at 2020-07-13 22:10:47 UT），非本源触发时刻（Issue #84 同型：观测时刻误作 T0，同 GRB180924A/GRB160611A/GRB120402A 先例），偏晚 10 h 27 m 53 s（按整秒差）；现取触发仪器 Swift/BAT 官方目录亚秒值 2020-07-13T11:42:54.723580Z（external/swift_bat 快照 trigger 982201），GCN 28088 整秒 11:42:54 UT 一致，swiftgrbba 快照 trigger_time 2020-07-13T11:42:54.000Z（截断值）互证。bot 的 t0_basis/t0_note 原值：t0_basis=「meta_trigger」、t0_note=「t0 为 meta trigger-time（真实触发时刻）」（§3.10 改写，原值留此）。【tag/sub_tag】tag=grb（Swift/BAT 触发 GRB，GCN 28088）；T90=48.98±9.52 s（15-350 keV，GCN 28096）属长暴典型量级，但来源未作 lgrb/sgrb 分类表述，按 §3.9 不以 T90 自行归类，sub_tag 留空。【其他物理量并列】fluence=9.0±1.6×10⁻⁷ erg/cm²（15-150 keV，90% CL，GCN 28096；swift_bat 目录快照 8.078×10⁻⁷ 15-150 keV、9.427×10⁻⁷ 15-350 keV）；T90=48.98±9.52 s（GCN 28096）与 swift_bat 快照 T100 口径 t90=41.972±7.987 s 并列（T100_best_model=PL，两口径均官方 BAT 产品，备查）；T50=20.748±9.168 s（15-350 keV，swift_bat 快照）；1-s peak photon flux=0.8±0.3 ph/cm²/s（15-150 keV，T+49.94 s 起，GCN 28096；swiftgrbba 快照同 0.8±0.3）；BAT 时谱 photon index=2.48±0.32（GCN 28096）；mask-weighted 光变 ~T+20 s 起 ~T+80 s 止、partial coding 46%（GCN 28096）；XRT：快报 2.5 s 像初始流量 1.27×10⁻⁹ erg/cm²/s（0.2-10 keV，GCN 28088）；精化分析数据 156 s 至 62.7 ks，光变初始 α=5.1±0.3、T+358 s 处转折后 α=0.41(+0.04/-0.05)，WT 谱 Γ=3.71(+0.26/-0.24)、NH=3.2±0.5×10²¹ cm⁻²（超银河值 2.0×10²⁰），PC 谱 Γ=2.13(+0.18/-0.17)、NH=1.7±0.5×10²¹ cm⁻²，T+24 h 预计计数率 0.059 c/s 对应观测（未吸收）流量 1.9×10⁻¹²（2.7×10⁻¹²）erg/cm²/s（GCN 28092）。【红移】无任何来源给出，保持 null。【alias 出处】GRB 200713A＝GCN 28088/28089/28092/28096 标准 GCN 用名（空格形）；BAT 982201＝swift_bat 官方目录 name_alt 原形。【UVOT】GCN 28088：White finding chart 150 s 起于 BAT 触发后 159 s，2.7′×2.7′ sub-image 覆盖 XRT 误差区 100%，无可信余辉候选；其「typical 3-sigma upper limit about 19.6 mag」为典型灵敏度描述而非本源实测上限（无精确窗口、非逐源测定，同 GRB180924A 对 GCN 23261 同型句式的处置），不入库。【测光检索留证（2026-10-25）】仓内 gcn/archive（45 889 篇）python 全文扫描（「200713A」/trigger 号「982201」/坐标「76.949」+「-32.81」双坐标一致才计）命中 5 篇：本源 4 篇 28088/28089/28092/28096（均无可用光学测光数值）+ GCN 28090（Fermi GRB200713.92，他源）；external/rssgrbag lightcurve.jsonl 0 行；external/grbsn_webtool 无该事件；external/uvot_grb、swift_grb、heasarc_grbcat 快照无此源，身份互证用 swift_bat、swiftgrbba、swift_xrt_live、mpe_greiner 快照；GCN 站在线核对 28088、28089 与仓内全文一致；ADS/SciX 无 API token 不可用（实测 401/WAF）；arXiv API 兜底（「GRB 200713A」「200713A」「Swift J050747.8-324851」「982201」）均 0 篇；TNS 不适用（GRB 非 AT/SN/CV 类）。→ 无可用光学测光，本 PR 新增 0 行。【X 射线】本源零测光、无 lc CSV；发现 Swift-XRT 数据（GCN 28088/28092 及 UKSSDC 产品），按 §3.3 不入库。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 982201）：GCN 28088 整秒 11:42:54 UT + Swift/BAT 官方目录亚秒值 2020-07-13T11:42:54.723580Z（external/swift_bat 快照）；bot 原值 2020-07-13T22:10:47Z 系误取 MASTER-IAC 对 Fermi trigger 616370565（GCN 28090）误差框的指向观测时刻，已修正（原值见 comment）",
+    "t0_basis": "GCN 28088 + swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 28088",
+      "title": "GRB 200713A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/28088",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28089",
+      "title": "GRB 200713A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/28089",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28092",
+      "title": "GRB 200713A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/28092",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28096",
+      "title": "GRB 200713A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/28096",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
