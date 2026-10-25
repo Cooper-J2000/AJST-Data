@@ -1,30 +1,61 @@
 {
   "transient_id": "GRB210518",
   "alias": [
+    "GRB210518889",
+    "bn210518889",
     "GRB 210518.889"
   ],
   "ra": 192.85,
   "dec": 36.92,
-  "T0": "2021-05-19T05:15:00Z",
-  "T0_ref": null,
+  "T0": "2021-05-18T21:20:17.915Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST 快照(external/fermi_gbm/normalized.jsonl,bn210518889)trigger_time=2021-05-18T21:20:17.915Z;GCN 30051 原文 trigger 643065622(MET,扣 5 跳秒=21:20:17.915Z);GCN 30052 反算触发 21:20:18 UT 整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.1,
+  "pos_ref": "HEASARC FERMIGBRST 快照 error_radius=6.1 deg(bn210518889,ra/dec=192.85/36.92 同值);GCN 30051 'final GBM position 12:51:24.00 +36:55:12.0 J2000'(=192.85/+36.92);GCN 30052 'trigger No 643065622, 12h 51m 24.00s, +36d 55m 12.0s, R=6.1'",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "GBM-only 暴(Fermi/GBM trigger bn210518889),无确认余辉/宿主/红移。【T0 修正】原值 2021-05-19T05:15:00Z 系 bot 对 GCN 30051 DDOTI 观测窗口终点 05:15 UTC 的误提取(Issue #84 模式:观测窗口时刻误作触发时刻;GCN 30051 原文 'from 2021-05-19 03:26 to 05:15 UTC (from 6.1 to 7.9 hours after the trigger)';GRB210524B 同型错误已合并裁定),现取触发仪器官方目录 FERMIGBRST(external/fermi_gbm 快照,bn210518889)trigger_time=2021-05-18T21:20:17.915Z;python 复算:MET 643065622.915 天真换算 21:20:22.915、扣 5 跳秒(2005-12-31/2008-12-31/2012-06-30/2015-06-30/2016-12-31 共 5 个,2017-01-01 起生效,Issue #67 口径)=21:20:17.915,自洽;GCN 30051 原文 trigger 643065622(MET)与 GCN 30052 反算触发 21:20:18 UT(MASTER-Kislovodsk '73903 sec after trigger time at 2021-05-19 17:52:01 UT')整秒一致;别名日分数 210518.889(21:20:17.915/86400 d=0.88910→截尾 0.889)自洽。原 extra_data t0_note='t0 为 meta trigger-time(真实触发时刻)'、t0_basis=meta_trigger 据此改写,原值留存于此(Issue #68:零锚点 bot 值不可信,且该值不对应 FERMIGBRST 快照中任何 2021-05-18/19 触发)。【身份】FERMIGBRST 快照 bn210518889 ra/dec=192.85/36.92 与本条目坐标逐位一致;GCN 30051 'final GBM position 12:51:24.00 +36:55:12.0 J2000'=192.85/+36.92;GCN 30052 同引 '12h 51m 24.00s, +36d 55m 12.0s, R=6.1'。同日相邻事件划界:GRB 210518A(GCN 30045/30049,官方触发 13:04:09 UT;MASTER 表两指向时刻按本库「UT 列=曝光起点」口径反算约 13:04:10,逐秒吻合)为另一触发(疑对应 bn210518545,trigger_time=2021-05-18T13:04:09.640Z),与本源(21:20:17.915Z)不同,未合并。【定位】pos_error=6.1 deg,单位由 arcsec 改 deg;pos_error_confidence=1sigma,依据仓内 external/fermi_gbm/README.md 对 error_radius 列的定义「定位误差半径。统计 1σ(误差椭圆平均,GBM 误差不对称)」(GRB210524B 同口径)。【分类】tag=grb(GCN 30051/30052 均按 GRB 通告处理);sub_tag=sgrb:Cao+2026(arXiv:2609.35994)表 4 将本源(bn210518889)列入其 599 个 Type I(短暴)样本(T90<2.1 s 截选,Fermi/GBM 目录数据),为现有唯一发表分类。【alias 出处】「GRB210518889」=FERMIGBRST 官方目录原形(tdat name 字段,GRB191202A 同批裁定口径)、「bn210518889」=trigger_name、「GRB 210518.889」=GCN 30051 主题行 'GRB 210518.889: DDOTI Upper Limits on the Afterglow' 实际用名(快照 name_alt 三位小数形虽系 parse.py decimal_grb_name 自拼,本源该形经 GCN 30051 实际使用,按 §3.10 有出处保留;GRB190507B/191202A/200530A 同批裁定指无 GCN 实际用名者不收,本源不属该情形);带空格拼接形「GRB 210518889」不收(Issue #69)。【物理量(多来源并列)】FERMIGBRST 快照:T90=0.896±0.590051 s、T50=0.256±0.546816 s(50-300 keV)、fluence=4.44381e-08±1.01055e-08 erg/cm2(10-1000 keV)、峰值光子流量 2.48532±0.808054 ph/cm2/s(64 ms,10-1000 keV)、Epeak=691.39294±113.08138 keV(CPL,obs);Cao+2026 表 4 含 bn210518889 行(数值与 FERMIGBRST 同源转录,不另列)。【测光检索(2026-10-25)】仓内 gcn/archive 本地未获取(目录为空),经 GCN 网站检索:事件页 gcn.nasa.gov/circulars/events/grb-210518889 仅列 GCN 30051,按 trigger 号 643065622 网检补得 GCN 30052,共 2 篇、均含光学上限(DDOTI 6 视场 w=19.00–19.35 IQR;MASTER 78 行 C 滤光片上限表 12.5–18.7 mag),已全部入库;仓内快照:external/fermi_gbm 1 条目录记录(身份/T0 互证)、external/rssgrbag 0 命中、external/grbsn_webtool 59 事件无本源、external/mpe_greiner 2021-05 有 13 条但无 05-18/19 记录、external/swift_bat 2021-05 有 6 触发但无 05-18/19、external/fermi_lat 2021 有 11 条无本源、external/konus_wind 快照止于 2018 年(无覆盖)、external/uvot_grb/swiftgrbba/batse/agile_mcal/saxgrbmgrb/liang2023/wang2022/guidorzi2025/minaev2020 grep '210518' 零命中、external/heasarc_grbcat 快照无 2021 年数据(覆盖缺口);WebSearch('bn210518889'/'GRB 210518.889'/'643065622')另命中 Fermi GBM DataTools 文档示例(无测光)与 Cao+2026(统计样本,无本源测光);TNS 不适用(GRB 非 AT/SN/CV 类);ADS/SciX 无 API token 未直接查询。结论:可用测光即 GCN 30051/30052 两篇上限,本 PR 新增 79 行(GCN 30052 78 行 + GCN 30051 合并 1 行;DDOTI 行 band=w 对齐 GRB210524B 已合并先例与库内既有 DDOTI 行口径)。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "fermi_gbm(FERMIGBRST) + GCN 30051/30052",
+    "t0_note": "T0 为 Fermi/GBM 触发时刻(FERMIGBRST trigger_time=2021-05-18T21:20:17.915Z;MET 643065622.915 扣 5 跳秒;GCN 30052 反算 21:20:18 UT 整秒一致;bot 原值 2021-05-19T05:15:00Z 系 GCN 30051 DDOTI 观测窗口终点,已弃用)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 30051",
+      "url": "https://gcn.nasa.gov/circulars/30051.json",
+      "title": "GRB 210518.889: DDOTI Upper Limits on the Afterglow",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30052",
+      "url": "https://gcn.nasa.gov/circulars/30052.json",
+      "title": "Fermi trigger No 643065622: Global MASTER-Net observations report",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Cao+2026",
+      "url": "https://arxiv.org/html/2609.35994v1",
+      "title": "Hierarchical Bayesian Inference on the intrinsic event rate of Type I gamma-ray bursts from the Fermi/GBM catalogue",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
