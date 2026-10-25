@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB210202A",
   "alias": [
-    "GRB 210202841"
+    "GRB210202841",
+    "bn210202841"
   ],
-  "ra": 229.80999755859375,
-  "dec": -38.040000915527344,
-  "T0": "2021-02-02T20:10:36.300000Z",
-  "T0_ref": null,
+  "ra": 229.81,
+  "dec": -38.04,
+  "T0": "2021-02-02T20:10:31.299Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-02-02T20:10:31.299Z（MJD 59247.840640039，仓内快照 external/fermi_gbm，2026-07-21 取数）；GCN 29387（GBM 团队）记 At 20:10:31.30 UT on 02 February 2021、GCN 29380（GBM Final Real-time）记 20:10:31 UT（trigger MET 633989436.299376，扣 5 闰秒=20:10:31.299），一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2196,
+  "pos_error_confidence": null,
+  "pos_ref": "HEASARC FERMILGRB 快照（2FLGC，Ajello+2019）：RA=15h19m14.4s Dec=−38°02′24″ → 229.81, −38.04 deg（J2000），error_radius=0.61 deg；GCN 29386（LAT 初报）RA,Dec=230.0,−38.0（r=0.7 deg, 90% containment）同域",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 wa1kmoon@zcode（2026-10-25）：(1)【T0 修正】原值 2021-02-02T20:10:36.300000Z 为 bot 对 HEASARC FERMILGRB trigger_met=633989436.3 的天真换算（以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2017-01-01 起生效的 5 个闰秒；python 复算 naive UTC=2021-02-02T20:10:36.300000 与原值逐位一致，bug 复现），正确 UTC=20:10:31.300；现采纳触发仪器 Fermi/GBM 触发时刻 2021-02-02T20:10:31.299Z（依据见 T0_ref）。多方互证：GCN 29380（GBM Final Real-time）记 At 20:10:31 UT（trigger 633989436.299376）；GCN 29387（GBM 团队）记 At 20:10:31.30 UT；GCN 29386（LAT 团队）记 T0=20:10:31.3 UT，一致；AGILE/MCAL 独立触发 20:10:32.98±0.01 UTC（GCN 29389，其自身触发口径，不写 T0_offset）。FERMILGRB(2FLGC) 表 time 列=2021-02-02 20:10:31.002 系 LAT 管线口径，较 GBM 触发早 0.297 s，备查。(2)【定位口径】ra/dec 为 2FLGC LAT 精化定位（HEASARC FERMILGRB 快照 RA=15h19m14.4s Dec=−38°02′24″ → 229.81, −38.04 deg）；error_radius=0.61 deg（=2196″）为 LAT transient factory 分析的定位误差，external/fermi_lat/README.md 未标注置信水平，故 pos_error_confidence 留空；GCN 29386（LAT 初报）RA,Dec=230.0,−38.0（r=0.7 deg, 90% containment, statistical error only），与精化位置相距约 0.155 deg、在各自误差内相容。未采用值备查：GBM Final Real-time 定位 RA=232.2 Dec=−40.4（统计不确定度 1.7 deg，GCN 29380）；BALROG 定位 RA=223.5±1.5 Dec=−35.5±1.0（另加 2 deg 系统误差，GCN 29382）；FERMIGBRST 目录行 ra=232.23 dec=−40.4 error_radius=1.67 deg 与 GBM Final Real-time 定位逐位一致，系目录吸收本队实时地面定位（非吸收其他仪器定位）；MPE Greiner 行（15h20m00s −38°00′、Error 42 角分、IPN=y）与 LAT 初报同域。(3)【坐标修正】原 ra/dec 229.80999755859375/−38.040000915527344 为 float32 残渣（float32(229.81)/float32(−38.04)，python struct 复算逐位相等），复原 2FLGC 原文坐标。(4)【分类】sub_tag 增 lgrb：GCN 29380 明言 likely LONG GRB，GBM 目录 T90=17.66±0.57 s（50-300 keV）佐证。非 SCHEMA 量备查：LAT >100 MeV 光子流量 (2.3±0.9)e-05 ph/cm2/s（T0 后 0-100 s）、>1 GeV (2.7±1.6)e-06 ph/cm2/s、最高光子 1.4 GeV 于 T0+19 s（GCN 29386，GeV/erg 量级不落光学/射电测光两车道，不入 lc）；AGILE MCAL 注量 2.8e-06 erg/cm2（0.4-10 MeV，90% CL，GCN 29389）；2FLGC tl100=37.74±5.54 s、ext_emission_max_ene=1400 MeV @ +19.34 s（目录快照）。测光检索（2026-10-25）：仓内 gcn/archive 全量 45 889 篇，grep+python 双路检索命中 6 篇（29380/29382/29385/29386/29387/29389），含光学数值者 1 篇（GCN 29385，MASTER-SAAO 4 条 C 带上限，全部带 Tmid-T0 时间锚点，已入库）；external/rssgrbag 无记录；external/grbsn_webtool 无该事件；heasarc_grbcat/konus_wind/agile_mcal/uvot_grb 快照无该事件；GCN 站（gcn.nasa.gov）检索命中同 6 篇（2026-10-25 实测），与本地档案一致；ADS/SciX 无 API token 未查（历史实测 401）；arXiv API 兜底 0 命中（「GRB 210202A」「210202841」均 0 篇）→ 仅 MASTER 4 条有时间锚点的无滤光片上限可入库；本 PR 新增 4 行。alias 处理：删带空格拼接形「GRB 210202841」（6 篇 GCN subject 均用 GRB 210202A，无逐字背书）；收 FERMIGBRST/FERMILGRB 官方 tdat name「GRB210202841」（ALIAS_JUNK_RE 误伤属已知待决，如实申报）与官方 trigger_name「bn210202841」。审核人 wa1kmoon@zcode，2026-10-25。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -149,8 +152,56 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 29380",
+      "url": "https://gcn.nasa.gov/circulars/29380",
+      "title": "GRB 210202A: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 29382",
+      "url": "https://gcn.nasa.gov/circulars/29382",
+      "title": "GRB 210202A: BALROG localization (Fermi Trigger  / GRB 210202841)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 29385",
+      "url": "https://gcn.nasa.gov/circulars/29385",
+      "title": "Fermi GRB 210202A: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 29386",
+      "url": "https://gcn.nasa.gov/circulars/29386",
+      "title": "GRB 210202A: Fermi-LAT detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 29387",
+      "url": "https://gcn.nasa.gov/circulars/29387",
+      "title": "GRB 210202A: Fermi GBM detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 29389",
+      "url": "https://gcn.nasa.gov/circulars/29389",
+      "title": "GRB 210202A: AGILE/MCAL detection",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
