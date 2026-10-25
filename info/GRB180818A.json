@@ -1,6 +1,9 @@
 {
   "transient_id": "GRB180818A",
-  "alias": [],
+  "alias": [
+    "GRB 180818A",
+    "BAT 853824"
+  ],
   "ra": 169.63679,
   "dec": -48.3444,
   "T0": "2018-08-18T03:12:04.026320Z",
@@ -9,12 +12,14 @@
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": ["grb"],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 23147 (Swift-XRT enhanced position): RA=169.63679, Dec=-48.34440, 1.9 arcsec radius (90% confidence)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) T0 修正（关键）：原 T0=2018-08-18T12:28:57Z 为 bot 误植——GCN 23153 证实该时刻是同日另一暴 GRB 180818B 的 Fermi/GBM 触发时刻（trigger 556288142 / 180818520，12:28:57.24 UT），与本源无关；本源真实触发为 Swift/BAT trigger 853824 于 2018-08-18 03:12:04 UT（GCN 23146），亚秒值 03:12:04.026320 取 batgrbproduct 官方通告页（含 UTCF 改正），与仓内 external/swift_bat 快照同值（swiftgrbba 快照 03:12:04.000Z 整秒一致）。原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=「meta_trigger」按《数据审核提示词》§3.10 改写，原值记于此。(2) Trigger_Instrument 原「Swift」细化为「Swift/BAT」：GCN 23146 明确 BAT triggered（trigger 853824），参考库内已合并审核先例。(3) 定位修正：原 ra=169.6364 为 GCN 23146 初始增强位置（误差 2.4″），与 pos_ref=GCN 23147（误差 1.9″）不自洽；改用 GCN 23147 增强位置 RA=169.63679, Dec=-48.34440（1.9″ 半径，90% 置信）→ 补 pos_error_confidence=90。BAT 地面精化位置 RA=169.698, Dec=-48.344（2.3′ 半径，sys+stat，90%，GCN 23154）备查。(4) tag 补 grb；sub_tag 留空：来源未明示长短暴分类，不自行以 T90 现算；T90(15-350 keV)=13.7±4.1 s、fluence(15-150 keV)=2.6±0.6e-7 erg/cm²、1-s peak photon flux=0.6±0.2 ph/cm²/s（15-150 keV，T+1.64 s，均 90% 置信）为 SCHEMA 外物理量，记此备查（GCN 23154）。(5) 红移：GCN 23146/23147/23148/23150/23154 均无红移，保持 null。(6) 测光：UVOT 无探测，GCN 23150 表列 9 条 3σ 上限（均给出相对触发的窗口起止，时间锚点明确）按 §3.3 入 lc（9 行；band 用 filters.json 键 uvot-*；Vega 系统依 GCN 23150 原文声明「using the UVOT photometric system (Breeveld et al. 2011)」；未做银河消光改正，E(B-V)=0.11）。X 射线数据（Swift/XRT，GCN 23148：alpha 6.0→break T+172 s→0.63；NH 超出银值 8.9(+3.1,-2.6)e21 cm^-2 等）按规则暂不审核、不入库。alias 无有出处真名，保持 []。(7) 测光检索（2026-10-24）：仓内 gcn/archive 全文检索「180818A」+ 触发号 853824 命中 6 篇——属本源 5 篇（23146/23147/23148/23150/23154，均 Swift 通告，其中 23150 含光学上限→lc 9 行），GCN 1359 为触发号数字巧合（实为 GRB 020409 的丹麦 0.5m 望远镜通告）；另按坐标（169.6/-48.34、11h18m、-48d20m）全文扫描 0 新命中，即无任何地面望远镜后随测光通告；同日 GRB 180818B 相关 GCN（23149/23151/23152/23153）已逐一确认归属，无串扰。external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该事件、heasarc_grbcat/swift_grb/uvot_grb 快照 0 命中；GCN 站检索对字母名/触发号实测失效（以本地全文档案为准）；ADS/SciX 无 API token 未查（本机实测 api.adsabs.harvard.edu 与 api.scixplorer.org 均返回 401 Missing Authorization）；arXiv API 兜底检索 all:\"GRB 180818A\" 0 命中 → 可用测光仅 GCN 23150 的 UVOT 上限；本 PR 新增 9 行。",
+  "comment": "审核 wa1kmoon@zcode（2026-10-24）：(1) T0 修正（关键）：原 T0=2018-08-18T12:28:57Z 为 bot 误植——GCN 23153 证实该时刻是同日另一暴 GRB 180818B 的 Fermi/GBM 触发时刻（trigger 556288142 / 180818520，12:28:57.24 UT），与本源无关；本源真实触发为 Swift/BAT trigger 853824 于 2018-08-18 03:12:04 UT（GCN 23146），亚秒值 03:12:04.026320 取 batgrbproduct 官方通告页（含 UTCF 改正），与仓内 external/swift_bat 快照同值（swiftgrbba 快照 03:12:04.000Z 整秒一致）。原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=「meta_trigger」按《数据审核提示词》§3.10 改写，原值记于此。(2) Trigger_Instrument 原「Swift」细化为「Swift/BAT」：GCN 23146 明确 BAT triggered（trigger 853824），参考库内已合并审核先例。(3) 定位修正：原 ra=169.6364 为 GCN 23146 初始增强位置（误差 2.4″），与 pos_ref=GCN 23147（误差 1.9″）不自洽；改用 GCN 23147 增强位置 RA=169.63679, Dec=-48.34440（1.9″ 半径，90% 置信）→ 补 pos_error_confidence=90。BAT 地面精化位置 RA=169.698, Dec=-48.344（2.3′ 半径，sys+stat，90%，GCN 23154）备查。(4) tag 补 grb；sub_tag 留空：来源未明示长短暴分类，不自行以 T90 现算；T90(15-350 keV)=13.7±4.1 s、fluence(15-150 keV)=2.6±0.6e-7 erg/cm²、1-s peak photon flux=0.6±0.2 ph/cm²/s（15-150 keV，T+1.64 s，均 90% 置信）为 SCHEMA 外物理量，记此备查（GCN 23154）。(5) 红移：GCN 23146/23147/23148/23150/23154 均无红移，保持 null。(6) 测光：UVOT 无探测，GCN 23150 表列 9 条 3σ 上限（均给出相对触发的窗口起止，时间锚点明确）按 §3.3 入 lc（9 行；band 用 filters.json 键 uvot-*；Vega 系统依 GCN 23150 原文声明「using the UVOT photometric system (Breeveld et al. 2011)」；未做银河消光改正，E(B-V)=0.11）。X 射线数据（Swift/XRT，GCN 23148：alpha 6.0→break T+172 s→0.63；NH 超出银值 8.9(+3.1,-2.6)e21 cm^-2 等）按规则暂不审核、不入库。alias 无有出处真名，保持 []。(7) 测光检索（2026-10-24）：仓内 gcn/archive 全文检索「180818A」+ 触发号 853824 命中 6 篇——属本源 5 篇（23146/23147/23148/23150/23154，均 Swift 通告，其中 23150 含光学上限→lc 9 行），GCN 1359 为触发号数字巧合（实为 GRB 020409 的丹麦 0.5m 望远镜通告）；另按坐标（169.6/-48.34、11h18m、-48d20m）全文扫描 0 新命中，即无任何地面望远镜后随测光通告；同日 GRB 180818B 相关 GCN（23149/23151/23152/23153）已逐一确认归属，无串扰。external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该事件、heasarc_grbcat/swift_grb/uvot_grb 快照 0 命中；GCN 站检索对字母名/触发号实测失效（以本地全文档案为准）；ADS/SciX 无 API token 未查（本机实测 api.adsabs.harvard.edu 与 api.scixplorer.org 均返回 401 Missing Authorization）；arXiv API 兜底检索 all:\"GRB 180818A\" 0 命中 → 可用测光仅 GCN 23150 的 UVOT 上限；本 PR 新增 9 行。 增量修正（Rusty-Harpoon@zcode，2026-10-25，独立核查 PR #179 时发现）：①lc 第 2/3/4/6/9 数据行 mjd 末位修入（由 T0+time 精确重算，差 1×10⁻⁷ 天，SCHEMA §3 七位小数自洽要求）；②alias 补 GRB 180818A（GCN 用名）与 BAT 853824（external/swift_bat name_alt，快照逐位）；③lc weights 空值补 1.0（库内惯例）。其余一律维持 #168（wa1kmoon@zcode）已合并审核。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": "90",
@@ -30,11 +35,36 @@
     }
   },
   "articles": [
-    {"name": "GCN 23146", "title": "GRB 180818A: Swift detection of a burst", "url": "https://gcn.nasa.gov/circulars/23146", "source": "wa1kmoon@zcode"},
-    {"name": "GCN 23147", "title": "GRB 180818A: Enhanced Swift-XRT position", "url": "https://gcn.nasa.gov/circulars/23147", "source": "wa1kmoon@zcode"},
-    {"name": "GCN 23148", "title": "GRB 180818A: Swift-XRT refined Analysis", "url": "https://gcn.nasa.gov/circulars/23148", "source": "wa1kmoon@zcode"},
-    {"name": "GCN 23150", "title": "GRB 180818A: Swift/UVOT Upper Limits", "url": "https://gcn.nasa.gov/circulars/23150", "source": "wa1kmoon@zcode"},
-    {"name": "GCN 23154", "title": "GRB 180818A: Swift-BAT refined analysis", "url": "https://gcn.nasa.gov/circulars/23154", "source": "wa1kmoon@zcode"}
+    {
+      "name": "GCN 23146",
+      "title": "GRB 180818A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/23146",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23147",
+      "title": "GRB 180818A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/23147",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23148",
+      "title": "GRB 180818A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/23148",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23150",
+      "title": "GRB 180818A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/23150",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 23154",
+      "title": "GRB 180818A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/23154",
+      "source": "wa1kmoon@zcode"
+    }
   ],
   "host_galaxy": null
 }
