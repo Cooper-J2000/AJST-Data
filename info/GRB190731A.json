@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB190731A",
   "alias": [
-    "GRB 190731943"
+    "GRB190731943",
+    "GRB190731.94"
   ],
-  "ra": 340.30999755859375,
-  "dec": -76.41999816894531,
-  "T0": "2019-07-31T22:38:28Z",
-  "T0_ref": null,
+  "ra": 340.31,
+  "dec": -76.42,
+  "T0": "2019-07-31T22:38:20.369Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2019-07-31T22:38:20.369Z（GBM trigger 586305505.368608 / 190731943，MJD 58695.9432913）；GCN 25240（GBM 团队）记 At 22:38:20 UT、GCN 25248（GBM 团队）记 At 22:38:20.37 UT；原值 2019-07-31T22:38:28Z 系 bot 对 FERMILGRB trigger_met=586305508.0 的天真换算（少扣 5 闰秒），详见 comment",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +15,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.31,
+  "pos_ref": "HEASARC FERMILGRB 快照（2FLGC，Ajello+2019）：RA=340.31, Dec=-76.42 deg，error_radius=0.31 deg；GCN 25244（LAT 团队）初报 RA,Dec=339.94,-76.62（r=0.28 deg, 90% containment, statistical only）同域（与精化位相距 0.218 deg）；Swift-XRT 精化位（GCN 25251）RA,Dec=339.72015,-76.57744（r=2.2 arcsec, 90%）距本位 12.5 arcmin（在 0.31 deg 误差半径内）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52, DOI 10.3847/1538-4357/ab1d4e）；2FLGC 的 LAT 光变为高能光子光变（tl100=275.68 s、ext_emission_max_ene=3800 MeV @ T0+231.3 s），GeV/MeV 量级不落光学/射电测光两车道，不入 lc。【T0 修正】原值 2019-07-31T22:38:28Z 为 bot 对 HEASARC FERMILGRB trigger_met=586305508.0 的天真换算（少扣 5 个闰秒；python 复算 naive UTC=2019-07-31T22:38:28.000000 与原值逐位一致），扣 5 闰秒后=22:38:23.0，即 FERMILGRB 表 trigger_time=2019-07-31T22:38:23.004Z 的 LAT 口径——该 trigger_met 为 LAT 管线口径、比 GBM 触发晚 2.635 s，不采纳；现采纳触发仪器 Fermi/GBM 官方目录 FERMIGBRST 亚秒值 trigger_time=2019-07-31T22:38:20.369Z（GBM trigger 586305505.368608 / 190731943，MJD 58695.9432913；GCN 25240（GBM 团队）记 At 22:38:20 UT、GCN 25248（GBM 团队）记 At 22:38:20.37 UT，与本值一致）。其他仪器触发时刻：CALET/CGBM 22:38:18.315 UT（GCN 25246）、AGILE/MCAL MET=491697501.521（纪元 2004-01-01）→ 22:38:21.521、Konus-Wind T0=81504.082 s UT=22:38:24.082（GCN 25274）、IPN 约 81500 s UT=22:38:20（GCN 25250）。【定位口径澄清】ra/dec 为 2FLGC LAT 精化定位（Ajello+2019，HEASARC FERMILGRB 快照 RA=340.31, Dec=-76.42 deg；error_radius=0.31 deg 为 LAT 分析的定位误差，未标注置信水平，故 pos_error_confidence 留空）；GCN 25244（LAT 团队）初报定位 RA,Dec=339.94,-76.62（r=0.28 deg, 90% containment, statistical error only），FERMIGBRST 目录行 ra=339.94, dec=-76.62, error_radius=0.28 与该初报逐位一致，疑为吸收初报定位；2FLGC 精化位与初报位相距 0.218 deg、在各自误差内相容；Swift-XRT 精化位（GCN 25251）RA,Dec=339.72015,-76.57744（r=2.2 arcsec, 90%），距 GCN 25244 LAT 初报位 4.0 arcmin（原文）、距 2FLGC 精化位 0.209 deg（在 0.31 deg 误差半径内）；GBM final real-time 定位（GCN 25240）RA=342.8, Dec=-73.9（统计误差 1.0 deg）距 XRT 位 2.79 deg；IPN 误差盒（GCN 25250，GBM-HEND 环带 × LAT 误差圆）中心 339.864,-76.572、面积 244 平方角分；MPE Greiner 表行（22h38m53s -76°35′，Error 17′，IPN=y）为 X 射线定位口径，与 XRT 位同域。【坐标修正】原 ra/dec 340.30999755859375/-76.41999816894531 为 float32 残渣（float32(340.31)/float32(-76.42)），按 FERMILGRB 原值恢复。【alias 更正】原「GRB 190731943」为导入管线拼接伪形；现收官方目录名「GRB190731943」（FERMIGBRST name/trigger_name；GCN 25240 记 trigger 586305505/190731943）与 MASTER 通告实际用名「GRB190731.94」（GCN 25242/25243）；三位小数形「GRB 190731.943」系 parse.py 自拼，不收。【分类】long GRB：GCN 25240 记 likely LONG GRB、GCN 25250/25274 记 long-duration；GBM T90=15.872±0.362 s（50-300 keV）。【备查】GBM（GCN 25248）：T90=15.9±0.4 s、fluence=(8.57±0.05)e-05 erg/cm2（10-1000 keV）、Band Epeak=456±9 keV、1 s 峰值光子流量 55.5±0.4 ph/cm2/s；FERMIGBRST 目录：T90=15.8722±0.362039 s、T50=5.88809±0.572432 s、fluence=8.8648e-05±3.38481e-08 erg/cm2、Epeak=538.92 keV（CPL）；Konus-Wind（GCN 25274）：fluence=1.32(±0.08)e-04 erg/cm2、Ep=406±30 keV（Band，20 keV-5 MeV）；LAT（GCN 25244）：>100 MeV 光子流量 (1.91±0.65)e-5 ph/cm2/s（T0+0-800 s）、最高能光子 3.8 GeV @ T0+234 s；CALET（GCN 25246）T90=14.6±1.8 s（40-1000 keV）；AstroSat CZTI（GCN 25258）40-200 keV 探测、最强脉冲 22:38:24.0 UT；Swift-XRT 余辉（GCN 25251，PC 模式 5.0 ks @ T0+33.4-62.9 ks，衰变指数 1.3）为 X 射线数据，暂不处理。【测光检索（2026-10-25）】仓内 gcn/archive/archive.json 45889 篇全文 python 扫描（日期「190731」命中 14 篇、触发号「586305505」命中 6 篇；GCN 25234 属同日异源 GRB190731.19/trigger 586240252，已划界；本源共 13 篇：GCN 25240/25242/25243/25244/25245/25246/25248/25250/25251/25256/25257/25258/25274；本机 grep 对这批 JSON 有二进制误判漏报，以 python 扫描为准），其中含光学数值/上限者 4 篇（GCN 25242/25243/25256/25257）；external/rssgrbag 0 命中、external/grbsn_webtool 无该事件、external/konus_wind/heasarc_grbcat/uvot_grb/swift_bat/batse/saxgrbmgrb 快照 0 命中（heasarc_grbcat 止于 2005-03、swift_grb 止于 2012-12，不覆盖本源）；GCN 站按名搜索已知失效，本地快照 45889 篇覆盖至 2026-10-22，等价于 GCN 站全量 Circular 检索；arXiv API（all:「GRB 190731A」、all:「bn190731943」、all:「190731.943」、abs:「190731A」）命中均 0 篇；ADS/SciX 无 API token 未查（本机实测 401）；TNS 不适用（GRB 类）→ 可入库测光=GCN 25257 的 Swift/UVOT 3 条上限（w2/b/v，有曝光窗口时间锚点）+ GCN 25256 的 MASTER 无滤光片上限 24 条（VWF 首帧 1 条 + MASTER-II 表 23 行），本 PR 共补 27 行；GCN 25242/25243 的 MASTER 上限 10 行经偏振片（原文 Filt.=P\\，据 GCN 16875 为 135° 取向偏振片）非无滤光片、无对应 filters.json 波段，不落 band 两车道，未入库（见 PR 待决事项）。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -221,8 +223,92 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25240",
+      "url": "https://gcn.nasa.gov/circulars/25240",
+      "title": "GRB 190731A: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25242",
+      "url": "https://gcn.nasa.gov/circulars/25242",
+      "title": "Fermi  trigger No 586305505 Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25243",
+      "url": "https://gcn.nasa.gov/circulars/25243",
+      "title": "Fermi  trigger No 586305505 Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25244",
+      "url": "https://gcn.nasa.gov/circulars/25244",
+      "title": "GRB190731A: Fermi-LAT detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25246",
+      "url": "https://gcn.nasa.gov/circulars/25246",
+      "title": "GRB 190731A: CALET Gamma-Ray Burst Monitor detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25248",
+      "url": "https://gcn.nasa.gov/circulars/25248",
+      "title": "GRB 190731A: Fermi GBM detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25250",
+      "url": "https://gcn.nasa.gov/circulars/25250",
+      "title": "IPN Triangulation of GRB 190731A",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25251",
+      "url": "https://gcn.nasa.gov/circulars/25251",
+      "title": "GRB 190731A: Swift-XRT afterglow detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25256",
+      "url": "https://gcn.nasa.gov/circulars/25256",
+      "title": "GRB 190731A: no OT detected by MASTER",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25257",
+      "url": "https://gcn.nasa.gov/circulars/25257",
+      "title": "GRB 190731A: Swift/UVOT Upper Limits",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25258",
+      "url": "https://gcn.nasa.gov/circulars/25258",
+      "title": "GRB 190731A: AstroSat CZTI detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 25274",
+      "url": "https://gcn.nasa.gov/circulars/25274",
+      "title": "Konus-Wind observation of GRB 190731A",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
