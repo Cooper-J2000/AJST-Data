@@ -1,0 +1,64 @@
+{
+  "transient_id": "GRB211023B",
+  "alias": [
+    "GRB 211023B",
+    "BAT 1080859"
+  ],
+  "ra": 170.30871,
+  "dec": 39.13534,
+  "T0": "2021-10-23T21:05:52.141400Z",
+  "T0_ref": "GCN 30960（BAT trigger 1080859，原文整秒 21:05:52 UT）；亚秒 141400 µs 取自 external/swift_bat 目录",
+  "T0_offset": null,
+  "T0_offset_ref": null,
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.7,
+  "pos_ref": "GCN 30966",
+  "redshift_type": null,
+  "redshift_ref": null,
+  "comment": "身份判定与改名重建（2026-10-25，维护者 Cooper-J2000）：原条目 GRB212102 是 bot 依 GCN 31021 的 eventId「GRB 212102」误建——该字段把暴名「GRB 2121023B」截断了（同族问题见 GCN 42240→GRB 202510、GCN 1905→GRB 200302），bot 由此得到 T0=2021-10-27T00:00:00Z、ra/dec 全空、Trigger_Instrument 误标 Swift/XRT。GCN 31021 正文明确观测对象是 GRB 211023B（「We observed the position of GRB 211023B (Dichiara et al. GCN 30960) with the VLA … 3.63 days post-burst … 3-sigma limit of 13 microJy」），是真实事件，且库内没有 GRB211023B 条目（全库 alias/comment 检索为 0；GCN 档案中 eventId=「GRB 211023B」的通告 17 篇），故按 §3.7 源级处置改为正确身份、保留其唯一一行数据，而不是整条删除。字段依据：T0=GCN 30960 的 BAT 触发 21:05:52 UT（亚秒取 external/swift_bat trigger_time=2021-10-23T21:05:52.141400Z）；定位=GCN 30966 天体测量增强 XRT 位置 RA,Dec=170.30871,+39.13534（2.7″ 半径，90% confidence，原文明确）；alias「BAT 1080859」取自 swift_bat 快照 name_alt。备查（GCN 30979，均 90%）：T90(15-350 keV)=1.30±0.26 s、谱 PL 指数 1.97±0.24、fluence(15-150 keV)=1.7±0.3e-7 erg/cm²——通告称「possibly short burst」，未作正式长短分类，按 §3.9 不自算，sub_tag 留空待审核裁定；GCN 30975 给 UVOT white 19.44±0.11、u 19.50±0.20 探测与 4 条上限，E(B-V)=0.024（Schlegel+1998）。本条目未经审核（无 extra_data.audit），仍在可认领队列；lc 仅 1 行（GCN 31021 的 VLA 上限），UVOT 探测等其余数据待后续审核按 §3.3 处理。",
+  "sub_tag": [],
+  "pos_error_unit": "arcsec",
+  "extra_data": {
+    "src": null,
+    "t0_note": "T0 取 GCN 30960 的 Swift/BAT 触发（原文整秒 21:05:52 UT），亚秒取自 external/swift_bat 目录；本条目由 bot 幽灵条目 GRB212102 改名重建（维护者 2026-10-25）",
+    "t0_basis": "GCN 30960"
+  },
+  "articles": [
+    {
+      "name": "GCN 30960",
+      "url": "https://gcn.nasa.gov/circulars/30960",
+      "title": "GRB 211023B: Swift detection of a possibly short burst with an optical counterpart",
+      "source": "Cooper-J2000"
+    },
+    {
+      "name": "GCN 30966",
+      "url": "https://gcn.nasa.gov/circulars/30966",
+      "title": "GRB 211023B: Enhanced Swift-XRT position",
+      "source": "Cooper-J2000"
+    },
+    {
+      "name": "GCN 30975",
+      "url": "https://gcn.nasa.gov/circulars/30975",
+      "title": "GRB 211023B: Swift/UVOT Detection",
+      "source": "Cooper-J2000"
+    },
+    {
+      "name": "GCN 30979",
+      "url": "https://gcn.nasa.gov/circulars/30979",
+      "title": "GRB 211023B: Swift-BAT refined analysis",
+      "source": "Cooper-J2000"
+    },
+    {
+      "name": "GCN 31021",
+      "url": "https://gcn.nasa.gov/circulars/31021",
+      "title": "GRB 211023B: 6 GHz VLA radio upper limit",
+      "source": "Cooper-J2000"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
+}
