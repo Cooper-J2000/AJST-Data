@@ -90,15 +90,22 @@ def occupancy(repo, pr, token):
 
 
 # ─── 判定（纯函数，可离线测）────────────────────────────────────────────────
-def decide(mine, me_pr, others):
+def decide(mine, me_pr, others, skip_same_author=True):
     """mine: set(源)；me_pr/others: {number,title,created_at,user:{login},draft}
 
     → (conflicts, has_earlier)；conflicts: [(其他 Pr, 共同源 list, 是否先于本 PR)]
     先后判据：created_at 更早者优先，同秒时 PR 号小者优先。
+
+    skip_same_author=True（默认）：**同一作者**的另一个 PR 不算挤占——那是正常流程：
+    `claim: X` draft → 同一个人的 data PR，以及 #188 那种「增量修正同一源」的 PR，
+    都会被自家 claim 挡住，误红。挤占只发生在**跨作者**之间。
     """
     me_key = (me_pr.get('created_at') or '', me_pr['number'])
+    me_who = (me_pr.get('user') or {}).get('login')
     conf = []
     for pr, shared in others:
+        if skip_same_author and me_who and (pr.get('user') or {}).get('login') == me_who:
+            continue
         other_key = (pr.get('created_at') or '', pr['number'])
         conf.append((pr, sorted(shared), other_key < me_key))
     conf.sort(key=lambda x: (x[0].get('created_at') or '', x[0]['number']))
@@ -221,6 +228,19 @@ def selftest():
     check('claim draft PR 也能挡住后来者', earlier3 is True and conf3[0][0]['number'] == 227)
 
     check('无重叠 → 不阻断', decide({'GRB180818A'}, me, [(claim, set())])[1] is False)
+
+    # 同一作者的 claim → data PR 是正常流程，不能误判（否则每个 agent 的数据 PR 都会被自家 claim 挡住）
+    own_claim = P(216, 'claim: GRB210503A', '2026-10-24T21:47:12Z', 'wa1kmoon', draft=True)
+    own_data = P(300, 'data: 审核 GRB210503A', '2026-10-25T07:00:00Z', 'wa1kmoon')
+    check('同一作者的 claim 不挡自己的 data PR',
+          decide({'GRB210503A'}, own_data, [(own_claim, {'GRB210503A'})])[1] is False)
+    check('自家增量修正 PR（#188 形态）也不挡',
+          decide({'GRB180818A'}, own_data, [(P(188, 'data: 增量', '2026-10-24T17:11:24Z', 'wa1kmoon'),
+                                             {'GRB180818A'})])[1] is False)
+    # 但跨作者仍然要挡
+    check('跨作者的 claim 照样挡',
+          decide({'GRB210503A'}, P(301, 'data: 审核 GRB210503A', '2026-10-25T07:00:00Z', 'syfu95'),
+                 [(own_claim, {'GRB210503A'})])[1] is True)
     print(f'\n{bad} 个用例失败' if bad else '\n全部用例通过')
     return 0 if not bad else 1
 
