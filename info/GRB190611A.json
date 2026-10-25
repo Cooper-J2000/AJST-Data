@@ -1,28 +1,76 @@
 {
   "transient_id": "GRB190611A",
-  "alias": [],
-  "ra": 324.72043,
-  "dec": -56.0737,
-  "T0": "2019-06-12T18:42:50Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 190611A",
+    "BAT 907950"
+  ],
+  "ra": 324.72268,
+  "dec": -56.07426,
+  "T0": "2019-06-11T17:49:01.998020Z",
+  "T0_ref": "GCN 24785（D'Elia et al., Swift team）：'At 17:49:01 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒，trigger=907950）；亚秒值取 external/swift_bat 快照 trigger_time=2019-06-11T17:49:01.998020 UTC",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.8,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 24786",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-10-25）：(1) T0 修正（关键）：原 T0=2019-06-12T18:42:50Z 为 bot 误植——经全档案排查，该时刻实为 GCN 24795 中 MASTER-Net 对同日另一暴 Fermi GRB190611.95（trigger 581986074，即 GRB 190611B，2019-06-11T22:47:49.34 UT 触发，GCN 24794）误差框的观测时刻（原文「71701 sec after trigger time at 2019-06-12 18:42:50 UT」），与本源无关；本源真实触发为 Swift/BAT trigger 907950 于 2019-06-11 17:49:01 UT（GCN 24785），亚秒值 17:49:01.998020 取 external/swift_bat 快照 trigger_time。原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=「meta_trigger」按《数据审核提示词》§3.10 改写，原值记于此。(2) Trigger_Instrument 原「Swift」细化为「Swift/BAT」：GCN 24785 明确 BAT triggered（trigger 907950），参考库内已合并审核先例。(3) 定位混拼修正：原 ra/dec=324.72043/-56.0737 为 GCN 24785 XRT 初始位置（误差 3.7″ 半径，90%），与 pos_error=1.8/pos_ref=GCN 24786 不自洽（出处混拼）；改用 GCN 24786 增强位置 RA=324.72268, Dec=-56.07426（1.8″ 半径，90% 置信）→ 补 pos_error_confidence=90。Swift-XRT 在线目录快照（external/swift_xrt_live）RA=324.72274, Dec=-56.07433（2.2″）备查；BAT 地面精化位置 RA=324.689, Dec=-56.070（3.0′ 半径，sys+stat，90%，GCN 24790）备查。(4) tag 补 grb；sub_tag 留空：来源未明示长短暴分类，不自行以 T90 现算；T90(15-350 keV)=41.8±30.6 s、fluence(15-150 keV)=4.6±1.6e-7 erg/cm²、1-s peak photon flux=0.9±0.3 ph/cm²/s（15-150 keV，T+0.54 s，均 90% 置信）为 SCHEMA 外物理量，记此备查（GCN 24790）。(5) 红移：本源全部 GCN（24785/24786/24790/24791/24792/24793）均无红移，保持 null。(6) 测光：UVOT 无探测，GCN 24792 表列 4 条 3σ 上限（均给相对触发的窗口起止，时间锚点明确）按 §3.3 入 lc（4 行；band 用 filters.json 键 uvot-white/uvot-u，原文 white_FC/u_FC/white/u 表述写各行 comment；Vega 系统依 GCN 24792 原文声明「using the UVOT photometric system (Breeveld et al. 2011)」；未做银河消光改正，E(B-V)=0.04）；VLT/FORS2 V 波段无探测，GCN 24791（3σ 上限 V(AB)=24.0 mag，mean epoch 2019-06-12 08:10:32 UT，即触发后 14.36 h）入 lc（1 行）。X 射线数据（Swift/XRT，GCN 24793）按规则暂不审核、不入库。(7) alias 补 GCN 用名「GRB 190611A」与 external/swift_bat 快照 name_alt「BAT 907950」。(8) 测光检索（2026-10-25）：仓内 gcn/archive 全文检索「190611A」+ 触发号 907950 命中 7 篇——属本源 6 篇（24785/24786/24790/24791/24792/24793，其中 24791/24792 含光学上限→lc 5 行），GCN 24794 为同日 GRB 190611B（Fermi）通告、GCN 24795 为 MASTER 对 190611B 误差框的观测（即假 T0 出处），已逐一确认归属、无串扰；另按坐标（324.72/-56.07、324.689/-56.070）全文扫描 0 新命中。external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无该事件、heasarc_grbcat/swift_grb/uvot_grb 快照 0 命中；GCN 站以本地全文档案为准（Web 检索确认通告列表无本源额外篇目）；ADS/SciX 无 API token 未查（本机实测 401）；arXiv API 兜底检索 all:\"190611A\"/all:\"GRB 190611A\" 0 命中 → 可用测光为 GCN 24791/24792 的光学上限；本 PR 新增 5 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 907950）：GCN 24785 整秒 17:49:01 UT；亚秒 17:49:01.998020 取 external/swift_bat 快照 trigger_time",
+    "t0_basis": "GCN 24785 + swift_bat",
+    "bot_created": true,
+    "audit": {
+     "status": "reviewed",
+     "auditor": "wa1kmoon@zcode",
+     "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 24785",
+      "title": "GRB 190611A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/24785",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24786",
+      "title": "GRB 190611A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/24786",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24790",
+      "title": "GRB 190611A, Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/24790",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24791",
+      "title": "GRB 190611A: Optical observations from VLT/FORS2",
+      "url": "https://gcn.nasa.gov/circulars/24791",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24792",
+      "title": "GRB 190611A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/24792",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24793",
+      "title": "GRB 190611A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/24793",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
