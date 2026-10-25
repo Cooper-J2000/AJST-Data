@@ -1,94 +1,158 @@
 {
-  "transient_id": "GRB210826A",
-  "alias": [
-    "GRB 210826293"
-  ],
-  "ra": 45.290000915527344,
-  "dec": -71.69000244140625,
-  "T0": "2021-08-26T07:01:50.160000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.05000000074505806,
-  "tag": [
-    "grb"
-  ],
-  "pos_error": null,
-  "pos_ref": "GCN 30721",
-  "redshift_type": null,
-  "redshift_ref": "GCN 30725",
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [
-    "Fermi-LAT"
-  ],
-  "pos_error_unit": "arcsec",
-  "extra_data": {
-    "catalog_data": {
-      "fermi_lat": {
-        "other": {
-          "tl100": 10972.55957,
-          "tl100_error": 286.17499,
-          "trigger_met": 651654110.16,
-          "error_radius": 0.21,
-          "like_best_ts": 49.7682,
-          "like_best_fluence": 1.51027e-05,
-          "like_best_grbindex": -1.93547,
-          "ext_emission_max_ene": 7700.0,
-          "ext_emission_max_ene_t": 2579.19995,
-          "like_best_fluence_error": 8.85605e-06,
-          "like_best_grbindex_error": 0.255761
-        },
-        "params": {
-          "t90": {
-            "v": 19.712,
-            "err": 1.145,
-            "band": "50-300 keV"
-          },
-          "eiso": {
-            "v": 53310200000000000000000000000000000000000000000000,
-            "err": 18055000000000000000000000000000000000000000000000,
-            "band": "100 MeV-10 GeV",
-            "frame": "rest"
-          },
-          "fluence": {
-            "v": 1.2052e-05,
-            "err": 6.0616e-08,
-            "band": "10-1000 keV"
-          },
-          "redshift": {
-            "v": 0.05
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 210826.293"
-        ],
-        "trigger_time": "2021-08-26T07:01:44.996Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "IPN": "y",
-          "Error": "12",
-          "obs_date": "2021-08-26",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "03h01m12s -71° 42'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
-    }
+ "transient_id": "GRB210826A",
+ "alias": [
+  "GRB 210826A",
+  "GRB 210826.293",
+  "bn210826293"
+ ],
+ "ra": 45.3,
+ "dec": -71.7,
+ "T0": "2021-08-26T07:01:45.161386Z",
+ "T0_ref": "GCN 30716（\"At 07:01:45 UT ... triggered and located GRB 210826A (trigger 651654110.161386 / 210826293)\"，亚秒取触发号精度）＋FERMIGBRST trigger_time 07:01:45.161Z（external/fermi_gbm 快照，整数秒一致）",
+ "T0_offset": null,
+ "T0_offset_ref": null,
+ "Trigger_Instrument": "Fermi/GBM",
+ "redshift": null,
+ "tag": [
+  "grb"
+ ],
+ "pos_error": 720.0,
+ "pos_ref": "GCN 30721（LAT on-ground 位置，\"error radius of 0.2 deg (90% containment, statistical error only)\"）",
+ "redshift_type": null,
+ "redshift_ref": null,
+ "comment": "审核 2026-10-25 Rusty-Harpoon@zcode。T0 修正：原值 2021-08-26T07:01:50.160000Z 系 2FLGC trigger_met=651654110.16（external/fermi_lat 快照）按纪元 2001-01-01T00:00:00 UTC 直加、未扣 2005-2016 间 5 次闰秒（复现：直加恰得 07:01:50.160000，偏晚 5.000 s；Issue #67/#109 族）；修正为 GBM 触发时刻 07:01:45.161386（GCN 30716 触发号 651654110.161386；FERMIGBRST 07:01:45.161Z 整数秒一致；GCN 30721 LAT 亦给 T0=07:01:45 UT）。闰秒换算口径差非真实爆发偏移，不写 T0_offset；2FLGC time 列自差 07:01:44.996 备查。位置：ra/dec 取 GCN 30721 Fermi-LAT on-ground 位置 45.3/-71.7（J2000），误差 0.2 deg＝720 arcsec（90% containment，仅统计误差）；原值 45.29/-71.69 为 2FLGC 目录值 float32 残渣（Issue #69 现象），与 GCN 值在误差内一致、备查；2FLGC error_radius 0.21 备查；GBM on-ground 64.6/-77.1（统计 2.1 deg，GCN 30716；目录 64.63/-77.07 error_radius 2.12 deg）与 BALROG 84.3±5.4/-75.6±0.7（1σ 统计＋2 deg 系统误差，GCN 30717）并列备查，均与 LAT 位置大误差圆相容。红移置 null（原值 0.05000000074505806 为 float32 残渣）：GCN 30725 明示 z=0.05 属误差框内 8 个未编目 X 射线源之一（Source 8）\"consistent with a catalogued galaxy at redshift z = 0.05\"——系视场内无关星系，非本暴宿主；external/fermi_lat 快照 params.redshift=0.05 同源污染（catalog_data 只读，已在 PR 报告）。分类：sub_tag 增 lgrb——GCN 30716 \"detection of a likely LONG GRB\"、GCN 30737 \"a long GRB 210826A\" 来源明示；Fermi-LAT 维持（GCN 30721 LAT 探测属实，0-4000 s >100 MeV 光子流 9.3(-3.8/+3.8)e-7 ph/cm2/s、谱指数 -1.9±0.3、最高能光子 7.7 GeV @约2.6 ks）。物理量并列（§3.9）：T90=19.71±1.14 s（50-300 keV，FERMIGBRST）／24(+17,-10) s（20-200 keV，AstroSat CZTI，GCN 30737）／14(+8,-5) s（100-500 keV Veto，GCN 30737）；fluence=1.2052e-5±6.06e-8 erg/cm2（10-1000 keV）；峰值流量=10.80±1.24 ph/cm2/s（10-1000 keV，64 ms）；Epeak=172.8±5.5 keV（CPL）；最强峰 07:01:53.50 UT（CZTI）。X 射线随访（GCN 30719/30725/30799， tiled Swift-XRT 8 个未编目源、无明确余辉）不在审核范围。导入说明更正：原 comment 称\"由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)\"——2FLGC 原目录（Ajello+2019, ApJ 878, 52）覆盖至 2018-08-04，不含本源；实为 HEASARC FERMILGRB 延伸表导入。测光检索（2026-10-25）：仓内 gcn/archive 全文命中本源 9 篇（30716/30717/30719/30720/30721/30725/30729/30737/30799；GCN 站检索亦 9 篇完全一致、无库外新增），含光学数值 2 篇（30720 MASTER 无滤光片上限、30729 UVOT v 上限）；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无记录；文献：OpenAlex 命中 4 条全为 GCN 通告本身、arXiv 0、Crossref 5 条无一涉及本源；TNS 不适用（非 AT/SN/CV 类）→ 共补 2 行入 lc（MASTER 1 行＋UVOT v 1 行，均有时间锚点）。",
+ "sub_tag": [
+  "lgrb",
+  "Fermi-LAT"
+ ],
+ "pos_error_unit": "arcsec",
+ "extra_data": {
+  "catalog_data": {
+   "fermi_lat": {
+    "other": {
+     "tl100": 10972.55957,
+     "tl100_error": 286.17499,
+     "trigger_met": 651654110.16,
+     "error_radius": 0.21,
+     "like_best_ts": 49.7682,
+     "like_best_fluence": 1.51027e-05,
+     "like_best_grbindex": -1.93547,
+     "ext_emission_max_ene": 7700.0,
+     "ext_emission_max_ene_t": 2579.19995,
+     "like_best_fluence_error": 8.85605e-06,
+     "like_best_grbindex_error": 0.255761
+    },
+    "params": {
+     "t90": {
+      "v": 19.712,
+      "err": 1.145,
+      "band": "50-300 keV"
+     },
+     "eiso": {
+      "v": 53310200000000000000000000000000000000000000000000,
+      "err": 18055000000000000000000000000000000000000000000000,
+      "band": "100 MeV-10 GeV",
+      "frame": "rest"
+     },
+     "fluence": {
+      "v": 1.2052e-05,
+      "err": 6.0616e-08,
+      "band": "10-1000 keV"
+     },
+     "redshift": {
+      "v": 0.05
+     }
+    },
+    "source": {
+     "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
+     "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
+     "retrieved": "2026-07-21"
+    },
+    "name_alt": [
+     "GRB 210826.293"
+    ],
+    "trigger_time": "2021-08-26T07:01:44.996Z"
+   },
+   "mpe_greiner": {
+    "other": {
+     "IPN": "y",
+     "Error": "12",
+     "obs_date": "2021-08-26",
+     "Instrument": "Fermi",
+     "GRB X-ray position": "03h01m12s -71° 42'"
+    },
+    "params": {},
+    "source": {
+     "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+     "name": "Greiner's GRB localization table (MPE)",
+     "retrieved": "2026-07-21"
+    },
+    "name_alt": [],
+    "trigger_time": null
+   }
   },
-  "articles": [],
-  "host_galaxy": null
+  "audit": {
+   "status": "reviewed",
+   "auditor": "Rusty-Harpoon@zcode",
+   "date": "2026-10-25"
+  }
+ },
+ "articles": [
+  {
+   "name": "GCN 30716",
+   "title": "GRB 210826A: Fermi GBM Final Real-time Localization",
+   "url": "https://gcn.nasa.gov/circulars/30716",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30717",
+   "title": "GRB 210826A: BALROG localization (Fermi Trigger 651654110 / GRB 210826293)",
+   "url": "https://gcn.nasa.gov/circulars/30717",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30719",
+   "title": "GRB 210826A: Tiled Swift observations",
+   "url": "https://gcn.nasa.gov/circulars/30719",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30720",
+   "title": "Fermi GRB 210826A: Global MASTER-Net observations report",
+   "url": "https://gcn.nasa.gov/circulars/30720",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30721",
+   "title": "GRB 210826A: Fermi-LAT detection",
+   "url": "https://gcn.nasa.gov/circulars/30721",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30725",
+   "title": "GRB 210826A: Swift-XRT observations",
+   "url": "https://gcn.nasa.gov/circulars/30725",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30729",
+   "title": "GRB 210826A: Swift/UVOT Upper Limits",
+   "url": "https://gcn.nasa.gov/circulars/30729",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30737",
+   "title": "GRB 210826A: AstroSat CZTI detection",
+   "url": "https://gcn.nasa.gov/circulars/30737",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 30799",
+   "title": "GRB 210826A: further Swift-XRT observations",
+   "url": "https://gcn.nasa.gov/circulars/30799",
+   "source": "Rusty-Harpoon@zcode"
+  }
+ ],
+ "host_galaxy": null,
+ "pos_error_confidence": "90"
 }
