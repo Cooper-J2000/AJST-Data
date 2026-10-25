@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB210723A",
-  "alias": [],
-  "ra": 121.72157,
-  "dec": -32.88624,
-  "T0": "2021-07-23T14:46:07Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1061284",
+    "bn210723615"
+  ],
+  "ra": 121.72115,
+  "dec": -32.8857,
+  "T0": "2021-07-23T14:46:10.915460Z",
+  "T0_ref": "GCN 30485（BAT 触发 14:46:10 UT）+ Swift/BAT 目录 Trig_time_UTC（含 UTCF；官方通告页 gcn.gsfc.nasa.gov/notices_s/1061284/BA/ 同值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 30486",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.0,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 30493",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发（trigger=1061284，rate trigger），Fermi/GBM（trigger 648744372，bn210723615）与 CALET/CGBM（SGM 1311086521）同测到，单脉冲结构。【T0 修正】原 bot 值 2021-07-23T14:46:07Z 与 GBM 触发时刻整秒一致（GBM=14:46:07.295），系误取 GBM 触发（原 extra_data t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，Issue #68 模式）；修正为 Swift/BAT 触发 2021-07-23T14:46:10.915460（GCN 30485 整秒 14:46:10 UT + swift_bat 目录 Trig_time_UTC 亚秒，官方 BAT 通告页注明含 UTCF，MPE 转载 BAT 通告 GRB_TIME=53170.91 SOD 同值）；并列：GBM 14:46:07.295（GCN 30499/fermi_gbm 目录）、CALET 14:46:05.572（GCN 30506）。BAT 地面分析光变单脉冲 T-5 s 起、T+65 s 止（GCN 30495；swift_bat 目录 T100_start=-4.588 s），属 rate trigger 正常超前量，不设 T0_offset。【位置】取 XRT 精化配套值 RA=121.72115/Dec=-32.88570、2.0″（90% 置信，GCN 30493，3236 s PC+6 UVOT 帧对 USNO-B1 精化）；并列：BAT 在板 3′（121.726/-32.889，GCN 30485）、BAT 地面 1.0′（121.723/-32.893，GCN 30495；swift_bat 目录 121.7209/-32.89371、0.66′）、XRT 初值 7.0″（121.72157/-32.88624，GCN 30485，原库 ra/dec 即此值）、XRT enhanced 1.9″（121.7213/-32.8851，GCN 30486，原库 pos_error 即此值，原库坐标与误差不配套）、swift_xrt_live 目录 121.72116/-32.88572/2.0″。【分类】tag=grb；sub_tag=lgrb 据 GCN 30506「The long GRB 210723A」与 GCN 30485「consistent with a classical long GRB」；注意 GCN 30485 提示银道面附近（b=-0.34°）不能排除银河系暂现源（如确证将命名 Swift J0806.9-3253，未启用），后续 8 篇通告无再分类。【T90 等】T90=48.54±3.50 s（15-350 keV，GCN 30495；swift_bat 目录 55.064±449.68 s 同能段）/≈43 s（10-1000 keV，GCN 30499；GBM 目录 42.7528±2.86 s，50-300 keV）/17.2±3.2 s（40-1000 keV，CALET SGM，GCN 30506）；fluence=5.3±0.2e-6 erg/cm2（15-150 keV，GCN 30495）、=7.6±0.2e-6 erg/cm2（10-1000 keV，GCN 30499）；1 s 峰值光子流=3.1±0.3 ph/cm2/s（15-150 keV，GCN 30495）；Epeak=88.2±15.3 keV（GCN 30495）；E(B-V)=0.962（Schlegel+1998，GCN 30528 转述）；NH_Gal=7.7e21 cm^-2（Willingale+2013，GCN 30485/30493）；无红移报道（swift_xrt_live 目录 N/A）。【测光检索（2026-10-25）】仓内 gcn/archive 全文命中 8 篇（30485/30486/30491/30493/30495/30499/30506/30528；光学相关 2 篇：30491 MASTER 无滤光片上限 2 点、30528 UVOT 9 波段上限，均有时间锚点）；external/rssgrbag、grbsn_webtool/SourceData、uvot_grb 快照无记录；GCN 站检索「210723A」命中同 8 篇无遗漏；OpenAlex 命中 3 篇（arXiv:2404.19732 BALROG/RoboBA GBM 定位算法——已核全文仅样本表提及、ApJS 2024 GBM 深度学习分类 10.3847/1538-4365/ad2de5、A&A 2026 prompt 光变样本 10.1051/0004-6361/202556841，均无该源测光表）；arXiv API「GRB 210723A」「GRB210723A」「1061284」三写法均 0 篇；Crossref 无相关命中；TNS 略过（非 AT/SN 类且无光学对应体；访问 403 反爬）→ 入库 11 行（MASTER 2 + UVOT 9，均上限），X 射线数据（GCN 30485/30493/30495 及 swift.ac.uk Burst Analyser）暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-25 审核修正为 Swift/BAT 触发时刻 14:46:10.915460（含 UTCF）；原 bot 值 14:46:07 为 GBM 触发时刻（原值留档见 comment）",
+    "t0_basis": "GCN 30485 + swift_bat Trig_time_UTC (UTCF)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [],
   "host_galaxy": null
