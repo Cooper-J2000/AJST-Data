@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB220426A",
-  "alias": [],
+  "alias": [
+    "GRB 220426A",
+    "bn220426285"
+  ],
   "ra": 339.6,
   "dec": -24.0,
-  "T0": "2022-04-26T06:49:51Z",
-  "T0_ref": null,
+  "T0": "2022-04-26T06:49:51.230Z",
+  "T0_ref": "GCN 31955（Fermi/GBM 官方通告，trigger 672648596：「At 06:49:51.23 UT ... triggered and located GRB 220426A」）；Fermi GBM 官方目录 trigger_time=2022-04-26T06:49:51.234Z 互证（external/fermi_gbm）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1080.0,
+  "pos_ref": "GCN 31950（BALROG 定位 RA=339.6±0.3/Dec=-24.0±0.3，1σ 统计）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Fermi/GBM 触发的 GRB 220426A（trigger 672648596 / 220426285，GCN 31955），同测者：Swift/BAT-GUANO 离轴探测（BAT 不在编码视场，GCN 31954）、INTEGRAL/SPI-ACS 与 Mars-Odyssey/HEND（IPN，GCN 31958）、Konus-Wind（GCN 31959）。【T0 修正】原 bot 值 2022-04-26T06:49:51Z 整秒与 Fermi 触发一致；原 extra_data t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（原值逐字留档，Issue #68 模式），按触发仪器亚秒修正为 2022-04-26T06:49:51.23Z（GCN 31955「At 06:49:51.23 UT ... triggered and located」）；并列：GBM 目录 06:49:51.234（external/fermi_gbm，差 4 ms，远小于 60 ms 报告线）、Konus-Wind T0=06:49:49.598（GCN 31959，另一仪器的触发时刻，仅备查）、IPN 24591 s UT≈06:49:51（GCN 31958）。【位置】取 BALROG 定位 RA=339.6/Dec=-24.0（原库坐标即此值，GCN 31950），pos_error=1080″（0.3°，原文「1 sigma statistical errors」即 1sigma；另有 2° 系统误差未并入）；并列：GBM 地面定位 RA=335.8/Dec=-20.5、1.0°（1σ 统计，GCN 31955；GBM 目录 335.8/-20.53/1.0°）、IPN 3σ 误差框中心 338.692/-22.994、面积 1131 平方角分、最长 1.6° 最短 13.6′（GCN 31958；mpe_greiner 目录即取 IPN 位置 338.692/-23.0）。【分类】tag=grb；sub_tag=lgrb（GCN 31958「very bright, long-duration」、GCN 31959「The long GRB 220426A」）。【T90 等】T90≈6 s（50-300 keV，GCN 31955）/5.6321±0.362 s（50-300 keV，GBM 目录）；fluence=1.084±0.005e-4 erg/cm2（10-1000 keV，GCN 31955）/1.0331±0.0004e-4 erg/cm2（10-1000 keV，GBM 目录）/9.2±0.2e-5 erg/cm2（20 keV-10 MeV，Konus-Wind，GCN 31959）；1 s 峰值光子流=180.7±0.9 ph/cm2/s（10-1000 keV，自 T0+3.9 s 起，GCN 31955）；Epeak=146.3±0.9 keV（Band 函数，GCN 31955）/158(-3,+4) keV（20 keV-15 MeV，Konus-Wind，GCN 31959）；无红移报道。【alias】GRB 220426A 为 GCN 通告用名（GCN 31950/31955 等 8 篇主题行）；bn220426285 为 FERMIGBRST 目录 burst name（external/fermi_gbm name_alt）；Fermi 触发名 GRB220426285（GCN 31950 主题行、MPE 页 grb.mpe.mpg.de/grb/GRB220426285/）与目录形态 GRB 220426.285（external/fermi_gbm name_alt）不列入 alias（伪形正则告警），此处留档。【测光检索（2026-10-25）】仓内 gcn/archive 全文命中 8 篇（31950/31954/31955/31956/31958/31959/31961/31966，GCN 站检索「220426A」同为 8 篇、无遗漏），光学相关 2 篇：GCN 31956（MASTER-OAGH 无滤光片上限表 28 点）与 GCN 31966（UVOT white 上限），均有时间锚点；external/rssgrbag、grbsn_webtool/SourceData、uvot_grb 快照 grep 0 命中；ADS 检索「GRB 220426A」命中 14 篇（4 篇 prompt 光谱/模型论文 Deng+2022/Wang+2022/Song+2022/Gupta+2026、2 篇 arXiv 预印本 arXiv:2205.08737 与 arXiv:2608.10841 均经摘要核实为 prompt 光谱/光球分析、无余辉测光、8 篇 GCN）；无格点名「GRB220426A」命中 1 篇（arXiv:2205.08737）；TNS 略过（非 AT/SN/CV 类）→ 入库 29 行（MASTER-OAGH 28 行上限 + UVOT white 1 行上限），X 射线数据（GCN 31966 XRT Source 1、swift.ac.uk/xrt_products/TILED_GRB00104）暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0=Fermi/GBM 触发时刻（GCN 31955，2022-04-26T06:49:51.23 UT）",
+    "t0_basis": "GCN 31955",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [
     {
@@ -51,7 +63,50 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1003..197G",
       "bibtex": "@ARTICLE{2026ApJ..1003..197G,\n       author = {{Gupta}, Soumya and {Sahayanathan}, Sunder and {Shanu}, Saharsh and {Nath}, Rishabh},\n        title = \"{Are Single-zone Emission Models Sufficient to Explain GRB 220426A and GRB 230812B?}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, X-ray transient sources, Radiative processes, 629, 1852, 2055, High Energy Astrophysical Phenomena},\n         year = 2026,\n        month = jun,\n       volume = {1003},\n       number = {2},\n          eid = {197},\n        pages = {197},\n          doi = {10.3847/1538-4357/ae6809},\narchivePrefix = {arXiv},\n       eprint = {2605.11543},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2026ApJ..1003..197G},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "GCN 31950",
+      "url": "https://gcn.nasa.gov/circulars/31950",
+      "title": "GRB 220426A: BALROG localization (Fermi Trigger 672648596 / GRB 220426285)",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 31954",
+      "url": "https://gcn.nasa.gov/circulars/31954",
+      "title": "GRB 220426A: Swift/BAT-GUANO detection outside the coded FOV",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 31955",
+      "url": "https://gcn.nasa.gov/circulars/31955",
+      "title": "GRB 220426A: Fermi GBM detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 31956",
+      "url": "https://gcn.nasa.gov/circulars/31956",
+      "title": "Fermi GRB 220426A: Global MASTER-Net observations report",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 31958",
+      "url": "https://gcn.nasa.gov/circulars/31958",
+      "title": "IPN triangulation of GRB 220426A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 31959",
+      "url": "https://gcn.nasa.gov/circulars/31959",
+      "title": "Konus-Wind detection of GRB 220426A",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 31966",
+      "url": "https://gcn.nasa.gov/circulars/31966",
+      "title": "GRB 220426A: Swift-XRT and UVOT observations",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
