@@ -1,28 +1,89 @@
 {
   "transient_id": "GRB190706B",
-  "alias": [],
-  "ra": 107.46161,
-  "dec": -29.55341,
-  "T0": "2019-07-06T13:42:22Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 913302"
+  ],
+  "ra": 107.46211,
+  "dec": -29.55293,
+  "T0": "2019-07-06T12:40:50.085380Z",
+  "T0_ref": "Swift/BAT 官方目录(trigger 913302,12:40:50.085380 UT;external/swift_bat 快照);与 GCN 24993(At 12:40:50 UT)、BAT notice GRB_TIME 45650.08 SOD、external/swiftgrbba(12:40:50.000Z)一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.8,
   "pos_ref": "GCN 24995",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【审核 2026-10-25 fsy@zcode】\n① 身份:Swift/BAT trigger 913302,2019-07-06T12:40:50 UT 触发(GCN 24993);BAT 在轨定位 RA,Dec=107.449,-29.584(3 arcmin,90%);2019-07-06 当日 Swift 唯一触发(external/swift_bat 与 external/swiftgrbba 快照均仅此一行),仓内无重复建档;alias 补 BAT 913302(BAT 目录快照 name_alt)。MPE Greiner 快照 OT=y。\n② T0:原值 2019-07-06T13:42:22Z(src=gcn_llm_extract,bot)为抽取错误——全部 6 篇相关通告(24993/24994/24995/24999/25003/25023)均无该时刻;同日相邻编号事件 GRB 190706C(AGILE/MCAL,快照 trigger_time=2019-07-06T13:42:26Z,RA 351.67,与本源相距约 123 度)与之仅差 4 s,疑为错配(未能确证)。改为 Swift/BAT 官方目录 trigger_time=2019-07-06T12:40:50.085380Z(external/swift_bat 快照,亚秒原生精度),与 GCN 24993 原文 At 12:40:50 UT、BAT notice GRB_TIME 45650.08 SOD、external/swiftgrbba 12:40:50.000Z 一致(三重印证)。\n③ 坐标:原 ra/dec=107.46161/-29.55341 为 GCN 24993 的 XRT 初始位置(不确定度 3.6 arcsec,90%),与 pos_ref=GCN 24995(增强位置)不自洽(与 190630C 同类 bot 导入问题);改为 GCN 24995 增强位置 RA,Dec=107.46211,-29.55293(1.8 arcsec,90% confidence),pos_error=1.8 维持,补 pos_error_confidence=90。链条:初始(24993,3.6 arcsec)→ prompt 增强(24994,107.4616/-29.5525,2.0 arcsec)→ 增强(24995,1.8 arcsec);swiftgrbba 107.46204/-29.55286(1.5 arcsec)与之差小于 1 arcsec。\n④ 测光:lc 原 0 行,新增 9 行(GCN 25023 UVOT 表,时间均自 BAT 触发起算,mjd 由新 T0 换算保留 7 位小数)。white_FC 行:原文表给测值 20.35±0.27(无>前缀),但正文称 No optical afterglow consistent with the XRT position is detected;MPE Greiner 事件页(www.mpe.mpg.de/~jcg/grb190706B.html)载 Swift 团队私人通信 UVOT afterglow detection (above table) is real, while text is a mistake——故按探测值入库(upperlimit=n,B 档,见待决事项)。其余 8 行为 3σ 上限(upperlimit=y)。white_FC 与 white、u_FC 与 u 分别为单曝光与合并测量(不同深度,Exp 147/519、246/647 s),并非同一测量重复,均保留。波段键 uvot-white/u/v/b/uvw1/uvm2/uvw2 均在 filters.json;UVOT photometric system 为 Vega(GCN 25023 引 Breeveld et al. 2011)。\n⑤ 检索留证(2026-10-25):GCN 事件页 gcn.nasa.gov/circulars/events/grb-190706b 全集 6 篇(24993/24994/24995/24999/25003/25023)逐篇读毕;GCN 站内与网络检索 GRB 190706B 光学/MASTER/其他仪器,无其他设备通告;ADS 直连失败(出口中断),经网络检索命中并核对 Jespersen et al. 2020(IOP VoR,分类)与 Abbott et al. 2021(LIGO-P2000040,无测光);仓内全部 19 个快照目录(swift_bat/swiftgrbba/fermi_gbm/fermi_lat/mpe_greiner/agile_mcal/konus_wind/batse/saxgrbmgrb/heasarc_grbcat/guidorzi2025/liang2023/minaev2020/wang2022/rssgrbag/grbsn_webtool/swift_grb/swift_xrt_live/uvot_grb)逐一 grep,除 Swift 族(swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live,均目录级;swift_xrt_live 含本源一行目录参数)外仅 agile_mcal 命中且为另一事件 GRB 190706C;gcn/archive 本地未下载(仓内为空),以 GCN 网站检索替代并在 PR 正文注明;TNS 未检索(GRB 不属 TNS 收录范围)。结论:公开测光仅 UVOT 一表,9 行已入库。\n⑥ 去重:X 射线通告(24993/24994/24995/24999)仅位置/计数率/谱参数,无 X 射线测光行入库;9 行 UVOT 内部无重复测量。\n⑦ 备查(GCN 25003,均 90% CL):BAT 地面定位 RA,Dec=107.443,-29.575(2.2 arcmin);T90(15-350 keV)=25.16±6.35 s;fluence(15-150 keV)=5.8±0.9e-7 erg/cm2;1-s 峰值光子流量 1.4±0.2 ph/cm2/s(自 T+0.10 s);谱 PL 指数 1.90±0.23。external/swift_bat 快照(同触发,不同数据集)t90=43.584±14.79785 s(15-350 keV)、fluence=6.505362e-07(+1.198e-07/-1.169e-07,15-150 keV,90%)、alpha=-1.86849(+0.264/-0.281)——两官方 T90 并存(25.16 vs 43.584),并列备查。Jespersen et al. 2020(ApJL 896,L20,Table 1):T90=43.6 s,type L,为 sub_tag=lgrb 依据。XRT refined(GCN 24999):共 8.5 ks(T+98 至 T+29.4 ks);光变 PL 衰减指数 0.80(+0.08/-0.07);谱吸收 PL,最佳拟合总柱 NH=3.1(+1.0/-0.7)e21 cm^-2(原文 consistent with the Galactic value of 2.4e21 cm^-2,非本征柱)。E(B-V)=0.15(Schlegel et al. 1998,GCN 24993/25023)。UVOT photometric system 为 Vega(GCN 25023 引 Breeveld et al. 2011)。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "t0_note": "t0 为 meta trigger-time(真实触发时刻)",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 24993",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/24993.gcn3",
+      "title": "GRB 190706B: Swift detection of a burst",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 24994",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/24994.gcn3",
+      "title": "GRB 190706B: Prompt enhanced Swift-XRT position",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 24995",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/24995.gcn3",
+      "title": "GRB 190706B: Enhanced Swift-XRT position",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 24999",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/24999.gcn3",
+      "title": "GRB 190706B: Swift-XRT refined Analysis",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 25003",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/25003.gcn3",
+      "title": "GRB 190706B: Swift-BAT refined analysis",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 25023",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/25023.gcn3",
+      "title": "GRB 190706B: Swift/UVOT Detection",
+      "source": "fsy"
+    },
+    {
+      "name": "Jespersen+2020",
+      "url": "https://iopscience.iop.org/article/10.3847/2041-8213/ab964d",
+      "title": "An Unambiguous Separation of Gamma-Ray Bursts into Two Classes from Prompt Emission Alone",
+      "source": "fsy"
+    },
+    {
+      "name": "MPE Greiner GRB 190706B",
+      "url": "https://www.mpe.mpg.de/~jcg/grb190706B.html",
+      "title": "Gamma-ray Burst 190706B",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
