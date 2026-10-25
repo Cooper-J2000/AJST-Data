@@ -2,27 +2,80 @@
   "transient_id": "GRB211025A",
   "alias": [],
   "ra": 162.38304,
-  "dec": 31.51231,
-  "T0": "2021-10-25T22:57:35Z",
-  "T0_ref": null,
+  "dec": 31.51233,
+  "T0": "2021-10-25T05:10:20.037640Z",
+  "T0_ref": "GCN 30986（At 05:10:20 UT, the Swift BAT triggered, trigger #1081113）; batgrbproduct trigger 1081113 官方页 UTC 字段 2021-10-25T05:10:20.037640（含 UTCF 钟差改正）https://gcn.gsfc.nasa.gov/notices_s/1081113/BA/",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.1,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 30987",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT image trigger #1081113（GCN 30986）。T0 经 fsy@zcode 2026-10-25 审核修正为 BAT 触发时刻 2021-10-25T05:10:20.037640Z（batgrbproduct 官方页 UTC，含 UTCF 钟差改正，与 GCN 30986 整秒一致）；原 bot T0=2021-10-25T22:57:35Z 为 MASTER-Kislovodsk 指向时刻（GCN 31001：触发后 64035 s 指向，05:10:20Z+64035s=22:57:35Z），属观测/指向时刻误植（Issue #84 同型），原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 不可信（Issue #68），均已废弃。Trigger_Instrument 由 bot 误记的 Swift/UVOT 修正为 Swift/BAT（UVOT 为触发后 131 s 起的后随观测，GCN 30991；同型先例见 GRB070309）。定位取 GCN 30987 增强 XRT 位置 RA,Dec=162.38304,+31.51233（2.1″ 半径，90% containment，故 pos_error_confidence=90）；原 dec=31.51231 系 bot 混入 GCN 30991 UVOT 初定位（+31.51231，0.9″/90%）所致，已按 pos_ref 出处统一。备查：BAT on-board 定位 162.377,+31.557（3′/90%，GCN 30986）、BAT 地面定位 162.407,31.506（2.3′/90%，GCN 30997）。T90(15-350)=103.5±27.6 s；fluence(15-150)=7.7±1.4e-7 erg/cm2；1s 峰光子流量 0.5±0.1 ph/cm2/s（15-150 keV，峰于 T+51.66 s）；时均光子谱指数 1.96±0.28（均 GCN 30997，误差 90% c.l.）→ sub_tag=lgrb 按 T90>2 s 归长暴。XRT（GCN 30996）：WT 模式拟合吸收柱（总柱）NH=7.1±1.4e20 cm^-2，高于银河系前景 2.4e20 cm^-2（Willingale+2013）；PC 模式总柱与银河系值一致；X 射线测光不入库。红移未测。光学测光（共 12 行，见 lc/GRB211025A.csv）：UVOT 白光初现检出 19.90±0.25 等 + 8 波段 3σ 上限（GCN 30991）、MASTER-Kislovodsk clear 上限 17.5（GCN 31001）、LCO 1-m Sinistro R=20.51±0.27 检出与 I>18.04 上限（GCN 31009），时间均已统一到标准 T0。测光检索（2026-10-25）：仓内 gcn/archive 本地未下载（目录为空），经 GCN 网站逐号扫描 GCN 30980–31060，eventId=GRB 211025A 共 7 篇（30986/30987/30991/30996/30997/31001/31009），其中 3 篇含光学数值（30991/31001/31009）→ 补 12 行；仓内 external/rssgrbag（Chandra & Frail 2012 射电光变）无该源、external/grbsn_webtool 无该事件；arXiv API（all:\"GRB 211025A\" 与 all:\"211025A\"）命中 0 篇；网络检索未见 dedicated 发表论文（Swift 官方 GRB 表亦无红移/宿主），TNS 未见可用独立条目（API 需凭据，经网络检索未命中该源测光）→ 除上述 12 行外无其他可用光学/射电测光；Swift/XRT X 射线数据不入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@zcode 2026-10-25 审核修正为 Swift/BAT 触发时刻 2021-10-25T05:10:20.037640Z（GCN 30986；batgrbproduct trigger 1081113，含 UTCF 钟差改正）；原 bot 记 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、T0=2021-10-25T22:57:35Z，该值为 MASTER-Kislovodsk 指向时刻（触发后 64035 s，GCN 31001），已废弃，详见 comment",
+    "t0_basis": "GCN 30986; batgrbproduct trigger 1081113 (gcn.gsfc.nasa.gov/notices_s/1081113/BA/)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 30986",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/30986.gcn3",
+      "title": "GRB 211025A: Swift detection of a burst",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30987",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/30987.gcn3",
+      "title": "GRB 211025A: Enhanced Swift-XRT position",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30991",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/30991.gcn3",
+      "title": "GRB 211025A: Swift/UVOT Detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30996",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/30996.gcn3",
+      "title": "GRB 211025A: Swift-XRT refined Analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30997",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/30997.gcn3",
+      "title": "GRB 211025A: Swift-BAT refined analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 31001",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/31001.gcn3",
+      "title": "Swift GRB 211025A: Global MASTER-Net observations report",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 31009",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/31009.gcn3",
+      "title": "GRB 211025A: Optical Afterglow Detection",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
