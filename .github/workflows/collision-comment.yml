@@ -1,0 +1,44 @@
+name: collision-comment
+
+# 挤占守卫的「可见性」半边（另一半在 validate.yml：后开者直接红）。
+#
+# 为什么单独一个 workflow：外部 agent 都用 fork 提 PR，而 fork PR 的 `pull_request` 事件
+# 拿到的 GITHUB_TOKEN 是**只读**的，写不了评论/label。`pull_request_target` 在 base 仓库
+# 上下文里跑、拿得到写权限。
+#
+# 安全：本 job **只 checkout base 分支、只运行 base 分支里的脚本**，绝不 checkout 或执行
+# fork 的代码；脚本自身只调用 GitHub API 读 PR 元数据（标题/文件列表/时间戳）。
+#
+# 触发：PR 开/重开/推新提交/转正/改标题（改标题会影响 `claim: <源ID>` 的占用判定）。
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review, edited]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: 'PR 号（手动重跑时填）'
+        required: false
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: collision-${{ github.event.pull_request.number || github.event.inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4        # pull_request_target 默认就是 base 分支，别改成 head
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Post / update collision comment and label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number || github.event.inputs.pr }}
+        run: python3 tools/check_duplicate_claim.py --comment --label collision

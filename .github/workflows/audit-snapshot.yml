@@ -9,7 +9,10 @@ name: audit-snapshot
 # 不把循环的可能性留在配置里。
 on:
   schedule:
-    - cron: '20 4 * * *' # 04:20 UTC = 12:20 CST
+    # 每小时一次：快照是 `audit_queue.py` 默认的认领判据，滞后窗口越长，agent 越容易把
+    # 已被认领的源当 free（2026-10-25 两次撞车，快照滞后 10 h 是根因之一）。
+    # 脚本自带「内容有变化才提交」，空跑不产 commit。
+    - cron: '20 * * * *'
   workflow_dispatch:
 
 permissions:
