@@ -1,29 +1,95 @@
 {
   "transient_id": "GRB210514A",
-  "alias": [],
+  "alias": [
+    "BAT 1048372"
+  ],
   "ra": 2.96184,
   "dec": -21.89454,
-  "T0": "2021-05-14T18:23:42Z",
-  "T0_ref": null,
+  "T0": "2021-05-14T18:23:46.806320Z",
+  "T0_ref": "GCN 30009（Swift trigger #1048372，触发时刻 2021-05-14T18:23:47 UTC）；batgrbproduct trigger 1048372 官方页 UTC 字段 2021-05-14T18:23:46.806320（含 UTCF 钟差改正）https://gcn.gsfc.nasa.gov/notices_s/1048372/BA/；external/swift_bat 快照 summary_general.txt 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 30011",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT rate trigger #1048372（GCN 30009/30018）。T0 经 fsy@zcode 2026-10-25 审核修正为 BAT 触发时刻 2021-05-14T18:23:46.806320Z（batgrbproduct trigger 1048372 官方页 UTC 字段，含 UTCF 钟差改正；external/swift_bat 快照 summary_general.txt 同值 MET 642709453.824；GCN 30009 整秒 18:23:47 与之互证）；原 bot T0=2021-05-14T18:23:42Z 为同日 CALET/CGBM 触发时刻 18:23:42.591 UTC 截断到整秒（GCN 30035 原文「triggered the CALET Gamma-ray Burst Monitor (CGBM) at 18:23:42.591 UTC on 14 May 2021」），属导入管线跨仪器串扰误植（Issue #84 同型），原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 不可信（Issue #68），均已废弃，详见 extra_data。Trigger_Instrument 由 bot 误记的 Swift/UVOT 修正为 Swift/BAT（BAT 触发，GCN 30009；UVOT 为触发后 80 s 起的后随观测，GCN 30025；同型先例 GRB070309）。定位取 GCN 30011 增强 XRT 位置 RA,Dec=2.96184,−21.89454（2.0″ 半径，90% confidence 原文明确，补 pos_error_confidence=90）。备查：BAT 地面定位 2.945,−21.898（1.0′，sys+stat，90% containment，GCN 30009；GCN 30018 同值 00h11m47.2s,−21d53′54.0″）、swift_bat 快照 2.945883/−21.89712（Image_position_err 0.654′）、batgrbproduct ground 2.94663/−21.89832（0.647′/90%）；同事件他仪器触发时刻备查、不得作 T0：CALET CGBM 18:23:42.591 UTC（GCN 30035）、Konus-Wind 18:23:45.021 UT（GCN 30048）。BAT 参数备查（GCN 30018，误差均 90% c.l.）：T90(15-350)=70.21±0.74 s、fluence(15-150)=7.4±0.2e-6 erg/cm2、1-s 峰光子流量 8.7±0.4 ph/cm2/s（自 T−0.52 s 起）、时均光子谱指数 1.65±0.04（PL 拟合，T−1.08–T+75.13 s）。他仪器备查：CALET T90(40-1000 keV)=46.0±2.5 s、T50=25.9±3.3 s（GCN 30035）；Konus fluence=1.97(−0.43,+0.56)e-5 erg/cm2（20 keV–10 MeV，90%，GCN 30048）。XRT 备查（GCN 30012；X 射线测光不入库）：PC 谱拟合吸收柱 NH=4.7(+0.7,−0.6)e21 cm^-2，显著高于银河系前景 2.0e20 cm^-2（Willingale+2013，12.2σ）；PC 光子指数 1.95(+0.12,−0.11)；观测 60 s–23.8 ks 共 6.7 ks；GCN 30013 更正 30012「无法判断是否衰变」的结论：光变呈 canonical X-ray afterglow 行为，末段衰变 α4=1.236(+0.024,−0.022)。红移未测；Deng+2023 伪红移 z=0.57（Zou+2024 转引，关系推导估计值）备查，不入 redshift 字段。长短分类：GCN 30035「long bright」、GCN 30048「long-duration」、Zou+2024「GRB 210514A is a long GRB with T90≈70.2 s」，sub_tag=lgrb 据此。光学测光（共 9 行，见 lc/GRB210514A.csv）：UVOT 3σ 上限 9 行（GCN 30025，触发后 80 s 起定标观测，T_start/T_stop 相对 BAT 触发与本库 T0 同历元；UVOT photometric system 原文引述 Breeveld et al. 2011 → Vega；未做银消改正，E(B−V)=0.022，Schlegel+1998）；swiftgrbba 快照 uvot_mag 串 UVM2>18.42 与 GCN 30025 原文 >18.41 差 0.01，取 GCN 原文。测光检索（2026-10-25）：仓内 gcn/archive 本地未获取（目录为空），经 GCN 网站检索：GCN 事件页 grb-210514a 全集 9 篇（30008/30009/30011/30012/30013/30018/30025/30035/30048，逐篇打开），其中仅 30025 含光学数值 → 补 9 行；仓内 external/rssgrbag 无该源、external/grbsn_webtool 无该事件、external/uvot_grb 无该源；arXiv API（all:\"GRB 210514A\"）命中 1 篇（Zou+2024 QPO 分析，无测光表，已登记 articles）；SciX 网页检索返回空白页（JS 渲染、无 API token），网络检索另见 Ryczanowski+2026（arXiv:2604.06311 透镜样本，仅提及、无测光）；TNS 站内检索无该源条目（API 需凭据，经网络检索未命中）→ 除上述 9 行外无其他可用光学/射电测光。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@zcode 2026-10-25 审核修正为 Swift/BAT 触发时刻 2021-05-14T18:23:46.806320Z（GCN 30009；batgrbproduct trigger 1048372，含 UTCF 钟差改正）；原 bot 记 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、T0=2021-05-14T18:23:42Z，该值为同日 CALET/CGBM 触发时刻 18:23:42.591 UTC 截断到整秒（GCN 30035），已废弃，详见 comment",
+    "t0_basis": "GCN 30009; batgrbproduct trigger 1048372 (gcn.gsfc.nasa.gov/notices_s/1048372/BA/)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [
+    {
+      "name": "GCN 30008",
+      "url": "https://gcn.nasa.gov/circulars/30008",
+      "title": "GRB 210514A: Swift detection of a burst",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30009",
+      "url": "https://gcn.nasa.gov/circulars/30009",
+      "title": "GRB 210514A: update on the BAT trigger time and burst duration",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30011",
+      "url": "https://gcn.nasa.gov/circulars/30011",
+      "title": "GRB 210514A: Enhanced Swift-XRT position",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30012",
+      "url": "https://gcn.nasa.gov/circulars/30012",
+      "title": "GRB 210514A: Swift-XRT refined Analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30013",
+      "url": "https://gcn.nasa.gov/circulars/30013",
+      "title": "GRB 210514A: Swift XRT light curve is fading",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30018",
+      "url": "https://gcn.nasa.gov/circulars/30018",
+      "title": "GRB 210514A: Swift-BAT refined analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30025",
+      "url": "https://gcn.nasa.gov/circulars/30025",
+      "title": "GRB 210514A: Swift/UVOT Upper Limits",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30035",
+      "url": "https://gcn.nasa.gov/circulars/30035",
+      "title": "GRB 210514A: CALET Gamma-Ray Burst Monitor detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30048",
+      "url": "https://gcn.nasa.gov/circulars/30048",
+      "title": "Konus-Wind detection of GRB 210514A",
+      "source": "fsy@zcode"
+    },
     {
       "name": "Zou+2024",
       "title": "Quasiperiodic Oscillations in GRB 210514A: a Case of a Newborn Supramassive Precessing Magnetar Collapsing into a Black Hole?",
