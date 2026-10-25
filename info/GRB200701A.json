@@ -1,28 +1,60 @@
 {
   "transient_id": "GRB200701A",
-  "alias": [],
+  "alias": [
+    "GRB 200701A",
+    "BAT 980421"
+  ],
   "ra": 123.563,
   "dec": -14.553,
-  "T0": "2020-07-01T12:46:59Z",
-  "T0_ref": null,
+  "T0": "2020-07-01T12:46:59.079040Z",
+  "T0_ref": "GCN 28052（Bernardini et al.（submitter Sbarufatti）, Swift team）原文 At 12:46:59 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200701A（trigger=980421，整秒）；Swift/BAT 官方目录 trigger_time UTC=2020-07-01T12:46:59.079040（external/swift_bat 快照，trigger 980421，亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 102.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 28054",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（wa1kmoon@zcode，2026-10-25）：身份=Swift/BAT 触发 980421。GCN 28052 原文「At 12:46:59 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200701A」（整秒触发时刻）；external/swift_bat 官方目录 trigger 980421 的 UTC 列=2020-07-01T12:46:59.079040（亚秒值）；external/swiftgrbba（HEASARC swiftgrbba tdat）同值、error_radius=1.7′、ref=GCN 28052; GCN 28054；external/mpe_greiner 同日同源。T0 由原整秒 12:46:59Z 细化为目录亚秒值 12:46:59.079040Z；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」系 bot 误植模板，本例 T0 数值恰与 GCN 28052 原文证实的触发时刻真值一致，原值照录于此。ra/dec=123.563/−14.553 与 pos_error=102″（1.7 arcmin，radius，sys+stat，90% containment）均出自 GCN 28054 的 BAT ground-calculated position，无跨通告拼接（GCN 28052 onboard 粗定位 123.555/−14.494/3′ 未被 bot 采用）；pos_error_confidence=90 系 28054 原文明示。sub_tag=lgrb 依据 GCN 28054 T90=38.9±8.6 s（15-350 keV）。Fermi-GBM 无在板触发、仅 targeted search 亚阈值探测（GCN 28053，timescale 8.192 s，Band 模板 Epeak≈230 keV）。因太阳观测约束 Swift 至 2020-09-07 06:11 UT 后才可定点（GCN 28052），external/swift_bat 目录 XRT_detection=No，本源无 XRT/UVOT 数据。非 SCHEMA 量：fluence=9.3±1.0×10^-7 erg/cm2（15-150 keV）、1 s 峰光子流量=0.7±0.2 ph/cm2/s、幂律谱指数 1.91±0.16（均 GCN 28054，误差 90% 置信）。同日变体划界：GCN 32307 的 subject/body 与 32315 的 body 误写「GRB 200701A」（32315 的 subject 本身正确记 220701A），实为 GRB 220701A（trigger 1114034，2022-07-01 04:52:58 UT，RA,Dec=242.5,+55.4）的 KAIT/Keck 光学上限，两文引用的 Evans GCN 32306/32308 均为 220701A，与本源无关（原文笔误，不入本源数据）。alias「GRB 200701A」为 GCN 原文用名与 external/swiftgrbba tdat name 字段；「BAT 980421」为 external/swift_bat 表触发号。测光检索（2026-10-25）：仓内 gcn/archive 45 589 篇命中本源 5 篇（28052/28053/28054 为本源 γ 射线通告，32307/32315 系 220701A 笔误），0 篇含本源光学数值；external/rssgrbag lightcurve 140 行/normalized 304 事件无记录；external/grbsn_webtool 63 事件无该事件；external/uvot_grb、external/swift_xrt_live 无记录；GCN 站检索 5 篇（与仓内一致）；ADS/SciX 无 token 未查（api.adsabs.harvard.edu 与 api.scixplorer.org 实测均 401）；arXiv API 兜底 0 篇（「200701A」「GRB 200701A」「980421」三式均 0 命中）→ 无可用测光，不建 lc，本 PR 新增 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻：GCN 28052 整秒触发时刻 12:46:59 UT；external/swift_bat 官方目录 trigger 980421 UTC=2020-07-01T12:46:59.079040（亚秒值）。非观测窗口时刻",
+    "t0_basis": "swift_bat_trigger_980421",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 28052",
+      "url": "https://gcn.nasa.gov/circulars/28052",
+      "title": "GRB 200701A: Swift detection of a burst",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28053",
+      "url": "https://gcn.nasa.gov/circulars/28053",
+      "title": "Fermi-GBM Sub-Threshold Detection of GRB 200701A",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28054",
+      "url": "https://gcn.nasa.gov/circulars/28054",
+      "title": "GRB 200701A: Swift-BAT refined analysis",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
