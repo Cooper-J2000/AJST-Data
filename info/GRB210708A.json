@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB210708A",
-  "alias": [],
-  "ra": 173.73706,
-  "dec": -49.15179,
-  "T0": "2021-07-08T02:27:07Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 210708.10",
+    "BAT 1059460"
+  ],
+  "ra": 173.7372,
+  "dec": -49.1515,
+  "T0": "2021-07-08T02:25:37.084880Z",
+  "T0_ref": "GCN 30413; external/swift_bat (trigger 1059460)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 7.0,
   "pos_ref": "GCN 30416",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发 #1059460（GCN 30413；同日另有 GRB 210708B＝trigger 1059494，坐标/触发号均不同，已区分）。T0 修正：原 bot 值 2021-07-08T02:27:07Z（整秒）并非触发时刻，实为 MASTER-OAFA 指向时刻——GCN 30412 原文 \"90 sec after trigger time at 2021-07-08 02:27:07 UT\"，反推触发＝02:27:07−90 s＝02:25:37 UT，与 GCN 30413 \"At 02:25:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 210708A (trigger=1059460)\" 一致（Issue #84 模式：观测/指向时刻误作 T0）；亚秒取触发仪器官方目录 external/swift_bat Trig_time_UTC=02:25:37.084880（swiftgrbba 整秒 02:25:37 一致）；原 bot t0_basis=meta_trigger、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"失真，已改写（原值留档于此）。ra/dec/pos_error 取 XRT 精化定位配套值 173.7372/-49.1515（7.0″，90%，GCN 30416）；其余定位并列：XRT 初报 173.73706/-49.15179（12.2″，90%，GCN 30413；原库 ra/dec 即此值，与 pos_error=7.0″ 不配套，已改配套精化值）、BAT 星上 173.699/-49.187（3′，90%，GCN 30413）、BAT 地面 173.759/-49.164（2.2′，90%，GCN 30422）、swift_xrt_live 目录 173.7356561/-49.1509659（7.0″）。alias 出处：GRB 210708.10 为 GCN 30412 事件名（旧式小数名，同 trigger 1059460）；BAT 1059460 为 external/swift_bat name_alt。T90(15-350keV)=2.77±0.70 s（GCN 30422；swift_bat 目录 2.772±0.700 s）、T50=1.14±0.57 s（swift_bat）；GCN 30413 记 BAT 光变 \"complex structure with a duration of about 10 sec\"、GCN 30422 记单峰约 3 s；无来源明示长/短分类，sub_tag 留空。fluence(15-150keV)=1.1±0.2e-7 erg/cm²、1s 峰值光子流量(15-150keV)=0.8±0.2 ph/cm²/s（GCN 30422，90% CL）；Fermi/GBM 亚阈值探测：4.096 s 时标 S/N=6、FAR=1.7e-4 Hz、soft 谱 Epeak=70 keV（GCN 30421，无星上触发）。无红移测量。XRT 位置邻近亮星 HD 100708（V≈5.5，1′ 内），或掩蔽暗弱余辉（GCN 30413/30425）；UVOT 上限未做银消改正，E(B-V)=0.160（Schlegel+1998，GCN 30425）。测光检索（2026-10-25）：仓内 gcn/archive 全文命中「210708」9 篇——本源 6 篇（30412/30413/30416/30421/30422/30425；光学/UV 数值 2 篇：MASTER 上限 30412、UVOT 上限 30425，其余为 γ/X 射线），另 3 篇属同日 GRB 210708B；external 目录互证：swift_bat/swiftgrbba/swift_xrt_live/mpe_greiner 收录本源（mpe_greiner 记 11h34m48s −49°11′、误差 3′，数值与 BAT 星上位置一致），uvot_grb 无记录；external/rssgrbag（140 行/74 源）与 external/grbsn_webtool（63 事件）无本源记录；GCN 站事件页 grb-210708a 列 5 篇（30413/30416/30421/30422/30425，均在仓内，30412/30425 已逐篇打开与仓内一致），站内检索「210708A」（2021-07-01 至 2026-10-25）亦仅此 5 篇、无库外新增（仓内档案止于 46010）；MASTER 通报 30412 以旧式名 GRB210708.10 发布、不在事件页索引，仓内已有；文献：arXiv（\"GRB 210708A\"/\"GRB210708A\" 两写法）与 OpenAlex（title_and_abstract）精确检索均 0 命中，Crossref 模糊命中 20 条无一涉及本源，WebSearch 命中仅 GCN 站/档案页面与 H.E.S.S. 观测日志（无测光数值）；TNS：非 AT/SN/CV 类未检索；GRBSN webtool 上游 GitHub API 404（记录失败，以仓内快照为准）；ADS/SciX 无 token，按回退链走 arXiv/Crossref/OpenAlex → 有时间锚点的上限全部入库：MASTER-OAFA 4 行（GCN 30412）＋UVOT 7 行（GCN 30425），共补 11 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-25 审核更正为 BAT 触发时刻（GCN 30413：02:25:37 UT；亚秒取 external/swift_bat trigger 1059460 Trig_time_UTC=02:25:37.084880）。审核前 t0=2021-07-08T02:27:07Z 为误取 GCN 30412 中 MASTER-OAFA 指向时刻（触发后 90 s），非触发时刻",
+    "t0_basis": "GCN 30413; external/swift_bat (trigger 1059460)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [],
   "host_galaxy": null
