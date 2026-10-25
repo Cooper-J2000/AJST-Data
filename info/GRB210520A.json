@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB210520A",
   "alias": [
-    "GRB 210520797"
+    "GRB210520797"
   ],
-  "ra": 123.44999694824219,
-  "dec": -69.22000122070312,
-  "T0": "2021-05-20T19:07:07.940000Z",
-  "T0_ref": null,
+  "ra": 123.45,
+  "dec": -69.22,
+  "T0": "2021-05-20T19:07:02.940Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-05-20T19:07:02.940Z（GBM trigger 643230427.939988 / 210520797，MJD 59354.7965618）；GCN 30059（GBM 自动通告）记 At 19:07:02 UT on 20 May 2021、GCN 30062（LAT）记 T0 = 19:07:02 UT，一致；GCN 30065 记 19:07:02.00 UT（亚秒 .00 与目录 .940 不一致，见 comment 备查）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,16 +14,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.87,
+  "pos_error_confidence": null,
+  "pos_ref": "HEASARC FERMILGRB 快照（Fermi LAT GRB 表）：RA=08h13m48.0s Dec=-69°13′12″ → 123.45, -69.22 deg，error_radius=0.87 deg；GCN 30062（LAT 初报）RA,Dec=123.0,-69.4（r=0.7 deg, 90% containment, statistical only）与之相距 0.240 deg（计算），在各自误差内相容",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52, DOI 10.3847/1538-4357/ab1d4e；HEASARC FERMILGRB 在线表同名流程扩充）；FERMILGRB 的 LAT 量为高能光子分析量（tl100=6.33±0.475 s、like_best_ts=125.185±0.457779、ext_emission_max_ene=450.0 MeV @ 触发后 1.43 s），不落光学/射电测光两车道，不入 lc。【T0 修正】原值 2021-05-20T19:07:07.940000Z 为 bot 对 HEASARC FERMILGRB trigger_met=643230427.94 的天真换算（少扣 2017-01-01 起的 5 个闰秒，Issue #67；python 复算 naive UTC=2021-05-20T19:07:07.940 与原值逐位一致），正确 UTC=2021-05-20T19:07:02.940；现采纳触发仪器目录 FERMIGBRST 亚秒值 19:07:02.940Z（MJD 59354.7965618）：GCN 30059（GBM 自动通告，同句 MET=643230427.939988）记 At 19:07:02 UT on 20 May 2021、GCN 30062（LAT）记 T0 = 19:07:02 UT，一致；GCN 30065（GBM 团队精化分析）记 19:07:02.00 UT，其亚秒 .00 与同一 GBM 通告链的 MET 小数 .939988（GCN 30059）不符，疑为模板补零，按 §3.8 采目录亚秒值，差 0.94 s 备查；他仪器触发：GECAM-B 2021-05-20T19:07:03.550 UTC（GCN 30061）、INTEGRAL/SPI-ACS TrigID 9218（GCN 30061 转引）。【定位口径澄清】ra/dec 为 HEASARC FERMILGRB 快照 LAT 精化定位（RA=08h13m48.0s Dec=-69°13′12″ → 123.45, -69.22 deg），error_radius=0.87 deg 为 LAT transient factory 分析的定位误差：HEASARC 文档只写 estimated error 未标注置信水平，external/fermi_lat/README.md 注按目录论文 Ajello+2019 惯例为 1σ 统计误差，故 pos_error_confidence 留空；GCN 30062（LAT 初报）RA,Dec=123.0,-69.4（r=0.7 deg, 90% containment, statistical error only），与精化位置相距 0.240 deg（计算），相容；GCN 30059（GBM 自动定位）RA=147.9, Dec=-67.0（统计误差 3.7 deg），距精化位置 9.313 deg（计算）——GCN 30062 明言 LAT 位置距 GBM 定位 9 deg、GCN 30065 称两位置相容（GBM 实时定位含系统差）；GECAM-B（GCN 30061）ra=129.04, dec=-72.01（err 5.55 deg, statistical only），距 3.348 deg（计算），相容；FERMIGBRST 目录行 ra=123.0, dec=-69.4, error_radius=0.74 与 GCN 30062 初报定位几乎逐位一致，疑为吸收 LAT 初报定位（GRB200530A 同判，PR #201；GBM README：error_radius 统计 1σ，0=外部仪器定位）；MPE Greiner 表行（08h12m00s -69°24′, Error 44 角分, Instrument=Fermi, IPN=y）即 (123.0, -69.4) 的转写，非独立定位。【坐标修正】原 ra/dec 123.44999694824219/-69.22000122070312 为 float32 残渣（float32(123.45)/float32(-69.22)），按 FERMILGRB 原值 08h13m48.0s/-69°13′12″ 恢复，换算恰为 123.45/-69.22。【alias 更正】「GRB 210520797」（空格+日期+触发序列拼接形，validate.py 伪形正则命中）更正为官方目录原形 GRB210520797（FERMIGBRST GRBNAME / FERMILGRB NAME / HEASARC Source Designation；GCN 30059/30062/30065 记 trigger 643230427.939988 / 210520797；7 篇通告全文检索小数形 210520.797 为 0 处，name_alt 小数形系本仓 parse.py decimal_grb_name 自拼，PR #201 同判，不收录）。【分类】long GRB：GCN 30059（GBM 团队）detection of a likely LONG GRB、GCN 30065 T90≈56 s（50-300 keV）、GCN 30061（GECAM-B）a long burst，sub_tag 补 lgrb。【备查】FERMIGBRST 目录值：T90=56.065±3.08272 s、T50=26.3685±1.63922 s（50-300 keV）、fluence=2.84506e-06±4.11244e-08 erg/cm2（10-1000 keV）、Epeak=2354.6116 (+584.61298/−584.61298) keV（CPL）；GCN 30065（T0−1.3 至 T0+58 s 拟合）：fluence=(1.02±0.04)e-5 erg/cm2（10-1000 keV）、Epeak=4.4±1.8 MeV（截止幂律）、1-s peak photon flux=2.6±0.2 ph/cm2/s（自 T0+0.58 s 起，10-1000 keV）；GCN 30062：>100 MeV 光子流量 (2.5±0.7)e-05 ph/cm2/s（触发后 0-100 s）、光子指数 -2.6±0.4；GCN 30061：GECAM-B 多脉冲持续约 50 s。Swift-XRT 排查（细节出自 GCN 30069；30063 为 tiling 启动通告无数值）：T0+43.1–62 ks 共 5.6 ks/19 tiles（PC 模式），2 个未编目 X 射线源均无变暗、与 2MASS 源一致，无余辉；X 射线内容按 §3.3/§7 不入库。【同日划界】GCN 30058（2021-05-19，SGR J1745-2900 磁星爆发，trigger 210519807）为另一事件，不属本源。【测光检索（2026-10-25）】仓内 gcn/archive 本地未获取（目录为空），经 GCN 网站检索替代：本源通告 7 篇（GCN 30059/30060/30061/30062/30063/30065/30069，经 gcn.nasa.gov 单篇 JSON 端点逐篇取得全文，MPE 汇总页 mpe.mpg.de/~jcg/grb210520A.html 清单互证）——仅 GCN 30060 含光学内容（MASTER-OAFA 无滤光片上限 3 条，本 PR 补 3 行），GCN 30063/30069 为 Swift-XRT 排查（无余辉、无光学测光），其余为伽马射线探测；external/rssgrbag 光变 140 行 0 命中、external/grbsn_webtool 63 事件无该源、external 其余快照（konus_wind/agile_mcal/batse/heasarc_grbcat/uvot_grb/swift_bat/swift_grb/swift_xrt_live/swiftgrbba/saxgrbmgrb/wang2022/liang2023/minaev2020/guidorzi2025）grep 0 实命中（swift_bat 2 处为无关源数值 2.210520/7.210520 巧合）、mpe_greiner 行仅目录参数；arXiv API（all:「210520A」等 3 式）0 命中；WebSearch 无 IPN/Konus/AGILE/CALET 专属通告，GECAM 预警系统论文（arXiv 2307.04999）以本源为定位图示例（伽马射线、无光学测光，未采用）；ADS/SciX 网页检索为 JS 应用服务端不可取（scixplorer.org 返回空壳）、无 API token；TNS 不适用（MASTER 未发现 OT，无 AT 条目）→ 可用测光仅 GCN 30060 的 3 条 MASTER-OAFA 上限，本 PR 补 3 行。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -151,6 +158,55 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30059",
+      "url": "https://gcn.nasa.gov/circulars/30059",
+      "title": "GRB 210520A: Fermi GBM Final Real-time Localization",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30060",
+      "url": "https://gcn.nasa.gov/circulars/30060",
+      "title": "Fermi GRB 210520A: Global MASTER-Net observations report",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30061",
+      "url": "https://gcn.nasa.gov/circulars/30061",
+      "title": "GRB 210520A: GECAM detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30062",
+      "url": "https://gcn.nasa.gov/circulars/30062",
+      "title": "GRB 210520A: Fermi-LAT detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30063",
+      "url": "https://gcn.nasa.gov/circulars/30063",
+      "title": "GRB 210520A: Tiled Swift observations",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30065",
+      "url": "https://gcn.nasa.gov/circulars/30065",
+      "title": "GRB 210520A: Fermi GBM detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30069",
+      "url": "https://gcn.nasa.gov/circulars/30069",
+      "title": "GRB 210520A: Swift-XRT observations",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
