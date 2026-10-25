@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB190606A",
   "alias": [
-    "GRB 190606080"
+    "GRB190606080",
+    "bn190606080",
+    "GRB190606.08",
+    "GRB 190606A"
   ],
-  "ra": 76.54000091552734,
-  "dec": -0.6800000071525574,
-  "T0": "2019-06-06T01:55:12.780000Z",
-  "T0_ref": null,
+  "ra": 76.54,
+  "dec": -0.68,
+  "T0": "2019-06-06T01:55:07.776Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2019-06-06T01:55:07.776Z（GBM trigger 581478912 / 190606080，MJD 58640.079951114，仓内快照取数 2026-07-21）；GCN 24764（GBM 团队）记 At 01:55:07.76 UT；GCN 24761（LAT 团队）记 T0 = 01:55:07.78 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +17,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 24761",
+  "pos_error": 10800,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 24761 (Fermi-LAT team): RA,Dec=76.54, -0.68 (deg, J2000), error radius 3.0 deg (90% containment, statistical error only)，3.0°=10800″；fermigbrst 目录行 error_radius=3.0° 同值；2FLGC/fermilgrb 行 error_radius=0.47°（LAT transient factory 分析）同位，未采用",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52）。审核 wa1kmoon@zcode（2026-10-25）：(1)【T0 修正】原值 2019-06-06T01:55:12.780000Z 为 bot 对 HEASARC FERMILGRB trigger_met=581478912.78 s 的天真换算（以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2017-01-01 起生效的 5 个闰秒；python 复算 naive UTC=2019-06-06T01:55:12.780000 与原值逐位一致，bug 复现），正确 UTC=01:55:07.780；现采纳触发仪器官方目录 FERMIGBRST 的亚秒值 01:55:07.776Z（MJD 58640.079951114）。多方互证：GCN 24764（GBM 团队）At 01:55:07.76 UT；GCN 24761（LAT 团队）T0 = 01:55:07.78 UT；AGILE/MCAL T0=01:55:07.80±0.01 UTC（GCN 24759）；Insight-HXMT/HE T0=01:55:07.00（GCN 24768，其自身探测口径）；Konus-Wind 触发 01:55:03.800 UT（GCN 24784）；IPN 约 6904 s UT=01:55:04（GCN 24765）；FERMILGRB(2FLGC) 表 trigger_time=01:55:06.997Z 为 LAT 口径，与本库 T0 差 0.779 s 备查。(2)【定位口径】pos_error 原为 null：GCN 24761 原文明示 best LAT on-ground location RA,Dec=76.54,-0.68（deg, J2000）、error radius 3.0 deg（90% containment, statistical error only），3.0°=10800″ 填入，pos_error_confidence=90（原文明确）；fermigbrst 目录行 ra=76.54, dec=-0.68, error_radius=3.0 与该初报逐位一致，疑为吸收初报定位（GCN 24764：GBM on-ground location is consistent with the LAT position）；2FLGC/fermilgrb 行 error_radius=0.47 deg（LAT transient factory 分析，未标注置信水平）同位不同置信口径，未采用；IPN 环带（Konus-GBM，RA=88.386 Dec=+21.574，r=25.034±0.198 deg，3sigma）与 LAT 误差圆联合误差框（GCN 24765）中心 76.561,-0.638、面积 2.4 平方度（较 LAT 圆小 10 倍），备查。(3)【坐标修正】原 ra/dec 76.54000091552734/-0.6800000071525574 为 float32 残渣（float32(76.54)/float32(-0.68)），按 FERMILGRB 原值恢复全精度 76.54/-0.68（先例 GRB181028A）。(4)【alias 更正】原「GRB 190606080」（带空格拼接形）无出处；改为有背书真名：GRB190606080（fermigbrst tdat name 字段原形）、bn190606080（fermigbrst trigger_name）、GRB190606.08（GCN 24757/24759 通告实际用名，MASTER/AGILE）、GRB 190606A（2FLGC gcn_name 字段与全部 GCN 用名）。(5)【sub_tag】补 sgrb：GBM T90=0.224±0.036 s（FERMIGBRST，50-300 keV）、GCN 24764 记 bright short spike（T90 约 0.3 s）、GCN 24765/24784 均记 short-duration, very bright、Yang+2025（arXiv:2501.14207）样本归 short GRB——各来源分类一致无冲突。(6)【高能数据不入 lc】2FLGC 的 LAT 光变为高能光子光变（tl100=122.74 s、最高能光子 1.6 GeV@T0+154 s，ext_emission_max_ene=1600 MeV），GCN 24761 >100 MeV 光子流 (4.3±1.9)E-05 ph/cm2/s——均不落光学/射电两车道，不入 lc，comment 备查。(7)【身份】Fermi GBM trigger 581478912 / 190606080 = Fermi-LAT 探测（GCN 24761，距 LAT 视轴 72°）= AGILE/MCAL（GCN 24759）= IPN 三角（Konus-Wind/GBM/INTEGRAL SPI-ACS/AGILE，GCN 24765）= Insight-HXMT/HE（GCN 24768）= Konus-Wind（GCN 24784）；仓内无同日重复条目。(8)【测光检索（2026-10-25）】仓内 gcn/archive 全文 45 889 篇，grep+python 双路检索（源名/触发号/坐标变体）命中 7 篇（24757/24759/24761/24764/24765/24768/24784），其中仅 GCN 24757（MASTER-Net）含光学数值：MASTER-IAC 于触发后 83 s 起检查自动定位误差框，5 个检查点无滤光片（P/P-）上限 16.7-17.7 mag（Tmid-T0=93/190/298 s）——有明确时间锚，本 PR 入 lc 5 行（其误差框与精化定位相距约 83.6 deg，见各行 comment）；external/rssgrbag/lightcurve.jsonl 0 行；external/grbsn_webtool/SourceData 无该事件；GCN 站（gcn.nasa.gov）按源名与触发号分别检索命中 6+6 篇（并集=仓内 7 篇）；ADS/SciX 无 token 未查（实测 ADS API 401 Missing Authorization、SciX API 202 空响应）；arXiv API 兜底命中 1 篇（Yang+2025，QPO 统计样本，仅 prompt 伽马分析，无测光）→ 本 PR 新增 lc 5 行。(9) 红移：无任何来源给红移，保持 null。(10) SCHEMA 外物理量备查：T90=0.224±0.036 s、T50=0.096±0.036 s（50-300 keV，FERMIGBRST）；fluence=4.01808E-06±1.33996E-08 erg/cm2（10-1000 keV，FERMIGBRST）；64ms 峰值光子流 119.089±2.716 ph/cm2/s（10-1000 keV）；Epeak=2344.39±232.09 keV（CPL，obs，FERMIGBRST）；Konus-Wind fluence 1.16E-05 erg/cm2、16ms 峰值流 1.45E-04 erg/cm2/s（20 keV-10 MeV，90% CL，GCN 24784）；AGILE/MCAL fluence 1.71E-6 erg/cm2（0.4-100 MeV，90% CL，GCN 24759）。",
   "sub_tag": [
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -214,8 +219,62 @@
         ],
         "trigger_time": "2019-06-06T01:55:07Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 24757",
+      "title": "Fermi trigger No 581478912 Global MASTER-Net observations report",
+      "url": "https://gcn.nasa.gov/circulars/24757",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24759",
+      "title": "Fermi trigger No 581478912 / GRB 190606A: AGILE/MCAL observations",
+      "url": "https://gcn.nasa.gov/circulars/24759",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24761",
+      "title": "GRB 190606A: Fermi-LAT detection",
+      "url": "https://gcn.nasa.gov/circulars/24761",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24764",
+      "title": "GRB 190606A: Fermi GBM detection",
+      "url": "https://gcn.nasa.gov/circulars/24764",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24765",
+      "title": "IPN Triangulation of GRB 190606A (short)",
+      "url": "https://gcn.nasa.gov/circulars/24765",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24768",
+      "title": "GRB 190606A: Insight-HXMT/HE detection",
+      "url": "https://gcn.nasa.gov/circulars/24768",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 24784",
+      "title": "Konus-Wind observation of GRB 190606A",
+      "url": "https://gcn.nasa.gov/circulars/24784",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Yang+2025",
+      "title": "Discovery of high-frequency quasi-periodic oscillation in short-duration gamma-ray bursts",
+      "url": "https://arxiv.org/abs/2501.14207",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
