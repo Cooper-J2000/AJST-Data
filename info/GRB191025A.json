@@ -3,26 +3,63 @@
   "alias": [],
   "ra": 320.755,
   "dec": -48.33,
-  "T0": "2019-10-25T18:42:09Z",
-  "T0_ref": null,
+  "T0": "2019-10-25T02:46:47Z",
+  "T0_ref": "GCN 26072（Swift/BAT 触发时刻，原文仅整数秒精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [],
   "pos_error": 180.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 26072",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发 931384「possible GRB 191025A」（GCN 26072：2019-10-25T02:46:47 UT 触发，BAT on-board 定位 RA,Dec=320.755,-48.330，误差 3′ 半径 90% 包含，含系统差；率域与成像域显著性均偏低）。GCN 26080（Swift Team 官方结论）：完整数据分析后认定 BAT trigger 931384「is a statistical fluctuation (noise peak) in the image plane and not an astrophysical source」——触发被权威否定，本条目建议维护者删除（见 PR 待决事项①）。XRT 1.5 ks 快速下传数据无探测、UVOT white 找图 150 s 无可信余辉候选（GCN 26072）；FRAM-Auger 30–585 s r'(AB)=19.1 上限（GCN 26073）——均非独立探测证据。原 T0=2019-10-25T18:42:09Z（bot，t0_basis=meta_trigger）实为同日 GRB 191025B 的触发时刻（Insight-HXMT/HE 于 2019-10-25T18:42:09.10 UT 检测，trigger ID HEB191025779，GCN 26081；IPN/Konus-Wind 于约 67329 s UT=18:42:09 三角定位，GCN 26086）——同日异源 T0 污染；GCN 26081 正文误称「GRB 191025A」（其 subject 与 GCN 26086/26089/26106 均用 191025B），bot 因此把 191025B 的时刻拼进了本条目；已改为 GCN 26072 的 BAT 触发时刻 02:46:47Z。原 extra_data.t0_basis='meta_trigger'、t0_note='t0 为 meta trigger-time（真实触发时刻）' 已失效，原值留此备查。同日划界：191025A=Swift 触发 931384（02:46:47 UT，已撤回）；191025B=HXMT/INTEGRAL/Konus-Wind/AstroSat 短暴（18:42:09 UT，IPN 3σ 误差框中心 RA,Dec=60.104,+56.480，GCN 26086），与本条目坐标（320.755,-48.33）完全不同；库内尚无 GRB191025B 条目（见待决事项②）。测光检索留证（2026-10-25）：① 仓内 gcn/archive 45889 篇全文 python 扫描（与 grep 双路交叉）「191025A」「931384」，命中 4 篇：26072（Swift 通告）、26073（FRAM-Auger 光学上限）、26080（否定通告）、26081（HXMT 检测，属 191025B）；「191025B」另命中 26086/26089/26106（IPN/Konus/AstroSat，均属 191025B）；命中均无可用光学/射电测光数值（26073 仅 r' 上限 19.1，且锚定在已否定的 BAT 误差圆）；② external 快照全部 19 个目录（swift_bat/swift_grb/swiftgrbba/swift_xrt_live/uvot_grb/heasarc_grbcat/mpe_greiner/fermi_gbm/konus_wind/rssgrbag/grbsn_webtool 等）grep「191025」「931384」均在快照覆盖范围内无记录（Swift 官方目录不收被否定的触发；heasarc_grbcat/swift_grb/konus_wind 快照止于较早年份，属覆盖范围真，核查已替为实测全部 19 目录含 gz/tdat/name_alt 字段）；③ GCN 站 26072/26073/26080/26081 在线核对（2026-10-25，均可达，内容与仓内档案一致）；④ ADS/SciX API 无 token（实测 401）未查；arXiv API 兜底（2026-10-25）：检索词「GRB 191025A」「191025A」「931384」均 0 命中（对照组「GRB 190114C」3 命中，检索管线有效）。结论：无任何独立探测证据、无可用测光，补 0 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 wa1kmoon@zcode 2026-10-25 审核修正为 GCN 26072 的 Swift/BAT 触发时刻（原 bot 值 2019-10-25T18:42:09Z 为同日 GRB 191025B 触发时刻污染），原值见 comment",
+    "t0_basis": "GCN 26072",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 26072",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/26072.gcn3",
+      "title": "Swift Trigger 931384: possible GRB 191025A",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26073",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/26073.gcn3",
+      "title": "Possible GRB 191025A: FRAM-Auger optical limit",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26080",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/26080.gcn3",
+      "title": "Swift/BAT Trigger 931384 is not a GRB ( 191025A )",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26081",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/26081.gcn3",
+      "title": "GRB 191025B: Insight-HXMT/HE detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26086",
+      "url": "https://gcn.gsfc.nasa.gov/gcn3/26086.gcn3",
+      "title": "IPN triangulation of GRB 191025B (short)",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
