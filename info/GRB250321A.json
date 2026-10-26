@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB250321A",
-  "alias": [],
-  "ra": 295.077,
-  "dec": 21.041,
-  "T0": "2025-03-21T00:42:39Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1297508"
+  ],
+  "ra": 295.09844,
+  "dec": 21.04038,
+  "T0": "2025-03-21T00:42:38.895220Z",
+  "T0_ref": "swift_bat 目录快照 trigger_time=2025-03-21T00:42:38.895220Z（trigger 1297508）；GCN 39794 整秒 00:42:38 UT；Fermi/GBM 亦同时触发（trigger 764210564，FERMIGBRST trigger_time=00:42:39.017Z，差 122 ms），双触发仪器取 Swift 值（§3.8 有 Swift 以 Swift 为准）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.6,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 39820",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Swift/BAT trigger 1297508（GCN 39794，00:42:38 UT，on-board RA,Dec=295.077,+21.041 3′/90%）与 Fermi/GBM trigger 764210564（GRB250321030，00:42:39.017Z）同时探测（GCN 39794 明文 simultaneous detection by Fermi/GBM）。同日划界：EP250321a 为 Einstein Probe WXT 独立探测的快 X 射线瞬变（EP 触发约 06:10 UT，晚本暴 5.5 h；IPN GCN 40129 将 06:13:25 的 Konus-Wind/SPI-ACS 探测定为 GRB 250321D 并证其与 EP250321a 一致；VLT X-shooter z=4.368（GCN 39809）属 EP250321a——注意与 GCN 39814 的 E(B-V)=4.368 数字巧合，二者无关）；GCN 39816（LCO r=21.40/V=21.76 @+5.47 h）虽 subject 写 EP 250321A，其内容是对 EP250321a OT 的观测（引用 39804/39805/39807/39809 等 EP 链通告），不属本源不入库；GRB 250321B（SVOM 亚阈值，GCN 39818/39828/39840/39856/39865）、250321C（GBM，GCN 39825）均另事件；GCN 11952 为 110420B 时间戳巧合。[T0] 原库 2025-03-21T00:42:39Z 系 GBM 目录亚秒值的整秒截断；双触发仪器（BAT 00:42:38.895220Z 与 GBM 00:42:39.017Z 差 122 ms）按 §3.8 有 Swift 以 Swift 为准，采 swift_bat 目录值 00:42:38.895220Z；GBM 值与 GCN 39794 的 simultaneous detection 备查。[定位] 原 ra/dec=295.077/21.041 系 GCN 39794 BAT on-board 定位（3′），而 pos_error=2.6″ 与 pos_ref=GCN 39820 挂的是 XRT 精化口径——坐标与误差混搭不自洽；已统一升级为 GCN 39820 增强定位 295.09844/+21.04038（2.6″/90%，XRT-UVOT 对齐+USNO-B1，1662 s PC 数据，距 BAT 定位 72″）；GBM 目录行 295.077/21.041/err=0.05° 系吸收 BAT on-board 定位（非 GBM 自身定位）备查。[alias] 新增「BAT 1297508」（swift_bat 目录 name_alt 原形，#215 先例）。[分类] tag 补 grb；sub_tag=lgrb：无 GCN 显式 long/short 判词（GCN 39794 记 complex structure duration at least 10 sec 为 BAT 光变描述）；t90=6.21±1.36 s（Swift-BAT 精化 GCN 39821，15-350 keV，90% 置信）、GBM 目录 t90=6.4±2.56 s（50-300 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径，T90 显著大于 2 s）。[伽马备查] GCN 39821（BAT 精化）：sharp peak 后快速衰减、谱指数 1.61±0.19、15-150 keV 注量 (6.7±0.8)e-07 erg/cm2、1-s 峰流量 3.2±0.5 ph/cm2/s（T-0.16 s 起，90% 置信）；XRT 衰减指数 alpha=1.13(+0.11,-0.10)（GCN 39820，X 射线内容不入库）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「250321」全形态：命中 40 篇——本源 10 篇（39793/39794/39795/39798/39799/39801/39802/39814/39820/39821），EP250321a 链 15 篇（划界如上，其测光不入库）、B/C/D 链 6 篇、巧合 1 篇；入库测光 18 行：GCN 39801 MASTER-OAFA 9 检查点上限（39802 重发其中 2 行同测量已去重，comment 注记）+ GCN 39814 UVOT 8 行（white_FC 与 white 为不同曝光均保留；E(B-V)=4.368 极高消光注记）+ GCN 39799 GOTO-L 1 行；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 250321A」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 18 行（均上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1297508，swift_bat 目录 2025-03-21T00:42:38.895220Z）；原 bot 值 2025-03-21T00:42:39Z 系 GBM 目录值整秒截断，双触发仪器按 §3.8 取 Swift 值；原值保留于 comment",
+    "t0_basis": "swift_bat trigger_time（双触发仪器 BAT/GBM 并存，有 Swift 以 Swift 为准）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
