@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB230911A",
-  "alias": [],
-  "ra": 57.502125,
-  "dec": -29.825183,
-  "T0": "2023-09-11T03:09:32Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 230911A",
+    "GOTO23akf",
+    "AT2023shv"
+  ],
+  "ra": 57.5027,
+  "dec": -29.8259,
+  "T0": "2023-09-11T03:09:32.880Z",
+  "T0_ref": "GCN 34720",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.4,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 34702",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Fermi/GBM 触发 GRB 230911A（trigger 230911132；GCN 34652 记 likely LONG GRB）。T0=2023-09-11T03:09:32.880Z 取 GCN 34720 的 03:09:32.88 UT（触发仪器亚秒精度照原文）；GCN 34652 的 trigger 716094577.87568（MET，扣 5 s 闰秒后 = 03:09:32.87568 UTC）与之相符，亚秒差异按规则直接并入 T0，未设 T0_offset（仓内 FERMIGBRST 快照 t90_start=-2.816 s 是 T90 区间起点相对触发时刻，不是触发时刻修正）。GBM 参数：T90=35.84±1.45 s（50–300 keV，仓内 FERMIGBRST 快照；GCN 34720 记 about 36 s）；Epeak=98±21 keV、alpha=-1.1±0.1、beta=-2.0±0.1（Band，T0−4–T0+30 s，GCN 34720；同快照 CPL 拟合 Epeak=140.4±11.4 keV，观测系）；fluence=6.2±0.3×10^-6 erg/cm2（10–1000 keV，GCN 34720；快照为 4.44×10^-6 erg/cm2）；1 s peak flux=3.7±0.2 ph/s/cm2（10–1000 keV，自 T0+2.0 s，GCN 34720）。位置取 Swift-XRT 增强定位 RA/Dec=57.5027/−29.8259，误差 3.4 arcsec 半径（90% 置信，GCN 34702）；原库 ra/dec=57.502125/−29.825183 实为 GOTO 候选坐标（03:50:00.51 −29:49:30.66，GCN 34681，与 XRT 相差 3.1 arcsec）。alias 增 AT2023shv（TNS，坐标 03:50:00.509 −29:49:30.66）与 GOTO23akf（GCN 34681/TNS 对象页）。光学：GCN 34681 表列 1 行（GOTO L 波段 400–700 nm，AB 19.22±0.10，t−trig=1.17 h）＋ TNS AT2023shv 的 2020-01-13 Last non detection（GOTO L，19.4 AB 上限，180 s，JD 2458862.362404），共 2 行；Belkin+2024（RNAAS 8, 6）只有光变图、无表，其余 6 个历次未读数入库。GCN 34702 的 XRT 余辉（T0+215.5–326.2 ks）属 X 射线，未处理、未入库。红移：GCN、TNS 均无。测光检索（2026-10-26）：本工作区无 gcn/archive 目录，改查 GCN 事件页 grb-230911a 得 5 篇（34652/34681/34684/34702/34720），并逐号扫 34640–34960 共 321 篇（0 失败）复核，命中同为 5 篇，仅 34681 含光学数值；external/rssgrbag 与 external/grbsn_webtool 无该源记录；ADS 检索 GRB 230911A 命中 6 条（5 篇 GCN + Belkin+2024，无其他测光文献），GOTO23akf/AT2023shv 分别命中 3/2 条（均 RNAAS、TNSTR 2261、GCN 34681），SciX 网页/API 反爬未取到结果；TNS AT2023shv 有坐标、发现星等 19.22 L-GOTO AB 与 2020-01-13 的 Last non detection（19.4 AB 上限，L-GOTO，180 s，JD 2458862.362404）→ 补 2 行。extra_data 原 t0_note=t0 为 meta trigger-time（真实触发时刻）、t0_basis=meta_trigger，本次改为 GCN 34720 出处。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2023-09-11T03:09:32.880Z 取 GCN 34720 的 03:09:32.88 UT（Fermi/GBM 触发时刻）",
+    "t0_basis": "GCN 34720",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Belkin+2024",
+      "title": "GRB 230911A: The First Discovery of a Fermi GRB Optical Counterpart with the Gravitational-wave Optical Transient Observer (GOTO)",
+      "url": "https://doi.org/10.3847/2515-5172/ad1876",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }

@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB241223A",
-  "alias": [],
+  "alias": [
+    "GRB 241223A",
+    "bn241223506"
+  ],
   "ra": 159.85,
   "dec": -34.8,
-  "T0": "2024-12-23T12:08:45Z",
-  "T0_ref": null,
+  "T0": "2024-12-23T12:08:46.632Z",
+  "T0_ref": "Fermi/GBM 触发时刻：GCN 38668（GBM 团队）'At 12:08:46.63 UT on 23 December 2024, GBM triggered and located GRB 241223A（trigger 756648531/241223506）'；FERMIGBRST 目录 trigger_time=2024-12-23T12:08:46.632Z（external/fermi_gbm 快照），亚秒取目录毫秒值，与通告 12:08:46.63 差 2 ms 属舍入",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "GRBAlpha",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1.0,
+  "pos_ref": "GCN 38668（GBM 团队）：RA = 159.85, Dec = -34.80（J2000），with a statistical uncertainty of 1.00 degrees（radius, 1-sigma containment, statistical only），另含系统误差双高斯模型 1.8 deg（52%）/4.1 deg（47%）（Goldstein+2020）；GCN 38650 初报 RA = 159.9, Dec = -34.8、statistical uncertainty 1.0 degrees；BALROG 定位（GCN 38651）160.4/-34.3（1 sigma 0.8 deg + 系统 2 deg）备查；FERMIGBRST 目录行 ra=159.98, dec=-34.61, error_radius=1.0 deg（external/fermi_gbm 快照，与 GCN 38668 相距 0.22 deg，在 1σ 内，未采用）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-10-26。身份：Fermi/GBM 触发 756648531/241223506（GCN 38650/38668，12:08:46.63 UT），同日由 GRBAlpha（峰值 2024-12-23 12:09:12.5 UTC，GCN 38678；该 12:09:12.5 为其峰值时刻而非触发时刻）、cubesat Avion（~12:08:45 UT，0.5 s 分辨率，GCN 39042）探测，INTEGRAL/SPI-ACS trigger 11006 亦触发（GCN 38678 转述）；各通告一律称本暴为 'Fermi GBM-detected burst'，触发仪器为 Fermi/GBM，故 Trigger_Instrument 由 GRBAlpha 改为 Fermi/GBM。(1) T0：原值 2024-12-23T12:08:45Z 比 GBM 触发早 1.63 s，且无任何来源给出该触发时刻（GCN 39042 的 '~12:08:45 UT' 是 Avion 的近似探测时刻、0.5 s 分辨率且非触发仪器；GRBAlpha 12:09:12.5 为峰值），判为导入误差，按提示词 §3.2 直接改为触发时刻：亚秒取 FERMIGBRST 目录 trigger_time=2024-12-23T12:08:46.632Z，GCN 38668 记 'At 12:08:46.63 UT'，二者差 2 ms 属舍入。未记 T0_offset：无证据表明爆发相对自动触发有 >1 s 的真实偏移（GCN 38668 提到 'possibly a precursor' 但未给相对触发的时刻数值）。extra_data 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写（§3.10）。(2) 定位：GCN 38668 地面定位 RA=159.85, Dec=-34.80，statistical uncertainty 1.00 deg（radius, 1-sigma containment, statistical only），另有系统误差双高斯 1.8°(52%)/4.1°(47%)（Goldstein+2020），故 pos_error=1.0、pos_error_unit=deg、pos_error_confidence=1sigma；GCN 38650 初报 159.9/-34.8（1.0 deg）、BALROG 160.4/-34.3（1σ 0.8°+系统 2°，GCN 38651）、FERMIGBRST 目录 159.98/-34.61（error_radius=1.0 deg，与 38668 差 0.22° 在 1σ 内，未采用）并列备查。无光学/X 射线精化定位：GCN 38671 在 GOTO 候选位置未检出 X 射线源，GOTO 的 AT 2024aera 被判为无关 CV（GCN 38655）。(3) 分类：GCN 38650 'detection of a likely LONG GRB'、GCN 38678 'The long-duration GRB 241223A'，sub_tag=lgrb。(4) 物理量（不参与任何判定）：T90=30.5 s（50-300 keV，GCN 38668）、FERMIGBRST T90=30.4646±0.72409 s；T50=5.37609±0.572451 s（50-300 keV，FERMIGBRST）；谱窗 T0+0.003–T0+47.489 s Band 谱 Epeak=239±5 keV、alpha=-0.66±0.02、beta=-2.42±0.06（GCN 38668）；fluence=(6.28±0.05)e-5 erg/cm²（10-1000 keV，GCN 38668）=6.26591e-05±4.92365e-08 erg/cm²（FERMIGBRST）；1 s 峰值光子流量 34.4±0.4 ph/cm²/s（自 T0+26 s 起，10-1000 keV，GCN 38668）；FERMIGBRST peak_flux=36.5097±1.59381（10-1000 keV，64 ms）；GRBAlpha T90=27.5 s、峰值计数率 388.0 cts/s、S/N=29.4σ（~80-950 keV，GCN 38678 与 GRBAlpha 目录表）；Avion T90~31 s、fluence~7e-6 erg/cm²（30-500 keV，GCN 39042）。(5) 红移：无余辉光谱或宿主测定，GCN 38655/38671 均未确认对应体，redshift 保持 null。(6) 余辉与测光：GOTO 在 GBM 90% 区域内找到 AT 2024aera/GOTO24jht（L=17.13±0.01 AB @ +2.12 h、16.84±0.01 @ +3.96 h、16.71±0.01 @ +5.20 h，ATLAS-REFCAT2 定标、未做银消改正），因持续增亮被判为无关 CV（GCN 38655），不入 lc；GOTO 巡天平均 5σ 深度 20.7 mag 为 151.2 平方度覆盖的场深、非本源位置上限，不入 lc；MASTER-SAAO 60 s 曝光 clear 波段 3 条上限（17.9/18.3/18.4 mag，Tmid-T0=29667/31507/32074 s）按 §3.3 入库（误差框覆盖式，指向坐标见各行 comment；三个指向中心距 GBM 最佳位置分别为 0.14°/1.65°/1.67°，前两个在 1σ（1.0°）外但在 90% 误差框内，均非确认余辉位置测光）；Swift-XRT（GCN 38671）为 X 射线数据，按 §3.3 不处理。(7) 别名：GRB 241223A（GCN 主题行用名）、bn241223506（FERMIGBRST name_alt 的 bn 形）；FERMIGBRST name_alt[0] 'GRB241223506' 为「日期+触发序列」拼接伪形按 §3.10 不收，name_alt 的点号形 'GRB 241223.506' 亦为日期+小数伪形（validate.py ALIAS_JUNK_RE 命中，会新增警告）不收。测光检索（2026-10-26）：仓内 gcn/archive 在本工作区不存在（ls gcn → No such file），改以 GCN 站事件页与逐号全文替代；external/rssgrbag/lightcurve.jsonl（140 行）0 命中；external/grbsn_webtool/SourceData（63 事件）无 241223；external/*/normalized.jsonl 仅 fermi_gbm 命中 1 行（目录级参数、无光变）；GCN 站事件页 gcn.nasa.gov/circulars/events/grb-241223a 共 9 篇（38650/38651/38653/38655/38656/38668/38671/38678/39042），逐篇打开全文（均 HTTP 200），含光学数值者 2 篇（38655 GOTO 候选、38656 MASTER 上限）；ADS API 无 token 返回 401、SciX 检索页为 JS 渲染无可读结果（文献库检索未完成，如实记录）；OpenAlex 'GRB 241223A' 1 命中（EP-FXT 引力波对应体论文，无关）、arXiv API abs:\"241223A\" 0 命中、Crossref 模糊匹配均为无关泛匹配；TNS 不适用（GRB 无 AT/SN 名，38655 的候选 AT 2024aera 另属他源）。结论：仅 MASTER-SAAO 3 条带时间锚点的上限可用 → 补 3 行。",
   "sub_tag": [
     "lgrb"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 = Fermi/GBM 触发时刻（GCN 38668 'At 12:08:46.63 UT'）；bot 原值 2024-12-23T12:08:45Z 偏早 1.63 s，已按 §3.2 更正；原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写，见 comment",
+    "t0_basis": "gcn_38668_gbm_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null

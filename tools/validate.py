@@ -92,11 +92,31 @@ INFO_NULLABLE_NUM = ['ra', 'dec', 'T0_offset', 'redshift', 'pos_error']
 
 # 别名伪形（导入管线产物：「日期+触发序列」拼接 / 10 字符截断；见《数据审核提示词》§3.10）
 ALIAS_JUNK_RE = re.compile(r'^GRB ?\d{9}$|^GRB ?\d{5,6}\.\d+$')
+# 伪形豁免（2026-10-26 维护者裁定，见《数据审核提示词》§3.10 与 Issue #69）：
+# 在 comment 里给出「<GCN nnn> … 原文用名」证据串的伪形，视为有出处，不计入普查。
+ALIAS_EVIDENCE_KEY = '原文用名'
+ALIAS_EVIDENCE_WINDOW = 200
+# articles[] 不收 GCN 通告（2026-10-26 维护者裁定，见《数据审核提示词》§3.5）
+GCN_ART_RE = re.compile(r'gcn\.(?:gsfc\.nasa|nasa)\.gov', re.I)
 # 受控取值（见 SCHEMA.md §2；2026-10-12 新增，按警告级检查）
 REDSHIFT_TYPES = {'spec', 'phot', 'upperlimit', 'spec-host', 'value', 'est'}
 POS_ERROR_CONF = {'90', '68', '3sigma', '1sigma'}
 # 别名伪形普查：逐项收集、最后汇总成一条警告（避免逐源刷屏）
 alias_junk = []
+alias_exempt = []
+gcn_articles = []
+
+
+def _alias_has_evidence(alias, blob):
+    """alias 是否在「原文用名」证据串窗口内、且同窗口给出 GCN 编号。"""
+    if not blob:
+        return False
+    norm = alias.replace(' ', '').upper()
+    for m in re.finditer(ALIAS_EVIDENCE_KEY, blob):
+        seg = blob[max(0, m.start() - ALIAS_EVIDENCE_WINDOW): m.end() + ALIAS_EVIDENCE_WINDOW]
+        if re.search(r'GCN\s*\d{4,5}', seg, re.I) and norm in seg.replace(' ', '').upper():
+            return True
+    return False
 
 errors = []
 warnings = []
@@ -168,12 +188,17 @@ def check_info(path):
     # 别名格式（警告级，见《数据审核提示词》§3.10）
     al = d.get('alias')
     if isinstance(al, list):
+        ed0 = d.get('extra_data') if isinstance(d.get('extra_data'), dict) else {}
+        blob = ' '.join(str(x) for x in [d.get('comment'), json.dumps(ed0, ensure_ascii=False)] if x)
         for v in al:
             if isinstance(v, str):
                 if not v.strip():
                     warn(f'{name}: alias 含空字符串（只收录有出处的名字）')
                 elif ALIAS_JUNK_RE.match(v):
-                    alias_junk.append(f'{name}:{v}')
+                    if _alias_has_evidence(v, blob):
+                        alias_exempt.append(f'{name}:{v}')
+                    else:
+                        alias_junk.append(f'{name}:{v}')
 
     # 受控取值（警告级，见 SCHEMA.md §2）
     rt = d.get('redshift_type')
@@ -196,6 +221,9 @@ def check_info(path):
         for i, a in enumerate(arts):
             if not isinstance(a, dict) or not a.get('name') or not a.get('url'):
                 err(f'{name}: articles[{i}] 缺 name/url 或不是对象')
+                continue
+            if GCN_ART_RE.search(str(a.get('url')) + ' ' + str(a.get('name'))):
+                gcn_articles.append(f'{name}:{a.get("name")}')
 
     hg = d.get('host_galaxy')
     if hg is not None:
@@ -588,8 +616,20 @@ def main():
             err(f'tags.json: 解析失败（{e}）')
 
     if alias_junk:
-        warn(f'alias 伪形普查：{len(alias_junk)} 项（例：{", ".join(alias_junk[:3])} …）——'
-             f'「日期+触发序列」拼接形/截断形不应作为别名，见《数据审核提示词》§3.10 与 Issue #69')
+        msg = (f'alias 伪形普查：{len(alias_junk)} 项（例：{", ".join(alias_junk[:3])} …）——'
+               f'「日期+触发序列」拼接形/截断形不应作为别名，见《数据审核提示词》§3.10 与 Issue #69')
+        if alias_exempt:
+            msg += (f'；另 {len(alias_exempt)} 项按 §3.10「<GCN nnn> 原文用名」证据串豁免、'
+                    f'不计入（例：{", ".join(alias_exempt[:3])}）')
+        warn(msg)
+    elif alias_exempt:
+        warn(f'alias 伪形背书豁免：{len(alias_exempt)} 项有「<GCN nnn> 原文用名」证据串，不计入普查'
+             f'（例：{", ".join(alias_exempt[:3])}）——见《数据审核提示词》§3.10')
+
+    if gcn_articles:
+        warn(f'articles 含 GCN 通告：{len(gcn_articles)} 条（例：{", ".join(gcn_articles[:3])} …）——'
+             f'按 2026-10-26 裁定 GCN 通告不登记进 articles[]，出处只在 comment 与 lc 的 reference 留证，'
+             f'见《数据审核提示词》§3.5 与 Issue #69')
 
     if not quiet:
         for m in errors:
