@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 345.41,
   "dec": 12.1,
-  "T0": "2023-02-01T06:20:54Z",
-  "T0_ref": null,
+  "T0": "2023-02-01T06:20:54.420Z",
+  "T0_ref": "GCN 33244（IceCube 官方通告）：On 2023-02-01 at 06:20:54.42 UT IceCube detected…（Bronze alert，FAR=2.07/yr，离线精化后时刻，触发仪器自给亚秒）；原库 06:20:54Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 33244（IceCube 离线精化方向）：RA=345.41 (+2.50/-3.07 deg) Dec=+12.10 (+1.62/-1.53 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=345.41/12.1 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube Bronze 径迹中微子候选事件（GCN 33244；AMON notice 137603_30799022，FAR=2.07/yr）；90% 区域内 3 个 4FGL 目录源（J2256.7+1307/J2308.9+1111/J2252.6+1245，1.6-2.3 deg）；跟随观测：Fermi-LAT（GCN 33248）、BOOTES-4/MET 光学上限（GCN 33270）、IceCube 附加中微子搜索（GCN 33256）。同日划界：GRB 230201A（Fermi GBM trigger，GCN 33242；MASTER 跟进 GCN 33245）与本中微子事件仅同名日巧合（GBM 定位与本源位置相距甚远），划界另事件。全库检索「230201A」命中 6 篇：33244/33248/33256/33270 属本源，33242/33245 属 GRB（划界）。[T0] 原库 06:20:54Z 系 GCN 33244 精化时刻 06:20:54.42 UT 的整秒截断，补亚秒 .420Z。[定位] ra/dec=345.41/12.1 原值即 GCN 33244 精化方向（保留，逐位一致）；90% PSF containment 不对称（RA +2.50/-3.07、Dec +1.62/-1.53 deg），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] Fermi/LAT→IceCube（LAT 系对应体搜索 GCN 33248，非探测器；检测仪器为 IceCube）。[分类] tag 保持空（中微子事件口径）；sub_tag 留空。[测光检索（2026-10-26）] 入库 1 行：GCN 33270 BOOTES-4/MET Clear 19.3±0.07 3σ 上限（best-fit 位置，Tmid-T0=2.274 d，6×300 s coadd 半宽 900 s）；同表 3 行 4FGL 目录源位置单独观测（17.67 等）系目录源候选点不属本源 best-fit 位置，不入 lc 录 comment；GCN 33248/33256 伽马与中微子搜索不入库；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（中微子事件）→ 本 PR 补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 补亚秒：GCN 33244 精化时刻 06:20:54.42 UT（Bronze alert）；t0_basis 由 meta_trigger 更正为 GCN 精化时刻",
+    "t0_basis": "GCN 33244（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
