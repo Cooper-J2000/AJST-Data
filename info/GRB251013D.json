@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB251013D",
-  "alias": [],
-  "ra": 46.8919,
-  "dec": 8.7859,
-  "T0": "2025-10-13T18:17:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB251013762"
+  ],
+  "ra": 46.901,
+  "dec": 8.8,
+  "T0": "2025-10-13T18:17:00.388Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2025-10-13T18:17:00.388Z（trigger 782072225.388414 / 251013762）；GCN 42224 整秒 18:17:00 UT、GCN 42280 亚秒 18:17:00.39 UT、GCN 42244（GUANO）T0: 2025-10-13T18:17:00.39 UTC 三方互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 300.0,
-  "pos_ref": "GCN 42244",
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 42244（Swift/BAT-GUANO 弧分级定位）：RA, Dec = 46.901, 8.800 deg，estimated uncertainty of 5 arcmin radius（NITRATES sqrt(TS)=27.6，16.384 s bin，T0 起）；原文未标注置信水平（pos_error_confidence 留空）；原库 ra/dec=46.8919/8.7859 系 GCN 42291 XRT Source 1 位置（5.6″/90%，未确认余辉候选）误配 GUANO 误差，已回退为 GUANO 官方定位",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Fermi/GBM trigger 782072225.388414（GRB251013762，GCN 42224/42280）+Swift/BAT-GUANO 弧分级定位（GCN 42244，BAT 未在轨定位，Fermi 通告触发 GUANO，sqrt(TS)=27.6）；GCN 42233（MASTER）/42258（Swift ToO）/42264（LAST）/42291（XRT）/42299（UVOT）同指此源。同日划界：251013A（GBM trigger 782044789 08:04 时段，GCN 42213/42214/42218/42252）、251013B（GCN 42215/42219/42234）、251013C（GBM 08:24 时段，GCN 42221 起约 30 篇，z=0.572 NOT 光谱）均另事件。[T0] 原库 2025-10-13T18:17:00Z 缺亚秒，更正为 FERMIGBRST trigger_time=18:17:00.388Z（GCN 42280 .39、GCN 42244 .39 互证）。[定位回退] 原库 ra/dec=46.8919/8.7859 系 GCN 42291 XRT Source 1 位置（5.6″/90%，距 GBM 定位 37″）误配 pos_error=300″（GUANO 5′）——XRT 两未编目源（Source 1 46.8919/+8.7859 5.6″、Source 2 46.9703/+8.8156 6.0″）原文均明言无确切变暗、cannot identify which, if any, is the afterglow，且 UVOT 在 Source 2 附近探测的未编目源亦 no evidence of fading（GCN 42299 三历元 white 20.98/20.78/20.68）——两候选均未证实为余辉，坐标不能采信单一候选；按 §3.1 回退为唯一的官方 GRB 定位 BAT-GUANO 46.901/8.800（5′=300″，pos_ref 原有正确），候选源信息全部移入 comment 备查（B 档记录方式；UVOT 三行探测照录入 lc 并注明对象未证实）。[alias] 新增「GRB251013762」（FERMIGBRST GRBNAME / HEASARC Source Designation，tdat name 字段原文用名，GCN 42224/42280 记 trigger 251013762）。[分类] tag 补 grb；sub_tag=lgrb：GCN 42224 原文 a likely LONG GRB；t90=41.9849±2.36026 s（FERMIGBRST，50-300 keV）、GCN 42280 记 duration (T90) about 42 s——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 42280（GBM 精化）：Comptonized Epeak=129±12 keV、alpha=-0.9±0.1（Band 同样拟合 Epeak=103±16）、fluence=(4.4±0.2)e-06 erg/cm2（10-1000 keV，T0-2.0~T0+53.2 s）、1-s 峰流量 0.83±0.03 ph/cm2/s（T0+4.9 s 起）；X 射线内容不入库（GCN 42291）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「251013」全形态：命中 68 篇——7 篇属本源（42224/42233/42244/42258/42264/42280/42291/42299 中除 ToO 外 7 篇有内容），其余属同日 A/B/C 暴（划界如上，C 暴测光极丰富但属 C）；入库 8 行：GCN 42233 MASTER-SAAO 4 检查点上限（GBM 初报 5.4° 框）+GCN 42299 UVOT white 探测 3 行（Source 2 附近未证实对应体，照录备查）+GCN 42264 LAST coadd 上限 1 行（21.14 AB，BAT-GUANO 区）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 251013D」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 8 行（3 探测+5 上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 782072225.388414 trigger_time=2025-10-13T18:17:00.388Z，补亚秒）；定位回退为 BAT-GUANO 官方值（XRT 候选未证实，原值保留于 comment）",
+    "t0_basis": "FERMIGBRST trigger_time（GCN 42224/42280/42244 互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
