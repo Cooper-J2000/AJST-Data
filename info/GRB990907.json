@@ -1,29 +1,36 @@
 {
   "transient_id": "GRB990907",
   "alias": [],
-  "ra": 156.6738,
-  "dec": -13.6899,
-  "T0": "1999-09-07T17:34:00Z",
-  "T0_ref": null,
+  "ra": 112.699,
+  "dec": -69.406,
+  "T0": "1999-09-07T17:35:11Z",
+  "T0_ref": "external/saxgrbmgrb 990907 行 trigger_time=1999-09-07T17:35:11Z（GRBM 40-700 keV）与 external/heasarc_grbcat 990907B 行 17:35:11.8Z（ECT，BATSE+BeppoSAX+IPN）一致；GCN 404（触发通告）仅记 around 17:34 U.T.（近似值，差 ~71 s 在 around 语义内）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BeppoSAX/WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 360.0,
+  "pos_ref": "GCN 405（BeppoSAX Mission Scientist）：refined WFC position R.A.=112.699 Decl.=-69.406（equinox 2000），error radius 6′；X 射线余辉互证：BeppoSAX NFI（GCN 409：1SAXJ0731.2-6928，7h31m12s -69°28′10″，3′，likely the X-ray afterglow，距 WFC 心 4′）；原库 ra/dec=156.6738/-13.6899 系 GCN 407 IPN 环带中心（该环带在天球另一侧，r=62.1237°±0.080° 3σ）——环心非源位置，bot 误抽取，已更正",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] BeppoSAX GRBM+WFC 触发定位（GCN 404/405）+BATSE（GRBCAT 990907B）+Ulysses IPN 三角（GCN 407：环带与 NFI 误差圆交出 ~100 平方角分四角框，07h29-31m -69°18-30′）+BeppoSAX NFI X 射线余辉 1SAXJ0731.2-6928（GCN 409：1070 s MECS，(2.0±0.6)e-2 cts/s，likely the X-ray afterglow——X 射线不入库）；GRBCAT 990907A（02:19:09Z IPN 另事件）、GRB990908（GCN 406 另暴，其Mount Stromlo 变源系银河系短周期变星划界）均非本源。全库检索「990907」命中 9 篇（404-409/413/415+16209 时间戳巧合）全部属本源系列。[T0] 原库 T0=1999-09-07T17:34:00Z 系 GCN 404/405 的近似/邮件时刻（around 17:34 UT；GCN 405 头 Date: Sept.7, 1999, 17:34 UT 亦为邮件时刻），已更正为目录触发值 17:35:11Z（saxgrbmgrb=GRBCAT ECT 17:35:11.8 一致）。[定位更正] 原库 ra/dec=156.6738/-13.6899 系 GCN 407 IPN 环带中心坐标（环带在天球另一侧，非源位置——bot 把环心当源位置误抽取），已更正为 GCN 405 WFC refined 定位 112.699/-69.406（6′）；补 pos_error=360″、pos_ref=GCN 405；原文未标注置信水平（pos_error_confidence 留空）；IPN 交框（GCN 407 四角）与 NFI 余辉位置备查。[Trigger_Instrument] IPN→BeppoSAX/WFC（IPN 系定位方法非触发仪器）。[分类] tag=grb 原有；sub_tag=lgrb：t90=145.0±6.7 s（external/saxgrbmgrb 990907 行，40-700 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] saxgrbmgrb 990907 行：fluence=8.41e-05 erg/cm2（40-700 keV，截断显示）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「990907」全形态：命中 9 篇（404-409/413/415+16209 时间戳巧合）全部属本源系列；入库 9 行（均上限）：GCN 408 Mount Stromlo 差分 V>20.3（两历元中点）+GCN 413 表 8 行（AAT V 23.2@8.7698/Danish V 23.0@9.3736/R 23.0@9.3755/I 22.5@9.3854/AAT V 22.7@10.7806/VLT V 23.5@10.4111/R 23.6@10.4153/AAT V 23.2@18.3736，3σ）；GCN 415（MJUO 三帧 R+I 宽带，仅 vs DSS-2 无数值）不入库录 comment；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；external/saxgrbmgrb/heasarc_grbcat 行仅目录参数；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（1999 年）→ 本 PR 补 9 行（均上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为目录触发值 17:35:11Z（saxgrbmgrb=GRBCAT ECT；GCN 404 仅 around 17:34 UT 近似）；原 bot 值 17:34:00Z 系邮件/近似时刻，原值与判据保留于 comment",
+    "t0_basis": "external/saxgrbmgrb 与 heasarc_grbcat trigger_time（GCN 404 around 17:34 UT 近似一致）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
