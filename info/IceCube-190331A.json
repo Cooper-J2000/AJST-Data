@@ -1,6 +1,8 @@
 {
   "transient_id": "IceCube-190331A",
-  "alias": [],
+  "alias": [
+    "IC190331A"
+  ],
   "ra": 337.68,
   "dec": -20.7,
   "T0": "2019-03-31T06:55:43.440Z",
@@ -14,7 +16,7 @@
   "pos_ref": "GCN 24028",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "审核 fsy（2026-10-27）：(1) T0：原 bot 值 2019-03-30T06:55:43Z 日期少一天（t0_basis=meta_trigger，Issue #68 bot 值不可信）；官方触发时刻 2019-03-31 06:55:43.44 UT（GCN 24028 原文 Date/Time 行；GCN 24040 亦引 detected on 2019-03-31 06:55:43.44 UT (T0)，双证），亚秒 .44 为触发仪器原始精度按 §3.2 保留。原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=「meta_trigger」按 §3.10 改写，原值记于此。(2) 身份：IceCube HESE 流高能中微子候选（μ 中微子，沉积 ~198736 PE，Krauss+2020；AMON 通告 15947448_132379），官方精化位置 RA=337.68、Dec=-20.70 deg J2000 与库内 ra/dec 一致；官方名称各处一致（GCN 24028/24039/24040/24094 与 Krauss+2020 均用 IceCube-190331A），无其他有出处别名形态，alias 保持 []。(3) 定位误差：来源只给逐轴不对称 90% PSF containment 误差（RA +0.23/−0.34、Dec +0.30/−0.48 deg，GCN 24028）与 90% 包含椭圆面积 0.35 deg²（Krauss+2020）；GCN 24094 述 90% 包含半径按方位角 0.23–0.48 d；未给单一圆半径，不自行换算 → pos_error 留空，全部值并列于此。(4) redshift：bot z=0.6（redshift_ref=gcn_llm:circulars_meta）实为 GCN 24094 中候选对应体 AGN WISEA J222925.59-201846.0（=2MASS J22292559-2018462=1WGA J2229.4-2018）的光测红移 z~0.6；Krauss+2020 X-shooter 光谱实测该 AGN z=0.27（Mg II/Ne V/Hβ/Hα 发射线）；中微子源对应体未确证，两值均非本源红移 → redshift/redshift_type/redshift_ref 置 null，两值并列备查。(5) tag/sub_tag：tags.json 无中微子事件类目，tag 保持 []（库内 88 个 IceCube 源均为空），新增类目建议见 PR 待决事项。(6) 零测光检索留证（2026-10-27）：仓内 gcn/archive 本地未获取，经 GCN 网站检索事件页 https://gcn.nasa.gov/circulars/events/icecube-190331a 命中 5 篇（24028/24034/24039/24040/24094）：24034 MASTER-OAFA 巡视 mlim=19.1（2019-04-01 09:04:32 UT 起，无单点位置/曝光时长，不入行）；24040 Fermi-LAT 积分 γ 上限（ph/cm²/s 量级，非带内测光）；24094 Swift-XRT X 射线（暂不处理）；24028/24039 无测光。仓内 external/rssgrbag 0 条、external/grbsn_webtool 无该事件、external/*/normalized.jsonl 无命中。文献：Krauss+2020（MNRAS 497, 2553；OUP VoR 403 不可达，尝试路径=OUP 文章页 WebFetch/webReader；取 arXiv v1 2007.10193 已接收版并用其原始 LaTeX 源逐值核对）：UVOT uvw2 检出候选对应体 AGN AB 19.64±0.08(stat)±0.03(sys)（2019-04-16，2829 s 净曝光）→ 补 1 行；ATCA 5.5+9 GHz 叠加单值上限 12.36/27.62/46.72 μJy/beam（XRT 源 1/2/3，2019-04-21/22，论文表 2）无单频可标，按附录 A 规则 3 暂不入库（见 PR 待决事项）；UVOT u 波段巡区平均 5σ 上限 u=20.3 mag AB（2019-04-09 7 点 tiling，无单点位置）→ comment 备查。TNS 不适用（无 AT/SN 命名）。本 PR 共补 1 行。",
+  "comment": "审核 fsy（2026-10-27）：(1) T0：原 bot 值 2019-03-30T06:55:43Z 日期少一天（t0_basis=meta_trigger，Issue #68 bot 值不可信）；官方触发时刻 2019-03-31 06:55:43.44 UT（GCN 24028 原文 Date/Time 行；GCN 24040 亦引 detected on 2019-03-31 06:55:43.44 UT (T0)，双证），亚秒 .44 为触发仪器原始精度按 §3.2 保留。原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=「meta_trigger」按 §3.10 改写，原值记于此。(2) 身份：IceCube HESE 流高能中微子候选（μ 中微子，沉积 ~198736 PE，Krauss+2020；AMON 通告 15947448_132379），官方精化位置 RA=337.68、Dec=-20.70 deg J2000 与库内 ra/dec 一致；名称：GCN 24028/24039/24094 与 Krauss+2020 用 IceCube-190331A；GCN 24040 原文用 IC190331A、GCN 24034 用 IceCube 190331A（空格形），故 alias 收 IC190331A（GCN 24040 原文用名），空格形不另收。(3) 定位误差：来源只给逐轴不对称 90% PSF containment 误差（RA +0.23/−0.34、Dec +0.30/−0.48 deg，GCN 24028）与 90% 包含椭圆面积 0.35 deg²（Krauss+2020）；GCN 24094 述 90% 包含半径按方位角 0.23–0.48 d；未给单一圆半径，不自行换算 → pos_error 留空，全部值并列于此。(4) redshift：bot z=0.6（redshift_ref=gcn_llm:circulars_meta）实为 GCN 24094 中候选对应体 AGN WISEA J222925.59-201846.0（=2MASS J22292559-2018462=1WGA J2229.4-2018）的光测红移 z~0.6；Krauss+2020 X-shooter 光谱实测该 AGN z=0.27（Mg II/Ne V/Hβ/Hα 发射线）；中微子源对应体未确证，两值均非本源红移 → redshift/redshift_type/redshift_ref 置 null，两值并列备查。(5) tag/sub_tag：tags.json 无中微子事件类目，tag 保持 []（库内 88 个 IceCube 源均为空），新增类目建议见 PR 待决事项。(6) 零测光检索留证（2026-10-27）：仓内 gcn/archive 本地未获取，经 GCN 网站检索事件页 https://gcn.nasa.gov/circulars/events/icecube-190331a 命中 5 篇（24028/24034/24039/24040/24094）：24034 MASTER-OAFA 巡视 mlim=19.1（2019-04-01 09:04:32 UT 起，已按 G 波段视场上限入 lc，time_err 因原文未给曝光时长留空）；24040 Fermi-LAT 积分 γ 上限（ph/cm²/s 量级，非带内测光）；24094 Swift-XRT X 射线（暂不处理）；24028/24039 无测光。仓内 external/rssgrbag 0 条、external/grbsn_webtool 无该事件、external/*/normalized.jsonl 无命中。文献：Krauss+2020（MNRAS 497, 2553；OUP VoR 403 不可达，尝试路径=OUP 文章页 WebFetch/webReader；取 arXiv v1 2007.10193 已接收版并用其原始 LaTeX 源逐值核对）：UVOT uvw2 检出候选对应体 AGN AB 19.64±0.08(stat)±0.03(sys)（2019-04-16，2829 s 净曝光）→ 补 1 行；ATCA 5.5+9 GHz 叠加单值上限 12.36/27.62/46.72 μJy/beam（XRT 源 1/2/3，2019-04-21/22，论文表 2）无单频可标，按附录 A 规则 3 暂不入库（见 PR 待决事项）；UVOT u 波段巡区平均 5σ 上限 u=20.3 mag AB（2019-04-09 7 点 tiling，无单点位置）→ comment 备查。TNS 不适用（无 AT/SN 命名）。本 PR 共补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -22,7 +24,11 @@
     "t0_note": "T0 为 IceCube 官方触发时刻 2019-03-31 06:55:43.44 UT（GCN 24028；GCN 24040 同值互证）；原 bot meta_trigger 值 2019-03-30T06:55:43Z 日期少一天，已按官方值修正（原值记于 comment）",
     "t0_basis": "GCN 24028",
     "bot_created": true,
-    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-27"}
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
