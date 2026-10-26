@@ -1,35 +1,46 @@
 {
   "transient_id": "GRB971227",
-  "alias": [],
-  "ra": 194.294,
-  "dec": 59.412,
-  "T0": "1997-12-27T00:30:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 971227",
+    "BATSE 6546",
+    "1SAX J1257.3+5924"
+  ],
+  "ra": 194.4,
+  "dec": 59.25,
+  "T0": "1997-12-27T08:23:06.722Z",
+  "T0_ref": "BATSE trigger 6546（external/batse 快照 trigger_time=1997-12-27T08:23:06.722Z）；HEASARC/BeppoSAX 记 08:23:07 UT（亚秒差 <1 s，取 BATSE 触发仪器值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BATSE-CGRO",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 360,
+  "pos_ref": "BeppoSAX GRBM 目录（external/saxgrbmgrb：RA=194.4, Dec=59.25, error_radius=0.1 deg）；HEASARC GRBCAT grbcat_id 3717 同值（error_radius 0.1 deg，原文未标置信水平）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-10-27。身份：GRB 971227 = BATSE trigger 6546（external/batse，1997-12-27T08:23:06.722Z，T90=6.784±2.052 s），BeppoSAX/HEASARC 记 08:23:07 UT、RA/Dec=194.4/59.25（0.1°）；IPN/ULYSSES 亦参与定位。T0：原值 1997-12-27T00:30:00Z 无通告依据（与任何目录均不符），已改为 BATSE 触发时刻 08:23:06.722Z；亚秒与 SAX/HEASARC 的 08:23:07 差 <1 s，按 §3.2 取触发仪器值，T0_offset 留空。位置：原 ra/dec=194.294/59.412 实为 GCN 21 的候选光学暂现源位置（RA 12h57m08.65s, Dec +59°24′40″），GCN 25/26 已判定该 R=19.5/20.4 天体为恒星/星系、**不是余辉**；本源位置改用 BeppoSAX 误差圈 194.4/59.25（0.1°=360″），pos_error_confidence 因原文未标置信水平留空。分类：BATSE T90=6.784±2.052 s（>20 keV），BeppoSAX GRBM T90=47±5 s（40-700 keV），两者冲突，sub_tag 留空（不自行判定）。红移：无光谱/宿主信息，redshift 留 null。测光：仅收 GRB 位置（BeppoSAX 误差圈）的深上限：GCN 24 的 Palomar r>21（1997-12-28.4 UT）与 Keck-II R>23（1998-01-01.8 UT）、GCN 25 的 Keck-II R~25.5（1997-12-30.8 UT）；GCN 20-23 的 R=19.5/20.4“候选体”经 GCN 25/26 否证为恒星/星系，不作为余辉探测入库；GCN 26 的 R>21.5 是“near proposed OT”位置、非 GRB 位置，未入库；LOTIS（Williams+1999）的 R>12.3/14.2/15.0 为大误差框视场极限、非源位置专用，未入库（摘要值仅记此备查）。测光检索（2026-10-27）：GCN 站检索 971227 命中 9 篇（20/21/22/23/24/25/26/28 及 27 为 GRB971214），逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；arXiv/ADS/SciX/TNS 无 token 或 0 篇（Williams+1999 已作为研究论文登记）；结论：GRB 位置可用上限 3 行，补 3 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 BATSE trigger 6546 时刻 1997-12-27T08:23:06.722Z（external/batse）；原 bot 值 00:30:00Z 无通告依据，已废弃",
+    "t0_basis": "BATSE trigger 6546",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
       "name": "Williams+1999",
+      "url": "https://doi.org/10.1086/312092",
       "title": "LOTIS Search for Early Time Optical Afterglows: GRB 971227",
-      "url": "https://ui.adsabs.harvard.edu/abs/1999ApJ....51....9W/abstract",
-      "bibtex": "@ARTICLE{1999ApJ....51....9W,\n       author = {G. G. Williams and H. S. Park and E. Ables and D. L. Band and S. D. Barthelmy and R. Bionta and P. S. Butterworth and T. L. Cline and D. H. Ferguson and G. J. Fishman and N. Gehrels and D. H. Hartmann and K. Hurley and C. Kouveliotou and C. A. Meegan and L. Ott and E. Parker and R. Porrata},\n       title = {LOTIS Search for Early Time Optical Afterglows: GRB 971227},\n       journal = {Astrophys.J. 519 (1999) L25},\n       year = {1999},\n       doi = {10.1086/312092},\n       eprint = {astro-ph/9902190},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/1999ApJ....51....9W/abstract},\n}",
-      "source": "bot"
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
