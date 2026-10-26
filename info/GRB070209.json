@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB070209",
-  "alias": [],
-  "ra": 46.237,
-  "dec": -47.37,
-  "T0": "2007-02-09T03:33:41Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 070209S",
+    "BAT 259803",
+    "Swift 259803"
+  ],
+  "ra": 46.213,
+  "dec": -47.376,
+  "T0": "2007-02-09T03:33:41.947620Z",
+  "T0_ref": "GCN 6086；external/swift_bat + external/swift_grb 目录 trigger_time（Swift/BAT trigger 259803）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 0.314,
-  "tag": [],
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
   "pos_error": 168.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 6087",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "Swift/BAT 触发（trigger=259803，GCN 6086 原文：At 03:33:41 UT，the Swift Burst Alert Telescope (BAT) triggered and located GRB 070209；短硬暴、BAT 光变单峰约 0.2 s、峰值计数率约 2500 cts/s（15-350 keV））。T0：修正为 Swift/BAT 目录触发时刻 2007-02-09T03:33:41.947620Z（external/swift_bat 与 external/swift_grb 快照一致，MET 192684821.947620）；GCN 6086 仅给整秒 03:33:41 UT（整数秒一致，按 §3.2/§3.8 取触发仪器目录亚秒值）；原 bot T0=2007-02-09T03:33:41Z（extra_data.t0_basis=meta_trigger）系该触发时刻的整秒截断值，已废弃。定位：原 ra/dec=46.237/-47.370 系 GCN 6086 在机初位（原文 uncertainty of 3 arcmin＝180″，radius，90% containment，含系统差），而 pos_error=168″ 却取自 GCN 6087（2.8′）——坐标与误差混拼两个来源且 pos_ref 标注 6087 与坐标不符；改取 GCN 6087 BAT 地面精化定位 RA=46.213/Dec=-47.376（原文 uncertainty of 2.8 arcmin，radius，sys+stat，90% containment，2.8′×60=168″），pos_error=168″ 保持不变，pos_error_confidence=90（原文明示 90% containment），pos_ref=GCN 6087（此时与坐标一致）；Swift/BAT 目录在图定位 46.23567/-47.38798（external/swift_bat 快照）与 MPE Greiner 目录 46.2375/-47.3667（3′，即 6086 在机位）并列备查；external/uvot_grb 目录 POS_ERR=168.0、POS_REF=SGA 相互印证。红移：原 redshift=0.314（redshift_ref=gcn_llm:circulars_meta）系误配——GCN 6101 的 z=0.314 是 XRT source #1 误差圈内一颗星系的红移（Gemini-south GMOS 2400s 光谱，CaII H&K 吸收与 [OII]/[OIII] 发射线）；而 GCN 6095 指明 source #1 距精化 BAT 定位 3.1′、在 BAT 误差圆之外，GCN 6119 于 T+5d/T+9d 复测后官方结论 none of these sources is the afterglow（三源均非余辉），Kann+2011（ApJ 734, 96）附录 B 同判（constant X-ray source outside the BAT error circle…possibly an AGN，论文按样本惯例假设 z=0.5），external/swift_grb 快照 notes 亦记 short duration GRB；Several sources detected in XRT；none are the afterglow (source 1 has z=0.314)；No UVOT detection→ redshift/redshift_type/redshift_ref 置 null，候选星系红移 z=0.314（GCN 6101）留档于此备查，不配给暴本身。t90=0.06800002±0.01788854 s（Swift/BAT 目录，external/swift_bat 快照，15-350 keV；GCN 6087 记 T90=0.1±0.02 s 一致），按目录 t90 判 sgrb（未自算）；fluence=2.035773e-08 erg/cm2（15-150 keV，90%，Swift/BAT 目录；GCN 6087 记 1.1±0.3e-08 一致量级）、1s 峰值光子流量=0.37±0.126 ph/cm2/s（15-150 keV，Swift/BAT 目录；GCN 6087 记 2.4±0.6 不同模型口径，并列备查）。X 射线：XRT 于触发后 78s 开始观测，12 orbits 共 26.9 ks 误差圆内未发现源（GCN 6095），T+5d/T+9d 复测 19.4 ks+22.8 ks 仍无源（GCN 6119），误差圆内 0.7-10 keV 计数率 3σ 上限约 7e-4 cts/s（Galactic NH=2.3e20 cm-2、光子指数 2，≈3e-14 erg/cm2/s，GCN 6119）——X 射线数据不入库，仅记录。UVOT：finding chart White（160-650 nm）滤光片 100s 曝光、触发后 83s 开始，未发现候选余辉，3σ 上限约 18.5 mag（GCN 6086），已在 lc（band 由 w 修正为 uvot-white）。测光检索（2026-10-27）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external/rssgrbag 光变 0 命中、grbsn_webtool 无该事件、swift_xrt_live 0 命中、heasarc_grbcat 快照覆盖止于 2005 年不含该暴，uvot_grb/swift_bat/swift_grb/mpe_greiner 等仅目录级参数无光变表；GCN 站逐篇枚举 6080–6560 号（2007-02-09 起发布窗口，共 481 篇，按 subject+body 检索「070209」与触发号「259803」）命中 6 篇：GCN 6086（BAT 检测）、6087（BAT 精化）、6095 与 6119（XRT 分析，无光学测光）、6101（XRT source #1 误差圈内星系红移）、6218（PROMPT/Skynet BVIR 3σ 上限 26 行，本 PR 入库）；Kann+2011（ApJ 734, 96；arXiv:0804.1959 实取 LaTeX 源码核对）附录 B：该暴数据全部为上限、取自 GCN 6086 与 GCN 6218（原文 no significant magnitude limit can be derived，so this burst is not further included in the results），无新测光；Fong+2015（ApJ 815, 102）系 web 检索线索，arXiv API 限流、IOP VoR 被 CAPTCHA 拦截，原文未能实取，列入「未能核实、建议后续补」清单（其样本按题录只收有余辉探测的短暴，预期无本暴可采纳数据）；TNS 不适用（GRB 类，无 AT/SN 命名）→ 本 PR 新增 PROMPT 上限 26 行、修订 UVOT 行 1 行（time 改曝光中点、band 改 uvot-white）。alias：GRB 070209S（MPE Greiner 目录用名，短暴标记 S，external/mpe_greiner 快照 name_alt 与 grbgen.html 链接文本）；BAT 259803、Swift 259803（external/swift_bat、external/swift_grb 快照 name_alt 触发号名，先例 info/GRB080121、info/GRB081017 同款收录）。articles 登记 Kann+2011（本次用于红移处置佐证与「无更多已发表测光」检索结论）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核修正为 Swift/BAT 目录触发时刻 2007-02-09T03:33:41.947620Z（external/swift_bat 与 external/swift_grb 快照一致）；GCN 6086 记触发 03:33:41 UT（整数秒一致）；原 bot 值 2007-02-09T03:33:41Z（meta_trigger）为该触发时刻的整秒截断，已废弃",
+    "t0_basis": "GCN 6086；Swift/BAT 目录（external/swift_bat、external/swift_grb）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Kann+2011",
+      "url": "https://doi.org/10.1088/0004-637X/734/2/96",
+      "title": "The Afterglows of Swift-era Gamma-Ray Bursts. II. Type I GRB versus Type II GRB Optical Afterglows",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
