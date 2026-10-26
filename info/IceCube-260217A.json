@@ -3,25 +3,31 @@
   "alias": [],
   "ra": 75.89,
   "dec": 14.63,
-  "T0": "2026-02-17T05:47:04Z",
-  "T0_ref": null,
+  "T0": "2026-02-17T05:55:24.52Z",
+  "T0_ref": "GCN 43768",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 43768",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份核验：IceCube 高能中微子 track-like 事件（Bronze stream，p_astro(signalness)=0.31，FAR=2.768/yr，探测器正常工作状态），官方通告 GCN 43768（Zegarelli，2026-02-17）。ra/dec 与官方精化定位一致（75.89, 14.63）；两路互证：① IceCube 官方通告 GCN 43768（检测时刻 05:55:24.52 UT、90% PSF containment RA=75.89 (+0.52/−0.56) deg、Dec=14.63 (+0.45/−0.43) deg）；② 后续设备通告互证——GCN 43782 MASTER（trigger No. 80851825，引 alert 定位 R=0.68 deg，由「1 days 73773 sec after trigger time at 2026-02-19 02:24:58 UT」反算 T0=05:55:25 UT，与官方一致；其表内 Tmid−T0 列亦与官方 T0 亚秒级自洽）、GCN 43781 Fermi-LAT（引同一时刻与坐标）。取数日期 2026-10-27（gcn.nasa.gov）。T0：取 IceCube 官方检测时刻 2026-02-17T05:55:24.52Z（GCN 43768）；bot 原值 2026-02-17T05:47:04Z 为 GCN 43788 所载 1000 s 中微子搜索窗的起点（05:47:04.510–06:03:44.510 UTC，窗中心即事件时刻），并非触发时刻（Issue #84 同型），原值与原 t0_note（「t0 为 meta trigger-time（真实触发时刻）」）/t0_basis（「meta_trigger」）失真、已改写并留档于此。定位：官方为 90% PSF 非对称误差（RA +0.52/−0.56 deg、Dec +0.45/−0.43 deg，GCN 43768），无单值半径，故 pos_error 留 null、区间记于此；pos_error_confidence=90（来源明示 90% PSF containment）；初始通告误差半径 0.68 deg（GCN 43782 引 alert notice）。事件性质：90% 定位区内无 Fermi 4FGL-DR4/3FHL 已知伽马射线源（GCN 43768/43781）。同日 GCN 43780「GRB 260217A」（Fermi GBM trigger 793012697，T0=09:18:12.01 UT，RA=278.43 Dec=−5.30）为独立 GBM 长暴，与本源无关。其他上限不入库备查：Fermi-LAT >100 MeV 积分流量上限（GCN 43781，95% conf，光子谱指数固定 2.0：约 17 年 <2.0e-10、T0 前 1 月 <5.5e-09、T0 前 1 天 <1.7e-07 ph cm^-2 s^-1）；IceCube 附加中微子上限（GCN 43788：1000 s 窗 E^2dN/dE(1 TeV)<0.14、2 天窗 <0.16 GeV cm^-2）。tag/sub_tag：tags.json 无中微子 alert 类目，留空（建议新增 neutrino-alert，见 PR 待决事项）。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（记 0 篇）；external/rssgrbag、external/grbsn_webtool 及 external/ 全目录 grep「IC260217A/IceCube-260217A/260217A」0 命中；GCN 站（gcn.nasa.gov/circulars）按事件号检索得 6 篇 Circular（43768/43780/43781/43782/43788/43911）逐篇打开，其中 2 篇含可用光学上限——GCN 43782 MASTER-Net 13 行（filter C=clear）、GCN 43911 ZTF 2 行（g/r），共补 15 行 upperlimit；43780 为无关 GBM GRB，43781/43788 仅积分流量与中微子上限（不入库）；文献回退 Crossref/OpenAlex/arXiv/SIMBAD TAP 按「IceCube-260217A」检索均 0 命中（2026 年新事件，无研究论文属正常）→ 共补 15 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2026-02-17T05:55:24.52Z 为 IceCube 官方通告（GCN 43768）检测时刻；bot 原值 2026-02-17T05:47:04Z 为 GCN 43788 所载 1000 s 搜索窗起点，非触发时刻（原值留档见 comment）",
+    "t0_basis": "GCN 43768（IceCube 官方通告检测时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
