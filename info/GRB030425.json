@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB030425",
-  "alias": [],
+  "alias": [
+    "GRB 030425"
+  ],
   "ra": 233.297,
   "dec": 26.292,
-  "T0": "2003-04-25T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2003-04-25T15:48:31Z",
+  "T0_ref": "GCN 2173",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 2173",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（fsy@代理 2026-10-27）：[身份] IPN 三角定位暴——GCN 2173（IPN 643，Hurley/Cline 等）：Ulysses、Mars Odyssey（HEND & GRS）、Konus-Wind 于 4 月 25 日 56911 s（当日秒数 SOD，=15:48:31 UT）观测本暴；初步 3σ 单误差盒面积约 2300 平方角分，盒中心 15h33m11.26s +26°17′30.30″（J2000）=233.29691667、+26.29175，库内 ra/dec=233.297/26.292 为其圆整值；GRBCAT 5642（heasarc_grbcat 快照）trigger_time=2003-04-25T15:48:31.000Z、observatories=IPN/ULYSSES、region=box、reference=2003GCN..2173....1H 同值互证；MPE Greiner 快照无该源。全库按盒中心 ±0.7° 与 T0 日期扫描，无重复建档。用名「GRB 030425」（GRBCAT name 字段、GCN eventId）入 alias，GCN 标题连写形 GRB030425 与源 ID 同形不另入。[T0] bot 原值 2003-04-25T00:00:00Z（t0_note=「t0 为触发日 00:00 UT（名字日期）」、t0_basis=name_date）为名字日期占位值，非触发时刻；按 §3.8 采触发仪器官方通告 GCN 2173 值 56911 s=15:48:31 UT（整秒精度，不自行补亚秒），GRBCAT 同值；T0_ref=GCN 2173；T0_offset 保持 null。[定位] 误差盒为四边形非圆形，pos_error 留空；原文用词 preliminary, 3 sigma error box，pos_error_confidence=3sigma；pos_ref 原为 null，改 GCN 2173。[分类] 无目录 t90 可判：GRBCAT 5642 两行 t90/t50 均空，t_other=500 s 且目录自注 Duration definition not specified（与 GCN 2173 Ulysses duration over 500 seconds 同源，为持续时长而非 t90）；按裁定不自算，sub_tag 留空待决。[非 SCHEMA 量] fluence=5.9E-05 erg/cm2（25-100 keV，GCN 2173 Ulysses；GRBCAT flux 表同值）；峰流量=1.6E-06 erg/cm2 s（0.50 s，GCN 2173）。[测光] 原行=GCN 2182（CrAO AT-64，FOV 53×35′）：46×120 s 无滤光片（unfiltered）影像覆盖误差盒约 75%，时间窗 Apr 26 18:28:33.94 – Apr 27 01:33:05.92 UT（原文 26.66 - 33.75 hrs after burst；按本 T0 复算为 26.6675 - 33.7430 h，差 ≤0.008 h ≤27 s，自洽）；全部影像 3σ 极限星等约 19.5，与 DSS 对比无光学暂源。band=G 正确（无滤光片）；mag_system 原文未声明，留空。重算：time=观测窗口中点 108738.93 s（中点/半宽为约定口径，真实曝光中点不可恢复）、time_err=窗口半跨 12735.99 s、mjd=52755.9172446（7 位小数，与 time 自洽）；原行 time=165649.0 s 锚定 bot 名字日期 T0，其 mjd=52755.917233796295 对应 Apr 26 22:00:49.000 UT，恰为窗口中点 Apr 26 22:00:49.93 UT 的亚秒截断值（绝对时刻本已正确、仅历元错），原值留存备查；GRBCAT afterglow 表 record 2191（AT-64/CAO、Unfiltered、Limit 19.5 mag、reference=2003GCN..2182....1R）同值互证，其 obs_time=52755.7694444（18:28 UT）为窗口起点按分圆整，属目录快照口径、不改。[测光检索（2026-10-27）] 仓内 gcn/archive 本地未获取（0 文件）；external/rssgrbag/lightcurve.jsonl 无该源；external/grbsn_webtool/SourceData 无该事件；external/konus_wind（ApJ 850,161 / ApJ 908,83 表）无 030425；external/uvot_grb 不适用（Swift 2004-11 才升空）；MPE Greiner 快照无该源；GCN 站事件页 grb-030425 共 2 篇（2173 定位、2182 CrAO 上限），已逐篇打开全文核对；其后 2183–2192 号逐条核对 SUBJECT 行，均无本暴（无精化定位、无后续测光通告）；arXiv API（export.arxiv.org）检索 all:\"GRB 030425\" 与 all:\"GRB030425\" 均 0 条；Web 文献检索未见本源正式发表文章（仅 GCN 通告与 GRBCAT 收录；GCN 2182 所引覆盖图页 grb.rssi.ru/GRB030425 已失效不可达）；TNS 不适用（2003 年、无光学对应体、无 TNS 命名）。结论：无新可用测光，本 PR 不新增行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "3sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "2026-10-27 审核：原 t0_note=「t0 为触发日 00:00 UT（名字日期）」、t0_basis=name_date 连同 bot 原 T0=2003-04-25T00:00:00Z 为名字日期占位值，非触发时刻；T0 已改为 IPN 触发时刻（GCN 2173 SOD 56911 s=15:48:31 UT，GRBCAT 5642 同值），详见 comment",
+    "t0_basis": "GCN 2173；GRBCAT 5642",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@代理",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
