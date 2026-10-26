@@ -1,27 +1,32 @@
 {
   "transient_id": "IceCube-240721A",
   "alias": [],
-  "ra": 354.7409079,
-  "dec": 23.6986176,
-  "T0": "2024-07-21T16:17:25Z",
-  "T0_ref": null,
+  "ra": 354.99,
+  "dec": 22.67,
+  "T0": "2024-07-21T16:17:25.800Z",
+  "T0_ref": "GCN 36918（IceCube 官方通告）：On 2024-07-21 at 16:17:25.8 UT IceCube detected…（Bronze alert，FAR=1.376/yr，离线精化后时刻，触发仪器自给亚秒）；原库 16:17:25Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.096,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 36918（IceCube 离线精化方向）：RA=354.99 (+1.08/-1.14 deg) Dec=22.67 (+1.38/-1.14 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；原库 ra/dec=354.7409079/23.6986176 系 AMON 初值（距精化值 ~1.1°），已被精化值替代",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 37195",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube Bronze 径迹中微子候选事件（GCN 36918；AMON notice 139674_30853199，FAR=1.376/yr）；跟随观测：Fermi-LAT（GCN 36921）、IceCube 附加中微子搜索（GCN 36927）、ZTF/GROWTH 光学巡检（GCN 36929：两候选 AT2023qqp/AT2024pge）。[redshift 去污染] 原库 redshift=0.096（redshift_ref 引 GCN 37195）源自该通告对 ZTF 候选 AT2024pge 的光谱观测（broad balmer lines z=0.096，SN II 型，M_g=-18.5），但 GCN 37195 原文结论即为「both transients are likely unrelated to IceCube-240721A」（AT2024pge 无 CSM 相互作用窄线证据；AT2023qqp z=0.64 系 AGN 活动且 400 天历史活动、一天耀发恰逢中微子到达系 chance）——两个候选均被光谱否证，宿主红移不挂源，redshift 置 null（GRB240514B/IceCube-201115A 同型先例）。[命名陷阱划界] 「GRB 240721A」名号属 GBM trigger 743243582/240721356（GCN 36914：08:32:57 UT，122.2/7.1），该触发经 GCN 36916 官方撤回：「in fact not due to a GRB. This trigger is likely due to a solar flare」——与本中微子事件（16:17:25.8 UT，354.99/22.67）时间差 ~7.7 h、角距 ~16°（计算），无任何关联；GCN 37195 中「IceCube-240808A」系该文对 240721A 的笔误（GCN 36918 为本源通告，佐证 36929/37195 链属本源）。[T0] 原库 16:17:25Z 系 GCN 36918 精化时刻 16:17:25.8 UT 的整秒截断，补亚秒 .800Z。[定位] 原 ra/dec=354.7409079/23.6986176 系 AMON 初值（距精化值 ~1.1°），已被精化值替代：ra/dec=354.99/22.67；90% PSF 不对称（RA +1.08/-1.14、Dec +1.38/-1.14 deg），pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] IceCube 原有正确。[分类] tag 保持空（中微子事件口径）；sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「240721A/IC240721A/IceCube-240721A」全形态：命中 7 篇——GCN 36918/36921/36927/36929/37195 属本源，36914/36916 属被撤回的同名 GBM 触发（划界）；入库 2 行：GCN 36929 ZTF g/r 典型深度上限 2 行（21.0，区域统计深度照录注记、time_err 留空）；两候选暂现体（AT2023qqp AGN/AT2024pge SN II）随否证不入库；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 有 AT2023qqp/AT2024pge 条目但均系否证候选不挂源 → 本 PR 补 2 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 补亚秒：GCN 36918 精化时刻 16:17:25.8 UT（Bronze alert）；t0_basis 由 meta_trigger 更正为 GCN 精化时刻",
+    "t0_basis": "GCN 36918（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
