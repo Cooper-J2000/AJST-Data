@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 335.74,
   "dec": 1.42,
-  "T0": "2022-12-24T00:55:09Z",
-  "T0_ref": null,
+  "T0": "2022-12-24T00:55:09.300Z",
+  "T0_ref": "GCN 33097（IceCube 官方通告）：On 2022-12-24 at 00:55:09.3 UT IceCube detected…（Bronze alert，FAR=4.116/yr，离线精化后时刻，触发仪器自给亚秒）；原库 00:55:09Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 33097（IceCube 离线精化方向）：RA=335.74 (+1.01/-0.72 deg) Dec=1.42 (+0.41/-0.30 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=335.74/1.42 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube Bronze 径迹中微子候选事件（GCN 33097；AMON notice 137469_77414913，FAR=4.116/yr）；跟随观测：BOOTES-4/MET 光学上限（GCN 33102）、Fermi-LAT（GCN 33103）、IceCube 附加中微子搜索（GCN 33118）。同日划界：最近伽马源 4FGL J2223.3+0102（0.39°，GCN 33097 原文）系目录源非探测。全库检索「221224A」命中 4 篇全部属本源。[T0] 原库 00:55:09Z 系 GCN 33097 精化时刻 00:55:09.3 UT 的整秒截断，补亚秒 .300Z。[定位] ra/dec=335.74/1.42 原值即 GCN 33097 精化方向（保留，逐位一致）；90% PSF containment 不对称（RA +1.01/-0.72、Dec +0.41/-0.30 deg），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] IceCube 原有正确。[分类] tag 保持空（中微子事件，与库内既有 IceCube-* 源口径一致）；sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「221224A/IC221224A/IceCube-221224A」全形态：命中 4 篇全部属本源；入库 1 行：GCN 33102 BOOTES-4/MET Clear 18.90±0.05 3σ 上限（5×60 s 中点；同表 4FGL J2223.3+0102 行系另一目标不入本源 lc）；GCN 33103/33118 伽马与中微子搜索不入库；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（中微子事件）→ 本 PR 补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 补亚秒：GCN 33097 精化时刻 00:55:09.3 UT（Bronze alert）；t0_basis 由 meta_trigger 更正为 GCN 精化时刻",
+    "t0_basis": "GCN 33097（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
