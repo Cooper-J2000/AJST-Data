@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 200.11,
   "dec": 48.29,
-  "T0": "2026-07-12T10:58:28Z",
-  "T0_ref": null,
+  "T0": "2026-07-12T11:06:48.980Z",
+  "T0_ref": "GCN 45141（IceCube 官方通告）：Time: 11:06:48.98 UT（Bronze alert，离线精化后时刻）；原库 10:58:28Z 与触发时刻差 ~8.5 min，出处不明，已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 45141（IceCube 离线精化方向）：RA=200.11 (+0.7/-0.66 deg) Dec=48.29 (+0.47/-0.44 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=200.11/48.29 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube Bronze 径迹中微子候选事件（GCN 45141；精化方向 200.11/48.29）。跟随观测：LAST 光学上限（GCN 45157：覆盖 90% footprint 无候选，限深 20.1 AB @T0+31.8 h）、Fermi-LAT（GCN 45146）、ZTF（GCN 45168：无候选）、IceCube 附加搜索（GCN 45159）。[T0] 原库 10:58:28Z 与 GCN 45141 精化时刻 11:06:48.98 UT 差 ~8.5 min（bot 值出处不明），已更正。[定位] ra/dec=200.11/48.29 原值即精化方向（保留）；不对称 PSF→pos_error 留空照录。[Trigger] IceCube 原有正确。[分类] tag/sub_tag 保持空（中微子事件口径）。[测光检索] 入库 1 行：GCN 45157 LAST 限深 20.1 AB；GCN 45146/45159/45168 不入库；external/rssgrbag 0 命中；ADS/SciX 401 → 本 PR 补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
