@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 75.89,
   "dec": 14.63,
-  "T0": "2026-02-17T05:47:04Z",
-  "T0_ref": null,
+  "T0": "2026-02-17T05:55:24.520Z",
+  "T0_ref": "GCN 43768（IceCube 官方通告）：On 26-02-17 at 05:55:24.52 UT IceCube detected…（Bronze alert，FAR=2.768/yr，离线精化后时刻，触发仪器自给亚秒）；原库 05:47:04Z 与触发时刻差 ~8 min，出处不明，已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 43768（IceCube 离线精化方向）：RA=75.89 (+0.52/-0.56 deg) Dec=14.63 (+0.45/-0.43 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=75.89/14.63 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube Bronze 径迹中微子候选事件（GCN 43768；FAR=2.768/yr）；跟随观测：MASTER（GCN 43782）、Fermi-LAT（GCN 43781）、IceCube 附加中微子搜索（GCN 43788）、ZTF（GCN 43911：无候选暂现）。划界：GRB 260217A（Fermi GBM，GCN 43780）与本中微子事件仅同名日巧合，划界另事件。全库检索「260217A」命中 6 篇全部属本源系列。[T0] 原库 05:47:04Z 与 GCN 43768 精化时刻 05:55:24.52 UT 差 ~8 min（bot 值出处不明），已更正。[定位] ra/dec=75.89/14.63 原值即 GCN 43768 精化方向（保留，逐位一致）；90% PSF 不对称（RA +0.52/-0.56、Dec +0.45/-0.43），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] IceCube 原有正确。[分类] tag 保持空（中微子事件口径）；sub_tag 留空。[测光检索（2026-10-26）] 入库 13 行（均上限）：GCN 43782 MASTER 13 检查点 Clear 上限（Tmid-T0=160204-160830 s，含台站名截断行照录）；GCN 43911 ZTF 无候选不入库；GCN 43781/43788 伽马与中微子搜索不入库；external/rssgrbag 0 命中；arXiv API 不可用；ADS/SciX API 无 token 实测 401 → 本 PR 补 13 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 更正为 GCN 43768 精化事件时刻 05:55:24.52 UT（原 bot 值 05:47:04Z 差 ~8 min 出处不明）",
+    "t0_basis": "GCN 43768（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
