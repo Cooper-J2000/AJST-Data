@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB990806",
-  "alias": [],
+  "alias": [
+    "GRB 990806B"
+  ],
   "ra": 47.6479,
   "dec": -68.1143,
-  "T0": "1999-08-06T16:28:00Z",
-  "T0_ref": null,
+  "T0": "1999-08-06T14:28:07Z",
+  "T0_ref": "GCN 392（BeppoSAX Mission Scientist）：On Aug.6, 14:28:07 UT a GRB (GRB990806) was detected simultaneously by the GRBM and WFC of BeppoSAX (also BATSE trigger 7701)（触发仪器官方通告亚秒到整秒）；GRBCAT 990806B trigger_time=1999-08-06T14:28:06Z（ECT，差 1 s 备查）；external/saxgrbmgrb 990806B trigger_time=14:28:07Z 一致；原库 16:28:00Z 系 BeppoSAX MAIL n. 99/21 分发时刻（GCN 392 头 Date: Aug.6, 1999, 16:28 UT，Issue #84 家族——邮件时间戳型）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 180.0,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 392（BeppoSAX-WFC refined）：R.A.(2000)=47.6479 Decl.(2000)=-68.1143，error radius 3′——库内 ra/dec 与之逐位一致；X 射线余辉互证：BeppoSAX NFI（GCN 393/401：47.674/-68.113，2′；1SAX J0310.6-6806 衰减 4 倍 likely the X-ray afterglow）；BATSE 定位圆偏 ~2°（GCN 400）备查；原文未标注置信水平（pos_error_confidence 留空）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] BeppoSAX GRBM+WFC 触发定位（GCN 392：14:28:07 UT，refined 47.6479/-68.1143/3′，也 BATSE trigger 7701）+BATSE 观测（GCN 400：FRED 结构，T50=4.93±0.26/T90=17.41±3.84 s，50-300 keV 峰流量 1.60±0.05 ph/cm2/s，注量 (3.29±0.53)e-06 erg/cm2）+BeppoSAX NFI X 射线余辉 1SAX J0310.6-6806 衰减 4 倍（GCN 393/401，X 射线不入库）；GRBCAT 990806B 行（14:28:06Z，47.65/-68.12，BATSE+BeppoSAX+IPN）；MPE 表行（obs_date 1999-08-06）核对。同日划界：GRBCAT 990806A（00:26:13Z IPN）与 990806C（16:42:48Z，36/64，KONUS）均另事件；GCN 392 头 16:28 UT 系 MAIL 分发时刻。全库检索「990806」命中 10 篇（392-401）全部属本源系列。[T0] 原库 T0=1999-08-06T16:28:00Z（t0_basis=meta_trigger）实为 GCN 392 头部 BeppoSAX MAIL n. 99/21 分发时刻（Date: Aug.6, 1999, 16:28 UT，比触发晚 ~2 h，Issue #84 家族——邮件时间戳型新变体），已更正为触发时刻 14:28:07Z（GCN 392 原文；GRBCAT ECT 14:28:06 差 1 s 备查）。[定位] 原 pos_error/pos_ref 空，ra/dec=47.6479/-68.1143 原值即 GCN 392 WFC refined 定位（保留，逐位一致）；补 pos_error=180″（3′）、pos_ref=GCN 392；原文未标注置信水平（pos_error_confidence 留空）；NFI 余辉位置（47.674/-68.113/2′）与 BATSE 圆（偏 ~2°）备查。[Trigger_Instrument] 补 BeppoSAX/WFC（GRBM 触发+WFC 定位；亦 BATSE trigger 7701）。[分类] tag=grb 原有；sub_tag=lgrb：t90=17.408±3.009 s（GRBCAT）=17.41±3.84 s（GCN 400 BATSE 精化）=11.0±2.2 s（saxgrbmgrb）——三来源一致 >2 s，按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 400（BATSE）：1-s 峰流量 1.60±0.05 ph/cm2/s（50-300 keV）、注量 (3.29±0.53)e-06 erg/cm2（>20 keV）、H32 硬度 0.811±0.034。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「990806」全形态：命中 10 篇（392-401）全部属本源系列；入库 11 行（均上限）：GCN 395 CTIO R>23.0+GCN 396 ESO 两晚变源比对限 B>25.2/R>23.5/I>18.0+GCN 397 CTIO R>23.8 与差分限 R>23.3+GCN 398 表 4 行（R 22.0/B 21.5/R 22.8/B 22.4）+GCN 399 LCO R~22.5；GCN 394（Yale UBVRIJHK 无逐带限深数值，completeness threshold R~20.5 录 comment 不入库）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；external/saxgrbmgrb 行仅目录参数；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（1999 年）→ 本 PR 补 11 行（均上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 BeppoSAX 触发时刻（GCN 392：14:28:07 UT，GRBM+WFC 亦 BATSE 7701）；原 bot 值 16:28:00Z 系 MAIL n. 99/21 分发时刻误植（Issue #84 家族），原值与判据保留于 comment",
+    "t0_basis": "GCN 392（BeppoSAX 触发通告；GRBCAT ECT 14:28:06 差 1 s 备查）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
