@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-221224A",
-  "alias": [],
+  "alias": [
+    "IC221224A"
+  ],
   "ra": 335.74,
   "dec": 1.42,
-  "T0": "2022-12-24T00:55:09Z",
-  "T0_ref": null,
+  "T0": "2022-12-24T00:55:09.291Z",
+  "T0_ref": "GCN 33097; GCN 33118",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 33097",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IceCube 高能中微子 track alert（ICECUBE_ASTROTRACK_BRONZE 流，AMON 通告 137469_77414913，GCN 33097），非 GRB；tags.json 无中微子类目，tag/sub_tag 留空（待维护者扩表）。T0：GCN 33097（IceCube 官方）给出事件时刻 2022-12-24 00:55:09.3 UT；GCN 33118（IceCube）1000 s 搜索窗口 00:46:49.291–01:03:29.291 UTC 与 2 d 窗口 2022-12-23 00:55:09.291–2022-12-25 00:55:09.291 UTC 均以 00:55:09.291 UTC 为事件时刻，亚秒取 0.291。原 bot 值 T0=2022-12-24T00:55:09Z（原 extra_data：t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"，t0_basis=meta_trigger，不可信，Issue #68），整数秒一致，按触发仪器亚秒值改写。定位：RA=335.74(+1.01/−0.72 deg)、Dec=+1.42(+0.41/−0.30 deg) J2000，90% PSF containment（GCN 33097；Fermi-LAT GCN 33103 引述一致）；来源未给单值误差半径（非对称），pos_error 留空。测光：GCN 33102 BOOTES-4/MET 对 best-fit position 的 Clear 滤光片 3σ 上限 18.90(0.05) mag（未声明星等系统，未做银消改正），入库 1 行；同表对 4FGL J2223.3+0102（距 best-fit 0.39 deg、在 90% 区域外）的 SDSS-i 上限非本源位置，不入库（原文该行日期笔误 2022-11-24 应为 12-24）。GCN 33103 Fermi-LAT >100 MeV 积分光子上限（ph cm^-2 s^-1，1 d/1 月/14 年积分）为积分流量且 band 为能量串，不入库；GCN 33118 IceCube 附加中微子事件搜索上限（E^2 dN/dE，GeV cm^-2）非电磁测光，不入库。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（0 篇），external/rssgrbag、external/grbsn_webtool/SourceData 及 external/ 全目录 grep 'IC221224A/IceCube-221224A/221224A' 0 命中；GCN 站（gcn.nasa.gov）按 '221224A' 命中 4 篇 Circular（33097、33102、33103、33118，均实际打开核对）→ 补 1 行；文献回退链 Crossref、arXiv API、OpenAlex 检索 'IC221224A'、'IceCube-221224A' 均 0 命中，SIMBAD TAP 无该名条目；TNS 未查（匿名 403，中微子 alert 无 AT/SN 命名）→ 共补 1 行。别名 IC221224A 为 GCN 33103 原文用名。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 中微子事件 IC221224A 的探测时刻（GCN 33097；亚秒 0.291 s 由 GCN 33118 搜索窗口锚定）",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
