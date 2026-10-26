@@ -1,29 +1,38 @@
 {
   "transient_id": "GRB240411A",
-  "alias": [],
-  "ra": 246.889,
-  "dec": 45.01,
-  "T0": "2024-04-11T01:44:59Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 240411A",
+    "bn240411073"
+  ],
+  "ra": 248.823,
+  "dec": 43.618,
+  "T0": "2024-04-11T01:44:58.481Z",
+  "T0_ref": "GCN 36061：Fermi/GBM trigger 734492703.48149（MET 以 2001-01-01 起算、含 5 次闰秒，扣 5 s 后 = 2024-04-11 01:44:58.481 UT）；GCN 36090 记 6298 s UT（01:44:58）；Fermi 正式通告 GRB_TIME 6298.48 SOD",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Glowbug",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1380,
+  "pos_ref": "GCN 36156：改进 IPN 3σ 误差框（BepiColombo/MGNS 加入）中心 248.823/+43.618，框 46′×1′、面积 65 平方角分；pos_error 为外接圆半径（中心到最远角 23.00′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（fsy 2026-10-26）：[原值] T0=2024-04-11T01:44:59Z、T0_ref=null、Trigger_Instrument=Glowbug、ra/dec=246.889/45.01、pos_error=null、pos_ref=null、sub_tag=[]、alias=[]、comment=null、articles=[]。身份：GRB 240411A = Fermi/GBM trigger 734492703 / 240411073（GCN 36061），触发于 2024-04-11 01:44:58 UT；同日 15:32 UT 的 Swift 暴为独立的 GRB 240411B（GCN 36063），两者勿混。T0：改取触发时刻 01:44:58.481。GCN 36061 给出 trigger 734492703.48149（MET 以 2001-01-01 起算、含 2005/2008/2012/2015/2016 共 5 次闰秒，UTC = 纪元 + MET − 5 s = 01:44:58.481 UT），与 GCN 36090 「6298 s UT (01:44:58)」及 Fermi 正式通告 GRB_TIME 6298.48 SOD 一致；原 bot 值 01:44:59Z 实为 Glowbug 用 32 ms 自适应窗定出的爆发起点 01:44:59.000（GCN 36141），不是触发时刻，两者仅差 0.519 s（<1 s），按 §3.2 直接改进 T0、不记 T0_offset。Trigger_Instrument 相应由 Glowbug 改为 Fermi/GBM：真正触发的是 GBM，Glowbug 与 GRBAlpha 均为探测（GCN 36141 / 36068）。定位：原 ra/dec=246.889/45.01 为 GCN 36090 初步 IPN 框中心（面积 4.6 平方度、最大 9.8 度）；改用 GCN 36156 加入 BepiColombo/MGNS 后的改进 IPN 3σ 框中心 248.823/+43.618（框 46′×1′、面积 65 平方角分）。pos_error=1380″ 取该细长框的外接圆半径（中心到最远角 23.00′，与半长轴 23′ 一致；框无正式圆半径）。GBM 最终定位 242.59/40.58（统计 5.4°，GCN 36061）精度远差，不采用。无 X 射线或光学余辉的精确定位。分类：来源互相冲突——GBM 自动通告称 likely LONG GRB（GCN 36061）、IPN 称 long-duration（GCN 36090），GRBAlpha 则称 short-duration 且 T90=1.0 s（GCN 36068）；GBM 目录 T90=3.52±0.09 s（50–300 keV）。不自行判定，sub_tag 留空，交维护者裁决（见 PR 待决）。非本库字段的量（仅备查）：T90=3.52±0.09 s、T50=0.96±0.18 s、fluence=1.74e-6±1.13e-8 erg/cm2（10–1000 keV）、峰值流量=21.1±1.2 ph/cm2/s（64 ms，10–1000 keV）、Epeak=794±179 keV（CPL，观测系）——均为 HEASARC FERMIGBRST（仓内 external/fermi_gbm 快照）；Glowbug 持续时间 0.51 s、总显著度 25.8σ（50 keV–>2 MeV，GCN 36141）；GRBAlpha 峰值 2024-04-11 01:45:00.0 UTC、~4σ（~120–400 keV，GCN 36068）。无红移、无宿主星系测定（无余辉）。光学：GOTO 在改进 IPN 框内未发现新源，5σ 极限 L>19.7（GCN 36164；观测起点 01:57:29 UT、4×90 s、ATLAS-REFCAT2 定标、未做银消改正），已入库 1 行（upperlimit=y）。测光检索（2026-10-26）：本工作区无仓内 gcn/archive 目录，改用 GCN 官方全档 archive.json.tar.gz（45,908 篇 Circular，2026-10-26 下载至仓外临时目录）全文检索——eventId=GRB 240411A 共 6 篇（36061/36068/36090/36141/36156/36164），全文含 \"240411A\" 亦为同 6 篇，其中仅 1 篇含光学数值（GCN 36164）；external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData 均无该源记录；GCN 站事件页 grb-240411a 可达（服务端列出 36061/36068/36090/36156），MPE 汇总页 grb240411A.html（2026-04-18 最后更新）逐条列出上述全部 6 篇、无额外光学/射电；ADS/SciX 检索 \"GRB 240411A\" 仅见 GCN 记录（2024GCN.36061 / 36141 / 36164 等），未见期刊论文；arXiv API 全字段检索 0 命中；TNS 检索 GRB 240411A 与 240411A 均 No results found。结论：除 GCN 36164 的 GOTO 上限外无其他测光或上限；本次共补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "3sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-26 审核修正为 GBM 触发时刻（原 bot 值为 Glowbug 爆发起点 01:44:59Z，见 comment 审核链）",
+    "t0_basis": "GCN 36061",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
