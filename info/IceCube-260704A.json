@@ -1,27 +1,36 @@
 {
   "transient_id": "IceCube-260704A",
-  "alias": [],
-  "ra": 320.7609,
-  "dec": 34.1095,
-  "T0": "2026-07-04T07:16:58Z",
-  "T0_ref": null,
+  "alias": [
+    "IC260704A",
+    "IceCube260704A"
+  ],
+  "ra": 320.67,
+  "dec": 34.14,
+  "T0": "2026-07-04T07:16:58.19Z",
+  "T0_ref": "GCN 45075",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.1402,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 45075",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 45085",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "身份核验：IceCube 高能中微子 track-like 事件（Bronze stream，ICECUBE_Astrotrack_BRONZE，FAR=0.8177/yr，探测器正常工作状态），官方通告 GCN 45075（Zegarelli，2026-07-04）。ra/dec 与官方精化定位一致（320.67, 34.14）；两路互证：① IceCube 官方通告 GCN 45075（检测时刻 07:16:58.19 UT、90% PSF containment RA=320.67 (+0.57/−0.55) deg、Dec=34.14 (+0.45/−0.47) deg）；② 后续设备通告互证——GCN 45143 Fermi-LAT（引同一检测时刻与坐标）、GCN 45092 IceCube 附加中微子搜索（1000 s 窗 07:08:38.191–07:25:18.191 UTC 以事件时刻为中心，窗中点 07:16:58.191 与 T0 互证）。取数日期 2026-10-27（gcn.nasa.gov）。T0：取 IceCube 官方检测时刻 2026-07-04T07:16:58.19Z（GCN 45075）；bot 原值 2026-07-04T07:16:58Z 与官方值同秒、仅缺亚秒精度，原 t0_note（「t0 为 meta trigger-time（真实触发时刻）」）/t0_basis（「meta_trigger」）失真、已改写并留档于此。定位：官方为 90% PSF 非对称误差（RA +0.57/−0.55 deg、Dec +0.45/−0.47 deg，GCN 45075），无单值半径，故 pos_error 留 null、区间记于此；pos_error_confidence=90（来源明示 90% PSF containment）；bot 原值 ra=320.7609/dec=34.1095 恰与 GCN 45085 候选宿主 WISEA J212302.62+340634.2 坐标逐位一致（21h23m02.62s=320.7609°、+34d06m34.2″=34.1095°），系误植候选体位置、非事件定位，已改。redshift：bot 原值 0.1402（redshift_ref=gcn_llm:circulars_meta; GCN 45085）系 GCN 45085 中 OHP/T193 对候选宿主 WISEA J212302.62+340634.2（距均值 IceCube 坐标约 4.9 角分）两批光谱 Hα 测得的星系红移，非本事件本体值，置 null；该星系 log(Hα/[NII])≈−0.1 处 BPT 图 AGN/LINER 区、r=18.05（PanSTARRS 存档），2026-07-05 02:04 UT（18.8 h after trigger）r 波段 6 min 成像无显著亮度变化（GCN 45085，未给正式上限值）；GCN 45099 ZTF 判定其不 flaring、非可信对应体，宿主未定论不建 host_galaxy，候选信息记于此备查。事件性质：90% 定位区内无 Fermi FL16Y/4FGL-DR4 已知伽马射线源（GCN 45075/45143）；ZTF 90% 区内唯一高显著暂现体 ZTF19ablafcb（RA 320.5248614、Dec +34.5149697，g=21.09±0.20）首测于 2019-07-31、核位置 AGN、相对历史基线无显著爆发，与本中微子无时间关联（GCN 45099）。同日 GCN 45072/45078/45083/45102/45129 的 GRB 260704A 是另一事件（SVOM/ECLAIRs trigger sb26070403，T0=2026-07-04T03:41:05 UT，RA=318.52、Dec=−25.61，库内另有 GRB260704A 条目），与本源无关，不得并档。alias 出处：IC260704A（GCN 45143 原文用名）、IceCube260704A（GCN 45085 标题原文用名）。tag/sub_tag：tags.json 无中微子 alert 类目，留空（建议新增 neutrino-alert，见 PR 待决事项）。其他上限不入库备查：Fermi-LAT >100 MeV 积分流量上限（GCN 45143，95% conf，光子谱指数固定 2.0，best-fit 位置：约 18 年（2008-08-04/T0）<3.4e-10、T0 前 1 月 <1.9e-08、T0 前 1 日 <1.2e-07 ph cm^-2 s^-1）；IceCube 附加中微子上限（GCN 45092：1000 s 窗 E^2dN/dE(1 TeV)<0.14、2 天窗 <0.16 GeV cm^-2，90% 空间包含区内）。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（记 0 篇）；external/rssgrbag、external/grbsn_webtool 及 external/ 全目录 grep「IC260704A/IceCube-260704A/260704A」0 命中；GCN 站（gcn.nasa.gov）事件页（circulars/events/icecube-260704a）与站内检索得本事件共 5 篇 Circular（45075/45085/45092/45099/45143）逐篇打开，其中 1 篇含可用光学上限——GCN 45099 ZTF 2 行（g/r），共补 2 行 upperlimit；45085 OHP/T193 仅对候选宿主成像/测谱（无暂现体上限数值，不入库）、45092/45143 仅中微子灵敏度与伽马积分流量上限（不入库）；检索另得 GRB 260704A 5 篇（45072/45078/45083/45102/45129）属独立 SVOM GRB 事件（已打开 GCN 45072 确认其 T0/坐标）；文献回退 Crossref/arXiv/OpenAlex/SIMBAD TAP 按「IceCube-260704A/IC260704A」检索均 0 命中（2026 年新事件，无研究论文属正常）→ 共补 2 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2026-07-04T07:16:58.19Z 为 IceCube 官方通告（GCN 45075）检测时刻；bot 原值 2026-07-04T07:16:58Z 与官方同秒、仅缺亚秒精度（原值留档见 comment）",
+    "t0_basis": "GCN 45075（IceCube 官方通告检测时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
