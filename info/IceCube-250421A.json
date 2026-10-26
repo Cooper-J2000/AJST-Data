@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 240.91,
   "dec": 28.67,
-  "T0": "2025-04-22T04:50:00Z",
-  "T0_ref": null,
+  "T0": "2025-04-21T17:06:08.070Z",
+  "T0_ref": "GCN 40195（IceCube 官方通告）：On 25-04-21 at 17:06:08.07 UT IceCube detected…（BRONZE alert，FAR=1.0254/yr，离线精化后时刻，触发仪器自给亚秒）；原库 T0=2025-04-22T04:50:00Z 出处不明（非任何通告事件时刻，日期亦差 1 天），已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
-  "redshift": 2.41,
+  "Trigger_Instrument": "IceCube",
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 40195（IceCube 离线精化方向）：RA=240.91 (+2.62/-4.44 deg) Dec=28.67 (+1.70/-1.70 deg)（90% PSF containment；原文注记 event traversed through the corner of the instrumented volume 方向不确定度大于平均）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=240.91/28.67 与精化值一致（保留）",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube BRONZE 径迹中微子候选事件（GCN 40195；AMON notice 140824_2517159，FAR=1.0254/yr；event through corner of instrumented volume 方向不确定度偏大）；跟随观测：LAST（GCN 40208）、DDOTI（GCN 40211）、Fermi-LAT（GCN 40242）、IceCube 附加中微子搜索（GCN 40247）。同日划界（双同名陷阱）：GRB 250421A（Fermi GBM trigger 250421443，10:38:31 UT，RA=249.1/Dec=-59.9，GCN 40191；AstroSat GCN 40214；MASTER 跟进 GCN 40201）与本中微子事件时间差 ~6.5 h、角距 ~90°（计算），无物理关联；EP250421A（Einstein Probe 事件，GCN 40203 COLIBRÍ 上限）系第三个同名日事件，亦划界。全库检索「250421A」命中 9 篇：40195/40208/40211/40242/40247 属本源，40191/40201/40214 属 GRB、40203 属 EP（划界）。[redshift 去污染] 原库 redshift=2.41（redshift_ref=gcn_llm）来源未能定位（GCN 40191-40247 无 2.41 数值）——中微子事件本体无红移测量，置 null（候选体红移不挂源先例）。[T0] 原库 T0=2025-04-22T04:50:00Z 出处不明（非任何通告事件时刻，日期 04-22 亦与事件日 04-21 不符），已废弃；更正为 GCN 40195 精化事件时刻 17:06:08.070Z。[定位] ra/dec=240.91/28.67 原值即 GCN 40195 精化方向（保留）；90% PSF 不对称（RA +2.62/-4.44、Dec +1.70/-1.70），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] Fermi/LAT→IceCube（LAT 系对应体搜索 GCN 40242）。[分类] tag 保持空（中微子事件口径）；sub_tag 留空。[测光检索（2026-10-26）] 入库 3 行：GCN 40208 LAST 无滤光片巡检上限 19.70 AB（field 1294，T+5.23 h）+GCN 40211 DDOTI 探测 SN2025cbj w=18.53±0.04 AB（T+11.74-18.69 h 中点，Type IIn z=0.07 震前 60 天发现大概率无关照录备查）+DDOTI 视场限 w>20.7 AB（10σ）；GCN 40203（EP250421A）划界不入库；external/rssgrbag 0 命中；arXiv API 不可用；ADS/SciX API 无 token 实测 401 → 本 PR 补 3 行（1 探测+2 上限）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 更正为 GCN 40195 精化事件时刻 17:06:08.07 UT（原 bot 值 2025-04-22T04:50:00Z 出处不明，日期 04-22 亦误）；Trigger_Instrument 由 Fermi/LAT 更正为 IceCube；redshift 2.41 去污染置 null（来源未能定位）；原值与判据保留于 comment",
+    "t0_basis": "GCN 40195（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [
     {
