@@ -3,25 +3,30 @@
   "alias": [],
   "ra": null,
   "dec": null,
-  "T0": "2025-04-22T23:39:55Z",
-  "T0_ref": null,
+  "T0": "2025-04-22T22:36:17Z",
+  "T0_ref": "GCN 40213（SVOM/ECLAIRs 官方通告）：starting at 2025-04-22T22:36:17 UTC (Tb)（触发仪器官方时刻）；原库 23:39:55Z 差 ~1 h，出处不明，已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
   "tag": [],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] SVOM/ECLAIRs X 射线暂现源（GCN 40213：trigger sb25042207，22:36:17 UTC）。跟随观测：GOTO 光学上限（GCN 40215）、BOOTES-2 光学上限（GCN 40216）、Swift-XRT（GCN 40217：场内多源无确切余辉）。[T0] 原库 23:39:55Z 与 GCN 40213 触发时刻 22:36:17 UTC 差 ~1 h（bot 值出处不明），已更正。[Trigger] Swift/XRT→SVOM/ECLAIRs（XRT 系跟随观测 GCN 40217，SVOM/ECLAIRs 系触发仪器 GCN 40213）。[定位] 原库 ra/dec 均 null（保留——GCN 40217 XRT 多源均无确切余辉证认，不采纳单一候选位置）。[分类] tag 补 grb（X 射线暂现源，GRBCAT 有对应 GRB 条目）；sub_tag 留空。[测光检索] GCN 40215/40216 光学上限无本源 best-fit 位置照录（SVOM 误差框大）；GCN 40217 X 射线不入库；external/rssgrbag 0 命中；arXiv API 不可用；ADS/SciX 401 → 真零测光源，留证如上。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 更正为 SVOM/ECLAIRs 触发时刻 22:36:17 UTC（GCN 40213）；Trigger_Instrument 由 Swift/XRT 更正为 SVOM/ECLAIRs",
+    "t0_basis": "GCN 40213（SVOM/ECLAIRs 触发通告）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
