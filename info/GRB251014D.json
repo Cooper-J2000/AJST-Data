@@ -5,7 +5,7 @@
   ],
   "ra": 323.9208,
   "dec": -41.85533,
-  "T0": "2025-10-14T21:54:40.55Z",
+  "T0": "2025-10-14T21:54:40.550Z",
   "T0_ref": "GCN 42274（Swift/BAT 触发通告）：At 21:54:40.55 UT triggered and located GRB 251014D（trigger=1404126，触发仪器自给亚秒）；仓内 swift_bat 快照未含该触发（快照截断于此）；GCN 42315（BAT 精化）同 trigger 号",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -19,14 +19,14 @@
   "pos_ref": "GCN 42284（Swift-XRT 增强定位：RA,Dec=323.92080,-41.85533，3.4 arcsec 90% 包含半径）——衰减 >3σ 的未编目 X 射线源，likely the GRB afterglow；原库 ra=323.9208 与之一致（末位 0 省略）；BAT 定位备查：on-board 323.918/-41.839（3′，GCN 42274）、地面 323.933/-41.873（2.7′，GCN 42315）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Swift/BAT trigger 1404126（GCN 42274 Klingler et al.）；GCN 42284（XRT 增强定位，衰减 >3σ 认证余辉）/42286（UVOT 上限）/42285（BOOTES-6/DPRT 上限）/42315（BAT 精化）同指此源。同日划界：GRB 251014A（Swift/GBM 早期暴，GCN 42237/42238/42239/42249/42250/42257/42270/42271/42273/42278/42307）、251014B（BAT-GUANO 短暴，GCN 42263/42265/42287/42288/42289/42305）、251014C（GBM，GCN 42272）均另事件。[T0] 原库 T0=2025-10-14T00:28:30Z（bot 值 t0_basis=meta_trigger，在本源全部 5 篇通告中均无出处——bot 无源抽取）比触发时刻早 21.4 h，更正为 GCN 42274 触发值 2025-10-14T21:54:40.55Z（触发仪器自给亚秒 .55；BOOTES 反算 23:03 UT−1.1 h≈21:54 互证）。[定位] ra/dec=323.9208/-41.85533（3.4″）与 GCN 42284 增强定位一致（衰减 >3σ 认证余辉，5.0 ks 数据），pos_ref 原有正确；补 pos_error_confidence=90（原文 90% confidence）。Trigger_Instrument Swift/UVOT→Swift/BAT（UVOT 非触发仪器；BAT 触发 1404126，GCN 42274 原文 At 21:54:40.55 UT, the Swift Burst Alert Telescope (BAT) triggered）。[alias] 新增「BAT 1404126」（GCN 42274/42315 记 trigger 1404126，swift_bat 目录 name_alt 同形；快照未含该行，以 GCN 为出处）。[分类] tag 补 grb；sub_tag=lgrb：无 GCN 显式 long/short 判词（GCN 42274 记 rate significance 8.71 likely real）；t90=286.98±70.09 s（Swift-BAT 精化 GCN 42315，15-350 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 42315（BAT 精化）：main emission followed by weaker emission、谱指数 1.74±0.38、15-150 keV 注量 (1.0±0.2)e-06 erg/cm2、1-s 峰流量 0.5±0.2 ph/cm2/s（T+5.18 s 起，90% 置信）；XRT 衰减 alpha=1.71(+0.12,-0.11)（GCN 42284，X 射线不入库）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「251014」全形态：命中 23 篇——5 篇属本源（42274/42284/42285/42286/42315），其余属同日 A/B/C 暴（划界如上）；入库测光 10 行：GCN 42286 UVOT 8 上限（white_FC/white 不同曝光均保留；E(B-V)=0.020）+ GCN 42285 BOOTES-6/DPRT 2 上限（clear→G；23:03 单帧 18.3 与 23:30 coadd 21.0，Gaia Gmag 参考系统未声明留空）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 251014D」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 10 行（均上限）。",
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Swift/BAT trigger 1404126（GCN 42274 Klingler et al.）；GCN 42284（XRT 增强定位，衰减 >3σ 认证余辉）/42286（UVOT 上限）/42285（BOOTES-6/DPRT 上限）/42315（BAT 精化）同指此源。同日划界：GRB 251014A（Swift/GBM 早期暴，GCN 42237/42238/42239/42249/42250/42257/42270/42271/42273/42278/42307）、251014B（BAT-GUANO 短暴，GCN 42263/42265/42287/42288/42289/42305）、251014C（GBM，GCN 42272）均另事件。[T0] 原库 T0=2025-10-14T00:28:30Z（bot 值 t0_basis=meta_trigger，在本源全部 5 篇通告中均无出处——bot 无源抽取）比触发时刻早 21.4 h，更正为 GCN 42274 触发值 2025-10-14T21:54:40.550Z（触发仪器自给亚秒 .55；BOOTES 反算 23:03 UT−1.1 h≈21:54 互证）。[定位] ra/dec=323.9208/-41.85533（3.4″）与 GCN 42284 增强定位一致（衰减 >3σ 认证余辉，5.0 ks 数据），pos_ref 原有正确；补 pos_error_confidence=90（原文 90% confidence）。Trigger_Instrument Swift/UVOT→Swift/BAT（UVOT 非触发仪器；BAT 触发 1404126，GCN 42274 原文 At 21:54:40.55 UT, the Swift Burst Alert Telescope (BAT) triggered）。[alias] 新增「BAT 1404126」（GCN 42274/42315 记 trigger 1404126，swift_bat 目录 name_alt 同形；快照未含该行，以 GCN 为出处）。[分类] tag 补 grb；sub_tag=lgrb：无 GCN 显式 long/short 判词（GCN 42274 记 rate significance 8.71 likely real）；t90=286.98±70.09 s（Swift-BAT 精化 GCN 42315，15-350 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 42315（BAT 精化）：main emission followed by weaker emission、谱指数 1.74±0.38、15-150 keV 注量 (1.0±0.2)e-06 erg/cm2、1-s 峰流量 0.5±0.2 ph/cm2/s（T+5.18 s 起，90% 置信）；XRT 衰减 alpha=1.71(+0.12,-0.11)（GCN 42284，X 射线不入库）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「251014」全形态：命中 23 篇——5 篇属本源（42274/42284/42285/42286/42315），其余属同日 A/B/C 暴（划界如上）；入库测光 10 行：GCN 42286 UVOT 8 上限（white_FC/white 不同曝光均保留；E(B-V)=0.020）+ GCN 42285 BOOTES-6/DPRT 2 上限（clear→G；23:03 单帧 18.3 与 23:30 coadd 21.0，Gaia Gmag 参考系统未声明留空）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 251014D」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 10 行（均上限）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1404126，GCN 42274 亚秒值 2025-10-14T21:54:40.55Z）；原 bot 值 2025-10-14T00:28:30Z 在全部通告中无出处（早 21.4 h，bot 无源抽取），原值保留于 comment",
+    "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1404126，GCN 42274 亚秒值 2025-10-14T21:54:40.550Z）；原 bot 值 2025-10-14T00:28:30Z 在全部通告中无出处（早 21.4 h，bot 无源抽取），原值保留于 comment",
     "t0_basis": "GCN 42274（Swift/BAT 触发通告亚秒值）",
     "bot_created": true,
     "audit": {
