@@ -1,23 +1,26 @@
 {
   "transient_id": "GRB001018",
-  "alias": [],
+  "alias": [
+    "GRB 001018"
+  ],
   "ra": 198.54291667,
   "dec": 11.80888889,
-  "T0": "2000-10-18T16:58:36Z",
-  "T0_ref": null,
+  "T0": "2000-10-18T16:58:34Z",
+  "T0_ref": "GCN 853",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": "GCN 918",
+  "pos_ref": "GCN 853",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 rssgrbag 射电余辉目录导入新建 (Chandra & Frail 2012)",
+  "comment": "审核链（fsy@代理 2026-10-27）：[身份] IPN 三角定位暴——GCN 853：Ulysses、NEAR、Konus-Wind 于 10 月 18 日 61114 s 触发并三角定位，误差盒中心 13h14m10.27s +11°48′31.75″（≈库内 ra/dec 13 14 10.3 +11 48 32，Chandra & Frail 2012 表1 同坐标）、面积 ~15 平方角分、原文标 preliminary 3σ；射电对应体 VLA J1314+1148（GCN 857，13 14 12.385 +11 48 57.90±50 mas）位于盒内；MPE Greiner 表（Uly/Ko/NE，IPN=y）与 GRBCAT 5018（observatories=IPN）互证；GCN 856：SROSS C-2 亦独立触发；用名「GRB 001018」（GCN 857/915/918）已入 alias。[T0] 原库 T0=2000-10-18T16:58:36Z（T0_ref 空）与 GCN 856 SROSS C-2 触发 61116.784 s（=16:58:36.784）截断吻合；按 §3.8 采触发仪器官方通告 GCN 853 值 61114 s=16:58:34 UT，GRBCAT 5018 ECT 2000-10-18T16:58:34.000Z 同值；SROSS 时间原文自注 may contain small systematic errors，备查。[定位] pos_ref 原库误作 GCN 918（Keck 光学观测通告，非定位来源），改为 GCN 853；误差盒四角（GCN 853，J2000）：(13 14 13.68 +11 49 31.43)、(13 13 50.40 +11 51 29.08)、(13 14 30.12 +11 45 34.18)、(13 14 06.85 +11 47 32.06)；盒为四边形非圆形，pos_error 留空，pos_error_confidence=3sigma（原文用词 preliminary, 3 sigma）。[测光] 原行=Chandra & Frail 2012 表4 拟合射电峰（8.46 GHz、Fm=590±68 µJy、tm=4.7±0.6 d、VLA，方法=fit，非单次测量），已对照 VizieR J/ApJ/746/156 表1/表4 核验；mjd 按新 T0 重算（原值 51840.4073611）；补 GCN 857 两行单次 VLA 测量（Oct 19.88 UT：258±65 µJy；Oct 20.76 UT：405±50 µJy）与 GCN 915 一行光学上限（18 Dec 2000 UT）。[分类] t90=31 s（Chandra & Frail 2012 表1/rssgrbag 目录，未给误差；GCN 853 亦报 Ulysses duration ~31 s）vs T90=1.63±0.05 s（GCN 856 SROSS C-2）来源冲突，sub_tag 留空待决（PR 待决事项①）。[候选宿主] GCN 918：Keck 于射电暂源东北 ~1″（0.46″±0.32″ E、0.89″±0.27″ N）见暗弱致密源 R=24.60±0.09、I=24.03±0.10，原文 may be related，未确证，不建 host_galaxy。[非 SCHEMA 量] fluence=1.2e-5 erg/cm2（25-100 keV，GCN 853 Ulysses）；fluence=1.98e-5 erg/cm2（15-150 keV，Chandra & Frail 2012 表1/rssgrbag 目录）；fluence=1.15e-5 erg/cm2（20-1024 keV，GCN 856 SROSS，未作 sec(theta) 改正）；T90=1.63±0.05 s（GCN 856）；GCN 853 峰流量「5.0E-1 erg/cm2 s」为原文模板笔误，GCN 854 勘误为 5.0E-6 erg/cm2 s（0.50 s）。[测光检索（2026-10-27）] 仓内 gcn/archive 本地未获取（0 文件）；external/rssgrbag/lightcurve.jsonl 命中 1 行（=原行）；external/grbsn_webtool 无该源；external/uvot_grb 无记录；GCN 事件页 grb-001018 全部通告 6 篇：853（触发定位）、854（峰流量勘误）、856（SROSS 伽马）、857（VLA 射电 2 次探测，已补 2 行）、915（Palomar 光学上限，已补 1 行）、918（Keck 宿主候选星系测光，不入瞬变体 lc）；ADS/SciX API 无 token，经 WebSearch 代理检索文献：Chandra & Frail 2012（ApJ 746, 156，VoR 免费，表1/表4 已核）、Frail et al. 2003（AJ 125, 2299）§4 报本源为样本中唯一 radio-only 暴、8.5 GHz 光变数日内达峰、~100 d 后低于探测，其机读表 2（全部射电观测表）IOP 反爬不可达（ASCII 文件空响应），未能取值，列入 PR 未能核实清单 → 本 PR 补 3 行。",
   "sub_tag": [],
+  "pos_error_confidence": "3sigma",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -97,8 +100,26 @@
         "name_alt": [],
         "trigger_time": "2000-10-18T16:58:34.000Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@代理",
+      "date": "2026-10-27"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Chandra+2012",
+      "title": "A Radio-selected Sample of Gamma-Ray Burst Afterglows",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "source": "fsy@代理"
+    },
+    {
+      "name": "Frail+2003",
+      "title": "A Complete Catalog of Radio Afterglows: The First Five Years",
+      "url": "https://doi.org/10.1086/374364",
+      "source": "fsy@代理"
+    }
+  ],
   "host_galaxy": null
 }
