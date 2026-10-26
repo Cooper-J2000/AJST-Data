@@ -1,29 +1,38 @@
 {
   "transient_id": "GRB990907",
-  "alias": [],
-  "ra": 156.6738,
-  "dec": -13.6899,
-  "T0": "1999-09-07T17:34:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 990907B"
+  ],
+  "ra": 112.699,
+  "dec": -69.406,
+  "T0": "1999-09-07T17:35:11.865400Z",
+  "T0_ref": "BATSE catalog (HEASARC batsegrb, trigger 7755)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BeppoSAX/GRBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 360,
+  "pos_ref": "GCN 405",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "GRB 990907 = BeppoSAX/GRBM+WFC 触发(GCN 404),CGRO/BATSE trigger 7755 同测;GRBCAT 编 GRB 990907B(grbcat_id 4553),同日 02:19:09 UT 的 GRBCAT 990907A(IPN-only、无定位)为另一事件,不在本库。原 ra/dec=156.6738/-13.6899 为 GCN 407 IPN 环圆心(环半径 62.1237±0.080°,3σ),并非源位置,已改;原 T0=1999-09-07T17:34:00Z 为 bot 值(t0_basis=meta_trigger),源自 GCN 404 'around 17:34 U.T.' 的分钟级散文近似,非精确触发。审核 T0=1999-09-07T17:35:11.8654Z(BATSE 官方目录 7755:MJD 51428.7327762199=17:35:11.8654 UTC);SAXGRBMGRB 目录 17:35:11.0(1 s 精度,整数秒一致);GRBCAT ECT 三行:BATSE 17:35:11.800(与采用值差 65 ms)、IPN 17:35:11.0、BeppoSAX 17:34:09.0(疑为 WFC 触发,仅见 GRBCAT 转引 Coletta & Giommi 2002,无原始目录可查);GCN 404/405 只给 'around 17:34 UT'。位置取 GCN 405 精化 WFC 坐标 112.699/-69.406,误差半径 6'(=360\"),原文未标注置信水平;GCN 404 初值 112.552/-69.394(8')。GCN 409:BeppoSAX NFI 跟测(UT Sep 8 04:32,MECS 1070 s)发现 X 射线余辉候选 1SAX J0731.2-6928(RA=7h31m12s,Dec=-69°28'10\",误差 3',距 WFC 中心 4',机会符合概率约 3×10^-3,'likely the X-ray afterglow');X 射线数据超出本库审核范围,不入库。GCN 407:IPN 环(Ulysses×BeppoSAX)与 WFC 误差圆相交成约 100 平方角分误差盒(四角约 07h29m39.6s~-69°24'14\" 至 07h31m55.0s~-69°23'22\");GCN 407 原文引 'BeppoSAX NFI error circle (GCN 373)' 系原文笔误(GCN 373 为 GRB 990705 通告),按误差盒位置应为 WFC 误差圆(GCN 405)。t90=145.0±6.7 s(SAXGRBMGRB,40-700 keV);按目录 t90 判 lgrb。测光检索(2026-10-27):仓内 gcn/archive 本地未获取(目录为空),external/rssgrbag(lightcurve.jsonl 与 normalized.jsonl)及 external/grbsn_webtool 无 990907 记录,batse/heasarc_grbcat/mpe_greiner/saxgrbmgrb 快照仅目录级参数(用于身份与 T0 互证);GCN 站事件页共 7 篇(404、405、407、408、409、413、415):408 为两历元差分成像无可变源(m_v=20.3)、413 为 AAT/Danish/VLT 八组 3σ 上限,两者共 9 行均已入库(全部 upperlimit=y);415(MJUO 0.61m,UT Sep 9.40,R+I 宽波段 3×600s)负结果但极限非数值('to the DSS-2 limit'),未入库;409 仅 X 射线;405/407 为定位。ADS 检索命中 Fynbo+2001(A&A 369, 373)表 2 转引 GCN 405/413(R 23.0,Δt=1.64 d,与 GCN 413 同源,非独立测量);TNS 不适用(1999 年 GRB,无 AT/SN 编号)。alias 'GRB 990907B' 为 GRBCAT 官方目录名(grbcat_id 4553)。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核重锚为 BATSE 7755 官方目录触发时刻(原 bot 值 1999-09-07T17:34:00Z 取自 GCN 404 'around 17:34 U.T.' 散文近似,t0_basis=meta_trigger,见 comment)",
+    "t0_basis": "BATSE catalog (trigger 7755)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
