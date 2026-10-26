@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB250818A",
-  "alias": [],
-  "ra": 213.8002,
-  "dec": -58.0134,
+  "alias": [
+    "BAT 1343270"
+  ],
+  "ra": 213.80012,
+  "dec": -58.01403,
   "T0": "2025-08-18T01:31:22Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 41403（Swift/BAT 触发通告）：At 01:31:22 UT triggered and located GRB 250818A（trigger=1343270，整秒）；仓内 swift_bat 快照未含该触发（快照截断于此），FERMIGBRST GRB250818063 trigger_time=01:31:22.998Z（GBM 亦触发，差 ~1.0 s 备查，有 Swift 以 Swift 为准）；GCN 41423（BAT 精化）同 trigger 号",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.4,
-  "pos_ref": "GCN 41413",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 41413（Swift-XRT 增强定位，astrometrically corrected：RA,Dec=213.80012,-58.01403，2.4 arcsec 90% 包含半径）；原库 ra/dec=213.8002/-58.0134 系 GCN 41403 XRT promptly downlinked 位置（4.9″/90%），两位置相距约 2.3″（计算）；BAT 定位备查：on-board 213.833/-58.007（3′，GCN 41403）、地面 213.816/-58.010（1.1′，GCN 41423）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Swift/BAT trigger 1343270（GCN 41403 Cenko et al.）+Fermi/GBM trigger 7642…GRB250818063（GCN 41402/41411）同触发放；GCN 41413（XRT 增强）/41416（UVOT）/41423（BAT 精化）/41425（XRT 精化）/41427（MASTER）/41438（AstroSat CZTI）同指此源。同日划界：GRB 250818B 为 SVOM 短暴（GCN 41405 起，GOTO25fzq/EP-FXT/Keck 红移/VLA/MeerKAT 等丰富跟进均属 B）、250818C（GCN 41420 GBM）另事件。[T0] 原库 01:31:22Z 与 GCN 41403 整秒一致（保留）；仓内 swift_bat 快照未含该触发（快照截断），T0_ref 锚 GCN 41403 整秒；FERMIGBRST GRB250818063 trigger_time=01:31:22.998Z 差 ~1.0 s 备查（双触发仪器有 Swift 以 Swift 为准）。[定位] 原 ra/dec=213.8002/-58.0134（4.9″）为 GCN 41403 XRT promptly downlinked 位置，而 pos_error=2.4″ 与 pos_ref=GCN 41413 挂增强定位口径——混搭不自洽；统一升级为 GCN 41413 增强定位 213.80012/-58.01403（2.4″/90%，XRT-UVOT 对齐+USNO-B1，431 s PC），两位置相距约 2.3″（计算）；补 pos_error_confidence=90。Trigger_Instrument Swift→Swift/BAT。[alias] 新增「BAT 1343270」（GCN 41403/41423 记 trigger 1343270，swift_bat 目录 name_alt 同形；快照未含该行，以 GCN 为出处）。[分类] tag 补 grb；sub_tag=lgrb：无 GCN 显式 long/short 判词（GCN 41403 记 complex structure out to at least T+150s 为光变描述）；t90=106.86±3.79 s（Swift-BAT 精化 GCN 41423，15-350 keV）+GBM 目录 100.098±1.94968 s（50-300 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 41423（BAT 精化）：multi-peaked T-15~T+140 s 主峰 T+78 s、谱指数 1.85±0.04、15-150 keV 注量 (1.2±0.03)e-05 erg/cm2、1-s 峰流量 5.5±0.3 ph/cm2/s（T+77.63 s 起，90% 置信）；GBM（GCN 41411/目录）：t90=100.098 s；XRT 衰减 alpha=1.15（GCN 41425，X 射线不入库）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「250818」全形态：命中 80 篇——9 篇属本源（41402/41403/41411/41413/41416/41423/41425/41427/41438），其余属同日 B（SVOM 短暴，~30 篇）与 C 及后续事件（划界如上）；入库测光 54 行：GCN 41427 MASTER-OAFA 51 检查点上限（简化表无坐标列，首行算术核验注记）+ GCN 41416 UVOT 3 行（u fc/b/v；E(B-V)=1.602 注记）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 250818A」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 54 行（均上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 保留 GCN 41403 整秒 01:31:22 UT（swift_bat 快照未含该触发；FERMIGBRST 01:31:22.998Z 差 ~1 s 备查）；t0_basis 由 meta_trigger 更正为 GCN 触发通告",
+    "t0_basis": "GCN 41403（Swift/BAT 触发通告整秒；双触发仪器有 Swift 以 Swift 为准）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
