@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB260127B",
-  "alias": [],
-  "ra": 104.669,
-  "dec": 21.845,
-  "T0": "2026-01-27T17:51:07Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 260127B",
+    "bn260127835"
+  ],
+  "ra": 190.42,
+  "dec": 56.88,
+  "T0": "2026-01-27T20:02:32.568Z",
+  "T0_ref": "GCN 43533/43573（Fermi/GBM trigger 791236957.568148，20:02:32 UT）；FERMIGBRST trigger_time=2026-01-27T20:02:32.568Z（external/fermi_gbm 快照，bn260127835）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
-  "redshift": 0.12,
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 18756,
+  "pos_ref": "GCN 43533/43573（Fermi/GBM 定位 190.42/+56.88，5.21° 半径；原文未标注置信水平）",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核 fsy 2026-10-26。身份重大更正：原库 T0=2026-01-27T17:51:07Z、ra/dec=104.669/21.845、redshift=0.12 均不属于 GRB 260127B。实际触发为 Fermi/GBM 791236957.568148 / bn260127835，2026-01-27T20:02:32.568Z（GCN 43533/43573；FERMIGBRST trigger_time 同值，RA/Dec=190.42/56.88，error_radius=5.21°）；原 T0 17:51:07Z 对应的是同日另一个 GBM 触发 bn260127744（external/fermi_gbm，RA/Dec=231.857/6.758），与本暴无关。原 ra/dec=104.669/21.845 是 GCN 43559 IPN 三角定位的**圆环中心**（半径 72.490±0.104°），不是源位置；本库不能把圆环中心当坐标，已改用 GBM 定位 190.42/56.88（5.21°，约 18756″），pos_error_confidence 因原文未标置信水平留空。原 redshift=0.12/redshift_ref=gcn_llm:circulars_meta 来自 GCN 43538 的 GOTO 候选体 GOTO26aih（RA 12:49:52.73 +66:44:58.87，L=19.15±0.14，t0+5.66 h，z=0.12 host）；该候选体未被确认，GCN 43558 的 Swift-XRT 未在候选位置发现源、且与 GBM 5.21° 误差圈不相容，不能作为本源红移/宿主，已置 redshift/redshift_type/redshift_ref=null。分类：GBM 判 likely SHORT GRB（GCN 43533），T90=1.024±0.707 s（50-300 keV，FERMIGBRST）；IPN 称 short（GCN 43559，圆环 72.490±0.104°）、GECAM-B T90=0.13 s（GCN 43597）、Konus-Wind T90≈0.3 s（GCN 43701），一致判 sgrb，sub_tag=['sgrb']（非自算）。触发仪器：原 Konus-Wind 改为 Fermi/GBM（GBM 触发；Konus 仅为探测）。测光：GCN 43538 的 GOTO 候选体 GOTO26aih 未被确认且 XRT 未检出，不入库；GCN 43534 MASTER-Tunka 给出 5 个 C 波段上限（Tmid-T0=2709/2822/2897/2970/3049 s，Expt=60 s，Limit=19.5/19.7/19.7/19.7/19.7；指向场中心约 12h20–12h52、+55°–+59°）；通告只说开始检查 GBM errorbox，未明确全覆盖 190.42/56.88，且表未把坐标与行一一对应，故暂不入库、列入待决；GCN 43558 的 Swift-XRT 为 X 射线（无源，5σ 上限 5.0e-13–6.9e-13 erg/cm2/s），按 §3.3 不处理。本源无可用光学测光，未建立 lc。测光检索（2026-10-26）：GCN 事件页 grb-260127b 共 11 篇（43533/43534/43538/43542/43558/43559/43573/43576/43597/43598/43701），逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；arXiv API/TNS/ADS 未取得（arXiv 空结果、TNS 403、ADS 401 无 token）；结论：无可用光学测光，补 0 行。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发 791236957.568148 时刻 2026-01-27T20:02:32.568Z（GCN 43533/43573 + FERMIGBRST bn260127835）；原 bot 值 17:51:07Z 属另一 GBM 触发 bn260127744，已废弃",
+    "t0_basis": "GCN 43533/43573 + FERMIGBRST bn260127835",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
