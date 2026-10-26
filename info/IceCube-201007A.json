@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 265.17,
   "dec": 5.34,
-  "T0": "2020-10-07T22:01:49Z",
-  "T0_ref": null,
+  "T0": "2020-10-07T22:01:49.280Z",
+  "T0_ref": "GCN 28575（IceCube 官方通告）：On 20/10/07 at 22:01:49.28 UT IceCube detected…（GOLD alert，离线精化后时刻，触发仪器 IceCube 自给亚秒）；原库 22:01:49Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 28575（IceCube 离线精化方向）：RA=265.17 (±0.52 deg) Dec=5.34 (+0.32/-0.23 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=265.17/5.34 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube GOLD 径迹中微子候选事件（GCN 28575；AMON notice 134577_31638233，FAR=0.262/yr）；跟随观测：INTEGRAL（GCN 28576：SPI-ACS/IBIS prompt 无对应体候选）、Swift-XRT（GCN 28579：Oct 8 00:18-02:19 3.8 ks PC tiling）、Fermi-LAT（GCN 28582：区域分析）、Fermi-GBM 上限（GCN 28584：事件时无在轨触发，位置可观测）、HAWC（GCN 28592：无显著探测）、IceCube 附加中微子搜索（GCN 28590）、ZTF/GROWTH 光学巡检（GCN 28609：87.5% 覆盖无候选）。同日划界：GRB 201007A（Fermi GBM trigger 201007123，02:56:38 UT，GCN 28569；MASTER 跟进 GCN 28570）与本中微子事件仅同名日巧合——时间差 ~19 h、GBM 定位 297.0/2.6 距中微子位置 ~32°，无物理关联，划界另事件。[T0] 原库 22:01:49Z 系 GCN 28575 精化时刻 22:01:49.28 UT 的整秒截断，补亚秒 .280Z。[定位] ra/dec=265.17/5.34 原值即 GCN 28575 精化方向（保留，逐位一致）；90% PSF containment 不对称（RA ±0.52、Dec +0.32/-0.23 deg），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] INTEGRAL→IceCube（INTEGRAL 系对应体搜索 GCN 28576，非探测器；检测仪器为 IceCube）。[分类] tag 保持空（中微子事件，与库内既有 IceCube-* 源口径一致）；sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「201007A/IC201007A/IceCube-201007A」全形态：命中 10 篇——GCN 28575/28576/28579/28582/28584/28590/28592/28609 属本源，28569/28570（GRB 201007A）划界另事件；入库 2 行：GCN 28609 ZTF g/r 典型深度上限 2 行（20.5/21.0，区域统计深度照录注记、time_err 留空）；GCN 28579 Swift-XRT、28582/28584/28592 伽马与中微子搜索不入库；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（中微子事件，ZTF 亦无候选）→ 本 PR 补 2 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 补亚秒：GCN 28575 精化时刻 22:01:49.28 UT（GOLD alert）；t0_basis 由 meta_trigger 更正为 GCN 精化时刻",
+    "t0_basis": "GCN 28575（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
