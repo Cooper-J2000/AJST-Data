@@ -1,27 +1,34 @@
 {
   "transient_id": "GRB040606",
-  "alias": [],
+  "alias": [
+    "GRB 040606"
+  ],
   "ra": 245.057,
   "dec": -15.629,
-  "T0": "2004-06-06T23:08:03Z",
-  "T0_ref": null,
+  "T0": "2004-06-06T13:17:37.960000Z",
+  "T0_ref": "HETE trigger 3316 notices",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 840,
+  "pos_ref": "HETE trigger 3316 notices",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：HETE-2 WXM 触发（trigger #3316，25-400 keV；GCN/HETE 通告包 gcn.gsfc.nasa.gov/other/3316.hete，2004-06-06，7 份通告 GRB_TIME 一致 = 47857.96 SOD {13:17:37.96} UT；GSFC hete_grbs.html 官方触发表同值，2004-08-07 Wayback 快照核对，现网表已不含 2004 年条目）。T0 修正：bot 原值 2004-06-06T23:08:03Z（t0_basis=meta_trigger，零锚）实为 GCN 2606 观测开始时刻（Issue #84 形态），改为触发时刻 13:17:37.96 UT；交叉验证：GCN 2606 自述观测始于爆发后 9.84 h（23:08:03 UT），反算 23:08:03 − 9.84 h = 13:17:39 ± 18 s，与通告值一致（差 1.0 s，在 9.84 h 精度 ±18 s 内）。坐标：库中 245.057/-15.629 与通告包末份 S/C_Last WXM 位置一致，保留；早前 S/C_Update 位置 244.373/-15.430、244.864/-15.355、244.806/-15.470（同一 28′ 误差盒内），GndAna 不给位置。pos_error=840″=14′ 半径（通告 WXM_MAX_SIZE=28.00′ 直径，圆盒，系统+统计合并；直径→半径换算）；几何自洽：GCN 2606 视场 12′×12′ 自述覆盖全不确定区 ~23%，144/(π·14²)=23.4% ✓（若 28′ 为半径则仅 5.8%，排除）；置信水平原文未标注，pos_error_confidence 留空。权威否定（§3.7）：HETE 地面分析（GndAna seq 7）官方结论「Definitely not a GRB.」「This position matches a known X-ray source.」「Burst_Invalidity flag is true.」；WXM 定位显著性弱（WXM_LOC_SN=4，image SN X=3.0/Y=3.5）。独立证据排查：IPN master burst list（ssl.berkeley.edu/ipn3 masterli.txt，2005-07-01 编，覆盖 1990-11—2005-05，经 Wayback 2006-09 快照读取）2004-06-06（DOY 158）无任何事件（6 月事件自 DOY 157 23:58:41 直接跳至 DOY 159 05:46:45）→ 无他星记录；external 快照（HEASARC GRBCAT、MPE Greiner、Konus-Wind 等）grep 均无 040606；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-040606，2026-10-27 取）仅 1 篇通告（GCN 2606，光学非探测 R<20.5）。按 §3.7 在 PR 待决事项报维护者删除，条目数据保留待裁；tag/sub_tag 保持空（GndAna 判定非 GRB，不宜标 grb）。测光检索留证（2026-10-27）：仓内 gcn/archive 本地未获取，改查 GCN 站事件页 1 篇（即 GCN 2606，唯一测光记录为 lc 既有 R<20.5 上限行）；external/rssgrbag、external/grbsn_webtool 无该源；external 目录快照 grep「040606」无命中；IPN 主表如上 → 除既有 1 行外无可用测光，补 0 行。alias「GRB 040606」为 GCN 2606 subject 原文用名（「GRB 040606: Optical observations」）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 HETE-2 触发时刻（通告包 trigger 3316 全部 7 份 GRB_TIME=47857.96 SOD=13:17:37.96 UT，fsy 2026-10-27 修正）；bot 原值 2004-06-06T23:08:03Z（t0_basis=meta_trigger）实为 GCN 2606 观测开始时刻",
+    "t0_basis": "HETE trigger 3316 notices",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
