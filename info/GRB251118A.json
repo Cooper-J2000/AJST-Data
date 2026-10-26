@@ -1,31 +1,39 @@
 {
   "transient_id": "GRB251118A",
-  "alias": [],
+  "alias": [
+    "GRB251118855"
+  ],
   "ra": 160.00422,
   "dec": -34.52254,
-  "T0": "2025-11-18T20:31:30Z",
-  "T0_ref": null,
+  "T0": "2025-11-18T20:31:30.090Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2025-11-18T20:31:30.090Z（trigger 785190695.089648 / 251118855）；GCN 42743 整秒 20:31:30 UT、GCN 42783 亚秒 20:31:30.09 UT、GCN 42752（LAT）T0 = 20:31:30.09 UT 三方互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 2.0,
-  "pos_ref": "GCN 42782",
+  "pos_error": 0.42,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 42786（Swift/UVOT 探测衰减源初步定位：RA,Dec=160.00422,-34.52254，0.42 arcsec 90% 包含半径）——库内 ra/dec 原值即此；GCN 42782（XRT 增强定位 160.00418/-34.52259，2.0″/90%，Source 1 超 RASS 限 likely the GRB afterglow）与 UVOT 位置相距约 0.55″（计算），两口径互证；Fermi-LAT 定位（GCN 42752：160.08/-34.58，0.17 deg/90%）距 5.0 arcmin（原文）备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Fermi/GBM trigger 785190695.089648（GRB251118855，GCN 42743/42783）；Fermi-LAT 探测（GCN 42752：>100 MeV 流量 (1.8±0.7)e-6 ph/cm2/s（0-1.5 ks）、最高光子 6.8 GeV @~T0+1400 s）；Swift-XRT Source 1 超 RASS 限认证余辉（GCN 42782）；UVOT 探测衰减源（GCN 42786）；另 NuSTAR（42774）/GECAM-B（42779）/Glowbug（42784）/Konus-Wind waiting mode（43013）/BALROG（42745）均探测。同日划界：GRB 251118B（GBM，GCN 42747/42748）、251118C=EP251118a（Einstein Probe 快 X 射线瞬变，GCN 42765-42793/43056 系列独立事件，其 MASTER/LCO/SVOM/VLT 测光不入本源）。[Trigger_Instrument 更正] 原 Konus-Wind 有误——触发仪器为 Fermi/GBM（GCN 42743 triggered and located），Konus-Wind 系 waiting mode 探测（GCN 43013），不构成触发认定。[T0] 原库 20:31:30Z 缺亚秒，更正为 FERMIGBRST trigger_time=20:31:30.090Z（GCN 42783/42752 .09 互证）。[定位] 原 ra/dec=160.00422/-34.52254 系 GCN 42786 UVOT 探测衰减源初步定位（0.42″/90%）而 pos_error=2.0″ 与 pos_ref=GCN 42782 挂 XRT 增强口径——混搭不自洽；统一采 UVOT 定位（库内坐标保留，更精）：pos_error=0.42、pos_error_confidence=90、pos_ref=GCN 42786；XRT 增强定位（42782：160.00418/-34.52259，2.0″/90%）与之相距约 0.55″（计算）互证备查。[alias] 新增「GRB251118855」（FERMIGBRST GRBNAME / HEASARC Source Designation，tdat name 字段原文用名，GCN 42743/42752/42783 记 trigger 251118855）。[分类] tag=grb 原有；sub_tag=lgrb 原有验证成立：GCN 42743 原文 a likely LONG GRB；t90=46.5928±0.362051 s（FERMIGBRST，50-300 keV）、GCN 42783 记 total duration (T90) about 46.6 s——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 42783（GBM 精化）：Comptonized Epeak=149.3±2.0 keV、alpha=-1.40±0.01（Band 同拟合 Epeak=134.0±2.7）、fluence=(1.03±0.01)e-04 erg/cm2（10-1000 keV，T0-2.8~T0+87.3 s）、1-s 峰流量 96±0.7 ph/cm2/s（T0+52 s 起）——亮暴；X 射线内容不入库（GCN 42782）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「251118」全形态：命中 25 篇——11 篇属本源（42743/42745/42750/42752/42753/42774/42779/42782/42783/42784/42786/43013 中除 ToO 外 11 篇），8 篇属 251118C=EP251118a（独立事件，其 MASTER/LCO/SVOM/VLT 测光不入），其余属 B 与后续；入库测光 99 行：GCN 42753 MASTER-OAFA 93 检查点上限（LAT 0.17° 框，Tmid-T0 28452~34499 s）+ GCN 42786 UVOT 6 行（5 探测+1 上限：white 18.79±0.05→20.11±0.10、v 18.60±0.19→>19.73、u 18.41±0.05→19.61±0.15，衰减趋势与 XRT 一致）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 251118A」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 99 行（6 探测+93 上限）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 785190695.089648 trigger_time=2025-11-18T20:31:30.090Z，补亚秒）；Trigger_Instrument 由 Konus-Wind 更正为 Fermi/GBM（Konus 系 waiting mode 探测非触发）；原值保留于 comment",
+    "t0_basis": "FERMIGBRST trigger_time（GCN 42743/42783/42752 互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
