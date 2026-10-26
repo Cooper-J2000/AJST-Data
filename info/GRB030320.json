@@ -1,27 +1,36 @@
 {
   "transient_id": "GRB030320",
   "alias": [],
-  "ra": 280.256,
-  "dec": -23.488,
-  "T0": "2003-03-21T02:42:00Z",
-  "T0_ref": null,
+  "ra": 267.925,
+  "dec": -25.31222,
+  "T0": "2003-03-20T10:11:40Z",
+  "T0_ref": "GCN 1941",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 1942",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "von Kienlin+2003 (DOI 10.1051/0004-6361:20031232)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：INTEGRAL 长暴（FoV 内第 5 个探测），IBAS 于 2003-03-20 10:11:40 UTC 触发（GCN 1941；von Kienlin+2003 同值），Konus-Wind、Ulysses、Mars Odyssey(HEND/GRS)、RHESSI、INTEGRAL/SPI-ACS 均探测（GCN 1942/1943）；与同日 GRB 030320B（18:49:17 UT，Ulysses/IPN，GCN 1944）为不同事件。T0：原 bot 值 2003-03-21T02:42:00Z（t0_basis=meta_trigger）实为 GCN 1946 Wise 观测起始时刻（原文 starting March 21, 02:42 UT），非触发时刻，审核改为 GCN 1941 触发时刻（HEASARC GRBCAT 同值 10:11:40.000Z；GCN 1943 记 Ulysses 观测在当日 36720 s=10:12:00，差 20 s，以触发仪器 IBAS 为准）。ra/dec：原值 280.256/-23.488 是 GCN 1942 IPN 环带环心（半径 11.122°±0.456°，原文自述不约束 IBIS 定位），非源位置；审核改为 von Kienlin+2003 精化 IBIS/ISGRI 误差圆圆心 17h51m42s -25°18′44″、半径 3′=180″（SIMBAD 同位置 17:51:42.0 -25:18:42 ±180″，2003A&A...411L.299V；von Kienlin 同团队 SPI 专文（A&A 411, L299）Table 1 图注明示同类 ISGRI 误差圆为 90% confidence value，据以填 90）。备查定位：IBAS 初步 17h51m43s -25°18′34″ 半径 5′（GCN 1941）；IPN 3σ 误差盒中心 267.9936/-25.2401、面积约 1000 sq arcmin（GCN 1943，HEASARC GRBCAT 即取此盒心）；SPI 粗定位 1°（von Kienlin+2003）。分类：von Kienlin+2003 明确为长暴（~60 s；GCN 1941 记 ~80 s、GCN 1943 记 Ulysses ~50 s；无目录 t90，按研究文章分类判 lgrb）。能量学备查（von Kienlin+2003）：20-200 keV 峰值流量(2 s) SPI 4.1(+1.3/-1.4)e-7、ISGRI 5.4e-7 erg/cm2/s；20-200 keV 积分流量 SPI 1.35(+0.21/-0.26)e-5、ISGRI 1.1e-5 erg/cm2；25-100 keV 积分流量 SPI 7.1(+1.6/-1.8)e-6、ISGRI 6.5e-6、Ulysses ~1.1e-5 erg/cm2（GCN 1943）；谱形单幂律 Γ≈1.7。位于银道面，NH=(1.4±0.1)e22 cm-2、AV=(10.5±0.5) mag、AR=(7.85±0.35) mag（von Kienlin+2003）。无红移。测光检索（2026-10-27）：① 仓内 gcn/archive 未随 clone 分发（README 称可自行再生成），改为直接逐号抓取 GCN 站 Circular 1938-2110 全文核对，命中 4 篇：1941（INTEGRAL/IBAS 定位）、1942（IPN 环带）、1943（IPN 小误差盒）、1946（Wise 光学上限 R=17.5），另 1944 为 GRB 030320B（不同事件，不入本源）；GCN 站短语检索 \"030320\" 命中 3 篇（1941/1943/1946），逐号扫另捕获 1942（IPN 环带），本源合计 4 篇。② OpenAlex 题录检索命中 3 条（GCN 1941/1946 转载 + von Kienlin+2003），其 10 篇施引文献均为 INTEGRAL 仪器/星表类文章（IBAS、SPI 探测能力、INTEGRAL 谱表等），无本源新测光；SIMBAD 仅 1 个标识符（GRB 030320），文献记录无新增测光；仓内 external/rssgrbag、grbsn_webtool 无 030320 记录；TNS 不适用（无 AT/SN 命名）。③ 补查（2026-10-27 复核补充）：Buffington et al. 2005（ApJ 626，SMEI 白光巡天，arXiv:astro-ph/0510159）表 2 第 1 行给出本暴 3σ 极限 Mv=6.6（N=21×4 s，t=+35 min 为「爆发与 SMEI 观测窗的最小时隔」，质量旗标 d=显著粒子污染）——时间锚点仅观测窗起点下界（实际窗口端点未知，无法给出可信 time/time_err），且限量受粒子污染旗标降质，故未入库、记本条备查。④ 结论：本源已发表上限共 3 条——GCN 1946 的 R=17.5 与 von Kienlin+2003 的 NTT/SOFI Ks=20.7（5σ）已入库（共 2 行），Buffington+2005 的 SMEI Mv=6.6 未入库（理由见上）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经审核（Rusty-Harpoon@zcode 2026-10-27）修正为 GCN 1941（INTEGRAL/IBAS）触发时刻 2003-03-20T10:11:40Z；bot 原值 2003-03-21T02:42:00Z（t0_basis=meta_trigger）实为 GCN 1946 Wise 观测起始时刻，已留底于 comment",
+    "t0_basis": "GCN 1941",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
@@ -32,5 +41,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
