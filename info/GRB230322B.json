@@ -1,28 +1,75 @@
 {
   "transient_id": "GRB230322B",
-  "alias": [],
-  "ra": 16.55353,
+  "alias": [
+    "GRB 230322B"
+  ],
+  "ra": 16.5535,
   "dec": -47.70079,
-  "T0": "2023-03-23T03:31:58Z",
-  "T0_ref": null,
+  "T0": "2023-03-22T21:10:37.893100Z",
+  "T0_ref": "GCN 33505（BAT trigger 1161127，21:10:37 UT）；亚秒取 Swift/BAT trigger 1161127 官方产品页 UTC 21:10:37.893100（含 UTCF）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 33505",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 0.43,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 33512",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发 GRB 230322B（trigger 1161127，GCN 33505；BAT 产品页 https://gcn.gsfc.nasa.gov/notices_s/1161127/BA/）。原 T0=2023-03-23T03:31:58Z 实为 GCN 33506 中 MASTER-SAAO 的指向/观测时刻（触发后 22880 s），不是触发时刻，已修正为 2023-03-22T21:10:37.893100Z（GCN 33505 给 21:10:37 UT，亚秒取 BAT trigger 1161127 官方产品页 UTC，含 UTCF 修正；external/swift_bat 目录 trigger_time 同值）。原 extra_data.t0_note=“t0 为 meta trigger-time（真实触发时刻）”、t0_basis=“meta_trigger” 一并废弃。\n定位：BAT 机上 16.565/-47.729（3′，90%）、地面 16.550/-47.709（1.7′，90%，GCN 33519）；XRT 16.55359/-47.70106（1.9″，90%，GCN 33505）、增强 16.55333/-47.70077（2.3″，90%，GCN 33507）；UVOT 16.55353/-47.70079（0.62″，90%，GCN 33505）与 16.55350/-47.70079（0.43″，90%，GCN 33512）。本条目取 GCN 33512 UVOT 定位（0.43″，90%）。\n测光：GCN 33512 UVOT 7 个早期曝光（white/v/b/u/w1/m2/w2，v 为 3σ 上限 >18.3）已入库；原文星等未做银河系消光改正（E(B-V)=0.017，Schlegel+1998）；UVOT 光度系统按原文所引 Breeveld+2011 记 Vega。GCN 33505 的 white 17.60±0.14 与 33512 的 white 17.60±0.04 是同一 finding chart（起点 118/119 s、150/147 s 曝光），按 33512 精化值入库、未重复。GCN 33506 MASTER-SAAO 在 Tmid−T0=22970 s 的 clear 波段上限 15.7 mag 已入库（band=G）。X 射线数据（GCN 33505/33507/33508）暂不处理。\nT90=11.61±2.17 s（15-350 keV）、fluence=3.7±0.6×10^-7 erg/cm2（15-150 keV）、1 s 峰值流量 1.1±0.2 ph/cm2/s（GCN 33519；external/swift_bat 记 T90=11.8±2.29 s）；无红移测量。sub_tag 留空：来源未给出 lgrb/sgrb 分类（仅 T90）。\n测光检索（2026-10-26）：仓内 gcn/archive 本 clone 无该目录（不可用）；external/rssgrbag lightcurve.jsonl（140 行）与 grbsn_webtool SourceData（63 事件）均无该源；external/swift_bat、swiftgrbba 命中（仅身份/T0/T90，无光变表）；GCN 站检索 “230322B” 命中 6 篇（33505/33506/33507/33508/33512/33519，其中 2 篇含测光/上限）；SciX 检索页需 JS 未取回结果、ADS 摘要页 405 不可达，经 Web 检索仅命中 ADS 的 GCN 33505 记录 1 条（2023GCN.33505....1C），arXiv API 0 条；TNS 检索 0 条 → 补 8 行（7 UVOT + 1 MASTER 上限）。UVOT 表时间口径（主控修正 2026-10-26）：GCN 33512 表 v 行 T_start/T_stop=661/1061 s、Exp=58 s（跨度 400 s），w1 行 710/1095 s、Exp=19 s（跨度 385 s），均与曝光时长严重不符；time 统一取 T_start+Exp/2、time_err=Exp/2（§3.2「曝光中间时刻」），其余 5 行按同一口径微调（差 0.5–1.5 s），行 comment 已逐行注明。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻 2023-03-22T21:10:37.893100Z（GCN 33505 给 21:10:37 UT，亚秒取 BAT trigger 1161127 产品页）；原 bot 值 2023-03-23T03:31:58Z 系 MASTER-SAAO 指向时刻，已废弃（见 comment）",
+    "t0_basis": "GCN 33505 + swift_bat trigger 1161127 product page",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 33505",
+      "url": "https://gcn.nasa.gov/circulars/33505",
+      "title": "GRB 230322B: Swift detection of a burst with optical counterpart",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 33506",
+      "url": "https://gcn.nasa.gov/circulars/33506",
+      "title": "Swift GRB 230322B: Global MASTER-Net observations report",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 33507",
+      "url": "https://gcn.nasa.gov/circulars/33507",
+      "title": "GRB 230322B: Enhanced Swift-XRT position",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 33508",
+      "url": "https://gcn.nasa.gov/circulars/33508",
+      "title": "GRB 230322B: Swift-XRT refined Analysis",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 33512",
+      "url": "https://gcn.nasa.gov/circulars/33512",
+      "title": "GRB 230322B: Swift/UVOT Detection",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 33519",
+      "url": "https://gcn.nasa.gov/circulars/33519",
+      "title": "GRB 230322B: Swift-BAT refined analysis",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
