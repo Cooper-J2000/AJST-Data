@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB040823",
-  "alias": [],
-  "ra": 272.15,
-  "dec": -20.7164,
+  "alias": [
+    "GRB 040823",
+    "IBAS 1958"
+  ],
+  "ra": null,
+  "dec": null,
   "T0": "2004-08-23T10:15:51Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 2654",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
@@ -14,14 +17,19 @@
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy（2026-10-27）。身份：GRB040823＝INTEGRAL trigger 1958（GCN 2654 原文「the error box of GRB040823 (INTEGRAL trigger 1958; trigger time 10:15:51 UT)」）；STScI S. Holland「2004 Localized Gamma-Ray Bursts」列「GRB 040823 (IBAS 1958)」、时间 10:15:51 UT（引 GCN 2654），其 RA/Dec 栏留空。alias 出处：「GRB 040823」＝SIMBAD 对象名（该 SIMBAD 条目无坐标，唯一引文 2004GCN..2654....1M 即 GCN 2654 本身）；「IBAS 1958」＝上列 STScI 页用名。同日甄别：SGR 1806-20 正处高活动期（GCN 2665 表列 040823 六次爆发，Konus 时标 22462/36755/40994.643/48073.891/48363/58681 s UT），无一次与 10:15:51 UT（当日 36951 s）吻合，最近一次 36755 s＝10:12:35 UT，差 196 s，远超航天器钟差（Wind–INTEGRAL 光程差量级约 5 s），不能判为其中之一；GRB040812（IBAS 1901）/040825/040827 各为不同触发，无同日混淆，全库亦无本事件第二建档。性质待决：该触发从未获 IBAS 地面分析定位通告（GCN 事件页 grb-040823 全部通告仅 2654 一篇），无余辉、无 IPN 三角定位，仓内 heasarc_grbcat 快照同期 INTEGRAL 暴（040106/040223/040323/040422/040624/040730/040812/040827/040903）在录而本源缺、mpe_greiner 快照亦无，无任何正式研究文献——GRB 性质既未确认，也未查到官方撤回文本，tag/sub_tag 留空，条目处置（保留/删除）报维护者裁决。T0：bot 值 2004-08-23T10:15:51Z 与 GCN 2654 引述的 INTEGRAL 触发时刻一致，核实无误，仅补 T0_ref＝GCN 2654；t0_note/t0_basis（meta_trigger）与核实结果相符，保持原样。定位修正：bot 原值 ra/dec＝272.15/-20.7164 实为 GCN 2654 的观测场心（18h08m36s -20d42'59\"，FOV 43′），原文仅述观测「covering the error box」、未给误差盒坐标，场心不是源位置——ra/dec 置 null（bot 把观测场心当源坐标的失真家族），pos_error/pos_ref 随之留空。测光检索（2026-10-27）：仓内 gcn/archive 本地未获取；external 快照（mpe_greiner/heasarc_grbcat/batse/saxgrbmgrb/konus_wind/swift_bat/swift_grb/agile_mcal/uvot_grb 等全部 normalized.jsonl 与 tdat.gz）查「040823/2004-08-23」零命中（konus_wind/swift_bat 为红移样本、Swift 2004-11 才升空，均无覆盖属预期）；GCN 站事件页命中 1 篇（2654，光学上限）；SIMBAD 无测光数据；arXiv 全文 API 查「GRB 040823」0 篇；WebSearch 无正式文献命中；ADS/SciX、VizieR 网页与 ISDC/IBAS 站 TLS 故障多次重试未成（已列 PR 说明）→ 无可用测光，补 0 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
