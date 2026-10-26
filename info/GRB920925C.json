@@ -1,31 +1,41 @@
 {
   "transient_id": "GRB920925C",
-  "alias": [],
-  "ra": 330.8802,
-  "dec": 25.4171,
-  "T0": "1992-09-26T05:46:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 920925E",
+    "W920925c",
+    "920925c"
+  ],
+  "ra": 330.79475,
+  "dec": 25.34575,
+  "T0": "1992-09-25T22:46:24Z",
+  "T0_ref": "HEASARC GRBCAT grbcat_id 1357（GRB 920925E，trigger_time=1992-09-25T22:46:24Z，time_def=Time at Detecting Instrument）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "WATCH-GRANAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "HEASARC GRBCAT grbcat_id 1357（RA=330.79475, Dec=25.34575；region=circle+intersect，未给误差半径）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "命名更正（首句）：库内 id GRB920925C 的数据实际对应 HEASARC GRB 920925E（name_alt W920925c / 920925c），并非 HEASARC GRB 920925C（后者 trigger 1992-09-25T20:45:14，RA/Dec=129.51/+28.82，name_alt 920925b；两者是不同事件）。按 §3.7 id 不改，官方名与目录别名写入 alias。身份/坐标：HEASARC GRBCAT grbcat_id 1357，RA=330.79475、Dec=25.34575（region=circle+intersect，目录未给误差半径），pos_error 留空；原 ra/dec=330.8802/25.4171 与目录相差约 0.1°，已改为目录值。T0：原 1992-09-26T05:46:00Z 与 HEASARC 的 1992-09-25T22:46:24Z 相差约 7 h，已改为目录触发时刻（time_def=Time at Detecting Instrument）；T0_offset 留空。触发仪器：HEASARC observatories 列 WATCH-GRANAT、IPN/WATCH、IPN；采用探测仪器 WATCH-GRANAT（IPN 提供定位），原 IPN 已改。分类：HEASARC t90=282.2±8.86 s（band 字段为空）> 2 s，按目录 t90 判 lgrb，sub_tag=['lgrb']（非自算）。红移：无光谱/宿主信息，留 null。测光：HEASARC afterglow_flag=N，无光学/射电测光；GCN 站检索 920925E 0 篇（1992 年早于 GCN），GCN 事件页无该源；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；arXiv 0 篇、ADS/SciX 401（无 token）、TNS 403；结论：无可入库测光，补 0 行，未建立 lc。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=1992-09-25T22:46:24Z 取 HEASARC GRBCAT grbcat_id 1357（GRB 920925E）的 Time at Detecting Instrument；原 bot 值 1992-09-26T05:46:00Z 偏晚约 7 h，已废弃",
+    "t0_basis": "HEASARC GRBCAT grbcat_id 1357",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
