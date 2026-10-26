@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB250603A",
-  "alias": [],
-  "ra": 129.93745,
-  "dec": -39.29287,
-  "T0": "2025-06-03T01:11:04Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 250603A"
+  ],
+  "ra": 129.93746,
+  "dec": -39.29286,
+  "T0": "2025-06-03T01:10:23.098520Z",
+  "T0_ref": "GCN 40613（Swift/BAT trigger 1320335，01:10:23 UT）；亚秒取 Swift/BAT 官方目录 trigger 1320335 = 2025-06-03T01:10:23.098520（external/swift_bat 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 40615",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.3,
+  "pos_ref": "GCN 40616（增强 XRT 定位 08h39m44.99s −39°17′34.3″，2.3″，90%）；GCN 40615 初报 1.9″/90% 备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-26。身份：Swift/BAT trigger 1320335（GCN 40613，01:10:23 UT，7.82σ）＝GRB 250603A；GCN 40613 曾因离银道面仅 1.42°、可能为银河系暂现源而给出备用名 Swift J0839.7-3916，GCN 40615 的 XRT 余辉确认其为 GRB、明确 'not a new Galactic transient'，故该备用名不入 alias。T0：原值 2025-06-03T01:11:04Z 不是触发时刻（BAT 触发 01:10:23 UT；XRT 于 01:12:04.7 UT 开始观测 = T0+101.7 s），已改为 2025-06-03T01:10:23.098520Z（GCN 40613 + Swift/BAT 目录 trigger 1320335）；亚秒差直接并入 T0，T0_offset 留空。定位：原 129.93745/−39.29287（1.9″）取自 GCN 40615 初报；改用 GCN 40616 的增强 XRT 定位 129.93746/−39.29286（2.3″，90%），pos_error_confidence=90。分类：GCN 40613 记 BAT 光变持续时间约 18 s（含 T0+16 s 可能的短尖峰），未明写 long/short；Swift/BAT 目录 t90=15.712±11.875 s（15-350 keV，external/swift_bat）> 2 s，按 2026-10-26 裁定依目录 t90 判 lgrb，sub_tag=['lgrb']（非自算）。红移：无光谱/宿主测定，redshift 留 null。测光：GCN 40619 UVOT 9 条 3σ 上限（white_FC 20.4、u_FC 19.7、white 21.0、v 19.0、b 19.6、u 19.8、w1 18.7、m2 18.5、w2 19.2），均为 Vega 系统（Breeveld+2011）、未做 E(B-V)=1.89 消光改正；原文 T_start/T_stop 与 Exp 口径不一致（部分行跨度远大于 Exp），统一按 §3.2 取 time=T_start+Exp/2、time_err=Exp/2，行 comment 已注明。测光检索（2026-10-26）：本工作区无 gcn/archive，改用 GCN 事件页 grb-250603a（5 篇：40613/40615/40616/40618/40619）逐篇全文；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；ADS/SciX 无 token（401）、arXiv 0 篇、TNS 无对象；结论：仅 GCN 40619 的 9 条 UVOT 上限可用，补 9 行；XRT（40615/40616/40618）为 X 射线，按 §3.3 不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发 1320335 时刻 2025-06-03T01:10:23.098520Z（GCN 40613 + Swift/BAT 目录）；原 bot 值 01:11:04Z 非触发时刻，已更正",
+    "t0_basis": "GCN 40613 + swift_bat trigger 1320335",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
