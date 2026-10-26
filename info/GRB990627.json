@@ -1,29 +1,34 @@
 {
   "transient_id": "GRB990627",
   "alias": [],
-  "ra": 29.65,
-  "dec": -77.0,
+  "ra": 27.1055,
+  "dec": -77.0883,
   "T0": "1999-06-27T05:00:51Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 356（BeppoSAX Mission Scientist）：A GRB (GRB 990627) was detected by the GRBM and WFC of BeppoSAX on June 27, at 05:00:51 U.T.（触发仪器官方通告整秒）；GRBCAT trigger_time=1999-06-27T05:00:51Z（ECT 口径）一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 180.0,
+  "pos_ref": "GCN 356（BeppoSAX-WFC final location）：R.A.(2000)=27.1055 DEC(2000)=-77.0883，error radius 3′；GRBCAT 行 27.1/-77.08 与 MPE 表行（01h48m25s -77°05′，3′）一致互证；原文未标注置信水平（pos_error_confidence 留空）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] BeppoSAX GRBM+WFC 触发定位（GCN 356 Gandolfi：05:00:51 UT，WFC final 27.1055/-77.0883，3′）；BeppoSAX NFI 探测衰减 X 射线源 1SAX J0148.5-7704（GCN 359：Jun 27.544-28.864 29 ksec，与 ATCA 射电源 AT J014832.6-770412 位置一致，fading strongly suggesting X-ray afterglow——X 射线内容不入库）；GRBCAT 行（05:00:51Z ECT，BeppoSAX+IPN）；MPE 表行（SAX/WFC 3′）。全库检索「990627」命中 4 篇（356/357/358/359）全部属本源。[T0] 原库 05:00:51Z 与 GCN 356 触发时刻一致（保留；本暴非 name_date 占位——05:00:51 与「0627」无关联，真实触发值）。[定位更正] 原库 ra/dec=29.65/-77.0 与 WFC final 定位（27.1055/-77.0883）相距约 2.5 deg——bot 抽取错误值（来源不明，非任何通告坐标），已更正为 GCN 356 WFC final 值；补 pos_error=180″（3′）、pos_ref=GCN 356；原文未标注置信水平（pos_error_confidence 留空）；GRBCAT/MPE 行一致互证。[Trigger_Instrument] 补 BeppoSAX/WFC（GRBM 触发+WFC 定位，GCN 356 原文 detected by the GRBM and WFC；仓内 7 例同仪先例）。[分类] tag=grb 原有；sub_tag 留空：无时长信息（GCN/GRBCAT t90=None）。[X 射线余辉] GCN 359：1SAX J0148.5-7704 衰减（strongly suggesting X-ray afterglow），位置与射电源 AT J014832.6-770412 一致——X 射线按 §3.3/§7 不入库；该射电源是否余辉原文未定论（GCN 357 明言 making no claims）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「990627」全形态：命中 4 篇全部属本源；GCN 357（ATCA）仅给 4 个 6cm 源位置无流量数值（原文 making no claims），不入库录 comment；GCN 359 为 X 射线不入库；入库 1 行：GCN 358 Sutherland 1.0m R~21 3σ 上限（Jun 28.138-28.193 中点，USNO-A1.0 定标）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（1999 年）→ 本 PR 补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 保留 GCN 356 触发时刻 05:00:51 UT（与库内原值一致）；t0_basis 由 meta_trigger 更正为 GCN 触发通告",
+    "t0_basis": "GCN 356（BeppoSAX 触发通告；GRBCAT ECT 一致）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
