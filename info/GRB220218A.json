@@ -1,28 +1,59 @@
 {
-  "transient_id": "GRB220218A",
-  "alias": [],
-  "ra": 133.83,
-  "dec": 31.984,
-  "T0": "2022-02-18T22:30:33Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 31608",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
-  "extra_data": {
-    "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+ "transient_id": "GRB220218A",
+ "alias": [
+  "GRB 220218A",
+  "GRB220218.94",
+  "BAT 1093860"
+ ],
+ "ra": 133.83,
+ "dec": 31.984,
+ "T0": "2022-02-18T22:28:59.357780Z",
+ "T0_ref": "GCN 31608（\"At 22:28:59 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 220218A (trigger=1093860)\"，整秒）＋external/swift_bat 目录亚秒 22:28:59.357780（含 UTCF；swiftgrbba 整秒 22:28:59 一致）",
+ "T0_offset": null,
+ "T0_offset_ref": null,
+ "Trigger_Instrument": "Swift/BAT",
+ "redshift": null,
+ "tag": [
+  "grb"
+ ],
+ "pos_error": 180.0,
+ "pos_ref": "GCN 31608",
+ "redshift_type": null,
+ "redshift_ref": null,
+ "comment": "审核 2026-10-25 Rusty-Harpoon@zcode。T0 修正：原值 2022-02-18T22:30:33Z 系 GCN 31607 MASTER-SAAO 指向时刻误作触发时刻（\"pointed ... 93 sec after trigger time at 2022-02-18 22:30:33 UT\"；MASTER-Kislovodsk 行 22:30:56−117 s=22:28:59 精确反推，SAAO 行差 1 s 属整化，Issue #84 模式）；修正为 BAT image trigger 22:28:59 UT（GCN 31608）＋swift_bat 目录亚秒。原值 2022-02-18T22:30:33Z 与 bot 失真标记留档：原 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、原 t0_basis=\"meta_trigger\"。位置：BAT on-board 133.830/+31.984，误差 3 arcmin（90% containment，含系统差，GCN 31608）——与原库 pos_error=180 arcsec 配套、维持；无 XRT/UVOT 观测（Swift 反作用轮重启期、自动 slews 关闭，GCN 31608 原文明示），故无精化位置；external/swift_bat 目录位置 133.8121/31.96772 备查。性质：image trigger，光变\"multi-minute timescale\"变化待下行数据确认（GCN 31608）；T90=270.84±47.92 s（15-350 keV）、T50=131.94±14.98 s（external/swift_bat 目录，summary_general_info）记此备查；来源未给 lgrb/sgrb 分类、不自算（§3.9）→ sub_tag 留空。tag=grb（Swift 官方命名 GRB 220218A，无否定通告）。alias：GRB220218.94＝GCN 31607 subject 用的 MASTER 点号名；BAT 1093860＝swift_bat name_alt。测光检索留证（2026-10-25）：仓内 gcn/archive 全文命中本源 3 篇（31607 MASTER、31608 Swift 通告、31613 BOOTES），无其它；external：swift_bat/swiftgrbba/mpe_greiner 有目录级记录（仅参数互证）、uvot_grb/fermi_gbm/rssgrbag/grbsn_webtool 无；文献：ADS（api.adsabs.harvard.edu，2026-10-25）命中 3 篇全为 GCN 通告本身（31608/31613＋按 subject 名 GRB220218.94 命中 31607，与 articles 一致）、无正式文献；OpenAlex 0、arXiv 0、Crossref 3 条无一涉及本源；TNS 不适用（非 AT/SN/CV 类）→ 共补 8 行（MASTER 7＋BOOTES-5/JGT 1，均有时间锚点）。",
+ "sub_tag": [],
+ "pos_error_unit": "arcsec",
+ "extra_data": {
+  "src": "gcn_llm_extract",
+  "t0_note": "T0=Swift/BAT 触发时刻（GCN 31608 整秒＋swift_bat 目录亚秒 22:28:59.357780）；原值 22:30:33Z 为 MASTER 指向时刻误植（详见 comment）",
+  "t0_basis": "gcn_31608+swift_bat_catalog",
+  "bot_created": true,
+  "audit": {
+   "status": "reviewed",
+   "auditor": "Rusty-Harpoon@zcode",
+   "date": "2026-10-25"
+  }
+ },
+ "articles": [
+  {
+   "name": "GCN 31607",
+   "title": "Swift GRB220218.94: Global MASTER-Net observations report",
+   "url": "https://gcn.nasa.gov/circulars/31607",
+   "source": "Rusty-Harpoon@zcode"
   },
-  "articles": [],
-  "host_galaxy": null
+  {
+   "name": "GCN 31608",
+   "title": "GRB 220218A: Swift detection of a burst",
+   "url": "https://gcn.nasa.gov/circulars/31608",
+   "source": "Rusty-Harpoon@zcode"
+  },
+  {
+   "name": "GCN 31613",
+   "title": "GRB 220218A: BOOTES-5/JGT optical upper limit",
+   "url": "https://gcn.nasa.gov/circulars/31613",
+   "source": "Rusty-Harpoon@zcode"
+  }
+ ],
+ "host_galaxy": null,
+ "pos_error_confidence": "90"
 }

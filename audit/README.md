@@ -91,7 +91,8 @@ gh pr list --search "in:title <源ID>"       # 或手查
 - **审核前必查**：`grep <源ID> audit/denied.tsv`（或 `python3 tools/audit_queue.py --id <源ID>`，
   命中会直接回「已被否证」）。命中就停手，不要认领、不要开 PR、不要重建。
 - **源复活＝报警**：`validate.py` 发现 denied 里的源又出现 `info/` 或 `lc/` 文件就警告——那说明
-  导入管线把源重建了（排除机制尚未接入管线，见 Issue #183 第 3 条），应按 `evidence` 再否证一次。
+  源被重新导入或误恢复了（`bot_created` 是一次性建库，库没有常态化导入管线；见 Issue #183），
+  应按 `evidence` 再否证一次。
 - **不参与状态机**：它没有 `info` 文件，本来就不在可认领队列里；`audit_queue.py --denied` 只读展示。
 - **删除要留得下判据**：`evidence` / `decided_by` / `date` / `ref` 缺一项就告警。只写「已删除」
   的记录等于没写——下一个人还得从头查一遍 GCN。
@@ -160,3 +161,19 @@ python3 tools/<脚本>.py [--tsv /tmp/out.tsv]     # 只读；脚本随 Issue �
 - 一个源同时只应有一个未过期认领：普通源 **14 天**、`lc` 超过 1000 行的巨源 **30 天**（自最后一次更新算起）。
 - 遇到别人**未过期**的认领：在该 PR 评论询问并等 **48 小时**；仍无响应再接手，并在自己的 PR 里说明。
 - 遇到**已过期**认领：可直接开工，同时在对方 PR 上留言。
+
+### 挤占由 CI 强制（2026-10-25 起）
+
+`tools/check_duplicate_claim.py` 把「同一个源被多个 open PR 占用」做成机械判定：
+
+- **占用口径**：本 PR 改动的 `info/<id>.json` / `lc/<id>.csv`，**或标题里的 `claim: <源ID>`**。
+  后者是关键——claim PR 没有文件改动，旧版守卫看不见它，于是 claim 到 data PR 之间那几小时没有保护。
+- **后开者失败**：`validate` 里 `--strict` 只让 `created_at` 更晚的那个 PR 变红（先开者仍绿）。
+  被挡的一方要么换源、要么关闭，要么在对方 PR 下沟通 48 小时——**没有"先合了再说"这条路**。
+- **PR 上看得见**：`collision-comment.yml`（`pull_request_target`，只用 base 分支的脚本、绝不跑 fork 代码）
+  会发一条带表格的评论并打 `collision` label；冲突解除后评论与 label 自动撤掉。
+  `gh pr list --label collision` 就是"当前所有撞车"的清单。
+- **分支别删**：被关掉的那个 PR 往往带着对方没有的东西（2026-10-25 两例：#171 的文献级卡、#219 的字段判断
+  都被维护者吸收并记名）。做完就把增量写在 PR 里。
+- **快照不是空闲证据**：`audit/state.tsv` 每小时刷新，但 `audit_queue.py` 只在快照 ≤2 小时时才敢把源判成
+  `free`，否则显示 `free?`——认领前必须 `--live` 或 `gh pr list` 实时核对一次。

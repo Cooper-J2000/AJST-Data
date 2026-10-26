@@ -1,30 +1,110 @@
 {
   "transient_id": "GRB220511A",
-  "alias": [],
-  "ra": 291.9,
-  "dec": 19.7,
-  "T0": "2022-05-11T13:41:56Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 220511A",
+    "GRB220511571",
+    "GRB 220511.571",
+    "bn220511571"
+  ],
+  "ra": 287.4316,
+  "dec": 17.7297,
+  "T0": "2022-05-11T13:41:56.870Z",
+  "T0_ref": "GCN 32030（Fermi/GBM 触发 13:41:56.87 UT，trigger 673969321/220511571）+ FERMIGBRST 目录 13:41:56.870（external/fermi_gbm 快照；ISO 写 3 位小数 .870）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 5.4,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 32052",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "GRB 220511A：Fermi/GBM 触发（trigger 673969321/220511571，13:41:56.87 UT，GCN 32018/32030），AGILE（T0=2022-05-11 13:41:57 UT，GCN 32021）、AstroSat/CZTI（峰值 13:41:57.45 UT，GCN 32028）、Konus-Wind（T0=13:41:59.624 UT，GCN 32033）、GECAM-B（utn220511_134156_GECAMb）与 INTEGRAL/SPI-ACS（trig#9912，转引自 GCN 32023）同测到；Swift/BAT 未触发，BAT-GUANO 事后存档定位（RA,Dec=287.446,17.739，7′，GCN 32023）。【T0 修正】原 bot 值 2022-05-11T13:41:56Z（extra_data t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，原值逐字留档）与 GBM 触发整秒一致；按触发仪器官方 Circular（GCN 32030 亚秒 .87；FERMIGBRST 目录 .870 同值）修正为 13:41:56.87，不设 T0_offset。swiftgrbba 目录 trigger_time=2022-05-11T13:47:57.000（BAT/GUANO）与 GCN 32023 所载「T0: 2022-05-11T13:47:57 UTC」一致，但比 GBM/AGILE/GECAM/CZTI/Konus 全部触发时刻晚 6 分钟，判为 GCN 32023 原文笔误（应为 13:41:57），不采用。【位置】原 bot 值 ra=291.9/dec=19.7 即 BALROG 定位 RA=291.9±1.4、Dec=19.7±1.0（1σ 统计，另估 1° 系统误差，GCN 32019）；并列：GBM 实时定位 RA=285.4/Dec=17.5（1.0° 统计，GCN 32018）、BAT-GUANO 287.446/17.739（7′，GCN 32023）、MPE Greiner 目录 287.4458/17.7333（Instrument=Swift，转引 BAT-GUANO）；本次改取 XRT 余辉位置 RA=287.4316/Dec=17.7297、误差 5.4″（半径，90% 置信，GCN 32052；即 GCN 32029 Source 1，2.4σ 变暗判为余辉，距 BAT-GUANO 位置 59″）。【分类】GCN 32018「likely LONG GRB」、GCN 32033「The long GRB 220511A」→ sub_tag=lgrb。【T90 等】T90≈4.2 s（50-300 keV，GCN 32030）/16.0±14.0 s（50-300 keV，FERMIGBRST 目录）/1.8(+0.8,-0.4) s（20-200 keV，AstroSat CZTI，GCN 32028）；fluence=7.62±0.23e-6 erg/cm2（10-1000 keV，T0-T0+5.7 s，GCN 32030）/7.37682±0.02858e-6 erg/cm2（10-1000 keV，FERMIGBRST 目录）/7.8±1.5e-6 erg/cm2（20 keV-10 MeV，Konus-Wind，GCN 32033）；Epeak=199±11 keV（幂律+高能截止，GCN 32030）/155±14 keV（Band，GCN 32030）/176.6±7.4 keV（COMPT，FERMIGBRST 目录）/125.8±4.9 keV（Band，FERMIGBRST 目录）/159(-34,+21) keV（Band，Konus-Wind，GCN 32033）；1 s 峰值光子流 20.3±0.5 ph/cm2/s（10-1000 keV，自 T0+0.58 s 起，GCN 32030）；无红移报道。【别名】GRB 220511A（GCN eventId 用名）；GRB220511571/GRB 220511.571（FERMIGBRST trigger 名/HEASARC 名，external/fermi_gbm 快照 name_alt）；bn220511571（GBM 官方编号）。GRB220511571/GRB 220511.571 为目录实有名、非管线拼接伪形，按提示词 §3.10「目录用过的形态确有背书者保留，并在 comment 注明出处」收录（会命中 validate 的伪形正则告警，属 Issue #69 清理范畴的例外，出处即本句）。【测光检索（2026-10-25）】仓内 gcn/archive 45889 篇全文检索（220511A/220511571）命中 12 篇（32018/32019/32021/32022/32023/32024/32027/32028/32029/32030/32033/32052；光学相关 2 篇：32022 MASTER-Amur 无滤光片上限 2 点、32027 BOOTES-2/TELMA clear 上限 1 点，均有时标锚点，已入库 3 行）；external/rssgrbag、grbsn_webtool、uvot_grb、konus_wind、agile_mcal、fermi_lat 快照均无记录；swift_xrt_live 仅有 1 条 X 射线余辉条目（287.4318/17.7305、Err90 5.9″，属本段声明暂不处理的 X 射线数据）；ADS 检索「GRB 220511A」命中 12 篇（即上述 GCN，无期刊论文）、「GRB220511A」「220511571」「673969321」各命中 3 篇 GCN；OpenAlex 命中 5 篇（GECAM-B 交叉定标 2025、BAT-GLIMPSE 2026、GBM 深度学习分类 2024、GECAM 触发软件 2024 等方法/样本类，无该源测光表）；arXiv API「GRB 220511A」0 篇；TNS 不适用（非 AT/SN/CV）→ 补 3 行（MASTER 2 + BOOTES-2 1，均上限）；X 射线数据（Swift/XRT，GCN 32024/32029/32052 及 swift.ac.uk ToO 00021498）暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-25 审核修正为 Fermi/GBM 触发时刻 13:41:56.870 UT（GCN 32030；FERMIGBRST 目录同值）；原 bot 值 13:41:56（整秒，meta_trigger）留档 comment",
+    "t0_basis": "GCN 32030 + FERMIGBRST (trigger 673969321/220511571)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 32018",
+      "title": "GRB 220511A: Fermi GBM Final Real-time Localization",
+      "url": "https://gcn.nasa.gov/circulars/32018",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32019",
+      "title": "GRB 220511A: BALROG localization (Fermi Trigger 673969321/ GRB 220511571)",
+      "url": "https://gcn.nasa.gov/circulars/32019",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32021",
+      "title": "GRB 220511A: AGILE detection",
+      "url": "https://gcn.nasa.gov/circulars/32021",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32022",
+      "title": "Fermi GRB 220511A: Global MASTER-Net observations report",
+      "url": "https://gcn.nasa.gov/circulars/32022",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32023",
+      "title": "GRB 220511A: Swift/BAT-GUANO arcminute localization",
+      "url": "https://gcn.nasa.gov/circulars/32023",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32027",
+      "title": "GRB 220511A: BOOTES-2/TELMA optical upper limit",
+      "url": "https://gcn.nasa.gov/circulars/32027",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32028",
+      "title": "GRB 220511A: AstroSat CZTI detection",
+      "url": "https://gcn.nasa.gov/circulars/32028",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32029",
+      "title": "GRB 220511A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/32029",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32030",
+      "title": "GRB 220511A: Fermi GBM observation",
+      "url": "https://gcn.nasa.gov/circulars/32030",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32033",
+      "title": "GRB 220511A: Konus-Wind detection of GRB 220511A",
+      "url": "https://gcn.nasa.gov/circulars/32033",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 32052",
+      "title": "GRB 220511A: Swift-XRT afterglow detection",
+      "url": "https://gcn.nasa.gov/circulars/32052",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

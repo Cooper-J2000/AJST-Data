@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB201104A",
   "alias": [
-    "GRB 201104001"
+    "GRB201104001",
+    "bn201104001"
   ],
-  "ra": 81.37000274658203,
-  "dec": -71.12999725341797,
-  "T0": "2020-11-04T00:01:01.750000Z",
-  "T0_ref": null,
+  "ra": 81.37,
+  "dec": -71.13,
+  "T0": "2020-11-04T00:00:56.750Z",
+  "T0_ref": "GCN 28830",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,16 +15,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 864,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 28828",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核链——原值：T0=2020-11-04T00:01:01.750000Z、ra/dec=81.37000274658203/−71.12999725341797（2FLGC FITS float32 原值）、pos_error=null、alias 仅 GRB 201104001、sub_tag 无 lgrb。问题与修正：(1) 原 T0 系 fermilgrb trigger_met 626140861.75 按 2001-01-01 纪元 naive 换算未扣 5 跳秒（2020-11 累计 5 s），比真实触发晚 5.000 s；真实触发 00:00:56.75 UT，据 GCN 28830（Fermi GBM 官方通告）与 FERMIGBRST 目录 trigger_time MJD 59157.000656829（=00:00:56.750 UTC，fermi_gbm 快照）改写 T0，AGILE/MCAL T0=00:00:56.77±0.01 佐证（GCN 28829）。(2) ra/dec float32 残渣复原 FERMILGRB 原文坐标 81.37/−71.13（=05h25m28.8s −71d07m48s），与 GCN 28828 的 RA,Dec=81.4,−71.1 圆整一致。(3) pos_error=864″（0.24 deg），GCN 28828 明文 90% containment（statistical error only），pos_error_confidence=90。未采用值备查：GBM 实时初定位 RA=60.4 Dec=−72.7（统计误差 1.0 deg，GCN 28823）；BALROG 定位 RA=67.9±10.4 Dec=−73.2±1.6（GCN 28834）；fermi_lat/2FLGC 目录自身 trigger_time 2020-11-04T00:00:55.996 系 LAT 管线口径，与 GBM 触发差 0.754 s。分类 lgrb：GCN 28823 称 likely LONG GRB，GBM 目录 T90=52.48±7.43 s（50-300 keV），GCN 28873 称 long GRB；Wang+2022 讨论其短暴样特征（长时标具 SGRB 特征）但来源均按长暴归类。非 SCHEMA 量备查：LAT >100 MeV 光子流量 (2.6±0.4)e-4 ph/cm2/s（触发后 0-100 s）、最高光子 3.7 GeV 于 T0+16 s（GCN 28828）；AGILE MCAL 注量 3.57e-06 erg/cm2（0.4-20 MeV，90% CL，GCN 28829）；Swift-XRT 覆盖 T0+67.6 ks 至 T0+80.9 ks，无 viable afterglow candidate，LAT 位置 3σ 上限 7.6e-3 ct/s（X 射线，不入库，GCN 28859）。测光检索（2026-10-25）：仓内 gcn/archive 全量 45 889 篇，检索 201104 相关命中 28 篇，其中 GRB 201104A 相关 9 篇（28823/28824/28828/28829/28830/28832/28834/28859/28873），含光学数值者 1 篇（GCN 28824，MASTER-OAFA 5 条上限，全部带 Tmid 时间锚点）；external/rssgrbag 无记录；external/grbsn_webtool 无该事件；heasarc_grbcat/konus_wind 快照无该事件；GCN 站（gcn.nasa.gov）检索为模糊全文匹配、无法精确计数（2026-10-25 实测），以本地全量档案为准；ADS/SciX 无 API token 未查（历史实测 401）；arXiv API 兜底命中 1 篇（Wang+2022，arXiv:2205.02982，纯 Fermi 伽马时序/谱分析，无测光表）→ 仅 MASTER 5 条有明确时间锚点的无滤光片上限可入库；本 PR 新增 5 行。审核人 wa1kmoon@zcode，2026-10-25。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -213,6 +221,60 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...935..179W",
       "bibtex": "@ARTICLE{2022ApJ...935..179W,\n       author = {{Wang}, Yun and {Jiang}, Lu-Yao and {Ren}, Jia},\n        title = \"{GRB 201104A: A ``Repetitive'' Short Gamma-Ray Burst?}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, Gravitational lensing, 629, 670, Astrophysics - High Energy Astrophysical Phenomena, High Energy Physics - Phenomenology},\n         year = 2022,\n        month = aug,\n       volume = {935},\n       number = {2},\n          eid = {179},\n        pages = {179},\n          doi = {10.3847/1538-4357/ac82ec},\narchivePrefix = {arXiv},\n       eprint = {2205.02982},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022ApJ...935..179W},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "GCN 28823",
+      "url": "https://gcn.nasa.gov/circulars/28823",
+      "title": "GRB 201104A: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28824",
+      "url": "https://gcn.nasa.gov/circulars/28824",
+      "title": "Fermi GRB 201104A: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28828",
+      "url": "https://gcn.nasa.gov/circulars/28828",
+      "title": "GRB 201104A: Fermi-LAT detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28829",
+      "url": "https://gcn.nasa.gov/circulars/28829",
+      "title": "GRB 201104A: AGILE/MCAL detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28830",
+      "url": "https://gcn.nasa.gov/circulars/28830",
+      "title": "GRB 201104A: Fermi GBM observation",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28832",
+      "url": "https://gcn.nasa.gov/circulars/28832",
+      "title": "GRB 201104A: Tiled Swift observations",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28834",
+      "url": "https://gcn.nasa.gov/circulars/28834",
+      "title": "GRB 201104A: BALROG localization (Fermi Trigger 626140861 / GRB 201104001)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28859",
+      "url": "https://gcn.nasa.gov/circulars/28859",
+      "title": "GRB 201104A: Swift-XRT observations",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28873",
+      "url": "https://gcn.nasa.gov/circulars/28873",
+      "title": "GRB 201104A: AstroSat CZTI detection",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null

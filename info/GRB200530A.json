@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB200530A",
   "alias": [
-    "GRB 200530031"
+    "GRB200530031"
   ],
-  "ra": 32.46900177001953,
-  "dec": 69.30400085449219,
-  "T0": "2020-05-30T00:44:15.568000Z",
-  "T0_ref": null,
+  "ra": 32.46916666666666,
+  "dec": 69.30388888888889,
+  "T0": "2020-05-30T00:44:10.568Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2020-05-30T00:44:10.568Z（GBM trigger 612492255 / 200530031，MJD 58999.0306779）；GCN 27897（GBM 团队）记 At 00:44:10.57 UT on 30 May 2020、GCN 27861（GBM Final Real-time）记 00:44:10 UT，一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,16 +14,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.312,
+  "pos_error_confidence": null,
+  "pos_ref": "HEASARC FERMILGRB 快照（2FLGC，Ajello+2019）：RA=02h09m52.6s Dec=+69°18′14″ → 32.46916667, 69.30388889 deg，error_radius=0.312 deg；GCN 27891 LAT 初报 RA,Dec=32.1,69.2（r=0.5 deg, 90%）同域",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52, DOI 10.3847/1538-4357/ab1d4e）；2FLGC 的 LAT 光变为高能光子光变（tl100=84.54±1.53 s、ext_emission_max_ene=1600 MeV @ +98.68 s），GeV/MeV 量级不落光学/射电测光两车道，不入 lc。【T0 修正】原值 2020-05-30T00:44:15.568000Z 为 bot 对 HEASARC FERMILGRB trigger_met=612492255.568 的天真换算（少扣 2017-01-01 起的 5 个闰秒；python 复算 naive UTC=2020-05-30T00:44:15.568000 与原值逐位一致），正确 UTC=2020-05-30T00:44:10.568；现采纳触发仪器目录 FERMIGBRST 的亚秒值 00:44:10.568Z（MJD 58999.0306779），GCN 27897（GBM 团队）记 At 00:44:10.57 UT、GCN 27861（GBM Final Real-time）记 00:44:10 UT，一致。FERMILGRB(2FLGC) 表 trigger_time=2020-05-30T00:44:10.000Z 为 LAT 口径，差 0.568 s 备查；其他仪器触发/特征时刻：CALET/CGBM 独立触发 00:44:15.067 UTC（GCN 27896）、AstroSat CZTI 最强峰 00:44:20.150 UT（GCN 27864）。【定位口径澄清】ra/dec 为 2FLGC LAT 精化定位（Ajello+2019，HEASARC FERMILGRB 快照 RA=02h09m52.6s Dec=+69°18′14″ → 32.46916667, 69.30388889 deg；error_radius=0.312 deg 为 LAT transient factory 分析的定位误差，网页文档只写 estimated error 未标注置信水平，external/fermi_lat/README.md 注按目录论文 Ajello et al. 2019 惯例为 1σ 统计误差，故 pos_error_confidence 留空）；GCN 27891（LAT 初报）RA,Dec=32.1,69.2（r=0.5 deg, 90% containment, statistical error only），与精化位置相距约 0.17 deg、在各自误差内相容；FERMIGBRST 目录行 ra=32.1, dec=69.23, error_radius=0.49 deg 与 GCN 27891 初报定位几乎逐位一致，疑为吸收 LAT 初报定位（GBM Final Real-time 定位 RA=17.3, Dec=71.9 距 LAT 位置约 5.6 deg，GCN 27861/27891）；MPE Greiner 表行（02h08m24s +69°14′, Error 29 角分, IPN=y）与 LAT 初报同域（相距约 0.033 deg；与 2FLGC 精化位置相距 0.1485 deg）。【坐标修正】原 ra/dec 32.46900177001953/69.30400085449219 为 float32 残渣（float32(32.469)/float32(69.304)），按 FERMILGRB 原值恢复全精度。【alias 更正】更正为 HEASARC 官方 Source Designation「GRB200530031」（FERMIGBRST tdat name 字段/fermilgrb GRBNAME 原形；GCN 27861 记 trigger 612492255.567684/200530031，GCN 27897 记 GBM200530031）。审核初版曾改为三位小数形「GRB 200530.031」并称有 name_alt/GCN 背书——经独立核查证伪：GCN 27861/27897 全文 0 处该形，name_alt 系本仓 parse.py decimal_grb_name 自拼（源码自述恒可由 yymmddfff 构造；GRB190507B/GRB191202A 两度同判）。【分类】long GRB：GCN 27861（GBM 团队）「detection of a likely LONG GRB」、GCN 27864（AstroSat CZTI）「long GRB 200530A」、GCN 27896（CALET）「The long GRB 200530A」；GBM T90≈23 s（GCN 27897）。【备查】T90=22.5284±2.28978 s、T50=11.2642±1.44818 s（50-300 keV）、fluence=2.33145e-05±3.66288e-08 erg/cm2（10-1000 keV）、Epeak=176.77078±2.7238393 keV（CPL，FERMIGBRST 目录值）；GCN 27897：fluence=(2.27±0.03)e-05 erg/cm2（10-1000 keV）、Epeak=178±4 keV（幂律+高能指数截止）、1-s peak photon flux=10.9±0.3 ph/cm2/s（自 T0+10.0 s 起，10-1000 keV）；GCN 27891：>100 MeV 光子流量 5.5e-06±1.8e-06 ph/cm2/s（触发后 0-1000 s）、光子指数 -2.3±0.3、最高能光子 1.6 GeV @ 触发后约 100 s、T0+4800–6700 s 重入 LAT FoV 未探测；GCN 27864：CZTI 40-200 keV 峰值计数率 669±29 cts/s、T90=20.98±0.08 s，Veto 100-500 keV 峰值计数率 709±46 cts/s、T90=20.87±0.31 s。【同日划界】同日 IceCube-200530A（2020-05-30 07:54:29.43 UT 中微子径迹事件，RA=255.37, Dec=26.61，GCN 27865）为另一独立事件（仓内另有 IceCube-200530A 条目），其相关通告 GCN 27865/27866/27869/27871/27872/27873/27875/27879/27881/27910/27980 不属本源；GCN 27869 为 IceCube Alert 200530.33 的 MASTER 观测报告，正文无 GRB 200530A 字样。【测光检索（2026-10-25）】仓内 gcn/archive/archive.json 45889 篇全文 python 扫描（「200530A」「200530031」「612492255」「GRB 200530」命中 16 篇，其中 GRB 200530A 通告 6 篇：GCN 27861/27862/27864/27891/27896/27897，其余 10 篇为同日 IceCube-200530A 中微子事件；另 subject 全量扫描「200530」命中 17 篇，新增 GCN 27869 系 IceCube Alert 200530.33 的 MASTER 报告，归属 IceCube 事件）——6 篇 GRB 通告中仅 GCN 27862 含光学数值；external/rssgrbag 光变 140 行 0 命中、external/grbsn_webtool 63 事件无该源、external/konus_wind/agile_mcal/heasarc_grbcat/uvot_grb/swift_bat 快照 0 命中（mpe_greiner 行仅目录参数）；GCN 站按名搜索已知失效，本地快照 45889 篇覆盖至 2026-10-22，等价于 GCN 站全量 Circular 检索；arXiv API（all:「GRB 200530A」、all:「200530.031」OR「bn200530031」、abs:「200530A」）命中均 0 篇；ADS/SciX 无 API token 未查（实测 401）→ 可用测光仅 GCN 27862 MASTER-IAC 无滤光片上限 1 条，本 PR 补 1 行。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -151,6 +158,49 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27861",
+      "url": "https://gcn.nasa.gov/circulars/27861",
+      "title": "GRB 200530A: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27862",
+      "url": "https://gcn.nasa.gov/circulars/27862",
+      "title": "Fermi GRB 200530A: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27864",
+      "url": "https://gcn.nasa.gov/circulars/27864",
+      "title": "GRB 200530A: AstroSat CZTI detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27891",
+      "url": "https://gcn.nasa.gov/circulars/27891",
+      "title": "GRB 200530A: Fermi-LAT detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27896",
+      "url": "https://gcn.nasa.gov/circulars/27896",
+      "title": "GRB 200530A: CALET Gamma-Ray Burst Monitor detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 27897",
+      "url": "https://gcn.nasa.gov/circulars/27897",
+      "title": "GRB 200530A: Fermi GBM detection",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

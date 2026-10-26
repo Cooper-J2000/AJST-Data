@@ -1,28 +1,65 @@
 {
   "transient_id": "GRB220710A",
-  "alias": [],
+  "alias": [
+    "GRB 220710A"
+  ],
   "ra": 221.5668,
   "dec": 20.6576,
   "T0": "2022-07-10T03:29:34Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 32375（Swift/BAT-GUANO 通告原文：T0: 2022-07-10T03:29:34 UTC，GECAM trig utn220710_032932_GECAMb）；Swift 官方目录 swiftgrbba（仓内快照）trigger_time=2022-07-10T03:29:34.000Z 同值互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "GECAM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 8.3,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 32385",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份】GRB 220710A＝GECAM 触发、Swift/BAT 经 GUANO 地面恢复的暴：GCN 32375 记 Swift/BAT 未船上定位（onboard），GECAM 近实时通告触发 GUANO 令 BAT 保存 T0±[-50,+150] s 事件模式数据后在 BAT 图像中探测到该暴（SNR=20），BAT 定位 RA,Dec=221.592,+20.657（误差 2 arcmin）；原 Trigger_Instrument=Swift/XRT 有误——XRT 仅做余辉跟进（GCN 32376/32385），改为 GECAM。Swift ToO 观测序列号 00021509（GCN 32376/32385）。XRT 余辉定位 RA,Dec=221.5668,+20.6576（8.3″，90% conf.，GCN 32385，距 BAT 定位 83″）；UKSSDC 增强型 XRT 定位（仓内 swift_xrt_live 快照 RA=221.5670743714, Dec=20.6582922469, 误差 6.9″）距现坐标约 2.7″，相容（本条 ra/dec 维持 GCN 32385 原值）。别名 GRB 220710A（带空格形）为 GCN 通告与 Swift 官方目录 swiftgrbba 用名。【T0】采纳 GCN 32375 给出的 GECAM 触发时刻 03:29:34 UTC；swiftgrbba 官方目录 03:29:34.000 同值。GECAM 触发通告名 utn220710_032932_GECAMb 内嵌 032932 与 T0 相差 2 s，通告名编码规则未证实，不作时间依据。bot 原值逐字留档：extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」。【分类】长暴：GCN 32375 记 BAT 探测持续 ~25 s。【物理量】BAT 持续 ~25 s（GCN 32375）；XRT 吸收柱 NH=2.60×10^20 cm^-2、谱指数 Gamma=0.94、XRT 首次观测 +242500 s（仓内 swiftgrbba 快照转述 UKSSDC 自动分析，供参考）。【定位置信】GCN 32385 原文「8.3 arcsec (radius, 90% confidence)」→ pos_error_confidence=90 取自原文。【红移】全部来源均未给出红移，未能核实。【检索留证】测光检索（2026-10-25）：仓内 gcn/archive（45 889 篇，收至 46010）全文检索 220710A/220710 命中 4 篇（32375 BAT-GUANO 定位、32376 Swift ToO、32385 XRT 余辉检测〔X 射线，不入库〕、32390 UVOT 上限），无其他仪器/团队通告；external/rssgrbag 0 行、grbsn_webtool 无该源目录、uvot_grb 及 batse/konus_wind/fermi_gbm/fermi_lat/agile_mcal/saxgrbmgrb 快照 0 命中（swiftgrbba/mpe_greiner/swift_xrt_live 仅身份与目录参数行）；ADS API 检索 \"GRB 220710A\" 命中 4 篇（=上述 4 通告）、\"GRB220710A\" 0 篇、full:utn220710 命中同 4 篇；arXiv API 0 命中；OpenAlex 命中 1 篇（GECAM 在轨触发定位软件综述，DOI 10.1088/1674-4527/ad683c，无本源测光）；TNS 不适用（非 AT/SN/CV）→ 可用测光仅 GCN 32390 的 UVOT white 3σ 上限 1 行，已补入 lc/GRB220710A.csv。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 GECAM 触发时刻（经 Swift/BAT-GUANO 通告 GCN 32375 转述；swiftgrbba 目录同值）",
+    "t0_basis": "GCN 32375",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Tohuvavohu+2022 (GCN 32375)",
+      "url": "https://gcn.nasa.gov/circulars/32375",
+      "title": "GRB 220710A: Swift/BAT-GUANO arcminute localization",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Evans+2022 (GCN 32376)",
+      "url": "https://gcn.nasa.gov/circulars/32376",
+      "title": "GRB 220710A: Swift ToO observations",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Beardmore+2022 (GCN 32385)",
+      "url": "https://gcn.nasa.gov/circulars/32385",
+      "title": "GRB 220710A: Swift-XRT afterglow detection",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Breeveld+2022 (GCN 32390)",
+      "url": "https://gcn.nasa.gov/circulars/32390",
+      "title": "GRB 220710A: Swift/UVOT Upper Limits",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

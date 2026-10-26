@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB181120A",
   "alias": [
-    "GRB 181120265"
+    "GRB181120265",
+    "GRB 181120.265",
+    "bn181120265"
   ],
-  "ra": 20.742000579833984,
-  "dec": 3.805999994277954,
-  "T0": "2018-11-20T06:21:24.084000Z",
-  "T0_ref": null,
+  "ra": 20.742083333333333,
+  "dec": 3.806111111111111,
+  "T0": "2018-11-20T06:21:19.084Z",
+  "T0_ref": "Fermi/GBM trigger 564387684/181120265：GCN 23427/23428 及 3 条 GBM 通告（Ground/Flight/Final）GRB_TIME 均 06:21:19.08 UT；HEASARC FERMIGBRST trigger_time=2018-11-20T06:21:19.084Z（取触发仪器目录毫秒精度，与 GCN 厘秒值一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +16,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2559.6,
+  "pos_error_confidence": "90",
+  "pos_ref": "HEASARC FERMILGRB（2FLGC/LTF 定位）：01h22m58.1s +03°48'22\"（=20.742083, +3.806111），error_radius 0.711 deg（90% containment，statistical only，依 Ajello+2019 §4.1）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 fsy@zcode 2026-10-25：(1) T0 原值 2018-11-20T06:21:24.084Z 系 bot 将 Fermi MET trigger_met=564387684.084 s 以 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣该纪元以来已生效的 5 个闰秒（2005-12/2008-12/2012-06/2015-06/2016-12 各 +1，Issue #67 口径），偏晚 5.000 s；脚本复核：564387684.084 s 天真换算=06:21:24.084，扣 5 闰秒=06:21:19.084；GCN 23427/23428 及全部 3 条 GBM 通告（Ground/Flight/Final，经 MPE grb181120A.html 存档核对）GRB_TIME 均 06:21:19.08 UT（LAT Offline 通告 06:21:19.07，10 ms 差系 LAT 自身口径）；FERMIGBRST trigger_time=2018-11-20T06:21:19.084Z。处置：按《数据审核提示词》§3.2 直接修正 T0=2018-11-20T06:21:19.084Z（取触发仪器目录毫秒精度，GCN 厘秒 19.08 一致），不写 T0_offset（换算误差非真实爆发时刻偏移）；2FLGC/FERMILGRB 表 time 列 06:21:18.996Z 与之差 0.088 s，系该衍生目录已知自差（§3.8③），仅作交叉验证。(2) 坐标：ra/dec 原值 20.742000579833984/3.805999994277954 为 2FLGC 坐标 20.7420833/3.8061111（01h22m58.1s +03°48'22\"）的 float32 噪声，已清理（例：GRB090626 同类处置）；补 pos_error=2559.6″（fermilgrb error_radius 0.711 deg，表说明 'localization error from LAT transient factory analysis (deg)'）；置信水平：Ajello+2019 §4.1 明示 LAT 定位误差为 '(90% containment, statistical only)'，GCN 23427（自动定位 1 deg）与 LAT Offline 通告（59.51′）同口径，故 pos_error_confidence=90。注：Ajello+2019 论文样本截至 2018-08-04，本暴（2018-11-20）不在论文表内，参数取自 HEASARC FERMILGRB 表（同 LTF 管线的在线扩展，仓内快照 retrieved 2026-07-21）。参考口径：GBM Final Position RA 36.99 Dec +6.56（2.69 deg）与 LAT 精化定位相距约 16 deg（GCN 23427 原文所述），与本条目采用的 2FLGC/LTF 定位不冲突。(3) 红移：2FLGC redshift 列空、GCN 无红移通告，保持 null。(4) 身份：Fermi GBM trigger 564387684/181120265（06:21:19.08 UT）=GRB 181120A（FERMILGRB gcn_name 列=GRB181120A）；GBM Final 通告注明与 INTEGRAL SPIACS trignum=8162 时间符合（1.0–100 s 内），佐证事件真实性；仓内无同日重复条目（info/ 仅 GRB181120A.json）；MPE 表定位（01h21m31s +04°10'）即 LAT Offline 人工定位口径，与 2FLGC 精化定位同源。(5) sub_tag 增补 lgrb：Curtin+2023（ApJ 954, 154）表 1/表 2 均列本源 Type=L（该文发表的分类表，基于 T90>2 s 且与在线分类人工比对），GBM Final 通告亦注 'likely a Long GRB'，两来源无冲突（§3.9）；T90=17.374±0.799 s（50–300 keV）。原审记 '不增补' 系当时未检得该分类来源，同日更正。(6) 测光检索（2026-10-25）：仓内 gcn/archive 本地未获取（目录不存在），经 GCN 网站检索；external/rssgrbag lightcurve.jsonl 0 命中、external/grbsn_webtool 无该事件、external/uvot_grb 与 swift_grb 无该源；GCN 站事件页 grb-181120a 共 2 篇（23427 LAT 探测、23428 GBM 观测，均仅伽马射线数据，无光学/射电/X 射线余辉测光或上限；23427 提及已申请 Swift ToO 但无任何后续观测通告）；GCN 归档索引 gcn3_arch_old141（23000–23999 全区间，覆盖 2018-07 至 2019-03）核对，含 'GRB 181120A' 的 Circular 仅 23427/23428 两篇；文献检索（WebSearch，多组关键词，覆盖 arXiv/IOP/ADS 索引；SciX 页面直连因同期网络中断未试通）命中 1 篇含可用数据：Curtin+2023（ApJ 954, 154，arXiv:2208.00803，VoR 已打开核对）CHIME/FRB 400–800 MHz FRB 类瞬发射电搜索上限，时间锚点明确，按 §3.3 补 2 行（lc/GRB181120A.csv，其表 1/表 2）；TNS 不适用（无光学对应体发现）。结论：无光学/红外/X 射线余辉测光；射电仅有 Curtin+2023 瞬发搜索上限，补 2 行。(7) alias：删 'GRB 181120265'（空格无点形，无目录背书）；增 'GRB181120265'（FERMIGBRST name/gbm_cat_name）、'GRB 181120.265'（2FLGC name）、'bn181120265'（触发号），均见仓内 catalog_data name_alt，依 §3.10 保留目录用名。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -148,8 +152,26 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "fsy"
+    },
+    {
+      "name": "Curtin+2023",
+      "title": "Limits on Fast Radio Burst–like Counterparts to Gamma-Ray Bursts Using CHIME/FRB",
+      "url": "https://doi.org/10.3847/1538-4357/ace52f",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }

@@ -1,28 +1,64 @@
 {
   "transient_id": "GRB211223C",
-  "alias": [],
+  "alias": [
+    "GRB 211223C",
+    "BAT 1090656"
+  ],
   "ra": 227.165,
   "dec": -26.878,
-  "T0": "2021-12-23T02:41:18Z",
-  "T0_ref": null,
+  "T0": "2021-12-23T14:29:26.700140Z",
+  "T0_ref": "GCN 31288（At 14:29:26 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 211223C, trigger=1090656，整秒）+ Swift/BAT 官方目录亚秒值 2021-12-23T14:29:26.700140Z（external/swift_bat 快照 trigger 1090656；batgrbproduct 官方页同值并标注 includes UTCF correction）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 72.0,
   "pos_ref": "GCN 31297",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（fsy@zcode，2026-10-25）。【身份】Swift/BAT 触发 GRB 211223C（trigger 1090656，GCN 31288：At 14:29:26 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 211223C）；BAT 在轨定位 (227.164,-26.873) r=3′（radius, 90% containment, including systematic uncertainty，GCN 31288）、BAT 地面精化 (227.165,-26.878) r=1.2′（radius, sys+stat, 90% containment，GCN 31297，即现 ra/dec/pos_error，与 pos_ref 同源）；batgrbproduct 官方页 ground position (227.165332770964,-26.8780599364081)、90% 误差半径约 1.154′ 一致；因太阳指向约束 Swift 未 slew（GCN 31288：cannot slew until 23:31 UT on 2021 December 29，此前无 XRT/UVOT 数据），UKSSDC XRT products 页 trigger 01090656 返回 404（无 XRT 数据产品），无 XRT 加强定位，BAT 地面精化即最终最佳定位；源名日期 12-23 与触发日期一致；同日仓内无其他 211223 命名暴，GCN 事件页该源全部 4 篇通告（31288/31294/31295/31297）无撞名；GCN 31282（MASTER 通告）经打开核实为 GRB 211222A（Fermi），系检索引擎误关联，非本暴。【T0 修正】bot 原值 2021-12-23T02:41:18Z 无任何来源锚点（external 各快照与 GCN 全文均无此时刻；t0_basis=meta_trigger 不可信，Issue #68），偏早 11 h 48 m 08.700140 s；现取触发仪器 Swift/BAT 官方目录亚秒值 2021-12-23T14:29:26.700140Z（external/swift_bat 快照 trigger 1090656；batgrbproduct 官方页同值且标注 includes UTCF correction，MET 661962595.008 s），GCN 31288 整秒 14:29:26 UT 一致；独立互证：MASTER GCN 31294「54769 sec after trigger time at 2021-12-24 05:42:16 UT」反算触发 14:29:27 UT（整秒）、BOOTES GCN 31295「starting on Dec. 23 at 21:58:25 UT (~7.5 hours after trigger)」反算 14:29:26±，均自洽。bot 的 t0_basis/t0_note 原值：t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"（§3.10 改写，原值留此）。【tag/sub_tag】tag=grb（Swift/BAT 触发，GCN 31288）；T90=15.00±5.00 s（15-350 keV，GCN 31297）属长暴量级，但来源未作 lgrb/sgrb 分类表述，按 §3.9 不以 T90 自行归类，sub_tag 留空。【其他物理量并列】fluence=2.4±0.1×10⁻⁶ erg/cm²（15-150 keV，90%，GCN 31297）与 swift_bat 目录 15-350 keV 4.93298×10⁻⁶、15-150 keV 2.203938×10⁻⁶ 并列；T90 并列：11.076±0.719 s（15-350 keV，swift_bat 目录快照）；1-s peak photon flux=3.1±0.4 ph/cm²/s（15-150 keV，GCN 31297）；BAT 时谱 photon index=1.15±0.09（GCN 31297）；partial coding 32%（GCN 31297）。【红移】无任何来源给出，保持 null。【alias 出处】GRB 211223C＝GCN 31288/31294/31295/31297 标准 GCN 用名（空格形）；BAT 1090656＝swift_bat 官方目录 name_alt 原形。【测光检索留证（2026-10-25）】仓内 gcn/archive 本地未获取（目录为空），经 GCN 网站检索：该源事件页共 4 篇（31288/31294/31295/31297），其中 2 篇含光学上限数值（GCN 31294 MASTER-IAC 无滤光片 16.4 mag、GCN 31295 BOOTES-4/MET clear 20.1 mag）→ 已补 2 行新建 lc；external/rssgrbag lightcurve.jsonl 0 行、external/grbsn_webtool 63 事件无此源；external/swift_bat、swiftgrbba、mpe_greiner 快照有目录参数条目（身份与 T0 互证；mpe_greiner 的「GRB X-ray position 15h08m39s -26°52′、Error 3」经比对即 GCN 31288 BAT 在轨定位舍入值，非 XRT 定位），external/uvot_grb、swift_grb、swift_xrt_live、heasarc_grbcat 快照无记录；arXiv API 检索「GRB 211223C」0 条（2026-10-25 实测）；SciX/ADS API 无凭证实测 401 不可用（同 GRB180924A 先例口径），通用引擎检索仅命中 GCN 通告与 Swift 官方 GRB 表，无正式发表文献；TNS 不适用（GRB 非 AT/SN/CV 类）。【X 射线】本源 lc 原无 X 射线行；Swift 因指向约束未 slew、无 XRT/UVOT 数据（GCN 31288），无可处理项。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger=1090656）：GCN 31288 整秒 14:29:26 UT + Swift/BAT 官方目录亚秒值 2021-12-23T14:29:26.700140Z（external/swift_bat 快照；batgrbproduct 官方页同值且标注 includes UTCF correction）；bot 原值 2021-12-23T02:41:18Z 无任何来源锚点，已修正（原值见 comment）",
+    "t0_basis": "GCN 31288 + swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 31288",
+      "title": "GRB 211223C: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/31288",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 31294",
+      "title": "Swift GRB 211223C: Global MASTER-Net observations report",
+      "url": "https://gcn.nasa.gov/circulars/31294",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 31295",
+      "title": "GRB 211223C: BOOTES-4/MET optical upper limit",
+      "url": "https://gcn.nasa.gov/circulars/31295",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 31297",
+      "title": "GRB 211223C: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/31297",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }

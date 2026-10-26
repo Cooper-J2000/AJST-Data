@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB200809B",
-  "alias": [],
-  "ra": 15.369,
-  "dec": -73.867,
-  "T0": "2020-08-09T15:41:26Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 200809B",
+    "GRB200809654",
+    "bn200809654"
+  ],
+  "ra": 15.82953,
+  "dec": -73.84557,
+  "T0": "2020-08-09T15:41:27.130Z",
+  "T0_ref": "GCN 28244（Fermi GBM 团队：15:41:27.13 UT，trigger 618680492/200809654（完整亚秒形式 618680492.129862 见 GCN 28236））；GCN 28236 整秒 15:41:27 UT 一致；FERMIGBRST 目录 trigger_time MJD 59070.653786225（15:41:27.129862 UT）互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,19 +16,72 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 4.5,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 28241（Swift-XRT enhanced position）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 wa1kmoon@zcode（2026-10-25）：(1) T0 原值 2020-08-09T15:41:26Z（bot 注记 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」）经全档案排查无出处：仓内 gcn/archive 45889 篇 python 全文扫描，「15:41:26」仅命中 GCN 28238 AstroSat CZTI 最强峰时刻 15:41:26.5 UT（光变峰时刻、非触发时刻）与两篇无关 MASTER 表行；触发仪器 Fermi/GBM 官方值为 GCN 28244 原文 15:41:27.13 UT（trigger 618680492/200809654（完整亚秒形式 618680492.129862 见 GCN 28236）），GCN 28236 整秒 15:41:27 UT 一致，FERMIGBRST 目录 trigger_time MJD 59070.653786225（=15:41:27.129862 UT）互证，T0 改为 2020-08-09T15:41:27.130Z。(2) ra/dec 原值 15.369/-73.867 系 MAXI/GSC 扫描定位（GCN 28240，90% 统计误差 0.38°、另加系统 0.1°，90% containment），现改用 Swift-XRT enhanced position RA,Dec=15.82953/-73.84557（不确定度 4.5″ radius、90% confidence，GCN 28241），pos_error=4.5″、pos_error_confidence=90；FERMIGBRST 目录行 ra/dec=15.8295/-73.8456、error_radius=0.00125°=4.5″ 与 GCN 28241 的 XRT 定位及 90% 不确定度完全一致，系该行吸收外部（Swift/XRT）定位；Swift/BAT-GUANO 地面定位 15.9406/-73.8459（4′ radius，90%，GCN 28237，与 XRT 位置相距 111″）备查。(3) 身份：Fermi GBM trigger 200809654（GCN 28236/28244），Swift/BAT-GUANO（GCN 28237）、AstroSat CZTI（GCN 28238）、MAXI/GSC（GCN 28240）多设备互证；FERMIGBRST 同日另有 200809211（05:04:31.565 UT）/200809255（06:07:22.164 UT）两暴，时刻坐标均不同，无混拼。(4) sub_tag=lgrb：GCN 28236 原文「likely LONG GRB」，GCN 28244 T90≈17 s（50-300 keV）。(5) 提示词外物理量：T90=17.408±8.838 s（50-300 keV，FERMIGBRST）；注量（10-1000 keV）目录值 (1.48219±0.05802)E-6 erg/cm²，GCN 28244 preliminary 值 (3.717±0.387)E-6 erg/cm²（两口径并列，目录为 final 版）；Epeak=747.75±76.86 keV（CPL，FERMIGBRST）。(6) X 射线数据不入 lc：MAXI/GSC 扫描流量 94±17 mCrab（4-10 keV，GCN 28240）及下一圈 17:14 UT <20 mCrab 上限、Swift-XRT 3.1 ks PC 数据（GCN 28241，T0+14.0-41.4 ks，count rate 口径）均暂不处理。(7) alias 收录：GRB 200809B（GCN subject 用名）、GRB200809654（FERMIGBRST name 列原形）、bn200809654（trigger_name 列原形）。(8) 测光检索（2026-10-25）：仓内 gcn/archive 45889 篇全文（grep+python 双路一致），该事件命中 9 篇（GCN 28236-28244），其中 2 篇含光学上限（28242 BOOTES-3/YA、28243 MASTER-Net，均已采纳入库）；external/rssgrbag 无记录；external/grbsn_webtool 无该事件；GCN 站按源名检索失效（已知问题），逐号在线核对 GCN 28242 与仓内档案一致；ADS/SciX 无 API token 未查（实测 401）；arXiv API 兜底（all:「GRB 200809B」「200809B」两查）0 命中 → 采纳 GCN 28242/28243 光学上限，本 PR 新增 22 行 lc。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2020-08-09T15:41:27.130Z 取触发仪器 Fermi/GBM 触发时刻（GCN 28244 原文 15:41:27.13 UT；FERMIGBRST 目录 trigger_time 一致）；原 bot 注记（t0_basis=meta_trigger，T0=15:41:26Z）已失真，原值见 comment",
+    "t0_basis": "GCN 28244 + fermi_gbm",
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "wa1kmoon@zcode", "date": "2026-10-25"}
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 28236",
+      "url": "https://gcn.nasa.gov/circulars/28236",
+      "title": "GRB 200809B: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28237",
+      "url": "https://gcn.nasa.gov/circulars/28237",
+      "title": "GRB 200809B: Swift/BAT-GUANO detection and arcminute localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28238",
+      "url": "https://gcn.nasa.gov/circulars/28238",
+      "title": "GRB 200809B: AstroSat CZTI detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28240",
+      "url": "https://gcn.nasa.gov/circulars/28240",
+      "title": "GRB 200809B: MAXI/GSC detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28241",
+      "url": "https://gcn.nasa.gov/circulars/28241",
+      "title": "GRB 200809B: Swift-XRT afterglow detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28242",
+      "url": "https://gcn.nasa.gov/circulars/28242",
+      "title": "GRB 200809B: BOOTES-3/YA optical upper limit",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28243",
+      "url": "https://gcn.nasa.gov/circulars/28243",
+      "title": "Fermi GRB 200809B: Global MASTER-Net observations report",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 28244",
+      "url": "https://gcn.nasa.gov/circulars/28244",
+      "title": "GRB 200809B: Fermi GBM detection",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

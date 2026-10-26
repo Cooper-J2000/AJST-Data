@@ -1,28 +1,59 @@
 {
   "transient_id": "GRB210524B",
-  "alias": [],
+  "alias": [
+    "GRB210524473"
+  ],
   "ra": 148.46,
   "dec": 7.79,
-  "T0": "2021-05-25T04:48:24Z",
-  "T0_ref": null,
+  "T0": "2021-05-24T11:20:34.686Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-05-24T11:20:34.686Z（GBM trigger 643548039.686002 / 210524473，MJD 59358.472623681；仓内 external/fermi_gbm 快照 raw 行 name=GRB210524473，快照 2026-07-21 取自 HEASARC）；GCN 30074（GBM 团队官方通告）记 At 11:20:34 UT on 24 May 2021，整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 4.76,
+  "pos_ref": "FERMIGBRST 目录行 ra=148.46 dec=7.79 error_radius=4.76 deg（external/fermi_gbm 快照 raw 行）；external/fermi_gbm/README.md 注 error_radius 为统计 1σ（GBM 误差椭圆平均）；GCN 30074（GBM Final Real-time Localization）记 RA = 148.5, Dec = 7.8（整秒舍入）with a statistical uncertainty of 4.8 degrees，与 4.76 一致；GCN 30078 转述 GBM Final Position RA: 148.460 DEC: 7.79 (J2000 degrees)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "由 GCN 管线导入新建。【T0 修正】原值 2021-05-25T04:48:24Z 为 bot 自 GCN 30078 抄取的 DDOTI 后续观测窗口止点（2021-05-25 04:48:24 UTC = 触发后 62869.314 s ≈ 17.46 h，恰与原文 16.19 to 17.46 hours after the event 的窗口止点一致），系 Issue #84「观测窗口时刻误入 T0」型错误；正确触发时刻取触发仪器官方目录 FERMIGBRST 亚秒值 2021-05-24T11:20:34.686Z（MJD 59358.472623681）：GCN 30074 记 At 11:20:34 UT on 24 May 2021（trigger 643548039.686002 / 210524473），MET 复算（纪元 2001-01-01T00:00 UTC，扣 2005-12-31/2008-12-31/2012-06-30/2015-06-30/2016-12-31 共 5 个闰秒，Issue #67 口径）：643548039.686002−5 = 643548034.686002 s → 2021-05-24T11:20:34.686002 UTC，与目录亚秒一致；GCN 30078 相对时长反算自洽（窗口起 03:32:24 UTC → 16.197 h、止 04:48:24 → 17.464 h）。原 bot 注记 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=\"meta_trigger\" 已按 §3.10 改写，原值记于此。【定位口径】ra/dec=148.46/7.79 为 FERMIGBRST 目录定位，与 GCN 30074 GBM Final Real-time Localization（RA=148.5, Dec=7.8 整秒舍入）一致；pos_error=4.76 deg 为 FERMIGBRST error_radius，置信水平 1sigma 取自 external/fermi_gbm/README.md 对该列的定义（统计 1σ），GCN 30074 原文只称 statistical uncertainty of 4.8 degrees 未标注置信水平（4.8 为整秒口径下的舍入）；MASTER（GCN 30075）与 DDOTI（GCN 30078）均按该误差盒（R=4.76 deg）搜索。【alias】GRB210524473 为 FERMIGBRST 官方 Source Designation（raw 行 name 列；GCN 30074 记 210524473）；MASTER 通告（GCN 30075）用小数形 Fermi GRB210524.47，按仓库惯例不收录小数形；注意该官方整数名与 validate.py 伪形正则（日期+触发序列拼接形）同形，系目录原形背书收录（FERMIGBRST name 列），--strict 伪形普查净新增 1 项即此。【分类】long GRB：GCN 30074 detection of a likely LONG GRB（T90=31.168±1.72206 s 系目录快照值，非该通告内容）；距 Fermi LAT 视场角 92.0 deg（GCN 30074），LAT 未触发，无 Fermi-LAT 子标签。【备查】FERMIGBRST 目录值（external/fermi_gbm 快照 raw 行）：T90=31.168±1.72206 s（起点 T0−1.92 s）、T50=14.976±6.9194 s（起点 T0+1.664 s）（50-300 keV）；fluence=1.82463e-06±8.61617e-08 erg/cm2（10-1000 keV）；peak_flux=4.8179±1.33554 ph/cm2/s（10-1000 keV，64 ms）；Epeak（CPL，观测系）=171.28215±13.050858 keV；Band 模型 Epeak=149.86998±12.186415 keV（注量谱）。【同日划界】同日另一事件 GRB 210524A = Fermi bn210524208（trigger_time 2021-05-24T04:59:59.092Z，ra=337.32 dec=−47.05，external/fermi_gbm 快照同表；MPE Greiner 表 GRB 210524A 行 IPN X 射线位置 22h54m15s −46°40′ 与该位置相容），与本源（bn210524473，ra=148.46 dec=+7.79）为两个不同事件，勿混淆。【测光检索（2026-10-25）】仓内 gcn/archive 本地未获取（目录为空），经 GCN 网站检索替代：事件聚合页 gcn.nasa.gov/circulars/events/grb-210524b 列 2 篇（30074/30078），关键词检索「210524B」2 篇（30074、30078）、「643548039」2 篇（30075、30078）、「210524473」1 篇（30074）→ 本源通告共 3 篇，经 gcn.nasa.gov 单篇 JSON 端点逐篇取得全文：GCN 30074（GBM 定位，无测光）、GCN 30075（MASTER-Tavrida 无滤光片上限 12 条，本 PR 补 12 行）、GCN 30078（DDOTI w 波段网格上限，本 PR 补 1 行）；GCN 30075 系按触发号检索发现，未挂在事件聚合页。external/rssgrbag 光变 0 命中；external/grbsn_webtool 63 事件无该源（仅 GRB030329 文件内数字巧合（6 位模式；GRB190114C 仅 5 位模式命中，非同类））；其余 external 快照（heasarc_grbcat/swift_grb/konus_wind/agile_mcal/batse/fermi_lat/uvot_grb/swift_bat/swift_xrt_live/swiftgrbba/saxgrbmgrb/wang2022/liang2023/minaev2020/guidorzi2025）grep「210524」0 实命中；external/fermi_gbm 命中即本源与同日另一事件 bn210524208 的目录行；external/mpe_greiner 仅 GRB 210524A（另一事件）行。文献检索：WebSearch 精确名（\"GRB 210524B\"/\"210524473\"/\"GRB 210524\"）仅命中 GCN 页面，无已发表测光论文；arXiv API 429 限流未成；ADS/SciX 网页为 JS 应用服务端不可取（scixplorer.org 返回空壳）、无 API token。TNS 不适用——MASTER 与 DDOTI 均未发现光学对应体（仅上限），无 AT/SN 编号条目。结论：可用测光 = GCN 30075 的 12 条 MASTER-Tavrida 上限 + GCN 30078 的 DDOTI 网格上限，本 PR 补 13 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为触发仪器 Fermi/GBM 触发时刻（FERMIGBRST 目录 trigger_time=2021-05-24T11:20:34.686Z，GCN 30074 整秒一致）；原 bot 标记 meta_trigger 已按 §3.10 改写，原值见 comment",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 30074",
+      "url": "https://gcn.nasa.gov/circulars/30074",
+      "title": "GRB 210524B: Fermi GBM Final Real-time Localization",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30075",
+      "url": "https://gcn.nasa.gov/circulars/30075",
+      "title": "Fermi trigger No 643548039: Global MASTER-Net observations report",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "GCN 30078",
+      "url": "https://gcn.nasa.gov/circulars/30078",
+      "title": "Fermi GRB 210524B: DDOTI Upper Limits on the Afterglow",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }

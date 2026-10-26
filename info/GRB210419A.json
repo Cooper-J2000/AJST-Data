@@ -1,28 +1,89 @@
 {
   "transient_id": "GRB210419A",
-  "alias": [],
-  "ra": 86.85414,
-  "dec": -65.50357,
-  "T0": "2021-04-19T23:15:50Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1044032"
+  ],
+  "ra": 86.85096,
+  "dec": -65.5025,
+  "T0": "2021-04-19T06:53:41.128920Z",
+  "T0_ref": "GCN 29828; external/swift_bat (trigger 1044032)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.0,
   "pos_ref": "GCN 29830",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 经 fsy@zcode 2026-10-25 审核修正：原 bot 值 2021-04-19T23:15:50Z 系 MASTER 通告（GCN 29832）的观测指向时刻（原文 'was pointed to the Swift GRB 210419A errorbox（S. Laha et al., GCN 29828）… 58929 sec after trigger time at 2021-04-19 23:15:50 UT'，58929 s 为观测时刻相对触发的时差），被误作 T0（Issue #84 口径：观测时刻不得写进 T0）；正确触发时刻 2021-04-19T06:53:41.128920Z（Swift/BAT trigger 1044032，external/swift_bat 目录亚秒值；GCN 29828 探测通告 06:53:41 UT 整秒一致），多重自洽反推：XRT 起观测 06:55:49.0 UT=T0+127.9 s、UVOT settled 起始 T0+136 s、LCO 窗口 T0+1.67–2.1 h=08:33–08:57 UT、MASTER 观测 T0+58929 s=23:15:50 UT；swiftgrbba 快照 trigger_time=06:53:41.000Z 同秒互证。(2) 位置：ra/dec 原值 86.85414/-65.50357 为 GCN 29828 的 XRT 船上定位（3.5 arcsec, radius, 90% containment），而 pos_error=2.0 与 pos_ref=GCN 29830 对应增强 XRT 定位（astrometrically corrected，XRT-UVOT alignment）：RA,Dec=86.85096,-65.50250（2.0 arcsec, radius, 90% confidence）——原条目混装两处坐标，已统一为 GCN 29830 值；swiftgrbba 快照最新目录位 86.85067/-65.50225（2.0 arcsec）备查；BAT 地面定位 86.912/-65.452（2.7 arcmin, sys+stat, 90%，GCN 29838）。(3) 身份：GRB 210419A＝Swift/BAT trigger 1044032（image trigger，GCN 29828/29838；swift_bat name_alt=BAT 1044032）；同日 GRB210419C（T0=2021-04-20T01:48:32Z，212.96/+36.01）为另一独立事件，非重复建档。(4) 分类：BAT T90=64.43±11.69 s（15–350 keV，GCN 29838）；Tian+2022（MNRAS 514, 2756）明言 'unambiguously placing this GRB in the long GRB category'，故 sub_tag=lgrb（§3.9 以来源分类为准）。(5) 测光检索（2026-10-25）：仓内 gcn/archive 本地未获取，经 GCN 网站事件页检索 7 篇（29828/29829/29830/29832/29835/29838/29841），其中 3 篇含光学/UV 上限（29829 LCO R/I、29832 MASTER C、29841 UVOT 7 波段）已入库 11 行（coadd 行入库，FC 行系其子集不另建）；仓内 external/rssgrbag（140 行射电光变）0 命中、external/grbsn_webtool（63 事件）无该事件、external/swift_bat 与 swiftgrbba 为目录级参数（T90/fluence/位置）、external/uvot_grb 与 swift_grb 无该源、其余快照逐目录扫描：mpe_greiner/fermi_gbm/swift_xrt_live 含本源目录级条目（位置/触发时刻，无测光），fermi_gbm 另命中同日其他暴；均无该源测光；外部文献经搜索引擎限定 arxiv.org 与 ADS（ui.adsabs.harvard.edu）站域检索：命中期刊文献 1 篇——Tian+2022（MNRAS 514, 2756，arXiv:2205.13263，MWA 185 MHz 快速射电搜索，无探测），已打开核对并补其成像域 3σ 上限 570 mJy 1 行（其促发毫秒脉冲注量上限 77–224 Jy ms 为脉宽/红移参数化限值，不入库）；TNS 不适用（无 AT/SN 命名）→ 共补 12 行（全部 upperlimit=y）。(6) X 射线：Swift/XRT 探测到余辉（GCN 29828/29830/29835；swiftgrbba 快照含 XRT 通量），按《数据审核提示词》§7 暂不入库。(7) extra_data.t0_note 原值 't0 为 meta trigger-time（真实触发时刻）'、t0_basis 原值 'meta_trigger'（bot 值，已失真，改写于此备查）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@zcode 2026-10-25 审核修正：Swift/BAT 目录亚秒值 2021-04-19T06:53:41.128920Z（external/swift_bat，trigger 1044032；GCN 29828 整秒 06:53:41 UT 一致）；原 bot 值 2021-04-19T23:15:50Z 系 MASTER 通告观测指向时刻（T0+58929 s）误作触发时刻",
+    "t0_basis": "GCN 29828; external/swift_bat (trigger 1044032)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Laha2021",
+      "url": "https://gcn.nasa.gov/circulars/29828",
+      "title": "GRB 210419A: Swift detection of a burst",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Strausbaugh2021",
+      "url": "https://gcn.nasa.gov/circulars/29829",
+      "title": "GRB 210419A: LCO Optical Upper Limit",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Osborne2021",
+      "url": "https://gcn.nasa.gov/circulars/29830",
+      "title": "GRB 210419A: Enhanced Swift-XRT position",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Lipunov2021",
+      "url": "https://gcn.nasa.gov/circulars/29832",
+      "title": "Swift GRB 210419A: Global MASTER-Net observations report",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Beardmore2021",
+      "url": "https://gcn.nasa.gov/circulars/29835",
+      "title": "GRB 210419A: Swift-XRT refined Analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Palmer2021",
+      "url": "https://gcn.nasa.gov/circulars/29838",
+      "title": "GRB 210419A: Swift-BAT refined analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Siegel2021",
+      "url": "https://gcn.nasa.gov/circulars/29841",
+      "title": "GRB 210419A: Swift/UVOT Upper Limits",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Tian+2022",
+      "url": "https://doi.org/10.1093/mnras/stac1483",
+      "title": "High time resolution search for prompt radio emission from the long GRB 210419A with the Murchison Widefield Array",
+      "source": "fsy@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

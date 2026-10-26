@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB191202A",
   "alias": [
-    "GRB 191202867"
+    "GRB191202867",
+    "bn191202867"
   ],
-  "ra": 249.47000122070312,
-  "dec": 17.489999771118164,
-  "T0": "2019-12-02T20:48:56.230000Z",
-  "T0_ref": null,
+  "ra": 249.47,
+  "dec": 17.49,
+  "T0": "2019-12-02T20:48:51.230Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2019-12-02T20:48:51.230Z（GBM trigger 597012536.229574 / 191202867，MJD 58819.867259602）；GCN 26329（GBM 团队）记 At 20:48:51.23 UT；GCN 26330 同记 T0 = 20:48:51.23 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,17 +15,22 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 26330",
+  "pos_error": 900,
+  "pos_ref": "HEASARC FERMILGRB 快照（2FLGC，Ajello+2019）：RA=16 37 52.8 Dec=+17 29 24 → 249.470, +17.490 deg，error_radius=0.250 deg；GCN 26330 LAT 初报 RA,Dec=249.54, 17.56（r=0.24 deg, 90% containment, statistical error only）同域",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52, DOI 10.3847/1538-4357/ab1d4e）；2FLGC 的 LAT 光变为高能光子光变（tl100=369.95 s、最高能光子 1.8 GeV 量级），不落光学/射电测光两车道，不入 lc。【T0 修正】原值 2019-12-02T20:48:56.230000Z 为 bot 对 HEASARC FERMILGRB trigger_met=597012536.23 的天真换算（MET 纪元 2001-01-01、少扣 5 个闰秒；python 复算 naive UTC=2019-12-02T20:48:56.230 与原值逐位一致），正确 UTC=2019-12-02T20:48:51.229574（GCN 26323 记 trigger 597012536.229574）；现采纳触发仪器目录 FERMIGBRST 的亚秒值 20:48:51.230Z（MJD 58819.867259602），与 GCN 26329/26330 记 T0=20:48:51.23 UT 一致。FERMILGRB(2FLGC) 表 trigger_time=2019-12-02 20:48:50.996 为 LAT 口径，差 0.234 s 备查；其他仪器触发时刻：Konus-Wind T0=74930.521 s UT=20:48:50.521（GCN 26344）、AstroSat CZTI 最强峰 20:48:51 UT（GCN 26326）、Insight-HXMT/HE T0=20:48:59.55（GCN 26370）。【定位口径澄清】ra/dec 为 2FLGC LAT 精化定位（Ajello+2019，HEASARC FERMILGRB 快照 RA=16 37 52.8 Dec=+17 29 24；error_radius=0.250 deg 为 LAT transient factory 分析的定位误差，未标注置信水平，故 pos_error_confidence 留空）；GCN 26330 LAT 初报定位 RA,Dec=249.54, 17.56（r=0.24 deg, 90% containment, statistical error only），与精化位置相距约 0.10 deg、在各自误差内相容；FERMIGBRST 目录行 ra=249.536, dec=17.558, error_radius=0.242 deg 与 GCN 26330 初报一致，疑为吸收初报定位（GBM final real-time 定位 RA=245.3, Dec=16.8、统计误差 1.0 deg，GCN 26323，距 LAT 位置约 4.12 deg）；MPE Greiner 表行（16h38m10s +17°34′, Error 14′, IPN=y）与 LAT 初报同域。【坐标修正】原 ra/dec 249.47000122070312/17.489999771118164 为 float32 残渣（float32(249.47)/float32(17.49)），按 FERMILGRB 原值恢复全精度。【alias 更正】删带空格拼接伪形「GRB 191202867」；改为 FERMIGBRST 官方目录原形「GRB191202867」（tdat name 字段）与「bn191202867」（trigger_name），GCN 26329 记 trigger 597012536/191202867。注：快照 name_alt 中的三位小数形「GRB 191202.867」经核查证实系本仓 parse.py decimal_grb_name 自拼（源码自述恒可由 yymmddfff 构造），非任何目录/通告实际用名，不收（GRB190507B/190606A 同批裁定）。【分类】long GRB：GCN 26323 记 likely LONG GRB、GCN 26344 记 The long-duration GRB191202A；GBM T90≈30.7 s（GCN 26329）。Fermi-LAT 有探测：GCN 26330。【备查】T90=30.7205±0.809558 s、T50=4.60809±0.362039 s（50-300 keV）、fluence=1.9505e-05±3.44992e-08 erg/cm2（10-1000 keV）、Epeak=225.47206±19.833891 keV（BAND）、peak_flux=33.6553±1.92295 ph/cm2/s（64 ms，10-1000 keV，以上 FERMIGBRST 目录值）；GCN 26329：fluence=(1.95±0.04)e-05 erg/cm2（10-1000 keV）、1-s 峰值光子流量 23.5±0.4 ph/s/cm2（10-1000 keV，T0+9.0 s 起）、Epeak=190±19 keV（Band）；GCN 26344：fluence=2.78(-0.68,+0.76)e-05 erg/cm2、Ep=265(-87,+91) keV（Konus-Wind，20 keV-10 MeV）；GCN 26326：CZTI 40-200 keV 最强峰 829 cts/s、T90=11.92 s；GCN 26370：HXMT/HE 80-800 keV T90=11.09 s；GCN 26330：LAT >100 MeV 光子流量（0-1000 s）=2.6e-06±8.8e-07 ph/cm2/s、光子指数 -1.6±0.2、最高能光子 1.8 GeV @ 触发后 393 s；2FLGC ext_emission_max_ene=1800 MeV @ +392.36 s——GeV/MeV 量级不落两车道，不入 lc。【测光检索（2026-10-25）】仓内 gcn/archive/archive.json 45889 篇全文 python 扫描（变体 '191202A'/'191202867'/'191202'/'597012536'/'bn191202867'/'249.536'/'249.54'+'17.56' 并集命中 7 篇：GCN 26323/26326/26329/26330/26344/26370 为本源伽马探测/定位通告，均无光学/射电数值；GCN 22095 为 GRB 171103A 坐标数字巧合、GCN 23911 为 GRB 190219A 通告末句 candidate counterpart for GRB 191202A 系原文笔误——观测在 2019-02-20、坐标 12:38:30 +76°36′，与本源无关；GCN 22095 由变体 '249.536' 补充命中，变体清单已补全）、external/rssgrbag 0 命中、external/grbsn_webtool 63 事件无该源、external/konus_wind/heasarc_grbcat/uvot_grb/swift/agile_mcal/batse/saxgrbmgrb/mpe_greiner 快照 python 全文扫描无光学/射电数值；arXiv API（all:'GRB 191202A'、'191202867'、'bn191202867'、'191202.867'、abs:'191202A'）命中均 0 篇（API 仅覆盖题录元数据）；ADS/SciX 无 API token 未查（本机实测无鉴权不可用）；GCN 站按名搜索已知失效，本地快照 45889 篇覆盖至 2026-10（最大编号 46010），等价于 GCN 站全量 Circular 检索 → 无可用光学/射电测光，本 PR 补 0 行。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -153,6 +159,49 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26323",
+      "url": "https://gcn.nasa.gov/circulars/26323",
+      "title": "GRB 191202A: Fermi GBM Final Real-time Localization",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26326",
+      "url": "https://gcn.nasa.gov/circulars/26326",
+      "title": "GRB 191202A: AstroSat CZTI detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26329",
+      "url": "https://gcn.nasa.gov/circulars/26329",
+      "title": "GRB 191202A: Fermi GBM observation",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26330",
+      "url": "https://gcn.nasa.gov/circulars/26330",
+      "title": "GRB 191202A: Fermi-LAT detection",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26344",
+      "url": "https://gcn.nasa.gov/circulars/26344",
+      "title": "Konus-Wind observation of GRB191202A",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26370",
+      "url": "https://gcn.nasa.gov/circulars/26370",
+      "title": "GRB 191202A: Insight-HXMT/HE detection",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

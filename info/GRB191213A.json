@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB191213A",
-  "alias": [],
+  "alias": [
+    "BAT 944091"
+  ],
   "ra": 224.53,
   "dec": -9.745,
-  "T0": "2019-12-13T04:06:23Z",
-  "T0_ref": null,
+  "T0": "2019-12-13T04:06:23.920500Z",
+  "T0_ref": "GCN 26398; external/swift_bat (trigger 944091)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,17 +18,54 @@
   "pos_ref": "GCN 26418",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "T0 经 fsy@zcode 2026-10-25 审核补全亚秒：Swift/BAT 目录精化值 2019-12-13T04:06:23.920500Z（external/swift_bat，trigger 944091），GCN 26398 整秒 04:06:23 UT 一致；原 bot 值 2019-12-13T04:06:23Z 为其整秒截断。Konus-Wind 通告（GCN 26484）引 T0(BAT)=04:06:21.499 UT，与 BAT 目录差 2.42 s，系第三方换算值，仅备查。pos_error=132″=2.2′（radius，sys+stat，90% containment，GCN 26418 BAT 地面精化定位）。sub_tag=ulgrb 依据 GCN 26484：KW 探测主发射时段 ~T0−25 s 至 ~T0+1815 s，原文称 The ultra-long GRB 191213A（另有 ~T0−834 s 至 ~T0−772 s 弱脉冲可能成协）。Swift 因太阳约束至 2019-12-23 16:25 UT 前未指向（GCN 26398），无 XRT/UVOT 数据（仓内 swift_grb、uvot_grb 快照无记录；UKSSDC xrt_curves/00944091 无曲线）。测光检索（2026-10-25）：仓内 gcn/archive 本地未获取，经 GCN 网站事件页检索 4 篇（26398/26418/26420/26484；仅 26420 含光学上限，已补 1 行）；仓内 external 全部 19 个快照目录（17 个含 normalized.jsonl，含 rssgrbag、grbsn_webtool、konus_wind、swift_grb、uvot_grb、swift_xrt_live、swift_bat 等）逐目录检索均无该源测光；外部文献经搜索引擎限定 arxiv.org/ADS 站域检索（ADS/SciX 站内 API 未跑通），命中已发表文献 1 篇（Wang+2022, ApJL 939 L14，GW 联合搜索表列该源 T0=2019-12-13 04:06:23.92，无该源测光）→ 共补 BOOTES-5/JGT 上限 1 行；TNS 不适用（无 AT 命名）。alias 补 BAT 触发编号 944091（GCN 26398；Swift/BAT 目录 Trig_ID）。",
   "sub_tag": [
     "ulgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@zcode 2026-10-25 审核补全亚秒：Swift/BAT 目录精化值 04:06:23.920500 UT（external/swift_bat，trigger 944091；GCN 26398 整秒 04:06:23 UT 一致）；原 bot 值 2019-12-13T04:06:23Z 为其整秒截断，原 t0_basis=meta_trigger",
+    "t0_basis": "GCN 26398; external/swift_bat (trigger 944091)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Palmer2019",
+      "url": "https://gcn.nasa.gov/circulars/26398",
+      "title": "GRB 191213A: Swift detection of a burst",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Lien2019",
+      "url": "https://gcn.nasa.gov/circulars/26418",
+      "title": "GRB 191213A: Swift-BAT refined analysis",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Castro-Tirado2019",
+      "url": "https://gcn.nasa.gov/circulars/26420",
+      "title": "GRB 191213A: BOOTES-5/JGT optical limit",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Ridnaia2019",
+      "url": "https://gcn.nasa.gov/circulars/26484",
+      "title": "Konus-Wind observation of GRB 191213A (ulong)",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Wang+2022",
+      "url": "https://doi.org/10.3847/2041-8213/ac990c",
+      "title": "Search for Coincident Gravitational Wave and Long Gamma-Ray Bursts from 4-OGC and the Fermi-GBM/Swift-BAT Catalog",
+      "source": "fsy@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

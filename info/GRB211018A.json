@@ -1,24 +1,25 @@
 {
   "transient_id": "GRB211018A",
   "alias": [
-    "GRB 211018936"
+    "GRB211018936",
+    "bn211018936"
   ],
-  "ra": 19.690000534057617,
-  "dec": -3.5999999046325684,
-  "T0": "2021-10-18T22:28:18.940000Z",
-  "T0_ref": null,
+  "ra": 19.69,
+  "dec": -3.6,
+  "T0": "2021-10-18T22:28:13.944Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-10-18T22:28:13.944Z（GBM trigger 656288898 / 211018936，MJD 59505.9362725）；GCN 30947（GBM 团队）记 At 22:28:13.94 UT；GCN 30943（LAT 团队）记 T0=22:28:13.9 UT；GCN 30940（MASTER）观测起始 22:29:41 UT=T0+87 s 与原文 '87 sec after trigger time' 自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.6399999856948853,
+  "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 30943",
+  "pos_error": 972,
+  "pos_ref": "HEASARC FERMILGRB 快照（2FLGC 扩展表，Ajello+2019 同流程）：ra=19.69, dec=-3.60 deg，error_radius=0.27 deg（LAT transient factory 分析定位，未标注置信水平，故 pos_error_confidence 留空）；GCN 30943 LAT 初报 RA,Dec=19.68, -3.60（0.19 deg, 90% containment, statistical error only）与之相距约 0.01 deg、相容；FERMIGBRST 快照行 ra=19.68, dec=-3.60, error_radius=0.19 deg 与初报一致；Swift/XRT（GCN 31010）5 个未编目源无一确证为余辉，无更好定位",
   "redshift_type": null,
-  "redshift_ref": "GCN 31010",
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "redshift_ref": null,
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（实际来源为 HEASARC FERMILGRB 表——该表即 2FLGC（Ajello+2019）表按同一流程对后续 GRB 的扩展，快照 retrieved 2026-07-21；2FLGC 正式发表版覆盖 2008-2018，不含本暴）。【T0 修正】原值 2021-10-18T22:28:18.940000Z 为 bot 对 HEASARC FERMILGRB trigger_met=656288898.94 的天真换算（MET 纪元 2001-01-01、少扣 5 个闰秒，Issue #67 口径；python 复算 naive UTC=2021-10-18T22:28:18.940 与原值逐位一致），正确 UTC=2021-10-18T22:28:13.94（GCN 30947 原文 'At 22:28:13.94 UT'；GCN 30943 记 T0=22:28:13.9 UT）；现采纳触发仪器目录 FERMIGBRST 亚秒值 22:28:13.944Z（MJD 59505.9362725），与 GCN 30947/30943、Zhang+2025（'GRB 211018A triggered the GBM instrument 22:28:13.94 UT'）、GRBAlpha 观测 22:29:34 UT（GCN 30945）、MASTER 起始 22:29:41 UT=T0+87 s（GCN 30940 原文 '87 sec after trigger time'）一致；FERMILGRB 表 trigger_time=22:28:13.002 为 LAT 口径，差 0.942 s 备查。【定位口径澄清】ra/dec 为 FERMILGRB LAT transient factory 定位（快照 ra=19.69, dec=-3.60 deg, error_radius=0.27 deg，文档未标注置信水平，故 pos_error_confidence 留空）；GCN 30943 LAT 初报 RA,Dec=19.68, -3.60（0.19 deg, 90% containment, statistical error only）与之相距约 0.01 deg、相容；FERMIGBRST 行 ra=19.68, dec=-3.60, error_radius=0.19 deg 与初报一致（疑吸收初报定位，GRB191202A 同例）；GBM real-time errorbox（01h02m31.20s, -00d40m48.0s, R=1.23 deg，GCN 30940/MASTER 引）中心距 LAT 定位约 5.0 deg、不含 LAT 定位；MPE Greiner 表行 01h18m42s -03°36′（19.675, -3.6, Error 11′, IPN=y）与 LAT 定位同域；Swift/XRT（GCN 31010）5 个未编目 X 射线源无一确证为余辉，无更好定位。【坐标修正】原 ra/dec 19.690000534057617/-3.5999999046325684 为 float32 残渣（float32(19.69)/float32(-3.6)，Issue #69 口径），按 FERMILGRB 原值恢复全精度。【红移更正】原 redshift=0.64（redshift_ref=GCN 31010）系误挂：GCN 31010 原文明言 Source 2/Source 4 为距 Fermi/LAT 定位 884″/636″ 的编目类星体（z=0.64/1.09），且 5 个未编目源 'none of them is above the RASS limit or shows definitive signs of fading'、'we cannot identify which, if any, is the afterglow'——无任何余辉确证，该 z 不能归属本暴 → redshift/redshift_type/redshift_ref 置 null。注：FERMILGRB 快照 params.redshift=0.64、IceCube GRBweb（z=0.6400）与 Aldowma+2025（arXiv:2510.16475 表 2）、Zhang+2025（表 2）均承此误联（红移引用皆溯至 Dichiara et al. 2021 即 GCN 31010）；目录快照按 §3.10 不改，PR 说明报告。【alias 更正】删带空格拼接伪形「GRB 211018936」；改为 FERMIGBRST 官方目录原形「GRB211018936」（tdat name 字段）与「bn211018936」（trigger_name），GCN 30947 记 trigger 656288898/211018936。注：快照 name_alt 中的三位小数形「GRB 211018.936」经核查系本仓 parse.py decimal_grb_name 自拼（GRB191202A/190507B/190606A 同批裁定），非目录/通告实际用名，不收。【分类】lgrb：GBM T90=123.906±0.362 s（50-300 keV，FERMIGBRST 快照；GCN 30947 同记 123.9 s），GCN 30945 明言 'bright/long duration GRB'（GRBweb 目录页转载互证），GRBAlpha 测得 T90=140 s（GCN 30945）；Fermi-LAT 有探测：GCN 30943（FERMILGRB 快照 like_best_ts=307.447）。【备查伽马参数】T90=123.906±0.362039 s、T50=65.5371±0.362051 s（50-300 keV）、fluence=(1.53347±0.00026)E-4 erg/cm2（10-1000 keV）、peak_flux=26.1968±1.36846 ph/cm2/s（64 ms，10-1000 keV）、Epeak(CPL)=326.26248±2.9902742 keV、flnc_band_epeak=314.19101±3.2695472 keV（以上 FERMIGBRST 快照）；GCN 30947：fluence=(1.53347±0.0003)E-4 erg/cm2（10-1000 keV，T90 起算）、1-s 峰值光子流量 15.6±0.3 ph/cm2/s（10-1000 keV，T0+134.5 s 起）、PL+cutoff 指数 -0.75±0.01、Epeak=351.4±4.9 keV、Band α=-0.74±0.01/β=-3.13±0.28/Epeak=344.6±6.2 keV；GCN 30943：LAT >100 MeV 0-300 s 光子流量 1.2(±0.3)E-4 ph/cm2/s、光子指数 -2.0±0.2、最高能光子 3.3 GeV @ 触发后 25 s、距 LAT 视轴 68 deg；2FLGC 快照：tl100=132.53999±8.79 s、like_best_fluence=3.30557e-05±1.99488e-05、ext_emission_max_ene=3300 MeV @ +24.44 s、eiso=2.13531E52 erg（100 MeV-10 GeV，rest frame，依赖存疑 z=0.64）；Aldowma+2025（arXiv:2510.16475，表 1）：joint GBM+LAT/LLE Band α=-0.599±0.03/β=-2.51/Ep=318±10 keV、T90 区间 4.384-128.290 s、(1-10^4 keV) fluence=(2.55±0.16)E-6 erg/cm2，GBM-only α=-0.62±0.03/β=-2.89±0.31/Ep=330±13 keV、fluence=(9.1±0.7)E-7 erg/cm2；Zhang+2025（arXiv:2501.09594）：T90~123.9 s（T0+4.3 s 起，区间 T0+[4.3,128.2] s）。【测光检索（2026-10-25）】仓内 gcn/archive 本地未获取，经 GCN 网站检索：事件页（gcn.nasa.gov/circulars/events/grb-211018a）列 5 篇（30943/30945/30947/30953/31010），另按触发号 656288898 检索补获 GCN 30940（MASTER-Net，事件页未收录），共 6 篇 Circular 逐篇打开全文——仅 30940 含光学上限（4 行，本 PR 入库），30953 为 Swift ToO 安排（无数据值），其余 4 篇为伽马/X 射线探测通告；仓内 external/rssgrbag（射电光变 140 行/74 源）0 命中、external/grbsn_webtool（63 事件）无该事件、swift_bat/swiftgrbba/uvot_grb/swift_xrt_live/swift_grb/heasarc_grbcat/konus_wind/agile_mcal/batse/saxgrbmgrb/mpe_greiner 快照 grep 扫描无光学/射电数值（mpe_greiner 仅目录级一行）；外部文献 WebSearch 命中 2 篇并已打开全文核对：Aldowma+2025（arXiv:2510.16475，Fermi LAT+GBM 联合谱分析，纯伽马）、Zhang+2025（arXiv:2501.09594，ApJ，宇宙线加速约束，纯伽马+中微子）——均无光学/UV/IR/射电测光；IceCube GRBweb 目录页（user-web.icecube.wisc.edu，第三路互证）无测光；TNS 不适用（无光学对应体认定、无 AT 命名）→ 补 4 行（全部 upperlimit=y）。【X 射线】Swift/XRT 4.4 ks PC（T0+304.3-340.2 ks，GCN 31010）探测 5 个未编目源，按《数据审核提示词》§7 暂不入库。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
@@ -159,8 +160,62 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-25"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Lipunov2021",
+      "url": "https://gcn.nasa.gov/circulars/30940",
+      "title": "Fermi trigger No 656288898: Global MASTER-Net observations report",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Arimoto2021",
+      "url": "https://gcn.nasa.gov/circulars/30943",
+      "title": "GRB 211018A: Fermi-LAT detection",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Ohno2021",
+      "url": "https://gcn.nasa.gov/circulars/30945",
+      "title": "GRB 211018A: Detection by GRBAlpha",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Roberts2021",
+      "url": "https://gcn.nasa.gov/circulars/30947",
+      "title": "GRB 211018A: Fermi GBM observation",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Evans2021a",
+      "url": "https://gcn.nasa.gov/circulars/30953",
+      "title": "GRB 211018A: Swift ToO observations",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Dichiara2021",
+      "url": "https://gcn.nasa.gov/circulars/31010",
+      "title": "GRB 211018A: Swift-XRT observations",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Aldowma+2025",
+      "url": "https://arxiv.org/abs/2510.16475",
+      "title": "Implications of Joint Spectral Analysis of Gamma-Ray Bursts detected by Fermi Large Area Telescope and Gamma-ray Burst Monitor on Phenomenological Correlations",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Zhang+2025",
+      "url": "https://arxiv.org/abs/2501.09594",
+      "title": "Constraints on Cosmic Rays Acceleration in Bright Gamma-ray Bursts with Observations of Fermi LAT",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }

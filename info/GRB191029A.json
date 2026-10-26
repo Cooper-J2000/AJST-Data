@@ -1,28 +1,89 @@
 {
   "transient_id": "GRB191029A",
   "alias": [],
-  "ra": 352.1492,
-  "dec": -40.5661,
-  "T0": "2019-10-29T13:16:48Z",
-  "T0_ref": null,
+  "ra": 352.16141,
+  "dec": -40.50108,
+  "T0": "2019-10-29T11:15:20.169860Z",
+  "T0_ref": "GCN 26088（Swift/BAT trigger 932058，BAT triggered at 11:15:20 UT）；external/swift_bat 快照 Trig_time_UTC=2019-10-29T11:15:20.169860（触发仪器官方目录亚秒值，整秒互证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": ["grb"],
   "pos_error": 1.5,
   "pos_ref": "GCN 26095",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "位置更正：原 ra/dec=352.1492/-40.5661 取自 GCN 26094，但该通告已被 GCN 26099 更正（自动分析误用了 BAT 误差圆内的一个 AGN 而非余辉，其位置与谱分析均不可用）；现改用 GCN 26095 增强 XRT 位置 352.16141/-40.50108（1.5 arcsec，radius，90% 置信，原文明确标注）；external/swift_xrt_live 快照现值 352.16154/-40.50121 与之相符。T0 更正：原 T0=2019-10-29T13:16:48Z 系 bot 误植——恰为 GCN 26091 中 iTelescope T30 首张曝光的平均时刻（触发后 7288 s），并非触发时刻；真实触发为 Swift/BAT trigger 932058 的 2019-10-29T11:15:20 UT（GCN 26088），external/swift_bat 快照 Trig_time_UTC=11:15:20.169860 与之整秒互证，GCN 26090 由 XRT 观测起始 12:06:55.2 UT 反推 3095.1 s 亦得 11:15:20.1；原 extra_data 值留档：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」。BAT 参数备查：T90=39.5±7.9 s（15-350 keV，90% 置信）、fluence=(1.1±0.1)e-6 erg/cm2（15-150 keV）、1 s 峰值光子流量 1.1±0.3 ph/cm2/s（均 GCN 26110）；BAT 地面定位 352.140/-40.464（1.8 arcmin，90%，GCN 26110）。XRT 确认余辉（衰减指数 0.77 +0.13/-0.12，GCN 26099）。红移：无来源报道。同日划界：仓内 T0 在 2019-10-29 的源仅此一个，触发号 932058 与本源坐标在 gcn/archive 全文中均仅命中本源通告。测光检索（2026-10-25）：仓内 gcn/archive python 全文扫描命中 9 篇（26088/26090/26091/26092/26094/26095/26097/26099/26110），其中 3 篇含光学上限数值；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无记录；GCN 站已核对（gcn.nasa.gov/circulars/26088 与仓内档案逐字一致）；ADS/SciX 无 API token 未查（实测 401）；arXiv API 兜底检索「GRB 191029A」与「191029A」均 0 篇 → 有明确时间锚点的上限已全部入 lc；本 PR 新增 11 行（iTelescope 2 行、BOOTES-4/MET 2 行、Swift/UVOT 7 行）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 26088 整秒 11:15:20 UT 与 external/swift_bat 快照亚秒 11:15:20.169860 互证）",
+    "t0_basis": "swift_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 26088",
+      "title": "GRB 191029A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/26088",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26090",
+      "title": "GRB 191029A: Swift-XRT observations",
+      "url": "https://gcn.nasa.gov/circulars/26090",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26091",
+      "title": "GRB 191029A: iTelescope optical upper limits",
+      "url": "https://gcn.nasa.gov/circulars/26091",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26092",
+      "title": "GRB 191029A: BOOTES-4/MET optical limit",
+      "url": "https://gcn.nasa.gov/circulars/26092",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26094",
+      "title": "GRB 191029A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/26094",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26095",
+      "title": "GRB 191029A: Enhanced Swift-XRT position",
+      "url": "https://gcn.nasa.gov/circulars/26095",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26097",
+      "title": "GRB 191029A: Swift/UVOT Upper Limits",
+      "url": "https://gcn.nasa.gov/circulars/26097",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26099",
+      "title": "GRB 191029A: CORRECTED Swift-XRT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/26099",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "GCN 26110",
+      "title": "GRB 191029A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/26110",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

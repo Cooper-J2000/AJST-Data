@@ -37,11 +37,12 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin "${{ github.base_ref }}" || true
           python3 tools/audit_queue.py --check-leads --base "origin/${{ github.base_ref }}" || true
-      # 警告级守卫：同一个源被多个 open PR 同时触碰（认领挤占），永不失败。
-      # 判据是实时 PR 状态，不是每日生成的 audit/state.tsv 快照（快照滞后会让 agent 把已认领的源当 free）。
-      - name: Duplicate claim guard (warning only, never fails)
+      # 阻断级守卫：同一个源被多个 open PR 同时占用（认领挤占）。
+      # 判据是**实时** open PR 状态（含 `claim: <源ID>` 标题），不是每日生成的 audit/state.tsv 快照。
+      # 只让**后开者**失败（先开者仍绿）；PR 上另有一条由 collision-comment.yml 发出的可见评论与 `collision` label。
+      - name: Duplicate claim guard (later PR fails)
         if: github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
-        run: python3 tools/check_duplicate_claim.py
+        run: python3 tools/check_duplicate_claim.py --strict

@@ -60,6 +60,10 @@ DENIED_COLS = ('source_id', 'reason_code', 'evidence', 'decided_by', 'date', 're
 DENIED_REASONS = ('retracted', 'duplicate', 'noise', 'other')
 
 SNAPSHOT_STALE_DAYS = 3     # 快照超过这个天数即视为过期（工具会告警）
+# 快照「可以用来断言空闲」的时限。快照是每日（现为每小时）生成的，滞后几个小时是常态：
+# 它只能**排除已占用**，不能证明空闲。超过这个时限，"free" 一律降级为 "free?"，
+# 免得 agent 把 10 小时前的快照当成"这个源没人做"（2026-10-25 两次撞车的根因）。
+SNAPSHOT_FREE_STALE_HOURS = 2
 CLAIM_TTL_DAYS = 14         # 普通源的认领软过期
 GIANT_ROWS = 1000           # 超过这么多行的源算"巨源"
 GIANT_TTL_DAYS = 30         # 巨源的认领软过期
@@ -274,7 +278,8 @@ def load_paper_cards(dirpath=None):
 def load_snapshot(path=SNAPSHOT):
     meta = {'path': path, 'exists': os.path.exists(path), 'snapshot_at': None,
             'healthy': None, 'open_prs': None, 'reviewed': None, 'repo': None,
-            'stale_days': None, 'fresh': False, 'rows': {}}
+            'stale_days': None, 'stale_hours': None, 'fresh': False,
+            'free_confident': False, 'rows': {}}
     if not meta['exists']:
         return meta
     try:
@@ -304,7 +309,10 @@ def load_snapshot(path=SNAPSHOT):
     if dt:
         age = days_since(dt)
         meta['stale_days'] = age
+        meta['stale_hours'] = age * 24
         meta['fresh'] = age <= SNAPSHOT_STALE_DAYS
+        # 「可用来断言空闲」比「可用作占用证据」严格得多
+        meta['free_confident'] = age * 24 <= SNAPSHOT_FREE_STALE_HOURS
     return meta
 
 # ─── 维护者预留台账（audit/reserved.tsv，人工维护）───────────────────────────
@@ -378,7 +386,7 @@ def cmd_denied(args, denied):
     for e in denied.get('errors') or []:
         print(f'  ⚠ {e}', file=sys.stderr)
     print('→ 这些源已从库中删除：**不要认领、不要审核、不要重建**；若 info/ 里又出现同名文件，'
-          '说明导入管线把源重建了（见 Issue #183）')
+          '说明源被重新导入或误恢复了（库没有常态化导入管线，见 Issue #183）')
     return 0
 
 
@@ -596,7 +604,19 @@ def resolve(sources, claims, snap, reserved=None):
             out[sid] = {'state': state, 'basis': basis, 'claim': claim,
                         'claimable': claimable, 'rows': rows}
             continue
-        out[sid] = {'state': FREE, 'basis': '无 audit 标记、无认领记录',
+        # 空闲判定：实时查询（--live）才有资格下结论；只读快照时，快照必须足够新（≤2 h），
+        # 否则降级为 `free?`——陈旧快照只能排除已占用，不能证明空闲。
+        if claims is not None:
+            conf_free, basis_free = True, '无 audit 标记、无认领记录（--live 实时核对）'
+        elif snap.get('free_confident'):
+            conf_free = True
+            basis_free = (f'无 audit 标记、无认领记录（快照 '
+                          f'{(snap.get("stale_hours") or 0):.1f} h 前，足够新）')
+        else:
+            conf_free = False
+            basis_free = (f'快照 {(snap.get("stale_hours") or 0):.1f} h 前，**不能**用它断言空闲——'
+                          f'认领前先 `--live` 或 `gh pr list --search <源ID>` 核对')
+        out[sid] = {'state': FREE if conf_free else FREE + '?', 'basis': basis_free,
                     'claim': None, 'claimable': 'yes', 'rows': rows}
     return out
 
@@ -619,9 +639,10 @@ def source_note(snap, claims, live, live_err, extra=()):
         lines.append(f'认领信息取自：快照（--live 失败：{live_err}）')
     else:
         lines.append('认领信息取自：快照（未用 --live）')
-    if not live and not snap['fresh']:
-        lines.append('⚠ 快照不可用作"空闲"的证据：它只能**排除已占用**。挑源前做一次实时核对'
-                     '（能跑 gh 就用 --live 或 gh pr list）；两个渠道都不通就停下来问用户。')
+    if not live and not snap.get('free_confident'):
+        lines.append(f'⚠ 快照 {(snap.get("stale_hours") or 0):.1f} h 前，**只能排除已占用、不能断言空闲**：'
+                     f'本页的 `free?` 一律需要实时确认（能跑 gh 就用 `--live` 或 `gh pr list`）；'
+                     f'两个渠道都不通就停下来问用户。')
     lines.append('提示：一个源同时只应有一个未过期认领（普通源 14 天 / >1000 行巨源 30 天）。')
     return lines
 
@@ -644,10 +665,12 @@ def cmd_list(args, sources, resolved, snap, claims, live_err, leads=None):
     if args.format == 'json':
         print(json.dumps({
             'generated_at': now_utc().strftime('%Y-%m-%dT%H:%M:%SZ'),
-            'snapshot': {k: snap[k] for k in ('exists', 'snapshot_at', 'fresh', 'stale_days') if k in snap},
+            'snapshot': {k: snap[k] for k in
+                         ('exists', 'snapshot_at', 'fresh', 'stale_days', 'stale_hours', 'free_confident')
+                         if k in snap},
             'live': bool(args.live and not live_err),
             'claimed_total': sum(1 for r in resolved.values()
-                                 if r['state'] not in (FREE, REVIEWED)),
+                                 if r['claimable'] == 'no' and r['state'] != REVIEWED),
             'available_total': total_free,
             'available': [{'id': s, 'rows': resolved[s]['rows'],
                            'has_lead': s in leads} for s in free],
@@ -716,7 +739,7 @@ def cmd_id(args, sources, resolved, snap, claims, live, live_err, leads=None, de
         if drow.get('evidence'):
             print(f'  判据            : {drow["evidence"]}')
         print('  → **不要认领、不要审核、不要重建这个源**。若 info/ 里又出现同名文件，'
-              '说明导入管线把它重建了，按上面的判据重新否证（见 Issue #183）')
+              '说明源被重新导入或误恢复了，按上面的判据再否证一次（见 Issue #183）')
         return 0
     if sid not in sources and sid not in resolved:
         print(f'未找到源 {sid}（info/{sid}.json 不存在）', file=sys.stderr)

@@ -1,28 +1,62 @@
 {
   "transient_id": "GRB230314A",
-  "alias": [],
-  "ra": 236.4,
-  "dec": 74.8,
-  "T0": "2023-03-14T02:51:24Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 230314A",
+    "GRB230314119",
+    "GRB 230314.119",
+    "bn230314119"
+  ],
+  "ra": 236.45,
+  "dec": 74.84,
+  "T0": "2023-03-14T02:51:24.129Z",
+  "T0_ref": "Fermi GBM 官方目录 FERMIGBRST（bn230314119，trigger_time=2023-03-14T02:51:24.129Z，仓内 external/fermi_gbm 快照）+ GCN 33474（02:51:24 UT，整秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 4.61,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "Fermi GBM 官方目录 FERMIGBRST（bn230314119，RA=236.45/Dec=74.84，error_radius=4.61 deg）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "Fermi/GBM 触发（trigger 700455089.129136 / bn230314119，GCN 33474），GBM 团队判为 likely LONG GRB → sub_tag=lgrb；Fermi LAT 视场角 40.0°（GCN 33474）。【T0】bot 原值 2023-03-14T02:51:24Z（原 extra_data t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，原值留档），整秒与 GCN 33474 触发时刻一致；亚秒取触发仪器官方目录 FERMIGBRST trigger_time=2023-03-14T02:51:24.129Z（§3.2：整数秒一致时以触发仪器亚秒值直接改进 T0，不设 T0_offset）。【位置】取 FERMIGBRST RA=236.45/Dec=74.84、error_radius=4.61 deg（external/fermi_gbm/README.md 注明该列为统计 1σ、GBM 误差不对称）；并列：GCN 33474 通告 RA=236.4/Dec=74.8（J2000）、统计不确定度 4.6°，原库 ra/dec 即通告值；银道坐标 l=109.80/b=37.49（FERMIGBRST；GCN 33476 记 b=38°、l=110°）。【T90 等】T90=46.8489±5.66117 s（50-300 keV，FERMIGBRST）；T50=18.4323±0.809562 s（50-300 keV，FERMIGBRST）；fluence=4.03591e-6±3.45651e-8 erg/cm2（10-1000 keV，FERMIGBRST）；peak_flux=4.17379±0.803349 ph/cm2/s（10-1000 keV，64 ms，FERMIGBRST）；Epeak=96.277908±5.1256022 keV（CPL、观测系，FERMIGBRST）；无红移报道。【alias】GRB 230314A 为 GCN 33474/33476/33488 通告用名；GRB230314119 为 FERMIGBRST name 列（Source Designation）；GRB 230314.119 为目录小数形；bn230314119 为 FERMIGBRST trigger_name 主键。【测光检索（2026-10-25）】仓内 gcn/archive 45889 篇全文扫描命中 3 篇（33474 GBM 定位、33476 MASTER 9 点上限表、33488 TURBO 12 场上限表，后两篇均有明确时间锚点）；external/rssgrbag、grbsn_webtool/SourceData、uvot_grb、mpe_greiner 快照无记录，fermi_gbm 目录命中（仅目录级参数）；GCN 站（gcn.nasa.gov/circulars/33474、/33476、/33488）逐一可达、未见第 4 篇；ADS 检索「GRB 230314A」命中 3 篇（即上述 GCN，bibcode 2023GCN.33474....1F/33476....1L/33488....1S）、「GRB230314A」0 篇、触发号 230314119 命中 1 篇（GCN 33474）；OpenAlex 0 篇、arXiv API 0 篇、Crossref 无相关命中；TNS 略过（非 AT/SN/CV 类）→ 入库 21 行（MASTER 9 + TURBO 12，均上限），无 X 射线测光发现。【原文笔误】GCN 33488 正文写作「GRB 2303014A」，所引 Lipunov et al. GCN 33249 实为 GRB 230201B 的 MASTER 通告（本源的 MASTER 通告应为 GCN 33476）。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-25"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 33474",
+      "title": "GRB 230314A: Fermi GBM Final Real-time Localization",
+      "url": "https://gcn.nasa.gov/circulars/33474",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 33476",
+      "title": "Fermi GRB 230314A: Global MASTER-Net observations report",
+      "url": "https://gcn.nasa.gov/circulars/33476",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "GCN 33488",
+      "title": "GRB 230314A: TURBO Optical Upper Limit",
+      "url": "https://gcn.nasa.gov/circulars/33488",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
