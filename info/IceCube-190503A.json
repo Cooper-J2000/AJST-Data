@@ -1,27 +1,32 @@
 {
   "transient_id": "IceCube-190503A",
   "alias": [],
-  "ra": 120.304,
-  "dec": 6.3568,
-  "T0": "2019-05-02T17:23:39Z",
-  "T0_ref": null,
+  "ra": 120.28,
+  "dec": 6.35,
+  "T0": "2019-05-03T17:23:08.720Z",
+  "T0_ref": "GCN 24378（IceCube 官方通告）：On 19/05/03 at 17:23:08 UT IceCube detected…离线精化后 Time: 17:23:08.72 UT——中微子事件检测时刻（触发仪器 IceCube 自给亚秒）；原库 2019-05-02T17:23:39Z 系 AMON 自动告警时刻（GCN 24386/24409 引 T0=17:23:39 UT），差 30.28 s 系告警链路延迟，且原库日期 05-02 亦错（事件在 05-03）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": "GCN 24384",
+  "pos_ref": "GCN 24378（IceCube 离线精化方向）：RA=120.28 (+0.57/-0.77 deg) Dec=6.35 (+0.76/-0.70 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、四向不对称值照录；原库 ra/dec=120.304/6.3568 系 AMON 自动告警初值（GCN 24381 dashboard URL 引 ra_deg=120.304/dec_deg=6.3568），已被精化值替代；pos_ref 原 GCN 24384（Fermi-GBM 观测通告）不承载定位",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube EHE 超高能径迹中微子候选事件（GCN 24378；AMON notice 42419327_132508）；跟随观测：INTEGRAL 对应体搜索（GCN 24381，无探测）、Fermi-GBM（GCN 24384：位置被地球遮挡 T0-650~T0+1500 s 无法设限）、Fermi-LAT（GCN 24386：90% 区域内无 4FGL/3FGL 目录源、无新伽马源）、Insight-HXMT（GCN 24388/24399：T0±100 s 无显著超出）、Swift-XRT tiling（GCN 24404：19 点 tiling 0.8° 半径，若干 X 射线源均不似对应体）、KAIT 星系巡检（GCN 24394）、IceCube 附加中微子搜索（GCN 24409：2 天窗内零附加径迹事件）。同日划界：GCN 24393 为 GRB 190504A（IPN 短暴）另事件、GCN 24675 为 IceCube-190504A 另事件。[T0] 原库 T0=2019-05-02T17:23:39Z（t0_basis=meta_trigger）系 AMON 自动告警时刻（GCN 24386/24409 引 T0=17:23:39 UT），非事件时刻；已更正为 GCN 24378 离线精化事件时刻 17:23:08.720Z（差 30.28 s 系告警链路延迟备查）；注意原库日期 05-02 亦错（实际事件在 05-03）。[定位] 原 ra/dec=120.304/6.3568 系 AMON 初值（GCN 24381 引 ra_deg=120.304/dec_deg=6.3568），已被 GCN 24378 离线精化值 120.28/6.35 替代（更正量 ~0.03°）；90% PSF containment 为不对称四向误差（RA +0.57/-0.77、Dec +0.76/-0.70 deg），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称原值照录于 pos_ref）；pos_ref 原 GCN 24384（Fermi-GBM 观测通告）不承载定位，改指 GCN 24378。[Trigger_Instrument] INTEGRAL→IceCube（INTEGRAL 系对应体搜索跟随观测 GCN 24381，非探测器；检测仪器为 IceCube）。[分类] tag 保持空（中微子事件，tags.json 无对应受控词；与库内既有 IceCube-* 源 tag=[] 口径一致）；sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「190503A/IC190503A/IceCube-190503A」全形态：命中 11 篇——GCN 24378/24381/24384/24386/24388/24394/24399/24404/24409 属本源，24393（GRB 190504A IPN）与 24675（IceCube-190504A）划界另事件；入库 1 行：GCN 24394 KAIT 54 星系 clear 巡检典型限深 19.0 mag（May 4 04:39:59-05:45:42 UT 窗口中点）；GCN 24404 Swift-XRT、24381/24388/24399 伽马/X 射线搜索不入库；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（中微子事件无 AT 条目）→ 本 PR 补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 IceCube 精化事件时刻 2019-05-03T17:23:08.720Z（GCN 24378）；原 bot 值 2019-05-02T17:23:39Z 系 AMON 自动告警时刻（差 30.28 s 且日期 05-02 误），原值与判据保留于 comment",
+    "t0_basis": "GCN 24378（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
