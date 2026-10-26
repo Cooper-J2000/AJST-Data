@@ -1,27 +1,32 @@
 {
   "transient_id": "IceCube-260704A",
   "alias": [],
-  "ra": 320.7609,
+  "ra": 320.67,
   "dec": 34.1095,
-  "T0": "2026-07-04T07:16:58Z",
-  "T0_ref": null,
+  "T0": "2026-07-04T07:16:58.190Z",
+  "T0_ref": "GCN 45075（IceCube 官方通告）：Time: 07:16:58.19 UT（Bronze alert，离线精化后时刻，触发仪器自给亚秒）；原库 07:16:58Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.1402,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 45085",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube Bronze 径迹中微子候选事件（GCN 45075；离线精化方向 320.67/34.14）。跟随观测：OHP/T193 光谱（GCN 45085：WISEA J212302.62+340634.2 Hα z=0.1402 候选）、Fermi-LAT（GCN 45143）、ZTF（GCN 45099：无候选）、IceCube 附加搜索（GCN 45092）。划界：GRB 260704A（SVOM，GCN 45072/45102/45129）与本中微子事件同名日巧合另事件。[redshift 去污染] 原库 0.1402 系 GCN 45085 对 WISEA J212302.62+340634.2（候选对应体，~4.9′ from 精化位置）的 Hα 光谱 redshift——关联未确证，置 null（候选体红移不挂源先例）。[T0] 原库 07:16:58Z 系精化时刻 07:16:58.19 UT 的整秒截断，补亚秒 .190Z。[定位] 原库 ra/dec=320.7609/34.1095 系 AMON 初值，更正为精化值 320.67/34.14。[Trigger] IceCube 原有正确。[分类] tag/sub_tag 保持空（中微子事件口径）。[测光检索] GCN 45085 系光谱观测无数值上限不入库；GCN 45099 ZTF 无候选；GCN 45143/45092 伽马与中微子搜索不入库；external/rssgrbag 0 命中；arXiv API 不可用；ADS/SciX 401 → 真零测光源，留证如上。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
