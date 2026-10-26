@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB000604",
-  "alias": [],
-  "ra": 233.978,
-  "dec": 10.6917,
-  "T0": "2000-06-04T00:40:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000604",
+    "GRB 000604A"
+  ],
+  "ra": 233.9458,
+  "dec": 10.6833,
+  "T0": "2000-06-04T00:35:44Z",
+  "T0_ref": "HEASARC GRBCAT grbcat_id 4912（GRB 000604A，IPN，trigger_time=2000-06-04T00:35:44Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -13,17 +16,23 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "MPE IPN 15h35m47s +10°41′（4′×8′，external/mpe_greiner）；HEASARC grbcat_id 4912 无坐标",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-10-27。身份：库内 GRB000604 = HEASARC GRB 000604A（grbcat_id 4912，IPN，trigger 2000-06-04T00:35:44Z）；同日 GRB 000604B（02:26:06）与 BeppoSAX 08:31 事件是不同事件。T0：原值 2000-06-04T00:40:00Z 比 HEASARC/IPN 的 00:35:44 晚 4m16s，已改为 00:35:44Z；T0_offset 留空。位置：原 ra/dec=233.978/10.6917 是 GCN 690/694 的光学源位置（15:35:54.7 +10:41:30），不是 GRB 位置；改用 MPE IPN 233.9458/10.6833（15h35m47s +10°41′，4′×8′），pos_error 留空（IPN 只给矩形框）。候选体：GCN 690/694 的光学源被 GCN 694 判为 ~3.5 mag 变化、与 GRB 无关；GCN 692 的 Leibowitz 候选（15:35:52.6 +10:41:08.8）在 r~22 未检出、亦非余辉；GCN 695 在 GRB 坐标的非探测未给极限星等。分类：IPN 目录无 T90/long-short，sub_tag 留空。红移：无光谱/宿主信息，留 null。测光：原库唯一行把 GCN 694 的“该源比源 A 暗 3.9±0.2 mag”误记为 R=3.9（绝对值）；原文未给源 A 的绝对 R 星等，无法还原绝对测光，且该源被判为变星、与 GRB 无关；按 §3.3 保留行、置 discard=y，并在行 comment 说明。时间/星等与 GCN 694 的 2000-06-07.430 UTC 对齐。测光检索（2026-10-27）：GCN 690/692/694/695 逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；HEASARC/MPE 目录用于身份/IPN 位置；arXiv/ADS/SciX/TNS 无 token 或 0 篇；结论：无可用测光，修正 1 行（discard=y）、补 0 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 HEASARC/IPN GRB 000604A 触发时刻 2000-06-04T00:35:44Z；原 bot 值 00:40:00Z 晚 4m16s，已废弃",
+    "t0_basis": "HEASARC GRBCAT grbcat_id 4912 (IPN)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
