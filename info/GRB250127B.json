@@ -1,28 +1,59 @@
 {
   "transient_id": "GRB250127B",
-  "alias": [],
+  "alias": [
+    "bn250127635"
+  ],
   "ra": 126.4,
   "dec": -14.0,
-  "T0": "2025-01-28T10:53:00Z",
-  "T0_ref": null,
+  "T0": "2025-01-27T15:14:38.583Z",
+  "T0_ref": "GCN 39046（Fermi GBM Final Real-time Localization：trigger 759683683.583014 / 250127635，At 15:14:38 UT on 27 Jan 2025）；FERMIGBRST trigger_time 2025-01-27T15:14:38.583Z；亚秒值取触发仪器",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 17280,
+  "pos_ref": "GCN 39046",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy（2026-10-26）。身份：GRB 250127B = Fermi/GBM trigger 759683683.583014 / 250127635（GCN 39046，Fermi GBM Final Real-time Localization）。GCN 39046 原文「At 15:14:38 UT on 27 Jan 2025, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 250127B (trigger 759683683.583014 / 250127635)」，on-ground 定位 RA=126.4、Dec=-14.0（J2000），statistical uncertainty 4.8 度，距 LAT boresight 96.0 度；Trigger_Instrument=Fermi/GBM 正确，库内 ra/dec=126.4/-14.0 与通告一致。\nT0 修正：bot 原值 2025-01-28T10:53:00Z（t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）实为 DDOTI 观测窗口的结束时刻，非触发时刻——GCN 39055 原文「on 2025-01-28 from 10:24 to 10:53 UTC (19.2 to 19.7 hrs after the event)」，属 Issues #84 所指「观测窗口时刻被写入 T0」的导入残留。新 T0=2025-01-27T15:14:38.583Z：GCN 39046 给整秒 15:14:38 UT，触发号亚秒 .583014 由触发仪器给出；仓内 FERMIGBRST 快照 trigger_time=2025-01-27T15:14:38.583Z 一致；按 MET 759683683.583014 自 2001-01-01T00:00:00 UTC 纪元独立换算并扣除 2006/2009/2012/2015/2017 五次闰秒亦得 15:14:38.583，无闰秒残留。亚秒级差异按裁定直接写入 T0，T0_offset/T0_offset_ref 保持 null（MASTER 表隐含基准为 15:14:39，与其 8678 s 起算/8709 s 中点自洽，1 s 差属观测方取整，非真实爆发偏移）。\n定位：pos_error=4.8 度=17280 角秒（GCN 39046 statistical uncertainty；原文未标注置信水平，pos_error_confidence 留空）；pos_ref=GCN 39046。FERMIGBRST 目录给 RA=127.49、Dec=-17.88、error_radius=3.43 度，与通告位置相距约 4.0 度，属同一 GBM 触发的不同定位版本，按 §4 通告优先，目录值并列备查。\n分类：GCN 39046 原文「the detection of a likely LONG GRB」→ tag=grb、sub_tag=lgrb（照原文分类，未自算 T90）。FERMIGBRST：T90=52.4809±2.17227 s、T50=24.3204±2.06397 s（50-300 keV，观测系）；fluence=3.76551e-06±2.73967e-08 erg/cm2（10-1000 keV，1σ）；上述量不入 schema，仅备查，不参与判定。\nalias：只入 bn250127635（FERMIGBRST trigger_name）。FERMIGBRST name_alt 之 GRB250127635 / GRB 250127.635 均为「日期+触发序号」形态（635 由当日 0.635 天推得），会被 validate.py 伪形普查计为告警，故按 GRB190508A 惯例记此备查、不入 alias；未新增空串项。\n红移 / 宿主：无光谱红移、无宿主星系证认发表，redshift 与 host_galaxy 保持 null。\n同日划界：GRB 250127A 系 SVOM/ECLAIRs 触发（sb25012701，2025-01-27T05:04:46 UTC，RA=169.589、Dec=3.346，GCN 39041），触发时刻与坐标均与本暴不同，非同一事件（库内 GRB250127A 条目的 T0 另有问题，不属本 PR 范围）；GBM 目录中 bn250127635 即本源，无同名歧义。\n测光检索（2026-10-26）：本工作区无 gcn/archive 目录（改用 GCN 站逐号全文核阅）；external/rssgrbag/lightcurve.jsonl 无该源；external/grbsn_webtool/SourceData 无该事件；GCN 站事件页 grb-250127b 共 3 篇（39046 GBM 定位、39049 MASTER-Tavrida 上限表、39055 DDOTI 上限），均逐篇打开全文核对；ADS/SciX 未能取得可复核命中（api.adsabs.harvard.edu 返回 401 需 token、scixplorer.org 返回空壳 202、网页端为 JS 渲染），改用 arXiv API 检索「250127B」0 条、Web 文献检索亦未发现该源文章；TNS 搜索需 POST+reCAPTCHA，未取得结果，且本源为 GBM 触发、无光学对应体与 TNS 名称。结论：可用测光只有两篇 GCN 通告的上限，已补 lc/GRB250127B.csv 共 26 行（MASTER-Tavrida 25 行 clear 波段上限 + DDOTI 1 行 w 波段上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "2026-10-26 审核：原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 连同 bot 原 T0=2025-01-28T10:53:00Z 一并失真——该时刻实为 GCN 39055 DDOTI 观测窗口结束时刻，非触发时刻；T0 已改为 GBM 触发时刻（GCN 39046 + FERMIGBRST），详见 comment",
+    "t0_basis": "GCN 39046；FERMIGBRST trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 39046",
+      "url": "https://gcn.nasa.gov/circulars/39046",
+      "title": "GRB 250127B: Fermi GBM Final Real-time Localization",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 39049",
+      "url": "https://gcn.nasa.gov/circulars/39049",
+      "title": "Fermi GRB 250127B: Global MASTER-Net observations report",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 39055",
+      "url": "https://gcn.nasa.gov/circulars/39055",
+      "title": "GRB 250127B: DDOTI Upper Limit on the Afterglow",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
