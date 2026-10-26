@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB210725B",
-  "alias": [],
-  "ra": 192.9219,
-  "dec": 17.108,
-  "T0": "2021-07-25T18:18:25Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1061554"
+  ],
+  "ra": 192.92217,
+  "dec": 17.10809,
+  "T0": "2021-07-25T12:00:48.024580Z",
+  "T0_ref": "swift_bat 目录快照 trigger_time=2021-07-25T12:00:48.024580Z（trigger 1061554）；GCN 30508（Swift/BAT 团队）At 12:00:48 UT 整秒；GCN 30512（MASTER-Tavrida）22657 sec after trigger time at 18:18:25 UT 反算 12:00:48 UT 整秒互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 30508",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.5,
+    "pos_error_confidence": "90",
+  "pos_ref": "GCN 30510（Swift-XRT 增强定位，astrometrically corrected：RA,Dec=192.92217,+17.10809，2.5 arcsec 90% 包含半径）；GCN 30526（UVOT）亦以此 XRT 位置为余辉判据",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-25）：[身份] Swift/BAT trigger 1061554（GCN 30508 Bernardini et al.）；同日多事件划界——GRB 210725A 为另一次 Swift 触发（GCN 30501/30503/30507/30509/30514/30517/30519/30527/30530 共 9 篇，其中 GCN 30519 记 A 的 GBM trigger 648877628/210725158，03:47:03.54 UT）；GCN 30500（Swift GRB210725.16=日分数 .16→约 03:50）属 A；GCN 30502 为第三个同日事件（Fermi GRB210725.05，trigger 648868114，01 时段）；GCN 43842（EP260224a）仅 createdOn 时间戳数字巧合命中，无关。[T0] 原库 T0=2021-07-25T18:18:25Z（bot 原值 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）实为 GCN 30512 中 MASTER-Tavrida 指向时刻（was pointed to … errorbox … at 2021-07-25 18:18:25 UT，即触发后 22657 s，Issue #84 系族第 10 例、GRB210318A PR #215 同型），已更正为 Swift/BAT 触发时刻 2021-07-25T12:00:48.024580Z（swift_bat 目录 trigger_time，与 GCN 30508 整秒 12:00:48 UT、GCN 30512 反算 18:18:25−22657 s=12:00:48 UT 三方互证）。[定位] 原 ra/dec=192.9219/17.108（pos_error 1.9″）为 GCN 30508 XRT promptly downlinked 增强位置；已升级为 GCN 30510 astrometrically corrected 增强定位 192.92217/+17.10809（2.5″，90% 包含半径，XRT-UVOT 对齐+USNO-B1）——后者为 Swift-XRT 团队官方定位产物且 GCN 30526 以其为余辉判据；两位置相距约 0.98″（计算）；BAT 定位备查：on-board 192.932/+17.125（3′，90%，GCN 30508）、地面 192.914/17.130（2.7′，sys+stat 90%，GCN 30516）、swift_bat 快照 192.8909/17.10179（目录行）。Trigger_Instrument Swift→Swift/BAT。[alias] 新增「BAT 1061554」（swift_bat 目录 name_alt 原形，GRB210318A PR #215 先例）；无其他有背书别名。[分类] tag=grb；T90=48.00±22.63 s（15-350 keV，GCN 30516 BAT 精化），GCN 30508 记 complex peak 至少 5 s、主峰 T+1 s 结束于 T+5 s 附加弱辐射 T-30 s~T+15 s；无原文显式 long/short 判词，sub_tag=lgrb 仅凭 T90（口径同 GRB200701A PR #202 待决先例，交维护者）。[伽马备查] GCN 30516（BAT 精化）：谱指数 1.16±0.43、15-150 keV 注量 (4.9±1.1)e-07 erg/cm2、1-s 峰流量 0.6±0.2 ph/cm2/s（T+0.97 s 起，15-150 keV，90% 置信）；GCN 30546（GBM 亚阈值）：无 GBM 在轨触发，targeted search 8.192 s 尺度 FAR=2.6e-05 Hz、S/N=9、normal 谱（Epeak=230 keV）；GCN 30520（XRT 精化）：0.3-10 keV 衰减指数 alpha=3.43(+0.20,-0.18)、WT 谱光子指数 1.77(+0.29,-0.27)、柱密度 6.6(+2.7,-0.1)e+21 cm^-2（银道 2.0e+20 Willingale+2013）——X 射线内容按 §3.3/§7 不入库。[测光检索（2026-10-25）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「210725」全形态：命中 19 篇——7 篇属本源（GCN 30508 触发定位/30510 XRT 增强/30512 MASTER 上限 1 条/30516 BAT 精化/30520 XRT 精化/30526 UVOT 上限 3 条独立曝光/30546 GBM 亚阈值），9 篇属同日 GRB 210725A（划界如上），1 篇属第三同日事件（30502），1 篇时间戳巧合（43842）；UVOT 表 u (fc) 与 u 为同一曝光重复列表，按 §3.4 去重保留一行；external/rssgrbag 光变 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 210725B」0 命中；ADS/SciX API 无 token 实测 401（本机未配 ADS_API_TOKEN）；TNS 无 AT 条目（UVOT/MASTER 均无 OT 发现）→ 可用测光为 UVOT 3 条 + MASTER 1 条上限，本 PR 补 4 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1061554，swift_bat 目录 2021-07-25T12:00:48.024580Z）；原 bot 值 2021-07-25T18:18:25Z 系 GCN 30512 MASTER-Tavrida 指向时刻误植（Issue #84 系族），原值与判据保留于 comment",
+    "t0_basis": "swift_bat trigger_time（GCN 30508/30512 整秒互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [],
   "host_galaxy": null

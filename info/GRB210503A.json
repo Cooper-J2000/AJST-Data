@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB210503A",
-  "alias": [],
+  "alias": [
+    "GRB210503815"
+  ],
   "ra": 328.93,
   "dec": 66.03,
-  "T0": "2021-05-04T11:38:00Z",
-  "T0_ref": null,
+  "T0": "2021-05-03T19:34:09.461Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-05-03T19:34:09.461Z（trigger 641763254.461374 / 210503815）；GCN 29927（GBM 团队）记 At 19:34:09 UT on 3 May 2021（整秒）与 MET 641763254.461374 同源；GCN 29928（MASTER）580 sec after trigger time at 19:43:49 UT 反算 19:34:09 UT 整秒互证；GCN 29935 观测窗口（11.5–16 h ↔ 07:02–11:38 UT）反算自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 5.1,
+    "pos_error_confidence": "1sigma",
+  "pos_ref": "ra/dec=328.93/66.03 为 FERMIGBRST 终值定位（GCN 29935 引用同一 Fermi GBM Final Position 328.93d +66.03d 逐位一致）；pos_error=5.1 deg 为 GCN 29927 初报 statistical uncertainty（=tdat error_radius，1σ）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核链（wa1kmoon@zcode 2026-10-25）：[身份] Fermi/GBM trigger 641763254.461374（GRB210503815；FERMIGBRST ra=328.93 dec=66.03 error_radius=5.1 deg）；GCN 29927（GBM 团队）、GCN 29928（MASTER-Kislovodsk）、GCN 29935（DDOTI）三篇同指此源。同名划界：GCN 29951/29965 的 IceCube-210503A 为高能中微子候选事件（2021-05-03 22:19:32.96 UT，RA=143.53 Dec=41.81，90% PSF 数度，方向近 4FGL J0928.5+4048），与本暴无关（命名 YYMMDD+序号巧合），其数据不属本源。[T0] 原库 T0=2021-05-04T11:38:00Z（bot 原值 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）实为 GCN 29935 DDOTI 观测窗口止点（「on 2021-05-04 from 07:02 to 11:38 UTC」的 11:38，Issue #84 系族；同型先例 GRB200224B PR #195、GRB210512 本批），已更正为 GBM 触发时刻 2021-05-03T19:34:09.461Z（FERMIGBRST trigger_time，与 GCN 29927 所记 MET 641763254.461374 同口径）：GCN 29927 整秒 19:34:09 UT、GCN 29928 反算（19:43:49−580 s）整秒 19:34:09 UT 双互证；tdat MJD 列 59337.815387284→19:34:09.458，与采值差 3.2 ms（目录两列管线口径差，备查）。[定位] ra/dec=328.93/66.03 库内原值即 FERMIGBRST 终值定位（GCN 29935 引用一致），保留；原 pos_error/pos_ref 空缺，补 pos_error=5.1 deg（GCN 29927 statistical uncertainty 5.1 degrees=tdat error_radius；external/fermi_gbm/README.md：全部 1σ 统计误差，无 90% 口径），pos_error_unit arcsec→deg；GCN 29927 初报值 RA=328.9 Dec=66.0 为同一定位低精度表述。Trigger_Instrument Fermi→Fermi/GBM（GCN 29927：GBM triggered and located）。[alias] 新增「GRB210503815」（FERMIGBRST GRBNAME / HEASARC Source Designation，tdat name 字段原形）；name_alt 小数形「GRB 210503.815」系本仓 parse.py decimal_grb_name 自拼（PR #201 判），不收录。[分类] GCN 29927 原文「a likely LONG GRB」+ FERMIGBRST T90=32.768±4.47085 s（50-300 keV）→ tag=grb、sub_tag=lgrb（原文直接背书）。[备查] FERMIGBRST：T50=7.936±1.08612 s（50-300 keV）、fluence=2.74375e-06±5.61785e-08 erg/cm2（10-1000 keV）、peak_flux=7.32815±1.1317 ph/cm2/s（64 ms，10-1000 keV）、Epeak=66.557121±6.7575259 keV（CPL）；GCN 29927：LAT boresight 角 32.0 deg。[测光检索（2026-10-25）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「210503」全形态：命中 5 篇——3 篇属本源（GCN 29927 定位通告无测光、GCN 29928 MASTER 误差框 35 检查点上限全部入库、GCN 29935 DDOTI 上限入库 1 行），2 篇为 IceCube-210503A 同名巧合（划界如上）；GCN 站点检索对字母/分数名已知失效（PR #85 起先例），以本地全文档案为准；external/rssgrbag 光变 0 命中、external/grbsn_webtool 无该源、fermi_lat/konus_wind/mpe_greiner/heasarc_grbcat/agile_mcal grep 0；arXiv API all:「GRB 210503A」与 all:「210503」AND「gamma-ray」均 0 命中；ADS/SciX API 无 token 实测 401（本机未配 ADS_API_TOKEN）；TNS 无 AT 条目（MASTER/DDOTI 均无 OT 发现）→ 可用测光为 MASTER 35 条 + DDOTI 1 条上限，本 PR 补 36 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 641763254.461374 trigger_time=2021-05-03T19:34:09.461Z）；原 bot 值 2021-05-04T11:38:00Z 系 GCN 29935 DDOTI 观测窗口止点误植（Issue #84 系族），原值与判据保留于 comment",
+    "t0_basis": "FERMIGBRST trigger_time（GCN 29927/29928 整秒互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [],
   "host_galaxy": null

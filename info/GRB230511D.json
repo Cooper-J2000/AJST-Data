@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB230511D",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2023-05-11T22:40:18Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 230511D",
+    "bn230511945"
+  ],
+  "ra": 237.48,
+  "dec": -17.42,
+  "T0": "2023-05-11T22:40:18.198Z",
+  "T0_ref": "GCN 33775（Fermi GBM Team，触发 22:40:18 UT，trigger 705537623.19843）；FERMIGBRST bn230511945 trigger_time MJD 60075.944655074 = 2023-05-11T22:40:18.198Z（仓内 external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 21.7,
+  "pos_ref": "GCN 33775",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "身份：GCN 33775（Fermi GBM Team，2023-05-11T22:50:51Z）报告 Fermi GBM 触发并定位 GRB 230511D（trigger 705537623.19843 / 230511945），分类 likely SHORT GRB；GCN 33803（IPN，Svinkin et al.）给出 short-duration GRB 230511D 的 GBM–SPI-ACS 三角定位，指为同一事件。Trigger_Instrument 由导入值 Fermi 改为 Fermi/GBM（GCN 33775 明示为 GBM 触发）。T0：GCN 33775 给 22:40:18 UT（整秒）；该通告触发号的小数部分 .19843 与 FERMIGBRST（仓内 external/fermi_gbm 快照 bn230511945）trigger_time MJD 60075.944655074 = 2023-05-11T22:40:18.198Z 在整秒上一致，故按触发仪器的毫秒精度把 T0 写为 22:40:18.198Z；两来源仅亚秒差异，直接体现在 T0，不设 T0_offset（无真实爆发时刻相对自动触发显著偏移的证据）。位置：GCN 33775 地面定位 RA=237.5°、Dec=-17.4°（J2000，统计不确定度 21.7°）；ra/dec 取 FERMIGBRST 的 237.48/-17.42（GCN 值为其 1 位小数舍入），pos_error=21.7，pos_error_unit 由默认 arcsec 改为 deg（原文单位为度），pos_ref=GCN 33775；原文只称 statistical uncertainty、未标注置信水平，pos_error_confidence 留空。分类：sub_tag=sgrb 取 GCN 33775「likely SHORT GRB」与 GCN 33803「short-duration GRB」的正式表述，未自行用 T90 判定。非 SCHEMA 量（均自仓内 external/fermi_gbm 快照 bn230511945＝FERMIGBRST）：T90=0.192±0.143 s（50–300 keV）；T50=0.128±0.181 s（50–300 keV）；fluence=8.91747e-08±1.42946e-08 erg/cm²（10–1000 keV）；peak_flux=3.19283±0.881528 ph/cm²/s（10–1000 keV，64 ms）；另 GCN 33775 给 Fermi LAT boresight 夹角 79.0°。IPN 三角定位（GCN 33803）：GBM–SPI-ACS 环心 RA=33.057°、Dec=-40.890°，半径 63.439±5.830°（3σ），与 GBM 定位联合得 530 deg²（3σ）定位区域。无红移与宿主星系证据，redshift/host_galaxy 保持 null。测光检索（2026-10-26）：本工作区无 gcn/archive 目录（该快照未获取），改用 GCN 站全文检索；仓内 external/rssgrbag/lightcurve.jsonl 无 230511 记录（0 行），external/grbsn_webtool/SourceData/ 无 230511 事件，其余 external 快照无 230511D 光变（fermi_gbm 仅目录条目；swift_bat/swift_xrt_live/uvot_grb/fermi_lat 等无记录）；GCN 站按 230511D 检索命中 3 篇（事件页 grb-230511d 亦仅列 33775、33782、33803），按触发号 705537623 检索命中 2 篇（33782、33803），未见其他后随通告——33775 为 GBM 自动定位、33803 为 IPN 三角定位，均无测光；33782（ZTF）只给区域覆盖统计：ztfg/ztfr 共 75 幅、总 8750 s、覆盖 951.5 deg²、起点 2023-05-12T04:02:10、中位深度约 21.3 mag，无逐场时刻与逐源测量，按提示词 §3.3 不入库；ADS/SciX 无 API token、网页为 JS 应用不可文本抓取，改以搜索引擎索引与 arXiv API 检索：arXiv 元数据检索 230511D 得 0 命中，搜索引擎索引仅返回上述 3 篇 GCN，无文献测光；TNS 检索 GRB230511D 无结果。结论：无可用测光，未建 lc/GRB230511D.csv，补 0 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_unit": "deg",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null

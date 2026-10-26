@@ -1,29 +1,41 @@
 {
   "transient_id": "GRB210512",
   "alias": [
-    "GRB 210512.786"
+    "GRB 210512.786",
+    "GRB210512789",
+    "GRB210512.79"
   ],
-  "ra": null,
-  "dec": null,
-  "T0": "2021-05-13T06:59:00Z",
-  "T0_ref": null,
+  "ra": 137.93,
+  "dec": 14.16,
+  "T0": "2021-05-12T18:56:03.318Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-05-12T18:56:03.318Z（trigger 642538568 / GRB210512789，MJD 59346.78892729）；GCN 30004 反算互证（started inspect … 1282 sec after trigger time at 2021-05-12 19:17:25 UT → 18:56:03 UT 整秒）；GCN 30006 观测窗口（触发后 9.5–12.1 h ↔ 04:27–06:59 UT）反算 T0≈18:56–18:58 自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 14.51,
+    "pos_error_confidence": "1sigma",
+  "pos_ref": "FERMIGBRST 642538568 终值 GBM 定位（ra=137.93 dec=14.16 error_radius=14.51 deg）；GCN 30006 引用同一终值 final GBM position 09:11:43.20 +14:09:36.0 J2000 逐位一致；GCN 30004 初报口径 (09h 44m 43.20s +14d 10m 48.0s, R=11.56 deg) 相距约 8.0 deg 备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核链（wa1kmoon@zcode 2026-10-25）：[身份] Fermi/GBM trigger 642538568（FERMIGBRST GRB210512789，tdat 原行 ra=137.93 dec=14.16 error_radius=14.51 deg、触发 MJD 59346.78892729）；GCN 30004（MASTER）与 GCN 30006（DDOTI）均指同一触发号；GCN 30006 eventId=「GRB 210512.786」。[T0] 原库 T0=2021-05-13T06:59:00Z（bot 原值 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）实为 GCN 30006 DDOTI 观测窗口止点（「from 2021-05-13 04:27 to 06:59 UTC」的 06:59，Issue #84 系族；同型先例 GRB200224B PR #195、GRB210518 PR #225 均为 DDOTI 窗口止点误植），已更正为 GBM 触发时刻 2021-05-12T18:56:03.318Z（FERMIGBRST trigger_time）：GCN 30004「1282 sec after trigger time at 19:17:25 UT」反算 18:56:03 UT 整秒互证；GCN 30006 相对时长（9.5–12.1 h）与绝对窗口反算自洽。[定位] 原 ra/dec/pos_error/pos_ref 均空，补 FERMIGBRST 终值定位 ra=137.93 dec=14.16 error_radius=14.51 deg（统计 1σ，external/fermi_gbm/README.md：全部为 1σ 统计误差、不存在 90% 置信口径；0=外部仪器定位、50=定位极差的哨兵值均非本例）；GCN 30006 引用同一终值（09:11:43.20 +14:09:36.0 J2000）逐位一致；GCN 30004 初报 (09h 44m 43.20s +14d 10m 48.0s, R=11.56 deg) 与终值相距约 8.0 deg（计算），两框互相包含，采终值目录定位。[alias] 「GRB 210512.786」为库内原有形，有 GCN 30006 subject/eventId/正文原文用名背书，保留并注明：官方目录小数位应为 .789（触发日内分数 0.78893），GCN 30006 的 .786 系提交人转写差异，按原文用名收录（GRB201104A PR #210 subject 背书先例）；新增「GRB210512789」（FERMIGBRST GRBNAME / HEASARC Source Designation，tdat name 字段原形）；新增「GRB210512.79」（GCN 30004 MASTER 原文用名，两位小数形）；name_alt 三位小数形「GRB 210512.789」系本仓 parse.py decimal_grb_name 自拼（PR #201/#207 判），不收录。[分类] tag=grb；T90=0.832±0.729712 s、T50=0.256±0.143108 s（50-300 keV，FERMIGBRST），两 GCN 均无显式分类文字，sub_tag=sgrb 仅凭目录 T90（口径同 GRB200701A PR #202 待决先例，交维护者）。[备查] FERMIGBRST 目录值：fluence=1.90629e-07±1.94086e-08 erg/cm2（10-1000 keV）、fluence_batse=1.27457e-07±1.164e-08（50-300 keV）、peak_flux=4.88746±1.31761 ph/cm2/s（64 ms，10-1000 keV）、Epeak=499.98044 (+134.68724/−134.68724) keV（CPL，flnc_best_fitting_model=flnc_comp）、t90_start=-0.192 s；error_radius=14.51 deg 属弱定位（GBM 误差本为不对称椭圆，README 注明取平均）。[测光检索（2026-10-25）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「210512」全形态：命中 2 篇——GCN 30004（MASTER-Kislovodsk 误差框 14 检查点上限，全部入库 14 行）、GCN 30006（DDOTI 马赛克上限，入库 1 行）；GCN 站点检索对分数名已知失效（PR #85 起先例），以本地全文档案为准；external/rssgrbag 光变 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 210512」与 all:「210512」AND「gamma-ray burst」均 0 命中；ADS/SciX API 无 token 实测 401（本机未配 ADS_API_TOKEN）；TNS 无对应 AT 条目（两 GCN 均无 OT 发现）→ 可用测光为 MASTER 14 条 + DDOTI 1 条上限，本 PR 补 15 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 642538568 trigger_time=2021-05-12T18:56:03.318Z）；原 bot 值 2021-05-13T06:59:00Z 系 GCN 30006 DDOTI 观测窗口止点误植（Issue #84 系族），原值与判据保留于 comment",
+    "t0_basis": "FERMIGBRST trigger_time（GCN 30004 反算整秒互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-25"
+    }
   },
   "articles": [],
   "host_galaxy": null

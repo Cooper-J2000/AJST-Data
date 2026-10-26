@@ -71,6 +71,8 @@
 
 ### 2.1 `articles[]` 元素
 
+`articles[]` 只放**研究文章**（期刊/会议/预印本）。**GCN Circular 不登记**（2026-10-26 维护者裁定）：通告出处写在 `comment` 的核对记录与 `lc` 行的 `reference` 列。`tools/validate.py` 对含 `gcn.gsfc.nasa.gov` / `gcn.nasa.gov` 链接的条目按警告级普查。
+
 | 键 | 类型 | 必填 | 说明 |
 |---|---|---|---|
 | `name` | string | 是 | 短引用名（如 `Smith+2023`） |
