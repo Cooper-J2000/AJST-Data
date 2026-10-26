@@ -1,28 +1,71 @@
 {
   "transient_id": "GRB230622A",
-  "alias": [],
-  "ra": 292.532,
-  "dec": -32.922,
-  "T0": "2023-06-22T17:05:04Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1176135"
+  ],
+  "ra": 292.51735,
+  "dec": -32.97036,
+  "T0": "2023-06-22T10:04:21.289560Z",
+  "T0_ref": "GCN 34058（Swift/BAT trigger 1176135，10:04:21 UT）+ Swift/BAT 官方目录（仓内 external/swift_bat 快照 trigger_time=2023-06-22T10:04:21.289560Z；GCN/SWIFT 通告 10:04:21.28 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 5.4,
   "pos_ref": "GCN 34069",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 230622A = Swift/BAT trigger 1176135（GCN 34058）。定位改为 Swift-XRT 增强定位 RA,Dec=292.51735,-32.97036（GCN 34069，5.4\" 半径，90% 置信）；原 ra/dec=292.532,-32.922 是 BAT 星上定位（GCN 34058，3' 半径），却配了 XRT 的 5.4\" 误差与 pos_ref='GCN 34069'，属坐标/误差/出处错配，已改正；BAT 地面定位 292.516,-32.972（2.2'，90%，GCN 34082）仅作互证。T0 原值 2023-06-22T17:05:04Z 是 MASTER 指向时刻（GCN 34067：触发后 25243 s 的观测起点），不是触发时刻（Issue #84 型残留），已改为 2023-06-22T10:04:21.289560Z：GCN 34058 给 10:04:21 UT，亚秒取 Swift/BAT 官方目录（仓内 external/swift_bat 快照 trigger_time=2023-06-22T10:04:21.289560Z），与 GCN/SWIFT 通告 10:04:21.28 UT 一致；无 >1 s 的真实爆发相对自动触发的偏移，T0_offset 留空。原 extra_data：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'（与实际不符，已改写）。分类：GCN 34070 原文称 'the long GRB 230622A'，sub_tag 记 lgrb。非 SCHEMA 量（不参与判定）：T90=18.37±13.63 s（15-350 keV，GCN 34082，90% 置信）；fluence(15-150 keV)=4.1±1.0×10^-7 erg/cm2、1 s peak flux=2.8±0.4 ph/cm2/s（GCN 34082）；Swift/BAT 目录 T90=23.55±17.73 s（external/swift_bat 快照）与 GCN 34082 不一致，并列备查、未采用。红移：BAT 红移表（external/swift_bat/.../GRBlist_redshift_BAT.txt）无此源，ADS/SciX 无研究论文、TNS 0 条、arXiv 0 篇，redshift 留空。测光（本次新增 20 行）：MASTER-Net 17 行 C 波段（clear/unfiltered，band=G）上限（GCN 34067，Tmid-T0 与 Expt. 原样，time_err=半曝光）；Swift/UVOT white 114 s 典型 3σ 上限 19.6 mag（GCN 34058，起点 378 s，time=曝光中点 435 s）；ATCA 5.5/9 GHz 3σ 上限 54/48 μJy/beam（GCN 34070，观测窗口 11:30 UT 起 10 h，time=窗口中点、time_err=半宽为约定口径）。MASTER 原文未声明星等系统（mag_system 留空）；UVOT 惯例 Vega（Breeveld et al. 2011）。X 射线数据未处理。测光检索（2026-10-26）：仓内 gcn/archive 在本 clone 不存在（0 篇，无法全文检索）；external/rssgrbag/lightcurve.jsonl 0 条、external/grbsn_webtool/SourceData 无此事件、external/uvot_grb 与 fermi_gbm/fermi_lat/konus_wind 快照均无记录；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-230622a）5 篇（34058/34067/34069/34070/34082，其中 34067、34070 含光学/射电上限），无其他篇；ADS/SciX 检索无研究论文（仅见 GCN 记录 2023GCN.34058、2023GCN.34069），arXiv 0 篇，TNS 0 条 → 结论：无已发表测光表，补 20 行（MASTER 17 + UVOT 1 + ATCA 2）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发 1176135 时刻（GCN 34058 10:04:21 UT + external/swift_bat 快照 10:04:21.289560）",
+    "t0_basis": "GCN 34058 + external/swift_bat",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 34058",
+      "title": "GRB 230622A: Swift detection of a burst",
+      "url": "https://gcn.nasa.gov/circulars/34058",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 34067",
+      "title": "Swift GRB 230622A: Global MASTER-Net observations report",
+      "url": "https://gcn.nasa.gov/circulars/34067",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 34069",
+      "title": "GRB 230622A: Swift-XRT refined Analysis",
+      "url": "https://gcn.nasa.gov/circulars/34069",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 34070",
+      "title": "GRB 230622A: ATCA rapid radio follow-up",
+      "url": "https://gcn.nasa.gov/circulars/34070",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 34082",
+      "title": "GRB 230622A: Swift-BAT refined analysis",
+      "url": "https://gcn.nasa.gov/circulars/34082",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
