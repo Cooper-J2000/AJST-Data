@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB260522A",
-  "alias": [],
+  "alias": [
+    "GRB 260522A",
+    "bn260522094"
+  ],
   "ra": 346.67,
   "dec": 9.66,
-  "T0": "2026-05-22T02:15:08Z",
-  "T0_ref": null,
+  "T0": "2026-05-22T02:15:08.782Z",
+  "T0_ref": "GCN 44687/44697（Fermi/GBM trigger 801108913.782424，02:15:08 UT）；FERMIGBRST trigger_time=2026-05-22T02:15:08.782Z（external/fermi_gbm 快照，bn260522094）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 44689",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1980,
+  "pos_ref": "GCN 44689（Fermi-LAT 定位 346.67/+9.66，0.55° 半径，90% containment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-26。身份：Fermi/GBM 触发 801108913.782424 / bn260522094（GCN 44687/44697，02:15:08 UT）＝GRB 260522A；Fermi-LAT 于 02:15:08 UT 探测到 820 MeV 光子（GBM 触发后 1.3 s，GCN 44689）。原 Trigger_Instrument=Fermi/LAT 改为 Fermi/GBM（GBM 触发，LAT 为延迟高能探测）。T0：原值 2026-05-22T02:15:08Z 为整秒；亚秒 .782 取自 FERMIGBRST trigger_time=2026-05-22T02:15:08.782Z，GCN 44687 记 02:15:08 UT；按 §3.2/§3.8 直接改进 T0，不写 T0_offset。定位：采用 GCN 44689 的 LAT 位置 346.67/+9.66（0.55°，90% containment），pos_error=1980″ 依原文 0.55° 换算；GBM 初定位 343.6/+14.1（±5.1°，GCN 44687）与 LAT 相差约 4.7°，仅备查。分类：GCN 44687 称 'likely SHORT GRB'；GBM T90=1.792±0.842 s（FERMIGBRST，50-300 keV），GCN 44697 记 T90~1.8 s；Greiner 表 short_grb=true；sub_tag=['sgrb']（非自算）。红移：5 篇 GCN 均无光谱/红移报告，redshift 留 null。测光：GCN 44693 GOTO 于 03:16:58 UT 起 4×90 s L 波段观测，5σ 上限 L<19.8 AB，覆盖 LAT 位置；已入库 1 行上限。GCN 44691 MASTER-Net 的指向场与 LAT 位置 346.67/+9.66 不符、未覆盖，未入库；其余 GCN 为 GBM/LAT 高能数据，按 §3.3 不处理。测光检索（2026-10-26）：GCN 事件页 grb-260522a 共 5 篇（44687/44689/44691/44693/44697），逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；arXiv 空结果、TNS 403、ADS/SciX 401（无 token）；结论：仅 GOTO 1 条带时间锚点的上限可用，补 1 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发 801108913.782424 时刻 2026-05-22T02:15:08.782Z（GCN 44687/44697 + FERMIGBRST）；原 bot 值 02:15:08Z 为整秒",
+    "t0_basis": "GCN 44687/44697 + FERMIGBRST bn260522094",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
