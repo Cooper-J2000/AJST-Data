@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB990316",
-  "alias": [],
-  "ra": 151.5667,
-  "dec": -5.2253,
-  "T0": "1999-03-16T00:30:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 990316A",
+    "GRB 990316"
+  ],
+  "ra": 152.08,
+  "dec": -4.44,
+  "T0": "1999-03-16T09:40:39.545Z",
+  "T0_ref": "CGRO/BATSE trigger 7475 触发时刻：BATSE 目录（HEASARC batsegrb，external/batse 快照）trigger_num=7475 行 time=MJD 51253.4032354792、seconds_trigger=34839.5454 s（=1999-03-16T09:40:39.545 UT）；Hurley+2011（ApJS 196,1）表1 'the Universal Time of the burst at Earth' 记 09:40:39（整秒，一致）；GCN 277 记本源为 'BATSE Trigger 7475'、LOTIS 首帧始于爆发后 13.6 s。GRBCAT 原始 tdat（heasarc_grbcat.tdat.gz）990316A 实有三行：旧行 time=09:38:58.000Z、精化行 09:40:39.500Z（与触发时刻一致）、IPN 行 09:40:39.000Z（与 Hurley+2011 一致）——仓内 normalized.jsonl 取 09:38:58.000Z 系 parse.py 对同 id 多行取众数时命中旧行的快照归一化 artifact，非 time_def 定义差；按 §3.8 取触发仪器目录值（快照 normalized 值与原始 tdat 精化行差 101.5 s，≥60 ms 已在 PR 说明报告；T0 另获 GRBCAT 精化行+IPN 行+Hurley+2011+BATSE 目录四重佐证）；GCN 276 'some 7.5 hours after the outburst' 与其观测 mean UT 17:34 自洽（17:34−09:40:39≈7.9 h，原文约数）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 276",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 936,
+  "pos_ref": "Hurley+2011（ApJS 196,1，The Interplanetary Network Supplement to the BATSE 5B Catalog）表1 行 '990316 09:40:39 7475 152.08 -4.44 0.26 152.198 -9.354 6.868 0.316'：BATSE 误差圆中心 152.08/−4.44（J2000，col 4-5）、总 1σ 统计半径 0.26°（col 6）；IPN 环带（col 7-10：极点 152.198/−9.354、角半径 6.868°、3σ 半宽 0.316°，日心系框架；本源仅此一条环带，表2 无误差盒）；arXiv:astro-ph/0605726 HTML 全文核对列定义（2026-10-27 取）；HEASARC batsegrb 目录 ra/dec 同值；GCN 277 'BATSE 3 sigma (0.3 deg statistical + 1.6 deg systematic) error circle'。原库 pos=151.5667/−5.2253（pos_ref=GCN 276）为 Wise 1m 观测视场中心，非本源定位，已改",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-27。身份：GRB 990316 = CGRO/BATSE trigger 7475（GCN 277 'LOTIS obtained realtime images of GRB990316 (BATSE Trigger 7475)'；Hurley+2011 表1 '990316 09:40:39 7475'；HEASARC batsegrb 行 trigger_num=7475），Ulysses+BATSE 单环带 IPN 定位（Hurley+2011 表1 仅 1 条环带、无误差盒）；同日 BATSE trigger 7477（12:28:59.513 UT，ra 102.45/dec −6.2）为另一爆发（GRBCAT 名 GRB 990316B=trigger 7477 12:28:59 UT；另有 GRB 990316C=18:00:22 UT（仅 BATSE，ra 190/dec 13）亦不在库内），与本源无关且均不在库内（PR 待决事项报告）。原 Trigger_Instrument='IPN' 改为 'CGRO/BATSE'（触发仪器为 BATSE，IPN 提供三角定位；GRB000408 同类先例）。(1) T0：原值 1999-03-16T00:30:00Z 为 bot meta_trigger 占位值（原 t0_basis='meta_trigger'，Issue #68 不可信），无可溯源出处，按 §3.2 重锚为触发时刻 1999-03-16T09:40:39.545Z（依据见 T0_ref）；GCN 276 'some 7.5 hours after the outburst' 与其 mean UT 17:34 自洽。T0_offset 不适用：无证据表明爆发相对自动触发有 >1 s 偏移。extra_data 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写（§3.10）。(2) 定位：原 ra/dec=151.5667/−5.2253 为 GCN 276 的 Wise 视场中心（'around RA=10:06:16 Dec=-05:13:31'），非本源定位，系 gcn_llm_extract 导入误解；改为 BATSE 目录定位 152.08/−4.44，pos_error=936″=0.26°（Hurley+2011 col6 'total 1σ statistical BATSE error circle radius'，pos_error_confidence=1sigma）；系统误差 1.6°（GCN 277 'BATSE 3 sigma (0.3 deg statistical + 1.6 deg systematic) error circle'；Hurley+2011 §III 口径 1σ 总半径按 √(0.26²+1.6²)≈1.62°）无法并入单值字段，列此备查；IPN 环带极点 152.198/−9.354、角半径 6.868°、3σ 半宽 0.316°（日心系；GCN 277 'an annulus derived from IPN data (GCN/IPN notice) that passes through the BATSE error circle'）——审核复核：环带内缘距 BATSE 目录中心 1.64°（|6.868−0.316−4.915|，大圆计算），与系统项 1.6° 一致，即环带穿过含系统项的 BATSE 误差圆；真实定位=含系统项的 BATSE 误差圆∩IPN 环带（无 published 误差盒）。(3) 分类：t90=91.136±2.415 s（BATSE 目录，>20 keV 四通道之和），按目录 t90 判 lgrb。(4) 物理量（不参与判定）：T50=12.288±0.231 s、T90=91.136±2.415 s（均 >20 keV，BATSE 目录）；四通道 fluence=8.4e-06±9.1768e-08、1.0143e-05±8.3734e-08、2.0233e-05±2.107e-07、1.4213e-05±1.8869e-06 erg/cm²（20-50/50-100/100-300/>300 keV，BATSE 目录）；峰值光子流量 3.8734±0.2854（64 ms）、3.6988±0.1412（256 ms）、3.6681±0.0704（1024 ms）ph/cm²/s（50-300 keV，BATSE 目录）；Band 谱 Epeak=138±5 keV、α=−1.31±0.04、β=−2.36±0.06（BATSE 目录 bright-swarm 谱表，HERB、LAD5）；GRBCAT 990316A 行 T90/T50/fluence/peak_flux 与 BATSE 目录同值。(5) 红移：无测定，redshift 保持 null。(6) 测光：GCN 276–282 七篇通告两类——(a) Wise 1m 视场极限（GCN 276）：R<19.9（视场中心 11′×11′ 区）/R<19.5（0.3°×0.3° 全覆盖区），mean UT 1999-03-16 17:34，带时间锚点，按 §3.3 历史上限条入库 2 行（见 lc）；(b) LOTIS 于触发后 13.6 s 起首帧（30 s 积分，GCN 277）在 RA=147.54/Dec=−4.95（J2000，IPN 环带边缘、距 BATSE 目录定位 4.55°，在含系统项的误差圆外）报一个 V~12.5 瞬变源（仅现于首帧，LOTIS 自称 'cannot rule out the possibility that this OT is a local effect'）；后续 KPNO 4m/0.9m（GCN 278，R>21）、MDM 2.4m（GCN 279，V 板限 23.9/23.0）、ESO NTT（GCN 280，2′×2′ 内无 >0.25 mag 变源至 V=24.1、R=24.3）、NOT（GCN 282）与 WSRT（GCN 281，4.88 GHz <130 μJy 3σ）在 LOTIS 候选位置均未证认变源/新源——候选被否定（GRB241223A 无关候选体同例），LOTIS 瞬变与其后各候选位置深观测上限均不入 lc，仅此留档；LOTIS 会议文（Williams+2000，astro-ph/9912402，Huntsville V 会刊）表1 的 m≈10.6/10.9 为按暴流量标度的可探测星等（模型推算），非实测，不入库。(7) 别名：GRB 990316A（HEASARC GRBCAT name，与同日 GRB 990316B=trigger 7477 区分）、GRB 990316（GCN 280/281/282 主题行用名）；BATSE 目录 name 'GRB 990316-'（尾划线目录形态）与 name_alt 'BATSE 7475'（触发号形）不收（GRB000408 先例 alias 不收触发号形）。(8) 重复建档排查：info/ 无同日其他 990316 条目（990316B 缺失见待决），denied.tsv 无本源。测光检索（2026-10-27）：仓内 gcn/archive 本地未获取（本工作区无该目录），经 GCN 网站检索替代：GCN 站事件页 gcn.nasa.gov/circulars/events/grb-990316 共 7 篇（276/277/278/279/280/281/282），逐篇经 gcn.nasa.gov/circulars/<N>.json 取全文（均 HTTP 200）；站内全文检索 '990316' 命中 6 篇（278–282 与 307——307 经核为 GRB 990123 监测文中出现的观测日期 990316，与本源无关）；external/batse、heasarc_grbcat 命中为目录级参数（无光变表）；external/rssgrbag/lightcurve.jsonl 0 命中；external/grbsn_webtool/SourceData（63 事件）无本源；OpenAlex 检索 'GRB 990316' 命中 10 条：4 条为 GCN 通告；Fynbo+2001（A&A 369,373，暗暴研究，仅摘要页核得，未见本源内容）；Williams+2000（astro-ph/9912402 会议文 HTML 全文已核，表1 为标度推算星等）；Connaughton/Sample 类文章（DOI 10.1086/339622 等，样本列表类标题命中，未取得全文逐核，列此备查）；arXiv API 'GRB 990316' 0 命中；文献侧 Hurley+2011（arXiv:astro-ph/0605726 HTML 全文已核）提供触发时刻与环带参数（已用于 T0/pos_ref）。TNS 不适用（1999 年 BATSE 暴、无 AT/SN 名，2026-10-27 判定）。结论：无可用光学/X 射线确认测光；补 2 行（Wise R 波段视场上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 = CGRO/BATSE trigger 7475 触发时刻（BATSE 目录 MJD 51253.4032354792 = 1999-03-16T09:40:39.545Z；Hurley+2011 表1 记 09:40:39）；bot 原值 1999-03-16T00:30:00Z 为 meta_trigger 占位、无可溯源出处（Issue #68），已按 §3.2 重锚；原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写，见 comment",
+    "t0_basis": "batsegrb_trigger_7475",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Hurley+2011",
+      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
+      "title": "The Interplanetary Network Supplement to the BATSE 5B Catalog of Cosmic Gamma-Ray Bursts",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
