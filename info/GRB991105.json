@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB991105",
-  "alias": [],
-  "ra": 187.6492,
-  "dec": -7.9319,
-  "T0": "1999-11-05T16:40:44Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 991105",
+    "GRB 991105C"
+  ],
+  "ra": 180.871,
+  "dec": -66.757,
+  "T0": "1999-11-05T16:40:44.793Z",
+  "T0_ref": "HEASARC batsegrb catalog (BATSE trigger 7841)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 216,
+  "pos_ref": "GCN 433",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "IPN/BATSE/BeppoSAX 事件（GRBCAT id 4635，多行：BeppoSAX/BATSE/gusbad/IPN 四行，位置以 BeppoSAX 行为准、触发以 BATSE 目录为准）：BATSE trigger 7841 于 1999-11-05 16:40:44 UT 触发（GCN 430/431/442；BACODINE 通告 GRB_TIME 60044.79 SOD），BeppoSAX GRBM 与 WFC 同时探测（GCN 430），WFC 测得 X 射线对应体位置，IPN（SAX/NEAR）三角定位（GCN 441）。T0：原 bot 值 1999-11-05T16:40:44Z（t0_basis=meta_trigger，整秒）修正为触发仪器 BATSE 当前目录（heasarc_batsegrb 快照）trigger 7841 的 16:40:44.793Z；GCN 442（BATSE 官方通告）给 1999 Nov 5.694963 UT=16:40:44.80，与目录同值舍入（差 10 ms）；GCN 430/431/432 均给整秒 16:40:44 UT；其余目录值备查：GRBCAT BATSE 行 ECT 16:40:44.70、gusbad 行 16:40:45.00、IPN 行 16:40:44.00、BeppoSAX 行 16:40:50.00、saxgrbmgrb 目录 16:40:46.00。位置：原 bot 值 ra=187.6492/dec=-7.9319 实为 GCN 441 IPN 环带中心（半径 58.9882°±0.0607°，3σ）之误植——环心至 WFC 圆心 59.008°，环带与 WFC 误差圆交于 12h03m52s -66°48'13\" 与 12h02m59s -66°47'30\"（GCN 441 原文），现取 GCN 433 修订 WFC 位置 ra=180.871/dec=-66.757、误差半径 3.6'=216\"；位置序列：GCN 430 初步 180.80/-66.76（5'）→431/432 精化 180.753/-66.814（3.6'，GCN 432 注明 99% 误差半径）→433 修订 180.871/-66.757（3.6'）；IAUC 7301/7303（经 MPE 页与仓内 mpe_greiner 快照）与 GRBCAT BeppoSAX 行（引 Coletta & Giommi 2002，ASDC 目录）列 180.75/-66.8 一致；De Pasquale+2006（astro-ph/0507708）表列 dec -67°45'25\" 系 66→67 笔误（其 RA 12h03m29s=180.871 与 GCN 433 全同，且 IPN 交点/GRBCAT/IAUC 均 -66.8）；3.6' 的置信水平 GCN 432 标注 99%，受控词表（90/68/3sigma/1sigma）无此档，pos_error_confidence 留空待决。sub_tag：t90=50.368±2.176 s（BATSE 当前目录 heasarc_batsegrb；GRBCAT 同值；GCN 442 初值 T90=48.64±1.36 s）——按目录 t90 判 lgrb/sgrb，判为 lgrb。GCN 442 所引「IPN (SAX/NEAR; GCN 411)」之 GCN 411 在 gcn.nasa.gov 与 GSFC 镜像均 404 且编号早于本暴，应为 GCN 441 之笔误；GCN 432 写「BATSE trigger 7701」亦为笔误（7701=GRB 990806，1999-08-06；本暴为 7841）。光学上限：本 PR 补 9 行（GCN 449→7 行：ESO 2.2m BRi 两历元 T0+15.8/39.9 h 3σ 极限 B=22.5/R=23.5/i=22.0、CTIO 4m R 四夜自 T0+15 h 起 3σ R=23.4；GCN 439→2 行：MJUO 0.61m 两历元 Nov 6.41/7.37 UT DSS 极限 R≈21），无 NFI 观测（日约束，GCN 432；De Pasquale+2006 编目 flag=N），无确认光学对应体（暗暴），红移无资料。测光检索（2026-10-27）：仓内 gcn/archive 本地未获取（工作区无 gcn/ 目录）；external/rssgrbag lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无 9911* 事件、external/uvot_grb（Swift 时代）不适用、Konus-Wind 目录（Svinkin+2023, ApJ 850, 161）无此事件、external/heasarc_grbcat/batse/saxgrbmgrb/mpe_greiner 快照仅参数行无测光；GCN 站该事件通告共 8 篇（430/431/432/433/439/441/442/449，全部打开核对），其中 439/449 含光学上限（补 9 行）；ADS/SciX API 需 token 未能直查，经 Web 检索代理核对：De Pasquale+2006（已打开，无 991105 测光）、Rol+2005（astro-ph/0501375，已打开，991105 仅以 Palazzi et al. 1999=GCN 449 引入暗暴样本，无新测光）、Fynbo+2001（A&A 369, 373，检索命中仅暗暴分类提及，未打开不引）；TNS 不适用（1999 年 GRB，无 OT 申报）。结论：除上述 9 行上限外无其他可入库测光。alias：「GRB 991105」（BATSE/GRBCAT 目录名）、「GRB 991105C」（BeppoSAX GRBM 目录 heasarc_saxgrbmgrb 用名，区分同日 GRBM 事件 991105A/B）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核修正为 BATSE trigger 7841 触发时刻 16:40:44.793 UT（heasarc_batsegrb 目录快照；GCN 442 官方通告 1999 Nov 5.694963 UT 同值舍入）；原 bot 值 1999-11-05T16:40:44Z 为 meta_trigger 整秒值",
+    "t0_basis": "HEASARC batsegrb catalog (BATSE trigger 7841)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
