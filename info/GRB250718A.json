@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB250718A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2025-07-18T04:30:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 250718A"
+  ],
+  "ra": 241.99583,
+  "dec": -11.99306,
+  "T0": "2025-07-18T00:14:02Z",
+  "T0_ref": "GCN 41115（Swift/BAT trigger 1334535，00:14:02 UT）；原值 2025-07-18T04:30:00Z 为 COLIBRÍ 观测窗口终点（GCN 41116：03:52–04:30 UTC），非触发时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 41115（BAT 定位 16h07m59s −11°59′35″，3 arcmin 半径；原文未标注置信水平）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-10-26。身份：Swift/BAT trigger 1334535（GCN 41115，'possible GRB 250718A'），00:14:02 UT 触发，BAT 定位 16h07m59s −11°59′35″（3 arcmin 半径）；外部 Swift/BAT 目录仓内快照（external/swiftgrbba）同源记录 trigger 1334535、241.998/−11.993、error_radius 3.0（目录口径 3 arcmin，与 GCN 41115 一致），并注明 BAT 像显著性仅 6.85σ、可能为噪声涨落、需后续数据确认（该保留意见写入本段，不据此删源）。T0：原值 2025-07-18T04:30:00Z 系 COLIBRÍ 观测窗口终点（GCN 41116 记 03:52–04:30 UTC），属 Issue #84 同类「窗口时刻误当 T0」；已改为 BAT 触发 2025-07-18T00:14:02Z（GCN 41115）。T0_offset 留空（无真实爆发相对自动触发的 >1 s 偏移证据）。位置：采用 GCN 41115 的 BAT 定位 241.99583/−11.99306，pos_error=180″（3 arcmin），原文未标置信水平，pos_error_confidence 留空；Swift/BAT 目录值 241.998/−11.993 在 comment 备查。分类：仅 2 篇 Circular（41115/41116），均未给 T90 或 long/short 分类；BAT 目录快照亦无 T90，sub_tag 留空。红移：COLIBRÍ 仅成像、无光谱，redshift 留 null。测光：COLIBRÍ i 波段 32 min 曝光、i>22.7 AB（GCN 41116），已入库 1 行上限；原文只给观测窗口 03:52–04:30 UTC，time 取窗口中点 04:11:00 UT、time_err=19 min（§3.8 约定口径），并注明真实曝光中点不可恢复。测光检索（2026-10-26）：本工作区无 gcn/archive，改用 GCN 事件页 grb-250718a（仅 41115/41116 两篇）与 GCN 站检索（250718A 共 3 条，均同两篇）；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；ADS/SciX 无 token（401）、arXiv 0 篇、TNS 无对象；结论：仅 COLIBRÍ 一条带时间锚点的上限可用，补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发 1334535 时刻 2025-07-18T00:14:02Z（GCN 41115）；原 bot 值 04:30:00Z 为 COLIBRÍ 窗口终点，已更正",
+    "t0_basis": "GCN 41115",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
