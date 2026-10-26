@@ -1,32 +1,47 @@
 {
   "transient_id": "GRB000115",
-  "alias": [],
-  "ra": 63.092,
-  "dec": 29.512,
-  "T0": "2000-01-15T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000115",
+    "BATSE 7954"
+  ],
+  "ra": 120.8851,
+  "dec": -17.2267,
+  "T0": "2000-01-15T14:49:32.025Z",
+  "T0_ref": "BATSE 4B trigger 7954 触发时刻（external/batse 快照 time=51558.6177317755；GCN 522）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 418.5,
+  "pos_ref": "GCN 520（RXTE/IPN 相交误差框四角）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份与 T0：GRB 000115 = BATSE trigger 7954（BATSE 于 2000-01-15 14:49:32 UT 触发，GCN 522；RXTE/PCA 首次扫描发现 X 射线新源、第二次观测证实衰减，GCN 519；IPN 环带 GCN 520/521；Stern+2002 记该暴有 X 射线暂现源、无光学暂现源）。原 T0=2000-01-15T00:00:00Z 为名字日期占位值（t0_basis=meta_trigger，无可溯源出处），修正为 BATSE 触发时刻 2000-01-15T14:49:32.025Z（external/batse 快照 trigger 7954：time=51558.6177317755、seconds_trigger=53372.0254；GCN 522 记 2000 Jan 15.61773 UT；MPE GRB 000115 页转录的 BACODINE 与 RXTE 位置通告分别记 14:49:32.02/.03，亚秒内一致）。原 Trigger_Instrument=IPN 改为 CGRO/BATSE（IPN 为定位网络，非触发仪器）。alias：GRB 000115（GCN 用名）、BATSE 7954（BATSE 目录 trigger 名）。\n\n位置：原 ra/dec=63.092/29.512 实为 GCN 520 中 IPN 环带的圆心（RA 63.092°、Dec 29.512°、半径 72.715°±0.015°，3σ），并非源位置（bot 误取环心）；改用 GCN 520 的 RXTE/IPN 相交误差框四角（8h03m12.5s −17°18′00″、8h03m21.2s −17°18′00″、8h03m48.0s −17°10′42″、8h03m48.0s −17°07′42″）形心 ra=120.8851、dec=−17.2267，pos_error=418.5″ 为四角最大角距（外接半径近似；框面积约 20.3 平方角分，与原文约 21 平方角分一致；对角线约 11.2′/12.1′）。该框由 RXTE 90% 误差框与 IPN 3σ 环带相交，混合置信水平，pos_error_confidence 留空；GCN 521 仅更正示意图，声明误差框坐标不变。GCN 519 的 RXTE 定位 120.8/−17.1（90%，约 0.3°×0.4°）与盒一致，未单列。\n\n红移与分类：无红移报道，redshift 留空。t90=15.04±0.143 s（BATSE 4B 目录 trigger 7954；GCN 522 记 T90=15.0±0.14 s），按目录 t90 判 lgrb（原 sub_tag 保留）。\n\n光学与 lc：GCN 524（CTIO 0.9m、ESO Danish 1.5m、CAHA 1.23m、IAC80 0.82m，BVR，2000 Jan 17.093–21.382）与 GCN 563（USNOFS 1.0m、UPSO 1.04m，Jan 16.275–19.764）对 RXTE/IPN 误差框成像，均未发现光学余辉，只给出极限星等（R 21.2–22.5、B 20.5–21.4、V 22.0、I 21.2–22.0；USNO A2.0 / Henden GCN 558 定标）。16 行均按统一 T0 重算 time/mjd（原以 bot 的 2000-01-15T00:00 为历元，历元差 53372.025 s）：其中 GCN 563 的 4 行原取观测窗口起点，已改为窗口中点并补 time_err=半窗口（§3.8 约定）。GCN 563 的 MJUO 0.61m 900s R+I 宽带行（I~20，近似值、非标准波段）未入库，见 PR 待决事项；GCN 558 仅为 BVRI 定标场测光，无源位置极限，不入 lc。X 射线（RXTE/PCA 余辉探测与衰减上限）不在审核范围。\n\n测光检索（2026-10-27）：GCN 存档全文（本地快照 45 908 篇）命中 8 篇（519/520/521/522/524/558/563 及 1 篇无关的 LIGO 通告），其中含光学观测 3 篇（524/558/563）、含 BATSE 时长/流量 1 篇（522）；rssgrbag 光变 0 行（仅目录参数：xray_ag_flag=Y、radio_ag_flag=N）、grbsn_webtool 无记录；arXiv 精确短语 0 篇；ADS/SciX 网页受反爬验证拦截，改用 INSPIRE 全文命中 3 篇（RXTE 观测、GRB 000630 论文、Konus 短暴目录，均无该暴光学测光表）与 Stern+2002（astro-ph/0108303）核对；TNS 不适用（2000 年暴，早于 TNS 启用）。结论：无新增可用测光（新增 0 行，修正 16 行时间；核不上依据的行 0 行）。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，与实际不符，已改写。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核修正为 BATSE 触发 7954 时刻 2000-01-15T14:49:32.025Z（原 bot 值 2000-01-15T00:00:00Z 为名字日期占位值，t0_basis=meta_trigger 无出处）",
+    "t0_basis": "BATSE 4B trigger 7954（external/batse 快照；GCN 522）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Stern+2002",
+      "url": "https://arxiv.org/abs/astro-ph/0108303",
+      "title": "The Decline of the Source Population of Gamma-Ray Bursts and Their Luminosity Function",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
