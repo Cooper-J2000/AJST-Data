@@ -4,24 +4,31 @@
   "ra": 276.25,
   "dec": 49.45,
   "T0": "1997-10-24T22:41:47Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 2/4（USNO 观测通告）：RXTE_ASM localization of GRB971024（Trigger No. 6448, GCN notice of 24 Oct 97 22:41:47 UT）——RXTE 触发通告原文时刻（1997 年通告，无亚秒）；单路局限见 comment",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "RXTE/ASM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] RXTE/ASM Trigger 6448（GCN 2/4 引触发通告：24 Oct 97 22:41:47 UT）；仓内 MPE Greiner 表行 GRB 971024（RXTE/ASM，X-ray position 18h24m51s +49°28.9′=276.2125/49.4817，误差框 9.0′×1′，XA=y OT=n）互证；GRBCAT 当日另有 971024A（BATSE 11:33:32Z，270.47/49.64）/971024B（IPN 13:26:40Z）/971024C（BATSE 22:22:55Z，104.54/25.63）三暴，均与本源（22:41:47Z RXTE/ASM）不同，划界如上。[T0] 原库 22:41:47Z 与 GCN 2/4 所引 RXTE 触发通告时刻一致（保留）；1997 年通告无亚秒；T0 证据为触发通告单路（MPE 表 trigger_time=null、GRBCAT 无此事件行），如实记录单路局限。[定位] ra/dec=276.25/49.45 原值保留（bot 自 RXTE 通告抽取，原通告不在仓内档案无法逐位复核）；MPE 表行 276.2125/49.4817 相距约 144″（计算），同属 RXTE/ASM 误差框（9.0′×1′ 矩形，GCN 2 称 90% confidence localization 无半径数值），pos_error 不适用圆半径留空、pos_ref 留空（B 档，来源未标注置信水平/矩形框）。[Trigger_Instrument] 补 RXTE/ASM（GCN 2/4 原文 RXTE_ASM localization + MPE 表 Instrument=RXTE/ASM）。[分类] tag 补 grb；无 T90/时长信息（GCN 与目录均无），sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「971024」全形态：命中 4 篇（GCN 2/3/4/5，全部属本源——1997 年最早期的 GCN 通告）；GCN 2（USNO 第一历元 14-14.5 h，R 波段 blink vs DSS 无数值限深不入库）、GCN 4（USNO 第二历元 +62.25 h，R≈19 变源上限，入库 1 行）、GCN 3/5（KPNO 4m Mosaic 5×10 min R 波段两晚，zero points not yet available 无数值不入库，数据公开页 noao.edu 注记）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；external/mpe_greiner 行仅目录参数；arXiv API all:「GRB 971024」0 命中；ADS/SciX API 无 token 实测 401；TNS 不适用（1997 年无 AT 体系）→ 本 PR 补 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 保留 GCN 2/4 所引 RXTE 触发通告时刻 22:41:47 UT（与库内原值一致，1997 年通告无亚秒）；t0_basis 由 meta_trigger 更正为 GCN 通告引述",
+    "t0_basis": "GCN 2/4 所引 RXTE Trigger 6448 触发通告（单路，见 comment）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
