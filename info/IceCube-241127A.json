@@ -1,27 +1,32 @@
 {
   "transient_id": "IceCube-241127A",
   "alias": [],
-  "ra": 164.0502,
-  "dec": 5.2615,
-  "T0": "2024-11-27T14:11:14Z",
-  "T0_ref": null,
+  "ra": 164.09,
+  "dec": 5.38,
+  "T0": "2024-11-27T14:11:14.420Z",
+  "T0_ref": "GCN 38349（IceCube 官方通告）：On 2024-11-27 at 14:11:14.42 UT IceCube detected…（GOLD alert，FAR=1.28/yr，离线精化后时刻，触发仪器自给亚秒）；原库 14:11:14Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 38349（IceCube 离线精化方向）：RA=164.09 (+0.46/-0.52 deg) Dec=5.38 (+0.58/-0.55 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；原库 ra/dec=164.0502/5.2615 系 GCN 38381 XRT tiling 场内已知源 LSXPS J105612.0+051546/SDSS J105612.22+051544.6 的位置（8.4″/90%，原库定位被无关已知源污染——该源历史计数率无爆发迹象）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube GOLD 径迹中微子候选事件（GCN 38349；AMON notice 140125_41215060，FAR=1.28/yr）；跟随观测：Swift-XRT tiling（GCN 38381：10 指向 4.7 ks）、Fermi-LAT（GCN 38379）、IceCube 附加中微子搜索（GCN 38420）、ZTF（GCN 38434：无暂现候选）。同名划界：GRB 241127A（Swift/BAT trigger 1270788，GCN 38354：21:43:16 UT，327.9/-56.7，T90=26.02±3.63 s，光学余辉多波段探测 GCN 38359/38365/38366/38384）与本中微子事件仅同名日巧合——时间差 ~7.5 h、角距 ~130°（计算），无物理关联；其 XRT 增强定位 327.88543/-56.66544（GCN 38362）不属本源。全库检索「241127A」命中 14 篇：38349/38379/38381/38420/38434 属本源，38354-38386 段属 GRB 241127A（划界）。[T0] 原库 14:11:14Z 系 GCN 38349 精化时刻 14:11:14.42 UT 的整秒截断，补亚秒 .420Z。[定位污染] 原库 ra/dec=164.0502/5.2615 系 GCN 38381 XRT tiling 场内已知源位置（LSXPS J105612.0+051546，8.4″/90%，与光学星系 SDSS J105612.22+051544.6 对应；原文 no signs of outburst——历史计数率 0.023 vs 新观测 0.015 ct/s 无爆发），已被无关已知源污染；已更正为 GCN 38349 精化方向 164.09/5.38；90% PSF 不对称（RA +0.46/-0.52、Dec +0.58/-0.55 deg），pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。X 射线内容按 §3.3/§7 不入库。[Trigger_Instrument] Swift/XRT→IceCube（XRT 系 tiling 跟随观测 GCN 38381，非探测器；检测仪器为 IceCube）。[分类] tag 保持空（中微子事件口径）；sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「241127A/IC241127A/IceCube-241127A」全形态：命中 14 篇（如上划界）；本源无任何可用测光（GCN 38434 ZTF 无暂现候选；GCN 38381 XRT 场内源均系无关已知源/低显著；GCN 38379 LAT 无新源）；GRB 241127A 的光学/NIR 探测（GCN 38359/38365/38366/38384）系 GRB 事件数据不入本源；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（中微子事件）→ 本 PR 补 0 行（真零测光源，留证如上）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 补亚秒：GCN 38349 精化时刻 14:11:14.42 UT（GOLD alert）；Trigger_Instrument 由 Swift/XRT 更正为 IceCube（XRT 系 tiling 跟随观测）；定位更正精化值（原库坐标系 XRT 场内已知源污染）；原值与判据保留于 comment",
+    "t0_basis": "GCN 38349（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
