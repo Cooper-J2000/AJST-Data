@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-230112A",
-  "alias": [],
+  "alias": [
+    "IC230112A"
+  ],
   "ra": 24.35,
   "dec": 0.9,
-  "T0": "2023-01-12T06:44:50Z",
-  "T0_ref": null,
+  "T0": "2023-01-12T06:44:50.60Z",
+  "T0_ref": "GCN 33161",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 33161",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IceCube 高能中微子 track alert（ICECUBE_Astrotrack_Bronze 流，AMON 通告 137537_52990531，GCN 33161），非 GRB；tags.json 无中微子类目，tag/sub_tag 留空（待维护者扩表，同 IceCube-221224A 处理）。T0：GCN 33161（IceCube 官方）给出事件时刻 2023-01-12 06:44:50.60 UT，按触发仪器亚秒值取 06:44:50.60；GCN 33164（BOOTES-4）、33169（Fermi-LAT）、33174（ZTF）均引同一 T0 与位置，互证一致。原 bot 值 T0=2023-01-12T06:44:50Z（原 extra_data：t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"，t0_basis=meta_trigger，不可信，Issue #68），整数秒一致，补亚秒并补 T0_ref。定位：RA=24.35(+1.43/−1.71 deg)、Dec=+0.90(+0.63/−1.26 deg) J2000，90% PSF containment（GCN 33161；GCN 33169 引述一致）；来源未给单值误差半径（非对称），pos_error 留空。测光：GCN 33164 BOOTES-4/MET 0.6m 对 best-fit position 的 Clear 滤光片 3σ 上限 19.25(0.06) mag（以同帧 3 颗亮星+SDSS DR16 星表定标，未声明星等系统，未做银消改正），入库 1 行。GCN 33174 ZTF/P48 对定位区的 g/r 巡天（2023-01-13 02:43 UTC 起，单曝 300 s，typical depth 21.0 mag）未探测到候选体——只给「典型深度」而非对特定位置的上限值，且 g/r 两波段未分列，不入库（备查）。GCN 33169 Fermi-LAT >100 MeV 积分流量上限（ph cm^-2 s^-1，1 d/1 月/14 年积分）为积分流量且 band 为能量串，不入库；GCN 33165 IceCube 附加中微子事件搜索上限（E^2 dN/dE，GeV cm^-2）非电磁测光，不入库。注意名称撞车：GCN 33158/33160 的「GRB 230112A」是同日另一事件（Fermi GBM 触发 230112342，2023-01-12 08:12:32 UT，RA=62.4/Dec=−3.4），与本中微子事件（06:44:50.60 UT，RA=24.35）无关，其 MASTER-Tunka 观测针对 GBM 误差框、坐标（05h 上下）亦不覆盖本源位置，未入库。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（0 篇），external/rssgrbag、external/grbsn_webtool/SourceData 及 external/ 全目录 grep 'IC230112A/IceCube-230112A/230112A' 0 命中（fermi_gbm/swift_bat 快照的 '230112' 命中为同日 Fermi GRB 230112A/230112C 触发，非本源）；GCN 站（gcn.nasa.gov）按 '230112A' 命中 7 篇 Circular（33158、33160、33161、33164、33165、33169、33174，均实际打开核对，其中 2 篇为上述 GRB 230112A 撞名）→ 补 1 行；文献回退链（2026-10-27）：Crossref 检索 'IC230112A' 0 命中；arXiv API 检索 'IC230112A'、'IceCube-230112A' 均 totalResults=0；OpenAlex 'IC230112A' 仅 1 条全文命中（Baikal-GVD ICRC2023 会议文，DOI 10.22323/1.444.1458，实际打开核对：只讨论 IceCube-211208A/GVD20211208CA 的中微子符合分析，无本源、无电磁测光）、'IceCube-230112A' 0 命中；SIMBAD TAP 无 IC230112A/IceCube-230112A 条目（仅返回撞名 Fermi GRB 'GRB 230112A'）；TNS 未查（匿名 403，中微子 alert 无 AT/SN 命名）→ 共补 1 行。别名 IC230112A 为 GCN 33169 原文用名。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 中微子事件 IceCube-230112A 的探测时刻（GCN 33161，亚秒 0.60 s 原文给出）",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
