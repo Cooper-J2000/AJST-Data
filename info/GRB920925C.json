@@ -1,32 +1,61 @@
 {
   "transient_id": "GRB920925C",
-  "alias": [],
-  "ra": 330.8802,
-  "dec": 25.4171,
-  "T0": "1992-09-26T05:46:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 920925E",
+    "W920925c",
+    "WATCH 920925c"
+  ],
+  "ra": 330.8,
+  "dec": 25.48,
+  "T0": "1992-09-25T22:46:24Z",
+  "T0_ref": "GCN 6155 (WATCH trigger 22:46:24 UT); Sazonov et al. 1998, A&AS 129, 1; Hurley et al. 2000, ApJS 128, 549 Table 1",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "WATCH-GRANAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1404,
+  "pos_ref": "Sazonov et al. 1998, A&AS 129, 1 (WATCH 3-sigma error circle); GCN 6155",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB920925C = 1992-09-25 22:46:24 UT 的 WATCH/GRANAT 暴（Sazonov et al. 1998 目录名 W920925c；SIMBAD 主名 GRB 920925C 的别名即 WATCH 920925c）；HEASARC GRBCAT 将同一事件另行编号为 GRB 920925E（grbcat_id 1357，别名列 W920925c, 920925c）。同日另有 GRBCAT 920925A（BATSE 1954，08:50:39 UT，129.7/-58.7）、920925B（WATCH，20:30:42 UT，201.1/+42.2）、GRBCAT 自编号的 920925C（20:45:14 UT，129.5/+28.8，别名列 920925b，与本源非同一事件）、920925D（BATSE 1956，21:45:16 UT，160.3/+67.4），坐标与触发时刻均与本源不符。两路互证：路径 A 仓内快照 external/heasarc_grbcat（2025-10-29 版）与 external/batse；路径 B 外部 SIMBAD（2026-10-27 查询，GRB 920925C = WATCH 920925c）、IceCube GRBweb Summary_table（仅 920925A/B，无本源）、GCN 6155/6802（2007 年回溯通告，全文已核对）、Hurley et al. 2000。T0：原值 1992-09-26T05:46:00Z 为 bot 自 GCN 6155 抓取的 POSS-II 蓝板曝光结束时刻（该板 04:51-05:46 UT）而非触发时刻（extra_data 原值 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」），已改为 WATCH 触发时刻 1992-09-25T22:46:24Z（GCN 6155 原文「The event triggered WATCH detector at 22:46:24 UT」；Sazonov et al. 1998 目录起始时刻同值；Hurley et al. 2000 表1/表2 同值）；GRBCAT 另有两行时刻并列备查：22:46:14（Time at Detecting Instrument，引 1994wedo.book）与 22:49:14（ipngrb Earth Crossing Time，MJD 48890.9508564815 换算）。位置：ra/dec=330.80/+25.48 为 WATCH 3-sigma 误差圆中心（Sazonov et al. 1998；GCN 6155 原文 22h03m12s +25°28'48\" J2000），3sigma 半径 0.34°（仅统计）/0.39°（含系统差），pos_error 取含系统差的 0.39°=1404″（Hurley et al. 2000 表2 同为 0.39°，GRBCAT 舍入为 0.4°），置信水平 3sigma 为来源明示。IPN（Ulysses×WATCH）环带：中心 (341.779, +1.878)、中心线半径 R=25.717°、3sigma 半宽 0.086°，与 WATCH 误差圆交出的误差框四角 (330.448, 25.255)、(331.214, 25.591)、(330.603, 25.133)、(331.224, 25.404)，面积 475 arcmin²（Hurley et al. 2000 表2）；GRBCAT 由框角自算的框中心 330.79475/+25.34575。原 ra/dec=330.8802/+25.4171 并非本源定位，而是 GCN 6155 报告的光学候选体位置（POSS-II 蓝板上 B=17.8 的点状暂现源，距 WATCH 圆中心 0.096°、距 IPN 环带中心线 0.058°，均在误差框内），该候选体未经二次探测证实，GCN 6802（2007-07-10，Shajn 2.6m，R<25.4 2sigma）在其位置未探测到任何目标（最近延展源 S1 在其南 9.5\"、R=23.2±0.1），故 ra/dec 改为 GRB 自身的 WATCH 定位，候选体测光保留在 lc 行并注明关联存疑。其他量：t90=282.17±8.86 s（Sazonov et al. 1998, A&AS 129, 1，VizieR J/A+AS/129/1 table1；GRBCAT 舍入为 282.2±8.86 s），按目录 t90 判 lgrb。Padilla et al. 1998（A&A 337, 43；VoR 各渠道不可得——aanda.org 403、aa.springer.de 域名失效、ADS 扫描版 PDF 超时，数值取自 arXiv v1 astro-ph/9807342）在 22:45:21 UT 于 (324.6°, +16.8°)（距 WATCH 定位约 9°、在 IPN 环带之外）报了一个 4 min 窗口的 TeV 候选超量（试后概率 3.3e-3，≥16 TeV 初步积分流量 (9±4)e-10 cm^-2 s^-1），作者认为与该暴的关联无法判定，位置又在本源误差框之外，故不入 lc、仅记备查。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（0 篇）、external/rssgrbag/lightcurve.jsonl 140 行无 920925 记录、external/grbsn_webtool 无 1992 年事件、external/batse 与 external/heasarc_grbcat 快照仅伽马目录行无测光表；外部 GCN 站搜索接口按「920925」返回 0 篇（接口限制，但经外部检索定位到 GCN 6155 与 6802 并直接打开核对全文）；Crossref/OpenAlex/arXiv 检索「GRB 920925 / 920925c」命中并核对 Sazonov 1998、Hurley 2000、Padilla 1998（TeV 巡天）及 GCN 6155/6802，无其他测光文献；TNS 未查（GRB 类源，1992 年无 TNS 记录）→ 唯一有明确时间锚点的测光为 GCN 6155 的 POSS-II 蓝板光学候选体（B=17.8，触发后 6.1-7.0 h），补 lc 1 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=1992-09-25T22:46:24Z 为 WATCH/GRANAT 触发时刻（GCN 6155；Sazonov et al. 1998）；bot 原值 1992-09-26T05:46:00Z 为 GCN 6155 中 POSS-II 蓝板曝光结束时刻，非触发时刻，已修正（原值留 comment）",
+    "t0_basis": "GCN 6155; Sazonov et al. 1998, A&AS 129, 1; Hurley et al. 2000, ApJS 128, 549",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Sazonov+1998",
+      "url": "https://doi.org/10.1051/aas:1998169",
+      "title": "GRANAT/WATCH catalogue of cosmic gamma-ray bursts: December 1989 to September 1994",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Hurley+2000",
+      "url": "https://doi.org/10.1086/313400",
+      "title": "The Ulysses Supplement to the Granat/WATCH Catalog of Cosmic Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Padilla+1998",
+      "url": "https://arxiv.org/abs/astro-ph/9807342",
+      "title": "Search for gamma-ray bursts above 20 TeV with the HEGRA AIROBICC Cherenkov array",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "3sigma"
 }
