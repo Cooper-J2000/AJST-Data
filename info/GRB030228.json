@@ -1,27 +1,36 @@
 {
   "transient_id": "GRB030228",
-  "alias": [],
+  "alias": [
+    "GRB 030228"
+  ],
   "ra": 347.624,
   "dec": -42.117,
-  "T0": "2003-02-28T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2003-02-28T20:26:46Z",
+  "T0_ref": "GCN 1918",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 1918",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 030228 = IPN 事件，Ulysses、INTEGRAL/SPI-ACS、RHESSI、Konus-Wind 于 2003-02-28 当日秒 73606 s（=20:26:46 UT）观测到该暴（GCN 1918）；HEASARC GRBCAT（grbcat_id 5610）trigger_time=2003-02-28T20:26:46Z、observatories=[IPN, ULYSSES] 同值互证。bot 原 Trigger_Instrument=INTEGRAL（无出处）实系同夜 INTEGRAL IBAS Alert n.129（=GCN 1912 所称 INTEGRAL trigger 225）之混淆：该触发发生于 21:52:44.4008 UTC，经离线分析判为伪事件 NOT A GRB（GCN 1913），与本法无关；审核改 Trigger_Instrument=IPN（grbcat observatories 首列）。T0：按 GCN 1918 触发时刻 73606 s=20:26:46 UT 填写（GRBCAT 同值）；bot 原值 2003-02-28T00:00:00Z（t0_note=\"t0 为触发日 00:00 UT（名字日期）\"、t0_basis=name_date）为占位值，已改写，原值留此与 extra_data.t0_note。ra/dec=347.624/-42.117（GRBCAT 同值）为 IPN 环带环心（annulus center），非源位置：环带半径 84.182°±0.157°（3σ，GCN 1918 原文自述），pos_error 无环带语义故置 null，参数留此备查。瞬时辐射量（GCN 1918，Ulysses 口径）：duration≈15 s（GRBCAT t_other=15.0 s）、25–100 keV fluence≈2.0E-06 erg/cm2、peak flux≈4.9E-07 erg/cm2/s（0.50 s）；来源未给 t90 及误差，sub_tag 置空待决（按 ~15 s 时长似为 lgrb，待维护者裁定）。alias「GRB 030228」：GRBCAT 目录名（grbcat_id 5610）兼 GCN 1912 标题用名；GCN 1918 标题用名 GRB030228 与源 id 同形。lc 唯一行（Swope 1-m I=19 上限，GCN 1912）经逐值核对属伪触发 trigger 225 之 10' 误差圆观测（原文 11 hours after the burst 对应 21:52 事件；且视场内变亮恒星（IRAS 17533-3752）17:56:44.46 -37:52:57 距本法环带环心 58.0°，不在 84.182° 环带上），非本源测光，已置 discard=y（详见 lc 行 comment）。测光检索（2026-10-27）：① 仓内快照 external/ 各目录（heasarc_grbcat、mpe_greiner、konus_wind、saxgrbmgrb、fermi_gbm、batse、swift_bat、swift_grb、uvot_grb、swiftgrbba、grbsn_webtool、rssgrbag 等）grep「030228」仅 heasarc_grbcat 1 条命中（目录参数，无光变表），仓内无 gcn/archive 快照；② GCN 站（gcn.nasa.gov/circulars）检索 subject:\"030228\"/\"GRB 030228\"/\"GRB030228\"、\"73606\"、\"trigger 225\"、body:\"GRB 030228\"，命中并逐篇打开 3 篇（GCN 1912、1913、1918），唯一光学观测即 GCN 1912（属另一事件，见上）；③ 文献：OpenAlex 检索 \"GRB 030228\"/\"GRB030228\" 共命中 7 条（前三条为 GCN 1912/1913 转载与 Li+2018 ApJS 234,26，一作 Li，arXiv:1712.03704），Crossref 无本暴研究论文；Li+2018（arXiv:1712.03704） 经 arXiv:1712.03704 全文核对，其表 1 相应行为 GRB 030328（z=1.5216），脚注「GRB 030228: Maiorano et al. (2006)」为 030328 之笔误（Maiorano+2006 即 GRB 030328 afterglow 论文），不含本暴数据。结论：本源无可入库测光，补 0 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经审核（Rusty-Harpoon@zcode 2026-10-27）修正为 GCN 1918 IPN 触发时刻 2003-02-28T20:26:46Z（Ulysses 当日秒 73606 s，HEASARC GRBCAT 同值）；bot 原值 2003-02-28T00:00:00Z 为名字日期占位（原 t0_basis=name_date），已留底于 comment",
+    "t0_basis": "GCN 1918",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
