@@ -1,28 +1,66 @@
 {
   "transient_id": "GRB250529A",
-  "alias": [],
+  "alias": [
+    "AT2025ndt",
+    "GOTO25dea",
+    "bn250529157"
+  ],
   "ra": 18.071949,
   "dec": 58.347004,
-  "T0": "2025-05-29T04:49:24Z",
-  "T0_ref": null,
+  "T0": "2025-05-29T03:46:16.320Z",
+  "T0_ref": "Fermi/GBM 自动通告页 trigger 770183181（GRB_TIME=13576.32 SOD={03:46:16.32} UT；写成 .320Z 仅为满足 ISO8601 三位小数，数值即 03:46:16.32）；GCN 40567（03:46:16 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": "GCN 40654",
+  "pos_ref": "GCN 40654；TNS AT 2025ndt（同坐标，未给误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "GRB 250529A（Fermi/GBM 触发 770183181 / bn250529157，GCN 40567；Konus-Wind、Swift/BAT、Mars-Odyssey/HEND 同见 GCN 40629，BAT 在编码视场外）。原 T0=2025-05-29T04:49:24Z 系误取 GCN 40654 中 GOTO 观测窗口终点（04:49:24 UT = +1.05 h），现改为 GBM 触发时刻 2025-05-29T03:46:16.32Z（GCN/Fermi 自动通告页 trigger 770183181：GRB_TIME=13576.32 SOD={03:46:16.32} UT；GCN 40567 与 GCN 40629 均记 03:46:16 UT，秒级一致，无 T0_offset 需求）。原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失效，原值见此处备注。GBM 通告称 likely LONG GRB、IPN 通告称 long-duration → sub_tag=lgrb。定位：ra/dec 取 GOTO 候选体 AT 2025ndt 的位置（GCN 40654 与 TNS 2025ndt 一致：18.071949 +58.347004 = 01:12:17.268 +58:20:49.21），原文未给该位置的误差，故 pos_error 与 pos_error_confidence 留空（来源未标注置信水平）。GRB 自身定位：GBM 终版 RA=7.1 Dec=54.7 ±4.2°（GCN 40567）；IPN 3σ 误差盒中心 18.193 +58.274，面积 1252 平方角分、最大尺度 5.6°、最小 4 角分（GCN 40629），候选体位于盒内。候选体近银道面（b≈-4.4°），原文称仍属 stronger (but still uncertain) afterglow candidate，TNS 无光谱、Type 未定，lc 各行均注明关联性未定。测光：仅 GOTO-North L 波段（400-700 nm）有数据——18.76±0.28（+0.90h）、19.14±0.12（+1.05h；TNS 记 04:49:24.9 UT、exp 360 s）、次夜 3σ 上限 L>19.05（t0+25h），另 TNS 给出 2025-02-02 触发前上限 19.4（exp 180 s）。星等按 ATLAS-REFCAT2 定标、未做银消改正（GCN 40654）；原文未明写系统，TNS 同一测量记 ABMag、GOTO 通告惯例为 AB → mag_system=AB 并在该行注明。无红移、无宿主星系记录；未发现 X 射线或射电测光。测光检索（2026-10-26）：仓内 gcn/archive 目录在本工作区不存在（改用 GCN 站逐号检索）；external/rssgrbag/lightcurve.jsonl 0 条、external/grbsn_webtool/SourceData 无 250529 事件（external/mpe_greiner 仅有 1 行 IPN 定位、无测光）；GCN 站 2025-05-28~2026-10-26 共 5472 篇标题检索命中 250529 相关 4 篇（本事件 3 篇 40567/40629/40654，另 1 篇 40571 为 GRB 250529B），另对 40558–41250 共 693 篇逐号全文检索命中同为上述 4 篇；ADS/SciX 元数据检索不可用（ADS API 返回 401 需 token、SciX 返回 202 空响应），改用 arXiv API（0 篇）与 Crossref（0 篇相关）+ 通用学术检索（仅命中 GCN/TNS 页）→ 未见正式发表文献给出该暴测光表；TNS 2025ndt 1 个对象页（1 探测 + 1 触发前上限，均已入库）→ 补 4 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 GBM 触发时刻（trigger 770183181，03:46:16.32 UT）；原 bot 注记已失效，原值见 comment",
+    "t0_basis": "Fermi/GBM notice 770183181",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "FermiGBM2025",
+      "url": "https://gcn.nasa.gov/circulars/40567",
+      "title": "GRB 250529A: Fermi GBM Final Real-time Localization",
+      "source": "fsy"
+    },
+    {
+      "name": "Kozyrev+2025",
+      "url": "https://gcn.nasa.gov/circulars/40629",
+      "title": "IPN triangulation of GRB 250529A",
+      "source": "fsy"
+    },
+    {
+      "name": "Kumar+2025",
+      "url": "https://gcn.nasa.gov/circulars/40654",
+      "title": "GRB 250529A: GOTO optical counterpart candidate (GOTO25dea/AT 2025ndt)",
+      "source": "fsy"
+    },
+    {
+      "name": "GOTO2025",
+      "url": "https://www.wis-tns.org/object/2025ndt",
+      "title": "TNS AT 2025ndt discovery report (2025TNSTR2152....1O)",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
