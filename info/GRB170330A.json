@@ -1,28 +1,38 @@
 {
   "transient_id": "GRB170330A",
   "alias": [],
-  "ra": 283.3323,
-  "dec": -13.4301,
-  "T0": "2017-03-30T22:27:27Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "ra": 283.33044,
+  "dec": -13.43115,
+  "T0": "2017-03-30T22:29:51.341320Z",
+  "T0_ref": "GCN 20944; Swift/BAT catalog (trigger 744773)",
+  "T0_offset": -140.395,
+  "T0_offset_ref": "GCN 20974（Konus-Wind 触发 T0=80850.946 s UT=22:27:30.946 UT，早于 BAT 自动触发 22:29:51.341320 UT 140.395 s；以 Konus 触发时刻为标记，爆发真实起点未必即 Konus 触发时刻）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.5,
   "pos_ref": "GCN 20961",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy@zcode,2026-10-28）。【身份链】Swift/BAT trigger 744773（GCN 20944 「At 22:29:51 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 170330A (trigger=744773)」）=XRT 定位链：GCN 20944 初始地面定位 RA,Dec=283.3323,-13.4301（5.9 arcsec, radius, 90% containment）→GCN 20945 prompt enhanced 283.3308,-13.4310（2.0 arcsec, radius, 90% confidence）→GCN 20961 enhanced 283.33044,-13.43115（1.5 arcsec, radius, 90% confidence；3111 s PC+6 幅 UVOT 图，本 PR 采纳）=GCN 20959 UVOT 探测渐暗余辉（283.33067,-13.43090，0.46 arcsec, radius, 90% confidence，与 XRT 位置一致）=swift_xrt_live 快照 283.33071,-13.43132（Err90=2.0″）=AstroSat CZTI 探测（GCN 20969，峰值计数 22:27:36.000 UT）=Konus-Wind 触发（GCN 20974，T0=80850.946 s UT=22:27:30.946 UT）=CALET CGBM 触发（GCN 20979，22:27:27.91 UT）——同暴多仪器互证，无同日他暴/孪生条目混淆；swift_bat 快照 name=GRB 170330A、name_alt=BAT 744773。【T0】bot 原值 2017-03-30T22:27:27Z 零锚（原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 家族；该值与 CALET CGBM 触发时刻 22:27:27.91（GCN 20979）接近，疑为截断，不可考，仅备查）→改取触发仪器官方值：GCN 20944 整秒 22:29:51 UT＋Swift/BAT 官方目录快照 trigger_time=2017-03-30T22:29:51.341320Z（external/swift_bat，trigger 744773，§3.8 ①②；swiftgrbba 快照 trigger_time=22:29:51.000 互证）。【T0_offset=-140.395 s】三台独立仪器证爆发早于 BAT 自动触发：Konus-Wind 触发 22:27:30.946（GCN 20974）=T0−140.395 s（取为标记，先例 GRB170329A/GRB170808B 同型同口径）；CALET CGBM 触发 22:27:27.91=−143.43 s，且原文明示 bright burst episode starts at T-5 sec=22:27:22.91 UT（−148.43 s）、Two late time emissions at T+120 s and T+150 s, which triggered Swift/BAT（GCN 20979）；CZTI 峰值 22:27:36.000=−135.34 s（GCN 20969）；BAT 精析（GCN 20968）原文 The burst came into the BAT field of view at ~T-170 s during a pre-planned spacecraft slew. Therefore, the burst emission might have started before ~T-170 s、主峰 ~T-135 s；swift_bat 快照 T90 窗口 -141.168~+3.300 s、1s 峰 -134.708~-133.708 s 同证。【定位】info 原 ra/dec=283.3323/-13.4301 出自 GCN 20944 初始 XRT 地面定位（5.9″），而 pos_error=1.5″/pos_ref=GCN 20961 一直指向增强定位——原文件系两处拼接；现取 GCN 20961 增强定位 283.33044/-13.43115（1.5″，radius, 90% confidence→pos_error_confidence=90）；GCN 20945 prompt 2.0″ 与 GCN 20959 UVOT 0.46″ 备查。【tag/sub_tag】tag=grb（GCN subject/SIMBAD gB）；sub_tag=lgrb 按目录 t90=144.468±2.18785 s（15-350 keV，external/swift_bat 快照）判；GCN 20968 记 T90=144.73±3.51 s（15-350 keV）、swiftgrbba 144.73 s（15-150 keV），Konus（20974）/CALET（20979）原文均称 long-duration；CZTI T90=15.6 s（40-200 keV，其数据窗，20969）与 CALET SGM 18.5±2.4 s（40-1000 keV，20979）为仪器/能段差异，并列备查。【红移】null：SIMBAD 无 z、swift_xrt_live Redshift=N/A、GCN 20941–21100 无光谱/红移通告、7 篇引用文献无一给出红移。【prompt 参数并列】fluence=5.6±0.3e-6 erg/cm2（15-150 keV，GCN 20968）与 1.85(+0.42,-0.54)e-5 erg/cm2（20 keV-10 MeV，GCN 20974）；1s 峰流 4.5±0.3 ph/cm2/s（15-150 keV，GCN 20968）；swift_bat 快照 fluence=5.505437e-06（15-150 keV）；E(B-V)=0.45（GCN 20944/20959，Schlegel+1998）。【测光检索留证（2026-10-28）】①仓内：本 worktree 未分发 gcn/archive；external/ 19 快照目录逐一检索「170330/744773」（含 .gz 解压全文）：命中 swift_bat（官方目录全参数）、swiftgrbba（BA 页快照，含 UVOT 星等行）、swift_xrt_live、mpe_greiner（仅目录行，IPN=y/XA=y/OT=y）4 个；fermi_gbm 唯一「命中」为 FERMIGBRST bn140209313 行浮点值 4.7744773e-08 内子串「744773」数值巧合假阳性（GRB110924A 先例同型）；其余 heasarc_grbcat（3 表 zgrep）、konus_wind、uvot_grb（2005–2010）、rssgrbag、grbsn_webtool、fermi_lat、batse、agile_mcal、saxgrbmgrb、swift_grb、guidorzi2025、liang2023、minaev2020、wang2022 共 14 目录零记录。②GCN 站逐号枚举 20941–21100（gcn.gsfc.nasa.gov/gcn3 镜像）：命中 10 篇（20944/20945/20954/20959/20961/20963/20968/20969/20974/20979），光学测光仅 20954（LCO，1 行）与 20959（UVOT，9 行，本 PR 补入）；20963 为 Swift-XRT refined analysis（X 射线，按 §3.3 不入库）；无其他光学/射电 follow-up、无光谱通告、无否证通告。③文献：SIMBAD 11 bibcode=7 研究文献+4 GCN；arXiv API「GRB 170330A」0 命中；Ror+2025（MNRAS 543,2404；DOI 10.1093/mnras/staf1514，arXiv:2509.07560 e-print 源码包全文检索，仅 2 处 UVOT/XRT 衍生拟合参数表，无逐暴测光表）、Camisasca+2023（A&A 671,A112 最小时标）、Wang+2022（ApJ 939,L14 GW+GRB，仓内 external/wang2022 快照）、Tarnopolski+2021（ApJ 911,20 BAT PSD）、Jespersen+2020（ApJL 896,L20）、Zhao+2019（ApJ 883,97 X 射线浅衰减）、Abbott+2019（ApJ 886,75 LIGO O2）均无本源光学测光或红移（SIMBAD 关联仅此 7 篇）。④结论：本源可用测光=GCN 20954 LCO 1 行（本 PR 修正）＋GCN 20959 UVOT 9 行（本 PR 新增），无其他可补行。【alias】留空：库内已审 Swift 源惯例不加触发号形别名；swift_bat name_alt「BAT 744773」备查（未收录）。【X 射线】本源 lc 无 X 射线行；GCN 20963 XRT 数据不入库（§3.3）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 自动触发时刻（trigger 744773）；爆发真实起点早于自动触发（见 T0_offset 与 comment）",
+    "t0_basis": "GCN 20944（整秒 22:29:51 UT）+ Swift/BAT 官方目录快照 trigger_time=2017-03-30T22:29:51.341320Z（external/swift_bat，trigger 744773，亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
