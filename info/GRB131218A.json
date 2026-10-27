@@ -1,28 +1,46 @@
 {
   "transient_id": "GRB131218A",
-  "alias": [],
-  "ra": 113.79375,
-  "dec": -64.722056,
-  "T0": "2013-12-19T14:32:15Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 131218A",
+    "INTEGRAL-6409"
+  ],
+  "ra": 113.7807,
+  "dec": -64.7373,
+  "T0": "2013-12-18T21:05:32Z",
+  "T0_ref": "GCN 15601（INTEGRAL/IBAS 官方通告整秒值「at 21:05:32 U.T. on December 18」）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 108,
+  "pos_ref": "GCN 15601",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy@代理 2026-10-28。身份：GRB131218A＝INTEGRAL/IBAS 于 2013-12-18 21:05:32 UT 触发（trigger 6409，GCN 15601 原文「a gamma ray burst lasting about 6 s has been detected by IBAS in the IBIS/ISGRI data at 21:05:32 U.T. on December 18」），IBIS/ISGRI 精化位 R.A. 113.7807 deg、DEC. -64.7373 deg、uncertainty 1.8 arc min (90% c.l.)。同日甄别：info/ 无第二 131218 建档（无 GRB 131218B）；GCN 镜像逐号枚举 15575–15660 无本暴其他事件名；Fermi/GBM 触发目录仓内快照查 GRB131218xx/GRB131219xx 零命中（GBM 未触发，本暴 INTEGRAL 独有）；同日 GCN 15598–15600 属 GRB 131216A（另一暴，gcn.gsfc 通告档页序），无混淆。T0：bot 原值 2013-12-19T14:32:15Z 系 GCN 15605 的 Swift/XRT 观测起始时刻（原文「XRT began observing the field on 2013-12-19 at 14:32:15 UT, i.e., 62803 s after the trigger」），属 Issue #84 家族「观测起始误作触发」；真实触发取触发仪器官方通告整秒值 2013-12-18T21:05:32Z（GCN 15601，§3.8 优先级①）；互证：14:32:15（12-19）− 62803 s = 21:05:32（12-18），两通告逐秒吻合；MPE 官方页 mpe.mpg.de/~jcg/grb131218A.html 载 GCN/INTEGRAL 自动通告（Wakeup GRB_TIME 75936.40 SOD = 21:05:36.40 UT；Refined/Offline 75951.40 SOD = 21:05:51.40 UT），自动生成产物证据弱于人工核实的 Circular（§4），仅列备查。extra_data bot 原注记 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis「meta_trigger」已失真废弃（原值留此）。定位：bot 原值 ra/dec = 113.79375/-64.722056 系 GCN 15603 的 Zadko 光学候选体位（RA 07h35m10.50s、DEC -64d43'19.4\"），该候选体是否余辉未证实——GCN 15603 自述「We have no more images so we cannnot conclude if it is a fading source or not」；GCN 15606 GROND 两历元图像相减「shows no evidence for variable sources」且第一系列（0.24 d，光学中点）r'>24.9 深限与候选体 R~20.0@0.87 d 应已更亮相矛盾；GCN 15605 UVOT 亦注明候选体位无探测——源位改取触发仪器官方精化位 113.7807/-64.7373（MPE 页 INTEGRAL Offline 通告 113.7806/-64.7371、1.80 arcmin 同值互证），pos_error=108\"（1.8'）、pos_error_confidence=90（原文 90% c.l.）；候选体坐标留本 comment 备查。分类：GCN 15601 主题行「GRB 131218A: a long GRB detected with INTEGRAL」、原文持续约 6 s；Greiner et al. 2024（A&A 691, A158；VoR 出版页反爬 403 未取得，经 arXiv:2410.14441v1 e-print 核读）表 allgrbs L/S 列＝L → 按来源表分类判 lgrb；仓内无本暴目录 t90 快照可引（konus_wind/fermi_gbm 等快照零命中）。alias：「GRB 131218A」＝GCN 通告原文用名（各通告主题行）；「INTEGRAL-6409」＝GCN 15606 原文用名「(INTEGRAL-6409, Gotz et al., GCN #15601)」。测光检索（2026-10-28）：仓内 gcn/archive 不在本 clone（0 篇）；external 快照 mpe_greiner 命中本暴条目（obs_date 2013-12-18、INTEGRAL X-ray 位 07h35m12s -64d43' 误差 2.8'，无测光表）、heasarc_grbcat 快照仅覆盖 1967–2005（无 2013 年行），konus_wind/fermi_gbm（含触发目录 tdat）/batse/saxgrbmgrb/agile_mcal/swift_bat/swift_grb/swiftgrbba/swift_xrt_live/uvot_grb/rssgrbag/grbsn_webtool 查「131218」均零命中；GCN 镜像逐号枚举 15575–15660（86 篇）命中 5 篇（15601/15602/15603/15605/15606），GCN 站事件页 gcn.nasa.gov/circulars/events/grb-131218a 同为 5 篇、全文逐字核对一致；arXiv 元数据 API 查「131218A」0 篇；OpenAlex 检索「131218A」6 条命中（4 条即上述 GCN 通告、1 条无关、1 条研究文＝Greiner et al. 2024 GROND 样本汇编，其表 allgrbs 本暴行：GROND-Start 1219-01:18:21 UT＝触发+15169 s、未探测、引 GCN 15606，已核读）；VoR（A&A 691, A158, DOI 10.1051/0004-6361/202449659）aanda.org 直链/DOI/HTML/PDF 均 403、CDS VizieR 三镜像 TLS/超时不可达、Wayback 无快照，按 §3.3 以 arXiv v1 替代并在用到处标注；SIMBAD/VizieR 多镜像 TLS 失败、TNS 不适用（非 AT/SN 命名）、ADS/SciX 公开端点未获结果集（HTTP 202 异步作业），均如实注明不作缺席证据。结论：可用测光＝GCN 15602 TAROT R>19.6 上限 1 行、GCN 15605 UVOT v>19.8 上限 1 行、GCN 15606 GROND 七波段上限 7 行（共补 9 行，lc source=fsy@代理）；GCN 15603 Zadko 候选体 R~20.0 行修正时间锚后保留；GCN 15605 XRT 非探测（计数率上限 ~9E-02 cts/s，X 射线）不入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 INTEGRAL/IBAS 触发时刻 2013-12-18T21:05:32 UT（GCN 15601）；原 bot 值 2013-12-19T14:32:15Z 系 Swift/XRT 观测起始（GCN 15605，触发后 62803 s），已废弃",
+    "t0_basis": "GCN 15601",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@代理",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://arxiv.org/abs/2410.14441"
+    }
+  ],
   "host_galaxy": null
 }
