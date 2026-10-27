@@ -1,29 +1,41 @@
 {
   "transient_id": "GRB990806",
-  "alias": [],
+  "alias": [
+    "GRB 990806",
+    "GRB 990806B",
+    "BATSE 7701"
+  ],
   "ra": 47.6479,
   "dec": -68.1143,
-  "T0": "1999-08-06T16:28:00Z",
-  "T0_ref": null,
+  "T0": "1999-08-06T14:28:07Z",
+  "T0_ref": "GCN 392（BeppoSAX GRBM/WFC 触发时刻 14:28:07 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/GRBM+WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 180,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 392",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 990806（GCN 392 原文用名 GRB990806）= BATSE trigger 7701 = HEASARC GRBcat 记名 GRB 990806B（BATSE-CGRO/BeppoSAX/IPN，external/heasarc_grbcat）；当日另有 GRB 990806A（00:26:13 UT，IPN，GRBCAT 无坐标）与 GRB 990806C（16:42:48 UT，BATSE/KONUS-Wind），按目录时刻（A/C 分别为 00:26、16:42）与坐标（C）比对均非同源。T0 复核：原 T0 1999-08-06T16:28:00Z 系 BeppoSAX MAIL 99/21 的发出时刻（GCN 392 首行「Date: Aug.6, 1999, 16:28 UT」），属通报/观测时刻误作 T0（Issue #84 类），已改为触发时刻 14:28:07 UT——GCN 392 原文「On Aug.6, 14:28:07 UT a GRB (GRB990806) was detected simultaneously by the GRBM and WFC of BeppoSAX (also BATSE trigger 7701)」；互证：GCN 394 观测 1999 Aug 7 6:57–10:53 UT = 16.48–20.39 h after the burst → 触发≈14:28 UT，GCN 398「3.8 hours after the burst」对应 Aug 6.76 → ≈14:26 UT。BATSE 目录触发 14:28:06.521（external/batse，BATSE 7701），与 BeppoSAX 的 14:28:07 差 0.48 s，亚秒级差异按 §3.2/§3.8 直接采用触发仪器 GCN 392 的秒级值、不写 T0_offset。位置：ra/dec 即 GCN 392 的 WFC 精化质心（03h10m35.5s -68d06'51.4″，误差半径 3'，pos_error=180″）；Greiner 星表页（external/mpe_greiner，IAUC 7235）作 2′，未采用。GCN 393 的 MECS 候选位置（47.674/-68.113，2′）距质心约 35″、GCN 401 的余辉位置 1SAX J0310.6-6806（03h10m35s -68o06'35″，1′）距质心约 17″，均在 3′ 误差圈内，未改用；BATSE 7701 目录定位（33.99/-74.03，误差半径 2.51°）距质心约 7.4°，GCN 400 亦称其与 WFC 定位有小偏离，未采用。pos_error_confidence 留空：GCN 392 未标注置信水平（GCN 400 仅对 BATSE 圆注明 90% conf.）。分类：t90=17.41±3.84 s（GCN 400，BATSE；目录值 17.408±3.009 s，external/batse）、t90=11.0±2.2 s（BeppoSAX GRBM 目录，external/saxgrbmgrb），按目录 t90 判 lgrb/sgrb，两目录均为长暴 → sub_tag=lgrb。其他物理量（不参与任何判定）：t50=4.93±0.26 s、peak_flux(1.024 s, 50–300 keV)=1.60±0.05 photons cm^-2 s^-1、fluence(>20 keV)=3.29±0.53e-6 erg cm^-2、H32=0.811±0.034（均 GCN 400）。X 射线备查（不在审核范围、未入库）：GCN 393/401 报 MECS 新源 1SAX J0310.6-6806，观测期 Aug 06.9267–08.6563 UT，1.4–10 keV 流量由 (5.5±1.5)e-13 降至 (1.5±0.6)e-13 erg s^-1 cm^-2；Montanari+2003（DOI 10.1007/10853853_53，仅摘要页可读）以 f(t)∝t^-1.15 确认该 X 射线源为余辉。红移：全波段无光学余辉探测、无光谱，redshift 保持 null。未入 lc 的光学上限备查：GCN 394（Yale 1 m，Aug 7 6:57–10:53 UT，UBVRIJHK 总曝光 5.1 h，无逐波段数值，仅 R≈20.5 mag 比较完备阈——视场典型上限）；GCN 396（ESO 2.2m/3.6m，两晚叠加像变源限 0.3 mag 至 B=25.2/R=23.5/I=18.0——变源限而非测光上限）；GCN 395 的 4m 5 min V 像（原文无数值）。测光检索（2026-10-27）：仓内 gcn/archive 本工作树无该目录（不可用），external/rssgrbag 与 grbsn_webtool 无该源记录；GCN 站与 gcn.gsfc.nasa.gov/gcn3 存档 392–401 共 10 篇（6 篇含光学限值数字：394/395/396/397/398/399）→ 补 7 行；arXiv 元数据检索 0 篇；OpenAlex 检索 11 条，光学相关仅 GCN 报告与 Rattenbury+2000（AIP Conf. Proc. 526, 347，DOI 10.1063/1.1361560，403 付费墙未打开）；ADS/SciX API 需 token（本次不可用）、公开检索页 JS 渲染无结果；TNS 检索 403 不可达 → 无新增可引用测光。原 extra_data 值备查（按 §3.10 改写）：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，二者均与实情不符。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 取 GCN 392 的 BeppoSAX GRBM/WFC 触发时刻 14:28:07 UT（原值见 comment）",
+    "t0_basis": "gcn_circular_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
