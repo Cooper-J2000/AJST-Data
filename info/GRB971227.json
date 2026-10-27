@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB971227",
-  "alias": [],
-  "ra": 194.294,
-  "dec": 59.412,
-  "T0": "1997-12-27T00:30:00Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "alias": [
+    "BATSE 6546",
+    "1SAX J1257.3+5924"
+  ],
+  "ra": 194.370833,
+  "dec": 59.271667,
+  "T0": "1997-12-27T08:23:06.722Z",
+  "T0_ref": "BATSE trigger 6546（CGRO/BATSE current catalog 触发时刻：TJD=0809 + 分数字段 30186.722 s = 08:23:06.722 UTC；Williams+1999 亦给 8:23:06.72 UT；IAUC 6796 GRBM Dec 27.34938 UT=08:23:06.4，与之相差 0.3 s）",
+  "T0_offset": -3.5,
+  "T0_offset_ref": "BATSE 实时触发通告（971227.gcn3 档案转载）：BURST, DOUBLE PULSE, DUR. APPROX. 7 SECS, STARTS AT APPROX. T-3.5 SECS（触发前约 3.5 s 已有辐射）",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 600,
+  "pos_ref": "BeppoSAX/WFC2 quick-look（IAUC 6796：12h57m29s +59°16.3'，10'；Williams+1999 同值；中心 12h57m29s=194.370833°，+59°16.3'=59.271667°）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 971227 = BATSE trigger No. 6546（IAUC 6798；BATSE current catalog 别名 BATSE 6546），同时被 BeppoSAX GRBM 与 WFC2 探测（IAUC 6796），Ulysses/BATSE 三角测量给出 ~7' 宽 IPN 环带（Williams+1999）；与 GRB 971214（IAUC 6787 等，GCN 27）为不同事件，勿混淆。触发时刻：BATSE 目录触发时刻 TJD=0809+分数字段 30186.722 s=08:23:06.722 UTC；IAUC 6796（GRBM，Dec 27.34938 UT=08:23:06.43）与之相差 0.3 s，HEASARC grbcat（08:23:07.000 ECT）与 saxgrbmgrb（08:23:07.000）为同一时刻的整秒表述，三者（06.43 / 06.722 / 07.000）互差 ≤0.6 s 相互一致，亚秒取触发仪器 BATSE 目录分数字段；Antonelli+1999（A&AS 138, 435）正文写 08:43:59.99 UT，与上述全部来源矛盾约 21 min，判为原文笔误（应为 08:23:0x），不影响本库 T0。T0 修正记录：原 bot 值 T0=1997-12-27T00:30:00Z、T0_ref 空、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=\"meta_trigger\"（bot 生成、无出处，与全部目录/通告矛盾约 8 h），按提示词 §3.2/§3.10 改为触发时刻并将原值留存本段；T0_offset=-3.5 s 依 BATSE 通告（触发前 3.5 s 已有辐射，|offset|>1 s）。位置修正：原 bot 值 ra=194.294/dec=59.412 实为 Castro-Tirado 暂现体候选（Object 1，12h57m10.6s +59°24'43\"±3\"，GCN 20/IAUC 6800）的坐标，该候选后被 Keck 深场否定（GCN 25：其 3\" 误差圈内至 R~24 无任何天体），不能代表 GRB 位置，故改记 BeppoSAX WFC2 quick-look 定位（12h57m29s +59°16.3'，10'，IAUC 6796；Williams+1999 同值）；来源未标注置信水平，pos_error_confidence 留空。备查：GCN 18/19/20 引用修订的 8' WFC 误差框（中心未单独公布）；NFI X 射线余辉候选 1SAX J1257.3+5924 精化位置 12:57:17.2 +59°24'02\"（1.5'，Antonelli+1999；IAUC 6797 初值 12:57:15 +59°24'02\"），光学跟踪多以其 1.5' 误差圆为中心（GCN 24 等）；alias 出处：BATSE 6546=IAUC 6798/BATSE 目录触发名，1SAX J1257.3+5924=IAUC 6797 的 X 射线余辉候选命名。t90：6.784±2.052 s（>20 keV，BATSE current catalog）；并列 47±5 s（40-700 keV，Frontera+2009 saxgrbmgrb，与 BATSE/IAUC 6798 的 ~6-7 s 双峰轮廓冲突，疑口径不同）；IAUC 6798：duration about 6 s、双峰相隔 2.5 s、>300 keV 不可见、fluence(>25 keV)=9.3±1.4e-7 erg/cm2、peak flux(50-300 keV)=3.3±0.2 ph/cm2/s。因两目录 t90 冲突，sub_tag 留空待决（见 PR）。测光检索留证（2026-10-27）：仓内 gcn/archive 本地不存在（记 0 篇）；external/rssgrbag 1 条（目录级参数：t90=7.0 s、fluence 4.42e-7（15-150 keV）、X-ray AG flag=Y、11 h X 射线流量 4e-13 erg/s/cm2（1.6-10 keV）、optical/radio AG flag=N，无光变表）；external/grbsn_webtool 无此事件；external/batse、heasarc_grbcat、saxgrbmgrb、mpe_greiner 各 1 条目录记录（均无测光）。外部：GCN 站取回该暴全部通告——gcn.gsfc.nasa.gov/gcn/other/971227.gcn3 档案 11 篇（GCN 17-26、28）＋其内转载的 IAUC 6796/6797/6798/6800/6803/6806/6807，光学结论均为上限或未证认，无任何确认的余辉探测；OpenAlex/Crossref 检索 \"GRB 971227\" 命中并实际取读 3 篇研究论文（Williams+1999 ApJ 519 L25 表 1；Antonelli+1999 A&AS 138, 435；Guarnieri+1999 A&AS 138, 457），Park+1999（A&AS，LOTIS 样本）与 Hurley+2000（GRBM-IPN）核对后无需单列数值。据此补 lc 19 行（全部为有时间锚点的上限/弃点候选行，出处见各行 reference/comment）。未入库：BeppoSAX NFI 的 X 射线余辉数据（1SAX J1257.3+5924 前 8 h 2-10 keV 3e-13 erg/cm2/s 后转不可探测，IAUC 6797/Antonelli+1999）与 Williams+1999 表 1 的 γ 行（BATSE 100 keV Fν=314 uJy，Band 谱拟合）及 X 行——X 射线/γ 不在本库测光审核范围；GCN 28（Tautenburg/CAHA MAGIC NIR，Jan 9.1 UT：两个很红候选、未做测光、文中自认无法判定是否与 GRB 相关）无可用锚定数值。版本说明：Williams+1999 的 VoR（IOP DOI 10.1086/312092）被出版社反爬拦截（Radware bot manager），ADS 扫描 403，按 §3.3 以 arXiv v2（astro-ph/9902190v2，1999-07-12）替代并在各行 comment 标注；Antonelli+1999 与 Guarnieri+1999 均取得 aas.aanda.org VoR 全文。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=BATSE trigger 6546 触发时刻 08:23:06.722 UTC（原 bot 值 1997-12-27T00:30:00Z 无出处、与全部目录矛盾，已按 §3.2 修正，原值见 comment）",
+    "t0_basis": "batse_trigger_6546_current_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
@@ -30,6 +40,18 @@
       "url": "https://ui.adsabs.harvard.edu/abs/1999ApJ....51....9W/abstract",
       "bibtex": "@ARTICLE{1999ApJ....51....9W,\n       author = {G. G. Williams and H. S. Park and E. Ables and D. L. Band and S. D. Barthelmy and R. Bionta and P. S. Butterworth and T. L. Cline and D. H. Ferguson and G. J. Fishman and N. Gehrels and D. H. Hartmann and K. Hurley and C. Kouveliotou and C. A. Meegan and L. Ott and E. Parker and R. Porrata},\n       title = {LOTIS Search for Early Time Optical Afterglows: GRB 971227},\n       journal = {Astrophys.J. 519 (1999) L25},\n       year = {1999},\n       doi = {10.1086/312092},\n       eprint = {astro-ph/9902190},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/1999ApJ....51....9W/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Antonelli+1999",
+      "title": "BeppoSAX discovery of the X-ray afterglow of GRB 971227",
+      "url": "https://doi.org/10.1051/aas:1999109",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Guarnieri+1999",
+      "title": "An optical counterpart to GRB 971227?",
+      "url": "https://doi.org/10.1051/aas:1999307",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
