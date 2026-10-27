@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB251118A",
-  "alias": [],
-  "ra": 160.00422,
-  "dec": -34.52254,
-  "T0": "2025-11-18T20:31:30Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 251118A",
+    "bn251118855"
+  ],
+  "ra": 160.00421,
+  "dec": -34.52253,
+  "T0": "2025-11-18T20:31:30.090Z",
+  "T0_ref": "GCN 42743（Fermi/GBM trigger 785190695.089648，20:31:30 UT）；FERMIGBRST trigger_time=2025-11-18T20:31:30.090Z（external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 2.0,
-  "pos_ref": "GCN 42782",
+  "pos_error": 0.42,
+  "pos_ref": "GCN 42786（Swift/UVOT 定位 10:40:01.01 −34°31′21.1″，0.42″，90%）；GCN 42782 XRT 160.00418/−34.52259（2.0″，90%）备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-10-26。身份：Fermi/GBM 触发 785190695.089648 / bn251118855（GCN 42743，20:31:30 UT）＝GRB 251118A；原库 Trigger_Instrument=Konus-Wind 错误——Konus-Wind 也有探测（GCN 43013），但触发仪器是 Fermi/GBM，已改为 Fermi/GBM。T0：原值 2025-11-18T20:31:30Z 为整秒；亚秒 .090 取自 FERMIGBRST 目录（trigger_time=2025-11-18T20:31:30.090Z），GCN 42743 记 20:31:30 UT；按 §3.2/§3.8 直接改进 T0，不写 T0_offset。定位：采用 GCN 42786 的 UVOT 位置 160.00421/−34.52253（0.42″，90%），比 GCN 42782 的 XRT 位置 160.00418/−34.52259（2.0″，90%）更精确；两者相差 <1″，XRT 值留 comment 备查。分类：GCN 42743 称 'likely LONG GRB'、GCN 43013 称 'long GRB'；T90=46.6 s（GCN 42783）、46.5928±0.362 s（FERMIGBRST，50-300 keV）；按目录 t90 判 lgrb，sub_tag=['lgrb']（非自算）。红移：12 篇 GCN 均无光谱/红移报告，redshift 留 null。测光：GCN 42786 UVOT 3 行探测（white 18.79±0.05、v 18.60±0.19、u 18.41±0.05），均为 Vega 系统（Breeveld+2011）、未做 E(B-V)=0.057 消光改正；原文只给观测窗口 T_start/T_stop 与总曝光 Exp，time 取窗口中点、time_err 取半宽（§3.8 约定口径），行 comment 已逐行记录原始窗口/曝光。其余 11 篇为 gamma/X 射线（LAT/NuSTAR/GECAM/Glowbug/Konus/GECAM-B/GBM/XRT/ToO/TERI），无光学测光，按 §3.3 未入库。测光检索（2026-10-26）：GCN 事件页 grb-251118a 共 12 篇（42743/42745/42750/42752/42774/42779/42782/42783/42784/42786/43013/44680），逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；arXiv API 查询 0/空、TNS 403、ADS/SciX 401（本环境无 token）；结论：可用光学测光仅 GCN 42786 的 UVOT 3 行探测，补 3 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发 785190695.089648 时刻 2025-11-18T20:31:30.090Z（GCN 42743 + FERMIGBRST）；原 bot 值 20:31:30Z 为整秒",
+    "t0_basis": "GCN 42743 + FERMIGBRST",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
