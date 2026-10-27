@@ -1,27 +1,32 @@
 {
   "transient_id": "IceCube-201115A",
   "alias": [],
-  "ra": 194.78452,
-  "dec": 1.601466,
-  "T0": "2020-11-15T02:07:26Z",
-  "T0_ref": null,
+  "ra": 195.12,
+  "dec": 1.38,
+  "T0": "2020-11-15T02:07:26.210Z",
+  "T0_ref": "GCN 28889（IceCube 官方通告）：On 20/11/15 at 02:07:26.21 UT IceCube detected…（GOLD alert，离线精化后时刻，触发仪器 IceCube 自给亚秒）；原库 02:07:26Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.62,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 28889（IceCube 离线精化方向）：RA=195.12 (+1.27/-1.49 deg) Dec=1.38 (+1.30/-1.11 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；原库 ra/dec=194.78452/1.601466 系 GCN 28893 采用的候选对应体 Sloan 位置（原文 We adopt the Sloan position of the source…RA: 194.78452±0.00028, Dec: 1.601466±0.000018——VLASS 候选宿主 SDSS J125908.28+013605.3，原库定位被未确证候选体污染）（距精化值 ~0.40° 球面角距），已被精化值替代",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] IceCube GOLD 径迹中微子候选事件（GCN 28889；AMON notice 134699_70289682，FAR=1.523/yr）；跟随观测：Fermi-GBM（GCN 28896：不可观测）、Fermi-LAT（GCN 28899：区域分析）、ANTARES（GCN 28901：无中微子对应候选）、INTEGRAL（GCN 28904：SPI-ACS/IBIS prompt 无对应体候选）、HAWC（GCN 28909：无显著探测）、IceCube 附加中微子搜索（GCN 28911：2 天窗 p=0.07 一致于大气背景，E^2 dN/dE < 3.7e-5 TeV cm^-2 90% CL）、VLASS 射电对应体候选（GCN 28893 转 ATel 14177）。[redshift 去污染] 原库 redshift=0.62（redshift_ref=gcn_llm）源自 GCN 28893：该值是 VLASS 候选对应体宿主星系 SDSS J125908.28+013605.3 的光度红移（photo-z 0.62±0.05），而该源与中微子事件的关联仅为候选（may be associated with a BL Lac type object；震前 19 个月 VLASS 已有射电发射、双瓣形态）——未确证为本中微子事件的对应体/宿主，redshift 置 null（PR #190503A 同型先例：候选宿主光度红移不挂源）；VLASS 候选射电探测照录入 lc（172.3±0.2 mJy @3GHz 2019-04-21，震前前兆）备查。[T0] 原库 02:07:26Z 系 GCN 28889 精化时刻 02:07:26.21 UT 的整秒截断，补亚秒 .210Z。[定位] 原 ra/dec=194.78452/1.601466 系 GCN 28893 采用的候选对应体 Sloan 位置（原文 We adopt the Sloan position of the source…RA: 194.78452±0.00028, Dec: 1.601466±0.000018——VLASS 候选宿主 SDSS J125908.28+013605.3，原库定位被未确证候选体污染）（距精化值 ~0.40° 球面角距），已被精化值替代：ra/dec=195.12/1.38（保留精化值）；90% PSF containment 不对称（RA +1.27/-1.49、Dec +1.30/-1.11 deg），不适配圆半径，pos_error/pos_error_confidence 留空（B 档，不对称值照录 pos_ref）。[Trigger_Instrument] IceCube 原有正确（检测仪器；INTEGRAL/GBM/LAT/HAWC/ANTARES 系对应体搜索）。[分类] tag 保持空（中微子事件，与库内既有 IceCube-* 源口径一致）；sub_tag 留空。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「201115A/IC201115A/IceCube-201115A」全形态：命中 8 篇（28889/28893/28896/28899/28901/28904/28909/28911）全部属本源；入库 1 行：GCN 28893 VLASS 候选对应体射电探测（172.3±0.2 mJy @3GHz，震前 2019-04-21 前兆，照录备查）；GCN 28896/28899/28901/28904/28909/28911 伽马与中微子搜索不入库；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（中微子事件，SDSS 光学源为候选宿主非 AT 暂现体）→ 本 PR 补 1 行（探测）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 补亚秒：GCN 28889 精化时刻 02:07:26.21 UT（GOLD alert）；t0_basis 由 meta_trigger 更正为 GCN 精化时刻",
+    "t0_basis": "GCN 28889（IceCube 精化事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
