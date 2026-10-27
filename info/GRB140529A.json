@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB140529A",
-  "alias": [],
-  "ra": 228.81,
-  "dec": -41.042,
+  "alias": [
+    "GRB 140529A",
+    "BAT 00091901003"
+  ],
+  "ra": 228.78202,
+  "dec": -41.05295,
   "T0": "2014-05-29T09:28:06Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 16340（Swift/BAT 团队 slew 地面分析：At 09:28:06 the IPN detected GRB 140529A，1 s 精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,10 +19,17 @@
   "pos_ref": "GCN 16342",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（2026-10-28，Rusty-Harpoon@zcode）：①坐标——原库 ra/dec=228.81/-41.042 是 BAT 精化位置（GCN 16346，90% 半径 1.2 arcmin），但 pos_error=3.3 arcsec 与 pos_ref=GCN 16342 对应的是 XRT 增强位置，二者混用；现改为 GCN 16342 的 XRT 增强位置 228.78202/-41.05295（3.3 arcsec，90% conf），原 BAT 位置备查。②T0——GCN 16340 给 09:28:06（1 s 精度）；Konus-Wind 触发 T0=34086.312 s UT=09:28:06.312（GCN 16345，整数秒一致）；Swift/BAT 目录快照 trigger_time=2014-05-29T09:28:01.098Z 与通告相差约 4.9 s（本源为 slew 中地面检测，非星上触发，以触发仪器通告为准）。③t90=8.144±1.511 s（Swift/BAT GRB 目录快照 2026-07-21，15-350 keV）；按目录 t90 判 lgrb；另 GCN 16346 给 T90=4.5±0.5 s（15-150 keV）、Konus-Wind（GCN 16345）称 long-duration、soft spectrum，均支持 lgrb。④alias：GRB 140529A 为 GCN 通告原文用名（GCN 16340/16342/16343/16345/16346）；BAT 00091901003 为 Swift/BAT GRB 目录 name_alt（快照 2026-07-21）。⑤catalog_data.agile_mcal 快照 name_alt=GRB140529A 而 trigger_time=2014-05-29T15:04:51Z，比 BAT 触发晚约 5.6 h，2014-05-29 当天 GCN archive 无对应通告，疑似 2nd AGILE-MCAL 目录（Ursi+2022）按日期+字母自命名的另一事件被误关联到本源；快照只读，报维护者核对。⑥测光检索（2026-10-28）：仓内 gcn/archive 全文检索 45 589 篇，「140529A」命中 5 篇（GCN 16340/16342/16343/16345/16346；含光学数值者仅 GCN 16343 的 UVOT 上限 2 点，已入库）；external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData/ 无 140529 记录；OpenAlex 全文检索「GRB 140529A」「140529A」共 6 命中（上述 5 篇 GCN + Zhang+2026 A&A DOI 10.1051/0004-6361/202556841，Swift/BAT prompt FRED 样本文，无测光）；arXiv API「GRB 140529A」0 命中；UKSSDC XRT 产品页（swift.ac.uk/xrt_products/00020383）在线核对为 GRB 140529A；TNS 不适用（GRB 类源）；结论：库内仅 GCN 16343 有可用光学测光（上限），补 2 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    },
     "catalog_data": {
       "swift_bat": {
         "other": {
