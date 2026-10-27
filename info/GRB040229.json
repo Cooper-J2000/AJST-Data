@@ -1,27 +1,36 @@
 {
   "transient_id": "GRB040229",
-  "alias": [],
+  "alias": [
+    "GRB 040229"
+  ],
   "ra": null,
   "dec": null,
   "T0": "2004-02-29T00:00:00Z",
   "T0_ref": null,
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "RXTE/ASM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "RXTE-ASM 探测的 GRB：GCN 2540（Rumyantsev & Pozanenko, CrAO/IKI）原文「the GRB040229 error box (RXTE-ASM GRB040229)」；GCN 事件页 eventId 与 SIMBAD 均用名「GRB 040229」（alias 出处）。触发时刻不可得：检测由 RXTE-ASM 经 GCN notice（非 Circular）分发，GCN 站事件页仅 1 篇 Circular（2540），gcn.gsfc.nasa.gov 旧站部分存活（/gcn3/ Circular 存档可达），RXTE-ASM 通告页均 404、heasarc.gsfc.nasa.gov 与 xte.mit.edu（ASM GRB 页）在本环境不可达、HEASARC grbcat/MPE Greiner/konus_wind 快照及在线版均无此源 → 真实触发时刻无法溯源，T0 暂保留导入占位值（触发日 00:00 UT，t0_basis=name_date），属 A 档待决；唯一测光行的绝对时刻（MJD 53065.9263889 = 2004-03-01T22:14 UT，GCN 2540）不受占位 T0 影响。定位：原文仅提 ASM error box，坐标不可达，ra/dec/pos_error/pos_ref 留空。t90 无任何来源 → sub_tag 留空待决。检索留证（2026-10-27）见 lc/GRB040229.csv 行 comment。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
+    "t0_note": "触发时刻不可得（RXTE-ASM 检测通告为 GCN notice 类、公开镜像不可达），t0 暂为名字日期占位值，待维护者裁决；原 bot 注：t0 为触发日 00:00 UT（名字日期）",
     "t0_basis": "name_date",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
