@@ -1,31 +1,39 @@
 {
   "transient_id": "GRB240606B",
-  "alias": [],
+  "alias": [
+    "GRB240606565"
+  ],
   "ra": 40.29507,
   "dec": -60.61201,
-  "T0": "2024-06-06T13:33:06Z",
-  "T0_ref": null,
+  "T0": "2024-06-06T13:33:06.050Z",
+  "T0_ref": "GCN 36633（GECAM-B 官方通告，trigger 392）：GECAM-B was triggered both in-flight and on-ground … at 2024-06-06T13:33:06.050 UTC (T0)；后续全部跟进链（Swift GUANO GCN 36628、XRT GCN 36631、7DT GCN 38724）均以该 T0 为基准；Fermi/GBM 亦在轨触发 13:33:06.087Z（FERMIGBRST trigger 739373591/240606565，GCN 36640 记 13:33:06.09 UT），Konus-Wind 13:33:07.583（其自算触发时刻，GCN 36646）备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "GECAM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 2.4,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 36631",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] GECAM-B 在轨+地面触发的长暴（GECAM trigger 392，GCN 36633），Fermi/GBM 在轨触发（trigger 739373591/240606565，GCN 36640），Swift/BAT 未在轨定位、由 GECAM 通告触发 GUANO 弧分级定位（GCN 36628），Konus-Wind 亦触发（GCN 36646）。同日划界：Swift Trigger 1235109（初名 GRB 240606A，GCN 36626）经 BAT 地面分析判为噪声涨落非天体（GCN 36639 原文 consistent with noise fluctuations），且不在库内，无需处置；GCN 36630（MASTER 对 Swift 1235109 误差框观测）属已否证事件不入库；GCN 9233 为 2009 年老暴时间戳巧合。[Trigger_Instrument 更正] 原 Swift/XRT 有误——XRT 仅做余辉跟进（GCN 36631），触发仪器为 GECAM（B 星，GCN 36633 原文 triggered both in-flight and on-ground），GRB220710A 同型更正先例；本暴定位链：GECAM 通告→GUANO 令 BAT 保存 T0±[-50,+150] s 事件数据→NITRATES 检出（sqrt(TS)=28.9，4.096 s 分析 bin，T0-2.048 s 起）→BAT-GUANO 定位 RA,Dec=40.234,-60.637（4 arcmin，GCN 36628）。[T0] 原库 2024-06-06T13:33:06Z（bot 值无 t0_basis）缺亚秒，更正为 GECAM-B 官方值 13:33:06.050Z（GCN 36633）；GBM 目录 13:33:06.087Z（差 37 ms）、GCN 36640 记 13:33:06.09、GCN 36628 引 GECAM 通告作 13:33:06.5（疑通告转写舍入异常，以 GECAM 团队自身通告 36633 的 .050 为准）均备查。[定位] ra/dec=40.29507/-60.61201（2.4″）为 GCN 36631 XRT 增强定位（XRT-UVOT 对齐+USNO-B1，3507 s PC 数据），系衰减 2.1σ 的疑似余辉 Source 1（原文 it is likely the afterglow，eRosita 深限下未探测）；补 pos_error_confidence=90（原文 90% confidence）；原文记 53 arcsec from the BAT-GUANO position，但按其给出的两坐标复算相距 140.4″（GCN 36631 自身内部不一致，以坐标复算为准，备查）；FERMIGBRST 目录行 ra/dec=40.234/-60.637 err=0.07 deg 即 BAT-GUANO 定位被目录吸收（0.07 deg=4.2′ 非典型 GBM 误差，README 0=外部仪器定位哨兵的弱化形态），非 GBM 自身定位，备查。[alias] 新增「GRB240606565」（FERMIGBRST GRBNAME / HEASARC Source Designation，tdat name 字段原文用名，GCN 36640 记 trigger 240606565）。[分类] tag=grb 原有；sub_tag=lgrb 原有验证成立：GCN 36633 原文 a long burst、GCN 36646 原文 The long-duration GRB 240606B；t90=11.008±3.11437 s（FERMIGBRST，50-300 keV）、GCN 36640 记 duration (T90) about 11 s（50-300 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 36640（GBM）：截止幂律 index=-1.2±0.1、Epeak=310±60 keV、fluence=(6.4±0.5)e-06 erg/cm2（10-1000 keV，T0-6.9~T0+8.4 s）、1-s 峰流量 7.9±0.7 ph/cm2/s（T0+0.51 s 起）；GCN 36633（GECAM-B）：~10 s 长脉冲（15-1020 keV）、T0-2~T0+2 s 截止幂律流量 6.67e-7 erg/cm2/s（20-1000 keV）；GCN 36646（Konus-Wind）：多峰结构 T0-53.0 s 起总持续 ~58.4 s、至 ~4 MeV、fluence=5.07(-0.10,+1.54)e-06 erg/cm2（20 keV-10 MeV，68% 置信）、64-ms 峰流量 1.68(-0.34,+0.61)e-06 erg/cm2/s（T0+0.318 s 起）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「240606」全形态：命中 12 篇——8 篇属本源（36628/36629/36631/36632/36633/36640/36646/38724），GCN 36626/36639 为已否证 Swift 1235109（=240606A 噪声），36630 同属该否证事件，36632 属本源，9233 巧合；入库测光：GCN 36632 MASTER-SAAO 12 检查点上限（检 GBM 初报 real-time 误差框 R=7.75 deg，框中心距 XRT 位置 10.28 deg、余辉在框外，弱约束注记照录）+ GCN 38724 7DT 组合像 r 等效上限 1 行（8 中带逐片深度原文有表（m450 20.7/m500 21.0/m550 20.1/m650 20.1/m700 19.6/m750 19.2/m800 18.0/m850 17.8 AB），但中带键不在 filters.json 且无透射曲线，按 wide-ATLAS 先例不新增键（待决供维护者裁定），仅入库最深组合 r 等效帧）；UVOT 3 帧仅作天测标定无数值（GCN 36631）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 240606B」0 命中；ADS/SciX API 无 token 实测 401；TNS 无 AT 条目→ 本 PR 补 13 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 GECAM-B 触发时刻 2024-06-06T13:33:06.050Z（GCN 36633，trigger 392，补亚秒）；Trigger_Instrument 由 Swift/XRT 更正为 GECAM（XRT 仅余辉跟进，GRB220710A 先例）；原值保留于 comment",
+    "t0_basis": "GCN 36633（GECAM-B 官方通告；GUANO/XRT/7DT 跟进链同基准）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
