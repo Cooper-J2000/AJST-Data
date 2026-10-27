@@ -1,27 +1,33 @@
 {
   "transient_id": "IceCube-260504A",
-  "alias": [],
+  "alias": ["IC260504A"],
   "ra": 246.99,
   "dec": 54.87,
-  "T0": "2026-05-04T21:11:20Z",
-  "T0_ref": null,
+  "T0": "2026-05-04T21:11:20.900Z",
+  "T0_ref": "GCN 44464",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2399.4,
+  "pos_ref": "GCN 44464",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IceCube Bronze 流 track-like 中微子候选事件（事件名 IceCube-260504A 即 GCN/AMON 用名；GCN 44472（Fermi-LAT）原文以 IC260504A 称本事件，alias 收录该原文用名（GCN 44472 原文用名）；库内建档唯一，同日 GRB260504B 为 SVOM/ECLAIRs 事件，位置/时刻/仪器均不同，无混淆）：IceCube 于 2026-05-04 21:11:20.90 UT 探测（ICECUBE_Astrotrack_BRONZE 流，Bronze 平均天体物理纯度 30%，FAR=0.504 yr^-1，GCN 44464；AMON 通告 signalness=0.43033、事件能量 ~1.15e2 TeV，非 SCHEMA 量仅备查）。T0：bot 值 2026-05-04T21:11:20Z（t0_basis=meta_trigger，源于 AMON 通告 DISCOVERY_TIME 76280 SOD=21:11:20.95 UT 之整秒截取）修正为触发仪器官方通告 GCN 44464 的 21:11:20.90 UT（GCN 44472 亦引 2026-05-04 21:11:20.90 UTC 作 T0）；其余亚秒值备查：AMON rev0/rev1 通告均记 DISCOVERY_TIME 21:11:20.95 UT、GCN 44502 搜索窗 21:03:00.958–21:19:40.958 UTC（窗心 21:11:20.958），与 44464 差 58 ms（整数秒一致，取官方通告值）。位置：ra/dec 246.99/54.87 为 GCN 44464 离线精化值（bot 取值正确；AMON rev1 同值 246.9900/+54.8699，初版 rev0 为 246.9313/+54.8685）；90% PSF containment 为非对称两轴偏移 RA +0.86/−0.80°、Dec +0.46/−0.47°（GCN 44464 原文）；精化通告未给单一半径，pos_error 取 AMON rev1 SRC_ERROR 39.99′（90% containment，stat-only）=2399.4″（该 rev 位置与精化值相同），与两轴偏移 RMS ≈0.67°（≈40.4′）自洽；90% containment → pos_error_confidence=90。90% 定位区内有 4FGL-DR4 伽马源 4FGL J1626.0+5436（RA 246.51°/Dec 54.61°，距最优拟合位置 0.38°，GCN 44464；GCN 44472 注其关联 87GB 162528.4+544848，LAT 1 天/1 月时标均无显著伽马探测）——仅为定位区内目录源，非确认对应体，不建 host_galaxy，红移无资料。后随观测：GCN 44472（Fermi-LAT）>100MeV 光子流量上限（95% conf；~17 年/1 月/1 天积分分别 <1.3e-10/<4.6e-09/<4.7e-08 ph cm^-2 s^-1，积分始于 2008-08-04/T0 之前）为伽马能量串家族，不入库；GCN 44502（IceCube）1000 s/2 天窗口内无额外 track-like 事件（p=1.00，灵敏度 E²dN/dE@1TeV=1.6e-01 GeV cm^-2），非电磁测光，不入库；GCN 44620（ZTF/GROWTH）光学跟进 → 本 PR 补 2 行上限。tag 留空：tags.json 受控词表（main：cv/fbot/fxt/grb/nova/sgr/sn/stellar-flare/tde/xrb）无中微子事件类目，按提示词 §3.7 在 PR 待决事项提出建议名 neutrino，待维护者扩表后回填。测光检索（2026-10-27）：仓内 gcn/archive 本地未获取（工作区无 gcn/ 目录）；external/rssgrbag lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无 2605 事件、external/uvot_grb 无 260504、external/ 全目录 grep「IceCube-260504A」0 命中；GCN 站该事件通告共 4 篇（44464/44472/44502/44620，均经 gcn.nasa.gov/circulars/<N>.json 打开核对），除 44620 补 2 行外余 3 篇见上；ADS/SciX 未能直查（平台需 JS/账号），经 Web 检索代理核对无该事件专文，arXiv 全文检索「IceCube-260504A」0 命中（2026-10-27）；TNS 不适用（无光学对应体申报）。结论：除新增 2 行外无其他可入库测光。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核修正为 IceCube 官方通告 GCN 44464 触发时刻 2026-05-04 21:11:20.90 UT；原 bot 值 2026-05-04T21:11:20Z 为 meta_trigger 整秒值（AMON 通告 DISCOVERY_TIME 76280 SOD=21:11:20.95 UT 之整秒截取）；原值 0.90 s 两位小数按库内三位小数惯例序列化为 .900，数值不变",
+    "t0_basis": "GCN 44464",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
