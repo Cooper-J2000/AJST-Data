@@ -1,29 +1,37 @@
 {
   "transient_id": "GRB040228",
-  "alias": [],
+  "alias": [
+    "GRB 040228B"
+  ],
   "ra": 153.05,
   "dec": -7.3258,
-  "T0": "2004-02-28T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2004-02-28T00:12:44.080Z",
+  "T0_ref": "GCN 2536",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 2536",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB040228 = HETE-2 WXM 2004-02-28 定位事件（MPE Greiner 目录用名 GRB 040228B，external/mpe_greiner 快照条目 040228B：HETE 位置 10h12m12s -07°20'、误差 22'*56'，与本源坐标一致）。ra/dec 为 WXM 地面分析定位中心 RA 10h12m12s、Dec -07°19'33\"（J2000，GCN 2536），矩形四角见 GCN 2536 原文；盒为四边形、单一半径无法忠实表达，pos_error 留空（先例 GRB001018/GRB180626B），置信水平 90% 取自原文「90% confidence rectangle」。触发链（GCN 2536，HETE-2 官方通告）：FREGATE 同日先后触发 H3066（535.95 s UT=00:08:55.95 UTC，多峰 ~40 s，7-80/30-400 keV）与 H3067（764.08 s UT=00:12:44.08 UTC，单峰 ~10 s，30-400 keV）；~00:13:24 UTC（~800 s UT，即触发后 ~40 s）WXM 2-15 keV 见 >50 s X 射线脉冲，疑为 GRB 之软晚相；WXM 地面定位通告挂 trigger 3067 名下（MPE 快照转引 GCN/HETE 定位通告 TRIGGER_NUM 3067、GRB_TIME 764.08 SOD），故 T0 取 H3067 触发时刻。H3066 与本源无关：IPN（GCN 2538，Hurley）三角定位 H3066（环带心 RA 222.855、Dec -17.387，半径 31.387±0.055 度 3sigma）并与 WXM 脉冲位置相距 ~37 度、H3066 限制区（RA 246-253、Dec -42 至 -33）远在 WXM 视场外；GRBCAT 为 H3066 立独立条目 GRB 040228A（external/heasarc_grbcat）。H3067 与 X 射线脉冲的关联未确证（GCN 2538：may be related either to H3066 or to the X-ray pulse (but not both). It may also be an independent event）。目录备查：GRBCAT 主条目（含本源坐标行）时间取 804.0 s UT=00:13:24.0（MJD 53063.0093055556，即 X 射线脉冲时刻）、duration=10 s（H3067，30-400 keV，定义未注明）；GRBCAT H3067 记录取 764.000 s、H3066 记录取 535.900 s，与 GCN 2536 的 764.08/535.95 分别差 80/50 ms（触发仪器官方通告优先）。原库 T0=2004-02-28T00:00:00Z 系 bot meta_trigger 零锚占位值（t0_basis=meta_trigger，Issue #68 家族），审核修正并保留原值于此；原库 Trigger_Instrument=IPN 误配（IPN 未触发本事件，仅三角定位无关的 H3066），改为 HETE-2。KISO 通告「0.5 days after the burst」自洽：12:11 UT - T0 = 0.4988 d。分类：GCN 2536 标题称「A Long GRB」；GRBCAT duration=10 s（定义未注明）、H3066 ~40 s、脉冲 >50 s；目录无 t90/t50 字段，sub_tag 留空待决（两值并列于此备查）。测光检索（2026-10-27）：仓内 gcn/archive 本地工作副本未获取该目录，无法全文检索（如实注明）；external/rssgrbag/lightcurve.jsonl 0 命中、grbsn_webtool 无 040228 目录、konus_wind 快照 0 命中、mpe_greiner 仅 040228B 条目（无测光）、heasarc_grbcat 4 行（无测光）；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-040228）共 4 篇（2536/2537/2538/2539），GSFC 镜像逐号扫描 2530-2620 无其他命中，其中 2 篇含光学数值（2537 KISO、2539 Descartes），均已入库；arXiv API 检索「GRB 040228」0 篇、「040228」+「HETE」0 篇（export.arxiv.org，2026-10-27）；SciX/ADS 网页为 JS 渲染抓取不可得（如实注明）→ 无更多可用测光，本 PR 新增 2 行（Descartes 爆后上限、爆发前上限）。",
   "sub_tag": [],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@代理 2026-10-27 审核修正为 HETE-2 FREGATE trigger H3067 触发时刻 764.08 s UT=2004-02-28T00:12:44.08Z（GCN 2536；WXM 地面定位通告挂 trigger 3067 名下互证，MPE 快照转引）；原 bot 值 2004-02-28T00:00:00Z 系 meta_trigger 零锚占位值（Issue #68 家族），原值留存于 comment。",
+    "t0_basis": "GCN 2536（HETE-2 官方通告，FREGATE trigger H3067）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
