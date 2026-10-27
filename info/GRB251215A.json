@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB251215A",
-  "alias": [],
+  "alias": [
+    "GRB251215181"
+  ],
   "ra": 122.61893,
   "dec": -36.74266,
-  "T0": "2025-12-15T04:21:21Z",
-  "T0_ref": null,
+  "T0": "2025-12-15T04:21:21.568Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2025-12-15T04:21:21.568Z（trigger 787465286.567966 / 251215181）；GCN 43104 整秒 04:21:21 UT、GCN 43114（GUANO）T0: 2025-12-15T04:21:21.57 UTC 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 5.7,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 43155",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] Fermi/GBM trigger 787465286.567966（GRB251215181，GCN 43104/43144）+Swift/BAT-GUANO 弧分级定位（GCN 43114，BAT-GLIMPSE SNR=6.5 与 NITRATES sqrt(TS)=14.6 双管线一致；另 CALET trig 1449807236 @04:23:36.28 UTC 触发，GCN 43114 转述）；Swift-XRT Source 5 衰减 >3σ 认证余辉（GCN 43155：T0+32.0~383.9 ks 9.9 ks 数据，衰减 alpha>0.3，距 BAT 定位 97″）。同日无其他 GRB（gcn/archive「251215」10 篇全属本源）。[Trigger_Instrument 更正] 原 Swift/XRT 有误——触发仪器为 Fermi/GBM（GCN 43104 triggered and located），XRT 仅余辉跟进；GRB220710A/240606B/241002B 同型先例（GUANO 家族第 4 例）。[T0] 原库 04:21:21Z 缺亚秒，更正为 FERMIGBRST trigger_time=04:21:21.568Z（GCN 43114 .57 互证）。[定位] ra/dec=122.61893/-36.74266（5.7″）原值即 GCN 43155 XRT 增强定位（Source 5 衰减 >3σ 认证余辉，与 GCN 43137 首报 Source 5 值一致），pos_ref 原有正确；补 pos_error_confidence=90（原文 90% confidence）；GBM 初报定位 112.8/-43.7/7.6° 备查；FERMIGBRST 目录行 122.653/-36.7395/err=0.05° 系吸收 GUANO 弧分定位（非 GBM 自身定位）备查。[alias] 新增「GRB251215181」（FERMIGBRST GRBNAME / HEASARC Source Designation，tdat name 字段原文用名，GCN 43104/43144 记 trigger 251215181）。[分类] tag 补 grb；sub_tag=lgrb：GCN 43104 原文 a likely LONG GRB；t90=142.85±1.28001 s（FERMIGBRST，50-300 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）。[伽马备查] GCN 43144（GBM 精化，T90 约 143 s 量级亮暴）；X 射线内容不入库（GCN 43137/43155）。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「251215」全形态：命中 10 篇全部属本源（43104/43114/43118/43133/43136/43137/43140/43144/43145/43155）；入库测光 170 行：GCN 43136 MASTER 167 检查点上限（12-15 段 111 行+12-16 段 56 行全表自洽——datetime+Expt/2−T0 与 Tmid-T0 列差 ≤1 s 舍入，无系统性偏差；其中 10 行台站名列宽截断仅余「MASTER-」，按 GRB230622A/GCN 34067 先例以 telescope=MASTER 收录并逐行注记；单行 lim 最低 14.4 系亮星场检查点照录）+ GCN 43145 UVOT white 深上限 1 行（>22.4）+ GCN 43140 COLIBRÍ r/z 上限 2 行（AB）；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 251215A」0 命中；ADS/SciX API 无 token 实测 401；TNS 无本暴 AT 条目→ 本 PR 补 170 行（均上限）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 787465286.567966 trigger_time=2025-12-15T04:21:21.568Z，补亚秒）；Trigger_Instrument 由 Swift/XRT 更正为 Fermi/GBM（XRT 仅余辉跟进）；原值保留于 comment",
+    "t0_basis": "FERMIGBRST trigger_time（GCN 43104/43114 互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
