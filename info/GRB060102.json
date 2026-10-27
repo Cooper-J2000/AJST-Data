@@ -1,28 +1,53 @@
 {
   "transient_id": "GRB060102",
-  "alias": [],
-  "ra": 328.839,
-  "dec": -1.837,
+  "alias": [
+    "BAT 175603"
+  ],
+  "ra": 328.834,
+  "dec": -1.838,
   "T0": "2006-01-02T21:17:28Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 4424",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 168,
   "pos_ref": "GCN 4425",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0：GCN 4423 原文 02:45:43 UT（航天器时间转换故障），GCN OPS 注与 GCN 4424 更正为 21:17:28 UT ±~2 s，GCN 4425 复核；Swift/BAT 目录 trigger_time=2006-01-02T21:17:27.963（差 0.037 s）。§3.2 的「亚秒取触发仪器值」与 §3.8 的「官方 GCN 优先」存在张力；GCN 4424 明示 ±2 s 系统改正，目录亚秒无实际意义，故保留整数秒并记录目录值，不写 T0_offset。定位取 GCN 4425 BAT 地面解 328.834/-1.838（±2.8′，半径，sys+stat，90% 包含）；原库 328.839/-1.837 可溯源至 uvot_grb 目录（POS_ERR=156″，POS_REF=SGA；SGA=Swift GRB Archive，Sakamoto et al. 2008，晚于 GCN 4425，按 §4 需比较时效/人工核实）；Roming+2009（arXiv:0809.4193v1 表 2）转录的“best reported”位置也是 328.834/-1.838/168″，即 GCN 4425 的 BAT 位置（非独立测量），故采用 Circular 值（差值 18″ 在 2.8′ 误差圆内）。无 XRT 或光学精化定位（GCN 4434：触发后 47 h XRT 未见图余辉）。lc：GCN 4427 MDM 1.3m R 波段，三次 5 min 曝光自 2006-01-03 02:28 UT（=T0+18632 s）起，共 15 min，对 DSS 比较给出 5σ 上限 R>20.5（stat+sys）；原文只给起点与总曝光，time 取窗口中点（18632+450 s）、time_err=450 s（§3.8 约定，真实曝光间隙不可恢复）；原文未声明星等系统故 mag_system 留空；原 reference 记作 'GCN4427'（缺空格）已规范为 'GCN 4427'。sub_tag：t90=19.0±5.1 s（Swift/BAT 目录 swift_bat，15–350 keV；GCN 4425 给 21±2 s），按目录 t90 判 lgrb。alias：'BAT 175603' 为本仓 swift_bat 快照的归一化别名（trigger 175603；GCN 4425 原文 trigger #175603）。测光检索（2026-10-27）：仓内 gcn/archive 快照在本 worktree 缺失，改查 GCN legacy 逐暴页 060102.gcn3 得 5 篇（4423/4424/4425/4427/4434，仅 4427 含光学上限，4434 为 X 射线不入库）；rssgrbag 0 条、grbsn_webtool 无 GRB060102 目录、uvot_grb 仅目录级定位；OpenAlex 全文检索 5 条（全为 GCN 通告）、题名检索 9 条（5 条 GCN + 4 条无关物理勘误）、Crossref 题名 0 条、SIMBAD TAP 关联 20 条（5 篇 GCN + 15 篇研究论文；其中 Nysewander+2009 表 2 以 11 hr R 波段 <18.2 µJy 收录本源，系按该文统一方法（α_L,opt=−0.85）从 GCN 4427 的 R>20.5 归算到 11 hr 的均匀化再分析，非独立观测，按 §3.4 不另立行，原行保留并在此备注）、Web 检索得 Roming+2009 表 2（无 UVOT 测光）；ADS 无 token 未查，TNS 无该 GRB 对象。结论：除 Nysewander+2009 的均匀化再分析（非独立观测，不入库）外，无其他可入库光学测光/上限；本次修改 1 行、补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@qoder",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Roming+2009",
+      "url": "https://doi.org/10.1088/0004-637X/690/1/163",
+      "title": "The First Swift Ultraviolet/Optical Telescope GRB Afterglow Catalog",
+      "source": "Rusty-Harpoon@qoder"
+    },
+    {
+      "name": "Nysewander+2009",
+      "url": "https://doi.org/10.1088/0004-637X/701/1/824",
+      "title": "A Comparison of the Afterglows of Short- and Long-duration Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@qoder"
+    }
+  ],
   "host_galaxy": null
 }
