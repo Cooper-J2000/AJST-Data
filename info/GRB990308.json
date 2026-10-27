@@ -3,25 +3,32 @@
   "alias": [],
   "ra": 182.761832,
   "dec": 4.282319,
-  "T0": "1999-03-08T05:14:24Z",
-  "T0_ref": null,
+  "T0": "1999-03-08T05:15:07Z",
+  "T0_ref": "GCN 275（BATSE/RXTE-ASM/Ulysses 联合通告）：the BATSE trigger time was 05:15:07 UTC（Trigger #7457）；GRBCAT 990308B 行 trigger_time=1999-03-08T05:15:07Z（ECT 口径）一致；原库 05:14:24Z 系 RXTE/ASM 90-s 观测起点（MJD 51245.218333，GCN 275 原文）非触发时刻（Issue #84 家族）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BATSE",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 275（RXTE/ASM）：10°×6.6′ 全宽误差框（90% 置信含统计+系统差，中心 R.A.=182.761832 Decl.=+4.282319 即库内坐标，旋转 51.2° east of north）——矩形框不适用圆半径，pos_error 留空；IPN 三角环带备查（GCN 275：中心 154.0761/-9.6383，r=35.583°，3σ 半宽 0.399°，Ulysses-BATSE）；MPE 表行（12h23m11s+06°43′=185.80/6.72，48′×7′）系另一次 ASM 处理结果备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] BATSE Trigger #7457（GCN 272/275）+RXTE/ASM 90-s 观测窗内探测（GCN 275：1.5-12 keV ~400 mCrab 强变光变）+Ulysses 弱探测（IPN 环带）——GRBCAT 990308B 行（05:15:07Z ECT，BATSE+IPN，ra/dec 189.18/3.55 系另一定位口径备查）。同日划界：GCN 271/273/274 的 BATSE 7456（=990308A，03:04:53Z）与 7460（=990308C，19:47:34Z；SGR 候选风波——GCN 271 提议新 SGR、GCN 273 判经典 GRB、GCN 274 撤回 SGR 提议判仪器尖峰）均非本源（本源=7457）；GCN 726（HST 宿主巡天）属本源。[T0] 原库 05:14:24Z 系 GCN 275 中 RXTE/ASM 90-s 观测起点（MJD 51245.218333）非触发时刻（Issue #84 家族——观测窗起点型），已更正为 BATSE 触发时刻 05:15:07Z（GCN 275 原文 the BATSE trigger time；GRBCAT ECT 一致）。[定位] 原 pos_error/pos_ref 空，ra/dec=182.761832/4.282319 原值即 GCN 275 ASM 误差框中心（保留）；矩形框（10°×6.6′）不适用圆半径，pos_error/pos_error_confidence 留空（B 档）；IPN 环带与 MPE 行备查如上（MPE 框心与 GCN 275 框心相距约 3.9 deg，系不同 ASM 处理/历元，照录不采）。[Trigger_Instrument] IPN→BATSE（IPN 系定位方法；BATSE Trigger #7457 触发，GCN 272/275 原文）。[分类] tag 补 grb；sub_tag 留空待决：t90 来源冲突——GRBCAT 990308B 行 t90=106.05±11.953 s（external/heasarc_grbcat；external/batse 7457 行 106.048±11.953 s 同）判长，external/rssgrbag 行（185.7975/6.7347）t90=0.5 s 判短，两目录口径冲突按 §3.9 裁定留空（见待决①）；GCN 无时长判词（ASM 观测窗 90 s 内强变光非 T90 口径）。[文献余辉] Schaefer et al. 1999, ApJL, 524, L103 报告本暴光学余辉（GCN 726 转述）；其精确坐标本次审核未能获取（arXiv API 不可用、无 ADS/SciX token、原文付费墙未尝试下载），定位未升级，列入「未能核实、建议后续补」清单。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「990308」全形态：命中 6 篇——GCN 271/273/274 属 SGR 风波他暴（7456/7460），GCN 272/275/726 属本源；入库 7 行（均上限）：GCN 272 LOTIS m~11.5@+37.6s（初响应）+m~11.0@+132.1s（Final 坐标）+Super-LOTIS m~14.0 四帧（t=1694/1809/2620/3923 s）+GCN 726 HST/STIS V~28.5（AB）@+468d；「burst start」基准歧义（ASM 耀发起 vs BATSE 触发）逐行注记；external/rssgrbag 1 行（GRB 990308，185.7975/6.7347，t90=0.5 s——与 GRBCAT/batse 的 106 s 冲突如上待决①）、external/grbsn_webtool 无该源；external/mpe_greiner/heasarc_grbcat 行仅目录参数；arXiv API 不可用；ADS/SciX API 无 token 实测 401；TNS 不适用（1999 年）→ 本 PR 补 7 行（均上限）。[待决①] t90 冲突：GRBCAT/batse 106.05 s vs rssgrbag 0.5 s（差 200 倍，疑 rssgrbag 误录或口径不同）——sub_tag 留空待维护者裁定；建议默认：采 GRBCAT/batse 106 s 判 lgrb。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 BATSE 触发时刻（Trigger #7457，GCN 275 05:15:07 UTC）；原 bot 值 05:14:24Z 系 GCN 275 中 RXTE/ASM 90-s 观测起点误植（Issue #84 家族），原值与判据保留于 comment",
+    "t0_basis": "GCN 275（BATSE trigger time；GRBCAT ECT 一致）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
