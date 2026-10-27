@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB250530C",
-  "alias": [],
-  "ra": 55.17029,
-  "dec": -22.44825,
-  "T0": "2025-05-31T03:36:18Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 250530C",
+    "BAT 1319125"
+  ],
+  "ra": 55.17085,
+  "dec": -22.44801,
+  "T0": "2025-05-30T18:58:42.893720Z",
+  "T0_ref": "GCN 40585（Swift/BAT 触发 18:58:42 UT，trigger 1319125）；亚秒取 Swift/BAT 官方目录 trigger 1319125 = 2025-05-30T18:58:42.893720（external/swift_bat summary_general.txt），与 GCN 40585 所述 18:58:42.89 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 40585",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.0,
+  "pos_ref": "GCN 40586",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT 触发 1319125（GCN 40585），XRT-UVOT 天文改正定位 55.17085, -22.44801（GCN 40586）。T0 修正：原值 2025-05-31T03:36:18Z 并非触发时刻，而是 MASTER-SAAO 开始观测的时刻（GCN 40587 原文「31055 sec after trigger time at 2025-05-31 03:36:18 UT」），已改为 BAT 触发 2025-05-30T18:58:42.893720Z；原 extra_data 的 t0_note「t0 为 meta trigger-time（真实触发时刻）」与实际不符，原值保留于本段。定位：原记 GCN 40585 的即时 XRT 位置 55.17029/-22.44825（1.9\"），改用 GCN 40586 的天文改正位置（2.0\"，90% 置信）；GCN 40585 值留此备查。红移：无（未探测到光学余辉，6 篇 GCN 均未给红移）。分类：T90=42.86±6.04 s（15-350 keV，GCN 40609）；Swift/BAT 目录另给 T90=65.328±25.107 s（15-350 keV，external/swift_bat）；两来源均未明写 long/short；按 2026-10-26 裁定，依 Swift/BAT 目录 t90=65.328±25.107 s（15-350 keV，external/swift_bat）判 lgrb，sub_tag=['lgrb']（非自算；GCN 40609 另给 t90=42.86±6.04 s 互证）。其他物理量（不参与判定）：fluence=8.5±0.9×10^-7 erg/cm^2（15-150 keV，GCN 40609）；1 s peak flux=0.8±0.2 ph/cm^2/s（15-150 keV，GCN 40609）；时间平均谱指数 1.32±0.17（GCN 40609）；XRT 谱光子指数 1.55(+0.20,-0.19)、N_H 超出银道值 2.8(+1.1,-0.9)×10^21 cm^-2（GCN 40589）；E(B-V)=0.025（GCN 40585）。\n\n测光：原无 lc，本次补 3 条上限（均 upperlimit=y）。UVOT White 150 s（触发后 111 s 起）的 19.6 mag，原文仅称 'The typical 3-sigma upper limit has been about 19.6 mag'（GCN 40585），未给出源位置专门测光，按 §3.3 不入库、仅备查。MASTER-SAAO C（clear）60 s 上限 18.6 mag，Tmid-T0=31086 s，原文未声明测光系统（GCN 40587；该表另有一行同历元 13.1 mag，Site 字段截断为「MASTER-」、无法确认站点，未入库）。BOOTES-7 0.6 m clear 上限 16.4 mag（观测起始 09:42:59 UT）与 11 张 coadd 18.2 mag（09:51:43 UT 为曝光中点）（GCN 40591；原文「May 21」为「May 31」笔误，按 +14.73 h/+14.88 h 与绝对时刻互证改正）。BOOTES 16.4 mag 一行原文只给观测起始时刻、未给曝光中点与时长，time 取起始时刻、time_err 留空。\n\n测光检索（2026-10-26）：本工作区无 gcn/archive 目录，改下载 GCN 官方全文归档 archive.json.tar.gz（45 908 篇）作全文检索，命中 6 篇（40585/40586/40587/40589/40591/40609）；external/rssgrbag 0 行、external/grbsn_webtool 无该事件、external/uvot_grb 无记录（external/swift_bat、swiftgrbba 为目录级，仅用于身份与 T0 互证）；GCN 站 event 页同为这 6 篇（其中 4 篇含可用上限）；ADS/SciX 检索「GRB 250530C」仅得 2 条 GCN 记录（2025GCN.40585、2025GCN.40609），无期刊论文（ADS API 无 token 返回 401）；arXiv 全文检索 0 篇；TNS 搜索被反机器人验证阻断，对象页 /object/GRB250530C 返回 404（无此对象）。结论：可用测光仅 MASTER 1 条 + BOOTES 2 条上限、无探测，补 3 行；UVOT 19.6 为视场典型上限、不针对源位置，未入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 1319125）；整秒 18:58:42 UT 见 GCN 40585，亚秒 18:58:42.893720 取 external/swift_bat 官方目录；原 bot 值 2025-05-31T03:36:18Z 实为 MASTER 观测起始时刻，已更正并保留于 comment",
+    "t0_basis": "swift_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
