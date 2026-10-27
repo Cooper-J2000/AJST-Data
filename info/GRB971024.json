@@ -1,28 +1,65 @@
 {
   "transient_id": "GRB971024",
-  "alias": [],
+  "alias": [
+    "GRB 971024A"
+  ],
   "ra": 276.25,
   "dec": 49.45,
-  "T0": "1997-10-24T22:41:47Z",
-  "T0_ref": null,
+  "T0": "1997-10-24T11:33:32.0015Z",
+  "T0_ref": "BATSE 目录 batsegrb trigger 6448（seconds_trigger=41612.0015 s UT，HEASARC 快照）；Smith+1999 表2 Time of GRB=11:33:32（DOI:10.1086/308029）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BATSE",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "Smith+1999 表2（DOI:10.1086/308029）：RXTE/ASM 误差框中心 18h25m00s +49°27′",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB971024 = GRB 971024A（HEASARC GRBCAT grbcat_id 3634；BATSE trigger 6448）。同日另有 GRB 971024B（13:26:40 UT、仅 IPN）与 GRB 971024C（22:22:55 UT、BATSE 6450、RA 104.5°/Dec 25.6°），坐标与触发时刻均与本源不符，非同一事件。T0：原值 1997-10-24T22:41:47Z 为 bot 抓取的 GCN 通告分发时刻（extra_data 原值 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」），并非触发时刻——GCN 2/GCN 4 原文「(Trigger No. 6448, GCN notice of 24 Oct 97 22:41:47 UT)」即通告时间戳、滞后触发约 11 h，属 Issue #84 同型错误，已按触发时刻修正：BATSE 目录 batsegrb trigger 6448 = 11:33:32.0015 UT（MJD 50745.4816203877）＝Smith+1999 表2 = 11:33:32（证实卫星 BATSE）＝GRBCAT 11:33:32.000（Earth Crossing Time）＝BeppoSAX/GRBM 目录 saxgrbmgrb 11:33:33；GCN 2/4 的 USNO 观测「GRB 后 14–14.5 h」恰落在 Flagstaff 当地夜间（约 10-25 01:33:32–02:03:32 UT），与 11:33 触发自洽、与 22:41 不符。位置：ra/dec=276.25/+49.45 即 Smith+1999 表2 的 18h25m00s +49°27′（RXTE/ASM 误差框中心，误差框来自 ASM/SSC1 探测，因位置邻近 SSC2 视场边缘仅记录 159 计数（Smith+1999））；误差框 249.5′×6.5′、PA=64.38°（Smith+1999 表3，按其口径为 90% 置信区域，与 GCN 2「90% confidence RXTE_ASM localization」一致），来源未给等效半径故 pos_error 留空；BATSE 误差圆半径 6.9°（Smith+1999 表5）；BeppoSAX/WFC 定位 RA 276.21°/Dec 49.47°、error_radius 0.2°（saxgrbmgrb，即 Frontera+2009 目录）互证。其他量：2–12 keV 流量=1.1±0.3 ×10^-7 erg/cm²（Smith+1999 表2）；t90=149.248±39.565 s（BATSE 目录 batsegrb，>20 keV）按目录 t90 判 lgrb；saxgrbmgrb t90=50.0±5.4 s（40–700 keV）亦 >2 s；Konus-Wind 亦证实本暴（Smith+2002 表1 旗标 k）。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（记 0）、external/rssgrbag 光变（74 源）与 external/grbsn_webtool 事件集（63 事件）均无 971024；GCN 站 Circulars #1–450 逐篇下载全文检索，命中 4 篇（GCN 2/3/4/5，均与本源直接相关）；文献回退链（Crossref/arXiv API/OpenAlex，无 ADS token）命中并实际打开 Smith+1999（ApJ 526,683，arXiv:astro-ph/9907332；VoR 被 IOP/Radware 反爬拦截，按规则以 arXiv v1 取值）、Smith+2002（ApJS 141,415，arXiv:astro-ph/0103357，仅 ASM X 射线光变与触发性质，无光学/射电数据）、Connaughton+2002（ApJ 567,1028，arXiv:astro-ph/0111564，其表1 本源行仅 O=N（X/I/R 未检索、留空白）、无任何对应体）；TNS 匿名访问 403、IceCube GRBweb 403/404，均未采用。结论：无任何对应体报道（Smith+1999：「very little follow-up was performed. No candidate counterpart was reported」；Connaughton+2002：「follow-up optical observations were not very deep」）；有明确时间锚点的上限仅 USNO Flagstaff 1.0m R 波段两历元 blink 巡检（GCN 2/GCN 4，R≈19），已入库 2 行（upperlimit=y）；KPNO 4m Mosaic 5×10min R 曝光（GCN 3/GCN 5）零点未发布、无可用限量，不入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-27 审核修正为 BATSE 触发时刻 11:33:32.0015 UT（原 bot 值 1997-10-24T22:41:47Z 为 GCN 通告分发时刻，见 comment）",
+    "t0_basis": "BATSE 目录 batsegrb trigger 6448 + Smith+1999 表2",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Smith+1999",
+      "url": "https://doi.org/10.1086/308029",
+      "title": "Localizations of Thirteen Gamma-Ray Bursts by the All-Sky Monitor on RXTE",
+      "source": "Rusty-Harpoon@zcode（数值取自 arXiv:astro-ph/9907332 v1，VoR 被反爬拦截）"
+    },
+    {
+      "name": "Smith+2002",
+      "url": "https://doi.org/10.1086/340328",
+      "title": "X-Ray Light Curves of Gamma-Ray Bursts Detected with the All-Sky Monitor on RXTE",
+      "source": "Rusty-Harpoon@zcode（arXiv:astro-ph/0103357 v2）"
+    },
+    {
+      "name": "Connaughton+2002",
+      "url": "https://doi.org/10.1086/338695",
+      "title": "BATSE Observations of Gamma-Ray Burst Tails",
+      "source": "Rusty-Harpoon@zcode（arXiv:astro-ph/0111564 v1）"
+    },
+    {
+      "name": "Frontera+2009",
+      "url": "https://doi.org/10.1088/0067-0049/180/1/192",
+      "title": "The BeppoSAX GRBM Gamma-Ray Burst Catalog",
+      "source": "Rusty-Harpoon@zcode（经仓内 external/saxgrbmgrb 目录快照互证）"
+    }
+  ],
   "host_galaxy": null
 }
