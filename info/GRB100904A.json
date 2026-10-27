@@ -1,28 +1,30 @@
 {
   "transient_id": "GRB100904A",
-  "alias": [],
+  "alias": ["BAT 433273", "Swift 433273"],
   "ra": 172.907,
   "dec": -16.185,
-  "T0": "2010-09-04T01:33:43Z",
-  "T0_ref": null,
+  "T0": "2010-09-04T01:33:43.808300Z",
+  "T0_ref": "Swift/BAT trigger #433273 (GCN 11203; external/swift_bat 与 external/swift_grb 目录 trigger_time)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": ["grb"],
   "pos_error": 108.0,
   "pos_ref": "GCN 11207",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy@2026-10-28）：① T0：bot 原值 2010-09-04T01:33:43Z（t0_basis=meta_trigger，T0_ref 空）整秒与触发仪器官方通告 GCN 11203（原文 At 01:33:43 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 100904A (trigger=433273)）一致；亚秒取触发仪器官方目录快照 external/swift_bat 与 external/swift_grb 的 trigger_time=2010-09-04T01:33:43.808300Z（两者一致），T0 更新为该值；原 t0_note/t0_basis 原值：「t0 为 meta trigger-time（真实触发时刻）」/「meta_trigger」。② 定位：ra/dec=172.907/-16.185 与 GCN 11207 的 BAT ground-calculated position（RA,Dec = 172.907, -16.185 deg = 11h31m37.6s, -16d11'05.5''）一致；pos_error=108''=1.8 arcmin（radius, sys+stat, 90% containment）→ 补 pos_error_confidence=90；SIMBAD 坐标 11h31m37.60s -16d11'05.5''（引 2010GCN.11207....1U）印证；external/swift_bat 目录位置 172.9007/-16.19472 为另一版本定位解（Image_position_err=1.546），在 108'' 误差圆内，不采用。③ 分类：t90=31.248±5.963092 s（15-350 keV，external/swift_bat 目录快照全精度；GCN 11207 给 31.3±7.9 s）→ 按目录 t90 判 lgrb。④ alias 新增 BAT 433273（external/swift_bat 目录 name_alt）、Swift 433273（external/swift_grb 目录 name_alt）。⑤ 物理量备查：fluence=1.27039e-06 erg/cm2（15-150 keV，90%，swift_bat 目录；GCN 11207 给 1.3±0.1×10^-6）；1s 峰光子流量=1.63±0.26 ph/cm2/s（15-150 keV，swift_bat 目录；GCN 11207 给 1.6±0.3，测自 T+2.29 s）；光子指数 1.67±0.16（GCN 11207，90% c.l.）；T100 最优模型 PL（swift_bat）；partial coding 30%（GCN 11207）。⑥ Sun 约束无法 slew、至 11 月 7 日后才可观测，无 XRT/UVOT 数据（GCN 11203/11207 原文、external/swiftgrbba 注记）。⑦ 无红移（SIMBAD 字段空；无余辉故无光谱）。⑧ 身份：Swift/BAT trigger #433273；2010-09-04 当日库内唯一条目，次日 GRB 100905A 为另一触发（GCN 11214），无孪生/混淆；external/mpe_greiner 快照 obs_date=2010-09-04、on-board 定位 11h31m41s -16°13'（3'）互证。⑨ 测光检索留证见 lc 行 comment 末段。",
+  "sub_tag": ["lgrb"],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT trigger #433273 真实触发时刻：整秒与 GCN 11203 一致，亚秒 0.808300 取 external/swift_bat 与 external/swift_grb 目录快照 trigger_time（两者一致）；bot 原 t0_basis=meta_trigger 经核为正确的触发时刻口径，仅原 T0 截断至整秒",
+    "t0_basis": "trigger_time",
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-28"}
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
