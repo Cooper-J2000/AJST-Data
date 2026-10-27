@@ -1,35 +1,46 @@
 {
   "transient_id": "GRB991014",
-  "alias": [],
-  "ra": 162.2315,
-  "dec": -19.0726,
+  "alias": [
+    "GRB 991014",
+    "GRB 991014B",
+    "BATSE 7803"
+  ],
+  "ra": 102.7621,
+  "dec": 11.6008,
   "T0": "1999-10-14T21:52:34Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 417",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BeppoSAX/GRBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 90,
+  "pos_ref": "in't Zand+2000（ApJ 545, 266）, §3.3",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 991014（GCN 417 原文用名 GRB991014；BATSE trigger 7803，GCN 424 与 SIMBAD 标识 Trigger 7803；HEASARC GRBCAT 作 GRB 991014B，同目录另有同日 00:25:25 UT 的 IPN 事件 GRB 991014A，非本暴）。触发：BeppoSAX GRBM 于 1999-10-14 21:52:34 UT 触发、WFC 单元 2 同时探测（GCN 417）；in't Zand+2000（ApJ 545, 266）记 1999 Oct 14.911508 UT（= 21:52:34.29），BATSE 7803 目录触发时刻 21:52:34.553，BeppoSAX/GRBM 目录（saxgrbmgrb）21:52:33——整数秒一致，T0 取官方通告整秒 21:52:34Z、不补亚秒，T0_ref = GCN 417；目录间 1 s 级差异按 §3.8 写入本记录，不记 T0_offset（原 t0_basis = meta_trigger，原 t0_note「t0 为 meta trigger-time（真实触发时刻）」，经核与 GCN 417 一致，改 t0_basis = GCN 417 并重写 t0_note）。Trigger_Instrument 原为 IPN 有误：IPN（Ulysses + BeppoSAX）只给出定位环（GCN 418/419），触发仪器是 BeppoSAX/GRBM（WFC 同时探测、BATSE 7803 亦触发）→ 改为 BeppoSAX/GRBM。位置：原 ra/dec = 162.2315/-19.0726 实为 GCN 419 IPN 环的圆心（半径 66.1316±0.0275°，3σ），不是源位置；已改用 X 射线余辉 SAX J0651.0+1136 的定位 α2000 = 6h51m02.9s、δ2000 = +11°36'03\"（in't Zand+2000 §3.3 → 102.7621/+11.6008），pos_error = 90″（= 1.5′，论文最终误差半径；统计误差 40″ 为 99% 置信、系统误差扩大后的 1.5′ 未标置信水平，故 pos_error_confidence 留空），pos_ref 指该论文。互证：SIMBAD 与 Chandra & Frail 2012（rssgrbag 目录）记 6h51m03.0s/+11°36'05\"（差 ~2″，远小于 1.5′）；WFC 初定 102.777/+11.594（6′，GCN 417）；精化 IPN 环宽 1.5′（3σ），IPN/NFI 联合误差盒 ~4 arcmin²（in't Zand+2000 §3.2）。红移：无光谱/测光红移（无光学余辉、宿主未定）→ null。sub_tag 留空待裁：t90 = 4.67±0.47 s（GCN 424）/4.352±0.326 s（BATSE 目录）、2.28±0.58 s（saxgrbmgrb 目录，40–700 keV）、论文 9.6±1.3 s（2–28 keV WFC）与 3.2±0.7 s（40–700 keV）；目录 t90 均 >2 s 指向 lgrb，GCN 424 判 Class I（long），论文正文亦称 “unlikely … a member of the class of short GRBs”（标题/摘要把该暴称为 one of the shortest，但正文明确未归入短暴类）；按 2026-10-26 裁定按目录 t90 判 lgrb。测光：原库零测光（无 lc/GRB991014.csv），本次补 7 条上限（光学 5 条：GCN 421/423/426/428；射电 2 条：GCN 425 的 8.46 GHz 与 1.4 GHz），均为「未探测到余辉」的 5σ 或图像极限，逐行 comment 记原文口径。BeppoSAX NFI 的 X 射线余辉（GCN 427/429；in't Zand+2000：TOO1 MECS 38.1 ks，2–10 keV 平均流量 3.5±0.5×10^-13 erg/s/cm2）属 X 射线，按 §3.3 不入库。测光检索（2026-10-27）：仓内 gcn/archive 全文命中 13 篇（GCN 417–429）、external 5 个目录命中（batse/heasarc_grbcat/mpe_greiner/rssgrbag/saxgrbmgrb，均只作身份与 T0 互证、无光变表）、grbsn_webtool 无此事件；GCN 站同 13 篇（417–429）逐一打开核对；ADS/SciX 不可自动化访问（ADS abs 页 405、ADS API 401、SciX API 404，均需 token/JS），改以 SIMBAD 文献表 41 条逐条核标题 + 网页检索，未见其它带独立测光的文献；TNS 403（1999 年暴，非 TNS 目标）→ 共补 7 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 核对为 BeppoSAX GRBM 触发时刻 21:52:34 UT（GCN 417；论文 1999 Oct 14.911508 UT = 21:52:34.29、BATSE 7803 = 21:52:34.553，整数秒一致）。原值：t0_note =「t0 为 meta trigger-time（真实触发时刻）」，t0_basis = meta_trigger",
+    "t0_basis": "GCN 417",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
-      "name": "in'TZand+2000",
+      "name": "in't Zand+2000",
       "title": "X-Ray Afterglow Detection of the Short Gamma-Ray Burst GRB 991014",
-      "url": "https://ui.adsabs.harvard.edu/abs/2000ApJ...545..266I",
+      "url": "https://doi.org/10.1086/317804",
       "bibtex": "@ARTICLE{2000ApJ...545..266I,\n       author = {{in'T Zand}, J.~J.~M. and {Kuiper}, L. and {Amati}, L. and {Antonelli}, L.~A. and {Hurley}, K. and {Coletta}, A. and {Costa}, E. and {Feroci}, M. and {Frontera}, F. and {Gandolfi}, G. and {Heise}, J. and {Kuulkers}, E. and {Muller}, J.~M. and {Nicastro}, L. and {Piro}, L. and {Smith}, M.~J.~S. and {Tavani}, M.},\n        title = \"{X-Ray Afterglow Detection of the Short Gamma-Ray Burst GRB 991014}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, X-Rays: General, Astrophysics},\n         year = 2000,\n        month = dec,\n       volume = {545},\n       number = {1},\n        pages = {266-270},\n          doi = {10.1086/317804},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0007280},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2000ApJ...545..266I},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
