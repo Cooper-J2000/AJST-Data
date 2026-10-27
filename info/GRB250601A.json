@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB250601A",
-  "alias": [],
+  "alias": [
+    "GRB 250601A",
+    "bn250601729"
+  ],
   "ra": 90.0709,
   "dec": -57.2892,
-  "T0": "2025-06-01T17:29:35Z",
-  "T0_ref": null,
+  "T0": "2025-06-01T17:29:35.538Z",
+  "T0_ref": "GCN 40596（Fermi/GBM trigger 770491780.538054，17:29:35 UT）；FERMIGBRST trigger_time=2025-06-01T17:29:35.538Z（external/fermi_gbm 快照）；GCN 40600 记 17:29:35.54",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 40600",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 40600（Swift/BAT-GUANO 定位，3 arcmin 半径；原文未标注置信水平）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-10-26。身份：Fermi/GBM 触发 770491780.538054（GCN 40596，17:29:35 UT）＝GRB 250601A；Swift/BAT-GUANO 地面定位 90.0709/-57.2892（3 arcmin 半径，GCN 40600）为同一事件。T0：原值 2025-06-01T17:29:35Z 为整秒，亚秒 .538054 取自 FERMIGBRST 目录（external/fermi_gbm 快照），GCN 40600 记 17:29:35.54；按 §3.2/§3.8 直接改进 T0，不写 T0_offset。定位：采用 BAT-GUANO 90.0709/-57.2892（3 arcmin 半径，GCN 40600），原文未标置信水平，pos_error_confidence 留空；GBM Final 86.5/-55.7（4.5°，GCN 40596）、XRT 候选 06:00:22.47 -57:16:40.0（GCN 40606）、EP/FXT 候选（GCN 40607）备查。分类：来源冲突——GCN 40596 称 'likely LONG GRB'；GCN 40600 记 duration ~1 sec；GCN 40631 Konus-Wind 称 'short-duration'（~0.8 s）；GCN 40621 GBM T90~3 s；FERMIGBRST t90=3.072±0.429 s（50-300 keV）。按 §3.9 来源冲突时 sub_tag 留空，交维护者裁决（PR 待决）。红移：VLT/FORS2 仅 R 波段成像、无光谱，redshift 留 null。测光：VLT/FORS2 R>24 AB（29.8 h，GCN 40622）、PRIME J>20.3 AB（~23.5 h，GCN 40624）、PRIME H>20.6 AB（~47.5 h，GCN 40626）已入库 3 行，均为上限；三者观测目标为 Swift/XRT 与 EP/FXT 候选位置（原文未给坐标），非确认余辉位置测光，行 comment 已注明。MASTER-SAAO（GCN 40603）给出 31328-37159 s 的 C 波段上限，但原文两两指向场坐标不含 BAT-GUANO 位置 RA=90.0709（明确未覆盖），故不入库。XRT/EP/FXT 为 X 射线，按 §3.3 不处理。测光检索（2026-10-26）：本工作区无 gcn/archive，改用 GCN 事件页 grb-250601a（12 篇：40596/40599/40600/40603/40604/40606/40607/40621/40622/40624/40626/40631）逐篇全文；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；ADS/SciX 无 token（401）、arXiv 0 篇、TNS 无对象；结论：仅 VLT/FORS2 与 PRIME 三条带时间锚点的上限可用，补 3 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻 2025-06-01T17:29:35.538Z（GCN 40596 + FERMIGBRST）；原 bot 值 17:29:35Z 为整秒",
+    "t0_basis": "GCN 40596 + FERMIGBRST",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
