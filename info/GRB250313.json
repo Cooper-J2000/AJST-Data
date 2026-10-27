@@ -1,29 +1,38 @@
 {
   "transient_id": "GRB250313",
   "alias": [
-    "GRB 250313.89"
+    "GRB 250313.89",
+    "bn250313894",
+    "AT 2025ehi"
   ],
   "ra": 226.68692,
   "dec": -41.69456,
-  "T0": "2025-03-14T07:26:28Z",
-  "T0_ref": null,
+  "T0": "2025-03-13T21:27:38.850Z",
+  "T0_ref": "Fermi-GBM trigger 763594063 官方通告（https://gcn.gsfc.nasa.gov/other/763594063.fermi：21:27:38.85 UT，10.1σ）；GCN 39735 同值（Ttrigger=2025-03-13 21:27:38.85 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 39735（MASTER OT J150644.86-414140.4）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "GRB 250313.89 = Fermi-GBM trigger 763594063（bn250313894）= MASTER OT J150644.86-414140.4 = AT 2025ehi；与同日 GRB 250313A（Fermi 14:34:33.69）、GRB 250313B（SVOM/GRM 17:52:11.1）是不同事件。T0 原为 2025-03-14T07:26:28Z，系误取 GCN 39735 中 MASTER-OAFA 的观测开始时刻；现改为触发时刻 2025-03-13T21:27:38.85Z（Fermi-GBM 官方通告，10.1σ；GCN 39735 同值），差约 9h58m49s，属 T0 口径纠正而非爆发相对自动触发的偏移，故 T0_offset 留空。原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失效。位置取 GCN 39735 的 MASTER OT 坐标（J2000），TNS AT 2025ehi 记为 15:06:44.680 -41:41:40.70（差约 2.7″）；MASTER 未给 OT 定位误差，pos_error 留空；Fermi-GBM 通告定位 14h43m16s -45d40m、半径 8.42°（stat+sys）为暴的粗定位而非 OT 位置。来源未给出 long/short 分类，sub_tag 留空。GCN 39735：Clear（无滤光片）16.0 mag，mlim=18.9，OT 见于 38 帧，参考图 2025-03-02.26325 UT Clear 19.9m；原文未声明星等系统。测光检索（2026-10-26）：本工作区无 gcn/archive（改用 GCN 站事件页与逐号全文）；external/rssgrbag 0 行、external/grbsn_webtool 无此事件；GCN 事件页 GRB 250313.89 仅 1 篇（39735，含 1 个 Clear 探测）；TNS AT 2025ehi 仅发现报告（mag 16，无更多测光）；ADS/SciX 记录 1 条（2025GCN.39735....1K，即 GCN 39735；ADS 页 405/CAPTCHA、SciX 403 未能打开，数值以 GCN 原文核对）→ 补 1 行（GCN 39735 的 Clear 16.0 探测）。别名证据：GCN 39735 原文用名「GRB 250313.89」（该 Circular 主题/正文用此名）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi-GBM 触发时刻（trigger 763594063，2025-03-13T21:27:38.85Z）；原 T0=2025-03-14T07:26:28Z 系误取 GCN 39735 中 MASTER-OAFA 的观测开始时刻",
+    "t0_basis": "fermi_gbm_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
