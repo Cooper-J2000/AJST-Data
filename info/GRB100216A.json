@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB100216A",
-  "alias": [],
+  "alias": [
+    "bn100216422",
+    "GRB 100216AS"
+  ],
   "ra": 154.263,
   "dec": 35.524,
-  "T0": "2010-02-16T10:07:00Z",
-  "T0_ref": null,
+  "T0": "2010-02-16T10:07:00.009Z",
+  "T0_ref": "GCN 10428（Swift-BAT 触发 412522，10:07:00 UT）；亚秒取触发仪器官方目录 t0=2010-02-16T10:07:00.009（Swift/BAT GRB Catalog summary_general.txt 行 1198，swift.gsfc.nasa.gov/results/batgrbcat/，仓内快照 external/swift_bat）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 0.038,
-  "tag": [],
-  "pos_error": 5.0,
-  "pos_ref": "GCN 10435",
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180.0,
+  "pos_ref": "GCN 10428",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "审核链（Rusty-Harpoon@zcode 2026-10-28）：[身份] Swift/BAT 地面分析检测的短暴（onboard 未触发；GCN 10428 原文 At 10:07:00 UT, Swift-BAT detected GRB 100216A as a rate peak (trigger# 412522), but no source was found onboard；单峰持续 0.3 s，15–350 keV 能量积分流量 (4.7±3)e-8 erg/cm2）。同一事件亦被 Fermi/GBM 探测（trigger 288007622，GCN 10428 原文）。两路互证：① GCN 10428（触发时刻 10:07:00 UT、RA/Dec=154.263/+35.524、90% 包含 3 角分）；② Swift/BAT 官方目录 summary_general.txt 行 1198（T0=2010-02-16T10:07:00.009、T90=0.208 s、ground detected）。BAT 目录注记 Tentative detection，但仍在官方目录内且 GBM 目录有对应条目 bn100216422，未检索到撤回证据，保留条目。[T0] 取触发仪器官方目录亚秒值 2010-02-16T10:07:00.009Z（GCN 10428 秒级一致；GBM 目录 10:07:00.187Z 与 Swift 差 0.178 s，按「有 Swift 以 Swift 为准」不采用）；原库 bot 值 10:07:00Z 出处 gcn_llm:circulars_meta，已被本值取代（差 9 ms，亚秒级直接改进 T0）。[定位] ra/dec=154.263/+35.524 为 BAT 地面分析定位（GCN 10428，保留）；pos_error 原 5.0 角秒（pos_ref=GCN 10435）系误记——GCN 10435 的 5 角秒(90%) 属 XRT 在 BAT 误差圆内检测到的源 RA/Dec=154.25836/+35.56772（判为已知 X 射线源 1RXS J101702.9+353404，坐标与本源 BAT 定位不同、无变暗，非暴对应体），已改回 BAT 定位 90% 包含半径 3 角分=180 角秒（GCN 10428 明示 90% containment）；BAT 目录 Image_position_err=3.124 arcmin（约 187.4 角秒）并列备查。[红移] 原值 0.038（redshift_ref=gcn_llm:circulars_meta）系机器抽取失真：0.038 是 BAT 误差圆内亮星系 KUG 1014+357（=LEDA 86918=SDSS J101700.25+353118.9）的红移（z=0.038 GCN 10428；z=0.0378 GCN 10429），该星系仅为候选宿主（无余辉探测、成协未定论；Jeong & Im 2024 亦按 host candidate 处理并明言 physical associations remain undetermined），非暴红移，故 redshift 置 null、候选信息留此备查；host_galaxy 按提示词 §3.10 不建立。[分类] tag=grb；sub_tag=sgrb：t90=0.208 s（Swift/BAT 目录，15–350 keV，误差目录未给），按目录 t90 判 sgrb；GCN 10428 标题亦称 Short, hard；GBM 目录 t90=0.192±0.143 s（50–300 keV）并列备查。[别名] bn100216422（Fermi/GBM 目录 trigger name，external/fermi_gbm 快照）；GRB 100216AS（MPE/Greiner 目录用名，external/mpe_greiner 快照）。[X 射线] XRT 深场（T0+214.4 ks 至 249.2 ks）无渐暗源，其余位置 3σ 计数率上限 6e-4 ct/s（约 2.3e-14 erg/cm2/s，0.3–10 keV，GCN 10435）——X 射线不入库（§3.3）。[测光检索]（2026-10-28）：仓内 gcn/archive 全文检索 100216 / 412522 / 288007622 → 4 篇（GCN 10428/10429/10435/10442，逐篇全文核对）；external/rssgrbag/lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无 100216 条目；external/swift_bat、swift_grb、swiftgrbba、uvot_grb、fermi_gbm、mpe_greiner 快照有条目但仅目录参数/探测标记，无光变表；OpenAlex 全文检索 GRB 100216A 命中 13 条（4 条为上述 GCN，其余为样本/统计文献 Burns+2016、Burns+2021、Jeong & Im 2024、PBH 搜索 2025 等，均无本源测光表）；arXiv API 与 Crossref 无新增命中；TNS 不适用（GRB 无 TNS 条目，未查）。本源可用测光仅 Keck R>22 与 UVOT UVW2>22.2 两条上限，均已入 lc。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Jeong+2024",
+      "url": "https://doi.org/10.3847/1538-4357/ad6b2a",
+      "title": "Host Galaxy Properties of Gamma-Ray Bursts Involving Neutron Star Binary Mergers and Its Impact on Kilonovae Rates",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
