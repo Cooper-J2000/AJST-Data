@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-221229A",
-  "alias": [],
+  "alias": [
+    "IC221229A"
+  ],
   "ra": 31.9,
   "dec": 4.18,
-  "T0": "2022-12-29T07:25:27Z",
-  "T0_ref": null,
+  "T0": "2022-12-29T07:25:27.88Z",
+  "T0_ref": "GCN 33122",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 33122",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "中微子 alert（IceCube Astrotrack Gold，track-like，FAR=1.014/yr，~50% astrophysical purity；GCN 33122）。身份两路互证（2026-10-27）：① IceCube 官方通告 GCN 33122 精化位置 RA=31.90(+1.68/−1.55) deg、Dec=+4.18(+1.39/−0.84) deg（J2000，90% PSF containment），与本条 ra/dec 一致；② 独立来源同用此名与此位置——GCN 33124（BOOTES-2/TELMA）、GCN 33126（Fermi-LAT）、GCN 33127（IceCube 附加中微子搜索），另有 SIMBAD 条目 IceCube-221229A（otype=ev）。T0：原 bot 值 2022-12-29T07:25:27Z（t0_basis=meta_trigger，不可信）与官方通告一致但缺亚秒，按 GCN 33122 改为 2022-12-29T07:25:27.88 UT；GCN 33127 用 07:25:27.884 UTC（差 4 ms，整数秒一致）。定位误差：通告给 90% PSF 包含域但为非对称区间（RA +1.68/−1.55、Dec +1.39/−0.84 deg），无单一半径，故 pos_error 留空、置信水平按原文记 90。alias：IC221229A 为 <GCN 33126> 原文用名。tags.json 无中微子类目，tag/sub_tag 留空待维护者扩表（见 PR 待决事项）。测光检索（2026-10-27）：仓内 gcn/archive 本地不存在（记 0 篇）、external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData/ 按 IceCube-221229A/IC221229A/221229A 检索 0 命中；GCN 站事件页（gcn.nasa.gov/circulars/events/icecube-221229a）共 4 篇——GCN 33122 官方通告、GCN 33124 BOOTES-2/TELMA 光学上限（1 行已入库）、GCN 33126 Fermi-LAT >100 MeV 流量上限（能量段积分上限，非 Fν 测光，不入库）、GCN 33127 IceCube 中微子上限（非电磁测光）；文献检索：Crossref（query.bibliographic=IC221229A，无相关命中）、arXiv API 与 arXiv 站内全文检索（\"IC221229A\"/\"IceCube-221229A\"/\"221229A\" 均 0 命中）、OpenAlex title+abstract 与 fulltext 检索（0 命中）、SIMBAD TAP（仅事件条目、无测光）；IceCube alert 样本类文献抽查：HAWC ICRC2025（arXiv:2508.00090，PDF 全文逐页查无逐事件表）、HAWC（arXiv:2602.16818，全文无 IC22 系列事件）、DECam（arXiv:1907.07193）与 ASAS-SN（arXiv:2204.00500）均早于本事件 → 除 GCN 33124 外无可用测光，补 1 行。t0_note/t0_basis 改写，原值：t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=\"meta_trigger\"。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 中微子事件探测时刻（GCN 33122：2022-12-29 07:25:27.88 UT）",
+    "t0_basis": "GCN 33122",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
