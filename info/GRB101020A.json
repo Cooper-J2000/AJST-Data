@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB101020A",
-  "alias": [],
+  "alias": [
+    "GRB 101020A",
+    "BAT 436737",
+    "Swift 436737"
+  ],
   "ra": 189.607,
   "dec": 23.129,
-  "T0": "2010-10-20T23:40:41Z",
-  "T0_ref": null,
+  "T0": "2010-10-20T23:40:41.709060Z",
+  "T0_ref": "GCN 11357",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 11357",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 204.0,
+  "pos_ref": "GCN 11358",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy@代理，2026-10-27）：身份=Swift/BAT 触发 436737（GCN 11357 原文 At 23:40:41 UT the Swift BAT triggered and located GRB 101020A (trigger=436737)；官方 batgrbproduct 页 gcn.gsfc.nasa.gov/notices_s/436737/BA/ 与 external/swift_bat、external/swift_grb 目录快照同源，无同日孪生条目（GCN 站检索触发号仅 11357/11358 两篇）。T0：GCN 11357（触发仪器官方通告）整秒值 23:40:41 UT，亚秒 0.709060 取触发仪器官方目录快照 external/swift_bat（2010-10-20T23:40:41.709060Z）并与官方 batgrbproduct 页（UTC: 2010-10-20T23:40:41.709060 [includes UTCF correction]）一致；external/swiftgrbba 快照 41.000 为舍入；原 bot T0=23:40:41Z 整秒值系 meta_trigger 锚，本次补锚亚秒。T0_offset 不适用（无 >1 s 的触发时刻调整记录）。定位：ra/dec=189.607/23.129 为 GCN 11358 BAT 地面精析位（12h38m25.8s +23d07'44.1\"），误差 3.4 arcmin（radius，sys+stat，90% containment）=204″；原库 pos_error=180″ 系 GCN 11357 在轨位（189.566，+23.161，3 arcmin=180″）的误差与 11358 坐标错配，已改并加 pos_error_confidence=90。备查：batgrbproduct 自动地面位 189.5761/+23.1830±1.75′（与 external/swift_bat 快照 189.5764/23.18287 一致，自动流水线产物，证据弱于人工精析的 GCN 11358）。分类：t90=172.336±29.2958 s（15-350 keV，external/swift_bat 目录快照；GCN 11358 通告值 175.0±28 s；batgrbproduct 页 177.28±31.61 s），按目录 t90 判 lgrb。Sun 约束：Swift 因太阳约束在 2010-11-02 17:41 UT 前无法指向，此前无 XRT/UVOT 数据（GCN 11357 原文、external/swiftgrbba 快照 comment），故本源无 X 射线行。测光检索留证（2026-10-27）：①GCN 站（gcn.nasa.gov/circulars，检索覆盖正文，Telma 探针验证）'101020A' 命中 5 篇=11357/11358/11359/11360/11361，'436737' 另命中 11357/11358（无遗漏）；含测光/上限的 3 篇：11359（MASTER 偏振 3 行初报）、11360（BOOTES-2/Telma 上限）、11361（MASTER 终报 coadd 2 行）；②本 clone 无 gcn/archive 全文快照（目录为空，未查）；③external/ 各快照（swift_bat/swift_grb/swiftgrbba/uvot_grb/mpe_greiner）均为目录级参数无光变表，rssgrbag/grbsn_webtool 无该源记录；④ADS/SciX（2012MNRAS.421.1874G，Gorbovskoy+2012 五暴专文）：Table 7 给出 GRB 101020A 的 MASTER coadd 上限 2 行（V>14.9、V>18.5），VoR（OUP/DOI 10.1111/j.1365-2966.2012.20195.x）403（Cloudflare）未取到，取 arXiv:1111.3625v1 表 7 佐证；⑤TNS 不适用（无 AT/SN 命名）。结论：共补 4 行（GCN 11359 两行单偏振上限、GCN 11361/VoR 表 7 两行 coadd 上限），并按原文重锚 Telma 行；本 PR 同时建立文献级卡 audit/leads/papers/gorbovskoy2012.md（覆盖库内 5 源）。alias：GRB 101020A（GCN 11357 主题行原文用名）、BAT 436737 与 Swift 436737（external/swift_bat、external/swift_grb 目录快照 name_alt，触发号见 GCN 11357/11358）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@代理",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
