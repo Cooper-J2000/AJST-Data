@@ -1,35 +1,48 @@
 {
   "transient_id": "GRB000201",
-  "alias": [],
+  "alias": [
+    "GRB 000201",
+    "GRB 000201A",
+    "BATSE 7976"
+  ],
   "ra": 139.0367,
   "dec": 18.1036,
-  "T0": "2000-02-01T03:02:00Z",
-  "T0_ref": null,
+  "T0": "2000-02-01T03:02:09.913Z",
+  "T0_ref": "BATSE 7976 trigger_time=2000-02-01T03:02:09.913Z（external/batse 快照）；HEASARC GRB 000201A 记 03:02:09 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BATSE-CGRO",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 535（TAROT 光学暂现源 9h16m08.8 +18°06′13″；原文未给定位误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-27。身份：GRB 000201A = BATSE trigger 7976（external/batse：2000-02-01T03:02:09.913Z，T90=94.976±3.206 s，RA/Dec=140.07/15.91，error_radius=0.73°）；GCN 535 的 TAROT 光学暂现源位于 9h16m08.8 +18°06′13″（139.0367/18.1036），在 BATSE 误差圈内，作为本条目位置。T0：原值 2000-02-01T03:02:00Z 比 BATSE 触发早 9.9 s，已改为 03:02:09.913Z；T0_offset 留空。触发仪器：原 IPN 改为 BATSE-CGRO（BATSE 7976 触发；IPN 参与定位）。分类：BATSE T90=94.976±3.206 s（>20 keV）> 2 s，按目录 t90 判 lgrb，sub_tag=['lgrb']（非自算）。红移：无光谱/宿主信息，留 null。测光：GCN 535 的 TAROT 无滤光片探测（mag 15±1，T0+55 min，30 min 后消失）已入库 1 行；原行 time=0.0 错误，已改为 3300 s（T0+55 min），原文只给相对时刻、未给曝光/误差，time_err 留空；band=G（unfiltered）、mag_system 留空（原文未声明系统）、upperlimit=n。Kehoe+2001（LOTIS，astro-ph/0104208）对 GRB 000201 未发现新的光学对应体，与 TAROT 暂现源为短时标事件一致，作为研究论文登记。测光检索（2026-10-27）：GCN 站检索 000201 命中 1 篇（535 TAROT）；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；HEASARC/BATSE 目录用于身份与 T90；arXiv Kehoe+2001 已打开；TNS/ADS/SciX 无 token 或 0 篇；结论：补 0 行、修正 1 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 BATSE trigger 7976 时刻 2000-02-01T03:02:09.913Z（external/batse）；原 bot 值 03:02:00Z 偏早 9.9 s，已废弃",
+    "t0_basis": "BATSE trigger 7976",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
       "name": "Kehoe+2001",
+      "url": "https://doi.org/10.1086/321719",
       "title": "A Search for Early Optical Emission from Short- and Long-Duration Gamma-Ray Bursts",
-      "url": "https://ui.adsabs.harvard.edu/abs/2001ApJ...554L.159K",
-      "bibtex": "@ARTICLE{2001ApJ...554L.159K,\n       author = {{Kehoe}, Robert and {Akerlof}, Carl and {Balsano}, Richard and {Barthelmy}, Scott and {Bloch}, Jeff and {Butterworth}, Paul and {Casperson}, Don and {Cline}, Tom and {Fletcher}, Sandra and {Gisler}, Galen and {Hurley}, Kevin and {Kippen}, Marc and {Lee}, Brian and {Marshall}, Stuart and {McKay}, Tim and {Rykoff}, Eli and {Smith}, Don and {Vestrand}, Tom and {Wren}, Jim},\n        title = \"{A Search for Early Optical Emission from Short- and Long-Duration Gamma-Ray Bursts}\",\n      journal = {\\apjl},\n     keywords = {Gamma Rays: Bursts, Gamma Rays: Observations, Astrophysics},\n         year = 2001,\n        month = jun,\n       volume = {554},\n       number = {2},\n        pages = {L159-L162},\n          doi = {10.1086/321719},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0104208},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2001ApJ...554L.159K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
