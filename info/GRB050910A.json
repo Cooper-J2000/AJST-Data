@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB050910A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2005-09-10T01:19:31Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 050910A"
+  ],
+  "ra": 28.942,
+  "dec": 1.496,
+  "T0": "2005-09-10T01:16:19.240000Z",
+  "T0_ref": "HETE trigger 3924 notices",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1800,
+  "pos_ref": "HETE trigger 3924 notices",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：HETE-2 WXM 触发（trigger #3924，TRIGGER_SOURCE「Trigger on the 6-80 keV band」，GAMMA_RATE 373 cnts/s @5.200 s；GCN/HETE 通告包 gcn.gsfc.nasa.gov/other/3924.hete，2005-09-10，3 份通告：S/C_Update seq2（01:16:37 UT）、S/C_Last seq3（01:19:54 UT）、GndAna seq4（02:32:12 UT），GRB_TIME 一致 = 4579.24 SOD {01:16:19.24} UT；GSFC hete_grbs.html 官方触发表同值）。T0 修正：bot 原值 2005-09-10T01:19:31Z（t0_basis=meta_trigger，零锚）实为 GCN 3959 第一合并窗结束时刻 01:19:31.50 的截断（Issue #84 形态），改为触发时刻 01:16:19.24 UT；交叉验证：GCN 3959 四个相对锚（GRB+25s/+192s/+221s/+2931s）反算触发时刻 = 01:16:19.86/19.50/19.51/19.63 UT，与通告值差 0.26–0.62 s，在相对时长整秒截断精度内一致。坐标：S/C_Update 与 S/C_Last WXM 位置一致 = 28.942/+1.496（J2000；current 29.015/+1.523、1950 28.298/+1.251），GndAna 不给位置（自述「There is no position known for this trigger at this time」）。pos_error=1800″=30′ 半径（通告 WXM_MAX_SIZE=60.00′ 直径，圆盒——原文明示「WXM error box is circular; not rectangular」；直径→半径换算）；几何自洽：GCN 3959 自述 TAROT 视场 1°×1° 已覆盖「the entire field」，若 60′ 为半径（直径 2°）则不可能被 1°×1° 视场覆盖，直径读法成立）；WXM_LOC_SN=4、image SN X=2.7/Y=4.0、LC SN X=5.2/Y=2.0；置信水平原文未标注，pos_error_confidence 留空。权威否定（§3.7）：HETE 地面分析（GndAna，seq 4）官方结论逐条「Definitely not a GRB.」「There is no position known for this trigger at this time.」「Burst_Invalidity flag is true.」「Particle event.」；独立证据排查全部为空——IPN master burst list（2010 年版 masterli.txt，Wayback 2010-06-19 快照，覆盖含 Swift/MESSENGER/Suzaku/INTEGRAL/AGILE/Fermi 列）2005-09-10（DOY 253）全天唯一事件为 17:29:59 UT（= HETE trigger 3926，非本事件；列对齐复核 HET=YES、SUZ=RI），01:16:19 UT 无任何事件（前一条目为 DOY 251 05:42:31）→ 无他星记录；external 快照（HEASARC GRBCAT、MPE Greiner、Konus-Wind 等）grep「050910」均无命中；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-050910a，2026-10-27 取）仅 1 篇通告（GCN 3959，TAROT 光学非探测）；文献检索命中 Besson+2007（arXiv:astro-ph/0605480；VoR: Astropart. Phys. 26, 367-377, DOI 10.1016/j.astropartphys.2006.07.008，经 arXiv journal-ref 与 Crossref 双路核实对应）——RICE 中微子限文样本表列「050910A」（livetime/阈值表，无测光、无定位数值）。按 §3.7 在 PR 待决事项报维护者删除（先例 GRB090705/GRB040606，reason_code=retracted），条目数据保留待裁；tag/sub_tag 保持空（GndAna 判定非 GRB，不宜标 grb）。测光检索留证（2026-10-27）：仓内 gcn/archive 本地未获取；GCN 站事件页 1 篇（GCN 3959，两窗光学上限，均已入库）；external/rssgrbag、external/grbsn_webtool 无该源；external 目录快照 grep 无命中；IPN 主表如上；Web 文献检索另命中 GCN 3959 本身（Klotz+2005，2005GCN..3959....1K）→ 补 1 行（第一合并窗 R>18.9 上限）并重锚 1 行（第二合并窗 R>19.3）。alias「GRB 050910A」为 GCN 3959 的 eventId 原文用名（subject/正文写作小写「GRB 050910a」；库内 98 例空格变体先例，非拼接伪形）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 HETE-2 触发时刻（通告包 trigger 3924 全部 3 份通告 GRB_TIME=4579.24 SOD=01:16:19.24 UT，fsy 2026-10-27 修正）；bot 原值 2005-09-10T01:19:31Z（t0_basis=meta_trigger）实为 GCN 3959 第一合并窗结束时刻 01:19:31.50 的截断",
+    "t0_basis": "HETE trigger 3924 notices",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Besson+2007",
+      "title": "Limits on the transient ultra-high energy neutrino flux from gamma-ray bursts (GRB) derived from RICE data",
+      "url": "https://doi.org/10.1016/j.astropartphys.2006.07.008"
+    }
+  ],
   "host_galaxy": null
 }
