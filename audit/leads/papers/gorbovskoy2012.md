@@ -19,7 +19,7 @@
 - MASTER coadd 上限表（Table 2/7）末列 Coadded number 为合并帧数；两垂直偏振筒（V+P1/V+P2）同窗同时曝光（"MASTER II have 2 images per exposition time"）。
 - 定标：§3.2——无滤光片星等以 Kislovodsk MASTER 历元零点改正；偏振双筒相对精度约 2%；偏振改正基于标准星双偏振均值匹配。星等系统原文未声明（接手者按 §3.3 处理）。
 - 银消光（NED EGC，图 12 用）：100902A AV=1.037、100905A AV=0.191、101020A AV=0.051。
-- 原文笔误：GCN 11359/11361 与本文 §2.5 均把 GRB 101020A 误写作 "GRB 101008A"（同句引 Saxton et al. 2010 = GCN 11357，即本源）。
+- 原文笔误：GCN 11359/11361 把 GRB 101020A 误写作 "GRB 101008A"（GCN 两篇逐字证实；同句引 Saxton et al. 2010 = GCN 11357，即本源。核查注：arXiv:1111.3625v1 全文无 "101008" 字样、§2.5 原句写 "GRB 101020A (Saxton et al. 2010)"，论文是否同样笔误待 VoR 取得后核，VoR OUP 403 未得）。
 
 ## 涉及源一览
 
