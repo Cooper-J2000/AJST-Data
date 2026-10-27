@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB040825A",
-  "alias": [],
-  "ra": 344.8458,
-  "dec": -11.1289,
-  "T0": "2004-08-25T16:21:37Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 040825"
+  ],
+  "ra": 344.74583333,
+  "dec": -10.93333333,
+  "T0": "2004-08-25T03:30:30Z",
+  "T0_ref": "GRBCAT 5785（HETE Trigger Summaries）；HETE MIT 官方页 U11553（UTC=20040825_033030）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 420,
+  "pos_ref": "MPE Greiner 目录快照「GRB 040825」条目（HETE X-ray position 22h58m59s -10°56'，Error 7'）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：HETE U11553（GCN 2660「HETE alert 11553」、GCN 2664「HETE Ground Analysis, trigger 11553」、GCN 2686「refined 7' error-circle (HETE#11553-2)」；HETE MIT 官方页编号 U11553，U=untriggered）。与无后缀条目 GRB040825 为同一事件（该条建议删除、见 PR #355 待决①）；当日另一事件 GRB040825B=HETE 3510（GCN 2662、触发 16:21:37 UT、22h46-47m -02°）为独立 XRF、勿混。T0=03:30:30 UT：GRBCAT 5785 time=53242.1461805556（Trigger time，ref「HETE Trigger Summaries (2003)」）；HETE MIT 官方页 U11553「Trigger time is UTC=20040825_033030」（SOD 12630 s）同值；GCN 2677（Pi of the Sky：2:24 UT=触发前 1h06m、9:35 UT=触发后 6h04m）与 GCN 2686 勘误后 t_b+ 值独立自洽。bot 原 T0=2004-08-25T16:21:37Z 系误植同日 B 暴（HETE 3510）触发时刻；原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 已按 §3.10 改写、原值留存本 comment。位置：bot 原 ra=344.8458/dec=-11.1289 为 GCN 2666 的 43arcmin 视场指向中心（GRBCAT afterglow 表 record 2495 自注「The observation is center in this position」）、非源定位；已更正为 MPE Greiner 快照「GRB 040825」条目 HETE X-ray position 22h58m59s -10°56'（Error 7'=420arcsec）＝GCN 2686 refined 7' error-circle (HETE#11553-2)；来源未标注置信水平、pos_error_confidence 留空。sub_tag=XRR：HETE MIT 官方页评估「GRB040825A XRR detected during SAA passage, therefore untriggered」（触发仪器官方来源分类、非自算）；GRBCAT 5785 主表 t50/t90 全空、flux 表无 5785 记录（flux_flag=N）、GCN 亦无持续时长数值、无目录 t90 可判 lgrb/sgrb（2026-10-26 裁定禁止自算）。Trigger_Instrument=HETE-2（GRBCAT observatory=HETE2；MIT 页「Triggering instrument was unknown」——SAA 过境未触发、地面分析收录；WXM 定位见 GCN 2666）。alias「GRB 040825」＝MPE Greiner 目录条目名（同型先例 GRB050813A alias「GRB 050813」）；注意 GCN 2657 标题的无后缀用名经 GCN 2658 更正实指 040825B、不作本源依据。GRBCAT afterglow 表 6 条（record 2492-2497）已逐一与 GCN 原文核对（2496 LCO obs_time=53242.0167 早于触发 3.2 h、与 GCN 2677 系列起点 2:24 UT 矛盾，系第 4 处疑似 GRBCAT 错误；2497 Danish 仅收第一历元、与 2493 同类良性）：record 2492 MASTER 行 MJD 53242.0059027778 与 GCN 2660 自述 16.8h after HETE alert（=MJD 53242.846）矛盾、疑 GRBCAT 换算错误（按 §3.9 不改快照、PR 报告）；record 2493 MJUO 仅收第一历元且用窗口起点 25.4028（非中点）；record 2495 MIYAZAKY 记 MJD 53243.0313425926=Aug 26 00:45 UT（日本白天、光学观测不可能；原文 12:45:08 UT 的小数应为 0.5313）疑 GRBCAT 解析错误。测光检索留证（2026-10-27）：仓内 gcn/archive 本地未获取（0 文件）；external/rssgrbag、external/grbsn_webtool、external/konus_wind、external/batse、external/saxgrbmgrb 均无 040825 记录；GCN 站事件页 grb-040825a 全集 9 篇（2657/2660/2661/2664/2666/2668/2677/2686/2687，2657 经 GCN 2658 更正属 040825B、已按其处置）逐篇打开核对；arXiv API 查询「GRB 040825A」「GRB040825A」均 0 条。本 PR 补 3 行上限（Pi of the Sky/Miyazaki/MASTER）、重算既有 5 行时间锚点；Mt John MOA 两历元上限（GCN 2661：midobs 25.4028-25.4346 4x300s R~21.1 约 75% North 覆盖；25.5292-25.5426 2x300s R~20.7 约 25% South）因滤光片为 MOA 宽 R（原文自述 similar to Ic）、filters.json 无对应键且无透射曲线数据、按 §3.3 两车道规则不入库（PR 待决③）；GCN 2668 为 Henden 定标场测光表（ftp 发布）、非本源测光、不入库。",
+  "sub_tag": [
+    "XRR"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为触发时刻（GRBCAT 5785 Trigger time=53242.1461805556=03:30:30 UT；HETE MIT 官方页 U11553 同值）",
+    "t0_basis": "trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
