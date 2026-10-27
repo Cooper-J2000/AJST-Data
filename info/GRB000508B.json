@@ -1,29 +1,40 @@
 {
   "transient_id": "GRB000508B",
-  "alias": [],
-  "ra": 253.58616,
-  "dec": -20.41683,
-  "T0": "2000-05-08T19:10:50Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000508B",
+    "BATSE 8098"
+  ],
+  "ra": 253.54,
+  "dec": -20.38,
+  "T0": "2000-05-08T19:10:50.873Z",
+  "T0_ref": "BATSE 8098 trigger_time=2000-05-08T19:10:50.873Z（external/batse 快照）；GCN 665/IPN 记 19:10:50.88 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BATSE-CGRO",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1512,
+  "pos_ref": "BATSE 8098 / HEASARC GRB 000508B（253.54/-20.38，error_radius=0.42°）；GCN 665 的 IPN 圆环（半径 76.512°±0.161°）仅作备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-27。身份：GRB 000508B = BATSE 8098（external/batse：2000-05-08T19:10:50.873Z，T90=136.192±4.238 s，RA/Dec=253.54/-20.38，0.42°）；GCN 665 的 IPN/RXTE 定位给出触发 19:10:50.88、圆环中心 253.498/-20.504、半径 76.512°±9.67′，与 BATSE 定位一致。T0：原值 2000-05-08T19:10:50Z 为整秒；亚秒 .873 取自 BATSE 目录，GCN 665 记 50.88，按 §3.2/§3.8 直接改进 T0，T0_offset 留空。触发仪器：原 IPN 改为 BATSE-CGRO（BATSE 8098 触发；IPN/RXTE 参与定位）。位置：原 253.58616/-20.41683 与 BATSE 253.54/-20.38 差约 0.07°；改用 BATSE 目录值 253.54/-20.38、pos_error=1512″（0.42°），原文未标置信水平，pos_error_confidence 留空。分类：BATSE T90=136.192±4.238 s（>20 keV）> 2 s，按目录 t90 判 lgrb，sub_tag=['lgrb']（非自算）。红移：无光谱/宿主信息，留 null。测光：原 lc 行的 time=115846 s 对应 GCN 670 的 NOT I 波段 May 10.14 UT，但 band=R、mag=22.5 来自 R 波段观测，属时间/波段混搭；现改为 GCN 668 的 FLWO 1.2 m R 波段（May 10 06:39 UT 起、600 s 曝光）R<22.5 上限：time=06:39+300 s=127989.127 s、time_err=300 s；band=R、upperlimit=y、mag_system 留空（原文未声明）、telescope=FLWO 1.2m、instrument=FLWO、reference=GCN 668、source=fsy。GCN 670 的 NOT I 与 DK R 观测（May 10.14/.17/.38、May 12.25）因未给逐历元定值/上限，仅在此记录、不另入库。测光检索（2026-10-27）：GCN 站检索 000508B 命中 3 篇（665/668/670），逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；BATSE/HEASARC 目录用于身份与 T90；arXiv/ADS/SciX/TNS 无 token 或 0 篇；结论：修正 1 行、补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 BATSE trigger 8098 时刻 2000-05-08T19:10:50.873Z（external/batse）；原 bot 值 19:10:50Z 为整秒，已补亚秒",
+    "t0_basis": "BATSE trigger 8098",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
