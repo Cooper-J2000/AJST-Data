@@ -3,27 +3,33 @@
   "alias": [],
   "ra": 55.6208,
   "dec": 17.1541,
-  "T0": "1998-12-20T21:52:25Z",
-  "T0_ref": null,
+  "T0": "1998-12-20T21:52:25.893650Z",
+  "T0_ref": "GCN 159（触发仪器 BeppoSAX/GRBM 官方通告）：The BeppoSAX Gamma Ray Burst Monitor was triggered on 1998 December 20, 21:52:25.89365 UTC（触发仪器自给亚秒）；RXTE/ASM 硬 X 射线耀发始于 within a few seconds of 21:52:21 UTC（探测起点非触发，备查）；GRBCAT 21:52:32Z 系 Earth Crossing Time（不同参考点，备查）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BeppoSAX/GRBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.2,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "GCN 170（VLA）：射电余辉 J034228.94+170914.6（RA=3h42m28.94s±0.01s Dec=+17d09′14.6″±0.2″，0.2 arcsec 1-sigma）——库内 ra/dec=55.6208/17.1541 与之相距约 0.8″（计算），系同一定位（bot 抽取自该通告）；WSRT（GCN 168）/NTT（GCN 179）/Keck（GCN 176）位置互证；IPN 误差框备查：GCN 160 三角环带（中心 347.373/+7.336，r=67.134°±0.020° 3σ）与 RXTE/ASM 框（5.0′×60′，中心 03h43m01s+17°09′）交出 2.4′×4.5′（约 11 平方角分）四角框",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-26）：[身份] BeppoSAX/GRBM 触发（GCN 159：21:52:25.89365 UTC，~15 s）+RXTE/ASM 硬 X 射线耀发（GCN 159：~21:52:21 起 ~20 s，5.0′×60′ 框）+Ulysses/Konus IPN 三角（GCN 160：2.4′×4.5′ 框）——三仪器同一天源互证；GRBCAT 行（ECT 21:52:32Z，IPN/ULYSSES/BeppoSAX）；MPE 表行（ASM/Uly X-ray position 03h42m34s+17°09′，2′×4.5′，IPN=y）。[射电余辉证认] GCN 168（WSRT）与 GCN 170（VLA）在误差框边缘探测同一射电源 J034228.94+170914.6，VLA 两历元流量上升（4.86 GHz 200→540 μJy），原文建议其为 GRB 981220 射电余辉——库内 ra/dec 即该余辉定位（0.2″/1σ）。[T0] 原库 21:52:25Z 系 BeppoSAX 触发值整秒截断，补全亚秒 21:52:25.893650Z（触发仪器官方值；RXTE ASM 耀发起 21:52:21 与 GRBCAT ECT 21:52:32 备查）。[定位] 原 pos_error/pos_ref 空，库内 ra/dec=55.6208/17.1541 实为 GCN 170 VLA 射电余辉定位（0.2″/1σ）——补 pos_error=0.2、confidence=1sigma、pos_ref=GCN 170；原 Trigger_Instrument=IPN 更正为 BeppoSAX/GRBM（IPN 系三角定位方法非触发仪器）。[分类] tag=grb 原有；sub_tag 留空：时长 ~15 s（GRBM）/~20 s（ASM）无显式 long/short 判词、GRBCAT t90=None、无目录 t90 可引（2026-10-26 裁定口径下无判据）。[伽马备查] GCN 159（GRBM）：40-700 keV 注量 (1.0±0.2)e-05 erg/cm2、峰流量 ~10±2 ph/cm2/s；GCN 167（GRBM 精化）：三峰结构、时变谱、40-700 keV 谱指数 2.1±0.3、峰流量 (2.4±0.4)e-6 erg/cm2/s、注量 (1.0±0.2)e-05 erg/cm2（更正 159 笔误）；RXTE/ASM：1.5-12 keV 峰流量 (1.2±0.1)e-07 erg/cm2/s。[宿主候选] GCN 176（Keck R=26.7±0.7 弱源）与 GCN 179（NTT B~24 边缘延展源）位置与射电余辉一致，原文均未定论（deeper imaging required）——按 §3.10 不建 host_galaxy，候选备查。[测光检索（2026-10-26）] 仓内 gcn/archive（45889 篇）grep+python 双路扫描「981220」全形态：命中 25 篇（GCN 159-179 段 14 篇+后续 186/187/191/192/193/194/196/250/269/270/287 共 11 篇，全部属本源）；入库 26 行：射电探测 6（WSRT 4.88GHz 260±90/200±50 μJy、VLA 4.86GHz 200±45/540±40、8.46GHz 370±43/460±36 μJy）+射电上限 1（WSRT 1.38GHz <200 μJy 4σ）+光学探测 2（Keck R=26.7±0.7、NTT B~24 边缘）+光学上限 9（NTT R>23.5/I>23、Steward VR>19.5、Palomar R>22.7、Yale V=22.0 变源限、USNO I=22.6 两晚（原报 I=24.5 经 GCN 194 定标更正：偏暗 1.945 mag，采更正值；取代 GCN 164/166 初步 I=22 与 GCN 171 原报值）、Bologna R~22/I~19.7）；GCN 162 的 VR 宽波段按 band=R 注记；GCN 179 的 B/I 两行时间经 GCN 193 更正为 Dec 24.04-24.07（本 PR 采更正值）；GCN 192 NOT/Danish R 上限 2 行、GCN 186 Tautenburg Gunn z 上限 1 行、GCN 187 SCUBA 850 μm（352.64GHz）测量 1 行、GCN 191 Palomar COSMIC V/R/I 2σ 上限 3 行、GCN 196 Keck J=26.4±0.3 探测 1 行（1999-01-14，源 J 变暗支持余辉成分）均补入；external/rssgrbag 0 命中、external/grbsn_webtool 无该源；arXiv API all:「GRB 981220」0 命中；ADS/SciX API 无 token 实测 401；TNS 不适用（1998 年）→ 本 PR 补 26 行（11 探测+15 上限）。[关联性争议披露] GCN 270（精化 IPN 环带：Ulysses-BeppoSAX 三角，中心 347.398/+7.340，r=67.118°，3σ 半宽 0.015°）：射电源 J034228.94+170914.6 位于环带中心线外 0.027°、outside it（原文 with some certainty incompatible with the GRB）；GCN 269/287：75 天射电监测流量不衰减、VLBA 见 core-jet 形态——均质疑 GCN 168/170 的余辉证认（更可能系 unrelated AGN/背景源）。库内 ra/dec 仍采该源定位（bot 原值出处即 GCN 170），pos_ref=GCN 170 记录定位出处不变，但争议如实披露。[更正通告采值] GCN 193 更正 GCN 179 的 B/I 观测时间（Dec 23.04-23.07→24.04-24.07，且 B~24@Dec 24.05 与 GCN 191 B≥25.4@Dec 24.2 合看意味 ~3.5 h 内 >1 mag 变光——该源更可能系余辉成分而非宿主）；GCN 194 更正 GCN 171 定标（I=24.5→22.6）；两处本 PR 均采更正值。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 BeppoSAX/GRBM 触发时刻（GCN 159 亚秒值 21:52:25.89365 UTC）；Trigger_Instrument 由 IPN 更正为 BeppoSAX/GRBM（IPN 系定位方法非触发仪器）；原值保留于 comment",
+    "t0_basis": "GCN 159（BeppoSAX/GRBM 触发通告亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-26"
+    }
   },
   "articles": [],
   "host_galaxy": null
