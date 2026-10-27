@@ -1,29 +1,35 @@
 {
   "transient_id": "GRB051215",
-  "alias": [],
+  "alias": [
+    "GRB 051215"
+  ],
   "ra": 163.139,
   "dec": 38.626,
   "T0": "2005-12-15T00:39:49Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 4352（Swift/BAT trigger 172767 触发时刻 00:39:49 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 0.145,
-  "tag": [
-    "grb"
-  ],
-  "pos_error": null,
-  "pos_ref": null,
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": null,
+  "tag": [],
+  "pos_error": 180,
+  "pos_ref": "GCN 4352",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "身份：Swift/BAT 触发 172767。库中坐标 163.139/38.626 即 GCN 4352（Holland et al.，2005-12-15T01:32:29Z）的 BAT 星载计算位置「RA,Dec 163.139d,+38.626d {10h 52m 33s,+38d 37' 34\"} (J2000)」；SIMBAD 交叉名唯一为 GRB 051215（类型 gB，无坐标、无红移记录）。alias「GRB 051215」为 GCN 4352 subject 原文用名（「GRB 051215: Swift detection of a possible burst」）；GCN 4351 尾部 [GCN OPS NOTE(15dec05): Per author's request, the 051214 was changed to 051215.] 说明首用名 GRB051214 系作者要求改名，不另立源、不收该形为 alias。T0 核实：GCN 4352 给触发时刻 00:39:49 UT；Swift/BAT 触发产品页 gcn.gsfc.nasa.gov/notices_s/172767/BA/（batgrbproduct v2.41）给「BAT Trigger Time: 156299989.088 [s; MET]」与「UTC: 2005-12-15T00:39:49.191440 [includes UTCF correction]」，两路一致 ⇒ 库中 T0 正确，未出现 heasarc_grbcat 导入的 ~7 小时时区伪影（本页时间本以 UTC 计），故不改 T0；按《提示词》§3.2/§3.8「只写来源给到的精度、不自行补亚秒」并取优先级①（触发仪器官方 GCN Circular）保留整秒值，亚秒备选值 00:39:49.191440（差 191.44 ms ≥ 60 ms）在此备查并已写进 PR 说明。T0_offset 保持 null：这是导入/历元层面的核查，不存在已确认的爆发时刻相对自动触发的 >1 s 真实偏移。权威否定（§3.7，触发被撤回且无任何独立证据）：GCN 4355（Krimm, Barthelmy, Cummings & Markwardt，2005-12-15T03:49:08 GMT，subject「Swift Trigger 172767 is not a GRB」）原文「The Swift-BAT trigger (trigger=172767) at 00:39:49 UT on 15 Dec 2005 (reported in GCN Circular 4352, Holland et al.) is not due to a GRB or any other astrophysical source. Using the full event-by-event data from the recent telemetry downlink, all 42 events in the trigger occurred within a single 100 microsec bin. This trigger was due to a cosmic shower event in BAT.」；独立证据排查全为空：GCN 4352 自述「The TDRSS lightcurve is consistent with noise which means it is either a weak short burst (less than ~0.1 sec) or a cosmic ray event」、XRT「show no signficant X-ray emission in the field」且星载质心未收敛（无 X 射线定位）、UVOT 200 s V 找场图「no new source … to a limiting magnitude of V=19.3」（仅上限）；通告目录 gcn.gsfc.nasa.gov/notices_s/172767/ 只有 BA 子页（同路径 /XRT/、/UVOT/ 均 404）；GCN 事件页 grb-051215 只有 4351/4352/4353/4354 四篇、无后续探测通告。按 §3.7 审核员不自行删除条目与 lc 行（全部保留），tag/sub_tag 置空（不宜标 grb），并在 PR「待决事项」报维护者删除（info+lc+audit/denied.tsv，建议 reason_code=retracted；先例 GRB090705/GRB171013A/GRB191025A/GRB200821A 已入 denied.tsv，GRB040606/GRB050910A 为同类待裁）。位置：pos_error=180 角秒（=3 角分半径，GCN 4352 原文「an uncertainty of 3 arcmin (radius, 90% containment, stat+sys)」，原文明示置信水平故 pos_error_confidence=90，pos_ref=GCN 4352）；并列备查（§3.9）：BAT 产品页地面 pre-slew 位置 RA 163.091571/Dec 38.725341、±8.1454216 角分（estimated 90% radius based on SNR）与 ±7.0455632 角分（formal 1-sigma fit error）、SNR 1.519894；同页飞行位置 RA 163.138835454615/Dec 38.6261488448551（与库中坐标在 0.001° 内一致）。红移：原值 0.145、原 redshift_ref=「gcn_llm:circulars_meta」（bot 内部标记、非可溯源引用）⇒ 不成立，redshift/redshift_type/redshift_ref 全部置 null。依据：GCN 4353（Cool, Eisenstein, Hogg & Blanton，SDSS 爆发前现场数据）原文「Among the spectra, there are 4 galaxies at the same redshift z=0.145. Most likely, this is the redshift of the cluster noted in Ofek and Gal-Yam (GCN 4351)」——z=0.145 是 burst 位置 6′ 内 4 个星系的光谱红移、被作者判读为星系团 NSC J105231+383822（Gal et al. 2003 AJ 125, 2064；GCN 4351 给该团测光红移 0.09）的红移，从未作为本触发的红移；SIMBAD 该天体 Redshift 行为空；其 VoR Cool+2006（PASP 118, 733-739, DOI 10.1086/503334「SDSS Preburst Observations of Recent Gamma-Ray Burst Fields」）正文在 IOP 付费墙后，本次只取到摘要、未据以取值。触发既被否定，亦无宿主证认，host_galaxy 保持 null（GCN 4351 的 0.9 角分邻近星系团不构成宿主证据）。分类：不判 lgrb/sgrb（sub_tag 留空）。备查物理量（不参与判定）：BAT 产品页 T90=0.38400000333786 s（误差栏空白，tstart 0 / tstop 0.384 s 相对 TRIGTIME；同页 50-300 keV、64 ms 光变的 T90=0.000000 s；T100=T50=Peak=0.384 s），页面自动标注「Where From?: (*SHORT BURST*)」，GCN 4351 称「apparently short burst」；因 42 个事件全落在同一 100 μs 箱内（GCN 4355），该 T90 是宇宙簇射产物，§3.9 的「目录 t90 判据」以事件真实存在为前提，故不用它开 sub_tag；另有 Image S/N Ratio 33428（Image Trigger?: NO）、Rate S/N Ratio 9.79795897113271、GRB Indicated?: YES [by BAT flight software]、Catalogged Source?: NO、15-150 keV 幂律谱能量注量 1.72957e-09 erg/cm2（-1.72957e-09/+1.00331e-08）。原 bot extra_data 时间基准说明为 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」（Issue #68 的零锚形态，且「真实触发时刻」在本源已被 GCN 4355 否定），已改写为以 GCN 4352 为锚，原值保留于此备查。勘误链：本行测光无数值勘误（不存在改写 V=19.3 的更正通告；GCN 4355 只否定触发本身，不更正 4352 的测光），故 lc.reference 仍指 GCN4352（沿用库内无空格格式）。测光检索留证（2026-10-27）：仓内 gcn/archive 本 clone 未获取（根目录无 gcn/，离线全文检索无法执行，已确认）；external 目录快照 17 个 normalized.jsonl（合计 24375 行，含 swift_bat 1668、swift_grb 872、heasarc_grbcat 5831、uvot_grb 626、swiftgrbba 2036、mpe_greiner 2948、rssgrbag 304 等）grep「051215」「2005-12-15」均 0 命中，grep「172767」仅命中 grbsn_webtool/GRB980425-SN1998bw 光谱 JSON 的巧合数字串，坐标 ±1° 匹配亦 0 命中；external/rssgrbag/lightcurve.jsonl 140 行、external/grbsn_webtool/SourceData 63 个事件目录内无本源；GCN 站：事件页 grb-051215 命中 4 篇（4351/4352/4353/4354）＋编号 4340-4400 全文扫描命中 5 篇（多出 4355 否定通告，其 subject 不含源名故事件页未挂），其中含测光数值的仅 GCN 4352 的 1 个 V 波段上限；GCN 4354（TNG/NICS）给 J 10 min（mean time Dec 15.087 UT）与 Ks 10 min（Dec 15.099 UT）成像、覆盖 3′ BAT 圆约 80%，但原文未给 burst 位置的任何星等或上限数值（只列两个不在 SDSS 目录中的新对象坐标、无亮度）⇒ 无可入库值（§7 禁估算）；SIMBAD 该源文献 4 条（3 条 GCN ＋ Cool+2006 VoR，正文不可达）；arXiv API all:051215 命中 0 条；TNS 检索页返回 403（反爬，未取得可核查结果）。结论：无可用新增测光 ⇒ 补 0 行，仅按 UVOT 口径重锚既有 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT trigger 172767 的触发时刻 2005-12-15T00:39:49 UT（GCN 4352 与 BAT 触发产品页 UTC 2005-12-15T00:39:49.191440 一致；fsy 2026-10-27 核实，未见 ~7 小时时区伪影）。注意：该触发已由 GCN 4355 判定非 GRB（BAT 宇宙簇射），此 T0 只是触发时刻，不是真实爆发时刻。bot 原值为 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」。",
+    "t0_basis": "GCN 4352（Swift/BAT trigger 172767）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
