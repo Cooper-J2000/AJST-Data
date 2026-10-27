@@ -1,28 +1,56 @@
 {
   "transient_id": "GRB040810",
-  "alias": [],
+  "alias": [
+    "GRB 040810",
+    "H3489"
+  ],
   "ra": null,
   "dec": null,
-  "T0": "2004-08-10T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2004-08-10T14:15:35Z",
+  "T0_ref": "HETE-2 触发 H3489 触发时刻 UTC=20040810_141535（触发仪器官方暴页 https://space.mit.edu/HETE/Bursts/GRB040810）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "GRB 040810 = HETE-2 触发 H3489（MIT 官方暴页：Fregate 触发 2004-08-10 14:15:35 UT，5–120 keV，自动拟合时长 9.3 s 仅为前兆段）；Konus-Wind 14:15:43.177 UT 亦触发（GCN 2641），Mars Odyssey/HEND 与 RHESSI 参与 IPN（GCN 2646）。审核 2026-10-27 Rusty-Harpoon@zcode。T0：bot 原值 2004-08-10T00:00:00Z（t0_basis=meta_trigger，t0_note=「t0 为 meta trigger-time（真实触发时刻）」）为占位失真，改取触发仪器（HETE-2）官方暴页触发时刻 14:15:35 UT；备查：Greiner 目录（MPE grb040810.html）给 14:15:35.9 UT，Hurley+2011（ApJS 197,34）表1 给地球穿越时 14:15:36 UT，Konus-Wind 触发 14:15:43.177 UT（GCN 2641，不同航天器口径）。定位：无可用圆定位，ra/dec/pos_error 置 null（参照同类 HETE 姿态失效情形的保守处置）——HETE WXM 圆（Seq4 RA 358.532°、Dec −35.074°，直径约 60′，Greiner 目录）因姿态不确定被 Hurley+2011 正文明确省略（\"We have omitted the HETE error circle coordinates for this burst\"）；但 Hurley+2011 表5（arXiv 印刷表与 VizieR J/ApJS/197/34 table5 第 120 行）实际列有该暴 HETE 列 RA=358.532/Dec=−35.074/R=1.000°（恰为 Seq4 WXM 圆坐标，与正文自相矛盾，且表中 R=1.000° 与 GCN Seq4 的 60′ 直径差一倍）——正文与表格矛盾已记档，ra/dec=null 的实质结论不受影响（该圆与 IPN 环不相交、姿态不可信）（「the HETE attitude could not be determined precisely」）；IPN 环（环心 332.624°,−12.452°，R=34.105°±0.014°，Hurley+2011 表5/VizieR J/ApJS/197/34；GCN 2646 另给第二环 309.285°,−21.748°，R=46.199°±1.815°）与 GCN 2646 的 IPN∩WXM ~90 平方角分误差盒（角点 RA 359.002°–359.788°、Dec −36.244° 至 −37.043°）均非圆定位；heasarc_grbcat 快照坐标 359.998,−35.686（region=annulus_int）为环交割相关坐标、非源定位。分类：lgrb——Pélangeon+2008（A&A 491,157）称「this long and intense burst」（并因仅前兆被 HETE 探测而将其剔出样本），GCN 2646 称「long, intense event」，Konus-Wind 测得持续 124 s（GCN 2641）。alias：「H3489」为 HETE 官方触发号用名（GCN 2641/2646 「=H3489」；Hurley+2011 表1）。测光检索（2026-10-27）：GCN 站按「GRB 040810」「GRB040810」「H3489」检索共 3 篇（2639 光学上限、2641 Konus-Wind 测谱、2646 IPN 定位，无其余测光）；SIMBAD 该源 13 条文献逐条排查：Buffington+2006（SMEI）表2 两条有锚点白光上限入库（补 2 行），Pélangeon+2008 作分类证据，Nysewander+2009（ApJ 701,824）表2 的 +11 h R<121.7 µJy 为按 α=−0.85 从 GCN 2639 外推的派生量、外推链不可复核未入库，Nardini+2008 仅暗暴列表脚注无数据，Rau+2009（A&A 498,399）与 RHESSI 两篇（ApJ 714,881；ApJ 756,44）均为瞬时辐射触发/谱统计、无测光，Wang+2020（ApJ 893,77）无该源；OpenAlex「GRB 040810」5 命中与上重合、Crossref 无新增；仓内 konus_wind/heasarc_grbcat/mpe_greiner/rssgrbag/grbsn_webtool 快照无该源测光（grbcat afterglow_flag=N）。共补 2 行、改 1 行（按新 T0 重算）。版本：Hurley+2011、Buffington+2006 的 IOP VoR PDF 被反爬拦截（captcha）、Pélangeon+2008 的 aanda.org 403，均实际尝试后取 arXiv 版（0907.2709v2 / astro-ph/0510159 / 0811.3304v1）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 HETE-2 触发时刻（H3489）2004-08-10 14:15:35 UT",
+    "t0_basis": "MIT HETE 官方暴页 H3489 UTC=20040810_141535（Greiner 目录 14:15:35.9 UT、Hurley+2011 表1 地球穿越时 14:15:36 UT 备查）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Buffington+2006",
+      "url": "https://doi.org/10.1086/498407",
+      "title": "A Search for Early Optical Emission at Gamma-Ray Burst Locations by the Solar Mass Ejection Imager (SMEI)"
+    },
+    {
+      "name": "Hurley+2011",
+      "url": "https://doi.org/10.1088/0067-0049/197/2/34",
+      "title": "The Interplanetary Network Supplement to the HETE-2 Gamma-Ray Burst Catalog"
+    },
+    {
+      "name": "Pelangeon+2008",
+      "url": "https://doi.org/10.1051/0004-6361:200809709",
+      "title": "Intrinsic properties of a complete sample of HETE-2 gamma-ray bursts. A measure of the GRB rate in the Local Universe"
+    }
+  ],
   "host_galaxy": null
 }
