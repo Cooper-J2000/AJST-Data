@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB100427A",
-  "alias": [],
+  "alias": [
+    "GRB100427356",
+    "bn100427356"
+  ],
   "ra": 89.171,
   "dec": -3.461,
-  "T0": "2010-04-27T08:32:08Z",
-  "T0_ref": null,
+  "T0": "2010-04-27T08:32:08.710Z",
+  "T0_ref": "GCN 10702（'At 08:32:08.71 UT on 27 April 2010, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 100427A (trigger 294049930 / 100427356)'，在线版已核对）；HEASARC FERMIGBRST bn100427356 trigger_time=MJD 55313.355656321=2010-04-27T08:32:08.706Z（与通告差 4 ms，取通告值，< 60 ms 不另报）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 150.0,
   "pos_ref": "GCN 10699",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0 核对（2026-10-28，Rusty-Harpoon@zcode）：Swift-BAT 未在轨触发，2010-04-27T08:31:55Z 地面分析检出率增（GCN 10699，定位 RA,Dec=89.171,-3.461，误差 2.5' 半径、90% 包含半径）；Fermi/GBM 于 08:32:08.71 UT 在轨触发（trigger 294049930 / 100427356，GCN 10702），T0 取 GBM 触发时刻并按 §3.2 补齐来源给出的亚秒值。历元并列备查：Swift/BAT 目录（swift_bat 快照）率增时刻 08:31:54.255Z、Swift 目录（swift_grb/uvot_grb 快照）08:31:55Z——差 13.71 s 系 BAT 率增早于 GBM 在轨触发（BAT 光变第一弱峰 T-3 s 起），非 T0_offset：真实爆发起点仅受 BAT 光变约束（T-3 s 相对率增），精度不足，不写入 T0_offset。t90=12.54±7.39 s（FERMIGBRST，50-300 keV）；t90=24.0±1.6 s（Swift/BAT 目录，15-350 keV）；t90≈24 s（GCN 10702，8-1000 keV）——按目录 t90 判 lgrb/sgrb（各来源数值不同但均 >> 2 s，分类无冲突）。新增别名 GRB100427356、bn100427356：<GCN 10702> 原文用名 trigger 294049930 / 100427356；FERMIGBRST trigger_name=GRB100427356、object_name=bn100427356（HEASARC heasarc_fermigbrst.tdat 仓内快照 external/fermi_gbm，2026-10-28 核对）。pos_error_confidence=90：GCN 10699 原文 'an estimated uncertainty of 2.5 arcmin radius (90% containment)'。测光检索（2026-10-28）：仓内 gcn/archive 全文检索 45 889 篇（按源名 100427A 与触发号 294049930/100427356），命中 3 篇（GCN 10699/10702/10703，仅 10703 含 1 条测光：UVOT u>21.2）；external/rssgrbag（Chandra & Frail 2012 射电光变 140 行/74 源）与 external/grbsn_webtool（63 事件）均无该源记录；external 目录快照（fermi_gbm/swift_bat/swift_grb/uvot_grb/swiftgrbba/mpe_greiner）仅目录参数与 U>21.2 转引（swiftgrbba ref_uvot=GCN 10703），无新增测光；OpenAlex 检索 'GRB 100427A' 命中 4 条：2 条为通告记录，另 2 篇样本类文章 Virgili+2012（MNRAS，doi:10.1111/j.1365-2966.2012.21411.x）与 Connaughton+2015（ApJS 216,32，doi:10.1088/0067-0049/216/2/32）经摘要核对均为伽马射线瞬发谱/GBM 定位分析，无该源余辉测光表；arXiv API 检索 '100427A' 0 命中；Crossref 模糊检索仅 130427A 等近名误中，无该源专属文献；GCN 站（gcn.nasa.gov/circulars）在线核对 10699/10702/10703 与仓内档案一致；TNS 匿名检索 HTTP 403（需登录），且本源为卫星触发 GRB、无光学对应体，非 TNS 收录类型。结论：全部可用测光=GCN 10703 的 UVOT u>21.2 一条（原有行已复核改写），补 0 行；XRT 上限 1.3e-3 ct/s（约 5e-14 erg/cm2/s，0.3-10 keV，GCN 10703）为 X 射线，按 §3.3 暂不入库。原 bot 值（留底）：T0='2010-04-27T08:32:08Z'、t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'、alias=[]、tag=[]、comment=null。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0=Fermi/GBM 在轨触发时刻（GCN 10702：08:32:08.71 UT）；原 bot 值 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'、T0='2010-04-27T08:32:08Z'",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
