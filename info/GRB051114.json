@@ -1,28 +1,50 @@
 {
   "transient_id": "GRB051114",
-  "alias": [],
+  "alias": ["GRB 051114A"],
   "ra": 226.29,
   "dec": 60.154,
   "T0": "2005-11-14T04:11:30Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 4272（Swift/BAT 团队正文：At 04:11:30 UT, Swift-BAT triggered and located GRB 051114, trigger=163844；触发时刻、非观测窗口起点；只取来源给到的整秒精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": ["grb"],
+  "pos_error": 114.0,
+  "pos_error_confidence": "90",
+  "pos_ref": "Sakamoto+ 2008（The First Swift BAT GRB Catalog, VizieR J/ApJS/175/179/bat1：Trigger 163844、RAJ2000 226.290、DEJ2000 +60.154、ePos 1.9 arcmin＝90% 误差半径）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核记录（2026-10-27；审核人 fsy）。\n【身份】坐标 ra/dec 226.29/+60.154 与 Swift/BAT trigger=163844、触发时刻 2005-11-14 与 Trigger_Instrument=Swift/BAT 互相印证；SIMBAD 该条目主名作「GRB 051114A」（标识符 GRB 051114A / GRB 051114，坐标 15h05m03.8s +60d09'22\"，引 2012ApJ...746..156C），故新增该别名；Swift BA 目录（仓内 external/swiftgrbba）另注「Did not trigger BAT, found in ground processing」，与 GCN 4272「星上软件未定位、地面处理提取位置」一致，因此 Trigger_Instrument 仍为 Swift/BAT（地面分析检出）。\n【T0】采用 GCN 4272 的 04:11:30 UT（触发时刻；只写来源给到的整秒精度，不自行补亚秒）。其余来源值并列备查（§3.8 优先级 ① 为触发仪器官方 GCN Circular）：Swift/BAT 官方通告页 gcn.gsfc.nasa.gov/notices_s/163844/BA/ 给 UTC 2005-11-14T04:11:28.239700（含 UTCF 改正；MET 153634289.2；页眉自述“No attempt has been made to eliminate the non-significant decimal places”）；仓内快照 external/swift_bat 04:11:29.161、external/swift_grb 04:11:29.441、external/uvot_grb 04:11:28（TRIGTIME 153634288.0）、external/swiftgrbba 04:11:28.000。各值最大互差 2.0 s（GCN 4272 的 30.0 与目录页的 28.0；≥60 ms，已在 PR 说明报告）。取 GCN Circular 而不用自动通告页亚秒值的理由：① §3.8 锚定优先级 ① 为触发仪器官方 GCN Circular；② GCN 4272 正文明确自述“due a handling mistake on the ground, the GCN BAT_POSITION Notice was generated with incorrect values in the following fields: TRIGGER_NUM, GRB_INTEN, BKG_INTEN, BKG_TIME, BKG_DUR, GRB_TIME, MERIT_PARAMS”——本暴非成像触发（通告页 Image Trigger?: NO、Image S/N Ratio: 0、Rate S/N Ratio: 6.7082），流水线给出的亚秒值不可靠；③ MPE Greiner 页转录的那份 BAT_POSITION Notice 确实带着错误字段（TRIGGER_NUM 163765、GRB_TIME 55355.63 SOD 15:22:35.63 UT），印证该链条失真。这些差异属触发时刻的记录口径分歧、不是“真实爆发时刻相对设备自动触发 T0 的偏移”，故 T0_offset 保持 null（§3.2/§3.8）。\n【定位】pos_ref/pos_error 取自已发表目录 Sakamoto+ 2008（BAT1 目录，ePos 原文明确标注为 90% 误差半径 → pos_error_confidence=90 从原文）；1.9 arcmin 换算为 114 arcsec（pos_error_unit=arcsec；与仓内 external/uvot_grb 的 POS_ERR=114.0、external/swiftgrbba 的 error_radius=1.9 一致）。同一事件的其他定位值并列备查：GCN 4272 地面位置 226.274d/+60.150d（15h05m06s +60d09'00\"）±3 arcmin（radius、90% 包含、stat+sys）；GCN 4275 精化位置 226.266d/+60.156d（15h05m04s +60d09'22\"）±2 arcmin（radius、sys+stat、90% 包含）；Swift/BAT 通告页 Flight 位置 226.2668/60.1564、Ground 位置 226.2557/60.1607 ±2.2489 arcmin（90% 按 SNR 估计）或 ±1.0858 arcmin（拟合 1σ）；SIMBAD 15h05m03.8s +60d09'22\"。GCN 4276 的射电上限正是在 GCN 4275 的 2 arcmin 圆内取的。\n【分类 sub_tag】判 sgrb（三处来源一致）：① 来源直接分类——GCN 4272 标题即「GRB 051114: Swift-BAT detection of a short burst」；② Chandra & Frail 2012（CDS J/ApJ/746/156 table1 第 177 行）source_flag=o，其 ReadMe Note (1) 定义 o = SHB（short-hard burst）；③ 通告 t90=2.2±0.3 s（15-350 keV，GCN 4275，注明按目录/通告 t90 判 lgrb/sgrb）。另并列其他来源 t90：2.0±2.236 s（15-350 keV，仓内 external/swift_bat 快照，基于 Lien+ 2016 第三版 BAT 目录）、4.5 s（15-150 keV，external/swift_grb 快照）、2.2 s（15-350 keV，external/uvot_grb 与 external/swiftgrbba 快照）、BAT1 目录该暴 T90 列为空。各值均 <10 s，lgrb/sgrb 判定不冲突。\n【非 SCHEMA 物理量（仅备查、不参与判定）】t90=2.2±0.3 s（15-350 keV，GCN 4275）；fluence=(1.32±0.24)e-7 erg/cm2（15-150 keV，GCN 4275）；fluence=1.28±0.23e-7 erg/cm2（15-150 keV、90% 置信，仓内 external/swiftgrbba/external/uvot_grb 快照）；fluence=1.235894e-7±2.36e-8 erg/cm2（15-150 keV、90%，external/swift_bat 快照）；1 s peak photon flux=0.73±0.16 ph/cm2/s（15-150 keV，自 T+0.2 s，GCN 4275）；peak_flux=0.7±0.15 ph/cm2/s（15-150 keV，1 s，external/swiftgrbba）；peak count rate≈1500 counts/s（15-350 keV，约触发后 0.5 s，GCN 4272）；幂律谱指数 α=1.22±0.27（GCN 4275）/ −1.25035（external/swift_bat）/ −1.21（Sakamoto+ 2008 BAT1）；partial coding=78%（GCN 4275）；T50=2.0±1.0 s（15-350 keV，external/swift_bat）、1.6 s（15-150 keV，external/swift_grb）。\n【余辉状态】X 射线：GCN 4279（Mangano/Cusumano+，Swift-XRT 13.6 ks ToO，始于 2005-11-15 15:18:23 UT、触发后 35 h）未探测，极限流量 2.3e-14 erg/cm2/s（0.3-10 keV 类口径）——属 X 射线数据，按《数据审核提示词》§3.3/§7 不入库、不改动。光学：无 GCN 通告报道（扫描 4255–4400 未见），Chandra & Frail 2012 该暴 opt_ag_flag=X（其 ReadMe Note (3)：X = 该波段未观测，而非未探测）→ 光学确无任何测光可补。射电：同表 radio_ag_flag=N（观测过、未探测）、radio_telescope=VLA，与 GCN 4276 一致；见 lc 行。红移/宿主：SIMBAD 无红移记录、rssgrbag 快照 redshift 为空 → redshift/redshift_type/redshift_ref 保持 null；无确认宿主星系 → host_galaxy 保持 null。\n【勘误链】GCN 4255–4400（146 篇）逐篇扫描，涉及本源的通告共 4 篇：4272（BAT 触发）、4275（BAT 精化分析）、4276（VLA 射电）、4279（XRT）；无更正射电测光的通告，故 lc 行 reference 仍指含该值的 GCN4276，无「原通告→更正通告」链条。\n【extra_data 改写留档】按 §3.10 改写 bot 写入的时间基准说明：t0_basis 原值「meta_trigger」、t0_note 原值「t0 为 meta trigger-time（真实触发时刻）」，现改为 GCN 4272 口径（Issue #68 认定 meta_trigger 不可信）。\n【测光检索留证（§3.3 四要素）】检索日期 2026-10-27。入口与命中数：① 仓内快照——gcn/archive（45 563 篇 Circular 全文）在本 clone 中不存在（无 gcn/ 目录；按 SCHEMA §1 该目录不入仓库），改以官方单篇存档 URL 逐篇取原文；external/rssgrbag 命中 1 条目录级记录（GRB 051114，radio_ag_flag=N＝无射电余辉探测、VLA；lightcurve.jsonl 140 行中 0 行、table4.dat 0 行）；external/grbsn_webtool/SourceData 无本源目录；external/uvot_grb 命中 1 条（仅目录级 T90/fluence/peak_flux/位置，无光变表）；external/swift_bat、external/swift_grb、external/swiftgrbba、external/mpe_greiner 各命中 1 条目录级记录（均不含光变表，只用于身份与 T0 互证）。② GCN 站——gcn.gsfc.nasa.gov/gcn3/NNNN.gcn3 扫描 4255–4400 共 146 篇，命中 4 篇（4272/4275/4276/4279），已全部打开读原文，其中含测光的仅 4276。③ ADS/SciX——两平台 API 均需令牌（scixplorer 搜索/API 返回 202 空响应、ui.adsabs 返回 202/405，未能取到结果），改用等价途径：SIMBAD 该条目文献表 29 条（含 4 条 GCN 通告 + 25 篇研究文章，逐条为 Swift/BAT 目录、射电余辉目录、短暴样本统计与理论汇编类）+ arXiv API 元数据检索 all:\"GRB 051114\" 命中 0 篇；实际打开并取值的文章为 Sakamoto+ 2008（VizieR J/ApJS/175/179/bat1，位置与 ePos）、Chandra & Frail 2012（CDS J/ApJ/746/156 refs.dat，确认本源 radio_ag_flag=N、无射电峰表）、Lien+ 2016（经仓内 external/swift_bat 快照）——均无含本源的光变/测光表可入库。④ TNS——检索页返回 403 未能访问（本源为 Swift 短暴、非 AT/SN/CV 类）。结论：除已有的 GCN 4276 单点射电上限外，无其他带时间锚点的探测或上限可入库。补了 0 行、修正 1 行（band 85GHz→8.5GHz；time 121410→121422 s、mjd→53689.5800000；新增 time_err=432 s；VLA 由 instrument 移至 telescope 列）。",
+  "sub_tag": ["sgrb"],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 4272 正文 04:11:30 UT；trigger=163844；地面分析检出，非观测窗口起点）",
+    "t0_basis": "GCN 4272",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Sakamoto+2008",
+      "url": "https://doi.org/10.1086/523646",
+      "title": "The First Swift BAT Gamma-Ray Burst Catalog"
+    },
+    {
+      "name": "Chandra+2012",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "title": "A Radio-Selected Sample of Gamma-Ray Burst Afterglows"
+    },
+    {
+      "name": "Lien+2016",
+      "url": "https://doi.org/10.3847/0004-637X/829/1/7",
+      "title": "The Third Swift Burst Alert Telescope Gamma-Ray Burst Catalog"
+    }
+  ],
   "host_galaxy": null
 }
