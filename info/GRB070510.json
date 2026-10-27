@@ -4,24 +4,32 @@
   "ra": 343.014,
   "dec": 47.933,
   "T0": "2007-05-10T05:56:40Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 6401",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 180.0,
   "pos_ref": "GCN 6401",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份核验：GCN 6401（Swift/BAT 触发 GRB 070510），BAT 触发时刻 2007-05-10 05:56:40 UT，与既有 T0 一致；pos_error 180 arcsec（=3 arcmin）来自 GCN 6401，通告标注 90% 置信水平（3 arcmin, 90%），故 pos_error_confidence=90。Trigger_Instrument 由 'Swift' 细化为触发仪器 'Swift/BAT'。tag 依 GCN 判定为 GRB，补受控词 grb。redshift 未见 GCN 6401 及仓内目录快照给出，暂置 null。sub_tag（lgrb/sgrb）无来源表 t90（仓内 swift_bat 快照无本暴）也无通告自身分类，留空待后续文献。原 bot extra_data.t0_basis=meta_trigger 的 T0 经与 GCN 6401 逐字核对无整点偏移。测光见 lc/GRB070510.csv：GCN 6401 UVOT White 3-sigma 上限约 18.5 mag（曝光起点 1361 s + 100 s，取中点 1411 s）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
