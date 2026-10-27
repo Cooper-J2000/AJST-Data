@@ -1,28 +1,78 @@
 {
   "transient_id": "GRB231220A",
-  "alias": [],
+  "alias": [
+    "GRB 231220A",
+    "bn231220674"
+  ],
   "ra": 27.321,
   "dec": 77.897,
-  "T0": "2023-12-20T16:10:17Z",
-  "T0_ref": null,
+  "T0": "2023-12-20T16:10:17.404Z",
+  "T0_ref": "触发仪器 Fermi/GBM：GCN 35407 记 At 16:10:17 UT on 20 Dec 2023（trigger 724781422.403544 / 231220674）；FERMIGBRST 目录 trigger_time=2023-12-20T16:10:17.404Z（仓内 external/fermi_gbm 快照；MET 天真换算 16:10:22.403544 扣 5 闰秒=16:10:17.403544，一致）；GCN 35409 引 T0=2023-12-20T16:10:17.4 UTC，整数秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": 300.0,
-  "pos_ref": "GCN 35409",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 300.0,
+  "pos_error_confidence": null,
   "pos_error_unit": "arcsec",
+  "pos_ref": "GCN 35409（Swift/BAT-GUANO）：RA,Dec=27.321, 77.897 deg = 01h49m17.04s, +77d53'49.2\"，estimated uncertainty 5 arcmin radius（=300 arcsec）",
+  "comment": "Fermi/GBM 触发（trigger 724781422.403544 / 231220674），Swift/BAT 未在轨定位；GUANO 依 GBM 通知回放 BAT 事件数据，NITRATES 在 4.096 s 窗内检出（sqrt(TS)=28.32，起于 T0-1.02 s），GCN 35409 给出角分级定位。定位取 GCN 35409（RA,Dec=27.321,77.897，5 arcmin radius）；该文只写 estimated uncertainty、未标注置信水平，pos_error_confidence 留空。GBM 地面定位中心（73.37,82.29，统计误差 5.04°）与本定位相距 8.71°、落在 GBM 统计误差框外（GBM 仅统计误差未含系统误差；身份由同一触发时刻确定，GCN 35409 明确 T0 引自 GCN 35407），位置以 BAT/GUANO 为准。【分类】GCN 35407 原文 detection of a likely LONG GRB、GCN 35409 标题 long burst → sub_tag=lgrb；T90=5.12±0.81 s（50-300 keV，FERMIGBRST 仓内快照 bn231220674）。【T0】取触发仪器 Fermi/GBM 精度：GCN 35407 只写到整秒（16:10:17 UT），GCN 35409 引 2023-12-20T16:10:17.4 UTC，FERMIGBRST 目录 trigger_time=2023-12-20T16:10:17.404Z；整数秒一致、亚秒差 ≤4 ms，按 §3.2/§3.8 直接改进 T0（原值 2023-12-20T16:10:17Z），不写 T0_offset。原 bot 注记 t0_note=t0 为 meta trigger-time（真实触发时刻）、t0_basis=meta_trigger 已按 §3.10 改写为实测依据。【X 射线】GCN 35411：XRT 3.6 ks PC 模式数据（T0+27.0 至 T0+39.5 ks）未探测到对应体，上限 2.2e-3 ct s^-1（BAT 最佳位置，GCN 35409）；计数率非测光，X 射线不在审核范围，不入库。GCN 35410 仅宣布 ToO 启动、无数值。【测光检索（2026-10-26）】仓内：本工作树无 gcn/archive/ 目录（未随仓库分发），改用 GCN 站全文检索；external/rssgrbag 命中 0 条、grbsn_webtool/SourceData 无该事件、uvot_grb/swift_grb/swiftgrbba/swift_xrt_live/heasarc_grbcat 快照均 0 条（fermi_gbm 快照仅有目录级 T0/T90，无光变；mpe_greiner 仅目录级 IPN 条目，无光变）。GCN 站按源名（231220A）与触发号（724781422 / 231220674）全文检索命中 6 篇（35407/35408/35409/35410/35411/35477）；其中 35408 为 MASTER-Tunka/Kislovodsk 的 37 条 clear(C) 扫描上限（Tmid-T0=92-5040 s、Limit=18.3-19.6 mag）＋另 4 条 12.4/14.8/14.8/15.0 mag 低值（共 41 条），但 41 个指向场散布在 GBM 5.04° 误差框周边（RA 03h28m-07h03m、Dec +76.98°-+86.36°），与 BAT/GUANO 定位（01h49m17.04s, +77d53'49.2\"）相距 5.7°-14.7°，均未覆盖该位置 → 属扫描场上限、非本源测光，不入 lc（41 条数值不逐条转列，原文 GCN 35408 完整可查）；35411 为 XRT 非探测（计数率，X 射线不入库）；35477 含唯一 1 条光学/UV 上限（已入库）。ADS/SciX：无 API token、网页搜索为 JS 空壳（无结果页），经 ADS 域名检索命中 2 条（2023GCN.35407....1F、2023GCN.35409....1R，均为 GCN），无正式发表文献；arXiv API 检索 231220A 0 篇。TNS 检索 GRB 231220A 无记录。结论：除 GCN 35477 的 UVOT White 上限外无可用测光 → 补 1 行。",
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "lgrb"
+  ],
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-26 审核修正为触发仪器 Fermi/GBM 触发时刻（GCN 35407 + FERMIGBRST trigger_time=2023-12-20T16:10:17.404Z）；原 bot 值 2023-12-20T16:10:17Z 为整秒截断，原 t0_note/t0_basis 见 comment",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-26"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "GCN 35407",
+      "url": "https://gcn.nasa.gov/circulars/35407",
+      "title": "GRB 231220A: Fermi GBM Final Real-time Localization",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 35408",
+      "url": "https://gcn.nasa.gov/circulars/35408",
+      "title": "Fermi trigger No 724781422: Global MASTER-Net observations report",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 35409",
+      "url": "https://gcn.nasa.gov/circulars/35409",
+      "title": "GRB 231220A: Swift/BAT-GUANO arcminute localization of a long burst",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 35410",
+      "url": "https://gcn.nasa.gov/circulars/35410",
+      "title": "GRB 231220A: Swift ToO observations",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 35411",
+      "url": "https://gcn.nasa.gov/circulars/35411",
+      "title": "GRB 231220A: Swift-XRT follow-up observations",
+      "source": "fsy"
+    },
+    {
+      "name": "GCN 35477",
+      "url": "https://gcn.nasa.gov/circulars/35477",
+      "title": "GRB 231220A: Swift-UVOT upper limit",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
