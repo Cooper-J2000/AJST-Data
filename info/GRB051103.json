@@ -1,29 +1,42 @@
 {
   "transient_id": "GRB051103",
-  "alias": [],
+  "alias": [
+    "GRB 051103",
+    "Sgr 0952+69",
+    "GRB 051103S",
+    "GRB051103.4"
+  ],
   "ra": 148.142,
   "dec": 68.845,
-  "T0": "2005-11-03T19:55:47Z",
-  "T0_ref": null,
+  "T0": "2005-11-03T09:25:43.785Z",
+  "T0_ref": "GCN 4197（Konus-Wind trigger T0=33943.785 s UT = 2005-11-03 09:25:43.785）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb",
+    "sgr"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 4197",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "分类存疑（文献口径，未定论；暂不按重分类处理，仅加 sgr 备选）：GRB 051103 为 M81/M82 群方向的短硬暴，主流解释为河外星系 SGR 巨耀发候选（Ofek+2006; Frederiks+2007; Hurley+2010; Svinkin+2015; Burns+2021 将其列入 4 个近距 MGF 样本，该样本与短 GRB 总体不一致 >99.9%，并统计关联到 M82），但无红移/宿主确证，Schosser+2025 的模拟显示 15.7% 的巡天至少出现 1 例此类误认，故保留 tag=grb 并加 tag=sgr 备选，id 不改；sub_tag=sgrb（GCN 4197 记录 duration=0.17 s；external/rssgrbag 目录 t90=0.2 s（无误差，Chandra & Frail 2012）；按目录 t90 判 sgrb）。\n\nT0：GCN 4197（Konus-Wind 触发 T0=33943.785 s UT = 2005-11-03 09:25:43.785 UT）。bot 原 T0=2005-11-03T19:55:47Z 有误——时分秒 19:55:47 实为 GCN 4198 MASTER 首帧 2005-11-05 19:55:47 UT（触发后 2 d 10:30:03.215）的时分秒，日期取自触发日；已按 GCN 4197 更正，原值留此（原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」）。T0_offset 不设（无 >1 s 的触发时刻修正）。\n\n定位：GCN 4197 IPN 三角定位误差四边形中心 148.142/68.845（本库 ra/dec），面积 120 arcmin²；原文一处称 3σ、末尾称 all quoted errors 90% CL，二者不一致且未给等效半径，故 pos_error/pos_error_confidence 留空待决；Hurley+2010 给出精化 3σ 椭圆中心 147.933/+68.589、长短轴 137'/0.96'、面积 104 arcmin²，未替换库内 GCN 框中心。\n\n距离/宿主：redshift=null（M81/M82 距离不是红移）；文献距离 3.6 Mpc（Ofek+2006）/3.7 Mpc（Burns+2021）。宿主未定：Burns+2021 统计关联 M82，Ofek+2006 倾向 M81 北旋臂恒星形成区，GCN 4206 另列 PGC 2719634/PGC 028505，均无确证，host_galaxy 留 null。\n\n测光：原有 3 行已逐行核对并按更正后的 T0 重算 time：GCN 4266 1.4 GHz 上限（原 band=14GHz 系 1.4 GHz 误写；原 1.5 mJy 恰为 4.86 GHz 的 3σ 值、也是北端 rms，不是 1.4 GHz 独立上限，改为 NVSS 完备极限 2.5 mJy（reference=GCN 4266; NVSS；该值系 NVSS 5σ 完备极限，非本次 VLA 3σ，见行 comment））、GCN 4266 4.86 GHz 1.5 mJy (3σ)、GCN 4207 Tautenburg R=21（time 改为 R 窗口中点）。新增 4 行：GCN 4198/4206 MASTER 无滤光片上限 17.0/18.5 mag（band=G）、GCN 4208 P60 单历元 R≈19.5（2.96–3.16 d）、Hurley+2010 KPNO R>24.5。GCN 4208 与 Ofek+2006 为同一次 P60 观测；Ofek+2006（arXiv 接受版 astro-ph/0609582）两历元比对给更深 R=20.5，但时间跨度非单一，未用于 time 轴，值留行 comment。\n\n别名：「GRB 051103」为 GCN/SIMBAD 用名；「Sgr 0952+69」为 SIMBAD 标识；「GRB 051103S」为 MPE Greiner 目录 name_alt；「GRB051103.4」系 GCN 4198/4206 MASTER 原文用名（GCN 4198 原文 GRB051103.4，属日期+小数伪形，按 §3.10 证据串豁免）。\n\nTrigger_Instrument 保留 IPN（Schema 示例、MPE 目录 Instrument=IPN）；GCN 4197 明言 Konus-Wind 触发、IPN 三角定位。\n\n文献版本：Ofek+2006 与 Burns+2021 的 VoR 未取（IOP Radware captcha / LSU 403），分别用 arXiv astro-ph/0609582 接受版、arXiv v3（2021-01-25 draft）；Schosser+2025 的 OUP 被 Cloudflare 403，用 arXiv v1（2023-03-13）。\n\n测光检索（2026-10-27）：仓内 gcn/archive 目录不存在（SCHEMA §1 明确不进仓库），改用 GCN 官方 per-burst 页 other/051103.gcn3 全文 7 篇（4197/4198/4206/4207/4208/4249/4266，全部打开，5 篇含光学/射电上限）；external/rssgrbag lightcurve.jsonl 0 行（normalized 1 条仅 t90/fluence），grbsn_webtool SourceData 无 GRB051103；GCN 站 7 篇（同上）；SIMBAD 1 对象/64 bibcodes；OpenAlex 238 条、Crossref 100 条（标题含 051103 3 篇）；ADS/SciX 无 token 不可用（回退 Crossref→arXiv→OpenAlex→SIMBAD）；TNS 无记录。结论：补 4 行（3→7 行），另 3 行重算 time；Ofek+2006（arXiv 接受版；IOP VoR 被反爬未取）与 Hurley+2010（UvA-DARE VoR）均已实际打开核对。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Konus-Wind 触发时刻 2005-11-03T09:25:43.785Z（GCN 4197）；bot 原值 2005-11-03T19:55:47Z 的时分秒实为 GCN 4198 MASTER 首帧 2005-11-05 19:55:47 UT，已在 comment 留原值并更正",
+    "t0_basis": "GCN 4197",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@qoder",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
@@ -48,13 +61,6 @@
       "source": "bot"
     },
     {
-      "name": "Abadie+2012",
-      "title": "Implications for the Origin of GRB 051103 from LIGO Observations",
-      "url": "https://ui.adsabs.harvard.edu/abs/2012ApJ...755....2A",
-      "bibtex": "@ARTICLE{2012ApJ...755....2A,\n       author = {{Abadie}, J. and {Abbott}, B.~P. and {Abbott}, T.~D. and {Abbott}, R. and {Abernathy}, M. and {Adams}, C. and {Adhikari}, R. and {Affeldt}, C. and {Ajith}, P. and {Allen}, B. and {Allen}, G.~S. and {Amador Ceron}, E. and {Amariutei}, D. and {Amin}, R.~S. and {Anderson}, S.~B. and {Anderson}, W.~G. and {Arai}, K. and {Arain}, M.~A. and {Araya}, M.~C. and {Aston}, S.~M. and {Atkinson}, D. and {Aufmuth}, P. and {Aulbert}, C. and {Aylott}, B.~E. and {Babak}, S. and {Baker}, P. and {Ballmer}, S. and {Barker}, D. and {Barnum}, S. and {Barr}, B. and {Barriga}, P. and {Barsotti}, L. and {Barton}, M.~A. and {Bartos}, I. and {Bassiri}, R. and {Bastarrika}, M. and {Bauchrowitz}, J. and {Behnke}, B. and {Bell}, A.~S. and {Belopolski}, I. and {Benacquista}, M. and {Bertolini}, A. and {Betzwieser}, J. and {Beveridge}, N. and {Beyersdorf}, P.~T. and {Bilenko}, I.~A. and {Billingsley}, G. and {Birch}, J. and {Biswas}, R. and {Black}, E. and {Blackburn}, J.~K. and {Blackburn}, L. and {Blair}, D. and {Bland}, B. and {Bock}, O. and {Bodiya}, T.~P. and {Bogan}, C. and {Bondarescu}, R. and {Bork}, R. and {Born}, M. and {Bose}, S. and {Boyle}, M. and {Brady}, P.~R. and {Braginsky}, V.~B. and {Brau}, J.~E. and {Breyer}, J. and {Bridges}, D.~O. and {Brinkmann}, M. and {Britzger}, M. and {Brooks}, A.~F. and {Brown}, D.~A. and {Brummitt}, A. and {Buonanno}, A. and {Burguet-Castell}, J. and {Burmeister}, O. and {Byer}, R.~L. and {Cadonati}, L. and {Camp}, J.~B. and {Campsie}, P. and {Cannizzo}, J. and {Cannon}, K. and {Cao}, J. and {Capano}, C. and {Caride}, S. and {Caudill}, S. and {Cavaglia}, M. and {Cepeda}, C. and {Chalermsongsak}, T. and {Chalkley}, E. and {Charlton}, P. and {Chelkowski}, S. and {Chen}, Y. and {Christensen}, N. and {Chua}, S.~S.~Y. and {Chung}, S. and {Chung}, C.~T.~Y. and {Clara}, F. and {Clark}, D. and {Clark}, J. and {Clayton}, J.~H. and {Conte}, R. and {Cook}, D. and {Corbitt}, T.~R.~C. and {Cornish}, N. and {Costa}, C.~A. and {Coughlin}, M. and {Coward}, D.~M. and {Coyne}, D.~C. and {Creighton}, J.~D.~E. and {Creighton}, T.~D. and {Cruise}, A.~M. and {Cumming}, A. and {Cunningham}, L. and {Culter}, R.~M. and {Dahl}, K. and {Danilishin}, S.~L. and {Dannenberg}, R. and {Danzmann}, K. and {Das}, K. and {Daudert}, B. and {Daveloza}, H. and {Davies}, G. and {Daw}, E.~J. and {Dayanga}, T. and {DeBra}, D. and {Degallaix}, J. and {Dent}, T. and {Dergachev}, V. and {DeRosa}, R. and {DeSalvo}, R. and {Dhurandhar}, S. and {Di Palma}, I. and {D{\\'\\i}az}, M. and {Donovan}, F. and {Dooley}, K.~L. and {Dorsher}, S. and {Douglas}, E.~S.~D. and {Drever}, R.~W.~P. and {Driggers}, J.~C. and {Dumas}, J.-C. and {Dwyer}, S. and {Eberle}, T. and {Edgar}, M. and {Edwards}, M. and {Effler}, A. and {Ehrens}, P. and {Engel}, R. and {Etzel}, T. and {Evans}, M. and {Evans}, T. and {Factourovich}, M. and {Fairhurst}, S. and {Fan}, Y. and {Farr}, B.~F. and {Fazi}, D. and {Fehrmann}, H. and {Feldbaum}, D. and {Finn}, L.~S. and {Flanigan}, M. and {Foley}, S. and {Forsi}, E. and {Fotopoulos}, N. and {Frede}, M. and {Frei}, M. and {Frei}, Z. and {Freise}, A. and {Frey}, R. and {Fricke}, T.~T. and {Friedrich}, D. and {Fritschel}, P. and {Frolov}, V.~V. and {Fulda}, P. and {Fyffe}, M. and {Garcia}, J. and {Garofoli}, J.~A. and {Gholami}, I. and {Ghosh}, S. and {Giaime}, J.~A. and {Giampanis}, S. and {Giardina}, K.~D. and {Gill}, C. and {Goetz}, E. and {Goggin}, L.~M. and {Gonz{\\'a}lez}, G. and {Gorodetsky}, M.~L. and {Go{\\ss}ler}, S. and {Graef}, C. and {Grant}, A. and {Gras}, S. and {Gray}, C. and {Greenhalgh}, R.~J.~S. and {Gretarsson}, A.~M. and {Grosso}, R. and {Grote}, H. and {Grunewald}, S. and {Guido}, C. and {Gupta}, R. and {Gustafson}, E.~K. and {Gustafson}, R. and {Hage}, B.},\n        title = \"{Implications for the Origin of GRB 051103 from LIGO Observations}\",\n      journal = {\\apj},\n     keywords = {gamma-ray burst: individual: GRB 051103, gravitational waves, stars: magnetars, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology},\n         year = 2012,\n        month = aug,\n       volume = {755},\n       number = {1},\n          eid = {2},\n        pages = {2},\n          doi = {10.1088/0004-637X/755/1/2},\narchivePrefix = {arXiv},\n       eprint = {1201.4413},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012ApJ...755....2A},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
-    },
-    {
       "name": "Svinkin+2015",
       "title": "A search for giant flares from soft gamma-ray repeaters in nearby galaxies in the Konus-WIND short burst sample",
       "url": "https://ui.adsabs.harvard.edu/abs/2015MNRAS.447.1028S",
@@ -62,11 +68,18 @@
       "source": "bot"
     },
     {
-      "name": "Zhang+2020",
-      "title": "Magnetar Giant Flare Origin for GRB 200415A Inferred from a New Scaling Relation",
-      "url": "https://ui.adsabs.harvard.edu/abs/2020ApJ...903L..32Z",
-      "bibtex": "@ARTICLE{2020ApJ...903L..32Z,\n       author = {{Zhang}, Hai-Ming and {Liu}, Ruo-Yu and {Zhong}, Shu-Qing and {Wang}, Xiang-Yu},\n        title = \"{Magnetar Giant Flare Origin for GRB 200415A Inferred from a New Scaling Relation}\",\n      journal = {\\apjl},\n     keywords = {Magnetars, Gamma-ray bursts, 992, 629, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2020,\n        month = nov,\n       volume = {903},\n       number = {2},\n          eid = {L32},\n        pages = {L32},\n          doi = {10.3847/2041-8213/abc2c9},\narchivePrefix = {arXiv},\n       eprint = {2008.05097},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2020ApJ...903L..32Z},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "name": "Burns+2021",
+      "title": "Identification of a Local Sample of Gamma-Ray Bursts Consistent with a Magnetar Giant Flare Origin",
+      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...907L..28B",
+      "bibtex": "@ARTICLE{2021ApJ...907L..28B,\n       author = {{Burns}, E. and {Svinkin}, D. and {Hurley}, K. and {Wadiasingh}, Z. and {Negro}, M. and {Younes}, G. and {Hamburg}, R. and {Ridnaia}, A. and {Cook}, D. and {Cenko}, S. B. and others},\n        title = \"{Identification of a Local Sample of Gamma-Ray Bursts Consistent with a Magnetar Giant Flare Origin}\",\n      journal = {\\apjl},\n         year = 2021,\n        month = jan,\n       volume = {907},\n       number = {2},\n          eid = {L28},\n        pages = {L28},\n          doi = {10.3847/2041-8213/abd8c8},\narchivePrefix = {arXiv},\n       eprint = {2101.05144},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...907L..28B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@qoder"
+    },
+    {
+      "name": "Schosser+2025",
+      "title": "Misidentification of short GRBs as magnetars in nearby galaxies",
+      "url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.1430S",
+      "bibtex": "@ARTICLE{2025MNRAS.537.1430S,\n       author = {{Sch{\\\"o}sser}, Elisa C. and {Burgess}, J. Michael and {Greiner}, Jochen},\n        title = \"{Misidentification of short GRBs as magnetars in nearby galaxies}\",\n      journal = {\\mnras},\n         year = 2025,\n        month = jan,\n       volume = {537},\n       number = {2},\n        pages = {1430-1443},\n          doi = {10.1093/mnras/staf067},\narchivePrefix = {arXiv},\n       eprint = {2303.05922},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.1430S},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@qoder"
     }
   ],
   "host_galaxy": null
