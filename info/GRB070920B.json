@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB070920B",
-  "alias": [],
-  "ra": 0.127,
-  "dec": -34.844,
+  "alias": [
+    "GRB 070920B",
+    "BAT 291728"
+  ],
+  "ra": 0.13029,
+  "dec": -34.85284,
   "T0": "2007-09-20T21:04:32.386340Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 6808（Swift/BAT trigger 291728，21:04:32 UT）+ Swift/BAT 官方目录（仓内 external/swift_bat 快照 trigger_time=2007-09-20T21:04:32.386340Z；external/swift_grb 同值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 8.0,
   "pos_ref": "GCN 6820",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-27。身份：GRB 070920B = Swift/BAT trigger 291728（GCN 6808，21:04:32 UT 触发）；同日 GRB 070920A（trigger 291614，04:00:13 UT）为另一事件，已甄别未混淆；alias 补 'GRB 070920B'（GCN 原文用名）与 'BAT 291728'（Swift/BAT 目录 trigger_name，external/swift_bat 快照 name_alt）。定位：改为 Swift-XRT 位置 RA,Dec=0.13029,-34.85284（GCN 6820，8.0\" 半径，90% containment 含 boresight 不确定度，Swift-XRT 团队官方产品；原文称该源距 BAT 精化位 33\"，几何复算 33.3\" 相符）；原 ra/dec=0.127,-34.844 是 BAT 地面精化定位（GCN 6811，1.0' 半径，90%），却配了 XRT 的 8.0\" 误差与 pos_ref='GCN 6820'，属坐标/误差/出处错配，已改正；BAT 星上位 0.144,-34.819（3'，90%，GCN 6808）仅备查。T0：bot 值 2007-09-20T21:04:32.386340Z 经核实正确——GCN 6808 给 21:04:32 UT（整数秒），亚秒取触发仪器官方目录（仓内 external/swift_bat 快照 trigger_time=2007-09-20T21:04:32.386340Z，external/swift_grb 同值），T0_ref 已补；无 >1 s 的真实爆发相对自动触发偏移，T0_offset 留空；extra_data t0_note/t0_basis（meta_trigger）与实际相符，未改写。Trigger_Instrument 原 'Swift' 精化为 'Swift/BAT'（GCN 6808 明确 BAT 触发）。分类：来源无长短明示分类，Swift/BAT 目录 t90=22.256±2.792121 s（15-350 keV，external/swift_bat 快照），按目录 t90 判 lgrb；GCN 6811 T90=20.2±0.2 s（15-350 keV）、external/swift_grb t90=22.31 s（15-150 keV）并列，均远大于 2 s，判定一致。非 SCHEMA 量（不参与判定）：fluence(15-150 keV)=6.6±0.5×10^-7 erg/cm2、1-s peak flux=0.8±0.1 ph/cm2/s、CPL 光子指数 0.67±0.58、Epeak=41.3±4.5 keV（GCN 6811，误差为 90% 置信）；Swift/BAT 目录 fluence=8.107905×10^-7 erg/cm2（15-150 keV）、Swift GRB 目录 t90=22.31 s/fluence=6.95×10^-7 erg/cm2（15-150 keV）并列备查。红移：BAT 红移表（external/swift_bat/summary_general_info/GRBlist_redshift_BAT.txt）无此源，检索亦无文献测得红移，redshift=null。测光（本次新增 4 行、修正 1 行）：SMARTS/ANDICAM I~20.8（GCN 6814，原行 time=5340.0 s、mjd=54363.93995817523 系把 '2007-09-21 01:29 UT' 中点时刻误作 1h29m 时长偏移，已按原文锚点重算 time=15867.6 s）；新增 TAROT R>18.2（GCN 6816，t0+2.7h 至 t0+3.6h 窗口中点）、ROTSE-IIIc 15.7/16.7/17.8 三行（GCN 6824，原文表 start/end/t_exp/mlim 原样转写）；GCN 6809（NOT 2.5m V/R/I 各 180 s）与 GCN 6812（LCO Swope 40-inch R 30 min）均无数值上限不入库——6809 报一红色静止天体 RA 00:00:34.56、Dec -34:49:08.4（±0.5\"）疑似 OA 候选，未获后续确认（GCN 6816 TAROT 在精化 BAT 位与该天体处均未探及 OT），仅备查；各行原文均未声明星等系统（USNO 定标），mag_system 留空；未发现 X 射线测光需处理。测光检索（2026-10-27）：仓内 gcn/archive 在本 clone 未获取（0 篇，无法全文检索）；external/rssgrbag/lightcurve.jsonl 0 条、external/grbsn_webtool/SourceData 无此事件、agile_mcal/batse/fermi_gbm/fermi_lat/konus_wind/saxgrbmgrb 快照 0 命中（fermi_gbm 'GRB210709201' 为数值巧合非本源）；GCN 站 '070920B' 检索 8 篇（6808/6809/6811/6812/6814/6816/6820/6824；事件页 grb-070920b 仅列 3 篇，以检索页全量枚举为准；触发号 291728 检索 4 篇交叉一致），其中光学观测 5 篇：6814（ANDICAM）、6809（NOT）、6812（LCO）、6816（TAROT）、6824（ROTSE）；ADS/SciX 与 Web 检索无该源专篇研究论文；Klotz et al. 2009（AJ 137,4100，TAROT 2001-2008 汇编，DOI 10.1088/0004-6256/137/5/4100）表 2 对本源仅同值转引 GCNC 6816、无增量；TNS 搜索页被 reCAPTCHA 拦截不可用（2007 年 Swift GRB 无 AT/SN 命名，预期不适用）→ 结论：补 4 行（TAROT 1+ROTSE 3）、修正 1 行（ANDICAM）；多目标文献线索见 audit/leads/papers/klotz2009.md（覆盖 70 个库内源，另 2 个库外源已开 new-source Issue）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Klotz+2009",
+      "url": "https://doi.org/10.1088/0004-6256/137/5/4100",
+      "title": "Early optical observations of GRBs by the TAROT telescopes: period 2001-2008",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
