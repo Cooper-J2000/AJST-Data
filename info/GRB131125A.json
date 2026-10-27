@@ -1,28 +1,44 @@
 {
   "transient_id": "GRB131125A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2013-11-25T16:32:47Z",
-  "T0_ref": null,
+  "alias": [
+    "bn131125689"
+  ],
+  "ra": 114.675,
+  "dec": 48.414,
+  "T0": "2013-11-25T16:32:51.048Z",
+  "T0_ref": "FERMIGBRST bn131125689（Fermi/GBM trigger 407089974，官方目录，仓内快照 2026-07-19）；IPN GCN 15546（observed at about 59571 s UT=16:32:51）与 MASTER GCN 15553（首帧 2013-11-25 16:33:40 UT 为 GRB 后 49 s）互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 15546（IPN 3σ 误差框中心）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "短暴：GCN 15546/15549（IPN/Konus-Wind）分类 short-duration, hard-spectrum，Konus-Wind 时标 ~0.5 s。T0 采用触发仪器官方目录 FERMIGBRST（bn131125689，trigger 407089974，仓内快照 2026-07-19）：2013-11-25T16:32:51.048Z；与 IPN GCN 15546（observed at about 59571 s UT=16:32:51）及 MASTER GCN 15553（首帧 2013-11-25 16:33:40 UT 为 GRB 后 49 s ⇒ GRB 时刻 16:32:51）互证。GCN 15552（iPTF）写 16:32:47，非触发仪器来源、优先级较低，未采用；bot 原 T0=2013-11-25T16:32:47Z（t0_note『t0 为 meta trigger-time（真实触发时刻）』、t0_basis=meta_trigger）据此改写，原值见本句。位置取 IPN 3σ 误差框中心 RA=114.675° Dec=+48.414°（GCN 15546；FERMIGBRST ground 位置同值）：该框面积 2.5 平方度、最长径 5.5°、最短径 29′，非圆形框，故不填 pos_error。t90=3.008±2.159 s（50-300 keV，FERMIGBRST bn131125689）、t50=0.32±0.231 s（同目录）；目录 t90=3.0 s 与两通告的 short 分类冲突，sub_tag 留空待决。alias bn131125689 为 FERMIGBRST trigger_name（官方目录名）。MASTER GCN 15553 另有一句『The 5-sigma upper limit has been about 14.1 mag』，无独立时间锚点，不入库、此处备查；同通告报 3 个 marginal OT 候选（MASTER_1 114.775649 +46.120371 m≈13.6、MASTER_2 114.597740 +48.927898 m≈13.7、MASTER_3 114.835195 +47.047021 m≈13.0，1σ 坐标误差 ±7″），为候选而非确认余辉，不入 lc。测光检索（2026-10-28）：仓内 gcn/archive 快照（覆盖至 GCN 46010，45889 个文件）全文检索『131125』『407089974』共命中 4 篇（GCN 15546 IPN / 15549 Konus-Wind / 15552 iPTF / 15553 MASTER，均逐篇打开）；external/rssgrbag、external/grbsn_webtool 无该源记录；FERMIGBRST 快照命中 1 条（触发参数，无测光）；无 ADS/SciX token，走 OpenAlex API 回退（元数据+全文检索）命中 4 条（上述 3 篇 GCN 通告 + Ershova+2020），arXiv API 0 命中；TNS 不适用（GRB，非 AT/SN/CV 类）；GCN 15552 所附场图链接（www.its.caltech.edu/~lsinger/iptf/Fermi407089974.pdf）实测 404，且原图无表不入库 → 结论：全部可用测光为 iPTF 深场上限与 MASTER 早期上限，补 2 行 MASTER 上限（reference=GCN15553），iPTF 行按新 T0 重算 time/mjd。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为触发仪器官方目录 FERMIGBRST（bn131125689）触发时刻；bot 原注『t0 为 meta trigger-time（真实触发时刻）』、原 T0=2013-11-25T16:32:47Z 已失效，原值见 comment",
+    "t0_basis": "fermigbrst_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ershova+2020",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
