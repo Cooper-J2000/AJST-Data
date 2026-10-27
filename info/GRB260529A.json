@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB260529A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2026-05-29T04:55:50Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 260529A",
+    "bn260529118"
+  ],
+  "ra": 302.81,
+  "dec": -15.28,
+  "T0": "2026-05-29T02:49:57.917Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2026-05-29T02:49:57.917Z（GBM trigger 801715802.916756 / 260529118，即 260529.118）；GCN 44733（GBM 团队）记 At 02:49:57 UT on 29 May 2026（整秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 4.21,
+  "pos_ref": "HEASARC FERMIGBRST 快照（external/fermi_gbm）：ra=302.81, dec=-15.28, error_radius=4.21 deg；GCN 44733（GBM on-ground）：RA=302.8, Dec=-15.3，统计不确定度 4.2 deg，同域",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核 fsy（2026-10-27）：(1) T0：原值 2026-05-29T04:55:50Z 经通告排查系 GCN 44737（GOTO）观测窗口结束时刻（原文 continued through to 2026-05-29 04:55:50 UT (+2.10 h post trigger)），按 §3.2 观测窗口起止不得作 T0，bot 误取（原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=「meta_trigger」按 §3.10 改写，原值记于此——Issue #68 bot 值不可信）；现采纳触发仪器官方目录 FERMIGBRST 亚秒值 02:49:57.917Z（external/fermi_gbm 快照 trigger_time，trigger 801715802.916756 / 260529118；GCN 44733 记 At 02:49:57 UT on 29 May 2026 整秒一致；MET 801715802.916756 − 5 s 闰秒改正 = 02:49:57.916756 UTC，与目录值自洽，Issue #67 口径；GOTO 观测窗口起止 03:00:27 / 04:55:50 UT 对该 T0 为 +0.18 h / +2.10 h，与 GCN 44737 所给相对时长吻合，互证）。(2) 定位补充：bot 无坐标，现补 GBM on-ground 定位 ra=302.81、dec=-15.28、error_radius=4.21 deg（FERMIGBRST 目录快照；GCN 44733 记 RA=302.8、Dec=-15.3、统计不确定度 4.2 deg，同域）。置信水平来源未标注（原文仅记 statistical uncertainty），pos_error_confidence 留空。(3) Trigger_Instrument 保持 Fermi/GBM；LAT 与源夹角 90.0 deg（GCN 44733），无 LAT 数据。(4) tag/sub_tag：GCN 44733 记 likely LONG GRB → grb/lgrb；FERMIGBRST 目录 t90=7.42412±1.05553 s（50-300 keV）> 2 s，按目录 t90 判 lgrb（2026-10-26 裁定口径，同向）。SCHEMA 外物理量备查（FERMIGBRST 目录值）：t90=7.42412±1.05553 s、t50=3.07205±0.572433 s（50-300 keV）、fluence=1.67843e-06±2.06291e-08 erg/cm2（10-1000 keV）、peak_flux=7.02256±1.14144 ph/cm2/s（10-1000 keV，64 ms）。红移：GCN 44733/44734/44737 均无红移信息，保持 null。(5) 测光入库共 2 行：GCN 44734（MASTER-OAFA 误差框检查点上限）表列 2 行（滤光片 C=clear 无滤光片，按 §3.3 记 band=G；原文未声明星等系统；time 取原表 Tmid-T0、time_err=Expt/2）。GCN 44737 的光学候选体 GOTO26fez / AT 2026nuz（+0.23 h 17.85±0.06、+1.3 h 17.90±0.04 AB，GOTO L）与 GCN 44745 COLIBRÍ g/r/i/z 探测均属该候选体——44745 原文「blue colors suggest that this is not the afterglow of GRB 260529A」，后经 TNS Gemini-S/GMOS-S 光谱分类为 CV，系库内独立源 AT2026nuz（已审 fsy 2026-10-22），其测光不入本源 lc；GCN 44737 所引 ATLAS 强制测光上限 m_o>18.06 AB（触发前约 26.3 h）亦为该候选体位置的历史上限，已记录于 AT2026nuz。(6) 测光检索（2026-10-27）：仓内 gcn/archive 本地未获取（目录为空），经 GCN 网站检索；external 快照：fermi_gbm 命中 1 条（bn260529118 目录参数，无光变表）、rssgrbag / grbsn_webtool / swift_bat / swift_grb / uvot_grb / konus_wind / heasarc_grbcat / mpe_greiner / fermi_lat 0 命中；GCN 站 event 页 grb-260529a 共 3 篇（44733 仅触发参数、44734 含 MASTER 上限 2 行→入库、44737 候选体→属 AT2026nuz 独立源）；另按触发号 260529118 / 801715802 服务端检索：命中 GCN 44741（GRB 260530A，另一事件，排除）与 IceCube GRBweb GRB260529A 页（目录互证：RA=302.81 Dec=-15.28、t90=7.424±1.056 s、fluence 1.68e-06，与 FERMIGBRST 同值）；GCN 44745 eventId=AT2026nuz（COLIBRÍ g/r/i/z 探测→属候选体，不入本源）；ADS/SciX API 无 token（SciX 202 空响应、ADS 404），WebSearch 学术索引 0 篇研究论文；arXiv API 兜底 all:「GRB 260529A」、all:「260529118 OR 801715802」均 0 命中 → 可用测光即 GCN 44734 MASTER 上限 2 行，本 PR 新增 2 行。(7) alias：收 GCN 事件名「GRB 260529A」（44733/44734/44737 subject 与正文用名）与官方目录名「bn260529118」（FERMIGBRST；GCN 44733 skymap/HEALPix URL 亦用此形）；快照 name_alt 中「GRB260529118」「GRB 260529.118」系导入管线 parse.py 自拼形态（其自述可由 yymmddfff 恒构造），GCN 无此用法，按 §3.10 不收入、记此备查。articles[]：检索无研究论文（GBM-only 事件、发现在审时点约 5 个月），实际使用来源仅 GCN 通告与官方目录——按 2026-10-26 裁定 GCN 通告不进 articles[]，保持 []。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 801715802.916756 / 260529118）：GCN 44733 记 02:49:57 UT（整秒），亚秒 02:49:57.917 取官方目录 FERMIGBRST trigger_time；原 bot 值 2026-05-29T04:55:50Z 系 GCN 44737 GOTO 观测窗口结束时刻，已弃用（原值与排查见 comment）",
+    "t0_basis": "GCN 44733 + fermi_gbm",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
