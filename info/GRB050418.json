@@ -1,27 +1,36 @@
 {
   "transient_id": "GRB050418",
   "alias": [],
-  "ra": 44.3417,
-  "dec": -18.5375,
-  "T0": "2005-04-18T11:00:34Z",
-  "T0_ref": null,
+  "ra": 44.346,
+  "dec": -18.538,
+  "T0": "2005-04-18T11:00:34.600Z",
+  "T0_ref": "GCN 3288",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 3288",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 3289",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发（trigger=114893，GCN 3288：At 11:00:34.6 UT Swift-BAT triggered，亮长暴、15-350 keV 峰值计数率约 4500 cts/s、距太阳 34° 受观测约束未 slew）。T0 修正为 BAT 触发时刻 2005-04-18T11:00:34.6 UT（GCN 3288，GCN 3289 复述一致）；Swift BAT 目录精化值 11:00:34.629320 UT（external/swift_bat 与 swift_grb 快照一致），按通告精度取 34.6；原 bot T0=2005-04-18T11:00:34Z（meta_trigger）系该触发时刻的整秒截断值，已废弃。定位：原 ra/dec 44.3417/-18.5375 系 GCN 3292 的观测场心（原文 Report：field centered on 02h57m22s -18d32′15″(2000)，换算 44.34167/-18.5375 完全吻合），非暴位置，已废弃；改取 GCN 3289 BAT 地面精化定位 44.346/-18.538（±3′=180″，原文标注 95% containment；受控词表无 95% 取值，pos_error_confidence 留空，见 PR 待决）；GCN 3288 在机初位 44.341/-18.538（未附误差半径）与 BAT 目录定位 44.33806/-18.54176（external/swift_bat 快照）并列备查。tag=grb；T90=81.76±1.371417 s（Swift/BAT 目录，external/swift_bat 快照，15-350 keV；GCN 3289 记 83±5 s 一致），按目录 t90 判 lgrb。无红移测量（各快照 redshift 均空）；Swift 因太阳约束未 slew，XRT/UVOT 未观测该场（UKSSDC Burst Analyser 页仅含 BAT 产品，swift_xrt_live 快照 0 命中）。测光检索（2026-10-27）：仓内 gcn/archive 本地未获取（如实注明）；external/rssgrbag 光变 0 命中、grbsn_webtool 无该事件、swift_xrt_live 0 命中、其余 external 快照仅目录级参数无光变表；GCN 站枚举 3288–3719 号（2005-04-18 至 2005-08-01 发布窗口，共 432 篇）命中 3 篇：GCN 3288（BAT 检测）、GCN 3289（BAT 精化）、GCN 3292（Bronberg 无滤光片光学上限，已在 lc）；arXiv 站内检索 \"GRB 050418\" 0 命中；TNS 不适用（GRB 类，无 AT/SN 命名）→ 无更多可用测光，lc 维持 1 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核修正为 Swift-BAT 触发时刻 2005-04-18T11:00:34.6 UT（GCN 3288；Swift BAT 目录精化值 11:00:34.629320 UT，external/swift_bat）；原 bot 值 2005-04-18T11:00:34Z（meta_trigger）为该触发时刻的整秒截断，已废弃；info T0 序列化按库内惯例补 3 位小数（11:00:34.600Z）",
+    "t0_basis": "GCN 3288",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
