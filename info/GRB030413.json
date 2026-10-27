@@ -3,25 +3,33 @@
   "alias": [],
   "ra": 198.605,
   "dec": 62.349,
-  "T0": "2003-04-13T00:20:00Z",
-  "T0_ref": null,
+  "T0": "2003-04-13T07:34:37Z",
+  "T0_ref": "GCN 2135",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [],
+  "pos_error": 2808,
+  "pos_error_confidence": "3sigma",
+  "pos_ref": "GCN 2135",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "IPN 定位的 HETE 时代暴（Ulysses、Konus-Wind、Mars Odyssey-HEND/GRS、HETE-FREGATE、INTEGRAL SPI-ACS 共测，GCN 2135；HETE 触发但 outside FOV、WXM 无定位，HEASARC GRBcat id 5632）。原 T0=2003-04-13T00:20:00Z 为 bot 占位值（t0_basis=meta_trigger，原 t0_note='t0 为 meta trigger-time（真实触发时刻）'，无可溯源出处），审核修正为触发时刻 2003-04-13T07:34:37Z：GCN 2135 记五台仪器于 27277 s UT（=07:34:37 UT）观测到爆发，HEASARC GRBcat id 5632 IPN 行 time=MJD 52742.3157060185 与之完全一致；GRBcat HETE2 行触发时刻 07:34:44 UT（MJD 52742.315787037，HETE Trigger Summaries）备查，差 7 s，按通告优先取 07:34:37。ra/dec 为 GCN 2135 IPN 误差盒中心（13:14:25.29 +62:20:54.62 = 198.605375 +62.34850556，与 HEASARC GRBcat 一致）；该盒为四边形（四角 13:14:31.12 +62:29:06.96 / 13:16:13.52 +61:35:06.14 / 13:12:28.04 +63:05:01.83 / 13:14:19.38 +62:12:40.70，原文面积约 314 平方角分），pos_error=2808 角秒为长对角线（约 93.7′）之半的外接近似（同 GRB000408 先例），原文明确 3 sigma。Ulysses 报持续时标约 15 s（GCN 2135），HEASARC GRBcat t_other=15.0 s（Duration definition not specified）且目录无 t90，sub_tag 暂空（15 s 时标疑似 lgrb，待决）。25-100 keV 流量约 2.3E-06 erg/cm2，峰流量约 4.7E-07 erg/cm2/s @0.25 s（GCN 2135）。测光检索（2026-10-27）：GCN 站点检索 \"GRB 030413\" 与 \"GRB030413\" 各命中 1 篇（GCN 2135、2137，均已打开核对），另扫描 gcn.gsfc.nasa.gov/gcn3 归档 2120-2160 号 subject 无其他本源通告；仓内 gcn/archive 本地缺失，external 快照 heasarc_grbcat（id 5632）/mpe_greiner 有目录行、konus_wind/rssgrbag/grbsn_webtool/uvot_grb 无记录；OpenAlex 命中 2 篇（GCN 2137 自身；Nardini+2008 MNRAS 383, 1049 附录 1 仅将本源上限出处记为 Schaefer et al. 2003=GCN 2137，纯转引无数值表，OUP VoR 403 后取 arXiv:0710.2436 全文确认）；Crossref/arXiv API 无本源命中；SIMBAD TAP 无该天体条目。唯一测光为 GCN 2137 的 Rc 上限（已入库），无新增行。",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-27 审核修正为 GCN 2135 IPN 触发时刻（原 bot 值 2003-04-13T00:20:00Z 为 meta_trigger 占位、无出处，原值见 comment）",
+    "t0_basis": "GCN 2135",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
