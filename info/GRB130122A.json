@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB130122A",
   "alias": [],
-  "ra": 194.307,
-  "dec": 59.003,
+  "ra": 194.28517,
+  "dec": 59.01455,
   "T0": "2013-01-22T23:44:09Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 14140",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +13,14 @@
     "grb"
   ],
   "pos_error": 1.8,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 14143",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核（2026-10-27，Rusty-Harpoon@qoder）：T0=2013-01-22T23:44:09Z，取触发仪器 Swift/BAT 官方通告 GCN 14140（只给整数秒）；BAT 目录 trigger_time=23:44:09.452440、swiftgrbba=23:44:09.000，亚秒差 <1 s，不设 T0_offset。坐标改用 GCN 14143 的 XRT 增强位置 194.28517/+59.01455（1.8″，90% 置信）；原 194.307/59.003 实为 GCN 14146 BAT 地面位置（3′），与 pos_ref=GCN 14143 不符；swiftgrbba 的 xrt_ra/dec=194.28512/59.01461（1.5″，未标置信水平）与 GCN 14143 相差 <0.6″，其误差半径未采用。GCN 14149 的 UVOT 位置 194.28459/+59.01487（0.53″）更精，本次仍沿用 pos_ref=GCN 14143 的 XRT 1.8″ 位置以保持 pos_ref/pos_error 自洽。sub_tag=lgrb：t90=76.54±20.77 s（Swift/BAT 目录，15–350 keV），GCN 14146 给 t90=64±36 s（15–350 keV），swiftgrbba 64.0 s（15–150 keV），三者误差内一致且均远大于 2 s，按目录 t90 判 lgrb。红移/宿主无（Littlejohns+2015 Table 2 该源 z 为空）。X 射线 10keV 行 30 行原样未动、未参与去重。光学/射电：UVOT 8 行按 GCN 14149 的 T_start/T_stop/Exp 改为窗口中点与半宽，white 行 band 由 w 改 uvot-white；GCN 14140 的 18.95 行保留但置 discard=y（与 14149 white_FC 同一次曝光、数值差 2.2σ，按 §3.4 不算重复，仅留档；采用 14149 精值 18.75±0.09）；补 3 行（GCN 14142 MASTER 16.8±0.3 @T0+101 s；GCN 14192 PTF R>19.1/18.4）；RTT150 5 行按原文 T−T0（h）重算；SANTEL/T100/CARMA/Xinglong 改为曝光中点并补 time_err；Xinglong 原文 median「19.7 hr」与起点 18:14:12 UT+5×300 s 的中点 18.71 h 不符，按起点+半曝光取 67353 s（18.71 h，与 18.7 hr 相符；原文 19.7 hr 留此）。原文笔误/不自洽：GCN 14148 首行 T0+mid=0.00899 d（776.7 s）与 T_start=00:14:14 UT（1805 s）矛盾，取起点+半曝光；Ershova+2020 Table 20 的 P 17.3(20 s) 为偏振帧（原文注 10：P—polarization filters）上限，与 GCN 14142 WF 16.8 属不同通道、同源同历元，不矛盾；本库无偏振波段键，故不入库。文献：Ershova+2020 Table 20 为 GCN 14142 转引（VoR 已核）；Volnova+2021 表为 GCN 14148 转引；Littlejohns+2015 因云无该源测光表；Ror+2025 仅拟合参数 → 无文献新增行；线索卡 audit/leads/GRB130122A.md 否证并删除。测光检索（2026-10-27）：worktree 无 gcn/archive（git 未跟踪，0 篇）、external/rssgrbag 0 条、grbsn_webtool 0 条；GCN 站 other/130122A 索引 13 篇（10 篇含光学/射电、3 篇仅 X 射线/BAT）；OpenAlex/Crossref 命中 4 篇研究文献（上列，均无可入库新测光）；TNS 检索 130122A 返回 No results（未登录，仅旁证）；结论：补 3 行、0 删（1 行保留并置 discard=y）；55→58 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -166,8 +169,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@qoder",
+      "date": "2026-10-27"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ershova+2020",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "source": "Rusty-Harpoon@qoder"
+    }
+  ],
   "host_galaxy": null
 }
