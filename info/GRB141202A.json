@@ -1,28 +1,54 @@
 {
   "transient_id": "GRB141202A",
-  "alias": [],
-  "ra": 145.0,
-  "dec": 59.9,
-  "T0": "2014-12-02T11:17:05Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB141202470",
+    "bn141202470"
+  ],
+  "ra": 143.1,
+  "dec": 54.404,
+  "T0": "2014-12-02T11:17:05.606Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2014-12-02T11:17:05.606Z（GBM trigger 439211828 / 141202470，MJD 56993.470203769；external/fermi_gbm 快照，2026-07-21 取数）；GCN 17133（GBM 团队）记 At 11:17:05.61 UT on the 2nd of December 2014（亚秒一致）；GCN 17131（IPN）记 about 40626 s UT（11:17:06）秒级一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 398,
+  "pos_error_confidence": "3sigma",
+  "pos_ref": "Svinkin+2022, ApJS 259, 34, Table 4",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy 2026-10-28）：[原值] T0=2014-12-02T11:17:05Z（T0_ref=null、t0_basis=meta_trigger）、ra/dec=145.0/59.9（pos_error/pos_error_confidence/pos_ref=null）、alias=[]、tag=[]、sub_tag=[]、articles=[]。[身份] IPN 短暴：GCN 17131 由 Fermi/GBM（trigger 439211828）、MESSENGER（GRNS）、INTEGRAL（SPI-ACS）、Konus-Wind、Swift（BAT：burst 时处预计划 slew、无事件数据、部分编码）联测三角定位；AGILE/MCAL 亦触发（Ursi+2022, ApJ 925, 152，external/agile_mcal 快照：orbit 39322、MET 344603825.169、t50=0.384±0.032 s、t90=0.768±0.032 s @0.4-100 MeV、LOC=GBM）；Konus-Wind 自触发 T0=40626.305 s UT=11:17:06.305（GCN 17136）；Suzaku/WAM 自触发 11:17:05.508 UT（GCN 17192）。FERMIGBRST 与 AGILE-MCAL 官方目录均收录本暴；heasarc_grbcat、konus_wind、swift_grb、swiftgrbba、uvot_grb、rssgrbag、grbsn_webtool、batse、fermi_lat 快照均无本暴条目（swift_bat 快照无本暴，仅 GRB 100917A 行 err 值 1.141202e-07 的数值巧合）。孪生检查：FERMIGBRST 2014-12-02 全表仅此 1 触发、MPE Greiner 快照同日仅此 1 条、Svinkin+2022 表 2 同日仅 GRB20141202_T40626 一条——无同日他暴、无重复条目。[T0] 采纳触发仪器官方目录 FERMIGBRST 亚秒值 2014-12-02T11:17:05.606Z（external/fermi_gbm 快照 raw 行 trigger_time MJD 56993.470203769=11:17:05.6056，bn141202470）：GCN 17133（GBM 团队官方通告）记 At 11:17:05.61 UT on the 2nd of December 2014（亚秒一致，差 4 ms<60 ms）；GCN 17131（IPN）记 about 40626 s UT（11:17:06，秒级一致）。他仪器自触发备查：Konus-Wind 40626.305 s UT=11:17:06.305（GCN 17136，晚 GBM 0.699 s）、Suzaku/WAM 11:17:05.508（GCN 17192，早 GBM 98 ms）。bot 标注 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」失实：原值 11:17:05 整秒与 GBM 触发一致（取整），非零锚 meta 值；原值原标注留此备查。[定位] 原 ra/dec=145.0/59.9 为 GCN 17133 GBM on-ground location（uncertainty 3.3 deg radius、1-sigma containment、statistical only，另有 2-3 deg systematic），远劣于 IPN 定位，弃用（原值留此）。改用 Svinkin+2022（ApJS 259, 34, Table 4，VizieR J/ApJS/259/34 table4.dat 2026-10-28 实取）发表版 IPN 定位：最概然位置 RA=143.100、Dec=+54.404，误差盒 MaxDim=0.221°（盒对角线）×MinDim=0.099°、面积 0.018 deg²；pos_error=398″=MaxDim/2 外接圆半径近似（table4 不含逐角点，以盒中心≈最概然位置近似，口径同库内 IPN 盒先例 GRB030217=885″）；IPN 三角为 3σ 约束（table3 环半径上下不确定度明标 3σ；GCN 17131 preliminary 盒亦明示 3 sigma），pos_error_confidence=3sigma。本会话复算：最概然位置落三条 3σ 环带内（FER-MES 距 65.6745°∈[65.6037,65.7493]、KW-MO 距 36.6967°∈[36.6483,36.7472]、KW-FER 距 82.7404°∈[82.3470,83.1753]）。GCN 17131 preliminary 3σ 盒（中心 143.073/+54.161，角点最远 1.6188°=5828″，面积复算 1448 sq arcmin≈原文 1439，max dim 复算 3.175°≈原文 3.2°）为前兆版本，被发表版取代；FERMIGBRST 目录 ra/dec=143.073/54.161、error_radius=0.36°（未标注置信水平）与 preliminary 盒心一致；MPE Greiner 快照记 IPN 盒 09h32m17s +54°10′、Error=192×10 arcmin（即 preliminary 盒）——均留此备查。[tag/sub_tag] tag=grb。sub_tag=sgrb：按 FERMIGBRST 目录 t90=1.408±0.271529 s（50-300 keV，external/fermi_gbm 快照全精度）判；旁证 GCN 17131 标题 short/hard、GCN 17133 记 T90≈1.3 s（50-300 keV）、Konus-Wind 单脉冲 ~1.4 s（GCN 17136）、Suzaku/WAM T90≈1.8 s（GCN 17192）、AGILE/MCAL t90=0.768±0.032 s（0.4-100 MeV，Ursi+2022）。[其他物理量] FERMIGBRST：fluence=(4.35166±0.0227052)E-6 erg/cm²（10-1000 keV）、64 ms 峰光子流 11.8684±1.00365 ph/cm²/s（10-1000 keV）、Epeak=658.60065±47.896851 keV（CPL，obs；external/fermi_gbm 快照）。GCN 17133：fluence=(4.2±0.2)E-6 erg/cm²、1-s 峰光子流 8.4±0.3 ph/cm²/s（自 T0+0.1 s）、CPL 指数 -0.11±0.08、Epeak=596±40 keV。Konus-Wind：fluence=4.44(-1.02,+1.47)E-6 erg/cm²、16-ms 峰流 7.37(-2.00,+2.67)E-6 erg/cm²/s（20 keV-10 MeV，90% 置信，GCN 17136）。Suzaku/WAM：fluence=4.48(-0.18,+0.10)E-6 erg/cm²（100-1000 keV，GCN 17192）。redshift 无任何测量，null。[alias] 新增 GRB141202470（GCN 17133 原文用名 trigger 439211828 / 141202470，同一触发号；FERMIGBRST 官方目录 name 字段=GRB141202470，external/fermi_gbm 快照）与 bn141202470（FERMIGBRST trigger_name 字段）。官方目录名+GCN 通告互证。[host_galaxy] 不建立：UVOT 变源（GCN 17139：RA=143.12408、Dec=+55.32899，0.5″ 90%）在 preliminary 盒外、距发表版精化盒最概然位置约 0.93°（本会话复算 0.9251°）；XRT 无余辉检出（GCN 17134：3σ 上限 5.2E-3 ct/s，0.3-10 keV）；GCN 17139 提及与 UVOT 源位置巧合的 SDSS 暗星系（g'=23.0±0.2，u' 上限 22.4）仅为候选，证据不足。[测光] 原有 1 行（DCT/LMI r'=20.57±0.03 AB，GCN 17153）数值核对无误，但 bot 取观测窗起点为 time（原 time=431035.0 s=2014-12-07T11:01:00.6Z、原 mjd=56998.459027777775，即窗口起点 11:01 UT）：按 §3.8 显式窗口端点口径改为中点——窗口 2014-12-07 11:01–11:08 UTC（原文自洽锚：starting 119.74 hours after the observations reported by Golenetskii et al. in GCN 17131，T0+119.74 h=2014-12-07T11:01:29.6Z），time=431244.394 s（中点 11:04:30−T0）、time_err=210 s（半跨）、mjd=56998.4614583（=T0_mjd+time/86400，7 位小数自检通过）。补入 GCN 17139 Swift/UVOT u 波段探测 2 行（u=20.43±0.09 与 u=20.69±0.13 AB；原文 T_start/T_stop=127.9/128.6 ks 与 129.4/130.3 ks，曝光中点口径 time=128250 s/129850 s、time_err=350 s/450 s，mjd=56994.9545788/56994.9730973）。三行均为同一「UVOT 变源」的光变（GCN 17139 发现、GCN 17153 DCT 复测 r'：与 SDSS R10 r'=22.65±0.20 比对增亮 ~2.1 mag）：该源位置在 IPN 盒外、XRT 无余辉、短暴触发后 ~128 ks 仍亮且较 DSS/SDSS 历史增亮 6 倍以上，GCN 17139/17153 原文均明示成协反常——行保留入库，成协存疑随行注明。mag_system=AB 均为原文声明（GCN 17139 \"AB magnitudes using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)\"；GCN 17153 \"reported in AB magnitude\"）；两通告均明示未做银河消光改正（GCN 17139 记 E(B-V)=0.02，Schlegel+1998），Gext_corr=n。[测光检索]（2026-10-28）：本 clone 无 gcn/archive 目录；仓内 external 快照逐一检索：fermi_gbm（收录，1 行）、agile_mcal（收录，1 行）、mpe_greiner（收录，1 行，仅 IPN 定位）、heasarc_grbcat/swift_bat/swift_grb/swiftgrbba/uvot_grb/konus_wind/rssgrbag（含 lightcurve.jsonl）/grbsn_webtool/batse/fermi_lat/liang2023/wang2022/guidorzi2025/minaev2020/saxgrbmgrb 均无本暴记录；GCN 经 gcn.gsfc.nasa.gov 镜像逐号枚举 17115-17212：共 8 篇涉及本暴（17131 IPN、17132 Swift tiling、17133 GBM、17134 XRT、17136 Konus-Wind、17139 UVOT、17153 DCT、17192 Suzaku WAM，均已打开全文），其中含光学测光的仅 17139（u×2，已补入）与 17153（r，原有行）；SIMBAD 命中 12 条 bibcode（8 篇 GCN + Ursi+2022 ApJ 925,152、Svinkin+2022 ApJS 259,34、Wang+2020 ApJ 893,77 统计研究、Fong+2015 ApJ 815,102 短暴余辉样本——前二已实取机读表核实（AGILE-MCAL 目录入 external/ 快照、Svinkin+2022 table2-4 已下载解析），后二仅确认题录、未取数值，均为即发辐射/样本研究、无该暴余辉测光表）；SciX/ADS API 需鉴权、Web 检索无专门余辉文献；TNS 不适用（GRB 官方名、非 AT/SN 类）→ 补 2 行、修正 1 行时间口径。[X 射线] XRT 上限（GCN 17134：5.2E-3 ct/s，0.3-10 keV；GCN 17139：9.6E-3 ct/s）为 X 射线量，暂不处理、不入 lc；Swift tiling（GCN 17132）与 XRT 观测（GCN 17134）无光学内容。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为触发仪器 Fermi/GBM 官方目录 FERMIGBRST 触发时刻（亚秒 05.606，GCN 17133 记 05.61 一致）；bot 原标注 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」失实，原值原标注见 comment",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Svinkin+2022",
+      "title": "The Second Catalog of Interplanetary Network Localizations of Konus Short-duration Gamma-Ray Bursts",
+      "url": "https://doi.org/10.3847/1538-4365/ac4607",
+      "source": "fsy"
+    },
+    {
+      "name": "Ursi+2022",
+      "title": "The Second AGILE MCAL Gamma-Ray Burst Catalog: 13 yr of Observations",
+      "url": "https://doi.org/10.3847/1538-4357/ac3df7",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
