@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB000812",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2000-08-12T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000812",
+    "GRB 000812B"
+  ],
+  "ra": 272.182,
+  "dec": 45.8465,
+  "T0": "2000-08-12T19:39:42Z",
+  "T0_ref": "HEASARC GRBCAT grbcat_id 4970（GRB 000812B，IPN，trigger_time=2000-08-12T19:39:42Z）；GCN 770 记 IPN 触发 70782 s = 19:39:42 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -13,19 +16,23 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 770 / MPE IPN 3σ 框中心 18h08m43.68s +45°50′47.3″（4′×30′）；GCN 771 射电源候选 18h08m49.33 +45°46′56.5″ 未确认是否为余辉",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [
-    "lgrb"
-  ],
+  "comment": "审核 fsy 2026-10-27。身份：库内 GRB000812 对应 HEASARC GRB 000812B（grbcat_id 4970，IPN，trigger 2000-08-12T19:39:42Z）；同日 GRB 000812A（04:17:51）是另一事件，不合并。T0：原值 2000-08-12T00:00:00Z 是“名字日期”占位（原 t0_basis=name_date），不是触发时刻；改为 19:39:42Z（GCN 770 的 70782 s）；T0_offset 留空。位置：原 ra/dec=null；采用 IPN 3σ 框中心 272.1820/45.8465（18h08m43.68s +45°50′47.3″，4′×30′，GCN 770/MPE），框无圆半径，pos_error 留空。GCN 771 的射电源 18h08m49.33 +45°46′56.5″（1 mJy，Aug 15.44 UT）位于 IPN 框内，但原文称“uncertain if afterglow”，不作为确认位置。触发仪器：IPN（正确）。分类：HEASARC/IPN 无 T90 或 long/short；原 sub_tag=lgrb 无来源依据，已清空（待有目录 t90/正式分类再补）。红移：无光谱/宿主信息，留 null。测光：GCN 774 的 TNG/Dolores R 波段 30 min 观测（2000-08-16.961 UT）在射电源误差框内未探测到 R~23 以下的源，已入库 1 行上限；该射电源候选未确认，故该上限是“候选位置”上限、非确认余辉位置；原行 time=345600 s（按 name_date）改为 357848 s（.961 UT 相对新 T0）、time_err=900 s（半曝光）；band=R、upperlimit=y、mag_system 留空（原文未声明）、telescope=TNG、instrument=Dolores、source=fsy。测光检索（2026-10-27）：GCN 770/771/774 逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；HEASARC/MPE 目录用于身份与 IPN 位置；arXiv/ADS/SciX/TNS 无 token 或 0 篇；结论：修正 1 行、补 0 行。",
+  "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 为 HEASARC/IPN GRB 000812B 触发时刻 2000-08-12T19:39:42Z；原 bot 值 00:00:00Z 是名字日期占位，已废弃",
+    "t0_basis": "HEASARC GRBCAT grbcat_id 4970 (IPN)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [],
   "host_galaxy": null
