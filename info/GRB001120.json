@@ -1,30 +1,48 @@
 {
   "transient_id": "GRB001120",
-  "alias": [],
-  "ra": 334.615,
-  "dec": 1.094,
-  "T0": "2000-11-20T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 001120A",
+    "GRB 001120"
+  ],
+  "ra": 334.61542,
+  "dec": 1.09414,
+  "T0": "2000-11-20T13:45:31Z",
+  "T0_ref": "GCN 888",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 888",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "IPN 暴（GCN 888：Ulysses/NEAR/Konus-Wind 三角定位；无 BATSE 触发）。T0：GCN 888 记「observed this GRB at 49531 seconds」，即 2000-11-20T13:45:31 UT；HEASARC GRBCAT（id=5045，GRB 001120A，IPN，time_def=Earth Crossing Time）给出同一时刻 13:45:31.000，两路互证。原 T0=2000-11-20T00:00:00Z 为名字日期占位（原 extra_data：t0_note=「t0 为触发日 00:00 UT（名字日期）」，t0_basis=name_date），已废止；无亚秒分歧，未写 T0_offset。IPN 时刻采用 GCN/GRBCAT 的 Earth Crossing Time 口径，未做光行时改正。身份：GRBCAT 同夜另有 GRB 001120B（2000-11-20T16:47:16，IPN，afterglow_flag=N），与本源不是同一事件；本源对应 001120A，别名「GRB 001120A」据 GRBCAT id 5045，「GRB 001120」为 GCN 888/892/893 原文用名。位置：GCN 888 3σ 误差框中心 22h18m27.70s +1°05'38.89″（ra/dec 由此取值；原 334.615/1.094 系该中心的粗略舍入）；框面积 66 arcmin²（按四角复算 65.1 arcmin²），细长条状，长约 30′、宽约 2′–3′，四角坐标见 GCN 888。原文只给框、不给单一误差半径，pos_error 留空；pos_error_confidence=3sigma 依原文「3 sigma error box」。SIMBAD（GRB 001120）无红移值；各通告均未探到光学对应体（见下），检索范围内亦无 X 射线/射电观测通告，redshift 留空。分类：sub_tag=lgrb 依 Nysewander+2009（ApJ 701, 824）表2「long-duration GRBs」样本收录本暴（VizieR J/ApJ/701/824/grb（table2.dat）；该行 25-100 keV fluence=1.0e-5 erg/cm2 与 GCN 888 一致）；无来源表 t90 字段可引（Wang+2020 表1 本暴 T90 为空），未自算 T90；GCN 888 只记 Ulysses 观测持续约 20 s（非 T90）。测光：lc 6 行全部为误差框内未探测上限，出处 GCN 890（0.35-m R 19.8；0.30-m 未滤光 C 20.8）与 GCN 892/893（Palomar 60-inch gunn-r / gunn-i 各两历元，R~22.5、i~22.5，原文标 approximate/uncertain，band 按原文记 R/i）；极限星等均以 USNO-A2.0 r 星等定标，原文未声明星等系统（Vega/AB），mag_system 留空。测光检索（2026-10-27）：GCN 站 circulars 800-960 逐篇检索命中 4 篇（888/890/892/893，本暴全部有关通告）；仓内 gcn/archive 未随本 clone 分发（改用 GCN 站），external/rssgrbag 0 行、grbsn_webtool 无该事件、batse/konus_wind/uvot_grb 无记录，heasarc_grbcat 2 行（001120A/B 触发时刻）、mpe_greiner 1 行（22h18m28s +01°06′，误差 3'*30'）、Wang+2020 表1 1 行（无 T90、无触发时刻）；SIMBAD 8 条文献（4 条 GCN + Burbidge2003/Nardini2008/Nysewander2009/Wang2020）；ADS/SciX 在线检索因无 API token 未取得（Missing Authorization），以 Crossref/arXiv/Semantic Scholar 替代，未命中专门测光文献，Nysewander+2009 表2 只给 11 h 外推 RFlux<15.1 uJy（派生量，不入库）；结论：无探测，补 5 行上限（合计 6 行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "3sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核修正为 GCN 888 IPN 触发时刻（原 bot 值 2000-11-20T00:00:00Z 为名字日期占位）",
+    "t0_basis": "GCN 888",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Nysewander+2009",
+      "title": "A Comparison of the Afterglows of Short- and Long-duration Gamma-Ray Bursts",
+      "url": "https://doi.org/10.1088/0004-637X/701/1/824",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
