@@ -6,7 +6,7 @@
   "T0": "2023-08-02T06:50:26.160Z",
   "T0_ref": "触发仪器 Swift/BAT 官方通告页 trigger 1182085：GRB_TIME 24626.16 SOD {06:50:26.16} UT（2023-08-02）；GCN 34313 'At 06:50:26 UT' 整秒一致，且 'The XRT began observing the field at 06:51:30.3 UT, 64.1 seconds after the BAT trigger' 反算触发 06:50:26.2 自洽；仓内 external/swift_bat 快照 trigger_time=2023-08-02T06:50:26.167840Z 互证（更细小数自洽）",
   "T0_offset": -3.93,
-  "T0_offset_ref": "GCN 34334：Fermi/GBM 同爆发触发时刻 06:50:22.23 UT——GBM 先于 BAT 自动触发 3.93 s，示爆发辐射早于设备自动触发 T0（§3.2 负值条款，与 GRB210807C 处理口径一致）；纯元数据，不改光变时间轴",
+  "T0_offset_ref": "GCN 34334：Fermi/GBM 同爆发触发时刻 06:50:22.23 UT——GBM 先于 BAT 自动触发 3.93 s，示爆发辐射早于设备自动触发 T0（§3.2 负值条款，同款在库先例 GRB170330A：Konus-Wind 触发早于 BAT 自动触发 140.395 s 记 T0_offset=−140.395）；纯元数据，不改光变时间轴",
   "Trigger_Instrument": "Swift",
   "redshift": null,
   "tag": [
@@ -26,7 +26,12 @@
     "src": "gcn_llm_extract",
     "t0_note": "T0=Swift/BAT 触发时刻 2023-08-02T06:50:26.160 UTC（官方通告页 trigger 1182085 GRB_TIME 24626.16 SOD；GCN 34313 整秒 + XRT 起始反算 + swift_bat 快照互证）；T0_offset=−3.93 s 记 Fermi/GBM 触发（06:50:22.23 UT，GCN 34334）早于 BAT 自动触发；原 bot 值 2023-08-02T06:50:22Z 为 GBM 触发时刻而非 Swift 触发",
     "t0_basis": "trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
