@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB210510A",
-  "alias": [],
+  "alias": [
+    "AT2021meo",
+    "ZTF21abaytuk"
+  ],
   "ra": 192.33,
   "dec": 44.86,
-  "T0": "2021-05-11T05:02:53Z",
-  "T0_ref": null,
+  "T0": "2021-05-10T19:20:00.830Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方通告页 trigger 642367205：GRB_TIME 69600.83 SOD {19:20:00.83} UT（2021-05-10，TJD 19344）；GCN 29981（GBM Final Real-time Localization）trigger 642367205.830352 / 210510806，At 19:20:00 UT on 10 May 2021；仓内 external/fermi_gbm（FERMIGBRST）trigger_time=2021-05-10T19:20:00.830Z 互证；MET 642367205.830352 − 5 闰秒（2001 纪元至 2021-05 累计 5 次）独立重算 = 2021-05-10T19:20:00.830 UTC 自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi",
@@ -12,19 +15,20 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_error": 21.7,
+  "pos_ref": "GCN 29981",
+  "redshift_type": "phot",
+  "redshift_ref": "GCN 30005",
+  "pos_error_confidence": null,
+  "comment": "T0 更正：原 bot 值 2021-05-11T05:02:53Z 系 ZTF 观测开始时刻而非触发时刻（GCN 30005 原文 'beginning at 05:02:53.10 UT on 2021-05-11 (~10 hours after the burst trigger time)'，Issue #84 家族误锚）；改用触发时刻 2021-05-10T19:20:00.830 UTC，三路互证（Fermi 官方通告页 trigger 642367205 / GCN 29981 / FERMIGBRST 目录）。原 bot extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」（bot 失真，改写留档）。定位：GCN 29981 RA=192.3 Dec=44.9（J2000）统计不确定度 21.7°；GCN 29993 引述 Fermi GBM Final Position RA=192.330 Dec=+44.860；FERMIGBRST error_radius=21.68°；pos_error 取 GCN 29981 的 21.7°（deg）；原文仅称 statistical uncertainty 未标注置信水平，pos_error_confidence 留空。分类：t90=1.344±0.792 s（50-300 keV，FERMIGBRST 目录）按目录 t90 判 sgrb；GCN 29981 'likely SHORT GRB'、GCN 30005 'short GRB210510A'、GBM 触发通告 TRIGGER_DUR=0.128 s 同口径。红移：ZTF 候选对应体宿主星系 SDSS 测光红移 0.221±0.0742（GCN 30005），宿主 WISE 颜色提示可能为 AGN；GBM 定位误差大（21.7°）、对应体身份为候选级。别名证据串：GCN 30005 表 'IAU Name AT2021meo'、'ZTF21abaytuk'。原文笔误：GCN 30005 引 '(GCN 28965)'（该号为 GRB 201130A 的 GBM 精化位通告）疑为 GCN 29981 之笔误。测光检索（2026-10-28）：GCN 站源名+触发号 642367205 双向检索命中 3 篇（29981 仅定位无测光；29993 DDOTI w 限量已入库 1 行；30005 ZTF g 检测已在表并改正 time）；相邻编号扫描 29980/29982 属 IceCube-210510A 中微子源（另一源未触碰）、30004/30006 属 GRB 210512.786，均无本源测光；仓内 external/rssgrbag 与 external/grbsn_webtool 无 210510A 记录、external/fermi_gbm 仅目录参数；文献检索未见以本源为对象的期刊论文（Ahumada 2022 UMD 学位论文 §2.5.10 转述同批 ZTF 观测，未采用）→ 共补 1 行（DDOTI w 上限）。审核 fsy 2026-10-28",
   "sub_tag": [
     "sgrb"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
+    "t0_note": "T0=触发时刻 2021-05-10T19:20:00.830 UTC（Fermi/GBM trigger 642367205；GCN 29981 + 官方通告页 + FERMIGBRST 三路互证）；原 bot 值 2021-05-11T05:02:53Z 为 ZTF 观测开始时刻，已更正",
+    "t0_basis": "trigger",
     "bot_created": true
   },
   "articles": [],
