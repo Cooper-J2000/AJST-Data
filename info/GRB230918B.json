@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB230918B",
-  "alias": [],
-  "ra": 313.6548,
-  "dec": -48.6748,
-  "T0": "2023-09-18T23:55:14Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 230918B",
+    "bn230918997"
+  ],
+  "ra": 307.7,
+  "dec": -48.4,
+  "T0": "2023-09-18T23:55:14.923590Z",
+  "T0_ref": "GCN 34734（Fermi/GBM trigger 716774119.92359 / 230918997，原文 At 23:55:14 UT … the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 230918B）；MET→UTC 按 Issue #67 口径减 5 跳闰秒（naive 23:55:19.923590 − 5 s = 23:55:14.923590，整秒与通告一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.3,
+  "pos_ref": "GCN 34734",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核 fsy（2026-10-28）。(1) 身份：Fermi/GBM 于 2023-09-18 23:55:14 UT 触发（trigger 716774119.92359 / bn230918997，GCN 34734，原文 likely LONG GRB）；同日 GRB 230918A（Glowbug 短暴，GCN 34733）为另一事件、无混并；GOTO 在 GBM 定位区内发现快速上升暂现源 GOTO23aky=AT 2023tbf（GCN 34738），后经 VLT/X-shooter 光谱判为矮新星，原文明确 AT 2023tbf is not a GRB afterglow and is not associated with GRB 230918B（GCN 34753）——bot 将 AT 2023tbf 的坐标（313.6548/−48.6748）与其 VLT 测光误配到本源，已全部清除。仓内 external/fermi_gbm、external/swift_bat、external/mpe_greiner 快照均无该触发条目，GBM 证据以官方通告 GCN 34734 为准。(2) T0：标准 T0=2023-09-18T23:55:14.923590Z——GCN 34734 给 UTC 整秒与 trigger MET 716774119.92359，MET→UTC 按 Issue #67 口径减 5 跳闰秒（naive 23:55:19.923590 − 5 s = 23:55:14.923590，整秒与通告一致）；原 bot T0=23:55:14Z（extra_data.t0_basis=meta_trigger、t0_note 原值留档于此）系整秒截断，亚秒由 MET 补足。T0_offset=null。(3) 定位：改取 GBM 地面定位 RA=307.7/Dec=−48.4（GCN 34734），pos_error=6.3、pos_error_unit=deg（原文 statistical uncertainty of 6.3 degrees，统计误差；置信水平未标注 → pos_error_confidence 留空，GCN 34738 称 the GBM 90% localisation region 并列备查）；原 ra/dec=313.6548/−48.6748 为 AT 2023tbf 位置，废弃。(4) 分类：GCN 34734 原文 likely LONG GRB（GBM 团队分类）→ sub_tag=lgrb；FERMIGBRST 快照无该触发条目，无目录 t90 可用。(5) 测光：唯一一行（VLT r=19.64±0.05 AB）系 AT 2023tbf 的测量、与本源无关 → discard=y 并留证（见行 comment）；GOTO L 波段三行探测（GCN 34738，20.34/20.18/20.03 AB）同属 AT 2023tbf，不入库。(6) 红移：null。(7) 宿主：null。(8) X 射线：无。(9) 测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external/rssgrbag 0 命中、grbsn_webtool 无该事件、fermi_gbm/swift_bat/mpe_greiner 快照无该触发；GCN 站逐篇枚举 34730–34765（36 篇）命中 4 篇：34733（GRB 230918A Glowbug，另一事件）、34734（GBM 触发）、34738（GOTO 发现 AT2023tbf）、34753（VLT 判矮新星）→ 本源无可用测光；SIMBAD 无 GRB 230918B 标识（0 命中）、OpenAlex 0 命中、arXiv API 0 命中 → 无已发表测光表，articles[] 留空。(10) alias：GRB 230918B（GCN 34734 subject 用名）、bn230918997（GCN 34734 原文 trigger 716774119.92359 / 230918997 的 GBM 触发名）。修订 1 行（置 discard）、新增 0 行，X 射线行 0 条。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0=Fermi/GBM trigger MET 716774119.92359 闰秒改正后 UTC 2023-09-18T23:55:14.923590Z（GCN 34734，Issue #67 口径）；原 meta_trigger 值系其整秒截断",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
