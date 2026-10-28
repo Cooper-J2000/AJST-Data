@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB170423A",
-  "alias": [],
+  "alias": [
+    "bn170423719"
+  ],
   "ra": 344.34,
   "dec": -4.26,
-  "T0": "2017-04-23T17:15:08Z",
-  "T0_ref": null,
+  "T0": "2017-04-23T17:15:08.351000Z",
+  "T0_ref": "GCN 21030（触发仪器官方通报，原文：At 17:15:08.35 UT on 23 April 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170423A (trigger 514660513 / 170423719)）；Fermi/GBM 目录（bn170423719）trigger_time=2017-04-23T17:15:08.351Z 与 GCN 整秒一致，取目录全精度亚秒值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1.17,
+  "pos_ref": "GCN 21030",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核（fsy 2026-10-28）：T0 补锚定（17:15:08.351000Z，GCN 21030 整秒+GBM 目录亚秒）。pos_error 补 1.17 deg（GCN 21030 原文 uncertainty of 1.17 degrees, radius, 1-sigma containment, statistical only；该文另述系统性误差 core-plus-tail 模型、90% GRB 约 3.7 deg——GBM 定位特性，录此备查）。sub_tag=lgrb：GCN 21030 原文 duration (T90) of about 47 s (50-300 keV)；GBM 目录 t90=46.59±1.14 s。身份唯一：同日 Fermi/GBM 另有未编号暴 bn170423872（20:55:23 UT，ra=209.6 dec=26.4）与本暴（17:15:08 UT，ra=344.3 dec=-4.3）时间/位置均不相干；GCN 检索无 170423B 命名。GBM-only 暴：Swift/MPE 目录均无记录，光学后续仅 TAROT Reunion（GCN 21076）。lc 唯一行（TAROT R>17.8±0.2 上限）逐行核对与 §3.8 中点改正见行注；articles 无该暴专属论文。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
