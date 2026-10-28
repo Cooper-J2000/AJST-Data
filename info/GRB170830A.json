@@ -1,28 +1,44 @@
 {
   "transient_id": "GRB170830A",
-  "alias": [],
+  "alias": [
+    "GRB 170830A",
+    "GRB170830A",
+    "GRB170830135",
+    "GRB 170830.135",
+    "bn170830135"
+  ],
   "ra": 267.244,
   "dec": -2.0,
-  "T0": "2017-08-30T03:14:01Z",
-  "T0_ref": null,
+  "T0": "2017-08-30T03:14:01.950Z",
+  "T0_ref": "GCN 21776（Fermi GBM Team：At 03:14:01.95 UT on 30 August 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170830A, trigger 525755646 / 170830135，原文 'This trigger is likely associated with the transient source reported by MAXI/GSC'）；external/fermi_gbm 快照 FERMIGBRST trigger_time=2017-08-30T03:14:01.949Z 一致（亚秒以 GCN 原文 03:14:01.95 为准）；bot 原值 2017-08-30T03:14:01Z 即 GBM 触发的整秒截断，按触发仪器亚秒值改进；GCN 原文 03:14:01.95（2 位小数）补零为 03:14:01.950Z 以符合本仓 ISO8601 校验格式（数值不变）；MAXI/GSC nova alert 触发为 03:15:29 UT（GCN 21761）——MAXI 为扫描仪、其 nova-alert 滞后真实爆发：AstroSat/CZTI 明言最强峰在 03:14:00 UT、约在 MAXI 触发前 89 s（GCN 21773），故 T0 取真实触发仪器的 GBM 值而非 MAXI 扫描告警时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "MAXI/GSC",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 324.0,
+  "pos_ref": "GCN 21761（MAXI/GSC 扫描定位 (R.A., Dec) = (267.244, -2.000) J2000 = (17 48 58, -02 00 00)，statistical 90% C.L. 椭圆长/短半径 0.09°/0.05°（取长半径 0.09°=324″），长轴自北向逆时针 41.0°，矩形误差盒四角 (266.590,-1.392)/(266.518,-1.475)/(267.633,-2.210)/(267.637,-2.281)，另有 0.1°（90% containment radius）系统不确定度；扫描平均流量 1330±75 mCrab（4-10 keV），前后过境均 <20 mCrab）；external/fermi_gbm 快照 FERMIGBRST（trigger 170830135）ra=267.244 dec=-2.0 一致；GBM 地面定位 275.9,-4.0（2.6° 1-sigma，GCN 21776）过粗不作位置来源",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份核验：MAXI/GSC nova alert 03:15:29 UT 触发（GCN 21761，扫描定位 RA=267.244 Dec=-2.000、90% C.L. 椭圆 0.09°/0.05°+0.1° 系统项、扫描平均 1330±75 mCrab 4-10 keV、前后过境 <20 mCrab）；Fermi/GBM 03:14:01.95 UT 触发（GCN 21776，trigger 525755646 / 170830135，自认与 MAXI 暂现源成协）；AstroSat/CZTI 确证 40-200 keV 多峰、最强峰 03:14:00 UT（约在 MAXI 触发前 89 s）、T90=57.6 s（GCN 21773）——真实 GRB，非恒星耀发（区别于同仪器的 GRB 141029A 案例）。T0 处置见 T0_ref：bot 原值 03:14:01Z 为 GBM 触发整秒截断，改进为亚秒触发值 03:14:01.95Z（GCN 21776），Trigger_Instrument 相应由 MAXI/GSC 改为 Fermi/GBM，MAXI 保留为发现仪器记入本 comment。T90：GBM 目录 117.25±2.32 s（50-300 keV，external/fermi_gbm 快照；GCN 21776 约 110 s）、CZTI 57.6 s，均远大于 2 s，判 lgrb。alias 出处：'GRB 170830A' 为 GCN 21761/21764/21773/21776 原文用名；'GRB170830135'/'GRB 170830.135'/'bn170830135' 为 FERMIGBRST 目录 name_alt（external/fermi_gbm 快照，对应 GCN 21776 'trigger 525755646 / 170830135'）。位置处置见 pos_ref：保留 MAXI 扫描定位（GBM 快照位置一致佐证；iTelescope 观测即覆盖整个 MAXI 矩形误差盒）。余辉未检出（GCN 21764：iTelescope T32 3×60 s 合成图 3σ 上限 18.5m，误差盒内未证认 ROSAT 源 1RXS J174835.3-014843 附近亦无新源）→ 无红移。检索留证（§3.3）：2026-10-28，入口 GCN 官网 https://gcn.nasa.gov/circulars 全文检索 + 邻域逐篇扫描：官方事件页 grb-170830a 列 4 篇；逐篇抓取 GCN 21755–21790 共 36 篇标题与正文关键词，GRB 170830A 相关通告仅 4 篇（21761 MAXI 探测 / 21764 iTelescope 上限即本行出处 / 21773 AstroSat CZTI / 21776 Fermi GBM）；旧版聚合页 gcn.gsfc.nasa.gov/other/GRB170830A.gcn3 不存在（404）；结论：无未收录测光来源，补行数 0。INSPIRE（inspirehep.net API）q='GRB 170830A' 0 篇、q='170830135' 0 篇（对照组 q='GRB 090423' 48 篇，检索通道正常）→ articles 留空（GCN 不入 articles）；仓内 external 快照 grep 170830 命中仅本源条目（mpe_greiner / fermi_gbm 各 1 条），rssgrbag/grbsn_webtool/swiftgrbba 无记录；mpe_greiner 标 IPN:y，但 GCN 21755–21790 范围内无本暴 IPN 三角测量通告（21767/21774/21775 为 GRB 170826A/170826B/170827B 的 Konus-Wind 观测），疑出自 IPN 目录而非 GCN，未找到不采信。SIMBAD 本机网络不可达（连接失败），未能复核 1RXS J174835.3-014843 证认，如实留证。待决（A 档）：①T0 采用 GBM 触发 03:14:01.95Z 且 Trigger_Instrument=Fermi/GBM（bot 原值本即 GBM 整秒截断），如维护者倾向保留 MAXI/GSC 并用 03:15:29 请裁决——注意 CZTI 证据表明 MAXI 时刻滞后真实爆发约 89 s；②mpe_greiner IPN:y 出处未定位。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
