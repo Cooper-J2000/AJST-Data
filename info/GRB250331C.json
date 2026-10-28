@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB250331C",
-  "alias": [],
-  "ra": 80.957,
-  "dec": 33.063,
-  "T0": "2025-03-31T04:43:50Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1299967"
+  ],
+  "ra": 80.9564,
+  "dec": 33.06317,
+  "T0": "2025-03-31T04:37:40.659100Z",
+  "T0_ref": "Swift/BAT 目录快照（external/swift_bat，trigger 1299967）；GCN 39959",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 39960",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 修正（Issue #84 家族）：bot 原值 2025-03-31T04:43:50Z（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」）实为 COLIBRÍ/DDRAGO 观测起点——GCN 39963 原文「Observations started on 2025-03-31, at 04:43:50 UTC (370 s after the trigger)」，非触发时刻。真触发=Swift/BAT trigger 1299967：GCN 39959「At 04:37:40 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 250331C」；亚秒取 Swift/BAT 目录快照 trigger_time=2025-03-31T04:37:40.659100Z（整数秒与 GCN 39959 一致，按目录亚秒优先）。Trigger_Instrument 由 Swift/UVOT 改为 Swift/BAT（UVOT 仅后随观测，GCN 39959）。位置取 GCN 39960 XRT 增强定位 RA,Dec=80.95640,33.06317（误差 1.9″，radius, 90% confidence → pos_error_confidence=90）；bot 原 ra/dec=80.957/33.063 为 GCN 39959 初版 XRT 定位（80.95740,33.06310）的舍入值，已统一为 pos_ref 所指 39960 精化值。alias「BAT 1299967」为 Swift/BAT 目录快照 name_alt（官方目录触发名）。分类：t90=70.1±11.7 s（15-350 keV，Swift/BAT refined analysis GCN 40057；Swift/BAT 目录快照同值 70.1±11.7 s），按目录 t90 判 lgrb/sgrb → sub_tag=lgrb。其他量：fluence(15-150 keV)=6.6±1.0e-7 erg/cm2（GCN 40057，90% conf）；BAT 地面定位 80.963,33.068（2.0′，90%，GCN 40057）；GCN 39977 XRT 精化定位 80.95619,+33.06347（2.2″，90%）并列备查。Fermi/GBM 快照同日 3 触发（bn250331070 01:40:52Z、bn250331243 05:49:17Z、bn250331949 22:46:32Z）时刻位置均不合，非同源、无双触发。XRT 测光（GCN 39997 精化分析）属 X 射线，按约不入库。测光检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇命中 9 篇（39959/39960/39963/39977/39981/39997/40003/40013/40057），其中 4 篇 Swift 官方定位/精化通告无光学测光；补入 GCN 39963 DDRAGO 1 行（time/mjd 改正）+39981 MASTER 2 行+40003 UVOT 9 行+40013 Calapai 1 行，共 +12 行；external/rssgrbag（射电）、external/grbsn_webtool 无该源记录；Fermi/GBM 快照无对应触发；ADS/SciX 网检（2026-10-28）未见该源研究论文，articles 留空。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 已修正为 Swift/BAT 触发时刻（trigger 1299967）；bot 原值 2025-03-31T04:43:50Z 为 GCN 39963 DDRAGO 观测起点（触发后 370 s），原值与改证见 comment",
+    "t0_basis": "swift_bat_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
