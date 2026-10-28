@@ -1,28 +1,47 @@
 {
   "transient_id": "GRB240402B",
-  "alias": [],
+  "alias": [
+    "LXT 240402A",
+    "FXT/GRB 240402B"
+  ],
   "ra": 245.45094,
   "dec": 25.76321,
-  "T0": "2024-04-02T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2024-04-02T08:47:46Z",
+  "T0_ref": "GCN 36017（GECAM-C 触发通告，原文 denoted as T0）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "GECAM",
-  "redshift": 1.551,
-  "tag": [],
+  "Trigger_Instrument": "GECAM-C",
+  "redshift": 1.5513,
+  "redshift_type": "spec-host",
+  "redshift_ref": "Becerra+2026, doi:10.1051/0004-6361/202557612（VLT/X-shooter 宿主发射线）；GCN 36385 初步值 z=1.551 一致",
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "pos_ref": "GCN 36027（Kinder 光学余辉位置 16:21:48.225 +25:45:47.57，ra/dec 与之一致）",
+  "comment": "身份：GRB 240402B（GECAM-C，GCN 36017）= Einstein Probe/LEIA 快 X 射线暂现源 LXT 240402A（GCN 36016），同一事件（Konus-Wind GCN 36028、Glowbug GCN 36030、VLT GCN 36025/36385、EP-FXT GCN 36022 互证）；与同日 GRB 240402A（Fermi GBM trigger 733794249，23:44:04 UT，GCN 36012）及 GRB 240402C（GCN 36036/36038/36046）为不同事件，未混入。T0：取触发仪器 GECAM-C 值 2024-04-02T08:47:46 UTC（GCN 36017）；互证：LEIA 08:47:41（GCN 36016）、Konus-Wind 08:47:48.797（GCN 36028）、Glowbug 08:47:45.240（GCN 36030），各仪器整数秒一致、仅亚秒–秒级差，按 §3.2/§3.8 取触发仪器值；bot 原值 2024-04-02T00:00:00Z（extra_data t0_note=meta trigger-time 的占位值）为管线残留，已弃（Issue #84 型）；T0_offset 不适用（无 >1 s 设备触发改正）。定位：ra/dec 为 GCN 36027 光学余辉位置；EP-FXT 误差 10″（90% C.L.，GCN 36022）；Chandra 定位 16:21:48.25 +25:45:47.18、误差 0.3″（1σ，Becerra+2026 表述）备查；本源未按任一单值填 pos_error（来源各给出不同置信水平，列此备查）。t90=6.55±0.52 s（GECAM-C，15–350 keV，GCN 36017），按目录 t90 判 lgrb；Becerra+2026 与 GCN 36385（z=1.551 宿主、Eiso=4.7e52 erg 近 Amati 关系）支持长暴起源；GCN 36034 曾按 z≈0.047（CGCG 138-001，后被宿主光谱否定）论证致密星并合（短暴区）起源，该论证随红移更正失效。红移：z=1.55130±0.00011（Becerra+2026 VoR，X-shooter [O II]/[O III]/Hα/Hβ 发射线；原文「Gaussian fit of the absorption lines」为笔误，应指发射线）；宿主未定论：暗弱底层星系 z=1.5513（Pcc≈0.5%）vs CGCG 138-001 z=0.04798±0.00001（Pcc≈3%，投影偏移≈220 kpc），host_galaxy 按 §3.10 不建立。alias 出处：LXT 240402A（<GCN 36016> 原文用名）、FXT/GRB 240402B（<GCN 36025> 原文用名）。X 射线：EP-FXT（GCN 36022）、Swift/XRT（GCN 36114）、Chandra（GCN 36253）及 Becerra+2026 表1 X 射线列均有 X 射线测光，按 §3.3 暂不入库。原文笔误备查：GCN 36018 引「GCN 36106/36107」应为 GCN 36016/36017；GCN 36253 引「GCN 36094」应为 GCN 36027；GCN 36027 文中「GRB 240402A by GECAM-C」应为 240402B。测光检索（2026-10-28）：仓内 gcn/archive 全文 45 889 篇 grep「240402 / LXT 240402」命中本事件 14 篇（含光学数值/上限 6 篇：36018 GWAC-F50A、36019 MASTER、36023 AST3-3、36025 VLT、36027 Kinder、36029 WFST；另 7 篇同日 A/C 事件命中已逐一排除），external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）、external/uvot_grb 均无记录；GCN 站事件页与仓内快照一致；ADS/SciX 检索命中研究论文 1 篇：Becerra+2026（A&A 705, A233 = arXiv:2510.13015；aanda.org 被 DataDome 反爬拦截，VoR PDF 取自 Helsinki 机构库 helda.helsinki.fi 并逐值核对，与 arXiv 版一致），其余命中（Jonker+2026, MNRAS 545, staf2021；arXiv:2608.03582 JWST）均针对 EP250207b、不含本源测光；TNS 不适用（GRB 类源，无 AT/SN 命名）→ 共补 53 行（MASTER 42 上限、AST3-3、WFST、Kinder 4 上限+1 探测、Becerra+2026 表1 光学 4 行），并将原 GWAC 行由占位 T0 历元改正至标准 T0 的曝光中点。Becerra+2026 表1 的 97.73 d 行为后期模板像（Magnitude 列=Template，无瞬变体星等），未入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=GECAM-C 触发时刻（GCN 36017）；2026-10-28 审核修正：bot 原 t0_note「t0 为 meta trigger-time（真实触发时刻）」对应的值 2024-04-02T00:00:00Z 为占位值，已弃用",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Becerra+2026",
+      "url": "https://doi.org/10.1051/0004-6361/202557612",
+      "title": "Exploring the connection between compact object mergers and fast X-ray transients: The cases of LXT 240402A and EP250207b",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
