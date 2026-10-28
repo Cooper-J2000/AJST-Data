@@ -1,28 +1,44 @@
 {
   "transient_id": "GRB151122A",
-  "alias": [],
-  "ra": 299.6973,
-  "dec": -19.9063,
-  "T0": "2015-11-22T17:00:45Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 151122A",
+    "GRB151122A",
+    "GRB151122709",
+    "GRB 151122.709",
+    "bn151122709"
+  ],
+  "ra": 299.704,
+  "dec": -19.899,
+  "T0": "2015-11-22T17:00:40Z",
+  "T0_ref": "GCN 18637（Swift/BAT rate-trigger #664653：On November 22, at 17:00:40 UT，onboard 位置 RA=299.704, Dec=-19.899，误差 3 arcmin 90% containment 含系统误差）；bot 原值 2015-11-22T17:00:45Z 为 Fermi/GBM 触发 469904449 的整秒近似（GBM 触发时刻 17:00:45.006Z，external/fermi_gbm 快照 FERMIGBRST；GCN 18639 原文 17:00:45.01 UT），两仪器触发相差 5.006 s，按 §3.2 有 Swift 则以 Swift 为准，采用 BAT 触发时刻 17:00:40Z；另 external/swift_bat 目录 trigger_time=2015-11-22T17:00:52.800Z（MET 469904452.8）为地面检出条目（Trigger_method=ground detected）的目录内部定义，非板上 rate-trigger 时刻，不采用",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 180.0,
-  "pos_ref": "GCN 18637",
+  "pos_ref": "GCN 18637（onboard-calculated location RA=299.704, Dec=-19.899 J2000，误差 3 arcmin 半径 90% containment 含系统不确定度=180″）；external/fermi_gbm 快照 FERMIGBRST（trigger 469904449）ra=299.704 dec=-19.899 一致佐证；bot 原 ra/dec=299.6973,-19.9063 为 GCN 18640 XRT Source 1（4.7″ 90% conf，距射电源 PMN J1958-1954 5.8″；Source 2 距恒星 HD 189004 2.1″），GCN 18652 于 T0+373–442 ks 复测 4 ks，两源均无变暗，XRT 团队结论 'these are unrelated to the GRB, and XRT did not detect the afterglow of GRB 151122A'，故改用 GCN 18637 BAT 位置",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份核验：Swift/BAT rate-trigger #664653（GCN 18637，17:00:40 UT，onboard RA=299.704 Dec=-19.899）与 Fermi/GBM trigger 469904449/151122709（GCN 18639，17:00:45.01 UT）为同一暴（GCN 18637 原文 'both of these triggers are the same astrophysical GRB'，GBM 地面定位 RA=292.950 Dec=-21.350 的 1-sigma 圈包含 BAT 位置）。T90：GBM 目录 51.2±15.5 s（50-300 keV，external/fermi_gbm 快照）、BAT 目录 36.8±1.6 s（15-350 keV，external/swift_bat 快照）、GCN 18639 约 30 s（50-300 keV），均远大于 2 s，判 lgrb。alias 出处：'GRB 151122A' 为 GCN 18637/18639 原文用名；'GRB151122709'/'GRB 151122.709'/'bn151122709' 为 FERMIGBRST 目录 name_alt（external/fermi_gbm 快照，对应 GCN 18639 'trigger 469904449 / 151122709'）。位置处置见 pos_ref：原 XRT Source 1 坐标经 GCN 18652 证伪（非余辉），改用 BAT onboard 位置；因余辉未证认，无红移。同日 GRB 151122B（AGILE/MCAL 与 Fermi GBM trigger 469902102，15:31:31.515 UT，另一短暴）为独立事件，不得合并（GCN 18662 亦有 subject 由 A 改 B 的官方注记）；本仓无 151122B 条目，不受影响。检索留证（§3.3）：2026-10-28，入口 GCN 官网 https://gcn.nasa.gov/circulars 全文检索 + 邻域逐篇扫描：站内搜索触发号 664653 仅返回 GCN 18637 一篇；逐篇抓取 GCN 18637–18705 共 69 篇标题与正文关键词，GRB 151122A 相关通告仅 6 篇（18637 v2 / 18638 / 18639 / 18640 / 18641 / 18652）；旧版聚合页 gcn.gsfc.nasa.gov/other/GRB151122A.gcn3 不存在（404）；结论：无未收录测光来源，补行数 0。INSPIRE（inspirehep.net API）q='GRB 151122A' 0 篇、q='151122709' 0 篇、q='GRB 151122B' 0 篇（对照组 q='GRB 090423' 48 篇，检索通道正常）→ articles 留空；仓内 external 快照（mpe_greiner/fermi_gbm/swift_bat/swiftgrbba/grbsn_webtool）均无本暴新增测光记录；mpe_greiner 标 IPN:y，但 GCN 18637–18705 范围内无 IPN 三角测量通告，疑出自 IPN 目录而非 GCN，未找到不采信。SIMBAD 本机网络不可达（连接失败），未能复核 PMN J1958-1954 与 HD 189004 证认，如实留证。待决（A 档）：①ra/dec 本次按 GCN 18652 证据改回 BAT onboard 位置，如维护者倾向保留 XRT Source 1 原值请裁决；②external/swift_bat 目录 trigger_time=17:00:52.800Z 与 GCN 17:00:40 UT 的口径差（判定为地面检出目录内部定义，不采用）",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
