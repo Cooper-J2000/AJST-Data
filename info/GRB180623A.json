@@ -1,28 +1,54 @@
 {
   "transient_id": "GRB180623A",
-  "alias": [],
-  "ra": 214.5295,
-  "dec": -60.2539,
-  "T0": "2018-06-23T20:22:36Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 180623A",
+    "BAT 844015"
+  ],
+  "ra": 214.52879,
+  "dec": -60.25352,
+  "T0": "2018-06-23T16:41:56Z",
+  "T0_ref": "Swift/BAT trigger 844015 触发时刻（GCN 22828 记 At 16:41:56 UT、trigger=844015；external/swift_bat 快照无此源记录，按通告精度取整数秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.5,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 22829",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0：GRB 180623A = Swift/BAT trigger 844015（GCN 22828 记 At 16:41:56 UT，trigger=844015）。原 T0=2018-06-23T20:22:36Z 无出处（t0_basis=meta_trigger，与触发通告 16:41:56 UT 相差 3.7 h），按触发通告修正为 2018-06-23T16:41:56Z（§3.2：T0 只能是触发时刻；external/swift_bat 快照无此源记录，按通告精度取整数秒）。Konus-Wind（GCN 22856）于 T0=60141.775 s UT（16:42:21.775）触发同一暴（晚 BAT 触发 25.8 s，时长 ~114 s 与 BAT T90 一致），系另一仪器的触发时刻、非同一触发事件的亚秒差，不并用于 T0（见 PR 待决）。Trigger_Instrument 原 Swift，改 Swift/BAT（仓内 Swift 触发源惯例）。无 T0_offset。alias：GRB 180623A（GCN 用名）、BAT 844015（trigger 目录名）。tag：原空，补 grb。\n\n位置：GCN 22829（Enhanced Swift-XRT position）RA,Dec=214.52879,−60.25352 deg（14h18m6.91s −60°15′12.7″），uncertainty of 1.5 arcsec（radius，90% confidence，3088 s PC 数据）。原 ra/dec=214.5295/−60.2539 与原文不符（bot 转写误差，RA 差约 2.4″、Dec 差约 1.4″），改用原文精确值；pos_error=1.5″ 不变，补 pos_error_confidence=90。GCN 22833（BAT refined）214.528/−60.268、1.0′，精度低于 XRT enhanced，不另采用。\n\n红移与分类：无红移报道，redshift 留空。t90=114.9±6.8 s（Swift/BAT refined analysis，GCN 22833，15–350 keV；Konus-Wind 22856 记时长 ~114 s 一致），按通告/目录 t90 判 lgrb（原 sub_tag 空，补 lgrb）。\n\n光学与 lc：GCN 22831（Swift/UVOT，settled 观测 T0+86 s 起，明示 UVOT photometric system/Breeveld+2011）逐滤光片表核对入库 8 行：white >20.68（86–236 s）、v >19.2（629–6296 s）、u >21.6（299–17732 s）、w1 >20.8（678–16819 s）、m2 >20.0（653–6501 s）、w2 >20.0（604–6092 s）共 6 行 3σ 上限有效入库；white 20.04±0.24（878–997 s）与 b 19.86±0.28（18042–18207 s）两行探测被 GCN 22834 撤回（The Source reported in our previous GCN Circ. No 22831 is in fact a source present in the DSS survey；there is no afterglow seen），按「核不上的行不删」原则置 discard=y 留档。原行（b 19.86±0.28、time=4802.0）三处修正：time 与出处窗口不符，改窗口中点 18124.5 s、time_err=82.5 s（§3.8）；mjd=T0+time 7 位小数（原 14 位）；telescope/instrument 列位修正（原把 Swift/UVOT 写进 instrument、telescope 空）。time/mjd 全部按新 T0 重算。X 射线（GCN 22829 定位、22830 XRT analysis）不在审核范围。\n\n测光检索（2026-10-28）：本机无 gcn/archive 快照，改用 GCN 网站事件页 https://gcn.nasa.gov/circulars/events/grb-180623a（源名+触发号 844015 双通道）——共 7 篇（22828 Swift detection、22829 XRT position、22830 XRT analysis、22831 UVOT、22833 BAT refined、22834 UVOT retraction、22856 Konus-Wind），逐篇打开：含光学观测 2 篇（22831 已入库、22834 为撤回通告）；external/rssgrbag 0 行、external/grbsn_webtool 无记录、external/swift_bat/fermi_gbm 无此源记录；arXiv API 精确短语 0 篇；INSPIRE 全文 2 篇（Sharma et al. 2021 AstroSat/CZTI 快变源巡天 DOI:10.1007/s12036-021-09714-6、Zhou et al. 2026 ApJL 1004 L11 arXiv:2605.13440，均全文提及本暴、无专属测光，已登记 articles[]）；ADS/SciX 反爬拦截（同 PR #330/#429/#433/#435 处置，改用 INSPIRE+arXiv 佐证）；TNS 无该源报道。结论：补 7 行（GCN 22831：6 上限+1 撤回探测留档）、修正 1 行（同 b 行）、核不上依据的行 2 行（两行撤回探测，均 discard=y）。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，与实际不符，已改写。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 Swift/BAT trigger 844015 触发时刻 2018-06-23T16:41:56Z（GCN 22828；原 bot 值 20:22:36Z 无出处，偏差 3.7 h）",
+    "t0_basis": "Swift/BAT trigger 844015（GCN 22828）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Sharma+2021",
+      "url": "https://doi.org/10.1007/s12036-021-09714-6",
+      "title": "The search for fast transients with CZTI",
+      "source": "fsy"
+    },
+    {
+      "name": "Zhou+2026",
+      "url": "https://arxiv.org/abs/2605.13440",
+      "title": "Magnetar-powered long gamma-ray bursts and connection to superluminous supernovae and fast radio bursts",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
