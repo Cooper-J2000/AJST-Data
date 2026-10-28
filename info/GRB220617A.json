@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB220617A",
-  "alias": [],
+  "alias": [
+    "GRB220617772",
+    "GRB 220617.772",
+    "bn220617772"
+  ],
   "ra": 156.96,
   "dec": 15.53,
-  "T0": "2022-06-17T18:31:12Z",
-  "T0_ref": null,
+  "T0": "2022-06-17T18:31:12.902462Z",
+  "T0_ref": "GCN 32209（Fermi GBM Team，触发仪器官方通告）：At 18:31:12 UT on 17 Jun 2022, triggered and located GRB 220617A (trigger 677183477.902462 / 220617772)，亚秒 .902462 取自 MET 触发号小数部分；GCN 32224（GBM 观测）报 18:31:12.89 UT（与 MET 差 12 ms，取 MET 精值）；仓内 FERMIGBRST 快照（external/fermi_gbm bn220617772 行）trigger_time=2022-06-17T18:31:12.902Z 交叉一致；IPN（GCN 32220）报行星际到达时刻 18:31:09 系三角测量时基、Konus-Wind 自身触发 T0=18:31:09.240（GCN 32237）均系设备到达/触发时刻，不用作锚、不记 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 32212",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 324.0,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 32212（Fermi-LAT team）：best LAT on-ground location RA,Dec=156.96, 15.53 (J2000)，error radius 0.09 deg=324″（90% containment, statistical only）；GBM on-ground 位（GCN 32209：155.8/21.2，统计误差 2.7 deg）与 IPN 3σ 误差框（GCN 32220）备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "通告集甄别（2026-10-28，仓内 GCN 全文库逐篇实核）：本暴通告共 8 篇——GCN 32209（Fermi GBM Final Real-time，触发 677183477.902462/220617772，likely SHORT）、32210（MASTER-SAAO 上限表 10 行）、32212（Fermi-LAT 探测：位 156.96/15.53±0.09 deg/90%，8.2 GeV 光子 T0+0.9 s）、32215（Swift-XRT：5 个未编目 X 射线源无确诊余辉；并勘误原 GCN 32211 误写 'GRB 220617B'——实为本暴 220617A）、32220（IPN 三角测量 3σ 误差框，short）、32224（GBM 观测 T90≈0.7 s）、32227（TNG 光学上限 r~24.5 AB）、32237（Konus-Wind，short-duration，T0=18:31:09.240）。T0 口径：Fermi GBM 触发（亚秒取 MET 精值 .902462；GCN 32224 报 .89 差 12 ms<60 ms 不立案）；info 原 T0=18:31:12Z 整秒已补亚秒；IPN 18:31:09/Konus 18:31:09.240 系行星际时基与设备触发时刻，不记 T0_offset。Trigger_Instrument 改 Fermi/GBM（原标 Fermi/LAT 系探测仪器非触发仪器；T0 与触发仪器同源 §3.5；LAT 位仍作 info 坐标——其 0.09 deg/90% 为最精定位）。pos：LAT 位（GCN 32212）324″/90% 显式给出。sub_tag：t90=0.704±0.230755 s（仓内 FERMIGBRST 快照 external/fermi_gbm bn220617772 行，50-300 keV；GCN 32224 亦报 T90≈0.7 s；GBM RTL 称 likely SHORT、IPN/Konus/TNG 均称 short），按目录 t90 判 sgrb。测光 11 行入库：GCN 32227 TNG/DOLORES r 波段上限 1 行（窗 2022-06-18 21:22:18→22:09:26 UT=T0+96665.1-99493.1 s，中点 98079.1、半宽 1414.0；r~24.5 AB SDSS 定标→mag_system=AB；作者自报 about 1.14 d 系约数、与精确中点差 ~417 s 留档；bot 原行 time=98080 系中点取整但缺 time_err，已精化）+GCN 32210 MASTER-SAAO 上限 10 行（Tmid-T0=661-2976、Expt 60-450（Coadd）→ time_err=Expt/2；Filt=C→band=G；首行端点自洽：起点 18:41:13 UT=T0+600.1 s+60≈661 ✓）。X 射线行不新增（GCN 32215 五源无确诊余辉）。文献检索（2026-10-28，Web 检索）：未见本暴专门研究论文，articles[] 留空。alias 出处：GRB220617772 / GRB 220617.772 / bn220617772＝FERMIGBRST 目录 name_alt（仓内 external/fermi_gbm 快照 bn220617772 行；GCN 32209 原文用名 trigger 677183477.902462 / 220617772、GCN 32224 原文用名 trigger 677183477 / 220617772）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
