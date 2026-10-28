@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB240229A",
-  "alias": [],
+  "alias": [
+    "GRB 240229588"
+  ],
   "ra": 199.18,
   "dec": 16.77,
   "T0": "2024-02-29T14:07:07Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 35833",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "GRID",
@@ -12,21 +14,33 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 4320,
+  "pos_ref": "GCN 35833",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 240229A，Fermi/GBM 触发 730908432（GCN 35833），GRID（GCN 35903/35904）、CALET/CGBM（GCN 35842）、VZLUSAT-2（GCN 35872）、GRBAlpha（GCN 35894）、Glowbug（GCN 35897）、IPN（GCN 35870）均探测。IceCube-240229A 为另一源（中微子警报 240229.66，位置 04h49m48.72s +15d59m45.6s，其 MASTER 观测报告 GCN 35837 属该警报），勿混淆。\nT0=2024-02-29T14:07:07 UT（Fermi/GBM 触发，GCN 35833；FERMIGBRST 快照 trigger_time 14:07:07.026Z 互证）；并列值：GRID 14:07:08 UTC（GCN 35903，1 s 精度）、CALET 14:07:07.40 UTC（GCN 35842）、Glowbug onset 14:07:09.552（GCN 35897）、IPN ~50827 s UT=14:07:07（GCN 35870）；取 GBM 整秒值（§3.2），各值已并列。\nt90=28.6726±0.923051 s（FERMIGBRST 快照，50-300 keV），按目录 t90 判 lgrb；另 GRID T90≈25.0±3.0 s（GCN 35903）、CALET T90=27.6±2.5 s（GCN 35842），各通告均称 long-duration。\n定位：GBM Final RT RA=199.2 Dec=16.8、statistical uncertainty 1.2 deg（GCN 35833，=4320\"）；ra/dec 精确形 199.18/16.77 同于 GCN 35844 引述的 Fermi GBM Final Position 与 FERMIGBRST 快照；来源未标注置信水平。\n别名：新增「GRB 240229588」（GCN 35834 原文用名，subject：Fermi Trigger 730908432 / GRB 240229588；亦为 FERMIGBRST trigger_name）。\n测光检索（2026-10-28）：仓内 gcn/archive 全文快照（截至 GCN 46010，2026-10 下旬）grep「240229A」命中 15 篇并逐篇确认归属（35837 属 IceCube-240229A 警报、3799 为 GRB 050814 误中，已排除）；含光学上限 2 篇——GCN 35838（MASTER 29 条上限，全部入库）与 GCN 35844（DDOTI 1 条，已核订），其余 8 篇为 gamma 射线探测（35833/35834/35842/35872/35894/35897/35903/35904）无光学测光；external/rssgrbag 0 条、external/grbsn_webtool 63 事件无此源。外部入口：GCN 站、SciX/ADS、TNS 直连多次重试均超时（网络不可达），替代路径 arXiv API 标题/摘要检索 0 篇、WebSearch 无专门文献（仅 GCN 转引）→ 无正式发表文献；共补 29 行（MASTER）、修订 1 行（DDOTI）。\nextra_data 原值：t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）'；本次核验后数值不变、依据升级（见 t0_note）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 触发时刻（GCN 35833，整秒精度；FERMIGBRST 快照 14:07:07.026Z 互证）；原 bot 值即 2024-02-29T14:07:07Z（t0_basis=meta_trigger），数值经复核不变，依据升级为已核验",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Becerra+2021",
+      "url": "https://arxiv.org/abs/2106.15075",
+      "title": "DDOTI Observations of Gravitational-Wave Sources Discovered in O3",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
