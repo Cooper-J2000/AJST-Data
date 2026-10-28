@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB250926A",
-  "alias": [],
-  "ra": 356.91,
-  "dec": 27.35,
-  "T0": "2025-09-26T00:21:23Z",
-  "T0_ref": null,
+  "alias": [
+    "bn250926015"
+  ],
+  "ra": 82.98,
+  "dec": -7.02,
+  "T0": "2025-09-26T00:21:23.966Z",
+  "T0_ref": "GCN 41993（Fermi GBM Final Real-time：00:21:23 UT，trigger 780538888.96614 / 250926015）；FERMIGBRST 官方目录快照 bn250926015 trigger_time=2025-09-26T00:21:23.966Z（external/fermi_gbm）；MET 780538888.96614 独立重算（2001-01-01 epoch 扣 5 次闰秒）=00:21:23.966 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,18 +14,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 6552,
+  "pos_ref": "GCN 41993；FERMIGBRST 官方目录快照 bn250926015",
+  "pos_error_confidence": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "重审（fsy，2026-10-28）：〔T0〕原整秒 00:21:23Z（bot meta_trigger=GBM 目录触发）正确，补目录亚秒 → 2025-09-26T00:21:23.966Z；GCN 41993 原文 00:21:23 UT 舍入一致。extra_data 原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot），按 §3.10 改写，原值留本 comment。〔T0_offset〕留空：Insight-HXMT 触发 00:21:24.600 晚于 GBM 触发 0.634 s（GCN 42013，非前导）；AstroSat CZTI 主探测器光变峰 00:21:21.75（Veto 峰 00:21:21.04，GCN 42008）早于 GBM 触发 2.216/2.926 s，但（i）该值为光变峰值非辐射起始，（ii）GBM 官方目录 t90_start=+0.064 s 显示 GBM 自身分析中 T90 窗起于触发后、无触发前辐射记录，跨仪器时标差异无法排除——按 §3.2「峰值不是 T0」与证据不足，不记 T0_offset，列 PR 待决。〔定位重大改正〕原 ra=356.91/dec=27.35 系 Insight-HXMT/GBM 三角定位**环带中心**（GCN 42019：annulus center 356.91/27.35、radius 113(+11/−10)° 3σ stat）被 bot 误作源位置——环带中心非位置（与 GRB240913C 的 ETJASMIN 环带同类失真）；改为 GBM on-ground 位：ra=82.98/dec=−7.02（FERMIGBRST 快照 bn250926015；GCN 41993 原文 RA=83.0, Dec=−7.0 舍入一致），pos_error=1.82°=6552″（快照 error_radius=1.82；GCN 原文 statistical uncertainty of 1.8 degrees，未标注置信水平 → pos_error_confidence 留空），pos_ref=GCN 41993+快照。42019 环带为附加约束备查：其 3σ 区排除 Orion Nebula 与本暴关联（原文「the Orion Nebula falls well out of the 3-sigma region … very likely unrelated」，回应 GCN 42000 提出的 Orion 成协可能）。〔分类〕t90=2.432±0.202 s（50-300 keV，FERMIGBRST 快照 bn250926015），按目录 t90 判 lgrb；GCN 41993 标题「likely LONG GRB」互证；其他来源值并列：HXMT T90=2.1(+2.3/−0.7) s（60-900 keV，GCN 42013）、CZTI T90=1.5(+0.3/−0.7) s（20-200 keV，GCN 42008）、DDOTI 转述 T90~5 s（GCN 42000）。〔alias〕bn250926015（GCN 41993 原文 trigger 名 250926015 的 HEASARC bn 形，FERMIGBRST 快照 name_alt 同形）。〔articles〕[]（仅用 GCN 通告与官方目录快照，无研究论文）。〔测光检索留证（2026-10-28）〕仓内 gcn/archive 全库扫描「250926A」命中 11 篇（41993/41994/42000/42003/42008/42013/42014/42019/42020/42027/42515）全部读取；GCN 事件页与仓内一致；external/rssgrbag、external/grbsn_webtool 无该源记录；SciX/ADS 检索无该暴专门论文与红移测量（红移留空）。光学上限仅 DDOTI（GCN 42000）与 MASTER-SAAO（GCN 41994）两处：补入 lc 新增 22 行（MASTER-SAAO 表原样，视场中心距 GBM 位 ≤1.4° 覆盖源位）+ 修正原 DDOTI 行（窗口中点口径 + band G→w）。其余通告为伽马射线探测（CZTI 42008、HXMT 42013、CALET 42027、VZLUSAT-2 42515）、三角定位（42019）与同日 IceCube 中微子候选（42003/42014，IceCube-250926A 另一事件、与本暴关联未确立），无测光数据。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 官方目录触发时刻 2025-09-26T00:21:23.966Z（bn250926015，GCN 41993 互证，MET 扣 5 闰秒复核）；CZTI 峰值早于触发 2.2 s 的跨仪器歧义见 comment，未记 T0_offset",
+    "t0_basis": "gbm_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
