@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB241206A",
-  "alias": [],
+  "alias": [
+    "bn241206505"
+  ],
   "ra": 215.5,
   "dec": 56.0,
-  "T0": "2024-12-06T12:06:49Z",
-  "T0_ref": null,
+  "T0": "2024-12-06T12:06:49.880Z",
+  "T0_ref": "GCN 38456（Fermi/GBM 团队通告：At 12:06:49.88 UT on 06 December 2024, the Fermi GBM triggered and located GRB 241206A, trigger 755179614/241206505）——亚秒取触发仪器通告值（原文 49.88，两位小数；存为 .880 三位小数系零填充，未抬精度）；GCN 38447（GBM Final Real-time）仅给整数秒 12:06:49 UT；Swift/BAT-GUANO（GCN 38453）同给 T0 2024-12-06T12:06:49.88 UTC，互证一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 5.2,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 38447",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "身份：Fermi/GBM trigger 755179614/241206505（GCN 38447/38456），GBM final real-time 定位 RA=215.5 Dec=56.0（J2000，statistical uncertainty of 5.2 degrees，GCN 38447）；Swift/BAT-GUANO 独立探测且定位与 GBM 一致（GCN 38453）。定位置信水平：GCN 38447 未标注，pos_error_confidence 留空；备查 FERMIGBRST 目录快照 ra=215.51 dec=55.99 error_radius=5.15 deg（external/fermi_gbm/normalized.jsonl，同一定位的更高精度表述，未采用，保留 GCN 十进值）。T0 备查：FERMIGBRST 目录快照 trigger_time=2024-12-06T12:06:49.876Z，与 GCN 38456 的 49.88 差 4 ms（<60 ms，不另报）。分类：GCN 38447 称 likely LONG GRB；t90=30.7815±2.07241 s（FERMIGBRST 目录快照，50–300 keV），按目录 t90 判 lgrb；GCN 38456 亦给 T90 约 31 s（50–300 keV），两源一致。注意：EP241206a（GCN 38457，Einstein Probe，2024-12-06T16:34:47Z，RA=34.702 Dec=38.914）为不同事件，不作别名、其 MASTER/OSN 上限（GCN 38458/38466/38480）不入本源。alias bn241206505 为 GCN 38447 skymap 路径用名与 FERMIGBRST 目录触发名。测光检索（2026-10-28）：仓内 gcn/archive 全文检索「241206」命中 14 篇、其中本事件 5 篇（38447/38448/38453/38456/38469，GCN 事件页 gcn.nasa.gov/circulars/events/grb-241206a 确认即全部），external/rssgrbag 与 external/grbsn_webtool 0 记录；外部：GCN 事件页 5 篇复核（其中 2 篇含光学上限表）、arXiv API（export.arxiv.org）检索「GRB 241206A」与「GRB241206A」均 0 命中、TNS 无该源条目（WebSearch 核查）、WebSearch 文献检索未发现针对本源的发表论文（命中项 Aryan+2025 ApJS 等均属 EP241206a，不同事件）→ 补 MASTER-Tunka 上限 9 行（GCN 38448）并修正 DDOTI 行 1 行（GCN 38469），全源仅上限、无任何余辉探测报道",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
