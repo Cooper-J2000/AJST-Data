@@ -1,28 +1,46 @@
 {
   "transient_id": "GRB980910",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "1998-09-10T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "BATSE 7077",
+    "GRB 980910A"
+  ],
+  "ra": 195.07,
+  "dec": -21.15,
+  "T0": "1998-09-10T16:57:44.417Z",
+  "T0_ref": "external/batse 快照（BATSE trigger 7077，trigger_time=1998-09-10T16:57:44.417Z）；external/heasarc_grbcat 快照 GRB 980910A 行同值互证（16:57:44.400Z，Earth Crossing Time）；GCN 197（触发号 7077）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
-  "redshift": 0.025,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "Trigger_Instrument": "CGRO/BATSE",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.82,
+  "pos_ref": "external/batse 快照（BATSE trigger 7077，error_radius=6.82 deg）；GCN 197（位置不确定 6.8 deg）",
+  "pos_error_confidence": null,
+  "pos_error_unit": "deg",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "T0/身份修正（Issue #380 午夜占位类 + 关联未证实数据清退）：bot 原 T0=1998-09-10T00:00:00Z（extra_data 原注 t0_note=「t0 为触发日 00:00 UT（名字日期）」、t0_basis=「name_date」）为名字日期午夜占位，ra/dec/Trigger_Instrument/pos_error 全空。真触发=CGRO/BATSE trigger 7077：external/batse 快照行（name_alt=「BATSE 7077」「GRB 980910-」）trigger_time=1998-09-10T16:57:44.417Z、ra=195.07、dec=-21.15、error_radius=6.82 deg；heasarc_grbcat 快照同日有两暴——GRB 980910A（grbcat_id 4059，16:57:44.400Z，195.07,-21.15，即本源=trigger 7077）与 GRB 980910B（grbcat_id 4060，20:02:21.600Z，205.49,+27.47，另一暴）→ 本条目对应 980910A，别名「GRB 980910A」「BATSE 7077」均取自官方目录名；两目录 T0 差 17 ms（.400 ECT vs .417 触发时刻，同源目录口径差、非偏移），取触发仪器目录亚秒值 .417。pos_error_confidence 留空（快照与 GCN 197 均未标注置信水平）。redshift 由 0.025 改 null：该 z 是 SN 1999E 的红移（Filippenko et al. IAUC 7090，经 GCN 197 转引），且原 redshift_ref=「gcn_llm:circulars_meta」为 bot 伪出处——SN 1999E 与 GRB 980910 的关联仅为 GCN 197 提出的猜测（自估 1/6 偶合概率）、GCN 198 明言待证、其后无证实，不属本源。lc 唯一行（GCN 197 的 V=16.0，mjd 51193.27599537=SN 1999E 发现时刻 1999-01-15.276）为 SN 发现星等、非本源测光 → discard=y 并在行 comment 留证；分类无据（BATSE 快照该行无 t90、GRBCAT 980910A 行亦无参数；同日 980910B 的 t90=0.448 s 属另一暴，不适用）→ sub_tag 留空。测光检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇命中 4 篇含「980910」，其中 6730/16463 两篇经查为时间戳数字巧合（createdOn 毫秒串）无本源内容、实际相关仅 GCN 197/198（197 给 SN 发现星等、198 无测光）→ 无可用本源测光，补 0 行；external/batse、heasarc_grbcat 快照有该触发行（无测光）；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）命中 SN 1999E 专题论文 Rigon et al. 2003（MNRAS 340, 191，astro-ph/0211432，已实际打开 arXiv 摘要页核对）：摘要仍称 SN 1999E 与 BATSE 事件 GRB980910 位置与时间「consistent」、仅为 possibility，无 GRB 980910 测光——佐证关联至今未证实与本处置，已登记 articles。",
   "sub_tag": [],
-  "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "t0 已修正为 CGRO/BATSE trigger 7077 触发时刻（1998-09-10T16:57:44.417Z，external/batse 快照）；bot 原值 1998-09-10T00:00:00Z 为名字日期午夜占位（t0_basis 原值 name_date），原值与改证见 comment",
+    "t0_basis": "batse_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Rigon+2003",
+      "url": "https://academic.oup.com/mnras/article/340/1/191/1125465",
+      "title": "SN 1999E: another piece in the supernova-gamma-ray burst connection puzzle",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
