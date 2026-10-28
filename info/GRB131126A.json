@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB131126A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2013-11-26T03:54:10Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB131126163",
+    "GRB 131126.163",
+    "bn131126163"
+  ],
+  "ra": 215.43,
+  "dec": 53.53,
+  "T0": "2013-11-26T03:54:10.430Z",
+  "T0_ref": "GCN 15573（Fermi/GBM 团队通告，trigger 407130853，03:54:10.43 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.28,
+  "pos_error_confidence": null,
+  "pos_ref": "FERMIGBRST（HEASARC；仓内快照 external/fermi_gbm，error_radius 列单位 degree）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核 Rusty-Harpoon@zcode 2026-10-28。身份：GRB 131126A＝Fermi/GBM trigger 407130853（GCN 15573）＝Konus-Wind T14048（GCN 15551）＝IPN Konus-GBM 三角定位事件（GCN 15550），三方互证。T0：触发仪器官方通告 GCN 15573 给 03:54:10.43 UT，据此把原 T0=2013-11-26T03:54:10Z 补亚秒改为 03:54:10.430Z；FERMIGBRST 目录（仓内 external/fermi_gbm 快照）trigger_time=2013-11-26T03:54:10.431Z，与通告差 1 ms（<60 ms）交叉一致；Konus-Wind 触发 03:54:08.270 UT（GCN 15551）系不同仪器各自触发、早 2.16 s，仅备查，不改 T0、不写 T0_offset。位置：ra/dec/pos_error 取 FERMIGBRST 目录（215.43, +53.53；error_radius=2.28 deg，tdat 列定义单位 degree），置信水平来源未标注故 pos_error_confidence 留空；IPN 限制带（GCN 15550：Konus-GBM 环心 RA 219.687、Dec -12.489、半径 65.710 deg±0.084 deg 3sigma，与 GBM 1-sigma statistical+systematic 误差区交叠段 RA,Dec 206.1,+52.1 至 222.6,+53.2）非单一位置，不入坐标字段、仅备查。分类：t90=0.128±0.353452 s（50-300 keV，FERMIGBRST 目录）；GCN 15573 亦给 T90≈0.3 s（50-300 keV，无误差），Konus 脉宽 ~140 ms（GCN 15551），GCN 15550/15551 均称 short-duration, hard-spectrum；按目录 t90 判 sgrb。alias：GRB131126163、GRB 131126.163、bn131126163（GCN 15573 原文用名 trigger 407130853 / 131126163；FERMIGBRST 目录 name_alt 同形）。本暴 GCN 通告共 4 篇：15550（IPN）、15551（Konus-Wind）、15572（iPTF 光学上限，lc 唯一一行出处）、15573（GBM 谱与时序）；均不入 articles[]。无红移、无宿主、无光学对应体（iPTF 未探测）。测光检索（2026-10-28）：仓内 gcn/archive 全文 grep『131126』命中 6 篇，涉本暴 4 篇（15550/15551/15572/15573），另 12188（GRB 110721A）与 27196（LIGO/Virgo S200219ac 银河表）为无关命中；grep『407130853』命中 3 篇（15550/15572/15573）；external/rssgrbag/lightcurve.jsonl 0 行命中；external/grbsn_webtool/SourceData/ 无本事件；external/fermi_gbm 目录快照仅目录参数、无测光。外部：GCN 站 https://gcn.nasa.gov/circulars/15572 已打开，与仓内文本一致；OpenAlex（api.openalex.org）『GRB 131126A』命中 2 条（其一为 GCN 15551 转载条目，其二为 Graham+2016 ApJ 826,98 PBH/IPN 短暴样本文——摘要为 36 个短暴的距离限制方法，无光学测光），『GRB 131126』『GRB131126A』『407130853』各 0 命中；arXiv API（export.arxiv.org，astro-ph.HE）『131126A』0 命中；Crossref bibliographic 检索 8 条均为无关泛称文献；TNS search?name=131126 返回 captcha 表单、无法取得结果列表（未能核实；本暴无光学对应体，TNS 预期无条目，已记入 PR 说明）。结论：公开测光仅 GCN 15572 一条 iPTF 上限，无其他光学/射电测光可补，lc 维持 1 行、补 0 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
