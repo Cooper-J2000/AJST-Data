@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB130821A",
   "alias": [
-    "GRB 130821674"
+    "GRB130821674"
   ],
   "ra": 314.2300109863281,
   "dec": -11.520000457763672,
-  "T0": "2013-08-21T16:10:31.010000Z",
-  "T0_ref": null,
+  "T0": "2013-08-21T16:10:28.011Z",
+  "T0_ref": "GCN 15113（Fermi/GBM 触发 trigger 398794231/130821674：16:10:28.011 UT）；FERMIGBRST trigger_time 2013-08-21T16:10:28.011Z；Liang+2014 正文同引 16:10:28.011 UT 为 T0",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,16 +14,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 648,
+  "pos_error_confidence": "90",
+  "pos_ref": "2FLGC（Ajello+2019）Table 2：RA=314.23、Dec=-11.52、Loc.Err.=0.18 deg（90% containment、statistical only）；DOI 10.3847/1538-4357/ab1d4e（VoR 不可得，取自 arXiv:1906.11403v1）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "2026-10-28 审核（Rusty-Harpoon@zcode）。T0 改正：原值 2013-08-21T16:10:31.010000Z 为 MET 398794231.010 自 2001-01-01T00:00:00Z 直接累加、未做闰秒改正的换算产物；官方触发时刻 16:10:28.011 UT 见 GCN 15113（Fermi/GBM trigger 398794231/130821674），FERMIGBRST trigger_time 与 Liang+2014 正文 T0 一致。新增别名「GRB130821674」（GCN 15113 原文用名：trigger 398794231/130821674，即 FERMIGBRST trigger_name GRB130821674；原别名「GRB 130821674」为拼接伪形、已替换为该官方名）。定位：ra/dec=314.23/-11.52 与 Loc.Err.=0.18 deg（90% containment、statistical only）经 2FLGC（Ajello+2019）Table 2 核实，pos_error=648 arcsec；并列备查：GCN 15115 在轨定位 RA=314.1、Dec=-12.0（0.1 deg、68% containment、statistical only）；Liang+2014 精化定位 (314.27, -11.70) 并论证 GRB 可能位于 GCN 15115 误差圆之外、故 Weihai/XRT 上限对本源的约束存疑（详见 lc 行注）。sub_tag 补 lgrb：t90=87.0413±1.14488 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb；「Fermi-LAT」为导入标记、为 tags.json sub 词表既有受控词（2026-10-24 commit d2b83e85 加入的仪器型 sub 标签；库内 229 源同有；2026-10-28 独立核查更正——初稿误判其为非词表词，该待决撤回），保留待维护者裁决（见 PR 待决事项）。测光检索（2026-10-28）：仓内 gcn/archive 全文检索 130821A / 398794231 / 130821674 / T58258，相关 7 篇（15113 GBM、15115 LAT、15123 Swift-XRT、15124 Weihai 光学上限、15125 Konus-Wind、15127 IPN；15133 系 GCN 15132 标题误写之更正、不涉本源），唯一光学数据即 GCN 15124 的 Weihai r'>20.8 上限；external/rssgrbag、grbsn_webtool、uvot_grb 均无本源记录；GCN 站（gcn.nasa.gov）核对 GCN 15113/15124 在线且与仓内全文一致；arXiv API 检索命中 2 篇并打开：Liang+2014（无光学测光表，其表 1/2 为 GBM/LAT 谱拟合与 LAT 光子流量，X/γ 数据不入测光库）、Ajello+2019（2FLGC，Table 2 为目录参数行，无新测光）；OpenAlex 检索命中 8 条（其中 3 条为 GCN 通告），其余样本类文章未逐一打开、不作依据。HEASARC 与 fermi.gsfc.nasa.gov 于 2026-10-28 多次连接超时不可达，两文 IOP VoR 探测均被 Radware 拦截返回 HTML，故按 arXiv 版取值（Liang+2014=arXiv:1312.2662v1、Ajello+2019=arXiv:1906.11403v1）并在此声明。结论：无新增测光行（补 0 行）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -203,6 +210,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2014ApJ...781...74L",
       "bibtex": "@ARTICLE{2014ApJ...781...74L,\n       author = {{Liang}, Yun-Feng and {Zhou}, Bei and {He}, Hao-Ning and {Tam}, Pak-Hin Thomas and {Fan}, Yi-Zhong and {Wei}, Da-Ming},\n        title = \"{High Energy Emission of GRB 130821A: Constraining the Density Profile of the Circum-burst Medium as Well as the Initial Lorentz Factor of the Outflow}\",\n      journal = {\\apj},\n     keywords = {gamma rays: general, radiation mechanisms: non-thermal, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2014,\n        month = feb,\n       volume = {781},\n       number = {2},\n          eid = {74},\n        pages = {74},\n          doi = {10.1088/0004-637X/781/2/74},\narchivePrefix = {arXiv},\n       eprint = {1312.2662},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2014ApJ...781...74L},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
