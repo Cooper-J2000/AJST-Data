@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB241206B",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2024-12-06T15:38:26Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 241206B",
+    "sb24120602"
+  ],
+  "ra": 300.202,
+  "dec": 65.182,
+  "T0": "2024-12-06T15:08:48Z",
+  "T0_ref": "GCN 38450（SVOM/ECLAIRs 团队）原文「triggered and located the long duration soft transient called GRB 241206B (sb24120602) at 2024-12-06T15:08:48 UT (Tb)」；IMT 像触发、SNR 9.3、5-8 keV、自 Tb 起 1310.72 s 检测窗口；SVOM 未发布亚秒、整秒为准。bot 原 15:38:26Z 为 GCN 38451 GWAC-F50A 观测开始时刻、非触发时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 559,
+  "pos_ref": "GCN 38450",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "源级否证（2026-10-28，fsy）：GRB 241206B 为 SVOM/ECLAIRs sb24120602 触发（IMT 像触发、SNR 9.3、5-8 keV、自 Tb=2024-12-06T15:08:48 UT 起 1310.72 s 窗口、定位 300.202/65.182、统计不确定 9.1′ + 建议差方合成 2′ 系统 = 9.32′ ≈ 559″，pos_error 取此合成值、置信水平原文未声明故 pos_error_confidence 留空；GCN 38450 原文并注「QSO B1959+650 is within the error box」）。SVOM/MXT 于 16:50 UT 起在误差框内检出单一持续 X 射线源 RA=300.013/Dec=65.1563（R90≈35″、90% c.l.）与已知 QSO/BL Lac 1ES 1959+650 位置一致，官方结论「the ECLAIRs trigger is related to an outburst of this source and it is not a real GRB」（GCN 38452 v2）→ 本源为 1ES 1959+650 的 X 射线 outburst 误标 GRB，按 §3.7 与 PR #449（GRB190409A）先例处置：不删源、测光行 discard=y、tag=[\"grb\"] 保留、sub_tag 置空、建议维护者作源级删除处理。T0 更正：bot 原值 2024-12-06T15:38:26Z 为 GCN 38451 GWAC-F50A 开始观测时刻、非触发时刻（Issue #84 族锚定错误）；标准 T0=2024-12-06T15:08:48Z（GCN 38450 原文、整秒、SVOM 未发布亚秒）（bot 原 t0_note「t0 为 meta trigger-time」、t0_basis=meta_trigger 失真，原值保留于此）。身份甄别补充：同日另一 GBM 触发 bn241206505 于 12:06:49.876 UT（早约 3 h、应为 GRB 241206A）、与本触发无关；仓内无 SVOM 官方目录快照。测光检索（2026-10-28）：GCN 事件页 gcn.nasa.gov/circulars/events/grb-241206b 共 3 篇（38450/38451/38452）全文核读（legacy gcn3 镜像对 38xxx 段 404、经 gcn.nasa.gov 页面原文逐字核对）；38451 原文笔误「19.7 min after the burst」（15:38:26.8−15:08:48 实为 29.65 min）、38452 原文笔误「52 minutes after the ECLAIRs trigger」（实为约 101 min）——两处均系 GCN 原文自身矛盾、不影响绝对时刻锚定；external 快照 grep「241206」仅 Fermi bn241206505（12:06:49.876 UT、另一事件）与 uvot_grb 内无关数字串；OpenAlex「GRB 241206B」0 命中、arXiv API 限流、网检仅见 GCN 通告与 vsnet 转载、无本源研究论文 → articles=[]。本源 1 行 GWAC-F50A R 带上限：时间锚改正（原 time=0.0 锚于观测起点 15:38:26.8 → 改 50 s 曝光窗口中点 15:38:51.8：time=1803.8 s、time_err=25.0 s、mjd=60650.6519884 Decimal 重算）、R 带 USNO B1.0 比对定标 mag_system 留空、源级否证 discard=y。别名证据：「GRB 241206B」为 GCN 38450/38451/38452 原文用名；「sb24120602」为 SVOM/ECLAIRs 触发编号（GCN 38450 原文）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 SVOM/ECLAIRs 触发时刻（sb24120602，GCN 38450 原文 Tb=2024-12-06T15:08:48 UT、整秒）；bot 原写法 t0=2024-12-06T15:38:26Z 实为 GCN 38451 GWAC-F50A 观测开始时刻、非触发时刻，原 note 见 comment",
+    "t0_basis": "gcn38450_eclairs_tb",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
