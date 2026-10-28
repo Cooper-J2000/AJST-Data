@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB161218A",
-  "alias": [],
-  "ra": 245.257,
-  "dec": -4.114,
-  "T0": "2016-12-18T03:47:34Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 727288"
+  ],
+  "ra": 245.25,
+  "dec": -4.113,
+  "T0": "2016-12-18T03:47:36.148280Z",
+  "T0_ref": "GCN 20283（Swift 检测通报，原文：At 03:47:36 UT, Swift BAT triggered GRB 161218A）整数秒 + BAT 目录（BAT 727288）trigger_time=2016-12-18T03:47:36.148280Z 亚秒值（同整数秒，取触发仪器目录亚秒）；swiftgrbba 编译 03:47:36.000Z 互证；原 bot 值 03:47:34Z 无来源支撑（t0_basis=meta_trigger 不可信，Issue #68 型），已改正；Konus-Wind GCN 20292 触发 03:47:31.97 UT、CALET GCN 20294 触发 03:47:31.89 UT 均早约 4 s（各仪器触发定义差异，非触发仪器值不采纳）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,14 +18,22 @@
   "pos_ref": "GCN 20293",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-10-28）：T0 修正与锚定见 T0_ref（03:47:36.148280Z）。ra/dec 由 bot 值 245.257/-4.114 改为 GCN 20293 BAT 地面计算位置 245.250/-4.113（RA(J2000)=16h21m00.1s, Dec(J2000)=-04d06'46.3\"，uncertainty 1.0 arcmin, radius, sys+stat, 90% containment），补 pos_error_confidence=90；swiftgrbba 编译同值互证。sub_tag=lgrb：Konus-Wind GCN 20292 明言 long GRB（duration ~7 s）、CALET GCN 20294 明言 Long-duration（T90=5.1±0.2 s，40-1000 keV）；BAT t90=7.1±0.6 s（15-350 keV）；GCN 20293 另注 10 s 分箱光变至 T+80 s 可见可能延伸辐射（possible extended emission）——未达 EE 判据，仅录于此备查。身份唯一：同日 Fermi/GBM 另有 bn161218222（05:19:23 UT，ra=105.2 dec=-19.7）与 bn161218356（08:32:40 UT，ra=358.6 dec=-17.0）两个独立暴，与本暴（03:47:36 UT，ra=245.25 dec=-4.11）时间/位置均不相干；GCN 检索无 161218B/C。Swift 因太阳约束无法 slew（swiftgrbba：cannot slew until 15:54 UT on 2017 January 08），XRT/UVOT 未观测，光学后续仅 TAROT（GCN 20290）。lc 唯一行（TAROT R>17.3 上限）逐行核对与 §3.8 中点改正见行注；articles 无该暴专属论文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
