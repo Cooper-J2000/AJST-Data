@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB250711A",
-  "alias": [],
+  "alias": [
+    "GRB250711611",
+    "bn250711611",
+    "sb25071104"
+  ],
   "ra": 261.2,
   "dec": 44.9,
-  "T0": "2025-07-11T14:40:14Z",
-  "T0_ref": null,
+  "T0": "2025-07-11T14:40:12.940244Z",
+  "T0_ref": "GCN 41064（Fermi GBM Final Real-time Localization：trigger 773937617.940244 → 扣 5 跳秒 = 14:40:12.940244 UT，prose At 14:40:12 UT 整秒一致）；FERMIGBRST 官方目录快照 bn250711611 trigger_time=2025-07-11T14:40:12.940Z（external/fermi_gbm）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,20 +16,25 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 4320,
+  "pos_ref": "GCN 41064",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：Fermi/GBM 触发 GRB 250711A（trigger 773937617.940244 / 250711611，GCN 41064 原文；bn250711611）＝SVOM/GRM 在轨触发同一暴（SVOM trigger reference: sb25071104、T0=2025-07-11T14:40:14.00 UTC，GCN 41072，比 GBM 触发晚 1.06 s、系两仪器自动触发时刻差）＝BALROG 同 trigger（GCN 41065）＝MASTER（GCN 41068 引 GCN 41064）；同日他暴甄别：S250711q 为 LIGO/Virgo/KAGRA 并合候选（03:27:25.108 UTC，GCN 41062/41120/41132）、EP250711a 为 EP-WXT 快 X 射线暂现（WXT 位 292.153/+4.707，GCN 41070/41071/41073/41074/41077/41084/41212；mpe_greiner 快照将其记作「GRB 250711B」、X-ray position 19h28m37s +04°42' 即 GCN 41071 NOT OT 位，与本暴无关、库内亦无 GRB250711B 条目）、GCN 41793 为 EP250911a 数值巧合，均与本暴无关。T0：bot 原值 2025-07-11T14:40:14Z（t0_basis=meta_trigger、T0_ref=null 零锚，Issue #68 家族形态）在 GBM 官方通告（41064/41065）与 FERMIGBRST 目录中均无对应、恰同 SVOM/GRM 触发时刻 14:40:14.00 UTC（GCN 41072）一致——无论其来源，本源 Trigger_Instrument=Fermi/GBM、以触发仪器官方值为准（§3.8 ①）→ 2025-07-11T14:40:12.940244Z（GCN 41064 trigger MET 773937617.940244；Fermi MET 历元 2001-01-01T00:00:00 UTC 须扣 2001 年后累计 5 跳秒（2005/2008/2012/2015/2016 各 +1 s）得 14:40:12.940244 UT，本会话 Python 独立复算；裸 MET 不扣闰秒会得 14:40:17.940、恰差 5.000 s）；GCN 41064 原文 At 14:40:12 UT on 11 Jul 2025（整秒一致）双证；FERMIGBRST 官方目录快照 trigger_time=2025-07-11T14:40:12.940Z（external/fermi_gbm，bn250711611，毫秒舍入同值）与原始 tdat MJD 60867.611260882 三证；他仪器备查：SVOM/GRM 14:40:14.00 UTC（GCN 41072）；无 T0_offset（SVOM 晚 1.06 s 系仪器自动触发时刻差、非真实爆发时刻偏移，§3.2）。bot 原标注 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"/t0_basis=\"meta_trigger\" 已按 §3.10 改写并把原值留此备查。定位：ra/dec=261.2/44.9 维持 GCN 41064 GBM on-ground 位（原文 RA = 261.2, Dec = 44.9 (J2000 degrees, equivalent to J2000 17h 24m, 44d 53'), with a statistical uncertainty of 1.2 degrees）→ pos_error=4320″=1.2 deg；原文未标注置信水平（statistical uncertainty）；FERMIGBRST 快照 ra=261.25、dec=44.94、error_radius=1.19 deg=4284″ 并列备查；BALROG 位（GCN 41065：RA(2000.0) = 267.8 deg、Decl.(2000.0) = 35.9 deg、The 1 sigma statistical error radius is 2.1 deg、We estimate an additional systematic error of 1 deg；与 GBM 位相距约 10.3°）并列备查，DDOTI（GCN 41076）即观测该 BALROG 误差区。分类：tag=grb；sub_tag=lgrb——t90=30.2085±1.37862 s（50-300 keV，FERMIGBRST 快照全精度），按目录 t90 判 lgrb；GCN 41064 原文 likely LONG GRB、GCN 41072 T90 = 38.5 +/-4.0 s（15-5000 keV，SVOM/GRM），同向无冲突。prompt 参数备查：FERMIGBRST 快照 t50=14.3362±0.72409 s（50-300 keV）、fluence=1.48555e-05±5.79058e-08 erg/cm2（10-1000 keV）、peak_flux=11.5861±1.11126（10-1000 keV，64 ms）；GCN 41072 谱参数 Epeak = 146 +23/-17 keV、PL 指数 -1.20 +0.09/-0.10、fluence = (1.69 +0.12/-0.10)E-05 erg/cm2（10-1000 keV，T0-10 至 T0+70 s）。alias：「GRB250711611」为 GCN 41064 原文用名（trigger 773937617.940244 / 250711611）+ FERMIGBRST name_alt；「bn250711611」为 GCN 41064 天图 URL 原文 bn250711611 + FERMIGBRST trigger_name；「sb25071104」为 GCN 41072 原文用名（SVOM trigger reference: sb25071104）。redshift=null（无任何测量）。host_galaxy 不建立（无文献支持确定宿主）。测光检索（2026-10-28）：仓内 gcn/archive 快照以本地镜像（45908 篇、覆盖至 GCN 46029/2026-10-25）grep「250711」命中 16 篇——本暴 5 篇（41064/41065/41068/41072/41076，逐篇打开核对原文）+同日他暴 11 篇（S250711q 3 篇、EP250711a 7 篇、EP250911a 1 篇）；其中含光学测光者 2 篇——GCN 41068（MASTER-Kislovodsk 31 行逐指向上限，本次全部入库：Filt=C 原文自注 Filter C is a clear (unfiltred) band 记 band=G；原表 Tmid-T0 列与起点+Expt/2−T0 逐行复算残差 ≤0.94 s（整秒截断/舍入抖动、无 GRB150123A/GRB240229A 型恒定历元错位），采用原表 Tmid-T0 整数为锚）与 GCN 41076（DDOTI 1 行上限，已有行重锚改正）；其余 3 篇为触发/定位通报，无光学测光；GCN 官方站三路互证：检索页 query=250711A totalItems=5、事件页 events/grb-250711a 列同 5 篇、gcn.gsfc.nasa.gov/other/250711611.fermi 404（如实注明）——与仓内 archive 一致、无漏收通告；external/ 快照逐一检索：fermi_gbm 收录（目录行）、mpe_greiner 无本暴条目（「GRB 250711B」实为 EP250711a）、swift_bat/swift_grb/swiftgrbba/konus_wind/uvot_grb/agile_mcal/saxgrbmgrb/batse/heasarc_grbcat/fermi_lat 0 命中、rssgrbag（含 lightcurve.jsonl）0 条、grbsn_webtool 无此事件；arXiv API all:\"GRB 250711A\"/\"250711A\"/\"250711611\" 均 0 命中；OpenAlex \"GRB 250711A\" 0 命中；SciX/ADS 站点反爬（HTTP 202/JS 壳）未获结果列表、TNS 检索页可达（HTTP 200）但结果表 reCAPTCHA+JS 渲染不可得、SIMBAD 双镜像 TLS 复位——三处均如实注明、不作缺席证据。结论：本源无余辉探测、全部测光为上限；本次修改 1 行（DDOTI 重锚：bot 原值 time=48706.0 系观测窗口起点 04:12:00 UTC 偏移、Issue #84 曝光/观测起点型失真）、补 31 行（MASTER），共 32 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 773937617 / 250711611）",
+    "t0_basis": "GCN 41064（trigger 773937617.940244 → 扣 5 跳秒 = 14:40:12.940244 UT）+ FERMIGBRST 官方目录快照 trigger_time=2025-07-11T14:40:12.940Z（external/fermi_gbm，bn250711611，亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
