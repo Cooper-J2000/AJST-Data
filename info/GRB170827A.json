@@ -1,13 +1,15 @@
 {
   "transient_id": "GRB170827A",
-  "alias": [],
-  "ra": 276.1506,
-  "dec": -40.2018,
-  "T0": "2017-08-28T00:47:05Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 170827A"
+  ],
+  "ra": 276.1508,
+  "dec": -40.2016,
+  "T0": "2017-08-27T05:12:28.408920Z",
+  "T0_ref": "GCN 21718",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,14 +18,21 @@
   "pos_ref": "GCN 21718",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0=2017-08-27T05:12:28.408920Z 取 Swift/BAT 触发产品页（gcn.gsfc.nasa.gov/notices_s/769567/BA/，含 UTCF 修正）亚秒值；GCN 21718 原文 'At 05:12:28 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 170827A (trigger=769567)' 整秒一致，亚秒取触发仪器产品页（§3.8①）。Trigger_Instrument=Swift/BAT（同句触发仪器）；未检索到 Fermi/GBM 触发本事件的证据：FERMIGBRST 快照 2017-08-27 仅有 19:38:04.465Z 的 bn170827818 短暴（t90=0.83 s），系同日另一事件，与本源无关（同日源甄别）。位置取 GCN 21718 内 Swift/XRT 源 18h24m36.19s -40d12'05.8\" ±4.9″ → ra=276.1508、dec=-40.2016；来源未标注置信水平。sub_tag=lgrb 按 Swift/BAT 目录 t90=98.624±31.703 s（15-350 keV）判「按目录 t90 判 lgrb」；GCN 21724 精化 T90=94.0±12.5 s 同证；REM GCN 21721 原文称 'the short GRB 170827A' 无测量依据、与触发仪器目录矛盾，从目录值（待决事项已报）。测光检索（2026-10-28）：仓内 gcn/archive 本机不存在，改用 GCN 网站——源名通道 '170827A' 命中 9 篇（21718/21721/21722/21724/21728/21729/21730/21743/21807，全部打开核对）、触发号通道 '769567' 命中 4 篇（21718/21724/21729/21743，为子集）、相邻号 21719/21720 打开为 LIGO/Virgo G299232 的 MASTER 通告，与本源无关；ADS/SciX 检索页（ui.adsabs.harvard.edu/search q=\"GRB 170827A\"）无返回结果（JS 渲染），Web 检索亦未命中该源研究论文——本源测光全部出自 GCN 通告，articles[] 无可登记研究论文；仓内 rssgrbag/grbsn_webtool/uvot_grb 快照无本源测光行。共 14 行测光入库（REM 上限 2、UVOT 上限 2、GROND 上限 3＋探测 4、LCOGT 上限 2、NTT 探测 1），无 X 射线行。审核 fsy 2026-10-28。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
