@@ -1,13 +1,17 @@
 {
   "transient_id": "GRB230826A",
-  "alias": [],
+  "alias": [
+    "GRB 230826A",
+    "BAT 1187463",
+    "bn230826814"
+  ],
   "ra": 83.0641,
   "dec": 66.12384,
-  "T0": "2023-08-26T19:32:44Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "T0": "2023-08-26T19:32:47.078920Z",
+  "T0_ref": "GCN 34565（BAT trigger 1187463，原文 At 19:32:47 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 230826A）；亚秒取 Swift/BAT trigger 1187463 官方产品页 UTC 19:32:47.078920（与 external/swift_bat 快照一致）",
+  "T0_offset": -2.550844,
+  "T0_offset_ref": "GCN 34564（Fermi/GBM trigger 714771169.528076 MET，Issue #67 口径减 5 跳闰秒后 UTC 19:32:44.528076，与通告原文 At 19:32:44 UT 一致）；GBM 触发早于 Swift/BAT 触发 2.550844 s（先例 info/GRB190519A 同款记录另一触发仪器的触发偏移）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,17 +20,23 @@
   "pos_ref": "GCN 34569",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy（2026-10-28）。(1) 身份：Swift/BAT 于 2023-08-26 19:32:47 UT 触发（trigger=1187463，GCN 34565），Fermi/GBM 亦触发（trigger 714771169.528076 / bn230826814，19:32:44 UT，GCN 34564，原文 likely LONG GRB），双卫星互证同一事件；XRT 于触发后 76.7 s 发现亮 X 射线源（GCN 34565/34568）；external/swift_bat 快照以 GRB 230826A（BAT 1187463）收录，GBM 快照无该触发条目（以 GCN 34564/34571 为 GBM 证据）。(2) T0：原 bot T0=2023-08-26T19:32:44Z（extra_data.t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，原值留档于此）为 Fermi/GBM 触发整秒（GCN 34564），非本源 Trigger_Instrument（Swift/BAT）触发时刻；标准 T0=2023-08-26T19:32:47.078920Z（GCN 34565 整秒一致，取官方产品页 https://gcn.gsfc.nasa.gov/notices_s/1187463/BA/ 亚秒 19:32:47.078920，与 external/swift_bat 快照一致，无 UTCFINIT 警告；§3.2/§3.8）；T0_offset=-2.550844 s 记录 GBM 触发相对 BAT 触发的偏移（GCN 34564 MET 714771169.528076，naive−5 闰秒=19:32:44.528076 UTC；|offset|>1 s）。(3) 定位：ra/dec=83.0641/66.12384 与 GCN 34569 增强 XRT 位一致（83.06410/+66.12384），pos_error=2.0″（原文 uncertainty of 2.0 arcsec (radius, 90% confidence)），pos_error_confidence=90，pos_ref=GCN 34569；BAT 在机位 83.012/+66.125（3′，90% 含系统差，GCN 34565）、BAT 地面位 83.048/66.129（1.0′，90% sys+stat，GCN 34592）、XRT 初位 83.05920/66.12506（10″，GCN 34565）并列备查。(4) 分类：t90=40.84±1.66 s（external/swift_bat 快照，15-350 keV；GCN 34592 精化 41.07±2.36 s 一致量级），按目录 t90 判 lgrb（未自算），与 GCN 34564 likely LONG GRB 一致。(5) 测光：UVOT 8 行 3σ 上限（GCN 34582 表：white_FC 20.0/white 20.4/v 17.8/b 19.6/u 19.5/uvw1 18.4/uvm2 18.4/uvw2 18.6，增强 XRT 位置处），time=T_start+Exp/2（§3.2；T_stop−T_start 含开销不等于 Exp）、mag_system=Vega（原文声明采用 UVOT photometric system，引 Breeveld et al. 2011（AIP Conf. Proc. 1358, 373））；AZT-33IK 行修订（GCN 34567）：原文给 UT start 20:06:00、Exp 44×60 s、表头 t-T0 (mid, days)=0.038345 d，绝对中点 20:28:00 UT 两种读法一致，按标准 T0 重算为 time=3312.92108 s、time_err=1320 s、mjd=60182.8527778；原行 time=1996.0/mjd=60182.8375（=20:06:00 UT）为误植 T0 下序列开始值，废弃；定标 USNO-B1.0 R2 星等、系统未声明（mag_system 留空）。(6) 红移：无，null。(7) 宿主：未确认，null。(8) X 射线：GCN 34568 XRT 分析按范围约定不入库。(9) 测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external/rssgrbag 0 命中、grbsn_webtool 无该事件；GCN 站逐篇枚举 34563–34600（38 篇）命中 10 篇：34564（GBM 触发）、34565（Swift 检测）、34567（Mondy 上限，已有行修订）、34568（XRT 分析，仅 X 射线）、34569（增强 XRT 位）、34571（GBM 观察）、34572（GRBAlpha 伽马探测）、34582（UVOT 上限 8 行，入库）、34586（VZLUSAT-2 伽马探测）、34592（BAT 精化+t90）→ 除 UVOT/MondY 外无其他光学测光；SIMBAD 无 GRB 230826A 标识（0 命中）、OpenAlex 命中 3 篇 2026 年样本类论文（prompt 光变/磁星长暴统计，摘要均未含 230826，逐篇未打开、按题录列为「未能核实」）、arXiv API 0 命中 → 无已发表测光表，articles[] 留空。(10) alias：GRB 230826A（GCN 34565 subject 用名）、BAT 1187463（external/swift_bat 快照 name_alt 官方触发号名，GCN 34592 trigger #1187463 同号，先例 info/GRB070209 同款收录）、bn230826814（GCN 34564 原文 trigger 714771169.528076 / 230826814 的 GBM 触发名）。新增 8 行、修订 1 行，X 射线行 0 条。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0=Swift/BAT trigger 1187463 官方触发时刻 2023-08-26T19:32:47.078920Z（GCN 34565+产品页+swift_bat 快照互证）；原 meta_trigger 值系 Fermi/GBM 触发整秒（GCN 34564），偏移已记入 T0_offset",
+    "t0_basis": "swift_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
