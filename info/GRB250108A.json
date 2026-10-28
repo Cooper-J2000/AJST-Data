@@ -1,31 +1,39 @@
 {
   "transient_id": "GRB250108A",
-  "alias": [],
-  "ra": 207.89654,
-  "dec": 26.23741,
-  "T0": "2025-01-08T12:42:45Z",
-  "T0_ref": null,
+  "alias": [
+    "sb25010802"
+  ],
+  "ra": 207.92093,
+  "dec": 26.21642,
+  "T0": "2025-01-08T04:37:01.513Z",
+  "T0_ref": "GCN 38845（SVOM/ECLAIRs 官方通告）：starting at 2025-01-08T04:37:01.513 UTC (Tb)（触发仪器官方时刻、亚秒照录）；原库 2025-01-08T12:42:45Z（t0_basis=meta_trigger、T0_ref=null 零锚）非触发时刻、出处不明，已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 0.5,
-  "pos_ref": "GCN 38852",
+  "pos_error": 4.1,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 38853",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（fsy@zcode 2026-10-28）：[身份] SVOM/ECLAIRs 触发的长暴 sb25010802（GCN 38845 原文 The SVOM/ECLAIRs telescope triggered and located the long duration GRB 250108A (sb25010802) starting at 2025-01-08T04:37:01.513 UTC (Tb)），Swift-XRT/UVOT 跟随（GCN 38846/38853/38866，ToO 00021755）、SVOM/VT 光学候选（GCN 38852）、NOT 光学上限（GCN 38862）；同日他暴甄别：GRB 250108B（Swift/BAT 触发 1280056、10:23:06.198 UT、RA/Dec=201.31/25.62，external/swift_bat 快照）与 EP250108a=AT 2025kg（EP-WXT 触发 06800000356、12:30:28.34 UT、RA/Dec=55.62/-22.51，GCN 38861，LFBOT）均为不同事件、各自携带的通告（GCN 38912/38995/39108/39146）与本源无关、未混入。[T0] 原库 2025-01-08T12:42:45Z（extra_data 原 t0_basis=meta_trigger、原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、T0_ref=null 零锚，Issue #68 家族形态）在 11 篇相关通告中均无此值、非触发时刻（与真触发差 +29143.5 s），已废弃；T0 取触发仪器官方通告值 2025-01-08T04:37:01.513 UTC（GCN 38845、优先级①；亚秒 .513 为触发仪器原值照录），GCN 38853（exposure obtained between T0+16.1 ks and T0+34.4 ks）、GCN 38866（102468 s after the SVOM trigger）、GCN 38862（22.72 hr after the GRB）三份后续通告的相对锚均与该 Tb 自洽互证；对应 MJD 60683.1923786。[Trigger] 原库 Swift/UVOT 有误（UVOT 系 Swift 跟随观测的载仪、非触发仪器），更正为 SVOM/ECLAIRs。[定位] 原库 ra/dec=207.89654/26.23741、pos_error=0.5″（GCN 38852 SVOM/VT 光学候选体：MXT 误差框内唯一新源、3σ 22.7 mag）——该候选体与已证认的 XRT 余辉位置（207.92093/+26.21642、4.1″、90%，GCN 38853）相距 109.2″，不可能为同一天体；GCN 38898 证认 XRT Source 1（变暗 >2σ）为该暴 X 射线余辉，故改采 XRT 增强定位（候选体此后未被 NOT/UVOT 复见、存疑，其坐标保留备查：RA/Dec=207.89654/26.23741、±0.5″、GCN 38852 未标置信水平）；ECLAIRs 定位 RA/Dec=207.946/26.204（7.79′ 90%，含 2′ 系统差平方合并，GCN 38845）、MXT 定位 RA/Dec=207.906/26.232（60″ 90%，GCN 38845）备查。[分类] sub_tag=lgrb（GCN 38845 原文 long duration GRB、标题 soft long burst；t90≈40 s（preliminary，SVOM/ECLAIRs，GCN 38845），按通告分类判 lgrb）。[alias] 新增「sb25010802」（GCN 38845 SVOM/ECLAIRs 触发号原文用名）。[红移] 无任何红移测量。[测光检索（2026-10-28）] 仓内 gcn/archive 按名检索命中 11 篇（7 篇属本暴：38845/38846/38852/38853/38862/38866/38898，逐篇打开——含光学数值的仅 38852/38862/38866 三篇、已全部入库；38846/38898 为 XRT 通告、X 射线数据不入库；4 篇 38912/38995/39108/39146 属同日 EP250108a 已排除）；external/rssgrbag、external/grbsn_webtool 0 命中；external/mpe_greiner 仅目录条目（Instrument=SVOM、无测光数值）；GCN 站互证（gcn.nasa.gov/circulars/38845/38852/38853/38862/38866/38898 逐篇打开、与仓内快照逐字一致）；arXiv API「GRB 250108A」0 命中、「250108A」1 篇（arXiv:2504.08889 系 EP250108a/SN 2025kg、非本源）；TNS 锥形检索（13:51:41.02 +26:12:59.1、r=2″）No results found（AT 2025kg 属 EP250108a、未混）；SIMBAD 三次访问 TLS 复位不可达、不作缺席证据。→ 补 3 行（SVOM/VT 探测+上限、Swift/UVOT 上限），NOT 行重锚，无遗漏测光。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 更正为 SVOM/ECLAIRs 触发时刻 2025-01-08T04:37:01.513 UTC（GCN 38845）；Trigger_Instrument 由 Swift/UVOT 更正为 SVOM/ECLAIRs；bot 原值（T0=2025-01-08T12:42:45Z、t0_basis=meta_trigger）保留于 comment",
+    "t0_basis": "GCN 38845（SVOM/ECLAIRs 触发通告）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
