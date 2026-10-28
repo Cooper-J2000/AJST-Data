@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB200125B",
-  "alias": [],
-  "ra": 7.7,
-  "dec": 64.4,
-  "T0": "2020-01-25T20:43:31Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB200125864",
+    "bn200125864"
+  ],
+  "ra": 7.45,
+  "dec": 64.69,
+  "T0": "2020-01-25T20:43:31.188Z",
+  "T0_ref": "GCN 26879（Fermi GBM 触发通告，trigger 601677816.188054 → 20:43:31.188 UT）；GCN 26893（20:43:31.19 UT，舍入一致）；FERMIGBRST 官方目录快照 bn200125864 trigger_time=2020-01-25T20:43:31.188Z（external/fermi_gbm）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 3600,
+  "pos_ref": "GCN 26879",
+  "pos_error_confidence": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Fermi/GBM 触发 bn200125864（trigger 601677816 / 200125864，GCN 26879/26893 原文）＝Insight-HXMT/HE HEB200125863（GCN 26888）＝Konus-Wind 触发（GCN 26951，T0=74611.206 s UT）＝IPN 三角（GCN 26918）同一事件（约 74611 s UT 互证）；同日 Swift 暴为 GRB200125A（MPE 快照 ra=228.05/dec=-8.15，另一事件），无混并。T0：bot 原值 2020-01-25T20:43:31Z（整秒，t0_basis=meta_trigger）→ 2020-01-25T20:43:31.188Z（触发仪器官方目录 FERMIGBRST 亚秒值；GCN 26879 原文 trigger 601677816.188054 同值；GCN 26893 记 20:43:31.19 UT 舍入一致）；他仪器备查：Konus-Wind T0=74611.206 s UT（20:43:31.206，GCN 26951，晚 GBM 18 ms，<60 ms）、Insight-HXMT/HE T0=2020-01-25T20:43:31.90（GCN 26888，自机 T0 定义，其 T90 自 T0-0.11 s 起量）；无 T0_offset（Konus 原文 multipeaked structure starts at ~T0-0.5 s，<1 s 不写，§3.2）。bot 原标注 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"/t0_basis=\"meta_trigger\" 已按 §3.10 改写并把原值留此备查。定位：bot 原 ra/dec=7.7/64.4 为 BALROG 位（GCN 26880：RA=7.7±0.8、Dec=64.4±0.4 deg，1σ statistical，另有 2 deg systematic error）→ 改触发仪器官方位 GBM Final Real-time Localization（GCN 26879：RA=7.5、Dec=64.7，statistical uncertainty 1.0 deg，原文未标注置信水平 → pos_error_confidence 留空）：精化值取 FERMIGBRST 官方目录 ra=7.45、dec=64.69、error_radius=1.0 deg（快照 bn200125864 行）→ pos_error=3600″；GCN 26911（DDOTI）引 GBM Final Position 00:29:47 +64:41:22（ra≈7.445/dec≈64.689）相符；IPN 环（GCN 26918：Konus-GBM 环心 RA=321.900/Dec=-14.917、半径 86.537°±0.136° 3σ）与 GBM/BALROG 位一致但为环非点位，不采用（GRB160612A 先例）；BALROG 位合成误差（1σ stat+2° sys）更大，列备查不采用。分类：tag=grb；sub_tag=lgrb——t90=5.824±0.0905097 s（50-300 keV，FERMIGBRST 快照全精度），按目录 t90 判 lgrb；GCN 26879 原文 likely LONG GRB、GCN 26893 记 duration (T90) of about 5.8 s（50-300 keV）、GCN 26918/26951 记 long-duration，HXMT t90=4.66 s（GCN 26888）同量级。prompt 参数备查：Epeak=175±3 keV（GCN 26893，T0–T0+12 s 平均 Band）；fluence=(5.48±0.03)E-5 erg/cm^2（10-1000 keV，GCN 26893）；Konus fluence=6.01(+0.37/-0.36)E-5 erg/cm^2、64-ms 峰流量 3.92(+0.46/-0.44)E-5 erg/cm^2/s（20 keV–10 MeV，90% CL，GCN 26951）；FERMIGBRST peak_flux=151.476±2.77352 ph/cm^2/s（10-1000 keV，64 ms）、t50=2.432±0.0905097 s。alias：「GRB200125864」为 GCN 26879 原文用名 trigger 601677816 / 200125864 + FERMIGBRST name 字段；「bn200125864」为 GCN 26879 天图 URL 原文 bn200125864 + FERMIGBRST trigger_name 字段。redshift=null（无任何测量）。host_galaxy 不建立（无文献支持确定宿主）。测光检索（2026-10-28）：仓内 gcn/archive 快照本地缺失，改查 GCN 官方站（gcn.nasa.gov）：按 200125B / 601677816 / 200125864 三路检索共得 8 篇（26879、26880、26886、26888、26893、26911、26918、26951，逐篇打开核对原文），含光学上限者 2 篇——GCN 26886（MASTER-Tavrida/IAC/Amur 70 行逐指向上限，本次全部入库：P|/P- 为 MASTER 透明偏振片通道、等效无滤光片宽带记 band=G，C 原文自注 clear 同记 G；23/70 行原表 Tmid-T0 列与起点+Expt/2 失洽恰 1 s（MASTER 整秒历元内部抖动），统一采用显式端点锚 time=起点+Expt/2−T0，原表 Tmid 列不作锚，GRB150123A 先例）与 GCN 26911（DDOTI/OAN 10σ w=20.04 上限 1 行，原行 time=20069 s 系窗口起点误作时刻（Issue #84 家族），改 02:18–06:53 UT 窗口中点锚）；其余 6 篇为 gamma 定位/谱/IPN/Konus 通报、无光学；external/rssgrbag 0 条、grbsn_webtool 无此事件、konus_wind 快照无此行、uvot_grb/swift 快照不覆盖本暴（Swift 当日所测为 GRB200125A）、无 Fermi-LAT 探测通告（GCN 26879 记距 LAT 视轴 65.0°）；arXiv API all:\"200125B\"/all:\"200125864\" 0 命中；OpenAlex 检索 7 命中（其中 5 篇即上述 GCN 通告本身，另 2 篇为 The First Insight-HXMT GRB Catalog DOI 10.3847/1538-4365/ac4d22 与 Fermi-GBM 亮暴时变谱 DOI 10.1088/1674-4527/ad16af，均仅 prompt 参数目录、无光学测光）。结论：本源无余辉探测、全部测光为上限；本次修改 1 行（DDOTI 重锚）、补 70 行（MASTER）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 601677816 / 200125864）",
+    "t0_basis": "GCN 26879（trigger 601677816.188054 → 20:43:31.188 UT）+ FERMIGBRST 官方目录快照 trigger_time=2020-01-25T20:43:31.188Z（external/fermi_gbm，bn200125864，亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
