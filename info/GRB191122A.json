@@ -1,27 +1,33 @@
 {
   "transient_id": "GRB191122A",
   "alias": [],
-  "ra": 54.26926,
-  "dec": -32.18602,
-  "T0": "2019-11-22T13:48:57Z",
-  "T0_ref": null,
+  "ra": 54.26986,
+  "dec": -32.18665,
+  "T0": "2019-11-22T13:32:56Z",
+  "T0_ref": "GCN 26269（At 13:32:56 UT, the Swift BAT triggered and located GRB 191122A, trigger=938899）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.6,
   "pos_ref": "GCN 26272",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 修正：原值 13:48:57Z 系导入误将 CHES 观测窗口起点（GCN 26271：Our observation starts at 13:48:57 UT）当作触发时刻（Issue #84 家族），正确触发 13:32:56 UT（GCN 26269：At 13:32:56 UT, the Swift BAT triggered and located GRB 191122A, trigger=938899）；CHES 窗口起点=真 T0+961 s；原 extra_data t0_note='t0 为 meta trigger-time（真实触发时刻）'/t0_basis='meta_trigger' 已失真，改写于此。定位：ra/dec 改为 XRT 增强位 RA,Dec=54.26986,-32.18665（1.6″，90%，GCN 26272，astrometrically corrected）；原 54.26926,-32.18602 为 prompt XRT 位（3.7″，90%，GCN 26269），与 pos_error=1.6″/pos_ref=GCN 26272 不符。分类：t90=153.3±38.3 s（15-350 keV，BAT 精化分析 GCN 26275），按通告 t90 判 lgrb。身份甄别：同日另有 IceCube-191122A 中微子事件（GCN 26276/26280/26281/26290/26295/26296/26298），与本 GRB 为不同源，其 MASTER 观测（26280）不属本源，未混入。测光检索（2026-10-28）：GCN 站按 191122A 检索 14 篇，GRB 191122A 相关 8 篇（26269/26270/26271/26272/26273/26274/26275/26277），光学测光 3 篇（26271 CHES 窗口 5×60 s 合并 5σ 极限 18.31 Gaia DR2 G 定标、26273 BOOTES-4 极限 20.3 unfiltered、26277 UVOT 9 波段上限）；BOOTES-4（26273）仅给起测时刻 13:34 UT（约 T0+94 s）与极限 20.3、无曝光时长，曝光中点不可恢复未入库（PR 待决）；arXiv API（2026-10-28）GRB 191122A 0 命中；仓内 external/rssgrbag、external/grbsn_webtool 无该源记录 → 新增 UVOT 9 行、修正 CHES 行（band w→G：原文 white filter 无滤光片；time=窗口中点 1124.5 s；原行 time=0.0 系 T0 锚定错误）；GCN 26274 为 XRT 精化分析（X 射线，暂不处理）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻 13:32:56 UT（GCN 26269）；原 meta_trigger 值实为 CHES 观测窗口起点",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-28"}
   },
   "articles": [],
   "host_galaxy": null
