@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB120709A",
   "alias": [
-    "GRB 120709883"
+    "GRB 120709.883",
+    "GRB120709883",
+    "bn120709883"
   ],
   "ra": 318.79998779296875,
   "dec": -50.41999816894531,
-  "T0": "2012-07-09T21:11:43.370000Z",
-  "T0_ref": null,
+  "T0": "2012-07-09T21:11:40.370000Z",
+  "T0_ref": "GCN 13429",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -18,12 +20,18 @@
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)；2026-10-28 Rusty-Harpoon@zcode 复核。T0 原为 21:11:43.37（FERMI MET 未做闰秒改正的机器换算），按触发仪器官方通告 GCN 13429 改为 2012-07-09T21:11:40.37 UT（trigger 120709883 / 120709.883）；FERMIGBRST 目录 trigger_time 21:11:40.367、2FLGC 21:11:40.004 与通告仅亚秒级差，Konus-Wind 自身触发于 21:11:43.609（GCN 13440，非本源 T0）。t90=27.3284±0.95841 s（50-300 keV，FERMIGBRST 目录），按目录 t90 判 lgrb；GCN 13429 通告 T90 约 30 s（长暴）。位置 318.80/-50.42 沿用 2FLGC 导入值（本次 HEASARC 在线不可达，未能逐字段复核）；GCN 13462 IPN 3σ 误差盒中心 318.842/-50.290、面积 0.46 平方度、长短径约 1.9°×0.12°，该位置位于盒南长边外约 1′（盒边缘附近；2026-10-28 独立核查球面复算更正——初稿误写「包含该位置」；盒为初步结果，偏差远小于盒尺度）；Swift/XRT 候选源（GCN 13428）在 IPN 盒外，经 GCN 13509 复测否定为该暴余辉。别名出处：原文用名 GCN 13429 记 trigger 120709883 / 120709.883（即 GRB 120709.883）；FERMIGBRST 目录名 GRB120709883 / bn120709883。测光检索（2026-10-28）：仓内 gcn/archive 命中 9 篇（13423/13426/13427/13428/13429/13440/13447/13462/13509，全文打开，仅 13426 与 13447 有光学数值）、external/rssgrbag 0 命中、external/grbsn_webtool 无该事件；GCN 站（gcn.nasa.gov，subject:GRB 120709A 检索）共 9 篇与仓内一致；OpenAlex 命中 9 条（无 ADS token，走回退；除上述通告外仅 Bukhari+2022，VoR 经 ScienceDirect 打开：仅 GBM/LAT 瞬时谱分析，无余辉测光表）；TNS 不适用（GRB 官方命名，无 AT/SN 条目）→ 补 2 行（GCN 13447 UVOT white/u 3σ 上限），修订 WFI 行时间口径（GCN 13426）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -176,7 +184,7 @@
     {
       "name": "Bukhari+2022",
       "title": "The spectral analysis and study of GRB 120709A, a burst with three distinct emission episodes",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022AdSpR..70.1512B",
+      "url": "https://doi.org/10.1016/j.asr.2022.05.073",
       "bibtex": "@ARTICLE{2022AdSpR..70.1512B,\n       author = {{Bukhari}, Syed Ali Mohsin and {Sajjad}, Saeeda and {Murtaza}, Urooj},\n        title = \"{The spectral analysis and study of GRB 120709A, a burst with three distinct emission episodes}\",\n      journal = {Advances in Space Research},\n     keywords = {Gamma-ray bursts, Spectral analysis, Lorentz factor, Quiescent, Outflow, GRB 120709A},\n         year = 2022,\n        month = sep,\n       volume = {70},\n       number = {5},\n        pages = {1512-1528},\n          doi = {10.1016/j.asr.2022.05.073},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022AdSpR..70.1512B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
