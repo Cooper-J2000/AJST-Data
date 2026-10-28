@@ -1,29 +1,38 @@
 {
   "transient_id": "GRB150123A",
-  "alias": [],
+  "alias": [
+    "GRB 150123A"
+  ],
   "ra": 111.56,
   "dec": -9.691,
-  "T0": "2015-01-23T15:56:47Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0": "2015-01-23T15:01:50Z",
+  "T0_ref": "GCN 17345（MAXI/GSC nova alert 触发时刻 2015-01-23 15:01:50 UT，原文 The MAXI/GSC nova alert system triggered a bright uncatalogued X-ray transient source at 15:01:50 UT，触发仪器官方通告、§3.8 优先级①）；GCN 17362 独立反算互证（MASTER 观测起始 2015-01-23 15:56:47 UT 自述 starting 3297 sec after trigger time，15:56:47−3297 s=15:01:50 UT）；UKSSDC Tiled 分析页列 T0=2015-01-23 15:01:23 UT（自动产品、与通告差 27 s，备查）",
+  "T0_offset": -39.0,
+  "T0_offset_ref": "GCN 17351（Konus-Wind waiting mode：原文 The burst light curve shows a single pulse started at ~T0(MAXI)-39 s with a duration of ~70 s——真实爆发早于 MAXI 自动触发约 39 s；原文带 ~ 为近似值）",
   "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 17345（原文 (R.A., Dec) = (111.560 deg, -9.691 deg) = (07 26 14, -09 41 27) (J2000)）；定位误差为非圆形态、pos_error 留 null（GRB120127A/GRB140814A 先例）：恒量假设下统计 90% C.L. 椭圆误差区长/短半径 0.14°/0.13°、长轴自北向逆时针滚角 110.0°、另有系统 0.1°（90% 包含半径）；Swift-XRT 在误差圆内找到 3 个未编目 X 射线源但 At the present time we cannot be sure which, if any, of these is the afterglow（GCN 17348），MASTER 后检：#1 星系无增亮、#2 空场无 OT、#3 受近邻亮星混叠（GCN 17362）——无确认余辉、无精化定位可用，ra/dec 维持 MAXI 定位",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy@zcode 2026-10-28。身份：GRB 150123A = MAXI/GSC nova alert 于 2015-01-23 15:01:50 UT 触发的未编目 X 射线暂现（GCN 17345 原文 The MAXI/GSC nova alert system triggered a bright uncatalogued X-ray transient source at 15:01:50 UT），扫描均流 332±36 mCrab（4-10 keV、1σ）；Konus-Wind waiting mode 独立探测（GCN 17351：单脉冲 ~T0−39 s 起、时长 ~70 s、谱窗 T0−39 至 T0+31 s、能量 20-1200 keV）；Swift（XRT/UVOT，GCN 17346/17348/17349）与 MASTER（GCN 17362）均按该触发与定位跟进；MPE 快照（external/mpe_greiner）同记该事件（obs_date=2015-01-23、07h26m14s −09°41′、Instrument=MAXI、Error 8′、无触发时刻）；MAXI 官方事件页 maxi.riken.jp/grbs/150123a/ 同列（SN 39.7、Flux 1.36±0.09e-8 erg/cm²/s、X 射线量不入库）；同日无孪生条目（镜像逐号枚举 GCN 17340-17365 仅 6 篇 150123A 通告、info/ 无其他 150123 源、UKSSDC grb15 年表 1 月仅列 GRB 150123A 单条）。T0：bot 值 2015-01-23T15:56:47Z 系 MASTER 观测起始（GCN 17362 T_start=15:56:47 UT、自述触发后 3297 s）被误植为触发（Issue #84 家族，GRB120127A/GRB131218A 先例）→ 改为 MAXI/GSC 官方通告触发时刻 15:01:50 UT（GCN 17345），MASTER 反算互证恰自洽；bot t0_basis=meta_trigger 无锚（Issue #68 家族）→ 补 T0_ref 并改写 t0_note/t0_basis；UKSSDC Tiled 页 T0=15:01:23 UT 与通告差 27 s（自动产品、取优先级①通告值）。T0_offset=−39 s：Konus-Wind 真实脉冲起始早于 MAXI 自动触发（GCN 17351，原文带 ~ 为近似）；纯元数据、不改写光变时间轴。位置：ra/dec=111.56/−9.691 保留（GCN 17345 逐字 111.560/−9.691）；MAXI 定位为非圆形态（90% C.L. 椭圆 0.14°/0.13°＋系统 0.1°）→ pos_error 留 null（GRB120127A/GRB140814A 先例）、完整描述见 pos_ref。分类：tag=['grb']；sub_tag=['lgrb'] 依来源分类——Konus-Wind 通告原文 The long GRB 150123A（GCN 17351），佐证：单脉冲时长 ~70 s（~T0−39 s 至 T0+31 s）；MAXI 快照与通告均无 t90 字段、未自行现算 T90。红移：无信息、null。alias：补 GCN 用名 GRB 150123A（带空格；GCN 17345/17346/17348/17349/17351 主题行均用此名；MASTER GCN 17362 用无空格形 GRB150123A=本库 id 形）。测光：UVOT 原行 time=5373 s 系 bot 以 MASTER 观测起始为 T0 的产物 → 重锚 8700±50 s（GCN 17349 散文锚 8.7ks after the trigger、无曝光窗端点、中点不可恢复、time_err=±50 s 为两位有效数字半位）；补 MASTER 上限 7 行（GCN 17362 表：Tunka/Kislovodsk/SAAO 三台址、单帧 180 s 与合并 1620-1800 s 深度共 7 次独立上限、band=G）；GCN 17362 原表 T-Tmid 列内部失洽（3-7 行值与起点偏移+半曝光差 442/141/−238/254/644 s 不等、第 5 行 13186 甚至小于起点偏移 13334——中点早于起点不可能），一律以显式端点 T_start+Exp 为锚（GRB100904A 先例）、该列失洽逐行记入 comment。无 X 射线行；MAXI 扫描流量与前后过境上限均为 X 射线量（332±36 mCrab、20 mCrab），按契约不入库。测光检索（2026-10-28）：仓内 gcn/archive 全文快照未随仓分发（如实注明）；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb/swift_bat/swift_grb/swift_xrt_live/swiftgrbba/fermi_gbm/fermi_lat/konus_wind/heasarc_grbcat/batse/agile_mcal/saxgrbmgrb 均 0 命中、mpe_greiner 1 条（仅元数据）；GCN 站：镜像 other 页 6 篇通告全文逐字核对（17345 MAXI 触发、17346/17348 Swift 铺开与 XRT、17349 UVOT u 上限已入库、17351 Konus-Wind、17362 MASTER 7 行上限已入库；17345 的 X 射线量——扫描均流 332±36 mCrab 与前后过境 13:29/16:34 UT 各 20 mCrab 上限——不入库）、镜像逐号枚举 GCN 17340-17365 恰 6 篇命中、门户事件页 gcn.nasa.gov/circulars/events/grb-150123a 存在（GRB 150123A 命中 29 处；GCN 检索 API 500、如实注明）；arXiv API 检索 150123A 与 GRB 150123A 均 0 篇；OpenAlex 命中 7 条（5 篇 GCN 通告本身 + 2 条 JAXA 年报「2015 年に MAXI が発見した新天体と突発現象」、记录页无正文可得、非研究文章）→ 无研究文章测光、articles 维持空；SciX 防护空响应、SIMBAD 无响应、Konus 页 ioffe.rssi.ru 连接失败（如实注明、不作缺席证据）、TNS 可达 0 结果；UKSSDC grb15 年表与 Tiled 页可达（身份互证、First observation 17:27:11 UT 备查）。结论：补 7 行（MASTER）、重锚 1 行（UVOT）、无 X 射线行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 MAXI/GSC nova alert 触发时刻 2015-01-23T15:01:50Z（GCN 17345）；原 bot 值 15:56:47Z 系 MASTER 观测起始（GCN 17362 T_start、触发后 3297 s）被误植为触发，已改正并经 MASTER 反算互证",
+    "t0_basis": "GCN 17345（MAXI/GSC trigger）；GCN 17362 反算互证（15:56:47−3297 s）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
