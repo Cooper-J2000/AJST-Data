@@ -1,31 +1,29 @@
 {
   "transient_id": "GRB250516A",
-  "alias": [],
-  "ra": 334.60979,
-  "dec": -9.11941,
+  "alias": ["bn250516608"],
+  "ra": 334.60978,
+  "dec": -9.11949,
   "T0": "2025-05-16T14:35:29Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 40467",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [
-    "grb"
-  ],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 40467",
+  "tag": ["grb"],
+  "pos_error": 2.2,
+  "pos_ref": "GCN 40468",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [
-    "lgrb"
-  ],
+  "comment": "身份：双触发同暴——Swift BAT 触发（GCN 40467：At 14:35:29 UT，trigger=1314210，Swift slewed immediately）且 Fermi GBM 同秒触发（GCN 40466：At 14:35:29 UT，trigger 769098934.27533 / 250516608；GCN 40473 原文 14:35:29.28 UT）；按「有 Swift 以 Swift 为准」T0 锚 Swift 整秒、Trigger_Instrument=Swift/BAT（原值 Fermi，系 Fermi 导入侧赋值）。T0=2025-05-16T14:35:29Z（Swift BAT 原文，整秒照写）；Fermi GBM 亚秒：MET 769098934.27533 经闰秒改正=14:35:29.27533 UTC（天真换算 14:35:34.27533，扣 5 闰秒，Python 独立重算，Issue #67），GCN 40473 原文 29.28、fermi_gbm 快照 trigger_time=2025-05-16T14:35:29.275Z 互证——与 Swift 值仅亚秒差，按 §3.2 不写 T0_offset、不改进 T0（Swift 为锚）。定位：Swift-XRT enhanced position RA=334.60978, Dec=-9.11949（22h18m26.35s -09d07m10.2\"），2.2 arcsec（radius，90% confidence，GCN 40468）→ 更新 pos_error=2.2/pos_error_confidence=90/pos_ref=GCN 40468；原 334.60979/-9.11941 ±1.9″（pos_ref=GCN 40467）系 40467 内 XRT ground 位，被 enhanced 位取代，原值备查；BAT 精化位 334.612/-9.120 ±1.1 arcmin（sys+stat，90%，GCN 40487）备查。分类：Fermi GBM stated class likely LONG GRB（GCN 40466）+ GCN 40473 原文 T90 about 21.8 s（50-300 keV）+ FERMIGBRST 快照 t90=21.8213±0.768 s（50-300 keV）互证，判 lgrb 维持。别名 bn250516608（GCN 40466 原文 trigger 名 250516608 的 HEASARC bn 形；fermi_gbm 快照 name_alt 同形）。测光检索（2026-10-28）：GCN 站 query=250516A 命中 12 篇全部消化（40466 Fermi；40467 Swift 检测；40468 XRT enhanced 位；40471 UVOT 6 行已入库；40472 XRT 精化分析、X 射线不入库；40473 GBM；40475 AstroSat CZTI、不入库；40477 MASTER-OAFA 1 行与 40482 重复；40482 MASTER-OAFA 106 行已入库；40485 Konus-Wind 无测光；40486 COLIBRI 行已核对修订；40487 BAT 精化）；trigger 号 769098934/250516608 检索无额外命中；仓内 external/rssgrbag、external/grbsn_webtool 无记录；本源非零测光（lc 114 行），无需 ADS 补数检索。",
+  "sub_tag": ["lgrb"],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-28"}
   },
   "articles": [],
   "host_galaxy": null
