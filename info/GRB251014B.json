@@ -3,25 +3,35 @@
   "alias": [],
   "ra": 14.5787,
   "dec": -35.5678,
-  "T0": "2025-10-14T00:28:30Z",
-  "T0_ref": null,
+  "T0": "2025-10-14T04:47:21.170Z",
+  "T0_ref": "GCN 42263（BAT-GUANO 通告引 Fermi 触发通告：T0=2025-10-14T04:47:21.17 UTC，Fermi trigger number 782110046）；源精度 2 位小数，按校验器要求写 3 位 .170",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 42263",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 7.3,
+  "pos_ref": "GCN 42289",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0/触发仪器/定位三元组修正：bot 原 T0=2025-10-14T00:28:30Z、Trigger_Instrument=Swift/BAT、pos_error=180″+pos_ref=GCN 42263 配 ra/dec=14.5787/-35.5678（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」）。修正依据：①bot T0 为同日另一暴的触发——FERMIGBRST 快照 bn251014020 trigger_time=2025-10-14T00:28:30.337Z（ra=111.732,dec=6.415，与本源位置无关）， Issue #84 家族「他源触发时刻」类。②真触发=Fermi/GBM：GCN 42263 原文「Swift/BAT did not localize GRB 251014B onboard (T0: 2025-10-14T04:47:21.17 UTC, Fermi trigger number 782110046)」（GUANO 收 Fermi 通告后保存 [-50,+150] s BAT 事件数据）；BAT-GLIMPSE 定位 14.5954,-35.5802（3′ radius，SNR 8.5），NITRATES 独立证实（2.048 s 时箱，sqrt(TS)=19.78）；仓内 GCN 全文快照与 FERMIGBRST 快照均无该触发的 GBM 团队通告/目录行 → T0 取 GCN 42263 所引 Fermi 通告值 04:47:21.17 UTC（源精度 2 位小数、按校验器写 3 位 .170），XRT/UVOT 通告的 T0 相对时刻（42288「49976 s after trigger」、42289「T0+49.9 ks」）与该 T0 内部自洽。③bot 坐标 14.5787/-35.5678 为 GCN 42289 的 XRT Source 2（7.3″，radius, 90% conf），与 bot 所挂 pos_error=180″/pos_ref=GCN 42263 不匹配 → pos_error/pos_ref 改正为 7.3″/GCN 42289（pos_error_confidence=90，原文明确）；BAT-GLIMPSE 3′ 定位记此备查。注意：XRT 三源（Source 2/3/4）均未确认余辉（GCN 42289：「none of them is above the RASS limit or shows definitive signs of fading … we cannot identify which, if any, is the afterglow」；Source 3 为类星体 [VV98] J005846.6-353444），Source 2 作源位置沿用 bot 原选择并留此说明。分类：GCN 42263 标题「arcminute localization of a short burst」明确短暴；FERMIGBRST 快照无该触发（782110046）行、无目录 t90 → sub_tag=sgrb 按通告。XRT 测光（GCN 42289 计数率/流量）属 X 射线，按约不入库。检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇命中 6 篇（42263/42265/42287/42288/42289/42305）：GCN 42287 VLT/FORS2 R~24 AB 上限 1 行（time/mjd 改正）+42288 UVOT white 1 行+42305 PRIME J 1 行，共 +2 行入库；42265 为 ToO 通告无测光；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）未见该源研究论文，articles 留空。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 已修正为 Fermi/GBM 触发时刻（trigger 782110046=2025-10-14T04:47:21.17 UTC）；bot 原值 2025-10-14T00:28:30Z 为同日另一暴 bn251014020 的触发时刻，原值与改证见 comment",
+    "t0_basis": "gcn_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
