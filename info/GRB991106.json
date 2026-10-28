@@ -1,30 +1,59 @@
 {
   "transient_id": "GRB991106",
-  "alias": [],
-  "ra": 336.115208,
-  "dec": 54.364722,
+  "alias": [
+    "GRB 991106",
+    "GRB 991106A",
+    "XRF 991106"
+  ],
+  "ra": 336.217,
+  "dec": 54.3647,
   "T0": "1999-11-06T10:54:27Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 434",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 192.6,
+  "pos_ref": "in't Zand+2026, A&A, BeppoSAX-WFC catalog, Table 1 (arXiv:2512.16845)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 991106 为 BeppoSAX WFC/GRBM 于 1999-11-06 10:54:27 UT 探测的事件（GCN 434/435），GRBCAT 记名 GRB 991106A；同日 19:03:32 的 BATSE 7842（39.24/+60.63）是另一事件 GRB 991106B，勿混（SIMBAD 把 Trigger 7842 列为 GRB 991106 别名，实为 991106B 的触发号，未采用）；别名来源：GRB 991106（GCN）、GRB 991106A（GRBCAT/HEASARC）、XRF 991106（SIMBAD）。T0 取 GCN 434 的探测时刻 10:54:27 UT（整数秒）；GCN 443 记 11 月 6.4545 UT（四位小数日 ≈10:54:29，精度约 ±4 s），在来源精度内一致，未改 T0、未写 T0_offset；WFC 星表 MJD 51488.454310（=10:54:12.4）为事件起始时刻，与探测时刻差 15 s，属起算口径差，T0 仍取 GCN 434。原 ra/dec=336.115208/+54.364722 实为 GCN 444 VLA 8.46 GHz 射电源位置（22:24:27.65 +54:21:53.0，距 NFI X 射线源 2.1′，约 10% 为背景源），已改为 BeppoSAX-WFC 星表质心 336.2170/+54.3647（Err=3.21′，目录第 11 列定义为 68% 圆误差半径；GCN 435 精化位置 336.202/+54.365、GCN 443 记 99% 半径 3.2′），原值留此备查。NFI 另检出一个 1.5′ 误差的点源 1 SAX J222441+5422.7（22:24:40.8 +54:22:45，GCN 445；SIMBAD 采用该坐标），可能是余辉也可能是背景/前景源，未作为 ra/dec。\n\n性质与分类：GCN 443 初判可能为短暴（GRBM 约 1 s、WFC 约 5 s、峰值 0.3 Crab）；GCN 448 进一步分析称 GRBM 短峰未被 BATSE 证实（2σ 上限 F<2.7e-8 erg/cm2/s，40-700 keV），WFC 暂现真实（2-26 keV 峰值 (2.0±0.4)e-8 erg/cm2/s），判为「peculiarly short and hard X-ray burst or an anomalous GRB」、X 射线富事件候选；in 't Zand+2026 WFC 星表 Table 1 记 t90=32.6±2.5 s（目录 t90 字段，WFC 2-30 keV），并注明不能完全排除为银河系 I 型 X 射线暴；Gorosabel+2002 称详细分析归为 long/soft 或 intermediate。按目录 t90 应判 lgrb，但与 GCN 443/448 的 short/hard 初步分类冲突 → sub_tag 留空，待裁决。红移未知，无宿主星系。\n\n测光检索（2026-10-27）：仓内 gcn/archive 全文（本地无该目录，按 README 下载官方 archive.json.tar.gz，31.6 MB）命中 eventId=GRB 991106 的 12 篇（434–438、440、443–448；其中 437/438/440/447 含光学数值极限、446 含 K′ 极限、444 射电仅位置无流量、445/448 仅 X 射线），external/rssgrbag 有源但仅 X 射线（xray_ag_flag=Y，opt/radio_ag_flag=N，xray_flux_11h=1.3e-13 erg/cm2/s），external/grbsn_webtool 无记录；GCN 站事件页 other/991106.gcn3 同 12 篇；ADS/SciX API 无 token（401）、网页版人机验证不可达；TNS 检索未返回条目（1999 年事件）；arXiv 命中 in 't Zand+2026（2512.16845）与 Gorosabel+2002（astro-ph/0110009），均无独立光学测光表（只转引 GCN 极限）；Fynbo+2001（A&A 369, 373）表 1 记 GRB 991106 R=22.0 @0.42 d（引 GCN 435/440），与 GCN 440 原文时序（首夜 ~10 h 极限 23.5、次夜 1.7 d 极限 22.0）不符，未采用。→ 补 7 行光学上限（GCN 437×2、438、440×2、447×2），无探测行。\n\n未入库：GCN 446 Calar Alto 3.5 m K′~19 极限位于射电源位置（非 GRB 位置）且 filters.json 无 K′ 键，只记 comment；GCN 444 VLA 8.46 GHz 探测未给流量密度；GCN 436 OSN 1.5 m R/I 16 次曝光仅与 DSS 比较、无可引用极限值。原文 extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，已按审核结果改写并留此备查。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "68",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-27 审核确认：GCN 434 的 BeppoSAX 探测时刻 1999-11-06 10:54:27 UT（原 bot 值 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 无可溯源依据，原值留 comment 备查）",
+    "t0_basis": "GCN 434",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Zand+2026",
+      "url": "https://arxiv.org/abs/2512.16845",
+      "title": "BeppoSAX-WFC catalog of fast X-ray transients",
+      "source": "fsy"
+    },
+    {
+      "name": "Gorosabel+2002",
+      "url": "https://arxiv.org/abs/astro-ph/0110009",
+      "title": "Constraints on the optical afterglow emission of the short/hard burst GRB 010119",
+      "source": "fsy"
+    },
+    {
+      "name": "Fynbo+2001",
+      "url": "https://arxiv.org/abs/astro-ph/0101425",
+      "title": "Detection of the optical afterglow of GRB 000630: Implications for dark bursts",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
