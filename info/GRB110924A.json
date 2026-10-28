@@ -4,24 +4,32 @@
   "ra": 234.748,
   "dec": -66.308,
   "T0": "2011-09-24T09:03:20Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 12391",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 180.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 12391",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份与 T0：Swift/BAT trigger 503926 于 2011-09-24 09:03:20 UT 触发（GCN 12391 原文「At 09:03:20 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 110924A (trigger=503926)」），T0 取官方通告整秒值（§3.8 ①）；Swift-BAT 位置通告页（gcn.gsfc.nasa.gov/other/503926.swift）GRB_TIME=32600.73 SOD（09:03:20.73 UT）备查——该触发未收入 Swift/BAT GRB 目录，无目录快照亚秒值可采。定位：BAT 在轨 RA,Dec=234.748,-66.308、误差 3 arcmin（原文「radius, 90% containment, including systematic uncertainty」）→ pos_error=180″、confidence=90。原 bot t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，经 GCN 12391 核验该值即 BAT 触发时刻，原标注留存于此。事件状态（§3.7）：从未被确认为 GRB——GCN 12391 subject 即「Swift detection of a possible burst」、BAT 位置通告 IMAGE_SIGNIF=6.60 sigma（<7σ，通告自注 questionable detection）、XRT 729 s 快视数据无源且只有 Nack-Position 通告、无 BAT refined analysis 通告、UVOT 无候选体；未收入 Swift/BAT GRB 目录（仓内 swift_bat 快照 1668 暴 041217–250605A）与 HEASARC swiftgrb、heasarc_grbcat、mpe_greiner 快照（逐一检索 110924/503926 均 0 命中）；SIMBAD 对本源全部 bibcode 仅 2 条：2011GCN.12391....1H 与 2011GCN.12393....1F——后者为 Fermi GBM 触发 110923481/110924391/110925200 判太阳耀斑的否证通告（其触发名 110924391 含 110924 字面、时刻 09:22:38.40 UT 晚本源 19 min，与 Swift 503926 非同事件）；GCN GSFC 镜像逐号枚举 12391–12510（120 篇）无 refined analysis、无否证通告；arXiv API 检索 0 命中。无否证通告但亦无任何证实证据（§3.7「未证实但未否证」），源级保留/删除交维护者裁决（PR 待决①）。BAT 光变单峰、时长约 10 s（GCN 12391 散文表述，非目录 T90 表值、非分类表述），sub_tag 留空（§3.9）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@zcode 2026-10-28 审核核验为 Swift BAT 触发时刻 2011-09-24T09:03:20Z（GCN 12391「At 09:03:20 UT, the Swift BAT triggered」，trigger=503926）；BAT 位置通告页 09:03:20.73 UT（SOD 32600.73）备查，无官方目录亚秒值（该触发未入 BAT 目录/swiftgrb）。原 bot 标注 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」留存于 comment。",
+    "t0_basis": "GCN 12391（Swift BAT 官方通告）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
