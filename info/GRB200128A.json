@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB200128A",
-  "alias": [],
-  "ra": 191.770292,
-  "dec": 45.200626,
-  "T0": "2020-01-28T06:43:20Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB200128153",
+    "bn200128153"
+  ],
+  "ra": 158.65,
+  "dec": 41.57,
+  "T0": "2020-01-28T03:40:05.775000Z",
+  "T0_ref": "FERMIGBRST; GCN 26909",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 2.9,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 18.95,
+  "pos_error_confidence": null,
+  "pos_ref": "FERMIGBRST; GCN 26909",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "redshift_ref": null,
+  "comment": "导入管线（gcn_llm_extract）将 GRB 200128A 与暂现源 ZTF20aajnksq（AT2020blt）混淆：原 ra/dec=191.770292/+45.200626、redshift=2.9、T0=2020-01-28T06:43:20Z 均属 ZTF20aajnksq（GCN 26966 发现通告：discovered on UT 2020-01-28T06:43:20.640 at r=19.6 mag、LRIS 谱 Lyman break/Lyα 吸收 z=2.9），原 Trigger_Instrument=Swift 亦误（GCN 26966 的 Swift ToO X-ray 观测是对该暂现源做的，非 Swift 触发本 GRB）。审核 2026-10-28（fsy）重置为本源（Fermi GBM trigger 200128153）真实参数：①T0——GCN 26909「At 03:40:05 UT on 28 Jan 2020」（MET 601875610.774992），Python 独立重算 epoch+MET−5 闰秒=03:40:05.774992 UTC，与 FERMIGBRST trigger_time=2020-01-28T03:40:05.775Z 一致、整秒与 GCN 一致 → T0=03:40:05.775Z（原 bot T0=06:43:20Z 系暂现源发现时刻而非触发时刻，Issue #84 家族；原 t0_note「t0 为 meta trigger-time（真实触发时刻）」不成立，原值留此备查）。②定位——GCN 26909：RA=158.6, Dec=41.6（statistical uncertainty 19.0 deg）；FERMIGBRST：ra=158.65, dec=41.57、error_radius=18.95 deg（最终目录、晚于实时通告，按 §4 取目录值）；两来源均未标注置信水平 → pos_error_confidence 留空。③分类——GCN 26909 stated「likely SHORT GRB」；t90=0.576±0.181 s（FERMIGBRST 50-300 keV），按目录 t90 判 sgrb，两源一致。④别名——GRB200128153 / bn200128153：FERMIGBRST 目录用名（name_alt 含 GRB200128153、GRB 200128.153、bn200128153）；GCN 26909 原文用名「trigger 601875610.774992 / 200128153」、通告内 skymap URL 文件名 bn200128153。⑤关联否证——GCN 26970（Fermi-GBM 团队）：ZTF20aajnksq 位置在 GBM 触发前约 25.3 min 至触发后 1.8 min 被地球遮挡，「we consider it unlikely that GRB 200128A is associated with ZTF20aajnksq」；GCN 26968 亦指出若关联则 M_r=-27.4 远亮于短暴余辉；Ho+2020（arXiv:2006.10761）标题即「With No Detected Gamma-Ray Burst Counterpart」（摘要未点名 GRB 200128A，直接否证依据仍是 GCN 26970）→ redshift=2.9 归属暂现源、本源置 null（该暂现源已在库为 ZTF20aajnksq 条目）。⑥lc 唯一行属 ZTF20aajnksq 发现点（GCN 26966），按真实 T0 重算历元后置 discard=y（见该行 comment），建议维护者迁入库内 ZTF20aajnksq 条目（PR 待决事项）。测光检索（2026-10-28）：GCN 站全文检索「200128A」命中 4 篇（26909/26966/26968/26970）全数核对原文；本地无 gcn/archive 快照，external/rssgrbag、external/grbsn_webtool、external/uvot_grb 无此源；arXiv 全文检索「GRB 200128A」0 命中、无已发表研究论文给出本源测光 → 本源补 0 行、discard 1 行；GCN 26968 的 Gemini r=25.2 与 ZTF20aajnksq 条目现有行同源。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "2026-10-28 审核修正：原 bot 值 T0=2020-01-28T06:43:20Z（t0_note 原文「t0 为 meta trigger-time（真实触发时刻）」）实为 ZTF20aajnksq 发现时刻（GCN 26966），非 GRB 触发时刻；正确 T0=Fermi GBM 触发 2020-01-28T03:40:05.775Z（FERMIGBRST；GCN 26909 MET 601875610.774992 独立重算一致）。",
+    "t0_basis": "FERMIGBRST; GCN 26909",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ho+2020",
+      "title": "ZTF20aajnksq (AT2020blt): A Fast Optical Transient at z ~ 2.9 With No Detected Gamma-Ray Burst Counterpart",
+      "url": "https://arxiv.org/abs/2006.10761",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
