@@ -1,26 +1,31 @@
 {
   "transient_id": "GRB210807C",
   "alias": [],
-  "ra": 143.53455,
-  "dec": -51.40237,
-  "T0": "2021-08-07T22:57:08Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "ra": 143.53386,
+  "dec": -51.40105,
+  "T0": "2021-08-07T22:57:08.490Z",
+  "T0_ref": "触发仪器 Swift/BAT 官方通告页 trigger 1064421：GRB_TIME 82628.49 SOD {22:57:08.49} UT（2021-08-07，TJD 19433/DOY 219）；GCN 30610 'At 22:57:08 UT' 整秒一致；仓内 external/swift_bat 快照 trigger_time=2021-08-07T22:57:08.490960Z 互证（更细小数自洽）",
+  "T0_offset": -104.18,
+  "T0_offset_ref": "GCN 30620 / GCN 30609：Fermi/GBM 同爆发触发时刻 22:55:24.31 UT（trigger 650069729 / 210807955；MET 650069729.307352 闰秒改正后独立重算 = 22:55:24.307 自洽）——GBM 先于 BAT 自动触发 104.18 s，示爆发辐射早于设备自动触发 T0（§3.2 负值条款）；纯元数据，不改光变时间轴",
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.0,
   "pos_ref": "GCN 30615",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error_confidence": "90",
+  "comment": "T0 亚秒补齐：原 bot 值 2021-08-07T22:57:08Z 整秒正确，按 §3.2 亚秒规则补触发仪器亚秒 .49（Swift/BAT 官方通告页 82628.49 SOD）。T0_offset=−104.18 s：Fermi/GBM 同爆发触发时刻 22:55:24.31 UT（GCN 30620 trigger 650069729 / 210807955；GCN 30609 trigger 650069729.307352；MET 650069729.307352 − 5 闰秒独立重算 = 22:55:24.307 自洽）——GBM 先于 BAT 自动触发 104.18 s，爆发辐射早于设备自动触发 T0。原 bot extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」（bot 失真，改写留档）。定位更正：原 bot 用 GCN 30610 prompt XRT 位（RA=143.53455 Dec=−51.40237，7.1″ radius 90% containment）配 GCN 30615 的 2.0″ 误差，坐标与误差错配；统一改用 GCN 30615 Enhanced Swift-XRT position RA=143.53386 Dec=−51.40105，2.0″（radius，原文明确 90% confidence），pos_error_confidence=90。分类：t90=89.972±6.256 s（15-350 keV，Swift BAT 目录 external/swift_bat 快照）按目录 t90 判 lgrb；GCN 30609 'likely LONG GRB'、GCN 30620 GBM T90≈125 s（50-300 keV）同口径。tag 补 grb（原为空）。测光检索（2026-10-28）：GCN 站源名检索命中 6 篇（30609/30620 GBM 定位与检测无光学测光；30610 FC 限量已修正 time；30619 UVOT 初始曝光限量新增 1 行；30615 精化位；30621 Swift-XRT refined Analysis 属 X 射线数据暂不处理）；仓内 external/uvot_grb 仅目录参数、external/rssgrbag 与 external/grbsn_webtool 无记录；文献检索未见以本源为对象的期刊论文 → 改 1 行 + 补 1 行。原文笔误：GCN 30620 'At 22:55:24.31 UT on 7 July 2021' 日期应为 7 August 2021。审核 fsy 2026-10-28",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
+    "t0_note": "T0=Swift/BAT 触发时刻 2021-08-07T22:57:08.490 UTC（官方通告页 82628.49 SOD；GCN 30610 + swift_bat 快照互证）；T0_offset=−104.18 s 记 GBM 触发（22:55:24.31 UT）早于 BAT 自动触发；原 bot 值 2021-08-07T22:57:08Z 整秒一致仅缺亚秒",
+    "t0_basis": "trigger",
     "bot_created": true
   },
   "articles": [],
