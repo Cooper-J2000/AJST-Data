@@ -3,7 +3,7 @@
   "alias": [],
   "ra": null,
   "dec": null,
-  "T0": "2012-02-01T00:00:00Z",
+  "T0": null,
   "T0_ref": null,
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -14,14 +14,19 @@
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份核验（2026-10-28，Rusty-Harpoon@zcode）：本源无任何触发/探测证据，疑似导入管线从 GCN 12978 标题笔误「GRB 1202019A」生成的幽灵源——该通告正文明确写观测对象为 GRB 120219A 场（Swenson et al., GCN 12964，Swift/BAT trigger 515375，T0=2012-02-19T14:30:08 UT），已打开 GCN 12978（仓内 gcn/archive 与 gcn.nasa.gov/circulars/12978 两个版本）逐句核对。原 extra_data t0_note='t0 为触发日 00:00 UT（名字日期）'、t0_basis='name_date' 为导入占位（无触发时刻可依据，违反《提示词》§3.2「T0 只能是触发时刻」），故 T0 置 null（原值 2012-02-01T00:00:00Z 留此备查）。测光检索（2026-10-28）：①仓内 gcn/archive 45 563 篇全文按 GRB120201 / GRB 120201 / 120201 检索命中 1 篇（GCN 12978，即上述笔误通告）；按日期 2012-02-0[12] 检索另命中 GCN 12917（GRB 120202A，非本源）；②external/rssgrbag/lightcurve.jsonl（140 行）、external/grbsn_webtool/SourceData（63 事件）无记录；③external 各目录快照 2012-02-01 无任何事件（mpe_greiner 2012-02 最早为 GRB 120202A；fermi_gbm/swift_bat/swiftgrbba/agile_mcal/konus_wind/batse/saxgrbmgrb/uvot_grb/swift_xrt_live 均无 120201 触发）；④外部入口：GCN 站 gcn.nasa.gov/circulars 检索 GRB 120201 无命中；无 ADS/SciX token，走 OpenAlex 全文检索（2 命中均无关）、Crossref（10 命中均无关）、arXiv API（0 命中）；TNS 检索无结果。结论：无本源测光，补 0 行；lc 唯一一行（GCN 12978，R=22.5）属 GRB 120219A，已置 discard=y，建议维护者否证删除本源、并将该行按 GRB 120219A 的 T0 迁移至 GRB120219A（见 PR #401 待决事项）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "原值「t0 为触发日 00:00 UT（名字日期）」（bot，2026-10-28 审核改写）：名字日期占位而非触发时刻，库内与外部检索均无本源触发记录，T0 置 null",
+    "t0_basis": "none_no_trigger_evidence",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
