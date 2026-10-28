@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB091015",
-  "alias": [],
+  "alias": [
+    "GRB 091015"
+  ],
   "ra": 306.13,
   "dec": -6.17,
-  "T0": "2009-10-16T17:40:00Z",
-  "T0_ref": null,
+  "T0": "2009-10-15T23:00:17Z",
+  "T0_ref": "GCN 10025（INTEGRAL/IBAS 定位通告，原文「A faint long GRB ... has been detected by IBAS in IBIS/ISGRI data at 23:00:17 UTC」，日期由勘误通告 GCN 10026 定为 October 15th）＋ INTEGRAL/IBAS 官方结果页（ibas.iasf-milano.inaf.it/IBAS_Results.html，取数 2026-10-28）同条 T start UTC=23:00:17；两路整秒一致、均未给亚秒值，按 §3.2 不自行补亚秒",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 10025 精化定位（与本条 ra/dec 同一套坐标）：「RA: 306.13 [degrees] DEC: -6.17 [degrees] with an uncertainty of 3 arcmin (90% c.l.)」→ pos_error=180 arcsec、置信水平 90% 从原文；INTEGRAL/IBAS 官方结果页同条记 20:24:31 / -06:10:12、Unc. 2.9 arcmin（= 306.1292 / -6.1700，与 306.13 / -6.17 同一定位的另一种写法，页表未标置信水平），仓内 external/mpe_greiner/normalized.jsonl 第 2153 行亦记 ra 306.12916666666666 / dec -6.166666666666667、Error 3、Instrument INTEGRAL（取数日期随快照）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy 2026-10-28）。[身份] 本条＝GRB 091015：INTEGRAL/IBAS 在 IBIS/ISGRI 数据中事后确认的暗弱长暴，触发 2009-10-15 23:00:17 UT（GCN 10025, Ferrigno+；无自动告警，「Interactive off-line analysis has allowed to confirm the GRB nature of the trigger」）。GCN 10025 的 subject 与正文把它误写成「GRB 090815 / August 15th」，并由 GCN 10026（Gotz，标题「GRB 091015: correction to GCN 10025」）勘误：「GCN number 10025 contains a mistake: the burst name is 091015 since it has been detected on October 15th, and not on August 15th as stated ih the GCN.」——与 2026-10-27 在 GRB090920（PR #379）上抓到的「通告 subject 笔误造名」同族，但此处有勘误通告、事件真实，故条目名沿用 GRB091015，不建 090815 幻影条目；笔误名不入 alias（原文笔误，按 §3.10 只在此记录）。三方互证：坐标与 GCN 10025 逐字一致；仓内 external/mpe_greiner/normalized.jsonl:2153 独立收录「GRB 091015」（obs_date 2009-10-15、Instrument INTEGRAL）；SIMBAD 对象「GRB 091015」（OID 5261856，取数 2026-10-28，页面本身 No Coord.）。无重复建档：库内 2009-10-1x 另有 GRB091010（Swift/BAT，298.669/-22.538）与 GRB091018A（32.21/-57.53），时刻与位置均不合；info/ 无 GRB090815*、无 GRB091016*。警惕同名撞车：external/fermi_gbm/normalized.jsonl:554 的「GRB 091015.129」（2009-10-15T03:05:42.937Z，ra 316.09/dec -49.5）是同日的另一暴，与本条无关，后来者不得据其改 T0 或合并数据。[T0] bot 原 T0=2009-10-16T17:40:00Z（extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，原值留此备查）既非触发时刻也与暴名日期不符：它正是 lc 所引 GCN 10029 中 RTT150 合并图像的观测中心时刻「October 16, 17:40 UT」（bot mjd=55120.73611111111 = 该时刻的 MJD，逐位吻合；即 Issue #68/#380 系的抽取失真，本例属「把余辉观测历元当触发时刻」子类），并因此使 lc 行 time=0.0 失去锚点。已改为触发仪器时刻 2009-10-15T23:00:17Z（GCN 10025 + IBAS 官方页整秒互证；两路都只给到整秒，不补亚秒）。无 >1 s 的「真实爆发 vs 自动触发」偏移证据，T0_offset 留空——历元/导入口径差不算偏移。通告自述「0.76 days after the burst」（=65664 s）与其自给绝对时刻 17:40 UT（=67183 s）互差 1519 s，属同一通告内部不一致，未采值已在 lc comment 并列备查。[分类] tag=grb（GCN 10025 确认 GRB 性质；GCN 10020-10170 共 151 篇逐号扫掠未见对本源的撤回/否证通告，其间 10068/10071/10079 的 not-real 通告针对 Swift-BAT 其他触发号，与本条无关）；sub_tag=lgrb 依来源明示分类：GCN 10025「A faint long GRB with duration of about 100 s」，IBAS 官方结果页同条 T90=100 s（原文未给误差，作旁证，非独立判据），未发现冲突的分类来源。[红移] 各来源均未测，留 null。[备查量值] IBAS 官方结果页 peak flux(20-200 keV)=0.08 ph cm^-2 s^-1（原文未给误差；GCN 10025 称「only detected in the 20-40 keV energy range」）；GCN 10035 合并图系统定标 1σ 不确定度 0.313 mag（统计 0.000）；均按 §3.9 写注不参与判定。[宿主] 无确定宿主记录，host_galaxy 保持 null。[测光检索留证] 测光检索（2026-10-28）：① 仓内：本 clone 无 gcn/archive/（ls 报 No such file or directory；CONTRIBUTING §2 亦规定不入库），故无全文快照可检，改为逐篇打开 GCN 原文；grep 全部 21 个 external/*/normalized.jsonl 与 external/agile_mcal/cds_table2-4.dat、external/konus_wind/*.csv、external/batse 与 external/saxgrbmgrb 的 .gz 原文、external/grbsn_webtool/SourceData，命中 2 行（mpe_greiner 身份互证、fermi_gbm 系另一暴），rssgrbag 射电光变与 grbsn_webtool 事件集本源 0 行 → 仓内无可入库测光。② GCN：按源名与通告号打开 10025/10026/10029/10035 共 4 篇（gcn.gsfc.nasa.gov/gcn3/ 与 gcn.nasa.gov/circulars/ 双站均可达、正文一致），另逐号扫掠相邻 10020-10170 共 151 篇全文，命中本源 3 篇（10025 定位、10029 光学、10035 光学）→ 可用测光 2 篇 2 行，本 PR 入库 2 行（重锚 1 行 RTT150/R、新增 1 行 PROMPT/z）；gcn.nasa.gov 检索页为前端渲染、api.v0 各端点 404 → 未能取得结果集，以逐号扫掠替代。③ SIMBAD（sim-id ASCII 接口，对象 1 个）关联文献 7 条，其中 3 条即上述 GCN；另 4 条为样本/目录类（Greiner+2024 GROND 样本、Wang+2020 统计样本、Bosnjak+2014 INTEGRAL/IBIS-SPI 谱目录、Longo+2012 AGILE-GRID 上限），本次未打开取数，Bosnjak+2014 的 CDS/VizieR 表尝试不可得（ReadMe 与 nph-Cat 均报 not found）→ 本源无文献表可补；arXiv API（all:「GRB 091015」与 all:091015）均 totalResults=0 → 无专文。④ TNS：检索页 HTTP 403 → 未能取得结果集（不作为不存在的证据）。结论：本源源级测光只有两条上限（GCN 10029 R>22 @ T0+67183 s、GCN 10035 z>21.2 @ T0+97560 s），已全部入库，无探测点可补，亦无射电/X 射线测光可补（见 PR 说明）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "fsy 2026-10-28 审核：bot 原 T0=2009-10-16T17:40:00Z 是 GCN 10029 里 RTT150 余辉观测的中心时刻（October 16, 17:40 UT），不是触发时刻；已改为 INTEGRAL/IBAS 触发时刻 2009-10-15T23:00:17Z（GCN 10025，日期经 GCN 10026 勘误；IBAS 官方结果页整秒一致）。bot 原值 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，均系失真记载，原文保留在 info comment 中备查",
+    "t0_basis": "GCN 10025 + IBAS 官方结果页（日期经 GCN 10026 勘误为 2009-10-15）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
