@@ -1,7 +1,7 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-43517.0,,s,55114.61696759259,w,21.36,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN10007,,
-43517.0,,s,55114.61696759259,uvot-v,19.86,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN10007,,
-43517.0,,s,55114.61696759259,uvot-u,20.48,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN10007,,
+44349.0,249,s,55114.6265972,uvot-white,21.36,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN10007,UVOT white（原文 wh）3σ 上限；原文 Time=4.41e4 s 为曝光起点（GCN 10007 起测 14:48:26 UT=+43517 s），中点=起点+498/2；time_err=半曝光；原文未做银消改正 E(B-V)=0.10；UVOT 光度系统 Vega（Poole+2008，Breeveld+2011）,Rusty-Harpoon@qoder
+45004.5,304.5,s,55114.6341840,uvot-v,19.86,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN10007,UVOT v 3σ 上限；原文 Time=4.47e4 s 为曝光起点，中点=起点+609/2；time_err=半曝光；原文未做银消改正 E(B-V)=0.10；UVOT 光度系统 Vega（Poole+2008，Breeveld+2011）,Rusty-Harpoon@qoder
+43783.5,283.5,s,55114.6200521,uvot-u,20.48,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN10007,UVOT u 3σ 上限；原文 Time=4.35e4 s=43500 s 为曝光起点，中点=43500+567/2=43783.5；time_err=半曝光；原文未做银消改正 E(B-V)=0.10；UVOT 光度系统 Vega（Poole+2008，Breeveld+2011）,Rusty-Harpoon@qoder
 43653.396,136.887,s,55114.61854625,10keV,6.84456555487134e-08,1.79920416405269e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 43969.474,179.191,s,55114.62220456018,10keV,5.20063542067274e-08,1.31597984468021e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 44197.19,116.058,s,55114.62484016204,10keV,5.58377982874804e-08,1.46045345823845e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -12,10 +12,12 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 49417.105,212.703,s,55114.68525584491,10keV,2.635814738349e-08,6.87556855977282e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 49800.774,205.229,s,55114.689696458336,10keV,2.84077207283982e-08,7.41020134743292e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 50367.391,398.255,s,55114.696254525465,10keV,2.66486608832819e-08,5.18863378155844e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-75711.0,,s,55114.989583333336,r,22.2,,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN10008,,
-99000.0,,s,55115.25913194445,i,22.11,0.15,magnitude,,n,n,,,,,,,1.0,n,,Faulkes Telescope North,GCN10017,,
-99360.0,,s,55115.26329861111,R,22.2,0.2,magnitude,,n,n,,,,,,,1.0,n,,Faulkes Telescope North,GCN10017,,
-226160.0,,s,55116.730891203704,R,22.4,0.17,magnitude,,n,n,,,,,,,1.0,n,,CrAO Shajn Telescope,GCN10030,,
+75723.0,,s,55114.9897222,r,22.2,,magnitude,AB,n,n,,,,,,,1.0,y,MPG-ESO(2.2m),GROND,"GCN10008;Greiner et al. 2024, A&A, 691, A158",GROND r' 约 22.2 AB（原文 ~22.2 无误差）；起始 2009-10-10T23:45:12 UT=+75723 s（Greiner+2024 表5；GCN 10008 记 23h45 UT）；原文未给曝光时长、中点不可恢复；未做银消改正 E(B-V)=0.14；GCN 10027 判定该候选 1–6 d 无衰减、排除为光学余辉 → discard=y,Rusty-Harpoon@qoder
+99000.0,1050,s,55115.2591319,i,22.11,0.15,magnitude,,n,n,,,,,,,1.0,y,Faulkes-North(2m),,GCN10017,FTN i' 7x300 s coadd 中点 +27.5 h（原文明列 Mid Time）；time_err=7x300/2；USNO-B1 定标（R2=14.89/i'=15.02），原文未声明星等系统；GCN 10027 排除该候选为余辉 → discard=y,Rusty-Harpoon@qoder
+99360.0,900,s,55115.2632986,R,22.2,0.2,magnitude,,n,n,,,,,,,1.0,y,Faulkes-North(2m),,GCN10017,FTN R 6x300 s coadd 中点 +27.6 h（原文明列 Mid Time）；time_err=6x300/2；USNO-B1 定标，原文未声明星等系统；GCN 10027 排除该候选为余辉 → discard=y,Rusty-Harpoon@qoder
+226160.0,2231,s,55116.7308912,R,22.40,0.17,magnitude,,n,n,,,,,,,1.0,y,Shajn,,GCN10030,CrAO Shajn 71x60 s；原文只给窗口 2009-10-12 16:55:18–18:09:40 UT（T0+2.62 d），time=窗口中点、time_err=半宽（§3.8 约定）；USNO-B1 定标，原文未声明系统；GCN 10027 排除该候选为余辉 → discard=y,Rusty-Harpoon@qoder
 419892.622,80255.421,s,55118.9731669213,10keV,1.41371889088107e-09,3.94186968726826e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-542664.0,,s,55120.39413194444,R,22.3,0.3,magnitude,,n,n,,,,,,,1.0,n,,Faulkes Telescope South,GCN10027,,
-542664.0,,s,55120.39413194444,i,22.2,0.3,magnitude,,n,n,,,,,,,1.0,n,,Faulkes Telescope South,GCN10027,,
+543456.0,900,s,55120.4032986,i,22.2,0.3,magnitude,,n,n,,,,,,,1.0,y,Faulkes-South(2m),,GCN10027,FTS i' 6x300 s coadd 中点 6.29 d（原文表列 Mid Time；观测起始 09:27:33 UT=+542664 s）；time_err=6x300/2；定标同 GCN 10017，原文未声明系统；本文即判定该候选非余辉 → discard=y,Rusty-Harpoon@qoder
+545184.0,900,s,55120.4232986,R,22.3,0.3,magnitude,,n,n,,,,,,,1.0,y,Faulkes-South(2m),,GCN10027,FTS R 6x300 s coadd 中点 6.31 d（原文表列 Mid Time）；time_err=6x300/2；定标同 GCN 10017，原文未声明系统；本文即判定该候选非余辉 → discard=y,Rusty-Harpoon@qoder
+30968.0,60,s,55114.4717245,G,17.5,,magnitude,,n,y,,,,,,,1.0,n,A&M 130mm TMB APO (Hermitage Obs.),SBIG ST2000,GCN10011,无滤光片（原文 no filter）单帧 120 s；上限 CR≈17.5（原文 approximately，无误差）；曝光中点 2009-10-10T11:19:17 UT=+30968 s（原文 8.6 h）；time_err=半曝光；USNO-B1 定标、原文未声明 AB/Vega；此刻候选尚未提出，为场上限,Rusty-Harpoon@qoder
+493171.2,43.2,s,55119.8212986,91.0GHz,0.69,0.23,mJy,,n,y,,,,,,,1.0,n,IRAM PdBI,PdBI,"de Ugarte Postigo et al. 2012, A&A, 538, A44 (Table 1)",3σ 上限 <0.69 mJy（原文 <0.69 (0.00±0.23) mJy；0.23 为实测流量 1σ 误差）；t−t0=5.708 d（原文只给相对时长，三位小数 → ±0.0005 d=43.2 s 记入 time_err）；91.0 GHz；原测量 Castro-Tirado et al. 2012（A&A in press，转引）；VoR 页面 403（DataDome），数值取自 arXiv:1108.1797 表1（online material）,Rusty-Harpoon@qoder
