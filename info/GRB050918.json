@@ -1,30 +1,53 @@
 {
   "transient_id": "GRB050918",
-  "alias": [],
+  "alias": [
+    "GRB 050918"
+  ],
   "ra": 267.61958,
   "dec": -25.41144,
   "T0": "2005-09-18T15:36:39Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 4002（INTEGRAL/IBAS 在 IBIS/ISGRI 数据中于 2005-09-18 15:36:39 UT 探测，通告只给整秒精度，不自行补亚秒；属触发时刻而非观测窗口起止，见 §3.2）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 7.0,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 4006（Swift/XRT 定位 17:50:28.7 -25:24:41.2，误差 7″，90% 包含半径）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy，2026-10-27）：① 原值：T0=2005-09-18T15:36:39Z、Trigger_Instrument=Swift、pos_error/pos_error_confidence/pos_ref/T0_ref/comment 全空、lc 仅 1 行（time=196281 s、uvot-v、V=19.3 上限、GCN4006）。② 身份与触发：GCN 4002（Mereghetti 等，IBAS 定位团队）原文「A 50 s long GRB has been detected by IBAS in IBIS/ISGRI data at 15:36:39 UT on September 18 2005」，并说明「No prompt IBAS Alert has been issued for this burst because its significance was below the threshold for automatic alert delivery」→ 触发仪器为 INTEGRAL/IBIS（IBAS），不是 Swift；Swift 只是 GCN 4006 的 TOO 跟进（Kennea 等）。故 Trigger_Instrument 由 Swift 改 INTEGRAL/IBIS（bot 显然把 Swift 的余辉通告当成了触发来源）。仓内 swift_grb（HEASARC SWIFTGRB）行 target_id=20015、det_flag=O（仅其他任务触发）、bat_detection=U，「Swift 20015」是本仓库 parse.py 由 target_id 拼出的字段而非任何来源用名 → 不录入 alias；BAT 通告页 gcn.gsfc.nasa.gov/notices_s/20015/BA/ 与 Fermi 页均 404（本源无 BAT 触发），swift_bat（1668 行）与 swiftgrbba 快照亦无本源。别名：SIMBAD 主名与 GCN 4002 标题均用「GRB 050918」→ alias 录入该形。③ T0：2005-09-18T15:36:39Z 由 GCN 4002 证实为触发时刻，无需改动、无 T0_offset（不存在真实爆发时刻相对自动触发的显著偏移；目录口径差见下）。交叉验证：uvot_grb（Roming+2017 HLSP grb-cat）TRIGTIME=148750599.0 s（自 2001-01-01T00:00:00 起算，换算恰为 2005-09-18 15:36:39）、TRIG_UT=2005-261-15:36:39；swift_grb trigger_time 同值；Vianello+2009 表 2 第 31 行给 15:36:38（早 1 s，属目录口径差，§3.8 不写 T0_offset，按 §4 优先级 ①GCN Circular 取 15:36:39，未采用值在此并列备查；VoR A&A 495,1005 页面 403 不可达，值取自 arXiv:0812.3349v2）。④ 定位：info 现有 ra/dec=267.61958/-25.41144 与 GCN 4006 的 XRT 位置 17:50:28.7/-25:24:41.2 完全一致，保留；补 pos_error=7.0″、pos_error_confidence=90（原文明确「7 arcseconds radius (90% containment)」）、pos_ref=GCN 4006；INTEGRAL 原始定位并列备查：RA 267.6096、Dec -25.4141，误差 2.8′（90% c.l.，GCN 4002），XRT 位置距该误差圈中心 34″。SIMBAD 主坐标同取 XRT 位置（267.619583/-25.411444，7000 mas，90%，引 Racusin+2009），与本报告一致。 关联性存疑并列（§3.1/§3.10）：GCN 4006 自身称该 XRT 源为「previously uncatalogued」并写明「further observations will be required to determine if this source is the afterglow」，即余辉身份未定，SIMBAD 亦沿用同一位置；本库保留该定位但在此备查。⑤ 分类：sub_tag=lgrb 依来源分类，非自算——GCN 4002 标题即「GRB 050918 - A long GRB detected by INTEGRAL」，正文「A 50 s long GRB has been detected by IBAS」；uvot_grb 目录 T90=50 s（T90_REF=GCN4002）。⑥ 通告量值（§3.9，仅记录不参与判定）：持续时长=50 s（IBIS/ISGRI，GCN 4002）；peak_flux=0.7 ph cm^-2 s^-1（约 8E-08 erg cm^-2 s^-1，20–200 keV，1 s 积分，GCN 4002）；fluence=2E-06 erg cm^-2（20–200 keV，50 s 积分，GCN 4002）。⑦ 红移与宿主：SIMBAD 与本次打开的全部来源（GCN 4002/4006、Vianello+2009、Foley+2008、Roming+2017 HLSP）均无红移、无宿主 → redshift/redshift_type/redshift_ref/host_galaxy 保持 null。⑧ lc 唯一行逐值核对、时间基准由观测起始改为曝光中间时刻（196281→201281 s，time_err=5000 s，mjd 重算），四要素检索留证写在该行 comment 末段。⑨ 未入库的候选（待维护者裁决，详见 PR 待决事项）：Roming+2017 HLSP grb-cat 对本源只给 FRST/PEAK 摘录（V=18.49±2.53，T_start=196313 s，3.44σ；V=17.99±1.83，T_start=376466 s，4.05σ）；image-event 3″ 库共 25 笔 V 曝光（T_start 相对触发 196313–422442 s，单曝光 100.8–2139.5 s，MAG 19.09–22.81，MAG_ERR 1.82–5.77，NSIGMA 0.0–5.64，MAG_LIM 19.35–21.09）；其中 2 笔达 5σ 以上（T_start=196533.5 s，V=19.93±2.53，NSIGMA 5.64；T_start=213897.3 s，V=19.89±2.52，NSIGMA 5.54），另有 4 笔为 MAG=99.0/MAG_ERR=99.0 哨兵值（上述 MAG/MAG_ERR 区间不含哨兵）。该源不在 Roming+2017 的 NOC 归一化光变库（13597 行/201 源）中，论文正文亦 0 次提及。未入库判据（2026-10-27 独立核查更正表述）：grb-cat 的 FRST/PEAK 摘录只给 T_start、无中间时刻，按 §3.2/§3.8 无法在不臆造的前提下写 time；image-event-3db 虽有 TIME 曝光中点（如 197620.4、214893.3 s）与 EXPOSURE/MAG/MAG_ERR/MAG_LIM，但属目录内部逐曝光值而非发表光变表，其 MAG_LIM 为 2σ 口径、不构成 §3.3 的上限行 → 全部未入库，列入 PR 待决事项①交由维护者裁决。⑩ X 射线：GCN 4006 的 XRT 候选源（无衰减，2 天后观测）属 X 射线数据，按 §3.3/§7 不入库、不改；本源 lc 无 X 射线行，无去重对象。⑪ extra_data 保留 bot 的 src/t0_note/t0_basis/bot_created（t0_basis=meta_trigger 与 GCN 4002 一致，不失真，未改写），仅新增 audit 标记。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://arxiv.org/abs/1701.03713",
+      "source": "fsy"
+    },
+    {
+      "name": "Vianello+2009",
+      "title": "The updated spectral catalogue of INTEGRAL Gamma-Ray Bursts",
+      "url": "https://arxiv.org/abs/0812.3349",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
