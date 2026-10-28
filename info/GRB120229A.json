@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB120229A",
-  "alias": [],
-  "ra": 20.035,
-  "dec": -35.807,
-  "T0": "2012-02-29T14:35:11Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 516571",
+    "Swift 516571",
+    "GRB 120229AS"
+  ],
+  "ra": 20.033,
+  "dec": -35.796,
+  "T0": "2012-02-29T14:35:11.161400Z",
+  "T0_ref": "GCN 12997（Swift/BAT 官方通告）：At 14:35:11 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 120229A (trigger=516571)（整秒）；亚秒取触发仪器官方产品页/目录：batgrbproduct 官方页 https://gcn.gsfc.nasa.gov/notices_s/516571/BA/ UTC 字段 2012-02-29T14:35:11.161400（含 UTCF 改正）＝external/swift_bat 与 external/swift_grb 目录快照 trigger_time 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
-  "redshift": 0.03,
-  "tag": [],
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
   "pos_error": 114.0,
   "pos_ref": "GCN 12998",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "身份：GRB120229A = Swift/BAT trigger 516571（GCN 12997 原文 At 14:35:11 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 120229A (trigger=516571)），短暴（T90=0.22 s）。SIMBAD 单一标识符 GRB 120229A（坐标 01h20m07.9s -35d47'44.0'' 引 2012GCNR..368....1M，取数 2026-10-28）；mpe_greiner 快照当日仅此一事件（用名 GRB 120229A，name_alt=GRB 120229AS，S=short 标记变体，alias 由此收录）；库内无同日孪生条目。alias 备查：BAT 516571（external/swift_bat 目录 name_alt）、Swift 516571（external/swift_grb 目录 name_alt），官方目录名（先例 GRB041228 同款）。定位：ra/dec=20.033/-35.796 为 GCN 12998 BAT ground-calculated position（原文 The BAT ground-calculated position is RA, Dec = 20.033, -35.796 deg，RA(J2000)=01h 20m 07.9s、Dec(J2000)=-35d 47' 44.0''），pos_error=114''=1.9 arcmin 取原文 an uncertainty of 1.9 arcmin, (radius, sys+stat, 90% containment)，置信水平 90% 从原文。原库 ra/dec=20.035/-35.807 系 GCN 12997 BAT on-board calculated location（原文 RA, Dec 20.035, -35.807，误差 3 arcmin radius 90% containment, including systematic uncertainty），而原 pos_error=114''/pos_ref=GCN 12998 为精化位口径——位置与误差错配，审核配套统一为 GCN 12998 精化位；Swift 因太阳约束未能 slew（GCN 12997：Swift could not slew to the burst due to a sun constraint；Due to a Sun observing constraint, Swift cannot slew to the BAT position until 19:46 UT on 2012 April 17. There will thus be no XRT or UVOT data for this trigger before this time），故无 XRT/UVOT 定位（external/swift_xrt_live 快照亦无本源条目）。T0：GCN 12997 触发整秒 14:35:11 UT；亚秒取触发仪器官方产品页/目录：batgrbproduct 官方页 trigger 516571 UTC=2012-02-29T14:35:11.161400（includes UTCF correction，取数 2026-10-28），external/swift_bat 与 external/swift_grb 快照 trigger_time 同值（三源一致）；原库 T0=2012-02-29T14:35:11Z（bot meta_trigger，t0_basis=meta_trigger）整秒一致，审核补亚秒 0.1614；T0 非观测窗/指向/场心/观测起始时刻（Issue #84 家族自查通过）。分类：tag=grb；t90=0.2359999±0.03687817 s（15-350 keV，external/swift_bat 目录快照全精度；GCN 12998 给 T90 (15-350 keV) is 0.22 +- 0.03 sec）→ 按目录 t90 判 sub_tag=sgrb；旁证：GCN 12999 谱滞 0.8+-8 msec（15-25 vs 50-100 keV）与 3.6 +5/-7 msec（25-50 vs 100-350 keV），原文 place this burst in the short burst category；mpe_greiner 快照 short_grb=true。红移：原库 redshift=0.03（redshift_ref=gcn_llm:circulars_meta）系 bot 从 GCN 12997 原文 We note that this location is 5 arc minutes from the relatively nearby (z=0.03) galaxy 6dFGSgJ012000.6-355307 误提取——0.03 为视场内前景星系 6dFGSgJ012000.6-355307 的红移，非本暴红移（前景星系红移污染，GRB030217 先例家族），审核置 null 并将原值留存于此。本暴红移四路查证：①GCN 全集 4 篇（12997/12998/12999/13084，GCN 站检索+GSFC 镜像逐字核对，2026-10-28）无一给本暴红移；②SIMBAD GRB 120229A Redshift 字段空；③Fong+2015（ApJ 815, 102）Table 1 的 z 列为 \\nod（无数据）；④官方目录快照（swift_bat/swift_grb/swiftgrbba/mpe_greiner）均无红移字段。host_galaxy 维持 null：无确定宿主（6dFGSgJ012000.6-355307 仅 GCN 12997 视场注记，距 BAT 定位 5'，无文献证认为宿主）。测光：lc 原有 1 行（GCN 13084，Magellan/Clay LDSS3，3x180 s r-band，2012 March 01.01 UT (9.6 hours post-burst)，3-sigma limit of r>22.4 mag）：行锚取原文显式十进制日 2012 March 01.01 UT=2012-03-01T00:14:24Z，time=锚−T0=34752.8386 s；time_err=±0.005 d=432 s 为十进制日两位小数精度口径（原文未给窗口端点，3x180 s 合并观测起点/中点不可分辨，散文锚 9.6 hours post-burst 与显式锚舍入内自洽，以显式锚为准）；mag_system 留空（GCN 13084 原文未声明星等系统，仅称 zeropoint from a standard star field）；仪器列按库内惯例拆分 Magellan2Clay(6.5m)/LDSS-3。Fong+2015 Table 7 行（δt=9.6 hr、Magellan/Clay、LDSS3、r、540 s、Fν<4.1 μJy、This work）与 GCN 13084 为同一测量（3x180=540 s、9.6 hr 一致），按去重保留最初来源 GCN 13084 行（其 μJy 值为银消改正+AB 换算产物，备查不采纳）。测光检索（2026-10-28）：仓内 gcn/archive 本地工作副本未获取，无法全文检索（如实注明）；external/rssgrbag/lightcurve.jsonl 0 命中、external/grbsn_webtool 无 120229 目录、external/uvot_grb/swift_xrt_live 无本源；GCN 站检索页（gcn.nasa.gov/circulars?query=120229A）4 篇（12997/12998/12999/13084），GSFC 镜像逐字核对 4 篇全文，仅 13084 含光学数值（已入库）；SIMBAD 关联 bibcode 22 条中实取 Fong et al. 2015, ApJ 815, 102（IOP VoR HTML+arXiv:1509.02922 v1 e-print 源码，两版该源行值逐表核对一致）→ 其 Table 7 光学行=GCN 同一测量（不再重增）、Table 8 射电 2 行（VLA 5.8 GHz，δt=0.38 d <54 μJy、3.32 d <66 μJy，This work 未发表）为本 PR 新增 2 行；其余关联文献（Berger 2014 综述、Dichiara+2020、Troja+2021 等样本/统计类）本 PR 未逐一打开全文核对有无本暴测光表（如实注明，列入 PR 未能核实清单）；TNS 不适用（非 AT/SN 类）→ 补 2 行（射电）。X 射线：无 XRT 数据（太阳约束），lc 无 X 射线行。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@代理 2026-10-28 审核补锚：整秒与 GCN 12997 一致（At 14:35:11 UT ... triggered），亚秒 0.1614 取触发仪器官方产品页/目录——batgrbproduct 官方页 https://gcn.gsfc.nasa.gov/notices_s/516571/BA/ UTC=2012-02-29T14:35:11.161400（含 UTCF）＝external/swift_bat 与 external/swift_grb 快照同值；原 bot 值 2012-02-29T14:35:11Z 留存于 comment。",
+    "t0_basis": "GCN 12997（Swift/BAT trigger 516571 官方通告，整秒）＋batgrbproduct 官方页/external/swift_bat 快照亚秒 0.1614",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Fong+2015",
+      "title": "A Decade of Short-Duration Gamma-Ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and Jet Opening Angles",
+      "url": "https://doi.org/10.1088/0004-637X/815/2/102",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
