@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB231205A",
-  "alias": [],
-  "ra": 206.1,
-  "dec": 22.8,
-  "T0": "2023-12-05T02:25:11Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 231205A",
+    "bn231205101"
+  ],
+  "ra": 202.936,
+  "dec": 17.932,
+  "T0": "2023-12-05T02:25:11.407Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST 快照（external/fermi_gbm/normalized.jsonl，bn231205101）trigger_time=2023-12-05T02:25:11.407Z（GBM trigger 723435916，MET 723435916.407408 扣 5 跳秒 Python 独立重算=02:25:11.407408 一致）；GCN 35263（GBM 自动通告）记 occurred at 02:25:11 UT、GCN 35266（GECAM-B）记自触发 2023-12-05T02:25:11.450 UTC，整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -13,19 +16,24 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 35304",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "T0 更正（2026-10-28，fsy）：bot 原值 2023-12-05T02:25:11Z 为整秒；标准 T0=2023-12-05T02:25:11.407Z——触发仪器 GBM 目录 FERMIGBRST 快照 bn231205101 trigger_time；GCN 35263 原文 trigger 723435916.407408（MET 扣 5 跳秒独立重算=02:25:11.407408，至 ms 一致）；GCN 35266 GECAM-B 自触发 02:25:11.450 UTC 备查（bot 原 t0_note「t0 为 meta trigger-time」、t0_basis=meta_trigger 失真，原值保留于此）。定位：ra/dec 取 IPN 3σ 误差框中心 202.936/+17.932（GCN 35304，框面积 119 平方角分，非圆形，pos_error 无半径可填、留空）；bot 原 206.1/22.8 为 GBM 实时定位（GCN 35263，误差 3.1 deg）弃用；GBM 目录位 206.06/22.75 r=3.07 deg、GECAM-B 202.8/26.8 r=6.1 deg（1σ 仅统计，GCN 35266）、ETJASMIN 联合定位（GCN 35268）备查。prompt 参数（写 comment 不判定）：t90=0.32±0.14 s（50-300 keV，FERMIGBRST 快照；GCN 35266 GECAM 记 duration 约 0.3 s）→ 按目录 t90 判 sgrb；fluence=1.48e-6 erg/cm2（10-1000 keV，FERMIGBRST）；Epeak=592.5 keV（CPL，FERMIGBRST）；peak_flux=32.1±1.9 ph/cm2/s（10-1000 keV，64 ms，FERMIGBRST）。红移：无任何光谱/红移报道，null。测光检索（2026-10-28）：GCN 站事件页 gcn.nasa.gov/circulars/events/grb-231205a 共 6 篇（35263/35266/35268/35277/35304/35402），其中 35263/35266/35277/35304 全文核读、35268（ETJASMIN 联合定位）/35402（GRID 纳卫星）仅事件页摘要（定位/检测类通告、无测光表；本地无 gcn/archive，旧版镜像 gcn3 对 35xxx 段 404）；仓内 external 快照 grep「231205」仅 FERMIGBRST 目录行与 mpe_greiner IPN 位（无测光表），rssgrbag/grbsn_webtool 无记录；OpenAlex「GRB 231205A」0 命中、arXiv 0 命中，无研究论文 → 补 0 行，改正 1 行 DDOTI（band G→w、极限 19.15→18.89、T0 亚秒统一），无其他可用测光。别名证据：「GRB 231205A」为 GCN 35277/35304 等通告原文用名；「bn231205101」为 Fermi GBM 官方 burst 编号（FERMIGBRST 快照 name_alt；GCN 35263 原文 trigger 723435916.407408 同一触发）。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（GBM trigger 723435916 / bn231205101，FERMIGBRST 快照 trigger_time=2023-12-05T02:25:11.407Z；GCN 35263 MET 723435916.407408 扣 5 跳秒一致）；bot 原写法 t0=2023-12-05T02:25:11Z 为整秒、t0_basis=meta_trigger 失真，原 note 见 comment",
+    "t0_basis": "fermi_gbm_catalog_bn231205101",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
