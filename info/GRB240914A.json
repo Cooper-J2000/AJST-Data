@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB240914A",
-  "alias": [],
+  "alias": [
+    "GRB 240914A",
+    "sb24091403"
+  ],
   "ra": 54.281,
   "dec": -35.027,
-  "T0": "2024-09-14T07:09:51Z",
-  "T0_ref": null,
+  "T0": "2024-09-14T01:40:03.900000Z",
+  "T0_ref": "GCN 37495（原文 an intermediate duration GRB or SGR at 2024-09-14T01:40:03.9 UT (T0)，SVOM/ECLAIRs 触发定位通告）+ GCN 37504（SVOM/GRM 同值 T0=2024-09-14T01:40:03.9 UT）；GCN 37498 侧证（NTT 观测开始 08:38:49 UT 称 about 7 hours after the burst T0，与 01:40:03.9 自洽）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 37495",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 861.4,
+  "pos_ref": "GCN 37495（ECLAIRs 在载定位 RA, DEC = 54.281, -35.027 (J2000)，原文统计误差 10.3 arcminutes，建议再以象限方式叠加调试期系统误差 10 arcminutes）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy（2026-10-28）。(1) 身份：SVOM/ECLAIRs 调试期在载触发 sb24091403，T0=2024-09-14T01:40:03.9 UT（GCN 37495，原文 an intermediate duration GRB or SGR），SVOM/GRM 在轨与地面亦触发（GCN 37504）；定位距 NGC 1380 约 10′（GCN 37495）；同日 GRB 240914B（Fermi/GBM trigger 747990592/240914298，07:09:47 UT，GCN 37496/37524）与 EP240913a 均为不同事件，无混并。仓内 external/mpe_greiner 快照含 GRB 240914A 条目（03h37m07s −35°02′、Error 14′、Instrument SVOM），external/fermi_gbm、external/swift_bat、external/rssgrbag 快照无该事件。(2) T0：原 bot T0=2024-09-14T07:09:51Z（extra_data.t0_basis=meta_trigger、t0_note 原值留档于此）非本源触发时刻——与 GRB 240914B 的 GBM 触发 07:09:47 UT（MET 747990592−5 s）仅差 4 s，系跨事件误植，废弃。标准 T0=2024-09-14T01:40:03.900000Z（GCN 37495/37504 原文直给 0.1 s 精度，无 MET 换算需求）。T0_offset=null。(3) 定位：保持 ECLAIRs 在载定位 ra=54.281/dec=−35.027（GCN 37495），补 pos_error=861.4″——原文统计误差 10.3′ + 建议象限叠加系统误差 10′，√(10.3²+10²)=14.36′=861.4″，external/mpe_greiner 快照 Error 14′ 相符；置信水平原文未标注 → pos_error_confidence 留空。Swift-XRT ToO 未发现未编目 X 射线源（GCN 37502/37508），无更精化定位可用。(4) 分类：sub_tag=[]（不分类）——ECLAIRs 团队原文 an intermediate duration GRB or SGR（性质存疑）；SVOM/GRM T90=4.6+3.1/−4.4 s（GCN 37504）形式上 >2 s 但误差下界 0.2 s，证据不足以支持 lgrb/sgrb，如实留空并引两处原文。(5) 测光：修订 NTT/EFOSC2 1 行（GCN 37498：2024-09-14 08:38:49 UT 起 Gunn r 成像指向 NGC 1380，视检无新暂现源，该星系外围区 3σ 极限 r~22.5 AB）——原 time=5338.0 系相对 bot 误植 T0 的起点，改按标准 T0 重算 time=25125.1 s，mjd=60567.3602894 不变（绝对时刻 08:38:49 UT）；曝光时长未给出 → time=观测起点、time_err 留空（见行 comment）；mag_system=AB（原文声明）。tag 补 [grb]；X 射线行 0 条，未触碰。(6) 红移：null。(7) 宿主：null（GCN 37495 提示定位距 NGC 1380 约 10′、NTT 观测指向该星系外围，但未发现任何新暂现源，无证据认定宿主）。(8) X 射线：Swift-XRT ToO 1.9 ks PC 数据（T0+36.3–42.4 ks）未发现未编目源、无 aftglow 报告（GCN 37508）；本源 lc 无 X 射线行。(9) 测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external/rssgrbag 0 命中、grbsn_webtool 无该事件、mpe_greiner 快照命中（仅定位条目，无测光）、fermi_gbm/swift_bat 0 命中；GCN 站逐篇枚举 37490–37585 命中 5 篇：37495（ECLAIRs 触发定位）、37498（NTT 光学上限）、37502（Swift ToO 启动）、37504（SVOM/GRM 时谱）、37508（XRT 无源）→ 光学测光仅 NTT 1 行上限（已修订入库）；SIMBAD 无 GRB 240914A 标识（0 命中）、OpenAlex 0 命中、arXiv API 0 命中 → 无已发表测光表，articles[] 留空。(10) alias：GRB 240914A（GCN 37495 subject 用名）、sb24091403（GCN 37495/37504 原文 SVOM trigger reference；仓内 GRB250713A 收录 sb 名先例）。修订 1 行、新增 0 行，X 射线行 0 条。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0=SVOM/ECLAIRs 触发 2024-09-14T01:40:03.9 UT（GCN 37495/37504 原文直给，0.1 s 精度）；原 meta_trigger 值 2024-09-14T07:09:51Z 系跨事件误植（≈GRB 240914B GBM 触发 07:09:47 UT），废弃",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
