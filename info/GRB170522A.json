@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB170522A",
   "alias": [
-    "GRB 170522657"
+    "GRB170522657",
+    "GRB 170522.657",
+    "bn170522657"
   ],
-  "ra": 139.35000610351562,
-  "dec": 25.670000076293945,
-  "T0": "2017-05-22T15:45:40.290000Z",
-  "T0_ref": null,
+  "ra": 139.34,
+  "dec": 25.67,
+  "T0": "2017-05-22T15:45:35.282000Z",
+  "T0_ref": "GCN 21126（触发仪器官方通报，原文：At 15:45:35.28 UT on 22 May 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170522A (trigger 517160740 / 170522657)）；FERMIGBRST（bn170522657）trigger_time=2017-05-22T15:45:35.282Z 与 GCN 整秒一致，取目录全精度亚秒值。bot 原 T0=15:45:40.290000Z 系 2FLGC trigger_met=517160740.29 按 2001-01-01 纪元天真换算、漏扣 5 跳秒（2006/2009/2012/2015/2017）的导入错误（差 +5.008 s，非真实爆发偏移，不写 T0_offset）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +16,17 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 0.19,
   "pos_ref": "GCN 21127",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（fsy 2026-10-28）：T0 修正为触发时刻 15:45:35.282000Z（GCN 21126 整秒+FERMIGBRST 亚秒；bot 原值 15:45:40.290000Z 系 2FLGC trigger_met=517160740.29 天真换算漏扣 5 跳秒 2006/2009/2012/2015/2017 的导入错误，差 +5.008 s，非真实爆发偏移 → 不写 T0_offset）。pos_error=0.19 deg 90%（GCN 21127 原文 an error radius of 0.19 deg (90 % containment, statistical error only)）；ra/dec 139.35000610351562/25.670000076293945 → 139.34/25.67（统一按 pos_ref=GCN 21127 原文精度；bot 值差 0.01 deg，远小于误差半径；MASTER GCN 21132 引同一 LAT 圈 ra=139.338 dec=25.67 r=0.19 互证）。并列备查：GBM 定位 RA=135.45 DEC=27.12、1.0 deg 1-sigma statistical（GCN 21126；core-plus-tail 系统误差 90% GRB 约 3.7 deg，Connaughton+2015）；2FLGC error_radius=0.23 deg（快照未标置信水平）。sub_tag 增 lgrb：FERMIGBRST t90=7.424±0.572 s（50-300 keV）+GCN 21126 原文 duration (T90) of about 7 s——按目录 t90 判 lgrb（§3.9）；Fermi-LAT 探测保留（GCN 21127：3.7 GeV 光子 @T0+8 s）。alias：伪形「GRB 170522657」改为 FERMIGBRST name_alt 官方目录原文用名「GRB170522657」「GRB 170522.657」「bn170522657」（GCN 21126 原文 trigger 517160740 / 170522657——§3.10 证据串豁免）。身份唯一：Swift-XRT 确认 X 射线余辉（GCN 21133/21201，X 射线不入库）；IPN 三角定位（GCN 21138）。lc 2 行（LCO i>19 上限改窗口中点口径 + 新增 MASTER-OAFA 14.5 上限）逐行核对与检索留证见行注；arXiv/WebSearch 检索无该暴专属论文。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -212,6 +216,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
     }
   },
   "articles": [],
