@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB180425A",
-  "alias": [],
-  "ra": 64.4517,
-  "dec": -32.9519,
-  "T0": "2018-04-25T06:46:21Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 180425A",
+    "BAT 828672"
+  ],
+  "ra": 64.45159,
+  "dec": -32.95216,
+  "T0": "2018-04-25T06:46:21.783300Z",
+  "T0_ref": "Swift/BAT trigger 828672 触发时刻（external/swift_bat 快照 trigger_time=2018-04-25T06:46:21.783300Z；GCN 22672 记 At 06:46:21 UT、trigger=828672）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.8,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 22673",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0：GRB 180425A = Swift/BAT trigger 828672（BAT 于 2018-04-25 06:46:21.783300 UT 触发，external/swift_bat 快照 trigger_time；GCN 22672 记 At 06:46:21 UT、trigger=828672）。原 T0=2018-04-25T06:46:21Z 为 bot 整秒值（t0_basis=meta_trigger 无出处），按触发仪器亚秒修正（§3.2）。Trigger_Instrument 原 Swift，改 Swift/BAT（与仓内 Swift 触发源惯例一致）。无 T0_offset。alias：GRB 180425A（GCN 用名）、BAT 828672（external/swift_bat name_alt）。tag：原空，补 grb。\n\n位置：GCN 22673（Enhanced Swift-XRT position）RA,Dec=64.45159,−32.95216 deg（04h17m48.38s −32°57′07.8″），uncertainty of 1.8 arcsec（radius，90% confidence）。原 ra/dec=64.4517/−32.9519 与原文不符（bot 转写误差，RA 差约 0.4″、Dec 差约 1.0″），改用原文精确值；pos_error=1.8″ 不变，补 pos_error_confidence=90。\n\n红移与分类：无红移报道，redshift 留空。t90=11.2±2.6 s（Swift/BAT refined analysis，GCN 22675，15–350 keV；external/swift_bat 快照记 11.904±2.712 s，版本微差），按通告/目录 t90 判 lgrb（原 sub_tag 空，补 lgrb）。\n\n光学与 lc：原行 band=w、19.6、T+87 s、reference=GCN22672——GCN 22672 为 Swift detection 通告，其中 White/19.6 系 UVOT「typical 3-sigma upper limit」样板句（约数、无实际曝光窗口、非本暴实测），核不上依据；按「核不上的行不删」原则置 discard=y 留档。GCN 22674（Swift/UVOT settled 观测，T0+88 s 起）补 7 行 3σ 上限：white >21.0（88–1201 s，Exp 353 s）、u >20.5（302–1152 s，285 s）、v >18.5（631–1250 s，78 s）、b >19.4（557–1176 s，58 s）、uvw1 >19.0（680–1299 s，78 s）、uvm2 >18.5（827–1275 s，58 s）、uvw2 >19.0（606–1226 s，58 s）；time=窗口中点、time_err=半窗宽（§3.8）；band 键 uvot-white/uvot-u/uvot-v/uvot-b/uvot-uvw1/uvot-uvm2/uvot-uvw2（原文 w/white 入 uvot-white；Pan-STARRS w 为另一波段，不用裸 w）；UVOT 星等系统推定 Vega（Breeveld et al. 2011）。X 射线（GCN 22673 定位、22676 XRT analysis）不在审核范围。\n\n测光检索（2026-10-28）：本机无 gcn/archive 快照，改用 GCN 网站事件页 https://gcn.nasa.gov/circulars/events/grb-180425a（源名+触发号 828672 双通道）——共 5 篇（22672 Swift detection、22673 XRT position、22674 UVOT limits、22675 BAT refined、22676 XRT analysis），逐篇打开：含 UVOT 上限 1 篇（22674，7 行已入库）；external/rssgrbag 0 行、external/grbsn_webtool 无记录、external/swift_bat 命中 trigger 828672 目录行（无光学测光）；arXiv API 精确短语 0 篇；INSPIRE 全文 1 篇（Zhou et al. 2026, ApJL，arXiv:2605.13440「Magnetar-powered long gamma-ray bursts and connection to superluminous supernovae and fast radio bursts」，全文提及本暴、无该暴专属测光/红移，已登记 articles[] 供溯源）；ADS/SciX 反爬拦截（同 PR #330/#429/#433 处置，改用 INSPIRE+arXiv 佐证）；TNS 无该源报道。结论：补 7 行（GCN 22674）、置 discard 1 行（22672 样板值）、核不上依据的行 1 行。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，与实际不符，已改写。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 Swift/BAT trigger 828672 触发时刻 2018-04-25T06:46:21.783300Z（原 bot 整秒值 t0_basis=meta_trigger 无出处）",
+    "t0_basis": "Swift/BAT trigger 828672（external/swift_bat 快照；GCN 22672）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Zhou+2026",
+      "url": "https://arxiv.org/abs/2605.13440",
+      "title": "Magnetar-powered long gamma-ray bursts and connection to superluminous supernovae and fast radio bursts",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
