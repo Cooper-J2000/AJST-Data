@@ -1,28 +1,38 @@
 {
   "transient_id": "GRB251112A",
   "alias": [],
-  "ra": 274.019,
-  "dec": 24.226,
-  "T0": "2025-11-12T17:32:13Z",
-  "T0_ref": null,
+  "ra": 274.0697,
+  "dec": 24.1535,
+  "T0": "2025-11-12T21:28:56Z",
+  "T0_ref": "GCN 42656（Swift/BAT 触发通告）：At 21:28:56 UT, the Swift Burst Alert Telescope (BAT) triggered and located a possible GRB 251112A（trigger=1413695，整秒）；原 bot T0=2025-11-12T17:32:13Z（t0_basis=meta_trigger）与该通告矛盾且不可溯源，已更正；仓内 external/swift_bat 快照截断未含该触发，external/swiftgrbba 快照 trigger_time=2025-11-12T21:28:56.000Z 整秒互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 4.1,
   "pos_ref": "GCN 42665",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT trigger 1413695（GCN 42656），XRT 精化定位证认（GCN 42665）。同日 IceCube-Cascade 251112A（GCN 42701，中微子级联预警，事件时刻 16:34 UTC）与 GRB 251112B（GCN 42662，MAXI/GSC）为不同事件，已排除。 || 坐标：原 ra/dec=274.019/+24.226 为 BAT 星上定位（GCN 42656，误差 3 arcmin，90%，含系统差）；本行改用与 pos_ref 一致的 XRT 精化定位 274.0697/+24.1535（GCN 42665，4.1 arcsec radius，90% confidence → pos_error_confidence=90）；BAT 地面精化 274.081/+24.158（1.4 arcmin，90%，GCN 42686）备查。 || T0：触发通告只给整秒（21:28:56 UT），未自行补亚秒；swiftgrbba 快照 21:28:56.000Z 互证。原 bot 值 2025-11-12T17:32:13Z 不可溯源，已废弃（原 extra_data t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）。 || t90=55.42±6.65 s（15–350 keV，GCN 42686 Swift-BAT refined analysis；swiftgrbba 快照同值 55.42 s）；按通告 t90 判 lgrb。 || Epeak=48.4±11.9 keV、fluence=7.6±0.9e-7 erg/cm2（15–150 keV，90% CL）、1-s peak flux=0.7±0.1 ph/cm2/s（15–150 keV，T+1.05 s）（GCN 42686）备查。 || 红移：4 篇通告均未报告；swift_xrt_live 与 UKSSDC 快照无 redshift。 || 测光检索（2026-10-28）：仓内 gcn/archive 45 889 篇全文检索「251112A」「1413695」「251112.8/251112.9」→ 命中 42656/42665/42667/42686 共 4 篇（GCN 42701 为同日 IceCube-Cascade 251112A 非本源），均无地面测光；external/rssgrbag 无记录；external/grbsn_webtool 无该事件；external/swiftgrbba、swift_xrt_live、mpe_greiner、uvot_grb、swift_bat、swift_grb、heasarc_grbcat 快照仅目录级参数（UVOT 上限值与 GCN 一致）；GCN 站事件页（2026-10-28 取数，https://gcn.nasa.gov/circulars/events/grb-251112a）同 4 篇、无其他测光；WebSearch+arXiv API 检索无本源专门研究文章（Bagoly+2026 仅红移完备性方法学样本列表提及，无测光表）；TNS 无条目。 || 结论：全部可用测光为 UVOT 上限，共 6 行——GCN 42656 White FC 1 行（原行核对更正）+ GCN 42667 表 5 行（新增），无其他可入库数据。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 42656 整秒值）",
+    "t0_basis": "gcn_42656",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
