@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB240229A",
-  "alias": [],
-  "ra": 199.18,
-  "dec": 16.77,
-  "T0": "2024-02-29T14:07:07Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB240229588",
+    "bn240229588"
+  ],
+  "ra": 195.477,
+  "dec": 12.791,
+  "T0": "2024-02-29T14:07:07.026Z",
+  "T0_ref": "GCN 35833（Fermi GBM Final Real-time Localization，trigger 730908432.025634 → 扣 5 跳秒 = 14:07:07.025634 UT，prose At 14:07:07 UT 整秒一致）；FERMIGBRST 官方目录快照 bn240229588 trigger_time=2024-02-29T14:07:07.026Z（external/fermi_gbm）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "GRID",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 10260,
+  "pos_ref": "GCN 35870",
+  "pos_error_confidence": "3sigma",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：Fermi/GBM 触发 bn240229588（trigger 730908432.025634 / 240229588，GCN 35833 原文）＝CALET CGBM 14:07:07.40 UTC 触发（GCN 35842）＝IPN 五站三角（GCN 35870：Fermi/GBM、INTEGRAL SPI-ACS、Konus-Wind、CALET、BepiColombo MGNS at about 50827 s UT (14:07:07)）＝GRID 14:07:08 UTC 触发（GCN 35903/35904）＝VZLUSAT-2（GCN 35872）＝GRBAlpha（GCN 35894）＝Glowbug（GCN 35897）同一事件；同日 IceCube-240229A 为中微子警戒另一事件（GCN 35837/35841/35847/35887，MASTER 35837 观测的是 IceCube 场、35838 才是本暴场），库内无该条目、无混并；35820–36150 逐号扫描无 GRB 240229B 等同日他暴建档混淆。T0：bot 原值 2024-02-29T14:07:07Z（整秒，t0_basis=meta_trigger）→ 2024-02-29T14:07:07.026Z（触发仪器官方目录 FERMIGBRST 亚秒值，external/fermi_gbm 快照 bn240229588 行）；GCN 35833 原文 At 14:07:07 UT on 29 Feb 2024（整秒一致）且 trigger MET 730908432.025634——Fermi MET 历元 2001-01-01T00:00:00 UTC 须扣 2001 年后累计 5 跳秒（2005/2008/2012/2015/2016 各 +1 s）得 14:07:07.025634 UT（本会话 Python 独立复算；裸 MET 不扣闰秒会得 14:07:12.025，恰差 5.000 s），目录快照 14:07:07.026 为毫秒舍入同值；他仪器备查：CALET CGBM 14:07:07.40 UTC（GCN 35842）、GRID 14:07:08 UTC（GCN 35903/35904）、Glowbug burst onset 14:07:09.552（32 ms 自适应窗，GCN 35897）、VZLUSAT-2 峰时 14:07:19（原文自注其光变相对其他卫星移位约 14 s、原因调查中，GCN 35872）、GRBAlpha 峰时 14:07:33.5 UTC（GCN 35894）；无 T0_offset（CALET 晚 0.374 s、GRID 晚约 0.97 s，均 <1 s 不写，§3.2）。bot 原标注 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"/t0_basis=\"meta_trigger\" 已按 §3.10 改写并把原值留此备查。定位：bot ra/dec=199.18/16.77 为 FERMIGBRST 目录 GBM Final 位（GCN 35833：RA = 199.2, Dec = 16.8，statistical uncertainty of 1.2 degrees，原文未标注置信水平；目录快照 ra=199.18、dec=16.77、error_radius=1.21 deg=4356″）→ 改用 GCN 35870 IPN 三角定位（preliminary, 3 sigma error box）：盒心 RA=195.477（13h 01m 54s）、Dec=+12.791（+12d 47' 26\"），四角 194.744/+10.021、195.408/+10.063、196.123/+15.555、195.453/+15.513，面积 3.5 sq. arcmin、最长维 5.7 deg、最短维 38.3 arcmin；pos_error=10260″=MaxDim/2 外接圆半径近似（口径同库内 IPN 盒先例 GRB030217=885″/GRB141202A=398″；本盒约 9:1 细长，外接圆口径偏保守，面积等效圆 √(Area/π)≈63″ 不覆盖长轴方向，两口径并注）；pos_error_confidence=3sigma（原文 preliminary, 3 sigma error box）；原文 The IPN localization is consistent with, but reduces the area of, the final Fermi-GBM and the BALROG localizations；盒心与 GBM Final 位相距约 5.4°（GBM 1.2° 为 statistical 误差、另有未量化系统差）；BALROG 位（GCN 35834：RA=195.9、Dec=16.3，1 sigma statistical error radius 1.7 deg，另有 systematic error 1 deg）列备查；MPE Greiner 快照记同一 IPN 盒（X-ray position 13h01m54s +12°47'、Error=342×38 arcmin、Instrument=IPN，即 GCN 35870 preliminary 盒）互证；DDOTI（GCN 35844）观测场心为 GBM Final Position 199.18/16.77（指向中心，非源定位）。分类：tag=grb；sub_tag=lgrb——t90=28.6726±0.923051 s（50-300 keV，FERMIGBRST 快照全精度），按目录 t90 判 lgrb；GCN 35833 原文 likely LONG GRB、GCN 35842 The long GRB 240229 且 T90=27.6±2.5 s（40-1000 keV，SGM）、GCN 35903/35904 long-duration T90≈25.0±3.0 s（30-2000 keV）、VZLUSAT-2 T90=27 s（GCN 35872）、GRBAlpha T90=24.5 s（GCN 35894）、Glowbug duration 24.6 s（GCN 35897），同口径无冲突。prompt 参数备查：FERMIGBRST 快照 t50=19.7124±0.572441 s（50-300 keV）、fluence=2.0887e-05（10-1000 keV）、peak_flux=19.5933±1.4753（64 ms）、epeak=328.5762±13.071859 keV（BAND，obs frame）；GCN 35842 光变 T+2.9 s 起、T+26.5 s 峰、T+36.8 s 止；GRID 首峰 10-1000 keV fluence≈3.5259E-05 erg/cm2、时间平均谱指数 −1.51(+0.06/−0.06)（GCN 35903/35904）；Glowbug Epeak=728 keV（T0–T0+10.2 s）/439 keV（T0+20.5 s–T0+24.6 s）、10-10000 keV fluence 3.9e-06 与 9.6e-07 erg/cm^2（GCN 35897，preliminary）。alias：「GRB240229588」为 GCN 35833 原文用名 trigger 730908432.025634 / 240229588 + FERMIGBRST name_alt；「bn240229588」为 GCN 35833 天图 URL 原文 bn240229588 + FERMIGBRST trigger_name。redshift=null（无任何测量）。host_galaxy 不建立（无文献支持确定宿主）。测光检索（2026-10-28）：仓内 gcn/archive 快照本地缺失（如实注明、不作缺席证据）；external/ 快照逐一检索：fermi_gbm 收录（目录行）、mpe_greiner 收录（仅 IPN 定位）、konus_wind/swift_bat/swift_grb/swiftgrbba/uvot_grb/agile_mcal/saxgrbmgrb/batse/heasarc_grbcat/fermi_lat 0 命中、rssgrbag（含 lightcurve.jsonl）0 条、grbsn_webtool 无此事件；GCN 官方站（gcn.nasa.gov，JSON 接口逐号枚举 35820–36150 全扫）grep 240229 共命中 15 篇——本暴 11 篇（35833/35834/35838/35842/35844/35870/35872/35894/35897/35903/35904，逐篇打开核对原文）+IceCube-240229A 另一事件 4 篇（35837/35841/35847/35887）；其中含光学测光者仅 2 篇——GCN 35838（MASTER-Amur/Kislovodsk 29 行逐指向上限，本次全部入库：Filt=C 原文自注 Filter C is a clear (unfiltred) band 记 band=G、Filt=R 两行记 band=R（filters.json 既有键）；14/29 行原表 Tmid-T0 列与起点+Expt/2 失洽恰 1.026 s（MASTER 整秒历元内部抖动，GRB200125B PR #478 23/70 行同现象），统一采用显式端点锚 time=起点+Expt/2−T0，原表 Tmid 列不作锚，GRB150123A/GRB200125B 先例）与 GCN 35844（DDOTI 1 行上限，已有行重锚改正）；其余 9 篇为 gamma 触发/定位/探测通报，无光学测光；arXiv API all:\"240229A\" 0 命中；OpenAlex 检索 3 命中（GRID 交叉定标 DOI 10.1007/s10686-025-10002-2、主/次暴谱性质 DOI 10.3847/1538-4357/add737、lenscat DOI 10.1098/rsta.2024.0168 数值巧合；前两篇摘要核对均为 prompt 伽马谱分析、无余辉测光，未被采用故不入 articles[]）；SIMBAD 本会话不可达（如实注明、不作缺席证据）。结论：本源无余辉探测、全部测光为上限；本次修改 1 行（DDOTI 重锚+限量取保守浅端 19.90）、补 29 行（MASTER），共 30 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 730908432 / 240229588）",
+    "t0_basis": "GCN 35833（trigger 730908432.025634 → 扣 5 跳秒 = 14:07:07.025634 UT）+ FERMIGBRST 官方目录快照 trigger_time=2024-02-29T14:07:07.026Z（external/fermi_gbm，bn240229588，亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
