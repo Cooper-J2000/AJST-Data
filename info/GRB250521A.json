@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB250521A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2025-05-21T04:27:02Z",
-  "T0_ref": null,
+  "alias": [
+    "bn250521185"
+  ],
+  "ra": 213.0,
+  "dec": 30.1,
+  "T0": "2025-05-21T04:27:02.114Z",
+  "T0_ref": "GCN 40508（Fermi/GBM 触发，trigger 769494427.113864 → 亚秒 .114）；仓内 FERMIGBRST 快照（external/fermi_gbm/normalized.jsonl）trigger_time=2025-05-21T04:27:02.114Z 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,18 +14,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 4.6,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 40508：RA=213.0, Dec=30.1（J2000 deg），统计不确定度 4.6 deg（另有系统误差，见通告 skymap）；FERMIGBRST 快照 ra/dec=213.01/30.07、error_radius=4.61 deg 同源略精，记 comment 备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-28）。(1) T0 原值 2025-05-21T04:27:02Z（整秒）补亚秒为 04:27:02.114Z：GCN 40508 trigger MET 769494427.113864 → 亚秒 .114，与仓内 FERMIGBRST 快照 trigger_time=2025-05-21T04:27:02.114Z 一致（整数秒一致，亚秒取触发仪器值，§3.2/§3.8）。其他仪器时刻并列备查：GRBAlpha 峰值 04:27:02.6 UTC（GCN 40541）、Wind/Konus 触发 04:27:04.888 UTC（GCN 40813 转述）、VZLUSAT-2 峰值 04:27:09（04:27:02）UTC（GCN 40813）。bot 原时间基准说明留档：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」。(2) 定位：ra/dec=213.0/30.1 即 GCN 40508 实时定位（原 null 补入）；pos_error=4.6 deg 为 GCN 40508 明示的统计不确定度（系统误差另计，见 skymap）；FERMIGBRST 快照 ra/dec=213.01/30.07、error_radius=4.61 deg 同源略精记此备查。来源未标注置信水平（仅称 statistical uncertainty，未给 sigma 档），pos_error_confidence 留空。(3) 分类：t90=27.9045±2.31822 s（FERMIGBRST，50–300 keV），按目录 t90 判 lgrb；GCN 40508 亦称 likely LONG GRB，GRBAlpha t90=21 s（GCN 40541）、VZLUSAT-2 t90=33 s（GCN 40813），互不矛盾。(4) alias 补 bn250521185：FERMIGBRST trigger 名（仓内 external/fermi_gbm 快照 name_alt；GCN 40508 通告触发号 250521185，HEASARC 路径 bn250521185）。快照 name_alt 另有「GRB250521185」「GRB 250521.185」两形，均落入 §3.10 伪形正则且 GCN 40508 原文写法为「250521185」（无 GRB 前缀），无法给出「<GCN nnn> 原文用名」证据串，故不收录（见 PR 待决事项）。(5) 红移：无任何来源给红移，保持 null。(6) 身份：Fermi/GBM trigger 769494427.113864 / 250521185；同日另有 GRB 250521B（SVOM，仓内 mpe_greiner 快照），本条目 4 篇 GCN（40508/40514/40541/40813）eventId 均为 GRB 250521A，无混淆。(7) 测光检索（2026-10-28，§3.3 留证）：仓内 gcn/archive 全文递归 grep「250521A」命中 4 篇——40508（GBM 定位）、40514（DDOTI 光学上限，唯一含光学数值，已在 lc）、40541（GRBAlpha）、40813（VZLUSAT-2），后三篇逐篇确认 eventId=GRB 250521A；external/rssgrbag/lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无 250521 命中、uvot_grb/swift_bat/swift_grb/swift_xrt_live/swiftgrbba/konus_wind/heasarc_grbcat 均 0 命中（mpe_greiner 命中为 GRB 250521B，非本源）；GCN 站事件页 gcn.nasa.gov/circulars/events/grb-250521a 共 4 篇，与仓内 archive 一致；ADS/SciX 无 API token 直连不可用，以 WebSearch（多组关键词）+ arXiv API 替代：export.arxiv.org all:\"250521A\" 与 all:\"GRB 250521A\" 均 0 entry；唯一文献级命中为 arXiv 2607.17971（Dafcikova+，GRBAlpha/VZLUSAT-2 伽马暂现体目录，纯预印本无 VoR），实为伽马射线探测汇总、无光学测光，本源伽马参数已见于 GCN 40541/40813，无增量；TNS 不适用（GRB 类，非 AT/SN/CV，web 检索亦无命中）→ 无可补测光，补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "deg",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（2026-10-28 审核核验：GCN 40508 trigger MET 769494427.113864 亚秒 .114 + FERMIGBRST trigger_time 同值）",
+    "t0_basis": "trigger_instrument",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
