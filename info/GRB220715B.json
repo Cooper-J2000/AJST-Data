@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB220715B",
-  "alias": [],
-  "ra": 254.8752,
-  "dec": -33.59766,
-  "T0": "2022-07-15T22:24:42Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 220715B",
+    "BAT 1116441"
+  ],
+  "ra": 254.87517,
+  "dec": -33.59793,
+  "T0": "2022-07-15T22:24:42.178080Z",
+  "T0_ref": "触发仪器 Swift/BAT 官方目录（external/swift_bat 快照，BAT trigger 1116441）trigger_time=2022-07-15T22:24:42.178080Z；GCN 32405（Swift/BAT 团队）记 At 22:24:42 UT on 15 Jul 2022，整秒一致；Fermi GBM 目录 trigger_time=2022-07-15T22:24:42.740Z（trigger 679616687.73956，MET 扣 5 跳秒 Python 独立重算=22:24:42.73956 一致）与 BAT 亚秒矛盾，按 §3.2 有 Swift 以 Swift 为准，GBM 亚秒值写 comment 备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 32406",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 更正（2026-10-28，fsy）：bot 原值 2022-07-15T22:24:42Z 为整秒；标准 T0=2022-07-15T22:24:42.178080Z——触发仪器 Swift/BAT 官方目录（external/swift_bat 快照，BAT trigger 1116441）trigger_time；GCN 32405（Swift/BAT 团队）与 GCN 32404（Fermi GBM 团队）均记 At 22:24:42 UT on 15 Jul 2022，整秒一致；GBM 目录 trigger_time=22:24:42.740Z（MET 679616687.73956 扣 5 跳秒独立重算=22:24:42.73956）与 BAT 目录亚秒矛盾，按 §3.2 有 Swift 以 Swift 为准（bot 原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 失真，原值保留于此）。双触发身份甄别：Swift/BAT（trigger 1116441）与 Fermi/GBM（trigger 679616687.73956 / bn220715934）同秒触发同一事件——GCN 32412 明言 GBM Final Real-time Localization consistent with the Swift position、GCN 32408 双引 Swift（32405）与 Fermi（32404）检测；同日另一 GBM 触发 bn220715368 在 08:49:40 UT、位置不同，非同源。定位：ra/dec 取 GCN 32406 prompt enhanced Swift-XRT 位 254.87517/−33.59793（1.9″ 半径，原文标注 90% confidence，pos_error_confidence=90）；bot 原 dec=−33.59766 误取 GCN 32405 XRT 地面初位（254.87520/−33.59766），与 pos_ref=GCN 32406 不自洽，已更正；GCN 32409 astrometrically corrected 位 254.87532/−33.59775（2.5″，90%，自动生成、更晚但误差更大）并列备查；BAT on-board 254.889/−33.597 3′（GCN 32405）、BAT ground 254.860/−33.586 1.1′（GCN 32414）、GBM 实时 221.7/−36.4 16.5°（GCN 32404）备查。prompt 参数（写 comment 不判定）：t90=40.408±1.218 s（15-350 keV，external/swift_bat 快照；GCN 32414 记 40.40±1.24 s 15-350 keV；GBM 目录 39.68±1.31 s 50-300 keV；GCN 32412 记约 40 s）→ 按目录 t90 判 lgrb，与 GCN 32404「likely long GRB」一致；fluence=1.19e-6 erg/cm2（15-150 keV，BAT 目录 90% c.l.；GCN 32414 记 1.2±0.1e-6 15-150 keV；GBM 2.2±0.3e-6 10-1000 keV，GCN 32412；GBM 目录 1.52e-6）；Epeak=118±28 keV（CPL，GCN 32412；GBM 目录 CPL 136.1 keV）；peak_flux=1.3±0.2 ph/cm2/s（15-150 keV 1 s，GCN 32414）。红移：事件页 12 篇通告无一给出光谱/红移，null。测光检索（2026-10-28）：GCN 站事件页 gcn.nasa.gov/circulars/events/grb-220715b 共 12 篇全部核读（32404/32405/32406/32407/32408/32409/32410/32411/32412/32414/32422；本地无 gcn/archive）；仓内 external 快照 swiftgrbba 给 UVOT 6 波段上限串（B>20.8、U>20.1、UVW1>18.8、UVM2>19.8、UVW2>19.9、White>20.4，与 GCN 32410 一致），rssgrbag/grbsn_webtool 无记录；OpenAlex 检索「GRB 220715B」0 命中、arXiv 0 命中，无本源研究论文 → 补 17 行（UVOT 9 行 GCN 32410、MASTER-OAFA 6 行 GCN 32407、BOOTES 2 行 GCN 32408），改正 1 行 VIRT（time 统一 T0 口径、补 time_err=±0.05 h）；GCN 32411 为 XRT 谱与衰减指数（X 射线不入 lc）。别名证据：「GRB 220715B」为 GCN 32405/32406/32409/32410/32414 等通告原文用名；「BAT 1116441」为 Swift BAT 官方目录 trigger 名（external/swift_bat 快照 name_alt）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（BAT trigger 1116441，external/swift_bat 快照 trigger_time=2022-07-15T22:24:42.178080Z；GCN 32405 记 22:24:42 UT）；bot 原写法 t0=2022-07-15T22:24:42Z 为整秒、t0_basis=meta_trigger 失真，原 note 见 comment",
+    "t0_basis": "swift_bat_catalog_1116441",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
