@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB120908A",
-  "alias": [],
+  "alias": [
+    "GRB120908938"
+  ],
   "ra": 230.64,
   "dec": -25.79,
-  "T0": "2012-09-08T22:31:00Z",
-  "T0_ref": null,
+  "T0": "2012-09-08T22:31:00.020Z",
+  "T0_ref": "GCN 13741（Fermi/GBM 触发通告 At 22:31:00.02 UT on 08 September 2012，trigger 368836263/120908938）；external/fermi_gbm 快照 trigger_time=2012-09-08T22:31:00.024Z 互证（差 4 ms）。T0 写作 .020 系同一数值（GCN 原文 .02）按 3 位小数补零以通过 ISO8601 校验，未改变精度",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "MAXI/GSC",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 13731（MAXI/GSC 90% C.L. 椭圆误差域，见 comment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "发现与触发：MAXI/GSC 于 2012-09-08T22:35:13 UT 扫描触发发现该 X 射线瞬变源（GCN 13731），定位 (R.A.,Dec)=(230.64,-25.79)，90% C.L. 椭圆误差域长/短半径 0.46/0.31 deg、长轴 PA=-30 deg，另有 0.1 deg（90% containment）系统误差——为椭圆域且无单一半径，pos_error 留空备查；MAXI 前后各一轨（92 min）上限 20 mCrab 系 X 射线，不入库。Fermi/GBM 于 22:31:00.02 UT 触发（trigger 368836263/120908938，GCN 13741），比 MAXI 早 252.98 s，GBM 定位与 MAXI 一致、且在 MAXI 触发时刻（GBM 后 200-300 s）有延展软辐射，主暴（T90≈66 s，50-300 keV）发生于 GBM T0，故 T0 取 GBM 触发时刻、Trigger_Instrument 改记 Fermi/GBM，MAXI/GSC 为发现/命名仪器。T0 亚秒修订：原库 2012-09-08T22:31:00Z → 22:31:00.020Z（GCN 13741 原文 .02 UT，同一数值补零 3 位小数入库）；external/fermi_gbm 快照 trigger_time=2012-09-08T22:31:00.024Z 互证（差 4 ms，低于 60 ms 报告线）。t90=66.945±2.98823 s（50-300 keV，external/fermi_gbm 快照；GCN 13741 preliminary 约 66 s 一致），按目录 t90 判 lgrb。alias「GRB120908938」为 FERMIGBRST trigger_name（external/fermi_gbm 快照 name_alt），原文用名：GCN 13741 原文 “trigger 368836263/120908938”。Swift ToO 于 2012-09-09T13:41:43 UT 开始（GCN 13740）。测光检索（2026-10-28）：仓内 gcn/archive 45889 篇全文按 “GRB 120908A”/触发号 368836263、120908938 检索命中 5 篇（GCN 13731/13740/13741/13742/13776），仅 GCN 13740 给光学数值（UVOT white 3σ 上限）；external/rssgrbag/lightcurve.jsonl、external/grbsn_webtool/SourceData 无该源记录；external/fermi_gbm、external/swift_grb 快照命中（trigger_time 22:31:00.024Z/22:31:00.02Z）用于身份与 T0 互证；ADS（api.adsabs.harvard.edu）abs 与全字段检索 “GRB 120908A” 命中 4 篇（均为上述 GCN 通告），“120908938”/“368836263” 命中 0 篇，4 篇 GCN 的 citations() 检索 0 篇——无研究论文给出该源测光；GCN 站（gcn.nasa.gov/circulars）打开 13731/13740/13741/13776 逐篇核对与仓内快照一致。结论：唯一可用光学测光为 GCN 13740 的 UVOT white 上限，补 0 行、修正 1 行。",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
