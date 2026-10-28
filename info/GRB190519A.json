@@ -1,27 +1,43 @@
 {
   "transient_id": "GRB190519A",
-  "alias": [],
-  "ra": 114.7673,
-  "dec": -38.8052,
-  "T0": "2019-05-19T07:24:57Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "GRB 190519A",
+    "BAT 904394",
+    "GRB190519309",
+    "GRB 190519.309",
+    "bn190519309"
+  ],
+  "ra": 114.76757,
+  "dec": -38.8054,
+  "T0": "2019-05-19T07:25:39.438900Z",
+  "T0_ref": "GCN 24595（Ukwatta et al., Swift）：'At 07:25:39 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 190519A (trigger=904394)'（整秒）；external/swift_bat 官方目录快照 trigger_time=2019-05-19T07:25:39.438900Z（trigger 904394 同源互证，取触发仪器目录亚秒，§3.2）；旁证：GCN 24595 'The XRT began observing the field at 07:27:04.3 UT, 85.0 seconds after the BAT trigger'（07:27:04.3−85.0=07:25:39.3，与 BAT 触发自洽）、GCN 24612 'began settled observations ... 150 s after the BAT trigger' 与 UVOT 表 T_start=150 一致。原 T0=2019-05-19T07:24:57Z 系 Fermi GBM 触发时刻（GCN 24596：'At 07:24:57.34 UT ... (trigger 579943502 / 190519309)'；external/fermi_gbm 快照 trigger_time=07:24:57.343Z）被 bot 误用作本源 T0——多触发仪器（GBM 先 42.1 s 触发到早峰）时按 §3.8 有 Swift 以 Swift 为准；GBM 触发时刻改记 T0_offset。",
+  "T0_offset": -42.1,
+  "T0_offset_ref": "Fermi GBM 先于 BAT 触发：GCN 24596 'At 07:24:57.34 UT on 19 May 2019, the Fermi Gamma-Ray Burst Monitor (GBM) triggered and located GGRB 190519A (trigger 579943502 / 190519309), which was also detected by the Swift/BAT'（快照 trigger_time=07:24:57.343Z，与 BAT 快照 07:25:39.438900Z 相差 42.0959 s，取 −42.1）；GCN 24595 BAT 光变 'there might be a weaker pulse that starts at ~ T-50 s'、GCN 24606 地面分析 'multi-peaked structure that starts at ~T-60 s'——爆发起始早于 BAT 自动触发，取独立仪器 GBM 触发时刻为精确锚点（§3.2 负偏移情形）。",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.6,
-  "pos_ref": "GCN 24597",
+  "pos_ref": "GCN 24597（Beardmore et al., Enhanced Swift-XRT position）：'RA, Dec = 114.76757, -38.80540 ... with an uncertainty of 1.6 arcsec (radius, 90% confidence)'（XRT-UVOT 对准 + USNO-B1 场源匹配改正，Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177）；原 ra/dec=114.7673/−38.8052 系 GCN 24595 初步增强位置（2.0″），与 pos_ref=GCN 24597（1.6″）不符，本次统一取 24597 原文值。",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "由 gcn_llm_extract 管线导入（bot_created；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 不可信，按 §3.10 核实改写并保留原文于此）。审核 2026-10-28（fsy）。① T0：原值 07:24:57Z 系 Fermi GBM 触发时刻（bot 误用；GBM 与 BAT 分别触发同一暴的多个峰），改正为 Swift/BAT 触发 07:25:39.438900Z（GCN 24595 整秒 + external/swift_bat 快照亚秒，§3.2/§3.8 有 Swift 以 Swift 为准）；GBM 早 42.1 s 的触发记 T0_offset=−42.1 s（§3.2，爆发起始早于 BAT 自动触发的独立证据）。② 定位：GCN 24597 精化 XRT 位置 RA,Dec=114.76757/−38.80540（1.6″, 90% confidence）→ pos_error_confidence=90（原文明确）；原 ra/dec=114.7673/−38.8052 为 24595 初步增强位置（2.0″）废弃。③ 别名：GRB 190519A（GCN 用名）+ BAT 904394（external/swift_bat name_alt）+ GRB190519309/GRB 190519.309/bn190519309（external/fermi_gbm name_alt 官方目录原文用名；GCN 24596 原文 'trigger 579943502 / 190519309'——§3.10 证据串豁免）。④ 分类：t90=44.48±2.585869 s（external/swift_bat 目录 15-350 keV，快照独立读取）按目录 t90 判 lgrb（2026-10-26 裁定口径）；GCN 24606 BAT 精化 T90=45.58±2.86 s、GCN 24596 GBM T90≈46 s（50-300 keV）一致。⑤ 光变（原 1 行改正 + 补 6 行，全部为上限）：(a) 原 1 行 UVOT U-band FC 上限 19.2（GCN 24595）：原文 'finding chart exposure of 250 seconds with the U filter starting 150 seconds after the BAT trigger'、'The typical 3-sigma upper limit has been about 19.2 mag'——原行 time=192 系 FC 曝光起点且锚在 bot 误取 GBM T0（150+42.1≈192），已改正重锚；同曝 GCN 24612 精化表 u_FC 150–400 s、Exp 246 s、>18.9 为精化值，按 §3.4 以精化值为准入表（reference=GCN24612），24595 的 ~19.2 典型值记于 comment 备查。(b) 补 GCN 24612 UVOT 上限表 6 行（v/b/u/w1/m2/w2）：'using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)' → mag_system=Vega；未做银消改正（E(B-V)=0.42）：v 456–2571 s、272 s >18.7；b 406–2520 s、272 s >19.7；u 150–2495 s、646 s >19.5（含 u_FC 拼接）；w1 505–2610 s、262 s >19.5；m2 481–2595 s、272 s >19.1；w2 432–2546 s、272 s >19.2（均 upperlimit=y、中点/半跨口径）。⑥ 本源无 X-ray 行（GCN 24608 XRT refined 按规则不入测光库，X 射线数据暂不在审核范围）。⑦ §3.3 检索留证（2026-10-28）：gcn/archive 本机缺失，改用 GCN 网站（gcn.nasa.gov）源名 'GRB 190519A' + 事件页（circulars/events/grb-190519a）双通道检索，共得 10 篇 circular——24594（Fermi GBM loc）、24595（Swift 检测）、24596（Fermi GBM 观测）、24597（enhanced XRT 位置，无测光）、24606（BAT refined）、24608（XRT refined，仅 X 射线）、24611（CALET CGBM）、24612（UVOT 上限表，新增行直接来源）、24613（AstroSat CZTI）、24652（Konus-Wind）；其中 24611/24613/24652 经 gcn3 原文 grep 核对均无光学内容；仓内快照 external/swift_bat（BAT 904394 全参数）、external/fermi_gbm（bn190519309 全参数）均核对；external/rssgrbag/lightcurve.jsonl、external/grbsn_webtool/SourceData、external/uvot_grb 均 0 命中；web 文献检索（'GRB 190519A' afterglow/paper）无本源专用研究论文——Deng+2023（ApJ 958, 119，伪红移样本）仅转引目录参数（T90/光度）无自有测光 → articles[] 维持空（GCN 通告不入 articles）；新增 6 行 + 原 1 行重锚，均来自 GCN 24595/24612 已核对原文。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift BAT 真实触发时刻（GCN 24595 + external/swift_bat 目录快照亚秒值，2026-10-28 审核改写；原 bot 值 07:24:57Z 系 Fermi GBM 触发时刻误用，已改记 T0_offset=−42.1 s）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
