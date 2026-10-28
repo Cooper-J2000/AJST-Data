@@ -1,13 +1,14 @@
 {
   "transient_id": "GRB081224",
   "alias": [
-    "GRB81224.0",
-    "GRB 081224887"
+    "GRB 081224",
+    "GRB 081224887",
+    "bn081224887"
   ],
-  "ra": 201.10000610351562,
-  "dec": 72.66999816894531,
-  "T0": "2008-12-24T21:17:56.410000Z",
-  "T0_ref": null,
+  "ra": 201.1,
+  "dec": 72.67,
+  "T0": "2008-12-24T21:17:55.414Z",
+  "T0_ref": "GCN 8723（'On 21:17:55.41 UT of Dec 24 2008 GBM detected a bright GRB'，trigger 251846276）；Fermi GBM 目录 FERMIGBRST bn081224887 trigger_time=21:17:55.414Z（2026-10-12 裁定口径：原 T0=2008-12-24T21:17:56.410000Z 系 2FLGC trigger_met=251846276.41 纪元 2001-01-01 naive MET→UTC 换算、未扣 2006-01-01 闰秒，Δ=0.996 s 亚秒差按裁定直接改写 T0，证据链见 comment）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -15,13 +16,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1188,
+  "pos_ref": "Fermi LAT 2FLGC (HEASARC fermilgrb; Ajello+2019)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（fsy 2026-10-28）：(1) T0——原值 21:17:56.410000 系 2FLGC trigger_met=251846276.41 按 2001-01-01T00:00:00 UTC 纪元直接换算、漏扣 2006-01-01 生效的 1 闰秒（naive 换算复算恰得 21:17:56.410，见 Issue #67），偏晚 0.996 s；GCN 8723 原文 'On 21:17:55.41 UT of Dec 24 2008 GBM detected a bright GRB'（trigger number 251846276/ GRB 081224887 / GRB 081224）；FERMIGBRST 目录 bn081224887 trigger_time=21:17:55.414Z；按《数据审核提示词》§3.2/§3.8（闰秒系目录口径差不算偏移、亚秒差直接写入 T0）改为 2008-12-24T21:17:55.414Z，T0_offset 不适用；2FLGC/fermilgrb 行 trigger_time=21:17:54.997 为衍生目录交叉值（差 0.417 s，不采用），Suzaku WAM（GCN 8739）触发 21:17:55.214 UT 系另一仪器口径。(2) 坐标——ra/dec 201.10000610…/72.66999816… 为 2FLGC 坐标 201.1/72.67（13 24 24.0 +72 40 12）的 FITS float32 残渣，已清理；补 pos_error=1188″（fermilgrb error_radius=0.33，单位为度）；来源未标注置信水平，pos_error_confidence 留空。(3) alias——删 'GRB81224.0'（2FLGC gcn_name 截断伪名）；补 'GRB 081224'、'bn081224887'；'GRB 081224887' 有出处：GCN 8723 原文用名（'Trigger number 251846276/ GRB 081224887 / GRB 081224'）。(4) 身份与标签——Fermi/GBM 触发（GCN 8723）；LAT 星上探测被 GCN 8726 撤回（'likely a statistical fluctuation'），但 2FLGC 地面分析 TS=26.53（like_best_ts）支持保留 Fermi-LAT；t90=16.448±1.159 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb（GCN 8739 Suzaku WAM T90≈10.3 s 同为长暴，不冲突）。(5) 位置存疑（待决）——Swift-XRT 候选体（GCN 8725：RA,Dec=213.1494, 74.1999，误差 3.4″ 90%）距 2FLGC 定位 3.75°（远超 0.33° 误差半径），但距被撤回的 LAT 星上定位仅 0.07°、距 GBM 地面定位 2.14°（统计 1°+系统 2-3° 内）；XRT 源与本暴的关联未经证实（GCN 8725 原文：未能确认变暗、LAT 误差圆未全覆盖）。(6) 测光检索（2026-10-28）——本机无 gcn/archive 快照，改用 GCN 网站 https://gcn.nasa.gov/circulars：源名 'GRB 081224' 与触发号 '081224887' 双通道 + 邻近通告号 8720–8750 逐篇扫描，共命中 4 篇（8723 Fermi GBM/LAT、8725 Swift-XRT、8726 LAT 撤回、8739 Suzaku WAM），均为激起段或 X 射线内容，无光学/红外/射电测光或上限；仓内 external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无、fermi_gbm/fermi_lat/swift_grb 仅目录参数行（agile_mcal 命中的 '081224A' 为另一暴）；SIMBAD 三种途径（CDS 两主机 + curl）均连接失败；文献面：GCN 8725 后无任何后随测光通报，Longo+2012（A&A）仅给 LAT 高能上限，Tashiro+2012/Basak+2014/Li+2020 均激起段谱研究——无可用光学/射电测光，补 0 行。lc 唯一行（10keV，Swift/XRT Burst Analyser）为 X 射线行，按契约原样保留。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -160,9 +162,20 @@
         ],
         "trigger_time": "2008-12-24T21:17:55.41Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
     }
   },
   "articles": [
+    {
+      "name": "Ajello+2019",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "source": "fsy"
+    },
     {
       "name": "Tashiro+2012",
       "title": "Spectral Evolutions in Gamma-Ray Burst Exponential Decays Observed with Suzaku WAM",
