@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB200901B",
-  "alias": [],
-  "ra": 217.8572,
-  "dec": -38.7117,
-  "T0": "2020-09-01T03:48:18Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 994165"
+  ],
+  "ra": 217.85911,
+  "dec": -38.71147,
+  "T0": "2020-09-01T07:09:26.441920Z",
+  "T0_ref": "GCN 28337（Swift/BAT trigger 994165，整秒 07:09:26 UT）＋ Swift/BAT 官方目录（仓内 external/swift_bat 快照 trigger_time=2020-09-01T07:09:26.441920Z），依 §3.2/§3.8 取触发仪器亚秒值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 4.2,
   "pos_ref": "GCN 28339",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "定位：Swift-XRT 增强位（astrometrically corrected）RA,Dec=217.85911,-38.71147（14h31m26.19s, -38d42m41.3s），4.2 arcsec（radius，90% confidence，GCN 28339）；原库坐标 217.8572,-38.7117 是 GCN 28337 初步 XRT 位（5.5″）却挂着 28339 的 4.2″ 误差，已统一为增强位。并列：BAT 地面位 217.860,-38.704（3.0′，90%，GCN 28345）。T0：原库 2020-09-01T03:48:18Z（bot meta_trigger）**不是触发时刻**——与 GCN 28334（MASTER-Net global report）中 MASTER-OAFA 于 2020-09-01 03:48:18 UT 开始指向观测 Swift GRB 200901A（trigger 994143，04h07m -59d53m，另一独立事件）的时刻一致，属导入管线把他源观测指向时刻错锚为本源 T0（Issue #84 家族，兼跨源污染）；按触发仪器 Swift/BAT 官方通告 GCN 28337 改为 07:09:26 UT，亚秒取官方目录 07:09:26.441920Z；XRT 起测 07:12:16.1 UT=触发+169.7 s、UVOT FC 起曝 T+175 s 均与该触发自洽（GCN 28337）。T0_offset 无 >1 s 证据，不写。分类：t90=705.94±148.71 s（GCN 28345；Swift/BAT 目录同值 705.94±148.7 s，15-350 keV），按目录 t90 判 lgrb；BAT 光变为弱辐射 T0~T+900 s（GCN 28345）。其他量：t50=222.8±86.5 s（BAT 目录）；fluence 4.3±0.4E-06 erg/cm^2（15-150 keV，GCN 28345）／BAT 目录 4.113672e-06（15-150 keV）；Epeak=46.7±8.6 keV（CPL，GCN 28345）；XRT 光变：初始上升 α=-0.6(+0.7,-0.9)，T+239 s 后 α=0.54，T+950 s 后 α=2.61（GCN 28347）；XRT 初始 2.5 s 像流量 1.11e-09 erg cm^-2 s^-1（0.2-10 keV，GCN 28337，X 射线量仅备查）；E(B-V)=0.09。别名「BAT 994165」（Swift/BAT 官方目录 name_alt）。身份：与同日 Swift 另一触发 GRB 200901A（trigger 994143，03:47:31 UT，赤道坐标 61.758,-59.88）为不同事件，本源数据未混入 A。测光检索（2026-10-28）：GCN 站逐号扫描 28330–28400 命中 GRB 200901B 相关 5 篇（28337/28339/28343/28345/28347；28334/28335/28336/28340/28341/28342/28344/28348 属 GRB 200901A），光学测光仅 28337（FC 上限）与 28343（UVOT 6 波段表，本 PR 入库）；仓内 external/rssgrbag 0 行、external/uvot_grb 与 external/swift_grb 快照无该源条目（external/swift_bat、external/swiftgrbba 目录级快照用于身份/T0 互证）；arXiv API 检索 \"200901B\" 0 篇、无针对本源的研究论文 → 补 5 行（b/v/w1/m2/w2 上限）并改写 u 行。Swift-XRT X 射线数据（GCN 28337/28347）暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 28337 整秒 + external/swift_bat 目录亚秒 07:09:26.441920Z）；原 bot 值 2020-09-01T03:48:18Z 系 GCN 28334 中 MASTER 指向观测 GRB 200901A 的时刻（错锚，Issue #84 家族），已留在 comment",
+    "t0_basis": "GCN 28337 + external/swift_bat 目录",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
