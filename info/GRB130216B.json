@@ -1,28 +1,47 @@
 {
   "transient_id": "GRB130216B",
-  "alias": [],
+  "alias": [
+    "GRB130216790"
+  ],
   "ra": 58.84993,
   "dec": 2.05183,
-  "T0": "2013-02-16T18:58:11Z",
-  "T0_ref": null,
+  "T0": "2013-02-16T18:58:12Z",
+  "T0_ref": "GCN 14226（Swift/BAT rate-trigger 时刻，整秒精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 8.6,
   "pos_ref": "GCN 14242",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error_confidence": "90",
+  "comment": "T0 备查值：Swift/BAT 目录 Trig_time_UTC=2013-02-16T18:58:10.575（仓内 external/swift_bat 快照，ground detected 行）；Fermi GBM 触发 2013-02-16T18:58:11.70（GCN 14235；仓内 FERMIGBRST 快照 18:58:11.695）；Suzaku WAM 18:58:13.41（GCN 14249）。按 §3.8 取触发仪器（Swift/BAT）官方 GCN 14226 的 rate-trigger 时刻 18:58:12（整秒精度，不自行补亚秒）；GROND 观测日志 Δt=106745 s 亦以 18:58:12 为锚（Greiner+2024, A&A 691, A158，Table 5，取自 arXiv:2410.14441）。原 bot 时间基准 2013-02-16T18:58:11Z（extra_data t0_basis=meta_trigger）已弃用。别名「GRB130216790」：GCN 14235 原文用名 trigger 382733894 / 130216790（Fermi GBM 触发号；仓内 FERMIGBRST 快照 trigger_name 同形）。t90 并列：3.7±0.5 s（15-350 keV，GCN 14232）/ 17.6±1.6 s（仓内 Swift BAT 目录快照 T90 列，与 GCN 明显不一致，备查）/ 12.99±1.28 s（50-300 keV，仓内 FERMIGBRST 快照）/ 约 7.44 s（50 keV-5 MeV，GCN 14249）；sub_tag=lgrb 按 Greiner+2024 Table 5 的 L 分类（研究文章分类，非自算 T90）。ra/dec/pos_error=8.6″（90%）出自 GCN 14242 的 XRT 流量超额位置（SNR≈2，1.5′ BAT 误差圈内边缘；该源 X 射线数据按审核范围不入库）。候选宿主：2MASX J03553770+0202484（GCN 14226，BAT 误差圈内 2′ 低红移星系；Perley/Cenko GCN 14231 高倾向旋涡星系）——候选未定论，不建 host_galaxy。MASTER GCN 14239 原文笔误：正文写「GRB130216A」，该通告主题与所用坐标（GCN 14235）均为 GRB 130216B。测光检索（2026-10-28）：仓内 gcn/archive 全文按 130216B/548918/382733894/坐标检索命中 7 篇（14226/14231/14232/14235/14239/14242/14249；14231=WIRC Ks 变源上限、14239=MASTER 白光上限、14242 为 X 射线不入库）；external/rssgrbag 与 external/grbsn_webtool 无该事件记录；OpenAlex 命中 6 条（4 条为上述 GCN 的题录转载，2 篇研究文章中仅 Greiner+2024 含该源测光表；Yu+2015 ApJS 216,32 为 GBM 定标统计样本，无逐源测光）；arXiv API 与 Crossref 无该源专文；GCN 站 /api/v0 端点 curl 返回 404 HTML（以仓内 45 563 篇全文检索为准）；TNS 搜索需登录+reCAPTCHA，本次未能取得条目结果。补 9 行：GROND g/r/i/z/J/H/K 上限 7 行（Greiner+2024 Table 2）+ MASTER 白光上限 1 行（GCN 14239），WIRC Ks 行按统一 T0 重算时间锚。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Swift/BAT rate-trigger 时刻（GCN 14226，整秒精度）；原 bot 值 2013-02-16T18:58:11Z（t0_basis=meta_trigger）已弃用，见 comment",
+    "t0_basis": "swift_bat_gcn14226",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
