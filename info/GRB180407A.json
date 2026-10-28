@@ -1,27 +1,33 @@
 {
   "transient_id": "GRB180407A",
-  "alias": [],
+  "alias": ["BAT 823001"],
   "ra": 35.236,
   "dec": 33.513,
-  "T0": "2018-04-07T02:26:12Z",
-  "T0_ref": null,
+  "T0": "2018-04-07T01:54:49.782600Z",
+  "T0_ref": "GCN 22612（触发通告：At 01:54:49 UT the Swift BAT triggered and located GRB 180407A，trigger=823001）；亚秒 0.782600 取 Swift/BAT 官方目录（仓内 external/swift_bat 快照 trigger_time，整秒与 GCN 22612 一致；external/swiftgrbba 快照 01:54:49.000Z 亦一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": ["grb"],
   "pos_error": 108.0,
   "pos_ref": "GCN 22616",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 更正：原 bot T0=2018-04-07T02:26:12Z 实为 COATLI 观测窗口起点（GCN 22614），非触发时刻（Issue #84 型导入残留）。GCN 22612（触发通告）明载 At 01:54:49 UT the Swift BAT triggered and located GRB 180407A（trigger=823001）；Swift/BAT 官方目录（external/swift_bat 快照）trigger_time=2018-04-07T01:54:49.782600Z（整秒一致，取其亚秒）；external/swiftgrbba 快照 01:54:49.000Z 一致；GCN 22614 自注观测窗口 02:26:12–03:01:38 UT＝T0 后 0.52–1.12 h，与 T0=01:54:49 反算自洽（0.523 h/1.113 h）。原 extra_data 失真说明：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger。位置：RA/Dec=35.236/33.513、误差 1.8′=108″（GCN 22616 BAT 地面定位，90% containment，故 pos_error_confidence=90）；22612 on-board 35.241/+33.499±3′ 备查。分类：t90=95.9±29.8 s（GCN 22616，15-350 keV）、t90=100.6±33.9 s（Swift/BAT 官方目录，15-350 keV），两源一致，按目录/通告 t90 判 lgrb。alias「BAT 823001」：Swift/BAT 官方目录快照 name_alt。Swift 因太阳约束未 slew（GCN 22612：2018-06-19 12:55 UT 前无 XRT/UVOT 数据；22616：T+144 s 后无 BAT 数据；UKSSDC trigger 823001 页同为无 XRT 定位），故无 XRT/UVOT 测光。测光检索留证（§3.3）：2026-10-28；仓内 gcn/archive 本机不存在，改用 GCN 网站（https://gcn.nasa.gov/circulars）双通道（源名 180407＋触发号 823001）逐篇扫描 22590–22680 共 91 篇，命中 4 篇：22612（触发通告）、22614（COATLI，唯一光学测光）、22616（BAT 精化，无测光）、22615（实为另一触发 823014，GCN OPS NOTE 已更名，排除）；external/rssgrbag、external/grbsn_webtool 无该源记录；external/swift_bat、swiftgrbba、mpe_greiner、heasarc_grbcat 仅目录级参数、无测光表；arXiv API all:「180407A」命中 0 篇；Web 检索无相关研究论文；TNS 不适用（GRB 类）。结论：全库可用测光仅 GCN 22614 一条 COATLI 上限；补行 0、修正 1 行。",
+  "sub_tag": ["lgrb"],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "gcn_trigger_notice",
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 22612：01:54:49 UT，trigger=823001；亚秒 0.782600 取 external/swift_bat 官方目录快照）；原 bot 值 2018-04-07T02:26:12Z 系 COATLI 观测窗口起点（GCN 22614），已废弃",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
