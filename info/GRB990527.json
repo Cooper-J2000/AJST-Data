@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB990527",
-  "alias": [],
-  "ra": 342.61,
-  "dec": -20.86,
-  "T0": "1999-05-27T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 990527B",
+    "BATSE 7586"
+  ],
+  "ra": 341.0525,
+  "dec": -18.6585,
+  "T0": "1999-05-27T13:56:55.673Z",
+  "T0_ref": "触发仪器 CGRO/BATSE 官方目录（HEASARC batsegrb，external/batse 快照）trigger 7586 trigger_time=1999-05-27T13:56:55.673Z（seconds_trigger=50215.673 s UT）；Hurley+2011, ApJS 196, 1 表 2 行 990527 UT 13:56:55 同秒；GCN 347 记 50269 s UT（13:57:49）未采用，见 comment",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 187,
+  "pos_error_confidence": null,
+  "pos_ref": "Hurley+2011, ApJS 196, 1, Table 3 (IPN box center)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-10-28）。身份：GRB 990527 = Ulysses+KONUS-WIND+NEAR IPN 联测暴（GCN 347）= BATSE trigger 7586（Hurley+2011, ApJS 196, 1 表 2/3 NB=7586；heasarc_grbcat 快照 GRB 990527B grbcat_id 4400、observatories=[BATSE-CGRO, IPN]；SIMBAD 标识 GRB 990527 与 Trigger 7586；batsegrb 主表名 'GRB 990527-'）。原 Trigger_Instrument=IPN 改 CGRO/BATSE（7586 在官方 batsegrb 目录有正式触发行、触发时刻取自该目录；先例 GRB991105/GRB990915/GRB000508B）；alias 新增 GRB 990527B（heasarc_grbcat 快照官方名）与 BATSE 7586（external/batse 快照 name_alt；SIMBAD 同义标识 Trigger 7586）。同日他暴甄别：1999-05-27 BATSE 共 3 个触发——7584（=GRBCAT 990527A，03:32:40.5Z，294.94/-45.16，t90=0.42 s 短暴）、7586（本暴）、7587（18:13:12.06Z，199.93/49.35，GRBCAT 未单列）；BeppoSAX GRBM 目录（仓内 saxgrbmgrb）另记 'GRB 990527' 18:22:27Z（t90=0.54 s，与三个 BATSE 触发均不同时刻）——均与本暴区分。SIMBAD 注记甄别：SIMBAD 注 'Associated with SN 1999ct (2006A&A...447..121B)'，实读 Bošnjak+2006 表 1：其 990527 行位置 199.9/49.3（=BATSE 7587）、SN 1999ct 位于 198.3/46.2（Ia，z=0.18）——该文为 BATSE 误差盒+1.6° 的盲交叉候选（正文自引 Kippen+1998 'no evidence for association'），关联属 7587 而非本暴（13:56:55 + IPN 盒 341.05/-18.66），SN 1999ct 不入本源任何字段。\nT0：原值 1999-05-27T00:00:00Z 为名字日期占位（t0_note='t0 为触发日 00:00 UT（名字日期）'、t0_basis='name_date'），废弃；改为触发仪器 CGRO/BATSE 官方目录（heasarc batsegrb，external/batse 快照）trigger 7586 的 1999-05-27T13:56:55.673Z（seconds_trigger=50215.6734 s UT、MJD 51325.5811999236；快照 normalized 值取 3 位小数 .673）。整秒与 Hurley+2011 表 2 行 990527 UT 13:56:55 一致；GRBCAT 990527B 记 13:56:55.600Z（与目录差 73 ms）；GCN 347 记 'May 27 1998 at 50269 s UT'（=13:57:49，与目录差 53.3 s，未被采用——正文 '1998' 系原文笔误，subject 与 GCN 349、Danish 观测日期 1999-05-29/30 均指 1999-05-27）；≥60 ms 分歧已在 PR 说明报告。无 |T0_offset|>1 s 依据，保持 null。\n位置：原 ra/dec=342.61/-20.86 无定位出处（量级近似 GCN 347 初步 IPN 盒与 mpe_greiner 快照 22h50m26s -20°53'，bot 转写），废弃；改采 Hurley+2011（ApJS 196, 1，IPN 对 BATSE 5B 目录的补编，VoR，IOP 全文表 2/3 实读）表 3 最终 IPN 误差盒：盒心 22h44m12s.61 -18°39'30\".68（J2000）=341.0525/-18.6585，四角 22h44m14s.20 -18°42'36\".58、22h44m23s.66 -18°41'07\".47、22h44m01s.55 -18°37'53\".78、22h44m11s.01 -18°36'24\".71（盒跨 0.092°×0.103°）；pos_error=187\"=盒心到最远角点的外接半径（先例 GRB990915 同表同法）。自洽核验：盒心到表 2 两条 IPN 环中心（324.721/7.053 与 42.269/23.055）的距离 30.339°/72.874° 与环半径 R=30.339±0.047、72.875±0.022 相符。表 3 误差盒未标注置信水平（构成环带为 3σ、BATSE 圆为 1σ stat+sys（σsys=1.6°），见论文图注）→ pos_error_confidence 留空。GCN 347 初步盒（四角 22h49m38s–22h51m15s、-20°48'51\"–-20°58'03\"，角点均值≈342.610/-20.891）与精化盒相距 2.67°，按数据来源权威级以已发表精化值为准；BATSE 飞行定位 344.56/-20.0（0.79° stat 圆）在精化盒外 3.57°（含系统误差约 2σ），备查。mpe_greiner/SIMBAD 快照仍载初步盒位置，按契约不就地改快照，此处备查。\n分类：GCN 347 原文 'the burst duration was ~20 s' → 判 lgrb；batsegrb 目录 7586 行无 T90 值；25-100 keV fluence ~8×10^-6 erg/cm^2（GCN 347）。\nlc 行：Danish 1.54m/DFOSC R>22.0 上限行（GCN 349）重锚——原文两晚观测：5×8 min+1×10 min 于 1999 May 29.33-29.44 UT（seeing 2.0\"）、7×10 min 于 May 30.33-30.45 UT（1.1\"），R=22.0 出自两晚比对（'no significantly variable object above a magnitude limit of R = 22.0'）；行锚定第二晚（更深）窗口中点 May 30.39=MJD 51328.3900000，time=中点-T0=242680.327 s、time_err=半窗跨 0.12 d/2=5184 s；第一晚中点备查（May 29.385=MJD 51327.385，time≈155848.3 s）。原 bot 行 time=292896.0 s 系以占位 T0 反推；mjd 数值不变（原 51328.39 即第二晚窗口中点，补全 7 位小数）；原文未声明星等系统（与 DSS-2 红板比对），mag_system 留空。\n测光检索（2026-10-28）：仓内 gcn/archive 全文快照在当前 main 不存在（git ls-tree origin/main 实证），改用 GCN 官网——gcn.nasa.gov 检索 '990527' 与 'GRB 990527' 各命中 2 篇（GCN 349 本源上限、GCN 1537 仅注记提及且 XRF 020903 误差盒与本暴不重叠；GCN 347 经 gcn.gsfc.nasa.gov/gcn3/347.gcn3 直接取得）＋GCN 340-366 邻域 27 篇 subject 逐篇扫描，除 347/349 外均非本暴；ADS/SciX API 需 token 不可用（如实注明、不作缺席证据），OpenAlex 全文检索 'GRB 990527' 命中 2 篇：Nardini+2008（arXiv:0710.2436 暗暴样本，实读：附录列 'GRB990527: Pedersen et al. (1999b)' 即 GCN 349 同一观测的转引、其书目 GCN 139 系原文笔误，无独立数值）与 2022ApJ...938...41D（GRB-SN 关联统计样本，未取得全文）；SIMBAD 对象在（书目 13 条 bibcode）；TNS 不适用（GRB 非 AT/SN/CV 类）；仓内 external 快照（rssgrbag 光变、grbsn_webtool、heasarc_grbcat、mpe_greiner、batse、konus_wind）均无本源测光。结论：除 GCN 349 上限外未发现其他有锚点测光，补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 BATSE 触发时刻（原 bot 值 1999-05-27T00:00:00Z 为名字日期占位，t0_basis=name_date；原值见 comment）",
+    "t0_basis": "HEASARC BATSE GRB catalog (batsegrb trigger 7586)",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Hurley+2011",
+      "title": "The Interplanetary Network Supplement to the BATSE 5B Catalog of Cosmic Gamma-Ray Bursts",
+      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
