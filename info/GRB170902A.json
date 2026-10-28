@@ -1,27 +1,35 @@
 {
   "transient_id": "GRB170902A",
-  "alias": [],
-  "ra": 233.833,
-  "dec": -57.2313,
+  "alias": [
+    "GRB 170902A",
+    "MAXI J1535-571"
+  ],
+  "ra": 233.83222,
+  "dec": -57.23004,
   "T0": "2017-09-02T20:00:36Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 21788（Barthelmy et al., Swift）：'At 20:00:36 UT, the Swift Burst Alert Telescope (BAT) triggered ... (trigger=770431)'（原文仅整秒精度，不自行补亚秒）；GCN 21791（Kennea, Swift-XRT）：'Swift trigger 770431 (AKA GRB 170902A) is not a GRB, but a Galactic Transient'——本源实为新银河系暂现源 MAXI J1535-571，BAT 触发时刻仍为该暂现源爆发的有效时间锚点；external/swift_bat 快照无本源条目（非 GRB 事件未入 BAT GRB 目录），无法交叉验证亚秒",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [],
   "pos_error": 1.5,
-  "pos_ref": "GCN 21790",
+  "pos_ref": "GCN 21790（Evans et al., Enhanced Swift-XRT position）：'RA, Dec = 233.83222, -57.23004 ... with an uncertainty of 1.5 arcsec (radius, 90% confidence)'（3279 s PC 数据；XRT-UVOT 对准 + USNO-B1 场源匹配改正，Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177）；原 ra/dec=233.833/-57.2313 为 GCN 21788 初步值，统一取 21790 精化值（与 pos_error=1.5″ 同源）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "由 gcn_llm_extract 管线导入（bot_created；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 不可信，按 §3.10 核实改写并保留原文于此）。审核 2026-10-28（fsy）。① T0：GCN 21788 原文 'At 20:00:36 UT, the Swift Burst Alert Telescope (BAT) triggered ... (trigger=770431)'，整秒精度、维持原值不补亚秒（§3.8）；external/swift_bat 快照无本源条目（见下）。② 身份裁定（重要）：GCN 21791（Kennea, Swift-XRT）明言 'Swift trigger 770431 (AKA GRB 170902A) is not a GRB, but a Galactic Transient'——MAXI 独立探测到该源且 Swift X-ray 光变无衰减，实为新银河系暂现源 MAXI J1535-571（黑洞 X 射线双星爆发）；GCN 21788 主题行本已标注 'burst or possible Galactic transient'。影响：tag/sub_tag 维持空（tags.json 受控词表无银河系 X 射线双星/暂现源爆发类目，擅标 grb 或错标 fxt/xrb 均不当，按 §7 A 档待维护者裁决，见 PR 待决事项）。③ 定位：GCN 21790 精化 XRT 位置 RA,Dec=233.83222/-57.23004（1.5″, 90% confidence）→ pos_error_confidence=90（原文明确）；原 ra/dec=233.833/-57.2313（21788 初步值）废弃。④ 别名：GRB 170902A（GCN 21788 用名）+ MAXI J1535-571（GCN 21791 原文用名）。⑤ 光变（1 行重锚，仍为上限）：UVOT White FC 典型上限 19.6 mag——GCN 21788 'UVOT took a finding chart exposure of 128 seconds with the White filter starting 413 seconds after the BAT trigger. The typical 3-sigma upper limit has been about 19.6 mag.'；原行 time=413 取曝光起点，改窗口中点 time=477.0、time_err=64.0（§3.8）；band=w 改 uvot-white（w 为 Pan-STARRS 键）；mag_system 留空（原文未声明，UVOT 推定 Vega 引 Breeveld+2011 备查）；'8'x8' region typically complete to about 18 mag' 类覆盖性表述不入行（§3.5）。⑥ 本源无 X-ray/射电行。⑦ §3.3 检索留证（2026-10-28）：gcn/archive 本机缺失，改用 GCN 网站（gcn.nasa.gov）源名 'GRB 170902A' + 事件页（circulars/events/grb-170902a）双通道检索，共得 3 篇 circular——21788（Swift BAT 触发+FC）、21790（enhanced XRT 位置，无测光）、21791（非 GRB 裁定）；仓内快照 external/swift_bat、fermi_gbm、uvot_grb、swift_xrt_live 均无本源条目（非 GRB 事件未入快照目录，已核实）；rssgrbag、grbsn_webtool 无交集；ADS/web 文献检索无以 'GRB 170902A' 为对象的研究论文（MAXI J1535-571 爆发文献属该暂现源本身，如需挂接建议随身份裁定一并处理）→ articles[] 维持空（GCN 通告不入 articles）；无检索新增行（唯一测光即 GCN 21788 FC 上限）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift BAT 触发时刻 GCN 21788 整秒值（2026-10-28 审核改写；该触发事件经 GCN 21791 裁定非 GRB、实为 MAXI J1535-571）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
