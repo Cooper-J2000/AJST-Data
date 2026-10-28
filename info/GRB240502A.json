@@ -1,32 +1,48 @@
 {
   "transient_id": "GRB240502A",
-  "alias": [],
-  "ra": 124.6,
-  "dec": 20.7,
-  "T0": "2024-05-02T00:00:00Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 240502A",
+    "bn240502228"
+  ],
+  "ra": 113.629,
+  "dec": 16.7244,
+  "T0": "2024-05-02T05:28:41.884406Z",
+  "T0_ref": "GCN 36382（原文 At 05:28:41.88 UT on 02 May 2024, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 240502A (trigger 736320526/240502228)）+ GCN 36368（GBM Final Position，trigger 736320526.884406 / bn240502228）；MET→UTC 按 Issue #67 口径减 5 跳闰秒（naive 05:28:46.884406 − 5 s = 05:28:41.884406，整秒与通告一致，并与仓内 external/fermi_gbm 快照 trigger_time 2024-05-02T05:28:41.884Z 相符）",
+  "T0_offset": -4.884406,
+  "T0_offset_ref": "GCN 36369（INTEGRAL/IBAS 于 05:28:37 UT 在 IBIS/ISGRI 数据中检测到该暴，较 GBM 触发早 4.884406 s；IBAS 时间为整秒精度，GRB190519A 先例：他星仪器更早触发记 T0_offset）",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_ref": "GCN 36369（INTEGRAL/IBAS 精化定位，原文 R.A.= 113.629 deg DEC.= +16.7244 deg with an uncertainty of 2 arcmin (90% c.l.)）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy（2026-10-28）。(1) 身份：Fermi/GBM 于 2024-05-02 05:28:41.88 UT 触发（trigger 736320526/bn240502228，GCN 36368/36382，原文 likely LONG GRB）；INTEGRAL/IBAS 早 4.88 s 于 05:28:37 UT 独立触发（GCN 36369，IBIS/ISGRI trigger No 10671）；同日 GBM 另有 bn240502600（14:23 UT）、bn240502906（21:45 UT）两个不相关触发（仓内 external/fermi_gbm 快照，坐标相距 >40°），无混并。仓内 external/fermi_gbm 快照含 bn240502228 条目（trigger_time 2024-05-02T05:28:41.884Z、t90=22.784±4.352 s、RA/Dec=113.629/16.7244）、external/mpe_greiner 快照含 GRB 240502A 条目（INTEGRAL X-ray position 07h34m31s +16°43′）、external/swift_bat 与 external/rssgrbag 无该事件。(2) T0：原 bot T0=2024-05-02T00:00:00Z（extra_data.t0_basis=meta_trigger、t0_note 原值留档于此）系 Issue #380 类午夜占位缺陷，废弃。标准 T0=2024-05-02T05:28:41.884406Z——GBM trigger MET 736320526.884406 按 Issue #67 口径减 5 跳闰秒（naive 05:28:46.884406 − 5 s），整秒与 GCN 36382（05:28:41.88 UT）及仓内 fermi_gbm 快照（05:28:41.884Z）一致。T0_offset=−4.884406 s（INTEGRAL/IBAS 更早触发 05:28:37 UT，GCN 36369，整秒精度），T0_offset_ref=GCN 36369。(3) 定位：改取 INTEGRAL/IBAS 精化定位 RA=113.629°/Dec=+16.7244°（GCN 36369），pos_error=120″（原文 2 arcmin）、pos_error_confidence=90（原文 90% c.l.）、pos_error_unit=arcsec；原 bot ra/dec=124.6/20.7 为 GBM 地面定位（GCN 36368，±7.2°），GCN 36382 原文确认 GBM Final Position 与 INTEGRAL 位置一致，故取精度高两个量级的 INTEGRAL 值；external/mpe_greiner 快照位置与之相符。(4) 分类：sub_tag=lgrb——GCN 36382 原文 duration (T90) of about 23 s (50-300 keV)，仓内 external/fermi_gbm 快照 t90=22.784±4.352 s 佐证。(5) 测光：修订 DFOT 1 行（GCN 36406：2024-05-04 14:29:05 UT 起多个 300 s R 帧叠合，4σ 极限 R=22.4，USNO-B1.0 定标，位于 INTEGRAL 误差圈内）——原 time=224945.0 系相对午夜占位 T0 的观测起点，改按标准 T0 重算 time=205223.115594 s、mjd=60434.6035295，叠合帧数未给出 → time_err 留空（见行 comment）。新增 GOTO 1 行（GCN 36384：2024-05-02 21:10:27 UT 起 4×90 s L 波段，INTEGRAL 误差圈内 5σ 极限 L>20.1 AB、未做银河系消光改正）——按 4×90 s 共加惯例 time=起点+180 s=56685.115594 s、time_err=180 s、mjd=60432.8843403、band=GOTO-L、upperlimit=y、mag_system=AB。新增 MASTER-Amur 2 行上限（GCN 36370：Filter C=clear → band=G，17.3/15.2，Tmid-T0=24018 系相对 MASTER 自设 T0=05:28:45 UT，换算至标准 T0 得 time=24021.115594 s、time_err=90 s、mjd=60432.5062847，自洽核验见行 comment）。MASTER-SAAO 8 行（GCN 36375）逐行 J2000 坐标（08h19m34.86s+20d20m 等）距 INTEGRAL 定位 >4°，系视场候选核查而非本源测光 → 不入库。X 射线行 0 条，未触碰。(6) 红移：null。(7) 宿主：null。(8) X 射线：无（Swift 未观测，无 XRT/XMM 报告）。(9) 测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external/rssgrbag 0 命中、grbsn_webtool 无该事件、fermi_gbm/mpe_greiner 快照命中（仅触发/定位/伽马参数，无光学测光）、swift_bat 0 命中；GCN 站逐篇枚举 36365–36440 命中 7 篇：36368（GBM Final Position）、36369（INTEGRAL 精化定位）、36370（MASTER-Amur 上限）、36375（MASTER-SAAO 视场核查）、36382（GBM 谱学）、36384（GOTO 上限）、36406（DFOT 上限）→ 光学测光共 DFOT 1 行修订、GOTO 1 行与 MASTER-Amur 2 行新增，全部为上限；SIMBAD 无 GRB 240502A 标识（0 命中）、OpenAlex 命中 1 篇（Dafcikova+2026 CubeSat 伽马暂现编目，含本暴伽马探测，无光学测光）、arXiv API 0 命中。(10) alias：GRB 240502A（GCN 36368/36382 subject 用名）、bn240502228（GCN 36368 原文 trigger 736320526/240502228 的 GBM 触发名，仓内 fermi_gbm 快照 name_alt 同）。修订 1 行、新增 3 行，X 射线行 0 条。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0=Fermi/GBM trigger MET 736320526.884406 闰秒改正后 UTC 2024-05-02T05:28:41.884406Z（GCN 36368/36382，Issue #67 口径）；原 meta_trigger 值 2024-05-02T00:00:00Z 系 Issue #380 类午夜占位缺陷，废弃",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Dafcikova+2026",
+      "title": "The Complete Catalog of Gamma-Ray Transients Observed by GRBAlpha & VZLUSAT-2 CubeSat Missions",
+      "url": "https://doi.org/10.48550/arxiv.2607.17971",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
