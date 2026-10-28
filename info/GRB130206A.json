@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB130206A",
-  "alias": [],
-  "ra": 140.387,
-  "dec": -58.193,
+  "alias": [
+    "Fermi bn130206817"
+  ],
+  "ra": 140.3767,
+  "dec": -58.19362,
   "T0": "2013-02-06T19:36:28Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 14181",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +14,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 5.6,
-  "pos_ref": "GCN 14188",
+  "pos_error": 4.6,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 14188; GCN 14203",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建（Evans+2007,2009）。审核 2026-10-27：身份 Swift/BAT trigger 547918（GCN 14181；BAT 位置 140.387/-58.193，1.9'，90%，GCN 14186）；坐标采用 GCN 14188 的 XRT 位置 140.37670/-58.19362（5.6\"，90%），GCN 14203 据晚期数据把误差圆缩至 4.6\"（90%），故 pos_error=4.6、pos_ref 并引 14188/14203。T0=19:36:28 取 GCN 14181 整数秒；Fermi GBM 触发 19:36:30.45（GCN 14189）系另一仪器触发，不是真实爆发相对 BAT 自动触发的 >1 s 偏移，T0_offset 不填。无红移测定值。alias「Fermi bn130206817」为 SIMBAD main_id（SIMBAD；GCN 14189 原文 trigger 381872193/130206817）。t90=91.6±12.3 s（FERMIGBRST，50-300 keV；Swift/BAT 目录 121.0±32.4 s、GCN 14186 128.0±50.6 s，均 >2 s），按目录 t90 判 lgrb。测光：逐行核对 GCN 14185（Zadko，3 条 R 上限）、GCN 14188（UVOT 8 条）、GCN 14191（GROND 7 通道上限，起始时刻用 VoR 表 5），时间统一改为曝光/窗口中点；GCN 14184 的「完整到 18 mag」是星表完备度而非余辉上限，该行置 discard=y，同一次 finding chart 的 3σ 上限 >21.4 取 14188；GROND 第二历元（2013-02-08 07:47 UT）仅述无变化、无测光值，未入库；14191 原文「6.5 hrs after trigger」与 01:10/01:11:50 UT（+5.59 h）不符，按绝对时刻。测光检索（2026-10-27）：GCN 站该暴共 10 篇（光学/红外仅 14184/14185/14188/14191，另 14189/14190 为 GBM/LAT，无光学表）；仓内 gcn/archive 未随仓库提交、不可用，rssgrbag 0、grbsn_webtool 0、uvot_grb 0 条；OpenAlex/Crossref/arXiv/SIMBAD 回退（ADS 无 token）命中研究论文 Greiner+2024（A&A 691, A158，GROND 样本 I；VizieR J/A+A/691/A158 tableb1 仅 log 收录 Det=n，无该暴测光表）与 Bhat+2015（仅 GBM 定位）；TNS 无记录 → 无新增测光行（补 0 行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -231,8 +236,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@qoder",
+      "date": "2026-10-27"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "source": "Rusty-Harpoon@qoder"
+    }
+  ],
   "host_galaxy": null
 }
