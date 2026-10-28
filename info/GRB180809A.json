@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB180809A",
-  "alias": [],
-  "ra": 297.793,
-  "dec": -34.663,
-  "T0": "2018-08-09T11:38:12Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB180809485"
+  ],
+  "ra": 297.90271,
+  "dec": -34.78546,
+  "T0": "2018-08-09T11:38:25Z",
+  "T0_ref": "GCN 23103（MAXI/GSC nova alert 触发 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.3,
   "pos_ref": "GCN 23106",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "定位：Swift-XRT 增强位 RA,Dec=297.90271,-34.78546（2.3 arcsec，radius，90% confidence，GCN 23106；enhanced XRT position，XRT-UVOT 对准 + USNO-B1 匹配）；XRT 位距 MAXI 位 9.1 arcmin。原库坐标 297.793,-34.663 是 MAXI 扫描定位（GCN 23103：90% C.L. 统计误差 0.09 deg + 系统 0.1 deg，90% containment radius；MPE Greiner 目录同位 19h51m10s -34d40'），却挂了 XRT 的 2.3 arcsec 误差——导入错配，已更正为 XRT 精化位。GCN 23141 二次观测（触发后 ~5 天，3700 s PC）在该位无源（3σ 上限 ~4E-3 cts/s ≈ 1E-13 erg cm^-2 s^-1），证实源已衰减、XRT 源确为 GRB 180809A X 射线对应体。T0：原 bot 值 2018-08-09T11:38:12Z（t0_basis=meta_trigger）实为 Fermi/GBM 触发口径（GCN 23118：At 11:38:12.08 UT，trigger 555507497 / 180809485；FERMIGBRST 目录 trigger_time MJD 58339.484862=11:38:12.08 UT 互证；Python 独立换算 11:38:12.076）；按触发仪器 MAXI/GSC 官方通告 GCN 23103 取 11:38:25 UT；CALET 地面分析亦锚定 T0=11:38:25 UT（GCN 23117）。GBM 与 MAXI 触发时刻相差 ~12.9 s：GBM 在主辐射期内触发，MAXI 为扫描过境触发（CALET 脉冲 T-15.1~T-4.2 s 相对 MAXI 触发，GCN 23117），MAXI 过境触发为本库 MAXI 源惯例历元（如 GRB120510A），不写 T0_offset。分类：t90=236.036±10.746 s（FERMIGBRST 目录，50-300 keV），按目录 t90 判 lgrb；并列：GCN 23118（GBM 团队）T90 约 220 s（50-300 keV）；CALET SGM 弱脉冲 T90=10.0±1.6 s、T50=5.0±1.6 s（40-1000 keV，GCN 23117，仅测到弱脉冲段，与目录值不矛盾）。其他量：fluence=(6.8±0.4)E-06 erg/cm^2（10-1000 keV，GCN 23118）／FERMIGBRST 目录 7.98103e-06±5.66e-08 erg/cm^2（10-1000 keV）；Epeak=620±230 keV（GCN 23118）；MAXI 扫描流量 890±57 mCrab（4.0-10.0 keV，GCN 23103）。别名「GRB180809485」（GCN 23118 原文用名 trigger 555507497 / 180809485；FERMIGBRST 目录 name=GRB180809485）。测光检索（2026-10-28）：GCN 站（gcn.gsfc.nasa.gov 档案 + 逐号扫描 23100-23190）命中 GRB 180809A 相关 7 篇（23103/23104/23106/23107/23117/23118/23141），仅 23107 含光学测光（iTelescope T30 极限，已在 lc）；仓内 external/rssgrbag 0 行、external/grbsn_webtool 无该事件；arXiv API 全文检索 \"180809A\" 0 篇、网络检索无专文 → 无新增可用测光，补 0 行。Swift-XRT X 射线数据（GCN 23106/23141）暂不处理。GRB 180809B（Swift/BAT 触发，GCN 23105 等）为另一独立事件，与本源无关。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 MAXI/GSC nova alert 触发时刻（GCN 23103）；原 bot 值 2018-08-09T11:38:12Z（meta_trigger，GBM 触发口径）已留在 comment",
+    "t0_basis": "GCN 23103",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
