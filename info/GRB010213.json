@@ -1,28 +1,48 @@
 {
   "transient_id": "GRB010213",
-  "alias": [],
-  "ra": 157.694,
-  "dec": 5.297,
+  "alias": [
+    "GRB 010213B",
+    "GRB 010213X"
+  ],
+  "ra": 157.9,
+  "dec": 5.510833,
   "T0": "2001-02-13T12:35:35Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 934",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1800,
+  "pos_ref": "GCN 934",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB010213＝GRB 010213B（HEASARC GRBCAT grbcat_id 5121，HETE2）＝GRB 010213X（MPE Greiner 目录用名，alias 出处）；与同日 BeppoSAX/IPN 事件 GRB 010213A（ECT 02:57:23 UT，ra 257.34 dec 39.26，saxgrbmgrb 快照、GRBCAT grbcat_id 5120）为不同事件，勿混。T0=2001-02-13T12:35:35Z 取自触发仪器 HETE 官方通告 GCN 934（WXM+FREGATE 探测，因谱极软两者均未自动触发，原文 13 February 2001 at 12:35:35 UTC）；GRBCAT trigger_time 一致（12:35:35Z）。坐标修正：原 ra=157.694/dec=5.297 无任何出处（gcn_llm_extract 导入残留）；GCN 934 初步定位 RA=10h31m36s Dec=+5d30m39s（J2000）=157.90/+5.510833，GRBCAT（157.9/5.51）、rssgrbag 快照（157.9/5.510833）三处一致，按 GCN 934 更新。pos_error=1800″ 取 GCN 934 系统误差半径 30′（对证认起作用的实际不确定度）；WXM 统计误差半径 3.5′=210″（原文标 95% 置信，95% 不在 pos_error_confidence 受控集内，故 pos_error_confidence 留空、两值并列备查）。t90：20.9 s（HEASARC GRBCAT，HETE2，7-400 keV）→ 按目录 t90 判 lgrb；并列备查：rssgrbag 快照（Chandra & Frail 2012）t90=34.0 s，Pélangeon+2008 表2 T90,B=20.12±2.16 s（6-80 keV，arXiv:0811.3304）。GCN 934 原文：双峰结构、持续约 30 s，6-10 keV 峰值能量流量约 1.5E-8 erg/cm2/s；2-18 keV 两峰约 0.7 与 2.4 Crab（软谱 X 射线 rich 事件）。无确认余辉（光学/近红外上限均非探测，射电候选源被 GCN 947 否证）；redshift 留空（Pélangeon+2008 z_sample=0.17±0.06 为伪红移 ẑ，非实测）；无确定宿主，host_galaxy 留空。测光检索（2026-10-28）：仓内 gcn/archive 全文检索 8 篇命中（934/936/940/941/942/945/946/947，其中 7 篇属本源、942 为 GRB010214 且含对 941 的更正确认），external rssgrbag 有该源目录行（无光变表）、grbsn_webtool 无该事件；arXiv API（all:GRB010213、all:GRB 010213）0 命中，WebSearch 命中 GCN 站事件页 gcn.nasa.gov/circulars/events/grb-010213（7 篇，与仓内一致）及 ADS 条目 2001GCN...947....1F；另实际打开 Pélangeon+2008（arXiv:0811.3304，全文本，仅样本参数表无测光）与 McGlynn+2005（astro-ph/0505349，仅提 GRB 010213 谱参数 photon index −2.14、Eo=4 keV）；TNS 不适用（2001 年 GRB）。结论：全库可用测光仅上限与一个被否证的射电场源；共补 3 行（GCN 936 TAROT lim 17 上限、GCN 946 BAO BATC-i lim R≈22 上限、GCN 947 追述 GCN 945 Feb 15.42 VLA 1.43GHz ~1 mJy 探测）。未入库：GCN 940 USNO H 波段（010215.42 UT 起）上限仅给「约等价于 POSS-IIF 红版深度」无数值，不臆造；GCN 947 提及 FIRST 巡天 1.4 GHz 6σ 对应源、无单独观测历元（无时间锚点不入库）。GCN 945/947 的 1.43 GHz 射电源为误差圈内场源（GCN 947：不再视为可行余辉候选），既有行与新行均保留并在行 comment 注明。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Pelangeon+2008",
+      "url": "https://arxiv.org/abs/0811.3304",
+      "title": "Intrinsic properties of a complete sample of HETE-2 gamma-ray bursts. A measure of the GRB rate in the Local Universe",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
