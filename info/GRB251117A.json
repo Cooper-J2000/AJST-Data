@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB251117A",
-  "alias": [],
+  "alias": [
+    "GRB251117.51"
+  ],
   "ra": 331.3,
   "dec": 5.57,
-  "T0": "2025-11-17T12:19:52Z",
-  "T0_ref": null,
+  "T0": "2025-11-17T12:19:52.140Z",
+  "T0_ref": "GCN 42719",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,11 +14,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 2592,
   "pos_ref": "GCN 42729",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：Fermi/GBM 触发 785074797/251117514（GCN 42719）；Fermi/LAT、SVOM/GRM、Swift/BAT-GUANO、AstroSat/CZTI、Insight-HXMT/HE 亦探测（GCN 42729/42731/42732/42740/42762）；ra/dec 取 Fermi-LAT 定位 RA=331.30、Dec=+5.57（GCN 42729）。T0=2025-11-17T12:19:52.140Z 取触发仪器 GBM 通告（GCN 42719：12:19:52.14 UT）；FERMIGBRST 目录 trigger_time=12:19:52.143Z（差 3 ms、备查）；SVOM/GRM 12:19:52.200（GCN 42731）与 Insight-HXMT 12:19:52.500（GCN 42762）为异仪器亚秒差、不构成 T0_offset。pos_error=0.72 deg=2592″、GCN 42729 原文标注 90% containment（statistical only）。t90=1.344±0.181019 s（FERMIGBRST 目录、50-300 keV）、按目录 t90 判 sgrb；GCN 42719 亦称 likely SHORT GRB。别名 GRB251117.51：GCN 42728 MASTER 原文用名「LAT GRB251117.51」（trigger 785074797 即本源）。测光检索（2026-10-28）：仓内 gcn/archive 全文命中 11 篇（42719、42728、42729、42730、42731、42732、42737、42740、42744、42762、42768），其中含光学测光的仅 42728（MASTER 9 条无滤光片上限、已补入库）与 42744（FTW r>23.9、原有行）；rssgrbag、grbsn_webtool、swift_bat、heasarc_grbcat 快照无 251117 记录、mpe_greiner 快照仅索引链接无页面；GCN 站事件页列 10 篇；arXiv/ADS 检索无本源专门论文；TNS 检索 251117A 无条目 → 共补 9 行（GCN 42728）。",
   "sub_tag": [
     "sgrb"
   ],
@@ -25,8 +27,14 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
