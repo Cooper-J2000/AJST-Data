@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB250510A",
-  "alias": [],
+  "alias": [
+    "sb25051002"
+  ],
   "ra": 284.10364,
   "dec": 18.3267,
-  "T0": "2025-05-10T06:02:26Z",
-  "T0_ref": null,
+  "T0": "2025-05-10T04:38:52.34Z",
+  "T0_ref": "GCN 40415（SVOM/ECLAIRs 触发通告：SVOM burst-id sb25051002，CRT 触发 2025-05-10T04:38:52.34 UTC（Tb），SNR 7.16 @20-120 keV、10.20 s 窗）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 5.7,
   "pos_ref": "GCN 40423",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "重审（fsy，2026-10-28）：〔T0 重大改正〕原 T0=2025-05-10T06:02:26Z 系 DDRAGO/COLIBRÍ 观测窗起点（GCN 40417 原文观测起始时刻）被 bot 误作触发时刻（t0_note 虽写 meta trigger-time，实际为观测起点，Issue #84 家族）——真触发为 SVOM/ECLAIRs CRT：Tb=2025-05-10T04:38:52.34 UTC（GCN 40415，burst-id sb25051002，SNR 7.16 @20-120 keV、10.20 s 窗），GCN 40417 原文「from 1.4 to 1.7 hours after the trigger」与 Tb 自洽（06:02:26−04:38:52.34=1.393 h）→ T0=2025-05-10T04:38:52.34Z（T0_ref=GCN 40415），T0_offset 留空（无更早辐射证据）。extra_data 原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot），按 §3.10 改写，原值留本 comment。〔Trigger_Instrument〕原 Swift/XRT 有误：Swift ToO 系触发后 10.2–20.8 ks 的后随观测（GCN 40423 原文 from 10.2 ks to 20.8 ks after the SVOM/ECLAIRs trigger），ECLAIRs 因触发 SNR 低于 slew 阈值未立即机动（GCN 40415）→ 改 SVOM/ECLAIRs。〔定位〕ra/dec=284.10364/18.3267 维持（Swift-XRT 在 ECLAIRs 90% C.L. 误差区内探测 EP-FXT 源 EPF_J185624.8+181937 的精化位，GCN 40423）；pos_error=5.7″ 维持，补 pos_error_confidence=90（原文 5.7 arcsec radius, 90% confidence）；pos_ref=GCN 40423 维持；ECLAIRs 本征位 284.17/18.37、10.94′（90% C.L. 含 2′ 系统误差，GCN 40415）备查。⚠ XRT 位与已知 2MASS 源 2MASS J18562485+1819380 一致（GCN 40423 原文自注）——X 射线对应体是否为 GRB 余辉存疑，位值仍为现有最优，留档备查。〔分类〕无 t90 来源：ECLAIRs CRT 10.20 s 系触发信噪比窗非 T90，无 GBM/Konus/BAT 目录数据，sub_tag 留空待后续数据。〔alias〕sb25051002（GCN 40415 原文 SVOM burst-id）。〔articles〕[]（仅用 GCN 通告，无研究论文）。〔测光检索留证（2026-10-28）〕仓内 gcn/archive 全库扫描「250510A」命中 4 篇（40415/40417/40420/40423）全部读取；GCN 事件页（gcn.nasa.gov/circulars/events/grb-250510a）与仓内一致、2025-05 后无新增通告、无红移；external/rssgrbag、external/grbsn_webtool 无该源记录；SciX/ADS 检索无该暴专门论文。唯一可用光学上限为 GCN 40417 DDRAGO i=20.84（已入库）；GCN 40420/40423 为 X 射线数据（EP-FXT 三源、XRT 计数率/流量），按 §7 X 射线暂不处理、不录入光学 lc。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=SVOM/ECLAIRs CRT 触发 Tb=2025-05-10T04:38:52.34Z（GCN 40415，burst-id sb25051002）；bot 原 T0 06:02:26Z 系 DDRAGO 观测窗起点误锚，已改正",
+    "t0_basis": "svom_gcn_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
