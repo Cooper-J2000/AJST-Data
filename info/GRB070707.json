@@ -1,22 +1,25 @@
 {
   "transient_id": "GRB070707",
-  "alias": [],
-  "ra": 267.67,
-  "dec": -68.95,
+  "alias": [
+    "GRB 070707"
+  ],
+  "ra": 267.7437,
+  "dec": -68.9242,
   "T0": "2007-07-07T16:08:21Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 6605",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
-  "redshift": null,
+  "Trigger_Instrument": "INTEGRAL/IBIS",
+  "redshift": 3.6,
   "tag": [
     "grb"
   ],
   "pos_error": 5.4,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 6610",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "redshift_type": "upperlimit",
+  "redshift_ref": "Piranomonte+2008",
+  "comment": "审核（fsy 2026-10-28）：[身份] INTEGRAL 短暴：IBAS/IBIS-ISGRI 于 2007-07-07 16:08:21 UT 触发（GCN 6605，位置 RA 267.67 / Dec -68.95 ±4′），Swift 仅后随观测、未触发（XRT/UVOT，GCN 6610/6611；HEASARC SWIFTGRB 快照 bat_detection=U、uvot_grb 快照 DISC_BY=INTEGRAL 互证）；McGlynn+2008 称其为首个 INTEGRAL 观测的短暴。原 Trigger_Instrument=Swift/BAT 系 bot 误赋，改 INTEGRAL/IBIS。[T0] 维持 2007-07-07T16:08:21Z（GCN 6605 原文触发时刻），补 T0_ref=GCN 6605；无 >1 s 偏移证据，T0_offset 留空。[坐标] 原 ra/dec=267.67/-68.95 为 GCN 6605 INTEGRAL 定位（±4′），与 pos_ref=GCN 6610（5.4″）不符；改用 GCN 6610 XRT 精化位置 RA,Dec=267.7437,-68.9242（=17h50m58.49s,-68d55m27.0s，原文标明 90% containment，故 pos_error_confidence=90），原 INTEGRAL 值留此备查。[alias] 补 'GRB 070707'（GCN 6605/6607/6609/6610/6611/6612/6613 标题原文用名 'GRB 070707'，swiftgrbba 目录 name_alt 同形）。[redshift] 补上限：Piranomonte+2008 §4.2 由 Lyman 系限不压低至 4200 Å 得最保守限 z<3.6（redshift=3.6, redshift_type=upperlimit）；同文由 Lyman-α forest 缺失给出更紧但稳健性较差的 z≲2.5，留此备查。[sub_tag] 维持 sgrb：t90≈1.1 s（GCN 6607 精化分析原文 'a single spike lasting about 1.1 s'；uvot_grb 目录 params.t90=1.1、T90_REF=GCN6607 同值）按通告/目录 t90 判 sgrb；GCN 6605 IBAS 最初判为 long，以精化分析为准。[host_galaxy] 不建立：宿主证据仅为光变晚期常数项 R≈27.3±0.13（Piranomonte+2008 Table 2 Beuermann 拟合 host 分量），未证认具体星系（其 Table 4 为视场星系群检验 G1–G6，非宿主认定）。[lc] 补 17 行：GCN 6611 UVOT 3σ 上限 6 行（V/B/U/UVW1/UVM2/UVW2，T_mid 为 coadd 加权中点、time_err=半曝光；swiftgrbba 目录快照 uvot_mag 'B>20.6; U>19.5; UVW1>20.3; UVM2>20.5; UVW2>20.5' 与 uvot_vmag=19.7 逐项互证）+ Piranomonte+2008 Table 1 VLT 11 行（FORS1 R 9 行 + ISAAC J>23.6 与 NACO K>22.7 两条 3σ 上限）；该文 t−t0 列有 3 行与自身 Mean time(UT) 矛盾（Jul 11.13697 差 −233.7 s、Aug 15.07151 差 +1338.8 s、Sep 28.03125 差 +34477.1 s），均以 Mean time(UT) 绝对时刻为准、t−t0 值并列备查；GCN 6609（R=25.7 上限）/6612（R~23.0 发现）/6613（变暗约 0.7 mag）均系同一 VLT 观测的未定标快报，不另入行。既有 Swift/XRT 10keV 行为 X 射线行，按 §3.3 保持原样。[测光检索留证]（2026-10-28）：① 仓内 gcn/archive 本地不存在（改用 GCN 站 https://gcn.nasa.gov/circulars 全文检索与逐篇原文，双通道：源名 'GRB 070707' + 邻近通告号 6604–6613 逐篇扫描，其中 6604 为 GRB070429B 无关；本暴通告共 9 篇：6605/6606、6607/6608 各为同文重发）；external/rssgrbag、external/grbsn_webtool/SourceData grep '070707' 0 命中（无射电/GRB-SN 数据）；② 文献：Piranomonte+2008 补 11 行、GCN 6611 补 6 行；McGlynn+2008 为 INTEGRAL γ 射线分析、无光学测光；Zhu+2023（MNRAS 521,269）VoR 不可得（OUP 反爬 403、无 arXiv 版、Semantic Scholar 无条目），未能核实是否含新测光，暂无据此补行；Kann+2011 文献级卡（audit/leads/papers/kann2011.md）判 070707 为 mention-only、无自有测光；③ SIMBAD/TNS 本机连接失败（HTTP:000）未核，TNS 不适用（GRB 非 AT/SN 类）。结论：补 17 行。",
   "sub_tag": [
     "sgrb"
   ],
@@ -115,6 +118,11 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
     }
   },
   "articles": [
