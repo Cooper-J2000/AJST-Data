@@ -1,27 +1,36 @@
 {
   "transient_id": "GRB140814A",
-  "alias": [],
+  "alias": [
+    "GRB 140814A"
+  ],
   "ra": 182.515,
   "dec": 49.348,
   "T0": "2014-08-14T07:12:31Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 16686（MAXI/GSC nova alert 触发时刻 2014-08-14 07:12:31 UT，触发仪器官方通告）；GCN 16688 独立反算互证（17:36:16 UT−37425 s=07:12:31 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 16686（(182.515 deg, 49.348 deg)=(12 10 03, +49 20 52) J2000；统计 90% C.L. 椭圆误差区 0.33°/0.27°、长轴自北向逆时针滚角 126.0°、另系统 0.1°（90% 包含半径）；非圆误差框 pos_error 留 null，矩形框四角见 comment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy@zcode 2026-10-28。身份：GRB 140814A = MAXI/GSC nova alert 于 2014-08-14 07:12:31 UT 触发的未编目 X 射线暂现（GCN 16686 原文 The MAXI/GSC nova alert system triggered a bright uncatalogued X-ray transient source at 2014-08-14T07:12:31 UT），扫描均流 232±45 mCrab（4-10 keV、1σ）；谱较软、黑体拟合 kT≈1 keV、通告原文注明 a possibility of an X-ray burst can not be excluded——无后续分类文献（arXiv/OpenAlex/GCN 全集检索均无），维持 GRB 定性；Swift 团队（GCN 16689）与 MASTER（GCN 16688）均按该触发与定位跟进；MPE 快照（external/mpe_greiner）同记该事件（obs_date=2014-08-14、12h10m03s +49°21′、Instrument=MAXI、Error 20′、无触发时刻）；同日无孪生条目（GCN 站事件页 gcn.nasa.gov/circulars/events/grb-140814a 共 4 篇通告、info/ 无其他 140814 源；镜像逐号枚举 16680–16710 命中同 4 篇）；GCN 16687 为 Swift 误发草稿（16689 声明作废；16689 原文 disregard GCN Circ. 16887 系笔误——16887 实为 GRB 141004A 通告）。T0：bot 值 2014-08-14T07:12:31Z 与 MAXI/GSC 触发时刻一致（触发仪器官方通告 GCN 16686、§3.8 优先级①），保留；bot t0_basis=meta_trigger 无锚（Issue #68 家族标注失真）→ 补 T0_ref 并改写 t0_note/t0_basis；MASTER 独立互证（GCN 16688：观测起始 2014-08-14 17:36:16 UT 即触发后 37425 s，反算 17:36:16−37425 s=07:12:31 UT）；Swift 通告散文锚 22 ks（GCN 16689）/22.08 ks（GCN 16687 草稿）为截断近似（13:35:33−07:12:31=22982 s=22.982 ks），按显式端点优先原则以 13:35:33 UT 为准。位置：保留 ra/dec=182.515/49.348（GCN 16686 逐字 (182.515 deg, 49.348 deg)=(12 10 03, +49 20 52) J2000）；定位误差为非圆形态、pos_error 留 null：恒量假设下统计 90% C.L. 椭圆误差区长/短半轴 0.33°/0.27°、长轴自北向逆时针滚角 126.0°、另有系统 0.1°（90% 包含半径）；无常量假设矩形误差框四角 (182.052, 48.309)/(181.153, 48.617)/(182.777, 50.186)/(183.701, 49.873) J2000（GCN 16686）；Swift-XRT 覆盖全椭圆未发现新源（3σ 上限 3e-03 cts/s、X 射线计数率不入库，GCN 16689）。分类：tag=['grb']；无 t90/无长短分类依据（MAXI 快照与通告均无 t90 字段、Swift/MASTER 未测时长），sub_tag 留空待决。红移：无信息、null。alias：补 GCN/MPE 用名 GRB 140814A（带空格；本库 id 为无空格形；GCN 16686/16688/16689 主题行与 MPE 快照均用此名）。测光：UVOT 原行 time=22982 s 系观测起始 13:35:33 UT 相对 T0（Issue #84 家族：起点被误作时刻）→ 改为 4 片 u 滤光曝光窗口中点（GCN 16689：Swift 四连续场拼接、UVOT per tile 871–937 s → 总曝光 3484–3748 s、取均值 904 s/片≈3616 s）；补 MASTER II（Kislovodsk）上限 2 行（GCN 16688：单帧 180 s 5σ 上限 ≈18.5 m、10 帧合并总曝光 1800 s 上限 20.0 m；band=G：MASTER II 无滤光片且原文未给波段口径；窗口中点/半宽为约定口径）；无 X 射线行。原 bot 时间基准说明（t0_note：t0 为 meta trigger-time（真实触发时刻）；t0_basis：meta_trigger）已废弃改写、原值保留于本句。测光检索（2026-10-28）：本 clone 无 gcn/archive 全文快照（未随仓分发）；仓内 external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb/swift_bat/swift_grb/swiftgrbba/fermi_gbm/fermi_lat/konus_wind/heasarc_grbcat/batse/agile_mcal/saxgrbmgrb 均 0 命中、mpe_greiner 1 条（仅元数据）；GCN 站：事件页共 4 篇通告（16688 MASTER 光学上限、16689 UVOT 上限均已入库；16686 的 X 射线量——扫描均流 232±45 mCrab 与前后过境 5:39/8:43 UT 各 20 mCrab 上限——不入库；16687 误发草稿）；官方触发通告页 gcn.gsfc.nasa.gov/other/140814A.gcn3 含全部 4 篇全文（逐字核对）；arXiv API 检索 GRB 140814A 与 140814A 均 0 篇；OpenAlex 检索 GRB 140814A 命中 4 条（3 篇 GCN 通告 + 1 篇 MAXI 现状日文综述、无关）→ 无研究文章测光、articles 维持空；SciX/SIMBAD/TNS 不可达（SciX 防护空响应、SIMBAD SSL 重置、TNS 403——如实注明、不作缺席证据）；MAXI 官方事件页 maxi.riken.jp/grbs/140814a/ 存在（SN=13.3、流量 0.61±0.10e-8 erg/cm2/s、3 s bin）但无触发时刻与测光表。结论：补 2 行、重锚 1 行、无 X 射线行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 MAXI/GSC nova alert 触发时刻 2014-08-14T07:12:31Z（GCN 16686）；原 bot 值与该触发时刻一致、但 basis 标注 meta_trigger 无锚，已按触发仪器官方通告锚定",
+    "t0_basis": "GCN 16686（MAXI/GSC trigger）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
