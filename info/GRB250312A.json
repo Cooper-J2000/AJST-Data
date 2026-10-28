@@ -4,26 +4,34 @@
   "ra": 29.51911,
   "dec": -42.39599,
   "T0": "2025-03-12T13:24:17Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 39686",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error": 1.9,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 39686",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT 于 2025-03-12T13:24:17 UT 触发（trigger=1294765，GCN 39686），GECAM-A 独立给出同一触发时刻（GCN 39829），external/swiftgrbba 快照同值；同日 GRB 250312B 为 Fermi 另一源，已甄别不混入。Trigger_Instrument 原写 Swift/UVOT 系 bot 误标（UVOT 仅为后续测光），更正为 Swift/BAT。T0 只写来源精度（整秒，来源未给亚秒）。定位：ra/dec 取 GCN 39686 XRT enhanced position（1.9 arcsec，radius，90% 包含半径）→ pos_error_confidence=90（来源明确标注 90%）；GCN 39693 进一步改判 29.51954, -42.39605 ±2.4 arcsec（90%）备查。sub_tag=lgrb：Swift/BAT 官方目录快照 T90_start=0.172 s、T90_stop=222.384 s（external/swift_bat/summary_general_info/summary_burst_durations.txt），T90=222.212 s，按目录 t90 判 lgrb；GECAM-A t90=5.0±0.2 s（50-200 keV 主脉冲，GCN 39829）并列备查，两者分类一致（均 long）。Swift/BAT 目录快照 MET 763478692.864 s 换算 UTC 与 GCN 整秒值差约 31-36 s，按 §3.8 优先级取触发仪器官方 GCN（快照只读，报 PR 说明）。测光检索（2026-10-28）：仓内 gcn/archive 全文命中 6 篇（39686/39689/39693/39697/39765/39829，逐篇核对归属）；external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData 无该源；external/swiftgrbba 快照与 UVOT 上限一致（White>20.50 等）；GCN 站事件页 gcn.nasa.gov/circulars/events/grb-250312a 与仓内一致（6 篇，无新增）；arXiv API 3 次查询（abs:\"GRB 250312A\"、all:\"250312A\"+astro-ph 等）0 命中；ADS/SciX 直连超时改用 WebSearch 替代检索（2 次）无该源研究论文命中 → 无已发表文献可登记，articles 留空；TNS 搜索页可达但结果需 JS+reCAPTCHA 未能机读，web 检索无该源 TNS 条目，alias 无可登记新名。本次据 GCN 39689 补 2 行 MASTER-SAAO 上限、GCN 39765 补 8 行 Swift/UVOT 上限，并修正原 GCN 39686 FC 行（band w→uvot-white、time 取曝光中点）；XRT 的 X 射线数据按契约不入库。",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
