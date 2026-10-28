@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB000416",
-  "alias": [],
+  "alias": [
+    "GRB 000416",
+    "1SAXJ1715.0-7134",
+    "GRB 000416C"
+  ],
   "ra": 258.861,
   "dec": -71.607,
-  "T0": "2000-04-16T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2000-04-16T14:32:54Z",
+  "T0_ref": "GCN 635",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/WFC",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 120,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 637",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB000416 = 1SAX J1715.0-7134 = GRBCAT GRB 000416C（BeppoSAX WFC2 于 2000-04-16 14:32:54 UT 触发，GCN 635；精化位置见 GCN 637：RA=258.861 Dec=-71.607（equinox 2000）、误差半径 2′=120″，来源未标注置信水平）。同日 GRBCAT 另列 GRB 000416A（IPN 07:13:35 UT）与 GRB 000416B（BATSE 08:23:45 UT），坐标与时刻均不同，与本源无关、勿混。T0：取触发仪器官方通告 GCN 635 的 WFC 触发时刻 2000-04-16T14:32:54Z；GCN 639 BATSE 独立记录 April 16.60618 UT=14:32:53.95（末位精度 0.00001 d≈0.86 s）与之一致；仓内 heasarc_grbcat 快照 000416C trigger_time=2000-04-16T14:32:54.000Z 互证，mpe_greiner 快照仅给 obs_date=2000-04-16。bot 原值 T0=2000-04-16T00:00:00Z（t0_basis=name_date，名义日期占位）已改正，原值留此备查。分类：tag=grb（GRBCAT/MPE 目录名）；sub_tag=XRR 依 GCN 635 原文分类（GRBM 仅边际探测，would lead to classify the event as an X-Ray rich GRB，惟不排除 I 型 X 射线暴；GCN 639 BATSE 20-100 keV 谱光子指数 -2.7±0.2 甚软、未触发在屏系统）；WFC 持续约 25 s（GCN 635）、BATSE 单脉冲约 8 s（GCN 639）；目录无 t90 字段，故不判 lgrb/sgrb。alias 依据：GRB 000416C（heasarc_grbcat 快照 name 字段）、1SAXJ1715.0-7134（GCN 637/639/640 原文用名）、GRB 000416（GCN eventId 与 mpe_greiner 目录名）。测光检索留证（2026-10-28）：仓内 gcn/archive 45889 篇全文按 000416 / SAXJ1715 / 1SAX 检索命中 5 篇（GCN 635 触发与初步位置、637 精化位置、638 Yale 1-m B R J K 仅述与 DSS 比对未见 OT 且未给限量值、639 BATSE 暴发探测、640 Mount Stromlo R_M 两个上限），其中仅 GCN 640 含光学测光，即现有 2 行；external/rssgrbag 与 external/grbsn_webtool 无该源记录；heasarc_grbcat / mpe_greiner / saxgrbmgrb 快照仅目录参数无光变表。外部：GCN 站 gcn.nasa.gov/circulars/640 已打开核对与仓内全文一致；ADS 全文检索（2026-10-28）GRB 000416 / 1SAXJ1715 命中 4 篇 GCN 与 1 篇研究文献 Nardini+2008（MNRAS 383 1049，附录 1 仅逐暴转引上限出处，本源引 Price et al. 2000=GCN 640，无新数值；已建文献级卡 audit/leads/papers/nardini2008.md 覆盖 90 个库内源）；arXiv API 检索 GRB 000416 / 1SAX J1715 均 0 命中；TNS 网页检索 name=GRB000416 无匹配条目。结论：现有 2 行为全部已知光学测光（均为上限），本 PR 补 0 行、改 2 行（time 按新 T0 重算、band R→MACHO-R）。",
+  "sub_tag": [
+    "XRR"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "t0 为 BeppoSAX WFC 触发时刻（GCN 635）；原 bot 值 2000-04-16T00:00:00Z（t0_basis=name_date 名义日期占位）已改正，原值留在 comment",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Nardini+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12588.x",
+      "title": "Optical afterglows of gamma-ray bursts: a bimodal distribution?",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
