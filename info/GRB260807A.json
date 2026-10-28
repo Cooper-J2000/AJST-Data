@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB260807A",
-  "alias": [],
-  "ra": null,
-  "dec": null,
+  "alias": [
+    "sb26080703"
+  ],
+  "ra": 16.148,
+  "dec": 44.7752,
   "T0": "2026-08-07T11:00:20Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 45308（触发通告：At 2026-08-07T11:00:20 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 260807A，SVOM burst-id sb26080703）；GCN 45355（ECLAIRs 精化分析）同为 11:00:20 UTC（原文年份笔误 2025，应为 2026）；按通告精度保留整秒",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 670.8,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 45308",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（Rusty-Harpoon@zcode 2026-10-28）：[身份] SVOM/ECLAIRs 触发并定位（GCN 45308，SVOM burst-id sb26080703；CRT 探测 SNR=7，8-120 keV，20.40 s 窗口自 10:59:59 起）；库内 T0 与通告一致。alias 新增「sb26080703」（SVOM burst-id，GCN 45308/45355 原文用名）。[同日划界] IceCube-260807A 系同日中微子径迹事件（GCN 45307：2026-08-07T06:04:41.70 UT，RA=325.37、Dec=0.07，90% PSF），与本案 T0、坐标均不同，非同一事件；GCN 45311（MASTER-Tunka，观测 IceCube 误差框）、45353、45420（Fermi-LAT）均属 IceCube-260807A，其上限与本案无关；EP260806a（GCN 45300/45302/45303/45306/45396）为前一日另一事件。[T0] bot 原值 2026-08-07T11:00:20Z 即触发时刻，审核确认不改；GCN 45355 原文年份笔误「trigger time T0 = 2025-08-07T11:00:20 UTC」应为 2026（原文笔误记此备查）。extra_data 原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，连同原值一并保留于此。[定位] ra/dec=16.148/44.7752（J2000）、pos_error=11.18′=670.8″（原文 90% C.L.，含 2′ 系统差以平方和并入），pos_error_confidence=90（原文 90% confidence level），pos_ref=GCN 45308。[分类] tag 补 grb；sub_tag 留空待决——GCN 45355 仅给探测区间 T0−20 s 至 T0（8-120 keV，多峰光变），未给 T90 或长短分类；FERMIGBRST、heasarc_grbcat、Swift 目录均无该源记录，无可引用的目录 t90 判据，不自算（§3.9）。[伽马备查] GCN 45355（ECLAIRs 精化）：T0−20 s 至 T0 探测、光子指数 0.7±0.3、4-120 keV fluence=(1.4±0.3)e-06 erg/cm²（68% C.L.）。[X 射线] GCN 45445：EP/FXT 两历元（T0+1.85 h 曝光 5.8 ks、T0+5.86 d 曝光 4.3 ks）误差圈内无显著变暗源，90% 流量上限 2.85e-14 / 3.67e-14 erg/cm²/s，无可信 X 射线余辉——X 射线内容不入库。[测光检索（2026-10-28）] 仓内 gcn/archive 45889 篇：递归 grep「260807」命中 8 篇——本源 3 篇（45308/45309/45355，均逐篇全文核对，仅 45309 含光学测光）+IceCube-260807A 5 篇（45307/45311/45353/45420，无关）；递归 grep「2026-08-07」另命中 EP260806a 5 篇（另一事件）；GCN 站在线页 gcn.nasa.gov/circulars/45309 与仓内存档逐句一致；external/rssgrbag/lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无该事件、external/heasarc_grbcat（tdat.gz）0 命中、external/fermi_gbm/normalized.jsonl 仅 flux_1024_error=0.260807 数值巧合（非本源）、external/swift_xrt_live 与 external/uvot_grb 0 命中；外部：arXiv API 检索「260807A」totalResults=0；ADS/SciX 无 token（api.adsabs.harvard.edu 返回 404、api.scixplorer.org 返回 202 空壳），改用 WebSearch 检索「GRB 260807A」「sb26080703」无文献命中；TNS 网页搜索被 reCAPTCHA 拦截未取得结果（本源无光学对应体证认、无 TNS 命名）。结论：全库可入库测光仅 GCN 45309 的 z>20.0 上限 1 条（DDRAGO/SVOM-COLIBRÍ，FM-GFT）——补 0 行、核对并修正既有 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "2026-10-28 审核：T0=2026-08-07T11:00:20Z 为 GCN 45308 触发时刻，bot 原值正确，未改动；原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 保留于 comment",
+    "t0_basis": "GCN 45308（SVOM/ECLAIRs 触发通告）；GCN 45355 同值互证",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
