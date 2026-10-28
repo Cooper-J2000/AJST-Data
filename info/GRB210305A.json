@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB210305A",
-  "alias": [],
-  "ra": 319.80764,
-  "dec": 34.554389,
-  "T0": "2021-03-05T19:02:59Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1035922",
+    "GRB 210305794",
+    "bn210305794"
+  ],
+  "ra": 319.81054,
+  "dec": 34.55403,
+  "T0": "2021-03-05T19:03:04.456060Z",
+  "T0_ref": "GCN 29595（D'Ai et al., Swift team）：At 19:03:04 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 210305A (trigger=1035922)；亚秒 .456060 取自仓内 Swift-BAT 目录快照（external/swift_bat，trigger_time=2021-03-05T19:03:04.456060Z）。注意：info 原 T0=2021-03-05T19:02:59Z 系 Fermi GBM 触发时刻（GCN 29628：At 19:02:59.40 UT，trigger 636663784 / 210305794；仓内 FERMIGBRST trigger_time=19:02:59.396Z 交叉一致）——双触发同暴以 Swift 为准（§3.8），已改正；Konus-Wind 自身触发 T0=68578.330 s UT=19:02:58.330（GCN 29641）同为设备触发时刻，不用作锚、不记 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.4,
-  "pos_ref": "GCN 29625",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 29625（Swift-XRT team enhanced position，XRT-UVOT 对准+USNO-B1 匹配）：RA,Dec=319.81054,+34.55403，1.4″（radius, 90% confidence）；GCN 29595 初报 XRT 位 319.80764/34.554389（4.7″, 90%）备查，本条取 refined 值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "通告集甄别（2026-10-28，仓内 GCN 全文库逐篇实核）：本暴通告共 7 篇——GCN 29595（Swift BAT 触发 19:03:04 UT，trigger 1035922；XRT 初报位 4.7″；UVOT FC 150 s white 无候选）、29596（MASTER-Kislovodsk 2 条上限表）、29611（BAT refined，T90=68.6±4.4 s）、29615（UVOT 9 波段上限表）、29625（XRT refined 位 1.4″/90%）、29628（Fermi GBM 观测：亦触发，19:02:59.40 UT，trigger 636663784/210305794，T90≈61.7 s，明确 'also detected by Swift/BAT/XRT' 同暴互证）、29641（Konus-Wind，long-duration，T0=19:02:58.330）。T0 口径：双触发同暴（Swift BAT 19:03:04 vs Fermi GBM 19:02:59.40）以 Swift 为准（§3.8），亚秒取仓内 Swift-BAT 目录快照；info 原 T0=19:02:59Z 系误用 Fermi GBM 触发时刻，已改正；BAT/GBM 4.6 s 之差系两设备自动触发时延，非本暴时刻偏移，不记 T0_offset。sub_tag：t90=67.524±4.210722 s（仓内 Swift-BAT 目录快照 external/swift_bat，15-350 keV；GCN 29611 报 68.6±4.4 s、FERMIGBRST bn210305794 行报 61.697±2.202 s、Konus-Wind 称 long-duration），按目录 t90 判 lgrb。pos：XRT refined 位（GCN 29625）319.81054/+34.55403、1.4″/90% 置信显式给出。测光 11 行入库：GCN 29615 UVOT 9 波段上限 9 行（time=窗口中点、time_err=半宽；UVOT 光度系统原文声明按 Breeveld+2011 → mag_system=Vega；未做银消改正 E(B-V)=0.155 原文明示）+GCN 29596 MASTER-Kislovodsk 2 行（Tmid-T0=17632/17713、Expt 60、band=G，起点 23:56:26 UT 自洽）；bot 原行（time=90 s、band=w、19.6 mag）系 GCN 29595 初报 FC「typical 3σ UL≈19.6」与窗口起 85 s 的杂糅、无精表依据，且 UVOT white 误用 band=w（Pan-STARRS/DDOTI 键），已删除并以 29615 精表 9 行取代。文献检索（2026-10-28，Web 检索）：未见本暴专门研究论文，articles[] 留空。alias 出处：BAT 1035922＝Swift-BAT 目录 name_alt（仓内 external/swift_bat 快照；GCN 29595 原文用名 trigger=1035922）；GRB 210305794 与 bn210305794＝FERMIGBRST 目录 name_alt（仓内 external/fermi_gbm 快照 bn210305794 行；GCN 29628 原文用名写作 trigger 636663784 / 210305794）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
