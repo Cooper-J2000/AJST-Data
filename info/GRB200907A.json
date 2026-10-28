@@ -3,26 +3,40 @@
   "alias": [],
   "ra": null,
   "dec": null,
-  "T0": "2020-09-07T14:24:20Z",
-  "T0_ref": null,
+  "T0": "2020-09-07T14:24:24.730Z",
+  "T0_ref": "GCN 28378（AGILE/MCAL 触发通告，原文 T0=2020-09-07T14:24:24.73 UT）；独立重算：AGILE 原点 2004-01-01，MET 526573464.733762 naive 换算（AGILE 无闰秒改正，与 Fermi 不同，Issue #67 口径）= 14:24:24.733762 UT，与通告一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "AGILE/MCAL",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：AGILE/MCAL 触发（GCN 28378，T0=14:24:24.73 UT）；同日 Swift/BAT 暴为另一事件（GRB 200907B，T0 18:51:11 UT）——GCN 28387（GROWTH-India）初稿误将 200907B 的观测记在 200907A 名下，GCN 28388 更正；IPN 三角（GCN 28409）定位本暴。检索中 GCN 28074/28075（HAWC）为 2020-07-09 事件（GRB 200709B），日期相近仅同名撞检，不属本暴不采。T0：bot 原值 2020-09-07T14:24:20Z（整秒，t0_basis=meta_trigger）→ 2020-09-07T14:24:24.73Z（触发仪器 AGILE 官方通告，§3.8 优先级①）。AGILE MET 重算口径：AGILE 原点 2004-01-01，naive 换算 526573464.733762 → 14:24:24.733762 UT 与通告一致（AGILE 与 Fermi 不同、无闰秒改正，Issue #67 家族按 Python 实证核对）；官方目录（Ursi+2022 AGILE-MCAL 目录，仓内快照 external/agile_mcal）同暴行 T0=MET 526573460.086 → 14:24:20.086 UT，与通告差 4.648 s（>60 ms 报告级，另见 PR），按 §3.8 取触发仪器通告值，目录值备查；T0_offset 不设（4.648 s 为通告/目录间取值分歧，非仪器系统差）。bot 原标注 t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"/t0_basis=\"meta_trigger\" 已按 §3.10 改写并把原值留此备查。定位：无 AGILE 精化位；IPN 三角 GCN 28409 给 3σ 误差盒 986 平方角分（约 55′×24.5′，盒心 RA≈141.475°、Dec≈-1.433°），误差盒非点位 → ra/dec/pos_error 留空（GRB160612A/GRB150123A 先例）；external/agile_mcal 目录行的 ra/dec 即该盒心，仅备查不采用。分类：tag=grb；sub_tag=sgrb——t90=0.128±0.016 s（0.4–100 MeV，Ursi+2022 目录快照 external/agile_mcal），按目录 t90 判；GCN 28387 记 short burst、IPN GCN 28409 记 (short) 同向。redshift=null（无任何测量）。host_galaxy 不建立（无文献支持确定宿主）。测光检索（2026-10-28）：仓内 gcn/archive 快照本地缺失，改查 GCN 官方站（gcn.nasa.gov）：按 200907A 检索逐篇打开核对共 4 篇——GCN 28378（AGILE 触发，无光学）、28387（GROWTH-India 初稿，唯一光学行出处）、28388（更正通告：该组观测实属 GRB 200907B）、28409（IPN 定位，无光学）；另 GCN 28074/28075（HAWC）为 GRB 200709B 同名异暴不属本源。唯一光学行处置：bot 原行 time=75545.0 s 系把钟面时刻 20:59:05 误作时长（bot 歪曲，其 mjd 59100.474594907406 为该歪曲链的自洽产物），且观测归属经 GCN 28388 勘误属 GRB 200907B → 该行 discard=y、reference 改指更正通告 GCN 28388（勘误规则），勘误链与重锚明细见 lc 行 comment；GRB 200907B 侧提取值已建线索卡 audit/leads/GRB200907B.md（按线索卡禁令不在本 PR 标题写该 ID）。external/rssgrbag 0 条；grbsn_webtool 无此事件；konus_wind/fermi_gbm/swift 官方快照无本暴行（Swift 当日所测为 GRB 200907B）；无 Fermi-LAT 探测通告。arXiv API all:\"200907A\" 0 命中；OpenAlex 3 命中（2 篇即上述 GCN 通告本身，另 1 篇 Chastain+2024 短暴射电余辉文献汇编 MNRAS 532, 2820, DOI 10.1093/mnras/stae1568——OUP 原文 403 不可达、arXiv 无条目 → 未取值，列未能核实清单）。articles 仅收研究文献 Ursi+2022（The Second AGILE-MCAL GRB Catalog，ApJ 925, 152）；GCN 通告不入 articles。结论：本源无有效余辉探测——唯一测光行经勘误归属他源，本次修改 1 行（discard+重锚+reference 更正），不新增行。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 AGILE/MCAL 触发时刻（GCN 28378）",
+    "t0_basis": "GCN 28378 原文 T0=2020-09-07T14:24:24.73 UT（AGILE MET 526573464.733762 naive 重算一致，AGILE 无闰秒改正）；AGILE-MCAL 官方目录（Ursi+2022，external/agile_mcal）T0=MET 526573460.086→14:24:20.086 UT 与通告差 4.648 s，以触发仪器通告为准",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ursi+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac3df7"
+    }
+  ],
   "host_galaxy": null
 }
