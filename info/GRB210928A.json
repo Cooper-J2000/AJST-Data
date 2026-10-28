@@ -1,28 +1,23 @@
 {
   "transient_id": "GRB210928A",
-  "alias": [
-    "GRB 210928084"
-  ],
-  "ra": 245.7760009765625,
-  "dec": -17.999000549316406,
-  "T0": "2021-09-28T02:00:36.006000Z",
-  "T0_ref": null,
+  "alias": ["GRB 210928084", "bn210928084", "J1623-1752", "J162315.0-175233"],
+  "ra": 245.81275,
+  "dec": -17.87598,
+  "T0": "2021-09-28T02:00:31.006Z",
+  "T0_ref": "GCN 30913",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [
-    "grb"
-  ],
-  "pos_error": null,
-  "pos_ref": "GCN 30912",
+  "tag": ["grb"],
+  "pos_error": 2.9,
+  "pos_ref": "GCN 30919",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
-  "sub_tag": [
-    "Fermi-LAT"
-  ],
+  "comment": "身份：Fermi GBM 触发（GCN 30913：At 02:00:31.01 UT，trigger 654487236 / 210928084），Fermi-LAT 同步探测高能辐射（GCN 30912），Konus-Wind 亦检测到（GCN 30921）；该源曾先报为 Fermi-LAT 瞬变源 J1623-1752（ATel #14939）与 Swift X 射线瞬变源 J162315.0-175233（ATel #14945），LAT 分析确证其为 GRB、Swift 瞬变源即余辉（GCN 30912 原文）。T0：原 2021-09-28T02:00:36.006000Z 系 bot 取 LAT 目录 trigger_met=654487236.006 天真换算（漏 5 闰秒，Issue #67 家族；Python 独立重算：天真=02:00:36.006，闰秒改正=02:00:31.006），且 GCN 30912 原文明示 GBM 触发 T0 = 02:00:31 UT、GCN 30913 原文 02:00:31.01 UT、FERMIGBRST 快照 trigger_time=02:00:31.006Z 互证 → 改 T0=2021-09-28T02:00:31.006Z（T0_ref=GCN 30913）；2FLGC 快照 trigger_time=02:00:30.997Z 差 9 ms（<60 ms 阈值）备查。定位：XRT 余辉精化位 RA=245.81275, Dec=-17.87598（16h23m15.06s -17d52m33.5s），估计 90% 不确定半径 2.9 arcsec（GCN 30919；该通告更正 GCN 30915 误报坐标、30915 又替换 30914，与 ATel 14945 一致）→ 补 pos_error=2.9/pos_error_confidence=90/pos_ref=GCN 30919；原 ra/dec=245.776/-17.999 系 2FLGC LAT 目录位（catalog_data.fermi_lat error_radius 0.12 deg）备查；LAT on-ground 位 RA=245.88, Dec=-17.91 ±0.15 deg（90% containment，statistical，GCN 30912）备查；swiftgrbba 快照 xrt_ra=245.51108/xrt_dec=-17.94789/±4.4″ 与 GCN 30919 更正值矛盾（疑快照陈旧或错误，按 §3.9 仅报告不改快照）。分类：t90=23.8084±0.362 s（50-300 keV，FERMIGBRST 快照），GCN 30913 原文 T90 about 24 s 互证，按目录 t90 判 lgrb；LAT 有探测（2FLGC tl100=543.22±11.55 s）→ 保留 Fermi-LAT。别名：GRB 210928084（FERMIGBRST trigger_name 拼接形；GCN 30912 原文用名 210928084，见 trigger 654487236 / 210928084）；bn210928084（FERMIGBRST name_alt/HEASARC burst name）；J1623-1752（GCN 30912/30924 原文用名 Fermi J1623-1752，ATel #14939/#14948）；J162315.0-175233（GCN 30912 原文用名 Swift X-ray transient J162315.0-175233，ATel #14945）。测光检索（2026-10-28）：GCN 站 query=210928A 命中 8 篇（30912 LAT；30913 GBM；30914→30915→30919 XRT 链，X 射线数据按范围暂不入库；30918 SLT-40cm 上限已核对修订；30921 Konus-Wind 检测无测光；30924 MeerKAT 探测 1 行已入库）；query=654487236 与 210928084 各命中 2 篇无新增；query=J1623-1752 反向检索 10 篇，31302/33392/43672 经核均为他暴、9731/18536/23719/26457 早于本暴无关；仓内 external/rssgrbag、external/grbsn_webtool 无记录，catalog_data 快照仅目录级参数；Web/ADS 检索无该暴专门研究论文 → 补 MeerKAT 射电 1 行，无其他可入库测光。",
+  "sub_tag": ["Fermi-LAT", "lgrb"],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -36,16 +31,15 @@
           "error_radius": 0.15,
           "fluence_batse": 2.05095e-05,
           "flux_batse_64": 7.60684,
-          "flux_256_error": 0.692272,
+          "flux_1024_error": 0.32564,
           "flux_batse_256": 6.78973,
           "flnc_band_epeak": 478.52591,
           "flnc_comp_epeak": 495.18674,
-          "flux_1024_error": 0.32564,
-          "flux_batse_1024": 5.80453,
-          "fluence_batse_error": 2.64585e-08,
+          "flux_256_error": 0.692272,
           "flux_batse_64_error": 0.837143,
           "flux_batse_256_error": 0.405318,
           "flux_batse_1024_error": 0.185751,
+          "fluence_batse_error": 2.64585e-08,
           "flnc_band_epeak_neg_err": 9.5056639,
           "flnc_band_epeak_pos_err": 9.5056639,
           "flnc_best_fitting_model": "flnc_comp",
@@ -174,7 +168,8 @@
         "name_alt": [],
         "trigger_time": null
       }
-    }
+    },
+    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-28"}
   },
   "articles": [],
   "host_galaxy": null
