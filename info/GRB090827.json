@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB090827",
-  "alias": [],
-  "ra": 18.435,
-  "dec": -50.899,
+  "alias": [
+    "GRB 090827"
+  ],
+  "ra": 18.451625,
+  "dec": -50.896444,
   "T0": "2009-08-27T19:06:26Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 9846",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,11 +14,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 6.4,
-  "pos_ref": "GCN 9847",
+  "pos_error": 5.2,
+  "pos_error_confidence": "90",
+  "pos_ref": "UKSSDC enhanced XRT position (trigger 00361029, XRT obsid 00020110); GCN 9847",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。T0=触发时刻 2009-08-27T19:06:26Z（GCN 9846，Swift/BAT 团队地面分析通告，trigger #361029；Swift MET 273092786=19:06:26 UTC 互证）；Swift/BAT 官方目录给 19:06:23.766、HEASARC swiftgrb 给 19:06:24.342（目录级，备查）；Konus-Wind 自触发 19:06:27.702（GCN 9848）。位置：GCN 9847 XRT 精化位置 RA,Dec=18.4495,-50.8957（6.4″，90%）；本库原 ra/dec 为 BAT 位置（18.435,-50.899）却配了 XRT 的 pos_error，已改为配套；现采用 UKSSDC enhanced XRT position RA=18.451625,Dec=-50.896444（5.2″，90%，晚于 GCN 9847 的修订值，取数 2026-10-27；UKSSDC 表行以 XRT obsid 00020110 为键，序列↔触发号映射据 HEASARC swiftgrb 快照 target_id=20110）；Greiner+2024 §A.5 提及其 2020 年取的修订 4.2″ error circle。sub_tag=lgrb：t90=8.0±1.6 s（Swift/BAT catalog）按目录 t90 判 lgrb；GCN 9848 亦称 The long GRB 090827；Greiner+2024 表 B1 分类 L。测光检索（2026-10-27）：仓内 gcn/archive 命中 4 篇（GCN 9846/9847/9848/9911），GCN 站事件页 gcn.nasa.gov/circulars/events/grb-090827 确认全事件仅此 4 篇通告；external/rssgrbag、external/grbsn_webtool 0 命中；OpenAlex 检索 GRB 090827 命中 5 条（3 篇 GCN、GCN Report 244.1、Greiner+2024；本机无 ADS token，走 OpenAlex 回退）。入库：GCN 9847 的 UVOT U>21.94（finding chart，窗口 T0+91644–120333 s）补 1 行；Greiner+2024（A&A 691, A158, doi:10.1051/0004-6361/202449659）表 2 未发表 GROND 测光，mid-time 31.16 h 处 g'r'i'z'JH 3σ 上限（AB，未做银消光改正）补 6 行，K 波段因探测器故障无覆盖（原文 §A.5）；A&A VoR PDF 403 不可达，数值取自 CDS 机读表 J/A+A/691/A158/tablea2（取数 2026-10-27），口径描述取自 arXiv:2410.14441。共补 7 行。别名「GRB 090827」为 GCN 9846 原文用名。lc 的 10keV 行（Swift/XRT Burst Analyser）未动；GCN 9911 的 XRT 复测上限 8.6e-4 ct/s 为计数率且属 X 射线，不入库。",
   "sub_tag": [
     "lgrb"
   ],
@@ -203,8 +206,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

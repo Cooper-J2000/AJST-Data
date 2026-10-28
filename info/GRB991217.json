@@ -1,27 +1,43 @@
 {
   "transient_id": "GRB991217",
-  "alias": [],
-  "ra": 345.867,
-  "dec": 0.228,
-  "T0": "1999-12-17T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 991217",
+    "SAX J2303.2+0015",
+    "XRF 991217",
+    "FXT991217"
+  ],
+  "ra": 345.8144,
+  "dec": 0.2494,
+  "T0": "1999-12-17T04:11:56Z",
+  "T0_ref": "GCN 474（BeppoSAX/WFC2 触发，1999-12-17.17496 UT = 04:11:56.5 UTC，来源精度约 0.9 s）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/WFC",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 270,
+  "pos_ref": "2026A&A...711A..60I（in 't Zand+2026, CDS J/A+A/711/A60 tablea2；68% 圆误差 4.5′）；GCN 474（4.5′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 991217 = SAX J2303.2+0015（GCN 474/490/502）= XRF 991217（SIMBAD）= FXT991217（in 't Zand+2026 目录），BeppoSAX/WFC2 触发。T0：取 GCN 474 触发时刻 1999-12-17.17496 UT（=04:11:56.5 UTC，来源精度约 0.9 s，T0 写整秒）；BeppoSAX 警报/GRBCAT 的 04:12:20、SSDC 目录 51529.175523（04:12:45）、WFC 目录 MJDstart 51529.174610（04:11:26.3）为口径差（均<60 s），未记 T0_offset。原 T0=1999-12-17T00:00:00Z 系名字日期伪值（extra_data 原值 t0_note='t0 为触发日 00:00 UT（名字日期）'、t0_basis='name_date'），已改正。位置：原 ra/dec=345.867/0.228 为 BeppoSAX 初步警报位置（误差约 6′，MPE GRB 991217 汇编页/BeppoSAX MAIL 99/35），改为精化位置 345.8144/+0.2494、4.5′（GCN 474；in 't Zand+2026，68% 圆误差）。分类：in 't Zand+2026 目录 Type=GRB?（GRBM 无显著信号），SIMBAD 别名 XRF 991217；t90=107.3±16.0 s（in 't Zand+2026 WFC 目录，2–30 keV），按目录 t90 判 lgrb；GCN 474 另称 duration~35 s，定义/能段不同，分类仍按目录 t90；sub_tag 记 XRF、lgrb。测光：仅 GCN 502 给出数值极限 R=22.0（三历元 1999 Dec 17.63/18.65/19.55，曝光 120/60/60 min；原文称 images go as faint as R=22.0，但未逐历元给限，无法确定哪一历元达到该深度；lc 行按 in 't Zand+2026 所述 0.5–2.5 d 窗口中点/半窗口入库（约定口径）；原文未声明星等系统）；GCN 490/493 称不深于 DSS/POSS-II，GCN 501 称叠加 R 帧略深于 DSS-2 但无数字极限，均未入库；无射电/NFI 余辉数据（in 't Zand+2026 明确未做 NFI 观测）。测光检索（2026-10-27）：仓内 gcn/archive 45908 篇全文命中 6 篇（GCN 474/482/490/493/501/502，仅 502 有数字极限）；external/rssgrbag 与 grbsn_webtool 无记录，saxgrbmgrb/grbcat/mpe_greiner 仅目录参数；GCN 站事件页 4 篇（482/490/501/502）已读；SIMBAD 文献表 11 条、OpenAlex 命中 9 篇（未见新增光学测光，按标题/摘要；ADS/SciX 被反爬拦截，未能取全文）；TNS 无结果 → 补 1 行（R 上限）。另：external/saxgrbmgrb 的 GRB 991217（1999-12-17T06:03:39，RA 115.3、Dec 48.5）为同日另一事件，与本源无关，未采用。Burbidge+2003 提到误差框内 z=3.7 QSO，非暴红移，redshift 留空。",
+  "sub_tag": [
+    "XRF",
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "68",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "T0 按 GCN 474 的 WFC 触发时刻 1999-12-17.17496 UT（04:11:56.5 UTC）改正；原值 't0 为触发日 00:00 UT（名字日期）'",
+    "t0_basis": "gcn_474_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-27"
+    }
   },
   "articles": [
     {
@@ -30,6 +46,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2003ApJ...585..112B",
       "bibtex": "@ARTICLE{2003ApJ...585..112B,\n       author = {{Burbidge}, G.~R.},\n        title = \"{The Sources of Gamma-Ray Bursts and Their Connections with QSOs and Active Galaxies}\",\n      journal = {\\apj},\n     keywords = {Cosmology: Miscellaneous, Gamma Rays: Bursts},\n         year = 2003,\n        month = mar,\n       volume = {585},\n       number = {1},\n        pages = {112-120},\n          doi = {10.1086/345894},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003ApJ...585..112B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "in 't Zand+2026",
+      "title": "BeppoSAX-WFC catalog of fast X-ray transients",
+      "url": "https://doi.org/10.1051/0004-6361/202558641",
+      "source": "fsy"
     }
   ],
   "host_galaxy": null

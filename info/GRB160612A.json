@@ -1,28 +1,56 @@
 {
   "transient_id": "GRB160612A",
-  "alias": [],
-  "ra": 350.0,
-  "dec": -37.0,
-  "T0": "2016-06-12T20:12:47Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 160612AS",
+    "GRB160612842",
+    "bn160612842",
+    "BAT 00031791037"
+  ],
+  "ra": 348.364,
+  "dec": -25.375,
+  "T0": "2016-06-12T20:12:47.549Z",
+  "T0_ref": "GCN 19531; FERMIGBRST (trigger 160612842)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 19537",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Fermi/GBM 触发 bn160612842（trigger 487455171 / 160612842）＝Swift/BAT 地面检出（slew，Trig_ID 00031791037，swift_bat 快照），GCN 19537 原文明示同指 GCN 19531 之暴；同日排查：FERMIGBRST、MPE Greiner、swift_bat 三快照 2016-06-12 均仅此 1 暴，无同日他暴、无孪生条目。T0：bot 原值 2016-06-12T20:12:47Z（t0_basis=meta_trigger，整秒）→ 2016-06-12T20:12:47.549Z（触发仪器官方目录 FERMIGBRST 亚秒值，external/fermi_gbm 快照 bn160612842 行）；GCN 19531（GBM 团队）原文 At 20:12:47.55 UT on 12 June 2016（与目录值舍入一致，差 1 ms < 60 ms）；GCN 19535（IPN）记 detected by Fermi (GBM), Konus-Wind, INTEGRAL (SPI-ACS), and Swift (BAT) at about 72768 s UT (20:12:48)（秒级一致）；他仪器自触发备查：Konus-Wind T0=72767.893 s UT（20:12:47.893，GCN 19539，晚 GBM 344 ms，原文明示 a major fraction of the burst counts was accumulated before the trigger，<1 s 不写 T0_offset）、Swift/BAT 目录 trigger_time=20:12:47.409（地面分析，早 GBM 140 ms，≥60 ms 分歧已在 PR 说明报告）。bot 原标注（t0_basis=meta_trigger / t0_note 原文）已按 §3.10 改写并把原值留 comment。定位：原 ra/dec=350.0/-37.0 为 GCN 19531 GBM on-ground location（RA = 350, DEC = -37，uncertainty 3 degrees radius、1-sigma containment、statistical only，另有 core-plus-tail 系统差模型）→ 改 GCN 19537 Swift/BAT 地面解 RA,dec = 348.364, -25.375（RA(J2000)=23h 13m 27s, dec(J2000)=-25d 22' 30\"），误差 3 arcmin（radius, 90% containment, including systematic uncertainty）→ pos_error=180″、pos_error_confidence=90；swift_bat 快照 RA_ground=348.3639/-25.37446、Image_position_err=1.727555′（置信水平未标注）与 GCN 一致，备查；IPN 3σ 误差盒（GCN 19535：盒心 348.342/-25.181、面积 2.18 sq deg、MaxDim 4.7°、MinDim 28′）是误差盒非定位，不采用（先例 GRB990907/GRB991105）；发表版精化 IPN 盒（Svinkin+2022, ApJS 259, 34, table4：最概然位 348.256/-25.159、MaxDim 5.300°×MinDim 0.499°、面积 2.360 sq deg；机读表 J/ApJS/259/34 table4.dat，2026-10-28 本会话打开核对；CDS 主站本会话 SSL/HTTP 均被拦，取自同日 02:37 缓存，Wayback 无该件）较 BAT 位粗，不采用；GCN 19537 原文明示 BAT 位与 IPN 误差盒一致；XRT 无精化位（GCN 19538 场内无源）。分类：tag=grb；sub_tag=sgrb——Li+2021（ApJS 252, 16）sGRB 样本收录本源（表行 160612A：T90=0.248 s、15–350 keV、Swift、无前兆、无延展发射；IOP VoR 表实核，arXiv:2010.10929 互证一致）；t90 并列：FERMIGBRST t90=0.288±0.230755 s（50-300 keV，快照全精度）、Swift/BAT 目录 t90=0.248±0.048166 s（15-350 keV）、GCN 19531 记 T90≈0.4 s、GCN 19537 记 T90=0.25 s（short-hard）、Konus 单脉冲 ~0.2 s（GCN 19539）；按目录 t90 判 sgrb。alias：「GRB 160612AS」为 MPE Greiner 快照 name_alt（该表短暴加 S 后缀，README 脚注 (a)；GRB140414A 先例）；「GRB160612842」为 GCN 19531 原文用名 trigger 487455171 / 160612842 + FERMIGBRST name 字段；「bn160612842」为 FERMIGBRST trigger_name 字段；「BAT 00031791037」为 swift_bat 快照 Trig_ID/name_alt 原形（summary_general.txt 表头：ground analysis 源该列为观测 ID 形；GRB170524B 先例）。redshift=null（无任何测量）。host_galaxy 不建立（无文献支持确定宿主）。测光检索（2026-10-28）：仓内 gcn/archive 快照在本 worktree 缺失，改查 GCN 官方逐暴页 gcn.gsfc.nasa.gov/other/160612A.gcn3 得全部 6 篇（19531/19535/19536/19537/19538/19539，与逐号枚举 19520–19620 一致），仅 19538 含测光（UVOT w2 上限，已入库；其 XRT 上限 0.008 ct/s ≈ 3.1E-13 erg/cm^2/s 属 X 射线，按 §3.3 不入库）；external/rssgrbag 0 条、grbsn_webtool 无此事件、konus_wind 快照无此行、swift_xrt_live 无行；heasarc_grbcat/swift_grb/uvot_grb 快照不覆盖 2016 年；swift_bat/swiftgrbba/fermi_gbm/mpe_greiner 仅目录级参数。OpenAlex 检索 5 命中（3 篇 GCN + Li+2021 + PBH 样本研究 arXiv:2512.08778）；Crossref 题名检索无本源测光文献；arXiv API all:\"160612A\" 0 命中（Li+2021 经 OpenAlex 命中后按 DOI 直取，其表为 prompt 时序参数；PBH 文仅 prompt 参数与分类，均无光学/UV/IR 测光）；ADS/SciX API 被 WAF challenge 拦截（x-amzn-waf-action: challenge，无 token）未查成；SIMBAD 主站 SSL 拦截、CFA 镜像超时/504 未查成；TNS 不适用（GRB，非 AT/SN 类）。结论：除 GCN 19538 的 UVOT uvw2 上限外无其他可入库测光；本次修改 1 行、补 0 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 487455171 / 160612842）",
+    "t0_basis": "GCN 19531（20:12:47.55 UT）+ FERMIGBRST 官方目录快照 trigger_time=2016-06-12T20:12:47.549Z（external/fermi_gbm，bn160612842，亚秒值）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2021",
+      "url": "https://doi.org/10.3847/1538-4365/abd3fd",
+      "title": "Temporal Properties of Precursors, Main Peaks, and Extended Emissions of Short GRBs in the Third Swift/BAT GRB Catalog",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Svinkin+2022",
+      "url": "https://doi.org/10.3847/1538-4365/ac4607",
+      "title": "The Second Catalog of Interplanetary Network Localizations of Konus Short-duration Gamma-Ray Bursts",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }

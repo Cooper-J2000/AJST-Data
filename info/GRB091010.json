@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB091010",
-  "alias": [],
-  "ra": 298.669,
-  "dec": -22.538,
+  "alias": [
+    "GRB 091010A",
+    "bn091010113"
+  ],
+  "ra": 298.6655,
+  "dec": -22.5182,
   "T0": "2009-10-10T02:43:09Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10004",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "SuperAGILE",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 1.9,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 10012",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "审核 Rusty-Harpoon@qoder（2026-10-27）：(1) 身份：SuperAGILE 于 2009-10-10T02:43:09 UT 触发并定位（GCN 10004；GCN 10005 更正命名笔误 090910→091010）；Fermi/GBM 触发 276835391/091010113 于 02:43:09.32（GCN 10018）、Konus-Wind 02:43:08.232（GCN 10013）、Suzaku/WAM 02:43:09.50（GCN 10023），整数秒一致，按触发仪器 SuperAGILE 取整秒 T0=02:43:09Z（T0_ref=GCN 10004；亚秒差异不设 T0_offset）。Swift/BAT 未触发（Swift 系 ToO 后随，GCN 10006/10007；仓内 swift_grb bat_detection=U），原 Trigger_Instrument=Swift/BAT 更正为 SuperAGILE。Swift ToO 起测 2009-10-10T14:48:26 UT（GCN 10006/10007），非 T0。(2) 定位：原 ra/dec=298.669/−22.538 为 SuperAGILE 3′ 误差圆中心（GCN 10004），与 pos_error=1.9″/pos_ref=GCN 10012 口径混用；改用 GCN 10012 的 UVOT 增强 XRT 位置 298.66550/−22.51820（1.9″，90% 置信），pos_error_confidence=90；两位置相距 72″（GCN 10006）。(3) 分类：t90=6.5 s（Suzaku/WAM，GCN 10023；FERMIGBRST 5.952±0.143 s、GBM 8.1±0.5 s 并列备查），GCN 10004/10023 称 long GRB，按目录/通告 t90 判 lgrb。(4) 红移：未检索到光谱或测光红移（de Ugarte Postigo+2012 表1 redshift 为 —），保持 null。宿主：GCN 10030 提出候选可能位于宿主星系，但 GCN 10027 已判定该天体 1–6 d 无衰减、非余辉，宿主未确认，host_galaxy=null。(5) 光学：UVOT wh/v/u 3σ 上限（GCN 10007）原时间全部记为起测时刻 +43517 s，现按各行曝光起点+半曝光改正为 +44349/+45004.5/+43783.5 s，band w→uvot-white（原文 wh），补 Vega（UVOT 光度系统，Poole+2008/Breeveld+2011）；新增 AAVSO 无滤光片上限 CR≈17.5（GCN 10011，+30968 s，band=G）。GROND/FTN/FTS/CrAO 六行探测均为后被 GCN 10027 排除的候选（恒定源），保留并置 discard=y。(6) 毫米：新增 PdBI 91.0 GHz 3σ 上限 0.69 mJy（t−t0=5.708 d；de Ugarte Postigo+2012 表1；原测量 Castro-Tirado et al. 2012，A&A in press）。(7) X 射线：11 行 Swift/XRT 10keV 未改动（GCN 10024 确认 XRT 源为余辉）。(8) 测光检索（2026-10-27）：本 worktree 无 gcn/archive（目录不存在，0 篇），改从 GCN 站事件页逐篇打开 20 篇（10004/10005/10006/10007/10008/10011/10012/10013/10014/10017/10018/10022/10023/10024/10027/10030/10033/10057/10059/10128；其中 10033 为 GRB 091003 撤稿、10057/10059 为 GRB 091020），含光学数值 6 篇；仓内 rssgrbag 0 行、grbsn_webtool 无该源目录、uvot_grb 目录 1 行仅参数；ADS 不可用（无 token），回退 Crossref/arXiv/OpenAlex/SIMBAD（SIMBAD 47 bibcodes）→ 研究论文 2 篇（de Ugarte Postigo+2012、Greiner+2024）；TNS 不适用。结论：补 2 行（1 光学上限 + 1 毫米上限），改 9 行光学；X 射线 0 行。(9) alias 补 GRB 091010A（SIMBAD 主标识/AGILE-MCAL 目录用名）与 bn091010113（SIMBAD 记 Fermi bn091010113；FERMIGBRST 触发名）；伪形 GRB091010113/GRB 091010.113 未收。",
   "sub_tag": [
     "lgrb"
   ],
@@ -247,8 +251,26 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@qoder",
+      "date": "2026-10-27"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "de Ugarte Postigo+2012",
+      "url": "https://doi.org/10.1051/0004-6361/201117848",
+      "title": "Pre-ALMA observations of GRBs in the mm/submm range",
+      "source": "Rusty-Harpoon@qoder"
+    },
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "source": "Rusty-Harpoon@qoder"
+    }
+  ],
   "host_galaxy": null
 }
