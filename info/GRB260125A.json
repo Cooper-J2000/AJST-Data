@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB260125A",
-  "alias": [],
+  "alias": [
+    "GOTO26acv",
+    "AT2026bjf"
+  ],
   "ra": 151.56962,
   "dec": -6.57599,
-  "T0": "2026-01-25T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2026-01-25T07:36:58.079Z",
+  "T0_ref": "GCN 43510（Fermi GBM 团队官方通告）：At 07:36:58 UT on 25 Jan 2026, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 260125A (trigger 791019423.079276 / 260125317)；external/fermi_gbm FERMIGBRST 快照 trigger_time=2026-01-25T07:36:58.079Z（亚秒取自官方目录快照，非 .000 截断）；GCN/Fermi 自动通告页（gcn.gsfc.nasa.gov/other/791019423.fermi）GRB_TIME 27418.08 SOD {07:36:58.08} UT 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": "GCN 43514",
+  "pos_ref": "GCN 43514（GOTO 候选体 GOTO26acv / AT 2026bjf 位：RA = 10:06:16.71, Dec = -06:34:33.55 (J2000), equivalent to RA = 151.56962, Dec = -6.57599 degrees）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "2026-10-28 审核（fsy@zcode）。身份：GRB 260125A = Fermi/GBM 于 2026-01-25 07:36:58 UT 触发的暴（trigger 791019423.079276 / 260125317，GCN 43510 原文 At 07:36:58 UT on 25 Jan 2026, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 260125A (trigger 791019423.079276 / 260125317)）；光学对应体 GOTO26acv = AT 2026bjf（GCN 43514 GOTO 团队候选体通告、GCN 43518 NOT 用名 GOTO26acv / AT 2026bjf、TNS AT2026bjf 页一致：RA 10:06:16.709, Dec -06:34:33.55、发现 2026-01-25 12:29:25.152 UT、GOTO 组上报、未分类、宿主列 PGC139241）；同日他暴逐一甄别排除、未合并：Fermi/GBM 同日另一触发 bn260125435（trigger_time=2026-01-25T10:25:45.226Z、RA=77.08,Dec=+17.61、误差 11.64 deg，external/fermi_gbm FERMIGBRST 快照；与本源相距约 77 deg（2026-10-29 核查球面复算 77.4°），无 GCN 通告）、IceCube-260125A=高能中微子事件（T0=2026-01-25 10:09:39.88 UTC、RA=243.72,Dec=+6.69，GCN 43519；库内独立源 IceCube-260125A，非本源）。T0：原值 2026-01-25T00:00:00Z 为名称-日期占位（bot t0_basis=meta_trigger 零锚，Issue #68/#84 家族），已改为触发仪器值 2026-01-25T07:36:58.079Z——三证一致：GCN 43510 官方通告整秒 07:36:58 UT、其触发号内嵌 MET 791019423.079276（按 2001-01-01 历元换算并扣累积闰秒 5 s：07:37:03.079276−5 s=07:36:58.079276 UTC，与通告整秒自洽）、external/fermi_gbm FERMIGBRST 快照 trigger_time=2026-01-25T07:36:58.079Z（取官方目录快照 3 位小数亚秒，非 .000 截断）；GCN/Fermi 自动通告页 GRB_TIME 27418.08 SOD {07:36:58.08} UT 同值（并列备查）。T0_offset=null（无证据表明爆发时刻相对自动触发有 >1 s 调整）。定位：ra/dec=151.56962,-6.57599 为 GCN 43514 GOTO 候选体位（bot 原值与此一致、pos_ref 未变），TNS 页 151.56962,-6.575987 同值；pos_error 留空：GCN 43514 未给候选体定位误差（GBM 统计误差 8.9 deg 系触发大误差区口径、远粗于候选体位，不据其填写），Swift-XRT 未探测到与 GOTO 位一致的源（GCN 43527）、无更精定位；来源未标注置信水平。分类：tag=[grb]；sub_tag=[lgrb]——GBM 团队官方通告原文 likely LONG GRB（GCN 43510），且 FERMIGBRST 快照 t90=11.7762±2.06398 s（50-300 keV）>2 s，按目录 t90 判 lgrb，两证一致；物理量备查（均 FERMIGBRST 快照）：t50=3.84007±0.724103 s（50-300 keV）、fluence=2.30165e-06±4.82437e-08 erg/cm²（10-1000 keV）、peak_flux=3.8119±0.931774 ph/cm²/s（10-1000 keV，64 ms）；GBM 地面计算定位（on-ground calculated location）RA=148.7,Dec=-2.9（统计误差 8.9 deg，GCN 43510；LAT boresight 角 67.0 deg，无 LAT 探测通告）。宿主：候选体位于星系 PGC 139241（LEDA 139241）上、距核约 9″（光度距离 53 Mpc，GCN 43514；GCN 43518 亦记 on top of the galaxy PGC 139241）——候选宿主、无光谱证认，host_galaxy 不建立、redshift 留空。alias：新增 GOTO26acv（GCN 43514/43518 原文用名）与 AT2026bjf（TNS 名，GCN 43514 原文 GOTO26acv (AT 2026bjf)）；触发号形 GRB260125317 不收录（Fermi 源无 Swift 式触发号 alias 惯例，库内 GRB250711A 审后 alias=[] 先例）。Trigger_Instrument 由 Fermi 改 Fermi/GBM（触发仪器为 GBM，GCN 43510）。articles=[]：无实际使用的研究文章（GCN 通告不入 articles[]）。测光检索（2026-10-28）：本仓无 gcn/archive 快照（目录不存在，同 GRB250821A 先例改用 GCN 站在线检索）；GCN 站（gcn.nasa.gov/circulars?query=260125A）命中 9 篇（逐号枚举）——本源 5 篇（43510 GBM 触发、43514 GOTO 发现、43515 Swift ToO、43518 NOT、43527 Swift-XRT）全部实读，另 4 篇为 IceCube-260125A 他源（43512/43519/43545/43547）；变体检索 GOTO26acv/AT2026bjf/260125317/791019423 均无新增通告；GCN/Fermi other 页（gcn.gsfc.nasa.gov/other/791019423.fermi）已读（自动通告，T0 互证）；GCN 事件页（gcn.nasa.gov/events/260125A）404；external/ 快照：fermi_gbm FERMIGBRST 有本源 1 行（参数目录、非测光），rssgrbag、grbsn_webtool、heasarc_grbcat、swift_bat、uvot_grb 均无本源记录；arXiv API 检索 GRB 260125A / 260125A / 2026bjf 命中 0，OpenAlex 检索 GRB 260125A / GOTO26acv / AT2026bjf 命中 0，SciX 网页客户端渲染不可达（如实注明、不作缺席证据），SIMBAD 连接失败（TLS 复位）、TNS API 需密钥（401）改网页版读取成功（AT2026bjf 未分类、无光谱）。结论：lc 1→4 行（既有 NOT 行时间锚/列位改正；新增 GOTO 3 行：触发后探测 2 行+触发前巡天 3σ 上限 1 行）；X 射线行 0（Swift-XRT 0.3-10 keV 上限 1.0e-13 erg/cm²/s 见 GCN 43527，按契约不入库、仅此备查）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻 2026-01-25T07:36:58.079Z（GCN 43510 trigger 791019423.079276 / 260125317 + FERMIGBRST 快照）；原 bot 值 2026-01-25T00:00:00Z 为名称-日期占位（原 t0_basis=meta_trigger 零锚），已废弃（原值留存于 comment）",
+    "t0_basis": "GCN 43510（Fermi/GBM 触发通告整秒 07:36:58 UT）+ FERMIGBRST 官方目录快照亚秒 .079Z；MET 791019423.079276 按 2001-01-01 历元减累积 5 跳秒换算=07:36:58.079276 UTC 互证",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
