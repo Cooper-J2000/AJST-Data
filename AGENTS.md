@@ -6,6 +6,9 @@
 
 ## 开工顺序（缺一不可）
 
+0. **先清自己手上的反馈**：`gh pr list --author @me --state open`，逐个 `gh pr view <n> --json comments`。
+   维护者在**你自己** open PR 下的评论就是审核意见，**处理完（改数据 + 回复 commit sha，或写明未采纳理由）才允许领新源**
+   （提示词 §2 第 2 条 / §5 第 8 项）。已合并/已关闭的不必回看。
 1. 通读 `数据审核提示词.md`（尤其 §2 开始之前、§3 单源审核流程、§7 禁止事项、§8 自检清单）；
 2. 契约补充：`SCHEMA.md`、`CONTRIBUTING.md`、`audit/README.md`、`audit/leads/README.md`、`filters.json`、`tags.json`；
 3. `python3 tools/audit_queue.py --id <源ID>` 查状态：`reserved` = 维护者自留，**不得认领、不得开 claim PR**；
@@ -14,25 +17,38 @@
 6. **每交付一个源后**：`git fetch origin main && git log --oneline HEAD..origin/main`。有变动先
    `git pull --rebase origin main` 再挑下一个源；新提交若碰到你刚提交的源、或你下一个要审的源，
    先读改动再动手。维护者会直接改 `info/`、`lc/`、`tools/` 与文档，这条保证**我方改动在你的下一次任务里一定可见**
-   （提示词 §2 第 9 条 / §5 第 7 条，2026-10-24 新增）。PR 页面上也会有一条「分支落后」的 CI 警告，落后多少提交、落后哪几个，都在那里。
+   （提示词 §2 第 10 条 / §5 第 7 条，2026-10-24 新增）。PR 页面上也会有一条「分支落后」的 CI 警告，落后多少提交、落后哪几个，都在那里。
 
-## 最常被违反的 5 条（细节见提示词）
+## 最常被违反的 6 条（细节见提示词）
 
-1. **`lc/` 为空或行数偏少的源必须检索并留证**（§3.3，2026-10-24 新增）。先查仓内
+1. **PR 有评论就要回**（§2 第 2 条 / §5 第 8 项，2026-10-29 新增）：维护者评论＝审核意见。采纳就改数据并在回复里给
+   `commit sha`，不采纳就写理由 + 证据；**不得静默重推同一 diff**。有未处理反馈时不领新源。
+2. **`lc/` 为空或行数偏少的源必须检索并留证**（§3.3，2026-10-24 新增）。先查仓内
    `gcn/archive`（45 563 篇 Circular 全文）、`external/rssgrbag`、`external/grbsn_webtool`，再查
    GCN 站 / **ADS 或 SciX** / TNS；`comment` 末段按「**检索日期 + 入口与篇数 + 结论 + 补了几行**」留证。
    **只写一句「已检索」不算留证。** 检索到的探测与上限，只要有明确时间锚点（绝对时刻，或 `+26.3 h`
    这类相对触发时长），就要入库，不能只写 comment。
-2. **`T0` 只能是触发时刻**（§3.2）：GCN 通告里观测窗口的起止时刻（`from 07:00-09:30 UTC`、
+3. **`T0` 只能是触发时刻**（§3.2）：GCN 通告里观测窗口的起止时刻（`from 07:00-09:30 UTC`、
    `through to 04:55:50 UT`、`starting at 13:40 UT`）**不得**写进 `T0`；通告只给「窗口 + 相对触发时长」时，
    用该时长反算触发时刻并在 `T0_ref` 写明依据。见 Issue #84。
-3. **X 射线行（`band` 为能量串，如 `10keV`）不改、不删、不新增、不参与去重**（§3.3 / §3.4 / §7）。
-4. **一源一 PR**；不动别人的源、不动 `spectra/` `tmplibrary/` `external/` `tools/`；不手改 `audit/state.tsv`；
+4. **X 射线行（`band` 为能量串，如 `10keV`）不改、不删、不新增、不参与去重**（§3.3 / §3.4 / §7）。
+5. **一源一 PR**（CI 的 `check_pr_scope.py` 会拦：一个 PR 只能碰一个 `info/lc` 源；§3.7 的源级处置也要拆两个 PR，
+   除非维护者在本 PR 下裁定接受）；不动别人的源、不动 `spectra/` `tmplibrary/` `external/` `tools/`；不手改 `audit/state.tsv`；
    库外新源用 `new-source` Issue，不擅自新建 `info/<id>.json`。
-5. **提交前 `python3 tools/validate.py` 必须 0 错误**；`--strict` 的告警看「相对基线是否新增」，
+6. **提交前 `python3 tools/validate.py` 必须 0 错误**（含新增的「每行 `flux_density` 非空」ERROR）；`--strict` 的告警看「相对基线是否新增」，
    不要用退出码当唯一判据（main 上本来就有历史告警）。
 
 ## 最近更新（外部 agent 请注意版本）
+
+- **2026-10-29**：三条契约硬化（本批 155 个 PR 审核暴露）：
+  1. **PR 有评论就要回**（§2 第 2 条 / §5 第 8 项）：领新源前先 `gh pr list --author @me --state open` 扫自己 PR 的
+     维护者评论，改数据 + 回复 `commit sha`（或不采纳理由）后才允许继续；PR 模板新增「前序 PR 反馈处理」栏。
+  2. **一源一 PR 由 CI 强制**：新增 `tools/check_pr_scope.py`（`validate` job 内运行）——`info/lc` 源集合 >1 或改动路径
+     越界（如 `filters.json`）即红；维护者 PR 豁免。§3.7 源级处置同样要拆两个 PR。
+  3. **`flux_density` 每行必须非空**：`validate.py` 升级为 ERROR。上限行的限度、探测行的测量值都要写进列，
+     只写在 `comment` 里不算（本批 5 个 draft PR、94 行犯此错，`main` 上基线是 0 行）。
+  另：**空转认领可被提前释放**（§5.6）——认领 72 h 内零提交零更新、维护者留言无回应者，维护者直接关闭并释放源
+  （先例 #342–#344 `GRB001019`/`GRB010326A`/`GRB021125`，10-26 → 10-29 释放）。
 
 - **2026-10-26**：三条维护者裁定，已落进契约与校验器：
   1. **`articles[]` 不收 GCN 通告**（§3.5、SCHEMA §2.1）。通告出处只写在 `comment` 的核对记录与 `lc` 行的

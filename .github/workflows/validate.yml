@@ -46,3 +46,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
         run: python3 tools/check_duplicate_claim.py --strict
+      # 阻断级守卫：一源一 PR + 改动路径白名单（2026-10-29 新增）。
+      # 判据 = 本 PR 的改动文件清单：info/lc 的源集合 >1（#490/#495 那类跨源操作）、或改了
+      # filters.json / tools/ 等无关文件（#550）即失败；维护者（OWNER/MEMBER/COLLABORATOR）豁免。
+      - name: PR scope guard (one source per PR, allowed paths)
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_EVENT_PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
+          GITHUB_EVENT_PULL_REQUEST_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
+        run: python3 tools/check_pr_scope.py --strict

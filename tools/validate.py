@@ -40,6 +40,8 @@ BAND_FREQ_RE = re.compile(
     r'^\s*(\d+(?:\.\d+)?)\s*(Hz|kHz|MHz|GHz|THz|eV|keV|MeV|GeV)\s*$',
     re.IGNORECASE)
 BAND_COL = LC_HEADER.index('band')
+FLUX_COL = LC_HEADER.index('flux_density')
+SRC_COL = LC_HEADER.index('source')
 TIME_COL = LC_HEADER.index('time')
 MJD_COL = LC_HEADER.index('mjd')
 TIME_UNIT_COL = LC_HEADER.index('time_unit')
@@ -256,8 +258,10 @@ def check_lc(path, band_keys, t0_by_id=None):
         return
     n_bad_width = n_bad_time = n_empty_band = n_bad_band = 0
     n_mjd_drift = 0
+    n_empty_flux = 0
     mjd_drift_ex = []
     bad_band_ex = []
+    empty_flux_ex = []
     for i, row in enumerate(rows[1:], start=2):
         if len(row) != len(LC_HEADER):
             n_bad_width += 1
@@ -284,6 +288,13 @@ def check_lc(path, band_keys, t0_by_id=None):
             v = row[LC_HEADER.index(col)]
             if v not in ('y', 'n', ''):
                 warn(f'{name}:{i}: {col}={v!r} 应为 y/n')
+        # 每行都必须带量值：上限行的限度、探测行的测量值都写进列，只写在 comment 里不算
+        # （《数据审核提示词》§3.3 / §8；2026-10-29 维护者裁定，main 基线 0 行为空）
+        if not row[FLUX_COL].strip():
+            n_empty_flux += 1
+            if len(empty_flux_ex) < 3:
+                empty_flux_ex.append(f'行{i}(band={row[BAND_COL].strip() or "空"}, '
+                                     f'telescope={row[LC_HEADER.index("telescope")].strip() or "空"})')
         # band 两条车道（SCHEMA.md §3.1）；filters.json 不可用时只判频率/能量串车道
         b = row[BAND_COL].strip()
         if not b:
@@ -296,6 +307,10 @@ def check_lc(path, band_keys, t0_by_id=None):
         err(f'{name}: {n_bad_width} 行字段数 ≠ 24')
     if n_bad_time:
         warn(f'{name}: {n_bad_time} 行 time 非数值')
+    if n_empty_flux:
+        err(f'{name}: {n_empty_flux} 行 flux_density 为空 —— 每行都必须带量值（上限行的限度、'
+            f'探测行的测量值），只写在 comment 里不算（《数据审核提示词》§3.3 / §8）'
+            f'｜示例：' + '；'.join(empty_flux_ex))
     if n_empty_band:
         err(f'{name}: {n_empty_band} 行 band 为空（SCHEMA.md §3 band 为必填）')
     if n_bad_band:

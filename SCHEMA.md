@@ -106,7 +106,7 @@
 | `time_unit` | str | 是 | `s`/`sec`、`m`/`min`、`h`/`hour`、`d`/`day` |
 | `mjd` | float | 否 | 权威绝对时间（T0 + time 换算；T0 为空时为空）；**换算时计算并保留 7 位小数**（见 §1 顶部说明）；若直接来自来源则按来源精度写 |
 | `band` | str | 是 | 波段标识，见 §3.1（`filters.json` 键，或频率 / 能量串） |
-| `flux_density` | float | 是 | 原始流量密度值（或星等值） |
+| `flux_density` | float | 是 | 原始流量密度值（或星等值）。**2026-10-29 起由 `validate.py` 以 ERROR 强制**：上限行的限度、探测行的测量值都必须写进本列，数值只写在 `comment` 里同样算违规 |
 | `flux_density_err` | float | 否 | 原始误差（1σ） |
 | `flux_density_unit` | str | 是 | `mJy`、`uJy`、`cgs`(erg/cm²/s/Hz)、`magnitude` |
 | `mag_system` | str | 条件必填 | `AB`/`Vega`；`flux_density_unit=magnitude` 时必填；**原文未声明星等系统时留空**并在 `comment` 注明（惯例可推定时须写明推定依据）。2026-10-12 修订 |

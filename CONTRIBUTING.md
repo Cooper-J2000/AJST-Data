@@ -17,6 +17,8 @@
 
 **并行查重（多个合作方同时审核时必做）**：`python3 tools/audit_queue.py --limit 20` 挑源、`--bucket 1/4` 分片；`--live` 的实时查询是判据，离线读 [`audit/state.tsv`](audit/state.tsv)（只能**排除已占用**、不能**确认空闲**；契约见 [`audit/README.md`](audit/README.md)）。开工即开 `claim: <源ID>` draft PR —— 一个源同时只应有一个未过期认领（普通源 14 天 / 巨源 30 天）。
 
+**PR 上的四道 CI 守卫（红=必须改）**：`validate`（结构 + 逐行；任一行 `flux_density` 为空即 ERROR）、`check_pr_scope.py`（**一源一 PR** + 改动路径白名单，越界改 `filters.json`/`tools/` 会红）、`check_duplicate_claim.py`（同源多 PR 时**后开者**红）、`check_branch_freshness.py`（落后多少提交，仅警告）。另外：**维护者在你自己 open PR 下的评论就是审核意见**，处置完（改数据 + 回复 `commit sha`，或写明未采纳理由）才领下一个源（提示词 §2 第 2 条 / §5 第 8 项）。
+
 **维护者自留的源不得认领**：`--id <源ID>` 显示 `reserved`（台账 [`audit/reserved.tsv`](audit/reserved.tsv)，`--reserved` 可列全部）时，不要开工、不要开 `claim:` PR；到期变 `reserved-expired` 后按 48 小时沟通协议处理。自留是维护者的授权性预留，不是排队，也不进 `state.tsv`。
 
 **多目标文献**：一篇文献涉及多个库内源时，除自己那一源照常走流程，只能为**过了增量门槛**的其他源写 `audit/leads/<源ID>.md` 源级卡（只写信息、不写状态，**不改变目标源的 free/claimed/reviewed 判定**）；覆盖 ≥3 个库内源的文献先建一张 `audit/leads/papers/<paper_key>.md` 文献级索引卡（一篇一张，只做索引、不代替源级卡）。纯「汇总表转引 GCN」的行不开源级卡（2026-10-24 起）。挑源时用 `--id` / `--leads` / `--paper <key>` 查看。格式见 [`audit/leads/README.md`](audit/leads/README.md) 与 [`audit/leads/papers/README.md`](audit/leads/papers/README.md)。
