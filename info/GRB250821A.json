@@ -1,29 +1,41 @@
 {
   "transient_id": "GRB250821A",
-  "alias": [],
-  "ra": 358.43969,
-  "dec": -28.6538,
-  "T0": "2025-08-21T22:17:52Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 250821A",
+    "BAT 1344131"
+  ],
+  "ra": 358.43974,
+  "dec": -28.65327,
+  "T0": "2025-08-21T10:46:17Z",
+  "T0_ref": "GCN 41462（Swift/BAT 触发通告：At 10:46:17 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 250821A (trigger=1344131)，触发仪器官方通告整秒值）；external/swiftgrbba 快照 trigger_time=2025-08-21T10:46:17.000Z 同值（.000 为目录秒级截断，未据此补亚秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 2.6,
-  "pos_ref": "GCN 41472",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 41472（enhanced Swift-XRT position：RA, Dec = 358.43974, -28.65327，2.6 arcsec radius, 90% confidence）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "2026-10-28 审核（fsy@zcode）。身份：GRB 250821A = Swift/BAT 于 2025-08-21 10:46:17 UT 触发的暴（trigger=1344131，GCN 41462 原文 At 10:46:17 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 250821A (trigger=1344131)）；XRT 及时定位 RA,Dec=358.43969,-28.65380（4.8 arcsec radius、90%，GCN 41462）、增强定位 358.43974,-28.65327（2.6 arcsec、90%，GCN 41472）；同日他暴逐一甄别排除、未合并：GRB 250821B=Fermi/GBM trigger 777485272/250821672（16:07:47.46 UT、RA=39.95,Dec=-77.13、统计误差 1.0 deg，GCN 41473）、GRB 250821C=Fermi/GBM trigger 777512525/250821988（23:42:00 UT、RA=104.3,Dec=-1.1，GCN 41482）、EP250821a=EP/WXT T0=2025-08-21T07:17:04 UTC（FXT 位 RA=289.8862,Dec=-43.3808，GCN 41467），均与本源坐标/触发无关。T0：原值 2025-08-21T22:17:52Z 系 MASTER-Kislovodsk 指向起始时刻（GCN 41478 原文 41495 sec after trigger time at 2025-08-21 22:17:52 UT）被 bot 误植为触发（Issue #84 观测起始误植家族，GRB120127A/GRB150123A 同型；原 t0_basis=meta_trigger 零锚），已改为触发仪器官方通告整秒值 2025-08-21T10:46:17Z（§3.8 优先级①；不自行补亚秒：notices_s/1344131/BA 亚秒页 404 不可达，external/swiftgrbba 快照 trigger_time=2025-08-21T10:46:17.000Z 的 .000 为目录秒级截断、按契约排除）；自洽互证：22:17:52−41495 s=10:46:17（GCN 41478 反算）、GCN 41479 XRT 数据 from 150 s to 29.3 ks after the trigger、GCN 41483 NOT 15.0 hr after the Swift/BAT trigger（Aug 22.075 UT−10:46:17=15.03 h）、GECAM-B 地面触发 2025-08-21T10:46:18.000 UTC（GCN 41487，晚 BAT 1 s）；external/swiftgrbba 快照同记 2025-08-21T10:46:17.000Z。定位：ra/dec 原值 358.43969,-28.6538 为 GCN 41462 及时 XRT 位、而 pos_error=2.6 与 pos_ref 却取 GCN 41472，系 bot 初版/增强定位拼接错位（GRB170330A/GRB130627B 同型），现统一取 GCN 41472 增强位 358.43974,-28.65327、pos_error=2.6 arcsec（90% confidence，原文明示）；并列备查：GCN 41463 及时增强位 358.44056,-28.65369（2.9 arcsec、90%）、external/swiftgrbba 快照 xrt_ra=358.43975、xrt_dec=-28.65328、xrt_error_radius=2.4（更晚快照，取数 2026-10-28）、external/swift_xrt_live 快照同 358.43974,-28.65327 r=2.4、external/mpe_greiner 行 358.4125,-28.616666666666667（BAT 在轨位 3 arcmin 口径）。分类：sub_tag=[sgrb,EE]——t90=1.52±0.37 s（15-350 keV，Swift-BAT 精化分析 GCN 41494；external/swiftgrbba 快照 t90=1.52 s 同值），按目录 t90 判 sgrb；GCN 41494 原文 The mask-weighted BAT light curve exhibits a short-duration main emission starting from ~T-0.5 to ~T+1.2 sec, followed by a weaker, extended emission which last up to ~ T+18 sec → EE（tags.json 既有 sub 词；库内 GRB080123A=[sgrb,EE] 先例）；并列：GECAM-B T90=1.5(+1.5/−0.5) s（40-6000 keV，GCN 41487）。物理量备查：fluence=1.3±0.3×10⁻⁷ erg/cm²（15-150 keV）、1-s 峰光子流量 0.9±0.2 ph/cm²/s（均 GCN 41494，90% c.l.）；BAT 精化位 RA,Dec=358.427,-28.631（2.1 arcmin、sys+stat、90%，GCN 41494）；XRT 谱吸收 3(+13,−2)×10²⁰ cm⁻²、衰变 α=1.32±0.20（GCN 41479，X 射线数据按契约不入库）。alias：新增 GRB 250821A（GCN 41462-41497 主题行与 external/swiftgrbba 快照 name 原文用名）与 BAT 1344131（GCN 41462 原文 trigger=1344131；GRB060102 先例 BAT 触发号形）。Trigger_Instrument 由 Swift/XRT 改 Swift/BAT（XRT 非触发仪器；触发为 BAT，GCN 41462）。articles=[]：本源无实际使用的研究文章（13 篇 GCN 通告不入 articles[]）。测光检索（2026-10-28）：本仓无 gcn/archive 快照（目录不存在，同 GRB141029A 先例改用 GCN 站）；GCN 站（gcn.nasa.gov/circulars?query=250821A）检索页 13 results found、并与逐号枚举 GCN 41462–41660 互证（41500 之后零命中），13 篇全部实读：41462 检测、41463/41472 XRT 位、41466 LCOGT、41471 UVOT、41478 MASTER、41479 XRT 精化（纯 X 射线）、41481 KAIT、41483 NOT、41487 GECAM-B、41488 VLT、41494 BAT 精化、41497 KNC——光学上限 7 篇（41466/41471/41478/41481/41483/41488/41497）全部入表；external/ 快照：swiftgrbba（本源 1 行，参数与 GCN 41471/41494 一致）、swift_xrt_live（XRT 位）、mpe_greiner（BAT 在轨位）有记录，heasarc_grbcat、swift_bat、uvot_grb、grbsn_webtool、rssgrbag、fermi_gbm、fermi_lat 均无本源记录（fermi 同日 250821672/250821988 为他暴）；arXiv API 检索 GRB 250821A/250821A 命中 0，OpenAlex 精确检索命中 0（宽检索 2 条均无关事件）、SciX API 与 SIMBAD 连接失败（TLS 复位，不可达如实注明、不作缺席证据）；TNS 不适用（GRB 非 AT/SN/CV 类）。结论：lc 1→19 行（补 18 行：UVOT 9、LCOGT 2、MASTER 4、KAIT 1、VLT 1、KNC 1；既有 NOT 行时间锚改正），X 射线行 0。",
+  "sub_tag": [
+    "sgrb",
+    "EE"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻 2025-08-21T10:46:17Z（GCN 41462，trigger=1344131）；原 bot 值 2025-08-21T22:17:52Z 系 MASTER-Kislovodsk 指向起始时刻（GCN 41478：41495 sec after trigger time at 2025-08-21 22:17:52 UT）被误植为触发，已废弃",
+    "t0_basis": "GCN 41462（Swift/BAT trigger 1344131）；GCN 41478 反算互证（22:17:52−41495 s=10:46:17）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
