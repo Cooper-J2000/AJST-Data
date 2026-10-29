@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB170419B",
-  "alias": [],
+  "alias": [
+    "GRB 170419B",
+    "BAT 748947"
+  ],
   "ra": 60.494,
   "dec": -15.121,
-  "T0": "2017-04-19T13:26:40Z",
-  "T0_ref": null,
+  "T0": "2017-04-19T21:33:46.057280Z",
+  "T0_ref": "Swift/BAT trigger 748947 触发时刻（external/swift_bat 快照 trigger_time=2017-04-19T21:33:46.057280Z；GCN 21016 记 Swift BAT detected GRB 170419B at 21:33:46 UT、trigger 748947；GCN 21025 refined 同 trigger。Fermi/GBM 21019 同秒自触发 21:33:46.807 UT，为另一仪器的触发时刻）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 84.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 21025",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0：GRB 170419B = Swift/BAT trigger 748947（BAT 于 2017-04-19 21:33:46.057280 UT 触发，external/swift_bat 快照 trigger_time；GCN 21016 记 Swift BAT detected GRB 170419B at 21:33:46 UT、trigger 748947；GCN 21025 refined 同 trigger）。原 T0=2017-04-19T13:26:40Z 与 GRB 170419A 的触发时刻相同（bot 跨源误植，Swift/GBM 两个触发通告均不支持该值），且原 Trigger_Instrument=Fermi/GBM 与 pos_ref=GCN 21025（BAT refined，源位置即出自该通告）不一致；改 Trigger_Instrument=Swift/BAT、T0=快照亚秒触发时刻（§3.2：T0 只能是触发时刻；整数秒一致取触发仪器亚秒）。Fermi/GBM 21019 亦触发同一暴（21:33:46.807 UT，trigger 514330431，同一秒内，为另一仪器自触发时刻；如改用 GBM 亚秒，T0 移约 0.75 s，见 PR 待决）。alias：GRB 170419B（GCN 用名）、BAT 748947（external/swift_bat name_alt）。tag：原空，补 grb。\n\n位置：GCN 21025（Swift-BAT refined analysis）RA,Dec=60.494,−15.121 deg，uncertainty 1.4 arcmin（radius，sys+stat，90% containment）→ pos_error=84″、pos_error_confidence=90；原 ra/dec/pos_error 与原文一致，仅补置信水平。external/swift_bat 快照 refined 值 60.49324/−15.11996 为目录版本四舍五入差，不另采用。\n\n红移与分类：无红移报道，redshift 留空。t90=77.2±9.8 s（Swift/BAT refined analysis，GCN 21025，15–350 keV；external/swift_bat 快照同波段记 65.856±11.26 s，版本微差），按通告/目录 t90 判 lgrb（原 sub_tag 空，补 lgrb）。\n\n光学与 lc：GCN 21024（Zadko robotic telescope，D=100cm，Gingin, Australia）：原文给 coadd 窗口 t0+13.3h to t0+13.5h（47880–48600 s），BAT 误差框内未发现光学暂现体，Rlim=19.2（NOMAD1 近距星定标）。原行 time=77480.0 s 基于误植 T0 且取 13.3h 起点、无 time_err；改 time=48240.0 s（窗口中点）、time_err=360.0 s（半跨，§3.8），mjd=T0+time 7 位小数（原 14 位）；telescope/instrument 列位修正（原把 Zadko/Gingin 写进 instrument、telescope 空）；原文未声明星等系统，mag_system 留空+comment。\n\n测光检索（2026-10-28）：本机无 gcn/archive 快照，改用 GCN 网站事件页 https://gcn.nasa.gov/circulars/events/grb-170419b（源名+触发号 748947 双通道）——共 4 篇（21016 Swift detection、21019 Fermi GBM、21024 Zadko、21025 BAT refined），逐篇打开：含光学观测 1 篇（21024，已核对入库）；external/rssgrbag 0 行、external/grbsn_webtool 无记录、external/swift_bat 与 external/fermi_gbm 各命中目录行（无光学测光）；arXiv API 精确短语 0 篇；INSPIRE 全文 0 篇；ADS/SciX 网页反爬拦截未取得结果集（同 PR #330/#429 处置，改用 INSPIRE+arXiv 佐证）；TNS 无该源报道（2017 年 GRB 无 IAU 名称，以 GCN 为主）。结论：补 0 行（唯一光学通告 21024 已入库）、修正 1 行（窗口中点+T0 重算+列位）、核不上依据的行 0 行。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，与实际不符，已改写。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 Swift/BAT trigger 748947 触发时刻 2017-04-19T21:33:46.057280Z（原 bot 值 2017-04-19T13:26:40Z 与 GRB 170419A 触发时刻相同，系跨源误植）",
+    "t0_basis": "Swift/BAT trigger 748947（external/swift_bat 快照；GCN 21016/21025）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
