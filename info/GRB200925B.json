@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB200925B",
-  "alias": [],
-  "ra": 246.7899,
-  "dec": 78.39033,
-  "T0": "2020-09-25T22:27:07Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB200925.91"
+  ],
+  "ra": 246.78575,
+  "dec": 78.39067,
+  "T0": "2020-09-25T21:50:37.022Z",
+  "T0_ref": "GCN 28499（Swift/BAT 触发通告，原文 'At 21:50:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200925B (trigger=997453)'，整秒）；external/swift_bat 官方目录快照（Swift/BAT GRB Catalog）trigger 997453：Trig_time_UTC=2020-09-25T21:50:37.022000（MET 622763462.720）→ 亚秒精化 T0=2020-09-25T21:50:37.022Z（核查修复：交付版取整秒并注「无亚秒可用」系遗漏目录亚秒，依 GRB250321A 等库内 Swift/BAT 同款先例采用目录亚秒）；external/swiftgrbba 快照 trigger_time=2020-09-25T21:50:37.000Z 为同值整秒表示；Hennessy+2025（MNRAS 544, 53）§2.1 同 21:50:37 UT。bot 原值 2020-09-25T22:27:07Z 系 GCN 28501 OSN 观测序列起始时刻误作 T0（Issue #84 家族），已改正",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.8,
-  "pos_ref": "GCN 28503",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1.4,
+  "pos_ref": "external/swiftgrbba 官方目录快照（HEASARC）xrt 位：xrt_ra/xrt_dec=246.78575/78.39067、xrt_error_radius=1.4″（hdr 注明 XRT 90% Error Radius）；GCN 28503（XRT astrometrically corrected，官方）RA,Dec=246.78522/+78.39052 err 1.8″、GCN 28500（enhanced）246.7868/78.3904 err 2.0″、swift_xrt_live 快照 246.78596/78.39065 相符",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT 触发 GRB 200925B（trigger 997453，T0=21:50:37 UT，GCN 28499）；同日 Fermi/GBM 暴为另一事件（GRB 200925A，T0 14:38:02.66 UT，GCN 28496/28497 与仓内 external/fermi_gbm 快照 bn 行互证），无混并；MASTER 通告以触发日小数日记本暴为 'Swift GRB200925.91'（GCN 28498 原文用名，21:50:37/86400=day 0.9103），收 alias（GCN 28498 标题+正文，§3.10 证据串豁免）。T0：bot 原值 22:27:07Z（整秒，t0_basis=meta_trigger）→ 21:50:37.022Z——bot 把 GCN 28501 OSN 观测序列起点 22:27:07 UT 误作触发时刻（Issue #84 家族）；T0 取 swift_bat 目录快照 trigger 997453 亚秒 .022（GCN 28499 整秒同值，核查修复补亚秒），并据此对全部 53 行 mjd 按 python 重算（相对锚行 mjd=T0+time；显式绝对历元行 GCN 28502 OT 与 LOFAR 3 行保持源引历元、time 反算）。Trigger_Instrument：Swift → Swift/BAT（§3.5）。定位：bot 原 ra/dec=246.7899/78.39033 为 GCN 28499 prompt XRT 位（err 3.9″）却配 pos_error=1.8/pos_ref=GCN 28503（值/误差混搭）→ 改官方目录 XRT 精化位 swiftgrbba xrt_ra/dec=246.78575/78.39067、err 1.4″（90%，hdr 定义），GCN 28503（1.8″）/GCN 28500（2.0″）/swift_xrt_live 相符（§3.9 触发仪器精化位优先）；OSN 光学位 0.5″（GCN 28501，16:27:08.50 +78:23:24.9）与 UVOT 增强位相合，仅备查（非触发仪器）。分类：tag=grb；sub_tag=lgrb——t90=18.25±0.97 s（15–350 keV，GCN 28506 BAT 精化分析），swiftgrbba 目录 t90=18.25 s（15–150 keV）同值；Hennessy+2025 §2.1 亦按 T90=18.25±0.97 s 判 LGRB。prompt 参数备查：fluence=1.0±0.1E-6 erg/cm^2（15–150 keV）、1-s 峰流量 3.0±0.3 ph/cm^2/s（15–150 keV，90% CL，GCN 28506）；swift_bat 快照 T100 谱参数（PL/cutpow）在 external/swift_bat 备查。redshift=null（无任何测量；Hennessy+2025 模型假定 z~1.8 非测量值，不取；其 ϵB<4.2E-4 以该假定为条件，备查）。host_galaxy 不建立（无文献支持确定宿主）。测光检索（2026-10-28）：仓内 gcn/archive 快照本地缺失，改查 GCN 官方站——扫查 GCN 28490–28520 全部标题并以 200925B 检索，本暴相关 10 篇逐篇打开核对（28499、28500、28501、28502、28503、28506、28507、28508、28511、28512），另 GCN 28498（MASTER，标题 'Swift GRB200925.91' 即本暴）共 11 篇；28496/28497 为 GRB 200925A（Fermi/GBM）不属本源。lc 处置：① OSN 行（GCN 28501）重锚——bot 原行 time=773 s 系把 22:27:07 观测起点误作 T0（Issue #84 家族），改作者自报中点 0.034294 d → time=2963.0 s、mjd=T0+time=59117.9444447，r'=19.46±0.1、mag_system=AB（原文声明；bot 原值、交付版误删，核查恢复）；② 新增 Swift/UVOT 9 行（GCN 28507 表：white FC/white 探测 19.80±0.20、20.77±0.37，v/b/u/u(FC)/w1/m2/w2 上限；mag_system=Vega 库内 uvot 惯例）；③ 新增 MASTER 4 行（GCN 28498 表 3 行上限 17.1/17.9/17.9 + GCN 28502 OT 探测 17.9，均 C/clear→G；28498 表无绝对起点、Tmid-T0 与指向时刻自洽故采用，28502 表 T-Tmid 与显式端点差 10 s 按显式端点锚；两通告 prose 限深 17.9/18.4 不一致不入行）；④ 新增 NUTTelA-TAO/BSTI 24 行（GCN 28511 preliminary：8 帧×g'/r'/i'，45 s 堆叠，5σ 上限/探测，commissioning 自注时间近似）；⑤ 新增 Abdullayev+2024 表 1 共 12 行（同组数据最终 225 s 堆叠 4 帧×g'/r'/i'，arXiv 2401.09805/RMxAA Conf Ser 59, 109；末帧原表 Tmid=1029 与其自述区间矛盾，按显式端点锚取 917 s 并留档）——④⑤ 为同数据不同堆积的不同发表测量，均保留由拟合端取舍；⑥ 新增 LOFAR/HBA 射电 3 行（Hennessy+2025 MNRAS 544, 53：2h 深像 3.1 mJy + 60/180 s 切片典型 3σ 51.3/28.8 mJy @144 MHz，切片逐片时刻仅见图不可恢复，锚定注释在行；60–360 s ~2σ 增益作者判不显著不采）。X 射线：XRT 通报（GCN 28508/28512）仅给谱/衰減描述与计数率，无逐点测光值，未新增行（X 射线行不动）。快照检查：external/swiftgrbba 行（trigger_time/t90/fluence/peak_flux/xrt 位/uvot_magnitudes，ref 同上）、external/swift_bat（trigger 997453 T100 谱参数）、external/swift_xrt_live 行、external/mpe_greiner 行（ra 246.85/dec 78.4 与 BAT 位一致）相符；external/rssgrbag 0 条；grbsn_webtool 无此事件；konus_wind/heasarc_grbcat/uvot_grb 快照无本暴行；无 Fermi-LAT 探测通告（GCN 28496 GBM 位用于 200925A）。arXiv：all:\"200925B\" 检索命中 Abdullayev+2024（2401.09805，全文 HTML 已核对表 1）与 Hennessy+2025（2509.21142，全文 HTML 已核对表 1/5）；OpenAlex 20 命中（10 篇为上述 GCN 通告本身，研究文献 2 篇即 Abdullayev+2024 与 Hennessy+2025，另 1 条为 2401.09805 的 RMxAA 发表版 DOI 10.22201/ia.14052059p.2025.59.20）。GCN 通告不入 articles。结论：本源有光学余辉探测（OSN/UVOT white/MASTER/NUTTelA）与射电上限（LOFAR）；本次修改 1 行（OSN 重锚）+ 新增 52 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 997453，swift_bat 目录亚秒 .022）",
+    "t0_basis": "swift_bat 目录快照 trigger_time=2020-09-25T21:50:37.022000Z（trigger 997453）亚秒精化 + GCN 28499 原文 21:50:37 UT（整秒）同值；bot 原值 2020-09-25T22:27:07Z 系 OSN 观测起点（GCN 28501）误作 T0，已改正",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [
     {
@@ -30,6 +42,13 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.544...53H",
       "bibtex": "@ARTICLE{2025MNRAS.544...53H,\n       author = {{Hennessy}, A. and {Starling}, R.~L.~C. and {Rowlinson}, A. and {de Ruiter}, I. and {van der Horst}, A.~J. and {Anderson}, G.~E. and {Tanvir}, N.~R. and {ter Veen}, S. and {Wiersema}, K. and {Wijers}, R.~A.~M.~J.},\n        title = \"{A LOFAR search for coherent radio emission accompanying prompt engine activity in gamma-ray bursts}\",\n      journal = {\\mnras},\n     keywords = {gamma-ray burst: general, radio continuum: transients, X-rays: bursts, High Energy Astrophysical Phenomena},\n         year = 2025,\n        month = nov,\n       volume = {544},\n       number = {1},\n        pages = {53-66},\n          doi = {10.1093/mnras/staf1640},\narchivePrefix = {arXiv},\n       eprint = {2509.21142},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025MNRAS.544...53H},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Abdullayev+2024",
+      "title": "Early-time optical spectral shape measurements of GRB 200925B",
+      "url": "https://arxiv.org/abs/2401.09805",
+      "bibtex": "@ARTICLE{2024arXiv240109805A,\n       author = {{Abdullayev}, Zhavlonbek and {Komesh}, Toktarkhan and {Grossan}, B. and {Abdikamalov}, Ernazar B. and {Maksut}, Zhanat and {Krugov}, M. and {Myrzakul}, Shynaray and {Tuiakbayeva}, Duriya},\n        title = \"{Early-time optical spectral shape measurements of GRB 200925B}\",\n      journal = {Revista Mexicana de Astronomia y Astrofisica Conf. Ser.},\n         year = 2025,\n       volume = {59},\n        pages = {109-113},\n          doi = {10.22201/ia.14052059p.2025.59.20},\narchivePrefix = {arXiv},\n       eprint = {2401.09805},\n primaryClass = {astro-ph.HE}\n}",
+      "source": "fsy"
     }
   ],
   "host_galaxy": null
