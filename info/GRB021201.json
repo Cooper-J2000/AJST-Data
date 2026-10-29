@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB021201",
-  "alias": [],
-  "ra": 121.948,
-  "dec": 21.2485,
-  "T0": "2002-12-01T05:32:12Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 021201",
+    "H2483"
+  ],
+  "ra": 121.942041,
+  "dec": 21.238258,
+  "T0": "2002-12-01T05:30:04Z",
+  "T0_ref": "GCN 1719 (IPN: observed at 19804 s UT = 05:30:04 UT)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -12,21 +15,34 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 102,
+  "pos_error_confidence": "3sigma",
+  "pos_ref": "GCN 1719 (IPN 3σ error box center, area ≈9 sq arcmin)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（fsy 2026-10-29）。身份：GRB021201＝IPN 短硬暴（GCN 1719，Ulysses/Mars Odyssey-HEND/RHESSI/HETE-FREGATE/Konus-Wind 联合三角定位）；Trigger_Instrument=IPN 沿用库内 IPN 源惯例，参与仪器如上。【T0】原 T0=2002-12-01T05:32:12Z（extra_data.t0_basis=meta_trigger）实为 BOOTES 观测窗口结束时刻（GCN 1720：窗口 05:28:23–05:32:12 UT＝触发前 1.68 min 至触发后 2.12 min），按窗口反算触发时刻为 05:30:04 UT；GCN 1719 原文「Ulysses, Mars Odyssey-HEND, RHESSI, HETE-FREGATE, and Konus-Wind observed this GRB at 19804 seconds」＝当日 UT 05:30:04，与仓内 heasarc_grbcat 快照 trigger_time=2002-12-01T05:30:04.000Z、Hurley+2011（ApJS 197,34，arXiv:0907.2709）Table 4 行「2002 Dec 01 05:30:04 H2483 Uly,MO,Kon,RHE」三源一致，故 T0 改为 2002-12-01T05:30:04Z（Issue #84 同型窗口残留）。原 t0_note/t0_basis：「t0 为 meta trigger-time（真实触发时刻）」/「meta_trigger」。【定位】原 ra/dec=121.948/21.2485 与任何来源不符，改为 GCN 1719 误差盒中心 RA=121.94204°、Dec=21.23826°（heasarc_grbcat 同值）；GCN 1719 为 3σ 四边形误差盒（四角坐标见原文），面积约 9 平方角分，pos_error=102″ 为等效圆半径 √(9/π)，pos_error_confidence=3sigma 从原文；盒内唯一 Chandra 源为 #10（GCN 1741）。【sub_tag】t90≈0.3 s（误差原文未给；Ulysses 25–100 keV，GCN 1719「duration of approximately 0.3 seconds」；仓内 rssgrbag 目录 t90=0.3 s、heasarc_grbcat t_other=0.3 s），按目录/通告 t90 判 sgrb，GCN 1719/1741/1743 原文均称 short/hard。【alias】「GRB 021201」（GCN 1720/1721/1746 等原文用名空格形）；「H2483」（Hurley+2011 ApJS 197,34 Table 4 HETE identifier）。【测光核对】lc 原 2 行均出自 GCN 1746（WIYN 3×600 s R，2002 Dec 5.5 UT）：R=20.4 是 USNO-A2.0 1050.05586294 编目星（目录 R=18.9）实测值，即 Chandra #10 处的蓝场星，GCN 1743（NOT）判其与 GRB 无关 → 编目源探测置 discard=y；R=23.3 为 PSF 减源后 Chandra #10 位 4″ 内的极限，真上限保留。两行原 time=368868 s 系按错误旧 T0（05:32:12）折算，已按新 T0 重算为 368996 s（mjd=52613.5000000）；原文只有日期精度（Dec 5.5），time_err=43200 s 为约定口径。VLA 1.43 GHz（GCN 1722）：盒内 2 mJy 源为 FIRST 编目源、新源 3σ<0.5 mJy，原文未给观测历元（无时间锚点）且为编目源，不入库；Morehead 0.6m 首历元（GCN 1721，无滤光片 ~2700 s）限深 Rc=21.2 (3σ) 出自 GCN 1760，已入库；USNO 1.0m 第二历元（触发后 2.9 d，GCN 1760）仅述「显著更深」无数值、NOT Dec 4.16 r′ 5×900 s（GCN 1743）与 BOOTES 巡视（GCN 1720 系列）无数值限量，均不入库；Chandra 21 ks 源表（GCN 1741）为 X 射线，不在审核范围。零测光检索留证：测光检索（2026-10-29）：仓内 gcn/archive 全文 9 篇命中（1719/1720/1721/1722/1723/1741/1743/1746/1760，其中含可入库数值 3 篇、有观测无数值 3 篇、X 射线 1 篇、定标场 1 篇、射电无历元 1 篇）；rssgrbag 有该源目录条目（t90=0.3 s）但 lightcurve.jsonl 0 行、grbsn_webtool 无该事件；ADS API 无 token（HTTP 401），以 arXiv API/OpenAlex/Crossref 兜底：OpenAlex「GRB 021201」命中 17 条，多为 GCN 通告索引与研究样本文章，无新测光表（Hurley+2011 HETE-2 IPN 补编 VoR tex 已实读仅给 T0/定位；Nardini+2008 附录 1 为上限出处转引无数值；Gal-Yam+2008 摘要未证实含本源数据，未采用）→ 本 PR 新增 2 行（BOOTES R>10 同时极限、Morehead Rc>21.2 首历元极限）、修正 2 行（WIYN R=20.4/23.3）。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-29 审核修正为 IPN 触发时刻 05:30:04 UT（原 bot 值 2002-12-01T05:32:12Z 为 BOOTES 观测窗口结束时刻，t0_basis=meta_trigger，Issue #84 同型残留；原值见 comment）",
+    "t0_basis": "GCN 1719（IPN：19804 s UT＝05:30:04 UT）；Hurley+2011 ApJS 197,34 Table 4（H2483）与 heasarc_grbcat trigger_time 互证",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Hurley+2011",
+      "url": "https://doi.org/10.1088/0067-0049/197/1/34",
+      "title": "The Interplanetary Network Supplement to the HETE-2 Gamma-Ray Burst Catalog",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
