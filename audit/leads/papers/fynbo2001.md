@@ -1,6 +1,6 @@
 ---
 paper_key: fynbo2001
-paper: Fynbo, J. P. U., Holland, S., Andersen, M. I., et al. 2001, A&A 368, 373（astro-ph/0101425；VoR 未见，本次经 ar5iv 全文核对 arXiv 版）
+paper: Fynbo, J. P. U., Jensen, B. L., Gorosabel, J., et al. 2001, A&A 369, 373–379, DOI 10.1051/0004-6361:20010112（astro-ph/0101425；VoR 未见，本次经 ar5iv 全文与 arXiv TeX 源码核对 arXiv 版；卷页与作者名单 2026-10-30 经 GRB000323 审核复核更正）
 date: 2026-10-29
 helper: Rusty-Harpoon@zcode
 sources: GRB000630, GRB980329A, GRB980613A, GRB970228A, GRB980326, GRB990712A, GRB981226, GRB990506, GRB970828, GRB000418A, GRB000131A, GRB990316, GRB970815, GRB990217, GRB990704, GRB990806, GRB991014, GRB991105, GRB000615, GRB000307
