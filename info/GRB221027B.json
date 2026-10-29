@@ -3,26 +3,43 @@
   "alias": [],
   "ra": 225.62105,
   "dec": 47.44193,
-  "T0": "2022-10-28T01:21:53Z",
-  "T0_ref": null,
+  "T0": "2022-10-27T19:13:38.784400Z",
+  "T0_ref": "GCN 32867（BAT 触发 19:13:38 UT，trigger=1131397）；亚秒取 Swift/BAT 官方目录 batgrbproduct（仓内 external/swift_bat 快照 trigger_time=2022-10-27T19:13:38.784400Z），external/swiftgrbba 快照同为 19:13:38.000Z，整数秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 32867",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发 #1131397（GCN 32867）。ra/dec 为 GCN 32867 内的 Swift-XRT enhanced position（1.9 arcsec，radius，90% containment——置信水平原文明确给出，故 pos_error_confidence=90）。T0 修正：bot 原值 2022-10-28T01:21:53Z 系把 MASTER 通告（GCN 32871）的指向时刻（'22094 sec after trigger time at 2022-10-28 01:21:53 UT'，原文 t0_note/t0_basis 为 t0 为 meta trigger-time（真实触发时刻）/meta_trigger）误作触发时刻，反推可得其真实含义；已改为 BAT 触发时刻 2022-10-27T19:13:38.784400Z（GCN 32867 给 19:13:38 UT；亚秒以触发仪器官方目录 batgrbproduct 为准，swiftgrbba 快照 19:13:38.000Z 整数秒一致）。t90=8.66±1.10 s（15-350 keV，GCN 32892 Swift/BAT 精化分析；external/swiftgrbba 快照 t90 同值），按目录 t90 判 lgrb。测光检索（2026-10-28）：仓内 gcn/archive 全文检索命中 10 篇（GCN 32867/32868/32869/32870/32871/32873/32875/32880/32892/32905），其中 6 篇含光学测光或上限（32869 BOOTES-1、32871 MASTER-Tavrida、32873 BART-SBT/FRAM-ORM、32875 Swift/UVOT、32880 COATLI、32905 GRANDMA），27 行全部入库；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无该源记录；GCN 站与仓内一致（32880 已在线打开核对，https://gcn.nasa.gov/circulars/32880 ）；文献检索：SciX 站连接超时，改用 WebSearch（多组关键词）+ arXiv 原文核验，命中样本论文 Qu+2025（MNRAS Letters 540 L6，arXiv:2505.05561，表 2 仅样本列表、无逐源测光表），无该源专文、无可引用测光表；TNS 不适用（GRB 类、无 AT/SN 命名）。共补 27 行；GCN 32868/32870 的 XRT 数据为 X 射线、按规则不入库",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift/BAT 触发时刻（GCN 32867：19:13:38 UT；亚秒取 batgrbproduct 官方目录）。bot 原值 2022-10-28T01:21:53Z 系 MASTER 指向时刻误植，已存 comment",
+    "t0_basis": "gcn_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Qu+2025",
+      "url": "https://arxiv.org/abs/2505.05561",
+      "title": "Pieces of evidence for multiple progenitors of Swift long gamma-ray bursts",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
