@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB041226",
-  "alias": [],
+  "alias": [
+    "GRB 041226",
+    "BAT 100815",
+    "Swift 100815"
+  ],
   "ra": 79.544,
   "dec": 73.349,
-  "T0": "2004-12-26T00:34:19Z",
-  "T0_ref": null,
+  "T0": "2004-12-26T20:34:18.976Z",
+  "T0_ref": "GCN 2914（Swift-BAT on-board 触发，原文「At 20:34:19 UT, the Swift Burst Alert Telescope (BAT) triggered」）；sub-second 取触发仪器官方 Swift/BAT 在线目录 Trig_time_UTC=2004-12-26T20:34:18.976400（external/swift_bat、swift_grb 快照），整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 360.0,
+  "pos_error_confidence": "3sigma",
   "pos_ref": "GCN 2914",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB041226 = Swift BAT on-board rate trigger 事件（GCN 2914 原文「the Swift Burst Alert Telescope (BAT) triggered and located on-board GRB041226」，BAT 触发号 100815）。多目录交叉：heasarc_grbcat（grbcat_id 5813，observatories=SWIFT）、swift_bat（名 BAT 100815）、swift_grb（名 Swift 100815）、swiftgrbba（target 100815）、mpe_greiner（obs_date 2004-12-26，RA 05h18m10s +73°21' = 79.542°，+73.35°）同名条目坐标互证；external 各快照中 2004-12-26 当日均仅此一源，无同日他暴混淆；info/ 无孪生条目、GRBCAT 无 A/B/C 后缀，无同事件双建档。T0：原 bot T0=2004-12-26T00:34:19Z 系 heasarc_grbcat 快照 trigger_time=2004-12-26T00:34:19.000Z（time_def=BAT trigger）的误值被 meta_trigger 采信（Issue #68 家族），较真实触发早 20 h；证伪三路：① GCN 2914 原文明言触发在 20:34:19 UT；② GCN 2961 BOOTES-2 于 26 日 20:34:00 UT 起 30 s 曝光，自称起于「onset of the 20 s main emission」前 19 s（= 20:34:19）；③ GCN 2915 ROTSE 首帧 27 日 00:46:47 UT 自称「4.2 hours after the burst」（00:34:19 口径下为 24.2 h，矛盾；20:34:19 口径下为 4.21 h，自洽）。T0 更正为 2004-12-26T20:34:18.976Z（Swift/BAT 官方目录 Trig_time_UTC=20:34:18.976400，与 GCN 整秒值仅差 24 ms，按 §3.2 取触发仪器亚秒值；heasarc_grbcat 快照误值 00:34:19 弃用，GRBCAT 快照问题在 PR 报告、快照只读不改）。位置：RA 79.544、Dec 73.349（J2000，GCN 2914 BAT 地面定位），误差 6 arcmin（radius，3-sigma，含系统差）→ pos_error=360″、pos_error_confidence=3sigma（从原文）；swift_bat 精化图像位置 79.55062/73.33427（Image_position_err 2.14′，Image_SNR 10.25）备查，不改库值。分类：swift_bat 目录 t90=8.296±1.876 s（15-350 keV）与 swift_grb t90=89.5 s、swiftgrbba t90=89.7 s（15-150 keV）冲突（相差约 10 倍），按 §3.9 来源冲突 sub_tag 留空、报 PR 待决（两值均 >2 s，若裁定可判 lgrb）；GCN 2914「multi-peaked with a main emission duration of ~20 s（4 counts/cm^2 fluence，15-350 keV）」备查。XRT/UVOT 均无观测（GCN 2914：飞船未自主 slewing；swiftgrbba comment「No AT slew; XRT: no observation; UVOT: no observation」；swift_bat XRT_detection=No），无余辉定位、无红移测定，非 GRB/撤回证据：未发现（GCN 链 2914→2915→2961 无更正或撤回，burst 保留于 Swift/BAT 官方目录）。测光检索（2026-10-29）：仓内 gcn/archive 全文检索「GRB041226/GRB 041226」命中 3 篇（2914 BAT 探测、2915 ROTSE-IIIb、2961 BOOTES-2 同时观测），其中 2 篇含光学数值（2915、2961）全部入库；external/rssgrbag 0 命中、grbsn_webtool 无该事件目录；external 目录级命中（heasarc_grbcat/swift_bat/swift_grb/swiftgrbba/mpe_greiner 各 1 条）均无测光表；OpenAlex 检索 5 条，无 041226 专属研究论文（BOOTES-2 会议文 DOI 10.1393/ncc/i2005-10137-x 实际打开仅为 landing page 无全文，其数据与 GCN 2961 同源，不引）；arXiv API all:\"GRB 041226\"、abs:041226 均 0 命中（export.arxiv.org，2026-10-29）；ADS/SciX API 无 token（401）未检索（如实注明）；TNS 不适用（2004 年 GRB，早于 TNS 收录范围）→ 本 PR 补 1 行（BOOTES-2 触发时刻 30 s 曝光未过滤极限 7.0 mag，GCN 2961），原 2 行 ROTSE 依正确 T0 重算 time（mjd 绝对时刻一处不变、一处替换为有出处值），详见 lc/GRB041226.csv 行 comment。alias：新增「GRB 041226」（GCN 2961 与 heasarc_grbcat/swift_grb/mpe_greiner 空格形用名）、「BAT 100815」（swift_bat 目录 name_alt）、「Swift 100815」（swift_grb 目录 name_alt），触发号 100815 三快照一致。bot 时间基准说明改写：原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、原 t0_basis=meta_trigger，原值留存于此。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 真实触发时刻：GCN 2914 整秒 20:34:19 UT，亚秒取触发仪器官方目录 20:34:18.976400",
+    "t0_basis": "swift_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
