@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB010412",
-  "alias": [],
+  "alias": [
+    "GRB 010412"
+  ],
   "ra": 294.92,
   "dec": 13.62,
-  "T0": "2001-04-13T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2001-04-12T21:46:28.992Z",
+  "T0_ref": "GCN 1037（触发仪器 BeppoSAX/GRBM 官方通告）：triggered ... on April 12.907280 U.T. = 2001-04-12T21:46:28.992Z；GRBCAT（external/heasarc_grbcat 快照，grbcat_id 5165 BeppoSAX 行）MJD 52011.9072800926 同一值（IPN 行 52011.9072916667=21:46:29.000，差 8 ms）；GCN 1033 记 21:46 UT 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BeppoSAX/GRBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 1036（Ulysses+BeppoSAX/GRBM 三角定位）：3σ 环带（中心 3.671/-21.012，半径 75.856±0.034 deg）与 BeppoSAX/WFC 误差圆相交成误差框，面积约 47 平方角分，四角 294.842577/13.545103、294.929439/13.716716、294.906675/13.518189、294.990525/13.683762（J2000）；库内 ra/dec=294.92/13.62 为四角均值 294.9173/13.6159 的两位小数舍入；误差框为多边形、原文未给圆半径与置信水平，pos_error/pos_error_confidence 留空。备查：WFC 精化定位 294.913/13.618、6'（GCN 1035/1037，未标置信水平）；初步 294.89/13.62、10'（GCN 1033）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB010412＝HEASARC GRBCAT grbcat_id 5165（BeppoSAX/IPN，Coletta & Giommi 2002）＝MPE Greiner 目录 GRB 010412（SAX/WFC 19h39m39s +13d37m，6'，IPN=y）；GCN 用名「GRB 010412」已入 alias。原 T0=2001-04-13T00:00:00Z 为名字日占位（extra_data.t0_basis=name_date 家族，GRB001019 同类），触发日实为 04-12，已废弃。T0 判定：触发仪器 BeppoSAX/GRBM 官方通告 GCN 1037「GRB010412 was triggered by the BeppoSAX Gamma Ray Burst Monitor (GRBM) on April 12.907280 U.T」＝2001-04-12T21:46:28.992Z（分数日 6 位 ≈0.086 s 精度，按来源精度照录、不补亚秒）；GRBCAT 原始行 MJD 52011.9072800926（Earth Crossing Time，BeppoSAX 行）为同一值，同源 IPN 行 52011.9072916667（21:46:29.000）与之差 8 ms；GCN 1033 记「Apr. 12, 21:46 U.T.」（整分）互证。无需 T0_offset。Trigger_Instrument 由 IPN 改为 BeppoSAX/GRBM：GCN 1037 明确由 GRBM 触发，IPN 仅做三角定位。定位：GCN 1036（Ulysses 与 BeppoSAX/GRBM 三角定位）给出 3σ 环带（中心 3.671/-21.012，半径 75.856±0.034 deg）与 WFC 误差圆相交的误差框，面积约 47 平方角分，四角 (294.842577,13.545103)/(294.929439,13.716716)/(294.906675,13.518189)/(294.990525,13.683762)；库内 ra/dec=294.92/13.62 即四角均值 (294.9173,13.6159) 的两位小数舍入，保留。框为多边形、原文未给圆半径，故 pos_error 与 pos_error_confidence 留空（同 GRB240411A/GRB131125A 处置）。备查：BeppoSAX/WFC 精化定位 RA=294.913、Dec=13.618、误差半径 6'（GCN 1035；GCN 1037 记 19h39m39.0s +13d37m06.6s，置信水平未标注），初步定位 294.89/13.62、10'（GCN 1033）；MPE 目录与 GRBCAT 坐标与之一致。分类：t90=60.0±2.2 s（HEASARC saxgrbmgrb 快照，40-700 keV），按目录 t90 判 lgrb；并列备查：GCN 1037 GRBM duration ~75 s、1 s 峰值流量 (1.71±0.06)e-6 erg/cm2/s（40-700 keV），WFC duration ~90 s、峰值 2.3 Crab（2-28 keV）；GCN 1036 Ulysses duration ~80 s、25-100 keV fluence 9.4e-6 erg/cm2、0.5 s 峰值 ~9e-7 erg/cm2/s（受太阳质子事件抬高本底影响，误差大于常）。无余辉、无红移（该事件 7 篇 GCN 均无光谱/红移报道），host_galaxy 留空。测光：3 条全为上限（无探测）——Mount Stromlo 50-inch R~20.0（GCN 1038，13.73 UT，3x300 s）、Palomar 60-inch I~20.5（GCN 1039，13.5 UT，4 指向 x 2x450 s）、Nyrölä 0.4m Rc>19.0（Oksanen+2002 Table 1，+29 h）。原库两行 time=0/mjd=52012.0 系锚在占位 T0 上的残值，已按真实历元重算 time/time_err/mjd 并补 source 列；两行数值、telescope、reference 与 upperlimit=y 经核对与原文一致，未改。X 射线行：本表无能量串 band 行，未涉及。测光检索（2026-10-29）：仓内 gcn/archive 全文命中 7 篇（1033/1035/1036/1037/1038/1039/1042，与 GCN 站事件页 gcn.nasa.gov/circulars/events/grb-010412 所列 7 篇一致；1038/1039 含光学上限，1042 仅 USNO 场星定标表、无源本身数值，其余为 X 射线/IPN 定位）；external/rssgrbag 无该源（无射电光变）、grbsn_webtool 无该事件、mpe_greiner 仅定位与 IPN=y；arXiv API（all:\"GRB 010412\" 与 all:GRB010412）0 命中；ADS API 无 token（401 Missing Authorization）、SciX API 404、SIMBAD 连接失败（TLS EOF / 502），未能完成 ADS 文献普查；另实际打开 Oksanen+2002（JAAVSO 30, 126，ADS 扫描 PDF https://articles.adsabs.harvard.edu/pdf/2002JAVSO..30..126O 共 4 页；摘要页 ui.adsabs 对本机返回 405 人机验证）。结论：可用测光仅 3 条上限；本次补 1 行（Nyrölä Rc>19.0），修订 2 行时间锚点。原 extra_data.t0_note/t0_basis（「t0 为 meta trigger-time（真实触发时刻）」/「meta_trigger」）与占位 T0 曾不自洽，改 T0 后该说明成立，原值保留不改。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [
     {
