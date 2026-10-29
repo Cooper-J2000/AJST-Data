@@ -1,29 +1,35 @@
 {
   "transient_id": "GRB210507",
   "alias": [
-    "GRB 210507.443"
+    "GRB 210507.443",
+    "HAWC-210507A"
   ],
-  "ra": null,
-  "dec": null,
-  "T0": "2021-05-07T11:36:00Z",
-  "T0_ref": null,
+  "ra": 257.2429,
+  "dec": 8.0859,
+  "T0": "2021-05-07T10:38:22Z",
+  "T0_ref": "GCN 29958（HAWC Burst Monitor 触发 UT）＋ HAWC AMON notice 1010067_1345（DISCOVERY_TIME 38302 SOD = 10:38:22.00 UT，2021-05-07）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HAWC",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1440,
+  "pos_ref": "GCN 29958（HAWC Burst Monitor AMON notice 1010067_1345）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：HAWC Burst Monitor 警报 HAWC-210507A（GCN 29958，2021-05-07 10:38:22 UT，10 s 窗，run 1010067 event 1345），DDOTI 通告称 HAWC GRB 210507.443（GCN 29957，日期小数 0.443 d≈10:38 UT 与触发一致）；别名「GRB 210507.443」为 GCN 29957 原文用名、「HAWC-210507A」为 GCN 29958 原文用名。**同日同名甄别**：Fermi/GBM 的 GRB 210507A 触发于 2021-05-07 18:40:38 UT（trigger 642105643 / 210507778，RA 285.9,Dec -7.5，GCN 29963）与本事件（10:38:22 UT，RA 257.24,Dec +8.08）时刻差 8 h、位置不同，为不同事件；Integral GRB210507.04（GCN 29962，MASTER 观测）亦为另一事件——本源未混入其数据。**事件可信度**：HAWC 通告自述该警报「consistent with background expectation based on the observation time」（FAR 3.76/yr，p=0.0062），后续无任何对应体：ANTARES 中微子搜索无候选（GCN 29967）、DDOTI 深场无探测（GCN 29957）、GBM 同日事件位置不符。事件未经证实，`tag` 维持空（不断言 grb），如后续被权威否定按 §3.7 报维护者处置。定位：HAWC Burst Monitor RA,Dec=257.2429,+8.0859（AMON notice J2000；GCN 29958 舍入为 257.24,+8.08），误差 0.4 deg=1440 arcsec——GCN 29958 标「68% containment（statistical only）」而 AMON notice 对同一 24 arcmin 值标「90% containment」，两者矛盾；DDOTI（GCN 29957）按高斯假设由 0.4°（68%）推得 90% 半径 34.1 arcmin 用于覆盖，佐证 0.4° 为 68% 口径，故 `pos_error_confidence=68`，AMON 的 90% 标注并列备查。T0：原库 2021-05-07T11:36:00Z **不是触发时刻**——恰为 GCN 29957 中 DDOTI 观测窗的**终点** 11:36 UTC（Issue #84 家族：观测窗口端点被错当 T0），且原库 lc 行 time=256080 s 对应绝对时刻 2021-05-10T10:44（照抄了 GCN 29957 的日期笔误，见下）；按触发仪器官方通告 GCN 29958 改为 10:38:22 UT（AMON notice 亚秒级 10:38:22.00）。`T0_offset` 无 >1 s 证据，不写。测光检索（2026-10-28）：GCN 站逐号扫描 29940–30010 命中本事件相关 3 篇（29957 DDOTI 上限/29958 HAWC 警报/29967 ANTARES 中微子上限；29962/29963/29966 属同日其他事件），光学测光仅 29957（DDOTI 上限，已在 lc）；仓内 external/rssgrbag、external/grbsn_webtool 无该事件；arXiv API 检索 \"210507.443\"/\"HAWC-210507A\" 0 篇、无研究论文 → 补 0 行，仅改写 1 行（窗口中点口径与日期笔误更正）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 HAWC Burst Monitor 触发时刻（GCN 29958/AMON notice 10:38:22.00 UT）；原 bot 值 2021-05-07T11:36:00Z 为 GCN 29957 中 DDOTI 观测窗终点时刻（错锚，Issue #84 家族），已留在 comment",
+    "t0_basis": "GCN 29958 + AMON notice 1010067_1345",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
