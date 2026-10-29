@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB170710B",
-  "alias": [],
-  "ra": 43.111,
-  "dec": 42.6391,
-  "T0": "2017-07-10T00:45:44Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 170710B",
+    "BAT 00086619001"
+  ],
+  "ra": 43.12205,
+  "dec": 42.67877,
+  "T0": "2017-07-10T08:10:06.251Z",
+  "T0_ref": "GCN 21316（Lien et al., Swift）：'At 08:10:06.251 UT on 2017-07-10, the Swift Burst Alert Telescope (BAT) detected a GRB during a pre-planned slew to a scheduled target.'；external/swift_bat 官方目录快照 trigger_time=20170710T08:10:06.251Z（与 GCN 毫秒值一致，取触发仪器口径）；GCN 21319（Fermi GBM）：'At 08:10:08.00 UT on 10 July 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170710B (trigger 521367012 / 170710340)'（仓内 FERMIGBRST 快照 bn170710340=08:10:07.996Z 一致，晚 1.7 s，§3.8 有 Swift 以 Swift 为准）。原 T0=2017-07-10T00:45:44Z 系 bot 误取同日另一暴 GRB 170710A（BAT 761119，external/swift_bat 快照 trigger_time=2017-07-10T00:45:44.623200Z）的触发时刻，而 ra/dec 与 lc 均属 170710B，按 §3.2/Issue #84 改正",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 60.0,
-  "pos_ref": "GCN 21316",
+  "pos_ref": "GCN 21316（Lien et al., Swift）：BAT 定位 'RA/Dec = 02h52m29.3s +42d40'43.6\"'（换算 43.1221/42.6788），误差 1 arcmin；external/swift_bat 快照 ra=43.12205 dec=42.67877（同一官方分析口径，取快照十进值）；GCN 21319 Fermi GBM 位置 43.122/42.679 一致",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "由 gcn_llm_extract 管线导入（bot_created；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 不可信，按 §3.10 核实改写并保留原文于此）。审核 2026-10-28（fsy）。① T0：原值 2017-07-10T00:45:44Z 为同日 GRB 170710A（BAT 761119）触发时刻、bot 张冠李戴（本源 ra/dec 与 lc 行均属 170710B）；改正为 Swift/BAT 预置 slew 探测时刻 2017-07-10T08:10:06.251Z（GCN 21316 原文毫秒值 + external/swift_bat 快照同值双证；Fermi GBM GCN 21319 触发 08:10:08.00 UT 晚 1.7 s，§3.8 有 Swift 以 Swift 为准；Issue #84）。② 定位：GCN 21316 BAT 位置 02h52m29.3s +42d40'43.6\"（1 arcmin）→ 取 external/swift_bat 快照十进值 43.12205/42.67877；原 ra/dec=43.111/42.6391 无出处可考（疑为 bot 导入杂值）废弃；pos_error=60″ 保留；来源未标注置信水平，pos_error_confidence 留空（Swift/BAT 惯例通常 90%，备查，§3.9）。③ 别名：GRB 170710B（GCN 21316 等通告用名）+ BAT 00086619001（external/swift_bat name_alt，Swift 观测序号 00086619001——本源为 slew 探测、无常规 6 位 BAT trigger 号）。④ 分类：t90=54.4±1.6 s（external/swift_bat 目录 15-350 keV）按目录 t90 判 lgrb（2026-10-26 裁定口径）；GCN 21319 'duration (T90) of about 42 s'（Fermi GBM）、快照 bn170710340 t90=42.24±4.64 s（50-300 keV）一致；GCN 21319 记 LAT boresight 夹角 49°（LAT 无独立探测发布）。⑤ 光变（原 1 行改 + 补 4 行，全部为上限）：(a) 原 1 行 UVOT UVW2 上限 21.3 mag（GCN 21318）：观测窗口 T0+85.2→92.7 ks、UVW2 总曝光 3924 s，改窗口中点 time=88950.0、time_err=3750.0（§3.8）；原 time=111864 系 bot 以误取 T0 下的绝对开始时刻反推，随 T0 改正重锚；mag_system 留空（原文未声明，UVOT 推定 Vega 引 Breeveld+2011 备查）。(b) 补 AMI 15 GHz 4 行（GCN 21461，Kunal Mooley, Oxford）：2017 Jul 12.3/13.26/15.29/19.23 UT 四晚 3σ 上限 153/93/93/222 μJy（原文年分笔误 2016 应为 2017），有明确时间锚点入库（§3.3）；band=15GHz、μJy 原样、日期末位半值作 time_err。⑥ 本源无 X-ray 行（GCN 21318/21354 之 XRT 内容按 §3.3/§3.4 不入测光库；GCN 21354 记 XRT Source 1 无衰减、非余辉）。GCN 21317（ToO 启动）无测光。⑦ §3.3 检索留证（2026-10-28）：gcn/archive 本机缺失，改用 GCN 网站（gcn.nasa.gov）源名 'GRB 170710B' + 事件页（circulars/events/grb-170710b）双通道检索，共得 6 篇 circular——21316（Swift BAT slew 探测）、21317（Swift ToO 启动）、21318（Swift-XRT/UVOT，UVW2 上限 21.3）、21319（Fermi GBM）、21354（Further Swift-XRT，无光学）、21461（AMI 15 GHz 射电 4 晚上限）；仓内快照 external/swift_bat、fermi_gbm、uvot_grb、swift_xrt_live 均核对（uvot_grb/xrt_live 无本源条目）；rssgrbag、grbsn_webtool 无交集；ADS/web 文献检索（两轮）无本源专用研究论文 → articles[] 维持空（GCN 通告不入 articles）；新增 4 行均来自 GCN 21461 已核对原文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift BAT slew 探测真实触发时刻（GCN 21316 + external/swift_bat 目录快照，2026-10-28 审核改写；原 bot 值系误取同日 GRB 170710A 触发时刻）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
