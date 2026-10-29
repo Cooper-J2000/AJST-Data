@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB181023A",
-  "alias": [],
-  "ra": 248.32979,
-  "dec": 19.5714,
-  "T0": "2018-10-23T02:04:02Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 181023A",
+    "BAT 868427"
+  ],
+  "ra": 248.3287,
+  "dec": 19.57062,
+  "T0": "2018-10-23T02:04:02.201780Z",
+  "T0_ref": "GCN 23366（Kennea et al., Swift）：'At 02:04:02 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 181023A (trigger=868427)'；external/swift_bat 官方目录快照 trigger_time=2018-10-23T02:04:02.201780Z（整数秒一致，取触发仪器目录亚秒值）；Fermi 无本源触发（FERMIGBRST 快照无 181023 条目）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
-  "pos_ref": "GCN 23369",
+  "pos_ref": "GCN 23369（Enhanced Swift-XRT position）：'RA, Dec = 248.32870, +19.57062; uncertainty 1.7 arcsec (90% confidence)'（1424 s XRT PC 数据；XRT-UVOT 对准 + USNO-B1 场源匹配改正，Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177）；原 ra/dec=248.32979/19.5714 与 23369 精化值差 ~4″、超出 pos_error，本次统一取 23369 原文值（与 pos_error=1.7″ 同源）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "由 gcn_llm_extract 管线导入（bot_created；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 不可信，按 §3.10 核实改写并保留原文于此）。审核 2026-10-28（fsy）。① T0：GCN 23366 整秒触发时刻 + external/swift_bat 快照亚秒值 02:04:02.201780Z（触发仪器目录口径，§3.8）。② 定位：GCN 23369 精化 XRT 位置 RA,Dec=248.32870/+19.57062（1.7″, 90% confidence）→ pos_error_confidence=90（原文明确）；原 ra/dec=248.32979/19.5714（差 ~4″、来源不明）废弃。③ 别名：GRB 181023A（GCN 用名）+ BAT 868427（external/swift_bat name_alt）。④ 分类：t90=56.984±8.033 s（external/swift_bat 目录 15-350 keV）按目录 t90 判 lgrb（2026-10-26 裁定口径）；GCN 23377（BAT refined）同段能段 T90 一致。⑤ 光变（原 1 行改 + 补 8 行，全部为上限）：(a) 原 1 行 UVOT White FC 典型上限 19.6（GCN 23366）：FC 150 s、T+199 s 起 → 窗口中点 time=274.0、time_err=75.0（§3.8；原 time=199 取起点）、band=w 改 uvot-white（w 为 Pan-STARRS 键）、mag_system 留空（原文未声明，UVOT 推定 Vega 引 Breeveld+2011 备查）；GCN 23376 white(fc) 200–350 s >20.1 为同曝精化值、不另立行记于此。(b) 补 KAIT 1 行（GCN 23368）：clear (roughly R)、60 s/帧、起 02:16:07 UT（=T0+724.8 s）、约 25 min，单帧典型限深 ~19.0（Pan-STARRS1 定标）→ 窗口中点 time=1474.8、time_err=750.0；clear 无正式滤光片 band=G（§3.4）；mag_system 留空。(c) 补 Swift/UVOT 上限表 7 行（GCN 23376，LaPorte et al.）：'using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)' → mag_system=Vega；未做银消改正（E(B-V)=0.05, Schlegel et al. 1998）：white 200–2078 s、470 s >20.8（FC 后续拼接，与 FC 行不同测不重复）；v 356–2128 s、194 s >19.4；b 455–2054 s、175 s >20.3；u 430–2029 s、175 s >19.6；w1 406–2005 s、175 s >19.6；m2 554–1803 s、78 s >19.2；w2 679–2104 s、175 s >19.2（均 upperlimit=y、中点/半跨口径）。⑥ 本源无 X-ray 行（GCN 23373 XRT refined 按规则不入测光库）。⑦ §3.3 检索留证（2026-10-28）：gcn/archive 本机缺失，改用 GCN 网站（gcn.nasa.gov）源名 'GRB 181023A' + 事件页（circulars/events/grb-181023a）双通道检索，共得 6 篇 circular——23366（Swift 检测）、23368（KAIT 光学上限）、23369（enhanced XRT 位置，无测光）、23373（XRT refined，无光学）、23376（UVOT 上限表）、23377（BAT refined）；仓内快照 external/swift_bat（BAT 868427 全参数）、fermi_gbm（无本源条目）均核对；rssgrbag、grbsn_webtool 无交集；ADS/web 文献检索无本源专用研究论文 → articles[] 维持空（GCN 通告不入 articles）；新增 8 行均来自 GCN 23368/23376 已核对原文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift BAT 真实触发时刻（GCN 23366 + external/swift_bat 目录快照亚秒值，2026-10-28 审核改写）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
