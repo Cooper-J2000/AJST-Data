@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB001007",
-  "alias": [],
-  "ra": 61.47625,
-  "dec": -21.89611111,
-  "T0": "2000-10-07T04:05:56Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 001007"
+  ],
+  "ra": 61.4761667,
+  "dec": -21.8959444,
+  "T0": "2000-10-07T04:58:47Z",
+  "T0_ref": "GCN 841（Ulysses/Konus-Wind/NEAR IPN 通告：burst observed at 17927 s UT → 2000-10-07T04:58:47）；Castro Cerón+2002, A&A, 393, 445 正文 t0=2000-10-07.207488 UT 交叉印证；HEASARC GRBCAT ECT=2000-10-07T04:58:48.000Z（与通告差 1 s，取触发仪器通告精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -12,11 +14,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.6,
+  "pos_ref": "Castro Cerón+2002, A&A, 393, 445：1.54m Danish 2000-10-11.3192–11.3673 帧 USNO A2.0 50 星天测解，α=4h05m54.28s δ=-21°53′45.4″，最终误差 0.60″（内差 0.55″+USNO 系统 1σ≈0.25″）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 rssgrbag 射电余辉目录导入新建 (Chandra & Frail 2012)",
+  "comment": "IPN 暴（Ulysses/Konus-Wind/NEAR 三角定位，GCN 841：三船观测于 17927 s UT=04:58:47，T90≈375 s，25–100 keV 液态 3.3e-5 erg/cm2）。原 T0=2000-10-07T04:05:56Z 无可溯源出处，疑为 GCN 843 参考星坐标 RA 04:05:56.44 误析成时刻（GRBCAT ECT 04:58:48 与 GCN 841 的 17927 s 均不支持），审核修正为 2000-10-07T04:58:47Z（触发仪器通告精度，整表时间轴重算）。ra/dec 更新为 Castro Cerón+2002 天测精化 OT 位置（原值 61.47625/-21.896111 为 GCN 843 圆整值）；pos_error=0.60″（1σ）。别名 GRB 001007 为 GCN 841/845 原文用名。sub_tag=lgrb 依 rssgrbag 目录 t90=375.0±0.0 s（Chandra & Frail 2012 目录表；GCN 841 亦给 duration≈375 s），按目录 t90 判 lgrb。候选宿主（host_galaxy 不建立，候选待定）：Castro Cerón+2002 §4.3 在 OA 位置发现延展复杂系统（≥2 成分，VLT/FORS1 468 d 与 ESO 3.60m 2001-09 B coadd），宿主合成星等 B=25.10±0.25、R=24.84±0.15，无红移；晚晚期（2000-10-29 起）lc 行为 OA+宿主混合值，各行 comment 已注明。测光检索（2026-10-30）：仓内 gcn/archive 5 篇（GCN 841/843/845/860/862，其中 4 篇含测光或上限数值）；external/rssgrbag 光变 1 行（8.46GHz 222µJy@7.1d，与 GCN 860 同一测量，已按 §3.4 去重）、grbsn_webtool/uvot_grb 无记录；GCN 站与 archive 一致（5 篇）；OpenAlex \"GRB 001007\" 命中 3 篇（Castro Cerón+2002 采用；2003 Springer 会议卷 doi:10.1007/978-94-017-1778-6_110 为 CC02 同组数据的重复发表，未另取值；GCN 845）；A&A VoR 出版社页面 403 反爬（HTML/PDF/DOI 均试、VizieR 无机读目录、ADS articles 镜像不可达），按 §3.3 取 arXiv v4（astro-ph/0110049，journal ref A&A 393, 445-452 与 VoR 一致）Table 1 补 11 行，原 GCN 845 行 R 值按 VoR 重定标值改 20.28→20.50。",
   "sub_tag": [
     "lgrb"
   ],
@@ -105,16 +107,22 @@
         "name_alt": [],
         "trigger_time": "2000-10-07T04:58:48.000Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
     }
   },
   "articles": [
     {
       "name": "CastroCeron+2002",
       "title": "The bright optical afterglow of the long GRB 001007",
-      "url": "https://ui.adsabs.harvard.edu/abs/2002A&A...393..445C",
+      "url": "https://doi.org/10.1051/0004-6361:20021010",
       "bibtex": "@ARTICLE{2002A&A...393..445C,\n       author = {{Castro Cer{\\'o}n}, J.~M. and {Castro-Tirado}, A.~J. and {Gorosabel}, J. and {Hjorth}, J. and {Fynbo}, J.~U. and {Jensen}, B.~L. and {Pedersen}, H. and {Andersen}, M.~I. and {L{\\'o}pez-Corredoira}, M. and {Su{\\'a}rez}, O. and {Grosdidier}, Y. and {Casares}, J. and {P{\\'e}rez-Ram{\\'\\i}rez}, D. and {Milvang-Jensen}, B. and {Mall{\\'e}n-Ornelas}, G. and {Fruchter}, A. and {Greiner}, J. and {Pian}, E. and {Vreeswijk}, P.~M. and {Barthelmy}, S.~D. and {Cline}, T. and {Frontera}, F. and {Kaper}, L. and {Klose}, S. and {Kouveliotou}, C. and {Hartmann}, D.~H. and {Hurley}, K. and {Masetti}, N. and {Mazets}, E. and {Palazzi}, E. and {Park}, H.~S. and {Rol}, E. and {Salamanca}, I. and {Tanvir}, N. and {Trombka}, J.~I. and {Wijers}, R.~A.~M.~J. and {Williams}, G.~G. and {van den Heuvel}, E.},\n        title = \"{The bright optical afterglow of the long GRB 001007}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, techniques: photometric, cosmology: observations, Astrophysics},\n         year = 2002,\n        month = oct,\n       volume = {393},\n        pages = {445-451},\n          doi = {10.1051/0004-6361:20021010},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0110049},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2002A&A...393..445C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "1sigma"
 }
