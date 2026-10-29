@@ -1,9 +1,12 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-118920.0,,s,51935.376388888886,V,6.3,,magnitude,,n,y,,,,,,,1.0,n,,CONCAM/Kitt Peak,GCN927,,
-176694.0,,s,51936.045069444444,R,21.3,0.2,magnitude,,n,n,,,,,,,1.0,n,,,GCN929,,
-178736.0,,s,51936.068703703706,R,21.3,0.4,magnitude,,n,n,,,,,,,1.0,n,,,GCN929,,
-190944.0,,s,51936.21,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN925,,
-190944.0,,s,51936.21,R,21.17,0.2,magnitude,,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN925,,
-195264.0,,s,51936.26,R,21.29,0.05,magnitude,,n,n,,,,,,,1.0,n,,TNG/Dolores,GCN926,,
-195264.0,,s,51936.26,R,23.5,,magnitude,,n,y,,,,,,,1.0,n,,TNG/Dolores,GCN926,,
-270432.0,,s,51937.13,R,21.29,0.2,magnitude,,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN925,,
+64.0,90,s,51935.3832407,G,6.3,,magnitude,,n,y,,,,,,,1.0,n,Kitt Peak,CONCAM,GCN927,GCN 927：CONCAM（Kitt Peak 全天鱼眼相机，无滤光片）一帧积分 33022-33202 s UT（3 min，时刻已改正 26 s 钟差、不确定度约 2 s），括住触发时刻 33048 s；band 原记 V，鱼眼相机无滤光片、原文以视星等（visual magnitude）表述，改 band=G（§3.3 无滤光片规则）；time=窗口中点 33112 s UT-T0、time_err=半窗口 90 s（§3.8 约定）；原文给视星等下限 6.3，未声明星等系统；time 相对 GCN 922 触发 T0 重算（原行以 2001-01-25T00:00 占位历元）,Rusty-Harpoon@zcode
+58148.6,900,s,51936.0555162,R,21.3,0.2,magnitude,,n,n,,,,,,,1.0,n,Loiano 1.5m,,GCN929,"GCN 929：起点 Jan 27.0451 UT（GCN 924 作 UT 01:05:00）、曝光 30 min，time=起点+半曝光-T0、time_err=半曝光 900 s；R=21.3±0.2，USNO 定标星 U1350_08031605（GCN 929 作 U350_08031605，原文笔误）；对象为 GCN 924 所报候选（11h57m07.3s +49°44'26.5""），GCN 929 否定其短时标变化；原文未声明星等系统；time 相对 GCN 922 触发 T0 重算（原行以 2001-01-25T00:00 占位历元）",Rusty-Harpoon@zcode
+59887.7,600,s,51936.0756447,R,21.3,0.4,magnitude,,n,n,,,,,,,1.0,n,Loiano 1.5m,,GCN929,GCN 929：起点 Jan 27.0687 UT、曝光 20 min，time=起点+半曝光-T0、time_err=半曝光 600 s；R=21.3±0.4，同前一行对象与定标星；原文未声明星等系统；time 相对 GCN 922 触发 T0 重算（原行以 2001-01-25T00:00 占位历元）,Rusty-Harpoon@zcode
+71496.0,432,s,51936.2100000,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,NOT,ALFOSC,GCN925,GCN 925：NOT+ALFOSC 第一期（Jan 27.21 UT，4×180 s 拼接），误差框内未发现候选对应体，极限 ~R22.5；原文只给历元 Jan 27.21（0.01 d 精度）、未注明为起点或中点，time 按历元直接计、time_err 取历元等效不确定度 ±0.005 d=432 s（§3.8 精度受限历元约定）；原文未声明星等系统（USNO 定标）；time 相对 GCN 922 触发 T0 重算（原行以 2001-01-25T00:00 占位历元）,Rusty-Harpoon@zcode
+71496.0,432,s,51936.2100000,R,21.17,0.2,magnitude,,n,n,,,,,,,1.0,n,NOT,ALFOSC,GCN925,GCN 925：GCN 924 所报对象在第一期 2 张重叠曝光（共 360 s）测得 R=21.17±0.20，USNO U1350_08031605 定标；历元/time_err 处理同本源 NOT 极限行（Jan 27.21，±432 s）；原文未声明星等系统；time 相对 GCN 922 触发 T0 重算,Rusty-Harpoon@zcode
+75816.0,432,s,51936.2600000,R,21.29,0.05,magnitude,,n,n,,,,,,,1.0,n,TNG,Dolores,GCN926,GCN 926：TNG+Dolores 第一期，2001 Jan 27.26 UT（原文自注为触发后 21 h，与 GCN 922 T0 自洽），总曝光 10 min；对象 R=21.29±0.05（不含零点定标不确定度），USNO-A2.0 U1350_08031829 定标；原文只给历元 Jan 27.26（0.01 d 精度），time_err 取历元等效不确定度 ±432 s；原文未声明星等系统；time 相对 GCN 922 触发 T0 重算（原行以 2001-01-25T00:00 占位历元）,Rusty-Harpoon@zcode
+75816.0,432,s,51936.2600000,R,23.5,,magnitude,,n,y,,,,,,,1.0,n,TNG,Dolores,GCN926,GCN 926：两期对比未发现显著变化天体，3σ 极限 R~23.5（原文适用于两期，此为第一期）；历元/time_err 处理同本源 TNG 探测行,Rusty-Harpoon@zcode
+150984.0,432,s,51937.1300000,R,21.29,0.2,magnitude,,n,n,,,,,,,1.0,n,NOT,ALFOSC,GCN925,GCN 925：第二期 Jan 28.13 UT（4×180 s 拼接），对象 R=21.29±0.20，与第一期一致（无变化）；历元/time_err 处理同本源 NOT 极限行；原文未声明星等系统；time 相对 GCN 922 触发 T0 重算（原行以 2001-01-25T00:00 占位历元）,Rusty-Harpoon@zcode
+150984.0,432,s,51937.1300000,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,NOT,ALFOSC,GCN925,GCN 925：原文 'Intercomparison of the images has revealed no candidate counterpart to magnitude ~22.5' 适用于两期，此为第二期上限行（本次审核新增）；历元/time_err 处理同本源 NOT 极限行,Rusty-Harpoon@zcode
+163080.0,432,s,51937.2700000,R,21.29,0.05,magnitude,,n,n,,,,,,,1.0,n,TNG,Dolores,GCN926,GCN 926：第二期 Jan 28.27 UT（原文自注为触发后 45 h）；原文 'well detected on both epochs and is constant within the measurement errors at magnitude R = 21.29 ± 0.05'，据该表述补第二期行（本次审核新增）；历元/time_err 处理同本源 TNG 探测行,Rusty-Harpoon@zcode
+163080.0,432,s,51937.2700000,R,23.5,,magnitude,,n,y,,,,,,,1.0,n,TNG,Dolores,GCN926,GCN 926：3σ 极限 R~23.5，此为第二期上限行（本次审核新增）；历元/time_err 处理同本源 TNG 探测行,Rusty-Harpoon@zcode
