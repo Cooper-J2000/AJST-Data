@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB140619B",
-  "alias": [],
-  "ra": 132.7,
-  "dec": -9.7,
+  "alias": [
+    "GRB140619475",
+    "GRB 140619.475",
+    "bn140619475",
+    "GRB 140619BS"
+  ],
+  "ra": 132.68,
+  "dec": -9.66,
   "T0": "2014-06-19T11:24:40.520000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 16419（原文：At 11:24:40.52 UT on 19 June 2014, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 140619B (trigger 424869883 / 140619475)）；FERMIGBRST trigger_time=2014-06-19T11:24:40.520Z 互证；2FLGC 同行 trigger_time=11:24:40.003Z 与 GBM 差 0.517 s（衍生目录自差，仅交叉验证）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,17 +17,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 0.06,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 16420",
-  "redshift_type": null,
+  "redshift_type": "est",
   "redshift_ref": "catalog:minaev2020",
-  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample。审核链（fsy 2026-10-28）：[身份] Fermi/GBM 触发 140619475（MET 424869883），LAT 定位 (132.68,-9.66)；同日 GRB140619A（Swift/BAT 602080，T0=2014-06-19T11:38:35.84Z，ra=27.096 dec=-39.249）与 GRB140619C（Konus-Wind，T0≈2014-06-19T22:46:06.864 UT，长暴 ~105 s，GCN 16429）均为独立事件；GCN 16466 明言观测目标是 short GRB 140619B 的 Fermi/LAT 位置，无混淆。[T0 复核] 原值 2014-06-19T11:24:40.520000Z 与 GCN 16419 原文及 FERMIGBRST trigger_time=2014-06-19T11:24:40.520Z 一致，保持不变；脚本复核 MET 424869883.52 天真换算=11:24:43.520、扣 3 跳秒（2006/2009/2012）=11:24:40.520，bot 未犯漏扣闰秒错误（Issue #67 类）；GCN 16420 的 At UT 11:24:47 为 LAT 探测时刻、非触发时刻，不采用。[坐标] 原值 ra=132.7 dec=-9.7、pos_error=null：按 GCN 16420 原文 LAT on-ground 定位 (RA,Dec)=(132.68,-9.66) J2000、误差半径 0.06 deg（90% containment, statistical error only），ra/dec 改按原文精度，补 pos_error=0.06、pos_error_unit=deg、pos_error_confidence=90；GBM 初报 (133.4,-3.7)±5 deg（1σ，GCN 16419）已被取代，备查。[红移] z=2.67 非实测：Ruffini+2015（ApJ 808,190，DOI 10.1088/0004-637X/808/2/190）原文 a theoretically derived redshift z=2.67±0.37，Minaev+2020 表转引；redshift_type 补 est，z=2.67±0.37（Ruffini+2015 理论推导值，非实测）。[分类] sub_tag=sgrb 依据 Ruffini+2015（题名 short GRB）与 Minaev+2020 Type I，按来源分类非现算；t90=2.816±0.809 s（FERMIGBRST，50-300 keV；GCN 16419 初报 T90≈0.5 s 同能段）。[alias] 新增「GRB140619475」（GCN 16419 原文用名 trigger 140619475，FERMIGBRST trigger_name 同形）、「GRB 140619.475」（同触发号目录小数形，FERMIGBRST/2FLGC 用名）、bn140619475（HEASARC bn 号）、「GRB 140619BS」（MPE Greiner 表用名）。测光检索留证见 lc 行 comment。",
   "sub_tag": [
     "sgrb",
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    },
     "derived": {
       "best": {
         "eiso": {
