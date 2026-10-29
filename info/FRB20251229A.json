@@ -1,27 +1,35 @@
 {
   "transient_id": "FRB20251229A",
-  "alias": [],
+  "alias": [
+    "FRB 20251229A"
+  ],
   "ra": 310.3494,
   "dec": 16.0252,
   "T0": "2025-12-29T22:00:58Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 43334（CHIME/FRB 首次探测 2025-12-29T22:00:58Z，400 MHz topocentric）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "CHIME",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 35.64,
+  "pos_ref": "GCN 43431（CHIME/FRB 更新 baseband 定位：RA 310.3494±0.0077°、Dec 16.0252±0.0099°，1σ；pos_error 取较大轴 0.0099°=35.64″）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode 2026-10-29。身份：FRB 20251229A = CHIME/FRB 新发现的重复暴（GCN 43334，TNS designation FRB 20251229A）；三次爆发 2025-12-29 22:00:58、2026-01-01 21:56:03、2026-01-03 21:53:36 UTC（400 MHz，topocentric）。T0：取首次探测 2025-12-29T22:00:58Z（GCN 43334），与原值一致，补 T0_ref；无 >1 s 的时刻调整，T0_offset 留空。定位：原 ra/dec=310.3494/16.0252 与 GCN 43431 更新后的 CHIME/FRB baseband 定位（20h41m23.9s +16°01′31″；RA 310.3494±0.0077°、Dec 16.0252±0.0099°，1σ）一致；GCN 43334 的早期定位（20h41m26.3s +16°01′24″，±1.2s/±18″，1σ）已被 43431 取代（两者相距约 36″），不采用。pos_error 取较大轴 0.0099°=35.64″（RA 轴 0.0077°=27.72″），pos_error_confidence=1sigma；43431 未给 90% 误差半径。红移：无测量值；GCN 43334 报 DM=192.145±0.013 pc/cm^3（银河系预期 NE2001 93.6 / YMW16 75.3 pc/cm^3），按 Macquart+2020 预期 z≲0.1，属推断而非测量，redshift 留 null。分类：tags.json 无 FRB 类目，tag/sub_tag 留空，已在 PR 待决事项提出新增 frb 主标签。测光：lc 两行出自 GCN 43339——COLIBRÍ/DDRAGO 双通道在 r、z 同步观测 2026-01-06 02:08–02:42 UTC（窗口 34 min，原文称 29 min 曝光），coadd 后 5σ 上限 r>22.99、z>21.88；Pan-STARRS DR1 定标、AB 系统、未做银河系消光改正（Gext_corr=n）；time=620642 s 为窗口中点 2026-01-06T02:25:00Z（=T0+620642 s，复算一致），time_err=1020 s 取窗口半宽（§3.8 约定，真实曝光中点不可恢复）。覆盖性：43339 按 GCN 43334 旧定位区计算，更新定位（43431）在其约 36″ 外；GCN 43433 用同一批数据按更新定位区做图像相减，给出 r>22.5、z>21.5（5σ），属同一次观测再分析、无新时间锚点，未另立行（原文笔误：43433 将 COLIBRÍ 上限通告 GCN 43339 误引为 43431）。射电：GCN 43334 只给爆发峰值流量 30±3 Jy、400–800 MHz 注量 160±16 Jy ms，非跟随上限，不入 lc。原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写。测光检索（2026-10-29）：仓内 gcn/archive 全文命中 4 篇（43334 发现/定位、43339 COLIBRÍ 上限、43431 更新定位、43433 同批数据再分析），逐篇打开；external/rssgrbag 0 行、grbsn_webtool/uvot_grb 无该源；GCN 站查询 20251229A（archive 已含至 46010 号，覆盖全部相关通告）；arXiv API 两种写法命中 0；ADS/SciX API 无 token（HTTP 401）；TNS 不适用。结论：核对并修订 2 行（补 time_err/telescope/instrument/comment/source），未新增行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 CHIME/FRB 首次探测时刻 2025-12-29T22:00:58Z（GCN 43334）；原 bot 注记 't0 为 meta trigger-time（真实触发时刻）' 已改写",
+    "t0_basis": "GCN 43334",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
