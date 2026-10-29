@@ -1,22 +1,25 @@
 {
   "transient_id": "ZTF19abqanpy",
-  "alias": [],
-  "ra": 56.2643,
-  "dec": 41.99846,
-  "T0": "2019-08-21T03:45:00Z",
-  "T0_ref": null,
+  "alias": [
+    "SN2019nuc"
+  ],
+  "ra": 56.264326,
+  "dec": 41.998417,
+  "T0": "2019-08-17T10:49:26Z",
+  "T0_ref": "GCN 25418（ZTF 首次探测 JD 2458712.9510 = 2019-08-17T10:49:26Z，取到整秒，原表精度 0.0001 d）；GCN 25421 判定本源与 GBM-190816 无关，故取发现时刻而非 GBM 触发时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": null,
   "redshift": 0.043,
   "tag": [
     "sn"
   ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 25418",
+  "redshift_type": "spec-host",
+  "redshift_ref": "GCN 25421（宿主星系窄发射线，z=0.043±0.001）",
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] GCN 25418（Stein et al.）在 subthreshold joint Fermi GBM-LVC 触发 GBM-190816 的 90% 误差框内发现 ZTF19abqanpy（RA 56.264326, Dec 41.998417）；该 GBM 事件见 GCN 25406（GW 候选 2019-08-16T21:22:13.027 UTC；GBM Targeted Search 信号起点 21:22:14.563 UTC，duration ~0.1 s，hard template，FAR 1.2E-4 Hz；无标准 bn 触发号，FERMIGBRST 快照无 190816 行），更新定位于 GCN 25465（90% 面积 3219 sq deg）。GCN 25421（Valeev et al.）用 10.4 m GTC/OSIRIS 于 Aug 21 03:00 UT 起取得 3700-10000 Å 光谱：宽线，SN Ia，max 前约一周；宿主星系（东 13 arcsec）窄发射线 z=0.043±0.001，投影距离 10.9 kpc；明确结论 ZTF19abqanpy 与 Fermi-GW 事件无关。故本源为独立 SN Ia，非 GBM-190816 对应体；库内无 GBM-190816/GRB190816 条目，GRB 190816A（Swift 触发，GCN 25368/25473）为另一事件。[T0] bot 原值 2019-08-21T03:45:00Z 是 GCN 25421 的 GTC i 波段观测时刻（原文 'magnitude on Aug 21, 03:45 UT'），不是触发/发现时刻（Issue #84 家族观测时刻污染）；改为 ZTF 首次探测 2019-08-17T10:49:26Z（GCN 25418 表 JD 2458712.9510）。Trigger_Instrument 由 Fermi/GBM 改为 null（GBM 未触发本源）。[定位/红移] ra/dec 取 GCN 25418；GCN 25418 未给定位误差，pos_error 与 pos_error_confidence 留空（GBM-190816 的大面积误差框不适用于 ZTF 位置）。redshift=0.043 来自宿主星系窄发射线（GCN 25421，±0.001），redshift_type=spec-host。宿主仅知东 13 arcsec、z=0.043，无坐标/名称，host_galaxy 不建。[lc] 原唯一行（time=0, mjd=58716.15625, i=18.65±0.05, GTC/OSIRIS, GCN 25421）即 GTC 成像，按新 T0 重锚 time=320134.0 s；新增 GCN 25418 三行 ZTF 测光：r=19.53±0.14 @ JD 2458712.9510（time=0.4 s）、g=19.67±0.21 @ JD 2458712.9893（time=3309.5 s）、r=18.59±0.07 @ JD 2458715.9438（time=258578.3 s），mjd=JD-2400000.5（原表 4 位小数），30 s 曝光 time_err=15 s。ZTF 星等系统原文未声明，按 ZTF 公共巡天 AB 惯例推定（Bellm et al. 2019, PASP 131, 018002）；GTC i 原文未声明系统，留空。去重：GTC i 与 ZTF r/g 为不同仪器/波段独立测量，非重复。[alias] SN2019nuc 为 TNS 名，Lasair 与 ZTF BTS 页面均用（TNS 站 403 未能直接打开），入 alias。[测光检索（2026-10-29）] 仓内 gcn/archive 全文检索 ZTF19abqanpy 命中 2 篇（25418、25421，均含光学数值）；GBM-190816 系列 17 篇（25406/25407/25408/25410/25414/25415/25418/25421/25424/25426/25430/25432/25434/25446/25452/25465/25491）无本源其他测光；external/rssgrbag 0 行、external/grbsn_webtool 无该源、external/fermi_gbm 的 FERMIGBRST 快照无 190816；ADS API 401（无 token）、TNS 403、arXiv 0 命中、OpenAlex 1 命中（即 GCN 25421，非研究论文）；Lasair/ZTF BTS 页面可打开（SN2019nuc、SN Ia、z=0.043、峰值 r=17.53±0.04 @ MJD 58732.49、46 次探测），但为 broker 派生值，未入库。结论：重锚 1 行 GTC、补 3 行 ZTF（GCN 25418）；articles 无研究论文（GCN 不入 articles）。",
   "sub_tag": [
     "SN-spec"
   ],
@@ -25,7 +28,12 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为该事件最早测量时刻（非触发时刻）",
     "t0_basis": "first_detection",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
