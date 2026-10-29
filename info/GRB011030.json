@@ -19,8 +19,10 @@
   "pos_ref": "GCN 1123（WFC 精化位 RA 20h43m35.4s Dec +77d17m20s J2000，误差半径 2.1'，99% 置信）",
   "redshift_type": "upperlimit",
   "redshift_ref": "GCN 1268（宿主颜色提示 z<3）；rssgrbag/MPE/GRBCAT 目录均记 z<3.0",
-  "comment": "BeppoSAX/WFC 触发的 X 射线闪（Heise+ GCN 1138 论证为 X-ray flash：GRBM 无对应体、谱峰 <40 keV、活动约 1400 s）。坐标为 GCN 1123 WFC 精化位（2.1'，99% 置信；受控词表无 99% 取值，故 pos_error_confidence 留空）。redshift=3.0 为上限：GCN 1268 宿主颜色提示 z<3，rssgrbag/MPE/GRBCAT 目录均记 <3.0；Bloom+2003（doi:10.1086/379310）摘要给两 XRF 联合 z≲3.5、光度学证据 z≳0.6，无光谱红移。alias 新增 SAX J2043.6+7717（GCN 1138 原文用名：\"SAX J2043.6+7717, the X-ray rich transient of 30 October, 2001 discovered by BeppoSAX-WFC\"）；alias XRF011030（GCN 1143 标题原文用名 \"XRF011030: Chandra Observations\"）。sub_tag：来源分类为 XRF（GCN 1138），tags.json 无对应受控词，留空待扩表（PR 待决）。测光检索（2026-10-30）：仓内 gcn/archive 全文命中 22 篇（GCN 1118-1146、1268/1269，已逐篇读全文，其中光学/IR/射电测光与上限共 11 篇有数值，全部入库）；external/rssgrbag 光变 2 行（已在 lc，与 2012ApJ...746..156C 目录一致）；external/grbsn_webtool、external/uvot_grb 无记录；文献面（arXiv/ADS 摘要层）另见 Bloom+2003、Levan+2005（宿主研究）与 Galli & Piro 2006（X 射线）——GCN 之外无新的瞬变体测光可补。本 PR 补 7 行（GCN 1122 VLA、GCN 1136 VLA、GCN 1145 J/K、GCN 1126/1127 第二历元、GCN 1120 拆分），全表 24 行统一换算到 T0=06:28:02Z。X 射线数据（GCN 1143 Chandra、Galli & Piro 2006 BeppoSAX/NFI）按契约暂不处理。",
-  "sub_tag": [],
+  "comment": "BeppoSAX/WFC 触发的 X 射线闪（Heise+ GCN 1138 论证为 X-ray flash：GRBM 无对应体、谱峰 <40 keV、活动约 1400 s）。坐标为 GCN 1123 WFC 精化位（2.1'，99% 置信；受控词表无 99% 取值，故 pos_error_confidence 留空）。redshift=3.0 为上限：GCN 1268 宿主颜色提示 z<3，rssgrbag/MPE/GRBCAT 目录均记 <3.0；Bloom+2003（doi:10.1086/379310）摘要给两 XRF 联合 z≲3.5、光度学证据 z≳0.6，无光谱红移。alias 新增 SAX J2043.6+7717（GCN 1138 原文用名：\"SAX J2043.6+7717, the X-ray rich transient of 30 October, 2001 discovered by BeppoSAX-WFC\"）；alias XRF011030（GCN 1143 标题原文用名 \"XRF011030: Chandra Observations\"）。sub_tag：来源分类为 XRF（GCN 1138），tags.json 无对应受控词，留空待扩表（PR 待决）。测光检索（2026-10-30）：仓内 gcn/archive 全文命中 22 篇（GCN 1118-1146、1268/1269，已逐篇读全文，其中光学/IR/射电测光与上限共 16 篇有数值，全部入库）；external/rssgrbag 光变 2 行（已在 lc，与 2012ApJ...746..156C 目录一致）；external/grbsn_webtool、external/uvot_grb 无记录；文献面（arXiv/ADS 摘要层）另见 Bloom+2003、Levan+2005（宿主研究）与 Galli & Piro 2006（X 射线）——GCN 之外无新的瞬变体测光可补。本 PR 补 7 行（GCN 1122 VLA、GCN 1136 VLA、GCN 1145 J/K、GCN 1126/1127 第二历元、GCN 1120 拆分），全表 24 行统一换算到 T0=06:28:02Z。X 射线数据（GCN 1143 Chandra、Galli & Piro 2006 BeppoSAX/NFI）按契约暂不处理。复查更正（2026-10-30）：tags.json 基线已含受控词 XRF（kind=sub），sub_tag 直接填 [\"XRF\"]（GCN 1138 系 XRF 类原始定义文献、GCN 1143 标题 XRF011030），原「待扩表」待决撤回。",
+  "sub_tag": [
+    "XRF"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "merged_from": [
