@@ -1,27 +1,36 @@
 {
   "transient_id": "IceCube-241224A",
-  "alias": [],
-  "ra": 185.0307759,
-  "dec": 2.4088207,
-  "T0": "2024-12-24T07:10:04Z",
-  "T0_ref": null,
+  "alias": [
+    "IC241224A",
+    "IceCube Alert 241224.30"
+  ],
+  "ra": 184.97,
+  "dec": 2.76,
+  "T0": "2024-12-24T07:10:04.35Z",
+  "T0_ref": "GCN 38664（IceCube 官方通告）：首段「On 2024-12-24 07:10:04.35 UT IceCube detected a track-like event」、精化段「Date: 2024-12-24 / Time: 07:10:04.35 UT」；GCN 38680 的 1000 s 搜索窗（07:01:44.350–07:18:24.350）中心与 2 天窗端点均为 07:10:04.350；AMON 通告 140284_303893.amon rev0/rev1 DISCOVERY_TIME 同为 07:10:04.35（2026-10-29 取数）→ 四证同值。原库 07:10:04Z 为整秒截取，按来源亚秒值补为 .35",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.159,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 38664（IceCube 离线精化方向，J2000）：RA=184.97 (+0.59, -0.52 deg)、Dec=2.76 (+0.67, -0.67 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值照录；AMON 通告 140284_303893.amon rev1（2026-10-29 取数）单值 SRC_ERROR=36.75′（stat-only, 90%）、位置 184.9699/+2.7599 与之互证；原库 ra/dec=185.0307759/+2.4088207 逐位等于 GCN 38707 表列 ZTF 候选体 ZTF18aaxzhgj 坐标（候选体位置污染），已改",
+  "pos_error_confidence": "90",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 38707",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "2026-10-29 审核（wa1kmoon@zcode）。[身份] IceCube「ICECUBE_Astrotrack_Bronze」径迹（track-like）中微子候选事件：GCN 38664 报 Bronze 流平均天体物理纯度 30%、FAR=3.816 events/yr；AMON 初始通告 https://gcn.gsfc.nasa.gov/notices_amon_g_b/140284_303893.amon（2026-10-29 取数）RUN_NUM 140284 / EVENT_NUM 303893、DISCOVERY_TIME 25804 SOD {07:10:04.35} UT、ENERGY 1.1426e+02 TeV、SIGNALNESS 2.9161e-01、FAR 3.8150 yr^-1、rev0 位置 185.0559/+2.7671（SRC_ERROR 44.40′ stat-only 90%）、rev1 位置 184.9699/+2.7599（36.75′ stat-only 90%）。非伽马暴；tags.json 无中微子类目，tag/sub_tag 留空（同 IceCube-250207A/260712A 待决）。[跟随观测] GCN 38680（IceCube 追加中微子搜索：以 T0 为中心的 1000 s 窗 2024-12-24 07:01:44.350–07:18:24.350 UTC 内除警报事件外 0 个 track 事件，E^-2.5 灵敏度 1.4e-01 GeV cm^-2；2 天窗 p=0.22）、GCN 38707（ZTF，无暂现候选体，见下）、GCN 39005（Fermi-LAT：90% 区内无 4FGL-DR4 目录源；>100 MeV 无 >5σ 新暂现，16 年积分流量上限 <1.45e-10 ph cm^-2 s^-1、1 月/1 天窗 <9.80e-09/<5.72e-08）、GCN 38663/39651（MASTER）。[T0] 2024-12-24T07:10:04.35Z：GCN 38664 首段与精化段时刻逐字一致（见 T0_ref）；原库 07:10:04Z 为整秒截取（原 extra_data t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，按 §3.10 允许改写、原值留此），整数秒一致，按触发仪器通告的亚秒值直接改进 T0，不写 T0_offset（§3.2 亚秒差异直接改进 T0）。[定位] ra/dec=184.97/2.76 取 GCN 38664 离线精化方向，与 AMON rev1（184.9699/+2.7599）在 2 位小数上一致；不对称 PSF → pos_error 留空、不对称值照录 pos_ref，pos_error_confidence=90（原文明确）；原库 ra/dec=185.0307759/+2.4088207 逐位等于 GCN 38707 表列 ZTF 候选体坐标（候选体位置污染，同 IceCube-250207A 的 bot 污染），已改。[红移去污染] 原库 redshift=0.159（redshift_ref=gcn_llm:circulars_meta; GCN 38707）实为 GCN 38707 所述已知 AGN 2MASX J12200736+0224320 的 SDSS 光谱红移（原文「This AGN has a spectroscopic redshift of z=0.159 from SDSS, and a QSO broadline classification」），属候选体/关联天体红移、非本中微子事件红移 → redshift/redshift_type/redshift_ref 全置 null（同 IceCube-250207A/260712A 口径）；本事件无红移资料，host_galaxy 不建立（该 AGN 非确认对应体）。[lc 判定] 原有唯一行 ZTF18aaxzhgj g=18.31±0.06 经 GCN 38707 全文核对：该源是距已知 AGN 2MASX J12200736+0224320 核 0.17″ 的编目 AGN 本体（SDSS 谱 z=0.159、QSO broadline），2018-06-05 即被 ZTF 探测、五年间由 g≈19（PS1 参考像）缓慢增亮至 g≈18，原文明确「no indications of significant flaring … that coincide with the detection of IC241224A」「no strong evidence from our data to suggest that this AGN is associated with the neutrino」→ 保留行、置 discard=y（先例 IceCube-221210A/GCN 33084 候选 blazar 探测、220907A/32536、200620A/28005）；time/mjd 已按 T0=07:10:04.35Z 重算。[MASTER 与 PKS 1217+02] GCN 38663（主题行「IceCube Alert 241224.30」，trigger No 303893 与本事件 AMON EVENT_NUM 相同 → 非误挂）为 MASTER-OAFA 的 Clear 波段上限表 31 行：20 行属视场中心 12h 20m 04s +02d 48m 的镜筒（距精化最优拟合 3.7′，在 90% 定位区内）→ 全部入库；另 11 行属第二镜筒视场 12h 11m 01s +02d 24m（距精化最优拟合 2.24°=134′，远超 AMON rev0 90% 半径 44.40′ 与 rev1 36.75′，不覆盖定位区）→ 不入库，留此备查（B 档：不覆盖定位区的视场上限不作为本源约束）。GCN 39651 所述「upper limit up to 19.6 mag（Lipunov et al.GCN#38663）」即 38663 表中 2024-12-24 07:18:13 UT、Exptime 100 s 的同一次测量（19.6 mag），不重复入库、reference 归 GCN 38663。GCN 39651 另报 PKS 1217+02（=5BZQJ1220+0203，RA 185.0495/Dec 2.0617，Massaro+2015；GCN 39005 引）在警报前后「brightening up to 15.7m」并据 2016 起 MASTER 档案光变提出 Zhirkov 效应：该 blazar 距精化最优拟合 0.7028°=42.2′，在 AMON rev0 90% 圆（44.40′）内、精化 90% 区（36.75′）外；GCN 39005 亦记其对应 γ 源 Fermi J1220.3+0200（4.9σ，185.09/+2.04）在 90% 定位区外 0.73°。15.7m 无任何时刻锚点（原文仅「near alert time」，档案光变只有 jpg 图，§7 禁止读图取数）→ 按 §3.3 不入库、仅备查；若日后取得时刻锚点，该行应属编目 blazar 自身流量、discard=y（同 GCN 33084 先例）。[alias] 新增「IC241224A」（GCN 39005/38707 原文用名）、「IceCube Alert 241224.30」（GCN 38663 主题行原文用名，MASTER 对同一警报的命名形）。[测光检索]（2026-10-29）仓内 gcn/archive 45 889 篇按 eventId/主题/正文检索命中 6 篇（38663/38664/38680/38707/39005/39651，全部实读），另按 trigger No 303893 复查无第 7 篇；external/rssgrbag（140 行）、external/grbsn_webtool、external/uvot_grb 及 external/ 全目录 grep「241224/IC241224」0 命中；GCN 站检索页为客户端渲染、未取回列表，AMON 通告页已实读；ADS API 401（无 token，如实记录）、TNS 403（匿名不可查）、arXiv API「IceCube-241224A/IC241224A/PKS 1217+02」0 篇、OpenAlex 0 篇；MASTER 事件页 id=2720792（2026-10-29）与 38663 同表，另列 coadd 行与 2024-12-26 02:27:30 UT 后续报告（上限 18.1 mag，未见对应 GCN 已发布通告）→ 均不入库备查。结论：本源无确证暂现对应体，可入库测光为 MASTER 上限 20 行 + 候选 AGN 探测 1 行（discard=y）→ 本 PR 共补 20 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 wa1kmoon@zcode 2026-10-29 审核改为 IceCube 官方通告 GCN 38664 的精化事件时刻 2024-12-24 07:10:04.35 UT（AMON 140284_303893.amon DISCOVERY_TIME 07:10:04.35 同值）；原 bot 值 2024-12-24T07:10:04Z 为 meta_trigger 整秒截取，整数秒一致、补足亚秒 .35；原 t0_note「t0 为 meta trigger-time（真实触发时刻）」与 t0_basis「meta_trigger」留痕于 comment",
+    "t0_basis": "GCN 38664",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
