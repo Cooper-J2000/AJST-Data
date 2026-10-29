@@ -1,29 +1,37 @@
 {
   "transient_id": "GRB221204",
   "alias": [
-    "GRB 221204.45"
+    "GRB 221204.45",
+    "BAT 1143281"
   ],
   "ra": null,
   "dec": null,
-  "T0": "2022-12-04T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2022-12-04T10:45:05Z",
+  "T0_ref": "GCN 33018（MASTER-Amur 观测起点 2022-12-04 10:49:47 UT=触发后 282 s，反算触发 10:45:05 UT）；Swift 自用名 GRB221204.45（0.45 d≈10:48 UT，GCN 33018/33020 原文用名）与 AKO 观测窗 15:05:55–15:18:02 UT=触发后 4.47 h（GCN 33020）互证；GCN 33025（Swift 团队撤回通告）记 20:45:05 UT 与上述三路证据矛盾（疑 10:45:05 之 12 h 笔误），comment 并列备查并列入 PR 待决",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "触发被权威否定（2026-10-28 核实，fsy）：GCN 33025（D. Palmer, Swift team, 2022-12-06）原文 Swift/BAT trigger #1143281 was due to the misidentification of Cyg X-1 during a star tracker Loss of Lock，并明言 GCN 33018（MASTER）与 GCN 33020（AKO）的光学上限 not relevant to an astrophysical event——即触发撤回且无独立证据（无 IPN/Fermi/Konus 等任何独立检测通告），按 §3.7 报维护者删除条目（本 PR 不自行删源，lc 行置 discard=y 留档，tag=[grb] 维持入库名义、sub_tag 留空）。T0 更正：bot 原值 2022-12-04T00:00:00Z 为午夜占位（非触发时刻，Issue #84 家族）；标准 T0=2022-12-04T10:45:05Z，依据见 T0_ref（GCN 33025 所记 20:45:05 UT 与 MASTER 反算 10:45:05、Swift 自名 .45、AKO 4.47 h 三路矛盾，列 PR 待决）。定位：无任何可用位置——MASTER 33018 引 BAT 位 19h58m06.86s +35d00m18.4s（R=0.05 deg）与 Cyg X-1（19h58m21.7s +35d12m05.8s）偏差约 12′，与失锁误认情形相容，不作为本源定位；ra/dec 维持 null。测光检索（2026-10-28）：GCN 站 query=1143281 命中 2 篇（33020/33025 全文核读）、相邻编号扫描得 MASTER 33018（同一触发）；仓内 external 快照 grep「221204/1143281」0 命中（swift_bat/swiftgrbba/swift_grb/heasarc_grbcat/mpe_greiner/konus_wind/batse 等均无此触发），rssgrbag/grbsn_webtool 无记录；OpenAlex「GRB 221204」0 命中、arXiv 0 命中，无研究论文；GCN 事件页 events/grb-221204 返回 500 不可达（改用编号检索）→ 结论：该事件无独立证据、仅两篇光学上限通告且均被 33025 判为与天体物理事件无关；补 0 行，唯一 lc 行（AKO Ic>17.7）置 discard=y。别名证据：「GRB 221204.45」为 GCN 33018/33020 原文用名（原文写作 Swift GRB221204.45）；「BAT 1143281」为 Swift BAT trigger 名（GCN 33020 原文 Trigger No 1143281、GCN 33025 原文 trigger #1143281）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT trigger #1143281 触发时刻 2022-12-04T10:45:05Z（GCN 33018 观测起点 10:49:47 UT=触发后 282 s 反算，Swift 自用名 GRB221204.45 互证）；bot 原写法 t0=2022-12-04T00:00:00Z 为午夜占位失真，原 note 见 comment；GCN 33025 记 20:45:05 UT 与此矛盾，见 PR 待决",
+    "t0_basis": "swift_bat_gcn33018_retraction_gcn33025",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
