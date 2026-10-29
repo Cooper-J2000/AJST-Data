@@ -1,35 +1,45 @@
 {
   "transient_id": "GRB021125",
-  "alias": [],
-  "ra": 296.983,
-  "dec": 28.391,
+  "alias": [
+    "GRB 021125"
+  ],
+  "ra": 296.9833,
+  "dec": 28.3911,
   "T0": "2002-11-25T17:58:30Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 1706",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 1714",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode，2026-10-29）。身份：GCN 1706 记 'the detection of GRB021125 at 17:58:30 UTC'；GCN 1714 给出 IBIS/ISGRI 精化圆心 19h 47m 56s、+28°23′28″ (2000)，换算 ra=296.9833、dec=28.3911（GRBCAT 主表 id 5585 同值 296.98333333/28.39111111）；原库值 296.983/28.391 系 3 位小数舍入，已按 GCN 1714 的秒级坐标改为 4 位。互证：GCN 1706 初步位置 19h47m、+28.1°、系统误差 30′；GCN 1707 IPN 3σ 盒 111 arcmin²；GCN 1709 加入 Konus 后改进为 72 arcmin²；GCN 1714 原文称 2′ 圆 'fully contained in the previous INTEGRAL error circle (GCN 1706)'、'partially overlaps the most recent IPN error box (GCN 1709)'。GRB021125B 为另一事件（GCN 1710/1712：Ulysses/Konus 观测于 21541 s = 2002-11-25T05:59:01 UT，环带中心 RA/Dec 2.237/−35.258、半径 85.862°±0.017°，3σ；GRBCAT id 5586），未并入本源。alias 增 'GRB 021125'（GCN 1729 标题及 GRBCAT name 的原文用名；本源 id 为无空格形 GRB021125）。\n\nT0：2002-11-25T17:58:30Z 取自 GCN 1706（INTEGRAL 探测通告，整秒），T0_ref=GCN 1706。GCN 1707 的 'at 64710 seconds' 为当日 SOD，64710 s = 17:58:30 UT（17×3600+58×60+30），互证一致；通告未给亚秒，未补。T0_offset/T0_offset_ref 留空（无 >1 s 的触发时刻修正）。\n\n定位：pos_error=120（GCN 1714 'The systematic errors on the position ... have been significantly reduced to a radius of 2 arcmin'，2′×60），pos_error_unit=arcsec，pos_ref=GCN 1714。原文未标注置信水平，pos_error_confidence 留空（Malaguti+2003 表1 的 IBIS/ISGRI 行同列 2′；该表表头 'IPN (3σ)' 仅指 IPN 行）。备查：GCN 1706 初步系统误差 30′；GCN 1707 IPN 3σ 盒 111 arcmin²；GCN 1709 改进 IPN 3σ 盒 72 arcmin²；Malaguti+2003 表1 另给 PICsIT 19:47:51 +28:19:16（5′）、SPI 19:47:55 +28:23:49（13′）。\n\nTrigger_Instrument：由 INTEGRAL 细化为 INTEGRAL/IBIS。GCN 1706 原文 'in IBIS field of view with ISGRI and PICsIT detectors'（ISGRI、PICsIT 为 IBIS 的两个探测器层），'confirmed by the SPI anticoincidence system'；GCN 1714 位置 'obtained from the IBIS/ISGRI data'。Malaguti+2003 §3 说明本次 IBAS 因 PICsIT 特殊遥测配置处于 idle、未自动触发，故该字段指探测仪器而非自主触发；库内已有 22 源使用 INTEGRAL/IBIS 形态。\n\n分类与红移：sub_tag=lgrb（GCN 1706 标题 'A long GRB localized by INTEGRAL'；按目录 t90 判 lgrb：t90=30.0 s（HEASARC GRBCAT id 5585 的 IPN/ULYSSES 行，误差未给；Ulysses 约 30 s 见 GCN 1707），rssgrbag 快照 t90=25.0 s，二者均 >2 s）。其他时长备查：GCN 1706 20 s；Malaguti+2003 的 PICsIT 24 s、SPI-ACS 23 s、ISGRI ≥21 s。redshift 留 null（无光谱/测光红移）；host_galaxy 留 null（无确定宿主；Malaguti+2003 明言 'no optical counterpart of GRB021125 was found'）。\n\nlc（1 行，GCN 1729 Berger & Frail）：原文 'On December 8.03 UT we used the VLA at 8.46 GHz to observe the 2-arcmin refined error circle of GRB 021125 (GCN 1714) ... We do not detect any sources within the error circle down to a 5-sigma limit of 220 microJy.' → band=8.46GHz、flux_density=0.22 mJy（原文 220 μJy；1 mJy=1000 μJy，精确等价）、upperlimit=y、telescope/instrument=VLA、reference=GCN1729。时间：December 8.03 UT = 2002-12-08T00:43:12Z（0.03 d=43.2 min），相对 T0=1061082 s，mjd=52616.03（GRBCAT 余辉表 obs_time 同值 52616.03；原行 time=1061070/mjd=52616.02986111111 对应 00:43:00，与名义值 00:43:12 差 12 s，远低于原文 0.01 d 精度）。原文精度只到 0.01 d（≈14.4 min），mjd 按来源精度写 2 位、不补零抬精度；原文未给积分时间/曝光时长，time_err 留空。GRBCAT 余辉表同行为 VLA/8.46 GHz/detected=n/Limit/220 microJy，互证 5σ 上限与未探测。\n\n文献：Malaguti+2003（A&A 411, L307-L310，DOI 10.1051/0004-6361:20031155）VoR 页面 www.aanda.org 返回 403（Cloudflare），书目经 Crossref 核实；正文以 arXiv v1 astro-ph/0307523（2026-10-29 实际下载 PDF）核对：表1 给出 IBIS/ISGRI 19:47:56 +28:23:28（2′）等定位，正文给 ~24 s、fluence 4.8–5.1e-5 erg/cm²（20–500 keV）、ISGRI 14±2 Crab、PICsIT 9±1 Crab 等 prompt 量，均非余辉测光；光变/谱均为图（Fig. 1–4），无测光表，未从图上读数。arXiv 版未见机读表/补充材料说明；VizieR 查询 J/A+A/411/L307 访问超时/502，未能核实是否存在机读表。articles 保留 Malaguti+2003，url 改为可访问的 arXiv 链接，bibtex 保留 VoR DOI。\n\n测光检索（2026-10-29）：① 仓内 gcn/archive 全文 45,889 篇，命中 7 篇（1706/1707/1709/1710/1712/1714/1729），其中 1710/1712 属 GRB021125B（另一事件）、本源 5 篇；含测光 1 篇（1729，射电 5σ 上限），其余为探测/定位/时长通告。② rssgrbag：lightcurve.jsonl 0 行；normalized 目录行 radio_ag_flag=N、xray/opt_ag_flag=X（未观测）、t90=25.0 s。③ grbsn_webtool SourceData 无该事件；external 其余目录（batse/konus_wind/uvot_grb/swift_*/fermi_*/agile_mcal/saxgrbmgrb/minaev2020/liang2023/wang2022/guidorzi2025 等）全文检索无 021125 命中；heasarc_grbcat 主表 6 行（021125 4 行 + 021125B 2 行，用于身份/t90/T0 互证）、余辉表 1 行（VLA 8.46 GHz 220 μJy 上限、obs_time 52616.03），mpe_greiner 1 行（初步 19h47m +28°06′、误差 30′、INTEGRAL）。④ 外部：GCN 站在线检索页为 JS 渲染（返回默认最新列表，未执行检索），以离线全文快照为准；ADS API 无 token 返回 401 'Missing Authorization'、ADS 网页版 405 Human Verification，SciX 未取（反爬）；arXiv API 精确 'GRB 021125' 0 篇、'GRB021125' 1 篇（Malaguti+2003）；OpenAlex/Crossref 除 Malaguti+2003 外仅命中 INTEGRAL 样本/谱目录类文献（2008、2009 年 A&A），未见该暴余辉测光文献；TNS 403（且 2002 年暴早于 TNS）。结论：除既有 1 行射电上限外无新增可入库测光；新增 0 行、修正 1 行（时间/坐标）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [
     {
       "name": "Malaguti+2003",
       "title": "GRB 021125: The first GRB imaged by INTEGRAL",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003A&A...411L.307M",
+      "url": "https://arxiv.org/abs/astro-ph/0307523",
       "bibtex": "@ARTICLE{2003A&A...411L.307M,\n       author = {{Malaguti}, G. and {Bazzano}, A. and {Beckmann}, V. and {Bird}, A.~J. and {Del Santo}, M. and {Di Cocco}, G. and {Foschini}, L. and {Goldoni}, P. and {G{\\\"o}tz}, D. and {Mereghetti}, S. and {Paizis}, A. and {Segreto}, A. and {Skinner}, G. and {Ubertini}, P. and {von Kienlin}, A.},\n        title = \"{GRB 021125: The first GRB imaged by INTEGRAL}\",\n      journal = {\\aap},\n     keywords = {gamma rays: burst, gamma rays: observations, Astrophysics},\n         year = 2003,\n        month = nov,\n       volume = {411},\n        pages = {L307-L310},\n          doi = {10.1051/0004-6361:20031155},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0307523},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003A&A...411L.307M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
