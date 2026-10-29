@@ -1,28 +1,41 @@
 {
   "transient_id": "IceCube-200615A",
-  "alias": [],
+  "alias": [
+    "IC200615A"
+  ],
   "ra": 142.95,
   "dec": 3.66,
-  "T0": "2020-06-15T08:58:51Z",
-  "T0_ref": null,
+  "T0": "2020-06-15T14:49:17.380Z",
+  "T0_ref": "GCN 27950; GCN 27968",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 27950",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IceCube 高能中微子 track alert（ICECUBE_Astrotrack_Gold 流，AMON 通告 134191_17593623 rev0/rev1，GCN 27950），非 GRB；tags.json 无中微子类目，tag/sub_tag 留空（待维护者扩表，先例 IceCube-230122A/250207A/190730A）。T0：bot 值 2020-06-15T08:58:51Z 实为 GCN27979/27973 的 Swift 观测窗起点（原文 between 08:58:51 UT 2020 June 15 and 11:12:28 UT on 2020 June 16，早于事件 5h50m26.38 s；该起点系印刷漏写首位 1、应为 18:58:51——事件 14:49:17.38 UT 后 AMON 告警 14:50:07 UT，实际观测始于 18:59:16 UT（McBride+2025 §2.2，VoR MNRAS 541:1613），且 6/16 读法容不下 XRT 12.8 ks 曝光；Issue #84 观测窗端点家族。原 extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，不可信，Issue #68）。真值：GCN 27950（IceCube 官方）On 20/06/15 at 14:49:17.38 UT IceCube detected a track-like event；GCN 27968（附加中微子搜索）2 d 窗 2020-06-14 14:49:17.380 至 2020-06-16 14:49:17.380 UTC 锚定 3 位小数；GCN 27954（INTEGRAL SPI-ACS，T0=14:49:17 UTC）、GCN 27970（Fermi-LAT，14:49:17.38 UT）、GCN 27972（HAWC，14:49:17 UTC）互证；AMON rev0/rev1 DISCOVERY_TIME 53357 SOD=14:49:17.37 UT（与通告差 10 ms，<60 ms 不另列）→ T0=2020-06-15T14:49:17.380Z（T0_MJD=59015.6175623，Decimal 复算）。Trigger_Instrument：INTEGRAL→IceCube——GCN 27954 系 SPI-ACS 在事件时刻的无对应体搜索（响应 50%、无显著探测），非触发仪器（bot 同族误配，先例 IceCube-190730A[GCN 25232]/230122A[Fermi/LAT]）。定位：RA=142.95(+1.18/−1.45 deg)、Dec=3.66(+1.19/−1.06 deg) J2000，90% PSF containment（GCN 27950；GCN 27957/27970/27972 引述一致）→ 来源未给单值半径（非对称），pos_error 留空；90% 为原文明确标注 → pos_error_confidence=90（先例 IceCube-221224A/250207A）；AMON rev0 初始位 143.4519/+3.7891、R=55.21′（stat-only 90%）与 rev1 精化位 142.9499/+3.6600、R=73.19′（50%=43.19′）备查。红移 null：唯一候选对应体 1RXS J093117.6+033146（XRT Source 1，radio-quiet AGN）SDSS 光谱红移 z=0.20495 属候选体、关联未确证（McBride+2025 Table 6 后验概率 0.897），不入本条目。同日甄别：GRB 200615A（Fermi/GBM trigger 613893610，06:00:05 UT，RA 48.1/Dec 5.4，GCN 27947）与本事件时刻差 8.82 h、角距 94.47°（复算），且 GCN 27957 明言事件时刻无 GBM onboard trigger——非同源；GRB 200615A 库内无条目（建源属维护者权限，此处仅划界）。测光检索（2026-10-30）：GCN 全文快照 45908 篇按「200615A」命中 10 篇（本事件 8 篇 27950/27954/27957/27968/27970/27972/27973/27979 + 同日 GRB 200615A 的 27947/27948 已排除），按 AMON 编号「134191_17593623」另命中 GCN 27953（MASTER 8 行上限；其标题用 IceCube Alert 200615.62、按 A 形检索漏检）→ 本事件 9 篇通告全部实读；external/rssgrbag、external/grbsn_webtool 及 external/ 全目录 grep「IceCube-200615A/IC200615A/17593623」0 命中（「200615」仅命中同日 GRB 200615A[fermi_gbm bn200615250]与 GRB 200615B[mpe_greiner]，均非本源）；gcn.nasa.gov 网页与 gcn.gsfc gcn3 镜像逐篇在线复核可达（27950/27953/27979 实取逐字比对一致）；arXiv API 检索「IceCube-200615A」命中 1 篇（McBride+2025）、「IC200615A」0 篇；OpenAlex 命中 6（5 篇为 GCN 通告索引 + McBride+2025）、Crossref 首条即该文 DOI；Stein+2022（arXiv:2203.17135，ZTF 24 campaigns）以 Proximity to Sun 未观测本事件（mention-only，无测光增量）；SIMBAD TAP 三主机连接失败（HTTP 000×3，不可达）、TNS 不适用（中微子 alert 无 AT/SN 命名）→ 补 10 行（MASTER 8 上限 + VLA 2 探测[候选对应体，discard=y]）并重锚 UVOT 1 行；GCN 27973 的 XRT 9 源为 X 射线不入库，GCN 27954/27957/27970/27972 伽马与中微子上限不入库。别名 IC200615A 为 GCN 27970 原文用名（Stein+2022 同用）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 中微子事件 IceCube-200615A 的探测时刻 14:49:17.38 UT（GCN 27950；3 位小数由 GCN 27968 搜索窗 14:49:17.380 UTC 锚定）。bot 原值 2020-06-15T08:58:51Z 系 GCN27979 Swift 观测窗起点（且该起点印刷漏 1，实为 18:58:51）",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-30"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "McBride+2025",
+      "url": "https://doi.org/10.1093/mnras/staf1035"
+    }
+  ],
   "host_galaxy": null
 }
