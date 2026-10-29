@@ -1,35 +1,44 @@
 {
   "transient_id": "GRB021219",
-  "alias": [],
-  "ra": 182.935,
-  "dec": 36.337,
-  "T0": "2002-12-19T07:33:57Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 021219"
+  ],
+  "ra": 282.604167,
+  "dec": 31.939722,
+  "T0": "2002-12-19T07:33:57.000Z",
+  "T0_ref": "GCN 1766",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_ref": "Mereghetti+2003（DOI 10.1051/0004-6361:20031303）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB021219 = INTEGRAL/IBAS 首个实时定位的 GRB（Mereghetti+2003, A&A 411, L311）。T0=2002-12-19T07:33:57.000Z 取触发仪器官方通告 GCN 1766（IBAS 团队 Mereghetti/Götz/Borkowski 所写，自述 citable）报的「detection of GRB021219 at 07:33:57 UTC」；仓内 heasarc_grbcat 快照（grbcat_id 5593）trigger_time 同值互证；mpe_greiner 快照仅给 obs_date=2002-12-19。Mereghetti+2003（IBIS/ISGRI 光变，0.2 s 分箱）称「The GRB started at 07:33:55 UTC」，与通告/目录差 2 s；按 §3.8 T0 锚定优先级取触发仪器官方 GCN，该差异见 PR 待决事项。原 extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot），已改写，原值留此备查。Trigger_Instrument：INTEGRAL→INTEGRAL/IBIS（GCN 1766 原文「in the field of view of the IBIS telescope」，IBAS 用 IBIS/ISGRI 数据实时定位；库内已有 22 例 INTEGRAL/IBIS 先例）。位置：原 ra/dec=182.935/36.337 为 GCN 1771 的 IPN 环心（环半径 78.549°±0.023°，3σ），环心不是源位置，已废止留此备查；改用 Mereghetti+2003 最终 IBIS/ISGRI 定位 α=18h50m25s δ=+31°56′23″（ra=282.604167，dec=31.939722），误差半径 2′=120″，原文未标注置信水平，pos_error_confidence 留空。自洽复核：该位置距 IPN 环心 78.542°，落在环半径 78.549°±0.023° 内；与 GCN 1768 精化位置（18h50.5m +31°54′，4′）相距约 2.6′；IPN∩INTEGRAL 误差盒约 22 平方角分（GCN 1772 勘误后 4 交点）。分类：sub_tag=lgrb 依 T90=5.5 s（Mereghetti+2003 原文，IBIS/ISGRI 15-500 keV，单峰）；rssgrbag 快照（Chandra & Frail 2012 目录）t90=6.0 s、fluence=8.55e-07 erg/cm2（15-150 keV）同向；按文献/目录 t90 判 lgrb；GCN 1766 标题亦自称「a long GRB」。瞬时辐射量（并列备查）：GCN 1766 峰值流量约 1-2e-07 erg/cm2/s（25-100 keV）、持续约 4 s；Mereghetti+2003 峰值流量约 3.7 ph cm-2 s-1=3.5e-07 erg/cm2/s、20-200 keV 积分流量 9e-07 erg/cm2、光子指数 Γ=1.6±0.1（峰值）/2.0±0.1（平均），X-ray rich。红移：无测量（误差框内光学皆未探测，Mereghetti+2003 称 dark/dim GRB），null。alias「GRB 021219」为 GCN 1775 标题原文用名（空格形；gcn/archive 各篇 eventId 同）。Mereghetti+2003 数值取自 arXiv:astro-ph/0308457v1 全文（A&A VoR 页面 403 不可达，已记录尝试路径；卷期页码经 Crossref 元数据核对一致）。测光检索（2026-10-29）：仓内 gcn/archive 全文检索「021219」命中 9 篇（1766 触发通告、1768 精化位置、1769 勘误、1770 MASTER、1771/1772 IPN 及更正、1773 Henden 双历元、1774 VLA、1775 OSN，其中 4 篇含测光/上限，全部逐篇打开核对）；external/rssgrbag normalized 1 行（目录参数，radio_ag_flag=N）而 lightcurve.jsonl 0 行、grbsn_webtool 无该事件、heasarc_grbcat/mpe_greiner 仅目录参数无光变表；ADS/SciX API 无 token 未获授权响应（记录如实），arXiv API 检索「GRB 021219」「021219」各命中 1 篇（Mereghetti+2003）、Crossref 标题检索 15 条无含本暴新测光的文献；SIMBAD 连接失败未取得。结论：本 PR 补 3 行上限（GCN 1770 MASTER 无滤光 13.7、GCN 1773 Henden Rc 18.0 与 Ic 19.5），改 2 行（VLA 4.86 GHz 0.22 mJy、OSN R 20.5，mjd/time 复核无误，reference 规范化并补 comment），合计 5 行，全部为上限、无探测。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2002-12-19T07:33:57.000Z 为 GCN 1766（INTEGRAL/IBAS，IBIS 视场内探测）所报探测时刻，heasarc_grbcat 同值互证；原 bot 注记「t0 为 meta trigger-time（真实触发时刻）」已失效，原值见 comment",
+    "t0_basis": "GCN 1766",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [
     {
       "name": "Mereghetti+2003",
       "title": "GRB 021219: The first Gamma-Ray Burst localized in real time with IBAS",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003A&A...411L.311M",
+      "url": "https://doi.org/10.1051/0004-6361:20031303",
       "bibtex": "@ARTICLE{2003A&A...411L.311M,\n       author = {{Mereghetti}, S. and {G{\\\"o}tz}, D. and {Beckmann}, V. and {von Kienlin}, A. and {Ubertini}, P. and {Bazzano}, A. and {Foschini}, L. and {Malaguti}, G.},\n        title = \"{GRB 021219: The first Gamma-Ray Burst localized in real time with IBAS}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, gamma rays: observations, Astrophysics},\n         year = 2003,\n        month = nov,\n       volume = {411},\n        pages = {L311-L314},\n          doi = {10.1051/0004-6361:20031303},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0308457},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003A&A...411L.311M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
