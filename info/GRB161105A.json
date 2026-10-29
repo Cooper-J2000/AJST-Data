@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB161105A",
-  "alias": [],
-  "ra": 120.1839,
-  "dec": -44.7753,
-  "T0": "2016-11-05T04:53:44Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 161105A",
+    "BAT 720697"
+  ],
+  "ra": 120.18375,
+  "dec": -44.77529,
+  "T0": "2016-11-05T04:53:02.375560Z",
+  "T0_ref": "GCN 20131（Page et al., Swift）：'At 04:53:02 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 161105A (trigger=720697)'；external/swift_bat 官方目录快照 trigger_time=2016-11-05T04:53:02.375560Z（与 GCN 整数秒一致，取触发仪器目录亚秒值）；GCN 20136（BAT refined）同记 04:53:02 UT、T90=177.3±25.8 s；MASTER-IAC GCN 20133 '42 sec after trigger time at 2016-11-05 04:53:44 UT' 反算触发 04:53:02 互证；Fermi 无本源触发（仓内 FERMIGBRST 快照 161105 条目为 bn161105417=10:00:48.956 UT 另一暴）。原 T0=2016-11-05T04:53:44Z 系机器人误取 MASTER-IAC 指向时刻（=T_BAT+42 s），按 §3.2/Issue #84（T0 只能是触发时刻）改正",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
-  "pos_ref": "GCN 20135",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 20135（Enhanced Swift-XRT position）：'RA, Dec = 120.18375, -44.77529 ... with an uncertainty of 1.7 arcsec (radius, 90% confidence)'（XRT-UVOT 对准 + USNO-B1 场源匹配改正，Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177）；GCN 20131 初步增强位置 120.1839/−44.7753（2.6″, 90%）一致；原 ra/dec 取 20131 值，本次统一为 20135 精化值（与 pos_error=1.7″ 同源）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "由 gcn_llm_extract 管线导入（bot_created；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 不可信，按 §3.10 核实改写并保留原文于此）。审核 2026-10-28（fsy）。① T0：GCN 20131 'At 04:53:02 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 161105A (trigger=720697)'；external/swift_bat 快照 trigger_time=2016-11-05T04:53:02.375560Z（整数秒一致，取触发仪器目录亚秒值）；GCN 20136（BAT refined）同记 04:53:02；MASTER-IAC GCN 20133 记指向 04:53:44 UT=T_BAT+42 s 反算互证；原 T0=04:53:44Z 系误取 MASTER 指向时刻，改正（Issue #84）。② 定位：GCN 20135 精化 XRT 位置 RA,Dec=120.18375/−44.77529（1.7″, 90% confidence）→ pos_error=1.7″、pos_error_confidence=90；GCN 20131 初步增强位置（2.6″）一致；原 ra/dec=120.1839/−44.7753 为 20131 值，统一取 20135 精化值。③ 别名：GRB 161105A（GCN 用名）+ BAT 720697（external/swift_bat name_alt）。④ 分类：t90=177.696±25.073 s（Swift BAT 目录 15-350 keV）按目录 t90 判 lgrb（2026-10-26 裁定口径）；GCN 20136 T90=177.3±25.8 s 一致、GCN 20131 光变 'duration of about 140 sec'。⑤ 光变（原 1 行改 + 补 10 行，全部为上限）：(a) 原 1 行 UVOT White 找图典型上限：GCN 20131 'UVOT took a finding chart exposure of 150 seconds with the White filter starting 586 seconds after the BAT trigger. No credible afterglow candidate has been found in the initial data products. ... The typical 3-sigma upper limit has been about 19.6 mag.'——原行 time=544 锚在误取的旧 T0（04:53:44）且取曝光起点，改窗口中点 time=661.0、time_err=75.0（T+586→T+736，§3.8）；band=w 改 uvot-white（w 为 Pan-STARRS 键，两车道规则）；mag_system=Vega（UVOT 光度系统 Breeveld+2011 惯例推定，GCN 20157 明示）；同一 FC 曝光 GCN 20157 white(fc) 586–735 s、147 s 曝光给 >20.44，为免同曝重复不另立行、记于此；'The 8'x8' region ... typically complete to about 18 mag' 为覆盖性表述不入行（§3.5）。(b) 补 MASTER-IAC 1 行（GCN 20133）：指向 04:53:44 UT=T+42，首组 10 s 曝光 'The 5-sigma upper limit has been about 16.4 mag (polaroid, unfiltered)'（SWIFT error-box ra=120.163 dec=−44.7794 r=0.05 即 BAT on-board）→ time=47.0±5.0、band=G（未滤光）、mag_system 留空；'Maximal coadded limit ~19.5 m. No OT found.' 无时间窗锚定不入行、记于此。(c) 补 TAROT La Silla 2 行（GCN 20152，D=25cm）：'t0+27.4s to t0+87.4s : Rlim = 16.5'（首帧 60 s 拖尾像）→ time=57.4±30.0；'t0+743.2s to t0+833.2s : Rlim = 19.8' → time=788.2±45.0；band=R；星等以就近 NOMAD1 恒星定标、未声明星等系统 → mag_system 留空；原文明言未做银消改正；'No more candidate were found in the next images taken until 2000 seconds after the GRB at the same limiting magnitude' 为覆盖性表述记于 19.8 行 comment。(d) 补 GCN 20157 UVOT 上限表 7 行（T_start/T_stop 以 BAT 触发为历元，与 T0 历元一致直接可用；'Preliminary 3-sigma upper limits using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)' → mag_system=Vega；未做银消改正 E(B−V)=0.33）：white 586–5286 s（549 s 有效曝光）>21.11；v 1046–7179 s >18.86；b 841–5081 s >20.07；u 816–1652 s >18.62；uvw1 792–11242 s >19.91；uvm2 767–7384 s >19.12；uvw2 1022–6974 s >19.24（均 upperlimit=y；white(fc) 586–735 s >20.44 与原行为同一 FC 曝光不另立行）。⑥ 本源无 X-ray/射电行。⑦ §3.3 检索留证（2026-10-28）：GCN 网站（gcn.nasa.gov/circulars）源名 'GRB 161105A' 与触发号 720697 双通道检索 + 邻域扫描 GCN 20125–20210 号段，共得 7 条 161105A circular——20131（Swift 检测）、20133（MASTER-IAC）、20135（enhanced XRT 位置）、20136（BAT refined）、20138（XRT refined）、20152（TAROT La Silla）、20157（Swift/UVOT Upper Limits）；20135/20136/20138 经原文核对无光学测光；外部快照 FERMIGBRST 的 161105 条目为 bn161105417（10:00:48.956 UT）另一暴、与本源无关；rssgrbag 光变、grbsn_webtool 无交集；文献检索（ADS/web）无该源专用研究论文 → 无检索新增行（补入 10 行均来自 GCN 20133/20152/20157 已核对内容）；articles[] 维持空（GCN circular 不入 articles）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift BAT 真实触发时刻（GCN 20131 + external/swift_bat 目录快照，2026-10-28 审核改写）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
