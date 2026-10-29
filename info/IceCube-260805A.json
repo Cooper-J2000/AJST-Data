@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-260805A",
-  "alias": [],
-  "ra": 60.57411872,
-  "dec": 25.81342036,
-  "T0": "2026-08-06T10:23:00Z",
-  "T0_ref": null,
+  "alias": [
+    "IC260805A"
+  ],
+  "ra": 60.47,
+  "dec": 26.07,
+  "T0": "2026-08-05T14:01:39.70Z",
+  "T0_ref": "GCN 45294（IceCube 官方通告）：Time: 14:01:39.70 UT（Bronze track-like 事件，离线精化后时刻不变）；原库 2026-08-06T10:23:00Z 实为 GCN 45310 所载 ZTF 观测块起始时刻（beginning at 2026-08-06 10:23 UTC），非触发时刻，已废弃（Issue #84 同型，原值留档见 comment）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.0192,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 45294（IceCube 离线精化方向）：RA=60.47 (+0.91/-0.80 deg)、Dec=26.07 (+0.54/-0.56 deg)（90% PSF containment，J2000）——不对称误差不适配圆半径，pos_error 留空、不对称区间照录；AMON 通告 rev1 同位置 60.4699/+26.0700、SRC_ERROR=38.99′（stat-only，90% containment）备查；原库 ra/dec=60.57411872/25.81342036 与 GCN 45310 候选体 ZTF26aaskzvj/AT 2026jrc 表列坐标逐位一致，系误植候选体位置、非事件定位，已改",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "身份核验：IceCube 高能中微子 track-like 事件（Bronze 流 ICECUBE_Astrotrack_BRONZE，FAR=1.449 yr^-1，探测器正常工作状态），官方通告 GCN 45294（2026-08-05）；AMON 通告 142956_64385264 rev0/rev1：SIGNALNESS=0.42063、ENERGY=1.2289e+02 TeV、SRC_ERROR=30.80′（rev0）/38.99′（rev1）stat-only 90% containment（非 SCHEMA 量，仅备查）。T0：原库 2026-08-06T10:23:00Z 与 GCN 45294 事件时刻 2026-08-05 14:01:39.70 UT 相差 20 h 21 m 20.3 s（=73280.3 s）；前者恰为 GCN 45310 原文「We started observations in the g- and r-band beginning at 2026-08-06 10:23 UTC」所给 ZTF 观测块起始时刻——即观测时刻被写成 T0（Issue #84 同型、与 IceCube-200615A 同族），已按 §3.2 更正为 14:01:39.70 UT。三路互证：① GCN 45337 的 1000 s 中微子搜索窗为 2026-08-05 13:53:19.709–14:09:59.709 UTC，窗中点 14:01:39.709（与 45294 相差 9 ms）；② AMON 通告 rev0/rev1 DISCOVERY_TIME 均记 14:01:39.70 UT（SOD 50499）；③ GCN 45695 Fermi-LAT 原文引「2026-08-05 at 14:01:39.70 UTC (T0)」。按 §3.8 取触发仪器官方通告所给两位小数精度、不补亚秒，故 T0=2026-08-05T14:01:39.70Z。（extra_data 原值留档：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，已失真并改写）定位：原库 ra/dec=60.57411872/25.81342036 与 GCN 45310 表列候选体 ZTF26aaskzvj/AT 2026jrc 坐标（+60.57411872/+25.81342036）逐位一致，系候选体坐标误植（与 IceCube-260704A 同型），非事件定位；已改为 GCN 45294 离线精化方向 RA=60.47 (+0.91/−0.80 deg)、Dec=26.07 (+0.54/−0.56 deg)（90% PSF containment，J2000），与 AMON rev1（60.4699/+26.0700，距精化值 <0.01′）、GCN 45695 所引坐标一致。官方为 90% PSF 非对称误差、无单值半径 → pos_error 留 null、pos_error_confidence=90（原文明示 90% PSF containment），区间照录于 pos_ref；AMON rev1 SRC_ERROR=38.99′（stat-only，90% containment）备查。红移：原库 0.0192（redshift_ref=gcn_llm:circulars_meta）系 GCN 45310 中候选体 AT 2026jrc 的 NED 宿主星系红移（~85 Mpc），非本中微子事件本体值，且该候选体未被确认为对应体 → redshift / redshift_type / redshift_ref 一律置 null（宿主未定论，不建 host_galaxy）。事件性质与对应体：90% 定位区内有 1 个 Fermi FL16Y 目录源 FL16Y J0402.5+2615（RA=60.647°、Dec=26.267°，距最优拟合位置 0.254°，GCN 45294/45695），其最可能对应体为平谱射电类星 5BZQ J0403+2600（=OF 200，RA 60.7732753/Dec +26.0004174，z=2.109，Massaro+2015；GCN 45695 复核 LAT 1 天/1 月时标均无 >5σ 新辐射）——仅为定位区内目录源，非确认对应体。[划界] 同日 GRB 260805A（GCN 45286 Fermi GBM Final Localization：trigger 807614318/260805388，T0=2026-08-05T09:18:33.28 UT，RA=252.53°、Dec=+34.93°，统计误差 3.11°）与本事件时刻差 16986.4 s（4 h 43 m 6.4 s）、角距 117.94°，判为两个独立事件，不并档；GCN 45290（MASTER-Net）标题与正文均为「Fermi GRB 260805A」（引 45286 误差框；2026-08-05 16:47:37 UT 起、Tmid−T0 26974–28576 s 共 17 行 filter C 上限 16.2–18.3 mag，视场中心 16h21m–17h13m/+33d–+42d）属该 GRB 的跟随观测，不入本源 lc；同日 GRB 260805B（45287/45289/45291）、GRB 260805C（45292/45346）、GRB 260805D（45381）同样与本事件无关。测光：入库 3 行全部出自 GCN 45310——① 候选体 ZTF26aaskzvj/AT 2026jrc 的 g=20.937±0.182（原文表格行）保留但置 discard=y：该天体首测于 2026-04-15，为 NED 宿主 z=0.0192（~85 Mpc）的 SN-like 暂现体，100 天前峰值 M_r<−18、上周已暗至 M_r=−15.4，仅在中微子到达时刻被 forced photometry 边缘探测，作者结论仅为「encourage spectroscopic follow-up to determine its nature」，未确认为对应体；②③ 补 g、r 两行上限 21.0 mag（原文「Each exposure was 300s with a typical depth of 21.0 mag」，覆盖定位区 65.4%=1.0 sq deg）。原行 time=0.0 系「T0 被写成观测时刻」的连带污染（Issue #84 同族），现以真实观测块起始 2026-08-06 10:23 UTC 对标准 T0 重算：time=73280.3 s（=20.3556 h，与原文「approximately 20.4 hours after event time」自洽），time_err=±180 s（原文相对时长精确到 ±0.05 h；原文未给候选体单点时刻，按 §3.8 观测窗口口径以起始时刻计、中点不可恢复），mjd=61258.4326389（T0+time 换算，7 位小数）。mag_system=AB：原文未声明系统，按 ZTF 测光定标推定（IPAC/ZTF DR22 发布说明 §12「All photometry is in the native ZTF photometric system. No color corrections are applied (or rather, zero color in the AB system is assumed)」，校准至 PS1；库内同型 ZTF 行先例 IceCube-260704A/260217A/260504A 亦记 AB）。不入库备查：GCN 45337 IceCube 附加中微子搜索（1000 s 窗内 0 个额外 track-like 事件、p=1.00、E²dN/dE@1TeV=1.4e-01 GeV cm^-2；2 天窗 p=1.00、1.7e-01 GeV cm^-2）；GCN 45695 Fermi-LAT >100 MeV 光子流量上限（95% conf，光子谱指数固定 2.0：~18 年（2008-08-04/T0）<3.0e-10、T0 前 1 月 <8.2e-09、T0 前 1 日 <3.7e-08 ph cm^-2 s^-1）——中微子灵敏度与伽马积分流量均非 lc 口径。alias 出处：IC260805A（GCN 45695 原文用名「the high-energy IC260805A neutrino event」）。tag/sub_tag 留空：tags.json 受控词表无中微子 alert 类目（同 IceCube-260704A/260217A/260504A 先例，见 PR 待决事项）。测光检索（2026-10-29）：仓内 gcn/archive 快照（45 888 篇，覆盖至 GCN 46010）全文命中「260805」12 篇，其中本事件 4 篇（45294/45310/45337/45695），余 8 篇为同日 GRB 260805A/B/C/D；GCN 站 46011–46090 共 80 篇逐篇打开，0 篇涉及本事件（并按 MASTER「IceCube Alert YYMMDD」命名检索，gcn/archive 内「IceCube Alert 260805」0 命中）→ 本事件通告共 4 篇、无遗漏；external/rssgrbag/lightcurve.jsonl、external/grbsn_webtool/SourceData 及 external/ 全目录 grep「260805 / IceCube-260805A / IC260805A」0 命中；ADS API 401（本机无 token，如实记录）、TNS 403、SIMBAD TAP 不可达（SSL），改以 arXiv API（「IceCube-260805A」0 条）、OpenAlex（0 条）、Crossref（仅通用 IceCube 仪器文、无本事件专文）兜底 → 无研究文献；结论：共补 2 行（g/r 21.0 mag 上限）+ 保留 1 行候选体并置 discard，合计 3 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2026-08-05T14:01:39.70Z 为 IceCube 官方通告（GCN 45294）事件时刻；bot 原值 2026-08-06T10:23:00Z 系 GCN 45310 所载 ZTF 观测块起始时刻（观测时刻被写成 T0，Issue #84 同型），原值与原 t0_note 留档见 comment",
+    "t0_basis": "GCN 45294（IceCube 官方通告事件时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
