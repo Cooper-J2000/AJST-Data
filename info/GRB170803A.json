@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB170803A",
-  "alias": [],
-  "ra": 174.93381,
-  "dec": -16.31052,
-  "T0": "2017-08-03T17:30:27Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 766081"
+  ],
+  "ra": 174.9338,
+  "dec": -16.31055,
+  "T0": "2017-08-03T17:30:27.173280Z",
+  "T0_ref": "GCN 21405：「At 17:30:27 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 170803A (trigger=766081)」——原文仅整秒；亚秒 0.173280 取自仓内 swift_bat 目录快照（external/swift_bat/normalized.jsonl：trigger_time=2017-08-03T17:30:27.173280Z，name_alt=BAT 766081，trigger=766081 与 GCN 21405 同源互证）。§3.2：整秒一致时取触发仪器（Swift BAT）亚秒（GCN① 整秒 → 触发仪器目录② 亚秒）。平行值：Fermi GBM trigger=523474232 于 17:30:27.112 UT（GCN 21406），系另一仪器时钟，不并入 T0。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.7,
-  "pos_ref": "GCN 21407",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 0.44,
+  "pos_ref": "GCN 21411",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-10-28）：（1）位置采用 GCN 21411 UVOT 团队精化位置 174.93380/-16.31055 ±0.44″（radius, 90% confidence）；平行值并列：XRT 增强位置 GCN 21407 174.93434/-16.31002 1.7″ 90%（bot 原取）、UVOT FC 初报 GCN 21405 174.93381/-16.31052 0.75″ 90%、BAT onboard GCN 21405 174.950/-16.311 3′ 90%。（2）sub_tag=lgrb：按目录 t90 判 lgrb——仓内 swift_bat 目录 t90=3.82±0.2368121 s（15-350 keV），GCN 21412 BAT 精化 T90=3.82±0.23 s；GCN 21418 BAT 亮度迟豫 43±12 ms（50-150 keV）/76 ms（150-350 keV）称 consistent with those of long GRBs，无分类冲突。（3）alias「BAT 766081」为 Swift BAT 触发号官方目录原文用名（仓内 swift_bat 目录 name_alt；GCN 21405 原文 trigger=766081）——§3.10 证据串豁免。（4）检索留证（§3.3）：2026-10-28 于 GCN 官网（gcn.nasa.gov/circulars）双通道检索：源名 170803A → 7 篇（21405/21406/21407/21408/21411/21412/21418），触发号 766081 → 2 篇（21405/21412），两通道一致；结论：UVOT 探测（21405 初报、21411 团队精化 8 段表）、XRT 定位（21407 增强、21408 精化仅 X 射线）、BAT 精化（21412）、迟豫与长暴一致（21418）、无红移/宿主星系/GeV 探测报道。本次补：T0 亚秒、UVOT 精化测光 8 行（band 由 w 修正为 uvot-white 等）、lgrb 判定、alias。（5）X 射线行未增删改。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
