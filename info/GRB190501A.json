@@ -1,27 +1,38 @@
 {
   "transient_id": "GRB190501A",
-  "alias": [],
-  "ra": 174.0,
-  "dec": 65.0,
-  "T0": "2019-05-01T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 190501A"
+  ],
+  "ra": 172.8,
+  "dec": 64.1,
+  "T0": "2019-05-01T05:23:23.580Z",
+  "T0_ref": "GCN 24360",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "AGILE",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2880.0,
+  "pos_ref": "GCN 24363",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "原 T0=2019-05-01T00:00:00Z 为名字日午夜占位（Issue #380 类，bot t0_basis=meta_trigger 失真），现改为触发仪器真实触发时刻：GCN 24360 原文 'AGILE detected a long burst at T0 = 2019-05-01 05:23:23.58 +/- 0.01 s (UTC)' → T0=05:23:23.580Z（来源精度 2 位小数，按校验器要求以 3 位小数书写、不增精度）；agile_mcal 快照 trigger_time=2019-05-01T05:23:21Z（MCAL 在轨触发时刻，与通告 T0 整数秒不同、差 2.58 s，取通告值，≥60 ms 已报 PR）；其他仪器触发时刻并列备查：Konus-Wind 05:23:21.146（GCN 24452）、CALET 05:23:17.604（GCN 24406）、IPN 'about 05:23:15'（GCN 24372）。位置：bot 原值 ra/dec=174.0/65.0 出自 GCN 24361 初版 GRID 定位（174,+65 ±5 deg，未给单值误差）；现取精化位 GCN 24363 原文 'positional error box centered at R.A., Dec. (J2000) = 172.8, 64.1 deg with a mean radius of 0.8 deg (95% stat. c.l.)' → ra=172.8、dec=64.1、pos_error=0.8 deg=2880″（95% stat c.l.）。IPN 3σ 盒中心 173.591/+62.105（GCN 24372）为盒中心非源位置、不入 pos（mpe_greiner 快照的 'GRB X-ray position 11h34m22s +62°06' Error 48' 即该 IPN 盒转写）。tag=[] → grb：AGILE/Konus/IPN/CALET 一致认定为 GRB。sub_tag=lgrb：GCN 24360 原文 'a long burst'（触发仪器自 classification），GCN 24406 CALET T90=15.5±3.5 s（40-1000 keV）、agile_mcal 快照 t90>=3.072 s（0.4-100 MeV，下限）、Konus 多峰 ~50 s+尾至 137 s 同证。alias「GRB 190501A」为 GCN 24360/24363 等原文用名。同日源甄别：Fermi bn190501794（GRB 190501.794，19:03:42.592Z，t90=425 s）为同日另一事件，与本源无关；本源无 Fermi/GBM 触发。测光检索（2026-10-28）：仓内 gcn/archive 本机不存在，改用 GCN 网站——源名通道 '190501A' 命中 9 篇（24360/24361/24363/24370/24371/24372/24406/24419/24452，全部打开核对）、AGILE 触发号通道 '483773003' 命中 0 篇（AGILE 通告编号不进入 Circular 全文）；GCN 24419 原文将 IPN 3σ 误差区引作 'Hurley et al. GCN Circ. 24732'，而 24732 实为 GRB 190603A 的 Fermi GBM 通告——原文笔误（应为 24372），照录不改。测光入库：GOTO 上限 1 行（GCN 24370，原行 time 修正）＋Swift/UVOT white/v/u 上限 3 行（GCN 24419，新增）；GCN 24419 的 XRT 上限（0.3-10 keV 流量 1.2-1.7e-13 erg cm^-2 s^-1）为 X 射线数据按 §3.3 暂不入库；Konus/CALET/IPN 通告无数光。ADS/SciX 检索页与 Web 检索（2026-10-28）仅命中 GCN 通告及本源被顺带提及的论文（Ursi+2020 ApJ GRB 190114C 专文、Parmiggiani+2021 ApJ 914,67）——无本源研究论文、无可用测光表，articles[] 空。审核 fsy 2026-10-28。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
