@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB191031C",
-  "alias": [],
-  "ra": 115.8682,
-  "dec": -62.3247,
-  "T0": "2019-10-31T18:43:16Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "GRB 191031C",
+    "BAT 932595"
+  ],
+  "ra": 115.87049,
+  "dec": -62.32466,
+  "T0": "2019-10-31T18:43:54.909020Z",
+  "T0_ref": "GCN 26108（Swift/BAT 触发通告：At 18:43:54 UT triggered and located GRB 191031C，trigger=932595，整秒）；external/swift_bat（trigger 932595，trigger_time=2019-10-31T18:43:54.909020Z，亚秒值）",
+  "T0_offset": -40.0,
+  "T0_offset_ref": "GCN 26132（Swift-BAT 精化分析：mask-weighted light curve 首峰 'The first begins around T-40 sec'，T-40 至 T-20 s）；Fermi/GBM 于 18:43:16.71 UT（T-38.2 s）触发同一爆发（GCN 26119）独立佐证",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.8,
   "pos_ref": "GCN 26115",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-28。身份：GRB 191031C = Swift/BAT trigger 932595（GCN 26108：At 18:43:54 UT triggered；external/swift_bat：RA/Dec=115.8736/-62.32325，t90=78.5±7.5 s 15-350 keV）；Fermi/GBM trigger 594240201/191031780 于 18:43:16.71 UT 触发同一爆发（GCN 26119 明言 'which was also detected by the Swift BAT and XRT'；GCN 26107 给 18:43:16 UT）；Insight-HXMT/HE HEB191031780（GCN 26146，T0=18:43:16.00）同源。同日邻暴甄别：GRB 191031D = Swift trigger 932608 / Fermi GBM 594249816，21:23:31 UT（GCN 26112；GBM 曾误名 191031C，GCN 26114 更正为 191031D），位置/时刻均不同，未混入。T0：原值 2019-10-31T18:43:16Z 系误取 Fermi/GBM 触发时刻（GCN 26107；不同设备各自触发同一爆发，有 Swift 以 Swift 为准），改为 Swift/BAT 目录 trigger_time=18:43:54.909020Z（与 GCN 26108 整秒一致）。T0_offset=-40 s：BAT 精化分析示光变首峰于 T-40 s 起始（GCN 26132），GBM 触发 T-38.2 s（GCN 26119）、HXMT 触发 T-38.9 s（GCN 26146）佐证；offset 为纯元数据，不改写光变时间轴。触发仪器：原 Swift 改为 Swift/BAT（原 extra_data t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失效，原值留此备查）。定位：原 ra/dec=115.8682/-62.3247 为 GCN 26108 的 XRT 源位（5.0\"，radius 90% containment），与原 pos_ref=GCN 26115/pos_error=1.8\" 不匹配；改用 GCN 26115 增强 XRT 位 RA,Dec=115.87049,-62.32466（1.8\"，radius 90% confidence，原文标注）；GCN 26109 的 prompt 增强位（115.8709/-62.3251，2.0\"）被 26115 取代，并列备查；UVOT 检出源与该位一致（GCN 26127），26109 明言该 XRT 源即 afterglow。分类：t90=93.2±19.0 s（15-350 keV，GCN 26132）、GBM T90≈78 s（50-300 keV，GCN 26119）、HXMT T90=47.315 s（GCN 26146）→ sub_tag=lgrb（按通告/目录 t90 判）；external/swift_bat t90=78.5±7.5 s 与 GCN 26132 的 93.2±19.0 s 并列备查（均 >2 s，分类不受影响）。alias 新增「GRB 191031C」（GCN 26108/26132 原文用名）、「BAT 932595」（external/swift_bat name_alt）。红移：无报道。测光检索（2026-10-28）：GCN 站按源名检索命中 12 篇：属本源 9 篇（26107/26108/26109/26115/26119/26127/26130/26132/26146，逐篇核对原文）+ 26111/26114/26112 系 GRB 191031D 甄别链（26111 原误名 191031C，GCN 26114 更正）；GCN 站按触发号 932595 复检 3 篇（26108/26109/26132）与上述一致。光学测光仅 GCN 26108（FC white 典型 3σ 上限 ~19.6）与 GCN 26127（white 检出 20.27±0.32、u>19.71、white>20.39）：26127 三行已入库，26108 行系同一曝光的初版上限，归并至 26127 行（见 lc comment）；X 射线数据（GCN 26130）不处理；arXiv API 检索「GRB 191031C」0 命中；ADS/SciX 网页需 JS 本次会话不可达；仓内 gcn/archive 本地不存在，external/swift_bat、swiftgrbba（其 uvot_mag='U>19.71; White=20.27' 与 GCN 26127 一致）、uvot_grb、rssgrbag、grbsn_webtool 无额外测光行；结论：新增 3 行、归并删除 1 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift/BAT 目录 trigger_time（trigger 932595，亚秒值）",
+    "t0_basis": "swift_bat_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
