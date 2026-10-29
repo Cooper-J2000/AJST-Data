@@ -1,29 +1,38 @@
 {
   "transient_id": "AT2026oyp",
-  "alias": [],
+  "alias": [
+    "ASASSN-26dt",
+    "MASTER OT J005044.95-713837.7"
+  ],
   "ra": 12.68796,
   "dec": -71.64403,
-  "T0": "2026-06-08T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2026-06-11T08:52:48Z",
+  "T0_ref": "TNS 2026TNSTR2444....1S（ASAS-SN/Cassius discovery date 2026-06-11T08:52:48Z；TNS 报告 308147）；ATEL 17878 同称 2026 June 11 峰值 g=10.5",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "ASAS-SN",
-  "redshift": null,
+  "redshift": 0.000426,
   "tag": [
     "nova"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.05,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 45106",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告 24146（BlackGEM/Lesedi+Mookodi，2026-06-29，z=0.000426）；ATEL 17878",
+  "comment": "AT 2026oyp = ASASSN-26dt（TNS/ATEL/GCN 45106 用名），SMC 经典新星（Fe II）。TNS Type=Nova；TNS 分类报告 24146（BlackGEM/Lesedi+Mookodi，2026-06-29，Type Nova，z=0.000426）。原 T0=2026-06-08T00:00:00Z 为占位（该日 00:00，实为 ASAS-SN 最后一次非探测日，非发现时刻），现按 TNS 发现时刻改为 2026-06-11T08:52:48Z（TNS 308147/2026TNSTR2444....1S，ASAS-SN/Cassius，Discovery Mag g=10.5；ATEL 17878 亦称 2026 June 11 峰值 g=10.5）。原 extra_data.t0_note='t0 为该事件最早测量时刻（非触发时刻）'、t0_basis='first_detection' 已按 2026-10-12 裁定改写，原值记于此。Trigger_Instrument 保持 ASAS-SN（TNS Discovering Data Source）。坐标取 GCN 45106 的 UVOT 前爆发位置 00h50m45.11s -71d38m38.51s（±1.05″，90%）；TNS 发现位置 00:50:45.142 -71:38:36.96（12.68809, -71.6436）与前者相差约 1.5″，GCN 原文称 marginal consistent。GCN 45106 中『RA=01:50:45.142』应为 00:50:45.142（原文笔误，与 TNS 对照）；其首句写 LMC nova，实为 SMC（TNS Host Name: SMC/NGC0292；ATEL 17878），按 SMC 记。红移 z=0.000426 来自 Lesedi/Mookodi 光谱（TNS 分类报告 24146；ATEL 17878）。MASTER 报告 313381 用名 MASTER OT J005044.95-713837.7（alias 收录）。tag=[nova] 与 TNS Type=Nova 一致；tags.json 无 nova 子类，sub_tag 留空（如需 nova-classical 请维护者扩表）。宿主 SMC（NGC 292），未建 host_galaxy（无独立宿主坐标/测光）。articles[] 只收研究论文，GCN/ATEL/TNS 通告不入列。测光检索（2026-10-29）：仓内 gcn/archive 45 889 篇命中 1 篇（GCN 45106），external/rssgrbag 与 grbsn_webtool 无记录；GCN 站 AT2026oyp 命中 1 篇（45106）、ASASSN-26dt 检索仅 45106 相关；TNS 2026oyp 共 2 份报告（308147 发现、313381 MASTER）5 条测光；ATEL 17878（光谱/前身星）与 18087（Swift 超软 X 射线，不入库）；ADS/SciX 无 token（API 401）、arXiv 0 条 → 新增 5 行（ASAS-SN 前一次非探测、ATEL 14.0、MASTER 两历元 14.1、MASTER 2018 上限），X 射线不动。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为该事件最早测量时刻（非触发时刻）",
+    "t0_note": "T0 为 TNS 发现时刻（ASAS-SN/Cassius 首次探测 2026-06-11T08:52:48Z）；原 bot 注记已失效，原值见 comment",
     "t0_basis": "first_detection",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
