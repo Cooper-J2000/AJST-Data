@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB191101A",
-  "alias": [],
-  "ra": 251.83474,
-  "dec": 43.74103,
-  "T0": "2019-11-02T02:08:44Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "GRB 191101A",
+    "BAT 932742"
+  ],
+  "ra": 251.83723,
+  "dec": 43.74096,
+  "T0": "2019-11-01T21:08:03.350920Z",
+  "T0_ref": "GCN 26135（Swift/BAT 触发通告：At 21:08:03 UT triggered and located GRB 191101A，trigger=932742，整秒）；external/swift_bat（trigger 932742，trigger_time=2019-11-01T21:08:03.350920Z，亚秒值）",
+  "T0_offset": -20.0,
+  "T0_offset_ref": "GCN 26167（Swift-BAT 精化分析：mask-weighted light curve 'extending from ~T-20 sec'）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.8,
   "pos_ref": "GCN 26140",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy 2026-10-28。身份：GRB 191101A = Swift/BAT trigger 932742（GCN 26135：At 21:08:03 UT triggered；external/swift_bat：RA/Dec=251.8539/43.74194，t90=142.708±18.247 s 15-350 keV）。T0：原值 2019-11-02T02:08:44Z 系误取 GCN 26145 中 iTelescope 观测起点（原文 'beginning at 2019-11-02 02:08:44 UT (5 hours after the trigger)'）——观测窗口起点不得作为 T0（Issue #84 家族），改取 Swift/BAT 目录 trigger_time=2019-11-01T21:08:03.350920Z（与 GCN 26135 整秒一致）。T0_offset=-20 s：BAT 精化分析示光变自 ~T-20 s 起始（GCN 26167）；offset 为纯元数据，不改写光变时间轴。触发仪器：原 Swift 改为 Swift/BAT（原 extra_data t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失效，原值留此备查）。定位：原 ra/dec=251.83474/43.74103 为 GCN 26135 的 XRT 源位（4.0\"，radius 90% containment），与原 pos_error=1.8\"/pos_ref=GCN 26140 不匹配；改用 GCN 26140 增强 XRT 位 RA,Dec=251.83723,+43.74096（1.8\"，radius 90% confidence，原文标注）；GCN 26137 prompt 增强位（251.8374/43.7406，2.1\"）被 26140 取代，并列备查；26137 明言该源即 afterglow。分类：t90=137.95±22.83 s（15-350 keV，GCN 26167）→ sub_tag=lgrb（按通告 t90 判）；external/swift_bat t90=142.708±18.247 s 并列备查。alias 新增「GRB 191101A」（GCN 26135/26167 原文用名）、「BAT 932742」（external/swift_bat name_alt）。红移：无报道。测光检索（2026-10-28）：GCN 站按源名检索命中 8 篇（26135/26137/26140/26142/26144/26145/26164/26167，逐篇核对原文），另按触发号 932742 复检 3 篇（26135/26137/26167）一致；光学测光有 GCN 26164（UVOT 9 行上限，已入库）、GCN 26142（VIRT Clear V≈17.0，已入库）、GCN 26145（iTelescope luminance ~19.5，原行改正后保留）；GCN 26135 的 UVOT FC 无可用数值（2.7' 子图未覆盖 XRT 误差圆、未给限值）；X 射线数据（GCN 26144）不处理；arXiv API 检索「GRB 191101A」0 命中；ADS/SciX 网页需 JS 本次会话不可达；仓内 gcn/archive 本地不存在，external/swift_bat、swiftgrbba（其 uvot_mag='B>21.2; U>20.9; UVW1>19.3; UVM2>19.8; UVW2>19.3; White>21.6' 与 GCN 26164 一致）、uvot_grb、rssgrbag、grbsn_webtool 无额外测光行；结论：新增 10 行（UVOT 9 + VIRT 1）、改写 1 行（iTelescope）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift/BAT 目录 trigger_time（trigger 932742，亚秒值）",
+    "t0_basis": "swift_bat_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
