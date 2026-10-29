@@ -1,31 +1,38 @@
 {
   "transient_id": "GRB250703A",
-  "alias": [],
+  "alias": [
+    "bn250703380"
+  ],
   "ra": 351.24,
   "dec": 28.375,
-  "T0": "2025-07-03T09:07:31Z",
-  "T0_ref": null,
+  "T0": "2025-07-03T09:07:31.427Z",
+  "T0_ref": "GCN 40909（Fermi GBM Final Real-time Localization：trigger 773226456.426922 / 250703380，At 09:07:31 UT on 3 Jul 2025）；仓内 FERMIGBRST 快照 trigger_time=2025-07-03T09:07:31.427Z；整数秒两源一致，亚秒值取触发仪器",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 40976（IPN 误差盒中心 RA=351.240、Dec=+28.375，J2000）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-28）。身份：GRB 250703A = Fermi/GBM trigger 773226456.426922 / 250703380（GCN 40909，Fermi GBM Final Real-time Localization，on-ground 定位 RA=337.6、Dec=26.1，statistical uncertainty 1.2 度）；IPN 三角定位（GCN 40976，Fermi-GBM + Konus-Wind + Mars-Odyssey/HEND）误差盒中心 RA=351.240、Dec=+28.375（3σ 误差盒，面积 0.16 平方度，最长维 2.2 度、最短 5 角分，与 GBM 定位一致并缩小其范围），库内 ra/dec 即该盒中心，pos_ref=GCN 40976；误差盒为矩形盒而非圆对称半径，pos_error 不填，置信水平原文标注 3σ（备查，pos_error 留空故 pos_error_confidence 不填）。EIRSAT-1 GMOD 亦探测（GCN 40984）。同日另有 EP250702a 等事件，已逐篇核对 eventId 确认归属，未混入。\nT0 修正：bot 原值 2025-07-03T09:07:31Z（t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，原值备查）仅给整秒。新 T0=2025-07-03T09:07:31.427Z：GCN 40909 给整秒 09:07:31 UT，触发号 773226456.426922 的亚秒 .427 由触发仪器 GBM 给出，仓内 FERMIGBRST 快照 trigger_time 一致。其他仪器亚秒值并列备查：Konus-Wind T0=32851.983 s UT=09:07:31.983（GCN 40977）、EIRSAT-1 GMOD 09:07:31.6 UTC（GCN 40984）、MASTER 表隐含基准 09:07:31 UT（GCN 40930）。整数秒一致，按裁定亚秒取触发仪器 GBM 值；T0_offset/T0_offset_ref 保持 null（各观测方亚秒/整秒差均 <1 s，属仪器与取整差，非真实爆发偏移）。\n分类：GCN 40909 原文「the detection of a likely LONG GRB」、GCN 40976/40977 均称 long-duration → sub_tag=lgrb（照原文分类）；FERMIGBRST 快照 t90=3.84±0.29 s（50-300 keV）、t50=1.792±0.143 s，按目录 t90>2 s 亦判 lgrb。\n定位目录值并列：FERMIGBRST 快照 RA=337.57、Dec=26.14、error_radius=1.18 度；mpe_greiner 快照给 IPN X 射线位置 23h24m58s +28°23'（=351.2417、+28.3833，Error 132*5）与 GCN 40976 一致。\n测光检索（2026-10-28）：仓内 gcn/archive 45889 篇全文按「GRB250703A / GRB 250703 / 250703380 / 773226456 / T32851」检索命中 6 篇（GCN 40909、40915、40930、40976、40977、40984，逐篇确认 eventId 均为 GRB 250703A；同日 GCN 40912 为 EP250702a 通告，已排除），其中 40915 为 DDOTI w>20.8 上限（已有行，本次修正）、40930 为 MASTER-SAAO 26 个 60 s 曝光上限（本次全部补入），其余 4 篇为 γ 射线定位/探测通告无测光；external/rssgrbag、external/grbsn_webtool、external/konus_wind 等仓内快照无该源测光记录，FERMIGBRST/mpe_greiner 仅目录参数。外部：GCN 站核读 Circ. 40915 全文与仓内归档一致；arXiv API 检索 abs:\"GRB 250703A\" 0 命中，SciX/ADS 经 WebSearch 代理检索未见含本源测光表的研究论文（Neights et al. 2026, MNRAS 545 关于 GRB 250702B 仅在 γ 射线光变图中并列本源，无可用测光）；TNS 检索无本源条目。结论：本源测光仅有 DDOTI 与 MASTER 两批上限，共修正 1 行、新增 26 行，无文献表格可补。\n光变：DDOTI 行（GCN 40915）band 由 G 改为 w（原文给 DDOTI w 滤光片，非无滤光片，据 §3.3 两车道规则；filters.json w 键），time 改为窗口中点口径 4378.573 s、补 time_err=3690 s（§3.8 窗口/coadd 口径），mjd 60859.43090277778 不变（窗口中点绝对时刻，与 T0+time 自洽），mag_system=AB 照原文「limiting AB magnitude」，Gext_corr=n 照原文「not corrected for the Galactic extinction」。MASTER 行（GCN 40930）time 取原文 Tmid-T0 列、time_err=半曝光 30 s、band=G（原文 Filter C 为 clear 无滤光片）、mag_system 留空（原文未声明系统）、upperlimit=y，各行指向坐标与曝光见行 comment。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 250703380），亚秒值取触发仪器（bot 原值 2025-07-03T09:07:31Z/t0_basis=meta_trigger，见 comment）",
+    "t0_basis": "trigger_instrument_gcn",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
