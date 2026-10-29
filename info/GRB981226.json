@@ -1,23 +1,29 @@
 {
   "transient_id": "GRB981226",
-  "alias": [],
+  "alias": [
+    "GB981226",
+    "1SAXJ2329.6-2356"
+  ],
   "ra": 352.405,
   "dec": -23.93166667,
-  "T0": "1998-12-27T02:30:00Z",
-  "T0_ref": null,
+  "T0": "1998-12-26T09:47:32Z",
+  "T0_ref": "GCN 174（Piro/BeppoSAX：GRBM+WFC 于 Dec. 26 around 9:47 U.T. 触发）；BeppoSAX/GRBM 官方目录（HEASARC saxgrbmgrb，external/ 快照）trigger_time=1998-12-26T09:47:32.000Z",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/GRBM+WFC",
   "redshift": 1.11,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 rssgrbag 射电余辉目录导入新建 (Chandra & Frail 2012)",
-  "sub_tag": [],
+  "pos_error": 0.5,
+  "pos_ref": "GCN 195（±0.5″）；Frail+1999, ApJ, 525, L81（α=23h29m37.21s±0.03s、δ=−23°55′53.8″±0.4″，J2000）",
+  "redshift_type": "phot",
+  "redshift_ref": "Christensen+2005, ApJ, 631, L29 (DOI 10.1086/497005)：z_phot=1.11±0.06（68% CL）",
+  "comment": "身份：GRB981226 = BeppoSAX GRBM+WFC 触发暴（GCN 174：Dec. 26 around 9:47 U.T.，WFC 初定位 RA 352.433°/Dec −23.942°、8′；Greiner 表 IAUC 7074，obs_date 1998-12-26），即 Frail+1999 的 X-ray rich GRB 981226；同日 BATSE trigger 7281（10:47:04.161 UT，RA 267.15°/Dec −24.4°，external/batse 快照）定位与时刻均与本源不符，为另一事件——catalog_data.batse 系导入管线按暴名错误交叉匹配（只读快照未改动，已在 PR 报告）。alias 出处：GB981226（GCN 174/178 原文用名）、1SAXJ2329.6-2356（GCN 184 BeppoSAX NFI X 射线源命名）。T0：原值 1998-12-27T02:30:00Z 为观测窗口端点误作触发时刻（Issue #84 同型：GCN 177 观测「between 1:15 and 2:30 UT」的 2:30 端点），已改为触发时刻 1998-12-26T09:47:32Z；精度取 BeppoSAX/GRBM 官方目录秒级值，GCN 174「around 9:47 U.T.」（分钟级）互证；HEASARC grbcat 1998-12-26T09:47:00Z（Earth Crossing Time，分截断）；Frail+1999 记 1998 Dec 26.41 UT（≈09:50，引 Di Ciolo et al. IAUC 7074，与 09:47:32 差 2.5 min，其表内 Δt 按 26.41 计）；GCN 169「15.2 hours after the burst」自洽。T0_offset 留空（无 >1 s 偏移证据）。位置：ra/dec 即射电余辉 VLA J232937.2-235553 定位（GCN 195 ±0.5″；Frail+1999 α±0.03s、δ±0.4″），来源未标注置信水平，pos_error_confidence 留空；BeppoSAX NFI 精化 X 射线源 1SAXJ2329.6-2356（GCN 184，误差半径 1′）在误差圈内备查。红移：z=1.11±0.06（68% CL，测光红移，Christensen+2005）。分类：t90=17.0±5.8 s（40–700 keV，BeppoSAX/GRBM 目录 saxgrbmgrb），按目录 t90 判 lgrb；rssgrbag 目录 t90=20.0 s 一致；XRR 依据 Frail+1999 标题/正文（当时最高的 X/γ fluence 比）与 GCN 1383 比较。宿主：射电余辉位置处延展星系（Frail+1999 Keck R=24.85±0.06；GCN 749 HST/STIS；GCN 1032 VLT Rc=24.8±0.1），z_phot=1.11±0.06，host_galaxy 已建（宿主测光在 host_galaxy.photometry，未混入 lc）。测光检索留证（2026-10-28）：①仓内 gcn/archive 全文（45 563 篇；本 worktree 无该目录，用主仓只读路径）检索「981226」命中 20 篇——事件通告 16 篇（GCN 169/172/173/174/177/178/180/181/182/183/184/185/186/188/190/195）逐篇打开：光学三候选（Galama/Castro-Tirado/Wozniak）均被后续观测否定、无确认余辉，射电探测/上限见 180/183/188/195；宿主通告 2 篇（749/1032）；仅提及 2 篇（887/1383）。②external/rssgrbag/lightcurve.jsonl 命中 1 行（C&F12 8.46 GHz 峰拟合，即库内原行，逐值一致）；grbsn_webtool 无此事件；batse/saxgrbmgrb/heasarc_grbcat/mpe_greiner 快照仅目录参数。③外部：GCN 站（gcn.nasa.gov/circulars/195 实际打开，与仓内存档一致，1998-12 通告全集已含于仓内）；ADS/SciX 经 WebSearch 检索并实际取读 arXiv LaTeX 源——Frail+1999（ApJ 525, L81，astro-ph/9909407；VoR IOP 付费墙、ADS 扫描 403，按 §3.3 取 arXiv v1 表1）、Christensen+2005（ApJ 631, L29，astro-ph/0508227，核 z=1.11±0.06）、Chandra & Frail 2012（ApJ 746, 156，arXiv:1110.4124，核表3 峰值 137±34 μJy、8.2±1.6 d）；Feroci+2000（ApJ 540, 697）为 X 射线论文不在范围；光学极限无独立发表论文（Lindgren/Rhoads/Wozniak 仅 GCN）；TNS 403 不可达（1998 年 GRB，无 AT/SN 命名，不适用）。④结论：原库 1 行明显偏少，本次补 30 行（Frail+1999 表1 射电 14 行、WSRT/JCMT 2 行、光学上限 13 行），全部有明确时间锚点；未入库备查：GCN 172/173/177/182/190 的候选体测光（非余辉数据）、GCN 182 gunn-i 检测阈 23.5/24.3（band 无对应键且原文自称 approximate）、GCN 169「limiting magnitude … close to R=21」（措辞含糊，被同组 GCN 185 更深极限取代）、GCN 195 三历元均值 76±17 μJy（无逐历元数值）、GCN 184/178 的 X 射线数据（不在审核范围）。",
+  "sub_tag": [
+    "lgrb",
+    "XRR"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -279,6 +285,11 @@
         "name_alt": [],
         "trigger_time": "1998-12-26T09:47:00.000Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
     }
   },
   "articles": [
@@ -295,7 +306,63 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2005ApJ....63....1C/abstract",
       "bibtex": "@ARTICLE{2005ApJ....63....1C,\n       author = {L. Christensen and J. Hjorth and J. Gorosabel},\n       title = {Photometric redshift of the GRB 981226 host galaxy},\n       journal = {Astrophys.J. 631 (2005) L29-L32},\n       year = {2005},\n       doi = {10.1086/497005},\n       eprint = {astro-ph/0508227},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2005ApJ....63....1C/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Chandra+2012",
+      "title": "A Radio-Selected Sample of Gamma Ray Burst Afterglows",
+      "url": "https://arxiv.org/abs/1110.4124",
+      "bibtex": "@ARTICLE{2012ApJ...746..156C,\n       author = {{Chandra}, Poonam and {Frail}, Dale A.},\n        title = \"{A Radio-Selected Sample of Gamma Ray Burst Afterglows}\",\n      journal = {\\apj},\n         year = 2012,\n        month = feb,\n       volume = {746},\n         eid = {156},\n       pages = {156},\n         doi = {10.1088/0004-637X/746/2/156},\narchivePrefix = {arXiv},\n       eprint = {1110.4124},\n}"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 1.11,
+    "redshift_err": 0.06,
+    "redshift_type": "phot",
+    "photometry": [
+      {
+        "band": "R",
+        "mag": 24.85,
+        "mag_err": 0.06,
+        "mag_sys": "Vega",
+        "source": "Frail+1999, ApJ, 525, L81（Keck，1.1″ 孔径，Landolt Mark A 定标）"
+      },
+      {
+        "band": "CL",
+        "mag": 25.04,
+        "mag_err": 0.07,
+        "mag_sys": "AB",
+        "source": "GCN 749（HST/STIS 50CCD clear，7865 s，约暴后 555 d）"
+      },
+      {
+        "band": "LP",
+        "mag": 24.5,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "GCN 749（HST/STIS F28X50LP，7909.63 s，约暴后 558 d）"
+      },
+      {
+        "band": "V",
+        "mag": 24.8,
+        "mag_err": 0.08,
+        "mag_sys": "Vega",
+        "source": "GCN 749（Johnson 系统，Walker 1994 定标）"
+      },
+      {
+        "band": "R",
+        "mag": 24.3,
+        "mag_err": 0.11,
+        "mag_sys": "Vega",
+        "source": "GCN 749（Kron-Cousins 系统）"
+      },
+      {
+        "band": "R",
+        "mag": 24.8,
+        "mag_err": 0.1,
+        "mag_sys": "Vega",
+        "source": "GCN 1032（VLT/FORS1 Rc，2″ 孔径，2000-10-04/05，未做银河消光改正 A_R=0.06）"
+      }
+    ],
+    "comment": "射电余辉 VLA J232937.2-235553 位置处延展星系（Frail+1999：距射电余辉 0.55″ 西、0.41″ 南，文中判为宿主）；z_phot=1.11±0.06（Christensen+2005，HyperZ）。星系中心坐标未逐值发表（仅给相对射电源偏移），故 ra/dec 略去。GCN 190（NOT 组合像 R=22.9±0.1）当时把 Castro-Tirado 候选体位置的源疑为宿主，后被证伪，不采用。",
+    "source": "Frail+1999, ApJ, 525, L81；Christensen+2005, ApJ, 631, L29；GCN 749；GCN 1032"
+  }
 }
