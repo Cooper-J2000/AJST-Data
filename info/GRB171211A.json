@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB171211A",
-  "alias": [],
+  "alias": [
+    "GRB 171211A",
+    "BAT 796469"
+  ],
   "ra": 98.13542,
   "dec": -58.69209,
-  "T0": "2017-12-11T09:27:32Z",
-  "T0_ref": null,
+  "T0": "2017-12-11T09:27:32.949900Z",
+  "T0_ref": "GCN 22234（Kennea et al., Swift）：'At 09:27:32 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 171211A (trigger=796469)'；external/swift_bat 官方目录快照 trigger_time=2017-12-11T09:27:32.949900Z（整数秒一致，取触发仪器目录亚秒值）；GCN 22241（BAT refined）同记触发、T90=2.32±0.59 s；Fermi 无本源触发（FERMIGBRST 快照 bn171211844=2017-12-11T20:15:58.533Z、ra/dec=78.14/1.15，系同日另一事件、与本源无关）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.8,
-  "pos_ref": "GCN 22236",
+  "pos_ref": "GCN 22236（Enhanced Swift-XRT position）：'RA, Dec = 98.13542, -58.69209 ... with an uncertainty of 2.8 arcsec (radius, 90% confidence)'（XRT-UVOT 对准 + USNO-B1 场源匹配改正，Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177）；原 ra/dec 与 pos_error 即取自本通告、本次核实无误",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "由 gcn_llm_extract 管线导入（bot_created；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，Issue #68 不可信，按 §3.10 核实改写并保留原文于此）。审核 2026-10-28（fsy）。① T0：GCN 22234 整秒触发时刻 + external/swift_bat 快照亚秒值 09:27:32.949900Z（触发仪器目录口径），原 T0=09:27:32Z 改进为亚秒值（§3.8）；FERMIGBRST 快照 171211 条目为 bn171211844（20:15:58.533Z、ra=78.14/dec=1.15）另一事件、勿混淆。② 定位：GCN 22236 精化 XRT 位置 98.13542/-58.69209（2.8″, 90% confidence）→ pos_error_confidence=90（原文明确）；原值核实无误。③ 别名：GRB 171211A（GCN 用名）+ BAT 796469（external/swift_bat name_alt）。④ Trigger_Instrument：原值 'Swift/UVOT' 系 bot 错误（UVOT 不触发），改正为 Swift/BAT（trigger=796469）。⑤ 分类：BAT refined GCN 22241 记 T90=2.32±0.59 s（15-350 keV）且明言 'Duration shows it to be intermediate between short and long bursts'，GCN 22234 主题亦标 'possibly short burst'；external/swift_bat 快照 t90=2.176±0.455 s（15-350 keV）处于 2 s 边界——目录 t90 机械判读（>2 s）与通告『possibly short/intermediate』表述冲突，按 §3.9 冲突条款 sub_tag 留空待决（见 PR 待决事项）。⑥ 光变（原 1 行改 + 补 4 行，全部为上限）：(a) 原 1 行 iTelescope.Net T27 I 波段上限 17.2（GCN 22250）：观测窗口 UT 11:41:37→11:54:45（T0+8044.05→8832.05 s）、8×60 s 合成图 5σ 上限 ~17.2（USNO-B1 定标）；原行 time=8045 取窗口起点，改窗口中点 time=8438.1、time_err=394.0（§3.8）；band=I（原文 'the I filter'）；USNO-B1 定标未声明星等系统 → mag_system 留空。(b) 补 Swift/UVOT 上限表 4 行（GCN 22239，Emery et al.）：'using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)' → mag_system=Vega；未做银消改正（E(B-V)=0.11）：v 387–6321 s、491 s 曝光 >19.0；uvw1 436–6731 s、491 s >19.7；uvm2 5503–6526 s、393 s >19.9；uvw2 362–6939 s、668 s >20.2（均 upperlimit=y、中点/半跨口径）；GCN 22234 记 FC 因场内亮源无数据，22239 表亦无 white/b/u 行，一致。⑦ 本源无 X-ray 行（GCN 22240 XRT refined 按规则不入测光库）。⑧ §3.3 检索留证（2026-10-28）：gcn/archive 本机缺失，改用 GCN 网站（gcn.nasa.gov）源名 'GRB 171211A' + 事件页（circulars/events/grb-171211a）双通道检索，共得 6 篇 circular——22234（Swift 检测）、22236（enhanced XRT 位置，无测光）、22239（UVOT 上限表）、22240（XRT refined，无光学）、22241（BAT refined）、22250（iTelescope I 波段上限）；仓内快照 external/swift_bat（BAT 796469 全参数）、fermi_gbm（bn171211844 系另一事件）均核对；rssgrbag、grbsn_webtool 无交集；ADS/web 文献检索无本源专用研究论文 → articles[] 维持空（GCN 通告不入 articles）；新增 4 行均来自 GCN 22239 已核对原文、原 1 行重锚自 GCN 22250。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Swift BAT 真实触发时刻（GCN 22234 + external/swift_bat 目录快照亚秒值，2026-10-28 审核改写）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
