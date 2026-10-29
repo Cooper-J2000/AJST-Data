@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB240523A",
-  "alias": [],
+  "alias": [
+    "GRB 240523A",
+    "BAT 1230423"
+  ],
   "ra": 33.56813,
   "dec": -22.0332,
-  "T0": "2024-05-23T14:43:11Z",
-  "T0_ref": null,
+  "T0": "2024-05-23T14:43:11.908720Z",
+  "T0_ref": "GCN 36536（At 14:43:11 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240523A, trigger=1230423，整秒）；亚秒值 14:43:11.908720 取仓内 Swift/BAT 官方目录快照 external/swift_bat（trigger 1230423，trigger_time=2024-05-23T14:43:11.908720Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 36536",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（Rusty-Harpoon@zcode，2026-10-28）：身份=Swift/BAT 触发 1230423。GCN 36536 原文「At 14:43:11 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240523A (trigger=1230423)」（整秒）；external/swift_bat 官方目录 trigger 1230423 的 trigger_time=2024-05-23T14:43:11.908720Z（亚秒值），BAT 飞行通告 GRB_TIME=52991.90 SOD（14:43:11.90 UT，MPE 事件页转载）同值。T0 由原 bot 整秒值 14:43:11Z 细化为目录亚秒值 14:43:11.908720Z；原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」系 bot 模板，本例 T0 数值恰为触发时刻真值，原值照录于此。ra/dec=33.56813/-22.03320 与 pos_error=1.9″（radius，90% containment）均出自 GCN 36536 的 Swift-XRT enhanced position（XRT 起测 14:45:39.6 UT、触发后 147.7 s），无跨通告拼接；pos_error_confidence=90 系 36536 原文明示；GCN 36537 后续 astrometric 精化位置 33.56798/-22.03336（2.1″/90%）备查，pos_ref 仍取 36536。sub_tag=lgrb：t90=41.932±8.652 s（15-350 keV，Swift/BAT 目录；GCN 36543 给 41.93±8.66 s 一致），按目录 t90 判 lgrb。非 SCHEMA 量：fluence=1.1±0.1×10^-6 erg/cm2（15-150 keV）、1 s 峰光子流量=1.0±0.3 ph/cm2/s、幂律谱指数 2.07±0.20（GCN 36543，误差 90% 置信）；XRT T+24 h 计数率预报 2.0×10^-3 ct/s、对应 0.3-10 keV 流量 6.5×10^-14 erg/cm2/s（GCN 36538，模型预报非实测，不入 lc）。lc 仅 1 行 UVOT White finding chart 上限，已逐行核对与 GCN 36536 原文一致（time/mjd/band/mag_system 口径修订见该行 comment）。测光检索（2026-10-28）：仓内 gcn/archive 45 889 篇全文按「240523A」「1230423」命中 4 篇（GCN 36536/36537/36538/36543，快照覆盖至 circularId 46010≈2026-10-20），仅 36536 含 UVOT White 上限即库内既有 1 行，36537/36538 为 X 射线分析、36543 为 BAT 精化无测光；external/rssgrbag、external/grbsn_webtool/SourceData 无该事件；external/mpe_greiner/swiftgrbba/swift_bat/uvot_grb 仅目录级参数。外部：arXiv API 检索「GRB 240523A」「240523A」均 0 命中（2026-10-28）；GCN 站（gcn.nasa.gov）两度超时未直达，以仓内 archive 全文 + MPE 事件页（mpe.mpg.de/~jcg/grb240523A.html，2026-10-28 打开，仅载上述 4 篇通告与 GCN NOTICE）互证；TNS 无该源条目（WebSearch 核查，无 TNS 名）；ADS/SciX 无 token 未直查（WebSearch site:scixplorer.org 无命中），WebSearch 另命中 Lan & Atteia 2025（ApJ 988, 117，arXiv:2506.20374），已取 arXiv v1 全文 PDF（2026-10-28，经 HAL 镜像下载后 arXiv 重试成功）逐页核对：仅样本截止点提及「up to GRB 240523A, there are 372 LGRBs having measured redshift」，无本源测光表或单源数据 → 除库内 1 行外无可用测光，本 PR 补 0 行（修订既有 1 行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻：GCN 36536 整秒触发时刻 14:43:11 UT；external/swift_bat 官方目录 trigger 1230423 trigger_time=2024-05-23T14:43:11.908720Z（亚秒值）。非观测窗口时刻",
+    "t0_basis": "swift_bat_trigger_1230423",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
