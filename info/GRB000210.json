@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB000210",
-  "alias": [],
-  "ra": 29.8125,
-  "dec": -40.66667,
+  "alias": [
+    "GRB 000210"
+  ],
+  "ra": 29.815417,
+  "dec": -40.658972,
   "T0": "2000-02-10T08:44:06Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 540",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "BeppoSAX",
@@ -12,16 +14,22 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 544",
-  "redshift_type": null,
+  "pos_error": 1.6,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 782",
+  "redshift_type": "spec-host",
   "redshift_ref": "catalog:minaev2020",
-  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "comment": "审核链（Rusty-Harpoon@zcode 2026-10-29）：[身份] BeppoSAX WFC 探测并定位（GCN 538/539 通告 RA=29.812 Dec=-40.669，GCN 540 SOC 圆通），BATSE 连续数据确认（GCN 549，Feb 10.36396 UT）与 IPN 三边测量（GCN 543，Ulysses/Konus/GRBM）交叉印证，身份无疑。别名「GRB 000210」为 GCN 549 原文用名。[T0] 2000-02-10T08:44:06Z：GCN 538/539 SAX WFC 通告 GRB_TIME=08:44:06 UTC；GCN 540（触发仪器 BeppoSAX SOC 官方圆通）「February 10.36396 UT」≈08:44:06；GCN 549 BATSE Feb 10.36396 一致。目录亚秒值并列备查：Konus-Wind 08:44:05.712（Tsvetkova+2021）、BeppoSAX GRBM 08:44:05.000（SAXGRBMGRB）、HEASARC GRBCAT 08:44:06.000——整数秒一致，亚秒差按触发仪器 WFC 通告精度（整秒）取整秒值。[坐标] 原 ra/dec=29.8125/-40.66667 系 MPE Greiner 表整分取整（01h59m15s -40°40′），与原 pos_ref GCN 544 不符；改为 GCN 782（Chandra CXC 重处理最终位置）01h59m15.7s -40d39'32.3\" → ra=29.815417 dec=-40.658972，误差 1.6″（基于 5 颗 X 射线源对 USNO-A2/2MASS 定标；GCN 782 同文另一解 01h59m15.6s -40d39'32.5\" 在误差内一致，备查）；GCN 782 未标注置信水平，pos_error_confidence 留空。[红移] z=0.8463 为宿主星系 VLT/FORS1 光谱（Piro+2002 §2.3 发射线 6881.2±0.5 Å），redshift_type=spec-host；redshift_ref 沿用 catalog:minaev2020，heasarc_grbcat 0.8463±0.0002 一致。[sub_tag] t90=7.968±0.411 s（Konus-Wind 目录，Tsvetkova+2021，观测系；SAXGRBMGRB 目录 t90=9.0±1.4 s 一致）按目录 t90 判 lgrb；Minaev+2020 Type II 一致。[光变] 逐行核对 GCN 545/547/554/560/783 与 rssgrbag 快照；GCN 545 探测被 GCN 547 撤回（本表 discard=y）；新增 Piro+2002（ApJ 577, 680）Table 1 光学与 Table 3 射电共 17 行（VoR 不可得，取自 arXiv astro-ph/0201282）；原 rssgrbag 探测行确证为 Piro+2002 Table 3 转引，改指最初出处。测光检索（2026-10-29）：仓内 gcn/archive 45 563 篇全文按「GRB000210/GRB 000210」检索命中 14 篇（540/542/543/544/545/546/547/548/549/553/554/560/782/783，另 538/539 WFC 通告经 GCN 540 追溯确认，已逐篇读原文；其余 30 个「000210」命中均为 Swift ToO URL 误匹配）；external/rssgrbag/lightcurve.jsonl 命中 1 行（8.46GHz 93 µJy 探测，已溯源入库）；external/grbsn_webtool 无该事件；external/uvot_grb 不适用（Swift 发射前）。WebSearch 文献检索命中 Piro+2002、Gorosabel+2003、Berger+2003、Smith+2005、Priddey+2006——后者均为宿主星系（SCUBA/MAMBO/SED）测光，非瞬变体光变，不入 lc；TNS 不适用（GRB 类）。来源无 GCN 546 之 0.26 mJy（2′ WFC 圆内 4σ）限量未入库（Chandra 2″ 圆的 0.13 mJy 已记入行 comment）；补行情况：新增 17 行、修改 8 行、撤回 1 行（row 2）。catalog-only 注记沿用：Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-29"
+    },
     "derived": {
       "best": {
         "eiso": {
@@ -428,18 +436,11 @@
       "source": "bot"
     },
     {
-      "name": "Berger+2003",
-      "title": "A Submillimeter and Radio Survey of Gamma-Ray Burst Host Galaxies: A Glimpse into the Future of Star Formation Studies",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003ApJ...588...99B",
-      "bibtex": "@ARTICLE{2003ApJ...588...99B,\n       author = {{Berger}, E. and {Cowie}, L.~L. and {Kulkarni}, S.~R. and {Frail}, D.~A. and {Aussel}, H. and {Barger}, A.~J.},\n        title = \"{A Submillimeter and Radio Survey of Gamma-Ray Burst Host Galaxies: A Glimpse into the Future of Star Formation Studies}\",\n      journal = {\\apj},\n     keywords = {Cosmology: Observations, Galaxies: Starburst, Gamma Rays: Bursts, Astrophysics},\n         year = 2003,\n        month = may,\n       volume = {588},\n       number = {1},\n        pages = {99-112},\n          doi = {10.1086/373991},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0210645},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003ApJ...588...99B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Michalowski+2008",
-      "title": "The Nature of GRB-selected Submillimeter Galaxies: Hot and Young",
-      "url": "https://ui.adsabs.harvard.edu/abs/2008ApJ...672..817M",
-      "bibtex": "@ARTICLE{2008ApJ...672..817M,\n       author = {{Micha{\\l}owski}, M.~J. and {Hjorth}, J. and {Castro Cer{\\'o}n}, J.~M. and {Watson}, D.},\n        title = \"{The Nature of GRB-selected Submillimeter Galaxies: Hot and Young}\",\n      journal = {\\apj},\n     keywords = {dust, extinction, galaxies: evolution, galaxies: high-redshift, galaxies: ISM, galaxies: starburst, gamma rays: bursts, Astrophysics},\n         year = 2008,\n        month = jan,\n       volume = {672},\n       number = {2},\n        pages = {817-824},\n          doi = {10.1086/523891},\narchivePrefix = {arXiv},\n       eprint = {0708.3850},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2008ApJ...672..817M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "name": "Chandra+2012",
+      "title": "A Radio-Selected Sample of Gamma Ray Burst Afterglows",
+      "url": "https://ui.adsabs.harvard.edu/abs/2012ApJ...746..156C",
+      "bibtex": "@ARTICLE{2012ApJ...746..156C,\n       author = {{Chandra}, P. and {Frail}, D.~A.},\n        title = \"{A Radio-Selected Sample of Gamma Ray Burst Afterglows}\",\n      journal = {\\apj},\n         year = 2012,\n        month = feb,\n       volume = {746},\n        pages = {156},\n          doi = {10.1088/0004-637X/746/2/156},\narchivePrefix = {arXiv},\n       eprint = {1110.4124},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012ApJ...746..156C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Minaev+2020",

@@ -1,9 +1,27 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-54090.0,,s,51584.990000000005,8.46GHz,0.065,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN560,,
-59694.0,,s,51585.054861111115,R,23.1,0.5,magnitude,,n,n,,,,,,,1.0,n,,1.54-m Danish Telescope,GCN545,,
-107034.0,,s,51585.60277777778,R,18.0,,magnitude,,n,y,,,,,,,1.0,n,,2.34m Vainu Bappu Telescope,GCN554,,
-168138.0,,s,51586.310000000005,8.46GHz,0.055,,mJy,,n,y,,,,,,,1.0,n,,ATCA,GCN560,,
-391914.0,,s,51588.9,8.46GHz,0.035,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN560,,
-403146.0,,s,51589.03,8.46GHz,0.038,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN560,,
-743040.0,,s,51592.963958333334,8.46GHz,0.093,,mJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",,
-16755469.0,,s,51778.29299768519,R,23.5,0.2,magnitude,,n,n,,,,,,,1.0,n,,Danish 1.54-m,GCN783,,
+54090.0,,s,51584.990000000005,8.46GHz,0.065,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN560,GCN 560（McConnell+）：VLA 8.46 GHz，2000 Feb 10.99 UT，4σ 无源，rms 噪声 65 µJy；本行以 rms 作上限值。GCN 546（Berger & Frail）同一观测（Feb 10.98 UT）另给 0.13 mJy（2σ，Chandra 2″ 误差圆内）限量，不另列行。Piro+2002 Table 3 同一积分发表 34±70 µJy（另列行）。,Rusty-Harpoon@zcode
+59706.0,2160.0,s,51585.055,R,23.1,0.5,magnitude,,n,n,,,,,,,1.0,y,1.54-m Danish Telescope,,GCN545,GCN 545 预备探测 R~23.1±0.5（Feb 11.03–11.08 UT；原文只给窗口，中点/半宽为约定口径）→ GCN 547 同团队撤回（disregarded；当时用未改正的 GCN 544 位置，其 R~23.3 限量属错误位置的空天区，不入库）→ GCN 548 修正 8″ 位置误差 → Piro+2002 Table 1 在改正位置发表 R=23.5±0.2（另列行）。本行数值保留备查、置 discard。原文未声明星等系统。,Rusty-Harpoon@zcode
+107037.0,2907.0,s,51585.6028125,R,18.0,,magnitude,,n,y,,,,,,,1.0,n,2.34m Vainu Bappu Telescope,,GCN554,GCN 554（Bhargavi+）：2000 Feb 10/11 两晚 R、V 观测，合并帧在 Chandra 位置（GCN 544/548）无探测，R=18.0 上限；原文未分晚给限量，本行取 Feb 11 窗口（13.66–15.275 UT），中点/半宽为约定口径。原文未声明星等系统。,Rusty-Harpoon@zcode
+168138.0,,s,51586.310000000005,8.46GHz,0.055,,mJy,,n,y,,,,,,,1.0,n,ATCA,,GCN560,GCN 560：ATCA 8.2 h 积分，2000 Feb 12.31 UT，4σ 无源，rms 55 µJy；以 rms 作上限值。GCN 560 未写明该 ATCA 观测频率；Piro+2002 Table 3 记为 8.70 GHz 并给 −4±59 µJy（另列行），频率表述不一致见 PR 待决事项。,Rusty-Harpoon@zcode
+391914.0,,s,51588.9,8.46GHz,0.035,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN560,GCN 560：VLA 2000 Feb 14.90 UT，4σ 无源，rms 35 µJy；以 rms 作上限值。Piro+2002 Table 3 同一观测发表 15±37 µJy（另列行）。,Rusty-Harpoon@zcode
+403146.0,,s,51589.03,8.46GHz,0.038,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN560,GCN 560：VLA 2000 Feb 15.03 UT，rms 38 µJy；Feb 14+15 合并另给 55 µJy（2σ）上限。Piro+2002 Table 3 同一观测发表 −34±42 µJy（另列行）。,Rusty-Harpoon@zcode
+741834.0,,s,51592.95,8.46GHz,93,21,uJy,,n,n,,,,,,,1.0,n,VLA,,Piro+2002,"唯一显著射电探测。Piro+2002 Table 3：2000 Feb 18.95 UT（Δt=8.59 d），8.46 GHz，CnB 阵，93±21 µJy（误差=rms 噪声）。原行引 rssgrbag（Chandra & Frail 2012, ApJ, 746, 156：8.6 d, 93 µJy 转引）→ 确证转引，去重改指最初出处并按原文补误差与历元（0.01 d 精度）。",Rusty-Harpoon@zcode
+16760567.0,5098.0,s,51778.352,R,23.5,0.2,magnitude,,n,n,,,,,,,1.0,n,1.54-m Danish Telescope,,GCN783,GCN 783：Aug 22.293–22.411 UT（2000）合并 R 帧（7x900 s），R=23.5±0.2（预备值）；原文只给窗口，中点/半宽为约定口径。该源延展、亮度恒定（与 Feb 11 像差 0.03±0.30 mag），Piro+2002 §2.3 光谱证认为星系（z=0.8463），此源为宿主主导。Piro+2002 Table 1 三晚（Aug 22–24）合并给 R=23.47±0.10（另列行）。原文未声明星等系统。,Rusty-Harpoon@zcode
+45450.0,432.0,s,51584.89,R,23,,magnitude,,n,y,,,,,,,1.0,n,NOT,HIRAC,Piro+2002,Piro+2002 Table 1：Feb 10.88–10.90 UT，R，3x300 s，seeing 1.2″，>23（爆发后 12.4 h 余辉深搜寻上限）。VoR 不可得（IOP 被 Radware 反爬拦截、A&A 站 DataDome 拦截），取自 arXiv astro-ph/0201282。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+59706.0,2160.0,s,51585.055,R,23.5,0.2,magnitude,,n,n,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：Feb 11.03–11.08 UT，R，10x300 s 合并，23.5±0.2（与 discard 行同帧、改正位置后的发表值）。该源延展恒定、宿主主导。原文未声明星等系统（Gorosabel+2003 Table 2 载同一定标链数值并注明 Vega 系统）。,Rusty-Harpoon@zcode
+316314.0,432.0,s,51588.025,R,22.6,,magnitude,,n,y,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：Feb 14.02–14.03 UT，R，600 s，>22.6。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+7349706.0,864.0,s,51669.43,R,22,,magnitude,,n,y,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：May 5.42–5.44 UT（2000），R，2x600 s，>22。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+16842042.0,86832.0,s,51779.295,R,23.47,0.10,magnitude,,n,n,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：Aug 22.29–24.30 UT（2000）三晚 R 合并（原文注 Aug 22–24 由多晚求和），23.47±0.10；GCN 783 预备值 23.5±0.2 另列行。宿主主导。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+17106858.0,6048.0,s,51782.36,V,24.09,0.15,magnitude,,n,n,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：Aug 26.29–26.43 UT（2000），V，9x900 s。宿主主导。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+17311194.0,130896.0,s,51784.725,I,22.60,0.12,magnitude,,n,n,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：Aug 27.21–30.24 UT（2000）四晚 I 合并（原文注 Aug 27–30 由多晚求和），22.60±0.12。宿主主导。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+17527194.0,1296.0,s,51787.225,B,25.1,0.7,magnitude,,n,n,,,,,,,1.0,n,1.54-m Danish Telescope,DFOSC,Piro+2002,Piro+2002 Table 1：Aug 31.21–31.24 UT（2000），B，2x1200 s。宿主主导。原文只给窗口，中点/半宽为约定口径；原文未声明星等系统。,Rusty-Harpoon@zcode
+22280640.0,150.0,s,51842.2417361,R,23.46,0.10,magnitude,,n,n,,,,,,,1.0,n,VLT,FORS1,Piro+2002,Piro+2002 Table 1：Oct 25.24 UT（2000），VLT/FORS1，300 s 单帧（中点=起点+150 s），23.46±0.10。宿主主导（同夜 FORS1 光谱证认星系）。原文未声明星等系统。,Rusty-Harpoon@zcode
+53226.0,,s,51584.98,8.46GHz,34,70,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Feb 10.98 UT，VLA B 阵，34±70 µJy（误差=rms）。与 GCN 546/560 的 Feb 10.98/0.99 VLA 积分为同一观测（另列行）。历元 0.01 d 精度。,Rusty-Harpoon@zcode
+169002.0,,s,51586.32,8.70GHz,-4,59,uJy,,n,y,,,,,,,1.0,n,ATCA,,Piro+2002,Piro+2002 Table 3：Feb 12.32 UT，ATCA 6A 阵，8.70 GHz，−4±59 µJy。GCN 560 同一观测未写频率、rms 55 µJy（另列行）；频率表述不一致见 PR 待决事项。,Rusty-Harpoon@zcode
+391914.0,,s,51588.9,8.46GHz,15,37,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Feb 14.90 UT，CnB 阵，15±37 µJy。与 GCN 560 行同一观测（另列行）。,Rusty-Harpoon@zcode
+403146.0,,s,51589.03,8.46GHz,-34,42,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Feb 15.03 UT，CnB 阵，−34±42 µJy。与 GCN 560 行同一观测（另列行）。,Rusty-Harpoon@zcode
+1433034.0,,s,51600.95,8.46GHz,20,16,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Feb 26.95 UT，CnB 阵，20±16 µJy（约 1.3σ，非探测）。,Rusty-Harpoon@zcode
+1948842.0,,s,51606.92,8.46GHz,58,33,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Mar 03.92 UT，CnB 阵，58±33 µJy（约 1.8σ，非探测）。注：原文 Δt 列（21.56 d）与其历元列（Mar 03.92）相差 1 d，本行按历元列换算。,Rusty-Harpoon@zcode
+4012938.0,,s,51630.81,8.46GHz,45,45,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Mar 27.81 UT，C 阵，45±45 µJy。原文 Δt 列（45.45 d）与历元列差 1 d，按历元列换算。,Rusty-Harpoon@zcode
+9362826.0,,s,51692.73,8.46GHz,48,26,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：May 28.73 UT，C 阵，48±26 µJy。原文 Δt 列（107.37 d）与历元列差 1 d，按历元列换算。,Rusty-Harpoon@zcode
+11605770.0,,s,51718.69,8.46GHz,-1,34,uJy,,n,y,,,,,,,1.0,n,VLA,,Piro+2002,Piro+2002 Table 3：Jun 24.69 UT，D 阵，−1±34 µJy（Δt=134.33 d 与历元列一致）。,Rusty-Harpoon@zcode
