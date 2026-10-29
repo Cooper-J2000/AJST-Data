@@ -1,28 +1,55 @@
 {
   "transient_id": "IceCube-160731A",
-  "alias": [],
-  "ra": 215.109,
-  "dec": -0.458,
-  "T0": "2016-07-31T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "IC160731A"
+  ],
+  "ra": 214.544,
+  "dec": -0.3347,
+  "T0": "2016-07-31T01:55:04.000Z",
+  "T0_ref": "AMON 128290/6888376（GCN/AMON ICECUBE HESE 通告 DISCOVERY_TIME 6904 SOD {01:55:04.00} UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2700.0,
+  "pos_error_confidence": "90",
+  "pos_ref": "AMON 128290/6888376 rev1（更新定位 214.5440/−0.3347，90% containment 45.00′ stat+sys；GCN 19760 转引 best-estimate 同值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy（2026-10-28）：(1) T0：原 bot 值 2016-07-31T00:00:00Z 系日期占位（t0_basis=meta_trigger、T0_ref=null，Issue #68 家族）。触发仪器 IceCube 官方值 2016-07-31 01:55:04.00 UT：GCN/AMON 通告（notices_amon/6888376_128290.amon，HESE/EHE 各 rev0+rev1 共 4 份）DISCOVERY_DATE=17600 TJD（=MJD 57600）、DISCOVERY_TIME=6904 SOD {01:55:04.00} UT；GCN 19743（HAWC）/19752（FACT）/19758（GBM）/19777（Konus）同引 1:55:04 UTC；ATel 9295（AGILE）明言 T0=16/07/31 01:55:04 UT，ATel 9301（H.E.S.S.）/9303（Fermi-LAT）同值；Keivani+2017（PoS ICRC2017 1015）：detected at 01:55:04 UT、HESE rev-0 通告于检测后 41 s（01:55:45 UT）发出；Kankare+2019（A&A 626，A117）：01:55:04.00 UT（MJD 57600.07990）；IceCat-1（Blaufuss+2023，ApJS）MJD 57600.080。MASTER GCN 19748 收包 2016-07-31 01:55:34.5 UT（30s after the EHE_event_time）→ 反算事件时刻 ≈01:55:04.5（备查，取官方整秒值）。通告两位小数 .00 按库内三位小数惯例序列化为 .000（同一时刻不新增精度，先例 IceCube-190730A/260504A）。(2) 身份：IceCube HESE+EHE 双流高能中微子候选（AMON ICECUBE HESE/EHE，RUN 128290，EVENT 6888376；CHARGE=15814.74 pe、SIGNAL_TRACKNESS=0.91 [HESE rev0 通告]、signalness 0.44 [IceCat-1]；HESE rev0 90% containment 73.79′=4427.4″、50% 25.19′=1511.4″（stat+sys）；EHE rev0 位 215.0929/−0.4191、50% 10.31′=618.6″、signalness 0.849——均备查）。原 Trigger_Instrument=Swift 系 bot 误植跟踪观测通告（GCN 19747=ATel 9294，Swift-IceCube 合作 19 点 tiling 跟进），触发仪器为 IceCube，已改。同日划界：external/fermi_gbm 快照同日他暴 GRB 160731024（trigger 00:35:06.874 UT，RA 118.71/Dec 6.15）与本目位置/时刻均不同；IceCat-1 同日另有第二例预警（MJD 57600.785，RA 312.63/Dec 20.07，另一事件）；库内无同事件孪生条目。(3) 定位：bot ra/dec=215.109/−0.458 系 AMON HESE rev0 初值（Swift/MASTER/HAWC/GBM/FACT 即时跟进所用，Swift tiling 场心同值）。IceCube 于 2016-08-01 02:35 UT 发 rev1 更新定位：RA=214.5440、Dec=−0.3347（J2000），90% containment 45.00′=2700″、50% 20.99′=1259.4″（stat+sys）；被 AGILE（ATel 9295：214.5440/−0.3347、90% 45.00′ stat+sys）、H.E.S.S.（ATel 9301：214.54/−0.33、0.75° 90%）、Fermi-LAT（ATel 9303：214.54/−0.33）、MAXI（ATel 9313：214.54/−0.33、0.75°）、iPTF（GCN 19760：best-estimate 214.5440/−0.3347）、Kankare+2019（214.5/−0.3、90% 0.75°，取自 IceCube alert 目录）、IceCat-1（214.58 +0.53/−0.57、−0.30 +0.45/−0.67，90% 轮廓矩形包络）一致采用 → ra/dec 取 rev1 值；pos_error=2700″（来源明示 90% containment → pos_error_confidence=90）；rev0↔rev1 两心相距 0.58°；IceCat-1 不对称包络值并列备查。(4) redshift/tag/sub_tag/alias/host_galaxy：无对应体确证 → redshift 维持 null；tag/sub_tag 维持 []（tags.json 无中微子类目，库内 IceCube 源均空，扩表建议见 PR 待决事项）；alias 新增 IC160731A（IceCat-1 目录用名）；host_galaxy 不建（定位区内已知源均为目录级位置巧合：NGC 5584 12.8 mag [GCN 19748]、尘埃星系 HerBS-203/HerBS-143 [Urata+2026，明言不主张物理成协]、Swift XRT 6 源均已知 X 射线对应体或恒星 [GCN 19747]）。(5) lc 逐行（1→5）：原 UVOT 行 bot 锚 time=10846.0 s=观测窗起点 03:00:46 UT 的 SOD（曝光起点被误作时刻，Issue #84 家族）→ 按 §3.8 以总观测窗（兼含 XRT/UVOT）2016-07-31 03:00:46–14:51:52 UT 中点/半跨重锚：time=25275 s、time_err=21333 s（原文只给窗口、未分列 UVOT 各 tile 曝光，真实 UVOT 曝光中点不可恢复；Keivani+2017 补充口径：19 个 tiling 位均用 U 滤光片、每位约 4 次共 ~420 s、灵敏度 ~18.9 mag [USNO 深度]，亦无逐位时刻；原通告自述 3.9–46.5 ks after trigger，对 T0=01:55:04 反算为 3.94/46.61 ks，显式端点与散文锚微不自洽，按先例 GRB100904A 以显式端点为准）；u 滤光片 3σ 上限 18.0（GCN 19747=ATel 9294 同文）；mag_system=Vega（原文未声明，UVOT 惯例，据 Breeveld+2011，先例 IceCube-190730A UVOT 行）；reference 归一 GCN 19747。新增 MASTER 3 行上限 + 1 行候选体探测（GCN 19748=ATel 9298 同文逐值一致）：Kislovodsk 指向起始 19:23:17 UT、单图（180 s）19.0/coadd（1260 s）19.8；IAC 21:25:16 UT、20.0/20.7；OAFA 22:55:29 UT、19.8/20.5——行值均取 coadd 深限、单图极限入行 comment 备查；原文相对时长（61241/68442/75655 s）与显式绝对时刻互不自洽（对 T0 反算差 +1652/+1770/−30 s），按先例 GRB100904A 以显式绝对时刻为准；无滤光片→band=G；coadd 墙钟跨度原文未给→time_err 留空；星等系统原文未声明→留空。新增 MASTER OT J142038.73-002500.1 探测行（2016-07-31 19:26:57 UT、曝光 180 s、17.9 mag；距 rev0 初位 0.07°、距 rev1 更新位 0.62°；原文自述 point-like partial CCD event [疑似伪信号]，候选对应体未确证 → discard=y，不参与光变拟合；上限行 discard=n）。(6) 测光检索留证（2026-10-28）：仓内 gcn/archive 本地未获取（工作树无 gcn/ 目录，CONTRIBUTING 定为可再生成大文件）；external/rssgrbag lightcurve.jsonl 0 命中；external/grbsn_webtool/SourceData 无 2016 事件；external/uvot_grb 无 160731；external/fermi_gbm/normalized.jsonl 唯一「160731」命中为同日他暴 GRB 160731024（见 (2)，数值巧合非本源）。GCN 站逐号枚举 19700–19860（161 篇全文实取）命中该事件 8 篇（19743 HAWC/19747 Swift/19748 MASTER/19752 FACT/19758 GBM/19760 iPTF/19772 ANTARES/19777 Konus；GCN 事件页 icecube-160731a 关联不全：漏 19752/19758、误链 GRB 160726A/160802A 的 Konus 通告 19733/19767，故以逐号枚举为准）；AMON 原始通告可达（HESE/EHE rev0+rev1）；ATel 8 篇（9294/9295/9298/9301/9303/9313/9315/9324；astronomerstelegram.org 直连 500，全部经 Wayback dated 快照实取）。文献：OpenAlex 2 轮 + arXiv API 检索；实读 5 篇——Kankare+2019（A&A 626，A117：PS1 巡区 31 个瞬变全为无关场源，论文明言 none had any characteristic to make it appear possibly related；i 波段深度 ~22 mag、2016-07-31 07:41:39 UT 起逐夜至 08-26、未给定位中心处上限 → 不入库；VoR 路径 aanda.org 与 DOI 落地页 403 [DataDome]、CDS VizieR 三镜像网络失败/404、Wayback 无该页快照、eScholarship 403，取 arXiv v2 已接收版 LaTeX 源逐值核对，先例 Krauss+2020 处理）、Keivani+2017（PoS ICRC2017 1015，PDF 实读）、Urata+2026（arXiv 2609.07863：160731A 场内 2 颗尘埃星系目录级关联、不主张成协、无时标测光）、Franckowiak+2020（ApJ，arXiv 2001.10232：仅转引 AMON 目录位 214.5/−0.33 ±0.75°，无测光）、arXiv 1605.00177v3（理论文，无测光）；SIMBAD 双镜像+TAP 连接失败（HTTP:000，如实注明、不作缺席证据）；TNS 不适用（中微子事件无 AT/SN 命名）。结论：除本 PR 新增 4 行外无其他可入库测光；γ/X/中微子族上限（HAWC GCN 19743 稳态+瞬态、GBM GCN 19758 地球遮挡 230 mCrab 12–100 keV、Konus GCN 19777 waiting mode ±1000 s、MAXI ATel 9313 2–20 keV、Swift-XRT GCN 19747、AGILE ATel 9295/LAT ATel 9303 >100 MeV、FACT GCN 19752/H.E.S.S. ATel 9301/MAGIC ATel 9315 TeV、ANTARES GCN 19772 中微子）均非光学带内测光，不入库、仅此处备查。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 IceCube 官方 AMON 通告 DISCOVERY_TIME 6904 SOD {01:55:04.00} UT（检测时刻；HESE rev0 通告于检测后 41 s 发出，Keivani+2017）＝2016-07-31T01:55:04.000Z；原 bot 值 2016-07-31T00:00:00Z 为日期占位（原 t0_basis=meta_trigger，Issue #68 家族），无触发时刻含义；通告 .00 两位小数按库内三位小数惯例序列化为 .000，数值不变",
+    "t0_basis": "AMON 128290/6888376",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Kankare+2019",
+      "title": "Search for transient optical counterparts to high-energy IceCube neutrinos with Pan-STARRS1",
+      "url": "https://doi.org/10.1051/0004-6361/201935171",
+      "source": "fsy"
+    },
+    {
+      "name": "Keivani+2017",
+      "title": "Four Swift searches for transient sources of high-energy neutrinos",
+      "url": "https://doi.org/10.22323/1.301.1015",
+      "source": "fsy"
+    },
+    {
+      "name": "Urata+2026",
+      "title": "A pilot submillimeter search for IceCube neutrino counterparts: JCMT follow-up and dusty-galaxy catalog associations",
+      "url": "https://arxiv.org/abs/2609.07863",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
