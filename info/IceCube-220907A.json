@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-220907A",
-  "alias": [],
+  "alias": [
+    "IC220907A"
+  ],
   "ra": 224.81,
   "dec": 44.7,
-  "T0": "2022-09-07T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2022-09-07T06:46:47.516Z",
+  "T0_ref": "GCN 32523; GCN 32538",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
-  "redshift": 0.135,
+  "Trigger_Instrument": "IceCube",
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 32523",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 32573",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "IceCube 高能中微子 track-like 候选事件（ICECUBE_Astrotrack_Bronze 流，平均天体物理纯度 30%，FAR=0.46 yr^-1，AMON 通告 137019_70165712，GCN 32523），非 GRB；tags.json 无中微子类目，tag/sub_tag 留空（待维护者扩表，同库各 IceCube 源）。同日 GRB 220907A（Fermi/GBM trigger 684252331.480966/bn220907587 于 14:05:26 UT，GCN 32525；Swift/BAT trigger=1123129 于 14:05:25 UT，BAT 在轨定位 RA/Dec 268.870/−20.315，GCN 32526；库内独立条目 GRB220907A）为另一独立事件，距本源精化位约 76 deg，无混淆（MASTER 同日发两份独立报告：GCN 32522 主题 IceCube Alert 220907.28、GCN 32524 主题 Swift GRB220907.59）；bot Trigger_Instrument=Fermi/LAT 系 GCN 32528（Fermi-LAT 对本事件的 γ 射线跟进观测通告）误植，改为 IceCube。T0：bot 值 2022-09-07T00:00:00Z 为名称-日期占位（Issue #68 家族；原 extra_data：t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"，t0_basis=meta_trigger），修正为触发仪器官方通告 GCN 32523 的 2022-09-07 06:46:47.52 UT；GCN 32538（IceCube）1000 s 搜索窗 06:38:27.516–06:55:07.516 UTC 与 2 d 窗 2022-09-06/09-08 06:46:47.516 UTC 均以 06:46:47.516 UTC 为事件时刻，亚秒取 0.516（先例 IceCube-221224A 同款窗口锚定，两证整数秒一致）；GCN 32528（Fermi-LAT）/32560（HAWC）引述同值；MASTER GCN 32522「15021 sec after trigger time」反算 06:46:48 UT（整秒）自洽。定位：精化位 RA=224.81（+2.07/−1.95 deg）、Dec=+44.70（+0.94/−1.06 deg）J2000，90% PSF containment（GCN 32523；GCN 32528/32560 引述一致）；非对称两轴、来源未给单值误差半径 → pos_error 留空、confidence=90；初始自动定位（AMON 通告，GCN 32522 引述）14h 54m 08.64s +45d 02m 56.4s（=223.536/+45.049 deg）R=0.64 deg，距精化位 0.968 deg，bot ra/dec 即精化位（未采用初始位）。红移：bot 0.135 系候选体 AT2022oyn 的 Type Ia SN 光谱红移（Keck I/LRIS+SNID，GCN 32573），该候选体已被原文明确排除为对应体，置 null（先例 IceCube-250207A 红移 0.26→null）。alias IC220907A 为 GCN 32528 原文用名（「the 90% IC220907A localization region」「IC220907A best-fit position」）。测光（lc 1→4 行）：ZTF 行（P48/ZTF，GCN 32536）重锚——bot time=100680 s 系占位 T0 至观测起始 2022-09-08 03:58 UTC 之差（观测起始被误作时刻+日期占位，Issue #84/#68），改 time=观测起始−T0=76272.484 s（原文另给约 21.2 h=76320 s，两锚自洽差 47.5 s）、time_err=30 s（分精度锚半单位）、mjd 重算；r=20.83±0.19 为候选体 ZTF22aatwsqt/AT2022oyn 探测（RA 224.4694373/Dec +44.8892302，距精化位 0.307 deg、在 90% 区域内），后被 Keck 光谱分类为 Type Ia SN z=0.135 并被原文排除为对应体（GCN 32573）→ discard=y（候选对应体探测先例 IceCube-190331A 已合并；190730A/160731A 系已交付 PR #551/#555 未并 main——2026-10-29 核查补合并状态标注）；mag_system=AB 系推定（ZTF 定标 AB，据 IRSA/IPAC ZTF release notes，同库已合并 IceCube-260504A/260217A ZTF 行同口径）。新增 MASTER-Amur 3 行上限（GCN 32522，对初始 AMON 误差盒的无滤光片巡视）：filter C=clear → band=G，time=曝光起点+Exptime/2−T0（原文 Tmid−T0=15112/15251/15471，与起点+半曝自洽），time_err=Exptime/2，视场中心距精化位 0.688/0.847/0.692 deg（均在 90% 区域内），星等系统原文未声明。测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（工作树无 gcn/ 目录）；external/rssgrbag、external/grbsn_webtool/SourceData、external/uvot_grb 0 命中；external/fermi_gbm、external/swift_bat 唯一命中=同日他暴 GRB 220907A（bn220907587/trigger 1123129，划界）；GCN 站逐号枚举 32500–32700 共 201 篇全文（2026-10-29 核查复算更正，原记 213 多计 12）→ 「220907」命中 16 篇，其中本事件 7 篇（32522/32523/32528/32536/32538/32560/32573）→ 补 3 行（MASTER）；TNS 对象页匿名 403（2026-10-29 核查更正状态码）、Wayback 无快照（候选体 AT2022oyn 条目不可达，其值仅经 GCN 32536/32573 核对）；AMON 原始通告 gcn.gsfc 两种 URL 形均 404，但第三形 notices_amon_g_b/137019_70165712.amon 实测 200 可达且内容（通告号/06:46:47.51/223.5357,+45.0493/38.31′）与引述互证——引述升级为原始通告直接实证（2026-10-29 核查补记）；IceCat-1（Blaufuss+2023，arXiv:2304.01174 LaTeX 源实读）目录只覆盖到 2020 年底，不含本事件；OpenAlex（IC220907A、IceCube-220907A：均 0 命中）、arXiv API（0）、Crossref（0）、SIMBAD 双镜像连接失败（HTTP:000，如实注明不作缺席证据）；ZTF 跟进计划文献 Stein et al. 2022（VoR MNRAS 521, 5046，arXiv:2203.17135）覆盖至 2021-12 的 24 次预警、不含本事件 → 共补 3 行（另重锚 1 行）",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 中微子事件 IC220907A 的探测时刻（GCN 32523；亚秒 0.516 s 由 GCN 32538 搜索窗口锚定）",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
