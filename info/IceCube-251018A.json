@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-251018A",
-  "alias": [],
+  "alias": [
+    "IC251018A"
+  ],
   "ra": 321.11,
   "dec": 41.31,
-  "T0": "2025-10-18T16:07:11Z",
-  "T0_ref": null,
+  "T0": "2025-10-18T05:05:42.970Z",
+  "T0_ref": "GCN 42352",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 42352",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IceCube 高能中微子 track alert（ICECUBE_Astrotrack_GOLD 流,Gold 平均天体物理纯度 50%,FAR=0.2566 yr^-1,GCN 42352；AMON 初始通告 141495_22018019:RUN 141495/EVENT 22018019、signalness=0.60730、能量 ~1.92e2 TeV,系 AMON 字段备查）,非伽马暴。同日甄别:GRB 251018A（Fermi/GBM 触发 2025-10-18 03:12:00.63 UT、trigger 782449925/251018133,GCN 42364;Swift/XRT target 01405083,GCN 42362;位置 RA 282.04/Dec −37.03,fermi_gbm/swiftgrbba/mpe_greiner 快照一致;库内已有独立条目 info/GRB251018A.json）与引力波候选 S251018bi（GCN 42357/42372）均为不同事件,位置/时刻/仪器皆不同,无混淆;仓内 external/ 快照「251018」子串命中（fermi_gbm 251018133、swiftgrbba/mpe_greiner GRB 251018A）全部属该 GRB,非本源。tags.json 受控词表无中微子类目,tag/sub_tag 留空,PR 待决建议扩表 neutrino（系统性,同 IceCube-190730A/250207A/160731A/200620A）。T0:GCN 42352（IceCube 官方）原文「On 25-10-18 at 05:05:42.97 UT IceCube detected a track-like event」;GCN 42371（Fermi-LAT）同引「05:05:42.97 UT (T0)」;AMON rev0/rev1 DISCOVERY_TIME 18342 SOD {05:05:42.97} UT;GCN 42369 搜索窗 04:57:22.970–05:14:02.970 UTC（1000 s,窗心 05:05:42.970）与 2 天窗 2025-10-17/19 05:05:42.970 UTC;GCN 42358（MASTER）散文「39688 sec after trigger time at 2025-10-18 16:07:11 UT」反算 trigger=05:05:43 UT,MASTER DB observ 页 trigger time 2025-10-18 05:05:42.97;GCN 42367（DDOTI）散文锚 T+21.9/25.2 h 按官方 T0 反算 21.905/25.205 h 自洽——九证同值互证。原 bot 值 2025-10-18T16:07:11Z（原 extra_data:t0_note=「t0 为 meta trigger-time（真实触发时刻）」,t0_basis=meta_trigger）为 GCN 42358 MASTER「started inspect … at 2025-10-18 16:07:11 UT」观测起始时刻（39688 s after trigger）,非触发时刻（Issue #84 家族指向起始误作 T0）,较官方值晚约 11.02 h,已改;官方两位小数 .97 按库内三位小数惯例序列化为 .970。位置:ra/dec 321.11/41.31 为 GCN 42352 离线精化方向（RA 321.11 (+3.09/−2.94 deg)、Dec 41.31 (+2.46/−3.51 deg),90% PSF containment,J2000;AMON rev1 与 GCN 42371 引述一致）;GCN 42352 未给单值误差半径（非对称两轴偏移）,pos_error 留空,pos_error_confidence=90（原文明确给出 90%）;在线 AMON rev1 单值 SRC_ERROR 180.00 arcmin（stat-only,90%）、SRC_ERROR50 96.00 arcmin（2026-10-28 核查备查补记）;初版 AMON rev0 位置 321.3077/+39.1859、SRC_ERROR 161.22 arcmin（90% containment,stat-only）、SRC_ERROR50 62.80 arcmin（备查;该 rev 位置与精化值不同,其半径不与精化位置混用;GCN 42358 引述的「21h 25m 13.92s,+39d 11m 09.6s,R=2.69」即此初值）。bot ra/dec 与精化值逐位一致,未发现候选体坐标污染。90% 定位区内伽马源:GCN 42352 列 4FGL-DR4 两源（4FGL J2118.3+4055、4FGL J2120.5+4331,距最优拟合 1.3/2.3 deg,均无清晰多波段对应体与分类）;GCN 42371（Fermi-LAT）列 3 个目录源（4FGL J2118.3+4055 1.2 deg、4FGL J2120.5+4331 2.3 deg、4FGL J2136.5+4259（blazar of uncertain type TXS 2134+428）2.8 deg）,LAT 1 天/1 月时标均无显著探测;~17 年积分在定位区内发现新伽马超额 Fermi J2125.8+3940（RA 321.46/+39.69,99% containment 6 arcmin、68% 3 arcmin,距最优拟合 1.65 deg）——伽马候选对应体,未确认,host_galaxy 不建立;红移无资料（维持 null）。测光:GCN 42367（DDOTI/OAN）2025-10-19 夜 w>20.6 AB 上限 1 行重锚（bot time=28369 s、mjd=60967.0 为 2025-10-19T00:00Z 日期only占位,重锚为观测窗 2025-10-19 03:00–06:18 UTC 中点 84797.03 s、time_err=5940 s）; GCN 42358（MASTER）对初始误差盒 70 视场 Clear 上限 70 行入库（51 行站点列「MASTER-」未填全记 MASTER、19 行 MASTER-Kislovodsk;2025-10-18 11:12–16:29 UT;Expt 10–540 s,极限 17.3–20.0 mag;视场中心距精化最优 0.7–6.6 deg,巡视基于初始 AMON 误差盒;表列 Tmid−T0 与按官方 T0 复算差 4.97–270.97 s,MASTER 自用 T0 秒级抖动,按先例弃用该列、以表列 Date Time 曝光中点为锚）；GCN 42369（IceCube 附加中微子搜索,1000 s 窗 p=1.00、2 天窗 p=0.02,灵敏度 1.5e-01/1.7e-01–1.8e-01 GeV cm^-2）与 GCN 42371（Fermi-LAT >100 MeV 光子流量上限）非电磁测光,不入库。测光检索（2026-10-28）:本工作树无 gcn/archive;仓内 external/ 全目录（rssgrbag、grbsn_webtool、uvot_grb 及各 normalized）grep「IceCube-251018A/IC251018A/251018.21」0 命中,heasarc_grbcat 无 251018 条目;GCN 站事件页 icecube-251018a 实列 6 篇（42351/42352/42358/42367/42369/42371,全部实读;42351 为 42352 的 duplicate submission）,检索页 UI 不可脚本化,以逐号枚举 42345–42420（76 篇 subject 全读）互证,其中 GRB 251018A 系 7 篇、S251018bi 系 2 篇均非本源;arXiv API「IceCube-251018A」「IC251018A」各 0 篇、OpenAlex 0 篇（均 2026-10-28）;SIMBAD 连接失败（http 000,重试未复,不作缺席证据）、ATel 检索页 500（4 次）且 Wayback 全站临时离线（均不作缺席证据）、TNS API 匿名 401 需 key（6 篇通告中亦无 IAU/TNS 命名）→ 补 70 行、重锚 1 行后无其他可入库测光。alias 收录 IC251018A（GCN 42371 原文用名 IC251018A）。articles[]:本次仅使用 GCN 通告/AMON 通告/MASTER DB 网页,无研究论文,维持空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 IceCube 官方通告 GCN 42352 触发时刻 2025-10-18 05:05:42.97 UT；原 bot 值 2025-10-18T16:07:11Z 为 GCN 42358 MASTER「started inspect … at 2025-10-18 16:07:11 UT」观测起始时刻误植（39688 s after trigger,Issue #84 家族）,非 meta trigger；官方两位小数按库内三位小数惯例序列化为 .970",
+    "t0_basis": "GCN 42352",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
