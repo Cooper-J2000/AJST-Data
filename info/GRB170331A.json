@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB170331A",
-  "alias": [],
-  "ra": 323.7926,
-  "dec": -24.38604,
-  "T0": "2017-03-31T01:40:46Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 170331A",
+    "BAT 744791"
+  ],
+  "ra": 323.79186,
+  "dec": -24.38626,
+  "T0": "2017-03-31T01:40:46.444640Z",
+  "T0_ref": "Swift/BAT trigger 744791 触发时刻（external/swift_bat 快照 trigger_time=2017-03-31T01:40:46.444640Z；GCN 20946 记 At 01:40:46 UT；GCN/SWIFT NOTICE（MPE 转录）记 01:40:46.44 UT，亚秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.6,
+  "pos_error_confidence": null,
   "pos_ref": "GCN 20960",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0：GRB 170331A = Swift/BAT trigger 744791（BAT 于 2017-03-31 01:40:46.444640 UT 触发，external/swift_bat 快照 trigger_time；GCN 20946 记 At 01:40:46 UT；GCN/SWIFT NOTICE（MPE 事件页转录）记 01:40:46.44 UT，亚秒一致）。原 T0=2017-03-31T01:40:46Z 为 bot 整秒值（t0_basis=meta_trigger，无可溯源出处），按触发仪器亚秒精度修正为 2017-03-31T01:40:46.444640Z（§3.2：整数秒一致仅亚秒不同取触发仪器亚秒）。无 T0_offset。alias：GRB 170331A（GCN 用名）、BAT 744791（external/swift_bat name_alt）。tag：原空，补 grb。\n\n位置：GCN 20960（Swift/UVOT enhanced position）RA,Dec=323.79186,−24.38626（J2000；sexagesimal 21h35m10.05s −24°23′10.5″，换算一致），1.6″ 不变。原 ra/dec=323.7926/−24.38604 与原文不符（bot 转写误差，RA 偏约 2.6″、Dec 偏约 0.8″），改用原文精确值。pos_error_confidence 原文未给置信水平，留空。\n\n红移与分类：无红移报道，redshift 留空。t90=17.57±2.57 s（Swift/BAT refined analysis，GCN 20967，15–350 keV；external/swift_bat 快照记 17.616±2.477 s，同源微差），按通告/目录 t90 判 lgrb（原 sub_tag 空，补 lgrb）。\n\n光学与 lc：GCN 20949（LCO Sutherland 两台 1-m、SDSS i、03:21 UT（1.7 h since GRB）起 2×120s、USNOB-1 定标、XRT 误差圈内无源、i>17.5 极限）：原行 time=6014.0 s 取 03:21 起点，改 time=6133.6 s（起点+总曝光/2=曝光中点）、time_err=120.0 s（§3.8），mjd=T0+time 7 位小数（原 14 位小数已修），原文未声明星等系统 mag_system 留空+comment，telescope/instrument 列位修正（原把 LCO 1-m Sutherland 写进 instrument、telescope 空）。GCN 20965（Swift/UVOT settled 观测，T0+128 s 起）补 8 行 3σ 上限：white_FC >20.4（128–278 s）、u_FC >19.6（286–536 s）、white >21.0（128–1532 s，含 FC 的累计）、v >18.5（616–1753 s）、b >19.1（542–1680 s）、u >19.7（286–1655 s，含 u_FC 的累计）、w1 >19.1（665–1631 s）、m2 >19.4（1069–1606 s）；原文波段表述 white_FC/u_FC 入 uvot-white/uvot-u（FC 与累计行同滤光片不同深度，独立保留）、w1/m2 入 uvot-uvw1/uvot-uvm2；time=窗口中点、time_err=半窗宽（§3.8）；UVOT 星等系统推定 Vega（Breeveld et al. 2011）。X 射线（GCN 20948 XRT enhanced position、20962 XRT refined）不在审核范围。\n\n测光检索（2026-10-28）：本机无 gcn/archive 快照，改用 GCN 网站事件页 https://gcn.nasa.gov/circulars/events/grb-170331a（源名+触发号 744791 双通道核对）——共 7 篇（20946/20948/20949/20960/20962/20965/20967），逐篇打开：含光学上限 2 篇（20949 LCO、20965 UVOT，均已入库），其余为 BAT/XRT 通告（20946 触发、20948/20962 XRT、20960 UVOT 定位、20967 BAT refined）；external/rssgrbag 0 行、external/grbsn_webtool 无记录、external/swift_bat 命中 trigger 744791 目录行（无光学测光）；arXiv API 精确短语 0 篇；INSPIRE 全文 0 篇；ADS/SciX 网页反爬拦截未取得结果集（与 PR #330 同，改用 INSPIRE+arXiv 佐证）；TNS 无该源报道（2017 年 Swift GRB 无 IAU 名称，以 GCN 为主）。结论：补 8 行（GCN 20965 UVOT 上限）、修正 1 行（LCO 中点+mjd 精度+列位）、核不上依据的行 0 行。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，与实际不符，已改写。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy 2026-10-28 审核修正为 Swift/BAT trigger 744791 触发时刻 2017-03-31T01:40:46.444640Z（原 bot 整秒值 t0_basis=meta_trigger 无出处）",
+    "t0_basis": "Swift/BAT trigger 744791（external/swift_bat 快照；GCN 20946）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
