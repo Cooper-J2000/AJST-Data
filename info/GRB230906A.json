@@ -3,25 +3,35 @@
   "alias": [],
   "ra": 79.7533,
   "dec": -47.893,
-  "T0": "2023-09-06T12:55:07Z",
-  "T0_ref": null,
+  "T0": "2023-09-06T12:55:07.149Z",
+  "T0_ref": "触发仪器 Fermi/GBM：GCN 34631 trigger 715697712/230906538 'At 12:55:07.15 UT'；仓内 external/fermi_gbm 快照 trigger_time=2023-09-06T12:55:07.149Z（更细小数，与通告舍入一致自洽）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 34704",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.4,
+  "pos_ref": "GCN 34639",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error_confidence": "90",
+  "comment": "数据审核（fsy 2026-10-28）。触发仪器更正：原 bot Trigger_Instrument=「Swift/XRT」错误——Swift 未触发，GCN 34636 为 ToO 补观测；本源由 Fermi/GBM 触发（GCN 34631 trigger 715697712/230906538，12:55:07.15 UT，'likely SHORT GRB'），IPN 三角定位（GCN 34637）、Konus-Wind（GCN 34638）、AstroSat CZTI（GCN 34649）、Swift ToO（GCN 34636）跟进，改 Trigger_Instrument=Fermi/GBM。T0 补亚秒：原 bot 2023-09-06T12:55:07Z 为同一 GBM 触发时刻的整秒截断，按 §3.2 亚秒规则补 .149（GBM 目录快照；GCN 通告 .15 舍入一致），四路时标互证：BlackGEM '19.1 hours after'（GCN 34651）与 XRT 'T0+93.0 ks 起'（GCN 34639）均自洽。原 bot extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」（bot 失真，改写留档）。定位更正：bot 坐标 79.7533/−47.893 本为 GCN 34639 Swift-XRT 位（6.4″ radius 90% conf）但 pos_ref 误标 GCN 34704（该篇实为 VLT 光学对应体位 RA=05:19:01.57 Dec=−47:53:32.3 ~0.5″ 误差），且 pos_error 缺失；改 pos_ref=GCN 34639、pos_error=6.4（arcsec）、pos_error_confidence=90（原文明确 90% conf）。更精确定位：GCN 34704 VLT 光学对应体 ~0.5″、GCN 34672 Chandra X-ray afterglow——是否改锚非触发仪器精化位待维护者裁定（待决①）。分类：t90=1.024±0.143 s（50-300 keV，Fermi GBM 目录 external/fermi_gbm 快照）按目录 t90 判 sgrb；GCN 34631 'likely SHORT GRB'、GCN 34637/34638 标题 (short)、Dichiara+2026（ApJL 999 L42）标题 Short GRB 一致。tag 补 grb（原为空）。测光检索（2026-10-28）：GCN 站源名+trigger 715697712 双向检索命中 11 篇：34631 GBM 定位、34634 MASTER-SAAO 5 条 clear 上限、34636 Swift ToO、34637 IPN、34638 Konus-Wind、34639 XRT 位、34643 UVOT 限量表、34649 AstroSat CZTI、34651 BlackGEM、34672 Chandra X 射线、34704 VLT R 检测+Ks 上限；光学测光入库：MASTER 5 行（新）+ UVOT white 1 行（新）+ BlackGEM 1 行（改）+ VLT R/Ks 2 行（新）共 9 行；34636/34637/34638/34649/34672 无光学测光。仓内 external 快照 grep：external/fermi_gbm 有本源目录行（t90/t50/fluence 引用如上），external/swift_bat、external/heasarc_grbcat、external/rssgrbag、external/grbsn_webtool 均无记录。文献：Dichiara+2026（bot 已挂 articles，本次核对属实）。原文注记：GCN 34639 XRT 'cannot confirm this as the afterglow'（无变暗迹象，后被 Chandra/VLT 确认对应体）；GCN 34634 MASTER 各 60 s 曝光未给结束时刻，按 start+30 s 取中点 err=30 s。审核 fsy 2026-10-28",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 触发时刻 2023-09-06T12:55:07.149 UTC（GCN 34631 trigger 715697712/230906538 12:55:07.15 UT；GBM 目录快照 .149 自洽）；原 bot 值 2023-09-06T12:55:07Z 为同一触发时刻的整秒截断，仅补亚秒；Swift 未触发（GCN 34636 为 ToO 补观测）",
+    "t0_basis": "trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [
     {
