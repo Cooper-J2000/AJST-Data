@@ -1,27 +1,35 @@
 {
   "transient_id": "HAWC-190916A",
-  "alias": [],
+  "alias": [
+    "HAWC-190917A"
+  ],
   "ra": 321.84,
   "dec": 30.97,
-  "T0": "2019-09-16T01:14:19Z",
-  "T0_ref": null,
+  "T0": "2019-09-17T01:14:19Z",
+  "T0_ref": "GCN 25766（HAWC Burst Monitor 警报通告，初版误写触发日期为 2019-09-16，经 GCN 25768 更正为 2019-09-17 01:14:19 UT；GCN 25779 据此更名 HAWC-190917A）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HAWC",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2880,
+  "pos_ref": "GCN 25766",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（Rusty-Harpoon@zcode 2026-10-28）。【身份】HAWC Burst Monitor 警报：1 s 窗口超额（delta_T=1.00 s），FAR=7.78/yr，RA(J2000)=321.84°、Dec(J2000)=30.97°（GCN 25766）；官方 AMON notice（gcn.gsfc.nasa.gov/notices_amon_hawc/18941_372.amon，run 18941 / event 372，notice 时刻 2019-09-17 02:05:27 UT）给 RA=321.8481、Dec=+30.9735（J2000）、DISCOVERY_DATE 19/09/17、DISCOVERY_TIME 4459 SOD {01:14:19.00} UT、FAR 7.7804/yr，与通告互证；坐标/T0/触发仪器一致，身份无歧义。【更名链】初版通告误写触发日期为 2019-09-16 → GCN 25768 更正触发时刻为 2019-09-17 01:14:19 UT → GCN 25779 官方更名 HAWC-190916A → HAWC-190917A。本条目 id 不改（§3.7），新增 alias「HAWC-190917A」（GCN 25779 原文用名）。【T0】原库 T0=2019-09-16T01:14:19Z 承初版通告的日期错误，按 §3.2 更正为 2019-09-17T01:14:19Z（GCN 25766 更正版；GCN 25774 INTEGRAL 亦记 event time 2019-09-17 01:14:19 UTC；AMON notice DISCOVERY_DATE/TIME 同值，两路互证）。无真实爆发时刻相对自动触发 >1 s 偏移的证据，T0_offset 保持 null。extra_data 原值留底：t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=\"meta_trigger\"。【定位】GCN 25766：Location uncertainty (68% containment): 0.8 deg（statistical only）→ pos_error=2880 arcsec、pos_error_confidence=68；同一 0.8 deg 半径在 AMON notice 记 SRC_ERROR 48.00 arcmin（stat-only, 90% containment）——通告（人工核实）与自动 notice 置信水平表述冲突，按 §3.9/§4 取通告值 68，90% 值并列备查；ra/dec 保留通告的 321.84/30.97，AMON 更精值 321.8481/+30.9735 备查。【分类】tag 留空：HAWC 甚高能（300 GeV–100 TeV）警报源，后续跟进均无 GRB 确认——Fermi-GBM 无星上触发、targeted search 无对应体（GCN 25772），INTEGRAL/SPI-ACS 无显著对应体（GCN 25774），IceCube 中微子搜索 p=0.044（1.7σ，GCN 25775），Insight-HXMT/HE 无显著超额（GCN 25776）；无证据臆填 grb，tags.json 无对应类目，待维护者裁决（PR 待决事项①）。【测光检索（2026-10-28）】仓内 gcn/archive 全文检索 HAWC-190916A / HAWC-190917A 命中 8 篇（25766/25768/25769/25772/25774/25775/25776/25779，逐篇打开），其中仅 GCN 25769 含光学测光（DDOTI w=19.5 上限，即库内已有行，本次重算时间历元）；external/rssgrbag/lightcurve.jsonl（140 行）与 external/grbsn_webtool/SourceData 均无该事件；GCN 站事件页 gcn.nasa.gov/circulars/events/hawc-190916a 亦仅列上述 8 篇；arXiv API 检索 all:\"HAWC-190916A\" 与 all:\"HAWC-190917A\" 均 0 命中（export.arxiv.org，2026-10-28）；WebSearch 检索 HAWC burst monitor 后续文献，命中 IceCube 实时跟进研究文章（Abbasi+2021, ApJ 910, DOI 10.3847/1538-4357/abe123，仅中微子上限、无测光，未采用故不入 articles）；TNS 不适用（HAWC 警报源、无 AT/SN 命名）。结论：可入库测光仅 DDOTI 1 行上限，补 0 行、修正 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "68",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "t0_note": "T0 为 HAWC Burst Monitor 警报触发时刻；原库值 2019-09-16T01:14:19Z 承 GCN 25766 初版通告的日期错误，2026-10-28 审核更正为 2019-09-17T01:14:19Z（GCN 25768/25779），原 t0_note/t0_basis 留底于 comment",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
