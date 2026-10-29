@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB210511B",
-  "alias": [],
-  "ra": 314.1,
-  "dec": 56.3,
-  "T0": "2021-05-11T11:26:39Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 210511B",
+    "bn210511477"
+  ],
+  "ra": 312.914,
+  "dec": 58.375,
+  "T0": "2021-05-11T11:26:39.260Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST 快照（external/fermi_gbm/normalized.jsonl，bn210511477）trigger_time=2021-05-11T11:26:39.260Z（GBM trigger 642425204，MET 642425204.260 扣 5 跳秒独立重算=11:26:39.260 一致）；GCN 29996（GBM 团队官方通告）记 At 11:26:39.26 UT on 11 May 2021，整秒与亚秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 30002",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 更正（2026-10-28，fsy）：bot 原值 2021-05-11T11:26:39Z 为整秒；标准 T0=2021-05-11T11:26:39.260Z——触发仪器 Fermi/GBM 官方目录 FERMIGBRST 快照 bn210511477 trigger_time（GBM trigger 642425204）；GCN 29996 记 At 11:26:39.26 UT on 11 May 2021；MET 642425204.260 按纪元 2001-01-01T00:00:00 UTC 扣 5 跳秒独立重算=11:26:39.260，三者一致（bot 原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 失真，原值保留于此）。多设备触发互证：GECAM-B 自触发 11:26:40.600 UTC（GCN 29990）、AGILE 自触发 11:26:37 UTC（GCN 29991）、Konus-Wind 自触发 T0=41201.35 s UT=11:26:41.350（GCN 30007）、IPN 归算 41199 s UT≈11:26:39（GCN 30002），整秒均与 GBM 触发一致；Konus 光变起于其 T0−1.7 s≈11:26:39.65、GBM 目录 t90_start=+0.51 s，真实爆发起点与 GBM 自动触发差 <1 s，T0_offset 不适用。定位：ra/dec 取 IPN 3σ 误差框中心 312.914/+58.375（GCN 30002；框面积 2687 平方角分、最大维 7.6 deg、最小维 6.0 arcmin，非圆形，pos_error 无半径可填、留空；原文 this box is consistent with, but reduces the areas of, the Fermi (RoboBA and BALROG), and GECAM localizations）；bot 原 ra/dec=314.1/56.3 无出处（pos_ref 空）弃用；GBM 实时定位 RA=316.2 Dec=61.7、统计误差 1.0 deg（GCN 29988）、GECAM-B 317.99/59.53、误差 3.19 deg 仅统计（GCN 29990）、BALROG 定位 GCN 29989，均备查。prompt 参数（写 comment 不判定）：t90=5.888±0.724 s（50-300 keV，FERMIGBRST 快照；GCN 29996 初步约 6 s，50-300 keV）；fluence=9.74e-6 erg/cm2（10-1000 keV，FERMIGBRST；GCN 29996 初步 (1.04±0.02)e-5，10-1000 keV；Konus 1.10(-0.15,+0.18)e-5，20 keV-10 MeV，GCN 30007）；Epeak=141.7 keV（CPL，FERMIGBRST；GCN 29996 Band 函数 128±5 keV；Konus 154(-22,+25) keV，GCN 30007）；peak_flux=27.0±1.4 ph/cm2/s（10-1000 keV，64 ms，FERMIGBRST）。分类：按目录 t90 判 lgrb（t90=5.888 s>2 s，FERMIGBRST），与 GCN 30002/30007/29991 stated class「long-duration (long) GRB」一致。测光检索（2026-10-28）：GCN 站事件页 gcn.nasa.gov/circulars/events/grb-210511b 共 9 篇全部核读（29988/29989/29990/29991/29992/29996/29998/30002/30007；本地无 gcn/archive）；仓内 external 快照 grep「210511」仅 FERMIGBRST 目录行与 mpe_greiner IPN 位（无测光表），rssgrbag/grbsn_webtool/uvot_grb 无记录；OpenAlex 检索 10 命中均为 GCN 记录或 GECAM 仪器论文、arXiv 0 命中，无本源余辉研究论文 → 补 8 行 MASTER-Kislovodsk 上限（GCN 29992），改正 1 行 DDOTI（band G→w、time 窗口起点误锚→中点），无其他可用测光（GCN 29989 为 BALROG 定位拟合、29991 AGILE 仅计数率，均无测光）。别名证据：「GRB 210511B」为 GCN 29992/29996/29998/30002/30007 原文用名；「bn210511477」为 Fermi GBM 官方 burst 编号（FERMIGBRST 快照 name_alt；GCN 29996 原文 trigger 642425204 / 210511477）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（GBM trigger 642425204 / bn210511477，FERMIGBRST 快照 trigger_time=2021-05-11T11:26:39.260Z；GCN 29996 记 11:26:39.26 UT）；bot 原写法 t0=2021-05-11T11:26:39Z 为整秒、t0_basis=meta_trigger 失真，原 note 见 comment",
+    "t0_basis": "fermi_gbm_catalog_bn210511477",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
