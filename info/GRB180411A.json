@@ -1,27 +1,33 @@
 {
   "transient_id": "GRB180411A",
-  "alias": [],
+  "alias": ["BAT 824451", "GRB180411519"],
   "ra": 356.854,
   "dec": 66.7785,
-  "T0": "2018-04-11T12:27:40Z",
-  "T0_ref": null,
+  "T0": "2018-04-11T12:27:43.711420Z",
+  "T0_ref": "GCN 22630（Swift/BAT 触发通告：At 12:27:43 UT the Swift BAT triggered and located GRB 180411A，trigger=824451）；亚秒 0.711420 取 Swift/BAT 官方目录（external/swift_bat 快照，整秒一致；external/swiftgrbba 12:27:43.000Z 亦一致）；多触发仪器（Fermi/GBM 12:27:40.969Z＝GCN 22634、Konus-Wind 12:27:42.530Z＝GCN 22640）与 Swift 整秒不同，按 §3.8「多个触发仪器互相矛盾时有 Swift 则以 Swift 为准」",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": ["grb"],
   "pos_error": 3.5,
   "pos_ref": "GCN 22632",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 更正：原 bot T0=2018-04-11T12:27:40Z、Trigger_Instrument=Fermi/GBM 系取 Fermi/GBM 触发时刻（GCN 22634：12:27:40.97 UT，trigger 545142465/180411519）的截断；本源 Swift/BAT 亦触发（GCN 22630：12:27:43 UT，trigger=824451；Konus-Wind T0=44862.530 s UT＝12:27:42.530，GCN 22640），按 §3.8 有 Swift 以 Swift 为准 → T0=2018-04-11T12:27:43.711420Z（整秒 22630，亚秒取 external/swift_bat 快照 12:27:43.711420Z；swiftgrbba 12:27:43.000Z 一致）。原 extra_data 失真说明：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger。位置：RA/Dec=356.854/66.7785、误差 3.5″（GCN 22632 Swift-XRT 精化位置，radius 90% confidence → pos_error_confidence=90）；BAT 地面定位 356.840/66.790±1.0′（GCN 22633）备查。分类：t90=77.5±0.9 s（GCN 22633，15-350 keV）；Swift/BAT 目录 t90=77.976 s；Fermi/GBM t90≈77.6 s（50-300 keV，GCN 22634）→ 两源以上一致，按目录/通告 t90 判 lgrb。alias 出处：BAT 824451（Swift/BAT 官方目录快照 name_alt）；GRB180411519（FERMIGBRST trigger_name，external/fermi_gbm 快照 name_alt；<GCN 22634> 原文用名 trigger 545142465 / 180411519）。测光检索留证（§3.3）：2026-10-28；仓内 gcn/archive 本机不存在，改用 GCN 网站（https://gcn.nasa.gov/circulars）双通道（源名 180411＋触发号 824451/545142465）逐篇扫描 22625–22660 共 36 篇，命中 9 篇：22630（Swift 触发）、22632（XRT 精化）、22633（BAT 精化）、22634（GBM）、22637（Tautenburg Rc>22）、22638（UVOT V>16.8）、22640（Konus-Wind）、22642（CALET，γ 数据无测光）、22641（属另一源 GRB 180411B，排除）；external/rssgrbag、external/grbsn_webtool 无该源记录；external/swift_bat、swiftgrbba、fermi_gbm、mpe_greiner、konus_wind 仅目录级参数、无测光表；arXiv API all:「180411A」命中 0 篇；Web 检索无相关研究论文；TNS 不适用（GRB 类）。结论：测光共 2 条入库——GCN 22637 Tautenburg Rc>22（修正历元）＋GCN 22638 UVOT V>16.8（新增）；补行 1、修正 1。",
+  "sub_tag": ["lgrb"],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "gcn_trigger_notice",
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 22630：12:27:43 UT，trigger=824451；亚秒 0.711420 取 external/swift_bat 官方目录快照）；原 bot 值 2018-04-11T12:27:40Z 系 Fermi/GBM 触发时刻（GCN 22634：12:27:40.97 UT）截断，已废弃",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
