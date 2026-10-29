@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB200416A",
-  "alias": [],
-  "ra": 335.69906,
-  "dec": -7.51816,
-  "T0": "2020-04-16T07:05:17Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 966554",
+    "GRB200416295"
+  ],
+  "ra": 335.6986,
+  "dec": -7.5179,
+  "T0": "2020-04-16T07:05:17.171400Z",
+  "T0_ref": "GCN 27591（Swift/BAT trigger 966554，整秒 07:05:17 UT）＋ Swift/BAT 官方目录（仓内 external/swift_bat 快照 trigger_time=2020-04-16T07:05:17.171400Z），依 §3.2/§3.8 取触发仪器亚秒值；Fermi/GBM 触发 07:05:17.38 UT（GCN 27592，trigger 608713522 / 200416295；GBM 目录快照 07:05:17.385）并列备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.5,
-  "pos_ref": "GCN 27591",
+  "pos_ref": "GCN 27594",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "定位：Swift-XRT 精化位 RA,Dec=335.6986,-7.5179（22h22m47.66s, -07d31m04.3s），3.5 arcsec（radius，90% confidence，GCN 27594）；原库坐标 335.69906,-7.51816 为 GCN 27591 初步 XRT 位（同 3.5″ 90%），已更新为精化值。并列：UVOT 初步位 335.69934,-7.51833（0.43 arcsec，90%，GCN 27602；swiftgrbba 快照同值）；BAT 地面位 335.691,-7.525（1.4′，90%，GCN 27601）。T0：原库 2020-04-16T07:05:17Z（bot meta_trigger，整秒）→ 按 Swift/BAT 官方目录亚秒值改 07:05:17.171400Z（§3.2 触发仪器亚秒规则；GRB070920B 等已审 Swift 源同惯例）；GBM 触发 07:05:17.38 UT 并列。T0_offset 无 >1 s 证据，不写。分类：t90=6.048±0.979 s（Swift/BAT 目录，15-350 keV），按目录 t90 判 lgrb；并列：GCN 27601 BAT T90=5.04±0.73 s（15-350 keV）、Fermi/GBM t90=9.344±0.32 s（50-300 keV，GCN 27592；GBM 飞行软件曾误判为粒子事件，地面分析改正）。其他量：t50=3.184±0.609 s（BAT 目录）；fluence 8.7±0.8E-07 erg/cm^2（15-150 keV，GCN 27601）／BAT 目录 9.471193e-07（15-150 keV）；GBM fluence=(1.43±0.08)E-06 erg/cm^2（10-1000 keV）、Epeak=74±6 keV（GCN 27592）／GBM 目录 fluence=1.66308e-06、Epeak=75.41 keV（CPL）；XRT 光变：早期 α=2.9±0.5，T+167 s 拐折后 α=0.25(+0.18,-0.25)（GCN 27594）；E(B-V)=0.06。别名「BAT 966554」（Swift/BAT 官方目录 name_alt）；「GRB200416295」（GCN 27592 原文用名 trigger 608713522 / 200416295；FERMIGBRST 目录 name=GRB200416295）。测光检索（2026-10-28）：GCN 站逐号扫描 27580–27660 命中 GRB 200416A 相关 5 篇（27591/27592/27594/27601/27602），光学测光仅 27591（FC 快估）与 27602（UVOT 7 波段表，本 PR 已入库）；仓内 external/rssgrbag 0 行、external/uvot_grb 与 external/swift_grb 快照无该源条目（external/swift_bat、external/swiftgrbba、external/fermi_gbm 目录级快照用于身份/T0 互证）；arXiv API 检索 \"200416A\" 0 篇、无针对本源的研究论文 → 补 6 行（UVOT v/b/u/w1 探测 + m2/w2 上限）并改写 white 行。Swift-XRT X 射线数据（GCN 27591/27594）暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 27591 整秒 + external/swift_bat 目录亚秒 07:05:17.171400Z）；原 bot 值 2020-04-16T07:05:17Z（meta_trigger 整秒）已留在 comment",
+    "t0_basis": "GCN 27591 + external/swift_bat 目录",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
