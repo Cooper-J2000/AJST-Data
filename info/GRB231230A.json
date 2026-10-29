@@ -1,22 +1,29 @@
 {
   "transient_id": "GRB231230A",
-  "alias": [],
-  "ra": 245.21706,
-  "dec": 58.12324,
-  "T0": "2023-12-30T01:29:08Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 231230A",
+    "GRB231230.06",
+    "GRB231230062",
+    "GRB 231230.062",
+    "bn231230062"
+  ],
+  "ra": 245.21382,
+  "dec": 58.12618,
+  "T0": "2023-12-30T01:29:08.738220Z",
+  "T0_ref": "GCN 35436（Swift/BAT 触发并定位 GRB 231230A，01:29:08 UT，trigger=1205319）+ Swift BAT 官方目录 batgrbproduct（Trig_time_UTC=2023-12-30T01:29:08.738220，仓内 external/swift_bat 快照 summary_general_info）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 1.9,
-  "pos_ref": "GCN 35437",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 35437（enhanced Swift-XRT position，RA=245.21382 Dec=58.12618，1.9 arcsec radius, 90% confidence）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Swift/BAT 触发（trigger 1205319，GCN 35436）；Fermi/GBM 01:29:10.05 UT 也触发（trigger 725592555/231230062，GCN 35434/35444）；GRID-04 01:29:08 UTC 触发（GCN 35559）。注意：GCN 35462 是 IceCube-Cascade 231230A（中微子事件，事件时刻 2023-12-30 09:41:46.570 UTC），与本 GRB 无关，勿混淆。【T0】bot 原值 2023-12-30T01:29:08Z（extra_data t0_basis=meta_trigger、t0_note「t0 为 meta trigger-time（真实触发时刻）」，原值留档），整秒与 GCN 35436 一致；亚秒取触发仪器官方目录 batgrbproduct Trig_time_UTC=01:29:08.738220（§3.2：整数秒一致时以触发仪器亚秒值为准，不设 T0_offset）。【位置】bot 原值 RA=245.21706/Dec=58.12324 实为 GCN 35436 XRT 初定位（3.5 arcsec, 90%），而 bot 的 pos_ref/pos_error 已取 GCN 35437（1.9 arcsec）→ 现统一取 GCN 35437 全套：RA=245.21382/Dec=58.12618、1.9 arcsec、90% confidence（原文明示）。并列备查：GCN 35441 astrometrically corrected XRT position RA=245.21436/Dec=+58.12396 ±2.1 arcsec（90%）；仓内 external/swiftgrbba 快照 xrt 位置 245.21487/58.12372 ±2.0 arcsec。【T90/sub_tag】t90=15.2±0.9 s（15-350 keV，Swift-BAT refined analysis, GCN 35474）＝Swift BAT 官方目录 T90=15.24±0.92 s（external/swift_bat 快照 summary_general_info）；GBM T90≈17 s（GCN 35444）、t90=17.152±1.379 s（50-300 keV，FERMIGBRST external/fermi_gbm 快照）；GRID T90≈17±1 s（GCN 35559）——按目录/通告 t90 判 lgrb。【alias】GRB 231230A 为 GCN 35436 等通告用名；GRB231230.06 为 MASTER 通告原文用名（<GCN 35435> 原文用名 Swift GRB231230.06，两位小数形有证据串豁免）；GRB231230062/GRB 231230.062/bn231230062 为 FERMIGBRST 目录形态（external/fermi_gbm 快照 name_alt：trigger 231230062）。【红移】无红移报道（Swift GRB table 与检索均未见）。【测光检索（2026-10-28）】仓内 gcn/archive 45889 篇全文扫描：按「231230A」命中 12 篇（35434 GBM 定位、35435 MASTER 上限表、35436 Swift 探测、35437 XRT 增强位置、35439 NOT 上限、35440 UVOT 上限表、35441 XRT 增强位置、35442 GOTO 上限、35443 XRT 精化（仅 X 射线）、35444 GBM 观测、35462 IceCube-Cascade 同名异事件、35559 GRID），另按触发号 1205319/231230062 复核命中 35435；external/rssgrbag（140 行）、grbsn_webtool/SourceData 无记录，swift_bat/fermi_gbm/swiftgrbba/mpe_greiner/uvot_grb 仅为目录级参数（swiftgrbba uvot_mag 列 White>18.9/B>18.5/UVW1>18.0 与 GCN 35440 一致）。外部：GCN 站直连超时（SPA），经 WebSearch 交叉验证 GCN 35436/35437/35440/35442/35443/35559 在 GCN/ADS 可达；ADS/SciX 检索命中均为 GCN 转引（bibcode 2023GCN.354xx....1 系列），无独立研究论文给出该源可用光学测光表；arXiv API 元数据检索 0 篇，全文命中两篇样本文均无可入库光学测光（Xin+2026 arXiv:2608.07060 为 XRT jet-break 样本、arXiv:2609.25672 为 GBM/BAT 样本仅伽马参数）；TNS 无记录（非 AT/SN/CV 类）→ 补 17 行（MASTER-Tavrida 9 + UVOT 3 + NOT 2 + GOTO 3，均为上限），未发现 X 射线测光需处理（XRT 数据按契约暂不入库）；MASTER-Kislovodsk 的 P-/P| 偏振通道 10 行上限未入库（filters.json 无偏振波段键，入库即臆造波段，且非全强度测光上限），留此备查。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,7 +32,12 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
