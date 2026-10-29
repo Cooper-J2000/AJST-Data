@@ -1,27 +1,36 @@
 {
   "transient_id": "IceCube-Cascade 210416A",
-  "alias": [],
+  "alias": [
+    "IceCubeCascade-210416a",
+    "IceCube Alert 210416.09"
+  ],
   "ra": 194.1867,
   "dec": -6.2888,
-  "T0": "2021-04-14T14:54:09.043200Z",
-  "T0_ref": null,
+  "T0": "2021-04-16T01:58:00.708721Z",
+  "T0_ref": "IceCube skymap FITS（https://roc.icecube.wisc.edu/public/hese_cascades/hese_59320_run00135196.evt000031863828.fits）头 START='2021-Apr-16 (01:58:00.708721)'、EVENTMJD=59320.08195264724；AMON notice 135196_31863828.amon DISCOVERY_TIME=01:58:00.70 UT 互证。原库 2021-04-14T14:54:09.043200Z = lc 行 MJD 59318.620938（Kanata/HONIR 观测时刻 2021-04-14 14:54:09.0432 UT），系观测时刻误作 T0，已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.54,
+  "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 71460.0,
+  "pos_error_confidence": "90",
+  "pos_ref": "AMON notice 135196_31863828.amon：SRC_RA=194.1867d、SRC_DEC=-6.2888d（J2000），SRC_ERROR=19.85 deg radius（stat+systematic, 90% containment）；IceCube skymap FITS 头 RA=194.186708、DEC=-6.288876、CIRC_ERR90=19.8541633 deg 互证。pos_error=19.85×3600=71460 arcsec",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 29820",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube HESE cascade 事件，AMON notice（RUN_NUM 135196 / EVENT_NUM 31863828，EVENT_NAME IceCubeCascade-210416a，ENERGY 30.20 TeV，FAR 0.9378 yr^-1，90% 半径 19.85 deg）与官方 skymap FITS hese_59320_run00135196.evt000031863828.fits（RUNID=135196、EVENTID=31863828）互证同一事件；事件名 210416 与事件日期 2021-04-16 一致。[T0] 取 skymap FITS 头 START='2021-Apr-16 (01:58:00.708721)'、EVENTMJD=59320.08195264724；AMON notice DISCOVERY_TIME 01:58:00.70 UT 互证 → 2021-04-16T01:58:00.708721Z。原库 T0=2021-04-14T14:54:09.043200Z 与 lc 行 MJD 59318.620938 逐位相同（59318.620938 = 2021-04-14 14:54:09.0432 UT），系由观测时刻反推的 T0 污染，已废弃；extra_data 原 t0_note「t0 为该事件最早测量时刻（非触发时刻）」/t0_basis=first_detection 同属误标（原 T0 实为 Kanata 观测时刻），已按事件时刻口径改写。[定位] ra/dec=194.1867/−6.2888 与 AMON SRC_RA/SRC_DEC（J2000）逐位一致（FITS RA=194.186708/DEC=−6.288876 亦一致），保留；pos_error=19.85 deg×3600=71460 arcsec，pos_error_confidence=90（原文明确 90% containment，非推定），pos_error_unit=arcsec。[红移] 原 redshift=0.54 出自 GCN 29820「3C 279 which was a known QSO at a redshift of 0.54」——是偶然落入误差区的编目 blazar 3C 279 的红移（SIMBAD 2022ApJS..261....2K：z=0.5354±0.0005），不是本中微子事件的红移；19.85 deg 半径覆盖约 1/4 天球、空间符合无统计意义 → redshift 与 redshift_ref 均置 null。3C 279（SIMBAD ICRS 12h56m11.1666s −05d47m21.525s = 194.04653/−5.78931）距最佳拟合位 0.5186 deg（在误差区内）。[lc] 原行 R=0.5 系误解析：GCN 29820 原文为 3C 279「exhibited a brightness decrease of ~0.5 mag in the R band from MJD=59315.651869 (2021/04/11) to MJD=59318.620938 (2021/04/14)」，0.5 是两历元间的 R 波段变暗幅度 ΔR≈0.5 mag（差分值，非绝对星等），原文未给任一历元的星等/曝光/误差/星等系统。该行本质是对编目源 3C 279 自身跨历元亮度变化的陈述、两历元均早于中微子事件（T0−1.46 d 与 T0−3.93 d），不属事件对应体信号 → 保留并置 discard=y；time 按后历元 MJD 59318.620938（原文直接给出）−T0=−126231.666 s，mjd 按原文精度写 59318.620938，time_err 留空（无曝光信息）。[MASTER] GCN 29822（主题行 IceCube Alert 210416.09，trigger No 31863828=本事件 EVENT_NUM）表 8 行按 §3.3 入库 6 行：同一指向的单图/coadd 取 coadd 深限、单图限写入行 comment，两个视场各自成行；C=clear/unfiltred→band=G；原文未声明星等系统。MASTER 的 Tmid−T0 以 02:03:57 UT（=AMON NOTICE_DATE）为锚，与官方事件时刻差 356.291 s，故一律用原文显式绝对时刻（Date Time）+Exptime/2 换算，不采用其相对值。[alias]「IceCubeCascade-210416a」为 GCN 29820 主题行与 AMON notice EVENT_NAME 的原文用名；「IceCube Alert 210416.09」为 GCN 29822 原文用名（MASTER 命名，两位小数形）；未在任何已核对来源见 IC210416A/IC210416 写法，故未收。[测光检索]（2026-10-29）仓内 gcn/archive 45,889 篇全文：'cascade'+IceCube 44 篇、'210416' 3 篇（29820 Kanata、29822 MASTER、29824 为无关的 GBM 210416925 not a GRB）、'31863828' 2 篇、'3C 279' 1 篇 → 本事件仅 2 篇跟随观测通告，IceCube 侧无本事件 additional-neutrino-events 上限通告（该系列始自 211128A）；external/rssgrbag 0 命中、grbsn_webtool 无该源；GCN 站 29820/29822、AMON notice、skymap FITS 均实际打开（HTTP 200）；ADS API 无 token → 401（未核实）；ATel 站内检索对所有查询（含对照词 IceCube）均返回 unable to fulfill this operation（不可用，未核实）；TNS 不适用（无 AT/SN 名）→ 补 6 行，原 1 行保留并置 discard=y。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为该事件最早测量时刻（非触发时刻）",
-    "t0_basis": "first_detection",
-    "bot_created": true
+    "t0_note": "t0 为 IceCube HESE cascade 事件时刻（skymap FITS START/EVENTMJD）；原 bot 值「t0 为该事件最早测量时刻（非触发时刻）」系误标（原 T0 实为 lc 观测时刻），已改写",
+    "t0_basis": "meta_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
