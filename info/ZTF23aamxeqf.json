@@ -1,27 +1,34 @@
 {
   "transient_id": "ZTF23aamxeqf",
-  "alias": [],
+  "alias": [
+    "AT2023jxk"
+  ],
   "ra": 255.65404,
   "dec": 51.86808,
-  "T0": "2023-06-07T19:03:55Z",
-  "T0_ref": null,
+  "T0": "2023-06-05T04:51:37.728Z",
+  "T0_ref": "GCN 33934（ZTF 首测 MJD=60100.20252 = 2023-06-05T04:51:37.728Z）；TNS 2023TNSTR1323....1F discovery date 2023-06-05T04:52:19.200Z（ZTF bot 报告时刻，晚 41.5 s，未采用）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "ZTF",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 33934",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：ZTF23aamxeqf = AT2023jxk（TNS 2023TNSTR1323....1F，ZTF 发现；GCN 33934 标题用名 AT2023jxk）。GCN 33934（=TNS AstroNote 2023-167）描述为 hostless、快演化红色暂现源，是强候选 orphan afterglow（末次非探测到首测之间 Konus-Wind 全天监测未检出对应 GRB；3″ 内 Legacy Survey DR9/PS1 均无对应体）。TNS 分类截至 2026-10-29 仍为「---」（无分类报告、无光谱），故 tag 留空（候选身份未确证，受控词表亦无 afterglow 类目，见 PR 待决事项①）。\nT0：原 T0=2023-06-07T19:03:55Z 系 GCN 33939 的 DFOT 观测起始时刻（观测时刻污染，非触发/发现时刻）。现改为 ZTF 首测时刻 2023-06-05T04:51:37.728Z（GCN 33934：MJD=60100.20252，g=19.22）。TNS discovery date 2023-06-05T04:52:19.200Z 系 ZTF bot 报告时刻（晚 41.5 s），同源 TNS AT report #179340 给 04:51:37.728，与 GCN 一致；按 §4 取 GCN（第 5 类优先于 TNS 第 7 类）。GCN 33939 的 T_start−T0=~2.59 d 与新高 T0 自洽（19:03:55 − 04:51:37.728 = 2.5919 d）。extra_data.t0_note/t0_basis 原为 bot 占位（「meta trigger-time」），已按实际口径改写；原值见本段。\n定位：GCN 33934 给 RA=255.6540479、Dec=+51.8680802（TNS 255.654042/+51.868081）；本条目沿用导入值（截断至 5 位小数），pos_ref 记 GCN 33934。GCN 未给定位误差，pos_error 留 null；ATel 16212 的 ±2.96″ 系 AMI-LA 射电定位误差，不适用。红移：TNS 未给、无光谱，宿主无对应体，redshift 留 null。\n测光：lc 现 10 行 = GCN 33934 四探测（g 19.22、r 18.96、r 19.14、g 19.84）+ 两条首测前强迫测光上限（g>19.91、r>20.14）+ GIT 暂定 3σ 探测（r=22.4，首测后 1.5 d）+ TNS 测光 2 行（r=19.02、r>19.75）+ DFOT R>20.8 上限（time 已按新 T0 重算）。同历元 g 限度 GCN 记 19.91、TNS 记 19.3664，取 GCN。ZTF 行星等系统按 AB 记（GCN 未声明，TNS 同源测光标 ABMag）；GIT、DFOT 行原文未声明系统，mag_system 留空。\n未入库：① AMI-LA 15.5 GHz（ATel 16212 = TNS AstroNote 2023-237）2023-06-27 无发射（3σ rms 0.12 mJy）、2023-08-13 探测 0.20±0.02 mJy（RA 17:02:36.90±0.08s、Dec +51:52:02.62±2.96″）——原文只给日期与每次 4 h 观测，无时刻锚点，无法换算 time/mjd（§3.3）；② Swift/XRT（TNS AstroNote 2023-169）2023-06-08 00:00 UT 起 3.45 ks 无探测，3σ 上限 0.003 cts/s ≈ f_X<1.0e-13 erg/cm²/s（0.3–10 keV）——X 射线不入库。\n测光检索（2026-10-29）：仓内 gcn/archive 45 889 篇全文中命中 2 篇（GCN 33934 首测报告、GCN 33939 DFOT 上限，均已入库）；external/rssgrbag（140 行）与 external/grbsn_webtool 无该源；仓内档案覆盖至 2026-10-22（最新 GCN 46010），全文中该源仅此 2 篇；TNS 对象页 1 篇 + 相关 AstroNote 3 篇（2023-167/169/237）；ATel 1 篇（16212，与 AstroNote 2023-237 同内容）；arXiv API 检索（全名与别名各 1 次）0 篇；ADS API 401（无 token）、SciX 页面 202 无内容 → 无研究论文，articles=[]。结论：可见测光已全部入库，补 9 行（lc 由 1 行增至 10 行）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 ZTF 首次探测时刻（GCN 33934 MJD=60100.20252）；原 bot 注记「t0 为 meta trigger-time（真实触发时刻）」已失效，原 T0=2023-06-07T19:03:55Z 实为 GCN 33939 的 DFOT 观测起始时刻（原值见 comment）",
+    "t0_basis": "first_detection",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
