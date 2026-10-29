@@ -4,22 +4,29 @@
   "ra": 240.19520833,
   "dec": -9.70930556,
   "T0": "2002-12-06T22:49:16Z",
-  "T0_ref": null,
+  "T0_ref": "Rutledge & Fox 2004（MNRAS 350, 1288；DOI 10.1111/j.1365-2966.2004.07665.x）：『The approximate start time of GRB021206 measured with RHESSI was 2002-Dec-06 22:49:16 UT』；互证：Coburn & Boggs 2003（Nature 423, 415，VoR）RHESSI 触发 22:49 UT、Wigger et al. 2004（ApJ 613, 1088）光变起于 22:49:00 UT 且双峰 22:49:15/22:49:17 UT、Boggs et al. 2004（ApJL 611, L77）Dec 6.951 UT；GCN 1727 初步 IPN 时刻 81155±1104 SOD（22:32:35±18 min，无近地卫星时的初步值）与本值相容（差 1001 s < 1σ）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "IPN",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.6,
+  "pos_ref": "GCN 2280：VLA 4.86 GHz 射电源 r.a.=16:00:46.85 dec.=-09:42:33.5 (J2000)，『with an uncertainty of about 0.6 arcsec』；与本库 ra/dec 换算逐位一致（16:00:46.85→240.19520833、−09:42:33.5→−9.70930556），rssgrbag tdat 同值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 rssgrbag 射电余辉目录导入新建 (Chandra & Frail 2012)",
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IPN 三角定位暴，五船互证（Ulysses、Mars Odyssey/HEND+GRS、Konus-Wind、RHESSI、INTEGRAL SPI-ACS，GCN 1727/2281）；无触发号，heasarc_grbcat（10119 行）与 konus_wind（Svinkin+2016 快照）均未收录本源；ra/dec=240.19520833/−9.70930556 非 float32 噪声，系 GCN 2280 VLA 射电源位置 16:00:46.85 −09:42:33.5 (J2000) 的逐位换算（原表述精度 0.01 s/0.1″，总不确定度 ~0.6″），rssgrbag tdat 原行同值。[定位] pos_error=0.6″（GCN 2280『uncertainty of about 0.6 arcsec』，来源未标注置信水平，pos_error_confidence 留空）；最终 IPN 3σ 椭圆（GCN 2281：中心 240.195/−9.710，长轴 20.4′×短轴 0.53′，PA~18°，面积 8.6 sq.arcmin）备查，射电源在椭圆内；Rutledge & Fox 2004 亦采射电源位置（『We adopt the position of a related radio transient』）。[T0] 原库 T0=2002-12-06T22:49:16Z 但 T0_ref=null，本次补据（见 T0_ref）；T0_offset 不适用（GCN 1727 的 81155 SOD 系初步值非显著时刻调整）。[分类] tag=grb；t90=20 s（rssgrbag/Chandra & Frail 2012 目录表，误差与能段未注明；GCN 1727 Ulysses 时标亦 ~20 s 另有 ~40 s 弱尾），按目录 t90 判 lgrb。[备查] fluence=2.64E-04 erg/cm²（15–150 keV 外推，rssgrbag）；25–100 keV fluence≈1.6E-04 erg/cm²、峰值流量≈2.9E-05 erg/cm²/s（0.50 s，GCN 1727）；无红移（X 射线/光学余辉均未探测，rssgrbag xray_ag_flag=X、opt_ag_flag=N）；GCN 2341 报射电源西北 ~2″ 处延展暗辐射但作者自警『caution about reality』且 GCN 2350 深曝光未证认，host_galaxy 不建立、候选仅备查。[测光检索（2026-10-29）] 仓内 gcn/archive（45889 篇）grep「GRB021206/GRB 021206」命中 6 篇：GCN 1727/1728/2281（IPN 通告，无测光）、GCN 2280（VLA 4.86 GHz 第一周 ~400 µJy 候选源，即 lc 4.86 GHz 行同一数据的定性表述，Feb–Mar 复测衰减 ≥5 倍无数值不入库）、GCN 2341（BTA R=24.8 上限）、GCN 2350（NOT R=25.4 上限）；第二路按坐标/位置检索（240.195、16:00:46）仅复核命中 2280/2281；external/rssgrbag lightcurve.jsonl 2 行＝现有 2 行，逐值核对 C&F12 Table 4（CDS table4.dat + HEASARC tdat + arXiv:1110.4124 三路一致）无误保留；external/grbsn_webtool 63 事件无本源；ADS/SciX 无 token 实测 401，改用 arXiv API（all:「GRB 021206」与 abs:「021206」各命中 12 条，均为偏振/理论文，无测光表）+ Crossref/OpenAlex 复核——检索提示所称 Berger et al. 快速射电暂现未找到对应文献，Berger, Soderberg, Frail & Kulkarni 2003b（ApJL 587, L5）实为 GRB 020405 射电耀（C&F12 引文表核实）→ 本 PR 补 2 行（GCN 2341/2350 光学上限），射电 2 行保留。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    },
     "catalog_data": {
       "rssgrbag": {
         "other": {
@@ -91,6 +98,13 @@
     }
   },
   "articles": [
+    {
+      "name": "Chandra+2012",
+      "title": "A Radio-Selected Sample of Gamma-Ray Burst Afterglows",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "bibtex": "@ARTICLE{2012ApJ...746..156C,\n       author = {{Chandra}, Poonam and {Frail}, Dale A.},\n        title = \"{A Radio-selected Sample of Gamma-Ray Burst Afterglows}\",\n      journal = {\\apj},\n         year = 2012,\n        month = feb,\n       volume = {746},\n       number = {2},\n        pages = {156},\n          doi = {10.1088/0004-637X/746/2/156},\narchivePrefix = {arXiv},\n       eprint = {1110.4124},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012ApJ...746..156C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "wa1kmoon@zcode"
+    },
     {
       "name": "Coburn+2003",
       "title": "Polarization of the prompt ensuremathgamma-ray emission from the ensuremathgamma-ray burst of 6 December 2002",
