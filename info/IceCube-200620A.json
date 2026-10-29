@@ -1,28 +1,49 @@
 {
   "transient_id": "IceCube-200620A",
-  "alias": [],
+  "alias": [
+    "IC200620A"
+  ],
   "ra": 162.11,
   "dec": 11.95,
-  "T0": "2020-06-20T03:03:32Z",
-  "T0_ref": null,
+  "T0": "2020-06-20T03:03:32.282Z",
+  "T0_ref": "GCN 27997（IceCube 官方通告）：On 2020-06-20 at 03:03:32.282 UT IceCube detected a track-like event；原库 03:03:32Z 系该值整秒截断",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.51,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 27997（IceCube 离线精化方向）：RA=162.11 (+0.64/-0.95 deg) Dec=11.95 (+0.63/-0.48 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、不对称值与 AMON rev1 单值 SRC_ERROR 40.80′=2448.0″（stat-only）备查（见 comment）；库内 ra/dec 与精化值一致（保留）",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核 fsy（2026-10-28）。【身份】IceCube Bronze 流 track-like 高能中微子候选事件（ICECUBE_Astrotrack_Bronze，阈值天体物理纯度 30%，FAR=2.321 yr^-1（GCN 27997）；AMON 通告 ENERGY 113.5 TeV、SIGNALNESS 0.3246（RUN_NUM 134207/EVENT_NUM 33533447，rev0+rev1 实读——2026-10-29 核查更正出处归属））；MASTER GCN 28001 引 trigger No 33533447 与通告互证；库内无同日孪生条目（IceCube-200615A 为 06-15 他事件），外目录无同日「200620A」GRB（external/fermi_gbm、heasarc_grbcat、swift_grb、mpe_greiner 均无命中）。名称：GCN 27997/28001/28005/28007 等全用 IceCube-200620A；GCN 28004 原文三处以 IC200620A 称本事件、IceCat-1（ApJS 269, 25）目录用名亦为 IC200620A → alias 收 IC200620A；MASTER 主题行「IceCube Alert 200620.13」系 AMON 告警编号（日期.序号）形态，不另收。【T0】bot 值 2020-06-20T03:03:32Z（原 extra_data：t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、t0_basis=meta_trigger，Issue #68 家族）系官方值整秒截断 → 触发仪器官方通告 GCN 27997 值 2020-06-20 03:03:32.282 UT（原文 On 2020-06-20 at 03:03:32.282 UT IceCube detected a track-like event；同通告精化块与 AMON rev0/rev1 DISCOVERY_TIME 11012 SOD {03:03:32.28} UT 为其 2 位小数截取）；互证：GCN 28004（Fermi-LAT）「detected on 2020-06-20 at 03:03:32.28 UT (T0)」、GCN 28009（INTEGRAL）03:03:32、GCN 28014（HAWC）03:03:32 UTC、GCN 28010（IceCube）2 天窗中心 2020-06-20 03:03:32.28 UTC、GCN 28001 MASTER「48560 sec after trigger time at 2020-06-20 16:32:52 UT」（03:03:32.282+48560=16:32:52.282 自洽）、GCN 28005 ZTF 起始 04:49 UTC−「approximately 25.8 hours」反算 ≈03:01 UT 自洽、IceCat-1 目录 MJD 59020.127（=03:03:32.28 的 3 位小数舍入）互证。【定位】ra/dec=162.11/11.95 为 GCN 27997 离线精化值（bot 取值正确，保留；AMON rev1 同值 162.1100/+11.9499，rev0 初值 162.2481/+11.9072 距精化值 0.1417°）；90% PSF containment 为非对称两轴偏移 RA +0.64/−0.95°、Dec +0.63/−0.48°（GCN 27997 原文；GCN 28004/28014 引述一致），不适配单一圆半径 → pos_error 留空（先例 IceCube-201007A/201115A/221224A/250207A），备查：AMON rev1 SRC_ERROR 40.80′（90% containment，stat-only，原文注明 The position error is statistical only, there is no systematic added）=2448.0″、SRC_ERROR50 20.99′=1259.4″；两轴偏移 RMS ≈0.6963°≈41.78′ 与 40.80′ 自洽；IceCat-1 目录不确定度 RA +0.62/−0.92°、Dec +0.61/−0.46° 备查；来源明示 90% → pos_error_confidence=90。90% 定位区内无 4FGL/3FHL 源，最近 4FGL J1041.0+1342（RA 160.27/Dec 13.71）距 best-fit 2.51°（GCN 27997；复算 2.5132°）。MASTER GCN 28001 误差盒表述 R=0.68° 与 AMON rev1 40.80′ 一致。【redshift 去污染】bot redshift=0.51（redshift_ref=gcn_llm:circulars_meta）实为 GCN 28005 中候选对应体 AT 2020ncr（=ZTF20abgvabi）宿主星系的 SDSS 测光红移（原文 AT 2020ncr has a faint host with a SDSS photometric redshift estimate of z=0.51 +/- 0.09）；该候选 nature unclear、光学 pre-detections 早至中微子到达前 120 天（GCN 28005）、MASTER 档案图像 2015-12-25 已有该源（GCN 28007，无星等值）；Jiang+2023（ApJL 953, L12）又交叉证认 SDSS J104832.79+122857.2（距精化位置 0.5332°，在 90% 区域内）为候选对应体——两候选均未确证为中微子对应体/宿主 → redshift/redshift_type/redshift_ref 置 null（先例 IceCube-190331A z~0.6→null、201115A 0.62→null、250207A 0.26→null：候选宿主测光红移不挂源），0.51±0.09 备查。不建 host_galaxy（仅有候选，未确证）。【分类】tags.json 受控词表无中微子事件类目，tag/sub_tag 保持 []（库内全部 IceCube 源同口径；新类目建议见 PR 待决事项）。【测光检索（2026-10-28）】仓内 gcn/archive 本地未获取（工作树无 gcn/ 目录）；external/rssgrbag lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无该事件、external/uvot_grb 无 200620、external/ 全目录 grep「200620A/IC200620A」0 命中。GCN 站检索页（query=200620A）命中 9 篇（27997/28002/28004/28005/28006/28007/28009/28010/28014）；事件页实列同 9 篇（2026-10-29 核查复测）；GCN 28001 经 GCN 28007 正文/MASTER 报告链另核（直达 gcn3/28001.gcn3，其主题行用「200620.13」故检索未命中）=共 10 篇，逐篇打开核对；other 页 gcn.gsfc.nasa.gov/other/200620A.icecube 404（IceCube AMON 事件无 other 页）。可入库电磁测光：GCN 28001 MASTER-SAAO 无滤光片上限 2 行（本 PR 新增）+GCN 28005 ZTF 候选对应体探测 1 行（bot 原行重锚修正）；28002 ANTARES（中微子流量上限）、28004 Fermi-LAT/28014 HAWC（>100 MeV/TeV γ 积分上限，能量族）、28006 Fermi-GBM（SAA 不可观测）、28009 INTEGRAL（近地点未开机）、28010 IceCube（附加中微子搜索）均非带内测光不入库。文献：arXiv API（all 字段）「IceCube-200620A/ZTF20abgvabi/AT2020ncr/AT 2020ncr」0 命中；ADS/SciX 直查需账号（201007A 先例同），经 Web 检索代理核对仅 TNS 发现报告（2020TNSTR1874....1R）与 Jiang+2023 提及本事件，无逐暴测光表；TNS AT 2020ncr 条目已打开（类型/红移空，Discovery Date 2020-06-21 04:48:56.160 UT）；IceCat-1 目录行已核对；SIMBAD 双镜像（u-strasbg/cds.unistra）连接失败，如实注明、不作缺席证据。共补 2 行（MASTER 上限），ZTF 1 行为原行修正。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 官方触发时刻 2020-06-20 03:03:32.282 UT（GCN 27997；AMON DISCOVERY_TIME {03:03:32.28} UT 为其 2 位小数截取）；原 bot meta_trigger 值 2020-06-20T03:03:32Z 系整秒截断，已按官方值修正（原值记于 comment）",
+    "t0_basis": "GCN 27997",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Jiang+2023b",
+      "title": "Two Candidate Obscured Tidal Disruption Events Coincident with High-energy Neutrinos",
+      "url": "https://doi.org/10.3847/2041-8213/acebe3",
+      "source": "fsy"
+    },
+    {
+      "name": "Abbasi+2023b",
+      "title": "IceCat-1: the IceCube Event Catalog of Alert Tracks",
+      "url": "https://doi.org/10.3847/1538-4365/acfa95",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
