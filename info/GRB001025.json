@@ -1,13 +1,12 @@
 {
   "transient_id": "GRB001025",
   "alias": [
-    "GRB001025A",
-    "GRB001025B"
+    "GRB001025A"
   ],
-  "ra": null,
-  "dec": null,
+  "ra": 129.1497,
+  "dec": -13.0697,
   "T0": "2000-10-25T03:10:05Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 861（RXTE/ASM 团队：beginning at about 03:10:05 UTC 25 Oct 2000）；Pedersen+2006, ApJ, 636, 381（arXiv v1 astro-ph/0509424）同引 11405 s UT；GRBCAT grbcat_id 5023 ECT=2000-10-25T03:10:09Z 交叉参考（差 4 s，取触发仪器 GCN 值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "RXTE/ASM",
@@ -15,13 +14,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.3,
+  "pos_ref": "Pedersen+2006, ApJ, 636, 381（DOI 10.1086/497948）：X 射线余辉 S1（XMM-Newton pn，最终姿态重建）RA=8h36m35.93s Dec=-13°04'10.82\"（±0.3\"）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 001025A＝RXTE/ASM 2000-10-25 03:10:05 UT 触发暴（GCN 861，ASM 单camera 4.0'×1.6° 误差盒，中心 8h38m -13°16'）；NEAR 与 Ulysses 联测（GCN 863），GCN 864 订正 IPN/RXTE 盒（中心 8h36m34.7s -13°05'03\"）；Pedersen+2006（arXiv v1）以最终 Ulysses/Konus/NEAR 数据给精化 ASM-IPN 盒（3.3 arcmin²，Table 5 四角均值 129.1256,-13.0759）。定位锚定 X 射线余辉 S1：XMM-Newton 首历元（2000-10-27）pn 源 S1，±0.3\"（来源未标注置信水平）；GCN 884 最终姿态重建初值 <10\"；S1 在 2002-11/2003-04 两历元 XMM 复测中消失，确认为余辉（Pedersen+2006，arXiv v1）。\n分类：t90=2.9 s（50-200 keV，Konus-Wind；Pedersen+2006），原文明确判 \"falls into the long-duration category\"、结论 \"was a long-duration GRB\"，按文献分类 sub_tag=lgrb（原 sgrb 系 bot 误挂 001025B 的属性）。\nalias：移除 GRB001025B——GCN 865 的 001025B 为同日另一独立短暴（Ulysses 触发 71369 s UT=19:49:29.9，IPN 盒 18h21m -5°08'；GRBCAT 记 GRB 001025E，grbcat_id 5027，t90=0.48 s；GCN 868/870/873 与 Hurley+2002 均为其观测）。GRB001025A 用名见 GCN 866。\n宿主：候选宿主＝S1 附近延展天体（VLT R 深场，R=24.01±0.04、B=25.13±0.12，E(B-V)=0.07 前景消光改正后，随机成协概率 <1%，Pedersen+2006）——未确证（无光谱/红移），不建 host_galaxy。\n伪红移：Atteia 法 z≈0.8±0.4（Pedersen+2006 转述，统计误差约 50%）——非实测，不入 redshift。\narticles：移除 Hurley+2002（ApJ 567, 447）——该文四短暴为 GRB000607、001025B、001204、010119（arXiv:astro-ph/0107188 摘要），不含本源。\n测光检索留证（2026-10-29）：仓内 gcn/archive 45947 篇全文检索 \"001025\" 命中 11 篇（GCN 861,863,864,865,866,867,868,869,870,873,884），其中含本源光学上限的 2 篇（866：R~18.0；867：R~22.5/24.5/23.2/24.5）；868/870/873 属 001025B；869/884 为 XMM（X 射线，不入库）；external/rssgrbag 0 行、grbsn_webtool 63 事件无此源。OpenAlex 检索 \"GRB 001025A\" 命中 20 条、\"GRB 001025\" 命中 10 条：本源专文仅 Watson+2002、Pedersen+2005/2006（X 射线为主）与 GCN 866；样本类文章无新测光；Barnard+2003 (MNRAS 338, 1) 曾于 2001-10-05 用 SCUBA 观测 850μm（2250 s）但原文明示因 IPN 环修正将 001025 排除、未发表数值。TNS 不适用（GRB 类）。Pedersen+2006 VoR 不可得（IOPscience Bot Manager 验证码、UChicago Press 403、ADS 403/405，2026-10-29 实测），改用 arXiv v1（astro-ph/0509424，仅 v1，2005-09-15 提交）。共补 1 行（Pedersen+2006 合并极限 R=25.5）；VLA 2000-11-01/11-21/11-24（Frail 私人通讯，经 Pedersen+2006）无发表流量值不入库。发现 XMM X 射线余辉测光（Watson+2002、Borozdin+2003、Pedersen+2006），暂不处理。",
   "sub_tag": [
-    "sgrb"
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -31,16 +30,14 @@
     "bot_created": true,
     "merged_from": [
       "GRB001025A"
-    ]
+    ],
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
-    {
-      "name": "Hurley+2002",
-      "title": "Afterglow Upper Limits for Four Short-Duration, Hard Spectrum Gamma-Ray Bursts",
-      "url": "https://ui.adsabs.harvard.edu/abs/2002ApJ...567..447H",
-      "bibtex": "@ARTICLE{2002ApJ...567..447H,\n       author = {{Hurley}, K. and {Berger}, E. and {Castro-Tirado}, A. and {Castro Cer{\\'o}n}, J.~M. and {Cline}, T. and {Feroci}, M. and {Frail}, D.~A. and {Frontera}, F. and {Masetti}, N. and {Guidorzi}, C. and {Montanari}, E. and {Hartmann}, D.~H. and {Henden}, A. and {Levine}, S.~E. and {Mazets}, E. and {Golenetskii}, S. and {Frederiks}, D. and {Morrison}, G. and {Oksanen}, A. and {Moilanen}, M. and {Park}, H.-S. and {Price}, P.~A. and {Prochaska}, J. and {Trombka}, J. and {Williams}, G.},\n        title = \"{Afterglow Upper Limits for Four Short-Duration, Hard Spectrum Gamma-Ray Bursts}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, Astrophysics},\n         year = 2002,\n        month = mar,\n       volume = {567},\n       number = {1},\n        pages = {447-453},\n          doi = {10.1086/338420},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0107188},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2002ApJ...567..447H},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
-    },
     {
       "name": "Watson+2002",
       "title": "The X-ray afterglows of gamma-ray bursts GRB 001025A and GRB 010220 observed with XMM-Newton",
