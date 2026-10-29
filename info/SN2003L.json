@@ -1,32 +1,54 @@
 {
   "transient_id": "SN2003L",
-  "alias": [],
+  "alias": [
+    "SN 2003L"
+  ],
   "ra": 165.80138,
   "dec": 11.07731,
-  "T0": "2003-01-12T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2003-01-12T03:36:00Z",
+  "T0_ref": "IAUC 8048（T. Boles 发现观测 2003 Jan. 12.15 UT = 03:36 UT；TNS DiscoveryRef 亦为 IAUC 8048）；Soderberg+2005 (ApJ 621, 908) §2.1「optically discovered on 2003 January 12.15 UT」。TNS 仅记发现日期 2003-01-12 00:00:00（无时刻），原库 T0 为该值的零点占位",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
-  "redshift": null,
+  "redshift": 0.021374,
   "tag": [
     "sn"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.1,
+  "pos_error_confidence": null,
+  "pos_ref": "Soderberg+2005 (ApJ 621, 908) §2.1：VLA 定位 α=11h03m12.3s、δ=+11°04′38.1″，两坐标各 ±0.1″（未标注置信水平）；IAUC 8048：Puckett/Boles 11 03 12.33、+11 04 38.3，LOTOSS 末位 12s.32、38″.0",
+  "redshift_type": "spec-host",
+  "redshift_ref": "NED NGC 3506：z=0.021374、速度 6408 km/s（SLS 参考系，2026-10-29 取数）；IAUC 8057 另由 SN 位置处窄 Hα 得 cz≈6720 km/s",
+  "comment": "身份：SN 2003L（Type Ic，宿主 NGC 3506；TNS：Type SN Ic、Host Name NGC3506、Discoverer=Boles; LOTOSS、DiscoveryRef=IAUC 8048）。IAUC 8048：T. Boles 于 2003 Jan. 12.15 UT 用未滤光 CCD 发现，R.A. 11 03 12.33、Decl. +11 04 38.3（J2000），mag 16.9，位于 NGC 3506 中心以西 9″.0、以北 1″.5；LOTOSS 独立发现、位置末位 12s.32、38″.0。Soderberg+2005 (ApJ 621, 908) §2.1 给 VLA 定位 11h03m12.3s、+11°04′38.1″（两坐标各 ±0.1″）、d≈92 Mpc。GCN 1834/1846/1939 的 eventId 均为「SN 2003L」；GCN 9444 提及 SN2003L 仅作比较对象（该篇属 SN 2007bg），未发现与 SN 2003lw/2003dh 等混淆。\nT0：2003-01-12T03:36:00Z（= 2003 Jan. 12.15 UT，IAUC 8048 的发现观测；Soderberg+2005 §2.1 同记「optically discovered on 2003 January 12.15 UT」）。SN 无触发，Trigger_Instrument 留 null。原库 T0=2003-01-12T00:00:00Z 是 TNS 发现日期（TNS: Discovery Date 2003-01-12 00:00:00.000，仅日期无时刻）的零点占位，现按 IAUC 8048 细化到 0.01 d，未自行补更细时刻。IAUC 8048 另列 prediscovery 探测 2003 Jan. 6.700 UT（17.3 mag，T. Kobayashi 0.41-m），早于发现日 5.45 d，故 lc 该点 time 为负。Soderberg+2005 Fig.2/表1 的 Δt 历元为「近似爆炸日 2003 January 1.0 UT」（论文自述由光学数据 Soderberg et al. 2004, in prep. 得出、属近似值），本库未采用为 T0；表1 各行 time 一律由绝对日期换算，Δt 原值写进行 comment 备查（其中 2003 May 28.1、2003 Oct 6.7 两行的 Δt 比绝对日期小 0.1 d，以日期为准）。\n光谱/类型：IAUC 8057（Asiago 1.82-m + AFOSC，2003 Jan. 25.00 UT）：Ic 型、极大后数日，Si II 速度约 5900 km/s；GCN 1846（MMT 6.5-m Blue Channel，2003 Jan. 29.46 UT，两次 600 s，320–880 nm）：正常 Ic、似 SN 1994I 近极大，Ca II 12000 km/s、Na I D 11700 km/s、Si II 5200 km/s。注意 GCN 1846 称 5200 km/s 出自 IAUC 8057，而 IAUC 8057 原文为约 5900 km/s（上游表述不一致，备查）。sub_tag 用受控词 SN-spec；tags.json 无 SN-Ic 类目（见 PR 待决事项）。\n射电：GCN 1834（VLA，2003 Jan. 26.23 UT）在 SN 光学位置测得 8.5 GHz 流量 1.4 mJy（探测、原文未给误差），Jan 28.22 UT 复测确认瞬变；原文未给积分时间。IAUC 8061 同历元记 1.4±0.03 mJy（8.5 GHz，01-26.23）、1.6±0.06 mJy（8.5 GHz）与 3.2±0.08 mJy（22 GHz，01-28.22）。Soderberg+2005 表1 为同一批 VLA 观测，已扣除宿主星系流量（DnC 构型下 8.5 GHz 宿主展源 45″×45″，原文用 UV 截断扣除），同历元（01-26.2）为 743±39 µJy；按 §4（已发表论文 > GCN）该历元取值 743±39 µJy，GCN/IAUC 的总流量值在此备查。原库该行 band 误记「85GHz」（原文为 8.5 GHz）、time=6672672 s / mjd=52728.23 对应 2003-03-30.23 UT，与 GCN 1834 的 2003-01-26.23 UT 差 63.0 d，已按原文重算。\nX 射线：Chandra ACIS-S 自 2003 Feb. 10.15 UT 起 30 ks 探测（Soderberg+2005 §3：30±6 counts；IAUC 8073：41±6 counts），2–10 keV 流量 9.2e-15 erg/cm2/s（幂律模型）、kT>1.7 keV（热轫致）；按 §3.3 X 射线不入 lc，仅记于此。\nGRB 关联：GCN 1939（IPN：Ulysses/Konus-Wind/RHESSI/Mars Odyssey/HETE-2/INTEGRAL SPI-ACS）检索 2002-11-10 至 2003-01-10 的 41 个暴与候选暴，无任何 IPN 定位与 SN 位置相容；给出 GRB fluence 上限约 several×10^-7 erg/cm²（>25 keV）。SN 2003L 距离约为 SN 1998bw 的 2.6 倍。\n红移/宿主：redshift 取 NED 的 NGC 3506 z=0.021374（速度 6408 km/s，SLS 参考系，2026-10-29 取数），redshift_type=spec-host；IAUC 8057 由 SN 位置处窄 Hα 得 cz≈6720 km/s；Soderberg+2005 取 d≈92 Mpc（Valenti et al. 2003）。宿主坐标取 NED（11h03m12.9s +11d04m37s）。pos_error=0.1″ 取自 Soderberg+2005「两坐标各 ±0.1″」（非圆半径），原文未标注置信水平，pos_error_confidence 留空。\n版本/可达性：VoR = ApJ 621, 908 (2005), DOI 10.1086/427649；出版社页（iopscience/stacks.iop.org）被 bot 验证码拦截、ADS 扫描页（articles.adsabs.harvard.edu）403 → 表1 数值取自 arXiv v1（astro-ph/0410163，submittedVersion，标注 submitted to ApJ），与 VoR 可能不同，建议后续以 VoR 复核（PR 待决事项）。\n检索留证（2026-10-29）：仓内 gcn/archive 全文检索 45 889 个 JSON 命中 3 篇（1834 射电探测、1846 光谱、1939 IPN 上限；另 9444 属 SN 2007bg 不计）；external/rssgrbag/lightcurve.jsonl（140 行/74 源）无 SN 2003L；external/grbsn_webtool/SourceData（63 事件）无 SN 2003L；GCN 站（gcn.nasa.gov/circulars）检索页为客户端渲染、未返回按 eventId 过滤的结果，以仓内全文快照为准；ADS API 401（无 token），SciX 未单独检索（与 ADS 同一平台）；改用 arXiv API 命中 2 篇（astro-ph/0410163 正式论文、astro-ph/0310305 会议文集）、NED 与 CBAT/IAUC（8048、8057、8061、8073 均实际打开）；TNS API 401（无 key），TNS 对象页可读（无测光：Light Curves No Data）。结论：新增 Soderberg+2005 表1 的 109 个射电测量 + IAUC 8048 的 7 个光学点（3 个上限、4 个探测），lc 由 1 行补到 116 行。\n原 extra_data 值（§3.10 留档）：t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」——对 SN 不成立，已改写为 t0_basis=discovery、t0_note=「t0 为发现时刻（Boles 2003-01-12.15 UT，IAUC 8048）；SN 无触发时刻」。",
   "sub_tag": [
     "SN-spec"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为发现时刻（Boles 2003-01-12.15 UT，IAUC 8048）；SN 无触发时刻",
+    "t0_basis": "discovery",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Soderberg+2005",
+      "url": "https://doi.org/10.1086/427649",
+      "title": "The Radio and X-Ray-Luminous Type Ibc Supernova 2003L",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": {
+    "ra": 165.80375,
+    "dec": 11.0769444,
+    "redshift": 0.021374,
+    "redshift_type": "spec",
+    "comment": "NGC 3506；SN 2003L 位于其中心以西 9″.0、以北 1″.5（IAUC 8048）。NED：星系型 G，RA 11h03m12.9s、Dec +11d04m37s，速度 6408 km/s、z=0.021374（SLS）",
+    "source": "NED（2026-10-29 取数）；IAUC 8048"
+  }
 }
