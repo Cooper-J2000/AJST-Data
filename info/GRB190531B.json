@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB190531B",
   "alias": [
-    "GRB 190531840"
+    "GRB 190531840",
+    "GRB190531840",
+    "GRB 190531.840"
   ],
-  "ra": 24.389999389648438,
-  "dec": -41.95000076293945,
-  "T0": "2019-05-31T20:10:17.140000Z",
-  "T0_ref": null,
+  "ra": 24.2962,
+  "dec": -41.95841,
+  "T0": "2019-05-31T20:10:12.142000Z",
+  "T0_ref": "GCN 24701（T0=20:10:12.14 UT，GBM 触发 581026217/190531840）；FERMIGBRST trigger_time=20:10:12.142（触发仪器亚秒）；GCN 24695/24705 整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -16,14 +18,16 @@
   ],
   "pos_error": 1.6,
   "pos_ref": "GCN 24706",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。误名更正：GCN 24696 曾将触发 581026217/GRB 190531840 误名 GRB190531A，GCN 24699 更正为 GRB 190531B，GRB190531A 不作别名。T0 修正：原值 20:10:17.140000Z 为 Fermi MET 581026217.14 天真换算（漏 5 闰秒，Issue #67 家族），正确触发时刻 20:10:12.14 UT（GCN 24695/24701/24705 一致），取 FERMIGBRST trigger_time=20:10:12.142（触发仪器亚秒）；差值源于换算错误而非真实偏移，T0_offset 不适用。定位：改用 Swift-XRT 精化位 RA,Dec=24.29620,-41.95841、1.6″、90%（GCN 24706，GCN 24702/24707 引用一致）；原 ra/dec=24.39,-41.95 为 LAT 粗位（0.11° 90% containment，GCN 24701，备查）。别名证据串：GRB 190531840（GCN 24696 主题行原文用名）、GRB190531840（FERMIGBRST trigger_name/name_alt，GCN 24696 正文链接形 grb/GRB190531840）、GRB 190531.840（2FLGC name_alt）。分类：t90=38.14±0.92 s（FERMIGBRST 50-300 keV 目录表），GCN 24705 报 T90 约 38.4 s，按目录 t90 判 lgrb（原 sub_tag=Fermi-LAT 非受控词表词）。测光检索（2026-10-28）：GCN 站按 190531B/190531840 双向检索 12 篇（24695/24696/24699/24701/24702/24705/24706/24707/24711/24713/24730/24738），含光学测光 3 篇（24707 MASTER 两站非探测、24711 VLT r>23 AB 上限、24731 UVOT 五波段上限）；arXiv API 两查询（GRB 190531B / 190531840）均 0 命中；SciX 检索无该暴研究论文；仓内 external/rssgrbag、external/grbsn_webtool 无该源记录 → 新增 UVOT 5 行、修正 VLT 行口径；MASTER-SAAO（T0+20321 s，unfiltered mlim=20.6）/MASTER-OAFA（T0+45907 s，mlim=20.0）两条非探测因原文未给曝光时长、曝光中点不可恢复未入库（PR 待决）。swiftgrbba 快照 uvot_mag U>21.2 与 GCN 24731 u>21.1 不一致，以 GCN 为准；swiftgrbba 快照 trigger_time=2019-05-31T07:29:11Z 与触发时刻不符（目录快照只读，PR 待决报告）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-28"},
     "catalog_data": {
       "fermi_gbm": {
         "other": {
