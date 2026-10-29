@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB180806A",
-  "alias": [],
+  "alias": [
+    "bn180806944"
+  ],
   "ra": 11.5536,
   "dec": 24.337,
-  "T0": "2018-08-06T22:38:59Z",
-  "T0_ref": null,
+  "T0": "2018-08-06T22:38:59.661Z",
+  "T0_ref": "Fermi/GBM trigger 555287944（bn180806944）：GCN 23095 记 Trigger 22:38:59.66 UT；external/fermi_gbm 快照 GRB180806944 trigger_time=2018-08-06T22:38:59.661Z，同整数秒取触发仪器快照亚秒精度",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -16,14 +18,22 @@
   "pos_ref": "GCN 23097",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0：GRB 180806A = Fermi/GBM trigger 555287944（bn180806944，GCN 23095 记 Trigger 22:38:59.66 UT、T90=15.6±0.8 s）。原 T0=2018-08-06T22:38:59Z（t0_basis=meta_trigger）与触发通告同整数秒，按触发仪器快照亚秒精度补齐为 2018-08-06T22:38:59.661Z（external/fermi_gbm 快照 GRB180806944）。Trigger_Instrument=Fermi/GBM 不变。alias 补 bn180806944（FERMIGBRST trigger_name 官目录名，§3.10 认可；GCN 23095 记 ID: 555287944 / 180806944，拼接形 GRB 180806944 不入 alias）。Konus-Wind（GCN 23119）于 81544.19 s UT（22:39:04.19）触发同一暴、AstroSat CZTI（GCN 23122）记最强峰 22:39:04.500 UT，均系其他仪器的触发/峰值时刻、非同一触发事件的亚秒差，不并用于 T0（见 PR 待决）。\n\n位置：GCN 23097（Swift-XRT refined）RA,Dec=11.5536,+24.3370，uncertainty of 5.0 arcsec (radius, 90% confidence)，XRT 观测 T0+57.6–76.2 ks。原 ra/dec/pos_error=5.0″/pos_ref=GCN 23097 与原文一致，补 pos_error_confidence=90。external/mpe_greiner 记 00h46m13s +24°20′ 一致。红移无报道，redshift 留空。t90=15.6±0.8 s（GCN 23095；快照 t90=15.6163±0.81），按通告/目录 t90 判 lgrb（原 sub_tag 空，补 lgrb）。\n\n光学与 lc：原 1 行（NOT r=22.31±0.10 AB，GCN 23098）核对：原 time=97309.0 系 bot 用截断 T0（22:38:59）与曝光中心 2018-08-08.07 UT 推得，改窗口中点 time=97308.3 s、time_err=150.0 s（300 s 单次曝光之半，§3.8）；mjd=T0+time 7 位小数（原 2 位）；telescope/instrument 列位修正为 NOT 2.56m / AlFOSC（原 AlFOSC/NOT 写在 instrument、telescope 空）。新增 3 行：GCN 23096（RATIR / 1.5m Harold Johnson Telescope，2018-08-07 7.47–7.51 UT 窗口中点、半窗 1728 s；r=20.21±0.02、i=19.92±0.01，AB、SDSS 定标）；GCN 23094（COATLI 50-cm，2018-08-07 11:23:26–12:21:39 UT 窗口中点、半窗 1746.5 s，共 2730 s；w=20.22±0.05，USNO-B1 定标 approximate AB，原文声明）。全部 mjd 按新 T0 重算。X 射线（GCN 23093 Swift ToO 通告、23097 XRT refined、23157 晚期复测 afterglow <1.0e-2 ct/s）不在审核范围。\n\n测光检索（2026-10-28）：本机无 gcn/archive 快照，改用 GCN 网站事件页（源名 180806A + 触发号 555287944 双通道）——共 9 篇（23093 Swift ToO、23094 COATLI、23095 Fermi GBM、23096 RATIR、23097 Swift-XRT refined、23098 NOT、23119 Konus-Wind、23122 AstroSat CZTI、23157 晚期 XRT），逐篇打开：含光学观测 3 篇（23094/23096/23098，均已入库）。external/fermi_gbm 有 GRB180806944 记录（trigger_time/t90，已并用于 T0/sub_tag）；external/mpe_greiner 有坐标记录（与 XRT 一致）；external/swift_bat、konus_wind、rssgrbag、grbsn_webtool、heasarc_grbcat、uvot_grb、wang2022、liang2023、minaev2020、guidorzi2025 无此源记录；arXiv API 与 INSPIRE（标题/全文）检索 0 篇专属研究论文（ADS/SciX 反爬拦截，同 PR #330/#429/#433/#435/#437 处置，改用 INSPIRE+arXiv 佐证），articles 保持空（Konus/CZTI/RATIR/NOT/COATLI 均为 GCN 通告、非研究论文）；TNS 无该源报道。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，T0 已按触发时刻核实并补亚秒，改写说明。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 555287944），亚秒取自 external/fermi_gbm 快照",
+    "t0_basis": "fermi_gbm snapshot trigger_time（GCN 23095 同整数秒佐证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
