@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB240101B",
-  "alias": [],
-  "ra": 352.0966,
-  "dec": 51.6379,
-  "T0": "2024-01-01T21:42:43Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 240101B",
+    "BAT 1205744"
+  ],
+  "ra": 352.09572,
+  "dec": 51.63617,
+  "T0": "2024-01-01T20:25:39.377680Z",
+  "T0_ref": "GCN 35449（Swift/BAT 触发通告：「At 20:25:39 UT, the Swift BAT triggered and located GRB 240101B (trigger=1205744)」，整秒）；官方 BAT 通告 1205744 GRB_TIME=73539.37 SOD=20:25:39.37 UT；external/swift_bat 快照 trigger_time=2024-01-01T20:25:39.377680Z（三源整秒一致，亚秒取触发仪器官方目录值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.2,
   "pos_ref": "GCN 35455",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份:GRB240101B = Swift BAT 触发事件（trigger 1205744，GCN 35449「At 20:25:39 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240101B」）。同日甄别:external 快照 2024-01-01 当日共 3 个独立事件——GRB240101A（BAT 1205708，14:20:17.33Z，RA 10.32 Dec 8.53）、本源（BAT 1205744，20:25:39.38Z，RA 352.09 Dec 51.62）、Fermi GBM GRB240101540（12:57:23.76Z，RA 4.73 Dec 30.46）；swift_xrt_live 快照 RA 352.0957/Dec 51.6364 与 GCN 35455 精化位置互证；info/ 无孪生条目。T0:原库 T0=2024-01-01T21:42:43Z 证伪为 MarSEC 观测起点（GCN 35463「started at 2024-01-01 21:42:43 UT, 77 min. after the GRB trigger」，20:25:39+77 min 相洽），系 Issue #84「观测起点误作 T0」家族；改取触发仪器值 2024-01-01T20:25:39.377680Z（GCN 35449 整秒、官方 BAT 通告 20:25:39.37 UT、external/swift_bat 快照 .377680Z，三源整秒一致，亚秒取触发仪器目录值），原值留存于此。位置:原库 ra/dec=352.0966/51.6379 为 GCN 35449 XRT 初定位（5.1″，90%），与 pos_ref=GCN 35455/pos_error=2.2″ 不配套；改取 GCN 35455 精化 XRT 位置 RA,Dec=352.09572,+51.63617（2.2″ radius，90% confidence，原文标注置信水平）。分类:t90=134.016±39.008 s（15-350 keV，external/swift_bat 快照）按目录 t90 判 lgrb；GCN 35472 记 T90=43.1±12.6 s（15-350 keV）并列备查，两值均远大于 2 s。红移:各来源均无记载，保持 null。测光检索（2026-10-30）:gcn.nasa.gov 按源名检索命中 8 篇（35449/35454/35455/35458/35463/35470/35472/35483）全部打开，光学上限 4 篇（KAIT 35454、UVOT 35458、MarSEC 35463、DFOT 35483）→ 新增 11 行、修正 DFOT 1 行；X 射线数据见 GCN 35470（XRT 精化），暂不处理；仓内 external/rssgrbag 光变 0 命中、external/grbsn_webtool 0 命中；arXiv API 两式检索（「240101B」AND GRB、「GRB 240101B」）均 0 命中；ADS/SciX 网页与 API 本次会话未能打开（JS 渲染/需令牌），如实记录不引证。无研究文章，articles 保持[]。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 fsy@zcode 2026-10-30 审核修正为 Swift BAT 触发时刻 2024-01-01T20:25:39.377680Z（GCN 35449 整秒 20:25:39 UT；官方 BAT 通告 20:25:39.37 UT；external/swift_bat 快照 .377680Z）；原 bot 值 2024-01-01T21:42:43Z 系 MarSEC 观测起点（GCN 35463）被 meta_trigger 采信（Issue #84 家族），原值留存于 comment。",
+    "t0_basis": "GCN 35449（Swift/BAT 触发仪器官方通告）+ external/swift_bat 快照（亚秒）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
