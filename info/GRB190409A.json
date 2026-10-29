@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB190409A",
-  "alias": [],
+  "alias": [
+    "BAT 897653"
+  ],
   "ra": 324.921,
   "dec": -46.607,
   "T0": "2019-04-09T13:01:21Z",
-  "T0_ref": null,
+  "T0_ref": "Swift/BAT trigger 897653 触发时刻：GCN 24081 记 At 13:01:21 UT；external/swift_bat 快照无此触发记录（GCN 24093 地面分析判 most likely a spurious event），按通告精度取整数秒",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 180.0,
   "pos_ref": "GCN 24081",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份与 T0：GRB 190409A = Swift/BAT trigger 897653（GCN 24081 记 At 13:01:21 UT, the Swift Burst Alert Telescope (BAT) triggered and located possible GRB 190409A）。原 T0=2019-04-09T13:01:21Z 与通告一致，保持；external/swift_bat 快照无此触发记录，按通告精度取整数秒。Trigger_Instrument 原 Swift，改 Swift/BAT（仓内 Swift 触发源惯例）。alias 补 BAT 897653（trigger 目录名）。tag 原空，补 grb。\n\n位置：GCN 24081 RA,Dec=21h39m41s,−46d36′25″（=324.921,−46.607 deg），uncertainty of 3 arcmin (radius, 90% containment)。原 ra/dec/pos_error=180″/pos_ref=GCN 24081 与原文一致，补 pos_error_confidence=90。\n\n⚠️ 触发被撤回（§3.7）：GCN 24093（BAT ground analysis）记 The BAT image significance has decreased to 3.7 sigma, and thus is consistent with a noise fluctuation…we believe that GRB 190409A was most likely a spurious event。独立证据检索：GCN 网站仅 2 篇（24081 检测、24093 撤回），无任何其他设备跟测通告；external/fermi_gbm 当日唯一触发为 21:38:05.455Z 的 GRB190409901（另一暴，位置 229.97/−33.13）；external/swift_bat、konus_wind、batse、heasarc_grbcat、mpe_greiner、rssgrbag 均无此触发记录。按 §3.7「触发被撤回且无独立证据 → 报维护者决定是否删除条目」，本 PR 不自行删除，条目照常完成行级修正与留证，删留见 PR 待决事项。\n\n红移与分类：无红移报道，redshift 留空；T90 无来源（24081 未给、24093 撤回、无目录记录），sub_tag 留空。\n\n光学与 lc：GCN 24081（UVOT FC 150 s White 起始 T0+2950 s，No afterglow found）核对入库 1 行：原 time=2950.0 系曝光起始而非中点，改 time=3025.0、time_err=75.0（§3.8）；mjd 14 位小数 → T0+time 7 位；band=w 改 uvot-white（UVOT white 约定）；telescope/instrument 列位修正为 Swift/UVOT；mag_system 原空，按 UVOT 惯例补 Vega（Breeveld+2011）；mag=18.0 系原文模板句 The list of sources is typically complete to about 18 mag（源表典型完备星等、非本曝光实测极限，同 GRB180425A bot 行处置）→ 置 discard=y 留档，行不删除。\n\n测光检索（2026-10-28）：本机无 gcn/archive 快照，改用 GCN 网站事件页（源名 190409A + 触发号 897653 双通道）——共 2 篇（24081 Swift 检测、24093 撤回），逐篇打开：含光学观测 1 篇（24081，已入库）；external/fermi_gbm 有当日 21:38 UT 另一暴 GRB190409901（非本事件）；external/swift_bat、konus_wind、batse、heasarc_grbcat、mpe_greiner、rssgrbag、grbsn_webtool、uvot_grb、wang2022、liang2023、minaev2020、guidorzi2025 无此源记录；INSPIRE（all 字段）检索 0 篇、arXiv API 0 篇（ADS/SciX 反爬拦截，同 PR #330/#429/#433/#435/#437/#443 处置），articles 保持空；TNS 无该源报道。\n\nextra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，T0 已按触发通告核实，改写说明。",
   "sub_tag": [],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT trigger 897653 触发时刻（GCN 24081，整数秒精度；触发已被 GCN 24093 撤回）",
+    "t0_basis": "gcn 24081 通告精度（external/swift_bat 快照无此触发记录）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
