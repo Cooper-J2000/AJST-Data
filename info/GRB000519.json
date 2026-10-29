@@ -1,30 +1,53 @@
 {
   "transient_id": "GRB000519",
-  "alias": [],
+  "alias": [
+    "GRB 000519A",
+    "BATSE 8111"
+  ],
   "ra": 346.161,
   "dec": 1.171,
-  "T0": "2000-05-19T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2000-05-19T08:18:05Z",
+  "T0_ref": "GCN 672",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 672",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 000519 = BATSE Trigger #8111，IPN 定位（Ulysses/BATSE/BeppoSAX-GRBM/NEAR，GCN 672）；HEASARC GRBCAT 用名 GRB 000519A，同日另有 GRB 000519B（13:02:37 UT，IPN）与 GRB 000519C（23:36:37 UT，BATSE）为不同事件，已区分。T0：GCN 672 给触发时刻 29885 s UT（1 s 精度）→ 2000-05-19T08:18:05Z；备查值：BATSE 目录 2000-05-19T08:18:07.737Z、GRBCAT 2000-05-19T08:18:07.700Z（均 Earth Crossing Time）、BeppoSAX GRBM 目录 2000-05-19T08:18:12Z（仓内 external/batse、external/heasarc_grbcat、external/saxgrbmgrb 快照），与 GCN 672 差 2.7-7.0 s，按提示词 §3.8 优先级取通告值，差异在 PR 说明报告；bot 原值 t0_note=t0 为触发日 00:00 UT（名字日期）、t0_basis=name_date，系占位失真，已改写。定位：IPN 100 平方角分 3σ 错误框（GCN 672，中心 23h04m38.55s +01°10′16.67″，五角点坐标见原文），ra/dec 取框中心；框为不规则四边形且原文未给单一半径，pos_error 留空；GCN 672 自称 3σ 但未给单一半径，pos_error_confidence 亦留空。星等系统：GCN 679 未声明系统（定标用 Henden GCN 673 的 BVRcIc 场测光），mag_system 留空。lc 两行均为上限（GCN 679：NOT R~20.8、DK-1.5m R~21.0，原文明言 no candidate counterpart was found），time 已由原库历元 2000-05-19T00:00UT 换算为标准 T0 历元（101088 s→71203 s、120096 s→90211 s），mjd 51684.17/51684.39 为原文日期精度（0.01 d≈14 min）。sub_tag：t90=14.592±1.218 s（>20 keV，BATSE 目录），按目录 t90 判 lgrb；BeppoSAX GRBM 目录 t90=10.0±8.2 s（40-700 keV）、Ulysses 时标 ~15 s（GCN 672），中心值一致不构成冲突。宿主：无确定宿主，host_galaxy 留空；注意 XRT 000519（Jonker+2013，RA 12h25m31.64s +13°03′58.8″，M86 方向；Eappachen+2022 研究其宿主候选）是与本暴无关的另一快速 X 射线暂现源，仅日期名相似，不入 alias。测光检索（2026-10-28）：仓内 gcn/archive 45889 篇全文按 000519 / BATSE Trigger 8111 双键检索命中 3 篇（672 定位、673 USNO BVRI 定标场、679 光学观测），679 为唯一含测光数值者，其 2 个上限已在库；external/rssgrbag 有该源条目但 radio_ag_flag=N 且 lightcurve.jsonl/table4.dat 无其射电测光行，external/grbsn_webtool、external/uvot_grb 无记录；GCN 站事件页 gcn.nasa.gov/circulars/events/grb-000519 同样仅 3 篇；arXiv API（abs:000519 等 3 种键形）+ WebSearch（ADS/SciX 替代）命中 2 篇：Fynbo+2001（A&A 369,373 VoR 表 2 转引 GCN 672/679：R=21.0 @ 0.82 d，暗暴汇编，无新测量；其 21.0 与 0.82 d 的配对与 GCN 679 原文口径——NOT 0.83 d 为 R~20.8、DK 1.04 d 为 R~21.0——不一致，仅备查）与 Gorosabel+2001 会议论文（DOI 10.1007/10853853_45 表 1：GRB000519 经 CAHA 1.23m(MAGIC) J/K′ 观测、无探测，无日期无数值，无时间锚点不入库）；GCN 679 另有 DK-1.54m 2000 May 25.37 UT (t+6d) R 3x300s 观测但原文未给限量，无数值不入库；TNS 不适用（GRB 类，无 TNS 名）。结论：无新的可用测光，本 PR 补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "t0 = GCN 672 给出的触发时刻 29885 s UT（2000-05-19，1 s 精度）",
+    "t0_basis": "GCN 672",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Fynbo+2001",
+      "url": "https://doi.org/10.1051/0004-6361:20010112",
+      "title": "Detection of the optical afterglow of GRB 000630: Implications for dark bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Gorosabel+2001",
+      "url": "https://doi.org/10.1007/10853853_45",
+      "title": "Follow-up observations from observatories based in Spain",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
