@@ -1,28 +1,47 @@
 {
   "transient_id": "GRB210212B",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2021-02-12T04:25:18Z",
-  "T0_ref": null,
+  "alias": [
+    "ZTF21aakruew",
+    "AT2021cwd"
+  ],
+  "ra": 156.17566,
+  "dec": 11.61138,
+  "T0": "2021-02-12T02:37:57Z",
+  "T0_ref": "GCN 29511（IPN 三角定位）原文「at about 9477 s UT (02:37:57)」→ 2021-02-12T02:37:57Z；GCN 29512（Assy）明言其 t-T0 按「GRB trigger of 2021-02-12 (UT) 02:37:57 (Svinkin et al.、GCN 29511)」起算、其表 t-T0(mid)=3.64231 d 与观测中点 2021-02-15T18:02:53Z−本库 T0=314696 s 互证；GCN 29514（Konus-Wind）光变起点记 T0=9479 s UT (02:37:59)、与本值差 2 s、系 waiting mode 光变起点、不写 T0_offset；原库值 2021-02-12T04:25:18Z 无出处、弃用",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Konus-Wind",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 29508",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【T0】原库值 2021-02-12T04:25:18Z 无 GCN/目录出处、弃用；改取 IPN 三角定位触发时刻 2021-02-12T02:37:57Z（GCN 29511 原文「at about 9477 s UT (02:37:57)」）；Assy 组 GCN 29512 明言其 t-T0 按 2021-02-12 (UT) 02:37:57 起算、其表 t-T0(mid)=3.64231 d 与 lc 中 Assy 行观测中点 2021-02-15T18:02:53Z−本库 T0=314696 s（3.64231 d）互证；GCN 29514 Konus-Wind waiting mode 光变起点记 T0=9479 s UT (02:37:59)、与本值差 2 s、系光变起点而非独立触发测定、不写 T0_offset。【Trigger_Instrument】None → Konus-Wind：GCN 29514 确认 Konus-Wind waiting mode 检测（单次辐射、总持续 ~48 s）；GCN 29511 记同暴另由 INTEGRAL（SPI-ACS）与 Swift（BAT）探测、BAT「likely outside the coded field of view」未参与定位。【定位】ra/dec 取 OT 位置：GCN 29508 原文 RA=10:24:42.16（156.17566 deg）、Dec=+11:36:40.98（+11.61138 deg）；原文未给定位误差、pos_error 留空；IPN 初步误差框四角 159.26/+24.95、100.54/+38.07、96.30/+19.08、163.83/+2.39（GCN 29511）仅备查、OT 位于框内（同原文）；本源无触发仪器定位（BAT 在编码视场外、Swift ToO XRT 亦未报告对应源（GCN 29513））、以 OT 位作源位提请维护者确认；GCN 29528 GROND g'r'i' SED 呈幂律、支持 OT 为余辉并确认与 GRB 210212B 成协。【分类】lgrb：GCN 29511/29514 原文均作「The long-duration GRB 210212B」、Konus-Wind 总持续 ~48 s 远大于 2 s。【测光检索（2026-10-28）】GCN 站按 210212B/ZTF21aakruew/AT2021cwd 检索命中并逐篇核对原文：29508（ZTF/LT 发现）、29511（IPN）、29512（Assy）、29513（Swift ToO 启动、无探测/上限数值）、29514（Konus-Wind）、29528（GROND）；Web 检索（含 arXiv）：本源见于 Ho et al. 2022（ApJ 938、85、arXiv:2201.12366）ZTF 快速光学暂现样本、无专属研究论文、已入 articles；仓内 rssgrbag/grbsn_webtool/tmplibrary 无本源记录；lc 改动：修正 Assy 行 1 行（time 锚点与中点口径）、新增 ZTF r 上限、ZTF g、LT r、GROND 7 波段共 10 行（1+1+1+7，另有修正行 1 行、lc 最终 11 行）。【别名】<GCN 29508> 原文用名 ZTF21aakruew/AT2021cwd。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ho2022",
+      "url": "https://arxiv.org/abs/2201.12366",
+      "title": "Cosmological Fast Optical Transients with the Zwicky Transient Facility (Ho et al. 2022、ApJ 938、85)",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
