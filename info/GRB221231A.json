@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB221231A",
-  "alias": [],
+  "alias": [
+    "GRB 221231A"
+  ],
   "ra": 336.256,
-  "dec": 25.1298,
-  "T0": "2022-12-31T21:46:05Z",
-  "T0_ref": null,
+  "dec": 25.12978,
+  "T0": "2022-12-31T21:46:05.129Z",
+  "T0_ref": "GCN 33129（Fermi/GBM 触发通告：21:46:05 UT，触发号 694215970.129412/221231907）；亚秒取触发仪器官方目录 FERMIGBRST trigger_time=2022-12-31T21:46:05.129（仓内 external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.0,
   "pos_ref": "GCN 33139",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "【身份】GRB 221231A＝Fermi/GBM 触发 221231907（GCN 33129，2022-12-31 21:46:05 UT，on-ground 定位 RA=332.7,Dec=36.5、5.2°）；Swift/BAT-GUANO 由该 GBM 通告触发保存 BAT 事件模式数据后地面检出，弧分级定位 RA,Dec=336.260,+25.138（5′，GCN 33132）；Swift/XRT ToO（obs 00021534）检出 5 个未编目 X 射线源（GCN 33135），其中 Source 2（RA,Dec=336.2560,+25.1298，3.1″ 90%）衰减 >3σ 判为余辉，增强定位 RA,Dec=336.25600,+25.12978（3.0″，90% conf.，GCN 33139）——本条 ra/dec/pos_error/pos_ref 取 GCN 33139 值。原 Trigger_Instrument=Swift/XRT 有误：XRT 仅余辉跟进，实际触发为 Fermi/GBM（Swift 官方目录 swiftgrbba 仓内快照亦记 trigger_obs=BAT/GUNAO、other_obs=Fermi (GBM)、trigger_time=2022-12-31T21:46:05.000 同整秒）。别名「GRB 221231A」（带空格形）为 GCN 通告与 swiftgrbba 原文用名；fermi_gbm 快照 name_alt 另有 GRB221231907/GRB 221231.907/bn221231907，属触发号拼接形，未加入 alias 以免伪形（出处备查于此）。【T0】GCN 33129 原文 21:46:05 UT（整秒）；同通告 GBM 触发号 694215970.129412（MET 秒）与 FERMIGBRST 官方目录（仓内 external/fermi_gbm 快照）trigger_time=2022-12-31T21:46:05.129 给亚秒，按 §3.8「整数秒一致取触发仪器亚秒值」采纳 T0=2022-12-31T21:46:05.129Z；swiftgrbba 快照 21:46:05.000 为截断值，备查。bot 原值 2022-12-31T21:46:05Z（整秒）留档；bot extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」维持不变。【定位置信】GCN 33139 原文「3.0 arcsec (radius, 90% confidence)」→ pos_error_confidence=90 取自原文。【分类】FERMIGBRST 目录 t90=6.144±2.429 s（50-300 keV，仓内 external/fermi_gbm 快照）；GCN 33146 记 T90≈5 s（50-300 keV）、GCN 33129 称 likely LONG；但 Swift/BAT-GUANO（GCN 33132）记 BAT 可见持续 <0.5 s、通告标题称 possibly short burst——目录 t90 与 BAT-GUANO 通告分类冲突，sub_tag 留空待决（PR 待决事项①）。【物理量】GBM 流量 (4.4±0.4)E-07 erg/cm^2（10-1000 keV，GCN 33146；FERMIGBRST 快照 9.52E-07）；Epeak=200±40 keV（GCN 33146；FERMIGBRST 快照 CPL 拟合 211.8 keV）；XRT 余辉幂律衰减指数 alpha=1.1(+0.6,-0.5)（GCN 33139）。均不参与判定。【红移】全部来源均未给出红移。【检索留证】测光检索（2026-10-28）：仓内 gcn/archive 45 889 篇（收至 GCN 46010）全文检索「221231A/221231907」命中 8 篇（33129 GBM 定位、33132 BAT-GUANO 定位、33133 Swift ToO、33135 XRT 5 源、33136 AKO 上限、33139 XRT 余辉、33146 GBM 谱、33149 DOT 上限），光学测光仅 33136/33149 两篇上限；external/rssgrbag 0 行、grbsn_webtool 无该源目录、uvot_grb 0 命中（GCN 33139 的 2 帧 UVOT 仅用于天测对齐，无测光）、swiftgrbba/fermi_gbm/mpe_greiner 仅目录参数行；GCN 站检索（WebSearch 命中 gcn.nasa.gov 与 ADS 同 8 篇通告）、MPE 汇总页 mpe.mpg.de/~jcg/grb221231A.html 列目与仓内一致；ADS/SciX 检索「GRB 221231A」命中即上述 GCN 通告，无研究论文（arXiv 2303.00698 GECAM-C 交叉定标一文摘要页为仪器标定内容、无本源测光，不登记 articles）；TNS 不适用（GRB 命名，非 AT/SN/CV 类）。结论：可用测光＝AKO Ic>18.8（GCN 33136，已有行核对修订）与 DOT r>21.7（GCN 33149，本次补入 1 行）两条上限；XRT X 射线数据按 §3.3 暂不入库。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
