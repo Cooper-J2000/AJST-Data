@@ -1,39 +1,54 @@
 {
   "transient_id": "GRB000528",
-  "alias": [],
-  "ra": 160.0,
-  "dec": -29.0,
-  "T0": "2000-05-28T20:50:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000528"
+  ],
+  "ra": 161.27625,
+  "dec": -33.98306,
+  "T0": "2000-05-28T08:46:24Z",
+  "T0_ref": "BeppoSAX GRBM 官方目录 trigger_time=2000-05-28T08:46:24Z（external/saxgrbmgrb 快照）；GCN 675/677 记 May 28.366 UT（0.001 d 精度，=08:47:02，与目录值一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "BeppoSAX/GRBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 677（BeppoSAX WFC 精化定位 RA=10h45m06.3s Dec=-33°58'59\" J2000，误差半径 2'，99% 置信；Frontera+2004 同值引用）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "定位：原库 ra/dec=160.0/-29.0 系 BeppoSAX GRBM 粗定位（GCN 675，误差半径 5°），已重锚至 WFC 精化误差圆（GCN 677）。WFC 2' 为 99% 置信半径，非受控置信取值（90/68/3sigma/1sigma），故 pos_error_confidence 留空。T0：原库 2000-05-28T20:50:00Z 系 BeppoSAX NFI TOO 观测起始时刻（GCN 683 原文『started around May 28 at 20:50 UT, i.e. about 12 hours after the GRB』），非触发时刻，已改正。采用触发仪器官方目录值 08:46:24Z；并列备查：Frontera+2004（ApJ 614, 301）正文记 08:46:21 UT（早 3 s，引 BeppoSAX Mail #00/10-11）、HEASARC GRBCAT ECT=08:46:35Z（地球穿越时口径，grbcat_id 4908，仅交叉验证）。Trigger_Instrument 原库 Konus-Wind 改为 BeppoSAX/GRBM：GRBM 在轨触发并通报（GCN 675），WFC 单元 2 同时探测（GCN 677）；Konus-Wind 与 Ulysses 仅参与 IPN 环三角定位（GCN 681）。bot 原 extra_data：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，因实际为 NFI 观测起点而失真，已改写。sub_tag lgrb 依据：t90=65.0±2.2 s（40-700 keV，saxgrbmgrb/GRBM 目录）按目录 t90 判 lgrb；GCN 675 记 GRB duration≈80 s、Frontera+2004 记 40-700 keV 全程持续 ~80 s 互证。alias「GRB 000528」为官方目录用名（external/saxgrbmgrb、heasarc_grbcat、mpe_greiner、rssgrbag 快照 name 字段）。疑似 X 射线余辉体 1SAX J1045.1-3359（=GCN 683 object #2，GCN 700 判定为可能余辉）不作为本源别名。测光检索（2026-10-30）：仓内 gcn/archive 全文命中 8 篇（GCN 674/675/677/681/683/686/691/700，其中 674/686/691 含光学/射电上限数值，均已入库）、external/rssgrbag 有目录条目但无该源光变行（radio_ag_flag=N）、external/grbsn_webtool 与 external/uvot_grb 无记录；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-000528）同为 8 篇；ADS/WebSearch 命中 Frontera+2004（仅 X 射线分析，其光学/射电上限即转引 GCN 691/686）与 Fynbo+2001（A&A 369, 373，表 2 两行 22.3/23.3 纯转引 GCN 674/691，无新增测光）；TNS 不适用（GRB 无 AT/SN 命名）。结论：无可新增的带时间锚点测光，lc 保持 5 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为触发仪器 BeppoSAX/GRBM 官方目录 trigger_time=2000-05-28T08:46:24Z（external/saxgrbmgrb 快照）；原 bot 值 2000-05-28T20:50:00Z 系 NFI TOO 观测起点（GCN 683）误作触发时刻",
+    "t0_basis": "saxgrbmgrb_catalog_trigger_time（GCN 675/677 May 28.366 UT 互证；Frontera+2004 08:46:21 UT 并列备查）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {
       "name": "Frontera+2004",
       "title": "A Decreasing Column Density during the Prompt Emission from GRB 000528 Observed with BeppoSAX",
-      "url": "https://ui.adsabs.harvard.edu/abs/2004ApJ...614..301F",
+      "url": "https://doi.org/10.1086/423335",
       "bibtex": "@ARTICLE{2004ApJ...614..301F,\n       author = {{Frontera}, F. and {Amati}, L. and {Lazzati}, D. and {Montanari}, E. and {Orlandini}, M. and {Perna}, R. and {Costa}, E. and {Feroci}, M. and {Guidorzi}, C. and {Kuulkers}, E. and {Masetti}, N. and {Nicastro}, L. and {Palazzi}, E. and {Pian}, E. and {Piro}, L.},\n        title = \"{A Decreasing Column Density during the Prompt Emission from GRB 000528 Observed with BeppoSAX}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, Gamma Rays: Observations, X-Rays: Bursts, Astrophysics},\n         year = 2004,\n        month = oct,\n       volume = {614},\n       number = {1},\n        pages = {301-308},\n          doi = {10.1086/423335},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0406575},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2004ApJ...614..301F},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Fynbo+2001",
+      "title": "Detection of the optical afterglow of GRB 000630: Implications for dark bursts",
+      "url": "https://doi.org/10.1051/0004-6361:20010112",
+      "bibtex": "@ARTICLE{2001A&A...369..373F,\n       author = {{Fynbo}, J.~U. and {Jensen}, B.~L. and {Gorosabel}, J. and {Hjorth}, J. and {Pedersen}, H. and {M{\\o}ller}, P. and {Abbott}, T. and {Castro-Tirado}, A.~J. and {Delgado}, D. and {Greiner}, J. and others},\n        title = \"{Detection of the optical afterglow of GRB 000630: Implications for dark bursts}\",\n      journal = {\\aap},\n         year = 2001,\n       volume = {369},\n        pages = {373-379},\n          doi = {10.1051/0004-6361:20010112},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0101425}\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
