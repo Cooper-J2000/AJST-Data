@@ -1,28 +1,44 @@
 {
   "transient_id": "IceCube-260115A",
-  "alias": [],
-  "ra": 145.5760425,
-  "dec": 13.0239392,
-  "T0": "2026-01-15T17:32:35Z",
-  "T0_ref": null,
+  "alias": [
+    "IC260115A",
+    "IceCube Alert 260115.73"
+  ],
+  "ra": 145.77,
+  "dec": 12.41,
+  "T0": "2026-01-15T17:32:35.710Z",
+  "T0_ref": "GCN 43421（IceCube 官方通告）：Time: 17:32:35.71 UT（Bronze alert，离线精化后时刻，原文给到 0.01 s）；GCN 43428 复述 2026-01-15 17:32:35.710 UTC（本库采用其三位小数写法，值相同）互证；原库 17:32:35Z 为整秒截断，已补 .71（=0.710）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.23,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 43421（IceCube 离线精化方向）：RA=145.77 (+2.29/−1.77 deg)、Dec=12.41 (+1.18/−0.91 deg)，90% PSF containment —— 不对称误差不适配圆半径：pos_error 留空、pos_error_confidence=90，不对称值照录；原库 ra/dec=145.5760425/13.0239392 逐位等于 GCN 43497 表列候选体 ZTF26aabnqai=AT2026azb 坐标（导入污染），已替换为精化方向",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube 径迹型（track-like）中微子候选事件，GCN 43421 原文「detected a track-like event with a moderate probability of being of astrophysical origin」，走 ICECUBE_Astrotrack_BRONZE 流（Bronze 平均天体物理纯度 30%，本事件大气背景误报率 2.0497 events per year），检测时刻 17:32:35.71 UT；初报 AMON notice 141917_80302474（AMON EVENT_NUM/trigger 80302474，GCN 43421 给出链接，GCN 43422 MASTER 以「trigger No 80302474」互证）。[T0] 逐字取 GCN 43421 精化段「Time: 17:32:35.71 UT」（与初报时刻同值），GCN 43428 复述「2026-01-15 17:32:35.710 UTC」互证；原库 17:32:35Z 为整秒截断（丢 0.71 s），已按来源精度改为 17:32:35.71Z；无证据支持 |offset|>1 s → T0_offset=null。[定位] 原库 ra/dec=145.5760425/13.0239392（7 位小数）逐位等于 GCN 43497 表列候选体 ZTF26aabnqai=AT2026azb 的坐标 —— 导入管线把跟随观测候选体坐标写成了事件位置；已改为 GCN 43421 离线精化方向 RA=145.77、Dec=12.41。不对称 PSF（RA +2.29/−1.77 deg、Dec +1.18/−0.91 deg，90% PSF containment）不适配圆半径 → pos_error=null、pos_error_confidence=90，不对称值照录 pos_ref。初报自动化通告位置 09h45m33.60s +12d16m40.8s（R=1.18 deg，GCN 43422 引 AMON notice）与精化方向距 0.62°。[Trigger] IceCube（GCN 43421 检测者即 IceCube 本体），原值正确。[红移去污染] 原库 redshift=0.23、redshift_ref=gcn_llm:circulars_meta（无 GCN 编号）实为候选体 AT2026azb 宿主星系的测光红移 0.23±0.08（Legacy Survey，GCN 43497 原文「The host galaxy has a photometric redshift of 0.23 +/- 0.08」），属候选体/宿主量而非中微子事件量 → redshift/redshift_type/redshift_ref 三字段置 null。host_galaxy 不建立：该宿主仅属候选体、非事件宿主（§3.10）。[划界·同日 GRB 260115A] 为另一事件：Fermi/GBM 触发时刻 2026-01-15T17:46:45.881Z（仓内 FERMIGBRST 快照 external/fermi_gbm；GCN 43417 报 17:46:45 UT、定位 110.2/3.3±5.1°、trigger 790192010.88085 / 260115741；BALROG 112.0/7.9±4.6° 1σ（另 1° 系统），GCN 43420；GECAM-B T0 17:46:45.900、T90=4.8+2.4/−1.4 s，GCN 43434；MASTER-Kislovodsk，GCN 43418；AstroSat CZTI 峰值 17:46:47.72，GCN 43453），与本事件时刻差 850.17 s（17:46:45.881 − 17:32:35.710）、定位相距 36.4°（对 BALROG 33.5°）→ 非同一物理事件，不存在 GRB–中微子符合，不合并；库内无 GRB260115A 条目，本 PR 不触碰任何其他源。该 5 篇（43417/43418/43420/43434/43453）不计入本源检索篇数。[别名] 新增「IC260115A」（GCN 43443 原文用名「the high-energy IC260115A neutrino event」）、「IceCube Alert 260115.73」（GCN 43422 MASTER 原文用名，两位小数形；MASTER 以 IceCube Alert YYMMDD.frac 命名）。[跟随观测·仅记 comment 不入库] GCN 43428：1000 s 窗（2026-01-15 17:24:15.710–17:40:55.710 UTC）内额外径迹事件 0 个、p=1.00，2 d 窗 p=0.19；E^2 dN/dE@1TeV 灵敏度 1.3e-01（1000 s）、1.5e-01–1.6e-01 GeV cm^-2（2 d）。GCN 43443 Fermi-LAT：90% 区内无 4FGL-DR4 源、无 >5σ 新 >100 MeV 辐射，95% 上限 <4.3e-10（2008-08-04→T0，~17 yr）、<3.8e-9（T0 前 1 个月）、<2.9e-7 ph cm^-2 s^-1（T0 前 1 天）；均为光子通量/事件数口径、非 SCHEMA 测光量，不入 lc。[文献] Urata & Huang 2026（arXiv:2609.07863，投 PASJ）Table 3：Planck 源 PHz G221.53+43.23 距最佳拟合方向 26.25′、A90=6.518 deg^2、积可信度 0.106，仅星表关联、无对应体测光。[测光检索]（2026-10-29）仓内 gcn/archive 全文 45889 篇按 eventId「IceCube-260115A」+ 正文串（260115A / IC260115A / IceCube Alert 260115 / AMON 80302474 / 141917）交叉检索，本源相关 5 篇（43421 通告、43422 MASTER、43428 中微子、43443 LAT、43497 ZTF；43419 为通用 Kafka 通告不计），其中带光学数值 2 篇（43422、43497）；同日 GRB 260115A 5 篇已按上段排除；external/rssgrbag 0 命中、external/grbsn_webtool 0 命中、external/fermi_gbm 仅 GRB 260115A（17:46:45.881Z，110.21/3.29，仅用于划界）；ADS API 无 token → 401（未核实）、SciX API → 404；arXiv 检得 1 篇（无对应体测光）→ 结论：本源无独立对应体，光学仅有候选体测量与 MASTER 上限；补 2 行（GCN 43422 MASTER-SAAO 两个指向上限），另 ZTF 候选体行 1 行保留并置 discard=y。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Urata+2026",
+      "url": "https://arxiv.org/abs/2609.07863",
+      "title": "A pilot submillimeter search for IceCube neutrino counterparts: JCMT follow-up and dusty-galaxy catalog associations",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
