@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB181231A",
   "alias": [
-    "GRB 181231144"
+    "GRB181231144",
+    "GRB 181231.144",
+    "bn181231144"
   ],
-  "ra": 254.58999633789062,
-  "dec": 0.6100000143051147,
-  "T0": "2018-12-31T03:27:48.745000Z",
-  "T0_ref": null,
+  "ra": 254.59,
+  "dec": 0.61,
+  "T0": "2018-12-31T03:27:43.745000Z",
+  "T0_ref": "GCN 23598：「At 03:27:43.75 UT on 31 December 2018, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 181231A (trigger 567919668 / 181231144)」（触发仪器官方通告①，两位小数）；亚秒 0.745000 取自仓内 FERMIGBRST 目录快照（external/fermi_gbm/normalized.jsonl：trigger_time=2018-12-31T03:27:43.745Z，trigger 567919668 同源互证）。§3.2：GCN① 与触发仪器目录② 整秒/两位小数一致 → 取目录全精度亚秒。平行值：GCN 23597（LAT 团队）引 GBM T0=03:27:43.8 UT（0.1 s 舍入，一致）。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,15 +16,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 0.24,
   "pos_ref": "GCN 23597",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（fsy 2026-10-28）：（1）T0 修正 03:27:48.745000Z→03:27:43.745000Z：bot 原值=2FLGC trigger_met=567919668.745 按 2001-01-01 纪元天真换算、漏扣 5 跳秒（2006/2009/2012/2015/2017）的导入错误（差 +5.000 s，naive 换算脚本复现=03:27:48.745000）；快照内 2FLGC trigger_time=03:27:43.001 与其自身 trigger_met 换算值（43.745）有 0.744 s 出入，以 FERMIGBRST trigger_time=03:27:43.745Z（触发仪器目录②，与 GCN 23598 原文 03:27:43.75 UT 一致）为准。（2）位置保留 GCN 23597 LAT 团队 on-ground 定位 254.59/0.61（按原文精度去除 float 噪声），pos_error=null→0.24 deg（原文 an error radius of 0.24 deg (90 % containment, statistical error only)，statistical only 在此注明），pos_error_unit arcsec→deg；并列备查：2FLGC error_radius=0.167 deg（流水线目录、快照未标置信水平且无独立位置）。pos_ref=GCN 23597 不变。（3）sub_tag 补 lgrb：按目录 t90 判 lgrb（§3.9）——FERMIGBRST t90=36.8648±3.66544 s（50-300 keV），2FLGC 同值，GCN 23598 原文 a duration (T90) of about 37 s (50-300 keV)。（4）alias：伪形「GRB 181231144」改为 FERMIGBRST name_alt 官方目录原文用名「GRB181231144」「GRB 181231.144」「bn181231144」（GCN 23598 原文 trigger 567919668 / 181231144——§3.10 证据串豁免）。（5）检索留证（§3.3）：2026-10-28 于 GCN 站双通道检索：源名 181231A → 3 篇（23597/23598/23599）、触发号 567919668 → 2 篇（23597/23598），两通道一致；结论：LAT 探测（23597）、GBM 触发（23598）、光学仅 BOOTES-2/TELMA 18 mag 上限（23599，即 lc 原行）；MPE 表另有 X 射线位置（目录注记，不属 lc 测光）；无红移/宿主星系/其他波段测光；GCN 23597 提及 Swift ToO 仅 requested、无后续 Swift circular。本次补：T0 修正、pos_error/置信水平、lgrb 判定、alias 官方化、lc 行时间口径重算。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -148,8 +151,14 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
     }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
