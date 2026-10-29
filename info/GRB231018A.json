@@ -1,32 +1,40 @@
 {
   "transient_id": "GRB231018A",
-  "alias": [],
+  "alias": [
+    "GRB231018521"
+  ],
   "ra": 1.2,
   "dec": 51.5,
-  "T0": "2023-10-18T12:30:07Z",
-  "T0_ref": null,
+  "T0": "2023-10-18T12:30:10Z",
+  "T0_ref": "GCN 34826（Fermi GBM Final Real-time Localization，触发仪器官方通告）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3600,
+  "pos_ref": "GCN 34827（BALROG localization）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "1) T0 修订：bot 原值 2023-10-18T12:30:07Z 与触发仪器通告不符（差 3 s，疑为导入历元换算问题，参见 Issue #67 形态），修订为 GCN 34826（Fermi GBM Final Real-time Localization）触发时刻 12:30:10 UT；GCN 34831（Fermi GBM Detection）同值；FERMIGBRST 目录快照（external/fermi_gbm）trigger_time=2023-10-18T12:30:10.664Z 互证；Swift/BAT-GUANO GCN 34873 引 T0=2023-10-18T12:30:10.66 UTC（尾数与 MET 719325015.663762 一致），整秒精度取触发通告值，不自行补亚秒。bot 原 extra_data t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」一并改写，原值留此备查。2) t90=39.4248±0.572433 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb；GCN 34831 亦给 T90≈39.4 s（50-300 keV）。3) 定位：ra/dec 取 BALROG（GCN 34827：RA=1.2±0.5 deg、Dec=51.5±0.2 deg，1sigma 统计误差，另加 1 deg 系统误差），pos_error=3600 arcsec 即其 1 deg 系统误差（非置信半径，来源未按单一置信半径标注置信水平，pos_error_confidence 留空）；GBM Final Real-time 为 RA=3.0、Dec=50.7、统计误差 1.0 deg（GCN 34826）；IPN 3sigma 误差盒 6.6 平方度、中心 RA=1.122、Dec=+47.410（GCN 34845）；FERMIGBRST error_radius=1.0 deg。4) alias「GRB231018521」有出处：GCN 34827 标题原文用名「GRB 231018521」（<GCN 34827> GRB 231018521），FERMIGBRST 目录名 bn231018521。5) 测光检索留证（2026-10-28）：仓内 gcn/archive 全文（45889 篇）按 GRB231018A / 231018 / 触发号 719325015 / 231018521 检索命中 14 篇（11 篇属本源：34826/34827/34831/34839/34845/34846/34847/34849/34850/34865/34873，另 3 篇为其他事件的「231018」字样误中：34838、43274、43276），唯一含光学数值的是 GCN 34839（GIT r' 上限）；external/rssgrbag 0 命中、external/grbsn_webtool 无此事件、external/fermi_gbm 仅目录参数无测光；GCN 站事件页（https://gcn.nasa.gov/circulars/events/grb-231018a）列 11 篇与存档一致；ADS（ui.adsabs.harvard.edu）命中 10 篇均为 GCN 通告、无正式论文；TNS 未命中→ 光学测光仅 GIT 上限 1 行（lc 已有行，按标准 T0 修订历元），补 0 行；GCN 34839 的逐指向极限表因各指向无独立时刻锚点且 lc 无坐标列未逐一入库，覆盖 BALROG 位置的 Tile 55565（RA 1.25, Dec 51.5）极限 18.93 记于 lc 行 comment。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 修订为 Fermi GBM 触发时刻（GCN 34826，12:30:10 UT）；bot 原值 2023-10-18T12:30:07Z 已废弃（差 3 s）",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
