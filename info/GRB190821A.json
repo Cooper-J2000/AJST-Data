@@ -1,27 +1,35 @@
 {
   "transient_id": "GRB190821A",
-  "alias": [],
-  "ra": 250.05464,
-  "dec": -34.00719,
-  "T0": "2019-08-21T17:10:34Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB190821.72"
+  ],
+  "ra": 250.05481,
+  "dec": -34.00711,
+  "T0": "2019-08-21T17:10:03Z",
+  "T0_ref": "GCN 25427（At 17:10:03 UT, the Swift BAT triggered and located GRB 190821A, trigger=921722）；MASTER GCN 25429（41 sec after trigger time at 2019-08-21 17:10:44 UT）反算 17:10:03 精确互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.6,
   "pos_ref": "GCN 25436",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 修正：原值 17:10:34Z 系导入误锚 BAT 光变峰（~T+30 s）而非触发时刻，正确触发 17:10:03 UT（GCN 25427：At 17:10:03 UT, the Swift BAT triggered and located GRB 190821A, trigger=921722；MASTER GCN 25429：41 sec after trigger time at 2019-08-21 17:10:44 UT，反算精确互证）；原 extra_data t0_note='t0 为 meta trigger-time（真实触发时刻）'/t0_basis='meta_trigger' 已失真，改写于此。定位：ra/dec 改为 XRT 增强位 RA,Dec=250.05481,-34.00711（1.6″，90%，GCN 25436，astrometrically corrected）；原 250.05464,-34.00719 为 prompt XRT 位（3.6″，90%，GCN 25427），与 pos_error=1.6″/pos_ref=GCN 25436 不符。分类：t90=57.1±2.6 s（15-350 keV，BAT 精化分析 GCN 25464），按通告 t90 判 lgrb。别名证据串：GRB190821.72（GCN 25429 主题行原文用名 Swift GRB190821.72，日期+小数日形）。测光检索（2026-10-28）：GCN 站按 190821A 检索 9 篇（25427/25431/25433/25435/25436/25444/25448/25450/25464），另循 25448 引文补取 25429 共 10 篇，光学测光 3 篇（25429 MASTER-SAAO 11 条上限表、25431 T60 探测、25450 UVOT 8 波段上限）；25448 的 18.4 上限系转引 25429 coadd 行，去重保留 25429；25448 wide-field 相机同步观测 12 mag 上限与 25433（XRT 位有恒星 1 小时内亮度不变）无逐点时间锚，不入表；arXiv API（2026-10-28）GRB 190821A 0 命中；仓内 external/rssgrbag、external/grbsn_webtool 无该源记录 → 新增 19 行、修正 T60 行（band R→G：原文 Clear filter 无滤光片；time=790+120/2=850 s 中点；原行锚定于错误 T0 且取曝光起点）；GCN 25444 为 XRT 精化分析（X 射线，暂不处理）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻 17:10:03 UT（GCN 25427；MASTER GCN 25429 T0+41 s=17:10:44 UT 互证）",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "fsy", "date": "2026-10-28"}
   },
   "articles": [],
   "host_galaxy": null
