@@ -1,29 +1,30 @@
 {
   "transient_id": "GRB000307",
-  "alias": [],
+  "alias": ["GRB 000307", "BATSE 8022", "GRB 000307B"],
   "ra": 89.078,
   "dec": 7.942,
-  "T0": "2000-03-07T21:50:47Z",
-  "T0_ref": null,
+  "T0": "2000-03-07T21:50:47.033Z",
+  "T0_ref": "GCN 601（78647 s UT = 21:50:47 UT，Ulysses/NEAR/BATSE/Konus，BATSE #8022）；亚秒取触发仪器 BATSE 官方目录（external/batse 快照 heasarc_batsegrb，trigger 8022 trigger_time=2000-03-07T21:50:47.033Z，整数秒与 GCN 601 一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 601（IPN 误差盒中心 RA 5h56m18.73s Dec +07°56'30.94\"）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：IPN 定位暴（Ulysses/NEAR/BATSE/Konus 三角定位，GCN 601），BATSE trigger 8022；HEASARC GRBCAL 名 GRB 000307B（grbcat_id 4799，21:50:47 UT），与同日另一事件 GRB 000307A（01:08:14 UT，grbcat_id 4798，仅 IPN）不同，本源即 21:50:47 UT 的 BATSE 8022。别名出处：GRB 000307 ← GCN 609/617 subject 原文用名；BATSE 8022 ← GCN 601 原文（GRB000307 (BATSE #8022)）与 external/batse 目录 name_alt；GRB 000307B ← HEASARC GRBCAL。位置：IPN 误差盒约 60 平方角分，中心即 ra/dec（3 位小数），四角 3σ，来源未给单一误差半径、未标注置信水平。t90=22.528±0.916 s（external/batse 快照 heasarc_batsegrb，>20 keV，BATSE trigger 8022），GCN 601 另给 T90~20 s（Ulysses 25–100 keV）——按目录 t90 判 lgrb。测光检索（2026-10-29）：仓内 gcn/archive 4 篇（GCN 601 定位、608 误差盒定标场 BVRI 测光非瞬变体测光、609 MDM R≈21.7 上限、617 WFI R~22.0 上限）；external/rssgrbag 0 行、external/grbsn_webtool 无此事件；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-000307）同 4 篇、无更多；SciX/ADS 平台直连不可达（403），经 WebSearch 定位并全文核对 Fynbo+2001（A&A 2001，arXiv:astro-ph/0101425）表 2：仅转引 GCN 601/617 的 R=22.0 上限（Δt=2.11 d），无新测光；MPE Greiner 总结页（mpe.mpg.de/~jcg/grb000307.html，updated 26-Mar-2000）确认无正式文献测光、无 X 射线观测；TNS 不适用（非 AT/SN/CV 类）→ 可用测光仅 2 组 R 上限（lc 共 4 行），本次修订时间口径（MDM 行取曝光中点）并补 time_err/mag_system/望远镜拆分，未新增行。",
+  "sub_tag": ["lgrb"],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {"status": "reviewed", "auditor": "Rusty-Harpoon@zcode", "date": "2026-10-29"}
   },
   "articles": [],
   "host_galaxy": null

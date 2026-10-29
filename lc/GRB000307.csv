@@ -1,5 +1,5 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-181849.0,,s,51613.015,R,22.0,,magnitude,,n,y,,,,,,,1.0,n,,WFI/ESO-MPI 2.2m,GCN617,,
-190921.0,,s,51613.12,R,21.7,,magnitude,,n,y,,,,,,,1.0,n,,MDM 1.3m,GCN609,,
-277321.0,,s,51614.12,R,21.7,,magnitude,,n,y,,,,,,,1.0,n,,MDM 1.3m,GCN609,,
-1305395.0,,s,51626.01900462963,R,22.0,,magnitude,,n,y,,,,,,,1.0,n,,WFI/ESO-MPI 2.2m,GCN617,,
+181849.0,600.0,s,51613.015,R,22.0,,magnitude,Vega,n,y,,,,,,1.0,n,,ESO/MPI 2.2m,WFI,GCN617,"GCN 617：2000-03-10.015 UT 2×600 s R-band（seeing 0.9″–1.2″），与 3-23 曝光组图像眨眼比对，多数误差盒搜到 R~22.0（Betelgeuse 散射光致限星等不均匀），无候选对应体。标准星取自 Henden（GCN 608）BVRcIc 测光 → Vega 系（推定依据：Johnson-Cousins 标准）。原文只给曝光日期与分次时长，time_err=总曝光 1200 s 之半为约定口径；若 10.015 UT 为曝光序列起点则中点应再 +600 s。mjd 按来源日期精度 0.001 d。上限。",Rusty-Harpoon@zcode
+192721.0,1800.0,s,51613.1408337,R,21.7,,magnitude,Vega,n,y,,,,,,1.0,n,,MDM 1.3m,,GCN609,"GCN 609：MDM 1.3m R-band，2000-03-10.12 UT 起观测（原文 starting on March 10.12 UT）、每夜曝光 1 h → time 取曝光中点=起点+1800 s（§3.2），mjd 由 T0+time 换算保留 7 位小数（原库该行 time/mjd 为曝光起点）。限星等 R≈21.7（受 Betelgeuse 散射光影响、测光困难）。银消光显著：E(B-V)=0.445、A_R=1.19（Schlegel+1998，据 GCN 609），数值未做消光改正。标准星为 USNO BVRcIc（GCN 608）→ Vega 系（推定）。上限。",Rusty-Harpoon@zcode
+279121.0,1800.0,s,51614.1408337,R,21.7,,magnitude,Vega,n,y,,,,,,1.0,n,,MDM 1.3m,,GCN609,"GCN 609：同上第二夜，2000-03-11.12 UT 起观测、曝光 1 h → 中点=起点+1800 s；R≈21.7 上限，A_R=1.19 未改正，Vega 系推定同上行。",Rusty-Harpoon@zcode
+1305395.0,900.0,s,51626.0190050,R,22.0,,magnitude,Vega,n,y,,,,,,1.0,n,,ESO/MPI 2.2m,WFI,GCN617,"GCN 617：2000-03-23.019 UT 3×600 s R-band（seeing 1.1″–1.6″），眨眼比对无候选对应体，多数误差盒 R~22.0（Betelgeuse 散射光致不均匀）。原文只给曝光日期与分次时长，time_err=总曝光 1800 s 之半为约定口径；mjd 由 T0+time 换算保留 7 位小数。Vega 系推定同首行。上限。",Rusty-Harpoon@zcode
