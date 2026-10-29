@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB191031A",
-  "alias": [],
+  "alias": [
+    "BAT 932435",
+    "GRB191031025"
+  ],
   "ra": 233.49,
   "dec": 6.109,
-  "T0": "2019-10-31T00:36:35Z",
-  "T0_ref": null,
+  "T0": "2019-10-31T00:36:33.697220Z",
+  "T0_ref": "触发仪器 Swift/BAT 官方目录 swift_bat 快照 trigger 932435 trigger_time=2019-10-31T00:36:33.697220Z（亚秒值）；GCN 26101（Swift 检测通告）记 At 00:36:33 UT、整数秒一致；Fermi/GBM 亦触发（trigger 594175000 / 191031025，GCN 26116 记 00:36:35.61 UT，python 独立复算 MET+2001-01-01 纪元扣 5 闰秒=00:36:35.61 逐位一致），两触发仪器相差 1.91 s（GCN 26116 00:36:35.61 − swift_bat 00:36:33.697220）、按「有 Swift 则以 Swift 为准」取 Swift",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 120.0,
   "pos_ref": "GCN 26131",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【T0】2019-10-31T00:36:33.697220Z 为触发仪器 Swift/BAT 官方目录（swift_bat 快照、trigger 932435）亚秒值；GCN 26101 记 At 00:36:33 UT；Fermi/GBM 亦触发（trigger 594175000 / 191031025、GCN 26116 记 00:36:35.61 UT、python 独立复算 MET 扣 5 闰秒逐位一致），两仪器触发时刻差 1.91 s 属同一暴的双触发时差而非设备时刻调整、不写 T0_offset；因 Swift 参与触发、按「有 Swift 则以 Swift 为准」取 Swift 值。【Trigger_Instrument】Fermi/GBM → Swift：Swift/BAT 实际触发（trigger 932435、GCN 26101），原值仅记 GBM 一侧。【定位】ra/dec=233.49/+6.109 与 pos_error=120″（2.0′）取 GCN 26131 Swift-BAT 精化分析（原文 2.0 arcmin radius sys+stat 90% containment，故 pos_error_confidence=90）；Swift 因太阳约束未 slew、至 2019-12-22 前无 XRT/UVOT 数据（GCN 26101 原文），故无更精化位；GCN 26102 GBM final real-time 位 247.3/+22.1（12.9° 统计误差）仅备查、GBM 团队自述与 Swift 位一致。【分类】lgrb：GCN 26131 T90=19.1±6.3 s（15–350 keV）、swift_bat 快照 t90=12.132±2.35 s（15–350 keV）、GCN 26116 GBM T90≈200 s，三者均远大于 2 s、无分类冲突；按通告/目录 t90 判 lgrb。【测光检索（2026-10-28）】GCN 站按 191031A 命中 6 篇并逐篇打开核对（26101/26102/26103/26116/26122/26131）；其中 GCN 26122 标题为 191031D 而正文首句误写 GRB 191031A——经相对时刻互证（原文「5.4 to 7.4 hours after the trigger」仅匹配 D 触发 21:23:31.132400 UT（差 5.39–7.42 h），若为 A 应为 26.2 h）判为 D 的观测（其引用的 enhanced XRT 位 GCN 26117 亦属 D、RA 283.28951 +47.64407），该 w=23.2 上限属 GRB191031D、已按 §3.11 留线索卡 audit/leads/GRB191031D.md、不入本源 lc；WebSearch 与 arXiv API 检索无本源专属研究论文；仓内 rssgrbag 无记录（grbsn_webtool 命中为 GRB980425 谱文件内数字巧合、非本源）→ 修正 COATLI 行 1 行（time 锚点+中点、band=G→w、mag_system=AB）。【别名】BAT 932435 为 Swift/BAT 官方目录 trigger 名（swift_bat 快照 name_alt）；GRB191031025 为 Fermi/GBM 触发命名（GCN 26116 原文用名 trigger 594175000 / 191031025）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
