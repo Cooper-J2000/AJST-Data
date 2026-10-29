@@ -1,27 +1,36 @@
 {
   "transient_id": "IceCube-250309A",
-  "alias": [],
-  "ra": 211.3537073,
-  "dec": -10.4938701,
-  "T0": "2025-03-09T07:36:04Z",
-  "T0_ref": null,
+  "alias": [
+    "IC250309A",
+    "IceCube Alert 250309.32"
+  ],
+  "ra": 211.07,
+  "dec": -10.73,
+  "T0": "2025-03-09T07:36:04.75Z",
+  "T0_ref": "GCN 39631（IceCube 官方通告，在线页面 2026-10-29 200 可达）：「On 2025-03-09 at 07:36:04.75 UT IceCube detected a track-like event」，离线精化行 Time: 07:36:04.75 UT；GCN 39637 引 T0=2025-03-09 07:36:04.75 UTC；GCN 39678 搜索窗 07:27:44.750–07:44:24.750 UTC 窗心 = 07:36:04.750。原库 07:36:04Z 为整秒截取，按触发仪器官方通告补足亚秒",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 39631（IceCube 离线精化方向）：RA=211.07（+0.31 −0.30 deg）、Dec=−10.73（+0.26 −0.30 deg）J2000，90% PSF containment；两轴不对称误差无法折算为圆半径，pos_error 留空、pos_error_confidence=90。原库 ra/dec=211.3537073/−10.4938701 逐位等于 GCN 39638 表内 ZTF 候选体 ZTF25aaiurnn 的坐标（候选体坐标污染），已改为精化方向",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube 高能中微子 track-like 候选事件（ICECUBE_Astrotrack_GOLD 流，Gold 流平均天体物理纯度 50%、本警报 FAR=0.1759 yr^-1，推断中微子能量 ~4 PeV，为近十年 IceCube 已知探测中第四高能；GCN 39631），非伽马暴。AMON 自动通告编号 1288692（GCN 39631 给出通告链接 notices_amon_g_b/140626_1288692.amon；GCN 39630 原文「trigger No 1288692」）。tags.json 受控词表无中微子类目，tag/sub_tag 留空（同 IceCube-250207A，PR 待决建议扩表）。[与 GRB 250309B 的关系：两个独立事件，非同一条目] GCN 39631 原文称本事件「coincides with the Fermi GRB250309B（Fermi-GBM trigger 763198715 at 07:38:30.66；GCN 39635/GCN 39642 同值）」：时刻差 145.91 s；角距 GCN 39631 记 0.77°（对 GBM 最新定位，其 1σ 统计误差 1.60°），GCN 39637 记 0.50°。GCN 39652（IPN 三角定位，3σ 框中心 208.8101/−12.9141）明确「The localization of IceCube-250309A (GCN 39631) is inconsistent with the IPN localization」；GCN 39657（GBM）据 ZTF/AT2025dws 对应体与 IPN 亦判「GRB 250309B and IceCube-250309A are unrelated」；GCN 39648（GECAM-B）称两者「spatially and temporally coincident」，但同时指出 07:36:04.75 UT 附近无 GECAM-B 触发、T0−330~−30 s 定向搜索无 >3σ 信号。故两者为时间/空间符合的两个独立触发事件，库内两条目均保留、不属 §3.7 重复建档（另附：GRB250309B 自身 T0=2025-03-09T00:00:00Z 为日期占位、真实 GBM 触发为 07:38:30.66，其 ra/dec=210.801761/−8.502842 与 GBM 210.58/−10.86（GCN 39635）、BALROG 210.5/−7.6（GCN 39629）、IPN 208.81/−12.91（GCN 39652）均不符——不属本源、本 PR 未改，列入 PR 待决事项）。GCN 39634 标题「GRB 250309B/IceCube-250309A」是 Swift 对两目标并测的表述（该通告更正 39633 把目标误写成 GRB 230509B 的笔误），不构成别名。[T0] GCN 39631 原文「On 2025-03-09 at 07:36:04.75 UT IceCube detected a track-like event」与精化行 Time: 07:36:04.75 UT；GCN 39637 引 T0=2025-03-09 07:36:04.75 UTC；GCN 39678 的 1000 s 搜索窗 07:27:44.750–07:44:24.750 UTC 窗心同值——三证互证，补足亚秒为 07:36:04.75Z（原 07:36:04Z 为整秒截取）。T0_offset 不设（亚秒级，按 §3.2 直接改进 T0）。[定位] 精化方向 RA=211.07（+0.31 −0.30 deg）、Dec=−10.73（+0.26 −0.30 deg）J2000，90% PSF containment（GCN 39631；GCN 39637/39657/39648/39678 引述一致）。两轴为不对称误差、不能折算成圆半径 → pos_error 留空，pos_error_confidence=90（原文明确 90%）。原库 ra/dec=211.3537073/−10.4938701 逐位等于 GCN 39638 表内 ZTF 候选体 ZTF25aaiurnn 的坐标（RA 211.3537073、DEC −10.4938701）——bot 把候选体坐标当事件方向（同族污染实例：IceCube-231103A 的 102.9192/48.078 即 GCN 34973 表内 ZTF 候选、IceCube-241224A 的 185.0307759 即 GCN 38707 表内 ZTF 候选），已改为精化方向。GCN 39631：90% 区域内无 4FGL-DR4/3FHL 目录源 → host_galaxy 不建立，redshift 留 null（中微子警报本身无红移；GRB 250309B 的 z=1.898 属另一事件，不取）。[Trigger] IceCube，原值正确；GCN 39633/39634（Swift 拼图观测）、39637（Fermi-LAT）、39638（ZTF）、39648（GECAM-B）、39652（IPN）、39657（Fermi-GBM）、39666（MITSuME/Seimei）均为跟随观测。[测光] GCN 39630（MASTER-OAFA）114 行 Clear 上限全部入库：time=曝光起点+Exptime/2，原文表列 Tmid−T0 逐行复算差 ≤0.75 s（整秒取整）；两视场中心分别为 213.10/−9.76（距精化方向 2.22°）与 210.77/−10.13（0.67–0.70°），均在精化 90% 区域（≈0.3° 半径）外，逐行 comment 已注明；band=G（原文「Filter C is a clear (unfiltred) band」）、星等系统原文未声明。原库唯一 ZTF 行（g=20.82±0.18，ZTF25aaiurnn）经核为星表源（MILLIQUAS 95% 概率 QSO、AllWISE 红 AGN、2025-03-02 即已探测、无同期耀发）→ 非对应体，置 discard=y。GCN 39666（MITSuME 2025-03-09 14:29 UT=+6.9 h、Seimei 16:53 UT=+9.3 h）原文「data reduction and detailed examination of the data are underway」，无任何数值 → 不入 lc。GCN 39713（MASTER 报 blazar J140105.33−091631.6 = 210.2722/−9.2754 在 3σ 内、中微子后 ~10 h 恢复常态）无数值、时间锚仅散文级 → 不入 lc。GCN 39640 属另一事件（Fermi GRB 250309A，GBM trigger 763173728 于 00:42:03 UT、GCN 39623；MASTER-Kislovodsk 视场 02h47m/+38d），非本源。伽马/中微子上限只入 comment（非光学测光，§3.3）：GCN 39637 LAT >100 MeV 95% 上限 <2.4e-10（16 年）/ <6.8e-09（1 月）/ <9.3e-8（1 天）/ <5.3e-6（±1000 s）ph cm^-2 s^-1；GCN 39657 GBM 3σ 10–1000 keV（0.128/1.024/8.192 s）0.11–3.7e-7 erg cm^-2 s^-1；GCN 39648 GECAM-B 前兆 3σ 0.38–6.33e-7；GCN 39678 附加中微子搜索 0 个事件、2 天窗 p=1.00。alias 收录 IC250309A（GCN 39637 原文用名「the high-energy IC250309A neutrino event」）与 IceCube Alert 250309.32（GCN 39630 原文用名「IceCube Alert 250309.32 (trigger No 1288692)」，MASTER 命名形）。测光检索（2026-10-29）：仓内 gcn/archive 45 563 篇全文检索「250309A/IC250309A/IceCube Alert 250309/1288692」得 24 篇，与本事件相关者逐篇实读 13 篇（39630/39631/39633/39634/39637/39638/39640/39648/39652/39657/39666/39678/39713；其余 39623/39629/39635/39642/39639/39643/39654/39699 属 GRB 250309A/250309B，16456–16469 为 2014 年 GRB 140626A（检索串 140626 命中其编号，与本源无关））；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 及 external/ 全目录 grep「250309A」0 命中；arXiv API 精确检索「IceCube-250309A」「250309A」「GRB 250309B」「AT2025dws」均 0 篇；ADS API 401（无 token）、SciX API 401，未取得文献 → articles 留空。结论：除 GCN 39630 的 114 行上限与 GCN 39638 的 1 行 ZTF 候选外，无其他可入库测光；本 PR 新增 114 行、修正保留 1 行（discard=y）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 wa1kmoon@zcode 2026-10-29 审核按 GCN 39631 补足亚秒为 2025-03-09T07:36:04.75Z；原 bot 值 2025-03-09T07:36:04Z（原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）为整秒截取，数值同秒",
+    "t0_basis": "GCN 39631",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
