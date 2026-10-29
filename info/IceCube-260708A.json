@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-260708A",
-  "alias": [],
-  "ra": 292.8653948,
-  "dec": -15.1344488,
-  "T0": "2026-07-08T17:17:42Z",
-  "T0_ref": null,
+  "alias": [
+    "IC260708A"
+  ],
+  "ra": 292.81,
+  "dec": -15.17,
+  "T0": "2026-07-08T17:17:42.551Z",
+  "T0_ref": "GCN 45120（IceCube 官方通告，在线页面 2026-10-29 200 可达）：「On 26-07-08 at 17:17:42.55 UT IceCube detected a track-like event」；GCN 45142（同合作组）：1000 s 搜索窗 2026-07-08 17:09:22.551–17:26:02.551 UTC 与 2 d 窗 2026-07-07/09 17:17:42.551 UTC，两窗窗心均为 17:17:42.551 → 取同一触发仪器的更高精度值 .551（与 45120 的 .55 四舍五入一致）；原库 17:17:42Z 为整秒截取，同秒，不设 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 45120（IceCube 离线精化方向，替代重建算法）：RA=292.81（+0.48/−0.47 deg）、Dec=−15.17（+0.44/−0.48 deg）J2000，90% PSF containment；GCN 45145 逐位复述同值。两轴不对称误差无法折算为圆半径，pos_error 留空、pos_error_confidence=90。原库 ra/dec=292.8653948/−15.1344488 逐位等于 GCN 45125 表内 ZTF 候选体 ZTF26abfurzw/AT2026kuv 的坐标（候选体坐标污染），已改为精化方向；AT2026kuv 距精化方向 3.85′（GCN 45145 记 3.9′）",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube 高能中微子 track-like 候选事件（ICECUBE_Astrotrack_GOLD 警报流，FAR=0.1472 yr^-1；GCN 45120），非伽马暴。AMON 自动通告 notices_amon_g_b/142827_7869742.amon（GCN 45120 给出链接；GCN 45122 原文「trigger No 7869742」= AMON 事件号）。[性质存疑（A 档，待维护者裁决）] GCN 45171（IceCube 自身跟随研究，用冰内命中时刻分布 + 冰面 IceTop 空气簇射阵列）：「the observed signatures are unlikely to be produced by a high-energy neutrino but instead indicate an origin in multiple muons produced in a cosmic-ray air shower, which is an expected, but rare background」——即本警报很可能为宇宙线空气簇射多重 μ 子本底。该通告不构成正式撤回（GCN 45120 警报仍有效、无 erratum，GCN 45142 也未撤回），故本条目不自行删除、不改 Trigger_Instrument，是否降级/删除留维护者裁决。[标签] tags.json 受控词表无中微子类目，tag/sub_tag 留空（同 IceCube-250309A/250506A；建议扩表）。[与同日 GRB 260708A 划界——两个独立事件] GRB 260708A 为 Fermi-GBM 触发（T0=2026-07-08T10:11:16.89 UT，trigger 805198281/260708424；GBM 位 227.4/−44.5±1.6°，LAT 精化位 225.61/−44.07±0.27°；GCN 45115/45117），其后确认 SN 2026stf 与宿主 z=0.055（GCN 45283/45295）。与本事件时刻差 25585.66 s（7.107 h）、角距 63.16°（按库内 GRB260708A 的 ra/dec=225.6537/−43.8844 自算；对 LAT 精化位 63.21°）——时刻与方向均不符，为独立事件、非 §3.7 重复建档。库内 info/GRB260708A.json 未混入本源数据、本 PR 未改该源；其 14 篇通告（GCN 45115/45117/45123/45124/45126/45127/45130/45140/45147/45150/45280/45283/45295/45296）已按身份全部排除。[T0] GCN 45120「On 26-07-08 at 17:17:42.55 UT IceCube detected a track-like event」；GCN 45142 的 1000 s 搜索窗 17:09:22.551–17:26:02.551 UTC 与 2 d 窗（2026-07-07/09 17:17:42.551 UTC）窗心均为 17:17:42.551 → 同一触发仪器更高精度值，取 T0=2026-07-08T17:17:42.551Z（原库 17:17:42Z 为整秒截取，同秒；45120 的 .55 与 .551 四舍五入一致，差 1 ms 不设 T0_offset）。[定位] 原库 ra/dec=292.8653948/−15.1344488 逐位等于 GCN 45125 表内 ZTF 候选体 ZTF26abfurzw/AT2026kuv 的坐标（RA 292.8653948、DEC −15.1344488）——bot 把候选体坐标当事件方向（同族污染：IceCube-231103A/241224A/250309A/250506A），已改为 GCN 45120 离线替代重建给出的精化方向 RA=292.81（+0.48/−0.47 deg）、Dec=−15.17（+0.44/−0.48 deg）J2000，90% PSF containment（原文说明主离线重建算法出现计算异常、故采用替代算法结果；GCN 45145 逐位复述同值）。两轴不对称、无法折算为圆半径 → pos_error 留空、pos_error_confidence=90（原文明示 90%）。AT2026kuv 距该最优拟合方向 3.85′（GCN 45145 记 3.9′，自算一致）。[Trigger] IceCube，原值正确；GCN 45122（MASTER）、45125（ZTF）、45134（Rubin）、45145（Fermi-LAT）均为跟随观测，非触发仪器。[redshift] 保持 null：IceCube 警报本身无红移；GCN 45125 的候选体 AT2026kuv 未给红移（原文只称其光变「consistent with a supernova」，无光谱/宿主 z），不取候选体红移；90% 区内无 FL16Y 目录源（GCN 45120/45145）→ 未建 host_galaxy。[测光·保留行] 原库唯一 ZTF 行（r=20.11±0.07，GCN 45125）保留并置 discard=y：对象为 ZTF26abfurzw/AT2026kuv，GOTO 于 2026-04-20 发现并报 TNS 的已知暂现源（ATLAS 强制测光：5 月初峰值 17.4 mag、此后缓慢变暗；ZTF ToO 测得 g−r=1），原文只称其为候选并「encourage spectroscopic observations」→ 编目源自身流量、非本事件新对应体。原值 time=53658.0 s 系按整秒 T0 计算，按 T0 补亚秒后为 53657.449 s（=2026-07-09T08:12:00Z−T0，原文明示观测起点）；原文未给该候选的具体曝光时刻，故 time 取观测起点、time_err 留空（真实曝光中点不可恢复）；mjd 相应重算保留 7 位小数；mag_system=AB（ZTF 于 Pan-STARRS1 AB 定标，Masci+2019）；telescope 由 instrument 列移入（列位调整）。[测光·新增 25 行 MASTER] GCN 45122（MASTER-OAFA）：主题行被 MASTER 按其观测日期误标为「IceCube Alert 260709A」，但原文 trigger No 7869742 与 AMON 通告 142827_7869742 一致、误差盒中心 19h31m14.40s −15d10m12.0s=292.81/−15.17 与本库精化方向逐位一致 → 确认为本源跟随观测（该误标不入 alias，避免与同日真实存在的 GRB 260709A 混淆）；25 行（含 5 行 Coadd）clear 波段上限全部入库：time=原文 Tmid−T0 减 0.551 s（原文以整数触发时刻为基准）、time_err=半曝光、上限 16.9–19.4 mag；band=G（原文「Filter C is a clear (unfiltred) band」）；星等系统原文未声明，mag_system 留空；逐行指向中心与距精化方向角距写在行 comment（0.26–0.29°，均在 90% 定位区内）。[测光·新增 4 行 Rubin] GCN 45134：首夜 u 20.5、g 22.8（4 次访问）、r 23.5、z 22.1 mag 单访问中值限深（观测自 2026-07-10 02:48:12 UTC≈T0+33.5 h 起），无候选上报 → 作巡天上限入库（time=观测起点、time_err 留空）；mag_system=AB（LSST AB 定义，原文引用 Ivezić+2019）。[不入库] 伽马/中微子上限只进 comment（§3.3）：GCN 45145 Fermi-LAT >100 MeV 95% 上限 <8.0e−10（~18 年）/ <5.7e−8（T0 前 1 月）/ <1.4e−7（T0 前 1 天）ph cm^-2 s^-1，另对 AT2026kuv 位置 1 月窗 <5.8e−8；GCN 45142 附加中微子搜索：1000 s 窗与 2 d 窗均 0 个 track 事件（p=1.00），E^2 dN/dE@1 TeV 灵敏度 3.4–3.8 与 3.3–3.8 GeV cm^-2；GCN 45134 当晚 z 波段约 5000 个 alert 无对应体信息。[测光检索留证（2026-10-29）] 仓内 gcn/archive 45 889 篇全文检索「260708A/IC260708A/IceCube-260708A/7869742/IceCube Alert 260708」：命中「260708」22 篇（本源 6 篇 + 同日 GRB 260708A 14 篇 + GRB 260708B/45118 与 LAT GRB260708.42/45119 两篇），另以 AMON trigger 号 7869742 兜底命中 GCN 45122（MASTER 误标 260709A）→ 本源共 7 篇（45120/45122/45125/45134/45142/45145/45171）逐篇实读；GCN 站在线检索「IceCube-260708A」「IC260708A」「260708A」结果与快照一致、无新增通告；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 及 external/ 全目录 grep「260708」0 命中（external/fermi_gbm 命中属 GRB 260708A）；arXiv API 精确检索「IceCube-260708A」「AT2026kuv」均 0 篇；ADS API 401（无 token）、SciX API 401、TNS 403 → 未取得文献，articles 留空。结论：除 ZTF 1 行（discard=y）外，另有 MASTER 25 行与 Rubin 4 行可入库上限。本 PR 补 29 行、修正保留 1 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 wa1kmoon@zcode 2026-10-29 审核按 GCN 45120/45142 补足亚秒为 2026-07-08T17:17:42.551Z；原 bot 值 2026-07-08T17:17:42Z（原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger）为整秒截取，同秒",
+    "t0_basis": "GCN 45120 / GCN 45142",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
