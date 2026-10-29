@@ -1,32 +1,49 @@
 {
   "transient_id": "GRB241212A",
-  "alias": [],
+  "alias": [
+    "GRB 241212A",
+    "bn241212390",
+    "sb24121201"
+  ],
   "ra": 45.08033,
   "dec": 6.71682,
-  "T0": "2024-12-12T09:21:48Z",
-  "T0_ref": null,
+  "T0": "2024-12-12T09:21:48.661200Z",
+  "T0_ref": "GCN 38561（原文 At 09:21:48.66 UT on 12 December 2024, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 241212A (trigger 755688113 / 241212390)）+ GCN 38540（trigger 755688113.6612 / 241212390，At 09:21:48 UT）；MET→UTC 按 Issue #67 口径减 5 跳闰秒（naive 09:21:53.6612 − 5 s = 09:21:48.6612，与 GCN 38561 的 09:21:48.66 一致）；SVOM/ECLAIRs Tb=09:21:49（GCN 38541，整秒）与之相容（+0.34 s）；external/fermi_gbm 快照（FERMIGBRST）trigger_time=2024-12-12T09:21:48.661Z 交叉验证（与 MET 重算一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 0.2,
-  "pos_ref": "GCN 38545",
+  "pos_ref": "GCN 38545（SVOM/VT 光学对应体精化定位，原文 RA, Dec = 45.08033, 6.71682, which is equivalent to 03:00:19.28 +06:43:00.56, with an uncertainty of 0.2 arcsec；位于 ECLAIRs 与 MXT 误差圈内）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy（2026-10-28）。(1) 身份：Fermi/GBM 于 2024-12-12 09:21:48.66 UT 触发（trigger 755688113/241212390，GCN 38540/38561，原文 likely LONG GRB）；SVOM/ECLAIRs 同秒级触发 sb24121201（Tb=09:21:49，GCN 38541）、SVOM/GRM 亦触发，SVOM 自动 slew；AstroSat CZTI 亦探测（GCN 38544）。仓内 external 快照核查：fermi_gbm 命中 FERMIGBRST 目录条目 bn241212390（trigger_time=2024-12-12T09:21:48.661Z，与 T0 交叉验证；地面定位 44.3/6.55、误差半径 3.63°、t90=39.42±4.22 s 50-300 keV）；mpe_greiner 有 GRB 241212A 条目（obs_date 2024-12-12，SVOM X 射线位置 45.1208/6.7，XA=y/OT=y，无触发时刻、非触发条目）；swift_bat、rssgrbag 0 命中。(2) T0：标准 T0=2024-12-12T09:21:48.661200Z——GBM trigger MET 755688113.6612 按 Issue #67 口径减 5 跳闰秒（naive 09:21:53.6612 − 5 s），与 GCN 38561 原文 09:21:48.66 UT 一致；原 bot T0=09:21:48Z（extra_data.t0_basis=meta_trigger、t0_note 原值留档于此）系整秒截断，亚秒由 MET 补足；SVOM Tb=09:21:49（整秒）与 GBM 触发相差 0.34 s 属整秒精度差，非真实偏移 → T0_offset=null。(3) 定位：保持 bot 已取的 SVOM/VT 光学对应体位置 ra=45.08033/dec=6.71682（GCN 38545，±0.2″，全证据链中最精），pos_ref=GCN 38545；置信水平原文未标注 → pos_error_confidence 留空；备查：ECLAIRs 在载 45.119/6.701（90% C.L. 2.9′ 含系统误差，GCN 38541）、MXT X 射线源 45.087/6.719（90% C.L. 70″，GCN 38541）、GBM 地面 44.3/6.5（±3.6°，GCN 38540）。(4) 分类：sub_tag=lgrb——GCN 38540 原文 likely LONG GRB；SVOM/GRM T90≈40 s（GCN 38541）、GBM T90≈39 s（50-300 keV，GCN 38561）；FERMIGBRST 目录 t90=39.4211±4.22214 s（50-300 keV，external/fermi_gbm 快照）相容。(5) 测光：新增 SVOM/VT 2 行探测（GCN 38545：VT_B=20.60、VT_R=19.88 mag AB，约 T0+1.15 h，band=filters.json 之 VT-B/VT-R，time=4140 s、mjd=60656.4380632）；修订 OHP/T193 1 行（GCN 38551：Y 6×300 s 叠合 5σ 上限 19.25±0.6，PanSTARRS 定标、未做消光改正）——原 time=33672.0 系 bot 以序列开始 18:43 UT 锚定的起点值，改按 §3.8 观测窗口中点口径取 18:59:00 UT（起点 18:43 UT+窗口总跨度 1920 s/2）→ time=34631.3388 s、time_err=960 s、mjd=60656.7909722（核查修复：前稿误按总曝光/2 取 18:58:00 UT/900 s）。排除：SVOM/C-GFT 早期上限 2 条（GCN 38546：T0_mid=58/91 s、3σ 极限 15.80/16.80）——原文 g/r/i 序列未标注逐行波段，band 不可考且仓内无空 band 行先例 → 不入库留证（此为该圆仅有的未入库测光）。X 射线行 0 条，未触碰。(6) 红移：null。(7) 宿主：null。(8) X 射线：SVOM/MXT 触发后 133 s 观测 6 s 发现未编目 X 射源（GCN 38541，即后继 X/VT 对应体）；Swift-XRT T0+257–297.7 ks 2.3 ks PC 数据在 ECLAIRs 误差区（118″）内无源（GCN 38579）；本源 lc 无 X 射线行。(9) 测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external 检索：fermi_gbm 命中 FERMIGBRST 条目 bn241212390（γ 射线目录参数，无光学测光）、mpe_greiner 命中 GRB 241212A 条目（SVOM X 射线位置与 OT 标记，无测光值）、grbsn_webtool 无该事件、rssgrbag/swift_bat 0 命中；GCN 站逐篇枚举 38538–38660 命中 9 篇：38540（GBM 定位）、38541（SVOM 触发）、38544（AstroSat CZTI）、38545（VT 光学对应体）、38546（C-GFT 早期上限）、38551（OHP/T193）、38559（Swift ToO）、38561（GBM 谱学）、38579（XRT 无源）→ 光学测光入库 VT 2 行新增 + T193 1 行修订，C-GFT 2 条因波段不可考不入库；SIMBAD 无 GRB 241212A 标识（0 命中，接口空响应）、OpenAlex 命中 5 条均系 SVOM 任务/仪器论文提及本暴（MXT 在载分析性能、SVOM/VT 数据处理概览等），无源专属测光论文；arXiv API 0 命中 → articles[] 收录其中 SVOM/VT 数据处理概览（Li+2026, RAA）备查。(10) alias：GRB 241212A（GCN 38540 subject 用名）、bn241212390（GCN 38540 原文 trigger 755688113.6612 / 241212390 的 GBM 触发名）、sb24121201（GCN 38541 原文 SVOM burst-id；仓内 GRB240914A/GRB250713A 收录 sb 名先例）。新增 2 行、修订 1 行，X 射线行 0 条。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0=Fermi/GBM trigger MET 755688113.6612 闰秒改正后 UTC 2024-12-12T09:21:48.661200Z（GCN 38540/38561，Issue #67 口径）；原 meta_trigger 值 09:21:48Z 系其整秒截断",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Li+2026",
+      "title": "SVOM/VT: Overview of Data Processing and GRB Identifications with X-band Data",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
