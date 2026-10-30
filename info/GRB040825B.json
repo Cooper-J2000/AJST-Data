@@ -1,32 +1,46 @@
 {
   "transient_id": "GRB040825B",
-  "alias": [],
+  "alias": [
+    "GRB 040825B",
+    "H3510",
+    "GRB 040825BX"
+  ],
   "ra": 341.64,
   "dec": -2.408,
   "T0": "2004-08-25T16:21:37Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 2662（HETE 官方触发通告：At 16:21:37 UTC (58897 s UT) on 25 August 2004 detected GRB040825B (=H3510)）；GRBCAT 5786 trigger_time=2004-08-25T16:21:37.000Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 540,
+  "pos_ref": "MPE Greiner 目录快照「GRB 040825BX」条目（HETE X-ray position 22h46m34s -02°24'，Error 9'）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：HETE trigger 3510（GCN 2662 标题「GRB040825B (=H3510)」、GCN 2663/2667「HETE trigger 3510」）。与同日更早触发的 GRB040825A（HETE 11553、03:30:30 UT、22h59m -10°56'）为两个独立事件；GCN 2657 标题的无后缀用名「GRB 040825」经 GCN 2658 更正实指本源 B（HETE trigger 3510、centre 22:46:34 -2:24:27 J2000）。A/B 两源测光已严格分账：A 用 2660/2661/2664/2666/2677/2686、本源用 2657/2658/2659/2663/2667/2675，无交叉引用。T0=16:21:37 UT＝触发时刻：GCN 2662（HETE 团队官方触发通告）「At 16:21:37 UTC (58897 s UT) on 25 August 2004, the HETE FREGATE and WXM instruments detected event GRB040825B (=H3510)」；GRBCAT 5786 trigger_time=2004-08-25T16:21:37.000Z 互证。bot 原 T0 即为该触发时刻、本次补齐 T0_ref；extra_data t0_note/t0_basis 已按 §3.10 改写、原值（「t0 为 meta trigger-time（真实触发时刻）」/meta_trigger）留存本 comment。位置：GCN 2662 flight 定位为 14' 圆（RA=22h47m22s Dec=-02d19'05\"）、触发后 1.8 h 精化为 160 sq arcmin 四角误差框（22h46m38.9s -02°33'40\"／22h46m01.9s -02°29'17\"／22h46m28.6s -02°15'14\"／22h47m05.5s -02°19'41\"；四角算术均值 341.6405°/-2.4078° 与现行 ra/dec 一致）；现行 ra=341.64 dec=-2.408 与 GCN 2658 所引 HETE 定位中心 22h46m34s -02°24'27\" 相符；pos_error=540\"＝MPE Greiner 目录快照「GRB 040825BX」条目（HETE X-ray position 22h46m34s -02°24'，Error 9'）；来源未标注置信水平、pos_error_confidence 留空。Trigger_Instrument=HETE-2（GCN 2662：FREGATE 与 WXM 检测、the burst triggered the WXM in the 2-30 keV energy band）。sub_tag=XRF：GCN 2662（触发仪器团队官方通告）原文「GRB040825B is therefore an XRF」、标题「An XRF Localized in Real Time by HETE」；Epeak=23 keV、fluence 1.3e-6 erg/cm2（2-30 keV）+6.3e-7（30-400 keV）、burst duration roughly 80 seconds（GCN 2662；GRBCAT 5786 t_other=80.0）；Pelangeon+2008 表 2 收录 040825B：E_obs_peak=25.1(+15.6/-8.2) keV、S_X=12(+0.9/-0.9)x10^-7 erg/cm2（2-30 keV）、T90,B=15.8±5.45 s（FREGATE B 波段 6-80 keV）、SNR=10.3、伪红移 z=2.2(+0.8/-0.8)，与 GCN 2662 自洽、佐证软谱。alias 取证：「GRB 040825B」＝GCN 2675 subject 与 GCN 2658 eventId 原文用名（GRBCAT 5786 条目名同）；「H3510」＝GCN 2662 原文用名「GRB040825B (=H3510)」；「GRB 040825BX」＝MPE Greiner 目录快照条目名。测光行核对：GCN 2663 原文给两个子场（mean UT 25.96076 与 25.99013、各 5x300s Rc、极限约 19.5）——原库仅收第一子场、且其 time=24113.0 与原文历元差 0.3 s，已按 25.96076 重算为 24112.7 s 并补 time_err=750 s 与望远镜列，另补第二子场行；原文无「2.8 hours after」之类相对时长表述、历元以 mean UT 为准。SSO 行（GCN 2657→GCN 2658 更正链）逐值核对无误：300 s 单帧 R、2004 Aug 25.778 UT、极限 R~19.8（USNO-A2.0 比对）、原文「2.3 hours after the GRB」与本源触发 16:21:37 UT 自洽（=8322 s）、与 A 暴（03:30:30 UT，相距 15.16 h）不符。新增 5 行上限：MASTER 首帧 G~16.2（GCN 2659、触发+1h43m+4s+15s）、MASTER 18:06:33 UT 帧 G~17.0（GCN 2659）、Miyazaki 30cm G~15.9（GCN 2667、16:44:14 UT）、Calar Alto 2.2m R~21（GCN 2675、窗口中点口径）、Loiano 第二子场 Rc~19.5（GCN 2663、mean UT 25.99013）。GCN 2659 另有 30 帧 60 s 曝光叠加极限约 19.5：叠加窗口跨度原文未给、中点不可考、不入库。GCN 2669（Henden、USNOFS 1.0m）为 BVRcIc 定标场测光（ftp 发布）、非本源测光、不入库。测光检索留证（2026-10-29）：仓内 gcn/archive 全文检索「040825」命中 19 篇（2657-2693 与 4090），属本源 B 的 8 篇（2657/2658/2659/2662/2663/2667/2669/2675），其中含光学测光数值的 5 篇（2657/2659/2663/2667/2675）已逐值核对入库；其余为 A 暴（trigger 11553）或 SGR 1806-20 活动期通告（2665/2693）、GCN 4090 系 GCN OPS 注明的 subject 误标（实为 GRB050805A）。external/rssgrbag、external/grbsn_webtool、external/saxgrbmgrb 均无 040825 记录；external/heasarc_grbcat 5786 与 external/mpe_greiner 仅目录参数、无光变表。ADS/SciX API 无 token（401）；OpenAlex 检索「GRB 040825B」命中 5 条：GCN 2675 本身、WIDGET 望远镜文章 Tamagawa+2005（astro-ph/0506234，表 I：触发时 WIDGET 在运行但天阴 cloudy、无数值上限）、Granot+2005（10.1086/431477，仅正文提及 040825B 属有余辉的 XRF 名单、无可引用数据行）、Pelangeon+2008（10.1051/0004-6361:200809709，谱参数汇总）、Nardini+2008（10.1111/j.1365-2966.2007.12588.x，附录注 GCN 2675 为本源上限出处、限值仅见于图 2 不可读数）；arXiv API 查「GRB 040825B」「XRF040825B」「HETE 3510」均 0 条；Sakamoto+2005（astro-ph/0409128）样本仅覆盖 HETE-2 前三年（表 1 止于 GRB030913）、不含本源。本 PR 补 5 行上限、修正 Loiano 第一子场行时间锚点与望远镜列错位。",
   "sub_tag": [
     "XRF"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为触发时刻（GCN 2662：16:21:37 UTC=58897 s UT；GRBCAT 5786 同值）",
+    "t0_basis": "trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Pelangeon+2008",
+      "url": "https://doi.org/10.1051/0004-6361:200809709"
+    }
+  ],
   "host_galaxy": null
 }
