@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB010119",
-  "alias": [],
-  "ra": 283.456,
-  "dec": 12.02,
-  "T0": "2001-01-20T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 010119B"
+  ],
+  "ra": 283.442375,
+  "dec": 11.9964,
+  "T0": "2001-01-19T10:19:38.400Z",
+  "T0_ref": "Hurley+2002, ApJ, 567, 447（DOI 10.1086/338420）Fig.1 图注：Konus-Wind Earth-crossing time 37178.4 s UT = 2001-01-19T10:19:38.4Z（触发仪器 VoR 精确值）；Gorosabel+2002, A&A, 383, 112 互证（Jan 19.430306 UT = 37178.44 s）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -13,24 +15,29 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "Hurley+2002, ApJ, 567, 447（DOI 10.1086/338420）Table 2：精化 IPN 误差框中心 18h53m46.17s +11d59'47.04\"（=283.442375, 11.9964），框面积 3.3 sq arcmin",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 010119 = Ulysses+NEAR+Konus-Wind 观测、IPN 三角定位的短暴（GCN 916：触发于当日 37179 s UT；duration ~0.2 s、25-100 keV fluence ~3.2E-07 erg/cm2，short/hard 类）。HEASARC GRBCAT 对同日双暴编号：本事件 = GRB 010119B（grbcat_id 5102，KONUS-WIND+IPN，触发 10:19:39）；010119A（grbcat_id 5101，纯 IPN，触发 00:33:56 UT）为另一事件、非本源。ra/dec 取 Hurley+2002（VoR）Table 2 精化 IPN 误差框中心（283.442375, 11.9964，框面积 3.3 sq arcmin，四角点坐标见该表）；初报框（GCN 916：中心 18h53m49.50s +12d01'12.50\" = 283.45625, 12.020139，面积 11 sq arcmin，3σ）与 rssgrbag 记录（283.45625, 12.02027778）均对应初报中心；bot 原 ra/dec 283.456/12.02 即初报框中心，已更新为精化值。IPN 误差框非圆形，pos_error 留空，pos_error_confidence 未声称（初报框为 3σ、精化框置信水平原文未标注）。T0 备查（§3.8）：GCN 916 给 37179 s UT（整秒精度）；HEASARC GRBCAT 010119B：KONUS-WIND 行 10:19:39.500 ECT（MJD 51928.430318287）、IPN 行 10:19:39.000（ipngrb 2003 目录，MJD 51928.4303125）；Hurley+2002（Konus-Wind/IPN 团队 VoR）Fig.1 图注给 Konus-Wind Earth-crossing time 37178.4 s UT，Gorosabel+2002（VoR）同值（Jan 19.430306 UT = 37178.44 s），两 VoR 互证一致；按触发仪器 VoR 精确值取 37178.4 s，与 GCN 916 整秒值及 GRBCAT 行差 0.6-1.1 s（≥60 ms，已在 PR 说明报告）。t90=0.18 s（HEASARC GRBCAT 010119B Konus-Wind 行，误差未给；rssgrbag 记 t90=0.2 s，Ulysses），按目录 t90 判 sgrb；GCN 916 与 Gorosabel+2002 亦均归 short/hard 类。alias「GRB 010119B」为 HEASARC GRBCAT 对同日双暴中本事件的编号（HEASARC GRBCAT tdat 行 9161）。bot 原时间基准说明 t0_note=「t0 为 meta trigger-time（真实触发时刻）」/ t0_basis=meta_trigger，而 bot 原值 2001-01-20T00:00:00Z 实为名字日期次日 0 点占位（触发在 1 月 19 日），已改写。articles[] 保留 3 篇研究论文（Oksanen+2002, JAVSO 30, 126；Gorosabel+2002, A&A, 383, 112；Hurley+2002, ApJ, 567, 447），GCN 通告不入 articles[]，出处见各 lc 行 reference/comment。测光检索（2026-10-30）：仓内 gcn/archive 45 563 篇全文检索「010119」命中 6 篇，其中相关 4 篇（GCN 916 IPN 定位 / 917 VLA 射电上限 / 919 Palomar 光学上限 / 920 Nyrola 光学上限，均已逐篇核对并入库），另 2 篇（GRB001025B、GRB201209A）为数字串误命中；external/rssgrbag 1 条目录参数记录（t90=0.2 s、fluence 5.28E-07 erg/cm2 15-150 keV 等，无光变行，lightcurve.jsonl 0 命中）；external/grbsn_webtool 0 命中；external/konus_wind 0 命中；external/heasarc_grbcat 2 条目录记录（010119A/B，无测光）；OpenAlex 全文检索「GRB 010119」命中 9 条（含 1 条重复记录），其中数据性文献仅 Gorosabel+2002 与 Hurley+2002（两篇 VoR 均已实际打开逐表核对），其余为 GCN 通告、书章（Freistetter 2020）与样本/转引类（Tanvir+2005、Klotz+2003、Nardini+2008、Chapman+2009，未见声称新的原始测光）；TNS 不适用（GRB 非 TNS 命名对象）。结论：已发表测光 = Gorosabel+2002 Table 1（6 行 NOT 上限）+ Hurley+2002 Table 3/4（转引 GCN 917/919/920）+ GCN 917/919/920 原始通告 → 原 4 行按标准 T0 重算时间轴后保留，新增 6 行（Gorosabel+2002 Table 1），共 10 行、全部为上限，无探测、无去重删除。宿主：无确认宿主（b=4.9° 低银纬稠密星场、消光 A_R=1.59，GCN 920 指出场内无可见背景星系（dense starfield with no visible background galaxies，b=4.9 亦出自 GCN 920；消光 A_R=1.59 据 Gorosabel+2002）），host_galaxy 保持 null。复查补充（2026-10-30）：external/mpe_greiner/normalized.jsonl 另有本事件目录记录 name_alt=GRB 010119S（X 射线位 18h53m50s +12°01′、Uly/Ko/NE、short_grb=true），系另一官方目录用名，留证备查。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 = Konus-Wind Earth-crossing time 37178.4 s UT（Hurley+2002 VoR Fig.1 图注）= 2001-01-19T10:19:38.4Z；bot 原值 2001-01-20T00:00:00Z 为名字日期占位残留",
+    "t0_basis": "konus_ect_vor",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {
       "name": "Oksanen+2002",
-      "title": "Gamma-Ray Burst Optical Afterglow Observations at Nyr\\",
+      "title": "Gamma-Ray Burst Optical Afterglow Observations at Nyrölä Observatory",
       "url": "https://ui.adsabs.harvard.edu/abs/2002JAVSO..30..126O",
       "bibtex": "@ARTICLE{2002JAVSO..30..126O,\n       author = {{Oksanen}, Arto and {Hyv{\\\"o}nen}, Harri and {Moilanen}, Marko},\n        title = \"{Gamma-Ray Burst Optical Afterglow Observations at Nyr{\\\"o}la Observatory}\",\n      journal = {\\jaavso},\n     keywords = {Gamma-Ray Bursts},\n         year = 2002,\n        month = jan,\n       volume = {30},\n       number = {2},\n        pages = {126-129},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2002JAVSO..30..126O},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
