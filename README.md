@@ -48,7 +48,7 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 | **`CONTRIBUTING.md`** | 校验 / 扩充 / 提交流程：`python3 tools/validate.py` 零依赖全量校验（CI 自动运行），扩充按 SCHEMA 契约，提交走 Pull Request。 |
 | **`数据审核提示词.md`** | **逐源数据审核任务的提示词**：整段发给你的 agent（Claude Code / Cursor / ZCode 等）即可开工，详见下节。 |
 | **`audit/README.md`** | 认领快照 `audit/state.tsv` 的契约与读取规则——多方并行审核时的查重依据。 |
-| **`tools/audit_queue.py`** | 审核队列工具：挑源（`--limit`）、确定性分片（`--bucket 1/4`）、查单源状态（`--id`）、实时查重（`--live`）。 |
+| **`tools/audit_queue.py`** | 审核队列工具：挑源（`--limit`，默认稳定乱序，`--sort rows|id` 可改）、确定性分片（`--bucket 1/4`）、查单源状态（`--id`）、实时查重（`--live`）。 |
 
 效力：`SCHEMA.md` / `CONTRIBUTING.md` / `audit/README.md`（数据与流程契约）高于 `数据审核提示词.md`（任务提示词）；冲突时以契约文件为准，并欢迎就提示词本身提 Issue / PR。
 
@@ -60,7 +60,8 @@ AJST 暂现源数据库的数据仓库（数据目录 `catadata/`）。本仓库
 2. 把 **`数据审核提示词.md`** 里的「提示词本体」整段发给你的 agent（该文件开头有给人看的使用说明）；
 3. 让 agent 先挑源并认领，别和其他合作方撞车：
    ```bash
-   python3 tools/audit_queue.py --limit 20     # 可认领队列（小源在前）
+   python3 tools/audit_queue.py --limit 20     # 可认领队列（稳定乱序，盐见 audit/queue_salt.txt）
+   python3 tools/audit_queue.py --sort rows    # 需要时按代价升序（小源在前）
    python3 tools/audit_queue.py --bucket 1/4   # 多人并行时用确定性分片，彼此不重叠
    python3 tools/audit_queue.py --live         # 实时查重（判据）
    ```
