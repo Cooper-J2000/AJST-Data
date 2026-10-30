@@ -3,8 +3,8 @@
   "alias": [],
   "ra": 195.474,
   "dec": 35.489,
-  "T0": "2000-11-05T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2000-11-05T16:25:28Z",
+  "T0_ref": "GCN 874（IPN：Ulysses/Konus-Wind/NEAR 于 59128 s UT 观测到该暴 = 2000-11-05T16:25:28Z）；HEASARC GRBCAT grbcat_id 5032（trigger_time=2000-11-05T16:25:28.000Z，Earth Crossing Time）同值互证；Hurley+2011（ApJS 197, 34）表 1/表 5 记 2000-11-05 16:25:28 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -13,20 +13,33 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "3sigma",
+  "pos_ref": "GCN 874（IPN 误差框中心 13h01m53.82s +35°29′19.25″，preliminary 3σ，约 25 平方角分）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：本源 = IPN 暴 GRB 001105（GCN 874），Ulysses/Konus-Wind/NEAR 三船联测定位，无单一触发仪器通告，Trigger_Instrument 记三船 IPN。HEASARC GRBCAT『GRB 001105』（grbcat_id 5032，trigger_time 2000-11-05T16:25:28.000Z ECT，observatories=[IPN]）同值互证；MPE Greiner 目录同暴（obs_date 2000-11-05，位置 13h01m54s +35°29′，Instrument Uly/Ko/NE，IPN=y）。同日 GRBCAT 仅此一暴；与 GRB001109（另一 IPN 暴，GCN 886 覆盖的是 001109）为不同事件。注意：HEASARC saxgrbmgrb（Frontera+2009）有同名条目『GRB 001105』但 trigger_time=2000-11-05T09:49:01Z（无坐标），与本源 16:25:28 差 6.6 h，GRBCAT 同日无该时刻事件——属 Frontera 目录的他事件或时间异常，未采用、未混入（PR 待决③）。T0：GCN 874 记 observed this GRB at 59128 s UT = 2000-11-05T16:25:28Z，GRBCAT 与 Hurley+2011（ApJS 197, 34，表 1/表 5）同值互证；整秒精度，不补亚秒。原 T0=2000-11-05T00:00:00Z 为名字日期占位（bot），已废弃；原 extra_data：t0_note='t0 为触发日 00:00 UT（名字日期）'、t0_basis='name_date'。位置：ra/dec=195.474/35.489 为 GCN 874 误差框中心（RA 13h01m53.82s、Dec +35d29m19.25s，preliminary 3σ，约 25 平方角分；四角 13h02m27.45s +35d26m38.15s、13h01m48.63s +35d27m54.46s、13h01m59.00s +35d30m44.04s、13h01m20.12s +35d31m59.97s）；误差框为四边形、无标量半径，pos_error 留空；框为 preliminary 3σ，pos_error_confidence=3sigma。Hurley+2011 表 5 给精化 IPN 环带两条（环心 356.196°/+61.623° R=81.624°±0.007°（1σ）；147.416°/−39.240° R=86.898°±0.014°（1σ）），表 6 给最终误差盒面积 9.63E-04 平方度；环带交点球面三角计算得 (195.4754, +35.4982)，与现值差约 36″（现值在两环 ±1σ 内）；是否改锚精化交点见 PR 待决①。物理量（GCN 874，Ulysses 口径）：duration~30 s（25-100 keV）、fluence~4.6e-6 erg/cm2（25-100 keV）、0.25 s 峰流量~1.3e-6 erg/cm2/s；sub_tag=lgrb 按通告 duration~30 s 判。alias：各来源（GCN/GRBCAT/MPE）均用 GRB 001105，与 id 同形，无新别名。红移无报道。测光检索（2026-10-30）：仓内 gcn/archive 45947 篇全文按「001105」检索命中 5 篇（GCN 874/875/876/877/894；876/877 为 Henden 定标星表及其 URL 勘误通告，无本源测光）；external rssgrbag（光变表）、grbsn_webtool、uvot_grb 均无记录，heasarc_grbcat/mpe_greiner/saxgrbmgrb 仅作身份与 T0 互证；外部：GCN 站核实 GCN 874/894 在线且与仓内一致，事件共 5 篇通告；arXiv API 全文检索「GRB 001105」0 命中；OpenAlex 检索命中 5 条（2 条即 GCN 875/894 的索引进口；3 篇论文：Nardini+2008（MNRAS 383, 1049）附录 1 对本源仅转引 Castro Ceron et al. 2000=GCN 894、无新数值，经 arXiv:0710.2436 TeX 源码逐字核对；Burbidge 2003（ApJ 585, 112）与 Basu 2004（ApJ 618, L71）为 QSO 缔合/红移统计论文，经 IOP 摘要页核对无本源测光数值，全文付费墙未逐页核对）；TNS 不适用（2000 年 GRB，无 AT/SN 命名）。结论：全库可用测光仅 GCN 875 一次与 GCN 894 六次 R/B/I 上限（90% 误差盒成像、均非探测），本次 0 行新增，7 行按统一 T0 重算 time/time_err/mjd。mag_system：GCN 875/894 均未声明星等系统，全部行留空（GCN 894 定标用 Henden GCN 876 BVRcIc 标准星，但通告未声明系统）。lc 第 1、2 行（GCN 875 R>19.5 与 GCN 894 R>20.0）为同一次 300 s 曝光的重报、限深不一致，按 §3.4 均保留（PR 待决②）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "t0=2000-11-05T16:25:28Z（GCN 874：IPN 三船 Ulysses/Konus-Wind/NEAR 于 59128 s UT 观测到该暴；GRBCAT grbcat_id 5032 与 Hurley+2011 表 1/表 5 同值互证）",
+    "t0_basis": "GCN 874",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Hurley+2011",
+      "url": "https://ui.adsabs.harvard.edu/abs/2011ApJS..197...34H/abstract",
+      "title": "The Interplanetary Network Supplement to the HETE-2 Gamma-Ray Burst Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
