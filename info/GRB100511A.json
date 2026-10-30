@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB100511A",
   "alias": [
-    "GRB 100511035"
+    "GRB100511035",
+    "bn100511035"
   ],
-  "ra": 111.37999725341797,
-  "dec": -0.9900000095367432,
-  "T0": "2010-05-11T00:49:58.230000Z",
-  "T0_ref": null,
+  "ra": 111.38,
+  "dec": -0.99,
+  "T0": "2010-05-11T00:49:56.230Z",
+  "T0_ref": "GCN 10744（Fermi/GBM 于 2010-05-11T00:49:56.23 UT 在轨触发，trigger 295231798 / 100511035，在线版已核对）；FERMIGBRST trigger_time 2010-05-11T00:49:56.230Z 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 252,
+  "pos_error_confidence": null,
+  "pos_ref": "2FLGC（Ajello+2019）/ FERMILGRB（HEASARC，2026-10-31 查询）：ra=111.38、dec=-0.99、error_radius=0.07 deg=252 arcsec",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。身份与 T0 核对（2026-10-31，Rusty-Harpoon@zcode）：Fermi/GBM 于 2010-05-11T00:49:56.23 UT 触发 GRB 100511A（trigger 295231798 / 100511035，GCN 10744；GBM 地面定位 RA,Dec=109.29,-4.65，误差 1.0° 半径、1σ 仅统计、另有 2–3° 系统，LAT 偏轴 43°）。原 T0 00:49:58.230 为 MET 295231798.23 → UTC 换算漏扣 2 闰秒（2006、2009 两次，Issue #67 类），按 GCN 10744 与 FERMIGBRST trigger_time 改正；FERMILGRB trigger_time 00:49:55.998 与之差 0.232 s（亚秒，仅交叉验证）。位置取 FERMILGRB（2FLGC）ra=111.38、dec=-0.99（修正 float32 残渣 111.37999725341797/-0.9900000095367432），error_radius=0.07 deg=252″，来源未标注置信水平（pos_error_confidence 留空）；GBM 地面定位备查。同日同名警告：Swift trigger 421695（GCN 10737，11:50:39 UT，RA,Dec=280.6,+18.3）当日亦被称作 GRB 100511A，且被 Swift 判定可能非天体物理事件（GCN 10742）；GCN 10738（Miyazaki 30cm）/10743（Super-LOTIS）的光学上限属该触发而非本源，lc 原 2 行已置 discard=y。t90=42.4327±1.47759 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb。新增别名 GRB100511035、bn100511035：<GCN 10744> 原文用名『GRB 100511A (trigger 295231798 / 100511035)』；FERMIGBRST/FERMILGRB name_alt 为 GRB100511035、GRB 100511.035、bn100511035（小数形未入 alias，避免伪形普查）。测光检索（2026-10-31）：仓内 gcn/archive 45947 篇全文检索「100511/421695/100511035」命中 5 篇（10737/10738/10742/10743 属 Swift 421695，10744 为本源 GBM 通告、无测光）；external/rssgrbag、external/grbsn_webtool 无记录；GCN 站（gcn.nasa.gov/circulars/10744）核对与仓内全文一致；ADS/SciX（abs+title+full 检索『GRB 100511A』『GRB100511A』『100511035』）命中 3 篇（即 GCN 10738/10743/10744），无其他文献；TNS 不适用（GRB 类）→ 本源无已发表测光，补 0 行。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -186,8 +189,26 @@
         ],
         "trigger_time": "2010-05-11T00:50:13Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ursi+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac3df7",
+      "title": "The Second AGILE MCAL Gamma-Ray Burst Catalog: 13 yr of Observations",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
