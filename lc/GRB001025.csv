@@ -1,10 +1,11 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-100051.0,,s,51843.29,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m (DFOSC),GCN867,,
-104371.0,,s,51843.34,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,,VLT Antu (FORS1),GCN867,,
-143251.0,,s,51843.79,R,18.0,,magnitude,,n,y,,,,,,,1.0,n,,Ouda 60-cm RC telescope,GCN866,,
-170899.0,,s,51844.11,4.86GHz,0.7,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN868,,
-178675.0,,s,51844.2,R,23.2,,magnitude,,n,y,,,,,,,1.0,n,,Nordic Optical Telescope (ALFOSC),GCN867,,
-189043.0,,s,51844.32,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,,VLT Antu (FORS1),GCN867,,
-234835.0,,s,51844.85,I,20.5,,magnitude,,n,y,,,,,,,1.0,n,,Calar Alto 2.2-m,GCN870,,
-316051.0,,s,51845.79,I,20.5,,magnitude,,n,y,,,,,,,1.0,n,,Calar Alto 2.2-m,GCN870,,
-401587.0,,s,51846.78,I,20.5,,magnitude,,n,y,,,,,,,1.0,n,,Calar Alto 2.2-m,GCN870,,
+100501,882,s,51843.2952083,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,Danish 1.54-m,DFOSC,GCN867,GCN 867：3×300s R，起点 Oct 26.29 UT，极限 ~22.5（preliminary，基于 USNO-A2.0 测光）；原文未声明系统。time=起点+900s/2（窗口中点口径 §3.8），time_err=450s+起点 0.01d 舍入 ±432s；Pedersen+2006（arXiv v1）引为 1.16 d 起 R>22.5,Rusty-Harpoon@zcode
+103680,432,s,51843.3320023,R,25.5,,magnitude,,n,y,,,,,,,1.0,n,VLT Antu,FORS1,"Pedersen+2006, ApJ, 636, 381",Pedersen+2006 摘要（VoR 不可得，取自 arXiv v1 astro-ph/0509424）：三历元 VLT R 合并图像 3σ 极限 R=25.5，摘要锚定 1.20 d；Table 6 首历元起点 Oct 26.34（Δt=1.21 d），此值实为合并图像极限而非单历元；原文未声明系统。time_err=1.20 d 的 0.01d 舍入 ±432s,Rusty-Harpoon@zcode
+105571,1632,s,51843.3538889,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,VLT Antu,FORS1,GCN867,GCN 867：起点 Oct 26.34 UT，10×200s，极限 ~24.5（USNO-A2.0）；Pedersen+2006 Table 6（arXiv v1）记同历元 12×200s（Δt=1.21 d），中点曝光取 VoR 2400s，值取 GCN 867（preliminary）；原文未声明系统。time=起点+2400s/2，time_err=1200s+432s,Rusty-Harpoon@zcode
+144451,1632,s,51843.8038889,R,18.0,,magnitude,,n,y,,,,,,,1.0,n,Ouda 60-cm RC telescope,,GCN866,GCN 866：8×300s R，起点 Oct 26.79 UT，坏天气极限约 18.0，与 DSS2-R 比对无新源；原文未声明系统。time=起点+2400s/2，time_err=1200s+432s；Pedersen+2006（arXiv v1）引为 1.66 d 起 R>18.0,Rusty-Harpoon@zcode
+170899,,s,51844.11,4.86GHz,0.7,,mJy,,n,y,,,,,,,1.0,y,VLA,,GCN868,本行属 GRB001025B：GCN 868 标题即 GRB001025B（Ulysses/Konus 短暴，触发 71369 s UT=19:49:29.9，IPN 盒 18h21m -5°08'；GRBCAT 记 GRB 001025E，t90=0.48 s），与本源（RXTE/ASM 03:10:05，IPN 盒 08h36m -13°）非同一事件，bot 误挂 → discard。GCN 868：VLA 4.86 GHz 起 Oct 27.11 UT，误差盒内无新源 >0.7 mJy（5–6σ）。数据移交 new-source Issue（GRB001025B）,Rusty-Harpoon@zcode
+182575,4332,s,51844.2451389,R,23.2,,magnitude,,n,y,,,,,,,1.0,n,Nordic Optical Telescope,ALFOSC,GCN867,GCN 867：13×600s R，起点 Oct 27.20 UT，极限 ~23.2（USNO-A2.0）；原文未声明系统。time=起点+7800s/2，time_err=3900s+432s,Rusty-Harpoon@zcode
+189843,1232,s,51844.3292593,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,VLT Antu,FORS1,GCN867,GCN 867：起点 Oct 27.32 UT，8×200s，极限 ~24.5（USNO-A2.0）；Pedersen+2006 Table 6 同（arXiv v1）（Δt=2.19 d）；原文未声明系统。time=起点+1600s/2，time_err=800s+432s,Rusty-Harpoon@zcode
+234835,,s,51844.85,I,20.5,,magnitude,,n,y,,,,,,,1.0,y,Calar Alto 2.2-m,,GCN870,"本行属 GRB001025B：GCN 870（Calar Alto 2.2-m I 波段，Oct 27.85 UT＝B 触发后 48 h；约 95% 误差盒覆盖，无 >0.3 mag 变源，极限 I=20.5），非本源事件 → discard。GCN 870 原发版「24, 71…」系笔误，GCN OPS 注（31 Oct 2000）更正为「48, 71, 95」；本行 UT 日期未受影响。数据移交 new-source Issue（GRB001025B）",Rusty-Harpoon@zcode
+316051,,s,51845.79,I,20.5,,magnitude,,n,y,,,,,,,1.0,y,Calar Alto 2.2-m,,GCN870,"本行属 GRB001025B：GCN 870（Calar Alto 2.2-m I 波段，Oct 28.79 UT＝B 触发后 71 h；约 95% 误差盒覆盖，无 >0.3 mag 变源，极限 I=20.5），非本源事件 → discard。GCN 870 原发版「24, 71…」系笔误，GCN OPS 注（31 Oct 2000）更正为「48, 71, 95」；本行 UT 日期未受影响。数据移交 new-source Issue（GRB001025B）",Rusty-Harpoon@zcode
+401587,,s,51846.78,I,20.5,,magnitude,,n,y,,,,,,,1.0,y,Calar Alto 2.2-m,,GCN870,"本行属 GRB001025B：GCN 870（Calar Alto 2.2-m I 波段，Oct 29.78 UT＝B 触发后 95 h；约 95% 误差盒覆盖，无 >0.3 mag 变源，极限 I=20.5），非本源事件 → discard。GCN 870 原发版「24, 71…」系笔误，GCN OPS 注（31 Oct 2000）更正为「48, 71, 95」；本行 UT 日期未受影响。数据移交 new-source Issue（GRB001025B）",Rusty-Harpoon@zcode
