@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB120102A",
   "alias": [],
-  "ra": 276.224,
-  "dec": 24.713,
-  "T0": "2012-01-02T02:15:55Z",
-  "T0_ref": null,
+  "ra": 276.22471,
+  "dec": 24.71352,
+  "T0": "2012-01-02T02:15:55.012820Z",
+  "T0_ref": "GCN 12794（Swift/BAT 于 02:15:55 UT 触发，trigger=510922）；Swift/BAT GRB Catalog 快照 trigger_time=2012-01-02T02:15:55.012820Z（触发仪器亚秒值优先采纳），HEASARC SWIFTGRB 同值；Konus-Wind（GCN 12800，T0=02:16:21.530 UT）与 Fermi/GBM（GCN 12801，02:16:23.24 UT）触发时刻自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,9 +16,12 @@
   "pos_ref": "GCN 12795",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（Rusty-Harpoon@zcode，2026-10-31）：T0 由整秒 02:15:55 精化为触发仪器亚秒值 02:15:55.012820（Swift/BAT 目录快照 trigger_time，GCN 12794 整秒互证）；238 行 XRT Burst Analyser 行的 mjd 系旧整秒 T0 导入，与新 T0 相差 12.8 ms，在 1 s 自洽容差内，按 X 射线行冻结规则未动。位置改用 GCN 12795 XRT 增强位置 276.22471,+24.71352（1.8″，radius，90% confidence；原 ra/dec 276.224,24.713 与 GCN 12799 BAT 精化位置一致、却配了 12795 的 XRT 误差，属错配）。t90=38.7±3.5 s（Swift/BAT GRB Catalog，15-350 keV；GCN 12799 同值），按目录 t90 判 lgrb；GCN 12800 亦称 long GRB。测光检索（2026-10-31）：仓内 gcn/archive 命中 8 篇（GCN 12794/12795/12796/12797/12799/12800/12801/12875），UVOT 8 行核对修正、GCN 12875 底片上限 5 行入库；external/rssgrbag 与 grbsn_webtool 无该事件记录；ADS/SciX 检索命中 8 篇（即上述 GCN，无期刊论文）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "fermi_gbm": {
@@ -291,6 +294,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [],
