@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB110312A",
-  "alias": [],
-  "ra": 157.5,
-  "dec": -5.259,
-  "T0": "2011-03-12T17:55:37Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 449074",
+    "Swift 449074"
+  ],
+  "ra": 157.48111,
+  "dec": -5.26262,
+  "T0": "2011-03-12T17:55:37.252080Z",
+  "T0_ref": "GCN 11782（At 17:55:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 110312A, trigger=449074）；亚秒取触发仪器官方通告页 batgrbproduct 的 UTC 2011-03-12T17:55:37.252080 [includes UTCF correction]（https://gcn.gsfc.nasa.gov/notices_s/449074/BA/，2026-10-31 实取）；Swift/BAT GRB Catalog 快照 trigger_time=17:55:37.252060（差 20 µs，弃）；Swift MET 321645344.252 不可直除（直除得 17:55:44.25，须含 UTCF/闰秒改正——本行已验证无漏闰秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,8 +19,10 @@
   "pos_ref": "GCN 11784",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)\n[审核链（wa1kmoon@zcode 2026-10-31）] [身份] Swift/BAT 触发 449074（GCN 11782），同日 GCN 存档 11782–11789 共 8 篇全部属本暴，gcn/archive 无 GRB 110312B 及其他同日混淆源；Follow-up（XRT/UVOT/GROND/RTT150/MITSuME）均指向同一位置，身份无歧义。原有 comment 首句（bot 导入记录）保留：由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)；XRT 行方法文献经 Crossref/OpenAlex 核实为 Evans+2009（MNRAS 397, 1177，DOI 10.1111/j.1365-2966.2009.14913.x）与 Evans+2010（The Swift Burst Analyser，A&A 519, A102，DOI 10.1051/0004-6361/201014819）。[T0] bot 原值 2011-03-12T17:55:37Z 整秒与 GCN 11782 一致；亚秒按触发仪器官方页取 .252080，见 T0_ref。[定位] bot 原 ra/dec=157.5/-5.259 实为 GCN 11783 的 BAT 地面位置（2.3′，90% containment），与 pos_error=1.7″（GCN 11784）口径错配；已改 GCN 11784 增强型 XRT 位置 157.48111/-5.26262（1.7″，radius, 90% confidence，pos_error_confidence=90）；BAT on-board 157.479/-5.255（3′）备查。[sub_tag] t90=35.136±7.781 s（Swift/BAT GRB Catalog 快照，15-350 keV）；GCN 11783 给 T90=28.7±7.6 s（15-350 keV）；按目录 t90 判 lgrb。[alias] BAT 449074、Swift 449074 取自仓内 swift_bat / swift_grb 目录快照 name_alt（官方目录用名）。[测光检索留证] 2026-10-31：仓内 gcn/archive 全文命中 8 篇（GCN 11782–11789），逐篇核对并取值；OpenAlex \"GRB 110312A\"/\"110312A\" 命中 7 条均为 GCN 通告本身；Crossref 题录检索无本暴专文；arXiv API 短语检索 0 篇（本机对 arxiv.org TLS 校验失败，经 WebFetch 实查 export.arxiv.org）；ADS/SciX API 无 token（HTTP 401，见 audit/unverified.tsv 通道级登记），其全文与引文检索未覆盖，不据此下「无文献」结论；Greiner+2024 GROND 样本（audit/leads/papers/greiner2024.md 文献级卡）本暴仅见于 allgrbs 观测日志表（无测光数值），未入 Tab.1。结论：已发表测光即 GCN 11785（GROND 7 波段上限）、11787（UVOT 9 条上限）、11788（RTT150 Rc）、11789（MITSuME g/Rc/Ic）与 UKSSDC XRT 光变（10keV 行）；本次修订 UVOT/GROND/RTT150/MITSuME 各行（窗口中点口径、mag_system、band 修正），新增 u_FC 一行，弃用 GCN 11782 的 typical 19.6 行（1 行）。[X 射线行] band=10keV 的 38 行按契约原样保留（mjd 仍按原整秒 T0 计算，与新 T0 差 0.252 s，容差内）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -208,8 +213,39 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-31"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2010",
+      "url": "https://doi.org/10.1051/0004-6361/201014819",
+      "title": "The Swift Burst Analyser",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Breeveld+2011",
+      "url": "https://doi.org/10.1063/1.3621807",
+      "title": "An Updated Ultraviolet Calibration for the Swift/UVOT",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
