@@ -14,14 +14,19 @@
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份甄别（审核结论）：本条目与 GRB220711B 为同一事件，系 GCN 32377 标题笔误产生的幽灵重复条目。证据链：① GCN 32377 标题写 'GRB 220712B: NOT optical afterglow confirmation'，但正文两处明确写 'observed again the field of GRB 220711B (D'Ai et al., GCN 32366)' 与 'this object is the optical afterglow of GRB 220711B'，观测中点 Jul 12.92 UT（27.71 hr after the GRB）与 GRB 220711B 触发时刻（Swift BAT trigger=1115766，2022-07-11T18:16:28 UT，GCN 32366）自洽；② 本条目 ra/dec（262.019/24.68096）与 GCN 32370（GRB 220711B 的 UVOT-enhanced XRT position，RA=262.01900 +24.68096，2.1″ 90% confidence）逐位一致；③ GCN 存档与仓内均无独立的 220712B 检测通告（2026-10-28 检索）。处置：本条目唯一测光行（NOT/ALFOSC z > 23.5 AB，GCN 32377）已按 §3.7 迁入 lc/GRB220711B.csv（time 按 220711B 标准 T0 重算）；本条目 bot 元数据（T0=2022-07-12T00:00:00Z 占位值、Trigger_Instrument=Swift/UVOT）不再单独修正，待维护者按 §3.7 源级处置删除。原 bot extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」。审核 fsy 2026-10-28",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
