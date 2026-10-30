@@ -1,23 +1,28 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-74736.0,,s,51725.865,R,23.0,,magnitude,,n,y,,,,,,,1.0,n,,CAHA 2.2m,GCN743,,
-76896.0,,s,51725.89,R,20.5,0.2,magnitude,,n,n,,,,,,,1.0,n,,,GCN737,,
-76896.0,,s,51725.89,G,20.5,,magnitude,,n,y,,,,,,,1.0,n,,Klet 0.57m,GCN741,,
-76896.0,,s,51725.89,R,21.0,,magnitude,,n,y,,,,,,,1.0,n,,,GCN737,,
-77760.0,,s,51725.9,R,24.5,0.4,magnitude,,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN739,,
-77760.0,,s,51725.9,R,24.0,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN739,,
-77760.0,,s,51725.9,R,23.04,0.08,magnitude,,n,n,,,,,,,1.0,n,,NOT 2.56m,GCN747,,
-77760.0,,s,51725.9,R,21.0,0.1,magnitude,,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN739,,
-89856.0,,s,51726.04,4.86GHz,0.1,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN738,,
-101088.0,,s,51726.17,R,20.34,0.08,magnitude,,n,n,,,,,,,1.0,n,,OAN 1.5m,GCN740,,
-101088.0,,s,51726.17,R,21.5,,magnitude,,n,y,,,,,,,1.0,n,,OAN 1.5m,GCN740,,
-102038.0,,s,51726.18099537037,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,,USNOFS 1.0m,GCN743,,
-106272.0,,s,51726.23,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,,P60/CCD13,GCN744,,
-111456.0,,s,51726.29,R,23.47,0.13,magnitude,,n,n,,,,,,,1.0,n,,Palomar 200-inch (Cosmic),GCN748,,
-111456.0,,s,51726.29,I,23.3,,magnitude,,n,y,,,,,,,1.0,n,,MDM 2.4m,GCN745,,
-111629.0,,s,51726.29200231482,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,,USNOFS 1.0m,GCN743,,
-112320.0,,s,51726.3,R,23.13,0.25,magnitude,,n,n,,,,,,,1.0,n,,USNOFS 1.0m,GCN747,,
-114912.0,,s,51726.33,R,23.2,,magnitude,,n,y,,,,,,,1.0,n,,MDM 2.4m,GCN745,,
-163642.0,,s,51726.89400462963,R,24.0,,magnitude,,n,y,,,,,,,1.0,n,,CAHA 2.2m,GCN743,,
-163642.0,,s,51726.89400462963,R,23.5,,magnitude,,n,y,,,,,,,1.0,n,,CAHA 2.2m,GCN743,,
-164160.0,,s,51726.9,R,24.05,0.16,magnitude,,n,n,,,,,,,1.0,n,,NOT 2.56m,GCN747,,
-336960.0,,s,51728.9,R,24.7,0.16,magnitude,,n,n,,,,,,,1.0,n,,NOT 2.56m,GCN747,,
+73915.0,600.0,s,51725.8769444,R,23.00,0.30,magnitude,Vega,n,n,,,,,,,1.0,n,CAHA 2.2m,,Fynbo+2001,VoR 表1 OT位置PSF测光（DAOPHOT II）；GCN 743 同帧（6月30.865起 2×600 s）给场极限 R=23.0（90%覆盖）；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+75283.0,240.0,s,51725.8927778,G,20.5,,magnitude,,n,y,,,,,,,1.0,n,Klet 0.57m,,GCN741,无滤光片（unfiltered，SBIG ST-8），原文未给波段口径→band=G；总曝光 480 s，限量 ~20.5（对 DSS-II）；原文未声明系统；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+75643.0,600.0,s,51725.8969444,R,20.5,0.2,magnitude,,n,n,,,,,,,1.0,y,,,GCN737,Bartolini 候选体（RA 14:47:25.3 Dec +41:12:28，对 USNO 星比较），后被否证非 OT：GCN 739 未在该位置找到对应体、GCN 743 该天体恒定、候选体本身 GCN 737 明言 not present in the DSS2（DSS-2 表述实指其以南 3.5″ 恒星状天体，见 GCN 739）→discard=y；20 min R 曝光；望远镜原文未注明（Bologna 大学团队）；原文未声明系统,Rusty-Harpoon@zcode
+75643.0,600.0,s,51725.8969444,R,21.0,,magnitude,,n,y,,,,,,,1.0,n,,,GCN737,同帧场极限 R=21（GCN 737）；望远镜原文未注明；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+76357.0,450.0,s,51725.9052083,R,23.04,0.08,magnitude,Vega,n,n,,,,,,,1.0,n,NOT 2.56m,ALFOSC,Fynbo+2001,VoR 表1 OT 测光，初报 GCN 747 同值（3×300 s，6月30.90 起，OT 初发现 21.1 h）；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+76357.0,450.0,s,51725.9052083,R,21.0,0.1,magnitude,,n,n,,,,,,,1.0,y,NOT 2.56m,ALFOSC,GCN739,恒星状天体（候选体以南 3.5″，RA 14:47:25.37 Dec +41:12:24.1），非 OT（DSS-2 红片中可能已有）→discard=y；基于 USNO-A2.0 对比，原文未声明系统,Rusty-Harpoon@zcode
+76357.0,450.0,s,51725.9052083,R,24.0,,magnitude,,n,y,,,,,,,1.0,n,NOT 2.56m,ALFOSC,GCN739,射电源位置（Berger&Frail，GCN 738）无光学对应体的限量 R=24；基于 USNO-A2.0 对比，原文未声明系统,Rusty-Harpoon@zcode
+76357.0,450.0,s,51725.9052083,R,24.5,0.4,magnitude,,n,n,,,,,,,1.0,y,NOT 2.56m,ALFOSC,GCN739,射电源旁最近光学源（RA 14:46:58.9 Dec +41:17:00，距射电源 1.5″）的星等，非 OT→discard=y；基于 USNO-A2.0 对比，原文未声明系统,Rusty-Harpoon@zcode
+88003.0,,s,51726.0400000,4.86GHz,0.1,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN738,4.86 GHz 限量：Bartolini 候选体（GCN 737）位置无射电源 0.1 mJy；7月1.04 UT，时长未给故 time_err 留空,Rusty-Harpoon@zcode
+99835.0,600.0,s,51726.1769444,R,21.5,,magnitude,Vega,n,y,,,,,,,1.0,n,OAN 1.5m,,GCN740,射电源位置（GCN 738）600 s×2 R 无探测，限量 R~21.5；原文未单独给该组起始时刻，按同历元 7月1.17 计；PG1633+099 Landolt 定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+100135.0,900.0,s,51726.1804167,R,20.34,0.08,magnitude,Vega,n,n,,,,,,,1.0,y,OAN 1.5m,,GCN740,Bartolini 候选体（非 OT）测光→discard=y；原文笔误「GRB 000620」（应为 000630，其引用 GCN 737 即本暴候选体）；R 波段 1200 s+600 s 两帧；PG1633+099 Landolt 定标（推定 Vega）,Rusty-Harpoon@zcode
+102585.4,2400.0,s,51726.2087778,R,22.5,,magnitude,Vega,n,y,,,,,,,1.0,n,USNOFS 1.0m,,GCN743,双场心（南/北各 4×600 s）拼接场极限 R=22.5（各覆盖 60%）；跨度按两场心曝光之和，原文未给各场心起始时刻；Henden GCN 742 定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+105283.0,6000.0,s,51726.2400000,R,23.13,0.25,magnitude,Vega,n,n,,,,,,,1.0,n,USNOFS 1.0m,,Fynbo+2001,VoR 表1 OT 测光：USNOFS 两晚（7月1.181 双场心 4×600 s、7月1.292 双场心 6×600 s+4×600 s，共 18×600 s）合并，历元 7月1.24 为合并平均历元；GCN 747 初报历元 7月1.3（t+29 h）同值；time_err=6000 s 为数据总跨度（7月1.181→约1.32）之半宽，约定口径；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega,Rusty-Harpoon@zcode
+107119.0,2700.0,s,51726.2612500,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,Palomar 60-inch,CCD13,GCN744,全盒场极限 R~22.5（候选体/射电源所在半盒 4×900 s + 另半盒 2×900 s，总跨度 5400 s）；seeing 0.9″；原文未声明定标系统；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+110053.0,450.0,s,51726.2952083,R,23.47,0.13,magnitude,Vega,n,n,,,,,,,1.0,n,Palomar 200-inch,Cosmic,GCN748,OT 探测（2×450 s R）；对 18 颗场星按 Henden GCN 746 测光定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+110353.0,750.0,s,51726.2986806,I,23.3,,magnitude,Vega,n,y,,,,,,,1.0,n,MDM 2.4m,,GCN745,射电源位置（GCN 738）I>23.3 限量（25 min 曝光，非 photometric 条件，seeing 1.5″）；对比星按 Henden GCN 742 定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+112775.8,3000.0,s,51726.3267222,R,22.5,,magnitude,Vega,n,y,,,,,,,1.0,n,USNOFS 1.0m,,GCN743,双场心（南 6×600 s、北 4×600 s）拼接场极限 R=22.5（各覆盖 60%）；跨度按两场心曝光之和；Henden GCN 742 定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+113509.0,450.0,s,51726.3352083,R,23.2,,magnitude,Vega,n,y,,,,,,,1.0,n,MDM 2.4m,,GCN745,射电源位置（GCN 738）R>23.2 限量（15 min 曝光，7月1.33 起始）；对比星按 Henden GCN 742 定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+161479.0,900.0,s,51726.8904167,R,24.05,0.16,magnitude,Vega,n,n,,,,,,,1.0,n,NOT 2.56m,ALFOSC,Fynbo+2001,VoR 表1 OT 测光（3×600 s）；GCN 747 初报历元 7月1.9 同值；OT 单调变暗 21→94 h 的确认历元；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数） 复查修正：3×600 s 总跨度 1800 s，中点偏移应为 +900 s（原误用 +450 s）。,Rusty-Harpoon@zcode
+162343.0,900.0,s,51726.9004167,R,23.85,0.22,magnitude,Vega,n,n,,,,,,,1.0,n,CAHA 2.2m,,Fynbo+2001,VoR 表1 OT位置PSF测光；GCN 743 同帧（7月1.894 起 2×900 s）给场极限 R=24.0（100%覆盖）；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+162688.6,900.0,s,51726.9044167,R,23.5,,magnitude,Vega,n,y,,,,,,,1.0,n,CAHA 2.2m,,GCN743,射电源位置（GCN 738）无对应体的限量 R=23.5；原文未明示历元，按上下文取 7月1.894 CAHA 历元；Henden GCN 742 定标→Vega；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+170947.0,43200.0,s,51727.0000000,353GHz,2.0,,mJy,,n,y,,,,,,,1.0,n,JCMT,SCUBA,Smith+2001,850 μm 非探测：原文仅给 rms=2 mJy、未给正式上限值，flux_density 按 rms 记录；目标为 Berger&Frail 射电源位置（非 OT 位置）；原文明确未将该结果列入其表 1（天气很差）；band 按附录 A 850 μm→353GHz（ν=c/λ）；原文仅给「July 2」，time 按 7月2.0 UT 计、time_err=±0.5 d 反映日期级精度,Rusty-Harpoon@zcode
+337471.0,1500.0,s,51728.9273611,R,24.67,0.14,magnitude,Vega,n,n,,,,,,,1.0,n,NOT 2.56m,ALFOSC,Fynbo+2001,VoR 表1 OT 测光（5×600 s）；GCN 747 初报 24.70±0.16（历元 7月3.9），VoR 为 24.67±0.14（7月3.91），按 VoR；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+349831.0,900.0,s,51729.0704167,B,26.0,,magnitude,Vega,n,y,,,,,,,1.0,n,TNG,,Fynbo+2001,2σ 上限（B 波段 OT 未探测）；单次 1800 s 曝光；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+353287.0,900.0,s,51729.1104167,V,25.44,0.23,magnitude,Vega,n,n,,,,,,,1.0,n,TNG,,Fynbo+2001,VoR 表1 OT V 波段测光（1800 s）；V−R=0.77±0.27（偏红）；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+941707.0,1800.0,s,51735.9208333,R,25.3,,magnitude,Vega,n,y,,,,,,,1.0,n,NOT 2.56m,ALFOSC,Fynbo+2001,2σ 上限（OT 未探测）；6×600 s；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
+2239207.0,3300.0,s,51750.9381944,R,26.1,,magnitude,Vega,n,y,,,,,,,1.0,n,NOT 2.56m,ALFOSC,Fynbo+2001,2σ 上限（OT 未探测，约束 SN1998bw 型超新星贡献）；11×600 s；定标链 Henden 2000(GCN 742/746) BVRcIc 标准星测光→Vega；原文历元仅 0.01 d 精度；中点=起点+曝光跨度/2、time_err=跨度/2 为约定口径（原文只给起始日期与曝光次数）,Rusty-Harpoon@zcode
