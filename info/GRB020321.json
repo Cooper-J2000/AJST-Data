@@ -1,35 +1,47 @@
 {
   "transient_id": "GRB020321",
-  "alias": [],
-  "ra": 14.2,
-  "dec": -83.0,
-  "T0": "2002-03-21T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 020321",
+    "GRB 020321A",
+    "Springtime Burst"
+  ],
+  "ra": 243.18208,
+  "dec": -83.72053,
+  "T0": "2002-03-21T04:20:40Z",
+  "T0_ref": "GCN 1281（BeppoSAX ALERT：Mar 21 04:20:40 UT）；GCN 1284（Mar 21.18102 UT＝04:20:40.1，GRBM+WFC 触发）；HEASARC GRBCAT ECT 2002-03-21T04:20:40Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/GRBM+WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 4,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 1348 / in 't Zand+2003（arXiv:astro-ph/0305359）：XMM-Newton EPIC-pn source 2（16h12m43.7s −83d43′13.9″，误差半径 4″），X 射线余辉候选（衰减指数 1.2）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode 2026-10-30。身份：GRB020321＝BeppoSAX WFC1/GRBM 触发事件（GCN 1281/1284，2002-03-21 04:20:40 UT）；HEASARC GRBCAT 记 GRB 020321A（grbcat_id 5423，ECT 04:20:40Z，BeppoSAX+IPN）；同日另有 GRB 020321B（grbcat_id 5424，仅 IPN，ECT 04:36:47Z，无定位、无 GCN、无测光），两事件按触发号划界，未混入。T0：原值 2002-03-21T00:00:00Z 为名字日期/午夜占位，改为触发时刻 04:20:40Z（GCN 1281 整秒；GCN 1284 给 Mar 21.18102 UT＝04:20:40.13，整秒一致；SAXGRBMGRB 目录 trigger_time=04:20:43Z 与 GCN/GRBCAT 差 3 s，取 GCN/GRBCAT 值）；T0_offset 留空。触发仪器：BeppoSAX/GRBM+WFC（GCN 1284：GRBM 与 WFC unit 1 探测，地面触发逻辑发现）。位置：原 ra=14.2 与全部来源不符，改为 GCN 1348/in 't Zand+2003 的 XMM-Newton source 2 X 射线余辉候选位置（误差 4″）；备查：WFC 质心 243.27/−83.71（5′，99% CL，GCN 1284）；NFI 初报源 242.76/−83.70（2′，GCN 1285）经精化分析未确认（GCN 1348）。置信水平：来源未标注 4″ 误差的置信水平，pos_error_confidence 留空。分类：t90=51.0±4.5 s（40-700 keV，SAXGRBMGRB/HEASARC 目录）；rssgrbag 表另给 t90=70.0 s（15-150 keV）；均 ≫2 s，按目录 t90 判 lgrb。红移：无光谱/宿主红移信息，留 null。alias：「GRB 020321」为 GCN 1281/1284 eventId 原文用名；「GRB 020321A」为 GRBCAT 目录名；「Springtime Burst」为 GCN 1281 subject 原文用名。测光：原 8 行全部按新 T0 重算；GCN 1286/1314/1308 的窗口/合并图像行按中点/半跨约定（§3.8）；GCN 1314 原波段 K′（IRSF/SIRIUS）记 Ks（先例 GRB970228A）；GCN 1308 两候选射电源无各自流量，按 5σ 阈值 190 μJy 记上限行；SSO R~20 候选体（GCN 1289，后经 GCN 1305 深场未证认）与 GCN 1385 源 A/B 候选体测光置 discard=y；GCN 1385 三夜场极限（U=22.4 B=24.1 V=23.6 R=23.8 等）仅给夜级时间无 UT，不入库备查。测光检索（2026-10-29/30）：仓内 gcn/archive 45 947 篇全文检索 020321 命中 12 篇（11 篇属本事件：1281/1284/1285/1286/1289/1305/1308/1314/1342/1348/1385；15468 为 GRB 131108A 靶标号误命中）；external/rssgrbag 命中 1 条目录行（无新测光行）、grbsn_webtool/uvot_grb 无记录；GCN 站事件页列出本事件通告 11 篇，与 archive 一致无遗漏；arXiv 全文检索 all:\"GRB 020321\" 命中 1 篇（in 't Zand+2003，仅 X/γ 数据）；OpenAlex 命中同篇及本事件 GCN 通告，无其他含可引用测光表的论文；TNS 检索 403 被拒（反爬），且 2002 年 GRB 无 TNS 命名；结论：新增 15 行（GCN 1385 源 A/B 各 7 行＋GCN 1289 R~20.5 上限 1 行）、修改 8 行、无删除。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 BeppoSAX GRBM+WFC 触发时刻 2002-03-21T04:20:40Z（GCN 1281/1284，GRBCAT ECT 互证）；原 bot 值 2002-03-21T00:00:00Z（meta trigger-time 占位）已废弃",
+    "t0_basis": "GCN 1281/GCN 1284",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {
       "name": "Zand+2003",
       "title": "X/gamma-ray measurements of the faint GRB 020321",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003astro5359Z/abstract",
+      "url": "https://arxiv.org/abs/astro-ph/0305359",
       "bibtex": "@ARTICLE{2003astro5359Z,\n       author = {J. J. M. in 't Zand and L. Kuiper and J. Heise and L. Amati and E. Costa and M. Feroci and F. Frontera and G. Gandolfi and L. Nicastro and L. Piro and P. Rodriguez-Pascual and M. Santos-Lleo and N. Schartel},\n       title = {X/gamma-ray measurements of the faint GRB 020321},\n       journal = {arXiv e-prints},\n       year = {2003},\n       eprint = {astro-ph/0305359},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003astro5359Z/abstract},\n}",
       "source": "bot"
     }
