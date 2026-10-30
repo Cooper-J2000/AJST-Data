@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB000126",
-  "alias": [],
+  "alias": [
+    "GRB 000126",
+    "GRB 000126D"
+  ],
   "ra": 116.7,
   "dec": 6.9,
-  "T0": "2000-01-26T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2000-01-26T23:26:29.625Z",
+  "T0_ref": "GCN 526（触发仪器 BATSE 官方通告：trigger #7971，84389.625 s UT on 2000 January 26 = 23:26:29.625 UTC）；HEASARC GRBCAT「GRB 000126D」trigger_time=2000-01-26T23:26:29.600Z（Earth Crossing Time）交叉一致，备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2.4,
+  "pos_ref": "GCN 526",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-29）。(1) 身份：BATSE 触发 #7971（GCN 526：84389.625 s UT on 2000 January 26，several pulses lasting more than 70 s，因触发始于实时遥测缺口 BACODINE/GCN 定位未发布）；IPN（Ulysses/Konus-Wind/NEAR，GCN 525）亦探测，~100 s 长暴、25-100 keV fluence ~1e-5 erg/cm²，给出两个 ~55 平方角分误差框，BATSE 定位排除其一（GCN 526：采纳框 7h44m18s-7h45m41s +7°34'-7°54'）。同日 BATSE 另有 7968/7969/7970 三个触发（HEASARC GRBCAT GRB 000126A/B/C，grbcat_id 4734-4736，T0=06:57:57/08:15:50/13:21:51 UT、坐标均与本源不同），无混并；特别注意 external/saxgrbmgrb 快照的「GRB 000126」条目（T0 06:58 UT、ref_position 4B_7968）实为 BATSE 7968，与本源无关。本源即 GRBCAT「GRB 000126D」（grbcat_id 4737，trigger_time 2000-01-26T23:26:29.600Z，Earth Crossing Time，与 GCN 526 差 25 ms 属亚秒舍入/时标定义差，<60 ms 不另报）。(2) T0：原值 2000-01-26T00:00:00Z（extra_data 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，原值留档于此）系午夜占位缺陷，废弃；标准 T0=2000-01-26T23:26:29.625Z=触发仪器 BATSE 官方通告 GCN 526 原文触发时刻，T0 只写来源精度不自行补位。T0_offset=null（无 >1 s 偏移证据）。(3) 定位：ra/dec=116.7/6.9 即 GCN 526 BATSE 初步定位原文值；pos_error=2.4 deg（原文 total (statistical+systematic) error radius of 2.4 deg (68% Conf.)），pos_error_confidence=68（原文明确给出）；IPN 精化误差框（GCN 526 采纳框角点；MPE Greiner 目录 IPN X-ray position 07h44m59s +07°44'，3'×20'；rssgrbag ra=116.25 dec=7.7417）为误差框/非对称值，不拆成 ra/dec 点值，备查。(4) 分类：sub_tag=lgrb 保留，按目录 t90 判（§3.9）——t90=70 s（HEASARC rssgrbag 表，Chandra & Frail 2012 ApJ 746, 156，无误差列值）；GCN 526 原文 several pulses lasting more than 70 s、GCN 525 原文 ~100 s long 佐证。(5) alias：新增「GRB 000126」（GCN 528 subject 与正文、GCN 533 正文原文用名（GCN 525/526 subject 为无空格形 GRB000126，同指本源））、「GRB 000126D」（HEASARC GRBCAT 官方目录名，grbcat_id 4737）。(6) 测光检索（2026-10-29，§3.3 留证）：仓内 gcn/archive（45563 篇全文）检索「000126」命中 5 篇（GCN 525/526/527/528/533，逐篇全文核对——本源全部已知测光即其中 5 个上限点（bot 原 4 行修订 + 本 PR 新增 GCN 527 第二历元 1 行），见各行 comment）；external/rssgrbag 命中 1 行（t90=70 s、fluence=1.65e-05 erg/cm² 15-150 keV、radio_ag_flag=N、opt_ag_flag=N，lightcurve.jsonl 0 行、无测光）；external/grbsn_webtool 无该事件；external/batse、heasarc_grbcat、mpe_greiner、saxgrbmgrb 快照命中均为触发/定位/伽马谱参数，无光学测光。外部文献：OpenAlex「GRB 000126」3 命中——Castro-Tirado+2005（Il Nuovo Cimento C 28, 715，DOI 10.1393/ncc/i2005-10137-x，全文 PDF 已下载核对：仅一句提及 GRB 000126 上限、无新数值）、Nardini+2008（MNRAS 383, 1049，arXiv 0710.2436 全文已核对：仅参考文献行引 GCN 533，无新数值）、1 条 GCN 528 标题误挂 GCN 1355 bibcode 的坏条目（OpenAlex/MAG 元数据错误，忽略）；arXiv API 另核 Fynbo+2001（A&A 369, 373，arXiv astro-ph/0101425）表 1 转引 GCN 525/527 的 R=19.0 上限（与 GCN 同值，转引不入库）；TNS 不适用（GRB 无 AT/SN 名）；ADS/SciX API 无 token（401 类，未检索成），已以 OpenAlex+arXiv 全文路径覆盖样本类文献。结论：无更多可用测光行，本 PR 修订 4 行时间口径、新增 1 行（GCN 527 第二历元 Jan 30.540），全部为上限。",
   "sub_tag": [
     "lgrb"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "68",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-29 审核修正为 BATSE 触发 #7971 触发时刻（GCN 526 原文 84389.625 s UT = 23:26:29.625 UTC）；原 bot 注『t0 为 meta trigger-time（真实触发时刻）』、原 T0=2000-01-26T00:00:00Z 已失效，原值见 comment",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
