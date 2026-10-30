@@ -19,7 +19,7 @@
   "pos_ref": "GCN 29009（Swift-XRT 增强定位初值 RA,Dec=23.09069,-1.75468，1.7″ 半径、90% 置信）；HEASARC swiftgrbba 快照（external/swiftgrbba，2026-03-16 导出，晚于通告）XRT 终值 RA,Dec=23.09071,-1.75469、误差半径 1.4″（90% 置信），依 §4「目录晚于通告以目录为准」取终值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "Swift/BAT 触发 1011980（GCN 29005），BAT 地面精化位置 RA,Dec=23.096,-1.762、1.1′（90%，GCN 29021）。定位改判：原库 ra/dec=23.09079,-1.75347 为 GCN 29005 的 XRT 初始定位（3.5″），但 pos_error/pos_ref 却记 1.7″/GCN 29009，坐标与误差口径错配；现取 swiftgrbba 快照（HEASARC，2026-03 导出，晚于通告）的 XRT 终值 23.09071,-1.75469、1.4″/90%，GCN 29009 初值备查。注意：同日 IceCube-201209A（GCN 29012，2020-12-09 10:15:43.94 UT，RA 6.86°、Dec -9.25°）是另一独立事件（中微子警报），与本 GRB 无关，不列为别名。t90=48.0±16.0 s（15-350 keV，Swift/BAT 地面分析 GCN 29021；external/swift_bat 快照同值 48.0±16.0 s），按目录 t90 判 lgrb；旁证：AstroSat/CZTI 称 long GRB、t90=23(+14,-12) s（GCN 29011），Insight-HXMT/HE t90=9.99 s（GCN 29050，T0 起 1.09 s 前）。红移：无实测红移，redshift=null；Zhou+2026（ApJL 2026，arXiv:2605.13440，VoR DOI 10.3847/2041-8213/ae7329）表 1 给 z=0.74，原文标 *（Amati 关系伪红移，非实测），不入 redshift 字段。extra_data 原 bot 标记 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」的表述与实际取值来源不符：该数值实为 Swift/BAT 官方目录触发时刻（trigger 1011980），已改写 t0_basis/t0_note。测光检索留证（2026-10-31）：仓内 gcn/archive 45563 篇全文 grep 命中 21 篇（29005/29006/29007/29009/29011/29012/29013/29014/29016/29021/29023/29024/29025/29026/29027/29031/29042/29049/29050/29082/29094），其中含光学数值 5 篇（FRAM 29006、KAIT 29007、UVOT 29026、Xinglong 29013、Mondy 29094）；external/rssgrbag 射电光变、external/grbsn_webtool 均无本源记录；arXiv API 全文检索「201209A」0 命中；OpenAlex 检索命中 8 条（均 GCN 通告）、全文检索另见 Zhou+2026（无光学测光表）；Crossref 检索无本暴专属论文；ADS/SciX API 无 token（401），通道级登记 audit/unverified.tsv → 光学测光共 16 行入库（UVOT 9、Mondy/AZT-33IK 4、FRAM 1、KAIT 1、Xinglong 1），比原库 7 行补 9 行、修正 6 行。",
+  "comment": "Swift/BAT 触发 1011980（GCN 29005），BAT 地面精化位置 RA,Dec=23.096,-1.762、1.1′（90%，GCN 29021）。定位改判：原库 ra/dec=23.09079,-1.75347 为 GCN 29005 的 XRT 初始定位（3.5″），但 pos_error/pos_ref 却记 1.7″/GCN 29009，坐标与误差口径错配；现取 swiftgrbba 快照（HEASARC，2026-03 导出，晚于通告）的 XRT 终值 23.09071,-1.75469、1.4″/90%，GCN 29009 初值备查。注意：同日 IceCube-201209A（GCN 29012，2020-12-09 10:15:43.94 UT，RA 6.86°、Dec -9.25°）是另一独立事件（中微子警报），与本 GRB 无关，不列为别名。t90=48.0±16.0 s（15-350 keV，Swift/BAT 地面分析 GCN 29021；external/swift_bat 快照同值 48.0±16.0 s），按目录 t90 判 lgrb；旁证：AstroSat/CZTI 称 long GRB、t90=23(+14,-12) s（GCN 29011），Insight-HXMT/HE t90=9.99 s（GCN 29050，T0 起 1.09 s 前）。红移：无实测红移，redshift=null；Zhou+2026（ApJL 2026，arXiv:2605.13440，VoR DOI 10.3847/2041-8213/ae7329）表 1 给 z=0.74，原文标 *（Amati 关系伪红移，非实测），不入 redshift 字段。extra_data 原 bot 标记 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」的表述与实际取值来源不符：该数值实为 Swift/BAT 官方目录触发时刻（trigger 1011980），已改写 t0_basis/t0_note。测光检索留证（2026-10-31）：仓内 gcn/archive 45889 篇全文 grep 命中 21 篇（29005/29006/29007/29009/29011/29012/29013/29014/29016/29021/29023/29024/29025/29026/29027/29031/29042/29049/29050/29082/29094），其中含光学数值 5 篇（FRAM 29006、KAIT 29007、UVOT 29026、Xinglong 29013、Mondy 29094）；external/rssgrbag 射电光变、external/grbsn_webtool 均无本源记录；arXiv API 全文检索「201209A」0 命中；OpenAlex 检索命中 8 条（均 GCN 通告）、全文检索另见 Zhou+2026（无光学测光表）；Crossref 检索无本暴专属论文；ADS/SciX API 无 token（401），通道级登记 audit/unverified.tsv → 光学测光共 16 行入库（UVOT 9、Mondy/AZT-33IK 4、FRAM 1、KAIT 1、Xinglong 1），比原库 7 行补 9 行、修正 6 行。",
   "sub_tag": [
     "lgrb"
   ],
@@ -27,9 +27,14 @@
   "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "T0=Swift/BAT 官方目录 trigger 1011980 触发时刻（MET 629185518.656 s = 2020-12-09T05:44:52.534740 UTC，external/swift_bat 快照）；原 bot 标记 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，数值与 BAT 目录一致，仅标记按实际来源改写（原值见 info.comment）",
+    "t0_note": "T0=Swift/BAT 官方目录 trigger 1011980 触发时刻（MET 629185518.656 s = 2020-12-09T05:44:52.534740 UTC，external/swift_bat 快照；UTC 列为目录自带权威列、含 Swift 钟漂改正，不可用纯闰秒换算复现）；原 bot 标记 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，数值与 BAT 目录一致，仅标记按实际来源改写（原值见 info.comment）",
     "t0_basis": "swift_bat_catalog",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [
     {
