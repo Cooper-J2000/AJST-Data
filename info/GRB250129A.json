@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB250129A",
-  "alias": [],
-  "ra": 198.676667,
-  "dec": 5.030667,
+  "alias": [
+    "MASTER OT J131442.41+050150.4",
+    "GRB250129.20",
+    "BAT 1285812"
+  ],
+  "ra": 198.6767,
+  "dec": 5.03064,
   "T0": "2025-01-29T04:45:09.019520Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 39066（Swift/BAT 于 04:45:09 UT 触发，trigger=1285812）；亚秒 0.019520 取自触发仪器官方目录（仓内 external/swift_bat 快照 trigger_time=2025-01-29T04:45:09.019520Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 2.15,
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 2.151,
   "tag": [
     "grb"
   ],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 39066",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 39116",
-  "comment": null,
+  "pos_error": 0.43,
+  "pos_ref": "GCN 39085",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 39071",
+  "comment": "身份核验：Swift/BAT 触发 1285812（GCN 39066，04:45:09 UT），XRT/UVOT 位置与各方 follow-up 一致。定位取 GCN 39085 UVOT 精化位置（0.43″，90% 置信）；备查：XRT 增强（GCN 39082）198.67662 +5.03073 ±2.4″ 90%、GCN 39066 UVOT FC ±1.10″ 90%；原库 ra/dec（198.676667 5.030667）与所引 GCN 39066 数值不对应，已改正。红移 z=2.151（VLT/X-shooter 吸收线，GCN 39071；NOT GCN 39073 z=2.15、OHP/T193 GCN 39078 一致）。t90=262.25±23.71 s（15-350 keV，GCN 39147 Swift-BAT refined analysis；仓内 swift_bat 目录快照 272.18±22.67 s 备查），按目录 t90 判 lgrb；Konus-Wind GCN 39116 亦称 long GRB。alias 出处：「MASTER OT J131442.41+050150.4」为 GCN 39119 原文用名；「GRB250129.20」为 GCN 39065（MASTER）原文用名；「BAT 1285812」为 Swift/BAT 官方目录用名（仓内 external/swift_bat 快照 name_alt）。Konus-Wind 量（GCN 39116）：fluence=(6.71±0.14)e-6 erg/cm2（10 keV-10 MeV）、Eiso=(7.7±0.2)e52 erg、Ep,z=(207±22) keV（取 z=2.151）。测光检索（2026-10-31）：仓内 gcn/archive 44 篇命中并逐篇读取（24 篇含光学/NIR 测光或上限，补 79 行）；external/rssgrbag、grbsn_webtool、uvot_grb 无记录；TNS 检索无该源（No results）；ADS/SciX 命中 48 条（44 GCN + Akl+2026 A&A 710 A211 + Ghosh+2026 MNRAS 551 stag1391 + 2 会议/评论），无其他正式文献。Akl+2026 VoR Table F.2（跨定标 AB 星等约 300 行）与 Ghosh+2026 Table A2（约 40 行，表头称银消光改正但重叠行与 GCN 原值相同，口径存疑）本次未入库，待维护者裁决（见 PR 待决事项）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,23 +29,29 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [
     {
       "name": "Akl+2026",
       "title": "Multi-epoch afterglow rebrightenings in GRB 250129A: Evidence of successive shock interactions",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...710A.211A",
+      "url": "https://doi.org/10.1051/0004-6361/202659762",
       "bibtex": "@ARTICLE{2026A&A...710A.211A,\n       author = {{Akl}, D. and {Antier}, S. and {Koehn}, H. and {Pang}, P.~T.~H. and {Geng}, J.~J. and {Gill}, R. and {Abdikamalov}, E. and {Adami}, C. and {Aivazyan}, V. and {Almeida}, L. and {Alshamsi}, S. and {Andrade}, C. and {Andr{\\'e}}, Q. and {Angulo-Valdez}, C. and {Atteia}, J.-L. and {Barkaoui}, K. and {Basa}, S. and {Becerra}, R.~L. and {Bendjoya}, P. and {Berdikhan}, D. and {Bernaud}, E. and {Boissier}, S. and {Brunier}, S. and {Burdanov}, A.~Y. and {Butler}, N.~R. and {Chen}, J. and {Colas}, F. and {Corradi}, W. and {Coughlin}, M.~W. and {Darson}, D. and {Dietrich}, T. and {Dornic}, D. and {Douzet}, C. and {Dubois}, C. and {Ducoin}, J.-G. and {du Laz}, T. and {Durroux}, A. and {Dutton}, D. and {Duverne}, P.-A. and {Dux}, F. and {Elhosseiny}, E.~G. and {Esamdin}, A. and {Filippenko}, A.~V. and {Fortin}, F. and {Freeberg}, M. and {Garc{\\'\\i}a-Garc{\\'\\i}a}, L. and {Gillon}, M. and {Globus}, N. and {Gokuldass}, P. and {Guessoum}, N. and {Hello}, P. and {Hellot}, R. and {Hendy}, Y.~H.~M. and {Hua}, Y.~L. and {Hussenot-Desenonges}, T. and {Inasaridze}, R. and {Iskandar}, A. and {Jel{\\'\\i}nek}, M. and {Karpov}, S. and {Klotz}, A. and {Kochiashvili}, N. and {Laskar}, T. and {Le Calloch}, A. and {Lee}, W.~H. and {Leonini}, S. and {Li}, X.~Y. and {Lien}, A. and {Limonta}, C. and {Liu}, J. and {L{\\'o}pez-C{\\'a}mara}, D. and {Magnani}, F. and {Mao}, J. and {Ma{\\v{s}}ek}, M. and {Moreno M{\\'e}ndez}, E. and {Menegazzi}, L.~C. and {Mercier}, W. and {Mihov}, B.~M. and {Molham}, M. and {Oates}, S. and {Odeh}, M. and {Peng}, H. and {Pereyra}, M. and {Pillas}, M. and {Pradier}, T. and {Rakotondrainibe}, N.~A. and {Reichart}, D. and {Rivet}, J.-P. and {Romanov}, F.~D. and {S{\\'a}nchez-{\\'A}lvarez}, F. and {Sasaki}, N. and {Schlekat}, D. and {Schneider}, B. and {Simon}, A. and {Slavcheva-Mihova}, L. and {Strausbaugh}, R. and {Sun}, T.~R. and {Takey}, A. and {Tanasan}, M. and {Turpin}, D. and {de Ugarte Postigo}, A. and {Wang}, L.~T. and {Wang}, X.~F. and {Wang}, Z.~M. and {Watson}, A.~M. and {de Wit}, J. and {Yan}, Y.~S. and {Zheng}, W. and {Z{\\'u}{\\~n}iga-Fern{\\'a}ndez}, S.},\n        title = \"{Multi-epoch afterglow rebrightenings in GRB 250129A: Evidence of successive shock interactions}\",\n      journal = {\\aap},\n     keywords = {gamma-ray burst: individual: GRB 250129A},\n         year = 2026,\n        month = jun,\n       volume = {710},\n          eid = {A211},\n        pages = {A211},\n          doi = {10.1051/0004-6361/202659762},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2026A&A...710A.211A},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     },
     {
       "name": "Ghosh+2026",
       "title": "Photometric and late-time spectropolarimetric observations of GRB 250129A afterglow",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026MNRAS.551g1391G",
+      "url": "https://doi.org/10.1093/mnras/stag1391",
       "bibtex": "@ARTICLE{2026MNRAS.551g1391G,\n       author = {{Ghosh}, A. and {Razzaque}, S. and {Barnard}, J. and {Joshi}, Jagdish C. and {Gupta}, R. and {Buckley}, D.~A.~H. and {van Soelen}, B. and {Dukiya}, N. and {Gupta}, A. and {Moskvitin}, A.~S. and {Cooper}, J. and {Chandra}, S. and {Jayasurya}, K.~M. and {Misra}, K. and {Rawat}, N. and {Resmi}, L. and {Spiridonova}, O.~I. and {Uklein}, R.~I.},\n        title = \"{Photometric and late-time spectropolarimetric observations of GRB 250129A afterglow}\",\n      journal = {\\mnras},\n     keywords = {techniques: photometric, techniques: polarimetric, gamma-ray burst: individual: GRB 250129A, gamma-ray bursts, High Energy Astrophysical Phenomena},\n         year = 2026,\n        month = sep,\n       volume = {551},\n       number = {2},\n          eid = {stag1391},\n        pages = {stag1391},\n          doi = {10.1093/mnras/stag1391},\narchivePrefix = {arXiv},\n       eprint = {2603.23359},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2026MNRAS.551g1391G},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
