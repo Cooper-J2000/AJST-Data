@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB180706A",
-  "alias": [],
-  "ra": 181.64308,
-  "dec": 66.03712,
+  "alias": [
+    "GRB180706351",
+    "BAT 846395"
+  ],
+  "ra": 181.64259,
+  "dec": 66.03714,
   "T0": "2018-07-06T08:24:40.412760Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 22909（BAT 触发 2018-07-06 08:24:40 UT）；亚秒 .412760 取自 Swift/BAT 官方目录快照（external/swift_bat，trigger 846395）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": null,
-  "tag": [],
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 2,
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
   "pos_ref": "GCN 22916",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "upperlimit",
+  "redshift_ref": "Rowlinson+2019（DOI 10.1093/mnras/stz2866）",
+  "comment": "审核记录（Rusty-Harpoon@zcode，2026-10-31）。身份：Swift/BAT 触发 846395（GCN 22909，2018-07-06 08:24:40 UT），Fermi/GBM 同测（GCN 22919，08:25:09.03 UT），XRT/UVOT 位置一致，确证。定位：ra/dec 取 GCN 22916 XRT 增强位置 181.64259,+66.03714（1.7″，90% 置信，原文给出置信水平）；原 ra/dec=181.64308,66.03712 实为 GCN 22909 UVOT 位置（0.77″，90%），与原 pos_error=1.7/pos_ref=GCN 22916 组合不符，已改齐备查；external/swiftgrbba 快照另载更晚 XRT 位置 181.64238,66.03683（1.4″），并列备查。T0：秒级 08:24:40 见 GCN 22909；亚秒 .412760 取自 external/swift_bat 快照（trigger 846395），与原 meta_trigger 值相同、本次改 t0_basis=swift_bat_catalog（原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，值核实一致仅改依据记载）。红移：未测；Rowlinson+2019 §2.1 由光学探测的最低波长推断 z≲2（近似上限），故 redshift=2、redshift_type=upperlimit。t90=42.444±7.163 s（Swift/BAT 目录，15–350 keV）→ 按目录 t90 判 lgrb；GCN 22921 给 T90=42.7±8.7 s（15–350 keV）、FERMIGBRST 目录 t90=38.144±1.145 s（50–300 keV），三值一致。alias：GRB180706351（GCN 22919 原文触发号 180706351，FERMIGBRST 目录用名 GRB180706351）、BAT 846395（Swift/BAT 官方目录 name_alt，trigger 846395）。测光检索留证（2026-10-31）：仓内 gcn/archive 全文按源名/触发号 846395/坐标三路检索共命中 10 篇（22909/22910/22916/22917/22919/22921/22922/22923/22924/22989；含光学数值 5 篇：UVOT 22922、COATLI 22910、TSHAO 22923、GOTO 22924、OSN 22989），无更多命中；external/rssgrbag 0 行、grbsn_webtool 无此事件、swift_bat/swiftgrbba/fermi_gbm/uvot_grb 仅目录参数；ADS 检索 \"GRB 180706A\" 命中 12 条，其中研究论文 2 篇：Rowlinson+2019（补 LOFAR 144 MHz 3σ 上限 1 行，三方交叉未通读 VoR）、Becerra+2023（表 1 给 COATLI 3 点 w≈17.1，与 GCN 22910 同仪器 coadd w=18.73 及 UVOT white 18.11 冲突约 1.6 mag，VoR 亦未通读，不入库，见 PR 待决事项）；GCN 站与仓内命中一致，TNS 不适用（GRB 类）。lc 处置：去重 1 行（GCN 22909 U FC 初步值并入 GCN 22922 精化行）；逐行重算 10 行（UVOT 8 行改窗口中点、COATLI/TSHAO 改正确历元、GOTO 补 time_err）；补 3 行（GCN 22989 OSN Ic 探测与上限、Rowlinson+2019 LOFAR 144 MHz 上限）；原 3 行 UL 行 Gext_corr=y 误标（原文明确未做银消改正）已统一改 n。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2018-07-06T08:24:40.412760Z：秒级 08:24:40 见 GCN 22909，亚秒取自 Swift/BAT 官方目录（trigger 846395）",
+    "t0_basis": "swift_bat_catalog_trigger_846395",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [
     {
@@ -30,7 +42,15 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.490.3483R",
       "bibtex": "@ARTICLE{2019MNRAS.490.3483R,\n       author = {{Rowlinson}, A. and {Gourdji}, K. and {van der Meulen}, K. and {Meyers}, Z.~S. and {Shimwell}, T.~W. and {ter Veen}, S. and {Wijers}, R.~A.~M.~J. and {Kuiack}, M.~J. and {Shulevski}, A. and {Broderick}, J.~W. and {van der Horst}, A.~J. and {Tasse}, C. and {Hardcastle}, M.~J. and {Mechev}, A.~P. and {Williams}, W.~L.},\n        title = \"{LOFAR early-time search for coherent radio emission from GRB 180706A}\",\n      journal = {\\mnras},\n     keywords = {gamma-ray burst, individual, GRB 180607A, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2019,\n        month = dec,\n       volume = {490},\n       number = {3},\n        pages = {3483-3492},\n          doi = {10.1093/mnras/stz2866},\narchivePrefix = {arXiv},\n       eprint = {1909.02958},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019MNRAS.490.3483R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Becerra+2023",
+      "title": "Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, COATLI, and RATIR observations",
+      "url": "https://doi.org/10.1093/mnras/stad2513",
+      "bibtex": "@ARTICLE{2023MNRAS.525.3262B,\n       author = {{Becerra}, R.~L. and others},\n        title = \"{Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, COATLI, and RATIR observations}\",\n      journal = {\\mnras},\n         year = 2023,\n       volume = {525},\n       pages = {3262},\n          doi = {10.1093/mnras/stad2513},\n archivePrefix = {arXiv},\n       eprint = {2308.07882},\n primaryClass = {astro-ph.HE},\n      adsurl = {https://ui.adsabs.harvard.edu/abs/2023MNRAS.525.3262B},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
