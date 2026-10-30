@@ -1,27 +1,43 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-75.0,,s,57572.50787037037,w,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19645,,
-150.0,,s,57572.508738425924,w,14.09,0.02,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-412.0,,s,57572.511770833335,uvot-u,15.05,0.03,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-639.0,,s,57572.514398148145,uvot-b,16.38,0.06,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-700.0,,s,57572.51510416667,uvot-u,15.88,0.09,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-790.0,,s,57572.51614583333,w,16.64,0.03,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-816.0,,s,57572.51644675926,uvot-uvw2,18.38,0.27,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-840.0,,s,57572.51672453704,uvot-v,16.51,0.1,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-865.0,,s,57572.517013888886,uvot-uvm2,17.75,0.25,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-889.0,,s,57572.51729166666,uvot-uvw1,16.8,0.12,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-4070.0,,s,57572.5541087963,R,17.9,,magnitude,,n,n,,,,,,,1.0,n,,Keck-I/LRIS,GCN19668,,
-4580.0,,s,57572.560011574074,uvot-u,17.79,0.08,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-4785.0,,s,57572.56238425926,uvot-b,18.76,0.11,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-4990.0,,s,57572.56475694444,w,18.33,0.05,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-5195.0,,s,57572.56712962963,uvot-uvw2,19.45,0.3,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-5400.0,,s,57572.569502314815,uvot-v,18.34,0.17,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-5600.0,,s,57572.57181712963,uvot-uvm2,19.07,0.29,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN19656,,
-19800.0,,s,57572.73616898148,R,19.4,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1-m,GCN19647,,
+75.0,,s,57572.50787037037,w,19.6,,magnitude,,n,y,,,,,,,1.0,y,Swift/UVOT,,GCN19645,"GCN 19645：UVOT 寻图 white 150 s 自 T0+75 s 起，初始数据产品未探测到候选体、~19.6 mag（3σ，typical）；同一曝光（T_start=75,T_stop=225）GCN 19656 给探测 14.09±0.02，本行为初始快视上限、被探测取代，弃用；time/mjd 保持导入原值未随新 T0 重算",Rusty-Harpoon@zcode
+150.0,73.5,s,57572.5087399,w,14.09,0.02,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：white（T_start=75,T_stop=225,Exp=147）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+200.448,30,s,57572.5093238,g,14.02,0.02,magnitude,,n,n,,,,,,,1.0,n,MITSuME Murikabushi 1m,,GCN19653,GCN 19653：Murikabushi 1m（Ishigakijima）MITSuME 三色相机 g，原文 T0+0.00232 d（MID-UT 12:13:25，两列自洽）；T-EXP=60 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+200.448,30,s,57572.5093238,Rc,13.73,0.02,magnitude,,n,n,,,,,,,1.0,n,MITSuME Murikabushi 1m,,GCN19653,GCN 19653：Murikabushi 1m（Ishigakijima）MITSuME 三色相机 Rc，原文 T0+0.00232 d（MID-UT 12:13:25，两列自洽）；T-EXP=60 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+200.448,30,s,57572.5093238,Ic,13.35,0.01,magnitude,,n,n,,,,,,,1.0,n,MITSuME Murikabushi 1m,,GCN19653,GCN 19653：Murikabushi 1m（Ishigakijima）MITSuME 三色相机 Ic，原文 T0+0.00232 d（MID-UT 12:13:25，两列自洽）；T-EXP=60 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+349.2,15,s,57572.5110454,g,15.46,0.06,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652：MITSuME Akeno 50cm 三色相机 g，原文 T0+5.82 min（MID-UT 12:15:54，两列自洽）；T-EXP=30 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+349.2,15,s,57572.5110454,Rc,14.59,0.06,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652：MITSuME Akeno 50cm 三色相机 Rc，原文 T0+5.82 min（MID-UT 12:15:54，两列自洽）；T-EXP=30 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+349.2,15,s,57572.5110454,Ic,14.25,0.09,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652：MITSuME Akeno 50cm 三色相机 Ic，原文 T0+5.82 min（MID-UT 12:15:54，两列自洽）；T-EXP=30 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+412.5,122.5,s,57572.5117781,uvot-u,15.05,0.03,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：u（T_start=288,T_stop=537,Exp=245）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+639.0,19.0,s,57572.5143996,uvot-b,16.38,0.06,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：b（T_start=543,T_stop=735,Exp=38）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+700.5,9.5,s,57572.5151114,uvot-u,15.88,0.09,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：u（T_start=691,T_stop=710,Exp=19）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+790.5,93.0,s,57572.5161531,w,16.64,0.03,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：white（T_start=567,T_stop=1014,Exp=186）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+816.5,29.0,s,57572.5164540,uvot-uvw2,18.38,0.27,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：uvw2（T_start=593,T_stop=1040,Exp=58）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+840.5,29.0,s,57572.5167318,uvot-v,16.51,0.10,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：v（T_start=617,T_stop=1064,Exp=58）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+865.5,29.0,s,57572.5170211,uvot-uvm2,17.75,0.25,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：uvm2（T_start=642,T_stop=1089,Exp=58）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+889.5,29.0,s,57572.5172989,uvot-uvw1,16.80,0.12,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：uvw1（T_start=666,T_stop=1113,Exp=58）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+3501.0,1950,s,57572.5475246,g,18.18,0.05,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652：Akeno g，原文 T0+58.35 min（MID-UT 13:08:26，两列自洽）；T-EXP=3900 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+3501.0,1950,s,57572.5475246,Rc,17.08,0.04,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652：Akeno Rc，原文 T0+58.35 min（MID-UT 13:08:26，两列自洽）；T-EXP=3900 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+3501.0,1950,s,57572.5475246,Ic,16.87,0.06,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652：Akeno Ic，原文 T0+58.35 min（MID-UT 13:08:26，两列自洽）；T-EXP=3900 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+4145.0,75,s,57572.5549783,R,17.9,,magnitude,,n,n,,,,,,,1.0,n,Keck-I/LRIS,,GCN19668,GCN 19668：Keck-I/LRIS R 150 s 自 13:17:55 UT（=T0+4070 s）起，原文同句称 1.125 h（=4050 s），相差 20 s，取 UT 时刻；time=起点+75 s（半曝光）；USNO-B1.0 R2 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+4580.0,98.0,s,57572.5600130,uvot-u,17.79,0.08,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：u（T_start=4480,T_stop=4680,Exp=196）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+4785.0,98.0,s,57572.5623857,uvot-b,18.76,0.11,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：b（T_start=4685,T_stop=4885,Exp=196）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+4990.0,98.0,s,57572.5647584,w,18.33,0.05,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：white（T_start=4890,T_stop=5090,Exp=196）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+5195.5,98.0,s,57572.5671369,uvot-uvw2,19.45,0.30,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：uvw2（T_start=5096,T_stop=5295,Exp=196）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+5400.0,98.0,s,57572.5695038,uvot-v,18.34,0.17,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：v（T_start=5300,T_stop=5500,Exp=196）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+5600.0,93.5,s,57572.5718186,uvot-uvm2,19.07,0.29,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN19656,"GCN 19656 UVOT 表：uvm2（T_start=5505,T_stop=5695,Exp=187）；time=曝光中点、time_err=半曝光；Vega（GCN 19656 明示 UVOT photometric system, Breeveld et al. 2011）；未做银消改正（E(B-V)=0.15）",Rusty-Harpoon@zcode
+11246.688,270,s,57572.6371738,g,19.32,0.07,magnitude,,n,n,,,,,,,1.0,n,MITSuME Murikabushi 1m,,GCN19653,GCN 19653：Murikabushi g，原文 T0+0.13017 d（MID-UT 15:17:31，两列自洽）；T-EXP=540 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+11246.688,270,s,57572.6371738,Rc,18.37,0.04,magnitude,,n,n,,,,,,,1.0,n,MITSuME Murikabushi 1m,,GCN19653,GCN 19653：Murikabushi Rc，原文 T0+0.13017 d（MID-UT 15:17:31，两列自洽）；T-EXP=540 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+11246.688,270,s,57572.6371738,Ic,18.22,0.08,magnitude,,n,n,,,,,,,1.0,n,MITSuME Murikabushi 1m,,GCN19653,GCN 19653：Murikabushi Ic，原文 T0+0.13017 d（MID-UT 15:17:31，两列自洽）；T-EXP=540 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+12631.0,3840,s,57572.6531959,g,19.13,0.06,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652 第 3 行：原文 T0+[min]=330.52 min（=19831 s）与 MID-UT 15:40:36（=12631 s）矛盾、恰差 2 h；前两行两列自洽，取 MID-UT 时钟读数；T-EXP=7680 s，time_err=半曝光；A 档待决，见 PR 说明；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+12631.0,3840,s,57572.6531959,Rc,17.96,0.05,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652 第 3 行：时间锚点矛盾（T0+[min]=330.52 min vs MID-UT 15:40:36）见同历元 g' 行 comment；T-EXP=7680 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+12631.0,3840,s,57572.6531959,Ic,17.61,0.06,magnitude,,n,n,,,,,,,1.0,n,MITSuME Akeno 50cm,,GCN19652,GCN 19652 第 3 行：时间锚点矛盾（T0+[min]=330.52 min vs MID-UT 15:40:36）见同历元 g' 行 comment；T-EXP=7680 s，time_err=半曝光；GSC2.3 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+19980.0,180,s,57572.7382538,R,19.4,,magnitude,,n,y,,,,,,,1.0,n,Zadko 1-m,,GCN19647,GCN 19647：Zadko 1m coadd，原文窗口 t0+5.5h–5.6h、Rlim=19.4；time=窗口中点、time_err=半宽（§3.8）；USNO-B1 定标、未做银消改正；原文未声明星等系统,Rusty-Harpoon@zcode
+33462.0,3546,s,57572.8942954,V,19.0,,magnitude,,n,y,,,,,,,1.0,n,Bassano Bresciano Observatory,Schmidt 0.32/0.40 m,GCN19650,GCN 19650：Bassano Bresciano Schmidt coadd，原文窗口 T0+8.31h–10.28h、Vlim=19，误差盒内未探测；time=窗口中点、time_err=半宽（§3.8）；UCAC4 定标、未做银消改正；原文未声明星等系统,Rusty-Harpoon@zcode
 108232.074,391.132,s,57573.759688356484,10keV,2.6109062018632e-08,6.66710893972249e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 109344.962,895.467,s,57573.77256900463,10keV,1.43610006094411e-08,3.03321585213441e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 115400.124,4971.726,s,57573.84265189815,10keV,1.25750345095327e-08,2.49699781028425e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-128131.0,,s,57573.99,15GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,,AMI Large Array,GCN19737,,
+128131.0,432,s,57573.9900015,15GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,AMI Large Array,,GCN19737,GCN 19737：AMI-LA 15 GHz 于 2016 Jul 04.99 UT 在 XRT 位置无源，3σ 上限 150 μJy；time_err=日期精度±0.005 d=432 s,Rusty-Harpoon@zcode
+301795.0,432,s,57576.0000015,15GHz,0.21,,mJy,,n,y,,,,,,,1.0,n,AMI Large Array,,GCN19737,GCN 19737：AMI-LA 15 GHz 于 2016 Jul 07.00 UT 在 XRT 位置无源，3σ 上限 210 μJy；time_err=日期精度±0.005 d=432 s,Rusty-Harpoon@zcode
+647395.0,432,s,57580.0000015,15GHz,0.12,,mJy,,n,y,,,,,,,1.0,n,AMI Large Array,,GCN19737,GCN 19737：AMI-LA 15 GHz 于 2016 Jul 11.00 UT 在 XRT 位置无源，3σ 上限 120 μJy；time_err=日期精度±0.005 d=432 s,Rusty-Harpoon@zcode
 198322.839,3913.25,s,57574.80240554398,10keV,6.85813659697097e-09,1.33667103709211e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-301795.0,,s,57576.0,15GHz,0.21,,mJy,,n,y,,,,,,,1.0,n,,AMI Large Array,GCN19737,,
-647395.0,,s,57580.0,15GHz,0.12,,mJy,,n,y,,,,,,,1.0,n,,AMI Large Array,GCN19737,,
-3394051.0,,s,57611.79,1.46GHz,0.166,0.046,mJy,,n,n,,,,,,,1.0,n,,GMRT,GCN19849,,
+3394051.0,432,s,57611.7900015,1.46GHz,0.166,0.046,mJy,,n,n,,,,,,,1.0,n,GMRT,,GCN19849,GCN 19849：GMRT 1460 MHz 于 2016 Aug 11.79 UT 探测 166±46 μJy（map rms 40 μJy），最可能为射电余辉；time_err=日期精度±0.005 d=432 s,Rusty-Harpoon@zcode
