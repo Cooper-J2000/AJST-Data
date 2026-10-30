@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB140801A",
   "alias": [],
-  "ra": 45.25,
-  "dec": -30.883333,
-  "T0": "2014-08-01T18:59:53.260000Z",
-  "T0_ref": null,
+  "ra": 44.06877,
+  "dec": 30.93799,
+  "T0": "2014-08-01T18:59:53.26Z",
+  "T0_ref": "GCN 16658（Fermi/GBM trigger 428612396，2014-08-01 18:59:53.26 UT）；Lipunov+2016 DOI 10.1093/mnras/stv2228 表2同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,14 +12,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "GCN 16657",
-  "comment": null,
-  "sub_tag": [
-    "lgrb"
-  ],
+  "pos_error": 2.5,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 16661：Swift/XRT enhanced position RA=44.06877°, Dec=+30.93799°, 2.5 arcsec radius, 90% confidence; 0.8 arcsec from MASTER optical counterpart. Lipunov+2016 DOI 10.1093/mnras/stv2228 §3.1 independently gives MASTER J2000 02:56:16.44 +30:56:16.8.",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 16657 (z=1.320); GCN 16663 (z=1.319±0.003)",
+  "comment": "身份核验：GRB 140801A = Fermi/GBM trigger 428612396；T0=2014-08-01T18:59:53.260Z（GCN 16658，Lipunov+2016 表2一致）。采用Swift/XRT增强余辉坐标 RA=44.06877°, Dec=+30.93799°（GCN 16661，90%误差半径2.5″），与 MASTER 首报坐标相距0.8″；原有RA=45.25°对应Lipunov+2016所述Fermi初始误差框中心RA=03:01:00；论文给该中心Dec=+30°53′24″（约+30.89°），而原JSON录成−30.883333°，赤纬符号错误。现采用GCN16661的Swift/XRT余辉坐标而非Fermi误差框中心。红移为光谱值 z=1.320（GCN16657；GCN16663给1.319±0.003）。Lipunov+2016将其描述为可能的中等时长GRB，故因词表没有该类，清空原lgrb副标签。\n光变核对：Lipunov+2016正式版 MNRAS 455, 712–724, DOI 10.1093/mnras/stv2228（出版社HTML Table 2；正文表共50行，光学/近红外观测表覆盖全部相应现有测量，AB且未作银消改正）；arXiv:1510.07807预印本仅用于身份交叉核验。Pozanenko+2017正式版 Table 3（Astronomy & Astrophysics Caucasus 1, 8；作者托管PDF，12页，标题/版本身份核验通过）补入MAO/AZT-22 10个R探测与TSHAO/Z-1000一条R波段上限；未滤光AbAO/AS-32行已由GCN16667存在，未重复添加。Pozanenko表未声明星等系统，新增行mag_system留空；各值未作银消改正。\n去重：删除原导入重复行（原CSV物理行14、23、28、36），分别为GCN16663、GCN16659、GCN16656、GCN16662的二次导入；保留并使用原始通告。GCN16659的3×180 s叠加按起始UT+270 s记中点；GCN16662仅给36391–47996 s观测窗口，按窗口中点42193.5 s及半宽5802.5 s记录。GCN16656的R≈20.6、约6.15 h与Lipunov+2016 Table 2的R点为同一观测：查询NOT FITS Header Archive（坐标检索）找到ALxh010200.fits（i，01:07:22 UT）及ALxh010201.fits（R，DATE-OBS 01:11:31、DATE-AVG 01:13:11 UT、200 s）；与论文R帧T_start=01:11:31.48及中点T−T0=6.2217 h吻合。已合并为论文AB星等20.70±0.06、time=22398.22 s（中点）±100 s，GCN序列起始时间作注释。GROND 2014-08-02 g′r′i′z′组：GCN #16666报告09:43 UT序列起始、总曝光1584 s及初报测光；Lipunov+2016正式版Table 2给T_start=09:44:10.69、24×66 s，并明确T−T0=15.1027 h为曝光中点，最终星等为g=22.11±0.08、r=21.62±0.06、i=21.41±0.09、z=21.26±0.12。依维护者裁定，采用论文最终值和其明确的中点时刻（54369.72 s），GCN初报保留作注释；删除GCN/Dainotti中重复导入的初报行。Pozanenko Table 3及GCN #16667的日期/时刻冲突：2014-08-02 AbAO/AS-32未滤光26×60 s行：按维护者裁定采用Table 3列t−T0=1.14962 d作中点（time=99327.2 s、time_err=780 s），其与Time UT=21:54:52所推连续曝光中点相差1648.428 s，帧间间隔未给；该表MAO/AZT-22的R=21.96±0.05行（2014-08-02 22:02:04 UT、15×180 s）依维护者裁定按T−T0=1.14422 d（time=98860.608 s、time_err=1350 s）录入，和UT起始推算中点差179.868 s；2014-08-07 MAO/AZT-22 R=23.40±0.20（10×180 s）行依维护者裁定采用Table 3列t−T0=6.17073 d作中点（time=533151.072 s、time_err=900 s），与UTC起始推算中点差116.332 s；2014-08-24 00:31:46（23.0511 d）差68562.300 s；依维护者裁定优先采用CrAO高度较高时段的Time UT，按39×120 s连续曝光估算中点01:10:46 UT并录入（time=1923052.74 s，time_err=2340 s），以表列23.0511 d为冲突注释。Lipunov+2016 GROND 2014-08-02 JHK组：T_start=09:44:09.88、144×10 s、T−T0=15.1048 h；依维护者裁定以论文T−T0作为曝光中点，time_err按累计曝光一半720 s记录，帧间间隔未给；连续曝光中点早约602 s。2014-08-03组：g′r′i′z′的T_start=09:02:13.36、24×115 s、T−T0=38.7240 h；JHK的T_start=09:02:13.31、300×10 s、T−T0=38.7713 h。依维护者裁定，以论文明确定义的T−T0曝光中点录入，time_err按累计曝光一半填写，帧间间隔未给；由连续累计曝光估算的中点分别早1086.3 s与1136.7 s。2014-08-04 GROND光学组：T_start=09:07:31.33、24×115 s、T−T0=62.7689 h，依维护者裁定采用论文T−T0作中点，time_err按累计曝光一半1380 s记录；连续曝光估算早929.97 s。JHK组T_start=09:07:30.45、288×10 s、T−T0=62.7760 h，也按论文中点录入，time_err=1440 s；连续曝光估算早896.4 s。GROND Table 2中Aug 2、3、4各组时间口径均按维护者逐项裁定处理。未触碰5条10keV X射线行。\n测光检索（2026-10-30）：本worktree无gcn/archive目录；external/rssgrbag/lightcurve.jsonl共140行，源名命中0；external/grbsn_webtool/SourceData共63个源文件，命中0。ADS API（ADS_API_TOKEN可用）对GRB140801A/Fermi 428612396检索返回17项：3篇研究论文+14条GCN；3篇包括Lipunov+2016、Ershova+2020、Pozanenko+2017；另检索Minaev+2020、Dainotti+2024与Tsvetkova+2021，分别核实为能谱参数、光学数据目录、非适用Swift等待模式目录。Dainotti+2024的正式版为MNRAS 533, 4023–4043, DOI 10.1093/mnras/stae1484；论文说明目录数据公开于SLAC-Gamma-Rays/grbLC，实际检查其中原始文件 grblc/data/mag_files/140801A_mag.txt（59条数据记录），确认CSV现有目录导入行的测量值及其所列原始引文；该目录转引条目仍按最初GCN/论文来源保留或去重。GCN事件页及光学通告核读，未发现除上述外的新增时间明确光学测光；Ershova+2020 Table20仅转引GCN16653，按线索卡门槛不新增数据。",
+  "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "derived": {
@@ -466,6 +465,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-10-30"
     }
   },
   "articles": [
@@ -478,9 +482,9 @@
     },
     {
       "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "title": "An optical gamma-ray burst catalogue with measured redshift – I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484",
+      "bibtex": "@article{Dainotti_2024, title={An optical gamma-ray burst catalogue with measured redshift -- I. Data release of 535 gamma-ray bursts and colour evolution}, volume={533}, number={4}, journal={Monthly Notices of the Royal Astronomical Society}, author={Dainotti, M G and De Simone, B and Mohideen Malik, R F and Pasumarti, V and Levine, D and Saha, N and Gendre, B and Kido, D and Watson, A M and Becerra, R L and Belkin, S and Desai, S and do E. S. Pedreira, A C C and Das, U and Li, L and Oates, S R and Cenko, S B and Pozanenko, A and Volnova, A and Hu, Y-D and Castro-Tirado, A J and Orange, N B and Moriya, T J and Fraija, N and Niino, Y and Rinaldi, E and Butler, N R and Gonzalez, J d J G and Kutyrev, A S and Lee, W H and Prochaska, X and Ramirez-Ruiz, E and Richer, M and Siegel, M H and Misra, K and Rossi, A and Lopresti, C and Quadri, U and Strabla, L and Ruocco, N and Leonini, S and Conti, M and Rosi, P and Ramirez, L M T and Zola, S and Jindal, I and Kumar, R and Chan, L and Fuentes, M and Lambiase, G and Kalinowski, K K and Jamal, W}, year={2024}, pages={4023--4043}, doi={10.1093/mnras/stae1484}}",
       "source": "bot"
     },
     {
@@ -510,6 +514,13 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract",
       "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Pozanenko+2017",
+      "title": "Observations of Gamma-ray Bursts in Abastumani Observatory",
+      "url": "https://ui.adsabs.harvard.edu/abs/2017A&AC....1....8P/abstract",
+      "bibtex": "@ARTICLE{2017A&AC....1....8P,\n  author = {Pozanenko, A. and Volnova, A. and Mazaeva, E. and Inasaridze, R. and Ayvazyan, V. and Zhuzhunadze, V. and Reva, I. and Burkhonov, O. and Rumyantsev, V. and Krugly, Y. and Molotov, I.},\n  title = {Observations of Gamma-ray Bursts in Abastumani Observatory},\n  journal = {Astronomy & Astrophysics (Caucasus)},\n  volume = {1},\n  pages = {8},\n  year = {2017}\n}",
+      "source": "audit"
     }
   ],
   "host_galaxy": null
