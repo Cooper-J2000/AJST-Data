@@ -1,23 +1,29 @@
 {
   "transient_id": "GRB070925",
-  "alias": [],
-  "ra": 253.218,
-  "dec": -22.0355,
+  "alias": [
+    "GRB 070925",
+    "Swift 20056"
+  ],
+  "ra": 253.217,
+  "dec": -22.02856,
   "T0": "2007-09-25T15:52:32Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 6823",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 6.0,
   "pos_ref": "GCN 6826",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份核验：本暴由 INTEGRAL IBAS 于 2007-09-25 15:52:32 UT 在 IBIS/ISGRI 数据中触发（GCN 6823），Trigger_Instrument 原 Swift/BAT 系误记——Swift 未触发（external/swift_grb 快照 bat_detection=U、uvot_grb 快照 BAT_PIT=null），Swift 仅作 ToO 跟踪（target 20056）；据 GCN 6823 与 uvot_grb 快照 DISC_BY=INTEGRAL、swiftgrbba 快照 trigger_obs=INTEGRAL 改为 INTEGRAL/IBIS。T0=2007-09-25T15:52:32Z 即 IBAS 触发时刻（GCN 6823；external/uvot_grb TRIG_UT、swift_grb 与 swiftgrbba 快照 trigger_time 同值互证）。定位：原 ra/dec=253.218/-22.0355 为 GCN 6823 IBAS 定位（2′，90% c.l.），原 pos_error=6.0″ 却引 GCN 6826，坐标与误差半径错配（bot 导入残留）；现采用 GCN 6826 Swift-XRT 精化定位 253.21700/-22.02856（6.0″ 半径，90% 包含含 boresight 不确定度），pos_error_confidence=90；原 IBAS 定位列此备查。t90=30.0±未给 s（external/uvot_grb 目录 params.t90，T90_REF=GCN 6823「lasting about 30 s」）；Higgins+2017 表A1 另给 T90=19 s（取自 IBAS 网页）——两值并列、均远大于 2 s，按目录 t90 判 lgrb。别名：GRB 070925（GCN 6823 原文用名「GRB 070925: a long GRB detected by INTEGRAL」）、Swift 20056（HEASARC SWIFTGRB 目录 name_alt，external/swift_grb 快照）。X 射线余辉确证：1.3e4–1.4e5 s 间衰减 α=1.2±0.3，T+72h 计数率 ~3e-3 ct/s（GCN 6828）。prompt：IBIS 20–200 keV 峰流量 ~2 ph/cm²/s（1 s 积分）、fluence >2e-6 erg/cm²（GCN 6823）；Bošnjak+2014 表2 fluence=36.1(+1.7/−3.4)e-7 erg/cm²（20–200 keV；A&A VoR 403 不可得，取自 arXiv:1309.3174）。测光检索（2026-10-29）：仓内 gcn/archive 全文命中 4 篇（GCN 6823 探测通告、6826 XRT 位置、6827 Gemini r~24.5 上限、6828 XRT 确证衰减；仅 6827 含光学数值→补 1 行）、external/rssgrbag 与 external/grbsn_webtool 无记录；ADS 无 token（401），以 OpenAlex 兜底命中 4 条（2 条为 GCN 通告本身、1 条 Higgins+2017 MNRAS 470,314、1 条 Leicester 博士论文无测光表）；TNS 不适用。Higgins+2017（VoR OUP 403 不可得，取自 arXiv:1705.06744）表A1 核对：fluence 与 Bošnjak+2014 一致、11h X-ray flux 未测得，全文无可用测光表。lc 原有 2 行 X-ray（UKSSDC Burst Analyser，band=10keV）按契约不动不参与去重，mjd=T0+time 自洽复核通过（54368.82305796297 / 54369.99742449074）。无红移记录。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -103,8 +109,26 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Higgins+2017",
+      "url": "https://doi.org/10.1093/mnras/stx1163",
+      "title": "Investigating the nature of the INTEGRAL gamma-ray bursts and sub-threshold triggers with Swift follow-up",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Bosnjak+2014",
+      "url": "https://doi.org/10.1051/0004-6361/201322256",
+      "title": "The spectral catalogue of INTEGRAL gamma-ray bursts: results of the joint IBIS/SPI spectral analysis",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
