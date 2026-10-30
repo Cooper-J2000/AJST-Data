@@ -1,29 +1,38 @@
 {
   "transient_id": "GRB000214",
-  "alias": [],
-  "ra": 153.56,
-  "dec": -41.892,
+  "alias": [
+    "GRB000214A",
+    "1SAX J1854.4-6627"
+  ],
+  "ra": 283.6125,
+  "dec": -66.4583333,
   "T0": "2000-02-14T01:01:01Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 550（BeppoSAX 任务科学家：'On Feb.14 at 01:01:01 a GRB has been detected by the GRBM and WFC1'）；Antonelli+2000（ApJ 545 L39）同值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/GRBM+WFC1",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 50,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 561 / Antonelli+2000（ApJ 545 L39）：NFI 余辉源 1SAX J1854.4-6627，RA=18h54m27s.0 Dec=-66°27'30\"（J2000），误差半径 50\"；90% 置信见 Guziy+2005",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（Rusty-Harpoon@zcode，2026-10-28）。身份：GRB 000214A『Valentine's Day Burst』（GRBCAT 名 GRB 000214A，区别于同日 BATSE 源 GRB 000214B，05:46 UT，grbcat_id 4765）；BeppoSAX GRBM+WFC1 于 2000-02-14 01:01:01 UT 触发。T0 备查：仓内 heasarc_grbcat 快照 01:01:01.000（Earth Crossing Time）、saxgrbmgrb 快照 01:01:00.000（与 GRBCAT 差 1 s）、GCN 557 只给 2 月 14.042 UT（日分数精度，与上相容）。坐标：原库 ra=153.56/dec=-41.892 系 GCN 556（Hurley & Feroci）IPN 环形三角定位的环心（annulus center RA(2000)=153.560, Decl(2000)=-41.892, radius 65.114°，几何参考点而非源位置），被导入管线误作源坐标，与 WFC/NFI 全部位置矛盾，废弃（原值留此备查）；改为 NFI 余辉源位置 R.A.=18h54m27.0s Decl.=-66d27'30″（GCN 561 原文用名 1SAX J185427-6627.5，Antonelli+2000 正文简写 1SAX J1854.4-6627）。红移：Antonelli+2000 由 Fe Kα 发射线（4.7±0.2 keV）解释得 z=0.37–0.47（文中 'assume z=0.47 for simplicity'，非独立确证），heasarc_grbcat/rssgrbag 快照记 0.47、mpe_greiner 快照记 z_range 0.37–0.47——redshift 保持 null 待决。t90 备查：saxgrbmgrb 快照 t90=8.0±3.2 s（40–700 keV）vs rssgrbag 快照 t90=115.0 s，两目录冲突，sub_tag 留空待决（按 §3.9 不以单一目录值定 lgrb/sgrb）。alias 出处：GRB000214A=GRBCAT 目录名；1SAX J1854.4-6627=GCN 561/Antonelli+2000 余辉源名。测光检索（2026-10-28）：GCN 站事件页 gcn.nasa.gov/circulars/events/grb-000214 共 9 篇（550/551/552/556/557/559/561/562/564）逐篇核读，测光相关 2 篇：GCN 562（ATCA 射电上限，补 2 行）、GCN 564（CTIO K' 上限，原有 2 行改为上限口径并修正波段）；仓内 external/rssgrbag 有该源条目但 opt/radio 余辉 flag=N、无光变表，external/grbsn_webtool/uvot_grb/swift_bat/swift_grb/batse/konus_wind/fermi_gbm 等均无 000214 记录（grep 多键形），heasarc_grbcat/mpe_greiner/saxgrbmgrb 快照用于身份与 T0 互证；gcn/archive 未随本 worktree 分发（SCHEMA：不进仓库），以 GCN 站事件页替代；ADS 检索以 WebSearch 代理（export.arxiv.org API 本机不可达，已实测留证）命中 4 条：Antonelli+2000（ApJ 545 L39，X 射线不入库）、Kotake & Nagataki 2001（PASJ 53 579，理论）/2002（会议）、Guziy+2005（A&A 441 975，补 UBVRI 场极限 5 行）、GCN 562，无其他测光文献。合计补 7 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-28"
+    }
   },
   "articles": [
     {
