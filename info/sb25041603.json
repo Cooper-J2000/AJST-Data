@@ -3,25 +3,33 @@
   "alias": [],
   "ra": 183.889,
   "dec": 52.6534,
-  "T0": "2025-04-16T06:39:55Z",
-  "T0_ref": null,
+  "T0": "2025-04-16T06:28:04Z",
+  "T0_ref": "GCN 40147（SVOM/ECLAIRs 触发通告）：「SVOM/ECLAIRs triggered on the X-ray transient labelled sb25041603 … starting at 2025-04-16T06:28:04 UTC (Tb)」。两路互证：① GCN 40148 观测起点 06:39:55 UT 记「12 min after the onboard trigger」（实测 711 s，≈11.9 min）；② GCN 40158「MXT starting at 2025-04-16T08:57:43 (2.5 hour after trigger time Tb)」（实测 2h29m39s）。原库 06:39:55Z 系 COLIBRÍ/DDRAGO 观测起点而非触发时刻，已更正；GCN 40158 中把 MXT 观测起点称为「T0」的值同属观测起点，不得用作 T0",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 39,
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
+  "pos_ref": "GCN 40158（SVOM/MXT，X 波段全数据定位：RA=183.889, Dec=52.6534）；pos_error=39″ 为原文统计 90% C.L. 半径，原文另要求叠加 35″ 系统误差（平方和 ≈ 52″）",
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] SVOM/ECLAIRs X 射线暂现源 sb25041603（GCN 40147：SVOM/ECLAIRs triggered on the X-ray transient labelled sb25041603；仅 IMT 触发，5–8 keV SNR=7.25，655.36 s 时间窗；SNR 低于 Slew 阈值，未做即时转向）。[T0] 原库 T0=2025-04-16T06:39:55Z、T0_ref=null；核实该时刻系 SVOM/COLIBRÍ DDRAGO 观测起点（GCN 40148「starting at 06:39:55 UT on 2025-04-16 (12 min after the onboard trigger, and 16 s after the alert reception)」），不是触发时刻，故更正为 GCN 40147 的 Tb=2025-04-16T06:28:04 UTC；交叉验证：40148 起点−Tb=711 s（≈12 min，与原文相符）、40158 的 MXT 起点 08:57:43 = Tb+2h29m39s（原文写 2.5 hour after trigger）。注意 GCN 40158 把 MXT 观测起点记作「T0 = 2025-04-16T08:57:43」，该值属观测起点，已拒绝写入本库 T0（§3.2 / Issue #84）。[Trigger] Trigger_Instrument=SVOM/ECLAIRs 经 GCN 40147 确认无误（COLIBRÍ/DDRAGO 与 MXT 均为跟随观测，非触发仪器）。[定位] ra/dec=183.889/+52.6534 取自 GCN 40158（SVOM/MXT 三轨 3.0 ks，统计 90% C.L. 39″ 另加 35″ 系统误差按平方和叠加）；ECLAIRs best-alert 位置为 184.1075/+52.6309、90% C.L. 半径 10.81′（含 2′ 系统误差，GCN 40147），已被 MXT 精化取代，仅留档备查。pos_error_confidence=90（原文明示 statistical 90% C.L.）。[分类] tag=stellar-flare，不补 grb：GCN 40158 标题「SVOM/sb25041603 is not a GRB」，正文「We conclude that SVOM/sb25041603 is likely not a GRB but a flare from the M4V star StKM 2-809」；依据为该位置与 M4V 星 StKM 2-809 相符并排除 GCN 40147 列出的 V* EG UMa 与 2MASS J12161363+5242459，谱为吸收热谱（NH=5(<10)e20 /cm2，kT=2.7±0.8 keV），0.3–5 keV 平均流量 2.2±0.4e-11 erg/cm2/s，3 轨内由 3.1e-11 衰减至 0.3e-11 erg/cm2/s，按 25 pc 得 L=1.6e30 erg/s。sub_tag 留空（原文未给 lgrb/sgrb 等分类判据）。[测光] lc 唯一一行＝GCN 40148 的 5σ 上限 i>22.89 mag (AB)；原文 50×60 s i 波段自 06:39:55 UT 起、coadd 共 3000 s，已按新 T0 重算 time=2211 s（窗口中点 07:04:55 UT）与 mjd=60781.2950810（7 位小数），time_err=1500 s 为窗口半宽；telescope=COLIBRÍ、instrument=DDRAGO（原行把两者并入 instrument 列「SVOM/COLIBRI DDRAGO」，已拆分）；该上限针对 ECLAIRs 10.81′ 误差框中心（GCN 40147 位置，距 MXT 精化位置约 8.1′、仍在 90% C.L. 半径内），并不落在 MXT 精化位置上，行内 comment 已注明。[检索留证] 2026-10-29 检索：仓内 gcn/archive 全文命中 3 篇（GCN 40147/40148/40158；其余 250416 命中均属无关的 GRB 250416A/B、EP250416a、IceCube-250416A）；GCN 新站直链 40147/40148/40158 均可访问；external/rssgrbag 0 命中、external/grbsn_webtool 0 命中；ADS/SciX API 无 token → HTTP 401（未能检索）；arXiv API 查「sb25041603」与「StKM 2-809」均 0 条；TNS 检索 403（反爬）。结论：除 GCN 40148 外无其它带明确时间锚点的光学/射电测光或上限，lc 维持 1 行、未补行。原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot 导入残留，与 GCN 40147 不符，已改写）。",
+  "tag": [
+    "stellar-flare"
+  ],
+  "sub_tag": [],
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 更正为 SVOM/ECLAIRs 触发时刻 2025-04-16T06:28:04 UTC（GCN 40147 Tb）；原库 06:39:55Z 系 COLIBRÍ/DDRAGO 观测起点（GCN 40148），已废弃",
+    "t0_basis": "GCN 40147（SVOM/ECLAIRs 触发通告，Tb）；GCN 40148/40158 相对触发时长（+11.9 min / +2.5 h）互证",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null

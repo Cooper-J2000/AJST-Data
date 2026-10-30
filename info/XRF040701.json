@@ -1,10 +1,15 @@
 {
   "transient_id": "XRF040701",
-  "alias": [],
-  "ra": 311.943,
-  "dec": -40.237,
+  "alias": [
+    "GRB 040701",
+    "GRB 040701X",
+    "U11548",
+    "XRF 040701"
+  ],
+  "ra": 312.067071,
+  "dec": -40.185786,
   "T0": "2004-07-01T13:00:55Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 2620（HETE-2 探测，13:00:55 UT，整秒）；HETE 触发页 U11548 UTC=20040701_130055、HEASARC GRBCAT trigger_time 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
@@ -12,11 +17,12 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_error": 1.06,
+  "pos_error_confidence": null,
+  "pos_ref": "Soderberg+2005 §3.2.2（HST/Chandra 对齐后最终位置不确定 1.06″，2σ）；GCN 2626（每坐标 ±0.5″，2σ）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "GCN 2627（Magellan Baade 6.5m + IMACS 发射线光谱，z=0.2146）；Soderberg+2005 §3.2.1（ApJ 627, 877，DOI 10.1086/430405）",
+  "comment": "身份：XRF040701 = U11548（GCN 2620 标题「XRF040701 (=U11548)」；HETE 触发页 U11548：UTC=20040701_130055、GRB=GRB040701+46855、触发仪器 unknown），HETE-2 探测的亮 XRF（GCN 2620：持续约 60 s，2–25 keV 能流 4.5±0.8e-7 erg/cm2，幂律谱指数 2.395±0.3）。HETE 用名 GRB040701（GCN 2620 所引 HETE 页；HEASARC GRBCAT 5778 与 rssgrbag 目录亦记 GRB 040701），MPE Greiner 汇编用名 GRB 040701X——均指本事件（坐标/触发时刻一致），库内无 GRB040701 条目，无重复建档。T0：GCN 2620 给 13:00:55 UT（整秒，无亚秒）；HETE 触发页 20040701_130055 与 HEASARC GRBCAT trigger_time=2004-07-01T13:00:55.000Z 一致。Soderberg+2005 §3.2.1 写 localized on 2004 July 1.542 UT（=13:00:28.8，为 3 位小数日期的舍入、精度 ±43 s），不是真实爆发时刻修订，故不记 T0_offset。位置：原 ra/dec=311.943/−40.237 为 HETE-2/WXM 8′ 半径误差圆中心（GCN 2620：20h47m46.3s −40°14′13″），非余辉/宿主位置；改为 X 射线余辉位置 CXOU J204816.1-401108 = 20h48m16.097s −40°11′08.83″（GCN 2626 源 #2；GCN 2630 两历元流量下降、列为首选余辉候选；Soderberg+2005 §3.2.1 解释为 X 射线余辉；rssgrbag 目录坐标 312.0671/−40.1858 一致），ra=312.067071、dec=−40.185786。pos_error=1.06″ 取 Soderberg+2005 §3.2.2（HST/Chandra 对齐后最终位置不确定 1.06″，2σ）；GCN 2626 另给每坐标 ±0.5″（2σ）；受控词表无 2sigma，pos_error_confidence 留空。红移：z=0.2146，GCN 2627（Magellan Baade 6.5m + IMACS，宿主星系 CXOU J204816.1-401108 的 Hβ 4861、[OIII] 4959/5007、Hα 6563、[NII] 6548/6583、[SII] 6717/6731 发射线）→ redshift_type=spec-host；Soderberg+2005 摘要取 z=0.21、§3.2.1 记 X 射线余辉与 resolved galaxy complex 成协、z=0.2146（Kelson et al. 2004）。X 射线数据（GCN 2626/2630 光源计数率表、Soderberg+2005 §3.2.1 的 2–10 keV 流量 7.75/4.06e-14 erg/cm2/s）按 §3.3 不在审核范围，未动、未新增。\n\n测光（逐行）：① 原唯一行（reference=GCN2638）：复核原文为 ESO Danish 1.5m（2004 Jul 03,15,16,17,19,23,24、Aug 4,5）与 VLT/FORS1（Jul 23.16、23.33、30.35 UT）R 波段成像，「we determine a lower limit of R~17.9 for the galaxy brightness」——R~17.9 是 z=0.2146 宿主星系的亮度下限（宿主亮于 R≈17.9），不是余辉/瞬变体测光，且不对应单一曝光（通告给多个历元、未指定该值出自哪次；GCN 2797 亦转述为 z=0.2146 emission-line galaxy with lower limit R~17.9 mag）。按 §3.10 宿主测光与瞬变体测光区分：保留行、置 discard=y（不删），不参与拟合；time=1853945 s 为 ETL 由正文 Jul 23 日期生成的 2004-07-23 00:00 UT 整日值（非真实曝光中点），mjd 按 T0+time 补足 7 位小数=53209.0000000；原文未声明星等系统。② 新增 GCN 2621 上限：Mt. John 0.6m + MOA，2004 Jul 4.459 UT 起对整误差框成像，MOA broad R 波段（原文口径，记 R），前 3 帧×300 s 堆栈，无亮于 R~20.2 的候选体；time=堆栈中点（起点+450 s）=252452.6 s、time_err=450 s；原文未声明星等系统。③④ 新增 HST/ACS 两行，Soderberg+2005 表 1（VoR）：2004 Aug 9.6/9.7 UT、Δt=39.1 d、曝光 1820/1940 s，F625W>27.81 AB、F775W>26.83 AB（残差图上限，论文未标置信水平、GCN 2824 称同批数据为 3σ；观测值未做银消改正；表头 HST Magnitude (AB)）；time=39.1 d=3378240 s，time_err 取 Δt 精度 0.05 d=4320 s（半曝光 910/970 s 小于该精度，未单列）；同一观测的 Vega 化 R>27.48、I>26.30（已减 AR=0.13、AI=0.09）不另立行；GCN 2824 早期通告的 27.5/27.0 为同批数据、以论文表 1 为准（其 27.5 实为消光改正后的 R 极限）。⑤ 新增 GCN 2628 射电行：VLA D-configuration，2004 Jul 12 08:19–09:48:49 UT，X 波段（表列 8.35 GHz；原文写 X-band 8.4 GHz）在余辉/宿主位置 CXOU J204816.1-401108 的 ~2σ 边缘探测 0.22(10) mJy；time=观测窗口中点=936179.5 s、time_err=半窗 2694.5 s（约定口径）；同通告 5 个视场射电源不与任何 Chandra 源重合、另 2 个 Chandra 位置（#16、#25）的边缘探测不在本事件位置，均不入库。GCN 2631（Du Pont 2.5m Jul 16.29/17.29/18.28/19.25 UT、SSO 40-in Jul 14，R 波段）只称无变源、未给数值极限，按 §3.3 不入库，记此备查；GCN 2638 的图像相减「变化小于百分之几星等」亦无数值极限。\n\n版本：Soderberg+2005 取 VoR——全文 HTML https://beta.iopscience.iop.org/article/10.1086/430405/fulltext/62297.text.html 与表 1 HTML https://beta.iopscience.iop.org/article/10.1086/430405/fulltext/62297.tb1.html（取数 2026-10-29）可读；出版社 PDF（doi.org→IOP、UChicago Press）与 ADS 扫描页被机器人验证拦截（403/captcha），ADS/SciX API 无 token（401）。VoR §3.2.2 正文写每历元总曝光 1840/1920 s，与表 1 的 1820/1940 s 不一致（两值之和均 3760 s，疑正文笔误），按表 1 逐波段值入库，记此备查。Crossref 题录核对：ApJ 627, 877–887 (2005)，DOI 10.1086/430405。\n\n测光检索（2026-10-29）：仓内 gcn/archive 全文 45889 篇命中本事件 9 篇（GCN 2620/2621/2626/2627/2628/2630/2631/2638/2824，全部已读；另 2797 仅转述宿主亮度下限）；external/rssgrbag 仅目录参数（t90=60 s、z=0.21；lightcurve.jsonl 无该源行），grbsn_webtool 与 uvot_grb 无记录，mpe_greiner 与 heasarc_grbcat 仅目录参数；GCN 站按名检索被子串命中淹没、无法给出精确计数，以仓内全库全文检索为准；ADS/SciX API 无 token（401），改用 OpenAlex/Crossref/arXiv 检索（arXiv 元数据检索仅 Soderberg+2005 一篇）；TNS 检索需登录/API，未能取得结果 → 结论：可用光学/射电测光共 5 行（含 1 行宿主测光保留置 discard=y），本次补 4 行。另：HEASARC GRBCAT 快照（external/heasarc_grbcat, grbcat_id 5778）本事件 dec 记为 +40.2369，符号错（应为 −40.2369），不改目录快照，随 PR 报告。",
   "sub_tag": [
     "XRF"
   ],
@@ -25,16 +31,28 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [
     {
       "name": "Soderberg+2005",
       "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
-      "url": "https://ui.adsabs.harvard.edu/abs/2005ApJ...627..877S",
+      "url": "https://doi.org/10.1086/430405",
       "bibtex": "@ARTICLE{2005ApJ...627..877S,\n       author = {{Soderberg}, A.~M. and {Kulkarni}, S.~R. and {Fox}, D.~B. and {Berger}, E. and {Price}, P.~A. and {Cenko}, S.~B. and {Howell}, D.~A. and {Gal-Yam}, A. and {Leonard}, D.~C. and {Frail}, D.~A. and {Moon}, D. and {Chevalier}, R.~A. and {Hamuy}, M. and {Hurley}, K.~C. and {Kelson}, D. and {Koviak}, K. and {Krzeminski}, W. and {Kumar}, P. and {MacFadyen}, A. and {McCarthy}, P.~J. and {Park}, H.~S. and {Peterson}, B.~A. and {Phillips}, M.~M. and {Rauch}, M. and {Roth}, M. and {Schmidt}, B.~P. and {Shectman}, S.},\n        title = \"{An HST Search for Supernovae Accompanying X-Ray Flashes}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, Radiation Mechanisms: Nonthermal, X-Rays: Bursts, Astrophysics},\n         year = 2005,\n        month = jul,\n       volume = {627},\n       number = {2},\n        pages = {877-887},\n          doi = {10.1086/430405},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0502553},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2005ApJ...627..877S},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 312.067071,
+    "dec": -40.185786,
+    "redshift": 0.2146,
+    "redshift_type": "spec",
+    "comment": "宿主为 X 射线余辉所在的分辨星系复合体（Soderberg+2005 §3.2.1：afterglow associated with a resolved galaxy complex, z=0.2146；GCN 2627 发射线光谱）；坐标为余辉定位 CXOU J204816.1-401108（= 复合体东北星系），宿主质心未单独给出。宿主亮度下限 R~17.9（GCN 2638，宿主亮于 R≈17.9，属宿主测光、非余辉；见 lc 中 discard=y 行）。",
+    "source": "GCN 2627（Magellan Baade 6.5m + IMACS，z=0.2146）；Soderberg+2005 §3.2.1（ApJ 627, 877, DOI 10.1086/430405）"
+  }
 }

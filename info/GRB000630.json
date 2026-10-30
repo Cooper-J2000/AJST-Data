@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB000630",
   "alias": [],
-  "ra": 221.8554,
-  "dec": 41.2078,
-  "T0": "2000-06-30T00:00:00Z",
-  "T0_ref": null,
+  "ra": 221.806188,
+  "dec": 41.231458,
+  "T0": "2000-06-30T00:30:53Z",
+  "T0_ref": "GCN 736（Hurley+2000，Ulysses/Konus-Wind/NEAR/BeppoSAX GRBM IPN 通告）：observed at 01853 s UT=00:30:53 UT；BeppoSAX GRBM 目录 00:30:59.000Z、HEASARC GRBCAT ECT 00:31:01.000Z 互证（差≤8 s，按触发仪器官方通告取值）；Fynbo+2001 亦记 6月30.02 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -12,18 +12,25 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.3,
+  "pos_ref": "Fynbo+2001（A&A 369, 373, §3.1，DOI 10.1051/0004-6361:20010112）OT 天体测量位置 RA(J2000)=14:47:13.485 Dec(J2000)=+41:13:53.25，29 星 USNO-A2.0 拟合 rms=0.3″",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "IPN 暴（Ulysses+Konus-Wind+NEAR+BeppoSAX GRBM，GCN 736，~20 s，25–100 keV 流量 ~2e-6 erg/cm2）。定位更正：原库 ra/dec=221.8554/41.2078 为 GCN 737 Bartolini 候选体位置（后被否证非 OT：GCN 739 未在该位置找到对应体、GCN 743 该天体恒定、GCN 739 另指候选体以南 3.5″ 恒星状天体 may be present on DSS-2 (red)（GCN 737 明言候选体本身 not present in the DSS2），改为 Fynbo+2001 OT 天体测量位置（IPN 初盒中心 14:47:14.72 +41:13:14.81，OT 距中心 <1′，GCN 736/747）。pos_error 为 29 星拟合 rms，来源未标注置信水平。sub_tag：t90=26.0±4.1 s（BeppoSAX GRBM 目录，40–700 keV），按目录 t90 判 lgrb；Fynbo+2001 亦归 long-duration class（Ulysses ~20 s）。宿主：Fynbo+2001 无法确认 OT 以北 2.0″ 的 R=24.68±0.15 星系为宿主；Kaplan+2001（GCN 1069，Keck/ESI 2001-06-19）将 OT 位置处比该星系暗约 2 mag 的暗源认作宿主——两说均未定论，host_galaxy 保持 null。T0 原为 bot 名字日期占位 2000-06-30T00:00:00Z（extra_data 原 t0_basis=meta_trigger），审核改为 GCN 736 触发时刻。测光检索留证（2026-10-30）：仓内 gcn/archive 45 563 篇全文检索「000630/GRB 00630」命中 14 篇（GCN 736–748、1069）逐篇读取；external/rssgrbag 光变 0 行命中、grbsn_webtool 无该事件、uvot_grb 无命中；GCN 站在线核对 GCN 736 与快照一致；WebSearch/ADS 命中 Fynbo+2001（VoR PDF 经 coauthor 站点 fe.infn.it 取得，与 arXiv astro-ph/0101425 表 1 逐值一致）、Smith+2001（SCUBA 850 μm rms=2 mJy 非探测）、Kaplan+2001（宿主，未入 lc）；TNS 无该源条目（2000 年暴早于 TNS）。→ 新增 5 行（TNG B/V、NOT 7月10.9/25.9 R 上限、JCMT/SCUBA 353GHz 限量），其余 22 行按 VoR 表 1 与 GCN 原文重算时间轴（T0+曝光中点），4 个非 OT 候选体/场源行置 discard=y。复查补充（2026-10-30）：external/rssgrbag 该源条目另含 opt_flux_11h=3.3 μJy（R, 0.7 μm）——系已入库 GCN/Fynbo 测光的派生汇编值，非独立测量，不另开行；「rssgrbag 无光变行」表述含此目级参数记录备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 原为 bot 名字日期占位（2000-06-30T00:00:00Z，原 t0_note/t0_basis 声称 meta trigger-time，实为占位）；审核改为 GCN 736 触发时刻 00:30:53Z，原值见 comment",
+    "t0_basis": "GCN 736（IPN）：observed at 01853 s UT=00:30:53 UT",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {

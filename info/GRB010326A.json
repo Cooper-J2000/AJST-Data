@@ -1,29 +1,40 @@
 {
   "transient_id": "GRB010326A",
-  "alias": [],
-  "ra": 132.963,
-  "dec": -38.3005,
+  "alias": [
+    "GRB 010326A",
+    "GRB 010326"
+  ],
+  "ra": 131.963,
+  "dec": -38.3006,
   "T0": "2001-03-26T03:15:00Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 1014（HETE 团队：On 26 March 2001 at 03:15:00 UTC；FREGATE 30-400 keV 触发，整秒精度）；GRBCAT 5153 trigger_time 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 1030",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] HETE-2 触发暴。GCN 1014（Ricker 等，HETE 团队）：2001 年 3 月 26 日 03:15:00 UTC 探测到一个硬谱、高银纬的高能暂现源，FREGATE 与 WXM 均探测到，原文「The burst triggered FREGATE in the 30-400 keV band」；多峰结构、持续约 25 s；FREGATE 6-30 keV 峰值流量 ~1 Crab。划界：同日另有 GRB010326B（GCN 1018：2001-03-26T08:33:12 UTC，RA=11h24m23.36s Dec=-11°09′57″，软谱、约 4 s，HETE 当日第二个暴）与 GRB010213（GCN 934）；GCN 1030 原文明确本暴与这两者不同（「This burst is distinct from the other GRBs (GRB010326B, GCN 1018; GRB010213, GCN 934)」）。GRB010326B 的通告（GCN 1018/1020/1027/1040）与 GRB010213（GCN 934 起）一律不入本条目。全库检索：按修正后的盒中心 ±2° 扫描，除本源自身外无同位置源；同日另存 GRB010326B（相距 44.17°，独立条目，未动）。[T0] 库内 2001-03-26T03:15:00Z 予以确认：GCN 1014 原文「On 26 March 2001 at 03:15:00 UTC」，系触发仪器 HETE/FREGATE 的官方通告时刻，整秒精度，不补亚秒；GRBCAT 5153（external/heasarc_grbcat）trigger_time=2001-03-26T03:15:00.000Z 同值互证。T0_ref=GCN 1014。交叉验证：BeppoSAX GRBM 目录（external/saxgrbmgrb，第 9 列 time 即 GRB 触发时刻、MJD/1 s 精度；Frontera+2009 ApJS 180,192）记 2001-03-26T03:14:56Z，比 HETE 早 4 s——HETE/FREGATE 为本暴的发现/主触发仪器（§3.8 锚定优先级①），GRBM 自身亦有独立触发记录，4 s 差异属仪器能段与星上触发算法差异（该目录 README 亦注明 GRBM 触发时刻可与其他卫星有秒级差异）；故 T0 取 HETE 值、差值记此备查（≥60 ms，已在 PR 说明报告）。T0_offset 保持 null（无真实爆发时刻相对触发的显著偏移证据）。[定位] 库内 ra/dec 由 132.963/-38.3005 更正为 131.963/-38.3006（盒中心）。原文笔误：GCN 1030 (CENTER) RA 132.9630 应为 131.9630——该打印中心（132.9630/-38.3005）到 Ulysses–Konus 环（中心 RA=178.727° Dec=30.803°，半径 81.702±0.028°，原文「3 sigma confidence」）为 81.2077°（偏 -0.494°，≈17.7σ），到 Konus-Wind–Konus-A 环（中心 RA=94.662° Dec=21.978°，半径 69.7±0.4°，原文「1 sigma confidence」）为 70.1749°（偏 +0.475°，≈1.2σ）——出带，打印中心根本不在两环交集内；而四个角点与两环严格吻合（四角到 ring1 = 81.7293/81.6742/81.7293/81.6741°，恰为 81.702±0.028 的上/下界；到 ring2 = 70.100/70.100/69.300/69.300°，恰为 69.7±0.4 的上/下界），说明四角可信、仅 CENTER 行有误；按 RA 首位数字笔误修正后 131.9630/-38.3006 到 ring1 = 81.7002°、到 ring2 = 69.7001°，均在带内 → 真实盒中心。独立复算：两对角线球面中点取平均得 131.9615/-38.3013（到 ring1 81.7015°、到 ring2 69.7000°，亦在带内），与采纳值相差约 5″，在盒宽约 3.4′ 之内。GCN 1030 四角 RA/Dec：132.3408/-38.5784、132.3988/-38.5441、131.5271/-38.0568、131.5851/-38.0230，原文「the following ~180 square arcmin. error box」；按四角复算为约 0.81°×0.06° 的细长四边形（≈164 平方角分，与原文 ~180 同量级），非圆形、原文未单给半径 → pos_error=null（不自行折算半径），pos_ref=GCN 1030。GRBCAT 5153（132.963/-38.3005）与 MPE Greiner（GRB 010326，132.9625/-38.3）均沿用了同一笔误值（转抄同一来源，不构成反证）。置信水平：合并盒原文未标注（两环分别给出 3 sigma 与 1 sigma），按 §3.9 不自行声称 → pos_error_confidence=null；GRB030425 先例不适用（其 GCN 2173 原文明确「3 sigma error box」）。[WXM 定位撤回] GCN 1014 初步位置 RA=11h50m59.11s Dec=-23°32′44″（J2000，WXM 与光学相机联合求解）统计误差半径 10′（90% confidence）、系统误差 20′；GCN 1015 把系统误差精化为 10′；GCN 1030 结论「we have concluded that the WXM location reported in GCN 1014 for this burst is spurious」（该暴在 WXM 中信噪比过低），HETE 团队致歉。该被撤回位置与真实盒中心相距 41.47°（到 GCN 1030 打印中心则为 40.69°；两者相差的 0.78° = 47.1′ 即上述笔误偏移）——故 GCN 1016（CTIO 0.9m V 1800 s）、GCN 1017（Mount Stromlo 5×300 s）、GCN 1022（Mount Stromlo 5×300 s）、GCN 1026（USNO 星标定）的观测场均为被撤回的 WXM 圆，对真实 IPN 盒不适用。处置：GCN 1022 上限行保留并置 discard=y（见 lc 行 comment）；GCN 1016/1017 未给数值极限星等、GCN 1026 为标准星标定而非源测光，均不入库。[Trigger_Instrument] 原值 Konus-Wind → HETE-2：GCN 1014 原文「The burst triggered FREGATE」，触发仪器是 HETE-2/FREGATE；Konus-Wind 仅为 GCN 1030 三角定位方之一（Ulysses/Konus-Wind/Konus-A），并非触发者。库内 Trigger_Instrument 无 HETE-2/FREGATE 形态，惯例取 HETE-2（35 例，如 GRB050910A；同日 GRB010326B 亦为 HETE-2）。[分类] tag=grb（原有）。sub_tag=lgrb：按目录 t90 判 lgrb（2026-10-26 裁定）——t90=23.0 s（GRBCAT 5153，7-400 keV，误差未给）、t90=19.0±3.2 s（saxgrbmgrb/Frontera+2009，40-700 keV）；两值均远大于 2 s、结论一致，不构成分类冲突（GCN 1014/1030 本身未给长/短分类）。[非 SCHEMA 量] 持续 ~25 s（GCN 1014/1030）；fluence=4e-5 erg/cm2（17 keV-2.5 MeV，GCN 1030）、1.6e-5 erg/cm2（30-400 keV，GRBCAT 5153）、1.086e-5±6.8e-7 erg/cm2（40-700 keV，saxgrbmgrb）；peak flux（0.25 s）=8e-6 erg/cm2 s（17 keV-2.5 MeV，GCN 1030）、1.82e-6±1.2e-7 erg/cm2 s（40-700 keV，saxgrbmgrb）；FREGATE 6-30 keV 峰值 ~1 Crab（GCN 1014）。[测光] lc 原 1 行 = GCN 1022，已按 §3.2 重算曝光中点与 mjd、并按 §3.3 因场址被撤回置 discard=y（详见该行 comment）。[测光检索（2026-10-29）] 仓内 gcn/archive 45 889 篇 python 全文扫描「010326」全形态命中 11 篇：属本暴（A）7 篇（GCN 1014/1015/1016/1017/1022/1026/1030）、属 GRB010326B 4 篇（1018/1020/1027/1040，已划界）；其中含光学数值的仅 1 篇（1022，R~21.5 上限）、1016/1017 只述无数值极限、1026 为标准星标定；GCN 1030 之后无任何一篇本暴后续通告（另以 IPN 盒坐标串 132.9/131.9、38.3 与 8h51m 全文反查，命中均为他源）。external/rssgrbag/lightcurve.jsonl（140 行/74 源）无该源；external/grbsn_webtool/SourceData 无该事件；external/heasarc_grbcat 有 GRB 010326A（id 5153）与 GRB 010326B（5154），仅目录参数；external/saxgrbmgrb 有该暴目录参数；external/konus_wind（Tsvetkova+2017/2021 带红移子样 317 条）无该暴（本源无红移）；external/mpe_greiner 有 GRB 010326（132.9625/-38.3，Error 20′，IPN:y，Instrument HETE/Uly/Ko）；external 其余目录（batse/fermi_gbm/fermi_lat/agile_mcal/swift_bat/swift_grb/swiftgrbba/uvot_grb/wang2022/minaev2020/liang2023/guidorzi2025）grep 无命中。外部入口：GCN 站按源名检索不可复现（旧事件页 URL 已 404），故以仓内 gcn/archive 全文命中数为准（A 7 篇，已逐篇打开核对全文）；ADS API 无 token 实测 401（Missing Authorization）、SciX API api.scixplorer.org 同为 401；TNS 不适用（2001 年、无 AT/SN 命名）且 API 实测 403；arXiv API（export.arxiv.org）all:GRB 010326 / GRB010326 / GRB 010326A / 010326A 四种写法均 0 条。结论：真实 IPN 盒内无任何光学/射电测光或上限可入库（唯一 GCN 光学上限的观测场已被 GCN 1030 撤回），本 PR 补 0 行、改 1 行（1022 重锚 + discard=y）。[alias] 新增「GRB 010326A」= GCN 1022 标题与 eventId 原文用名（GCN 1022「GRB 010326A: Further optical observations」）；新增「GRB 010326」= A/B 后缀确立前 GCN 1014/1015/1017/1026 的原文用名（GCN 1017 subject「GRB 010326: Optical observations」、其 eventId=GRB 010326；GCN 1030 明确 GCN 1014 所指即本暴，故该名确指本源），MPE Greiner 目录 name 亦为 GRB 010326；库内 id GRB010326A 自身形态不入 alias。[extra_data] t0_note 原值「t0 为 meta trigger-time（真实触发时刻）」、t0_basis 原值「meta_trigger」保留于此；现 t0_basis 改为指向 GCN 1014。extra_data 其余键未动。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 HETE-2/FREGATE 触发时刻（GCN 1014「On 26 March 2001 at 03:15:00 UTC」，整秒精度；GRBCAT 5153 同值）；原值「t0 为 meta trigger-time（真实触发时刻）」见 comment",
+    "t0_basis": "GCN 1014",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null

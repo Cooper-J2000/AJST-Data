@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB001212",
-  "alias": [],
-  "ra": 102.4088,
-  "dec": 36.3811,
-  "T0": "2000-12-12T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 001212B"
+  ],
+  "ra": 102.393917,
+  "dec": 36.381328,
+  "T0": "2000-12-12T14:57:26Z",
+  "T0_ref": "GCN 899（IPN：Ulysses/NEAR/Konus-Wind 于 53846 s UT 观测到该暴 = 2000-12-12T14:57:26Z）；HEASARC GRBCAT「GRB 001212B」（grbcat_id 5063，trigger_time=2000-12-12T14:57:16Z ECT，差 10 s）与 Frontera+2009 BeppoSAX GRBM 目录「GRB 001212B」（trigger 14:57:23Z，差 3 s）为异口径备查值，按 §3.8 取优先级最高的触发仪器官方通告值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -13,20 +15,33 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": "GCN 903",
+  "pos_error_confidence": "3sigma",
+  "pos_ref": "GCN 899（IPN 初步 3σ 误差盒中心 6h49m34.54s +36°22′52.78″，约 32 平方角分）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：本源 = IPN 暴 GRB 001212（GCN 899），Ulysses/NEAR/Konus-Wind 三船联测定位、BeppoSAX GRBM 协测（Frontera+2009 目录条目 GRB 001212B：trigger 14:57:23Z、t90=67.0±2.2 s、40-700 keV fluence 2.04e-5 erg/cm²）；同日另有 GRB 001212A（GRBCAT grbcat_id 5062，ECT 09:33:35Z；Frontera+2009 trigger 09:33:42Z，位置 dec≈-74°）为另一事件，按触发时刻与坐标划界、无混并。HEASARC GRBCAT「GRB 001212B」（grbcat_id 5063，ECT 14:57:16Z，observatories=IPN，afterglow_flag=Y）；MPE Greiner 目录（external/mpe_greiner 快照）同暴：obs_date 2000-12-12、位置 06h49m35s +36°22′（4′×8′）、Instrument Uly/Ko/NE、IPN=y。T0：原值 2000-12-12T00:00:00Z 为名字日期午夜占位（bot 导入缺陷，extra_data 原值留档），废弃；标准 T0=GCN 899 的 53846 s UT=2000-12-12T14:57:26Z（触发仪器官方通告，整秒精度不补亚秒）；GRBCAT ECT 14:57:16Z（差 10 s，疑为单船到达时刻与地球穿越时刻口径差）与 Frontera+2009 GRBM trigger 14:57:23Z（差 3 s）备查；相对时长自洽佐证：GCN 902「约暴后 2.0 天」、GCN 900「约 53 h」、GCN 903「48 h」、GCN 907「2.5 天」均与本 T0 吻合。T0_offset=null（无 >1 s 偏移证据）。定位：ra/dec 取 GCN 899 初步 3σ 误差盒中心 6h49m34.54s +36°22′52.78″（=102.393917/36.381328）；四角点 6h49m40.68s +36°21′37.66″、6h48m49.32s +36°19′04.79″、6h50m20.11s +36°26′42.07″、6h49m28.41s +36°24′07.90″，面积约 32 平方角分；误差盒为四边形、无标量半径，pos_error 留空；GCN 899 自标 preliminary 3σ，pos_error_confidence=3sigma。原库 ra/dec=102.4088/36.3811 为 GCN 900 光学候选体位置（=GCN 903 BAO 测光位置 06:49:38.19 +36:22:53.8，位于 899 误差盒内），该候选体经 GCN 901 比对 2MASS 1998-04-01 扫描判为中 M 型矮星（2MASSI J0649380+362251，J=15.220±0.058/H=14.603±0.083/Ks=14.341±0.079），GCN 904 据后续测光结论「not optical afterglow for GRB 001212」（R 波段 0.2-0.3 mag 精度内无变化），GCN 907 两历元 H 测光（14.45/14.50）恒定——候选体非本暴余辉，故按 GRB000326 先例重锚 IPN 误差盒中心，原值留档；MPE Greiner 与 Frontera+2009（102.4/+36.44，error_radius 0.1°）位置互证。分类：sub_tag=lgrb 按目录 t90=67.0±2.2 s（Frontera+2009 BeppoSAX GRBM 目录 saxgrbmgrb，40-700 keV）判；GCN 899 Ulysses duration ~70 s 佐证。alias：「GRB 001212B」为 HEASARC GRBCAT 与 Frontera+2009 官方目录名（区分同日 001212A）；各通告均用 GRB 001212（与 id 同形，不另立）。红移无报道。测光检索（2026-10-30，§3.3 留证）：仓内 gcn/archive 45947 篇全文按「001212」检索命中 7 篇（GCN 899/900/901/902/903/904/907，逐篇全文核对，其中 5 篇含测光数值=库内全部行的出处）；external rssgrbag（lightcurve.jsonl 与 normalized.jsonl）、grbsn_webtool、uvot_grb 均无记录；heasarc_grbcat/mpe_greiner/saxgrbmgrb 命中均为触发/定位/伽马参数目录记录、非光变行。外部：GCN 站事件页 https://gcn.nasa.gov/circulars/events/grb-001212 共 7 篇通告（与仓内一致，已打开核对）；OpenAlex 检索「GRB 001212」命中 7 条——5 条即 GCN 900/901/902/904/907 的索引进口，另 2 条经原文核对均为提及无新测光（Nardini+2008 MNRAS 383, 1049 附录 1 仅转引 Zhu 2000=GCN 904 出处，见已有文献级卡 papers/nardini2008.md 记 mention-only；Kulkarni & Rau 2006 ApJ 644, L63 以本候选体作 M 矮星闯入体示例引 Mohan+2000/Gizis 2000，并转述「brightened to R=19.5 mag」（对 GCN 900 的二手转述，非独立测量、无独立时间锚点、对象已判 M 矮星，故不入库），经 arXiv:astro-ph/0604343 TeX 源码逐字核对）；MPE 总结页 https://www.mpe.mpg.de/~jcg/grb001212.html 确认无 IAU Circular、无正式文献测光；TNS 不适用（2000 年 IPN 暴、无 AT/SN 名）。结论：本暴无任何确认余辉；可用测光=4 条误差盒上限（GCN 902 G≤16.0、GCN 900 R≤21.0、GCN 907 H≤18.3/H≤18.4）+ GCN 903/904/907 对被否定候选体的 20 行测光（全部置 discard=y，证据见各行 comment）；本次补 GCN 904 漏收行 1 行（Dec 15.73，R=18.64±0.22），lc 共 24 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为触发日 00:00 UT（名字日期）",
-    "t0_basis": "name_date",
-    "bot_created": true
+    "t0_note": "t0=2000-12-12T14:57:26Z（GCN 899：Ulysses/NEAR/Konus-Wind 于 53846 s UT 观测到该暴；GRBCAT ECT 14:57:16Z 与 Frontera+2009 GRBM trigger 14:57:23Z 为异口径备查值；bot 原值 t0_basis=name_date 已废弃、留档 comment）",
+    "t0_basis": "GCN 899",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Frontera+2009",
+      "url": "https://doi.org/10.1088/0067-0049/180/1/192",
+      "title": "The Gamma-Ray Burst Catalog Obtained with the Gamma-Ray Burst Monitor aboard BeppoSAX",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

@@ -1,35 +1,45 @@
 {
   "transient_id": "GRB001109",
-  "alias": [],
-  "ra": 277.527125,
-  "dec": 55.309917,
-  "T0": "2000-11-09T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "1SAX J1830.1+5517"
+  ],
+  "ra": 277.5325,
+  "dec": 55.298889,
+  "T0": "2000-11-09T09:23:17Z",
+  "T0_ref": "GCN 878（BeppoSAX GRBM+WFC1 触发 09:23:17 UT）；GRBCAT ECT 09:23:17.000Z 互证；Castro Cerón+2004 t0=2000-11-09.391169 UT=09:23:17 互证（DOI 10.1051/0004-6361:20035921）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
-  "redshift": 0.398,
+  "Trigger_Instrument": "BeppoSAX/GRBM+WFC1",
+  "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 50,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 885（BeppoSAX NFI X 射线余辉 1SAX J1830.1+5517：RA=18h30m07s.8 Dec=+55°17'56\" J2000，误差半径 50\"）",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 1090",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "身份与定位：BeppoSAX GRBM+WFC1 同时触发（GCN 878，09:23:17 UT，预警盒 4'）；WFC 精化盒 2.5'（GCN 879：RA 277.531 Dec +55.301）；NFI 首次指向发现 X 射线余辉（GCN 882，1.5'）；余辉源 1SAX J1830.1+5517 定位 RA=18h30m07s.8 Dec=+55°17'56\"、误差半径 50\"（GCN 885）。本条 ra/dec 原存 277.527125/55.309917 系 GCN 880 射电源 VLA J1830+5518（±0.1\"）位置，因该源被 GCN 1168（Berger & Frail：VLA 390 天监测无衰减、谱形为河外源，判定非 GRB 001109 余辉，其光学对应星系非宿主）否定为余辉，现改锚 X 射线余辉位置（GCN 885）；external/rssgrbag 目录位置 277.5325/55.29888889 与之一致。红移：原存 0.398 系误差盒内星系 A（z=0.398±0.002，GCN 1090 Hα+[O III]；另组分 B z=0.3399±0.0005）；Castro Cerón+2004 计算 chance coincidence 3±0.9%，认为星系 A 与 GRB 的物理关联无法确立；GCN 1168 判定其非宿主 → redshift 置 null（宿主不定论，红移未知）。触发时刻：GCN 878 与 GRBCAT ECT 09:23:17.000Z 一致；HEASARC SAXGRBMGRB 目录给 09:23:13.000Z（Δ=4 s，备查）；来源未标注 pos_error 置信水平。t90=54.0±3.6 s（40-700 keV，HEASARC SAXGRBMGRB）；rssgrbag 目录另给 t90=60 s；按目录 t90 判 lgrb。dark GRB（Castro Cerón+2004：I>22.9@11.4 hr，最暗 BeppoSAX NFI 定位暴）。bII=+24.96（GCN 887）。bot 原 t0_note「t0 为 meta trigger-time（真实触发时刻）」/t0_basis=meta_trigger，实际入库为名字日期占位 2000-11-09T00:00:00Z，本次已改为触发时刻。测光检索（2026-10-29）：仓内 gcn/archive 命中 14 篇（878/879/880/881/882/883/885/886/887/889/891/1090/1092/1168，其中 880/881/883/886/887/889/891 含光学/NIR/射电数值或限深，已全部入库）；external/rssgrbag 仅目录级记录（lightcurve.jsonl 无本源光变行）；external/grbsn_webtool 无 001109（无 SN 关联）；OpenAlex 检索 \"GRB 001109\" 命中 23 条，有效文献为 Castro Cerón+2004 A&A 424,833（VoR 全文 aanda.org DataDome 403 不可得，取 arXiv astro-ph/0406414 v1 TeX 源 Table 1 补 21 行误差盒上限）与 Castro Cerón 2003 AIP 会议版（10.1063/1.1579393，为 2004 VoR 前身不另取数）、Amati+2003（X 射线，不在审核范围）、Barnard+2003 SCUBA 350GHz 1.89±1.4 mJy（测已否证射电源，不入库）；GCN 站核对 GCN 878 与仓内一致；TNS 不适用（2000 年 GRB 无 TNS 条目）。复查补充（2026-10-30）：Castro Cerón+2004 §3.5 的 IRAM 30m MAMBO 250 GHz 非探测（2003-03-04–12，rms 0.5 mJy、3σ<1.5 mJy，对象为已否证射电源 VLA J1830+5518）不入库，与 Barnard+2003 SCUBA 同口径备查；论文对 object A 另给 R=20.65±0.06 等 UBVRIJHK SED（候选宿主场星系测光、无独立时间锚），不入库；GCN 887 的 CAHA 3.5m H 历元（Nov 10.8379）与论文 Table 1 窗口（10.7363–10.7883）不一致，lc 取论文值（优先级高），GCN 值备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 BeppoSAX GRBM+WFC1 触发时刻（GCN 878）",
+    "t0_basis": "gcn_trigger_gcn878",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {
       "name": "CastroCeron+2004",
       "title": "On the constraining observations of the dark <ASTROBJ>GRB 001109</ASTROBJ> and the properties of a z = 0.398 radio selected starburst galaxy contained in its error box",
-      "url": "https://ui.adsabs.harvard.edu/abs/2004A&A...424..833C",
+      "url": "https://arxiv.org/abs/astro-ph/0406414",
       "bibtex": "@ARTICLE{2004A&A...424..833C,\n       author = {{Castro Cer{\\'o}n}, J.~M. and {Gorosabel}, J. and {Castro-Tirado}, A.~J. and {Sokolov}, V.~V. and {Afanasiev}, V.~L. and {Fatkhullin}, T.~A. and {Dodonov}, S.~N. and {Komarova}, V.~N. and {Cherepashchuk}, A.~M. and {Postnov}, K.~A. and {Lisenfeld}, U. and {Greiner}, J. and {Klose}, S. and {Hjorth}, J. and {Fynbo}, J.~P.~U. and {Pedersen}, H. and {Rol}, E. and {Fliri}, J. and {Feldt}, M. and {Feulner}, G. and {Andersen}, M.~I. and {Jensen}, B.~L. and {P{\\'e}rez Ram{\\'\\i}rez}, M.~D. and {Vrba}, F.~J. and {Henden}, A.~A. and {Israelian}, G. and {Tanvir}, N.~R.},\n        title = \"{On the constraining observations of the dark <ASTROBJ>GRB 001109</ASTROBJ> and the properties of a z = 0.398 radio selected starburst galaxy contained in its error box}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, Galaxy: fundamental parameters, techniques: photometric, Astrophysics},\n         year = 2004,\n        month = sep,\n       volume = {424},\n        pages = {833-839},\n          doi = {10.1051/0004-6361:20035921},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0406414},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2004A&A...424..833C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }

@@ -1,28 +1,43 @@
 {
   "transient_id": "IceCube-231004A",
-  "alias": [],
+  "alias": [
+    "IC231004A"
+  ],
   "ra": 143.79,
-  "dec": -25.04,
-  "T0": "2023-10-04T14:39:41Z",
-  "T0_ref": null,
+  "dec": 25.04,
+  "T0": "2023-10-04T14:39:41.18Z",
+  "T0_ref": "GCN 34797/34798（IceCube 离线精化事件时刻）：Date 2023-10-04 / Time 14:39:41.18 UT → 2023-10-04T14:39:41.18Z；AMON 通告 notices_amon_g_b/138415_56188508.amon DISCOVERY_TIME 52781 SOD {14:39:41.18} UT 同值；GCN 34887 亦以 2023-10-04T14:39:41.18 为 T0。原库 2023-10-04T14:39:41Z 系同一时刻截断到整秒（非 GBM 08:23:35、非 AMON 初报窗口起点），差 0.18 s（亚秒级），已按 §3.2 直接改进 T0、不设 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.1503,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "Trigger_Instrument": "IceCube",
+  "redshift": null,
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 34837",
-  "comment": null,
+  "redshift_ref": null,
+  "tag": [],
   "sub_tag": [],
+  "pos_error": null,
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
+  "pos_ref": "GCN 34798（IceCube 更正后的离线精化方向，更正 GCN 34797 的 Dec 符号错误）：RA=143.79 (+1.10/-1.01 deg)、Dec=+25.04 (+1.03/-1.21 deg)（90% PSF containment）；AMON 通告 138415_56188508 rev1（15:45:05 UT）SRC_RA=143.7899、SRC_DEC=+25.0399、SRC_ERROR=65.40 arcmin（stat-only 90%）一致。不对称误差不适配圆半径 → pos_error 留空、pos_error_confidence 按原文记「90」，不对称值照录；库内 ra=143.79 保留、dec 由初报 -25.04 更正为 +25.04",
+  "comment": "2026-10-29 审核（wa1kmoon@zcode）：① 身份与划界：本源为 IceCube 高能中微子候选事件 IceCube-231004A（GCN 34797：「track-like event with a high probability of being of astrophysical origin」，ICECUBE_Astrotrack_GOLD 流，FAR=0.4490 yr^-1，Gold 流平均 astrophysical purity 50%）；AMON 通告 notices_amon_g_b/138415_56188508.amon（RUN_NUM 138415 / EVENT_NUM 56188508，NOTICE_TYPE「ICECUBE Astrotrack Gold」，DISCOVERY_TIME=52781 SOD {14:39:41.18} UT，ENERGY=4.4218e+02 TeV，SIGNALNESS=8.4178e-01；rev0 14:40:25 UT RA=143.7656 Dec=+25.0511 R=30.80′，rev1 15:45:05 UT RA=143.7899 Dec=+25.0399 R=65.40′，均 stat-only 90%）。同日 GCN 34795/34804/34812/34868 的 GRB 231004A 是另一事件：Fermi/GBM 触发 718100620.108376 / 231004350 于 2023-10-04 08:23:35 UT，GBM 地面定位 RA=68.3、Dec=-9.9（统计不确定度 3.4 deg）；CALET 08:23:32.70 UT、Glowbug onset 08:23:33.360 UT、GRID 08:23:35.0 UT。与本中微子事件时刻差 22566.18 s（6h16m6.2s），与修正后方向角距 81.3 deg（取仓内 FERMIGBRST Final 值 68.35/-9.95 亦为 81.3 deg，加 3.4 deg 统计误差仍远不相交）；仓内 fermi_gbm 目录（FERMIGBRST 快照）2023-10-04 仅一条触发（08:23:35.108Z，即 GRB 231004A），本事件时刻 14:39:41 前后无 GBM 触发；GCN 34851 亦明言「There was no Fermi-GBM onboard trigger around the event time of the neutrino candidate」→ 两者无关联，GRB 231004A 的 GBM/CALET/Glowbug/GRID 通告不构成本源触发，不得合并。库内 info/ 无 GRB231004A.json（仅本源），无重复建档。alias 收 IC231004A（GCN 34803 原文「the IC231004A high-energy neutrino event」；GCN 34837/34887 主题行亦用此名）；仓内 gcn/archive 全文检索未见本事件的 MASTER 通告（「138415」「56188508」「IceCube Alert 231004」均无命中），故未收「IceCube Alert YYMMDD.frac」形式别名。注：GCN 34868 原文把 GCN 34797 列为 GRB 231004A 的「IceCube detection」，系同名混淆笔误；GCN 34805 引「GCN circular 34791,34792」应为 34797/34798（原文笔误）。② T0 口径：改为 2023-10-04T14:39:41.18Z，依据 GCN 34797/34798「Date: 2023-10-04 / Time: 14:39:41.18 UT」及 AMON DISCOVERY_TIME 14:39:41.18 一致；GCN 34887 亦以 2023-10-04T14:39:41.18 为 T0。原库 T0=2023-10-04T14:39:41Z 即同一事件时刻截断到整秒（既非 GBM 的 08:23:35，也非 AMON 初报窗口起点；AMON rev0 发现时刻同为 14:39:41.18），差 0.18 s 属亚秒级，按 §3.2 直接改进 T0、不设 T0_offset。原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」为 bot 通用口径，已改写、原值留此。③ Trigger_Instrument：Fermi/GBM → IceCube。原值系把同名 GRB 231004A 的 GBM 触发放到本源；GCN 34851 已证中微子时刻无 GBM 触发，且本源触发者为 IceCube（34797/34798）。④ 定位：GCN 34797 初报 Dec=-25.04 有符号错误，GCN 34798「Update of IceCube-231004A - Corrected direciton」明确「the declination value was incorrectly reported」，更正为 Dec=+25.04；GCN 34803 与 AMON rev1 亦为 +25.04/+25.0399。库内 dec=-25.04 系初报错值，改为 +25.04（若沿用负值，候选体 AT2023uqf 的 Dec=+25.1158 将在 ~50 deg 外，自相矛盾）；ra=143.79 保留（34797/34798 与 AMON rev1 143.7899 一致）。PSF 不对称（RA +1.10/-1.01 deg、Dec +1.03/-1.21 deg，90% PSF containment）→ pos_error 留空、pos_error_confidence 按原文记「90」，不对称值照录 pos_ref/本条（先例 IceCube-260712A/221210A）；AMON rev1 另给圆半径 R=65.40′（stat-only 90%）备查。90% 区内无 4FGL-DR4/3FHL 源，最近 4FGL J0927.2+2454（141.82/-24.90，原文如此）距 1.79 deg（GCN 34797）。⑤ 红移：原 redshift=0.1503（redshift_ref=gcn_llm:circulars_meta; GCN 34837）实为候选对应体 AT2023uqf/ZTF23abidzvf 的宿主星系光谱红移（GCN 34837：NOT/ALFOSC + Keck/LRIS 光谱，宿主窄发射线 Hα/Hβ/[OIII]/[OII] 一致给出 z=0.1503），非中微子事件红移，且该源与本中微子无确证物理关联 → redshift/redshift_type/redshift_ref 置 null；候选体信息记此。另：GCN 34837 原文「Observations were conducted on 2013-10-14」有误——原文笔误：2013-10-14 应为 2023-10-14/17（Stein+2025 正文记光谱首次获取于 2023-10-17 04:16:15 UT（NOT/ALFOSC）与 2023-10-17 15:29:02 UT（Keck/LRIS））。⑥ 候选体与测光：GCN 34810（ZTF/GROWTH）对定位区 ToO 的唯一候选 AT2023uqf（RA 143.4548956 Dec +25.1158103）r=20.51±0.11；GCN 34837 据光谱分类为 Type Ibn 快速演化超新星（无 H 线、~4470/5880 Å 中宽 He I、CSM 相互作用），未确认与中微子关联；GCN 34887（GRANDMA）给出该源 7 条带时刻的测光。以上 8 行均系候选体 AT2023uqf 的测光，按 §3.3 保留并置 discard=y（行不删）。Stein+2025（arXiv:2508.08355v1，Appendix J/Table 5）另给出 SN 2023uqf 的 122 行测光（34 探测 + 88 上限，ZTF/ATLAS/SEDM/LMI/WaSP/LCO/WIRC/Swift/ALFOSC/GMOS）；候选体未确证为对应体，按 §3.3 与 GRB200723A 先例暂不入 lc（GOTO/ATLAS 对 AT2020qer 的行完全未收），本 PR 不补其余 121 行——已收的 ZTF 行仅采用其 r 波段单点时刻（见 lc comment）。GCN 34803（Fermi-LAT >100 MeV 光子通量上限：15 yr <1.6e-10、1 月 <1.0e-8、1 天 <1.3e-7 ph cm^-2 s^-1，95%）、GCN 34805（HAWC TeV 上限，稳态 E^2 dN/dE=1.11e-13、瞬变 1.67e-11 (E/TeV)^-0.3 TeV cm^-2 s^-1，95%）、GCN 34806（IceCube 附加中微子搜索：1000 s 内 0 个额外径迹事件、E^-2.5 灵敏度 1.4e-01 GeV cm^-2；2 天窗口 p=1.00）、GCN 34851（GBM 10-1000 keV 3σ 通量上限 0.128/1.024/8.192 s 三档）均属 γ/TeV/中微子能段积分通量或灵敏度，不满足 SCHEMA 光学波段与单位口径 → 只记本条、不入 lc（§3.3）。另检索到 arXiv:2508.08355（Stein+2025「SN 2023uqf: An Interacting Supernova Coincident with a High-Energy Neutrino」，已核对 arXiv html 全文 Table 5；未见正式发表版；其结论为该 Type Ibn 超新星与 IC231004A 的偶然符合概率 p=0.3%，主张其为可能对应体）——本 PR 采用其 Table 5 的 r 波段单点时刻（2023-10-05 12:16:08 UT）更正 ZTF 行时间，其余测光未入 lc；未据此改动关联判定与红移口径，候选体身份仍按「无确证关联」处理。⑦ 测光检索留证（2026-10-29）：仓内 gcn/archive 45 889 篇全文扫描，本源命中 13 篇（34795/34797/34798/34803/34804/34805/34806/34810/34812/34837/34851/34868/34887；其中 34795/34804/34812/34868 属同名 GRB 231004A，已划界）；external/rssgrbag 0 命中、external/grbsn_webtool 0（63 事件无本源）、fermi_gbm 目录仅上述 1 条 2023-10-04 触发（属 GRB）；GCN 站逐篇打开 34798/34810（HTTP 200，与仓内全文一致），站内检索 API 返回 400、以仓内全档兜底；ADS API 无 token（HTTP 401，如实记录）、SciX 网页 202 空响应；arXiv API 检索 IceCube-231004A / IC231004A / AT2023uqf / ZTF23abidzvf / IceCube 231004 命中 2508.08355（Stein+2025，见上，本次采用其 Table 5 的 r 波段单点时刻）；另按 2023uqf 检索命中 Sawada+2026（ApJL 1005, L70, DOI 10.3847/2041-8213/ae80bd——同一对象的辐射流体力学解释，无测光表）；TNS /object/2023uqf HTTP 403（需登录）→ 未核实。结论：光学测光来源为 GCN 34810（ZTF 候选体 1 行）、GCN 34887（GRANDMA 7 行）与 Stein+2025 Table 5（122 行候选体测光，按先例不入 lc，仅取其 r 波段单点时刻）；本 PR 修正 1 行（ZTF 行时刻按 Table 5 更正为 2023-10-05 12:16:08 UT）、补 7 行（GRANDMA），现共 8 行。⑧ 待决（A 档）：候选体 SN 2023uqf 的 122 行测光（Stein+2025 Table 5，34 探测 + 88 上限）是否按 §3.3 收入本源 lc（即使 discard=y）——本 PR 按 GRB200723A 先例未收，请维护者裁定。",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 取 IceCube 离线精化事件时刻 2023-10-04 14:39:41.18 UT（GCN 34797/34798；AMON 138415_56188508 DISCOVERY_TIME 14:39:41.18 一致）；bot 原值「t0 为 meta trigger-time（真实触发时刻）」已改写，原值见 comment",
+    "t0_basis": "gcn_34797_34798_icecube_event_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Stein+2025",
+      "url": "https://arxiv.org/abs/2508.08355",
+      "title": "SN 2023uqf: An Interacting Supernova Coincident with a High-Energy Neutrino",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

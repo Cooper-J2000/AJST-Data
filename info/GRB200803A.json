@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB200803A",
   "alias": [
-    "GRB 200803149"
+    "GRB200803149",
+    "MASTER OT J204422.34-625641.8"
   ],
-  "ra": 311.2900085449219,
-  "dec": -63.08000183105469,
-  "T0": "2020-08-03T03:34:31.570000Z",
-  "T0_ref": null,
+  "ra": 311.0939,
+  "dec": -62.94478,
+  "T0": "2020-08-03T03:34:26.568Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2020-08-03T03:34:26.568Z（trigger 618118471.567908 / 200803149）；GCN 28196（GBM Team）记 At 03:34:26 UT；python 独立复算 MET naive UTC=03:34:31.567908、扣 5 闰秒=03:34:26.567908 与目录值逐位一致；原值 2020-08-03T03:34:31.570000Z 系 bot 对 trigger_met 的天真换算（少扣 5 闰秒，Issue #67）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,12 +15,13 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 28203",
+  "pos_error": 2.8,
+  "pos_ref": "GCN 28205",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "【T0】2020-08-03T03:34:26.568Z 为触发仪器 Fermi/GBM 官方目录（FERMIGBRST、trigger 618118471.567908 / 200803149）值；GCN 28196 记 At 03:34:26 UT；原值 03:34:31.570000Z 为 bot 对 trigger_met 的天真换算（少扣 5 闰秒、python 复算逐位复现，Issue #67）；fermi_lat 快照 trigger_time=03:34:25.997Z（LAT 口径）备查。【定位】ra/dec=311.09390/−62.94478、pos_error=2.8″（radius、原文明示 90% confidence）取 GCN 28205 Swift-XRT 精化位（增强位）；原值 311.29/−63.08 系 GCN 28203 LAT on-ground 位（0.46° 90% containment statistical only）、XRT 位距其 9.7′、距 MASTER OT 1.5″；GBM final real-time 位 313.6/−62.0（1.4° 统计）备查（GCN 28196）。【分类】lgrb：GCN 28206 GBM T90≈119 s（50–300 keV）、官方目录 fermi_gbm 快照 t90=118.274±1.14 s 一致、GCN 28196 通告初判 likely LONG；按目录/通告 t90 判；Fermi-LAT 子标签维持：LAT 独立探测 TS=36.8、最高光子 ~650 MeV @ T0+~200 s、>100 MeV 光子流量 8.0e-6±2.3e-6 ph/cm2/s（0–450 s、GCN 28203），LAT 数据为高能光变量不落测光两车道、不入 lc。【测光检索（2026-10-28）】GCN 站按源名命中 9 篇并逐篇打开核对（28196/28198/28199/28200/28202/28203/28205/28206/28207/28226 中 28200/28207 为 XRT 自动分析与 CZTI 通告、无可用测光）；WebSearch 无本源专属研究论文（MPE JCG 页仅转述）；仓内 rssgrbag/grbsn_webtool 无记录 → 新增 12 行（MASTER 发现像片 1 探测 + 铺陈瓦片上限 11 行）、修正 Chilescope 行 1 行（time 随 T0 修正重算）；GCN 28199 与 28198 为同帧重复发表、去重保留 28198。【别名】GRB200803149 为 GBM 触发命名（GCN 28196 原文用名 trigger 618118471.567908 / 200803149、GCN 28199 原文 trigger No 200803149、FERMIGBRST 快照 name_alt）；MASTER OT J204422.34-625641.8 为 GCN 28202 原文用名（发现通告）。【目录快照存疑】catalog_data.fermi_lat.source 名「Fermi LAT 2nd GRB Catalog (2FLGC)」与 URL（heasarc fermilgrb 表）不符、且 2020 年暴不可能载于覆盖 2008–2018 的 2FLGC——疑为 FERMILGRB 表误标、已在 PR 待决报告（只读不改）。",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -174,8 +176,14 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
     }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

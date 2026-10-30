@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB000801",
-  "alias": [],
-  "ra": 167.942,
-  "dec": -9.412,
-  "T0": "2000-08-02T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000801",
+    "GRB 000801B"
+  ],
+  "ra": 167.94225,
+  "dec": -9.412125,
+  "T0": "2000-08-01T04:56:14Z",
+  "T0_ref": "GCN 761（IPN：Ulysses/Konus-Wind/NEAR 于 2000-08-01 17774 s UT 观测到该暴）；整数秒与 HEASARC GRBCAT「GRB 000801B」（grbcat_id 4962，trigger_time=2000-08-01T04:56:14Z，Earth Crossing Time，observatories=IPN）互证；GCN 767 表「hours after GRB」列（42.4/66.7/162.5 h）由该 T0 反算与 mid-exp 日期自洽，交叉印证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
@@ -13,17 +16,23 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 763（Konus-Wind 数据分析确认的正确 IPN 误差盒，中心 11h11m46.14s -09°24'43.65\"）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-29）。(1) 身份：本源即 HEASARC GRBCAT「GRB 000801B」（grbcat_id 4962，observatories=IPN，afterglow_flag=Y）；2000-08-01 同日另有 GRB 000801A（trigger_time=2000-08-01T01:11:09Z，grbcat_id 4961，afterglow_flag=N）与 GRB 000801C（07:48:44Z，grbcat_id 4963，afterglow_flag=N）两个 IPN 事件，按触发时刻区分、无混并。触发与伽马参数：Ulysses/Konus-Wind/NEAR 三星于 17774 s UT 观测，Ulysses 测 duration ~30 s、25-100 keV fluence ~1.7e-5 erg/cm²、0.25 s 峰流 ~1.3e-6 erg/cm²/s（GCN 761）；SROSS C-2 于 17776.64 s UT 独立观测（自述 may be off by a few hundred ms），T90=13.9 s、20-1024 keV fluence=1.6(±0.87)e-5 erg/cm²（GCN 768；硬度比 0.27±0.08 由 GCN 773 复述）。(2) T0：原值 2000-08-02T00:00:00Z（extra_data 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，原值留档于此）系名字日期次日午夜占位缺陷，废弃；标准 T0=2000-08-01T04:56:14Z=GCN 761 的 17774 s UT，整数秒与 HEASARC GRBCAT 000801B ECT（04:56:14Z）一致；GCN 767 表 6 行「hours after GRB」（42.4/42.6/42.8/66.7/66.9/162.5 h）由该 T0 反算得 42.39/42.61/42.85/66.73/66.87/162.49 h，与 mid-exp 日期（0.001 d 精度）自洽，交叉印证；SROSS 17776.64 s（GCN 768）为另一航天器到达时刻，与 T0 差 2.64 s，备查。T0_offset=null（无 >1 s 偏移证据）。(3) 定位：ra/dec 取 GCN 763 终盒中心 11h11m46.14s -09°24'43.65\"（=167.94225/-9.412125；原库 167.942/-9.412 为其三位小数舍入值，数值留档备查）；四角点 11h11m58.39s -09°25'33.33\" / 11h11m15.51s -09°16'27.89\" / 11h12m16.65s -09°33'01.31\" / 11h11m33.90s -09°23'54.23\"；GCN 761/762 初步双解盒（各 ~40 平方角分，3σ）中 GCN 761 第一解被 Konus 数据否定，GCN 763 确认第二解（即现用盒）为正确盒；MPE Greiner 目录（external/mpe_greiner）记 IPN X-ray position 11h11m46s -09°25'、误差 4'×8'、Instrument Uly/Ko/NE，互证。pos_error=null（误差盒无单一误差半径，不自行换算）；pos_error_confidence 未标注（GCN 763 未给置信水平；初步盒 3σ 为 GCN 761 口径，备查）。(4) 分类：sub_tag 留空——t90 来源冲突：SROSS C-2 T90=13.9 s（GCN 768，20-1024 keV）vs external/rssgrbag 目录 t90=30.0 s（normalized.jsonl，fluence 口径 15-150 keV；与 Ulysses duration ~30 s 同量级），按 §3.9 冲突留空待决。(5) alias：「GRB 000801」（GCN 761/762/763/765/767/768/773 eventId 原文用名；rssgrbag/MPE Greiner 目录 name）、「GRB 000801B」（HEASARC GRBCAT 官方目录名，grbcat_id 4962，区分同日 000801A/000801C）。(6) 测光检索（2026-10-29，§3.3 留证）：仓内 gcn/archive（45563 篇全文）检索「000801」命中 7 篇（GCN 761/762/763/765/767/768/773，逐篇全文核对）：GCN 767 VLT/Antu+FORS1 6 次指向 R 上限（全部入库）、GCN 765 VLA 4.86 GHz 上限（入库），其余为定位与伽马参数、无测光；external/rssgrbag 无该源光变行（lightcurve.jsonl 无记录；normalized.jsonl 有目录级参数记录：t90=30.0 s、fluence=2.81e-5 erg/cm² 15-150 keV、opt/radio AG flag=N/N、radio_telescope=VLA——目录参数非测光）；external/grbsn_webtool 无该事件；external/konus_wind、heasarc_grbcat、mpe_greiner 命中均为触发/定位/伽马谱目录参数、无测光。外部：OpenAlex 检索「GRB 000801」与「GRB000801」共命中 8 条，其中 6 条即上列 GCN 通告本身（OpenAlex 收录 GCN）、另 2 条（Nardini+2008 MNRAS 383, 1049；Berger+2002 ApJ DOI 10.1086/344262）经 arXiv TeX 源全文核对——Nardini+2008（arXiv:0710.2436）对 GRB000801 仅在引用映射表注「Palazzi et al. (2000c)=GCN 767」、无数值表行；Berger+2002（arXiv:astro-ph/0207320）无本源提及；TNS 不适用（2000 年 IPN 暴、无 AT/SN 名）。结论：可入库测光=GCN 767 逐指向 6 行（3 行原 bot 行重算时间轴 + 3 行补漏）+ GCN 765 VLA 上限 1 行，共 7 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-29 审核修正为 IPN 三星观测时刻（GCN 761 的 17774 s UT=2000-08-01T04:56:14Z，与 HEASARC GRBCAT GRB 000801B ECT 互证）；原 bot 注『t0 为 meta trigger-time（真实触发时刻）』、原 T0=2000-08-02T00:00:00Z 系名字日期午夜占位，已失效，原值见 comment",
+    "t0_basis": "trigger_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [],
   "host_galaxy": null

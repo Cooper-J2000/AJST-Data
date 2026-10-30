@@ -98,10 +98,27 @@ def evaluate(files, title='', assoc=''):
             + '（数据 PR 只允许 info/<源ID>.json、lc/<源ID>.csv、audit/leads/*.md；'
               '配置/工具/文档改动请单独提 PR —— 提示词 §7）')
     if len(sources) > 1:
-        errors.append(
-            '一源一 PR 违规：本 PR 触碰 ' + str(len(sources)) + ' 个源（'
-            + '、'.join(sorted(sources)) + '）。§3.7 源级处置也要拆成两个 PR（保留源 / 待删源各一个），'
-            '除非维护者在本 PR 下明确裁定接受（提示词 §3.6 / §7）')
+        # §3.7 跨源迁行形态（2026-10-30 维护者裁定）：一个源承载审核结论（带 info/<id>.json），
+        # 其余源只出现 lc/<id>.csv —— 把错置/幽灵条目里的光变行迁入或迁出，不改对方 info。
+        # 这是 §3.7「同时把待删条目里的光变数据一并审核」的必然形态：迁行本身跨源，
+        # 而「一源一 PR」的本意是防止顺手改别人的数据，不是禁止迁行。
+        by_src = {}
+        for f in files:
+            m = DATA_RE.match(f)
+            if m:
+                by_src.setdefault(m.group('src'), set()).add('json' if f.endswith('.json') else 'csv')
+        primary = sorted(s for s, kinds in by_src.items() if 'json' in kinds)
+        others = sorted(s for s in by_src if s not in primary)
+        if len(primary) == 1 and others and all(by_src[s] == {'csv'} for s in others):
+            warnings.append(
+                f'跨源迁行（§3.7）：主源 {primary[0]} 带 info，附带源 {others} 仅 lc 行 —— '
+                'PR 说明「待决事项」须列出迁入/迁出各行与建议保留的条目')
+        else:
+            errors.append(
+                '一源一 PR 违规：本 PR 触碰 ' + str(len(sources)) + ' 个源（'
+                + '、'.join(sorted(sources)) + '）。§3.7 源级处置也要拆成两个 PR（保留源 / 待删源各一个），'
+                '除非维护者在本 PR 下明确裁定接受（提示词 §3.6 / §7）；'
+                '唯一放行形态是「一个源带 info + 其余源仅 lc/<id>.csv」（跨源迁行）')
     if sources:
         claim = CLAIM_RE.match(title or '')
         if claim and claim.group('src') not in sources:
@@ -136,6 +153,12 @@ SELFTEST_CASES = [
     ('两个源 → 违规', ['info/GRB220711B.json', 'lc/GRB220711B.csv',
                   'info/GRB220712B.json', 'lc/GRB220712B.csv'],
      'data: 审核 GRB220712B', 'NONE', 1),
+    ('跨源迁行（主源 info + 附带源仅 lc）→ 只警告', ['info/GRB220403A.json', 'lc/GRB220403A.csv',
+                                    'lc/GRB220403B.csv'],
+     'data: 审核 GRB220403A', 'NONE', 0),
+    ('跨源迁行但两个源都带 info → 违规', ['info/GRB220403A.json', 'lc/GRB220403A.csv',
+                              'info/GRB220403B.json'], 
+     'data: 审核 GRB220403A', 'NONE', 1),
     ('越界文件 → 违规', ['info/GRB000214.json', 'lc/GRB000214.csv', 'filters.json'],
      'data: 审核 GRB000214', 'NONE', 1),
     ('两源 + 越界 → 两条错误', ['info/A.json', 'lc/A.csv', 'info/B.json', 'tools/validate.py'],

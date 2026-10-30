@@ -1,17 +1,17 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-59125.0,,s,52243.947916666664,R,18.5,,magnitude,,n,y,,,,,,,1.0,n,,Calar Alto 1.23-m,GCN1171,,
-59125.0,,s,52243.947916666664,I,19.0,,magnitude,,n,y,,,,,,,1.0,n,,Calar Alto 1.23-m,GCN1171,,
-84361.0,,s,52244.24,R,18.5,,magnitude,,n,y,,,,,,,1.0,n,,NEAT 48-inch,GCN1170,,
-97321.0,,s,52244.39,K,18.5,,magnitude,,n,y,,,,,,,1.0,n,,Palomar Hale+WIRC,GCN1174,,
-172045.0,,s,52245.25486111111,i,20.5,0.5,magnitude,,n,n,,,,,,,1.0,n,,SDSS Photometric Telescope,GCN1175,,
-299497.0,,s,52246.729999999996,4.86GHz,0.32,0.04,mJy,,n,n,,,,,,,1.0,n,,VLA,GCN1173,,
-429097.0,,s,52248.229999999996,R,22.8,0.2,magnitude,,n,n,,,,,,,1.0,n,,Magellan 6.5m Baade + Direct Camera,GCN1179,,
-441193.0,,s,52248.37,K,18.1,,magnitude,,n,n,,,,,,,1.0,n,,IRTF + NSFCam,GCN1180,,
-508585.0,,s,52249.15,R,23.0,0.1,magnitude,,n,n,,,,,,,1.0,n,,Magellan 6.5m Baade + Direct Camera,GCN1181,,
-511177.0,,s,52249.18,R,23.0,,magnitude,,n,y,,,,,,,1.0,n,,MDM 1.3m,GCN1186,,
-602761.0,,s,52250.24,R,23.0,,magnitude,,n,y,,,,,,,1.0,n,,MDM 1.3m,GCN1186,,
-602761.0,,s,52250.24,R,20.0,,magnitude,,n,n,,,,,,,1.0,n,,MDM 1.3m,GCN1187,,
-602761.0,,s,52250.24,R,21.7,,magnitude,,n,n,,,,,,,1.0,n,,MDM 1.3m,GCN1187,,
-602761.0,,s,52250.24,R,22.3,,magnitude,,n,n,,,,,,,1.0,n,,MDM 1.3m,GCN1187,,
-778153.0,,s,52252.27,R,23.0,,magnitude,,n,y,,,,,,,1.0,n,,MDM 1.3m,GCN1186,,
-927625.0,,s,52254.0,4.86GHz,0.35000000000000003,,mJy,,n,n,,,,,,,1.0,n,,VLA,GCN1207,,
+59125.0,,s,52243.9479167,R,18.5,,magnitude,,n,y,,,,,,,1.0,n,Calar Alto 1.23-m,,GCN1171,"原文仅给起始时刻 2001-11-30 22:45 UT、未给曝光时长，time 取起始时刻（MJD 52243.9479167）；满月不利条件下限量仅约 R,I=18.5–19（本行 R=18.5）；原文未声明星等系统",Rusty-Harpoon@zcode
+59125.0,,s,52243.9479167,I,19.0,,magnitude,,n,y,,,,,,,1.0,n,Calar Alto 1.23-m,,GCN1171,同 GCN 1171 R 行：22:45 UT 起始、时长未给；限量 I=19.0；原文未声明星等系统,Rusty-Harpoon@zcode
+84361.0,432,s,52244.24,R,18.5,,magnitude,,n,y,,,,,,,1.0,n,NEAT 48-inch,,GCN1170,原文历元仅给 Dec 1.24 UT（等效 ±0.005 d=432 s，写入 time_err）；月照与视宁度不利，限量 R=18.5；GCN 1174 复引同一次 NEAT 测量（R=18.5），未另立行；原文未声明星等系统,Rusty-Harpoon@zcode
+97321.0,432,s,52244.39,K,18.5,,magnitude,,n,y,,,,,,,1.0,n,Palomar Hale Telescope,WIRC (Wide-Field Infrared Camera),GCN1174,原文 K' 滤光片、'limit of roughly K'=18.5 mag'，upperlimit 由 n 改 y（原行为非探测却标 n，系导入错误）；filters.json 无 K' 键，暂按最近键 K 记录（待决：拟新增 K'）；在 GCN 1173 VLA 源位置未找到对应体；历元 Dec 1.39 UT（±432 s）；原文未声明星等系统,Rusty-Harpoon@zcode
+172071.3,4036.2,s,52245.255165,i,20.5,0.5,magnitude,,n,n,,,,,,,1.0,n,SDSS Photometric Telescope,,GCN1175,"11×180 s i 波段曝光 coadd（原文给窗口 MJD 52245.208450–52245.301880），time=窗口中点、time_err=总跨度/2（§3.8 约定口径）；~2σ 边缘探测 i*=20.5±0.5，位于 GCN 1173 射电源位置附近；原文未声明系统（SDSS i* 惯例为 AB 基准 asinh 星等，未自行标注）；GCN 1176/1177 提示该天体可能为常星（距射电源 4.7""）",Rusty-Harpoon@zcode
+299497.0,432,s,52246.73,4.86GHz,0.32,0.04,mJy,,n,n,,,,,,,1.0,n,VLA,,GCN1173,"原文 320±40 μJy @ 4.86 GHz（Dec 3.73 UT，±432 s 写入 time_err），0.32±0.04 mJy 为同值；源位 RA=03:05:24.71 Dec=+03:46:13.1（±1.1""）",Rusty-Harpoon@zcode
+429097.0,432,s,52248.23,R,22.8,0.2,magnitude,Vega,n,n,,,,,,,1.0,n,Magellan 6.5m Baade,Direct Camera,GCN1179,"单帧 180 s R 曝光（Dec 5.23 UT，±432 s）；源位 3:05:24.73 +3:46:14.1（USNO-A2 定标，距射电源 1""）；Landolt 标准星单星定标 → mag_system=Vega；GCN 1179 原文笔误：正文将本事件写作 'GRB 011131'",Rusty-Harpoon@zcode
+441193.0,432,s,52248.37,K,18.1,,magnitude,,n,n,,,,,,,1.0,n,IRTF,NSFCam,GCN1180,"K' 滤光片（Dec 5.37 UT，±432 s）；当晚无定标，K=18.1 系据另一晚同仪器零点的粗略估计（原文 'very rough zero point'），原文未声明系统；亮源即 GCN 1179 光学源，其西南 1.66"" 另见更暗第二源",Rusty-Harpoon@zcode
+508585.0,432,s,52249.15,R,23.0,0.1,magnitude,Vega,n,n,,,,,,,1.0,n,Magellan 6.5m Baade,Direct Camera,GCN1181,3 帧 R 共 780 s（Dec 6.15 UT，±432 s）；PSF 测光较前夜变暗 0.16±0.05 mag（约 22 h）；Landolt 标准星定标 → mag_system=Vega；PSF 减除后留残余，作者提示或为宿主星系,Rusty-Harpoon@zcode
+511177.0,432,s,52249.18,R,23.0,,magnitude,,n,y,,,,,,,1.0,y,MDM 1.3m,,GCN1186,GCN 1186：Chandra 场源 CXOU J030458.7+034702（GCN 1185 十亮源之一，非余辉候选）三晚均未探测，限量约 R>23；该限量非 GRB 011130 本体测光，discard=y（见 PR 待决事项）；每晚约 2 h R 曝光；历元仅给 Dec 6.18 UT（±432 s）,Rusty-Harpoon@zcode
+602761.0,432,s,52250.24,R,23.0,,magnitude,,n,y,,,,,,,1.0,y,MDM 1.3m,,GCN1186,GCN 1186：Chandra 场源 CXOU J030458.7+034702（GCN 1185 十亮源之一，非余辉候选）三晚均未探测，限量约 R>23；该限量非 GRB 011130 本体测光，discard=y（见 PR 待决事项）；每晚约 2 h R 曝光；历元仅给 Dec 7.24 UT（±432 s）,Rusty-Harpoon@zcode
+778153.0,432,s,52252.27,R,23.0,,magnitude,,n,y,,,,,,,1.0,y,MDM 1.3m,,GCN1186,GCN 1186：Chandra 场源 CXOU J030458.7+034702（GCN 1185 十亮源之一，非余辉候选）三晚均未探测，限量约 R>23；该限量非 GRB 011130 本体测光，discard=y（见 PR 待决事项）；每晚约 2 h R 曝光；历元仅给 Dec 9.27 UT（±432 s）,Rusty-Harpoon@zcode
+602761.0,432,s,52250.24,R,20.0,,magnitude,Vega,n,n,,,,,,,1.0,y,MDM 1.3m,,GCN1187,GCN 1187：Chandra 源 CXOU J030527.9+034657 的光学对应体（星系），R=20.0，Dec 7.24 测得（Landolt 星定标 → Vega）；恒定场源、非 GRB 011130 本体测光，discard=y（见 PR 待决事项）；历元 ±432 s,Rusty-Harpoon@zcode
+602761.0,432,s,52250.24,R,21.7,,magnitude,Vega,n,n,,,,,,,1.0,y,MDM 1.3m,,GCN1187,GCN 1187：Chandra 源 CXOU J030514.2+034854 的光学对应体（galaxy?），R=21.7，Dec 7.24 测得（Landolt 星定标 → Vega）；恒定场源、非 GRB 011130 本体测光，discard=y（见 PR 待决事项）；历元 ±432 s,Rusty-Harpoon@zcode
+602761.0,432,s,52250.24,R,22.3,,magnitude,Vega,n,n,,,,,,,1.0,y,MDM 1.3m,,GCN1187,GCN 1187：Chandra 源 CXOU J030534.2+034208 的光学对应体（galaxy?），R=22.3，Dec 7.24 测得（Landolt 星定标 → Vega）；恒定场源、非 GRB 011130 本体测光，discard=y（见 PR 待决事项）；历元 ±432 s,Rusty-Harpoon@zcode
+927625.0,43200,s,52254.0,4.86GHz,0.35,,mJy,,n,n,,,,,,,1.0,n,VLA,,GCN1207,GCN 1207 为监测总结：4.86 GHz 于 Dec 4/6/7/9/11 观测，另测 8.46 GHz，两频率流量相近（350 μJy）无明显变化，作者判为平谱 AGN（1.43 GHz 过暗未入 NVSS）；原文未逐历元给值与误差，本行历元 Dec 11.0 系导入管线锚定（±0.5 d 写入 time_err）；350 μJy=0.35 mJy（原 float 尾差已清）；历元归属见 PR 待决事项,Rusty-Harpoon@zcode

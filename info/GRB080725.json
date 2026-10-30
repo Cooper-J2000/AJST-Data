@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB080725",
-  "alias": [],
+  "alias": [
+    "GRB 080725",
+    "bn080725435"
+  ],
   "ra": 121.699,
   "dec": -13.984,
-  "T0": "2008-07-25T10:26:14Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0": "2008-07-25T10:26:14.632460Z",
+  "T0_ref": "GCN 8014 + Swift/BAT 官方目录（external/swift_bat 快照 trigger_time=2008-07-25T10:26:14.632460Z）",
+  "T0_offset": -105.0,
+  "T0_offset_ref": "GCN 8019（BAT mask-weighted light curve：T-105 至 T-100 s 有 short, faint precursor，辐射早于自动触发，提前取负）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 78.0,
   "pos_ref": "GCN 8019",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（wa1kmoon@zcode，2026-10-29）。【身份】Swift/BAT 触发 GRB 080725（trigger 317888，GCN 8014：At 10:26:14 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 080725）；BAT 在轨定位 (121.715, -13.990) r=3′（90% containment，GCN 8014），地面精化 (121.699, -13.984) r=1.3′=78″（radius, sys+stat, 90% containment，GCN 8019）——pos 取 GCN 8019 地面精化值；因近太阳 Swift 未 slew、无 XRT/UVOT 数据（GCN 8014/8019），无更精定位。同日邻近触发：Fermi/GBM bn080725435（trigger_time 2008-07-25T10:26:09.056Z，RA/Dec 121.7/-14.0，external/fermi_gbm 快照）较 BAT 触发早 5.6 s、位置一致，判为同一次爆发（FERMIGBRST 官方目录名 GRB080725435 同源，因属「GRB+9 位拼接形」不入 alias，出处记此备查）；mpe_greiner 快照仅 obs_date 无 trigger_time。alias：GRB 080725（GCN 8014/8016/8019 原文用名，带空格形）、bn080725435（HEASARC FERMIGBRST GRBNAME 形，external/fermi_gbm 快照 name_alt）。【T0】GCN 8014 整秒 10:26:14 UT；按 §3.2「整数秒一致时以触发仪器亚秒值为准」取 Swift/BAT 官方目录亚秒值 10:26:14.632460Z（external/swift_bat 快照 trigger_time；external/swift_grb 快照同值；swiftgrbba 10:26:14.000Z、uvot_grb 10:26:14Z 整秒一致）；bot 原值 2008-07-25T10:26:14Z 与 GCN 8014 一致，本次按目录亚秒精化。bot 的 t0_basis/t0_note 原值：t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"（未改写）。【T0_offset】GCN 8019：BAT mask-weighted light curve 起始有 short, faint precursor（T-105 至 T-100 s），真实辐射早于自动触发，记 -105.0 s（同款先例 GRB160611A：emission starts at T-15 sec 记 -15.0）；swift_bat 目录 T90_start=-105.516 s 一致（0.5 s 亚秒差不入 offset）。【tag/sub_tag】t90=92.736±49.499 s（Swift/BAT 官方目录 external/swift_bat 快照），GCN 8019 t90=120(+5,-75) s（15-350 keV），Fermi/GBM t90=25.9203±1.20757 s（50-300 keV，external/fermi_gbm 快照）——按目录 t90 判 lgrb。【其他物理量并列】fluence=3.7±0.2×10⁻⁶ erg/cm²（15-150 keV，90% c.l.，GCN 8019）；1-s 峰值光子流量 2.3±0.3 ph/cm²/s（15-150 keV，自 T+3.54 s 起，GCN 8019）；时间平均谱幂律指数 1.50±0.10（GCN 8019）；partial coding 42%（GCN 8019）；redshift 无测定（无 XRT/UVOT/光学后续）。【测光核对】lc 两行 REM 60-cm R>16.1、H>14.5（GCN 8016）逐句核对无误：观测起始 10:34:23 UT（T0+488.368 s）、3σ 上限、原文未声明星等系统，时间锚定细则见行内 comment。【测光检索（2026-10-29）】仓内 gcn/archive 全文检索「GRB080725 / GRB 080725」命中 3 篇（GCN 8014/8016/8019；仅 8016 含光学数值，其 2 行已入库），trigger 317888 命中 8014/8019 两篇；external/rssgrbag（射电余辉 140 行/74 源）、external/grbsn_webtool（63 事件）均无该源记录；external/heasarc_grbcat 无该源行，uvot_grb/swiftgrbba 仅有目录参数无测光表；ADS/SciX API 无 token 不可达（返回 {\"message\":\"Not found\"}），arXiv API 检索「GRB 080725」命中 0 篇，OpenAlex 命中 1 篇（即 GCN 8019 通告本身），Crossref 无相关研究论文 → 无可用研究文献与新增测光；本 PR 新增 0 行、修订 2 行（时间锚定与元数据）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

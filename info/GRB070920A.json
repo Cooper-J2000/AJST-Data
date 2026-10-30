@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB070920A",
   "alias": [
-    "GRB070920"
+    "GRB 070920",
+    "GRB 070920A",
+    "GRB070920A"
   ],
   "ra": 100.968,
   "dec": 72.25,
   "T0": "2007-09-20T04:00:13.763940Z",
-  "T0_ref": null,
+  "T0_ref": "Swift/BAT 官方目录（仓内快照 external/swift_bat/summary_general_info/summary_general_copy.txt，trigger 291614）Trig_time_UTC=2007-09-20T04:00:13.763940；GCN 6805 整秒值 04:00:13 UT 一致；swiftgrbba/uvot_grb 快照均为 04:00:13Z",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -15,12 +17,15 @@
     "grb"
   ],
   "pos_error": 126.0,
-  "pos_ref": "GCN 6807",
+  "pos_ref": "GCN 6807 (Swift-BAT refined analysis): RA=100.968, Dec=72.250, 2.1 arcmin radius (sys+stat, 90% containment)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发 291614（GCN 6805，04:00:13 UT，星上定位 100.932/+72.227、3′）；同日另有 GRB070920B（trigger 291728，21:04:32 UT，GCN 6808/6811），触发号与坐标均不混淆。审核 wa1kmoon@zcode（2026-10-29）：(1) T0 保持 2007-09-20T04:00:13.763940Z——Swift/BAT 官方目录（仓内快照 external/swift_bat，trigger 291614）Trig_time_UTC=2007-09-20T04:00:13.763940，6 位小数为目录原样精度（末位 0 亦目录原样），非浮点噪声；GCN 6805 整秒值 04:00:13 UT 一致；TAROT GCN 6806 自估 t0=2007-09-20T04:00:14.112（差 0.35 s），亚秒差异按触发仪器 Swift 为准不采用，无需 T0_offset。(2) 定位：ra/dec=100.968/72.250、pos_error=126″=2.1′ 取 GCN 6807 BAT 地面精化定位（sys+stat，90% containment），pos_error_confidence=90（原文明确）；并列备查：BAT 目录再分析 RA_ground=100.972、DEC_ground=72.24221、Image_position_err=1.93′（swift_bat 快照），未采用（GCN 6807 为本条目定位引用出处；GCN 6805 星上定位已被 6807 取代；mpe_greiner 快照「GRB 070920」位置 06h43m44s +72°14′ 即 6805 星上值）。(3) sub_tag=lgrb：t90=56±1 s（GCN 6807，15-350 keV）；BAT 目录 T90=55.76±5.29 s（swift_bat 快照）；Swift GRB 官方目录 t90=51.54 s（15-150 keV，swift_grb 快照）；Klotz+2009 表2 亦列 T90=56 s——按目录 t90 判 lgrb，各来源均远大于 5 s、无冲突。(4) alias：删「GRB070920」（无空格无后缀形，GCN/目录原文均未使用，系旧库 id 残留），改为「GRB 070920」（GCN 6805/6806/6807 原文用名，发出时同日 B 暴尚未发现）、「GRB 070920A」（GCN 6921 NOT 原文用名）、「GRB070920A」（GCN 6854 MAGIC 原文用名）。(5) 红移：无 OT/宿主探测（NOT 深至 R>24.3 仍非探测），无任何来源给出红移，保持 null。(6) 测光逐行核对：TAROT 行旧 time=-13823.8 s 为导入抽取失真——GCN 6806 明确观测在触发后 544.7 s 开始（首图 90 s 曝光：t0+544.7 至 t0+634.7，R>18.2），已按原文重锚 time=589.7 s、time_err=45 s；NOT 行旧 time=4186.24 s（对应 05:10:00 UT 整）不可溯源，按 GCN 6921 观测窗口 2007-09-20.209–20.221 UT（触发后 1.0–1.3 h）重算中点 time=4162.24 s、time_err=半宽 518.4 s（原文另称 mean time 1.15 hr，与窗口中点一致）；补 GCN 6921 第二历元 2007-10-15.135 UT SN 搜索上限 R>24.3 一行。三行原文均以 USNO-B1 定标、未声明星等系统（mag_system 留空）；TAROT 未做银消光改正（GCN 6806 注明 Schlegel+1998 A_R≈0.3，Klotz+2009 表2 列 A_R=0.29）。(7) 测光检索（2026-10-29）：仓内 gcn/archive 全文检索「070920」命中 15 篇，属本暴 5 篇——6805（无测光）、6806（TAROT R>18.2，已重锚入库）、6807（仅 γ 射线量）、6854（MAGIC ≥250 GeV VHE 微分流量上限，能量流量 erg/cm² 非 Fν 测光，不入库）、6921（NOT R>24.3 两行入库）；另 10 篇为同日 GRB070920B（6808/6809/6811/6812/6814/6816/6820/6824）或误命中（30427），与本暴无关。external/rssgrbag（140 行/74 源射电光变）与 external/grbsn_webtool（63 事件）均无本源；GCN 6820 XRT 观测属 070920B。外部检索：ADS/SciX API 无 token 均 401（Missing Authorization，实测）；arXiv API 检索「GRB 070920」/「GRB070920A」/「070920A」0 命中；OpenAlex 命中 3 篇——2 篇为 GCN 6805/6921 镜像、Klotz+2009（AJ 137, 4100）表2 对本暴仅转引 GCNC 6806 同值（9.1–10.6 min，CR>18.2）、MNRAS stad2513 仅转引 BAT 目录参数——无新增可入库测光；本 PR 补 1 行、重锚 2 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
@@ -28,8 +33,20 @@
     "bot_created": true,
     "merged_from": [
       "GRB070920"
-    ]
+    ],
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Klotz+2009",
+      "url": "https://doi.org/10.1088/0004-6256/137/5/4100",
+      "title": "Early optical observations of gamma-ray bursts by the TAROT telescopes: period 2001-2008",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

@@ -1,24 +1,29 @@
 {
   "transient_id": "GRB050714",
-  "alias": [],
-  "ra": 43.5863,
-  "dec": 69.1261,
+  "alias": [
+    "GRB050714A"
+  ],
+  "ra": 43.592499,
+  "dec": 69.112778,
   "T0": "2005-07-14T00:05:56Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 3607",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 6.9,
+  "pos_ref": "GCN 3649",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] INTEGRAL/IBAS 触发 2598（GCN 3607：IBIS/ISGRI 于 2005-07-14 00:05:56 UT 探测到 40 s 长暴，IBAS 定位 43.5863/+69.1261，2.0′ 90%），别名 GRB050714A（<GCN 3608> 原文用名 \"GRB 050714A\"，Integral trigger 2598；HEASARC SWIFTGRB 亦名 GRB 050714A/Swift 20014）。Swift/BAT 未触发本暴（external/swift_bat 目录无此源；external/swift_grb 记 target 20014、det_flag=O、bat_detection=U——Swift 仅执行 ToO XRT 观测，GCN 3610），原 Trigger_Instrument=Swift/BAT 系导入误记，已更正为 INTEGRAL/IBIS。注意同日 22:40:32 UT 的 Swift trigger 145994 = GRB050714B（GCN 3613，另坐标 169.69/−15.53）为独立事件，勿混淆。[T0] 保持 2005-07-14T00:05:56Z（GCN 3607 IBAS 团队触发通告）；Vianello+2009（A&A 495, 1005）表 2 给 00:05:53，相差 3 s，按 §3.8 优先级取触发仪器官方通告值，差异并列备查，不构成 T0_offset。[定位] ra/dec 改为 Swift/XRT 精化余辉位置 02:54:22.2 +69:06:46（GCN 3649，6.9″ 半径 90% 包含，较 GCN 3610 初值 9″ 更精；Vianello+2009 表 2 同值 43.592499/69.112778、0.115′）；原值 43.5863/69.1261 为 INTEGRAL IBAS 2′ 位置（GCN 3607）。[分类] t90=34 s、T50=24.0 s（Vianello+2009 表 2），按文献 t90 判 lgrb；GCN 3607 亦称 \"A 40 s long GRB\"。[能量参数] GCN 3607：peak flux 0.3 ph/cm²/s（20–200 keV，1 s）、fluence 6.16e-7 erg/cm²（20–200 keV，40 s）；Vianello+2009 表 2/3：peak flux 0.4 ph/cm²/s、fluence 4.27e-7 erg/cm²（20–200 keV）、photon index 2.03(+0.21/−0.09)，光变三峰、过弱无法做分辨谱分析。[光学候选] Tautenburg R~21 候选（GCN 3611，I>~20）与 GCN 3609 两个变源：原文明言 \"No accurate photometry has been performed so far\"，且 Vianello+2009 §3.30 明确 \"these detections were not confirmed\"，系未确证候选、估计值，不入库。[X 射线行] lc 2 行 10keV（UKSSDC Burst Analyser，Evans+2007,2009）按契约保持原样；其 time/mjd 与本 T0 自洽（mjd−T0=50368.447/59495.708 s），流量比 1.607 对应衰减指数 ≈2.9，与 external/swiftgrbba 快照 xrt_lc_index=−3.007、xrt_11hr_flux=1.03e-12 erg/cm²/s（0.3–10 keV）一致；GCN 3649 第二次观测（T+5.0 d，9.7 ks）XRT 不探测（X 射线上限，暂不入库）。[测光检索]（2026-10-29）：仓内 gcn/archive 全文命中 15 篇，其中本暴（050714A）相关 7 篇（GCN 3607/3608/3609/3610/3611/3649/3789），其余 8 篇为同日独立事件 050714B 及其 VLA 观测（GCN 3651 属 050714B，不入本源）；external/rssgrbag 0 命中、external/grbsn_webtool 无此事件、external/heasarc_grbcat 无此源；ADS/SciX API 401（无 token），OpenAlex 命中 5 条、研究论文 1 篇（Vianello+2009，VoR 页面 DataDome 拦截，CDS/VizieR 表 TLS 不可达，实际核对 arXiv:0812.3349v2 表 2/3 与 §3.30）；GCN 站检索以仓内 archive 全文为准 → 补 5 行光学上限（ROTSE-IIId 2 行 GCN 3608、Red Buttes 3 行 GCN 3789）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "mpe_greiner": {
@@ -38,8 +43,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Vianello+2009",
+      "title": "The updated spectral catalogue of INTEGRAL gamma-ray bursts",
+      "url": "https://doi.org/10.1051/0004-6361:200811251",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

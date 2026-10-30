@@ -1,27 +1,36 @@
 {
   "transient_id": "IceCube-250506A",
-  "alias": [],
+  "alias": [
+    "IC250506A",
+    "IceCube Alert 250506.59"
+  ],
   "ra": 116.5,
   "dec": 35.32,
-  "T0": "2025-05-06T14:14:12Z",
-  "T0_ref": null,
+  "T0": "2025-05-06T14:14:12.090Z",
+  "T0_ref": "GCN 40369（IceCube 官方通告）：离线精化后 Time: 14:14:12.09 UT（2025-05-06），保留原文百分秒（写作毫秒三位 .090 仅为可解析、不增精度，同先例 IceCube-260712A）；GCN 40377 复述同一 T0；原库 14:14:12Z 为同值截断",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
-  "redshift": 0.386,
+  "Trigger_Instrument": "IceCube",
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 40369（IceCube 离线精化方向）：RA=116.50 (+0.59/-0.57 deg, 90% PSF containment)、Dec=35.32 (+0.48/-0.43 deg, 90% PSF containment)，J2000——不对称误差不适配圆半径，pos_error 留空、不对称值照录；库内 ra/dec=116.5/35.32 即精化值（保留）；精化前 AMON 初报误差盒中心见 GCN 40368（07h45m48.00s +35d19m26.4s = 116.45/35.324，R=0.51 deg），与精化位有别",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 40421",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube 高能中微子候选（track-like；ICECUBE_Astrotrack_BRONZE alert stream；GCN 40369；AMON 事件页 140896_73492707.amon、MASTER 记 trigger No 73492707；GCN 40368 原文用名「IceCube Alert 250506.59」，GCN 40377 原文用名「IC250506A」）。[与 GRB 250506A 划界] 同日 GRB 250506A 为 SVOM/ECLAIRs 触发 sb25050601（Tb=2025-05-06T02:23:22 UTC，GCN 40358；精化位 RA=219.373 Dec=28.909，GCN 40364），与本事件（T0=14:14:12.09 UTC）时刻差 42650.09 s（11.85 h）、角距 83.087°（按 40364 精化位算），为独立事件；库内 info/GRB250506A.json 及 22 篇 GRB 250506A 通告（GCN 40355/40358/40359/40360/40361/40362/40363/40364/40365/40366/40371/40373/40378/40382/40387/40392/40394/40396/40405/40440/40453/40798）均未混入本源。[T0] GCN 40369 精化时刻 Time: 14:14:12.09 UT（2025-05-06）→ T0=2025-05-06T14:14:12.090Z（原文百分秒，补一个尾零仅为 ISO 解析兼容、不增精度）；原库 14:14:12Z 为同值截断；无独立证据要求 T0_offset。[定位] 精化方向 RA=116.50 (+0.59/-0.57 deg)、Dec=35.32 (+0.48/-0.43 deg)（90% PSF containment），库内 ra/dec=116.5/35.32 与之逐位一致（即精化值；精化前 AMON 初报误差盒中心 116.45/35.324、R=0.51 deg，见 GCN 40368，未采用）；不对称 PSF→pos_error=null、pos_error_confidence=90。[Trigger] 原库 Fermi/LAT 系跟随观测（GCN 40377），改为 IceCube。[redshift 去污染] 原库 redshift=0.386（redshift_ref=gcn_llm:circulars_meta; GCN 40421）实为 ZTF 候选 ZTF23aabbszx/AT2023fyh 的 DESI 光谱红移 z=0.3860；GCN 40421 判定该源为核区 AGN（W1−W2=0.76，2023-01-25 首现、长期爆发、近 50 d 衰减），原文直述「There is no particular activity in the past 6 months which suggest a connection to the high-energy neutrino」→ 非本源红移，redshift/redshift_type/redshift_ref 置 null，候选信息留此 comment，未建 host_galaxy。[测光] 保留 ZTF 行并置 discard=y（候选 AGN，非暂现对应体）；补入 GCN 40368 MASTER-SAAO 12 行 clear 波段上限（Tmid−T0=9220–11212 s、60 s 曝光、17.2–18.3 mag）。GCN 40377 Fermi-LAT >100 MeV 流量上限（95% CL <2.97e-10 ph cm^-2 s^-1，16 yr；1 月/1 天 <6.91e-9/<2.61e-8 ph cm^-2 s^-1）与 GCN 40388 附加中微子搜索（1000 s 窗 0 事件、2 d p=1.00、灵敏度 1.4e-1–1.7e-1 GeV cm^-2）只入 comment、不入 lc（前者为 GeV 能段积分流量上限、无光学测光；后者为同仪器中微子搜索，均非光变点）。[测光检索留证（2026-10-29）] 仓内 gcn/archive 全文 45 889 篇，命中本源 5 篇（GCN 40368/40369/40377/40388/40421），另 22 篇属 GRB 250506A 已按身份排除；external 快照命中均属 GRB 250506A（fermi_gbm bn250506100、swift_xrt_live GRB 250506A），本源 0 命中；GCN 站在线检索为前端渲染、结果不可复核，ADS API 401（无 token），ATel 搜索被反爬拒绝 → 无其他带时间锚点的光学测光；本 PR 补 12 行（MASTER），另保留 1 行并置 discard=y。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null

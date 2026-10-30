@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB220403A",
-  "alias": [],
-  "ra": 56.5,
-  "dec": -44.3,
-  "T0": "2022-04-03T21:35:37Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 220403A",
+    "bn220403424"
+  ],
+  "ra": 30.28,
+  "dec": -14.16,
+  "T0": "2022-04-03T10:10:02.661Z",
+  "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST 快照（external/fermi_gbm/normalized.jsonl，bn220403424）trigger_time=2022-04-03T10:10:02.661Z；GCN 31818（GBM Final Real-time Localization）原文 trigger MET 670673407.661128（MET 扣 5 跳秒 Python 独立重算=2022-04-03T10:10:02.661128 UTC，至 ms 一致）、检测时刻 10:10:02 UT；GCN 31824（BAT-GUANO）引「GRB 220403A，detected by Fermi/GBM with T0: 2022-04-03T10:10:02 UTC (GCN 31818)」；GCN 31819 MASTER prose「25957 sec after trigger time at 2022-04-03 17:22:40 UT」与 T0 自洽（17:22:40−T0=25957.339 s）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 33948,
+  "pos_ref": "FERMIGBRST 目录快照 bn220403424（HEASARC Fermi GBM 触发目录）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 更正（2026-10-28，fsy）：bot 原值 2022-04-03T21:35:37Z 并非触发时刻、而是 GCN 31822 中 Tautenburg 开始观测的时刻（bot 把后续望远镜观测起点当成 T0，Issue #84 族锚定错误）；bot 原 Trigger_Instrument=Swift/UVOT 亦误——UVOT 发现的是 GRB 220403B 的 OT（GCN 31820），与本 GBM 暴无关（bot 原 t0_note「t0 为 meta trigger-time」、t0_basis=meta_trigger 失真，原值保留于此）。标准 T0=2022-04-03T10:10:02.661Z，依据见 T0_ref。定位：ra/dec 取 FERMIGBRST 目录位 30.28/−14.16（快照 error_radius=9.43 deg=33948 arcsec，GBM 目录定位为 1σ 统计半径口径、另有数 deg 级系统误差，pos_error_confidence=1sigma）；bot 原 56.5/−44.3 为 GCN 31818 实时定位（15.3 deg 统计），按目录位优于实时位的优先级弃用、保留备查。prompt 参数（写 comment 不判定）：t90=6.912±1.493 s（50-300 keV，FERMIGBRST）→ 按目录 t90 判 lgrb；t50=1.792±1.145 s（50-300 keV）；fluence=4.07961e-7 erg/cm2（10-1000 keV，FERMIGBRST）；Epeak=69.1 keV（BAND，FERMIGBRST）；peak_flux=2.8767±0.906 ph/cm2/s（10-1000 keV，64 ms，FERMIGBRST）。红移：无任何光谱/红移报道，null。身份备注：GCN 31824 猜测 220403A 或为 GRB 220403C（INTEGRAL SPI/ACS trig #9822、T0=2022-04-03T10:13:50 UTC，晚 228 s）的弱前兆，尚无定论；两暴 T0 相距 228 s ≫ 1 s，按 §3.2 各自独立锚定、不合并。测光检索（2026-10-28）：GCN 事件页 gcn.nasa.gov/circulars/events/grb-220403a 聚合 3 篇（31818/31819/31822）全文核读；网检另补获 GCN 31824（BAT-GUANO，题头以 GRB 220403C (or A) 为主、未被 A 事件页聚合收录）亦核读——GUANO 为 A 回取 200 s BAT 事件数据、NITRATES 未检出（伽马射线非检出、无测光表）；本地无 gcn/archive，legacy gcn3 镜像取原文。GCN 31819 MASTER-SAAO 上限表 10 行全部入库（V 2 行、C 8 行 → band=G）。GCN 31822 Tautenburg 行实属 GRB 220403B：题头虽写「GRB 220403A」、正文观测的是 Klingler et al.（GCN 31820，即 Swift GRB 220403B）的场并测 Swift/UVOT 发现的 OT、比较对象 GCN 31821（Ondrejov D50）亦为 220403B 测光，且 220403A（GBM 框心 dec≈−44）在 Tautenburg（纬 +51°）永不升起、物理上不可观测 → 该行迁入 lc/GRB220403B.csv 并按 B 的 T0 重锚，本文件不再保留（迁移动因与原值见该行 comment）。external 快照：mpe_greiner 无 220403A 条目（同日仅 GRB 220403B/220403C）、rssgrbag/grbsn_webtool 无记录；OpenAlex 检索「GRB 220403A」1 命中为 GBM 深度学习方法论文（CNN 分类，非本暴研究）、arXiv API 限流改网检无本暴论文命中，articles=[]。本源补 10 行、迁出 1 行。别名证据：「GRB 220403A」为 GCN 31819/31822/31824 通告原文用名；「bn220403424」为 GBM 触发编号（GCN 31818 原文 trigger 670673407.661128 / 220403424；FERMIGBRST 快照 name_alt）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 670673407.661128 / bn220403424，FERMIGBRST 快照 trigger_time=2022-04-03T10:10:02.661Z；GCN 31818 MET 一致）；bot 原写法 t0=2022-04-03T21:35:37Z 实为 GCN 31822 Tautenburg 观测开始时刻、非触发时刻，原 note 见 comment",
+    "t0_basis": "fermi_gbm_catalog_bn220403424",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null

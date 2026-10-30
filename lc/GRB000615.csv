@@ -1,12 +1,20 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-20688.0,,s,51710.92,8.46GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN721,,
-20940.0,,s,51710.92291666666,K,19.0,,magnitude,,n,n,,,,,,,1.0,n,,Calar Alto 3.5m/Omega Cass,GCN713,,
-24835.0,,s,51710.967997685184,H,19.6,0.3,magnitude,,n,n,,,,,,,1.0,n,,TNG/ARNICA,GCN727,,
-25800.0,,s,51710.979166666664,K,17.5,,magnitude,,n,y,,,,,,,1.0,n,,AZT-24 1.1m,GCN708,,
-25800.0,,s,51710.979166666664,J,20.5,,magnitude,,n,y,,,,,,,1.0,n,,AZT-24 1.1m,GCN708,,
-43140.0,,s,51711.17986111111,R,21.6,,magnitude,,n,n,,,,,,,1.0,n,,FLWO 1.2m,GCN709,,
-64740.0,,s,51711.42986111111,R,21.5,,magnitude,,n,y,,,,,,,1.0,n,,FLWO 1.2m,GCN709,,
-107693.0,,s,51711.92700231481,H,20.5,,magnitude,,n,y,,,,,,,1.0,n,,TNG/ARNICA,GCN727,,
-128688.0,,s,51712.17,8.46GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN721,,
-281400.0,,s,51713.9375,J,19.1,0.3,magnitude,,n,n,,,,,,,1.0,n,,AZT-24 1.1m,GCN719,,
-384432.0,,s,51715.13,8.46GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN721,,
+15756,660,s,51710.4451389,R,22.0,,magnitude,,n,y,,,,,,,1.0,n,FLWO 1.2m,,Maiorano+2003,R~22 上限（Maiorano+2003 对 GCN 706 FLWO 6月15日 R 数据的精化分析：两幅 300 s + 一幅 600 s，触发后约 4 h）；观测窗口取 GCN 706 原文 June 15 10:30–10:52 UT，中点/半宽为约定口径；GCN 706 原文仅与 POSS-II 红板（R~20）比对无新目标；VoR 不可得（会议海报，无期刊版），取自 arXiv:astro-ph/0302022 全文 TeX；原文未声明系统；未做银消改正（GCN 706：Schlegel E(B-V)=0.024，A_R=0.063）,Rusty-Harpoon@zcode
+56784,432,s,51710.92,8.46GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN721,原文 150 μJy（4–5σ）：WFC 误差圆（GCN 705）内无射电源；观测历元 June 15.92 UT（精度 0.01 d，等效不确定度 ±432 s）；三次观测之一（另两次 June 17.17/20.13）,Rusty-Harpoon@zcode
+60931.2,43,s,51710.968,H,19.6,0.3,magnitude,,n,n,,,,,,,1.0,n,TNG,ARNICA,GCN727,GCN 713 候选源第一历元（June 15.968 UT，历元精度 0.001 d）H=19.6±0.3；与第二/三历元无显著变化（3σ）；AS30-0 标准星定标（Hunt+1998），原文未声明系统,Rusty-Harpoon@zcode
+61116,4080,s,51710.9701389,K,19.0,,magnitude,,n,n,,,,,,,1.0,n,Calar Alto 3.5m,Omega Cass,GCN713,GCN 713 候选红源（RA 15:32:35.16 Dec +73:50:45.2 ±1″，无 DSS-2 红对应体）K′=19 估计值；原文只给观测窗口 June 15 22:09 – June 16 00:25 UT（两次运行合并像，单图极限亦约 K′=19），中点/半宽为约定口径；波段原文为 K′（K-prime），filters.json 暂无该键，暂记 K，建议扩键 infra-Kp 后更正（见 PR 待决）；原文未声明系统；作者自疑可能为银河系恒星（R-K~2）,Rusty-Harpoon@zcode
+66757.6,4858.7,s,51711.035435,K,17.5,,magnitude,,n,y,,,,,,,1.0,n,AZT-24 1.1m,,GCN708,原文只给观测窗口 June 15.9792–16.09167 UT（合并像，J 共 3600 s + K 1500 s），中点/半宽为约定口径；极限 K=17.5（S/N=3）；原文称起测于触发后约 17.2 h，与 GCN 703 触发时刻 06:18:24 UT 自洽；原文未声明系统,Rusty-Harpoon@zcode
+66757.6,4858.7,s,51711.035435,J,20.5,,magnitude,,n,y,,,,,,,1.0,n,AZT-24 1.1m,,GCN708,同窗口合并像 J 极限 20.5（S/N=3，两次 J 成像合并）；窗口/中点口径同 K 行；原文未声明系统,Rusty-Harpoon@zcode
+79836,600,s,51711.1868056,R,21.6,,magnitude,,n,n,,,,,,,1.0,y,FLWO 1.2m,,GCN709,第一夜序列中一个可能变源（RA 15:33:06.04 Dec +73:49:46.4 ±0.3″，USNO R 定标）约 R~21.6；原文明言该源在图内似有移动、「we DO NOT think it is the GRB afterglow」，故 discard=y；4×300 s 序列自 June 16 04:19 UT 起，取曝光中点；原文未声明系统（USNO R 定标）,Rusty-Harpoon@zcode
+101436,600,s,51711.4368056,R,21.5,,magnitude,,n,y,,,,,,,1.0,n,FLWO 1.2m,,GCN709,两夜 ISIS-2 图像相减：无亮于约 R~21.5 的变源；锚定第二序列（June 16 10:19 UT 起的 4×300 s，取曝光中点），该极限实跨两夜比对；Fynbo+2001 表 2 转引 R=21.5 但锚 Δt=0.18 d（首夜历元），本行按 GCN 709 原文口径；原文未声明系统,Rusty-Harpoon@zcode
+81693.1,43,s,51711.2083,H,19.6,0.3,magnitude,,n,n,,,,,,,1.0,n,TNG,ARNICA,GCN727,GCN 713 候选源第二历元（June 16.2083 UT，历元精度 0.001 d）H=19.6±0.3；与第一/三历元无显著变化（3σ）；AS30-0 标准星定标（Hunt+1998），原文未声明系统,Rusty-Harpoon@zcode
+143788.8,43,s,51711.927,H,20.5,,magnitude,,n,y,,,,,,,1.0,n,TNG,ARNICA,GCN727,三历元（June 15.968/16.2083/16.927 UT）比对：无 3σ 显著变源深至 H~20.5，挂第三历元（June 16.927 UT，历元精度 0.001 d）；AS30-0 标准星定标（Hunt+1998），原文未声明系统,Rusty-Harpoon@zcode
+164784,432,s,51712.17,8.46GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN721,同 GCN721 行：150 μJy（4–5σ）上限；观测历元 June 17.17 UT（精度 0.01 d，等效不确定度 ±432 s）；三次观测之二,Rusty-Harpoon@zcode
+318096,600,s,51713.9444444,J,19.1,0.3,magnitude,,n,n,,,,,,,1.0,n,AZT-24 1.1m,,GCN719,GCN 713 候选源在 June 18.9375 UT 起始的 1200 s J 图像中测得 J=19.1±0.3（取曝光中点）；同图极限 J=20.1 另行一行；原文未声明系统,Rusty-Harpoon@zcode
+420528,432,s,51715.13,8.46GHz,0.15,,mJy,,n,y,,,,,,,1.0,n,VLA,,GCN721,同 GCN721 行：150 μJy（4–5σ）上限；观测历元 June 20.13 UT（精度 0.01 d，等效不确定度 ±432 s）；三次观测之三,Rusty-Harpoon@zcode
+77376,30,s,51711.1583333,R,21.0,,magnitude,,n,y,,,,,,,1.0,n,USNO 1.0m,,GCN713,USNO 1.0-m June 16 03:48 UT R 图像，极限约 R=21；GCN 713 称候选源在该图「barely visible」但未给星等，按图像极限入库；时刻精度 1 min（time_err 为等效不确定度），曝光时长未给；原文未声明系统,Rusty-Harpoon@zcode
+55056,4320,s,51710.9,I,20.5,,magnitude,,n,y,,,,,,,1.0,n,IAC 80,,GCN713,IAC 80 June 15.9 UT I 图像，极限约 20.5；原文称候选源隐约可见但未给星等，按图像极限入库；历元精度 0.1 d（time_err 为等效不确定度），曝光时长未给；原文未声明系统,Rusty-Harpoon@zcode
+143788.8,43,s,51711.927,H,19.6,0.3,magnitude,,n,n,,,,,,,1.0,n,TNG,ARNICA,GCN727,GCN 713 候选源第三历元（June 16.927 UT，历元精度 0.001 d）H=19.6±0.3；与第一/二历元无显著变化（3σ）；AS30-0 标准星定标（Hunt+1998），原文未声明系统,Rusty-Harpoon@zcode
+318096,600,s,51713.9444444,J,20.1,,magnitude,,n,y,,,,,,,1.0,n,AZT-24 1.1m,,GCN719,June 18.9375 UT 起始 1200 s J 图像的极限星等（与 J=19.1±0.3 候选源测光同图，取曝光中点）；原文未声明系统,Rusty-Harpoon@zcode
+404434.6,1800,s,51714.9437333,J,19.1,0.3,magnitude,,n,n,,,,,,,1.0,n,AZT-24 1.1m,,GCN719,June 19.9229 UT 起始的 3600 s J 图像，候选源 J=19.1±0.3（原文「in all the observations」各历元一致）；取曝光中点；原文未声明系统,Rusty-Harpoon@zcode
+404434.6,1800,s,51714.9437333,J,20.7,,magnitude,,n,y,,,,,,,1.0,n,AZT-24 1.1m,,GCN719,June 19.9229 UT 起始 3600 s J 图像的极限星等；取曝光中点；原文未声明系统,Rusty-Harpoon@zcode

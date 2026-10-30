@@ -1,27 +1,37 @@
 {
   "transient_id": "ZTF20aajnksq",
-  "alias": [],
+  "alias": [
+    "AT2020blt"
+  ],
   "ra": 191.770292,
   "dec": 45.200626,
   "T0": "2020-01-28T06:43:20Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 26966; TNS AT2020blt",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "ZTF",
   "redshift": 2.9,
-  "tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "Ho+2020 (ApJ 905, 98) §2.3; GCN 26966",
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 26966",
-  "comment": null,
-  "sub_tag": [],
+  "pos_error_confidence": null,
   "pos_error_unit": "arcsec",
+  "pos_ref": "GCN 26966",
+  "comment": "审核 2026-10-29（wa1kmoon@zcode）。①身份：ZTF20aajnksq = AT2020blt（TNS 名），ZTF Uniform Depth Survey 于 2020-01-28 发现的快速衰减红色暂现源（1.3 d 内 Δr≈2.3 mag、g−r≈0.6，VoR 摘要；GCN 26966 作 2.5 mag/1.25 d、g−r=+0.65），Keck/LRIS 谱给出 z=2.9。Ho+2020（ApJ 905, 98）结论：光学光变可用拐点 1 d 的 broken power-law 描述、LX~1e46 erg/s、10 GHz 射电明亮，与长暴余辉的特征一致，只是高能卫星没探测到 GRB，故判为「经典（on-axis、Γ0≳100）GRB 被漏掉」的余辉——即无 GRB 对应体的 orphan afterglow（TNS 分类亦为 Afterglow）。与 GRB 200128A 无关：GCN 26970（Fermi-GBM 团队）指出本源位置在 GBM 触发前约 25.3 min 至触发后 1.8 min 被地球遮挡，「we consider it unlikely that GRB 200128A is associated with ZTF20aajnksq」；GCN 26968 亦指出若关联则 M_r=−27.4 远亮于短暴余辉。原 Trigger_Instrument=Fermi/GBM 系导入管线把同区域的 GRB 200128A（已单列条目 GRB200128A）混入，改为 ZTF（巡天发现，无伽马触发）。②T0：2020-01-28T06:43:20Z = ZTF 发现时刻（GCN 26966「discovered on UT 2020-01-28T06:43:20.640 at r=19.6 mag」；TNS AT2020blt discovery date 2020-01-28 06:43:20；Ho+2022 表1 记 MJD 58876.2801），GCN 27039（Konus-Wind）亦以 2020-01-28 06:43:20 UTC 为 T0。T0 取整秒（26966 的 .640 见 lc 发现行；亚秒差不写 T0_offset，§3.2）。原 extra_data 的 t0_note「t0 为 meta trigger-time（真实触发时刻）」/t0_basis「meta_trigger」不成立（本源无触发），已改写并留原值于此备查。③定位：ra=191.770292、dec=+45.200626 逐位取自 GCN 26966（「191.770292 +45.200626」），TNS 同值；26966 未给位置误差 → pos_error/pos_error_confidence 留空。④红移：2.9 四路互证——(a) GCN 26966：Keck/LRIS 的 Lyman break 与 Lyα 吸收，z=2.9；(b) Ho+2020 §2.3 Optical Spectroscopy：z=2.90(+0.05/−0.04)（低 S/N）；(c) TNS AT2020blt：redshift 2.9；(d) Ho+2022 表1：2.9 → 保留 2.9，redshift_type=spec（不是别的对象，也无需置 null）。⑤历元换算：Ho+2020 表1 的 Δt 以该文 t0=JD 2458876.68±0.01（=MJD 58876.18，2020-01-28T04:19:12Z，§3.1 明言为拟合的「首光」估计值）为基准，比本库 T0 早 8648 s → time=Δt×86400−8648 s（表内日期与 Δt 逐行自洽，复算一致）。⑥lc（原 1 行 → 27 行）：原 GCN 26968 的 Gemini-North/GMOS 行数值核对无误（8×200 s、DRAGONS、PS1 DR1 定标、探测），但原 time=366157 s 是观测起点（12:25:57 UT）而非曝光中点、time_err 缺失、telescope 未拆列 → 按 §3.2 改为中点 time=366957 s、time_err=800 s、telescope=Gemini-North、instrument=GMOS；AB 依 26968 原文「r = 25.2 +- 0.05 AB mag」。该 25.2 mag 是源在 4.35 d 内衰减约 5.6 mag（19.6→25.2）的结果，与 z=2.9 不矛盾（不是红移填错）。另按 Ho+2020 表1（VoR，DOI 10.3847/1538-4357/abc34d，已实际打开）补 23 个光学点（P48/ZTF、LT+IO:O、P60+SEDM、P200+WaSP；含 3 个上限 r>21.36、r>22.04、i>22.24）与 3 个 VLA 10 GHz 点（52.1±6.5 μJy 探测；<15、<21 μJy 上限），共补 26 行。表注：光学星等已做银河系消光改正（故 Gext_corr=y）、AB 系统（§2.1「all magnitudes given in AB」）；原文日期仅 0.01 d 精度 → time_err 取 432 s 舍入半宽；射电三行以观测起点+0.7 h/2=+1260 s 取中点（表内 Δt 列比日期换算大 0.02 d，三行一致，以绝对日期为准）。⑦不入库、仅记录：Swift/XRT 两个历元（GCN 26966 与 Ho+2020 表1：Jan 29.70 探测 (3.96−1.08+1.30)e−3 ct/s、Jan 31.04 上限 <3.95e−3 ct/s）——X 射线不在审核范围；Konus-Wind（GCN 27039）20–1500 keV 90% 上限：fluence <6.1e−7 erg/cm²、limiting peak flux <1.7e−7 erg/cm²/s（0.74 d 窗口内无符合的 GRB，两个 waiting-mode 事件定位不符）；Ho+2022（ApJ 938, 85）表3：2022-01-31 LRIS 960 s 于源位置 G>26.49、R>25.92 AB（原文为宿主搜寻成像，非源测光，故不入 lc），同文给出 Eγ,iso<1.0e52 erg（严于 Ho+2020 的 <7e52 erg）。⑧原文内部不一致（照录备查）：(a) 发现星等——Ho+2020 摘要「r=19.60」/表1 19.60±0.08 vs §2.1 正文 19.57±0.14、GCN 26966 19.6、TNS 19.57（lc 取表1）；(b) 第二个点——表1 Jan 28.35 19.97±0.08 vs §2.1 正文「1.5 h 后 r=20.01±0.16」（lc 取表1）；(c) 最后一次 ZTF 上限——表1 r>21.36 vs §2.1 正文 r>20.73（lc 取表1）。⑨tag=grb（orphan GRB afterglow；tags.json 无 afterglow/orphan 类目，未自造）；sub_tag 留空——原文未给长/短暴分类（无 GRB 探测、无 t90），Ho+2020 仅与长暴余辉类比，不足以判 lgrb，不臆造（§3.9）。alias=AT2020blt（TNS 名，GCN 26968「ZTF20aajnksq/AT2020blt」用名）。⑩articles：保留 Ho+2020（VoR 已打开、表1 取数）、Andreoni+2021（表2：本源分类「no GRB」、r 波段衰减 1.58 mag/d）；新增 Ho+2022（表1/3 与 Eγ 上限用于互证）；删 Gupta+2022（该文只把本源作为已知 orphan afterglow 对照、图10 数据转引 Ho+2020，无本源独立数值）。GCN 通告不入 articles。测光检索（2026-10-29）：本地无 gcn/archive 快照；external/rssgrbag、grbsn_webtool、uvot_grb、fermi_gbm、konus_wind 均无本源记录；GCN 站全文检索「ZTF20aajnksq」命中 4 篇（26966/26968/26970/27039，全部打开核对）；「2020blt」检索 0 命中（分词不匹配 AT2020blt），逐篇核对正文含 AT2020blt 的仅 26968；arXiv 元数据检索「ZTF20aajnksq」3 篇（Ho+2020、Gupta+2022、Ho+2022），按别名「AT2020blt」5 篇（另 Sarin+2021 arXiv:2106.01556、2411.07973，均无本源新增测光），Andreoni+2021 全文另核；ADS API 无 token（401，未检索）；TNS AT2020blt 页已打开（Afterglow、z=2.9、19.57 r-ZTF）；ATel 13429 被 CAPTCHA 拦、未打开（不引用）→ 结论：可用测光集中在 Ho+2020 表1；本次补 26 行（光学 23 + 射电 3），另修正 Gemini 行 1 行。",
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [],
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "2026-10-29 审核修正：T0=2020-01-28T06:43:20Z 为 ZTF 发现时刻（GCN 26966；TNS discovery date 2020-01-28 06:43:20；Ho+2022 表1 MJD 58876.2801），非 GRB 触发时刻；原值 t0_note「t0 为 meta trigger-time（真实触发时刻）」/t0_basis「meta_trigger」不成立（本源无伽马触发，与 GRB 200128A 无关，见 GCN 26970），原值已留在 comment。",
+    "t0_basis": "GCN 26966; TNS AT2020blt",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [
     {
@@ -39,11 +49,10 @@
       "source": "bot"
     },
     {
-      "name": "Gupta+2022",
-      "title": "Revealing nature of GRB 210205A, ZTF21aaeyldq (AT2021any) and follow-up observations with the 4Ktexttimes4K CCD imager + 3.6m DOT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022JApA...43...11G",
-      "bibtex": "@ARTICLE{2022JApA...43...11G,\n       author = {{Gupta}, Rahul and {Kumar}, Amit and {Pandey}, Shashi Bhushan and {Castro-Tirado}, A.~J. and {Ghosh}, Ankur and {Dimple} and {Hu}, Y.-D. and {Fern{\\'a}ndez-Garc{\\'\\i}a}, E. and {Caballero-Garc{\\'\\i}a}, M.~D. and {Castro-Tirado}, M. {\\'A}. and {Hedrosa}, R.~P. and {Hermelo}, I. and {Vico}, I. and {Misra}, Kuntal and {Kumar}, Brajesh and {Aryan}, Amar and {Tiwari}, Sugriva Nath},\n        title = \"{Revealing nature of GRB 210205A, ZTF21aaeyldq (AT2021any) and follow-up observations with the 4K{\\texttimes}4K CCD imager + 3.6m DOT}\",\n      journal = {Journal of Astrophysics and Astronomy},\n     keywords = {Gamma-ray burst: general{\\textemdash}gamma-ray burst: individual: GRB 210205A and ZTF21aaeyldq{\\textemdash}methods: data analysis{\\textemdash}telescope, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2022,\n        month = jun,\n       volume = {43},\n       number = {1},\n          eid = {11},\n        pages = {11},\n          doi = {10.1007/s12036-021-09794-4},\narchivePrefix = {arXiv},\n       eprint = {2111.11795},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022JApA...43...11G},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "name": "Ho+2022",
+      "title": "Cosmological Fast Optical Transients with the Zwicky Transient Facility: A Search for Dirty Fireballs",
+      "url": "https://doi.org/10.3847/1538-4357/ac8bd0",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null

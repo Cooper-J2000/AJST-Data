@@ -1,35 +1,45 @@
 {
   "transient_id": "GRB000615",
-  "alias": [],
-  "ra": 233.058,
-  "dec": 73.814,
-  "T0": "2000-06-15T16:20:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000615",
+    "GRB 000615A"
+  ],
+  "ra": 233.168,
+  "dec": 73.848,
+  "T0": "2000-06-15T06:18:24Z",
+  "T0_ref": "GCN 703（BeppoSAX GRBM 与 WFC 于 2000-06-15 06:18:24 UT 同时检测）；heasarc_grbcat（grbcat_id 4921）trigger_time=2000-06-15T06:18:24.000Z 一致；external/saxgrbmgrb（Frontera+2009）给 06:17:48.000Z、Maiorano+2003（astro-ph/0302022）给 06:17:45 UT，差约 36–39 s，并列备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX/GRBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 120,
+  "pos_ref": "GCN 705（BeppoSAX WFC 精化坐标 RA 233.168 DEC +73.848，误差半径 2′=120″）；rssgrbag（Chandra & Frail 2012）目录记录 RA 233.16792 Dec +73.84806 同值互证",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB000615＝BeppoSAX GRBM+WFC 2000-06-15 06:18:24 UT 触发暴（GCN 703），目录名 GRB 000615A（heasarc_grbcat grbcat_id 4921 / saxgrbmgrb / rssgrbag）；同日另有 GRB 000615B（IPN，16:32:27 UT（GCN 710 原文 59547 s UT 换算；heasarc_grbcat 4922 记 16:32:36Z，目录 ECT 口径），RA 35.6 Dec −17.9，GCN 710）与 GRB 000615C（IPN，20:47 UT，heasarc_grbcat）两个独立事件，与本源无关，不入 alias。别名出处：GRB 000615 ← GCN 703–727 subject 原文用名；GRB 000615A ← heasarc_grbcat/saxgrbmgrb/rssgrbag 目录用名。位置：原库 ra/dec（233.058, +73.814）为 GCN 707 BeppoSAX NFI 初步分析的 MECS 源位置（1.5′），GCN 707 原文即声明其可能与 1.3′ 外 NVSS 射电源成协而未必属 GRB，本审核改为 GCN 705 WFC 精化误差圆中心；GCN 703 粗定位 233.141/+73.795/5′、mpe_greiner SAX/WFC 15h32m34s +73°48′/5′ 并列备查；Maiorano+2003 转引盒中心 15h32m36.9s +73°49′07″/2′ 与 GCN 705 数值略异（见 PR 待决）；GCN 705 未标注置信水平。t90=13.0±4.2 s（external/saxgrbmgrb 快照，40–700 keV，Frontera+2009），rssgrbag 另给 t90=12 s（15–150 keV）——按目录 t90 判 lgrb。T0：原库 T0=16:20:00Z 为 GCN 707 的 NFI 观测开始时刻（观测窗口时刻误标为触发），按 §3.2 改正为 GCN 703 触发时刻 06:18:24Z；extra_data.t0_note/t0_basis 的 bot 原值（「t0 为 meta trigger-time（真实触发时刻）」/meta_trigger）已失真，改写并留档于此。测光检索（2026-10-30）：仓内 gcn/archive 14 命中（11 篇相关：GCN 703/705/706/707/708/709/710/713/719/721/727，其中 7 篇含误差盒测光或上限数值；GCN 886（GRB 001109 深近红外上限汇总表）实含本源汇总转引行（H>20.5@~17 h，与 GCN 727 一致，纯汇总表转引不入库）；41397/41448 为 Fermi 触发号数字巧合的无关命中）；external/rssgrbag 1 条目录参数记录（无光变行）、external/grbsn_webtool 无此事件、external/batse 不适用（触发仪器为 BeppoSAX）；GCN 站搜索页为 JS 渲染、静态抓取不能按名检索旧事件，以仓内 45 563 篇全量快照为 GCN 入口判据；SciX/ADS 平台经 OpenAlex 检索命中 7 篇（Fynbo+2001、de Pasquale+2003、Rol+2005 等暗暴样本汇编，均转引 GCN：Fynbo+2001 表 2 行 R=21.5/Δt=0.18 d/GCN 703,709 已取 arXiv TeX 逐值核对；de Pasquale+2003 表 2 仅 X 射线流量与派生光-X 流量比、无带时间锚点测光）；Maiorano+2003（astro-ph/0302022，会议海报预印本、无期刊版）全文 TeX 核对，取其 R~22 精化上限 1 行；TNS 不适用（非 AT/SN/CV 类）→ 补入 8 行（Maiorano R~22、GCN 713 USNO R 与 IAC 80 I 上限、GCN 727 H 第二/三历元探测、GCN 719 J 第二历元探测与 J 20.1/20.7 两图极限），原 11 行时间轴按新 T0 重算、数值保持原文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "原 bot 值「t0 为 meta trigger-time（真实触发时刻）」已失真：原 T0=16:20:00Z 实为 GCN 707 NFI 观测开始时刻；2026-10-30 审核改正 T0=2000-06-15T06:18:24Z（GCN 703 触发时刻）",
+    "t0_basis": "gcn_circular_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {
       "name": "Maiorano+2003",
       "title": "Multiwavelength observations of the GRB000615 field",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003astro2022M/abstract",
+      "url": "https://arxiv.org/abs/astro-ph/0302022",
       "bibtex": "@ARTICLE{2003astro2022M,\n       author = {E. Maiorano and N. Masetti and E. Palazzi and L. Nicastro and E. Pian and L. Amati and F. Frontera and J. in 't Zand and K. Z. Stanek},\n       title = {Multiwavelength observations of the GRB000615 field},\n       journal = {arXiv e-prints},\n       year = {2003},\n       eprint = {astro-ph/0302022},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003astro2022M/abstract},\n}",
       "source": "bot"
     }

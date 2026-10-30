@@ -1,27 +1,33 @@
 {
   "transient_id": "IceCube-220822A",
-  "alias": [],
+  "alias": ["IC220822A"],
   "ra": 273.08,
   "dec": 21.54,
-  "T0": "2022-08-22T20:26:30Z",
-  "T0_ref": null,
+  "T0": "2022-08-22T20:26:30.03Z",
+  "T0_ref": "GCN 32475（IceCube 官方通告）：Time: 2022-08-22 20:26:30.03 UT（ICECUBE_Astrotrack_Bronze 径迹事件）；AMON 原始通告 136973_28816141 rev0/rev1 的 DISCOVERY_TIME 73590 SOD {20:26:30.03} UT 一致；原库 20:26:30Z 为整秒截断，补亚秒 .03",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
-  "redshift": 0.14,
+  "Trigger_Instrument": "IceCube",
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 32475（IceCube 离线精化方向）：RA=273.08 (+2.47/−2.50 deg)、Dec=+21.54 (+0.94/−1.18 deg)（90% PSF containment）——不对称区间无单一半径 → pos_error 留空；置信水平 90% 照原文填 pos_error_confidence；库内 ra/dec=273.08/21.54 与精化值逐位一致（保留）；AMON 原始通告 136973_28816141 rev1 圆半径 106.20′（90%，stat-only）另记备查",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 32498",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube 高能中微子 track-like 候选事件（ICECUBE_Astrotrack_Bronze 流，平均天体物理纯度 30%，FAR=2.005 events/yr，能量 114.92 TeV，signalness 0.383；AMON 原始通告 136973_28816141 rev0/rev1），非 GRB（GCN 32475）。90% 区域内两 4FGL 源 4FGL J1809.3+2042 / 4FGL J1819.1+2133 距精化位 1.08/1.58 deg，非对应体（GCN 32475）。[触发 vs 跟随] 触发仪器为 IceCube：GCN 32475 是本事件唯一触发通告；原库 Trigger_Instrument=Fermi/LAT 系 GCN 32478（Fermi-LAT 对 IC220822A 的跟随观测，并报告新伽马源 Fermi J1810.1+2154）误植，改为 IceCube；32480（ZTF 跟随）、32481（IceCube 附加中微子搜索）、32498（Keck 光谱分类）、32504（HAWC 跟随）亦均为跟随观测，非触发（先例 IceCube-220907A 同款误植）。[T0] GCN 32475「Time: 2022-08-22 20:26:30.03 UT」；AMON 原始通告 rev0/rev1「DISCOVERY_TIME: 73590 SOD {20:26:30.03} UT」一致；原库 20:26:30Z 为整秒截断，补亚秒 .03（先例 IceCube-260712A）。原 extra_data.t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 与事实相符（本源 T0 即触发时刻），未改写。[定位] ra/dec=273.08/21.54 与 GCN 32475 精化方向逐位一致（AMON rev1 273.0799/+21.5399 同值）；90% PSF 不对称（RA +2.47/−2.50 deg、Dec +0.94/−1.18 deg）→ pos_error 留空（无单一半径）、pos_error_confidence 按原文 90% 填「90」、不对称值照录 pos_ref；AMON 通告圆半径 106.20′（90%，stat-only）另记备查。[红移去污染] 原 redshift=0.14 出自 GCN 32498：ZTF 候选体 AT2022saw=ZTF22aarmiqk（GCN 32480）经 Keck I/LRIS 光谱 + SNID 分类为 Type Ia SN、z=0.14（约 50 days post peak），原文明确「type Ia supernovae are not predicted to emit high-energy neutrinos, we therefore exclude AT2022saw as a candidate counterpart to IC220822A」——该红移属候选体、与中微子事件无确证关联，故 redshift/redshift_type/redshift_ref 置 null（先例 GRB200723A/AT2020qer、IceCube-220907A/AT2022oyn、IceCube-250207A）。[测光] 5 行：① 原 ZTF 行（GCN 32480）系候选体 AT2022saw 的探测 r=21.71±0.20（原表 ZTF Name ZTF22aarmiqk、IAU Name AT2022saw、RA 272.3184212/Dec +22.1633981，在 90% 定位区内），后被证认为 SN Ia 并排除为对应体 → 保留行、discard=y（§3.3 不得删行）；重锚时间：原文「began at 2022-08-23 03:53 UTC, approximately 7.4 hours after event time」，time=03:53:00−T0=26789.97 s（≈7.4417 h，与原文 ~7.4 h 自洽）、mjd 重算 7 位（原 time=26790.0/mjd=59814.16180555555 同为观测起始锚，按新 T0 亚秒重算）；原文只给巡天起始时刻与单曝 300 s，候选体所属曝光时刻未给，time_err 留空；mag_system=AB 系推定：原文未声明系统，ZTF 测光定标为 AB（PS1 系）系统（同库已合并 IceCube-220907A/260504A/260217A ZTF 行同口径，据 IRSA/IPAC ZTF release notes）；② 新增 MASTER 4 行上限（GCN 32474，主题行「IceCube Alert 220822.85」，以 AMON trigger No 28816141 指认本事件；行内 Tmid−T0 与曝光起点+半曝换算差 ≤1 s，系原文秒取整）：filter C=clear → band=G，time=原表 Tmid−T0、time_err=Exptime/2，limit 12.7/13.1/18.3/19.0 mag；原文未声明星等系统 → mag_system 留空；前两行原文站点字段被截断为「MASTER-」，节点未能确定，telescope 记 MASTER。[不入库] GCN 32478 Fermi-LAT：>100 MeV 光子流上限 <2e-10（14 yr，95% CL）、<4.1e-9（1 month）、<8.8e-8（1 day）ph cm^-2 s^-1，新源 Fermi J1810.1+2154（RA 272.54/Dec 21.91，95% 半径 0.14 deg，~4.5σ，14 年积分，距最佳位 0.6 deg）——均为 >100 MeV 积分光子流/伽马源，非单色 Fν、波段为能量串（属 §3.3/§7 的 X 射线车道），只进 comment；GCN 32481 IceCube 附加中微子搜索（1000 s 窗 0 事件，2 d 窗 p=0.07，灵敏度 1.4e-1/1.7e-1 GeV cm^-2）与 GCN 32504 HAWC（稳态/暂现 E^2 dN/dE 95% CL 上限 1.33e-13/5.88e-12 (E/TeV)^-0.3 TeV cm^-2 s^-1）同为非测光量，只进 comment。[元数据] tag/sub_tag 留空（中微子事件口径，tags.json 无中微子类目，先例各 IceCube 源）；alias 收录 IC220822A（GCN 32478 原文「the 90% IC220822A localization region」「IC220822A best-fit position」、GCN 32498「neutrino IC220822A」）；articles 留空（未使用研究论文数值）。[测光检索]（2026-10-29）：仓内 gcn/archive 45889 篇全档检索（eventId、220822A、IC220822A、220822、AMON 136973、28816141、坐标/别名兜底）→ 本源 7 篇（32474/32475/32478/32480/32481/32498/32504），可用测光仅 32474 的 4 条上限（已入库）与 32480 候选体 1 条（已留、判无关）；external/rssgrbag 0、external/grbsn_webtool 0、external/fermi_gbm 无本源；GCN 站 32475 页实测可达且与仓内一致；AMON 原始通告 notices_amon_g_b/136973_28816141.amon 实测 200（rev0/rev1）；ADS API 401（无 token）、TNS 对象页 403（匿名）、arXiv API 五组检索（IceCube-220822A/IC220822A/AT2022saw/ZTF22aarmiqk/IceCube+220822）均 0 命中 → 结论：无更多可用测光；本 PR 补 4 行（上限），另重锚 1 行并置 discard=y。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null

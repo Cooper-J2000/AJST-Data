@@ -1,17 +1,19 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-167472.0,,s,51787.979999999996,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,,NOT+ALFOSC,GCN788,,
-168336.0,,s,51787.99,B,24.0,,magnitude,,n,y,,,,,,,1.0,n,,TNG+Dolores,GCN786,,
-169200.0,,s,51788.0,I,23.3,,magnitude,,n,y,,,,,,,1.0,n,,NOT+ALFOSC,GCN788,,
-170928.0,,s,51788.02,u,23.5,,magnitude,,n,y,,,,,,,1.0,n,,NOT+ALFOSC,GCN788,,
-176976.0,,s,51788.09,R,24.2,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m+DFOSC,GCN788,,
-187344.0,,s,51788.21,V,24.5,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m+DFOSC,GCN788,,
-258192.0,,s,51789.03,B,24.0,,magnitude,,n,y,,,,,,,1.0,n,,TNG+Dolores,GCN786,,
-260784.0,,s,51789.06,R,24.6,,magnitude,,n,y,,,,,,,1.0,n,,NOT+ALFOSC,GCN788,,
-263376.0,,s,51789.09,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m+DFOSC,GCN788,,
-276336.0,,s,51789.24,V,24.7,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m+DFOSC,GCN788,,
-353232.0,,s,51790.13,R,24.3,,magnitude,,n,y,,,,,,,1.0,n,,NOT+ALFOSC,GCN788,,
-354960.0,,s,51790.149999999994,R,24.5,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m+DFOSC,GCN788,,
-355824.0,,s,51790.159999999996,B,24.0,,magnitude,,n,y,,,,,,,1.0,n,,TNG+Dolores,GCN786,,
-363600.0,,s,51790.25,R,23.6,,magnitude,,n,y,,,,,,,1.0,n,,Palomar 60-inch,GCN787,,
-436176.0,,s,51791.09,R,23.6,,magnitude,,n,y,,,,,,,1.0,n,,Danish 1.54-m+DFOSC,GCN788,,
-452592.0,,s,51791.28,R,23.9,,magnitude,,n,y,,,,,,,1.0,n,,Palomar 60-inch,GCN787,,
+64130,450,s,51787.7352083,MACHO-R,20.5,,magnitude,,n,y,,,,,,,1.0,n,Mount Stromlo 50-inch,,GCN780,GCN 780 原文：Mount Stromlo 50-inch，starting 31.73 August 2000 UT（即 ~17.8 h after the burst），3×300 s 合成，R_MACHO 与 B_MACHO 覆盖误差盒除最东 ~0.5′ 外全部，R_MACHO 3σ 限幅 ~20.5（较 DSS 深）；time=窗口中点（起点+450 s）、time_err=半总曝光（§3.8）；band=MACHO-R（原文 R_MACHO，filters.json 已有键）；MACHO 自成星等系统且原文未声明，mag_system 留空；原库漏收，本次补入,Rusty-Harpoon@zcode
+86594,450,s,51787.9952083,B,24.0,,magnitude,,n,y,,,,,,,1.0,n,TNG,Dolores,GCN786,GCN 786 原文：TNG+Dolores B 波段 15 min 合成，2000-08-31.99 UT（~24 h after the GRB），seeing 1.2″，3σ 限幅 B~24.0（对 DSS-II 无新源、历元间比较无显著变源）；定标用 USNO-A2.0 星表，原文未声明星等系统，mag_system 留空；time=窗口中点（起点+450 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+87080,1800,s,51788.0008333,R,24.5,,magnitude,Vega,n,y,,,,,,,1.0,n,NOT(2.56m),ALFOSC,GCN788,GCN 788 表：起始 2000-08-31.98 UT、R 波段 6×600 s 合成，seeing 0.9″，3σ 限幅 ~24.5；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+1800 s）、time_err=半总曝光（原文只给起始历元+总曝光，§3.8）,Rusty-Harpoon@zcode
+87608,600,s,51788.0069444,I,23.3,,magnitude,Vega,n,y,,,,,,,1.0,n,NOT(2.56m),ALFOSC,GCN788,GCN 788 表：起始 2000-09-01.00 UT、I 波段 4×300 s 合成，seeing 0.8″，3σ 限幅 ~23.3；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+600 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+89186,450,s,51788.0252083,U,23.5,,magnitude,,n,y,,,,,,,1.0,n,NOT(2.56m),ALFOSC,GCN788,GCN 788 表：起始 2000-09-01.02 UT、U 波段 3×300 s 合成，seeing 1.1″，3σ 限幅 ~23.5；time=窗口中点（起点+450 s）、time_err=半总曝光（§3.8）；U 波段定标原文未声明（GCN 788 仅说明 VRI 定标基于 GCN 785），mag_system 留空 band 记 Johnson U（NOT/ALFOSC 滤镜列原文「U」；filters.json 的 u 为 SDSS u′，两键不同，复查更正大小写）。,Rusty-Harpoon@zcode
+99584,4800,s,51788.1455556,R,24.2,,magnitude,Vega,n,y,,,,,,,1.0,n,Danish(1.54m),DFOSC,GCN788,GCN 788 表：起始 2000-09-01.09 UT、R 波段 8×1200 s 合成，seeing 1.6″，3σ 限幅 ~24.2；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+4800 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+108752,3600,s,51788.2516667,V,24.5,,magnitude,Vega,n,y,,,,,,,1.0,n,Danish(1.54m),DFOSC,GCN788,GCN 788 表：起始 2000-09-01.21 UT、V 波段 6×1200 s 合成，seeing 1.7″，3σ 限幅 ~24.5；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+3600 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+164063,,s,51788.8918403,G,20.0,,magnitude,,n,y,,,,,,,1.0,n,Crimean AT-64,SBIG ST-8,GCN784,"GCN 784 原文：Crimean Observatory AT-64（D=64 cm, F/1.4）+SBIG ST-8 1530×1020 CCD，无滤光片（visible light），2000-09-01 21:24:15 UT 单历元，3σ 限幅 ~20.0；原文未给曝光时长，time=该历元、time_err 留空；无滤光片→band=G（§3.3）；原文未声明星等系统，mag_system 留空；原库漏收，本次补入",Rusty-Harpoon@zcode
+176450,450,s,51789.0352083,B,24.0,,magnitude,,n,y,,,,,,,1.0,n,TNG,Dolores,GCN786,GCN 786 原文：TNG+Dolores B 波段 15 min 合成，2000-09-02.03 UT（~49 h after the GRB），seeing 1.1″，3σ 限幅 B~24.0（对 DSS-II 无新源、历元间比较无显著变源）；定标用 USNO-A2.0 星表，原文未声明星等系统，mag_system 留空；time=窗口中点（起点+450 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+180692,2100,s,51789.0843056,R,24.6,,magnitude,Vega,n,y,,,,,,,1.0,n,NOT(2.56m),ALFOSC,GCN788,GCN 788 表：起始 2000-09-02.06 UT、R 波段 7×600 s 合成，seeing 0.8″，3σ 限幅 ~24.6；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+2100 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+187184,6000,s,51789.1594444,R,24.5,,magnitude,Vega,n,y,,,,,,,1.0,n,Danish(1.54m),DFOSC,GCN788,GCN 788 表：起始 2000-09-02.09 UT、R 波段 10×1200 s 合成，seeing 1.3″，3σ 限幅 ~24.5；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+6000 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+197744,3600,s,51789.2816667,V,24.7,,magnitude,Vega,n,y,,,,,,,1.0,n,Danish(1.54m),DFOSC,GCN788,GCN 788 表：起始 2000-09-02.24 UT、V 波段 6×1200 s 合成，seeing 1.4″，3σ 限幅 ~24.7；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+3600 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+273140,2100,s,51790.1543056,R,24.3,,magnitude,Vega,n,y,,,,,,,1.0,n,NOT(2.56m),ALFOSC,GCN788,GCN 788 表：起始 2000-09-03.13 UT、R 波段 7×600 s 合成，seeing 1.1″，3σ 限幅 ~24.3；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+2100 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+274082,450,s,51790.1652083,B,24.0,,magnitude,,n,y,,,,,,,1.0,n,TNG,Dolores,GCN786,GCN 786 原文：TNG+Dolores B 波段 15 min 合成，2000-09-03.16 UT（~76 h after the GRB），seeing 1.5″，3σ 限幅 B~24.0（对 DSS-II 无新源、历元间比较无显著变源）；定标用 USNO-A2.0 星表，原文未声明星等系统，mag_system 留空；time=窗口中点（起点+450 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+277568,4800,s,51790.2055556,R,24.5,,magnitude,Vega,n,y,,,,,,,1.0,n,Danish(1.54m),DFOSC,GCN788,GCN 788 表：起始 2000-09-03.15 UT、R 波段 8×1200 s 合成，seeing 1.2″，3σ 限幅 ~24.5；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+4800 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+283208,1800,s,51790.2708333,R,23.6,,magnitude,Vega,n,y,,,,,,,1.0,n,P60,,GCN787,GCN 787 原文：Palomar 60-inch 两指向拼接覆盖全误差盒，Sep 3.25 UT 起、总曝光 3600 s，3σ 限幅 R=23.6（基于 Henden，GCN 785 定标→Vega）；time=窗口中点（历元按起点处理+1800 s）、time_err=半总曝光（§3.8）；仪器名原文未给，instrument 留空,Rusty-Harpoon@zcode
+356984,3000,s,51791.1247222,R,23.6,,magnitude,Vega,n,y,,,,,,,1.0,n,Danish(1.54m),DFOSC,GCN788,GCN 788 表：起始 2000-09-04.09 UT、R 波段 5×1200 s 合成，seeing 1.5″，3σ 限幅 ~23.6；VRI 定标基于 Henden（GCN 785）BVRcIc 标准测光→Vega；time=窗口中点（起点+3000 s）、time_err=半总曝光（§3.8）,Rusty-Harpoon@zcode
+372200,1800,s,51791.3008333,R,23.9,,magnitude,Vega,n,y,,,,,,,1.0,n,P60,,GCN787,GCN 787 原文：Palomar 60-inch 两指向拼接覆盖全误差盒，Sep 4.28 UT 起、总曝光 3600 s，3σ 限幅 R=23.9（基于 Henden，GCN 785 定标→Vega）；time=窗口中点（历元按起点处理+1800 s）、time_err=半总曝光（§3.8）；仪器名原文未给，instrument 留空,Rusty-Harpoon@zcode

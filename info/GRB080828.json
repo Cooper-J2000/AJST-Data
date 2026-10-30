@@ -1,23 +1,28 @@
 {
   "transient_id": "GRB080828",
-  "alias": [],
-  "ra": 199.626,
-  "dec": -65.93,
+  "alias": [
+    "GRB 080828"
+  ],
+  "ra": 199.5871,
+  "dec": -65.9405,
   "T0": "2008-08-28T03:14:45Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 8151（SuperAGILE 触发 2008-08-28 03:14:45 UT；HEASARC SWIFTGRB Swift 20081 trigger_time 同值互证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "SuperAGILE",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 4.2,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 8157",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核 wa1kmoon 2026-10-29。身份：GRB 080828 = SuperAGILE 触发暴（GCN 8151，2008-08-28 03:14:45 UT，定位 199.626/−65.930，误差 3′）。T0：保持 2008-08-28T03:14:45Z，T0_ref=GCN 8151；HEASARC SWIFTGRB（Swift 20081）trigger_time 同值互证；GCN 8157 称 XRT 于 14:07:17 UT 开始观测、39.15 ks after the burst，反算触发时刻≈03:14:47（39.15 ks 为舍入值），一致。触发仪器：原 Swift/BAT 无据——BAT 未触发本暴（SWIFTGRB bat_detection=U），Swift 仅在触发后 39.15 ks 对该场做 ToO 后随（GCN 8157/8161），本暴由 SuperAGILE 触发，改为 SuperAGILE（GCN 8151）。位置：原 ra/dec=199.626/−65.930 为 SuperAGILE 定位（3′），与 pos_error=4.2″ 口径混用（同 GRB080408A 先例）；改用 XRT 精化位置 199.5871/−65.9405（GCN 8157，4.2″，90% 包含半径），距 SuperAGILE 原位约 1.1′、在其 3′ 误差圆内；HEASARC SWIFTGRB 目录坐标 199.587542/−65.940111（同为 XRT 精化值，与 GCN 8157 差约 0.3″）备查。分类：sub_tag=lgrb，依 GCN 8151「duration of about 25 s（20–60 keV，单峰结构）」——通告原文未给误差，按通告 duration 判 lgrb（先例 GRB080408A 同情形）。红移：GCN 与检索均无本暴宿主/红移记录（XRT 源 uncatalogued、UVOT 各波段非探测、无任何光学余辉报告），redshift 留 null，不建 host_galaxy。alias「GRB 080828」（GCN 8151/8157 原文用名）。测光：原 2 行 XRT（band=10keV）为 X 射线行，保持原样；其 mjd 与 T0+time 自洽（T0 mjd=54706.1352431）。补 GCN 8161 UVOT 5 波段 3σ 上限 5 行：原文给 T_start/T_stop（相对 SuperAGILE 触发）与 Exp，为多指向拼接窗口，time=窗口中点、time_err=窗口半跨为约定口径，真实曝光中点不可恢复；曝光时长 White 355.8 s、u 1798.8 s、b 1250.3 s、w1 1615.6 s、m2 899.8 s；w1/m2 对应 filters 键 uvot-uvw1/uvot-uvm2；上限未作银消光改正（E(B-V)≈0.81 mag，Schlegel+1998）；UVOT 星等系统按 GCN 8161 自述引 Poole et al. 2008（MNRAS 383, 627）推定 Vega。测光检索（2026-10-29）：仓内 gcn/archive 全文命中 3 篇（GCN 8151/8157/8161，均已全文核对；gcn.gsfc.nasa.gov 旧档同期页确认 080828 仅此 3 篇，无 GROND/MASTER 等地面后随通告）；external/rssgrbag、grbsn_webtool、uvot_grb、agile_mcal、konus_wind、swift_bat、swiftgrbba、heasarc_grbcat 均无 080828 测光记录；OpenAlex 命中 2 条（GCN 8151 本身与 Longo+2012, A&A 547, A95 AGILE-GRID 高能上限样本——属 E>30 MeV 高能数据，按 eV–GeV 能串行规则不入库；其 VoR 经 A&A（DataDome 拦截）与 HAL（无全文）均未打开，未引用）；ADS/SciX API 无 token（HTTP 401）；结论：补 5 行上限，无其他可用测光。另：extra_data.catalog_data.fermi_gbm（bn080828189，trigger_time 04:32:11.265 UT，RA 221.3/Dec −12.3）与本暴 SuperAGILE 定位（Dec −65.9）矛盾，系同日另一 GBM 触发的误关联（该触发无 GCN Circular）；catalog_data 只读，已报维护者处置。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -124,6 +129,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
     }
   },
   "articles": [],

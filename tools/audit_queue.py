@@ -50,6 +50,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INFO_DIR = os.path.join(ROOT, 'info')
 LC_DIR = os.path.join(ROOT, 'lc')
 SNAPSHOT = os.path.join(ROOT, 'audit', 'state.tsv')
+QUEUE_SALT = os.path.join(ROOT, 'audit', 'queue_salt.txt')   # 队列乱序盐（换一行即整体重排）
 LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
 PAPER_DIR = os.path.join(LEADS_DIR, 'papers')   # 文献级索引卡：一篇多源文献一张，不参与状态机
 RCARD_MIN_WARN = 5          # 同一 PR 新增源级卡 ≥ 此数且无文献级卡 → 提示改用文献级卡（§3.11）
@@ -112,6 +113,43 @@ def bucket_of(source_id, n):
 
 def bucket_index(source_id, n):
     return bucket_of(source_id, n) + 1        # 对外用 1..N
+
+
+def queue_salt():
+    """读 audit/queue_salt.txt 的第一条非注释行；缺文件时退回固定串（顺序仍稳定）。"""
+    try:
+        with open(QUEUE_SALT, encoding='utf-8') as fh:
+            for ln in fh:
+                s = ln.strip()
+                if s and not s.startswith('#'):
+                    return s
+    except OSError:
+        pass
+    return 'ajst-queue-default-salt'
+
+
+_SALT = queue_salt()
+
+
+def shuffle_key(source_id):
+    """稳定伪随机序：salt 不变时**任何机器、任何一次运行**都给同一排列。
+
+    不用 random.shuffle 的原因：它每次调用都换排列，多人/多 agent 并行时
+    「队首」互相打架（A 说下一个是 X，B 说是 Y），`--limit`/`--bucket` 一过滤
+    顺序还会变。改成 salt+源ID 的哈希序，既能打乱、又全体一致。
+    想换一批顺序 = 改 audit/queue_salt.txt 的一行（一次提交，全体同步）。
+    """
+    return hashlib.sha256((_SALT + '\x00' + source_id).encode('utf-8')).hexdigest()
+
+
+def sort_key(args, resolved):
+    """返回排序键函数：shuffle（默认）/ rows（代价升序）/ id。"""
+    kind = getattr(args, 'sort', 'shuffle')
+    if kind == 'rows':
+        return lambda s: (resolved[s]['rows'], s)
+    if kind == 'id':
+        return lambda s: s
+    return shuffle_key
 
 
 # ─── 仓库侧数据 ──────────────────────────────────────────────────────────────
@@ -651,7 +689,7 @@ def cmd_list(args, sources, resolved, snap, claims, live_err, leads=None):
     leads = leads or {}
     free = [s for s, r in resolved.items() if r['claimable'] == 'yes']
     takeover = [s for s, r in resolved.items() if r['claimable'] == 'takeover']
-    key = (lambda s: (resolved[s]['rows'], s)) if args.sort == 'rows' else (lambda s: s)
+    key = sort_key(args, resolved)
     free.sort(key=key)
     takeover.sort(key=key)
     if args.bucket:
@@ -1088,8 +1126,9 @@ def main(argv=None):
     ap.add_argument('--bucket', metavar='K/N', help='确定性分片，如 1/4（1 ≤ K ≤ N）')
     ap.add_argument('--id', metavar='SOURCE_ID', help='查单个源的状态与依据')
     ap.add_argument('--pack', type=int, metavar='M', help='按 M 个源一批打包输出')
-    ap.add_argument('--sort', choices=['rows', 'id'], default='rows',
-                    help='排序：rows=按代价升序（默认），id=按源名')
+    ap.add_argument('--sort', choices=['shuffle', 'rows', 'id'], default='shuffle',
+                    help='队列顺序：shuffle=稳定乱序（默认，盐见 audit/queue_salt.txt）、'
+                         'rows=按代价升序（小源在前）、id=按源名')
     ap.add_argument('--include-all', action='store_true', help='列出所有源（含已审核/被占用）')
     ap.add_argument('--leads', action='store_true',
                     help='列出全部线索卡 audit/leads/（多目标文献交接；不影响源状态）')
@@ -1166,7 +1205,8 @@ def main(argv=None):
     args.reserved_note = reserved_note(reserved, sources)
     args.denied_note = denied_note(denied)
     if args.include_all:
-        order = sorted(resolved, key=lambda s: (resolved[s]['state'], resolved[s]['rows'], s))
+        _k = sort_key(args, resolved)
+        order = sorted(resolved, key=lambda s: (resolved[s]['state'], _k(s)))
         for s in order:
             print(render_row(s, resolved, leads))
         return 0

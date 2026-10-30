@@ -1,29 +1,41 @@
 {
   "transient_id": "GRB000313",
-  "alias": [],
+  "alias": [
+    "GRB 000313",
+    "GRB 000313B",
+    "BATSE 8035"
+  ],
   "ra": 207.5329,
   "dec": 31.2803,
-  "T0": "2000-03-13T00:26:18Z",
-  "T0_ref": null,
+  "T0": "2000-03-13T21:13:04.057Z",
+  "T0_ref": "BATSE 触发 8035 触发时刻（external/batse 快照 trigger_time=2000-03-13T21:13:04.057Z，HEASARC batsegrb 目录）；Castro-Tirado+2002（A&A 393, L55）记 13 Mar 2000 UT 21h13m04s；GRBCAT GRB 000313B 给 21:13:04.000Z（ECT），整数秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3.0,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 612 / Castro-Tirado+2002（BOOTES-1 OT 000313 候选体位置 RA(2000)=13h50m07.9s Dec(2000)=+31°16′49″ ±3″）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 000313 = BATSE trigger 8035（GCN 612 原文 'GRB 000313 (BATSE trigger 8035)'；Castro-Tirado+2002 同），HEASARC GRBCAT 名 GRB 000313B（grbcat_id 4806，t90=0.768±0.458 s，位置 197.89/+10.25 即 Castro-Tirado+2002 所记 refined 'Huntsville position' 13h11m +10°14′）；同日另一事件 GRB 000313A（BATSE+IPN，03:03:51Z，ra 27 dec −50，grbcat_id 4805）与本源无关，不得混同。别名出处：GRB 000313（GCN 612 主题行/正文用名）、GRB 000313B（GRBCAT 用名）、BATSE 8035（GCN 612 与 Castro-Tirado+2002 原文 'BATSE trigger 8035'）。T0：原值 2000-03-13T00:26:18Z 为 bot 从 GCN 1430 误抽取的 'meta trigger-time'——该时刻实为 GRB 020531 的 HETE trigger 7688 触发时刻（GCN 1439/1430 链，GCN 1430 原文 'HETE trigger 7688 at To = 00:26:18 UT'），与本暴无关；改为 BATSE 触发时刻 2000-03-13T21:13:04.057Z（亚秒取触发仪器目录值；Castro-Tirado+2002 与 GRBCAT 均给 21:13:04 s，整数秒一致）。原 extra_data：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'。位置：ra/dec 为 BOOTES-1 OT 000313 候选体位置（±3″）；OT 距 refined BATSE 定位中心 23°（统计误差半径 7.6°，按 Briggs et al. 1999 双高斯总误差模型 OT 位于 3.0σ），OT 与 GRB 的关联未被确证（无余辉、无宿主；作者排除了卫星闪光/飞机/宇宙线解释但关联仍为假设）——坐标保持 OT 位置，pos_error=3″ 为 OT 位置误差，来源未标注置信水平。t90=0.768±0.458 s（BATSE 目录 trigger 8035；Castro-Tirado+2002 同值），按目录 t90 判 sgrb。测光检索留证（2026-10-30）：仓内 gcn/archive 全文检索 '000313' 命中 5 篇，其中仅 GCN 612（BOOTES 光学 OT）与 GCN 613（VLA 射电）含本源测光/上限，GCN 1430（GRB 020531）仅将本 OT 引为短暴先例、无本源测光，GCN 2739（GRB 040924）仅作对比引用本 OT、无本源测光，GCN 9052 为 XRT 产品 URL 数字串误命中；另按触发号 '8035' 检索亦仅 GCN 612。external/batse 与 external/heasarc_grbcat 仅身份/t90 互证；external/rssgrbag（140 行/74 源）无本源；external/grbsn_webtool 无 0003 事件。外部：OpenAlex 检索 'GRB 000313' 命中 15 条，除 Castro-Tirado+2002（A&A 393, L55）及其 arXiv 版外均为 BOOTES 综述/会议文或无关暴；射电仅 GCN 613（Berger & Frail），无后续正式文献表；TNS 不适用（GRB 类）。结论：可用测光 = Castro-Tirado+2002 表1（16 行：1 探测 I=9.4±0.1 + 15 上限，其中 K′ 行因 filters.json 无 K′ 键暂缓入库，见 PR 待决事项）+ 正文超广角帧 R>9.1 上限 1 行 + GCN 613 VLA 8.46 GHz 上限 1 行；本次补 15 行、修正 3 行。Castro-Tirado+2002 VoR（aanda.org/ADS articles）经多条路径不可达（DataDome 拦截/403），数值取自 arXiv v2（astro-ph/0206201v2，2026-10-30 取得）；其摘要值 I=9.4±0.1 与 arXiv v2 一致。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 经 Rusty-Harpoon@zcode 2026-10-30 审核修正为 BATSE 触发 8035 时刻 2000-03-13T21:13:04.057Z（原 bot 值 2000-03-13T00:26:18Z 为从 GCN 1430 误抽取的 GRB 020531 HETE 触发时刻，t0_basis=meta_trigger 无出处）",
+    "t0_basis": "BATSE trigger 8035（external/batse 快照；Castro-Tirado+2002；GRBCAT GRB 000313B）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [
     {

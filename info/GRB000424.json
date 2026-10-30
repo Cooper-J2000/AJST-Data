@@ -1,29 +1,40 @@
 {
   "transient_id": "GRB000424",
-  "alias": [],
+  "alias": [
+    "GRB 000424",
+    "BATSE 8086",
+    "GRB 000424B"
+  ],
   "ra": 104.718,
   "dec": 49.873,
-  "T0": "2000-04-24T18:18:07Z",
-  "T0_ref": null,
+  "T0": "2000-04-24T18:18:07.993Z",
+  "T0_ref": "GCN 644（On April 24 at 18:18:07 UT a burst (GRB000424: BATSE trigger 8086) was detected in WFC，秒级）；亚秒取触发仪器 BATSE 官方目录：external/batse 快照 heasarc_batsegrb，trigger 8086 trigger_time=2000-04-24T18:18:07.993Z（整数秒与 GCN 644 一致）；HEASARC GRBCAL grbcat_id 4863（GRB 000424B）同事件 ECT=18:18:07.000Z（亚秒差 0.993 s，备查）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "CGRO/BATSE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 150,
+  "pos_ref": "GCN 644（BeppoSAX WFC 定位 R.A.=104.718 Decl.=49.873，误差半径 2.5′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：BeppoSAX WFC 定位暴（GCN 644，误差半径 2.5′），BATSE trigger 8086。GRBCAL 同日另有 GRB 000424A（grbcat_id 4862，09:04:27 UT，BATSE/IPN，ra 233.06 dec 71.8）与本源（=GRB 000424B，18:18:07 UT，WFC 位置）为不同事件，已按触发号与坐标划界。别名出处：GRB 000424 ← GCN 647 subject 原文用名；BATSE 8086 ← GCN 644 原文「GRB000424: BATSE trigger 8086」与 external/batse 目录 name_alt；GRB 000424B ← HEASARC GRBCAL（grbcat_id 4863）。触发与定位：BATSE trigger 8086 触发，BeppoSAX WFC（2–26 keV）同时探测；GRBM 因近 SAGA 关机、NFI 因意大利假期未跟进，故定位即 WFC 2.5′ 误差圆（GCN 644）；pos_error=2.5′=150″，来源未标注置信水平。t90=18.432±1.985 s（external/batse 快照 heasarc_batsegrb，>20 keV LAD，BATSE trigger 8086；GRBCAL 同值）——按目录 t90 判 lgrb。测光检索（2026-10-29）：仓内 gcn/archive 8 篇（644 定位；647/648/649/651/660/663 光学上限；664 为误差盒定标场 UBVRI 测光、非瞬变体测光）；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-000424）同 8 篇、无更多；external/rssgrbag 测光 0 行（目录条目 1 条：坐标与 WFC 位置一致，xray=X/opt=N/radio=N，旁证无余辉探测）、external/grbsn_webtool 无此事件；OpenAlex 检索命中 11 条——Nardini+2008（MNRAS 383, 1049）附录 1 对本源仅给上限出处引用、无数值（文献级卡 nardini2008，mention-only），Milagro VHE 短暴约束（ApJ 2007, DOI 10.1086/519763）与 Burgess+2013（ApJ 779, 175）BATSE 谱学样本无本源光学测光，LLNL LOTIS 报告（OSTI 15007544）摘要无逐暴数据、全文下载超时未能核对（列「未能核实」）；TNS 不适用（无 AT/SN/CV 对应体）→ 可用测光为 7 组光学上限，本次补 GCN 648（R~20.7）与 GCN 660 两历元（R~22.8）共 3 行，原 4 行时间口径统一为历元+半曝光/窗口中点。原 extra_data t0_note「t0 为 meta trigger-time（真实触发时刻）」/t0_basis=meta_trigger 为 bot 写入的失真说明，已改写为 batse_catalog。复查补充（2026-10-30）：LOTIS 报告（Williams 2000 博士论文，OSTI 15007544，UCRL-LR-141147）全文已核实——「000424」仅 Table I 汇总表一行（000424 SAX 2.5′，余辉标志 X），全篇无本暴 LOTIS 覆盖图、观测记录或上限，无漏入库测光。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 BATSE trigger 8086 触发时刻（external/batse 快照 heasarc_batsegrb）",
+    "t0_basis": "batse_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [],
   "host_galaxy": null
