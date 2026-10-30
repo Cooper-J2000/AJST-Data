@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB110107A",
-  "alias": [],
-  "ra": 299.89,
-  "dec": 41.889,
-  "T0": "2011-01-07T21:15:51Z",
-  "T0_ref": null,
+  "alias": [
+    "bn110107886"
+  ],
+  "ra": 299.9091,
+  "dec": 41.914,
+  "T0": "2011-01-07T21:15:51.799Z",
+  "T0_ref": "GCN 11545（Cummings et al., Swift/BAT 团队）：GRB 110107A occurred at 21:15:51 UTC，即 Fermi GBM trigger 316127753 时刻；亚秒 .799 取 FERMIGBRST trigger_time 2011-01-07T21:15:51.799Z（HEASARC，仓内 external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,13 +15,21 @@
     "grb"
   ],
   "pos_error": 3.6,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 11547",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。T0：取 GCN 11545（Swift/BAT 团队）定义的 Fermi GBM trigger 316127753 时刻 21:15:51 UTC；亚秒 .799 取 FERMIGBRST trigger_time（仓内快照 2026-07-21）。Swift/BAT 目录 trigger_time=2011-01-07T21:14:42.458Z 为 slew 地面分析参考时刻（约 T−69 s，非爆发触发时刻），未采用。位置：GCN 11547 XRT 增强位置 299.90910,+41.91400（3.6″，90% 置信，GCN 明示）；swiftgrbba 快照 xrt_ra/dec=299.90929/41.91428（xrt_error_radius=3.0″，UKSSDC 后期精化，置信水平未标注）备查；导入初值 299.890,41.889 实为 BAT 位置（GCN 11545，3′），已替换。alias「bn110107886」出处：FERMIGBRST name_alt。t90=77.0±3.605551 s（Swift/BAT GRB Catalog，15-350 keV）、183.555±24.4065 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb。测光检索（2026-10-31）：仓内 gcn/archive 45563 篇按「GRB 110107A / 110107 / 316127753」检索命中 5 篇（GCN 11545/11546/11547/11551/11565），仅 GCN 11551 含光学测光（v>20.5、u>21.2 两条 3σ 上限，已修订入库）；external/rssgrbag、grbsn_webtool、uvot_grb 快照均无记录；GCN 站 11551 原文核对一致（2026-10-31）；ADS 检索（abs/title「GRB 110107A」及 GRB110107A、110107886、90978002 变体）命中 6 条（5 篇 GCN + GCN Report 317），无研究论文、无新增可入库测光；TNS 不适用（GRB 非 AT/SN 类）。lc 内 2 行 X 射线（10keV）不在审核范围未动，其 mjd 基于整秒历元，与现行 T0 差 0.799 s（<1 s 自洽容差）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
