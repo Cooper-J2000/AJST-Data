@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 132.696,
   "dec": -36.099,
-  "T0": "2016-02-06T13:27:19Z",
-  "T0_ref": null,
+  "T0": "2016-02-06T02:52:43Z",
+  "T0_ref": "GCN 18993（MAXI/GSC 触发时刻 02:52:43 UT 2016-02-06）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 18993",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "定位为 MAXI/GSC 扫描位置：90% C.L. 椭圆误差区长短半轴 0.33/0.30 deg（长轴自北逆时针 23.0 deg），另有 0.1 deg（90%）系统误差，非圆对称半径故 pos_error 留空（GCN 18993）；相邻两次扫描（01:20 UT 与 04:25 UT）均无显著流量（上限 20 mCrab）。Swift-XRT tiled 观测在误差区内发现 2 个未编目 X 射线源（GCN 18996，T0+46.2–53.5 ks，X 射线数据不入库），其中 source 2（RA=132.5583，Dec=-36.0137，90% 误差半径 5.8″）为各光学跟进的目标源，余辉未获确认。T0 原为 2016-02-06T13:27:19Z（bot meta_trigger），实为 KWFC 首次曝光开始时刻（GCN 19008 观测窗口起点，Issue #84 同类残留），已改正为 MAXI/GSC 触发时刻。身份互证：MPE Greiner 目录收录 GRB 160206A（Instrument=MAXI，obs 2016-02-06，仓内 external/mpe_greiner 快照）。测光检索（2026-10-31）：仓内 gcn/archive 全文检索「160206A」命中 6 篇（GCN 18993/18994/18996/18997/19000/19008，即该源全部通告，其中 3 篇含光学测光/上限），external/rssgrbag、external/grbsn_webtool 无记录；GCN 站与 ADS 全字段检索「160206A」各命中 6 篇且均为上述 GCN、无任何期刊论文提及该源 → 无文献测光可补，补 0 行（原有 3 行按标准 T0 重算入库）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 MAXI/GSC 触发时刻（GCN 18993，02:52:43 UT）；原 bot 值 2016-02-06T13:27:19Z（t0_basis=meta_trigger）实为 KWFC 观测窗口起点，已改正（原说明移入 comment）",
+    "t0_basis": "gcn_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
