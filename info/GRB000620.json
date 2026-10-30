@@ -1,30 +1,54 @@
 {
   "transient_id": "GRB000620",
-  "alias": [],
-  "ra": 312.137,
-  "dec": 32.151,
-  "T0": "2000-06-20T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000620",
+    "GRB 000620B"
+  ],
+  "ra": 113.8217,
+  "dec": 69.1931,
+  "T0": "2000-06-20T05:33:38Z",
+  "T0_ref": "GCN 716/717（BeppoSAX GRBM+WFC 于 2000-06-20 05:33:38 UT 触发）；GCN 722（June 20.23169 UT = 05:33:38.0 UT，互证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "BeppoSAX/GRBM+WFC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 216,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 722（WFC X 射线对应体定位 RA=7h35m17.2s Dec=+69d11m35s J2000，误差半径 3.6'）；GCN 718 同值低精度（RA=113.821 Dec=+69.193）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-30）。(1) 身份：BeppoSAX GRBM 与 WFC 于 2000-06-20 05:33:38 UT 同时触发并定位（GCN 716/717；GCN 722 给 June 20.23169 UT=05:33:38.0 UT，自洽），Ulysses/Konus-Wind/BeppoSAX GRBM 三星 IPN 三角定位（GCN 723）；saxgrbmgrb 快照（HEASARC，源自 Frontera+2009, ApJS 180, 192 目录）同日两行——GRB 000620A（trigger_time=00:54:39Z、RA 276/Dec -59、GRBM 40 度误差盒、t90=25.0±5.4 s）与本源无关，本源=GRB 000620B 行（trigger_time=05:33:33Z、RA 113.82/Dec +69.2、WFC 定位 ref_position=W）；heasarc_grbcat 快照 grbcat_id 4927、observatories=[BeppoSAX, IPN]；rssgrbag/mpe_greiner 快照同名条目位置均为本暴 WFC 误差圆，身份无歧义。(2) T0：原值 2000-06-20T00:00:00Z 为名字日期午夜占位（bot t0_basis=meta_trigger），整张 lc 的 time 原以该占位 T0 起算，已按新 T0 整体重算。现取触发仪器官方通告值 05:33:38Z（§3.8 优先级①）；并列备查：saxgrbmgrb GRB 000620B 行 trigger_time=2000-06-20T05:33:33.000Z（早 5 s）、heasarc_grbcat ECT=2000-06-20T05:33:43.000Z（Earth Crossing Time 口径，晚 5 s，仅交叉验证）。GCN 734 原文表自带 T-T0 列（5.67/16.08/27.45/63.49 h），其中 3 行与 05:33:38Z 在表内舍入内相符，1 行（27.45 h）与窗口日期换算值差恰 12.00 h、疑原文笔误（见该行 lc comment）。(3) Trigger_Instrument：原值 Konus-Wind 系 GCN 723 IPN 通告的参与仪器——IPN 是定位方法非触发仪器；GRBM 与 WFC 在轨同时触发（GCN 716/722），改 BeppoSAX/GRBM+WFC（库内既有写法）。(4) 定位：原 ra/dec=312.137/+32.151 系 GCN 723 IPN 环心（annulus center，半径 77.784±0.043 度、3sigma），距本暴 WFC 误差圆约 77.8 度，非源位置，已重锚 WFC 精化定位 RA=113.8217（7h35m17.2s）/Dec=+69.1931（+69d11m35s）、误差半径 3.6'=216 arcsec（GCN 722；GCN 718 给 RA=113.821/Dec=+69.193 同值）。GCN 722 标注 99% error radius，超出 pos_error_confidence 受控词表（90/68/3sigma/1sigma），confidence 留空。De Pasquale+2006 表 1 位置 07h35m29s +69d11m56s 系 GCN 716 预估值（113.872/+69.199），未采用。(5) sub_tag：t90=15.0 s（RSS-GRBAG 目录 t90 字段，误差未给出；按目录 t90 判 lgrb）；并列：GCN 722 GRBM 持续约 15 s、WFC 约 20 s，De Pasquale+2006 表 2 gamma-ray duration 15 s（40-700 keV）、X-ray duration 20 s，三处一致。fluence=1.12e-06 erg/cm2（15-150 keV，RSS-GRBAG 快照，非 BeppoSAX 暴由 Nysewander+2009 方法外推的口径）；saxgrbmgrb 000620B 行无 t90/fluence（000620A 行的 t90=25.0 s、fluence=1.67e-06 erg/cm2 属另一事件，不并列）。(6) alias：GRB 000620（rssgrbag/heasarc_grbcat/mpe_greiner 快照 name 字段用名）；GRB 000620B（saxgrbmgrb 目录用名，B 行区分同日另一触发 000620A）。(7) 测光检索（2026-10-30）：仓内 gcn/archive（45 563 篇）全文检索 000620 命中 14 篇——12 篇本暴相关（GCN 716/717/718/722/723/724/725/728/729/734/740/750），2 篇假阳性（751、7251）；含测光数值的为 GCN 725（R=19）、728（~20 无滤光片）、729（J=20.5 中心/19.5 边缘）、734（R=19.8/21.7/22.1/22.8），共 8 行上限均已入库；GCN 724（Loiano 152cm，June 20.88 UT 起 R 1800 s）仅述 no obvious object brighter than POSS1、无数值上限，不入库；GCN 740 提及 GRB 000620 optical candidate (Bartolini et al., GNC737)，但其引用的 GCN 737 实为 GRB 000630 的可能光学对应体（RA 14h47m25.3s Dec +41d12m28s，不在本暴误差盒内），该 R=20.34±0.08 不属本暴测光（GCN 740 笔误/误引）；GCN 750（VLA 4.86/8.46 GHz，起 June 20.93 UT）误差盒内唯一未编目射电源被判定不大可能是本暴余辉，原文未给流量数值或上限，不入库。external 快照：rssgrbag 1 条目录级参数（t90/fluence，lightcurve.jsonl 0 命中；opt/radio 余辉标志 N、X 射线标志 X 即未观测）、saxgrbmgrb 2 行（000620A/B，目录级）、heasarc_grbcat 1 行、mpe_greiner 1 行（均目录级，无光变表）、grbsn_webtool/batse/konus_wind/uvot_grb 0 命中。文献：OpenAlex 检索 GRB 000620 命中 4 篇——GCN 724/729 转载条目、De Pasquale+2006（A&A，DOI 10.1051/0004-6361:20053950，表 1 列本暴 WFC/无 NFI 观测/无余辉（N）、表 2 持续 15/20 s，无测光数值）、Nardini+2008（MNRAS 10.1111/j.1365-2966.2007.12588.x，库内文献级卡 nardini2008.md 判 mention-only：附录 1 仅转引上限出处无数值）；Fynbo+2001（A&A 369, 373-379，DOI 10.1051/0004-6361:20010112，arXiv astro-ph/0101425 TeX 源码逐值核对）表 2 两行 R=19.8@0.24 d（引 GCN 722,734）、R=21.7@0.67 d（引 GCN 734）均纯转引 GCN 734，无新增测光（注：PR #597 文献级卡 fynbo2001.md 的 sources 清单漏列 GRB000620）；TNS 不适用（GRB 类无 AT/SN 命名）。结论：带时间锚点的可用测光即 GCN 725/728/729/734 的 8 行上限，补 0 行；lc 全部 8 行按新 T0 重算时间轴。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为触发时刻：GCN 716/717 BeppoSAX GRBM+WFC 触发 05:33:38 UT，GCN 722 June 20.23169 UT 互证；原 bot 值 2000-06-20T00:00:00Z 系名字日期午夜占位，非真实触发时刻",
+    "t0_basis": "gcn_716_717_trigger_time（GCN 722 June 20.23169 UT 互证；saxgrbmgrb 目录 GRB 000620B 行 05:33:33Z、heasarc_grbcat ECT 05:33:43Z 备查）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Fynbo+2001",
+      "title": "Detection of the optical afterglow of GRB 000630: Implications for dark bursts",
+      "url": "https://doi.org/10.1051/0004-6361:20010112",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "De Pasquale+2006",
+      "title": "The BeppoSAX catalog of GRB X-ray afterglow observations",
+      "url": "https://doi.org/10.1051/0004-6361:20053950",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
