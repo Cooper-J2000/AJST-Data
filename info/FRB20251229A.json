@@ -1,27 +1,35 @@
 {
   "transient_id": "FRB20251229A",
-  "alias": [],
+  "alias": [
+    "FRB 20251229A"
+  ],
   "ra": 310.3494,
   "dec": 16.0252,
   "T0": "2025-12-29T22:00:58Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 43334（CHIME/FRB 首次探测 2025-12-29T22:00:58Z，400 MHz topocentric）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "CHIME",
-  "redshift": null,
+  "redshift": 0.1275,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 35.64,
+  "pos_ref": "GCN 43431（=ATel 17606）CHIME/FRB baseband 定位：RA 310.3494±0.0077°、Dec 16.0252±0.0099°，1σ；pos_error 取较大轴 0.0099°=35.64″。ATel 17709（CHIME/FRB Outriggers，仅见 ATel、未经 GCN 复核）另给 20h41m23.82s +16°01′51.34″，3σ 误差椭圆 a=20″、b=0.07″、PA=13.2°（east of North），中心比 43431 偏北约 20.6″；本库保留 43431 的 ra/dec 未改",
+  "redshift_type": "spec-host",
+  "redshift_ref": "ATel 17856",
+  "comment": "审核 wa1kmoon@zcode 2026-10-29。身份：FRB 20251229A = CHIME/FRB 新发现的重复暴（GCN 43334 / ATel 17574，TNS designation FRB 20251229A）；三次爆发 2025-12-29 22:00:58、2026-01-01 21:56:03、2026-01-03 21:53:36 UTC（400 MHz，topocentric）。T0：取首次探测 2025-12-29T22:00:58Z（GCN 43334 / ATel 17574），与原值一致，补 T0_ref；无 >1 s 的时刻调整，T0_offset 留空。定位：保留 GCN 43431（=ATel 17606）的 CHIME/FRB baseband 定位 RA 310.3494±0.0077°、Dec 16.0252±0.0099°（1σ；20h41m23.9s +16°01′31″）；GCN 43334 的早期定位（20h41m26.3s +16°01′24″，±1.2s/±18″，1σ）已被 43431 取代（相距约 36″）。ATel 17709（CHIME/FRB Outriggers）另给更晚的精化定位：20h41m23.82s +16°01′51.34″，3σ 误差椭圆 a=20″、b=0.07″、PA=13.2°（east of North），中心比 43431 偏北约 20.6″；该定位仅见 ATel、未经 GCN 复核，未改 ra/dec，仅在 pos_ref/comment 并列。pos_error 取 GCN 43431 较大轴 0.0099°=35.64″（RA 轴 0.0077°=27.72″），pos_error_confidence=1sigma；43431 未给 90% 误差半径。红移：ATel 17856（2026-06-27，Bhardwaj 等）用 GTC/OSIRIS 对最可能宿主 SDSS J204123.23+160126.54 测得 secure 光谱红移 z=0.1275±0.0002（spec-host），与 DM 相符；该宿主由 ATel 17709 的 PATH 给出 P(O|x)≈0.732–0.834（考虑 S1 为星/星系两种情形）。另一候选为 ATel 17822 的 LBT 暗不规则星系（距 FRB 中心约 2.4″；17856 的 3 h GTC 光谱仅见 6680 Å 弱发射、无法定 z；17863 更正该通量为 ~6×10^-18 erg/s/cm^2，不改结论）。17723/17822 早先给该宿主测光红移 0.08（PS1-WISE-STRM）/0.12±0.02（SDSS/CIGALE）。host_galaxy 仍不建（宿主未唯一确认，PS1 探测阈值以下仍可能有宿主），候选与依据见本条。分类：tags.json 无 FRB 类目，tag/sub_tag 留空，已在 PR 待决事项提出新增 frb 主标签。测光：lc 两行出自 GCN 43339——COLIBRÍ/DDRAGO 双通道在 r、z 同步观测 2026-01-06 02:08–02:42 UTC（窗口 34 min，原文称 29 min 曝光），coadd 后 5σ 上限 r>22.99、z>21.88；Pan-STARRS DR1 定标、AB 系统、未做银河系消光改正（Gext_corr=n）；time=620642 s 为窗口中点 2026-01-06T02:25:00Z（=T0+620642 s，复算一致），time_err=1020 s 取窗口半宽（§3.8 约定，真实曝光中点不可恢复）。覆盖性：43339 按 GCN 43334 旧定位区计算，更新定位（43431、17709）在其约 36″/20.6″ 外；GCN 43433 用同一批数据按更新定位区做图像相减，给出 r>22.5、z>21.5（5σ），属同一次观测再分析、无新时间锚点，未另立行。原文笔误：GCN 43433 将 CHIME/FRB 作者写作 Mason et al.（应为 Ng et al.）；ATel 17822 将 outrigger 定位误引为 ATel 17577（应为 17709）。射电/宿主补充（均非瞬变测光，不入 lc）：ATel 17588 HyperFlash/ECLAT 1.4 GHz 爆发（MJD 61048.555753859 TDB，注量 163±33 Jy ms）；17591 FAST 9 次爆发（DM=192.91±0.15 pc/cm^3）；17671 Northern Cross 408 MHz 爆发（2026-02-07 10:47:01.845 UTC，注量 ~100 Jy ms）；17723 uGMRT 650 MHz 持续射电源 64±13 μJy（2026-02-08/09）；17735 VLA 6 GHz 3σ 上限 10 μJy（2026-03-30）；17822 LBT/LBC 3σ r=25.7/g=26.0（2026-05-19）与暗星系 g=24.20±0.09/r=24.08±0.12（距 FRB 2.4″），属宿主成像、非瞬变非探测。原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写。测光检索（2026-10-29）：仓内 gcn/archive 全文命中 4 篇（43334/43339/43431/43433），逐篇打开；ATel 站（astronomerstelegram.org）11 篇（17574/17588/17591/17606/17671/17709/17723/17735/17822/17856/17863），逐篇打开；external/rssgrbag 0 行、grbsn_webtool/uvot_grb 无该源；GCN 站查询 20251229A（archive 已含至 46010 号）；arXiv API 两种写法命中 0；ADS/SciX API 无 token（HTTP 401）；TNS 不适用。结论：无新增瞬变测光行（补 0 行）；lc 2 行核对并补 time_err/telescope/instrument/comment/source；红移/宿主与定位按 ATel 17856/17709 更新 info。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 CHIME/FRB 首次探测时刻 2025-12-29T22:00:58Z（GCN 43334）；原 bot 注记 't0 为 meta trigger-time（真实触发时刻）' 已改写",
+    "t0_basis": "GCN 43334",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
