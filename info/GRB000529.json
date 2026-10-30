@@ -1,30 +1,51 @@
 {
   "transient_id": "GRB000529",
-  "alias": [],
+  "alias": [
+    "GRB 000529",
+    "GRB 000529B",
+    "1SAX J0009.8-6128"
+  ],
   "ra": 2.451,
   "dec": -61.465,
   "T0": "2000-05-29T08:43:11Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 676",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "BeppoSAX",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 680",
+  "pos_error": 120,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 684",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：BeppoSAX GRBM+WFC2 于 2000-05-29 08:43:11 UT 触发（GCN 676）；WFC 误差圆 RA=2.348 Dec=-61.531 r=4′（GCN 676）；IPN 三角定位见 GCN 678/680（NEAR/Konus/GRBM/Ulysses，环带与 WFC 圆交叠、面积约减 30%）；NFI 于触发后 ~7.5 h 发现 X 射线候选余辉源 1SAX J0009.8-6128（RA=2.451 Dec=-61.465 r=2′，GCN 684/685，位置与 IPN 环带一致 GCN 680），本条目 ra/dec 即锚该 NFI 源（pos_error=2′=120″）；同日另一 BeppoSAX 暴 GRB 000529A（Frontera+2009 GRBM 目录：trigger 00:03:51 UT，RA=218° Dec=39°）为另一事件，勿混。T0=08:43:11 UT 取触发仪器官方通告 GCN 676；heasarc_grbcat（grbcat_id 4909，Earth Crossing Time）=08:43:11.000 一致；Frontera+2009 GRBM 目录（HEASARC saxgrbmgrb，GRB 000529B）=08:43:12.000，差 1 s，按 §3.8 优先级取 GCN 676。t90=13.0±4.5 s（Frontera+2009 saxgrbmgrb，40-700 keV）与 t90=4.0 s（Chandra & Frail 2012 rssgrbag，能段未注）冲突，sub_tag 留空待决。alias 出处：GRB 000529（GCN 676 起各通告用名）；GRB 000529B（Frontera+2009 GRBM 目录名，同日 A/B 双暴区分）；1SAX J0009.8-6128（GCN 685，X 射线候选余辉源名）。pos_error 置信水平来源未标注。测光检索（2026-10-30）：仓内 gcn/archive 45563 篇全文检索「000529」命中 7 篇（GCN 676/678/680/682/684/685/699，其中 682/699 含光学数值）；GCN 站事件页 gcn.nasa.gov/circulars/events/grb-000529 同 7 篇无更多；external/rssgrbag 仅目录参数记录（Chandra & Frail 2012，radio_ag_flag=N，无光变行）、external/grbsn_webtool 无此事件、external/saxgrbmgrb 与 heasarc_grbcat 均为触发/伽马参数记录（非测光）；OpenAlex「GRB 000529」命中 7 条（Fynbo+2001 A&A 369,373 表 2 对 GCN 682 属纯转引：R-limit 19.8、Δt=1.10 d，无新测光；De Luca+2006 A&A 为 X 射线余辉目录；Williams 2000 LOTIS 学位报告 DOI 10.2172/15007544 表 I 仅定位汇总、无测光数值，全文 PDF 两次下载截断未能全文核验；其余条目无测光）→ 可入库光学测光共 5 点（GCN 682 一点 + GCN 699 四点），本 PR 新增 GCN 682 一行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Fynbo+2001",
+      "url": "https://doi.org/10.1051/0004-6361:20010112",
+      "title": "Detection of the optical afterglow of GRB 000630: Implications for dark bursts"
+    },
+    {
+      "name": "Frontera+2009",
+      "url": "https://doi.org/10.1088/0067-0049/180/1/192",
+      "title": "The Gamma-Ray Burst Catalog Obtained with the Gamma-Ray Burst Monitor Aboard BeppoSAX"
+    }
+  ],
   "host_galaxy": null
 }

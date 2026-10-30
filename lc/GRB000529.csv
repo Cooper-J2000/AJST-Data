@@ -1,5 +1,6 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-154369.0,,s,51695.15,R,22.7,,magnitude,,n,y,,,,,,,1.0,n,,SAAO 1m,GCN699,,
-179425.0,,s,51695.439999999995,R,24.0,,magnitude,,n,y,,,,,,,1.0,n,,CTIO 4m,GCN699,,
-179425.0,,s,51695.439999999995,R,22.7,,magnitude,,n,y,,,,,,,1.0,n,,ESO 2.2m,GCN699,,
-436897.0,,s,51698.42,R,22.3,,magnitude,,n,y,,,,,,,1.0,n,,ESO NTT,GCN699,,
+154369.0,1500.0,s,51695.1500000,R,22.7,,magnitude,,n,y,,,,,,,1.0,n,SAAO 1m,,GCN699,"GCN 699 历元 2000 May 31.15 UT、Texp=3000 s；time_err=半曝光 1500 s（§3.2）；历元精度 0.01 d（~864 s）；3σ R_lim=22.7；定标用 Landolt T Phe 标准星（Landolt 1992, AJ 104, 340），原文未声明星等系统，mag_system 留空",Rusty-Harpoon@zcode
+179425.0,450.0,s,51695.4400000,R,24.0,,magnitude,,n,y,,,,,,,1.0,n,CTIO 4m,,GCN699,GCN 699 历元 2000 May 31.44 UT、Texp=900 s；time_err=半曝光 450 s；历元精度 0.01 d；3σ R_lim=24.0；定标同 GCN 699（Landolt T Phe），原文未声明星等系统，mag_system 留空,Rusty-Harpoon@zcode
+179425.0,300.0,s,51695.4400000,R,22.7,,magnitude,,n,y,,,,,,,1.0,n,ESO 2.2m,,GCN699,GCN 699 历元 2000 May 31.44 UT、Texp=600 s；time_err=半曝光 300 s；3σ R_lim=22.7；与 CTIO 4m 同历元系两台望远镜各自独立观测，非同一次测量转引，两行均保留（§3.4）；原文未声明星等系统，mag_system 留空,Rusty-Harpoon@zcode
+436897.0,50.0,s,51698.4200000,R,22.3,,magnitude,,n,y,,,,,,,1.0,n,ESO NTT,,GCN699,GCN 699 历元 2000 Jun 3.42 UT、Texp=100 s；time_err=半曝光 50 s；3σ R_lim=22.3（GCN 699 各历元重叠区比较无显著亮度变化目标至 R~22.3；与 DSS-II 红图比较无新天体、DSS 限 R~21.5，备查）；原文未声明星等系统，mag_system 留空,Rusty-Harpoon@zcode
+119395.0,450.0,s,51694.7452083,MACHO-R,19.75,,magnitude,,n,y,,,,,,,1.0,n,Mount Stromlo 50-inch,,GCN682,"GCN 682：Exposure 3×300 s starting May 30.74 UT，limiting magnitude R_M~19.75（原文 R_M=MACHO red band，band 用 filters.json 既有键 MACHO-R）；time=起点历元 May 30.74 UT+450 s（半曝光），起点精度 0.01 d，真实曝光中点受此限制不可完全恢复（§3.8）；对比 DSS 无 OT 候选体；mag_system 原文未声明，留空；Fynbo+2001（A&A 369, 373）表 2 转引为 R-limit 19.8、Δt=1.10 d（转引舍入/口径差，本行取 GCN 682 原值 19.75 与原历元）",Rusty-Harpoon@zcode
