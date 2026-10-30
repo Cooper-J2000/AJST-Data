@@ -3,30 +3,30 @@
   "alias": [
     "GRB 240229588"
   ],
-  "ra": 199.18,
-  "dec": 16.77,
-  "T0": "2024-02-29T14:07:07Z",
-  "T0_ref": "GCN 35833",
+  "ra": 195.477,
+  "dec": 12.791,
+  "T0": "2024-02-29T14:07:07.026Z",
+  "T0_ref": "GCN 35833（Fermi GBM Final Real-time Localization：原文「At 14:07:07 UT on 29 Feb 2024」整秒 + trigger 730908432.025634；MET 扣 2001 年后累计 5 跳秒 = 14:07:07.025634 UT）；FERMIGBRST 官方目录快照 bn240229588 trigger_time=2024-02-29T14:07:07.026Z（external/fermi_gbm，毫秒舍入同值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "GRID",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 4320,
-  "pos_ref": "GCN 35833",
+  "pos_error": 10260,
+  "pos_ref": "GCN 35870",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "身份：GRB 240229A，Fermi/GBM 触发 730908432（GCN 35833），GRID（GCN 35903/35904）、CALET/CGBM（GCN 35842）、VZLUSAT-2（GCN 35872）、GRBAlpha（GCN 35894）、Glowbug（GCN 35897）、IPN（GCN 35870）均探测。IceCube-240229A 为另一源（中微子警报 240229.66，位置 04h49m48.72s +15d59m45.6s，其 MASTER 观测报告 GCN 35837 属该警报），勿混淆。\nT0=2024-02-29T14:07:07 UT（Fermi/GBM 触发，GCN 35833；FERMIGBRST 快照 trigger_time 14:07:07.026Z 互证）；并列值：GRID 14:07:08 UTC（GCN 35903，1 s 精度）、CALET 14:07:07.40 UTC（GCN 35842）、Glowbug onset 14:07:09.552（GCN 35897）、IPN ~50827 s UT=14:07:07（GCN 35870）；取 GBM 整秒值（§3.2），各值已并列。\nt90=28.6726±0.923051 s（FERMIGBRST 快照，50-300 keV），按目录 t90 判 lgrb；另 GRID T90≈25.0±3.0 s（GCN 35903）、CALET T90=27.6±2.5 s（GCN 35842），各通告均称 long-duration。\n定位：GBM Final RT RA=199.2 Dec=16.8、statistical uncertainty 1.2 deg（GCN 35833，=4320\"）；ra/dec 精确形 199.18/16.77 同于 GCN 35844 引述的 Fermi GBM Final Position 与 FERMIGBRST 快照；来源未标注置信水平。\n别名：新增「GRB 240229588」（GCN 35834 原文用名，subject：Fermi Trigger 730908432 / GRB 240229588；亦为 FERMIGBRST trigger_name）。\n测光检索（2026-10-28）：仓内 gcn/archive 全文快照（截至 GCN 46010，2026-10 下旬）grep「240229A」命中 15 篇并逐篇确认归属（35837 属 IceCube-240229A 警报、3799 为 GRB 050814 误中，已排除）；含光学上限 2 篇——GCN 35838（MASTER 29 条上限，全部入库）与 GCN 35844（DDOTI 1 条，已核订），其余 8 篇为 gamma 射线探测（35833/35834/35842/35872/35894/35897/35903/35904）无光学测光；external/rssgrbag 0 条、external/grbsn_webtool 63 事件无此源。外部入口：GCN 站、SciX/ADS、TNS 直连多次重试均超时（网络不可达），替代路径 arXiv API 标题/摘要检索 0 篇、WebSearch 无专门文献（仅 GCN 转引）→ 无正式发表文献；共补 29 行（MASTER）、修订 1 行（DDOTI）。\nextra_data 原值：t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）'；本次核验后数值不变、依据升级（见 t0_note）。",
+  "comment": "身份：GRB 240229A，Fermi/GBM 触发 730908432（GCN 35833），GRID（GCN 35903/35904）、CALET/CGBM（GCN 35842）、VZLUSAT-2（GCN 35872）、GRBAlpha（GCN 35894）、Glowbug（GCN 35897）、IPN（GCN 35870：Fermi/GBM、INTEGRAL SPI-ACS、Konus-Wind、CALET、BepiColombo MGNS）均探测。IceCube-240229A 为另一源（中微子警报 240229.66，位置 04h49m48.72s +15d59m45.6s，其 MASTER 观测报告 GCN 35837 属该警报），勿混淆；GCN 35820–36150 逐号扫描无 GRB 240229B 等同日他暴。\nT0=2024-02-29T14:07:07.026Z：GCN 35833 原文「At 14:07:07 UT」只给整秒，trigger MET=730908432.025634——Fermi MET 历元 2001-01-01T00:00:00 UTC 须扣 2001 年后累计 5 跳秒（2005/2008/2012/2015/2016 各 +1 s）得 14:07:07.025634 UT（裸 MET 不扣会得 14:07:12.025，恰差 5.000 s），与 FERMIGBRST 官方目录快照 bn240229588 的 trigger_time=2024-02-29T14:07:07.026Z 毫秒舍入同值——取触发仪器的亚秒值（§3.2）。并列值：CALET 14:07:07.40（GCN 35842）、GRID 14:07:08（GCN 35903/35904）、Glowbug burst onset 14:07:09.552（GCN 35897）、VZLUSAT-2 峰 14:07:19（原文自注相对其他卫星移位约 14 s、原因调查中，GCN 35872）、GRBAlpha 峰 14:07:33.5（GCN 35894）、IPN ~50827 s UT=14:07:07（GCN 35870）。无 T0_offset（CALET 晚 0.374 s、GRID 晚约 0.97 s，均 <1 s，§3.2）。\nt90=28.6726±0.923051 s（FERMIGBRST 快照，50-300 keV），按目录 t90 判 lgrb；另 GRID T90≈25.0±3.0 s（GCN 35903）、CALET T90=27.6±2.5 s（GCN 35842），各通告均称 long-duration。\n定位：GBM Final RT RA=199.2 Dec=16.8、statistical uncertainty 1.2 deg（GCN 35833，=4320″；ra/dec 精确形 199.18/16.77 同于 GCN 35844 引述与 FERMIGBRST 快照）→ 改用 GCN 35870 IPN 三角定位（preliminary, 3 sigma error box）：盒心 RA=195.477（13h 01m 54s）、Dec=+12.791（+12d 47m 26s），四角 194.744/+10.021、195.408/+10.063、196.123/+15.555、195.453/+15.513，面积 3.5 sq. arcmin、最长维 5.7 deg、最短维 38.3 arcmin；pos_error=10260″=MaxDim/2 外接圆近似（口径同库内 IPN 盒先例 GRB030217=885″、GRB141202A=398″；本盒约 9:1 细长，外接圆口径偏保守，面积等效圆 √(Area/π)≈63″ 不覆盖长轴方向，两口径并注）；pos_error_confidence=3sigma（原文「preliminary, 3 sigma error box」）；原文「The IPN localization is consistent with, but reduces the area of, the final Fermi-GBM and the BALROG localizations」；盒心与 GBM Final 位相距约 5.4°（GBM 1.2° 为 statistical 误差、另有未量化系统差）；BALROG 位（GCN 35834：RA=195.9、Dec=16.3，1 sigma statistical 1.7 deg + systematic 1 deg）备查；MPE Greiner 快照记同一 IPN 盒（13h01m54s +12°47′、342×38 arcmin）互证；DDOTI（GCN 35844）观测场心为 GBM Final Position 199.18/16.77（指向中心，非源定位）。\n别名：「GRB 240229588」（GCN 35834 原文用名，subject：Fermi Trigger 730908432 / GRB 240229588；亦为 FERMIGBRST trigger_name）。\n测光检索（2026-10-28）：仓内 gcn/archive 全文快照（截至 GCN 46010）grep「240229A」命中 15 篇并逐篇确认归属（35837 属 IceCube-240229A 警报、3799 为 GRB 050814 误中，已排除）；含光学上限 2 篇——GCN 35838（MASTER 29 条上限）与 GCN 35844（DDOTI 1 条），其余 8 篇为 gamma 射线探测无光学测光；external/rssgrbag 0 条、external/grbsn_webtool 63 事件无此源。外部入口：GCN 站、SciX/ADS、TNS 直连多次重试均超时（网络不可达），替代路径 arXiv API 0 篇、WebSearch 无专门文献 → 无正式发表文献。\n元数据后续补正（2026-10-30，维护者）：T0 亚秒、Trigger_Instrument（GRID→Fermi/GBM；GRID 为独立触发仪器，但定义 T0 的是 GBM）、IPN 盒定位三项并入自 PR #532（审核 fsy@zcode）——该 PR 与本源 2026-10-29 合并的 #527 撞源，三项增量未落地，故由维护者代收。lc 30 行承自 #527 且未改动：仍为原表 Tmid 锚、DDOTI 上限 20.64（#532 另提的「显式端点锚」与「DDOTI 取浅端 19.90」两种口径未采纳，理由见 #532 关闭说明）；本次仅把 30 行 time 各减 0.026 s 以配合 T0 亚秒（mjd 列不变，保持 mjd=T0+time 自洽）。\nextra_data 原值：t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」；本次核验后依据升级（见 t0_note）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "T0=Fermi/GBM 触发时刻（GCN 35833，整秒精度；FERMIGBRST 快照 14:07:07.026Z 互证）；原 bot 值即 2024-02-29T14:07:07Z（t0_basis=meta_trigger），数值经复核不变，依据升级为已核验",
-    "t0_basis": "gcn_circular",
+    "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 730908432 / 240229588），取亚秒值",
+    "t0_basis": "GCN 35833（trigger 730908432.025634 → 扣 5 跳秒 = 14:07:07.025634 UT）+ FERMIGBRST 官方目录快照 trigger_time=2024-02-29T14:07:07.026Z（external/fermi_gbm，bn240229588）",
     "bot_created": true,
     "audit": {
       "status": "reviewed",
@@ -42,5 +42,6 @@
       "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "3sigma"
 }
