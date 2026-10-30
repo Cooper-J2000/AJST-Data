@@ -3,23 +3,25 @@
   "alias": [
     "XRF090702"
   ],
-  "ra": 175.888,
-  "dec": 11.501,
+  "ra": 175.89704,
+  "dec": 11.50161,
   "T0": "2009-07-02T10:40:37Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 9603",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBAS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 5.0,
+  "pos_ref": "GCN 9609 (Swift/XRT-UVOT enhanced position)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核记录（LHe496@Codex，2026-10-30）：采用 T0=2009-07-02T10:40:37Z（GCN 9603），触发仪器 INTEGRAL/IBAS；Swift/XRT-UVOT 精化位置为 (175.89704,+11.50161)，误差半径 5.0 arcsec（90%，GCN 9609）。GCN 9603 将事件称为 long GRB；Bošnjak+2014 Table 1（出版社摘要页、ADS 题录与 arXiv:1309.3174 交叉核对；三方交叉，未通读 VoR）列 t_start=10:40:35.00 UTC、T90=19(+8/-8) s、20–200 keV；Higgins+2017 Table A1 列 T90=6 s（注明取自 IBAS1）；GCN 9603 报持续约 10 s 并称 long GRB。T90 数值不相同且不互换使用；GCN 9603 明确给出 long GRB 分类，lgrb 依此记录。t_start 未证明等同仪器触发时刻。INTEGRAL 官方触发列表另列 2009-07-02 10:40:49.57（start of GRB）；Swift/MAST 目录及 GCN 9603 均给 10:40:37。按用户裁定固定 T0 为 GCN 9603；这些不同定义留待维护者处理，T0_offset 留空，不将目录差异解释为物理偏移。GCN 9607 UVOT finding-chart 合并限值为 3σ，原文只给 T_start/T_stop，按仓库规则取窗口中点及半宽；Poole+2008 定义 UVOT Vega 系统，未作银消改正。Roming+2017 的出版社/ADS 题录与 arXiv v1 字段定义交叉核对；三方交叉，未通读 VoR；实际测光值来自 MAST UVOTGRB 官方 HLSP 3″ image-event 数据表，实取并核验 10 条 GRB090702 记录（MAG_LIM_SIG=2，QUALITY_FLAG=F），取其 MAG_LIM；逐滤镜逐图像 TSTART/TSTOP 与 GCN 9607 窗口重叠，MAST 曝光总和（U 1795.53→1796、B 1753.03→1753、white 971.30→971、V 1125.95→1126 s）与 GCN Exp 相符，表明共用这些图像。GCN 为窗口级 3σ 合并限值，MAST 为逐图像 2σ 限值，属相关、不同报告产品；数值/时间粒度不同，不是 §3.4 所定义的同值同刻重复，故并列并在行备注披露共享观测。GCN 9605 按原文 Jul 2.9965 报告历元直接换算且不推断其为起点或中点；GCN 9614（明确起点）及 GCN 9917（明确平均时刻）依曝光规则记录。未明确星等系统者留空。零测光检索（2026-10-30）：本 checkout 无 gcn/archive；external/rssgrbag 原始 140 + normalized 304 条，0 命中；external/grbsn_webtool 62 个源目录，0 命中；官方 GCN 本事件 7 篇 circular（4 篇光学相关）；ADS exact 搜索 7 条（全为 GCN），expanded 搜索 8 条（含 1 条宽泛目录）；后续 DOI/标识检索识别并核查 4 篇研究文献。TNS 精确别名搜索 0 条；本次补入 MAST 10 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "merged_from": [
@@ -115,8 +117,31 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-10-30"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Bošnjak+2014",
+      "url": "https://doi.org/10.1051/0004-6361/201322256"
+    },
+    {
+      "name": "Higgins+2017",
+      "url": "https://doi.org/10.1093/mnras/stx1163"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
