@@ -1,13 +1,13 @@
 {
   "transient_id": "GRB091111",
   "alias": [],
-  "ra": 137.8133,
-  "dec": -45.9093,
+  "ra": 137.82427,
+  "dec": -45.92541,
   "T0": "2009-11-11T15:21:59Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10159 (INTEGRAL/IBAS trigger time 2009-11-11 15:21:59 UT)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBAS",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,8 +16,10 @@
   "pos_ref": "GCN 10167",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)\n审核元数据核对（2026-10-30，LHe496@Codex）：GCN 10159 标准 T0 为 INTEGRAL/IBAS 触发；GCN 10167 给出 Swift/XRT 精化位置 RA=137.82427°, Dec=−45.92541°, 误差 5.1″/90%。旧文件把 IBAS 位置与 XRT 误差半径混用，现采用精化位置。GCN 10159 的 T90≈100 s，标记 lgrb。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -106,5 +108,6 @@
     }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
