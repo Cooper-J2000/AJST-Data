@@ -1,35 +1,54 @@
 {
   "transient_id": "GRB030501",
-  "alias": [],
-  "ra": 332.536,
-  "dec": -37.604,
-  "T0": "2003-05-01T01:17:21Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 030501"
+  ],
+  "ra": 286.375,
+  "dec": 6.30722,
+  "T0": "2003-05-01T03:10:18Z",
+  "T0_ref": "GCN 2183",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 2183",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（wa1kmoon 2026-10-29，PR #610）：[身份] 本源＝INTEGRAL IBAS 触发的 GRB030501：GCN 2183（IBAS 定位团队）『report the detection of a GRB at 03:10:18 UTC at coordinates RA 19h 05m 30s DEC +06deg 18' 26'' (J2000) with an uncertainty of 3 arcmin radius. The burst lasted about 40 seconds』；HEASARC GRBcat（external/heasarc_grbcat 快照，grbcat_id 5646）trigger_time=2003-05-01T03:10:18.000Z、ra/dec=286.375/6.30722222、observatories=[IPN, INTEGRAL, ULYSSES] 同值互证；MPE Greiner 快照同坐标（Error 3'）。注意同日另有 GRB030501B（Konus-Wind 01:17:21.824 UT 触发，GCN 2194/2199，GRBcat 5647，IPN 误差盒 RA≈283–290/Dec≈+24）与 GRB030501C（20:44:50.3 UT，GCN 2200），均为不同事件，勿与本品混同。[T0] bot 原值 2003-05-01T01:17:21Z（原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis=meta_trigger）实为 GRB030501B 的 Konus-Wind 触发时刻（GCN 2194；GRBcat 5647 trigger_time=01:17:21.800Z），误植到本源；改用 GCN 2183 触发时刻 2003-05-01T03:10:18Z（T0_ref=GCN 2183）。独立自洽：TAROT『started at 3h10m37.6s, less than 20 seconds after the burst trigger』（GCN 2188）、CrAO『May, 1 21:59-23:12 (18.8 hours after GRB)』（GCN 2202，21:59 UT 距触发 18.81 h）均与 03:10:18 一致。[坐标] bot 原 ra/dec=332.536/-37.604 为 GCN 2187 IPN 环心（原文『annulus centered at RA, Decl(2000)= 332.536, -37.604 degrees, whose radius is 61.259 +/- 0.294 degrees』）——环心不是定位点，勿引作源坐标（同 GRB030217/GRB030228 先例）；改用 GCN 2183 IBAS 定位：RA 19h05m30s=286.375°、DEC +6°18'26''=+6.30722°，pos_error=3'=180''（pos_ref=GCN 2183；GRBcat 5646 与 MPE Greiner 快照同值）。GCN 2183 未标注置信水平，pos_error_confidence 留空。[tag] 补 grb。[sub_tag] 按目录 t90 判 lgrb：t90=40 s（Klotz+2009 Table 1，T90 列；GCN 2183 持续约 40 s 一致）。Beckmann+2003（A&A 411, L327, VoR 已打开核对）正文称本源『this long GRB』（第 5 节）；Klotz+2009（AJ 137, 4100）Table 1 列 T90=40 s。备查：GCN 2183 持续约 40 s、GRBcat t_other=40.0（Duration definition not specified）。[alias] 补『GRB 030501』（<GCN 2188> 标题原文用名『GRB 030501: TAROT possible candidate counterpart』；GCN 2201/2202/2224 标题同形，HEASARC GRBcat 目录名亦为带空格形）。[articles] Beckmann+2003 为 γ 射线谱学研究（VoR 已核对，无光学测光表），url 改为 DOI 形（aanda.org 站对爬虫反爬 403/405，VoR 经 A&A 官网 HTML 全文实际打开）；新增 Klotz+2009（VoR Table 1 提供本源 TAROT 测光两行，已逐值入库）。[测光检索留证]（2026-10-29）：仓内 gcn/archive 全文检索『GRB030501|GRB 030501』命中 11 篇（2183/2186/2187/2188/2189/2194/2199/2200/2201/2202/2224），其中本源测光相关 5 篇（2188 TAROT 候选、2189 证伪、2201 Wise 上限、2202 CrAO 两条上限、2224 TAROT 最终上限）；另按环心坐标检索仅命中 GCN 2187。external/rssgrbag、grbsn_webtool 0 命中；heasarc_grbcat/mpe_greiner 各 1 条目录参数（无光变表）。ADS/SciX 无 API token（401）、摘要页 WebFetch 405，改用 OpenAlex：检索『GRB 030501』命中研究论文含 Beckmann+2003（无测光）、Klotz+2009（Table 1 已入库）、『Further Analysis of GRB 030501』（AIPC 会议文 10.1063/1.1810833，γ 谱学续篇、无测光，未引用）；arXiv API 检索『GRB 030501』0 命中。结论：本 PR 补 4 行（Klotz+2009 20–50 s CR>15、GCN 2224 20–1020 s CR>18、GCN 2202 CrAO 两条上限），GCN 2188 TAROT R=14.9『detection』经 GCN 2189（XDSS/2MASS 存档图像中已存在，为强消光恒星）与 GCN 2224（确认为亮红外源、TAROT 无滤光片残存 IR 敏感度所致）证伪，置 discard=y。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 GCN 2183 IBAS 触发时刻（2026-10-29 审核改定；bot 原值 2003-05-01T01:17:21Z 实为同日另一事件 GRB030501B 的 Konus-Wind 触发时刻，原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis=meta_trigger，详见 comment）",
+    "t0_basis": "gcn_2183",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [
     {
       "name": "Beckmann+2003",
       "title": "Time resolved spectroscopy of GRB 030501 using INTEGRAL",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003A&A...411L.327B",
+      "url": "https://doi.org/10.1051/0004-6361:20031075",
       "bibtex": "@ARTICLE{2003A&A...411L.327B,\n       author = {{Beckmann}, V. and {Borkowski}, J. and {Courvoisier}, T.~J.-L. and {G{\\\"o}tz}, D. and {Hudec}, R. and {Hroch}, F. and {Lund}, N. and {Mereghetti}, S. and {Shaw}, S.~E. and {von Kienlin}, A. and {Wigger}, C.},\n        title = \"{Time resolved spectroscopy of GRB 030501 using INTEGRAL}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, gamma rays: observations},\n         year = 2003,\n        month = nov,\n       volume = {411},\n        pages = {L327-L330},\n          doi = {10.1051/0004-6361:20031075},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003A&A...411L.327B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Klotz+2009",
+      "title": "Early optical observations of gamma-ray bursts by the TAROT telescopes: period 2001-2008",
+      "url": "https://doi.org/10.1088/0004-6256/137/5/4100",
+      "bibtex": "@ARTICLE{2009AJ....137.4100K,\n       author = {{Klotz}, A. and {Bo{\\\"e}r}, M. and {Atteia}, J.~L. and {Gendre}, B.},\n        title = \"{Early optical observations of gamma-ray bursts by the TAROT telescopes: period 2001-2008}\",\n      journal = {\\aj},\n         year = 2009,\n        volume = {137},\n         pages = {4100},\n          doi = {10.1088/0004-6256/137/5/4100},\n       eprint = {0902.0898}\n}",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
