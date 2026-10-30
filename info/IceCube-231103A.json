@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-231103A",
-  "alias": [],
-  "ra": 102.9192,
-  "dec": 48.078,
-  "T0": "2023-11-03T09:17:35Z",
-  "T0_ref": null,
+  "alias": [
+    "IC231103A"
+  ],
+  "ra": 105.67,
+  "dec": 47.85,
+  "T0": "2023-11-03T09:17:35.29Z",
+  "T0_ref": "GCN 34933（IceCube 官方通告）：「On 23-11-03 at 09:17:35.29 UT IceCube detected a track-like event…」，精化后「Time: 09:17:35.29 UT」；AMON 通告 gcn.gsfc.nasa.gov/notices_amon_g_b/138515_8773328.amon（RUN 138515 / EVENT 8773328，rev0 与 rev1 同）DISCOVERY_TIME 33455 SOD {09:17:35.29} UT 一致。原库 09:17:35Z 整数秒与来源一致、仅缺来源给出的百分秒 .29 → 按来源精度补足（§3.2）；亚秒差不写 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 34933（IceCube 离线精化方向）：RA=105.67 (+3.15/-2.94 deg 90% PSF containment) J2000、Dec=+47.85 (+1.95/-1.78 deg 90% PSF containment) J2000。初始自动定位（AMON 通告 138515_8773328.amon rev0）RA=104.2522 Dec=+46.5805 R=64.55′（stat-only 90%）；精化 rev1 RA=105.6700 Dec=+47.8500 R=147.59′=2.46 deg（stat-only 90%）。非对称两轴 PSF 不适配单一半径 → pos_error=null、pos_error_confidence=90（原文明给 90% PSF containment）、不对称值照录本条。原库 ra/dec=102.9192/48.078 实为 ZTF 候选体 AT2023wue（ZTF23abnoapt）的坐标（GCN 34973 表列 RA 102.9192032 / +48.0780348），非事件方向，已按精化方向更正（见 comment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核链（wa1kmoon@zcode 2026-10-29）：[身份] IceCube 高能中微子 track-like 事件（ICECUBE_Astrotrack_GOLD 流，平均天体物理纯度 50%，FAR=0.1472 yr^-1，能量 180.34 TeV；AMON 通告 RUN 138515 / EVENT 8773328，gcn.gsfc.nasa.gov/notices_amon_g_b/138515_8773328.amon），GCN 34933 首个报告；非 GRB，tags.json 无中微子类目 → tag/sub_tag 留空（同库各 IceCube 源）。[划界] 同名 GRB 231103A 是另一独立事件：Fermi/GBM 于 2023-11-03 14:41:30 UT 触发（trigger 720715295.24961 / bn231103612），在轨定位 RA=14.0 Dec=-55.3（±5.2 deg，GCN 34934）；比本源 T0 晚 5 h 23 m 54.7 s、角距 128.4 deg → 无关联，不并入本源。GCN 34948（MASTER-SAAO）标题为「Fermi GRB 231103A」，实为对 GBM 误差盒的巡视（表列 Tmid−T0=100379–110735 s、视场中心 00h17m–01h37m / Dec −48.3°…−61.7°、b=−62°），属 GRB 231103A 而非本源，未入 lc。[T0] GCN 34933「On 23-11-03 at 09:17:35.29 UT」与精化「Time: 09:17:35.29 UT」、AMON 通告 DISCOVERY_TIME 33455 SOD {09:17:35.29} 三方一致；原库 09:17:35Z 整数秒正确、仅缺来源百分秒 → 补足为 .29（§3.2；亚秒差不写 T0_offset）。extra_data.t0_basis 原值「meta_trigger」（bot 写）与 T0_ref 不一致，改记为「GCN 34933」，原值在此留档。[定位] 精化方向 RA=105.67 (+3.15/−2.94 deg)、Dec=+47.85 (+1.95/−1.78 deg) J2000，原文标注 90% PSF containment；非对称两轴 → pos_error=null、pos_error_confidence=90、不对称值照录 pos_ref。原库 ra/dec=102.9192/48.078 实为 ZTF 候选体 AT2023wue 的坐标（GCN 34973 表列 RA 102.9192032 / +48.0780348，逐位相同），系 bot 把候选体坐标当成事件方向，已更正为事件精化方向。[Trigger] IceCube 原有正确；GCN 34934 的 GBM 触发为同日他暴，不作本源触发仪器。[别名] 新增「IC231103A」（GCN 34952 原文用名：the IC231103A high-energy neutrino event / IC231103A best-fit position）；GCN 34935 的 MASTER 用名「IceCube Alert 231103.39」（trigger No 8773328 与 AMON EVENT_NUM 互证）记此备查，未列入 alias（同库 IceCube 源只用 IC 形，先例 IceCube-200620A/220907A）。[测光] lc 1→2 行。①原 ZTF 行（GCN 34973）：表列 ZTF23abnoapt=AT2023wue（RA 102.9192032 Dec +48.0780348）g=17.98±0.05，距精化位 1.856 deg、原文称在 90.0% 定位区内；标题「No candidates」指无通过的暂现对应体——该源 2023-10-27 首次探测（早于 T0 约 7 天）、快升缓降、蓝色、类 CV，SEDm 光谱蓝连续谱 + SNID 最佳拟合为银河系源，原文「we consider it likely that ZTF23abnoapt is unrelated to the neutrino」→ 非对应体，按候选对应体探测处置（先例 IceCube-220907A/200620A）：保留行、discard=y。原文未给该星等的具体曝光时刻（表为 AMPEL 告警库检索结果，且首次探测早于 T0），time=观测起始 2023-11-03 09:24 UTC−T0=384.71 s 为名义锚（原文分精度，time_err=30 s 为其半单位，真实测量时刻不可恢复），mjd=T0+time/86400 保留 7 位；mag_system=AB 系推定（ZTF 定标 AB/PS1 系，据 Masci+2019 PASP 131 018003，GCN 34973 原文即引此文；同库 IceCube-220907A/200620A 同口径）；band=g 照原文 Filter=g；telescope=P48/ZTF、instrument 留空（bot 原行 ZTF/P48 记在 instrument 列，按同库 ZTF 行惯例移列，留痕）；巡视参数：单曝 300 s、典型深度 21.0 mag、覆盖定位区 84.1%（12.9 sq deg）。原文另提变源 ZTF19aaenfez（WISEA J065203.55+473924.6，W1−W2=0.95 疑 AGN，较 5 年基线中位亮约 50%、爆发持续 >1 年）——无星等值，仅记此备查。②新增 MASTER-Amur 无滤光片上限（GCN 34935，主题行「IceCube Alert 231103.39」）：曝光起点 2023-11-03 16:29:24 UT、Exptime 180 s、表列 Tmid−T0=25999、上限 18.0 mag；视场中心 07h01m07.02s +47d50m23.7s（=105.27925/+47.83992）距精化位 0.262 deg；filter C=clear → band=G；星等系统原文未声明。Fermi-LAT（GCN 34952）只有 >100 MeV 积分光子流量上限（<4.3e-10 / 1.3e-8 / 7.2e-8 ph cm^-2 s^-1），非测光；IceCube 附加中微子搜索（GCN 34954）无光学内容 → 均不入库。[测光检索]（2026-10-29）仓内 gcn/archive 45 887 篇（circular 1–46010，截至仓内快照 2026-10-22 无后续通告）：按 231103 / IC231103A / IceCube Alert 231103 / 8773328 / 138515 作正文/主题检索命中 7 篇 = 34933、34934+34948（GRB 231103A，划界）、34935（MASTER-Amur，已入库）、34952、34954、34973；若对整份 JSON 朴素 grep（含 createdOn 等非正文键）则得 9 篇，多出的 2 篇为误中——GCN 15509/15510 的 createdOn 毫秒时间戳 1385158044000 / 1385159962000 含子串「138515」，与本事件无关；external/rssgrbag 140 行 0 命中、external/grbsn_webtool/SourceData 正文 0 命中（朴素 grep 仅 1 处误中：SN2020bvc_Spectra2.txt 浮点串 7.559891989231103253e+03 含子串「231103」，非本事件）、external/fermi_gbm 唯一命中 bn231103612 即 GRB 231103A（划界）；ADS API 无 token → HTTP 401（如实记录）、SciX API 无 token → HTTP 202 空响应、arXiv「IceCube-231103A」与「231103A」各 0 篇、Crossref 无专文 → 无研究论文，articles 留空 → 结论：本事件可用测光仅 2 条（ZTF 候选体 1 条 + MASTER 上限 1 条），本 PR 补 1 行（MASTER 上限）、重锚并把 ZTF 行置 discard=y。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "GCN 34933",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
   "articles": [],
   "host_galaxy": null
