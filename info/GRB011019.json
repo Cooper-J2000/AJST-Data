@@ -1,30 +1,48 @@
 {
   "transient_id": "GRB011019",
-  "alias": [],
+  "alias": [
+    "GRB 011019B",
+    "GRB 011019X"
+  ],
   "ra": 10.709,
   "dec": -12.449,
-  "T0": "2001-10-20T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2001-10-19T08:42:50Z",
+  "T0_ref": "GCN 1109（HETE FREGATE/WXM 检测 31370 SOD=08:42:50 UT 2001-10-19；HEASARC GRBCAT GRB 011019B trigger_time 同值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1260,
+  "pos_error_confidence": "68",
+  "pos_ref": "GCN 1109（WXM best fit RA(2000)=00h42m50s.23 Dec(2000)=-12°26′58″，1σ(68.3%) 半径 21′；2σ 35′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "HETE-2 未触发（untriggered）X-ray rich 暗暴，FREGATE/WXM 于 2001-10-19 08:42:50 UT 检测（GCN 1109，duration~30 s，fluence~1.8e-7 erg/cm2）。同日另有 IPN 事件 GRB 011019A（trigger 06:22:59 UT，HEASARC GRBCAT grbcat_id 5321，无坐标），与本源（GRB 011019B，grbcat_id 5322，HETE2+IPN，08:42:50 UT）为不同事件，未合并。t90=25.4 s（HEASARC GRBCAT，7-400 keV，未给误差），按目录 t90 判 lgrb。别名出处：GRB 011019B←HEASARC GRBCAT 官方目录名（name_alt 含 011019）；GRB 011019X←MPE Greiner 目录（坐标 10.7083,-12.45 与本源一致）。GRBCAT 快照 ra=11.46 与 GCN 1109 WXM best fit 10.709 相差约 0.75°，位置取触发仪器通告 GCN 1109（原 ra/dec 10.709/-12.449 与之吻合，保持不变）。测光检索（2026-10-29）：仓内 gcn/archive 全文检索「011019」命中 8 篇（GCN 1109/1110/1111/1112/1115/1116/1128/1130），其中 6 篇为光学观测通告；external/rssgrbag（140 行/74 源）与 external/grbsn_webtool 无该源记录；GCN 站直连超时未单独复核，以仓内 archive 全文为准；文献检索（WebSearch 定位）命中 Barraud+2003（A&A 400,1021，HETE/FREGATE 谱分析样本，已打开核对，含 011019 但无测光表）与 Sakamoto+2005（HETE-2 样本统计，未打开核对故未引用）；TNS 不适用（2001 年 GRB，无 AT/SN 命名）。可入库的有时间锚点上限共 8 处：GCN 1130（TT600，10-19 22:00 UT）、GCN 1115（ROTSE-III 三历元）、GCN 1112（Mount Stromlo）、GCN 1128（Subaru 两历元）、GCN 1116（NEAT）；GCN 1110（NOFS V 波段拼图 05:37-07:03 UT 10-20）无数值限深未入库。本 PR 补 4 行（GCN 1115×3、GCN 1130×1）。原 bot 时间基准记录：t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis「meta_trigger」，对应占位 T0=2001-10-20T00:00:00Z，已按 GCN 1109 纠正。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=HETE 触发时刻（GCN 1109：31370 SOD=08:42:50 UT，2001-10-19），原 bot 值「t0 为 meta trigger-time（真实触发时刻）」对应占位 T0=2001-10-20T00:00:00Z，已纠正",
+    "t0_basis": "GCN 1109",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Barraud+2003",
+      "url": "https://doi.org/10.1051/0004-6361:20030074",
+      "title": "Spectral analysis of 35 GRBs/XRFs observed with HETE-2/FREGATE",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
