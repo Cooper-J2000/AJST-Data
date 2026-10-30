@@ -59,6 +59,10 @@ RESERVED_COLS = ('source_id', 'holder', 'since', 'until', 'reason', 'ref')
 DENIED_TSV = os.path.join(ROOT, 'audit', 'denied.tsv')      # 已否证源清单（人写、工具只读）
 DENIED_COLS = ('source_id', 'reason_code', 'evidence', 'decided_by', 'date', 'ref')
 DENIED_REASONS = ('retracted', 'duplicate', 'noise', 'other')
+UNVERIFIED_TSV = os.path.join(ROOT, 'audit', 'unverified.tsv')   # 未能核实的文献材料（人写、工具只读）
+UNVERIFIED_COLS = ('source_id', 'pr', 'paper', 'missing', 'attempted',
+                   'blocker', 'substitute', 'status', 'date')
+UNVERIFIED_STATUS = ('substituted', 'missing', 'search-limited')
 LEAD_KEYS = ('source_id', 'status', 'paper', 'pr', 'helper', 'date')
 PAPER_KEYS = ('paper_key', 'paper', 'date', 'helper', 'sources', 'out_of_repo')
 LEAD_STATUS = {'extracted', 'mention-only'}
@@ -503,6 +507,65 @@ def check_reserved(info_ids, reviewed_ids):
             warn(f'{rel}:{n}: 源 {sid} 尚未入库（预留仍生效，入库后自动接管）')
 
 
+def check_unverified(info_ids):
+    """未能核实的文献材料登记表（警告级）：格式完整、status 合法、源可定位。
+
+    契约见 audit/README.md 的「unverified.tsv」小节。存在理由：§3.3 要求「补充材料必须先查后取」、
+    「拿不到 VoR 要在 comment 与 PR 说明写明尝试路径」，但 PR 正文合并后基本没人回头翻——
+    这张表是唯一的结构化汇总入口，让「正文表见在线材料、而在线材料取不到」不再随 PR 沉底。
+    「missing」的行不许填 substitute（没拿到就是没拿到），「substituted」必须写清替代覆盖范围。
+    """
+    if not os.path.exists(UNVERIFIED_TSV):
+        return
+    rel = 'audit/unverified.tsv'
+    denied = set()
+    if os.path.exists(DENIED_TSV):
+        for ln in open(DENIED_TSV, encoding='utf-8').read().splitlines():
+            if ln.strip() and not ln.lstrip().startswith('#'):
+                denied.add(ln.split('\t')[0].strip())
+    try:
+        with open(UNVERIFIED_TSV, encoding='utf-8') as fh:
+            lines = fh.read().splitlines()
+    except OSError as e:
+        warn(f'{rel}: 读取失败（{e}）')
+        return
+    seen = set()
+    for n, ln in enumerate(lines, 1):
+        if not ln.strip() or ln.lstrip().startswith('#'):
+            continue
+        cols = [c.strip() for c in ln.split('\t')]
+        if cols[0] == 'source_id':
+            continue
+        if len(cols) != len(UNVERIFIED_COLS):
+            warn(f'{rel}:{n}: {len(cols)} 列（应为 {len(UNVERIFIED_COLS)} 列：'
+                 f'{" / ".join(UNVERIFIED_COLS)}）')
+            continue
+        row = dict(zip(UNVERIFIED_COLS, cols))
+        sid = row['source_id']
+        if not sid:
+            warn(f'{rel}:{n}: source_id 为空（通道级问题写 `*`）')
+            continue
+        if row['status'] not in UNVERIFIED_STATUS:
+            warn(f'{rel}:{n}: {sid} 的 status={row["status"]!r} 不在 '
+                 f'{"|".join(UNVERIFIED_STATUS)} 之内')
+        for k in ('paper', 'missing', 'attempted', 'blocker', 'date'):
+            if not row[k]:
+                warn(f'{rel}:{n}: {sid} 缺 {k}（「取不到」必须留得下尝试路径与卡点）')
+        if row['date'] and not re.match(r'^\d{4}-\d{2}-\d{2}$', row['date']):
+            warn(f'{rel}:{n}: {sid} 的 date={row["date"]!r} 不是 YYYY-MM-DD')
+        if row['status'] == 'missing' and row['substitute']:
+            warn(f'{rel}:{n}: {sid} status=missing 却填了 substitute（没拿到就是没拿到，'
+                 '要写替代来源请改 status=substituted）')
+        if sid == '*':
+            continue
+        key = (sid, row['paper'])
+        if key in seen:
+            warn(f'{rel}:{n}: {sid} / {row["paper"]} 重复出现')
+        seen.add(key)
+        if sid not in info_ids and sid not in denied:
+            warn(f'{rel}:{n}: 源 {sid} 既不在 info/ 也不在 denied.tsv（写错源 ID？）')
+
+
 def check_denied(info_ids, lc_ids):
     """已否证源清单（警告级）：字段完整、reason_code 合法、不重复、源不得复活。
 
@@ -616,6 +679,7 @@ def main():
     check_reserved(info_ids, reviewed_ids)
     # 已否证源清单（警告级；见 audit/README.md 的 denied.tsv 小节与 Issue #183）
     check_denied(info_ids, {os.path.splitext(f)[0] for f in lc_files})
+    check_unverified(info_ids)
     check_zero_lc_evidence(reviewed_ids)
 
     # tags.json 顶层形状

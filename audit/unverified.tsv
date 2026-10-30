@@ -1,0 +1,13 @@
+# 未能核实的文献材料登记表（人写，工具只读）
+# 用途：审核时「完整数据表/机读表见正式发表版」「表 N 见在线材料」这类追不到的东西，
+#       除写进该行 comment 与 PR 说明外，必须在这里留一行——PR 合并后正文会沉底，
+#       这张表是唯一的汇总入口（契约见 audit/README.md「unverified.tsv」小节）。
+# 列：source_id / pr / paper / missing / attempted / blocker / substitute / status / date
+# source_id 写 `*` = 通道级问题（缺凭据、站点整站不可达），不绑定单个源。
+# status: substituted（已用 arXiv/摘要/其他版本替代，覆盖范围见 substitute） | missing（完全没拿到，相关行列未入库） | search-limited（检索通道受限，不是某篇论文拿不到）
+source_id	pr	paper	missing	attempted	blocker	substitute	status	date
+GRB000214	550	Guziy+2005 (A&A 441, 975; DOI 10.1051/0004-6361:20042419; arXiv:astro-ph/0506652)	VoR 全文（Table 1 UBVRI 场 3σ 极限五项）	aanda.org 全文页与两处 PDF 直链被 DataDome 人机验证拦截（两次尝试）；ADS articles.adsabs.harvard.edu/pdf/2005A&A...441..975G 返回 AccessDenied；VizieR J/A+A/441/975 ReadMe 连接超时（两次）	A&A 站反爬 + ADS 无扫描件 + VizieR 超时	arXiv v1 实取并通读，Table 1 的 B/R/I/V/U 五行上限逐值核对后入库（reference 记 Guziy+2005）	substituted	2026-10-30
+GRB000313	601	Castro-Tirado+2002 (A&A 393, L55; DOI 10.1051/0004-6361:20021172; arXiv:astro-ph/0206201)	VoR 全文（Table 1 观测日志 16 行 + 正文 R>9.1 限值）	aanda.org HTML 连接超时；aanda.org PDF 被 DataDome 反爬 403；ADS articles 扫描件 403 AccessDenied；web.archive.org 超时；SciX 返回空页；edpsciences.org 连接失败	VoR 六条路径全败（A&A 站反爬 + ADS 无该文扫描件）	arXiv v2 实取并通读，16 行表 1 与正文限值逐行程序化核对；摘要值 I=9.4±0.1 已与检索到的 VoR 摘要比对一致	substituted	2026-10-30
+GRB000418A	609	Klose+2000 (ApJ 545, 271; DOI 10.1086/317816; arXiv:astro-ph/0007201)	VoR 全文（Table 1，25 行光学/NIR）	iopscience.iop.org 直连与 DOI 跳转均被 Radware Bot Manager 302 至 perfdrive 挑战页（curl 与 WebFetch 两通道均试）；ADS API fl=esource 为空；articles.adsabs.harvard.edu 403；CDS/VizieR 无 J/ApJ/545/271 目录且查询超时	IOP Radware 反爬 + ADS 无扫描件 + VizieR 无该卷目录	arXiv astro-ph/0007201 e-print TeX 源，25 行程序化比对一致	substituted	2026-10-30
+GRB000418A	609	Berger+2001 (ApJ 556, 556; DOI 10.1086/321612; arXiv:astro-ph/0102278)	VoR 全文（Table 2 射电光变）	iopscience 与 DOI 跳转均 Radware 302（同上两通道）；ADS 无 esource；CDS/VizieR 无目录	IOP Radware 反爬 + ADS 无扫描件 + VizieR 无该卷目录	arXiv astro-ph/0102278 e-print，Table 2 逐行核对	substituted	2026-10-30
+*	601|611|612|622	—（通道级，非单篇）	ADS / SciX 的全文与引文检索通道	审核 agent 侧无 ADS/SciX API token：实测 HTTP 401（612 与 622 同报），只能退到 GCN 站检索、arXiv API、OpenAlex、SciX 网页	缺凭据，非文献不可得	无（ADS 侧检索结论记为未覆盖，不得当作「无文献」）	search-limited	2026-10-30

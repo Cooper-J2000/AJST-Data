@@ -34,6 +34,9 @@ import urllib.request
 API = 'https://api.github.com'
 DATA_RE = re.compile(r'^(?:info|lc)/(?P<src>[^/]+)\.(?:json|csv)$')
 LEAD_RE = re.compile(r'^audit/leads/(?:papers/)?[^/]+\.md$')
+# 未能核实的文献材料登记表：审核员对每个追不到的 VoR/补充材料各写一行（契约见 audit/README.md）。
+# 允许出现在数据 PR 里——否则「取不到的必须在某处留痕」这条规则就没有写入通道。
+UNVERIFIED_RE = re.compile(r'^audit/unverified\.tsv$')
 CLAIM_RE = re.compile(r'^\s*claim\s*[:：]\s*(?P<src>[A-Za-z0-9_.\-]+)', re.I)
 # 标题里的源名 token（与维护者侧 review.py 同一套；不认 IceCube-/HAWC- 会误判，见 PR#563）
 TITLE_SRC_RE = re.compile(
@@ -88,7 +91,9 @@ def evaluate(files, title='', assoc=''):
         return [], [f'维护者 PR（author_association={assoc}）：范围检查豁免'], sources
     if not files:                      # 纯认领 PR（只有空提交）没有任何改动文件
         return [], [], sources
-    bad = [f for f in files if not (DATA_RE.match(f) or LEAD_RE.match(f) or is_doc(f))]
+    ok_side = lambda f: bool(DATA_RE.match(f) or LEAD_RE.match(f)
+                          or UNVERIFIED_RE.match(f) or is_doc(f))
+    bad = [f for f in files if not ok_side(f)]
     data_side = [f for f in files if DATA_RE.match(f) or LEAD_RE.match(f)]
     if not data_side and not bad:      # 文档-only PR：提示词 §9 允许单独 PR，不要求带源
         return [], [], sources

@@ -97,6 +97,33 @@ gh pr list --search "in:title <源ID>"       # 或手查
 - **删除要留得下判据**：`evidence` / `decided_by` / `date` / `ref` 缺一项就告警。只写「已删除」
   的记录等于没写——下一个人还得从头查一遍 GCN。
 
+## `unverified.tsv` —— 未能核实的文献材料（人写，**不参与**状态机）
+
+审核中追不到的东西在这个表里留一行：正文写「Table N is available in machine-readable form」
+而补充材料页 403、VoR 只有 arXiv 版、ADS 没 token 只查得了一半……
+
+| 列 | 含义 |
+|---|---|
+| `source_id` | 源 id；**`*` = 通道级问题**（缺凭据、整站不可达），不绑定单个源 |
+| `pr` | 相关 PR 号，多个用 `\|` 分隔 |
+| `paper` | 文献（一作+年份 + DOI/arXiv 号）；通道级问题写 `—` |
+| `missing` | 缺什么：VoR 全文 / 补充材料 MRT / 表 N / 检索通道 |
+| `attempted` | **实际试过的路径与结果**（403 / 超时 / 反爬 / 无 esource）——这是这张表的核心价值 |
+| `blocker` | 一句话卡点 |
+| `substitute` | 替代来源与**覆盖范围**（「arXiv v2 表 1 十六行已核」≠「全文已核」） |
+| `status` | `substituted`（已替代）\| `missing`（完全没拿到，相关行列**未入库**）\| `search-limited`（通道受限，不是某篇论文拿不到） |
+| `date` | 登记日期 `YYYY-MM-DD` |
+
+规则：
+
+- **`missing` 的行不许填 `substitute`**：没拿到就是没拿到，要写替代来源请改 `substituted`。
+- **`search-limited` 不得当作「无文献」**：通道没打通不等于检索结果为空，不能拿去支撑
+  「该源无测光」「无已发表表」这类结论。
+- **不替代 PR 说明**：该行的 `comment` 与 PR 说明的「未能核实」清单照旧要写，这张表是
+  **汇总入口**（PR 正文合并后就没人回头翻了，表不会沉底）。
+- `validate.py` 校验列数、`status` 枚举、日期格式、源 ID 可定位（在 `info/` 或 `denied.tsv`）。
+- 维护者合并数据 PR 时扫一遍本表新增行；累积到一定量后开一次回顾 Issue 集中补。
+
 ## 不要做的事
 
 
