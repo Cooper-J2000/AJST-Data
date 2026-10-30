@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-231211A",
-  "alias": [],
+  "alias": [
+    "IceCube Alert 231211.03"
+  ],
   "ra": 311.48,
   "dec": 10.28,
-  "T0": "2023-12-11T00:47:31Z",
-  "T0_ref": null,
+  "T0": "2023-12-11T00:47:31.79Z",
+  "T0_ref": "GCN 35328",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 35328：RA=311.48 (+1.15/−2.33 deg)、Dec=+10.28 (+0.67/−0.68 deg)，J2000、90% PSF containment；非对称二维误差不能用单一圆半径表示，pos_error 留空。",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份与T0：IceCube-231211A 为 IceCube Astrotrack Bronze track 候选事件。GCN 35328 给出检测时刻 2023-12-11 00:47:31.79 UT、精化位置 RA=311.48、Dec=+10.28；GCN 35329 同引该 T0/位置。原库 T0 仅截到整秒，已按官方 GCN 精度改为 00:47:31.79Z。触发仪器原误写 Fermi/LAT，改为 IceCube；GCN 35329 的 Fermi-LAT 通报是定位区内 blazar 的伽马活动，不是本事件的触发仪器或本 LC 的光学测量。别名 IceCube Alert 231211.03 与 MASTER Circular 35321 原文一致（trigger No 4054005）。定位误差为非对称 90% PSF 坐标偏差，无单值圆误差可填，置信度记 90。tags.json 没有 neutrino 类目，tag/sub_tag 留空；GCN/ATel 通告不登记进 articles[]。\n\n测光检索（2026-10-30）：仓内 gcn/archive 未随 checkout 分发；external/rssgrbag 140 个射电峰值行中 0 个事件/触发命中；external/grbsn_webtool/SourceData 文件名及正文 0 命中。GCN 事件页列出 4 篇（35328、35329、35332、35414），另沿 35414 的引用打开 GCN 35321，共核对 5 篇相关 Circular：35321 有 4 个 MASTER 光学上限，新增 4 行；35414 有 2 个 FRAM 光学上限，原有 2 行逐项核对并修正其相对时间/MJD；35328 身份/T0；35329 为 Fermi-LAT blazar 伽马通报，不是光学点；35332 是中微子复查，无光学测光。ADS（一次受控变体查询）返回 6 条：5 篇上述 GCN 和 ATel 16377，均为非研究文章；Crossref 事件名标题查询前 100 条中 0 个标题提及该事件；arXiv 精确短语 0 篇；OpenAlex 精确源名 0 篇；网页检索 4 个精确源名/别名查询未发现研究论文。TNS 坐标查询尝试返回 HTTP 403，且该 IceCube neutrino alert 不属 TNS 目标源类型。/home/linbo/Database 的 15 个 PDF 均无本源题录命中；无研究文章可进入 VizieR/OA 或出版版取回流程。可用原始光学测光共 6 行，本 PR 新增 4 行；未发现可用研究论文或其他测光。\n\n时间与去重：统一 T0 为 GCN 35328 的 2023-12-11T00:47:31.79Z。MASTER 的 Tmid−T0 列为每个曝光的中点偏移，按原值 50021/50162/50242/51196 s 使用，time_err=曝光时长的一半（90/30/30/90 s）；MJD 由 T0+time 算至 7 位小数。FRAM GCN 35414 只给两个精确 UTC 时间戳和“19×90 s exposure”，未说明每个滤镜点对应的曝光起止或19张的分配，故 time 使用来源报告的时间戳减精确 T0（329050.21/329148.21 s），time_err 留空，不推算曝光中点；MJD 与之自洽到 7 位。原文未声明星等系统，两组 mag_system 均留空。MASTER 的 C 明确为 clear/unfiltered，依规则写 band=G；FRAM 原文 r/v 波段报告 R/V，上库用滤镜键 R/V。所有 6 行均为上限。独立测量来自不同时间/设备，无行级重复；保留最初来源 reference GCN 35321/35414。未接触 X 射线能段行（本 LC 无此类行）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "GCN 35328",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-10-30"
+    }
   },
   "articles": [],
   "host_galaxy": null
