@@ -4,25 +4,37 @@
   "ra": 183.5156667,
   "dec": 47.9010833,
   "T0": "2015-03-10T00:00:00Z",
-  "T0_ref": "Hosseinzadeh+2017 (ApJ 836, 158; arXiv:1608.01998) Table 1 记发现日期 Mar 10（UTC 日）；原表无时刻，取当日零点占位",
+  "T0_ref": "Hosseinzadeh+2017 (ApJ 836, 158; DOI 10.3847/1538-4357/836/2/158) Table 1 与正文：iPTF 于 2015 Mar 10 发现（原文只给 UTC 日、无时刻，取当日零点占位）；Table 4 爆发时刻 MJD 57090.7±0.7 写 comment 备查",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
   "redshift": 0.066,
   "tag": [
-    "fbot"
+    "sn"
   ],
   "pos_error": null,
   "pos_ref": "Hosseinzadeh+2017 (ApJ 836, 158; arXiv:1608.01998) Table 1：12h14m03.76s +47°54′03.9″（J2000）",
   "redshift_type": "spec",
   "redshift_ref": "Hosseinzadeh+2017 (ApJ 836, 158; arXiv:1608.01998) Table 1",
-  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）",
+  "comment": "重分类：fbot → sn（Type Ibn 超新星）。依据 Hosseinzadeh+2017（ApJ 836, 158; DOI 10.3847/1538-4357/836/2/158，VoR HTML 已实际核对）：正文「Host contamination of iPTF15ul makes it difficult to identify features, but its spectral similarity with SN 2000er allows us to classify it as an SN Ibn.」；建议 sub_tag=snibn（tags.json 缺该类目，见 PR 待决事项）。宿主：文献未给宿主单独名称（Table 1 仅给距宿主中心 0.4″），host_galaxy 保持 null。光变参数（Hosseinzadeh+2017 Table 4，备查不参与判定）：峰值 MJD 57093.9±0.5；爆发时刻 MJD 57090.7±0.7（pre-maximum 抛物线拟合零点）；观测峰值 R,r −20.43±0.26；拟合 M_R=−20.64±0.29（含消光误差）；下降斜率 0.241±0.041 mag/d（rest frame）；E(B−V)=0.41±0.10、A_V=1.27±0.35、R_V=3.1（固定）、A_R=1.07±0.26（CCM89）。测光入库：72 行（探测 69 + 3σ 上限 3）取自 VoR Table 2 机读表 https://content.cld.iop.org/journals/0004-637X/836/2/158/revision1/apjaa3f02t2_mrt.txt（2026-10-31 下载核对，仪器 P48/Swift/LCOGT）；星等系统按 VoR 声明：ugriz 点 AB、UBVRI 点 Vega、Swift 为 UVOT 系统（零点基于 Vega，Poole+2007）。存疑（B 档）：VoR 正文称视星等已做银消改正、SN 2015U 与 iPTF15ul 另做宿主消光改正，但 MRT 列名为「Observed magnitude」且 Table 1 发现星等 18.8 与 Table 2 首测 g=18.75±0.03 相符（若含宿主改正 A_g≈1.2 应明显更暗），Table 2 是否已做改正无法裁定，按原表数值原样入库（Gext_corr=n）。原文两表不一致：Table 4 记最后非探测 MJD 57090.38，而 Table 2 同时刻（57090.383）给探测 g=21.11±0.19（57089.382 才带 > 旗标），按 Table 2 机读表原样入库并报维护者。测光检索（2026-10-31）：仓内 gcn/archive 45 947 篇全文按「iPTF15ul」与坐标各查 0 篇命中（坐标命中 5 篇均为无关事件）；external/rssgrbag 0 篇、external/grbsn_webtool 63 事件无此源；TNS 对象页 404、SIMBAD 两主机超时（均不可达，已在 audit/unverified.tsv 登记）；ADS 题录命中 1 篇、全文命中 29 篇，其中唯一含 iPTF15ul 独立测光者为定义文献 Hosseinzadeh+2017（已全表入库），其余 28 篇为样本/比对类转引 → 补 72 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "hermes_list_20261031"
+    "ingest_source": "hermes_list_20261031",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Hosseinzadeh+2017",
+      "url": "https://doi.org/10.3847/1538-4357/836/2/158",
+      "title": "Type Ibn Supernovae Show Photometric Homogeneity and Spectral Diversity at Maximum Light",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
