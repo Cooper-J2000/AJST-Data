@@ -1,30 +1,41 @@
 {
   "transient_id": "GRB000830",
-  "alias": [],
+  "alias": [
+    "GRB 000830",
+    "GRB 000830C"
+  ],
   "ra": 353.55,
   "dec": 6.346,
-  "T0": "2000-08-30T01:00:00Z",
-  "T0_ref": null,
+  "T0": "2000-08-30T23:49:52Z",
+  "T0_ref": "external/heasarc_grbcat 快照 GRB 000830（grbcat_id 4984）trigger_time=2000-08-30T23:49:52.000Z（Earth Crossing Time，IPN 官方目录）；external/saxgrbmgrb（Frontera+2009, ApJS 180, 192，BeppoSAX/GRBM 目录）GRB 000830C trigger_time=2000-08-30T23:49:52.000Z 同值互证；GCN 779 记 Ulysses/Konus/NEAR 于 85793 s UT（=23:49:53，到达时刻口径、整数秒舍入，备查）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "Ulysses/Konus-Wind/NEAR",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 779（初步 IPN 误差盒中心 RA(2000)=23h34m12.08s Dec(2000)=+06°20′47.07″）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份/定位：ra/dec=353.55/6.346 系 GCN 779 初步 IPN 误差盒中心 RA(2000)=23h34m12.08s Dec(2000)=+06°20′47.07″（=353.5503/6.3464，原库为舍入值，保持不动）；该盒为 3σ 误差盒（面积 ~38 sq arcmin，1 中心+4 角点，环带交集多边形无单一等效半径），故 pos_error 置 null 不自行换算，盒面积与 3σ 置信记于此、pos_error_confidence 留空；仓内 gcn/archive 全文检索该源仅 8 篇通告（GCN 779–788），无后续精化盒。T0：原库 2000-08-30T01:00:00Z 系 bot 占位值（extra_data 原值 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，原值留档于此），已改触发时刻 2000-08-30T23:49:52Z（依据见 T0_ref）；lc 原 16 行 time 系按该占位历元起算，本 PR 全部按标准 T0 重算。Trigger_Instrument：原 IPN → Ulysses/Konus-Wind/NEAR（GCN 779 三星均实测该暴；IPN 为其三角定位网络角色）；BeppoSAX/GRBM 亦在轨探测（Frontera+2009 目录行 GRB 000830C；同日 000830A=05:09:14、000830B=11:39:08 为另两事件，以触发时刻与 IPN 位置划界）。alias：「GRB 000830」官方目录用名（heasarc_grbcat/rssgrbag/mpe_greiner）；「GRB 000830C」Frontera+2009 GRBM 目录用名。sub_tag lgrb 依据：t90=9.0±2.8 s（40-700 keV，Frontera+2009 GRBM 目录）按目录 t90 判 lgrb；GCN 779 记 duration ~9 s、Chandra & Frail 2012 表 1 记 T90=9 s 互证。测光检索（2026-10-30）：仓内 gcn/archive（45 563 篇全文）命中该源 8 篇——GCN 779（IPN 定位）、780/784/786/787/788（含光学上限；其中 780/784 两篇原库漏收，本 PR 补 2 行）、781（方法建议、无数据）、785（Henden 定标场测光，非源测光）；external/rssgrbag 有该源目录参数记录（instrument_code=T、radio_ag_flag=N，lightcurve.jsonl 无该源光变行）、external/grbsn_webtool 无该事件；Chandra & Frail 2012（arXiv:1110.4124）表 1 仅目录行、无射电测光；ADS/OpenAlex 命中 Rol+2005（astro-ph/0501375 正文仅引 GCN 788）、Nardini+2008（astro-ph/0710.2436 正文仅引 Jensen 2000c=GCN 788），均纯转引、无新测光；检索中出现的「Gorosabel+2002, A&A 383, 112」经核对为 GRB 010119 论文（astro-ph/0110009），与本源无关、排除；TNS 名称检索无结果（2026-10-30）。→ 本 PR 补 2 行，lc 16→18 行；原 16 行数值（星等/波段/望远镜）全部与 GCN 786/787/788 原文逐值核对一致，仅按标准 T0 重算时间轴并按窗口中点口径补 time_err；本源无 X 射线行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为触发时刻，取触发仪器官方目录 ECT：external/heasarc_grbcat grbcat_id 4984 = 2000-08-30T23:49:52.000Z（external/saxgrbmgrb GRB 000830C 同值互证）；原 bot 值 2000-08-30T01:00:00Z 系占位（原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失真，原值留档 info.comment）",
+    "t0_basis": "heasarc_grbcat_ect（saxgrbmgrb_catalog_trigger_time 互证；GCN 779 85793 s UT 整数秒一致）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-30"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
