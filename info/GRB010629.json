@@ -1,30 +1,48 @@
 {
   "transient_id": "GRB010629",
-  "alias": [],
+  "alias": [
+    "GRB 010629",
+    "GRB 010629A"
+  ],
   "ra": 248.158,
   "dec": -18.723,
-  "T0": "2001-06-29T00:52:00Z",
-  "T0_ref": null,
+  "T0": "2001-06-29T12:21:07.750Z",
+  "T0_ref": "GCN 1075（HETE-2 FREGATE+WXM 触发时刻 12:21:07.75 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IPN",
+  "Trigger_Instrument": "HETE-2/FREGATE+WXM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 900,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 1075（HETE 定位误差圆 15′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0：GRB010629 = GRBCAT 的 GRB 010629A（grbcat_id 5240，observatories=HETE2/IPN），HETE-2 FREGATE+WXM 于 2001-06-29 12:21:07.75 UT 触发并定位（GCN 1075：8-40 keV，持续 ~20 s、双峰相隔 ~12 s，RA=248.158/Dec=-18.723，误差圆 15′）；IPN 环带（Ulysses+BeppoSAX GRBM 三角定位）见 GCN 1076。原 T0=2001-06-29T00:52:00Z（原 extra_data.t0_basis=meta_trigger）系占位误植：实取自 GCN 1080 首个观测块「2001 June 29 00:02-00:52 UT」的结束时刻，且该日期本身是通告笔误（原文自述 starting 11h41m after the burst trigger，12:21:07.75 UT+11h41m=June 30 00:02 UT，应为 June 30）；观测窗起止不得作 T0。现 T0 改为 GCN 1075 触发时刻。原 Trigger_Instrument=IPN 改为 HETE-2/FREGATE+WXM（IPN 为定位方法，非触发仪器；Ulysses/BeppoSAX GRBM 为三角定位贡献方）。pos_error=900″（15′，GCN 1075 未标注置信水平）。GRBCAT t90=15.1 s（7-400 keV，external/heasarc_grbcat 快照）、t90=14.0±3.6 s（40-700 keV，Frontera et al. 2009 BeppoSAX/GRBM 目录，external/saxgrbmgrb 快照）。sub_tag：XRR——研究文章分类（De Pasquale et al. 2006 将其列入 BeppoSAX/HETE-2 X-ray-rich 样本，表 1-3 记 XRR 010629），与目录 t90 一致。alias：GRB 010629（<GCN 1075> 原文用名，eventId「GRB 010629」）；GRB 010629A（GRBCAT 目录名）。注意：MPE Greiner 目录将本暴记为「GRB 010629B」（external/mpe_greiner 快照，坐标与 GCN 1075 一致），与 GRBCAT 的 010629B 冲突，未采纳入 alias；GRBCAT 另列 GRB 010629B（grbcat_id 5241，ECT 2001-06-29T19:10:59Z，仅 IPN、无定位），系同日另一事件，与本源无关，勿混。测光检索（2026-10-29）：仓内 gcn/archive 全文命中 5 篇（GCN 1075/1076/1077/1079/1080；1077、1080 含光学数值，1079 未给限星等数值）；external/rssgrbag 0 条、grbsn_webtool 无该事件、uvot_grb 无（Swift 前 HETE-2 事件）；ADS API 401（无 token），arXiv API 摘要检索 0 篇专文，OpenAlex 命中 4 篇（均样本类：De Pasquale+2006、Pelangeon+2008 仅样本列名提及，无测光表）→ 据此补 2 行（GCN 1080 Gunn I 两个观测块）；GCN 1079 MDM 1.3m R 波段（June 30 03:35-07:50 UT，无新源）因原文未给限星等数值无法入库，仅此备查。",
+  "sub_tag": [
+    "XRR"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 HETE-2 FREGATE+WXM 触发时刻（GCN 1075）；原 bot 值 t0_basis=meta_trigger（2001-06-29T00:52:00Z，系 GCN 1080 观测窗结束时刻误植）已在审核中改写，原值见 comment",
+    "t0_basis": "GCN 1075（HETE-2 触发时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-29"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "DePasquale+2006",
+      "url": "https://doi.org/10.1051/0004-6361:20054501",
+      "title": "Properties of X-Ray Rich Gamma Ray Bursts and X-Ray Flashes detected with BeppoSAX and HETE-2",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
