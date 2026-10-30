@@ -1,18 +1,25 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-0.0,,s,52212.569444444445,R,21.0,,magnitude,,n,y,,,,,,,1.0,n,,Nainital 1.0-m / Calar Alto 1.23-m,GCN1120,,
-9552.0,,s,52212.68,4.8GHz,0.23,0.04,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN1124,,
-17520.0,,s,52212.77222222222,K,19.5,0.5,magnitude,,n,y,,,,,,,1.0,n,,Calar Alto 3.5m/Omega-Cass,GCN1142,,
-32700.0,,s,52212.947916666664,15GHz,0.4,,mJy,,n,y,,,,,,,1.0,n,,Ryle Telescope,GCN1121,,
-46704.0,,s,52213.11,K,18.0,,magnitude,,n,y,,,,,,,1.0,n,,MDM 1.3m,GCN1126,,
-55344.0,,s,52213.21,Ic,20.5,,magnitude,,n,y,,,,,,,1.0,n,,MDM 2.4m,GCN1127,,
-98544.0,,s,52213.71,4.8GHz,0.2,0.04,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN1124,,
-99840.0,,s,52213.725,G,19.5,0.5,magnitude,,n,y,,,,,,,1.0,n,,Klet 0.57m/SBIG ST-8,GCN1144,,
-123600.0,,s,52214.0,R,23.61,,magnitude,,n,y,,,,,,,1.0,n,,WIYN 3.5m,GCN1140,,
-296400.0,,s,52216.0,R,23.28,,magnitude,,n,y,,,,,,,1.0,n,,WIYN 3.5m,GCN1140,,
-814800.0,,s,52222.0,R,22.9,,magnitude,,n,y,,,,,,,1.0,n,,Palomar 60-inch,GCN1137,,
-834672.0,,s,52222.23,I,22.5,,magnitude,,n,n,,,,,,,1.0,n,,MDM 2.4m,GCN1139,,
-974520.0,,s,52223.84861111111,K,20.1,,magnitude,,n,y,,,,,,,1.0,n,,TNG/NICS,GCN1146,,
-1082550.0,,s,52225.098958333336,z,22.5,,magnitude,Vega,n,y,,,,,,,1.0,n,,KPNO 4-m MARS,GCN1141,,
-1676160.0,216000.0,s,52231.96944444445,4.86GHz,0.121,0.019,mJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",,
-2047680.0,120960.0,s,52236.26944444444,8.46GHz,0.139,0.009,mJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",,
-3666000.0,,s,52255.0,V,26.2,,magnitude,,n,n,,,,,,,1.0,n,,HST/STIS,GCN1268,,
+25918,,s,52212.5694444,R,21.0,,magnitude,,n,y,,,,,,,1.0,n,Nainital 1.0-m,,GCN1120,原文只给曝光起点 2001-10-30 13:40 UT（时长未给），历元取起点；R=21 限深为 Nainital 与 Calar Alto 1.23-m 联合资料在 5' 半径内对照 DSS-2 R 的口径；星等系统原文未声明,Rusty-Harpoon@zcode
+35470,432,s,52212.6800000,4.8GHz,0.23,0.04,mJy,,n,n,,,,,,,1.0,n,WSRT,,GCN1124,历元原文 Oct 30.68（0.01 d 精度，等效 time_err=432 s）；探测对象为 WFC 误差圈内射电源 VLA J2044+7717（GCN 1122 发现、GCN 1124 证认），GCN 1136 证其恒定，余辉归属存疑,Rusty-Harpoon@zcode
+41818,,s,52212.7534722,R,21.0,,magnitude,,n,y,,,,,,,1.0,n,Calar Alto 1.23-m,,GCN1120,原文只给曝光起点 2001-10-30 18:05 UT，历元取起点；R=21 限深为两台望远镜联合口径（同 GCN1120 行）；星等系统原文未声明,Rusty-Harpoon@zcode
+45268,1830,s,52212.7934028,K,19.5,0.5,magnitude,,n,y,,,,,,,1.0,n,Calar Alto 3.5m,Omega-Cass,GCN1142,原文 K' 波段（Omega-Cass 极化模式，限深约 K'=19.5，误差 ±0.5 为原文估计）；窗口 18:32-19:33 UT 取中点/半宽；filters.json 无 K' 键暂记 K，待决申请新增 infra-Kp（同 PR 550 先例）,Rusty-Harpoon@zcode
+48028,5610,s,52212.8253472,J,19.8,,magnitude,,n,y,,,,,,,1.0,n,TIRGO,ARNICA,GCN1145,窗口 18:15-21:22 UT 取中点/半宽；5-sigma 限深；J 波段经平均零点定标（原文）；星等系统原文未声明,Rusty-Harpoon@zcode
+48028,5610,s,52212.8253472,K,18.0,,magnitude,,n,y,,,,,,,1.0,n,TIRGO,ARNICA,GCN1145,窗口 18:15-21:22 UT 取中点/半宽；5-sigma 限深；K 波段有标准星定标（原文）；星等系统原文未声明,Rusty-Harpoon@zcode
+58618,5400,s,52212.9479167,15GHz,0.4,,mJy,,n,y,,,,,,,1.0,n,Ryle Telescope,,GCN1121,3 h 观测自 21:15 UT 起（21:15-00:15 UT），中点/半宽为约定口径；15 GHz，0.4 mJy rms 未探测,Rusty-Harpoon@zcode
+72622,3600,s,52213.1100000,K,18.0,,magnitude,,n,y,,,,,,,1.0,n,MDM 1.3m,,GCN1126,120 min 曝光，历元原文 Oct 31.11（0.01 d），time_err 取半曝光；K>18 为近似限深；星等系统原文未声明,Rusty-Harpoon@zcode
+74350,432,s,52213.1300000,8.47GHz,0.3,,mJy,,n,n,,,,,,,1.0,n,VLA,,GCN1122,VLA 8.47 GHz 对 WFC 误差圈内射电源 VLA J2044+7717 的初步流量（原文 preliminary，未给误差）；历元 Oct 31.13（0.01 d）；该源恒定（GCN 1136），余辉归属存疑；同历元 VLA J2042+7718（0.9 mJy）被 GCN 1123 精化排除在误差圈外，不入库,Rusty-Harpoon@zcode
+81262,450,s,52213.2100000,Ic,20.5,,magnitude,,n,y,,,,,,,1.0,n,MDM 2.4m,,GCN1127,15 min 曝光，历元原文 Oct 31.21，time_err 取半曝光；I_c>20.5（约比 POSS-II IVN 板深 1 mag，原文）；非测光夜未定标；星等系统原文未声明,Rusty-Harpoon@zcode
+124462,432,s,52213.7100000,4.8GHz,0.2,0.04,mJy,,n,n,,,,,,,1.0,n,WSRT,,GCN1124,历元原文 Oct 31.71（0.01 d 精度，等效 time_err=432 s）；同 VLA J2044+7717（恒定源，见首行注）,Rusty-Harpoon@zcode
+126208,450,s,52213.7302083,G,19.5,0.5,magnitude,,n,y,,,,,,,1.0,n,Klet 0.57m,SBIG ST-8,GCN1144,10x60 s 曝光，窗口 17:24-17:39 UT 取中点/半宽；无滤光片（原文 unfiltered），band=G；限深误差 0.5 mag 为原文估计；星等系统原文未声明,Rusty-Harpoon@zcode
+166798,1200,s,52214.2000000,K,18.0,,magnitude,,n,y,,,,,,,1.0,n,MDM 1.3m,,GCN1126,第二历元：40 min 曝光，历元原文 Nov 1.20；非测光夜未定标（原文）；K>18 近似限深为两晚资料联合口径；星等系统原文未声明,Rusty-Harpoon@zcode
+168526,450,s,52214.2200000,Ic,20.5,,magnitude,,n,y,,,,,,,1.0,n,MDM 2.4m,,GCN1127,第二历元：15 min 曝光，历元原文 Nov 1.22；I_c>20.5 限深为两晚资料联合口径（原文）；非测光夜；星等系统原文未声明,Rusty-Harpoon@zcode
+192718,43200,s,52214.5000000,R,23.61,,magnitude,,n,y,,,,,,,1.0,n,WIYN 3.5m,mini-mosaic,GCN1140,原文只给观测夜 UT 日期（011101，五张 600 s R），历元取该 UT 日中点、半宽 0.5 d 为约定口径；5-sigma 限深，零点沿用 Bloom+2003（GCN 1137）定标；星等系统原文未声明；另 011101+011103 差像噪声水平 5-sigma R=22.7 未单列行,Rusty-Harpoon@zcode
+365518,43200,s,52216.5000000,R,23.28,,magnitude,,n,y,,,,,,,1.0,n,WIYN 3.5m,mini-mosaic,GCN1140,同上：观测夜 UT 日期 011103，历元取该 UT 日中点、半宽 0.5 d；5-sigma 限深；星等系统原文未声明,Rusty-Harpoon@zcode
+823438,432,s,52221.8000000,8.47GHz,181.0,18.0,uJy,,n,n,,,,,,,1.0,n,VLA,,GCN1136,新出现的变射电源（近 WFC 误差圈中心，RA 20:43:32.3 Dec +77:17:18.9，±1 arcsec），首个非 X 射线波段对应体（GCN 1136 原文）；与恒定源 VLA J2044+7717 为不同天体；历元 Nov 8.80（0.01 d）,Rusty-Harpoon@zcode
+860590,480,s,52222.2300000,I,22.5,,magnitude,,n,n,,,,,,,1.0,n,MDM 2.4m,,GCN1139,可能的 2-sigma 探测（作者自述需确认，或可作射电源光学上限）；位置 20:43:31.94 +77:17:19.0，在 GCN 1136 新射电源西 1.2 arcsec；两次 8 min 曝光，time_err 取半曝光；POSS-II IVN 板定标，星等系统原文未声明,Rusty-Harpoon@zcode
+883918,43200,s,52222.5000000,R,22.9,,magnitude,,n,y,,,,,,,1.0,n,Palomar 60-inch,,GCN1137,原文只给观测日期 2001-11-09（六张 600 s，非测光夜），历元取当日中点、半宽 0.5 d 为约定口径；5-sigma 限深；USNO A2.0 定标（R=17.3 定标星）；原文注该方向 A_R 约 1 mag 银消光；星等系统原文未声明,Rusty-Harpoon@zcode
+1004818,4380,s,52223.8993056,K,20.1,,magnitude,,n,y,,,,,,,1.0,n,TNG,NICS,GCN1146,窗口 20:22-22:48 UT 取中点/半宽；5-sigma 限深；AS36 标准星定标；星等系统原文未声明,Rusty-Harpoon@zcode
+1108468,1650,s,52225.0989583,z,22.5,,magnitude,Vega,n,y,,,,,,,1.0,n,KPNO 4-m,MARS,GCN1141,RG830 滤光片（原文 approximately z-band）；窗口 1:55-2:50 UT（55 min）取中点/半宽，总曝光 600 s（仪器开销大，原文）；限深 22.5 为 Vega 系统（原文声明）,Rusty-Harpoon@zcode
+1676160,216000,s,52231.6694676,4.86GHz,0.121,0.019,mJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",rssgrbag 目录射电峰值拟合值（4.86 GHz 峰 121±19 uJy 于 19.4±2.5 d）；峰值时刻为相对触发时长，mjd=T0+time 换算；对应 GCN 1136 新变射电源（余辉）,Rusty-Harpoon@zcode
+2047680,120960,s,52235.9694676,8.46GHz,0.139,0.009,mJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",rssgrbag 目录射电峰值拟合值（8.46 GHz 峰 139±9 uJy 于 23.7±1.4 d）；峰值时刻为相对触发时长，mjd=T0+time 换算；对应 GCN 1136 新变射电源（余辉）,Rusty-Harpoon@zcode
+3735118,43200,s,52255.5000000,V,26.2,,magnitude,,n,n,,,,,,,1.0,n,HST,STIS,GCN1268,宿主星系总星等（probable host：与 X 射线 GCN 1143 及射电 GCN 1136 位置 ~1 arcsec 内重合的小不规则星系），非 OT 点测；STIS 50CCD open + LP，原文只给观测日期 2001-12-12，历元取当日中点、半宽 0.5 d；去银消光（A_V=1.2，SFD98）后 V 约 25,Rusty-Harpoon@zcode
