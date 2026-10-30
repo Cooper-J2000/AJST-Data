@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB060707A",
-  "alias": [],
+  "alias": [
+    "GRB 060707",
+    "GRB060707"
+  ],
   "ra": 357.079167,
-  "dec": -17.916667,
+  "dec": -17.9225,
   "T0": "2006-07-07T21:30:19Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 5285（Swift/BAT 触发时刻 21:30:19 UT，trigger=217704）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,10 +16,11 @@
     "grb"
   ],
   "pos_error": 180.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 5285",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "Jakobsson+2006, A&A 460, L13（doi:10.1051/0004-6361:20066405；摘要原文 z=3.425±0.002）",
+  "comment": "t90=66.644±6.377 s（Swift/BAT 目录，15-350 keV；GCN 5289 给 68±5 s）；按目录 t90 判 lgrb。T0：GCN 5285 报 BAT 触发时刻 21:30:19 UT（trigger=217704），取整数秒精度；Swift/BAT 目录（batgrbcat）给 21:30:19.497320Z，亚秒差 497 ms 按 §3.8 取触发仪器 GCN 整秒值（≥60 ms 差值已在 PR 报告）。位置：BAT 在轨定位 RA,Dec=357.079,-17.923（3 arcmin 半径、90% 含系统差，GCN 5285）；导入值 dec=-17.916667 系 Greiner 表截断『-17°55'』所致，已按 GCN 5285 原文 -17d55'21\" 改为 -17.9225；XRT 精化位置 RA 23:48:18.89、Dec -17:54:20.4（±3.9\"，90%，GCN 5293）备查。红移 z=3.425±0.002（光谱，VLT/FORS1 Ly-alpha 吸收；Jakobsson+2006 A&A 460 L13 摘要原文），GCN 5298 通告值 3.43。别名出处：GRB 060707（GCN 5285 等通告原文用名）、GRB060707（GCN 5293 标题与 UVOT 目录 OBJECT 用名）；GCN 5287 系『A mistaken submission -- it has been removed』（gcn.gsfc.nasa.gov 旧档页），swiftgrbba 目录 ref_uvot 所引 GCN 5287 不存在。测光检索（2026-10-31）：仓内 gcn/archive 按源名/触发号 217704/坐标检索命中 10 篇相关通告（5285/5288/5289/5290/5291/5293/5294/5298/5314/5485；5287 已被官方移除；23250/36965/36531/41699 为无关命中），全部核对处置；external/rssgrbag 光变表 0 行、external/grbsn_webtool 无此事件；ADS（api.adsabs，摘要+全文）命中研究文献 1 篇（Jakobsson+2006，仅红移无测光表），其余为 GCN 与样本/统计类转引，未见新的光学测光表；VizieR Roming+2009 table3 交叉核对未完成（CDS 整站网络不可达，见 audit/unverified.tsv search-limited 行，未据其增删行）；TNS 不适用（GRB 非 AT/SN 类）→ 无遗漏光学测光，补 0 行。rssgrbag 目录 opt_flux_11h=8.1 µJy（R 0.7µm，ref_codes 45,33,21,8,37,42）为目录汇编的 11 h 光学流量，仓内快照无法分辨其原始单次测量出处，未入库，见 PR 待决。lc 处置摘要：GCN 5285 white 18.5 上限两行（band=w 曝光起点锚 / Dainotti 中点锚）确证同一次测量，去重保留中点行；GCN 5294 七个共加波段 time_err 补半窗宽；GCN 5290 R~20.2 行 time 无出处置 discard=y；GCN 5314 行实为 GRB 060714 观测（通告标题笔误）置 discard=y 并留线索卡；GCN 5298 R~22.4 去重保留通告行（Dainotti 转引行误标上限已删）；X 射线行（10keV）未动。",
   "sub_tag": [
     "lgrb"
   ],
@@ -628,15 +632,27 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
     {
       "name": "Dainotti+2024",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "url": "https://doi.org/10.1093/mnras/stae1484",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {MNRAS 533 4023 (2024)},\n       year = {2024},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Jakobsson+2006",
+      "title": "H I column densities of z > 2 Swift gamma-ray bursts",
+      "url": "https://doi.org/10.1051/0004-6361:20066405",
+      "bibtex": "@ARTICLE{2006A&A...460L..13J,\n       author = {P. Jakobsson and J. P. U. Fynbo and C. Ledoux and P. Vreeswijk and D. A. Kann and J. Hjorth and R. S. Priddey and N. R. Tanvir and D. Reichart and J. Gorosabel and S. Klose and D. Watson and J. Sollerman and A. S. Fruchter and A. de Ugarte Postigo and K. Wiersema and G. Björnsson and R. Chapman and C. C. Thöne and K. Pedersen and B. L. Jensen},\n       title = {H I column densities of z > 2 Swift gamma-ray bursts},\n       journal = {A&A 460 L13 (2006)},\n       year = {2006},\n       doi = {10.1051/0004-6361:20066405},\n       eprint = {astro-ph/0609450},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006A&A...460L..13J/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Minaev+2020",
