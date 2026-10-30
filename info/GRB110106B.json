@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB110106B",
-  "alias": [],
-  "ra": 134.195833,
-  "dec": 47.0,
+  "alias": [
+    "GRB 110106.893",
+    "GRB110106893",
+    "bn110106893",
+    "BAT 441676"
+  ],
+  "ra": 134.15423,
+  "dec": 47.00272,
   "T0": "2011-01-06T21:26:16.080000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 11543（Fermi/GBM 触发通告：'At 21:26:16.08 UT on 06 January 2011, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 110106B (trigger 316041978 / 110106893)'）；FERMIGBRST 目录 trigger_time=2011-01-06T21:26:16.078Z（亚秒舍入差 2 ms）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -13,15 +18,21 @@
     "grb"
   ],
   "pos_error": 1.8,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 11532",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 11538",
-  "comment": null,
+  "comment": "审核（LastXing 2026-10-31，PR #656）。(1) 身份：Fermi/GBM 触发 316041978/110106893（GCN 11543，'At 21:26:16.08 UT on 06 January 2011'），Swift/BAT 也触发（trigger=441676，21:26:17 UT，GCN 11525），GBM 早 0.94 s 取为触发仪器；同日他暴划界：GRB110106A（BAT 15:25:16 UT，RA 79.3，GCN 11520）、GRB110107A（21:15:51 UTC，RA 299.9，GCN 11545），与本源时刻/位置均不相混。(2) 定位：原 ra/dec=134.195833/47.0 系 GCN 11525 的 BAT 板载位置（3′ 90%），却配 GCN 11532 的 1.8″ 误差，坐标与误差错配；已改 GCN 11532 增强 XRT 位置 RA,Dec=134.15423,+47.00272（1.8″，radius, 90% confidence → pos_error_confidence=90）；swiftgrbba 快照 xrt_ra=134.1545/xrt_dec=47.00261（UKSSDC 后续复核值）一致。(3) T0：触发仪器 GBM 官方通告 21:26:16.08 UT；无闰秒换算问题（通告/目录均为 UTC）。(4) sub_tag=lgrb 依据：t90=35.5206±3.61194 s（FERMIGBRST，50-300 keV；GCN 11543 同给 T90≈35.5 s），按目录 t90 判 lgrb。(5) 红移：z=0.618 系 Gemini-N/GMOS 对 XRT 误差圈内延展天体（GCN 11534 发现）的谱线红移（[O II]、Hβ、[O III] 共同 z，GCN 11538）；GCN 11540：光学余辉位于该星系以东 1.5″（投影 ~10 kpc），宿主关联未完全定论 → host_galaxy 保持 null，红移按多目录（Konus Tsvetkova+2021 z_type=spectroscopic、Swift 目录、RSSGRBAG、Liang2023）惯例采纳为源红移。(6) alias：GRB110106893 / GRB 110106.893 / bn110106893（FERMIGBRST 目录 name_alt；GCN 11543 原文用名 'trigger 316041978 / 110106893'）、BAT 441676（Swift/BAT 目录，GCN 11525 原文 trigger=441676）。(7) 光变修订：65 行 UVOT 对 UKSSDC Burst Analyser（trigger 00441676，uvot qdp）逐点核对，星等实为 bot 由 Fν[Jy] 按 AB 零点换算（原标 Vega 误标，改 AB）；GCN 11552 六行补 time_err=半跨、CAHA V 行 time/mjd 按窗口中点改 3768 s；GCN 11537 三行补 time_err=曝光/2；GCN 11555 两行 time 由不可溯源的 8774/8791 s 改按通告窗口中点 11596.86/10707.36 s，band R→G（MASTER-II 无滤光片，先例 GRB120510A）；删 Dainotti2024 转写重复行 2 行（CAHA V 3786 s、WHT 10800 s，后者仪器误标 AUX-PortImager）；新增 GCN 11548（MASTER T+50.6 s，16.0 mag 上限）与 GCN 11599（EVLA 8.46 GHz，-27±24 μJy 非探测）两行；X 射线行（10keV）37 行未触碰。(8) 测光检索留证（2026-10-31）：仓内 gcn/archive 检索 eventId/正文含 GRB110106B 共 14 篇（11525/11528/11532/11533/11534/11537/11538/11540/11541/11543/11548/11552/11555/11599）全部通读；external/rssgrbag（lightcurve.jsonl 无本源、radio_ag_flag=N）、grbsn_webtool 无本源；OpenAlex 全文检索命中 13 条（9 条 GCN + Gruber2015 GBM 定位 ApJS 216,32 + Tsvetkova2021 + arXiv 1503.04580 低光度余辉研究 + 学位论文，均无新测光表）；ADS/SciX API 无 token（HTTP 401）检索受限，已登记 audit/unverified.tsv，不作为「无文献」结论；补 2 行、删 2 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LastXing",
+      "date": "2026-10-31"
+    },
     "derived": {
       "best": {
         "eiso": {
@@ -651,8 +662,8 @@
   "articles": [
     {
       "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts (MNRAS 533, 4023)",
+      "url": "https://doi.org/10.1093/mnras/stae1484",
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "source": "bot"
     },
