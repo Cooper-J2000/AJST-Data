@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB241013A",
-  "alias": [],
-  "ra": 252.9,
-  "dec": -33.3,
-  "T0": "2024-10-13T00:58:34Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB241013041",
+    "GRB241013.04"
+  ],
+  "ra": 275.2756,
+  "dec": -15.6302,
+  "T0": "2024-10-13T00:58:34.360Z",
+  "T0_ref": "GCN 37789（Fermi/GBM 团队精化通告：At 00:58:34.36 UT on 13 October 2024, GBM triggered and located GRB 241013A, trigger 750473919/241013041）——亚秒取通告值（原文 34.36 两位小数，存为 .360 三位小数系零填充，未抬精度）；FERMIGBRST 官方目录快照 trigger_time=2024-10-13T00:58:34.358Z（external/fermi_gbm）毫秒舍入同值；GCN 37780 初报整秒 00:58:34 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,18 +15,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 150,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 37781（INTEGRAL IBAS 精化定位 R.A.=275.2756 deg, DEC.=-15.6302 deg, 2.5 arcmin, 90% c.l.）；FERMIGBRST 最终目录 ra=275.276 dec=-15.6302 error_radius=0.042 deg 同值互证",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（Rusty-Harpoon@zcode 2026-10-31）：[身份] Fermi/GBM trigger 750473919/241013041（GCN 37780/37789）；INTEGRAL/IBAS 于 00:58:26 UT 探测同一事件（GCN 37781），GCN 37789 明确 GBM on-ground location 与 INTEGRAL 定位一致——同源无疑。[T0] 原库 2024-10-13T00:58:34Z（bot extra_data 原值：t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time（真实触发时刻）），更正为触发仪器精化通告亚秒值 00:58:34.36 UT（GCN 37789）；FERMIGBRST 00:58:34.358Z 同值毫秒舍入；整秒与 GCN 37780 一致；INTEGRAL 触发 00:58:26 UT 为另一仪器值备查（差 8.36 s 系不同仪器触发判定，不构成 T0_offset）。[定位] 原库 ra/dec=252.9/-33.3 为 GBM 初报实时定位（统计误差 14.5°，GCN 37780）已被取代备查；更正为 INTEGRAL 精化定位 275.2756/-15.6302，pos_error=150″（2.5′，原文 90% c.l.）。REM 候选对应体 18:20:57.1/-15:38:09.5（±3″，非 2MASS 源）在误差圈内（GCN 37787），但同文提示候选位置与三颗 PS1 星表源（r~20.3/21.6/20.4）一致、疑为混合（blending），对应体身份存疑，故不以候选体坐标替代目录定位。[分类] GCN 37780 a likely LONG GRB、GCN 37789 记 T90 about 9 s（50-300 keV）；t90=12.5443±1.44819 s（FERMIGBRST，50-300 keV）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）→ lgrb。[伽马备查] GCN 37789：fluence=(1.4±0.1)e-06 erg/cm2（10-1000 keV，T0-6.1~T0+3.6 s）、1-s 峰光子流量 1±0.1 ph/cm2/s（T0+2.1 s 起）；INTEGRAL 峰流量 ~0.6 ph/cm2/s（20-200 keV，2-s 积分）、fluence~6e-07 erg/cm2（GCN 37781）；银纬 b=-1°（银盘拥挤、消光显著，GCN 37787）。[alias] 新增「GRB241013041」（FERMIGBRST name_alt 原文用名，trigger 241013041 见 GCN 37780/37789）；新增「GRB241013.04」（<GCN 37783> 原文用名 Integral GRB241013.04，INTEGRAL 精化事件名）。[测光检索（2026-10-31）] 仓内 gcn/archive 45947 篇全文，按源名/触发号 750473919、241013041、bn241013041／INTEGRAL 名 GRB241013.04／精化坐标（275.2756,-15.6302）与候选坐标（18:20:57）检索：命中 5 篇（37780/37781/37783/37787/37789），其中含光学测光 2 篇——GCN 37787（REM，4 点已在 lc）与 GCN 37783（MASTER-OAFA 未滤光上限 2 点，本次补入）；external/rssgrbag 0 行、grbsn_webtool 无该事件、heasarc_grbcat 无该源、mpe_greiner 仅目录行（INTEGRAL 定位）、FERMIGBRST 快照仅目录参数无光变。外部：GCN 站事件页（gcn.nasa.gov/circulars/events/grb-241013a，2026-10-31 访问）列 4 篇，与仓内一致（37783 系 INTEGRAL 名下第 5 篇）；SciX API（api.scixplorer.org，2026-10-31）元数据与全文检索（241013A/241013041/GRB241013.04）命中均为上述 GCN 通告——无研究论文；TNS 无该源条目（无命名光学对应体）。结论：全部可用测光 = REM 4 点 + MASTER-OAFA 上限 2 点，本次新增 2 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为触发仪器精化通告亚秒值（GCN 37789）；原 bot 值 t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time（真实触发时刻）已在 comment 留底",
+    "t0_basis": "GCN 37789 trigger time 00:58:34.36 UT（存为 .360 零填充；FERMIGBRST trigger_time 2024-10-13T00:58:34.358Z 互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
