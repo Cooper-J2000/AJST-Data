@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB090328A",
-  "alias": [],
-  "ra": 90.870833,
-  "dec": -41.95,
-  "T0": "2009-03-28T09:36:49.486000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB090328",
+    "GRB090328401"
+  ],
+  "ra": 90.665292,
+  "dec": -41.881806,
+  "T0": "2009-03-28T09:36:46.511Z",
+  "T0_ref": "GCN 9044（Fermi GBM 于 09:36:46 UT 触发，trigger 259925808 / GRB090328401）；HEASARC FERMIGBRST bn090328401 trigger_time=2009-03-28T09:36:46.511Z（仓内 external/fermi_gbm 快照，亚秒取触发仪器目录值）；原 bot 值 2009-03-28T09:36:49.486 系 Konus-Wind 自身触发时刻（GCN 9050：Konus T0=34609.486 s UT），非触发仪器 GBM 之值（偏 +2.975 s），已按 §3.8 优先级改正",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.736,
+  "redshift": 0.7357,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 9044",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.6,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 9048",
+  "redshift_type": "spec",
+  "redshift_ref": "Cenko+2011 (ApJ 732, 29; DOI 10.1088/0004-637X/732/1/29)",
+  "comment": "审核 2026-10-31（Rusty-Harpoon@zcode）。T0：触发仪器 GBM 的 GCN 9044（09:36:46 UT，trigger 259925808）与 FERMIGBRST 目录亚秒值 46.511 s 整数秒一致，按 §3.8 取 2009-03-28T09:36:46.511Z；原值 09:36:49.486 为 Konus-Wind 自身触发时刻（GCN 9050），偏 GBM +2.975 s；全表 time/mjd 已按新 T0 重算（X 射线行按 §3.3 保持原样）。定位：取 Swift/UVOT 精化位置（GCN 9048：RA=06:02:39.67，Dec=−41:52:54.5，0.6″，90% 包含半径）；并列备查：XRT 增强位置 RA,Dec=90.66494,−41.88265（2.0″，90%，GCN 9046）、Fermi/LAT 90.87,−41.95（68% 包含半径 0.11 deg，GCN 9044）、GROND r′ 06:02:39.69 −41:52:54.9（系统差 0.3″，McBreen+2010；原文 dec 误印 −41:42:54.9）。红移：取 Cenko+2011 VoR 精化值 0.7357±0.0004（Gemini/GMOS 谱，[OII]+吸收线组）；并列值 0.736（GCN 9053 [OII] 初测）、0.7354±0.0003（McBreen+2010 VLT/FORS2；SWIFTGRB 目录同值）。alias「GRB090328401」：<GCN 9044> 原文用名 GRB090328401（trigger 259925808 / GRB090328401）；「GRB090328」为各 GCN 通告与文献用名。sub_tag lgrb 按目录 t90 判：t90=61.697±1.81023 s（FERMIGBRST bn090328401，50–300 keV）；Fermi-LAT 5σ 探测见 GCN 9044。测光检索（2026-10-31）：仓内 gcn/archive 命中 12 篇属本源（GCN 9044/9045/9046/9048/9049/9050/9052/9053/9054/9057/9060/9077，全文逐篇读过，含测光数值 4 篇：9048/9054/9058/9060）；external/rssgrbag 命中 1 行（8.46GHz 拟合峰值，已在库）、external/grbsn_webtool 无 090328 记录；GCN 站与仓内 archive 一致；ADS API 检索 abs/title \"GRB 090328\" 命中 19 条，非 GCN 文献 7 条逐一判读：Cenko+2011（ApJ 732, 29）表3/表4 逐行入库（补 8.46GHz 射电 14 行，含 GCN 9060 两历元的同测量交叉印证）；McBreen+2010（A&A 516, A71）多历元 GROND 仅见图 7 无数值表，图上读数不入库（仅取宿主位置/红移，VoR 被 DataDome 反爬、取自 arXiv，已登记 unverified.tsv）；Bissaldi+2010、2011AIPC.1358..47P、2010AIPC.1223..183B 为 GBM/LAT 谱与会议类，2013MNRAS.435.3009L 为模型类，2010AAS 仅摘要，均无新测光 → 共补 14 行。既有 Dainotti2024 行的 Gext_corr=y 与各原文『未做银消改正』的事实不符（疑为 bot 侧『已算 Gextcor 派生列』标记），沿 GRB000418A 合并先例未改，提请维护者裁定该列语义。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
@@ -863,6 +867,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
@@ -907,7 +916,29 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2010arXiv10024194B/abstract",
       "bibtex": "@ARTICLE{2010arXiv10024194B,\n       author = {Elisabetta Bissaldi},\n       title = {GRB 090323 and GRB 090328: two long high-energy GRBs detected with Fermi},\n       journal = {arXiv e-prints},\n       year = {2010},\n       eprint = {1002.4194},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010arXiv10024194B/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Cenko+2011",
+      "title": "Afterglow Observations of Fermi Large Area Telescope Gamma-ray Bursts and the Emerging Class of Hyper-energetic Events",
+      "url": "https://doi.org/10.1088/0004-637X/732/1/29",
+      "bibtex": "@ARTICLE{2011ApJ...732...29C,\n       author = {S. B. Cenko and D. A. Frail and F. A. Harrison and J. B. Haislip and D. E. Reichart and N. R. Butler and B. E. Cobb and A. Cucchiara and E. Berger and J. S. Bloom and P. Chandra and D. B. Fox and D. A. Perley and J. X. Prochaska and A. V. Filippenko and K. Glazebrook and K. M. Ivarsen and M. M. Kasliwal and S. R. Kulkarni and A. P. LaCluyze and S. Lopez and A. N. Morgan and M. Pettini and V. R. Rana},\n       title = {Afterglow Observations of Fermi Large Area Telescope Gamma-ray Bursts and the Emerging Class of Hyper-energetic Events},\n       journal = {ApJ 732 29 (2011)},\n       year = {2011},\n       doi = {10.1088/0004-637X/732/1/29},\n       eprint = {1004.2900},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011ApJ...732...29C/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "McBreen+2010",
+      "title": "Optical and near-infrared follow-up observations of four Fermi/LAT GRBs: redshifts, afterglows and host galaxies",
+      "url": "https://doi.org/10.1051/0004-6361/200913734",
+      "bibtex": "@ARTICLE{2010A&A...516A..71M,\n       author = {S. McBreen and T. Kr{\\\"u}hler and A. Rau and J. Greiner and D. A. Kann and S. Savaglio and P. Afonso and C. Clemens and R. Filgas and S. Klose and A. K{\\\"u}pc{\\\"u} Yolda{\\c{s}} and F. Olivares E. and A. Rossi and G. P. Szokoly and A. Updike and A. Yolda{\\c{s}}},\n       title = {Optical and near-infrared follow-up observations of four Fermi/LAT GRBs: redshifts, afterglows and host galaxies},\n       journal = {A\\&A 516 A71 (2010)},\n       year = {2010},\n       doi = {10.1051/0004-6361/200913734},\n       eprint = {1003.3885},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010A\\&A...516A..71M/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 90.665375,
+    "dec": -41.881972,
+    "redshift": 0.7354,
+    "redshift_err": 0.0003,
+    "redshift_type": "spec",
+    "comment": "McBreen+2010 §4.2.3：GROND 深曝光认定宿主星系，位置 06:02:39.69 −41:52:55.1，与余辉相距 0.14″，光谱红移 z=0.7354±0.0003（VLT/FORS2）；表 3：SFR=4.8 M⊙/yr，宿主消光模板 SMC（LMC/MW 拟合相当），A_V^host=0.22(+0.06/−0.18)，θ_jet<5.5°，E_γ<4.6×10^50 erg；宿主绝对星等 M_B=−20.67、M_K=−20.17",
+    "source": "McBreen+2010, A&A 516, A71 (DOI 10.1051/0004-6361/200913734)，取自 arXiv v1（VoR DataDome 反爬）"
+  }
 }
