@@ -1,24 +1,25 @@
 {
   "transient_id": "GRB141221A",
   "alias": [
-    "GRB141221"
+    "GRB141221338",
+    "BAT 622006"
   ],
-  "ra": 198.270833,
-  "dec": 8.216667,
+  "ra": 198.28686,
+  "dec": 8.2051,
   "T0": "2014-12-21T08:07:11.220000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 17216（Fermi/GBM 触发通告：At 08:07:11.22 UT on 21 Dec 2014，trigger 440842034/141221338）；FERMIGBRST bn141221338 trigger_time=2014-12-21T08:07:11.216Z 互证（差 4 ms，<60 ms 不另报）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 1.45,
+  "redshift": 1.452,
   "tag": [
     "grb"
   ],
   "pos_error": 1.6,
   "pos_ref": "GCN 17211",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 17228",
-  "comment": null,
+  "comment": "定位：原 ra/dec=198.270833,8.216667 为 MPE Greiner 表取整 X 射线位置（13h13m05s +08°13'，Error=3'），与 pos_ref=GCN 17211 不符，改为 GCN 17211 Swift-XRT 增强位置 198.28686,+8.20510（1.6″，90% 包含半径，pos_error_confidence=90）；UVOT 精化位置 198.28672,+8.20522（0.43″，90%，GCN 17219）、GROND 位置 198.28667,+8.20525（0.2″，GCN 17212）并列备查。T0=Fermi/GBM 触发时刻（GCN 17216），Trigger_Instrument=Fermi/GBM 与之一致；Swift/BAT 触发 08:07:10.958720 UT（GCN 17206 印刷 08:07:10 UT；swift_bat 目录亚秒值）并列——两者为仪器间口径差，非 T0_offset（#680 同口径）。本表全部 BAT 相对时刻按 BAT 亚秒历元换算（Δ=-0.26128 s），逐行依据见各 comment。t90=23.808±1.7173 s（FERMIGBRST，50–300 keV），按目录 t90 判 lgrb；Swift/BAT t90=36.816±4.104 s（15–350 keV）并列（同判 lgrb）。红移 1.452（GCN 17228 Keck/DEIMOS Mg II 吸收线，原文注明 wavelength solution 初步、结果 tentative；Liang+2023、Minaev+2020 同值 1.452）。TAROT R 两组并存说明：GCN 17227（NOMAD-1 R=12.23 定标，未声明系统）与 Bardho+2016 表 1（自有定标、AB 系+银消改正，值约差 0.16 mag）为同一 TAROT 数据的两次独立发表定标，按 §3.4 均保留。GCN 17206 white FC 初步值 17.18±0.14 与 GCN 17219 white 17.33±0.04 为同一次曝光（150 s，起于触发+83 s），按 #669 先例取精化值，初步行已删。UKSSDC Burst Analyser 57 个 UVOT 行逐值核对（2026-10-31 下载 qdp）：Dainotti2024 表星等系由 BA 流量按 AB 零点换算（mag_system 由 Vega 改 AB）。检索留证（2026-10-31）：仓内 gcn/archive 命中含「141221」16 篇（14 篇属本源、全文逐篇核对，其中含光学数值 8 篇：17206/17208/17209/17210/17212/17219/17221/17222/17227）；external/rssgrbag 0 行（Chandra & Frail 2012 早于本源）、external/grbsn_webtool 无 141221 记录；GCN 站与仓内一致；ADS 检索「GRB 141221A」命中 14 条，研究论文仅 Bardho+2016（另 1 条 COSPAR 摘要无数据；Dainotti+2024/Li+2023/Minaev+2020 为目录类、已在库）；TNS 不适用（GRB 类）。REM 早光变（GCN 17208）仅正文约值 H~13.1→H~15.8，无数值表与精确时间锚点，不入库。本轮新增 1 行（GCN 17227 R=15.6±0.3，86.5–92.5 s 窗口，导入管线漏抽）。alias 处置：新增「GRB141221338」（GCN 17216 原文用名：trigger 440842034/141221338，即 GRB141221338，FERMIGBRST 目录用名）、「BAT 622006」（GCN 17206 原文用名：trigger=622006，Swift/BAT 目录用名 BAT 622006）；原 alias「GRB141221」为无出处日期截断形（GCN/目录检索无此写法），删除。",
   "sub_tag": [
     "lgrb"
   ],
@@ -544,6 +545,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
@@ -567,7 +573,15 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract",
       "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Bardho+2016",
+      "title": "GRB 141221A: gone is the wind",
+      "url": "https://doi.org/10.1093/mnras/stw537",
+      "bibtex": "@ARTICLE{2016MNRAS.459..508B,\n       author = {Bardho, O. and Gendre, B. and Rossi, A. and Amati, L. and Haislip, J. and Klotz, A. and Palazzi, E. and Reichart, D. and Trotter, A. S. and Boer, M.},\n       title = {GRB 141221A: gone is the wind},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2016},\n       volume = {459},\n       pages = {508},\n       doi = {10.1093/mnras/stw537},\n       eprint = {1602.09014},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2016MNRAS.459..508B/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
