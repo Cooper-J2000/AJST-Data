@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB220501A",
-  "alias": [],
+  "alias": [
+    "BAT 1104842",
+    "GRB 220501828",
+    "bn220501828"
+  ],
   "ra": 85.583,
   "dec": 14.01,
-  "T0": "2022-05-01T19:51:50Z",
-  "T0_ref": null,
+  "T0": "2022-05-01T19:51:51.225760Z",
+  "T0_ref": "GCN 31982（D'Ai et al., Swift team）：At 19:51:51 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 220501A (trigger=1104842)；亚秒 .225760 取自仓内 Swift-BAT 目录快照（external/swift_bat，trigger_time=2022-05-01T19:51:51.225760Z）。注意：info 原 T0=2022-05-01T19:51:50Z 系 Fermi GBM 触发时刻（GCN 31983：trigger 673127515.736396 / 220501828；GCN 31988 报 19:51:50.74 UT、仓内 FERMIGBRST trigger_time=19:51:50.736Z 交叉一致）——双触发同暴以 Swift 为准（§3.8），已改正；GBM 提前 ~0.5-1 s 系两设备自动触发时延，不记 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 96.0,
-  "pos_ref": "GCN 31993",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 31993（Swift-BAT refined ground position）：RA,Dec=85.583, 14.010 deg，1.6 arcmin=96″（radius, sys+stat, 90% containment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "通告集甄别（2026-10-28，仓内 GCN 全文库逐篇实核）：本暴通告共 6 篇——GCN 31982（Swift BAT 触发 19:51:51 UT，trigger 1104842；太阳约束无法立即 slew，XRT/UVOT 8 月 4 日前无数据）、31983（GBM Final Real-time，trigger 673127515.736396/220501828，likely LONG）、31984（GRANDMA/TJML 光学上限 r(AB)>16.0）、31988（GBM 观测 T90≈51 s，自引 Swift GCN 31982 确认同暴）、31990（BOOTES-1B 光学上限 17.5）、31993（BAT refined，T90=202.24±20.60 s，位 85.583/14.010±1.6′）。近邻防污染：GCN 31986/31989/31992/31994 为 IceCube-220501A（中微子事件，另一源，正文提及 220501A 系搜对应体），非本暴通告，不入本源。T0 口径：双触发同暴（Swift BAT 19:51:51 vs GBM 19:51:50.74）以 Swift 为准（§3.8），亚秒取仓内 Swift-BAT 目录快照；info 原 T0=19:51:50Z 系误用 GBM 触发整秒，已改正；不记 T0_offset。pos：BAT refined 位（GCN 31993）85.583/14.010、1.6′=96″、90% containment 显式给出 → 补 pos_error_confidence=90。sub_tag：t90=202.24±20.60134 s（仓内 Swift-BAT 目录快照 external/swift_bat，15-350 keV；GCN 31993 同值 202.24±20.60 s；GBM 50-300 keV 报 51.2011±3.61997 s、GCN 31983 称 likely LONG），按触发仪器目录 t90 判 lgrb。测光 2 行入库（均为上限，无 XRT/UVOT 数据——太阳约束）：GCN 31984 TJML 8×60 s 堆叠（窗 28.8-38.9 min=1728-2334 s，中点 2031/半宽 303；r(AB)>16.0 对 Pan-STARRS 定标 → band=r、mag_system=AB 原文声明；bot 原行 time=2050 无窗内依据，已按窗口中点口径改正）+GCN 31990 BOOTES-1B 38×10 s 堆叠（clear→band=G；20:14 UT=T0+1329 s 起，中点 1519/半宽 190；17.5 mag，原文未声明测光系统→mag_system 留空）。IceCube-220501A 相关通告中的搜索上限属 IceCube 源，不入本源。文献检索（2026-10-28，Web 检索）：未见本暴专门研究论文，articles[] 留空。alias 出处：BAT 1104842＝Swift-BAT 目录 name_alt（仓内 external/swift_bat 快照；GCN 31982/31993 原文用名 trigger 1104842）；GRB 220501828＝GCN 31983 原文用名 220501828 加 GRB 前缀的拼接（非 name_alt 逐字形态，2026-10-31 核查更正表述；证据串在案、validate 豁免通过）、bn220501828＝FERMIGBRST 目录 name_alt（仓内 external/fermi_gbm 快照 bn220501828 行；GCN 31983 原文用名 trigger 673127515.736396 / 220501828）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
