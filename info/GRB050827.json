@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB050827",
-  "alias": [],
+  "alias": [
+    "GRB 050827"
+  ],
   "ra": 64.2900390625,
   "dec": 18.200389862060547,
-  "T0": "2005-08-27T18:57:15Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0": "2005-08-27T18:57:15.118740Z",
+  "T0_ref": "Swift/BAT 触发（trigger 152325）：GCN 3893 给 18:57:15 UT；Swift/BAT 目录（batgrbcat）快照 trigger_time=2005-08-27T18:57:15.118740Z（HEASARC SWIFTGRB 同值，uvot_grb/swiftgrbba 快照 18:57:15 为舍入）；亚秒取触发仪器目录值",
+  "T0_offset": -15.0,
+  "T0_offset_ref": "GCN 3894（BAT 精化分析 mask-weighted 光变第一峰起于 T-15 s，辐射早于自动触发，按 §3.2 取负）；GCN 3893 早期通告给预触发辐射始于 T-10 s，取精化分析值；Quimby+2006 (ApJ 640, 402) 转引 Sakamoto+2005 亦称 GRB 050827 started 15s before its trigger",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
@@ -16,8 +18,10 @@
   "pos_ref": "SGA (UVOTGRB)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。身份：Swift/BAT 触发 152325（GCN 3893，2005-08-27T18:57:15 UT），XRT 余辉证认（GCN 3899/3906，衰减指数 -1.2±0.2）。位置取 SGA（UVOTGRB 快照 POS_ERR=1.5″，64.290039/18.200390）；Goad+2007 (A&A 476, 1401) UVOT 增化 XRT 位置 04:17:09.59 +18:12:02.0（2.6″）与其一致；GCN 3899 初步 XRT 位置（8″，90%）被取代；来源未标注置信水平。t90=50.032±9.129 s（Swift/BAT 目录 batgrbcat，15-350 keV；GCN 3894 给 49±2 s）按目录 t90 判 lgrb。红移：文献检索未见测量值或上限，保持 null。GCN 3903（OSN 1.5m）报两源 R=23.7±0.37 / 23.4±0.26，原文无观测时刻（无时间锚点）不入库，且 MDM R>23.5（GCN 3900）不支持其为余辉。测光检索（2026-10-31）：仓内 gcn/archive 全文检索 050827/150465/152325 命中 10 篇（3893/3894/3895/3899/3900/3901/3902/3903/3906，3895/3900/3901/3902 含光学/IR 上限），external/rssgrbag 无记录、external/grbsn_webtool 无此事件；ADS（api.adsabs.harvard.edu）abs+full 检索 \"GRB 050827\"/\"GRB050827\"/\"050827\" 命中 8 篇 GCN + 2 篇正文提及（Quimby+2006 仅引 GCN 3894 预触发辐射，Goad+2007 仅位置表）→ 补入 GCN3895 两行、GCN3901 六行；原 9 行非 X 射线行逐值回核（6 行 UVOT 对 MAST HLSP uvotgrb noc-db FITS 逐值一致，GCN3900/3902 行对通告原文一致）。alias「GRB 050827」为 GCN 3894/3899 等原文用名。本源 T0 由 18:57:15Z 改为 18:57:15.118740Z，31 行 X 射线行 mjd 需维护者按 mjd=T0+time 重算（+0.118740 s），非 X 射线行已同步重算。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -251,8 +255,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
