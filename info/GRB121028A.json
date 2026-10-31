@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB121028A",
   "alias": [],
-  "ra": 271.903,
-  "dec": -2.298,
+  "ra": 271.89948,
+  "dec": -2.29358,
   "T0": "2012-10-28T05:04:31Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 13913 (Swift/BAT trigger at 2012-10-28 05:04:31 UT)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,8 +16,10 @@
   "pos_ref": "GCN 13918",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)\n\n审核记录（2026-10-30，LHe496@Codex）：Swift/BAT GCN 13913 给出触发时刻 05:04:31 UT；Swift/BAT 目录精确值 05:04:31.919360 UT 与其同一整秒，按 GCN 给出的秒精度记录 T0，不写亚秒 T0_offset（差 0.91936 s）。GCN 13918 的增强 XRT 位置为 RA=271.89948°, Dec=−2.29358°, 误差半径 1.7″/90%；原文件把 BAT 地面位置 271.903°, −2.298° 与 XRT 的 1.7″误差混用，已修正。T90 有口径差：GCN 13917 为 3.8±0.7 s（15–350 keV），Swift GRB 目录为 2.8 s（15–150 keV）；两者均大于 2 s，按目录 T90 标记 lgrb，数值均保留备查。\n测光检索（2026-10-30）：本地 gcn/archive 不存在；external/rssgrbag、external/uvot_grb 未找到该源的测光行，Swift GRB / Swift GRBBA 目录只提供元数据。GCN 事件页共 9 篇通告，6 篇含本源光学/红外观测（13913、13914、13915、13924、13927、13950）；ADS 用 “GRB 121028A” 与 “GRB121028A” 检索命中 10 条（9 篇 GCN circular + GCN Report 402.1，未发现研究论文/独立文献测光表）。据 GCN 13950 细化 UVOT 白光初报，并补入 7 条 UVOT 上限；其余现存地面测光逐行核实。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -207,8 +209,14 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-10-30"
     }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }

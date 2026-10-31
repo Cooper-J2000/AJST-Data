@@ -1,11 +1,13 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-6.0,,s,56228.211539351854,G,10.0,,magnitude,,n,y,,,,,,,1.0,n,,RAPTOR,GCN13924,,
-134.0,,s,56228.21302083333,w,19.2,,magnitude,,n,y,,,,,,,1.0,n,,UVOT,GCN13913,,
-198.0,,s,56228.21376157407,R,19.0,,magnitude,,n,y,,,,,,,1.0,n,,Faulkes Telescope North,GCN13914,,
+5.6,5.0,s,56228.2115347,G,10.0,,magnitude,,n,y,,,,,,,1.0,n,,RAPTOR,GCN13924,原文：RAPTOR Maui wide-field monitor 于 T0+0.6 s 开始 10 s 未滤光曝光；按曝光中点记录，3σ 上限 10.0 mag。Tycho-2 V 定标；未滤光按 G 记。,LHe496@Codex
+198.0,15.0,s,56228.21376157407,R,19.0,,magnitude,,n,y,,,,,,,1.0,n,,Faulkes Telescope North,GCN13914,Faulkes Telescope North；GCN 13914 报 mid-time=198 s，3×10 s R 曝光，按 30 s 总跨度给半宽 15 s；USNO-B1 定标，原文未声明星等系统。,LHe496@Codex
 200.105,60.762,s,56228.2137859375,10keV,8.27530725015911e-07,1.8860948481119e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
+208.0,75.0,s,56228.2138773,uvot-white,19.2,,magnitude,Vega,n,y,,,,,,,1.0,y,Swift,UVOT,GCN13913,"初报 GCN 13913：UVOT White finding-chart 曝光约从 T0+134 s 开始，称典型 3σ 限约 19.2 mag。与 GCN 13950 表中同一 finding-chart 曝光（Tstart=133,Tstop=283 s）为同一数据；该初报值保留作来源记录并 discard=y，采用 GCN 13950 后续表值 >19.96。时间按 133–283 s 窗口中点/半宽记录。Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
+208.0,75.0,s,56228.2138773,uvot-white,19.96,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"White finding-chart; Tstart=133 s, Tstop=283 s, exposure=147 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
 307.203,51.981,s,56228.21502549769,10keV,9.87519000892e-07,2.22527975936888e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 450.268,91.085,s,56228.216681342594,10keV,6.49138563961342e-07,1.47419978178421e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-535.0,,s,56228.21766203704,i,18.0,,magnitude,,n,y,,,,,,,1.0,n,,Faulkes Telescope North,GCN13914,,
+470.0,125.0,s,56228.2169097,uvot-u,19.43,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"U exposure; Tstart=345 s, Tstop=595 s, exposure=245 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
+535.0,5.0,s,56228.21766203704,i,18.0,,magnitude,,n,y,,,,,,,1.0,n,,Faulkes Telescope North,GCN13914,Faulkes Telescope North；GCN 13914 原文滤光片 i′，mid-time=535 s、10 s 曝光，库内使用 i 键；USNO-B1 定标，原文未声明星等系统。,LHe496@Codex
 599.461,74.795,s,56228.218408113426,10keV,5.28496332335314e-07,1.1978586295617e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 719.381,51.799,s,56228.21979607639,10keV,1.8241872708818e-06,4.09673785279097e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 779.345,33.662,s,56228.22049010417,10keV,3.18945306949772e-06,7.17016497408787e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -18,11 +20,17 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 1968.88,175.515,s,56228.23425787037,10keV,1.09363782709662e-07,2.87093651858858e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 2204.559,120.345,s,56228.23698563658,10keV,1.88996774621488e-07,4.44061505655668e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 2511.814,244.352,s,56228.2405418287,10keV,1.18214051081811e-07,2.76749928334462e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
+2735.5,22.5,s,56228.2431308,uvot-b,19.1,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"B exposure; Tstart=2713 s, Tstop=2758 s, exposure=44 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
+4315.5,3438.5,s,56228.2614178,uvot-white,21.07,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"White summed exposure; Tstart=877 s, Tstop=7754 s, exposure=540 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
 6360.551,449.759,s,56228.28508739583,10keV,4.21836165065689e-08,1.20729433136723e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
+6627.5,99.5,s,56228.2881771,uvot-v,18.94,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"V exposure; Tstart=6528 s, Tstop=6727 s, exposure=196 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
+7038.0,100.0,s,56228.2929282,uvot-uvw1,19.61,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"UVW1 exposure; Tstart=6938 s, Tstop=7138 s, exposure=196 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
+7243.0,100.0,s,56228.2953009,uvot-u,19.68,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"U exposure; Tstart=7143 s, Tstop=7343 s, exposure=196 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
 7490.828,1036.736,s,56228.298169305555,10keV,3.28031432059568e-08,6.37573287068076e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
+7861.0,100.0,s,56228.3024537,uvot-uvw2,19.9,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN13950,"UVW2 exposure; Tstart=7761 s, Tstop=7961 s, exposure=196 s; 3σ limit. Swift/UVOT natural photometric system (Vega; Breeveld et al. 2011); Galactic extinction not corrected (E(B−V)=1.41).",LHe496@Codex
 12848.471,6787.935,s,56228.3601790625,10keV,1.86447718368891e-08,4.69415201547644e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-18682.0,,s,56228.42769675926,Ic,18.7,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN13915,,
-18682.0,,s,56228.42769675926,g,19.7,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN13915,,
-18682.0,,s,56228.42769675926,Rc,19.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN13915,,
+18682.0,3180.0,s,56228.42769675926,Ic,18.7,,magnitude,,n,y,,,,,,,1.0,n,Okayama 50cm telescope,MITSuME three-color camera,GCN13915,MITSuME 三色相机；GCN 13915 给 T0+=0.21623 d、MID-UT=10:15:53、总曝光 6360 s，按中点/半宽记录；3σ 上限，GSC2.3 定标，原文未声明星等系统。,LHe496@Codex
+18682.0,3180.0,s,56228.42769675926,g,19.7,,magnitude,,n,y,,,,,,,1.0,n,Okayama 50cm telescope,MITSuME three-color camera,GCN13915,MITSuME 三色相机，原文 g′ 用本库现有 g 波段键记录；GCN 13915 给 T0+=0.21623 d、MID-UT=10:15:53、总曝光 6360 s，按中点/半宽记录；3σ 上限，GSC2.3 定标，原文未声明星等系统。,LHe496@Codex
+18682.0,3180.0,s,56228.42769675926,Rc,19.4,,magnitude,,n,y,,,,,,,1.0,n,Okayama 50cm telescope,MITSuME three-color camera,GCN13915,MITSuME 三色相机；GCN 13915 给 T0+=0.21623 d、MID-UT=10:15:53、总曝光 6360 s，按中点/半宽记录；3σ 上限，GSC2.3 定标，原文未声明星等系统。,LHe496@Codex
 32094.238,16670.705,s,56228.58293099537,10keV,8.28525011685034e-09,2.97777218305585e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-46829.0,,s,56228.753472222226,H,20.5,,magnitude,,n,y,,,,,,,1.0,n,,Omega2000,GCN13927,,
+48629.0,1800.0,s,56228.7743056,H,20.5,,magnitude,,n,y,,,,,,,1.0,n,Calar Alto 3.5m,Omega 2000,GCN13927,GCN 13927：Calar Alto 3.5m/Omega 2000，YJHK 每个 900 s，观测序列从 2012-10-28 18:05 UT（约 T0+13 h）开始；原文未给 H 波段单独时刻，按四波段 3600 s 序列窗口取中点及半宽，具体 H 单帧时刻不可恢复。未探测，H>20.5；原文未声明星等系统。,LHe496@Codex
