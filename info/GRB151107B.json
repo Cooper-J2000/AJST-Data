@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB151107B",
-  "alias": [],
+  "alias": [
+    "GRB 151107B",
+    "bn151107851"
+  ],
   "ra": 31.3,
   "dec": 45.6,
-  "T0": "2015-11-07T20:24:52Z",
-  "T0_ref": null,
+  "T0": "2015-11-07T20:24:52.297Z",
+  "T0_ref": "GCN 18570（'At 20:24:52.30 UT on 07 November 2015, the Fermi Gamma-ray Burst Monitor triggered and located GRB 151107B (trigger 468620696 / 151107851)'）；Fermi GBM 目录 FERMIGBRST bn151107851 trigger_time=2015-11-07T20:24:52.297Z，亚秒精度取目录值（与 GCN 18570 的 52.30 UT 一致；MET 468620696 按真实 UTC 扣 4 闰秒恰得 20:24:52，无 Issue #67 型 naive 换算残差）；AGILE MCAL 快照同爆记录 trigger 20:24:59（MCAL 自身触发历元，相互印证）；CALET CGBM 20:24:54.77 为 CGBM 触发时刻（GCN 18605）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,18 +15,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 6120,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "GCN 18570（'RA = 31.3, DEC = 45.6, with an uncertainty of 1.7 degrees (radius, 1-sigma containment, statistical only; there is additionally a systematic error which we have characterized as a core-plus-tail model, with 90% of GRBs having a 3.7 deg error and a small tail suffering a larger than 10 deg systematic error. [Connaughton et al. 2015, ApJS, 216, 32]'）；Fermi GBM 目录 FERMIGBRST bn151107851 error_radius=1.67 deg 一致；1.7 deg×3600=6120 arcsec，core-plus-tail 系统误差无法并入单一半径值记于此；MASTER GCN 18576 所引 GCN socket 自动定位框（RA=00:42:28 Dec=+48:48:58 r=4.5°）与 GCN 18570 不一致，未采纳",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 2026-10-28（fsy）。① T0：GCN 18570 'At 20:24:52.30 UT on 07 November 2015, the Fermi Gamma-ray Burst Monitor triggered and located GRB 151107B (trigger 468620696 / 151107851)'；FERMIGBRST bn151107851 trigger_time=2015-11-07T20:24:52.297Z（亚秒取目录值）；AGILE MCAL 快照同爆 trigger 20:24:59、GCN 18605 CALET CGBM 20:24:54.77 均为各仪器自身触发时刻，互证同爆。原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 系机器人自述（Issue #68 不可信），按 §3.10 改写并保留原文于此。② 定位：GCN 18570 RA=31.3 DEC=45.6 r=1.7°（1-sigma containment, statistical only；另有 core-plus-tail 系统误差 90% 3.7°、尾部长于 10°，Connaughton et al. 2015, ApJS, 216, 32）→ pos_error=6120″、pos_error_confidence=1sigma；FERMIGBRST error_radius=1.67° 一致；GCN 18576 所引 socket 自动定位（RA=00:42:28 Dec=+48:48:58 r=4.5°）与 18570 不一致，不采纳。③ 别名：GRB 151107B（GCN 18570 用名）+ 目录名 bn151107851（FERMIGBRST name_alt）；触发名拼接形 GRB151107851 按别名伪形规则（§3.10/Issue #69）不入 alias，记于此。④ 分类：t90=139.01±6.44601 s（FERMIGBRST 50-300 keV）按目录 t90 判 lgrb（2026-10-26 裁定口径）；GCN 18570 'T90 of about 139 s (50-300 keV)'、GCN 18605 CALET SGM T90=95.0±1.4 s（40-920 keV）一致为长爆。⑤ 光变（原 1 行改 + 补 6 行，全部为上限，均入 lc）：(a) GCN 18574 MMT 窗 A（white light 0.1 s 时间分辨率，T−329.3→T+25.7 s 覆盖终 1σ 定位框及外围 6°）：实时管线 'did not detect any events longer than 0.3 s and brighter than approximately V=10.5 mag' → 事件级上限 V≈10.5；10 s 有效曝光 co-add（100 帧叠加）'has not revealed any variable source down to V=12.0 mag' → V=12.0；两行均取窗口中点 time=−151.8±177.5（§3.8）。(b) MMT 窗 B（20×9 幅 30 s 曝光 white light，T+62.7→T+666.7 s，视场中心 RA=24.1 Dec=44.8 仍含终 1σ 框）：'not revealed any variable object down to roughly V=13.5 mag' → 原导入行取整秒 365.0 且无 time_err，已改窗口中点 time=364.7±302.0；原 band=V 改 G（原文明言 white light 未滤光，2026-10-12 裁定）；原文以 V 星等标称 → mag_system=Vega 为 V 星等惯例推定。(c) GCN 18576 MASTER：IAC（Tenerife）'Our first (10s exposure) set limit is 16.8'（指向 20:25:52 UT=T+59.7，原文称 60 sec after trigger）→ time=65±5；Kislovodsk 'first (10s exposure) set limit is 18.1'（20:25:59 UT=T+66.7，原文 66 sec）→ time=71±5；同站 'The summary (60sec) unfiltered optical limit is 19.5m'（T+66→T+126）→ time=96±30；SAAO（Sutherland）'first (10s exposure) set limit is 15.4'（20:25:58 UT=T+65.7，原文 66 sec）→ time=71±5；MASTER 各行原文未逐条声明滤光片（60 s 汇总明言 unfiltered）→ band=G、mag_system 留空（§3.4）。(d) 夜巡覆盖声明 'we cover more than 98% of 1 sigma+systematic and 85% of 3-sigma + systematic of the FERMI GBM final error box with upper limit up to 19 mag during this night' 为随覆盖率变化的场极限（无单一锚点/深度对），按 §3.5 不入行，记于此。⑥ 排除：MASTER OT J015539.85+485955.6（2015-11-07.99775 m=15.2，ATel #8262）与本 GRB 无关——Liverpool Telescope 光谱呈矮新星爆发谱（Piascik & Steele, ATel #8265）、11-10 成像 m=15.5 不衰减、IPN 三角测量（GCN 18577）明言 the OT and the GRB are indeed unrelated → 不入 lc。⑦ §3.3 检索留证（2026-10-28）：GCN 网站（gcn.nasa.gov/circulars）事件检索，源名 'GRB 151107B' 与触发号 151107851/468620696 双通道共得 5 条 circular——18570（Fermi GBM 定位/谱）、18574（Mini-MegaTORTORA 光学上限）、18576（MASTER-NET 光学上限）、18577（IPN 三角测量，无测光）、18605（CALET CGBM γ 探测，无测光）；邻域扫描 GCN 18560–18600 号段未发现其他 151107B 相关测光通告（相邻号属 GRB 151107A 等其他事件，已甄别）；外部快照 konus_wind 无 151107 条目；网络文献检索（MMT 仪器文 Karpov+2017/2019 等）仅复述 GCN 上限、无该源专用研究论文、无新增测光 → 无检索新增行（补入 6 行均来自 18574/18576 已核对内容）；articles[] 维持空（GCN circular 不入 articles）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 Fermi GBM 真实触发时刻（GCN 18570 + FERMIGBRST 目录值，2026-10-28 审核改写）",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
