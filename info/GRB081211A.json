@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB081211A",
-  "alias": [],
+  "alias": [
+    "GRB 081211",
+    "GRB 081211A",
+    "Swift 337115",
+    "BAT 337115"
+  ],
   "ra": 328.1165466308594,
   "dec": -33.835636138916016,
-  "T0": "2008-12-11T11:48:10Z",
-  "T0_ref": null,
+  "T0": "2008-12-11T11:48:10.690660Z",
+  "T0_ref": "GCN 8653（Swift/BAT 触发，11:48:10 UT，整秒）；亚秒取触发仪器官方 Swift/BAT 目录 trigger 337115 Trig_time_UTC=2008-12-11T11:48:10.690660（external/swift_bat 快照，external/swift_grb 同值），整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,10 +21,17 @@
   "pos_ref": "GCN8656 (UVOTGRB)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。2026-10-31 审核（Rusty-Harpoon@zcode）：身份=Swift/BAT trigger 337115（GCN 8653，BAT 粗定位 328.087,-33.815，XRT 增强位置 GCN 8655 与 UVOT 精化位置 GCN 8656 一致）。T0 亚秒精化：Swift/BAT 官方目录 Trig_time_UTC=2008-12-11T11:48:10.690660（GCN 8653 整秒 11:48:10 UT 一致）；光变行 time 均相对 BAT 触发，X 射线行（10keV）按契约保持原样、其 mjd 保留旧历元（差 0.69 s，在 1 s 容差内）。pos：GCN 8656 UVOT 精化位置 328.11654,-33.83565、误差 0.7″（90% containment）；uvot_grb 目录快照 POS_ERR=0.6″ 未标注置信水平，按来源权威级（官方目录>GCN）保留 0.6″，置信水平不自行声称。t90=3.424±0.842 s（Swift/BAT 官方目录，15–350 keV；GCN 8658 给 3.5±0.9 s，15–350 keV），按目录 t90 判 lgrb。alias 出处：「GRB 081211」为 GCN 8653/8656/8657/8658 Swift 团队用名；「GRB 081211A」「Swift 337115」见 HEASARC SWIFTGRB 与 uvot_grb 目录快照 name_alt；「BAT 337115」见 Swift/BAT 目录 name_alt。测光检索（2026-10-31）：仓内 gcn/archive 45947 篇全文，命中本源 9 篇，其中相关 5 篇（GCN 8653/8655/8656/8657/8658），另 4 篇为 GRB 081211B（8661/8666/8669/8676）；external/rssgrbag、external/grbsn_webtool 无记录；GCN 8656 给 white 4.5σ 探测 21.23±0.39（113–7134 s 窗口）与 u/b/uvw2/v/uvm2/uvw1 六个 3σ 上限（均有时间锚点，本轮新增 7 行入库）；MAST UVOTGRB noc-db FITS（2026-10-31 下载核对）既有 5 行 white 逐值一致；同目录 grb-cat 的 FRST/PEAK V 点显著性仅 0.61σ/2.01σ，非探测，不入库；ADS 检索（2026-10-31）：abs/title 命中 1 条（GCN Report 187.1，非研究论文），全文命中 3 条（GCN Report 187.1、Huja+2010 ApJ 713,552 仅样本范围句提及、Roming+2017 目录论文=既有 noc-db 行出处）→ 本轮新增 7 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    },
     "catalog_data": {
       "uvot_grb": {
         "other": {
@@ -254,6 +266,13 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
