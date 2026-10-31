@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB250331D",
-  "alias": [],
+  "alias": [
+    "bn250331243"
+  ],
   "ra": 48.65718,
   "dec": 62.28326,
-  "T0": "2025-03-31T05:49:17Z",
-  "T0_ref": null,
+  "T0": "2025-03-31T05:49:17.014718Z",
+  "T0_ref": "GCN 39961（Fermi/GBM trigger 765092962.014718，MET→UTC 扣 5 闰秒重算）；GCN 40004（05:49:17.01 UT）；FERMIGBRST 快照（bn250331243）同值互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.5,
   "pos_ref": "GCN 40079",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0/触发仪器修正（Issue #84 家族变体——触发仪器标错）：bot 原 Trigger_Instrument=Swift/BAT、T0=2025-03-31T05:49:17Z（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」）。实际触发链：Fermi/GBM 先触发——GCN 39961「At 05:49:17 UT on 31 Mar 2025, the Fermi Gamma-Ray Burst Monitor (GBM) triggered and located GRB 250331D (trigger 765092962.014718 / 250331243)」；Swift/BAT 未机载定位（GCN 39979 原文「Swift/BAT did not localize GRB 250331D onboard」），GUANO 收到 Fermi 通告后保存 T0-50 至 T0+150 s BAT 事件数据离线成像定位（48.52543,62.30596，5′，SNR 11.6，slew 期间）；Swift ToO 后随（GCN 39982/39998/40079）。T0 由 MET=765092962.014718 扣 5 闰秒（2001 纪元至 2025 共 5 次）python 重算=05:49:17.014718Z，与 GCN 40004「05:49:17.01 UT」及 FERMIGBRST 快照 05:49:17.015Z 一致。位置：GCN 40079 XRT 增强定位 RA,Dec=48.65718,+62.28326（3.5″，radius, 90% confidence → pos_error_confidence=90），其 Source 2 以 >3σ 显著变暗判为余辉（GCN 39998 初版同值、当时无法定认）；bot ra/dec 与之一致，保留。alias「bn250331243」为 Fermi/GBM 官方触发编号（GCN 39961 HEASARC 路径用名、FERMIGBRST 快照 name_alt）。分类：GCN 39961 原文「likely LONG GRB」；t90=8.96±1.81 s（50-300 keV，FERMIGBRST 快照；GCN 40004 终版 T90 约 9 s 一致），按目录 t90 判 lgrb/sgrb → sub_tag=lgrb。其他量：fluence(10-1000 keV)=6.1±0.8e-7 erg/cm2、Epeak=91±20 keV（GCN 40004）；GBM 在地定位 21.1,55.7（统计误差 13.9°，GCN 39961）。XRT 测光（GCN 39998/40079 计数率与流量）属 X 射线，按约不入库。检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇命中 8 篇（39961/39979/39982/39990/39998/40004/40005/40079）；GCN 40005 AbAO/AS-32 叠加像 R>20.8 上限 1 行入库（time/mjd 改正）；GCN 39990 MASTER-Kislovodsk 3 行上限（Tmid-T0=62554/63431/64508 s，C 滤片，17.7-17.9）不入库——其指向中心（02h54m,+65d33m 等三处）距 XRT 余辉位置约 3.9-4.7°、通告未给 FoV 无法确证覆盖本源位置，视场极限不当作源测光；40005 中 XRT #2 圈内 R=18.72±0.07 探测与 USNO-B1.0 R2=18.97 一致、通告判非变源，不归因于余辉未入库；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）未见该源研究论文，articles 留空。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 已修正为 Fermi/GBM 触发时刻（trigger 765092962.014718，扣 5 闰秒）；bot 原值 2025-03-31T05:49:17Z 整数秒与真值一致，但 Trigger_Instrument 原标 Swift/BAT 有误（实为 Fermi/GBM 触发、BAT-GUANO 离线恢复），原值与改证见 comment",
+    "t0_basis": "fermi_gbm_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
