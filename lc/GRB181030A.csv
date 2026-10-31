@@ -1,16 +1,18 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-50.0,,s,58421.06241898148,w,18.94,0.22,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN23389,,
-2672.0,,s,58421.0927662037,R,19.12,0.03,magnitude,,n,n,,,,,,,1.0,n,,Zeiss-1000/SAO RAS,GCN23390,,
-3410.0,,s,58421.10130787037,uvot-u,20.3,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-3615.0,,s,58421.103680555556,uvot-b,20.1,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-3819.0,,s,58421.106041666666,w,20.7,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-4025.0,,s,58421.10842592592,uvot-uvw2,20.1,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-4230.0,,s,58421.11079861111,uvot-v,18.9,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-4435.0,,s,58421.113171296296,uvot-uvm2,20.7,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-4640.0,,s,58421.11554398148,uvot-uvw1,20.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN23400,,
-35265.0,,s,58421.47,Z,21.07,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR/1.5m Harold Johnson Telescope,GCN23396,,
-35265.0,,s,58421.47,i,22.11,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR/1.5m Harold Johnson Telescope,GCN23396,,
-35265.0,,s,58421.47,J,20.31,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR/1.5m Harold Johnson Telescope,GCN23396,,
-35265.0,,s,58421.47,r,22.25,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR/1.5m Harold Johnson Telescope,GCN23396,,
-35265.0,,s,58421.47,H,19.61,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR/1.5m Harold Johnson Telescope,GCN23396,,
-35265.0,,s,58421.47,Y,20.8,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR/1.5m Harold Johnson Telescope,GCN23396,,
+110.83564,10,s,58421.0619560,G,16.5,,magnitude,,n,n,,,,,,,1.0,n,MASTER-Kislovodsk,MASTER,GCN23392,首组 20 s 曝光起于 2018-10-30 01:29:03 UT（原文：触发后 101 s），time 取该组中点 01:29:13 UT；m_OT=16.5，双偏振滤光片均探测（W/P，无标准滤光片，按无滤光片规则记 G）；原文未声明系统；探测目标 MASTER OT J094742.25+143925.73,Rusty-Harpoon@zcode
+210.0,59,s,58421.0631038,uvot-white,18.94,0.22,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN23389,white FC 118 s 起于触发后 151 s（原文），time=151+118/2=210 s、time_err=59 s；GCN 23400 对同一 FC 曝光给精测 19.34±0.30（white_FC 行），两值不一致，按 §3.4 两行均保留；mag_system 按 UVOT 惯例推定 Vega（据 Breeveld+2011，原文未声明）,Rusty-Harpoon@zcode
+211.0,59,s,58421.0631153,uvot-white,19.34,0.30,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN23400,white_FC T_start=152/T_stop=270 s（相对 BAT 触发），time=中点 211 s、time_err=半宽 59 s；对同一 FC 曝光 GCN 23389 快速估计为 18.94±0.22，两值不一致，按 §3.4 两行均保留；UVOT photometric system（Breeveld et al. 2011，原文明引）记 Vega,Rusty-Harpoon@zcode
+2772.83564,2160.5,s,58421.0927662,Rc,19.12,0.03,magnitude,,n,n,,,,,,,1.0,n,Zeiss-1000/SAO RAS,,GCN23390,原文 12×300 s Rc，UT 01:37:35–02:49:36，UT_mid=02:13:35 原文直给，time_err=窗口半宽 2160.5 s（跨度 4321 s）；原文未声明系统（定标由 SDSS 星等按 Lupton 2005 转 Rc）；正文简写 R=Rc band,Rusty-Harpoon@zcode
+4796.0,818,s,58421.1161825,uvot-white,20.7,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=3978/T_stop=5614 s（相对 BAT 触发），time=中点 4796 s、time_err=半宽 818 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+5001.5,817.5,s,58421.1185609,uvot-uvw2,20.1,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=4184/T_stop=5819 s（相对 BAT 触发），time=中点 5001.5 s、time_err=半宽 817.5 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+5199.0,810,s,58421.1208468,uvot-v,18.9,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=4389/T_stop=6009 s（相对 BAT 触发），time=中点 5199 s、time_err=半宽 810 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+8273.0,3474,s,58421.1564255,uvot-uvw1,20.2,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=4799/T_stop=11747 s（相对 BAT 触发），time=中点 8273 s、time_err=半宽 3474 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+10402.5,6833.5,s,58421.1810725,uvot-u,20.3,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=3569/T_stop=17236 s（相对 BAT 触发），time=中点 10402.5 s、time_err=半宽 6833.5 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+10630.5,6856.5,s,58421.1837114,uvot-b,20.1,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=3774/T_stop=17487 s（相对 BAT 触发），time=中点 10630.5 s、time_err=半宽 6856.5 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+13546.0,8952,s,58421.2174556,uvot-uvm2,20.7,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN23400,T_start=4594/T_stop=22498 s（相对 BAT 触发），time=中点 13546 s、time_err=半宽 8952 s；3σ 上限；UVOT photometric system（Breeveld et al. 2011）记 Vega；未做银消改正（原文 E(B-V)=0.03）,Rusty-Harpoon@zcode
+35442.0,5202,s,58421.4708815,r,22.25,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR/1.5m Harold Johnson Telescope,,GCN23396,原文观测窗口 8.40–11.29 h after BAT trigger（2018/10 30.41–30.53 UTC），time=中点 9.845 h、time_err=半宽 1.445 h；3σ 上限；AB 系统（原文声明）；未做银消改正；相比 SDSS DR9 定标,Rusty-Harpoon@zcode
+35442.0,5202,s,58421.4708815,i,22.11,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR/1.5m Harold Johnson Telescope,,GCN23396,原文观测窗口 8.40–11.29 h after BAT trigger（2018/10 30.41–30.53 UTC），time=中点 9.845 h、time_err=半宽 1.445 h；3σ 上限；AB 系统（原文声明）；未做银消改正；相比 SDSS DR9 定标,Rusty-Harpoon@zcode
+35442.0,5202,s,58421.4708815,Z,21.07,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR/1.5m Harold Johnson Telescope,,GCN23396,原文观测窗口 8.40–11.29 h after BAT trigger（2018/10 30.41–30.53 UTC），time=中点 9.845 h、time_err=半宽 1.445 h；3σ 上限；AB 系统（原文声明）；未做银消改正；band Z 为 RATIR 近红外 Z 滤光片（与 r/i/Y/J/H 并列），借库内 UKIRT Z 键（8817 Å）近似,Rusty-Harpoon@zcode
+35442.0,5202,s,58421.4708815,Y,20.8,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR/1.5m Harold Johnson Telescope,,GCN23396,原文观测窗口 8.40–11.29 h after BAT trigger（2018/10 30.41–30.53 UTC），time=中点 9.845 h、time_err=半宽 1.445 h；3σ 上限；AB 系统（原文声明）；未做银消改正；相比 2MASS 定标,Rusty-Harpoon@zcode
+35442.0,5202,s,58421.4708815,J,20.31,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR/1.5m Harold Johnson Telescope,,GCN23396,原文观测窗口 8.40–11.29 h after BAT trigger（2018/10 30.41–30.53 UTC），time=中点 9.845 h、time_err=半宽 1.445 h；3σ 上限；AB 系统（原文声明）；未做银消改正；相比 2MASS 定标,Rusty-Harpoon@zcode
+35442.0,5202,s,58421.4708815,H,19.61,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR/1.5m Harold Johnson Telescope,,GCN23396,原文观测窗口 8.40–11.29 h after BAT trigger（2018/10 30.41–30.53 UTC），time=中点 9.845 h、time_err=半宽 1.445 h；3σ 上限；AB 系统（原文声明）；未做银消改正；相比 2MASS 定标,Rusty-Harpoon@zcode

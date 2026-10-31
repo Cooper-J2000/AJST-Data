@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB181030A",
-  "alias": [],
-  "ra": 146.9251,
-  "dec": 14.6582,
-  "T0": "2018-10-30T01:29:03Z",
-  "T0_ref": null,
+  "alias": [
+    "MASTER OT J094742.25+143925.73"
+  ],
+  "ra": 146.92603,
+  "dec": 14.65731,
+  "T0": "2018-10-30T01:27:22.164360Z",
+  "T0_ref": "GCN 23389（BAT 触发 01:27:22 UT，trigger=869494）；亚秒取 Swift/BAT 目录快照（external/swift_bat，MET 562555664.000 → 01:27:22.164360），整秒与 GCN 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 1.7,
   "pos_ref": "GCN 23391",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift 触发 869494。T0 修正：旧值 2018-10-30T01:29:03Z 系误取 MASTER-Kislovodsk 观测起始时刻（GCN 23392 原文「101 sec after trigger time at 2018-10-30 01:29:03 UT」），非触发时刻；现按 BAT 触发时刻 2018-10-30T01:27:22.164360（GCN 23389 + Swift/BAT 目录快照亚秒），全表 time/mjd 已重算（本源无 X 射线行）。旧 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失真改写，原值记于此。定位：旧 ra/dec=146.9251/14.6582 为 GCN 23389 XRT 初始位置（4.8″，90%），与 pos_ref=GCN 23391 不符；现取 GCN 23391 增强 XRT 位置 RA,Dec=146.92603,+14.65731（1.7″，radius，90% confidence，原文明确给出置信水平）。t90=304.7±76.9 s（GCN 23397，15-350 keV；Swift/BAT 目录快照 t90=303.196±78.598 s 一致），按通告/目录 t90 判 lgrb。红移：GCN 23389–23400 与文献检索均无 z，留空。alias「MASTER OT J094742.25+143925.73」为 GCN 23392 原文用名。lc 逐行核对：GCN23389 white FC 18.94±0.22（118 s，起于触发后 151 s）与 GCN23400 white_FC 19.34±0.30 为同一曝光的两次分析、数值不一致，两行均保留；GCN23400 其余 7 行为窗口中点/半宽口径的 3σ 上限；GCN23390 R(=Rc) 19.12±0.03（UT_mid=02:13:35 原文直给）；GCN23396 r/i/Z/Y/J/H 六行为 3σ 上限（AB，窗口 8.40–11.29 h after BAT trigger）；新增 GCN23392 MASTER m_OT=16.5 一行。测光检索（2026-10-31）：仓内 gcn/archive 8 篇（GCN 23389/23390/23391/23392/23394/23396/23397/23400，其中 5 篇含光学数值，X 射线内容不入库）、external/rssgrbag 0、external/grbsn_webtool 0、external/uvot_grb 0、external/swift_grb 0；ADS 检索 2 组查询共命中 9 条（8 条为上述 GCN，1 条为 2021ApJ...920L..21M 的 FRB 181030A H I 论文，与本 GRB 无关）→ 无研究文献测光，无红移；新增 1 行（MASTER），其余 15 行重算时间轴，共 17 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 869494，MET 562555664.000）；旧值 2018-10-30T01:29:03Z 实为 MASTER-Kislovodsk 观测起始（GCN 23392），已修正",
+    "t0_basis": "swift_bat_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
