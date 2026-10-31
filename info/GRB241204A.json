@@ -1,28 +1,45 @@
 {
   "transient_id": "GRB241204A",
-  "alias": [],
+  "alias": [
+    "bn241204152"
+  ],
   "ra": 316.5,
   "dec": 6.55,
-  "T0": "2024-12-04T03:39:22Z",
-  "T0_ref": null,
+  "T0": "2024-12-04T03:39:22.515Z",
+  "T0_ref": "GCN 38441（Fermi GBM 触发通告：At 03:39:22.51 UT on 04 December 2024，trigger 754976367/241204152）；FERMIGBRST 官方目录快照 bn241204152 trigger_time=2024-12-04T03:39:22.515Z（external/fermi_gbm）；GCN 38436（Fermi-LAT：T0 = 03:39:22.51 UT）同值互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1800,
   "pos_ref": "GCN 38436",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "重审（fsy，2026-10-28）：〔T0〕原整秒 03:39:22Z（bot meta_trigger=GBM 目录触发）方向正确，补目录亚秒 → 2024-12-04T03:39:22.515Z；GCN 38441 原文 03:39:22.51 UT、GCN 38436（LAT）同值 03:39:22.51 UT，舍入一致。extra_data 原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot），按 §3.10 改写，原值留本 comment。〔T0_offset 处置（2026-10-31 核查修正）〕Konus-Wind 于 03:39:19.909 UT 触发（GCN 38631：单脉冲自 T0 起、总持续 ~0.1 s，谱至 ~7 MeV），较 GBM 自动触发（03:39:22.515Z）早 2.606 s——原审核定性为「自动触发前已有辐射的真实偏移」并置 T0_offset=−2.606 s；经核查该定性不成立：GCN 38441 双峰落在 T90≈0.8 s 窗口内、fermi_gbm 快照自载 t90_start=−0.064 s、GBM 帧内 T0−2.6 s 处无辐射，2.606 s 主要为 Wind(L1) 与 Fermi 的星际光行时差（Wen et al. 2026, ApJL 1004, L8 的 MCCF 三角定位环带恰过 LAT 位置、偶然概率 P_chance≈0.8%），库内负 offset 先例均为钟面/换算差语义 → T0_offset 归 null，Konus 触发时刻留本句备查。〔Trigger_Instrument〕原 Fermi/LAT 有误：LAT 系高能附加探测（GCN 38436：GBM 触发时 26° off boresight，0–350 s >100 MeV 光子流量 (1.7±0.4)E-5 ph/cm2/s），实际触发为 GBM（GCN 38441：trigger 754976367/241204152）→ 改 Fermi/GBM；「Fermi/LAT」值保留给 LAT 似然探测且 GBM 未触发的源（GRB100213C 先例）。〔定位〕ra/dec=316.5/6.55 维持（Fermi-LAT 最优 on-ground 位，GCN 38436；FERMIGBRST 快照 ra/dec 同值）；补 pos_error=0.5°=1800″（radius，原文 90% containment, statistical error only → pos_error_confidence=90），pos_ref=GCN 38436 维持。〔分类〕t90=0.768±0.143 s（50-300 keV，FERMIGBRST 快照 bn241204152），按目录 t90 判 sgrb；GCN 38441 原文 duration (T90) of about 0.8 s、GCN 38631 标题「(short/hard)」及正文「The short-duration GRB 241204A」互证。〔alias〕bn241204152（GCN 38441 原文 trigger 名 241204152 的 HEASARC bn 形，FERMIGBRST 快照 name_alt 同形）。〔articles〕Wen et al. 2026, ApJL 1004, L8（DOI 10.3847/2041-8213/ae7108；2026-10-31 核查补充——本暴专文，经实核无 GCN 之外新测光表、无红移测量）。〔测光检索留证（2026-10-28）〕仓内 gcn/archive 全库扫描「241204A」命中 6 篇（38436/38440/38441/38442/38445/38631）全部读取；GCN 事件页（gcn.nasa.gov/circulars/events/grb-241204a）与仓内一致、2024-12 之后无新增通告；external/rssgrbag、external/grbsn_webtool 无该源记录；（2026-10-31 核查修正：原称「SciX/ADS 检索无该暴专门论文」失实——Wen et al. 2026, ApJL 1004, L8（DOI 10.3847/2041-8213/ae7108，2026-06-03 在线）即本暴专文，已入 articles[]；实核该文无 GCN 之外的新测光表、无红移测量，数据结论不变，红移留空。）补入 lc 新增 24 行：MASTER-Kislovodsk 23 行（GCN 38440 表原样，视场中心距 LAT 位 ~0.2°、覆盖源位）+ COLIBRÍ 1 行（GCN 38445）；并修正原 DDOTI 行（GCN 38442：窗口中点口径、band G→w）。GCN 38440 第 24–29 行（起点 15:46:27–16:10:26 UT，指向 20h46m–20h58m +03d10m–+05d04m）距源位 ~5°、未覆盖源位，不入库（场地极限，§3.3）。附属量备查：GBM fluence=2.22±0.09E-6 erg/cm2（10-1000 keV，GCN 38441；快照 fluence=7.80E-7 erg/cm2 备查）；Konus fluence=6.20(+1.11/−1.01)E-6 erg/cm2（20 keV-10 MeV，GCN 38631）；LAT >100 MeV 光子流量 (1.7±0.4)E-5 ph/cm2/s（T0+0–350 s，GCN 38436）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 官方目录触发时刻 2024-12-04T03:39:22.515Z（bn241204152，GCN 38441 互证）；Konus-Wind 于 03:39:19.909 UT 先行触发（GCN 38631，单脉冲起始）备查；T0_offset 归 null（2026-10-31 核查修正：原记 −2.606 s 定性不成立，见 comment）",
+    "t0_basis": "gbm_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Wen et al. 2026",
+      "url": "https://doi.org/10.3847/2041-8213/ae7108"
+    }
+  ],
   "host_galaxy": null
 }
