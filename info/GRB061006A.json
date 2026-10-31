@@ -1,25 +1,39 @@
 {
   "transient_id": "GRB061006A",
-  "alias": [],
-  "ra": 111.091667,
-  "dec": -79.2,
-  "T0": "2006-10-06T16:45:26.896000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 061006",
+    "GRB061006",
+    "GRB 061006S",
+    "BAT 232585",
+    "Swift 232585"
+  ],
+  "ra": 111.030542,
+  "dec": -79.198825,
+  "T0": "2006-10-06T16:45:50.510340Z",
+  "T0_ref": "GCN 5699（16:45:50 UT，trigger 232585）；亚秒取 Swift/BAT 官方目录 16:45:50.510340Z（swift_bat/swift_grb 快照，2026-07-21）",
+  "T0_offset": -22.8,
+  "T0_offset_ref": "GCN 5704（BAT 分析：双尖峰起于 T-22.8 s；因尖峰落在预设计漂移内，BAT 延迟至首个 64 s 图像才触发）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.4377,
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 5699",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 2.2,
+  "pos_ref": "GCN 5723",
+  "redshift_type": "spec",
+  "redshift_ref": "Berger+2007",
+  "comment": "身份：Swift/BAT 触发 232585（GCN 5699），即 GCN 5702 的 IPN 短暴——BAT 触发前 22.8 s 的双尖峰被 Konus-Wind（触发 16:45:26.896 UT=60326.896 s，GCN 5710）/RHESSI/Suzaku（16:45:27，GCN 5717）同时探测（GCN 5704），同一事件，无合并问题。T0：原值 16:45:26.896 为 Konus-Wind 触发时刻（非本源 Swift 触发），改为 Swift/BAT 触发 16:45:50.510340Z；真实爆发（双尖峰）起于 T-22.8 s（GCN 5704），记 T0_offset=-22.8 s，光变时间轴仍以 T0（触发）为历元。位置：改 GCN 5723 XRT 改正位置（2.2″，90%）；备查：GCN 5703 XRT 6″（90%）、GCN 5699 BAT on-board 3′、D'Avanzo+2009 光学余辉 07:24:07.60 -79:11:55.1（0.2″，1σ）、Berger+2007 宿主 07:24:07.75 -79:11:55.3。红移：z=0.4377±0.0002（Berger+2007 GMOS 宿主谱）；D'Avanzo+2009 FORS 谱 z=0.436±0.002 一致。sub_tag：t90=0.376±0.062 s（Konus-Wind 目录 Tsvetkova+2021，GCN 5710 总时长约 0.5 s），Minaev+2020 静系 t90=0.26 s、grb_type=I（I+EE），Swift/BAT 目录 t90=129.8±30.7 s 为含延展尾的整段值——按目录 t90 与两处 Type I 分类判 sgrb。测光检索（2026-10-31）：仓内 gcn/archive grep 命中 13 篇（相关 11 篇 + 2 篇数字巧合误命中 27213/35296）（5699/5700/5702-5705/5710/5711/5717/5718/5723 等，含光学数值者 5700/5711，另 5705/5718 提及光学观测（无数值）），external/rssgrbag 与 external/grbsn_webtool 无记录；ADS 全文检索 65 篇命中，有独立光学测光的仅 D'Avanzo+2009（VLT 9 点，arXiv v2 表 2 已逐值核对）与 Berger+2007（GMOS/PANIC 宿主测光，见 host_galaxy）；GCN Report 6.1 未单列新数值；TNS 无此源（2006 年 Swift GRB 非 TNS 对象）；本轮新增 0 行，17 个光学/UV 行全部逐值重核（Faulkes 2 行改判上限、i' 波段改正；UVOT 6 行 time_err/银消标志修正；VLT 9 行 time_err/系统标注修正），11 个 X 射线行按 §3.3 保持原样（mjd 仍基于旧 T0，与现 T0 差 23.6 s，属已知警告态）。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    },
     "derived": {
       "best": {
         "eiso": {
@@ -566,7 +580,29 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract",
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Berger+2007",
+      "title": "A New Population of High-Redshift Short-Duration Gamma-Ray Bursts",
+      "url": "https://doi.org/10.1086/518762",
+      "bibtex": "@ARTICLE{2007ApJ...664.1000B,\n       author = {Berger, Edo},\n       title = {A New Population of High-Redshift Short-Duration Gamma-Ray Bursts},\n       journal = {The Astrophysical Journal},\n       year = {2007},\n       volume = {664},\n       pages = {1000},\n       doi = {10.1086/518762},\n       eprint = {astro-ph/0611128},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2007ApJ...664.1000B/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "D'Avanzo+2009",
+      "title": "The optical afterglows and host galaxies of three short/hard gamma-ray bursts",
+      "url": "https://doi.org/10.1051/0004-6361/200811294",
+      "bibtex": "@ARTICLE{2009A&A...498..711D,\n       author = {D'Avanzo, P. and Malesani, D. and Covino, S. and Piranomonte, S. and Grazian, A. and Fugazza, D. and Margutti, R. and D'Elia, V. and Antonelli, L. A. and Campana, S. and others},\n       title = {The optical afterglows and host galaxies of three short/hard gamma-ray bursts},\n       journal = {Astronomy and Astrophysics},\n       year = {2009},\n       volume = {498},\n       pages = {711},\n       doi = {10.1051/0004-6361/200811294},\n       eprint = {0901.4038},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2009A&A...498..711D/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 111.032292,
+    "dec": -79.198694,
+    "redshift": 0.4377,
+    "redshift_err": 0.0002,
+    "redshift_type": "spec",
+    "comment": "宿主确定：光学余辉与延展源位置重合（余辉偏移宿主中心 0.3″±0.3″，D'Avanzo+2009），GMOS/FORS 两谱均测得宿主红移。宿主坐标取 Berger+2007（GMOS 相对邻近 2MASS 恒星定位 07:24:07.75 -79:11:55.3，约 0.16″）。宿主自身测光（文献值，记录于此、不入 lc）：Berger+2007 GMOS r_AB=24.18±0.09（系统差 0.26 mag）、i_AB=23.11±0.09（系统差 0.30 mag），观测起于触发后 3.6 d（i 共 900 s、r 共 1440 s）；Magellan/Baade PANIC Y=22.0±0.2（2006-10-08.39 UT，960 s，零点不确定约 30%）；D'Avanzo+2009 宿主 I=23.03+0.22/-0.15，其 VLT 晚期 B/V/R/I/J 测光与深 K 限以宿主为主（对应本源 lc 行已在 comment 注明）。",
+    "source": "Berger+2007（DOI 10.1086/518762）；D'Avanzo+2009（DOI 10.1051/0004-6361/200811294）"
+  }
 }
