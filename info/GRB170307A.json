@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB170307A",
-  "alias": [],
+  "alias": [
+    "GRB 170307A",
+    "bn170307851"
+  ],
   "ra": 13.51,
   "dec": 9.538,
-  "T0": "2017-03-07T20:25:17Z",
-  "T0_ref": null,
+  "T0": "2017-03-07T20:25:17.495Z",
+  "T0_ref": "GCN 20835",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 150.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 20838",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-10-28）：[身份] Fermi/GBM 触发 510611122（通告名 170307851）：GCN 20835 原文 'At 20:25:17.49 UT on 07 March 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170307A (trigger 510611122 /170307851)'，并确认 Swift BAT 亦测到（GCN 20832）；GCN 20838 精化分析确认 BAT trigger #741528 'is indeed a GRB'。两触发时刻差 56.5 s：BAT 20:24:21 UT 系 SAA 出区过程中的过早触发（GCN 20832 原文称 Swift was emerging from the SAA、当时尚不能定性 'a possible GRB'），BAT 光变示暴始于 ~T_BAT+55 s（GCN 20838）=20:25:16，与 GBM 触发自洽，故 T0 取暴发实际触发仪器 GBM 的时刻；BAT 历元不另设 T0_offset（lc 数据均为绝对时刻、以标准 T0 锚定，无分历元数据）。[T0] 2017-03-07T20:25:17.495Z（T0_ref=GCN 20835；external/fermi_gbm 目录 trigger_time 同值，按触发仪器精到亚秒），原 20:25:17Z 为同一时刻整秒截断；external/swift_bat 目录历元 2017-03-07T20:24:21.280840Z 留此备查（早 56.5 s，非暴始）。按 Issue #84，T0 只取触发时刻，不取观测窗边界。[坐标] GCN 20838 BAT 精化位置 RA,Dec=13.510,9.538（J2000，±2.5′，radius sys+stat，90% containment），ra/dec/pos_error 维持 bot 原值，补 pos_error_confidence=90；Swift 受太阳约束未 slew、无 XRT/UVOT 数据（GCN 20832），坐标无法再精化。[分类] tag 补 'grb'；sub_tag 补 'lgrb'：t90=28.416±1.7173 s（50–300 keV，external/fermi_gbm 目录）按目录 t90 判 lgrb；同量并列 GCN 20838 t90=56.92±27.40 s（15–350 keV）、GCN 20835 T90~57.9 s（50–300 keV）、external/swift_bat 目录 29.92±28.18 s，均远超 2 s。[alias] 补 'GRB 170307A'（GCN 20832/20835/20838/20880 标题原文用名，external/swift_bat 目录 name 同形）与 'bn170307851'（GCN 20835 GBM 通告名 /170307851，external/fermi_gbm 目录 name_alt 同形；仓内 bn 形别名已有先例）。[lc] 仅 1 行射电（GCN 20880 AMI Large Array 15 GHz 非探测）：流量还原原文 '3sigma upper limit of 90 uJy' 原单位 0.09 mJy→90 uJy，upperlimit=y 维持；原文仅给观测历元 '2016 Mar 13.57 (UT)'——年份系原文笔误（2016 应为 2017：通告日期 2017-03-16，历元与 GBM 触发差 5.72 d 与 3 月 13 日观测自洽）；历元精度 0.01 d → time=历元−T0=494130.5 s、time_err=±0.005 d=432 s；mjd 按 T0+time 重算保留 7 位小数；band=15GHz 为原文中心频率原样；instrument 'AMI Large Array' 维持 bot 原样、reference 补空格 'GCN 20880'、source 补 fsy；按 §3.4 射电行不做合并/换算/归一。[测光检索留证]（2026-10-28）：① 仓内 gcn/archive 本地不存在（改用 GCN 站 https://gcn.nasa.gov/circulars 全文检索与逐篇原文，双通道：源名 'GRB 170307A' + 触发号 741528/510611122 + 邻近通告号 20830–21020 逐篇扫描（20831 为 GRB 170306B 无关）；本暴通告共 4 篇：20832/20835/20838/20880 全部打开核对）；external/ 各快照（rssgrbag、konus_wind、uvot_grb、batse、agile_mcal、saxgrbmgrb、fermi_lat、heasarc_grbcat、grbsn_webtool、swift_bat、fermi_gbm）仅目录级参数、无测光表，测光 0 命中；② 文献：Web/ADS 检索未找到含本暴测光表的研究论文（AMI-LA 跟踪仅见于 GCN 20880），补 0 行；③ SIMBAD 本机连接失败（HTTP:000）未核，TNS 不适用（GRB 非 AT/SN 类）。结论：补 0 行（既有 1 行重锚+还原原单位）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
