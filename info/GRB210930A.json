@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB210930A",
-  "alias": [],
-  "ra": 197.40185,
-  "dec": 48.62853,
-  "T0": "2021-09-30T16:22:45Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 210930A",
+    "BAT 1075565"
+  ],
+  "ra": 197.401875,
+  "dec": 48.6285556,
+  "T0": "2021-09-30T02:46:52.183340Z",
+  "T0_ref": "GCN 30897（BAT trigger 1075565，原文 At 02:46:52 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 210930A）；亚秒取 Swift/BAT trigger 1075565 官方产品页 UTC 02:46:52.183340（与 external/swift_bat 快照一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.4,
   "pos_ref": "GCN 30900",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy（2026-10-28）。(1) 身份：Swift/BAT 于 2021-09-30 02:46:52 UT 触发（trigger=1075565，GCN 30897），XRT 于触发后 140.1 s 发现衰减 X 射线源（GCN 30897/30900）；同日 Fermi 触发 654658271（GRB210930.06，01:41:21 UT，RA 19h36m40s +24d09m，GCN 30899）为另一事件、与本源无关；external/swift_bat、external/swiftgrbba、external/mpe_greiner 快照均以 GRB 210930A 收录，身份互证一致。(2) T0：原 bot T0=2021-09-30T16:22:45Z（extra_data.t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，原值留档于此）实为 MASTER-Tavrida 指向时刻（GCN 30901 原文 48953 sec after trigger time at 2021-09-30 16:22:45 UT；16:22:45−02:46:52=48953 s），属观测/指向时间误植为 T0（Issue #84 家族），废弃；标准 T0=2021-09-30T02:46:52.183340Z（GCN 30897 整秒一致，取 Swift/BAT trigger 1075565 官方产品页 https://gcn.gsfc.nasa.gov/notices_s/1075565/BA/ 亚秒 02:46:52.183340，与 external/swift_bat 快照一致；§3.2/§3.8），T0_offset=null（导入缺陷、非真实偏移）。(3) 定位：改取 GCN 30900 增强 XRT 位置 RA=197.401875/Dec=48.6285556（13h09m36.45s +48d37m42.8s），pos_error=2.4″（radius，原文 uncertainty of 2.4 arcsec (radius, 90% confidence)），pos_error_confidence=90，pos_ref=GCN 30900；原 ra/dec=197.40185/48.62853 为 GCN 30897 XRT 初位（3.8″，90%），与 2.4″ 误差混拼两来源，已统一到 30900 精化位；GCN 30897 BAT 在机位 197.435/+48.623（3′，90% 含系统差）、GCN 30917 BAT 地面位 197.415/48.630（1.6′，90% sys+stat）并列备查。(4) 分类：t90=11.81±1.94 s（GCN 30917，15-350 keV；external/swift_bat 快照 11.812±1.940826 s 一致），按通告/目录 t90 判 lgrb（未自算）。(5) 测光：UVOT 9 行上限（GCN 30903 表：white_FC 19.9/u_FC 19.6/white 20.6/v 18.7/b 19.6/u 19.7/w1 19.5/m2 18.7/w2 20.4，XRT 位置处 3σ），time=T_start+Exp/2（§3.2；T_stop−T_start 含开销不等于 Exp）、mag_system=Vega（原文声明采用 UVOT photometric system，引 Breeveld et al. 2011（AIP Conf. Proc. 1358, 373））；MASTER 4 行上限（GCN 30901 表，表头 Tmid-T0 原文直给中点 32055/32055/36978/49043 s，Expt 1/1/180/180 s，C=无滤光片→band=G；前三行站点列原文截断为 MASTER-、节点不可考；mag_system 原文未声明系统）；CAHA 行修订：原 time=9245.0 为误植 T0 下序列开始值，原文只给序列开始 18:56:50 UT 与 r 波段 6x90s 叠合，取叠合总曝光 540 s 计中点（=18:56:50 UT+270 s）与半宽 270 s（§3.8 约定口径），mag_system 原文未声明系统。GCN 30897 UVOT 段 the list of sources is typically complete to about 18 mag 为星表完备度陈述、非该源位置测光，不入库。(6) 红移：无，null。(7) 宿主：未确认，null。(8) X 射线：GCN 30902 XRT 分析（衰减指数 0.71 等）按范围约定不入库。(9) 测光检索（2026-10-28）：仓内 gcn/archive 本地未获取（如实注明，未参与检索）；external/rssgrbag 0 命中、grbsn_webtool 无该事件、uvot_grb/icecube 快照无该源；GCN 站逐篇枚举 30895–30945（51 篇）命中 7 篇：30897（检测）、30900（增强 XRT 位）、30901（MASTER 上限 4 行，入库）、30902（XRT 分析，仅 X 射线）、30903（UVOT 上限 9 行，入库）、30909（CAHA 上限，已有行修订）、30917（BAT 精化+t90）；SIMBAD 无 GRB 210930A 标识（0 命中）、OpenAlex 命中 5 篇（4 篇即上述 GCN、另 1 篇 2024 Fermi/GBM 深度学习样本论文与该 Swift 暴无关）、arXiv API 检索 210930A 0 命中 → 无已发表测光表，articles[] 留空。(10) alias：GRB 210930A（GCN 30897 subject 原文用名）、BAT 1075565（external/swift_bat 快照 name_alt 官方触发号名，GCN 30917 trigger #1075565 同号，先例 info/GRB070209 同款收录）。新增 13 行、修订 1 行，X 射线行 0 条（本源无 X 射线测光行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0=Swift/BAT trigger 1075565 官方触发时刻 2021-09-30T02:46:52.183340Z（GCN 30897+产品页+swift_bat 快照互证）；原 meta_trigger 值系 MASTER 指向时刻误植",
+    "t0_basis": "swift_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
