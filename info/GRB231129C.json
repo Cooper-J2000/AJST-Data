@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB231129C",
   "alias": [],
-  "ra": 11.91,
-  "dec": -81.636,
-  "T0": "2023-11-29T19:10:15Z",
-  "T0_ref": null,
+  "ra": 11.1769,
+  "dec": -81.9936,
+  "T0": "2023-11-29T19:10:18.115Z",
+  "T0_ref": "触发仪器 Fermi/GBM：GCN 35217 trigger 722977823/231129799 '19:10:18 UT'（MET 722977823.114938）、GCN 35221 '19:10:18.11 UT'；仓内 external/fermi_gbm 快照 trigger_time=2023-11-29T19:10:18.115Z（更细小数自洽）；MASTER-SAAO 光学检测 19:11:48 UT 即 trigger 后 90 s（GCN 35240）独立互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,17 +12,20 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 9.5,
+  "pos_ref": "GCN 35251",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error_confidence": "90",
+  "comment": "数据审核（fsy 2026-10-28）。T0 改锚：原 bot 2023-11-29T19:10:15Z 取自 Swift/BAT-GUANO burst time 19:10:15.02 UTC（GCN 35242——GUANO 响应 Fermi 通告保存数据拟合的爆发时刻，非触发时刻），但触发仪器为 Fermi/GBM——GBM 触发 19:10:18.115 UTC（trigger 722977823/231129799；GCN 35217 MET 722977823.114938/19:10:18 UT、GCN 35221 19:10:18.11 UT、external/fermi_gbm 快照 .115 自洽），MASTER-SAAO 光学检测 19:11:48 UT 即 trigger 后 90 s（GCN 35240）独立互证，改 T0=2023-11-29T19:10:18.115Z。GUANO 时刻与 GBM 触发差 −3.10 s（待决①：GUANO burst-fit 时间是否记 T0_offset，本审暂 null 留 comment）。原 bot extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」（bot 失真，改写留档）。定位更正：原 bot ra=11.91/dec=−81.636 为 GBM 目录位且 pos_error 缺失；改用 GCN 35251 Swift-XRT afterglow RA=11.1769 Dec=−81.9936（00:44:42.45 −81:59:37.0），9.5″ radius 90% conf，pos_error_confidence=90。更精确定位：GCN 35240 MASTER OT 位 00:44:37.97 −81:59:48.75 ±4″（与 XRT 位相距 ~15″，原文称位于 XRT 误差框内并示衰减）——是否改锚待维护者裁定（待决②）。分类：t90=5.82414±0.09051 s（50-300 keV，Fermi GBM 目录 external/fermi_gbm 快照）按目录 t90 判 lgrb；GCN 35217 'likely LONG GRB'、GCN 35221 'about 15 seconds，likely long' 一致。测光检索（2026-10-28）：GCN 站源名检索命中 23 篇（35217/35221/35222/35223/35225/35226/35227/35228/35229/35230/35231/35234/35235/35236/35238/35240/35242/35244/35249/35251/35256/35288/35311），其中光学测光仅 4 篇：35226 iTelescope 检测（AT2023yph，Ic≈18 @02:27 UT）被 35229 撤回——实为高自行恒星（Gaia DR3 4631003097698452224）非本源对应体，bot lc 唯一行即此撤回假候选，按撤回处置 discard=1 留档且 AT2023yph 不作 alias；35240 MASTER-SAAO 检测 m_OT~17.6（未滤光）@T+90 s 新增 1 行；35249 PROMPT-7 两条 Open 滤光 5-sigma 限量新增 2 行（一条针对 MAXI/GSC X 射线区域、一条针对 MASTER OT/XRT 候选体）；其余 35222 BALROG/35242 BAT-GUANO/35311 IPN 为定位、35223 MAXI/35234/35251 XRT 为 X 射线、35225 Tiled Swift 为规划、35227/35238/35244/35228/35230/35231/35235/35236/35256/35288 为伽马检测，均无光学测光。仓内 external 快照 grep：external/fermi_gbm 有本源目录行（t90/t50/fluence 引用如上）；external/swift_bat 快照的 GRB 231129A（trigger 1199764，05:05:59 UT）为同日另一爆发非本源；external/heasarc_grbcat、external/rssgrbag、external/grbsn_webtool 无记录。文献：Chen+2024（ApJ 972 132，热辐射主导，bot 已挂 articles，核对属实）。原文注记：GCN 35240 未给曝光时长与误差、星等系统未声明；GCN 35249 标定到 g 波段参考星（隐含 AB 但未声明系统）→ mag_system 留空。审核 fsy 2026-10-28",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
+    "t0_note": "T0=Fermi/GBM 触发时刻 2023-11-29T19:10:18.115 UTC（trigger 722977823/231129799；GCN 35217/35221 + GBM 目录快照互证）；原 bot 值 2023-11-29T19:10:15Z 为 Swift/BAT-GUANO burst time 19:10:15.02（GCN 35242）而非 GBM 触发",
+    "t0_basis": "trigger",
     "bot_created": true
   },
   "articles": [
