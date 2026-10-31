@@ -1,13 +1,15 @@
 {
   "transient_id": "GRB231104A",
-  "alias": [],
-  "ra": 23.7875,
-  "dec": 83.790833,
-  "T0": "2023-11-04T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "bn231104075"
+  ],
+  "ra": 23.80633,
+  "dec": 83.79348,
+  "T0": "2023-11-04T01:47:39Z",
+  "T0_ref": "GCN 34938（Swift/BAT trigger 1194500，触发时刻 01:47:39 UT）；多触发仪器矛盾时按规则取 Swift",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,17 +18,23 @@
   "pos_ref": "GCN 34940",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "T0 其余来源备查：Fermi/GBM 触发 01:47:28.139 UT（trigger 720755253/231104075，GCN 34950；官方目录 FERMIGBRST trigger_time=01:47:28.139Z）；Konus/WIND 触发 01:47:39.141 UT（GCN 35008）；NuSTAR 屏上升沿 01:47:37 UT（GCN 34957）。sub_tag：t90=37.1206±1.81 s（FERMIGBRST，50-300 keV）按目录 t90 判 lgrb；另 BAT T90=46.77±1.54 s（15-350 keV，GCN 34964）、GBM 通告 T90≈44 s（GCN 34950）、VZLUSAT-2 T90=26 s（GCN 35008）备查。定位：ra/dec 为 Swift-XRT 增强位置（GCN 34940，2.2 arcsec radius，90% confidence；原文明确给出置信水平）；原 ra/dec 23.7875/+83.790833 实为 BAT 在轨位置（GCN 34938，3 arcmin）但误配了 34940 的 2.2″ 误差，已改正。消光备查：E(B-V)=0.156（GCN 34941）/0.157（GCN 34938）。时间基准修正记录：bot 原值 t0_basis=meta_trigger、T0=2023-11-04T00:00:00Z（仅日期占位，非真实触发时刻）。测光检索（2026-10-31）：仓内 gcn/archive 命中 21 篇（18 篇属本源，其中 9 篇含光学/IR 测光或上限，已全部逐篇核对）；external/rssgrbag 无本源记录、grbsn_webtool 无本源事件目录；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-231104a）与仓内一致；ADS（api.adsabs.harvard.edu）检索 \"GRB 231104A\"/\"231104A\"/触发号 231104075 命中 17 条（全部为 GCN Circular，无独立发表论文）、arXiv API 无命中；TNS 不适用（GRB 类）。本轮新增 16 行（MASTER-Tavrida 7、Swift/UVOT 8、3.6m DOT 1），修正既有 9 行的历元/上限标记/波段键。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Swift/BAT 触发时刻 2023-11-04T01:47:39 UT（GCN 34938）；bot 原值 t0_basis=meta_trigger、T0=2023-11-04T00:00:00Z",
+    "t0_basis": "swift_bat_trigger_gcn34938",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
