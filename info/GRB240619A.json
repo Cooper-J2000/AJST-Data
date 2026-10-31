@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB240619A",
-  "alias": [],
-  "ra": 162.394583,
-  "dec": 17.282797,
-  "T0": "2024-06-19T03:43:30Z",
-  "T0_ref": null,
+  "alias": [
+    "AT2024lwv",
+    "GOTO24cvn",
+    "GRB240619155"
+  ],
+  "ra": 162.3944,
+  "dec": 17.2829,
+  "T0": "2024-06-19T03:43:31.003Z",
+  "T0_ref": "Fermi/GBM 触发 740461416.003318（GCN 36694 原文 03:43:31 UT；GCN 36717 给 03:43:31.00 UT）；FERMIGBRST 官方目录 trigger_time=2024-06-19T03:43:31.003Z（仓内 external/fermi_gbm 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.63,
+  "redshift": 0.396,
   "tag": [
     "grb"
   ],
   "pos_error": 4.3,
   "pos_ref": "GCN 36721",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "Kumar+2025（DOI 10.1093/mnras/staf1689）表 4；GCN 36813 初测 z=0.3965",
+  "comment": "触发时刻：Fermi/GBM trigger 740461416.003318 → UTC 2024-06-19T03:43:31.003（扣 2001 纪元后 5 闰秒，Issue #67 口径）；GCN 36694 原文 03:43:31 UT、GCN 36717 给 03:43:31.00 UT，FERMIGBRST 目录同值；互证：CALET/CGBM 03:43:30.40（GCN 36719）、GRBAlpha 峰值 03:43:30.7（GCN 36724）、Konus-Wind 自锚 T0=03:43:28.204（GCN 36768）。原 bot 值 2024-06-19T03:43:30Z 早 1 s，改正（原 extra_data：t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis「meta_trigger」）。定位：Swift-XRT 精化位置 RA,Dec=162.3944,+17.2829（4.3″ 半径，90%，GCN 36721），距 GOTO 位置 10:49:34.70,+17:16:58.07（GCN 36715）0.7″；原库坐标为 GOTO 位置而 pos_ref 指 GCN 36721，改用 XRT 位置；GBM 初定位 RA=162.1,Dec=17.3（1.6°，GCN 36694）备查。红移：X-shooter 发射线证认 z=0.3965（GCN 36813），Kumar+2025 表 4 精化 z=0.3960±0.0001，取 VoR；原值 0.63±0.19 为 PS1-STRM 光度红移（GCN 36715 引 Beck+2020），弃用。t90=36.126±0.586 s（FERMIGBRST，50–300 keV），GCN 36694 称 likely LONG GRB；但 Chen+2025（ApJ 993,147）论证其为 SGRB-with-EE（ME 相位 T90≈3.6 s），分类冲突 → sub_tag 留空待决。别名出处：AT2024lwv 为 TNS 用名、GOTO24cvn 为 GOTO 内部名（GCN 36715）；别名「GRB240619155」有出处：GCN 36695 原文用名「(Fermi Trigger 740461416 / GRB 240619155)」。测光检索（2026-10-31）：仓内 gcn/archive 命中 14 篇（36694/36695/36708/36715/36717/36719/36720/36721/36724/36739/36740/36744/36768/36813；MASTER 4 个 C 波段上限、GOTO 2 个探测 + 1 个触发前上限、WINTER J、AMI-LA 15.5GHz 均已入库）；external rssgrbag/grbsn_webtool/uvot_grb 无记录、fermi_gbm 仅目录参数；GCN 站无 archive（覆盖至 GCN 46068）之外的遗漏通告；ADS 命中研究论文 2 篇：Kumar+2025（MNRAS 544,1541，表 A1 含本源 14 行光学测光、表 A2 射电 1 行；OUP 原站 Cloudflare 403，取 LJMU 机构库排版 VoR 副本 https://researchonline.ljmu.ac.uk/id/eprint/28158/ 与 arXiv:2509.09827v1 逐值核对，新增 12 行、同源转引值引用最初出处）、Chen+2025（ApJ 993,147，VoR 已通读，纯 GBM 时谱分析，无光学/射电测光表）；TNS photometry 5 点（GOTO-S/GOTO-N/ATLAS-CHL/ATLAS-MLO/PS1），补触发前 ATLAS、GOTO 上限与 ATLAS-MLO o=16.175 共 3 行，PS1 i 与报告 215607 互证。Kumar+2025 表 A1 标题只声明全表 AB；其 §6.2 的银消改正用于种群分析光变，且 GCN 转引行与原 GCN 值逐一相同，判表 A1 数值未做银消改正（Gext_corr 留空=n）。本轮新增 19 行、修正 3 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 触发 740461416.003318 → UTC 03:43:31.003（2026-10-31 审核改正，原 bot 记录：t0 为 meta trigger-time（真实触发时刻）/meta_trigger）",
+    "t0_basis": "fermigbrst_trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [
     {
@@ -32,6 +42,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...993..147C",
       "bibtex": "@ARTICLE{2025ApJ...993..147C,\n       author = {{Chen}, Jia-Ming and {Zhu}, Ke-Rui and {Chang}, Xue-Zhao and {Peng}, Zhao-Yang and {Zhang}, Li},\n        title = \"{GRB 240619A: Evidence for a Compact Star Merger Origin}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, 629},\n         year = 2025,\n        month = nov,\n       volume = {993},\n       number = {1},\n          eid = {147},\n        pages = {147},\n          doi = {10.3847/1538-4357/ae0938},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025ApJ...993..147C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Kumar+2025",
+      "title": "Discovery and Analysis of Afterglows from Poorly Localised GRBs with the Gravitational-wave Optical Transient Observer (GOTO) All-sky Survey",
+      "url": "https://doi.org/10.1093/mnras/staf1689",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
