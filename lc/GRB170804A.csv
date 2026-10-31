@@ -1,10 +1,10 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-131.0,,s,57969.50263888889,w,19.01,0.15,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN21410,,
-289.0,,s,57969.5044675926,uvot-u,18.7,0.1,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN21415,,
-545.0,,s,57969.50743055555,uvot-b,18.9,0.4,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN21415,,
-596.0,,s,57969.50802083333,uvot-uvw2,19.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN21415,,
-671.0,,s,57969.508888888886,uvot-uvw1,19.0,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN21415,,
-796.0,,s,57969.51033564815,uvot-v,18.7,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN21415,,
-871.0,,s,57969.5112037037,w,20.0,0.2,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN21415,,
-24983.0,,s,57969.79027777778,r,21.4,,magnitude,,n,y,,,,,,,1.0,n,,LCO 1m,GCN21417,,
-24983.0,,s,57969.79027777778,i,21.1,,magnitude,,n,y,,,,,,,1.0,n,,LCO 1m,GCN21417,,
+206.0,75.0,s,57969.5035115,w,19.01,0.15,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN21410,GCN 21410 UVOT finding chart：White 150 s 曝光起始于 T0+131 s；time=曝光中点 131+150/2=206 s、time_err=半曝光 75 s（§3.8）。GCN 21415 的 white_FC（132-281 s，18.9±0.1）为同一曝光，按 §3.4 保留最初来源 GCN 21410。星等未做银消改正（E(B-V)=0.02）；UVOT 光度系统即 Vega 系（GCN 21415 声明 UVOT photometric system，Breeveld et al. 2011）,wa1kmoon@zcode
+414.0,125.0,s,57969.5059189,uvot-u,18.7,0.1,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN21415,GCN 21415 u_FC：T_start 289 s、T_stop 539 s、exp 246 s；time=窗口中点 (289+539)/2=414 s、time_err=半宽 125 s（原文只给窗口，中点/半宽为 §3.8 约定口径）。未做银消改正；UVOT Vega 系（Breeveld+2011，GCN 21415 明示）,wa1kmoon@zcode
+555.0,10.0,s,57969.5075508,uvot-b,18.9,0.4,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN21415,GCN 21415 b：T_start 545 s、T_stop 565 s、exp 19 s；time=窗口中点 555 s、time_err=半宽 10 s。未做银消改正；UVOT Vega 系（Breeveld+2011）,wa1kmoon@zcode
+994.0,398.0,s,57969.5126318,uvot-uvw2,19.2,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN21415,GCN 21415 uvw2：T_start 596 s、T_stop 1392 s、exp 97 s，3σ 上限 >19.2；time=窗口中点 994 s、time_err=半宽 398 s（多次指向拼接窗口，真实曝光中点不可恢复）。未做银消改正；UVOT Vega 系（Breeveld+2011）,wa1kmoon@zcode
+981.5,310.5,s,57969.5124871,uvot-uvw1,19.0,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN21415,GCN 21415 uvw1：T_start 671 s、T_stop 1292 s、exp 78 s，3σ 上限 >19.0；time=窗口中点 981.5 s、time_err=半宽 310.5 s。未做银消改正；UVOT Vega 系（Breeveld+2011）,wa1kmoon@zcode
+1019.5,223.5,s,57969.5129270,uvot-v,18.7,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN21415,GCN 21415 v：T_start 796 s、T_stop 1243 s、exp 58 s，3σ 上限 >18.7；time=窗口中点 1019.5 s、time_err=半宽 223.5 s。未做银消改正；UVOT Vega 系（Breeveld+2011）,wa1kmoon@zcode
+945.5,74.5,s,57969.5120705,w,20.0,0.2,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN21415,GCN 21415 white：第二次 White 曝光（T_start 871 s、T_stop 1020 s、exp 147 s，与 FC 不同）；time=窗口中点 945.5 s、time_err=半宽 74.5 s。未做银消改正；UVOT Vega 系（Breeveld+2011）,wa1kmoon@zcode
+26400.0,1200.0,s,57969.8066827,r,21.4,,magnitude,,n,y,,,,,,,1.0,n,LCO 1m,,GCN21417,GCN 21417 LCO 1m（Siding Spring）5×240 s SDSS r'，3σ 上限 >21.4（seeing ~2.6″）；原文只给起始 T0+7.0 h（≙2017-08-04.79 UT）与每滤片共 20 min 曝光，r'/i' 共用整个约 40 min 窗口：time=窗口中点 T0+26400 s、time_err=半宽 1200 s（逐滤片中点不可恢复，§3.8）。以 USNO-B1 定标换算至 SDSS r'，未做银消改正；原文未声明星等系统,wa1kmoon@zcode
+26400.0,1200.0,s,57969.8066827,i,21.1,,magnitude,,n,y,,,,,,,1.0,n,LCO 1m,,GCN21417,GCN 21417 LCO 1m（Siding Spring）5×240 s SDSS i'，3σ 上限 >21.1；窗口口径同行内 r' 行（T0+25200 s 起共 40 min）：time=窗口中点 T0+26400 s、time_err=半宽 1200 s。以 USNO-B1 定标换算至 SDSS i'，未做银消改正；原文未声明星等系统,wa1kmoon@zcode
