@@ -1,22 +1,25 @@
 {
   "transient_id": "GRB121226A",
-  "alias": [],
-  "ra": 168.62,
-  "dec": -30.413,
-  "T0": "2012-12-26T19:09:43Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 121226A",
+    "GRB 121226AS"
+  ],
+  "ra": 168.6423,
+  "dec": -30.4064,
+  "T0": "2012-12-26T19:09:43.890520Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 544027：2012-12-26T19:09:43.890520Z（仓内 swift_bat 快照，retrieved 2026-07-21）；BAT 位置通告 GRB_TIME=68983.89 SOD {19:09:43.89} UT 互证；GCN 14105 给整秒 19:09:43 UT（一致）。多个来源整数秒一致，按 §3.2 取触发仪器（Swift/BAT）亚秒值；原库 T0=19:09:43Z 已精化 +0.890520 s",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 1.27,
+  "redshift": 1.37,
   "tag": [
     "grb"
   ],
   "pos_error": 2.1,
   "pos_ref": "GCN 14112",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "redshift_type": "phot",
+  "redshift_ref": "Nugent+2022, ApJ, 940, 57（DOI 10.3847/1538-4357/ac91d1）宿主星系 Prospector 测光红移（GOLD SAMPLE 表）",
+  "comment": "身份：Swift/BAT trigger 544027（GCN 14105）。定位：原库 ra/dec=168.62,−30.413 实为 GCN 14111 BAT 精化地面位置、却配了 XRT 的 2.1″ 误差，属错配；已改取 GCN 14112 Swift/XRT 精化位置 168.6423,−30.4064（2.1″，90% 包含；pos_error_confidence=90 按原文）。T0：见 T0_ref；非 X 射线 22 行 mjd 已按新 T0 重算（7 位小数）；12 行 X 射线（10keV）行 mjd 需维护者按 mjd=T0_new+time 机械重算（§3.3 唯一例外，维护者合入前执行）。无 T0_offset（无 >1 s 的爆发时刻调整证据）。分类：t90=1.012±0.203 s（15-350 keV，Swift/BAT catalog）；GCN 14111 T90=1.00±0.20 s 并判 short-hard → 按目录 t90 判 sgrb。红移：原库 1.27（catalog:mpe_greiner，z_flag=phh=宿主测光红移）与 MPE Greiner 本暴单页（z=1.37+0.05/−0.06，引 Nugent et al. 2022）自相矛盾；Nugent+2022（ApJ 940, 57）宿主 Prospector 测光红移 z=1.37+0.05/−0.06（arXiv v1 GOLD SAMPLE 行核对）→ 改为 1.37（phot）。并列备查：Dichiara+2021（ApJL 911, L28）宿主 SED z≈1.8+0.2/−0.1；Fong+2015 无红移（表1 为⋯，正文 assume z=1 仅建模假定）。Dichiara+2021 表1 脚注把 121226A 红移引到 Selsing2016（GCN 19274）属上游引证笔误——GCN 19274 实为 GRB 160410A 的 VLT/X-shooter 红移通告（1.717）。宿主：GCN 14139 TNG 宿主测光 r(AB)=24.68±0.15（15.4 d），与 0.5 d 一致无衰减、射电源重合（GCN 14126）→ 成协可靠，host_galaxy 已建立；0.5 d 历元 GTC/Pandey/GROND 测光的 OT/宿主属性文献未定论（GCN 14114 vs GCN 14139 vs Pandey+2019），行留在 lc 并在行 comment 区分。去重：GCN 14105 white FC 行（19.6，time 错取 124 s）与 GCN 14113 white_FC 行（20.6，104–254 s）为同一曝光的初报/精化 → 删 14105 行、留 14113 精化值；Fong+2015 表 7 NOT 行（<2.1 μJy @11.1 hr）为 GCN 14110 转引 → 保留最初出处；其余为不同望远镜/不同标定的独立测量，均保留（GTC r：GCN 14114 r'~25、Pandey+2019 r=24.30±0.30、GROND r'=24.05±0.13 同历元并存）。测光检索留证（2026-10-31）：仓内 gcn/archive 全文扫描命中 13 篇（本源通告 14105–14139 共 12 篇 + S190425z 无关）、external/rssgrbag/grbsn_webtool/uvot_grb 无本源测光记录；GCN 站内容与仓内一致；ADS（SciX API）full-text 命中 13 篇 refereed：Fong+2015（VoR 已核）、Pandey+2019、Greiner+2024（GROND 样本 I）、Dichiara+2021、Nugent+2022 含本源数据（增量），其余 8 篇（2013ApJS..209...20G、2015ApJ...810...31V、2016ApJ...819...15S、2021ApJ...911L..28D 同 Dichiara、2022RAA、2023ApJ...945...67S、2024MNRAS.533.1629O、2025AstL、2026ApJ..1008..181X、2022MNRAS.515.4890O）为样本统计/单暴对比、无本源新测光。新增 14 行（Fong+2015 VLA 5.8GHz 上限 2、Pandey+2019 GTC 5、Greiner+2024 GROND 7）；UVOT/Zadko/ARIES/MITSuME/BOOTES/GTC/TNG/NOT 各行按原文窗口口径补 time_err/改 band（w→uvot-white）并重算 mjd。GCN 14109 原文笔误 trigger 518731（应为 544027）。alias 新增：GRB 121226A（GCN 通告用名）、GRB 121226AS（MPE Greiner 表 name_alt，S=short 标记）。取数版本：Fong+2015 为 IOP VoR HTML 全文；Pandey+2019/Nugent+2022/Dichiara+2021/Greiner+2024 逐行值取自 arXiv e-print TeX（VoR 不可达，三方交叉，见 audit/unverified.tsv）。",
   "sub_tag": [
     "sgrb"
   ],
@@ -220,8 +223,96 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Fong+2015",
+      "url": "https://doi.org/10.1088/0004-637X/815/2/102",
+      "title": "A Decade of Short-duration Gamma-Ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and Jet Opening Angles",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Pandey+2019",
+      "url": "https://doi.org/10.1093/mnras/stz530",
+      "title": "A multiwavelength analysis of a collection of short-duration GRBs observed between 2012 and 2015",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Dichiara+2021",
+      "url": "https://doi.org/10.3847/2041-8213/abf562",
+      "title": "Evidence of Extended Emission in GRB 181123B and Other High-redshift Short GRBs",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Nugent+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d1",
+      "title": "Short GRB Host Galaxies. II. A Legacy Sample of Redshifts, Stellar Population Properties, and Implications for Their Neutron Star Merger Origins",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample: I. Overview and statistics",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": {
+    "ra": 168.64219,
+    "dec": -30.40636,
+    "redshift": 1.37,
+    "redshift_type": "phot",
+    "photometry": [
+      {
+        "band": "r",
+        "mag": 24.68,
+        "mag_err": 0.15,
+        "mag_sys": "AB",
+        "source": "GCN 14139（TNG 2 h SDSS r，平均 2013-01-11.227 UT=15.4 d）"
+      },
+      {
+        "band": "g",
+        "mag": 24.3,
+        "mag_err": 0.4,
+        "mag_sys": "AB",
+        "source": "Dichiara+2021, ApJL, 911, L28, Table 2（Gemini/GMOS-S；已做银消改正 E(B−V)=0.05）"
+      },
+      {
+        "band": "Z",
+        "mag": 23.99,
+        "mag_err": 0.12,
+        "mag_sys": "AB",
+        "source": "Dichiara+2021, ApJL, 911, L28, Table 2（Gemini/GMOS-S；同上消改正）"
+      },
+      {
+        "band": "Y",
+        "mag": 23.62,
+        "mag_err": 0.23,
+        "mag_sys": "AB",
+        "source": "Dichiara+2021, ApJL, 911, L28, Table 2（Gemini/GMOS-S；同上消改正）"
+      },
+      {
+        "band": "J",
+        "mag": 22.97,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Dichiara+2021, ApJL, 911, L28, Table 2（VLT/HAWK-I；同上消改正）"
+      },
+      {
+        "band": "K",
+        "mag": 22.43,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Dichiara+2021, ApJL, 911, L28, Table 2（VLT/HAWK-I；同上消改正）"
+      }
+    ],
+    "comment": "宿主成协：光学（GCN 14114/14139）与 5.8 GHz 射电源（GCN 14126，1.75 d）均与 XRT 位置重合；GCN 14139 称 0.5 d 与 15.4 d 两历元 r 无衰减、余辉贡献可忽略；Nugent+2022 将该宿主收入 Gold Sample。红移为宿主测光红移（Prospector）z=1.37(+0.05/−0.06)（Nugent+2022；误差不对称）；并列：Dichiara+2021 宿主 SED z≈1.8(+0.2/−0.1)。坐标取 GCN 14139（±0.3″）。0.5 d 历元各测光（GCN 14114 r'~25、Pandey+2019 r/i/z、GROND g'r'i'z'）的 OT/宿主属性未定论，行留在 lc；GTC 53.25/53.27 d 深限 z>23.79、i>24.47（Pandey+2019 表5）亦见 lc 行。Dichiara+2021 逐值取自 arXiv v1（IOP VoR 仅得摘要级，三方交叉，见 audit/unverified.tsv）。",
+    "source": "GCN 14139; Nugent+2022, ApJ, 940, 57; Dichiara+2021, ApJL, 911, L28"
+  },
+  "pos_error_confidence": "90"
 }
