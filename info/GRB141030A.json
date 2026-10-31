@@ -14,14 +14,19 @@
   "pos_ref": null,
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "幻影条目甄别（fsy 2026-10-28）：本条目系机器人自 GCN 17129 标题笔误「GRB 141030A」误建——该文正文实为 GRB 141130A（Swift/BAT trigger 620090，T0=2014-11-30T23:10:56Z，GCN 17120），正文日期「2014-10-30」同为笔误：同段正文观测始于 23:12:44 UT、即触发后 108 s，仅当日期为 2014-11-30 时自洽，且同作者组 GCN 17122 正文同样误写 2014-10-30 而 Subject/Event 均为 141130A。swift_bat 目录 summary_general 2014-10-30 无任何触发、2014-11-30 仅 620090 一例；MPE 目录无 GRB 141030A、有 GRB 141130A（obs_date=2014-11-30）。本条目 T0=2014-10-30T23:12:44Z 实为 GCN 17129 的观测起始时刻（Issue #84 型错误）叠加日期笔误，且 Trigger_Instrument=Swift/UVOT 亦系误标（真实触发仪器为 Swift/BAT），真实 T0 属保留条目 GRB141130A。其唯一测光行（Nanshan 36cm R=17.67±0.20，mjd=56991.968252314815=真实 T0+201 s）已按 §3.7 迁入 lc/GRB141130A.csv；本条目 info/lc 行保留不动，建议维护者删除本条目（见 PR #419 待决事项）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
