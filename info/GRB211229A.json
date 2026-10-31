@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB211229A",
-  "alias": [],
+  "alias": [
+    "GRB211229145",
+    "GRB 211229.145",
+    "bn211229145"
+  ],
   "ra": 295.044,
   "dec": 23.133,
-  "T0": "2021-12-29T03:29:15Z",
-  "T0_ref": null,
+  "T0": "2021-12-29T03:29:15.901398Z",
+  "T0_ref": "GCN 31329（Fermi GBM Team，触发仪器官方通告）：At 03:29:15 UT on 29 Dec 2021, triggered and located GRB 211229A (trigger 662441360.901398 / 211229145)，亚秒 .901398 取自 MET 触发号小数部分；GCN 31340（GBM 观测）亦报 03:29:15.90 UT；仓内 FERMIGBRST 快照（external/fermi_gbm bn211229145 行）trigger_time=2021-12-29T03:29:15.901Z 交叉一致；GECAM-B 在飞触发 2021-12-29T03:30:05.200（GCN 31331）系 GECAM 自身触发时刻，不用作锚、不记 T0_offset",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 240.0,
-  "pos_ref": "GCN 31334",
+  "pos_ref": "GCN 31334（Swift/BAT-GUANO arcminute localization，NITRATES sqrt(TS)=50）：RA,Dec=295.044, 23.133 deg，estimated uncertainty 4 arcmin（=240″）；GCN 31342 XRT 后随在 394″ 内检出 4 个未编目 X 射线源（距 GUANO 位 20″-398″）但无一衰减确诊、不能认定位，info 位保持 GUANO 弧分级位",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "通告集甄别（2026-10-28，仓内 GCN 全文库逐篇实核）：本暴通告共 7 篇——GCN 31329（Fermi GBM Final Real-time，触发 662441360.901398/211229145，likely LONG）、31330（MASTER-Kislovodsk 上限表 4 行=双相机 2 窗）、31331（GECAM-B 在飞触发 03:30:05.200，自引 GBM GCN 31329 确属本暴；GECAM 位 302.7/27.5±8.7 deg 1σ 粗定位，并注『与 SGR J1935+2154 接近、不能排除起源』——Fermi+GUANO+XRT 全流程按 GRB 处置）、31334（Swift/BAT-GUANO 弧分级定位 295.044/23.133±4′）、31335（Swift ToO 启动，target 00021475）、31340（GBM 观测 T90≈120 s）、31342（Swift-XRT+UVOT：4 个 X 射线源无确诊余辉；UVOT u 上限 >21.0）。T0 口径：Fermi GBM 触发，亚秒取 MET 小数（GCN 31340 报 .90、仓内 FERMIGBRST .901 交叉一致）；GECAM 触发 03:30:05.200 系该星自身触发时延（|Δ|≈50 s），双触发同暴以触发仪器 Fermi 为准，不记 T0_offset；GUANO NITRATES 16.384 s 分析时 bin 系定位窗口非 T0。pos：info ra/dec=GUANO 弧分级位（GCN 31334），pos_error=240″=4′ 原文即此；原文未标注置信水平→pos_error_confidence 留空。sub_tag：t90=119.807±2.42868 s（仓内 FERMIGBRST 快照 external/fermi_gbm bn211229145 行，50-300 keV；GCN 31340 亦报 T90≈120 s、GCN 31329 称 likely LONG），按目录 t90 判 lgrb。测光 5 行入库：GCN 31342 UVOT u 上限 1 行（窗口 43722-66830 s 中点 55276、半宽 11554；UVOT Vega（Breeveld+2011 原文声明）；未做银消改正 E(B-V)=5.811 原文明示；bot 原行 time=55277 差 1 s 且缺 time_err，已改正）+GCN 31330 MASTER-Kislovodsk 上限 4 行（Tmid-T0=323/403、Expt 60→time_err=30；双 Tmid 各系双相机同窗异场心 pointing，均保留；Filt=C→band=G；首窗端点自洽：起点 03:34:08 UT=T0+292.1 s+30≈323 ✓）。X 射线行：不新增（GCN 31342 四源 count-rate/flux 系 XRT 行为 §3.3/§3.4 管辖，且无源确诊为余辉）。文献检索（2026-10-28，Web 检索）：未见本暴专门研究论文，articles[] 留空。alias 出处：GRB211229145 / GRB 211229.145 / bn211229145＝FERMIGBRST 目录 name_alt（仓内 external/fermi_gbm 快照 bn211229145 行；GCN 31329 原文用名 trigger 662441360.901398 / 211229145、GCN 31340 原文用名 trigger 662441360 / 211229145）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
