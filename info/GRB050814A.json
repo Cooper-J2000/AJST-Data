@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB050814A",
-  "alias": [],
-  "ra": 264.204167,
-  "dec": 46.333333,
-  "T0": "2005-08-14T11:38:57Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 050814",
+    "GRB 050814.485",
+    "Swift 150314",
+    "BAT 150314"
+  ],
+  "ra": 264.18908,
+  "dec": 46.33944,
+  "T0": "2005-08-14T11:38:56.966Z",
+  "T0_ref": "Swift 官方目录 trigger 150314（2005-08-14T11:38:56.966Z；仓内 swift_bat / swift_grb 快照 trigger_time）；GCN 3799 给 11:38:57 UT（整数秒一致，按 §3.2 取触发仪器亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,16 +17,21 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 3799",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.4,
+  "pos_ref": "Evans+2009",
+  "redshift_type": "phot",
+  "redshift_ref": "Curran+2008",
+  "comment": "身份：Swift/BAT trigger 150314，2005-08-14 11:38:57 UT 触发（GCN 3799），BAT 在轨位置 264.204,+46.333（3′，90% 包含）；别名出处：「GRB 050814」＝GCN 3800/3804 通告用名，「Swift 150314」＝GCN 3807 原文用名，「GRB 050814.485」＝GCN 3809/3818 原文用名（GCN 3809 原文 'GRB 050814.485'），「BAT 150314」＝Swift/BAT 与 Konus-Wind 目录 name_alt（GCN 3799 给 trigger=150314）。T0 亚秒：swift_bat/swift_grb 快照 trigger_time=11:38:56.966Z、uvot_grb TRIG_UT=11:38:56（截断）、swiftgrbba=11:38:57.000、GCN 3799=11:38:57（整数秒一致，按 §3.2 取触发仪器亚秒值）；X 射线行 145 行零接触，T0 改亚秒后其 mjd 需按 mjd=T0_new+time 重算（维护者合入前执行，ΔT0=−0.034 s，本 PR 说明已点明）。定位：GCN 3800 XRT 首轨位置（半径 7″）→ GCN 3805 五轨精化 17h36m45.7s +46°20′20.5″（8″）→ 采用 Evans+2009（MNRAS 397, 1177）XRT 目录位置 264.18908,+46.33944（半径 1.4″，取自仓内 swiftgrbba 快照 xrt_ra/xrt_dec/xrt_error_radius）；快照未标注置信水平（Evans 目录惯例为 90% 包含半径，备查，字段留空不自行声称）。红移：Jakobsson+2006b（A&A 447, 897）SED 拟合 z=5.3±0.3（phot）；Curran+2008（A&A 490, 1047）GRBz 复测 z=5.77±0.12（phot）——取后者（更晚的专用方法复测；MPE Greiner 表即转引该值），前者并列备查；两值均为测光红移，无光谱红移。分类：t90=142.852±41.66 s（15-350 keV，Swift/BAT 目录快照），按目录 t90 判 lgrb；GCN 3803 预备值 T90=65(+40/−20) s 备查。测光检索（2026-10-31）：ADS abs 检索 'GRB 050814' 命中 17 条（9 篇 GCN + Jakobsson AIPC 836,552 与 A&A 447,897 + Ziaeepour ApJ 690,L10 [X 射线谱尾分析，无光学测光] 及其会议版 AIPC 1065,169、AIPC 1133,368 + COSPAR 2006 综述[无测光表] + Zha 2 篇[无关]），另经 MPE 表线索补检 Curran+2008 A&A 490,1047（摘要不含源名，正文仅复测红移、无新测光）；仓内 gcn/archive 全文命中 9 篇（3799/3800/3803/3804/3805/3807/3809/3818/3821，全部逐篇核对，无漏记测光），rssgrbag 无该源射电光变行（radio_ag_flag=N），grbsn_webtool/uvot_grb 无光变表 → 光学/射电测光已全部入库（本 PR 补 0 行新测光，为 GCN/文献已有行的逐行核对与去重）。VoR 渠道：Jakobsson+2006b 与 Curran+2008 经出版社 A&A 网站全文 HTML（含 Table 1）实取逐值核对（curl 被 DataDome 403，浏览器路线取得），VizieR（CDS/CfA 镜像）超时未用；GCN 通告出处见各行 reference/comment（GCN 不入 articles）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    },
     "derived": {
       "best": {
         "eiso": {
@@ -605,6 +615,20 @@
     }
   },
   "articles": [
+    {
+      "name": "Jakobsson+2006b",
+      "title": "A mean redshift of 2.8 for Swift gamma-ray bursts",
+      "url": "https://ui.adsabs.harvard.edu/abs/2006A&A...447..897J/abstract",
+      "bibtex": "@ARTICLE{2006A&A...447..897J,\n       author = {{Jakobsson}, P. and {Levan}, A. and {Fynbo}, J.~P.~U. and {Priddey}, R. and {Hjorth}, J. and {Tanvir}, N. and {Watson}, D. and {Jensen}, B.~L. and {Sollerman}, J. and {Natarajan}, P. and {Gorosabel}, J. and {Castro Cer{\\'o}n}, J.~M. and {Pedersen}, K. and {Pursimo}, T. and {{\\'A}rnad{\\'o}ttir}, A.~S. and {Castro-Tirado}, A.~J. and {Davis}, C.~J. and {Deeg}, H.~J. and {Fiuza}, D.~A. and {Mikolaitis}, S. and {Sousa}, S.~G.},\n        title = \"{A mean redshift of 2.8 for Swift gamma-ray bursts}\",\n      journal = {Astronomy and Astrophysics},\n         year = 2006,\n        month = mar,\n       volume = {447},\n       number = {3},\n        pages = {897-903},\n          doi = {10.1051/0004-6361:20054287},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0509888},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006A&A...447..897J},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Curran+2008",
+      "title": "Robust photometric redshift determinations of gamma-ray burst afterglows at z ≳ 2",
+      "url": "https://ui.adsabs.harvard.edu/abs/2008A&A...490.1047C/abstract",
+      "bibtex": "@ARTICLE{2008A&A...490.1047C,\n       author = {{Curran}, P.~A. and {Wijers}, R.~A.~M.~J. and {Heemskerk}, M.~H.~M. and {Starling}, R.~L.~C. and {Wiersema}, K. and {van der Horst}, A.~J.},\n        title = \"{Robust photometric redshift determinations of gamma-ray burst afterglows at z ≳ 2}\",\n      journal = {Astronomy and Astrophysics},\n         year = 2008,\n        month = nov,\n       volume = {490},\n       number = {3},\n        pages = {1047-1053},\n          doi = {10.1051/0004-6361:200810545},\narchivePrefix = {arXiv},\n       eprint = {0809.1559},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2008A&A...490.1047C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
     {
       "name": "Dainotti+2024",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
