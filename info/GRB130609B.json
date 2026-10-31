@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB130609B",
-  "alias": [],
-  "ra": 53.776,
-  "dec": -40.168,
-  "T0": "2013-06-09T21:38:40Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB130609902",
+    "BAT 557828"
+  ],
+  "ra": 53.77097,
+  "dec": -40.17407,
+  "T0": "2013-06-09T21:38:40.416520Z",
+  "T0_ref": "GCN 14841（BAT 触发 2013-06-09 21:38:40 UT）；亚秒 .416520 取自 Swift/BAT 官方目录快照（external/swift_bat trigger 557828，trigger_time 2013-06-09T21:38:40.416520Z），整数秒一致，按 §3.2 取触发仪器亚秒值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1.7,
+  "pos_ref": "GCN 14847",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核记录（Rusty-Harpoon@zcode，2026-10-31）。身份：Swift/BAT 触发 557828（GCN 14841，2013-06-09 21:38:40 UT），Fermi/GBM 同测（GCN 14869，21:38:35.61 UT，trigger 392506718/130609902，GBM 定位与 Swift 一致）、Konus-Wind（GCN 14856，T0=21:38:36.818 UT）、Suzaku/WAM（GCN 14915，21:38:35 UT）多站互证，XRT/UVOT 位置一致，确证；同日 GRB 130609A 为另一事件（GBM trigger 130609129、T0=03:05:10.69 UT、T90≈5 s，GCN 14839），坐标与触发号均不同、无混淆。定位：ra/dec 取 GCN 14847 XRT 增强位置 53.77097,−40.17407（1.7″，90% 置信，原文给出置信水平）；原 ra/dec=53.776,−40.168 实为 GCN 14862 BAT 精化地面位置（1.0′，90%），已随 pos_error/pos_ref 改齐；GCN 14857 UVOT 位置 53.77128,−40.17409（0.50″，90%）并列备查。T0：秒级 21:38:40 见 GCN 14841；亚秒 .416520 取自 Swift/BAT 官方目录快照（trigger 557828，trigger_time 2013-06-09T21:38:40.416520Z），整数秒一致、按 §3.2 取触发仪器亚秒值；T0 精化 +0.416520 s，lc 700 行 10keV X 射线行的 mjd 须按 mjd=T0+time 由维护者合入前机械重算（2026-10-31 裁定）。分类：t90=210.6±15.1 s（15–350 keV，GCN 14867 final；Swift/BAT 目录 211.172±17.055 s、GCN 14862 191.98±2.44 s、FERMIGBRST 191.491±2.862 s（50–300 keV））→ 按目录 t90 判 lgrb；GCN 14856/14915 亦称 long。红移：无实测值；GCN 14888 给 IGC 模型理论估计 z≈1.3（非实测，不入 redshift，见 PR 待决）。alias：GRB130609902 为 FERMIGBRST 目录用名，GCN 14869 原文用名「GRB 130609B (trigger 392506718 / 130609902)」即本源；BAT 557828 为 Swift/BAT 官方目录 name_alt。测光检索留证（2026-10-31）：仓内 gcn/archive 全文按 130609B/557828 检索命中 11 篇（14841/14847/14852/14856/14857/14862/14866/14867/14869/14888/14915，含光学数值 3 篇：14841 UVOT fc 1 行、14857 UVOT 表 16 行、14866 GROND 7 行）；external/rssgrbag 0 行、grbsn_webtool 无此事件；ADS 检索 \"GRB 130609B\"/\"130609B\" 命中 12 条（均为 GCN/报告）、full:\"130609B\" 命中 22 条（剔 GCN 后 10 篇统计类论文，逐篇核摘要：2025MNRAS.543.2404R、2026ApJ..1008..103Y、2025MNRAS.540L...6Q、2023ApJ...948...23Z 等均无本源可引用测光表）→ 补 GCN 14857 UVOT 16 行，其余 0 行。lc 处置：GCN 14841 行 band 由 w（Pan-STARRS 键、误植）改 uvot-white，time 84→159 s（fc 起点 T0+84 s、nominal 150 s、取中点）、time_err=75 s、补 mag_system=Vega；GROND 7 行 time 由 129980 s 重算为 129979.58348 s（按原文 mid-time 09:45 UT）、补 time_err=375 s（g/r/i/z）/300 s（J/H/K）；补 GCN 14857 UVOT 16 行（white×3、v×2、b×2、u×3、uvw1×2、uvm2×2、uvw2×2，其中 3 行 3σ 上限）；700 行 10keV X 射线行零接触。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -239,8 +244,14 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
