@@ -1,28 +1,50 @@
 {
   "transient_id": "GRB240913C",
-  "alias": [],
-  "ra": 52.799491,
-  "dec": 16.0,
-  "T0": "2024-09-13T11:42:36Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "alias": [
+    "EP240913a",
+    "EP 240913a",
+    "bn240913488"
+  ],
+  "ra": 16.694542,
+  "dec": 16.729778,
+  "T0": "2024-09-13T11:42:36.118Z",
+  "T0_ref": "GCN 37509（Fermi GBM 触发通告：At 11:42:36.12 UT on 13 September 2024，trigger 747920561 / 240913488）；FERMIGBRST 官方目录快照 bn240913488 trigger_time=2024-09-13T11:42:36.118Z（external/fermi_gbm）；MET 747920561 独立重算（2001-01-01 epoch，扣 2001 年以来 5 次闰秒）=11:42:36Z 互证",
+  "T0_offset": -183.118,
+  "T0_offset_ref": "GCN 37492（EP/WXT：The transient started at T0=2024-09-13T11:39:33 UTC，早于 GBM 自动触发 183.118 s，|Δ|>1 s 真实偏移；EP 原文整秒精度，偏移约 ±0.5 s）",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.2,
+  "pos_ref": "GCN 37497",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "重审（fsy，2026-10-28）：本条实为 Einstein Probe/WXT 快速 X 射线暂现 EP240913a 与 Fermi/GBM 触发 GRB 240913C 的同一事件（IPN GCN 37538：EP240913a 位置位于 IPN 定位区内，证认成立；AstroSat CZTI GCN 37505、ETJASMIN GCN 37507 同判）。〔定位改正〕原 ra=52.799491/dec=16.0 系导入管线把 GCN 37584 定标星行「RA: 01:06:52.7994912, DEC: +16:43:24.121128」误解析（取角秒值 52.7994912 为度、取时角整数 16 为度），Issue #68 家族失真；现按 Swift/XRT 精化定位 GCN 37497 改正：RA=01:06:46.69=16.694542、Dec=+16:43:47.20=16.729778，pos_error=6.2 arcsec（radius，原文 90% C.L. statistical and systematic → pos_error_confidence=90）。〔Trigger_Instrument〕原 Swift/XRT 系 Swift ToO 后随观测（GCN 37497：2024-09-13T19:47:21.024 UT 起，触发后 8.13 hr）而非触发仪器；Swift/BAT 仅离轴在册（IPN GCN 37538：outside the coded field of view）；改为 Fermi/GBM（GCN 37509 触发通告，trigger 747920561 / 240913488）。〔T0〕原整秒 11:42:36Z（bot 取自 GBM 目录触发）方向正确，补目录亚秒 → 2024-09-13T11:42:36.118Z；GCN 37509 原文 11:42:36.12 UT 舍入一致。EP/WXT 于 11:39:33 UTC 已捕获暂现起始（GCN 37492；快脉冲 ~T0(EP)+180 s 与 GBM 触发重合）——属「自动触发前已有辐射」，记 T0_offset=−183.118 s（T0_offset_ref=GCN 37492；EP 整秒精度）。extra_data 原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot），按 §3.10 改写，原值留本 comment。〔分类〕t90=6.272±1.680 s（50-300 keV，FERMIGBRST 快照 external/fermi_gbm bn240913488），按目录 t90 判 lgrb；GCN 37509 原文 T90≈6.3 s、IPN GCN 37538 「The long-duration GRB 240913C」互证。〔alias〕EP240913a（GCN 37492 原文用名）、EP 240913a（GCN 37538 原文用名）、bn240913488（GCN 37493 原文引 GBM 库 burst trigger 名，FERMIGBRST 快照 name_alt 同形）。〔articles〕移除 bot 误挂的 Burbidge+2003（2003ApJ...585..112B 理论综述，与本源测光无关、审核未使用）；新增实际使用的 Choza+2026（arXiv:2607.27439，ATA 射电上限）。〔测光检索留证（2026-10-28）〕仓内 gcn/archive 全库扫描「240913」命中 20 篇（37481–37584；其中 37481/37482/37491 属 GRB 240913A/B 另两暴），本源相关 16 篇全部读取；external/rssgrbag、external/grbsn_webtool 无该源记录；GCN 事件页（gcn.nasa.gov/circulars/events/grb-240913c）与仓内一致、无后续测光通告；SciX/ADS 检索命中 Choza+2026（MNRAS 551，ATA 2660/3340 MHz 两行入库；VoR OUP 页 403，取 arXiv v1）与 Wu+2025（Galaxies 13,62，MDPI 403 未获原文、未能核对，arXiv 版未检索到）；无红移测量（光学对应体始终未探测，Choza+2026 Table 1 z 列为「-」）。补入 lc 新增 13 行：JinShan r/z（GCN 37500）、NOT r/z（GCN 37501）、KAIT 叠加（GCN 37511）、Mephisto u/g/i/r/z 5 行（GCN 37582）、MASTER-OAFA 1 行（GCN 37521）、ATA 2660/3340 MHz 2 行（Choza+2026）；并修正原 AbAO 行（GCN 37584）中点口径。未入库留证：GCN 37485 MASTER-Amur 4 行（视场中心 00:59:51–52 +12°47′–48′，距 Swift-XRT 源位 ~4.3°、未覆盖源位，场地极限不入库 §3.3）；GCN 37521 另一指向 1 行（距源位 1.59° 视场边缘未覆盖）；GCN 37499 ESO-NTT r~23.5（只给起点 2024-09-14T05:58:49 UT 无曝光时长，中点不可恢复）；GCN 37515 VLT/HAWK-I J~23.7 Vega（只给起点 06:54:36 UT 与各波段总曝光、无各波段时刻，中点不可恢复）；GCN 37582 Mephisto v UL=20.87（filters.json 无 v 键，Mephisto v 通带无可查证透射曲线，待维护者扩表后补）；KAIT 单帧典型极限 19.5（field limit）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 官方目录触发时刻 2024-09-13T11:42:36.118Z（bn240913488，GCN 37509 互证）；EP/WXT 于 2024-09-13T11:39:33 UTC 起观测到暂现（GCN 37492），早于 GBM 自动触发 183.118 s，记入 T0_offset",
+    "t0_basis": "gbm_catalog_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Choza+2026",
+      "title": "Radio Follow-Up of Einstein Probe Fast X-Ray Transients",
+      "url": "https://arxiv.org/abs/2607.27439",
+      "bibtex": "@ARTICLE{2026arXiv260727439C,\n       author = {{Choza}, C. and {Bright}, J.~S. and {Carotenuto}, F. and {Pollak}, A. and {Fender}, R. and {Siemion}, A.},\n        title = \"{Radio Follow-Up of Einstein Probe Fast X-Ray Transients}\",\n      journal = {MNRAS},\n         year = 2026,\n       eprint = {2607.27439},\n archivePrefix = {arXiv},\n         url = {https://arxiv.org/abs/2607.27439}\n}",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
