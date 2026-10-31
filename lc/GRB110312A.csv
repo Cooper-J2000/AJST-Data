@@ -1,8 +1,8 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-167.0,,s,55632.74888888889,w,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11782,,
+167.0,,s,55632.7488918,uvot-white,19.6,,magnitude,,n,y,,,,,,,1.0,y,,Swift/UVOT,GCN11782,"GCN 11782 给的是 FC 后 ""typical 3-sigma upper limit has been about 19.6 mag""（典型值，非本场实测限量）；同一 FC 曝光在 GCN 11787 实测为 white_FC T0+168–318 s >21.8（本文件已收），本行弃用；时间 167 s 为 FC 起点原文值；band 原导入为 w（filters.json 的 Pan-STARRS w），实为 UVOT white，已改 uvot-white",wa1kmoon@zcode
 167.451,2.288,s,55632.7488941088,10keV,3.52903199506162e-06,7.18295722687155e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-168.0,,s,55632.74890046297,w,21.3,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
-168.0,,s,55632.74890046297,w,21.8,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
+1032,864,s,55632.7589034,uvot-white,21.3,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 white 叠加，窗口 T0+168–1896 s（429 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
+243,75,s,55632.7497714,uvot-white,21.8,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 white_FC 首图，窗口 T0+168–318 s（147 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
 171.804,2.539,s,55632.74894449074,10keV,2.92964978263238e-06,5.82580668530772e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 177.534,3.339,s,55632.749010810185,10keV,2.11207546364648e-06,4.73616141967536e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 185.422,4.868,s,55632.749102106485,10keV,1.31561016225073e-06,3.05294455048132e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -11,19 +11,20 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 212.58,6.247,s,55632.74941643519,10keV,4.30788334521583e-07,9.99248886723312e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 247.356,15.548,s,55632.74981893519,10keV,4.16798148171744e-07,8.92547639068872e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 280.958,21.055,s,55632.750207847224,10keV,5.69338979961213e-07,1.21705141556336e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-327.0,,s,55632.75074074074,uvot-u,20.1,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
+1173.5,846.5,s,55632.7605411,uvot-u,20.1,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 u，窗口 T0+327–2020 s（382 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
+452,125,s,55632.7521904,uvot-u,20.1,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 u_FC 首图，窗口 T0+327–577 s（246 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
 329.061,27.048,s,55632.75076459491,10keV,9.17253835419965e-07,2.06102674804805e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 376.412,29.267,s,55632.75131263889,10keV,1.30261561037922e-06,2.85836869661069e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 441.434,48.628,s,55632.75206520833,10keV,9.85815840418002e-07,2.22374312710122e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 562.044,71.983,s,55632.75346115741,10keV,8.86387776582331e-07,1.99361435779907e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-582.0,,s,55632.753692129634,uvot-b,20.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
-657.0,,s,55632.75456018519,uvot-v,19.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
+3322.5,2740.5,s,55632.7854138,uvot-b,20.6,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 b，窗口 T0+582–6063 s（315 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
+1301.5,644.5,s,55632.7620226,uvot-v,19.2,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 v，窗口 T0+657–1946 s（156 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
 660.236,49.822,s,55632.754597638894,10keV,1.0610970666623e-06,2.39122088458552e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-683.0,,s,55632.75486111111,uvot-uvm2,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
-706.0,,s,55632.75512731481,uvot-uvw1,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
+1326,644,s,55632.7623062,uvot-uvm2,19.6,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 uvm2，窗口 T0+682–1970 s（156 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
+1350.5,644.5,s,55632.7625897,uvot-uvw1,19.6,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 uvw1，窗口 T0+706–1995 s（136 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
 762.733,75.846,s,55632.75578394676,10keV,4.11316154396961e-07,9.34213429287467e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 943.559,104.98,s,55632.75787684028,10keV,1.21474054094954e-07,2.73746285180192e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-1036.0,,s,55632.75894675926,uvot-uvw2,18.8,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN11787,,
+1219,183,s,55632.7610677,uvot-uvw2,18.8,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN11787,GCN 11787 uvw2，窗口 T0+1036–1402 s（39 s 曝光）；窗口中点/半宽为约定口径（原文只给 T_start/T_stop，§3.8）；3σ 上限；UVOT Vega 系（Poole+2008 光度系统，GCN 11787 原文引用；惯例推定据 Breeveld+2011）；未作银消光改正（原文注明 E(B-V)=0.04）,wa1kmoon@zcode
 1087.686,68.58,s,55632.759544976856,10keV,1.63523783783006e-07,3.69589519492158e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1203.693,56.715,s,55632.76088765047,10keV,1.48962441549387e-07,3.35075130286241e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1308.161,48.353,s,55632.762096770835,10keV,2.59956585695819e-07,5.85326050655518e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -33,21 +34,21 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 1661.548,47.068,s,55632.76618689815,10keV,2.57931719127022e-07,5.83085403648603e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1772.4,63.784,s,55632.76746990741,10keV,3.24435271818178e-07,7.09309949568236e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1908.255,116.279,s,55632.76904230324,10keV,1.76158777307772e-07,3.98625744730326e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-1961.0,,s,55632.76965277778,Rc,18.0,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN11789,,
-1961.0,,s,55632.76965277778,Ic,17.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN11789,,
-1961.0,,s,55632.76965277778,g,17.8,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN11789,,
+1961.0,510,s,55632.7696557,Rc,18.0,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN11789,GCN 11789，MID-UT 18:28:18 UT 原文直接给中点时刻（=T0+1961 s），T-EXP 1020 s → time_err=半曝光 510 s；3σ 上限 Rc；GSC2.3 定标；原文未声明星等系统,wa1kmoon@zcode
+1961.0,510,s,55632.7696557,Ic,17.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN11789,GCN 11789，MID-UT 18:28:18 UT 原文直接给中点时刻（=T0+1961 s），T-EXP 1020 s → time_err=半曝光 510 s；3σ 上限 Ic；GSC2.3 定标；原文未声明星等系统,wa1kmoon@zcode
+1961.0,510,s,55632.7696557,g,17.8,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN11789,GCN 11789，MID-UT 18:28:18 UT 原文直接给中点时刻（=T0+1961 s），T-EXP 1020 s → time_err=半曝光 510 s；3σ 上限 g'；GSC2.3 定标；原文未声明星等系统,wa1kmoon@zcode
 5947.19,113.019,s,55632.81578923611,10keV,9.02478082861833e-08,1.56151422219002e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 6477.496,159.432,s,55632.82192703704,10keV,5.63201720731659e-08,1.00900405770923e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-7463.0,,s,55632.833333333336,Rc,23.5,,magnitude,,n,y,,,,,,,1.0,n,,RTT150,GCN11788,,
+10463,3000,s,55632.8680585,Rc,23.5,,magnitude,,n,y,,,,,,,1.0,n,,RTT150,GCN11788,GCN 11788，观测窗口 2011-03-12 20:00–21:40 UT（16×300 s Rc 叠加），窗口中点/半宽为约定口径（§3.8）；叠加图 frame limit Rc~23.5；原文未声明星等系统；未作银消光改正,wa1kmoon@zcode
 12117.653,127.853,s,55632.887206631945,10keV,2.58910459785879e-08,5.99882298837469e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 13437.506,4695.503,s,55632.902482708334,10keV,2.44166629481883e-08,4.85661660043055e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-21683.0,,s,55632.99791666667,r,24.1,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
-21683.0,,s,55632.99791666667,H,21.4,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
-21683.0,,s,55632.99791666667,K,19.3,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
-21683.0,,s,55632.99791666667,g,24.3,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
-21683.0,,s,55632.99791666667,J,22.0,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
-21683.0,,s,55632.99791666667,z,23.1,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
-21683.0,,s,55632.99791666667,i,23.0,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,,
+26363,4680,s,55633.0520863,r,24.1,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 r；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
+26363,4680,s,55633.0520863,H,21.4,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 H；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
+26363,4680,s,55633.0520863,K,19.3,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 K；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
+26363,4680,s,55633.0520863,g,24.3,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 g；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
+26363,4680,s,55633.0520863,J,22.0,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 J；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
+26363,4680,s,55633.0520863,z,23.1,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 z；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
+26363,4680,s,55633.0520863,i,23.0,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN11785,"GCN 11785，观测窗口 2011-03-12 23:57 UT 起 2.6 h（原文 ""March 11"" 系笔误，应为 March 12；""6 hours after the GRB trigger"" 与触发 17:55:37 UT 自洽）；g'r'i'z' 共 64.5 min、JHK 共 56 min 曝光；窗口中点/半宽为约定口径（§3.8）；3σ 上限 i；AB 系（原文声明）；未作银消光改正（E(B-V)=0.04，Schlegel+1998）",wa1kmoon@zcode
 24532.079,328.137,s,55633.030892118055,10keV,9.73252370041864e-09,1.96399770734657e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 35409.914,251.814,s,55633.15679298611,10keV,1.02223653895713e-08,2.66527953989746e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 37758.743,3896.0,s,55633.183978506946,10keV,8.62621311145278e-09,1.41749105995942e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
