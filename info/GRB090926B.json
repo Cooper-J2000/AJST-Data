@@ -1,27 +1,36 @@
 {
   "transient_id": "GRB090926B",
-  "alias": [],
-  "ra": 46.316667,
-  "dec": -39.016667,
-  "T0": "2009-09-26T21:55:28.530000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090926.914",
+    "bn090926914"
+  ],
+  "ra": 46.3084,
+  "dec": -39.006,
+  "T0": "2009-09-26T21:55:48.416220Z",
+  "T0_ref": "Swift/BAT 触发时刻：GCN 9935/9939（trigger=370791，21:55:48 UT 整秒）；亚秒取触发仪器官方目录快照 HEASARC SWIFTGRB/BAT TRIGTIME 275694948.416 s MET = 21:55:48.416220 UTC（仓内 catalog_data.swift_bat / swift_grb，取数 2026-07-21；konus_wind 快照 21:55:48.416 一致）。交叉印证：Greiner+2024 GROND 观测日志 allgrbs 090926B 行 GROND-Start 2009-09-27 01:54:24 UT = T0+14316 s（arXiv:2410.14441v1）；MAXI/GSC 探测起点 21:55:31 UT 比 BAT 触发早 17 s（GCN 9943）；UVOT settled 观测始于触发后 98 s、XRT 始于 88.3 s（21:57:16.8 UT，GCN 9935/9949）。原 T0=2009-09-26T21:55:28.530Z 为 Fermi/GBM 触发时刻（GCN 9957），因全表测光历元锚点均为 BAT 触发而改判，见 comment",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.24,
   "tag": [
     "grb"
   ],
-  "pos_error": 3.6,
-  "pos_ref": "GCN 9935",
-  "redshift_type": null,
+  "pos_error": 1.7,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 9940",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 9947",
-  "comment": null,
+  "comment": "GRB 090926B＝Swift/BAT trigger 370791，2009-09-26 21:55:48 UT 触发并定位（GCN 9935/9939）；同日 GRB 090926A 为另一事件（Fermi/LAT 暴，04:41 UT 触发，z=2.106），勿混。Fermi/GBM 于 21:55:28.53 UT 先行触发（trigger 275694930 / 090926.914，GCN 9957 原文用名 \"090926.914\"，即 GRB 090926.914；FERMIGBRST 目录名 bn090926914 / GRB090926914，GBM 定位与 BAT 一致、LAT 视场角约 100°），MAXI/GSC 于 21:55:31–21:55:55 UT 亦探测到该源（2-30 keV，X 射线数据暂不入库，GCN 9943）。T0 裁定：原 T0=21:55:28.530Z 为 GBM 触发时刻，但本库全部测光（Swift/XRT Burst Analyser 161 行、UVOT 9 行）的历元锚点均为 BAT 触发（GCN 9949 明言 UVOT 窗口时刻相对 BAT trigger），X 射线行不可改，故按 §3.2/§3.8 改判 T0=BAT 触发 21:55:48.416220Z、Trigger_Instrument=Swift/BAT；两 T0 相差 19.88622 s，本源 X 射线行的 mjd 需由维护者按 mjd=T0+time 机械重算（§3.3 唯一例外条款），非 X 射线行已同步重算。定位改增强 XRT 位置 RA,Dec=46.30840,−39.00600（1.7″，radius，90% confidence，GCN 9940，pos_error_confidence=90 取自原文）；原值 46.316667/−39.016667 为 MPE Greiner 表圆整的 BAT on-board 位置（03h05m16s −39°01′），与原 pos_error=3.6″（GCN 9935 XRT prompt 误差）错配，已弃用；Swift/BAT 最终目录 XRT 位置 46.30812/−39.006（1.4″，catalog_data.swiftgrbba 快照）备查。红移 z=1.24：VLT/FORS2 光谱 [O II] 3727 发射线 + Mg II/Fe II/Al III 吸收线（GCN 9947），Konus 目录 z_type=spectroscopic → redshift_type=spec。sub_tag lgrb：t90=64.0±1.6 s（FERMIGBRST，50-300 keV，仓内 catalog_data.fermi_gbm 快照），Swift/BAT t90=109.7±11.3 s（15-350 keV，GCN 9939），GBM 通告 T90=81±13 s（10-1000 keV，GCN 9957）——按目录 t90 判 lgrb。alias「GRB 090926.914」与「bn090926914」为 Fermi/GBM 触发名（GCN 9957 原文用名 \"trigger 275694930 / 090926.914\"；FERMIGBRST 目录）。宿主：GCN 9944 VLT 在误差圈内探得 R~23 暗弱略延展源，GCN 9947 光谱解释为余辉+宿主混合（afterglow+host blend），宿主未与余辉分离测定，host_galaxy 不建立；宿主性质表见 Palmerio+2019（audit/leads/papers/palmerio2019.md）与 Krühler+2015 线索卡。测光检索留证（2026-11-01）：仓内 gcn/archive 全文命中 10 篇（GCN 9935/9939/9940/9941/9943/9944/9947/9949/9957/9996，光学上限/探测已逐篇核对入库或修订）；仓内 external/rssgrbag（140 行光变）、external/grbsn_webtool（63 事件）均无 090926B 记录；GCN Report 246.1（Swift 官方报告）UVOT 表与 GCN 9949 逐值全同；ADS 全文命中文章中 PASJ Sugizaki+2011（2011PASJ...63S1035S）为 MAXI+GBM SED 谱分析、无光学测光；Greiner+2024（A&A 691, A158）Table 2 含未单独发 GCN 的 GROND 7 波段探测，已补入 7 行；Dainotti+2024（grbLC 机读表 090926B_mag.txt，15 行）经逐值核对全部为 GCN 9941/9944/9949/9996 的转引，去重删 3 行、其余 reference 改指最初出处。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-01"
+    },
     "derived": {
       "best": {
         "eiso": {
@@ -813,6 +822,13 @@
     }
   },
   "articles": [
+    {
+      "name": "Greiner+2024",
+      "title": "The GROND gamma-ray burst sample: I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "bibtex": "@ARTICLE{2024A&A...691A.158G,\n       author = {Greiner, J. and Krühler, T. and Bolmer, J. and Klose, S. and Afonso, P. M. J. and others},\n       title = {The GROND gamma-ray burst sample: I. Overview and statistics},\n       journal = {A&A},\n       year = {2024},\n       volume = {691},\n       pages = {A158},\n       doi = {10.1051/0004-6361/202449659},\n       eprint = {2410.14441},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...691A.158G/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
     {
       "name": "Dainotti+2024",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
