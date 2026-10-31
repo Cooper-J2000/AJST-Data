@@ -3,25 +3,30 @@
   "alias": [],
   "ra": 29.53,
   "dec": 3.47,
-  "T0": "2020-09-29T17:48:36Z",
-  "T0_ref": null,
+  "T0": "2020-09-29T17:48:36.840Z",
+  "T0_ref": "GCN 28532（IceCube 官方通告：17:48:36.84 UT，源精度 2 位小数、按校验器要求写 3 位 .840）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 28532（IceCube 离线精化方向）：RA=29.53 (+0.53/-0.53 deg) Dec=3.47 (+0.71/-0.35 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、四向不对称值照录；库内 ra/dec=29.53/3.47 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "中微子轨迹事件（ICECUBE_Astrotrack_Gold 流，Gold 平均天体物理纯度 50%，误报率 1.411/年，探测器正常状态；GCN 28532）。T0：bot 值 17:48:36Z 整数秒正确，补通告亚秒 .84 → 2020-09-29T17:48:36.840Z（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」保留改写）。定位：bot ra/dec=29.53/3.47 与 GCN 28532 精化值一致；误差为 90% PSF containment 不对称形式（RA ±0.53°、Dec +0.71/−0.35°），不适配圆半径 → pos_error 留空、值照录 pos_ref（沿用仓内已审 IceCube 条目惯例，如 IceCube-201007A/230201A）。AMON 自动告警初值见 gcn.gsfc.nasa.gov/notices_amon_g_b/134552_68615710.amon（bot 值即精化值、无初值污染）。90% 定位区内无 Fermi-LAT 4FGL/3FGL 源（最近 4FGL J0152.6+0147，距 2.17°，GCN 28532）。tag 留空（中微子事件，沿用仓内已审 IceCube 条目惯例、不标 grb）。后随观测（仓内 GCN 全文快照 45908 篇命中 10 篇相关）：GCN 28535 ANTARES 无中微子对应体、28536 Fermi-GBM 与 28537 Fermi-LAT 与 28546 HAWC 与 28552 INTEGRAL SPI-ACS/IBIS 伽马上限（伽马/高能，不入库）、28541 Swift-XRT（X 射线，按约不入库）、28551 ZTF 覆盖 0.9 sq deg（88.72% 定位区，g/r 各 300 s，typical depth 21.0 mag，无候选体——typical depth 为视场典型深度、非源位置测光，不入行）、28593 JCMT/SCUBA-2 850 μm 与 450 μm RMS 上限（4.6/152 mJy/beam，1σ）→ 入库 2 行（bot 原 1 行改正：time 按 T0 亚秒化重推 310043.16 s、mjd 59125.3305556 与 bot 值一致、telescope/instrument 拆分、reference 规范；450 μm→665GHz 行为补录）。测光检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇按「IceCube-200929A」命中上述 10 篇（另有 28520/28525/28527 为 IceCube-200926A/GRB 200929A 同日他源子串误中，已逐一排除）；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）未见该源研究论文，articles 留空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 已补 GCN 28532 亚秒值 .84（bot 原值 17:48:36Z 整数秒一致）；bot 的 meta_trigger 基础与官方通告一致，原值与改证见 comment",
+    "t0_basis": "gcn_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
