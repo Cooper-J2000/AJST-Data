@@ -1,27 +1,35 @@
 {
   "transient_id": "IceCube-230217A",
-  "alias": [],
+  "alias": [
+    "IC230217A"
+  ],
   "ra": 124.54,
   "dec": 20.74,
-  "T0": "2023-02-17T20:49:43Z",
-  "T0_ref": null,
+  "T0": "2023-02-17T20:49:43.400Z",
+  "T0_ref": "GCN 33337（IceCube 官方通告：20:49:43.4 UT）；GCN 33351（BOOTES-4 通告同值 T0=20:49:43.4 UT）；源精度 1 位小数、按校验器要求写 3 位 .400",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 33337（IceCube 离线精化方向）：RA=124.54 (+1.67/-3.27 deg) Dec=20.74 (+2.14/-2.46 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、四向不对称值照录；库内 ra/dec=124.54/20.74 与精化值一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "中微子轨迹事件（ICECUBE_Astrotrack_Bronze 流，平均天体物理纯度 30%，误报率 1.877/年，探测器正常状态；GCN 33337）。Trigger_Instrument 改正：bot 原值 Fermi/LAT 有误——GCN 33350 是「Fermi-LAT gamma-ray observations of IceCube-230217A」后随观测通告，非触发仪器 → IceCube。T0：bot 值 20:49:43Z 整数秒与通告一致，补亚秒 .4（GCN 33337/33351 均给 20:49:43.4 UT）→ 20:49:43.400Z；extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」改写留存。定位：bot ra/dec=124.54/20.74 与精化值一致；90% PSF containment 不对称（RA +1.67/−3.27°、Dec +2.14/−2.46°）→ pos_error 留空、值照录 pos_ref（沿用仓内已审 IceCube 条目惯例）。90% 区内有两个 4FGL-DR3 伽马源：4FGL J0816.9+2050（距 best-fit 0.3°，亦在 3FHL）与 4FGL J0817.1+1955（0.85°）（GCN 33337）。同日 GRB 230217A（Swift/BAT 与 Fermi/GBM 于 21:53:10 UT 触发，GCN 33339/33338；trigger 698363595.689472/230217912）晚于本中微子事件约 1 小时，无任何通告提出关联 → 非同源。tag/sub_tag 留空（中微子事件，沿用仓内已审 IceCube 条目惯例）。lc 处置：bot 原 r=18.055±0.17 行为 4FGL J0816.9+2050（已知 blazar）的星等测量（原文自证 not brightening）→ discard=y；补入 GCN 33351 两行 Clear 滤片上限（best-fit 位置 19.96±0.11、4FGL J0817.1+1955 位置 19.44±0.07）——原文表「Tmid-T0 (day)」经核对为起点差（误标），按 §3.3 start+Exp/2 重算。后随通告：GCN 33350 Fermi-LAT、33355 IceCube 附加中微子搜索（伽马/中微子，不入库）。测光检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇按「230217A」命中 20 篇（其中 33338/33339/33343/33348/33349/33353/33356/33358/33360/33361/33363/33365/33368/33370/33374/33433 共 16 篇属同日 GRB 230217A，非本源；本源相关 4 篇=33337/33350/33351/33355），光学测光仅 GCN 33351 一处，1 行 discard+2 行补入；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）未见该源研究论文，articles 留空。T0 亚秒口径补充披露（2026-10-31 核查）：官方通告 GCN 33337/33351 均记 20:49:43.4 UT（1 位小数），本条按库内 3 位惯例补零记 .400；AMON 原始通告 137661_22129736 DISCOVERY_TIME {20:49:43.37} 与 GCN 33355 搜索窗（1000 s 窗 20:41:23.370–20:58:03.370）窗心示 20:49:43.370，与官方 1 位小数取整相容（差 0.03 s），两口径并存备查。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 已补 GCN 33337/33351 亚秒值 .4（bot 原值 20:49:43Z 整数秒一致）；bot 的 meta_trigger 基础与官方通告一致，原值与改证见 comment",
+    "t0_basis": "gcn_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
