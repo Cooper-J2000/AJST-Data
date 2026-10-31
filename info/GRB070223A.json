@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB070223A",
-  "alias": [],
-  "ra": 153.454167,
-  "dec": 43.116667,
-  "T0": "2007-02-23T01:15:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 070223",
+    "BAT 261664",
+    "Swift 261664"
+  ],
+  "ra": 153.451625,
+  "dec": 43.133528,
+  "T0": "2007-02-23T01:15:00.682000Z",
+  "T0_ref": "Swift/BAT GRB Catalog batgrbproduct 报告（trigger 00261664，UTC 2007-02-23T01:15:00.682000，TDRSS 位置消息，https://swift.gsfc.nasa.gov/results/batgrbcat/GRB070223/web/GRB070223.html，取数 2026-11-01）；GCN 6125（At 01:15:00 UT triggered，整秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 0.5,
-  "pos_ref": "GCN 6127",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.3,
+  "pos_ref": "GCN 6221",
+  "redshift_type": "spec",
+  "redshift_ref": "Perley+2016, ApJ 817, 7（DOI 10.3847/0004-637X/817/1/7）",
+  "comment": "GRB 070223（Swift/BAT trigger 261664）。T0 取 Swift/BAT 目录 batgrbproduct 报告 UTC 值 01:15:00.682（GCN 6125 整秒一致；HEASARC SWIFTGRB 同为 01:15:00.682，swiftgrbba 表舍入 01:15:01，uvot 目录 TRIGTIME=193886100 s MET 为整秒截断）。定位采用 GCN 6221 光学余辉位置 RA 10:13:48.39 Dec +43:08:00.7（每坐标误差约 0.3″，来源未标注置信水平；与 XRT 位置一致；Perley+2016 表载同位置误差 0.40″；uvot 目录快照 POS_REF=GCN6221/POS_ERR=0.4）。候选体史：GCN 6127 Liverpool 候选体（10:13:48.73 +43:08:00.54）被 GCN 6162 深合成否证（unlikely OT）；GCN 6162 的 S1（10:13:48.19 +43:07:54.65，R≈23.7）被 GCN 6221 判为修正后 XRT 位置之外的无关源——lc 中相应两行置 discard。红移 z=1.6295：宿主星系 Keck/LRIS 光谱，Lyα 3198 Å 与 [O II] 9801 Å 同红移（Perley+2016）。t90=128±32 s（Swift/BAT 目录，15-350 keV）；GCN 6132 精化分析报 T90=89±2 s（15-350 keV）；均 ≫2 s，按目录 t90 判 lgrb。alias 出处：GCN 6125 原文用名 GRB 070223（trigger 261664）；Swift/BAT 目录 name_alt BAT 261664；HEASARC SWIFTGRB name_alt Swift 261664。测光检索留证（2026-11-01）：仓内 gcn/archive 全文检索命中 14 篇（6125/6126/6127/6128/6130/6131/6132/6133/6134/6136/6150/6162/6168/6221，逐篇核对——光学/IR/射电数值全部已入库或修订；GCN 6168 WHT+LIRIS JHK 探测、GCN 6221 WHT 复测非探测均未给星等/极限数值，无法入库仅此留证）；external/rssgrbag 光变 0 行、external/grbsn_webtool 无 070223；ADS 元数据检索 \"GRB 070223\" 10 篇 + \"GRB070223\" 5 篇（均为 GCN/GCN Report）、全文检索 26 篇命中（无新增可用测光表；Perley+2016 供红移与位置）；TNS 不适用（GRB 无 TNS 条目）→ 无更多可用测光，本 PR 补 0 行新行、仅修订既有行。MASTER-VWF 4 行极限的适用性存疑见 PR 待决事项①。",
   "sub_tag": [
     "lgrb"
   ],
@@ -367,16 +371,28 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-01"
     }
   },
   "articles": [
     {
+      "name": "Perley+2016",
+      "title": "The Swift Gamma-Ray Burst Host Galaxy Legacy Survey. I. Sample Selection and Redshift Distribution",
+      "url": "https://ui.adsabs.harvard.edu/abs/2016ApJ...817....7P/abstract",
+      "bibtex": "@ARTICLE{2016ApJ...817....7P,\n       author = {Perley, D. A. and Krühler, T. and Schulze, S. and de Ugarte Postigo, A. and Hjorth, J. and Berger, E. and Cenko, S. B. and Chary, R. and Cucchiara, A. and Ellis, R. and Fong, W. and Fynbo, J. P. U. and Gorosabel, J. and Greiner, J. and Jakobsson, P. and Kim, S. and Laskar, T. and Levan, A. J. and Michałowski, M. J. and Milvang-Jensen, B. and Tanvir, N. R. and Thöne, C. C. and Wiersema, K.},\n       title = {The Swift Gamma-Ray Burst Host Galaxy Legacy Survey. I. Sample Selection and Redshift Distribution},\n       journal = {The Astrophysical Journal},\n       year = 2016,\n       volume = 817,\n       pages = {7},\n       doi = {10.3847/0004-637X/817/1/7}\n}"
+    },
+    {
       "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {Dainotti, M. G. and De Simone, B. and Mohideen Malik, R. F. and Pasumarti, V. and Levine, D. and Saha, N. and Gendre, B. and Kido, D. and Watson, A. M. and Becerra, R. L. and Belkin, S. and Desai, S. and Pedreira do E. S., A. C. C. and Das, U. and Li, L. and Oates, S. R. and Cenko, S. B. and Pozanenko, A. and Volnova, A. and Hu, Y.-D. and Castro-Tirado, A. J. and Orange, N. B. and Moriya, T. J. and Fraija, N. and Niino, Y. and Rinaldi, E. and Butler, N. R. and González, J. d. J. G. and Kutyrev, A. S. and Lee, W. H. and Prochaska, X. and Ramirez-Ruiz, E. and Richer, M. and Siegel, M. H. and Misra, K. and Rossi, A. and Lopresti, C. and Quadri, U. and Strabla, L. and Ruocco, N. and Leonini, S. and Conti, M. and Rosi, P. and Ramirez, L. M. T. and Zola, S. and Jindal, I. and Kumar, R. and Chan, L. and Fuentes, M. and Lambiase, G. and Kalinowski, K. K. and Jamal, W.},\n       title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = 2024,\n       volume = 533,\n       pages = {4023},\n       doi = {10.1093/mnras/stae1484}\n}",
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
