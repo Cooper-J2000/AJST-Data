@@ -3,12 +3,13 @@
   "alias": [
     "GRB 190613.172",
     "bn190613172",
+    "GRB190613172",
     "AT2019aabt"
   ],
-  "ra": 182.53008333333332,
-  "dec": 67.23525000000001,
-  "T0": "2019-06-13T04:07:41Z",
-  "T0_ref": null,
+  "ra": 182.5292,
+  "dec": 67.23529,
+  "T0": "2019-06-13T04:07:18.310160Z",
+  "T0_ref": "Swift/BAT GRB Catalog trigger 908288 (04:07:18.310160 UT); GCN 24798; GCN 24819",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -16,16 +17,18 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 0.5,
-  "pos_ref": "https://www.wis-tns.org/object/2019aabt",
+  "pos_error": 0.43,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 24815 (Swift/UVOT preliminary position)",
   "redshift_type": null,
   "redshift_ref": "catalog:liang2023",
-  "comment": "catalog-only: Liang+2023 Fermi-GBM spectral-energy sample (ApJS 266, 31)",
+  "comment": "catalog-only: Liang+2023 Fermi-GBM spectral-energy sample (ApJS 266, 31)。审核 Rusty-Harpoon@zcode 2026-10-31：(1) T0：原值 2019-06-13T04:07:41Z 取自 Liang+2023 快照 trigger_time，与触发时刻不符——GBM 触发 582091643.234478=04:07:18.234 UT（GCN 24799/24816、FERMIGBRST），BAT 触发 908288=04:07:18.310160 UT（GCN 24798/24819、Swift BAT 目录）；两触发仪器亚秒不同（差 76 ms），按提示词 §3.2 有 Swift 以 Swift 为准，T0=2019-06-13T04:07:18.310160Z；全部 GCN/TNS 测光历元均相对 BAT 触发。(2) 定位：改用 Swift/UVOT 初步位置 182.52920 +67.23529（0.43″、90%，GCN 24815）；原 TNS 位置 182.530083 +67.23525（0.5″、未标置信水平）实为 MASTER 发现位置，与增强 XRT 位置（GCN 24809，182.52964 +67.23535、1.5″ 90%）相距 ~1.2″，均在误差圈内；swiftgrbba 快照 xrt_ra/dec=182.52921/67.23533（1.5″）备查。(3) sub_tag=lgrb：t90=17.149±1.493 s（50–300 keV，FERMIGBRST；Liang+2023 同值），按目录 t90 判 lgrb；Liang+2023 分类 grb_type=II。(4) 红移 2.78：出处为 SEDM Lyα 暂定证认（GCN 24835/24850，作者自注 tentative）与 MPE 表（z_flag=?），Liang+2023 亦列 2.78；无已发表光谱红移文献，redshift_type 留空。(5) 别名：GRB 190613.172 系 Liang+2023 目录 name_alt 原文用名（GBM 触发名 190613172：GCN 24799 原文 '190613172'、GCN 24800 原文 'GRB 190613172'）；增补 GRB190613172（FERMIGBRST trigger_name）。(6) 测光检索（2026-10-31）：仓内 gcn/archive（45 947 篇全文）命中本源 15 篇（24798/24799/24800/24801/24802/24803/24809/24810/24815/24816/24819/24822/24835/24838/24850），其中含光学测光数值 8 篇；external/rssgrbag 0 命中、external/grbsn_webtool 无该事件；GCN 站 API 直连失败（服务器错误），以仓内全文档案为准；ADS（abs+full 共 3 组查询）命中研究文献 2 篇，其中 Curtin+2023（ApJ 954, 154，arXiv:2208.00803）CHIME/FRB 400–800 MHz 瞬发射电上限有明确时间锚点，补 2 行（VoR 被 IOP Radware 反爬，三方交叉 arXiv v3 TeX+ADS，audit/unverified.tsv 已登记）；TNS AT2019aabt 3 条测光：发现点 16.2 mag（04:10:22 UT）与触发前非探测（2017-12-24，lim 20.2）各补 1 行，另一条 #118844（mag 17.8 与 lim 17.4 互相矛盾）不入库；文献级余辉测光检索无更多命中（full:'GRB 190613A' 仅 2 篇 CHIME 搜索文）。共补 34 行（MASTER 检测 1+上限 26、KAIT 2、Kitab 1、CHIME 2、TNS 2），原 10 行按 GCN 曝光窗口改中点并换算新 T0。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {"status": "reviewed", "auditor": "Rusty-Harpoon@zcode", "date": "2026-10-31"},
     "derived": {
       "best": {
         "t90_obs": {
@@ -327,6 +330,13 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract",
       "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Curtin+2023",
+      "title": "Limits on Fast Radio Burst-like Counterparts to Gamma-Ray Bursts Using CHIME/FRB",
+      "url": "https://doi.org/10.3847/1538-4357/ace52f",
+      "bibtex": "@ARTICLE{2023ApJ...954..154C,\n       author = {{Curtin}, Alice P. and {Tendulkar}, Shriharsh P. and {Josephy}, Alexander and {Chawla}, Pragya and {Andersen}, Bridget C. and {Kaspi}, Victoria M. and {Bhardwaj}, Mohit and {Cassanelli}, Tomas and {Cook}, Amanda M. and {Dong}, Fengqiu Adam and {Fonseca}, Emmanuel and {Gaensler}, B. M. and {Kaczmarek}, Jane F. and {Lanmnan}, Adam E. and {Leung}, Calvin and {Pearlman}, Aaron B. and {Petroff}, Emily and {Pleunis}, Ziggy and {Rafiei-Ravandi}, Masoud and {Ransom}, Scott M. and {Shin}, Kaitlyn and {Scholz}, Paul and {Smith}, Kendrick and {Stairs}, Ingrid H.},\n       title = {Limits on Fast Radio Burst-like Counterparts to Gamma-Ray Bursts Using CHIME/FRB},\n       journal = {The Astrophysical Journal},\n       year = {2023},\n       volume = {954},\n       pages = {154},\n       doi = {10.3847/1538-4357/ace52f},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2023ApJ...954..154C/abstract}\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
