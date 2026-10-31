@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB090929B",
-  "alias": [],
-  "ra": 117.72016906738281,
-  "dec": -0.6575559973716736,
-  "T0": "2009-09-29T10:09:07Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090929B",
+    "BAT 371050",
+    "Swift 371050"
+  ],
+  "ra": 117.72017,
+  "dec": -0.65756,
+  "T0": "2009-09-29T10:09:07.257040Z",
+  "T0_ref": "GCN 9963（10:09:07 UT，Swift/BAT 触发，trigger=371050）；Swift/BAT 目录（batgrbcat）trigger_time=2009-09-29T10:09:07.257040Z（HEASARC SWIFTGRB 同值，swiftgrbba 快照 10:09:07.000Z 为舍入）；亚秒取触发仪器目录值，GCN 9963 整数秒为其舍入",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,14 +16,22 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1.399999976158142,
-  "pos_ref": "SGA (UVOTGRB)",
+  "pos_error": 1.4,
+  "pos_ref": "Swift-XRT enhanced position（HEASARC SWIFTGRBBA 371050：xrt_ra=117.72017, xrt_dec=-0.65756, error_radius=1.4″；Evans+2009, MNRAS 397, 1177）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。审核链（wa1kmoon@zcode 2026-10-31）：[身份] Swift/BAT 触发 371050（GCN 9963：At 10:09:07 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 090929B, trigger=371050）；BAT on-board 位置 117.705,-0.632（3′，90%，GCN 9963），地面精化 117.712,-0.645（1.4′，90%，GCN 9979）；Swift-XRT 找到未编目 X 射线源。[T0] GCN 9963 记 10:09:07 UT（整数秒）；Swift/BAT 目录 trigger_time=10:09:07.257040Z 为触发仪器亚秒值（HEASARC SWIFTGRB 同值），T0 据此精化，亚秒差按契约不记 T0_offset。[定位] ra/dec=117.72017,-0.65756、pos_error=1.4″ 取自 SWIFTGRBBA 目录（UKSSDC enhanced position，Evans+2009, MNRAS 397, 1177）；enhanced 位置早期值 GCN 9964=117.72015,-0.65764（1.8″，90%）——GCN 9964 误标为 GRB 090929，GCN 9965 更正为 GRB 090929B（同值），按勘误链取更正后归属；原 pos_ref「SGA (UVOTGRB)」与坐标实际出处（BA 表 xrt_ra/xrt_dec）不符，已改；坐标原为 float32 残渣（117.72016906738281/-0.6575559973716736），清理为目录快照精度；XRT enhanced 定位为 90% 包含半径，pos_error_confidence=90。[分类] t90=360±20 s（GCN 9979，15-350 keV，BAT 精化分析）；目录 t90=361.6 s（HEASARC SWIFTGRB）/357.36±7.21 s（Swift BAT 目录）；Greiner+2024 allgrbs 表 L/S=L；Konus-Wind（GCN 9975）与 Suzaku WAM（GCN 9993）均称 long GRB；按目录 t90 判 lgrb。[红移] 无红移测量（各 GCN/目录均无 z，redshift=null）；enhanced 误差圆内有 USNO 星（R2=19.3，GCN 9969/9971），无确定宿主，host_galaxy=null。[物理] fluence=5.9±0.3×10⁻⁶ erg/cm²（15-150 keV）、1-s 峰值光子流量 3.3±0.2 ph/cm²/s（GCN 9979）；仅备查。[UVOT/RAPTOR 污染] XRT 位置 <2″ 有 10 等星（GCN 9963）、19″ 处 11 等星限制 RAPTOR 测光精度（GCN 9967）、R=9.5 亮星污染 UVOT 测光（GCN 9969）；UVOT white 探测 18.7±0.5 与 USNO 星 R2=19.3 一致性存疑（UVOTGRB 目录记「UVOT: possible detection」），RAPTOR/UVOT 行保留原值、行 comment 注明污染。[lc] 224 行中 208 行为 Swift/XRT 10keV X 射线行（按契约不改不删）；非 X 射线 16 行复核并统一 T0 重算 mjd：GCN 9969 white 18.7±0.5 行原 time=112 s 无出处，原文表 T_start=94/T_stop=4032/Exp=292，改窗口中点 2063 s±1969 s，band 由 'w'（filters.json 中为 Pan-STARRS w，误标）改 'uvot-white'；u/b/uvw2 三条上限行原 time（3440/3625/4056 s）无出处，按原文窗口改中点 3522/3727/4131 s±半宽；GCN 9970 DSO-14 I>17.1 行原 time=43218 s 无出处，取原文表 mean time 12.0 h=43200 s（正文「12.0 minutes」为原文笔误，表头明确为 h）、补 time_err=40 s（1×80 s 半曝光）；GCN 9967 RAPTOR R~16.8 行 time 706→706.37 s（10:20:53.37 UTC）、R~18.0 行 2453 s（10:50 UTC）保留；GCN 9971 Gemini/NIRI JHK 上限 13565 s（09-29.58 UT）保留。新增 Greiner+2024（A&A 691, A158）Table 2 GROND 7 行：g'>19.70、r'=19.45±0.10、i'=19.40±0.20、z'>19.40、J>19.30、H>19.10、K>18.20（AB，未做银消光改正；mid 21.58 h=T0+77688 s，griz/JHK 曝光各 4.0 min，time_err=120 s）——数值取自 CDS J/A+A/691/A158/tablea2 的 090929B 行（vizier.cfa.harvard.edu，取数 2026-10-31）并与 arXiv:2410.14441v1 TeX L470 逐值一致；A&A VoR 未取得（反爬/TLS 失败，见 audit/unverified.tsv）。[测光检索（2026-10-31）] 仓内 gcn/archive 含 090929B 通告 10 篇全文已读（9963/9965/9967/9969/9970/9971/9973/9975/9979/9993；另有 9964 为 090929 泛名、被 9965 更正归属），除上述 GCN 光学值外无新增测光；external/rssgrbag、external/grbsn_webtool 无本源记录；OpenAlex 命中 18 条（10 篇 GCN 通告 + 8 研究条目：Ror+2025 MNRAS 12, staf1514 为 UVOT/XRT 样本复分析、Chang+2021 ApJ X 射线耀发样本，均无本源新原始测光；Morgan 2014 学位论文未及）；arXiv API \"GRB 090929B\" 精确检索 0 命中；ADS/SciX 无 token（实测 HTTP 401），该通道记 audit/unverified.tsv 通道级 search-limited；净补 7 行（GROND）。[别名] GRB 090929B 为 GCN/SIMBAD 用名；BAT 371050、Swift 371050 为目录名（swift_bat/swift_grb 快照 name_alt）。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-31"
+    },
     "catalog_data": {
       "uvot_grb": {
         "other": {
@@ -260,6 +272,31 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
