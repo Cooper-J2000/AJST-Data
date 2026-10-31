@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB160703A",
   "alias": [],
-  "ra": 287.414,
-  "dec": 36.913,
-  "T0": "2016-07-03T12:10:05Z",
-  "T0_ref": null,
+  "ra": 287.4168,
+  "dec": 36.9175,
+  "T0": "2016-07-03T12:10:05.126360Z",
+  "T0_ref": "Swift/BAT catalog (batgrbcat, trigger 702699) trigger_time；GCN 19645（12:10:05 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,9 +14,9 @@
   ],
   "pos_error": 3.9,
   "pos_ref": "GCN 19655",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "redshift_type": "upperlimit",
+  "redshift_ref": "GCN 19656; catalog:mpe_greiner",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT trigger 702699（GCN 19645），BAT 地面定位 RA,Dec=287.414,+36.913（GCN 19648）；ra/dec 已更新为 XRT 精化位置 287.4168,+36.9175±3.9″（90% containment，GCN 19655，距 MITSuME 光学对应体 5.1″），pos_error/pos_ref 原本即指向该位置。T0 取触发仪器官方目录 batgrbcat 触发时刻 12:10:05.126360Z（GCN 19645 给 12:10:05 UT，整数秒一致按触发仪器亚秒值）；互证：Konus-Wind T0=12:10:07.015（GCN 19649）、Lomonosov BDRG 12:10:02（GCN 19725）——系不同航天器触发时刻之差，不构成 T0_offset。t90=44.4±2.8 s（15–350 keV，GCN 19648 Swift/BAT refined analysis），按通告 t90 判 lgrb。红移：UVOT 各滤光片探测与 z<~1.5 一致（GCN 19656），MPE 目录 z_flag=ul,ph，故 redshift_type=upperlimit。测光检索（2026-10-31）：仓内 gcn/archive 全文检索命中 14 篇（13 篇含 160703A，另 GCN 19725 Lomonosov 记 GRB 160703），其中 9 篇含光学/射电测光或上限（19645/19647/19650/19652/19653/19656/19668/19737/19849）；rssgrbag、grbsn_webtool 无记录；ADS full:\"160703A\" 命中 20 条，除 GCN 外仅 CZTI 快发辐射极化类论文（Gupta+2024 等），无余辉测光表；→ 补 MITSuME Akeno 9 行、Murikabushi 6 行、Bassano V 上限 1 行，弃 GCN 19645 初始白光上限 1 行（被 GCN 19656 同曝光探测取代）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -174,6 +174,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
@@ -185,5 +190,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
