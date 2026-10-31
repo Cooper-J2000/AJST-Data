@@ -1,25 +1,36 @@
 {
   "transient_id": "GRB090126A",
-  "alias": [],
-  "ra": 3.848,
-  "dec": 81.365,
+  "alias": [
+    "GRB 090126",
+    "Swift 20099"
+  ],
+  "ra": 3.6577,
+  "dec": 81.3733,
   "T0": "2009-01-26T02:01:15Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 8852（SuperAGILE 触发 2009-01-26 02:01:15 UT）；external/uvot_grb 快照 TRIG_UT=2009-026-02:01:15 同值互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "SuperAGILE",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2.2,
+  "pos_ref": "GCN 8854",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核记录（Rusty-Harpoon@zcode，2026-10-31）：身份=SuperAGILE 触发（GCN 8852，2009-01-26 02:01:15 UT，duration about 60 s，20-60 keV），Swift 以 TOO 跟进（target 20099，BAT 未触发：external/swift_bat 目录快照无 090126 条目、仓内无 BAT 触发通告），Trigger_Instrument 原值「Swift/BAT」改「SuperAGILE」。定位=GCN 8854 XRT-UVOT 增强位置 RA,Dec=3.6577,+81.3733（2.2″，原文注明 90% 置信）；原 ra/dec=3.848,81.365 实为 GCN 8852 SuperAGILE 位置（3′ 半径）；快照另载 swiftgrbba 3.65983,+81.37342（1.9″）与 swift_xrt_live 3.6596,+81.3734（2.6″），并列备查。T0=2009-01-26T02:01:15Z 不变（GCN 8852，秒级，未自行补亚秒）；uvot_grb 快照 TRIGTIME=254628075 按 Swift MET 折算为 2012-01-26T02:01:15 UT，与其 TRIG_UT=2009-026-02:01:15 相差整 3 年，疑上游目录抽取错误，快照未改。t90≈60 s（GCN 8852「duration of about 60 s」；uvot_grb 目录 t90=60.0 s，T90_REF=GCN8852），按目录 t90 判 lgrb/sgrb → sub_tag=lgrb。redshift：无任何来源给出（UVOT 无光学余辉探测），保持 null。别名：GRB 090126（GCN 8852 原文用名）、Swift 20099（HEASARC SWIFTGRB name_alt）。测光检索（2026-10-31）：仓内 gcn/archive 全文检索 090126 命中 6 篇，其中 4 篇属本暴（8852 触发定位、8854 XRT 精化、8864 UVOT 上限、8880 XRT 余辉确认，逐篇读 body）、另 2 篇为日期巧合无关（GCN 8858 AXP 1E1547.0-5408 爆发表、GCN 16775 GRB 140901B 触发号 140901262）；external/rssgrbag、external/grbsn_webtool 无 090126 记录；GCN 站与仓内一致；ADS/SciX（abs+title 检索 \"GRB 090126A\"/\"GRB 090126\"，2026-10-31）命中仅上述 4 篇 GCN，无正式发表文献；TNS 不适用 → 结论：除 Swift/UVOT 外无任何光学测光记录 → 补 GCN 8864 UVOT 上限 4 行（v>20.1、b>22.7、u>21.0、white>23.1，未做银消改正），其余无可入库测光。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    },
     "catalog_data": {
       "uvot_grb": {
         "other": {
