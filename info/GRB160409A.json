@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB160409A",
-  "alias": [],
+  "alias": [
+    "BAT 682162"
+  ],
   "ra": 289.705,
   "dec": -5.39,
   "T0": "2016-04-09T05:54:14Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 19304（触发仪器官方通报，原文：At 05:54:14 UT on 2016-04-09 BAT triggered GRB 160409A (trigger #682162)）；Konus-Wind GCN 19312 触发 05:54:14.430 UT 整数秒一致（非触发仪器亚秒值不采纳）；swiftgrbba 编译 trigger_time=2016-04-09T05:54:14.000Z 同值互证；BAT 目录（BAT 682162）trigger_time=2016-04-09T05:54:06.301Z 早 7.7 s——按 §3.8 层级以触发仪器官方 GCN 值为准",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 180.0,
   "pos_ref": "GCN 19304",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-10-28）：T0/触发仪器锚定见 T0_ref。ra/dec=289.705/-5.390 与 pos_error=180 arcsec（3 arcmin, radius, 90% containment）均出自 GCN 19304 on-board 定位，补 pos_error_confidence=90。身份唯一：MPE 目录 2016-04-09 仅此一暴、Fermi/GBM 当日无触发、GCN 检索无 160409B。Swift 因星载目录匹配 4U 1916-053 未立即 slew（该源距 BAT 位置 9 arcmin、在误差圈外，GCN 19304 已甄别），ToO 后 XRT/UVOT 均无新源。tag/sub_tag：Konus-Wind GCN 19312 明言 long-duration（t90=48.0±1.6 s，15-350 keV，BAT 目录）→ grb/lgrb。alias 补 BAT 682162（swift_bat name_alt）。lc 唯一行（UVOT white>21.3 上限）逐行核对与规范化见 lc 行注；articles 无该暴专属论文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
