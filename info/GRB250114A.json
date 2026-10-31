@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB250114A",
-  "alias": [],
+  "alias": [
+    "BAT 1281241"
+  ],
   "ra": 166.57679,
   "dec": -15.11159,
   "T0": "2025-01-14T07:33:19.475360Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 38927（BAT 触发 07:33:19 UT，trigger=1281241）；亚秒取 Swift BAT 目录 trigger_time=2025-01-14T07:33:19.475360Z（trigger 1281241，仓内 external/swift_bat 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
@@ -12,24 +14,32 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 2.4,
-  "pos_ref": "GCN 38936",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 0.74,
+  "pos_ref": "GCN 38927",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 38934",
+  "comment": "定位为 Swift/UVOT FC 位置（GCN 38927：166.57679, -15.11159，0.74″，90% conf）；增强 XRT 位置备查（GCN 38936：166.57609, -15.11189，2.4″，90% conf）。红移 z=4.732 为 VLT/X-shooter 吸收线光谱红移（GCN 38934）。t90=293.89±13.45 s（15-350 keV，GCN 39012 Swift-BAT refined analysis）；Swift BAT 目录 t90=294.0±11.7 s（15-350 keV）——按目录 t90 判 lgrb；Yu+2025 亦分类为 long GRB。新增别名「BAT 1281241」（Swift BAT 目录 name_alt，仓内 external/swift_bat 快照）。测光检索（2026-10-31）：仓内 gcn/archive 14 篇（38927/38928/38929/38930/38931/38933/38934/38936/38943/38945/38946/38948/38999/39012，全文通读，其中 38931/38946 含未入库的 MASTER/TAROT 测光）；external/rssgrbag、external/grbsn_webtool 无该源记录；GCN 站检索 13 篇与仓内一致、无后续通告；ADS 命中 15 条（14 条为上述 GCN，研究论文仅 Yu+2025 ApJ 995, 201，其 arXiv v1 全文无光学/射电测光表，VoR 被 IOP Radware 反爬拦截，见 audit/unverified.tsv）；TNS 无 250114A 条目 → 补 MASTER-OAFA 探测 1 行、TAROT/TCH 3 行，其余 9 行按统一 T0 逐行换算修正（曝光起点改中点、亚秒混算残差消除）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [
     {
       "name": "Yu+2025",
       "title": "Probing the Nature of High-redshift Long GRB 250114A and Its Magnetar Central Engine",
-      "url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...995..201Y",
+      "url": "https://doi.org/10.3847/1538-4357/ae2009",
       "bibtex": "@ARTICLE{2025ApJ...995..201Y,\n       author = {{Yu}, Wen-Yuan and {L{\\\"u}}, Hou-Jun and {Tian}, Xiao and {Chen}, Liang-Jun and {Liang}, En-Wei},\n        title = \"{Probing the Nature of High-redshift Long GRB 250114A and Its Magnetar Central Engine}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, 629, High Energy Astrophysical Phenomena},\n         year = 2025,\n        month = dec,\n       volume = {995},\n       number = {2},\n          eid = {201},\n        pages = {201},\n          doi = {10.3847/1538-4357/ae2009},\narchivePrefix = {arXiv},\n       eprint = {2511.21419},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025ApJ...995..201Y},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }

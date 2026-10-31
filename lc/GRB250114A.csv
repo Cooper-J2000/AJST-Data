@@ -1,10 +1,14 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-135.525,,s,60689.31637731898,w,20.35,0.2,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN38927,,
-184.525,,s,60689.31694444861,H,13.2,0.1,magnitude,Vega,n,n,,,,,,,1.0,n,,REM 60cm,GCN38933,,
-859.525,,s,60689.32475694861,R,20.2,,magnitude,AB,n,n,,,,,,,1.0,n,,TRT,GCN38929,,
-890.525,,s,60689.32511574491,r,20.18,0.15,magnitude,AB,n,n,,,,,,,1.0,n,,LCO 1-m Sinistro,GCN38930,,
-2090.52,,s,60689.33900457593,r,21.58,0.12,magnitude,AB,n,n,,,,,,,1.0,n,,VLT UT3/X-shooter acquisition camera,GCN38934,,
-21814.5,,s,60689.567291381485,V,21.88,0.52,magnitude,,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN38948,,
-23172.5,,s,60689.58300897408,i,20.17,0.22,magnitude,,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN38943,,
-23899.5,,s,60689.591423325925,r,22.01,0.35,magnitude,,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN38948,,
-202781.0,,s,60691.66181105741,7GHz,0.07,,mJy,,n,n,,,,,,,1.0,n,,ATCA,GCN38999,,
+68,5,s,60689.3155958,G,15.9,,magnitude,,n,n,,,,,,,1.0,n,,MASTER-OAFA,GCN38931,原文 10 s 曝光 OT 探测，T-Tmid=68 s（位置 11:06:18.39 -15:06:41.2 与 UVOT 余辉一致），time_err=5 s 为半曝光；无滤光片（GCN 38928 同一曝光记 C=clear unfiltered，并给同口径上限 18.2；本通告另给 5σ 上限约 17.7，取探测行为主）；原文未声明星等系统，未给 OT 测光误差,Rusty-Harpoon
+90,30,s,60689.3158504,G,15.4,0.2,magnitude,,n,n,,,,,,,1.0,n,,TAROT/TCH,GCN38946,原文「15.4 ± 0.2 r-mag after the first minute」，出自 60 s 拖尾像（观测自 T0+60 s 起），time=中点 90 s、time_err=30 s 为约定半宽；无滤光片，原文以 r-mag 表述（Klotz+2006 方法），未声明星等系统,Rusty-Harpoon
+101,,s,60689.3159777,H,13.2,0.1,magnitude,Vega,n,n,,,,,,,1.0,n,,REM 60cm,GCN38933,原文 t−t0=101 s，H=13.2±0.1（Vega，2MASS 定标）；REM 观测自 T0+84 s（07:34:43 UT）开始，原文未给 H 曝光时长；原行 time=184.525 与原文不符，已按原文改正,Rusty-Harpoon
+150,30,s,60689.3165449,G,16.3,0.1,magnitude,,n,n,,,,,,,1.0,n,,TAROT/TCH,GCN38946,原文「16.3 +/-0.1 r-mag after the second minute」，第二分钟（T0+120–180 s）取中点 150 s、time_err=30 s 为约定半宽；无滤光片，原文以 r-mag 表述（STDPipe，Skymapper 定标），未声明星等系统,Rusty-Harpoon
+211,75,s,60689.3172509,w,20.35,0.2,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN38927,原文：FC 150 s White 曝光，触发后 136 s 开始，20.35±0.20（1σ），未做银消光改正（E(B-V)=0.056）；time=中点（起点+75 s）、time_err=半曝光 75 s；原文未声明系统，UVOT 惯例 Vega（Breeveld+2011）；原行 time=135.525 为曝光起点残值，已改正,Rusty-Harpoon
+300,30,s,60689.3182810,G,17.4,0.2,magnitude,,n,n,,,,,,,1.0,n,,TAROT/TCH,GCN38946,原文「17.4 +/- 0.2 r-mag 5 minutes post T0」，time=300 s、time_err=30 s 为约定半宽；该测量出自 T0+2–5 min 系列像（STDPipe，Skymapper 定标），原文未给单帧时刻；无滤光片，原文以 r-mag 表述，未声明星等系统,Rusty-Harpoon
+870,,s,60689.3248782,R,20.2,,magnitude,AB,n,n,,,,,,,1.0,n,,TRT,GCN38929,原文：R 波段系列帧叠栈「r ~ 20.2 mag at a median time 14.5 mins after the Swift trigger」，time=870 s；Pan-STARRS 定标（PS1 目录为 AB 系统，推定 AB），未做银消光改正；原文未给误差与曝光时长（观测起点 07:46:08.50 UT=T0+769 s）；原行 time=859.525 与原文不符，已改正,Rusty-Harpoon
+1160.52464,270,s,60689.3282407,r,20.18,0.15,magnitude,AB,n,n,,,,,,,1.0,n,,LCO 1-m Sinistro,GCN38930,原文：起点 07:48:10 UT（触发后 14.85 min），3×180 s SDSS-r，r=20.18±0.15（AB，Pan-STARRS 定标）；time=中点（起点+270 s）、time_err=270 s 为半序列；原行 time=890.525 为观测起点，已改正,Rusty-Harpoon
+2090.12464,43,s,60689.3390000,r,21.58,0.12,magnitude,AB,n,n,,,,,,,1.0,n,,VLT UT3/X-shooter acquisition camera,GCN38934,原文：30 s acquisition camera 图像，Jan 14.339 UT，r=21.58±0.12 AB（Pan-STARRS 定标）；time=0.339 d 反算（08:08:09.6 UT）、time_err=43 s（原文日小数 0.001 d 精度之半）；原行 time=2090.52 与原文换算差 0.4 s，已改正,Rusty-Harpoon
+22415.24464,600,s,60689.5742444,V,21.88,0.52,magnitude,,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN38948,原文：UTstart 13:36:54.720（t−T0=6.06 h），1×1200 s，V=21.88±0.52；time=中点（起点+600 s）、time_err=600 s 为半曝光；APASS 定标（Lupton 2005 转换），原文未声明星等系统；未做银消光改正；原行 time=21814.5 为曝光起点，已改正,Rusty-Harpoon
+23472.52464,300,s,60689.5864815,i,20.17,0.22,magnitude,,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN38943,原文：单次 600 s SDSS i' 曝光，起点 13:59:32 UT（~6.44 h after trigger），i'=20.17±0.22（PanSTARRS DR2 定标，未做银消光改正）；time=中点（起点+300 s）、time_err=300 s 为半曝光；原文未声明星等系统；原行 time=23172.5 为曝光起点，已改正,Rusty-Harpoon
+24500.07664,600,s,60689.5983744,r,22.01,0.35,magnitude,,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN38948,原文：UTstart 14:11:39.552（t−T0=6.64 h），1×1200 s，r=22.01±0.35；time=中点（起点+600 s）、time_err=600 s 为半曝光；APASS 定标（Lupton 2005 转换），原文未声明星等系统；未做银消光改正；原行 time=23899.5 为曝光起点，已改正,Rusty-Harpoon
+216280.525,13500,s,60691.8180556,7GHz,0.07,0.013,mJy,,n,n,,,,,,,1.0,n,,ATCA,GCN38999,原文：2025-01-16 15:53 UT 起 7.5 h，70 uJy/beam @ 7 GHz，rms 13 uJy/beam（取为 1σ 误差 0.013 mJy）；time=窗口中点（起点+3.75 h）、time_err=半宽 13500 s（原文只给观测窗口，中点/半宽为约定口径）；原行 time=202781.0 为观测起点，已改正,Rusty-Harpoon
