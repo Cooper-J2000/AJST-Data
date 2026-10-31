@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB130701A",
-  "alias": [],
-  "ra": 357.216667,
-  "dec": 36.1,
-  "T0": "2013-07-01T04:17:42.161000Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 559482"
+  ],
+  "ra": 357.22942,
+  "dec": 36.10058,
+  "T0": "2013-07-01T04:17:43.630460Z",
+  "T0_ref": "GCN 14953（BAT 触发 04:17:43 UT，trigger 559482）；Swift/BAT GRB Catalog trigger_time 2013-07-01T04:17:43.630460Z（仓内 extra_data.catalog_data.swift_bat 快照，2026-07-21 取）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,9 +16,9 @@
   ],
   "pos_error": 2.0,
   "pos_ref": "GCN 14955",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 14956",
-  "comment": null,
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-01）。T0 口径：采 Swift/BAT 触发时刻 04:17:43.630460Z（GCN 14953 整秒 04:17:43 UT；swiftgrbba 目录 04:17:43.000 整秒一致；亚秒取触发仪器目录 BATGRBCAT 值）；原值 04:17:42.161 为 Konus-Wind 自触发时刻（GCN 14958，T0=15462.161 s UT），与 Swift 触发相差 1.47 s，不作标准 T0；全表非 X 射线行 time/mjd 已按新 T0 重算，X 射线行 mjd 需维护者按 mjd=T0+time 机械重算（§3.3 唯一例外条款）。定位：改采 GCN 14955 增强 XRT 位置 357.22942,+36.10058（2.0″ 半径，原文标注 90% 置信，与 NOT 光学余辉位置 23:48:55.09,+36:06:01.4 相符）；原 ra/dec 357.216667,+36.1 为 BAT 在轨定位（3′），与 pos_ref=GCN 14955 不符，已纠正。红移：z=1.155 为 VLT/X-shooter 吸收线光谱红移（FeII/MgII/MgI/CaII，GCN 14956），redshift_type=spec。sub_tag=lgrb：t90=4.38±0.25 s（15-350 keV，GCN 14959 / Swift/BAT 目录），按目录 t90 判 lgrb；Konus T90=3.658±0.319 s（GCN 14958）、Minaev+2020 Type II 同向。alias「BAT 559482」出自 Swift/BAT GRB Catalog（catalog_data.swift_bat.name_alt）。测光检索（2026-11-01）：仓内 gcn/archive 全文命中 11 篇（GCN 14953–14963，其中 14962 为 GRB 130701B；含光学数值者 14954/14956/14957/14960/14963）；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS 全文检索命中 25 篇（10 篇 GCN + Littlejohns+2015、Anderson+2018 AMI、Selsing+2019、Contopoulos+2014 等），其中 Littlejohns+2015（MNRAS 449,2919，RATIR 首夜 r/i/Z/Y）与 Anderson+2018（MNRAS 473,1512，AMI 15.7GHz 7 历元非探测）补 11 行，其余命中为转引/样本统计无新测光；GCN 站与本地 archive 内容一致。UVOT 全部行已对 UKSSDC Burst Analyser qdp 逐点核对（含上限表），time_err 补半曝光；存量行 Gext_corr=y 及 Gext_* 派生列为后端管线产物（Dainotti 表 extcorr=n），本 PR 未动，待维护者裁定。",
   "sub_tag": [
     "lgrb"
   ],
@@ -470,15 +472,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-01"
     }
   },
   "articles": [
     {
       "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
-      "source": "bot"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {Dainotti, M. G. and De Simone, B. and Mohideen Malik, R. F. and Pasumarti, V. and Levine, D. and Saha, N. and Gendre, B. and Kido, D. and Watson, A. M. and Becerra, R. L. and Belkin, S. and Desai, S. and Pedreira do E. S., A. C. C. and Das, U. and Li, L. and Oates, S. R. and Cenko, S. B. and Pozanenko, A. and Volnova, A. and Hu, Y.-D. and Castro-Tirado, A. J. and Orange, N. B. and Moriya, T. J. and Fraija, N. and Niino, Y. and Rinaldi, E. and Butler, N. R. and González, J. d. J. G. and Kutyrev, A. S. and Lee, W. H. and Prochaska, X. and Ramirez-Ruiz, E. and Richer, M. and Siegel, M. H. and Misra, K. and Rossi, A. and Lopresti, C. and Quadri, U. and Strabla, L. and Ruocco, N. and Leonini, S. and Conti, M. and Rosi, P. and Ramirez, L. M. T. and Zola, S. and Jindal, I. and Kumar, R. and Chan, L. and Fuentes, M. and Lambiase, G. and Kalinowski, K. K. and Jamal, W.},\n       title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = 2024,\n       volume = {533},\n       pages = {4023},\n       doi = {10.1093/mnras/stae1484},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n}",
+      "source": "bot; VoR url updated by Rusty-Harpoon@zcode 2026-11-01"
     },
     {
       "name": "Minaev+2020",
@@ -500,7 +507,22 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract",
       "bibtex": "@ARTICLE{2024A&A...690A.261G,\n       author = {C. Guidorzi and R. Maccary and A. Tsvetkova and S. Kobayashi and L. Amati and L. Bazzanini and M. Bulla and A. E. Camisasca and L. Ferro and D. Frederiks and F. Frontera and A. Lysenko and M. Maistrello and A. Ridnaia and D. Svinkin and M. Ulanov},\n       title = {New results on the gamma-ray burst variability-luminosity relation},\n       journal = {A&A, 690, A261 (2024)},\n       year = {2024},\n       doi = {10.1051/0004-6361/202451401},\n       eprint = {2409.01644},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Littlejohns+2015",
+      "title": "A detailed study of the optical attenuation of gamma-ray bursts in the Swift era",
+      "url": "https://doi.org/10.1093/mnras/stv479",
+      "bibtex": "@ARTICLE{2015MNRAS.449.2919L,\n       author = {Littlejohns, O. M. and Butler, N. R. and Cucchiara, A. and Watson, A. M. and Fox, O. D. and Lee, W. H. and Kutyrev, A. S. and Richer, M. G. and Klein, C. R. and Prochaska, J. X. and Bloom, J. S. and Troja, E. and Ramirez-Ruiz, E. and de Diego, J. A. and Georgiev, L. and González, J. and Román-Zúñiga, C. G. and Gehrels, N. and Moseley, H.},\n       title = {A detailed study of the optical attenuation of gamma-ray bursts in the Swift era},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = 2015,\n       volume = {449},\n       pages = {2919},\n       doi = {10.1093/mnras/stv479},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015MNRAS.449.2919L/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Anderson+2018",
+      "title": "The Arcminute Microkelvin Imager catalogue of gamma-ray burst afterglows at 15.7 GHz",
+      "url": "https://doi.org/10.1093/mnras/stx2407",
+      "bibtex": "@ARTICLE{2018MNRAS.473.1512A,\n       author = {Anderson, G. E. and Staley, T. D. and van der Horst, A. J. and Fender, R. P. and Rowlinson, A. and Mooley, K. P. and Broderick, J. W. and Wijers, R. A. M. J. and Rumsey, C. and Titterington, D. J.},\n       title = {The Arcminute Microkelvin Imager catalogue of gamma-ray burst afterglows at 15.7 GHz},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = 2018,\n       volume = {473},\n       pages = {1512},\n       doi = {10.1093/mnras/stx2407},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2018MNRAS.473.1512A/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
