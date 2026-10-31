@@ -1,24 +1,29 @@
 {
   "transient_id": "GRB081109A",
-  "alias": [],
-  "ra": 330.7875,
-  "dec": -54.716667,
-  "T0": "2008-11-09T07:02:02.420000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 081109",
+    "GRB081109293"
+  ],
+  "ra": 330.7905,
+  "dec": -54.7118,
+  "T0": "2008-11-09T07:02:02.420Z",
+  "T0_ref": "GCN 8505",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.98,
+  "redshift": 0.9787,
   "tag": [
     "grb"
   ],
   "pos_error": 1.4,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 8506",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec-host",
+  "redshift_ref": "Kruehler+2011（A&A 534, A108; DOI 10.1051/0004-6361/201117428）",
+  "comment": "审核（Rusty-Harpoon@zcode 2026-10-31）。身份：Swift/BAT 触发 334112（GCN 8500，07:02:06 UT）与 Fermi/GBM 触发 081109293（GCN 8505，07:02:02.42 UT）为同一事件；同日 GRB081109B（Swift 触发 334129，GCN 8511/8512）为独立事件、数据未混入。T0：取触发仪器官方通告 GCN 8505 的触发时刻 07:02:02.42 UT（原库 07:02:02.420000、现值 07:02:02.420 均为同一时刻，末位补零至毫秒系校验器 ISO 解析要求 3/6 位小数所致，X 射线行 mjd 无需重算）；FERMIGBRST 目录 trigger_time=07:02:02.415（差 5 ms 备查）；Swift/BAT 触发 07:02:06 UT（BAT 目录 07:02:06.614940，亚秒备查），以 BAT 为历元的相对时刻（GCN 8504/8509 UVOT 表、Jin+2009 Table 2）一律 +3.58 s 换算至本 T0。位置：改为 GCN 8506 XRT 精化位置 RA=330.7905 Dec=-54.7118（1.4″、90% 包含半径；原库坐标 330.7875/-54.716667 为 Greiner 表分钟级值、与 pos_ref=GCN 8506 不符）。红移：z=0.9787±0.0005，类型 spec-host——Krühler+2011（A&A 534, A108）VLT/FORS2 宿主光谱 [OII]λ3727 首次测定；GCN 8515 仅有 z<3.5 上限（HEASARC swift_grb 快照 redshift=3.5 即该上限误入，目录快照未改动）；原库 redshift=0.98 未见于各目录快照（swift_bat/mpe_greiner 均已为 0.9787），疑为导入舍入，未采用值在此备查。sub_tag：Jin+2009 正文明确「classified as a long GRB」→ 补 lgrb；XRR 在 ADS/SciX 摘要与全文检索中未找到任何文献依据，暂留待维护者裁决（见 PR 待决事项）。别名：GRB081109293 = FERMIGBRST trigger_name（GCN 8505 原文用名 081109293）；GRB 081109 = GCN 8500/8505 通告主题用名（A/B 分立前）。测光检索留证（2026-10-31）：仓内 gcn/archive 全文命中 16 篇（8500/8501/8503/8504/8505/8506/8507/8508/8509/8510/8511/8512/8515/8517/8523/8636），另 GCN 站 Report 179，其中 10 篇含光学/NIR/射电测光或上限；external/rssgrbag 0 命中、external/grbsn_webtool 无本源；ADS/SciX 命中 18 条，研究文献 3 篇：Jin+2009（MNRAS 400,1829，Table 2 经 ADS scan VoR PDF 逐值核对）、Krühler+2011（A&A 534,A108，Table 1 经 arXiv v1 逐值核对，VoR 被 DataDome 拦，已登记 audit/unverified.tsv）、Jin+2012（MemSAIS 21,194，Jin+2009 数据的模型再分析、无新测光表）→ 补入 GCN 8517 TAROT 探测 R≈17.8±0.2（t0+95.1–125.1 s）1 行、GCN 8515 GROND g/r/i/z/J/K 6 行，共 7 行。lc 处置：删 9 行确证重复（GCN 8500/8509 的 Dainotti 转写行 6 行、LiLiang 对 Jin Table 2 的重复转写 2 行、Dainotti2024;8500 转写 1 行，均保留指向最初出处的一行）；GCN 8504/8509 UVOT 与 GCN 8510 GROND 行由曝光起点改窗口中点+半宽（§3.8）；LiLiang 三行改回最初出处与原值（GCN 8501 H=15.47、GCN 8510 H=19.7、GCN 8515 H=19.56，原行错标 REM/值转录失真）；Jin Table 2 行 reference 改 Jin+2009（BAT 历元 +3.58 s）、Krühler Table 1 行改 Kruehler+2011；Faulkes 行清除误标仪器 MuSCAT3；Nelson 行 time 改 GCN 中点值。GCN 8508 原文笔误「November 11」应为 11-09（文中自注 4.81 h post burst = 11-09 11:50:36 UT）。宿主：GCN 8523 与 Krühler+2011 报道暗弱恒定源（wh=22.86±0.09、r0≈22.74）为可能宿主，按 §3.10 不建 host_galaxy，宿主测光未混入 lc。X 射线行 177 行零接触。",
   "sub_tag": [
-    "XRR"
+    "XRR",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -673,6 +678,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
@@ -710,6 +720,13 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract",
       "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Kruehler+2011",
+      "title": "The SEDs and host galaxies of the dustiest GRB afterglows",
+      "url": "https://doi.org/10.1051/0004-6361/201117428",
+      "bibtex": "@ARTICLE{2011A&A...534A.108K,\n       author = {{Kr\\\"uhler}, T. and {Greiner}, J. and {Schady}, P. and {Savaglio}, S. and others},\n        title = \"{The SEDs and host galaxies of the dustiest GRB afterglows}\",\n      journal = {\\aanda},\n         year = 2011,\n        month = oct,\n       volume = {534},\n          eid = {A108},\n        pages = {A108},\n          doi = {10.1051/0004-6361/201117428},\narchivePrefix = {arXiv},\n       eprint = {1108.0674},\n primaryClass = {astro-ph.HE},\n      adsurl = {https://ui.adsabs.harvard.edu/abs/2011A&A...534A.108K},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
