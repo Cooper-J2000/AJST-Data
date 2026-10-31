@@ -1,23 +1,29 @@
 {
   "transient_id": "GRB060805B",
-  "alias": [],
-  "ra": 272.5074,
-  "dec": 58.1466,
-  "T0": "2006-08-05T18:43:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 060805B",
+    "Swift 20037"
+  ],
+  "ra": 272.52254167,
+  "dec": 58.15502778,
+  "T0": "2006-08-05T14:27:15Z",
+  "T0_ref": "GCN 5407",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "IPN",
   "redshift": 1.3,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "catalog:swift_grb",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "pos_error": 2.6,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 5414",
+  "redshift_type": "est",
+  "redshift_ref": "GCN 5437",
+  "comment": "身份：IPN 定位 GRB（Hurley 等，GCN 5407：Ulysses/Mars Odyssey/Konus/RHESSI/INTEGRAL SPI-ACS 于 2006-08-05 52035 s UT 观测到 8 s 长强爆发，三角定位约 46 平方角分误差框，其中心 18:10:01.78 +58:08:47.67 即原 ra/dec）。Trigger_Instrument 由 Swift/BAT 改为 IPN：uvot_grb 快照 DISC_BY=IPN、MPE Greiner 表 Instrument=IPN、HEASARC swift_grb bat_detection=U（BAT 未触发）；Swift/BAT 触发的 GRB 060805A（trigger 222683，04:47:49 UT，GCN 5398/5403，赤纬 +12 度）是另一暴。T0：原值 18:43:00Z 与任何已知触发时刻不符（导入残留），改按 GCN 5407 的 52035 s UT=14:27:15Z；HEASARC swift_grb trigger_time=14:27:15Z 一致；uvot_grb TRIG_UT=14:27:14（Swift MET TRIGTIME 176480834）差 1 s，备查。位置：改用 XRT 余辉定位（GCN 5414：RA 18:10:05.41 Dec +58:09:18.1，±2.6 角秒，90% Conf.，J2000）；GCN 5428 ±3.9 角秒（90% containment）一致；uvot_grb 快照增强定位 POS_ERR=1.7 角秒（POS_REF=Goad，Goad+2007 A&A 476,1401 方法；快照未标注置信水平），备查。红移：伪红移 pz=1.3±0.2（90% 误差），Pelangeon & Atteia（GCN 5437）由 RHESSI 瞬发谱参数（Bellm 等，GCN 5418：Epeak=320±20 keV）推算，非实测，故 redshift_type=est。t90=8.0 s（GCN 5407 原文 8 s long burst；uvot_grb 快照 params.t90=8.0、T90_REF=GCN5407），按目录 t90 判 lgrb。alias：GRB 060805B 为 GCN 通告原文用名（GCN 5413 等）；Swift 20037 为 HEASARC SWIFTGRB 目录 name_alt（仓内 swift_grb 快照）。光变：非 X 射线 8 行（GCN5413×6、GCN5454×1、GCN5429×1）逐行回核原文一致；T0 改正（18:43:00→14:27:15，+15345 s）后 time/mjd 全部重算，UVOT 行原 time 记的是 Tstart，改为 Tstart+Exp/2 中点、time_err=半曝光（§3.8 约定口径）；UVOT 上限未做银消改正（原文 E(B-V)=0.037 mag，Schlegel+1998）；X 射线 11 行（band=10keV）零接触，其 mjd 需随新 T0 由维护者按 mjd=T0+time 重算。测光检索（2026-10-31）：仓内 gcn/archive 全文检索 060805 命中 17 篇（本暴 8 篇：5407/5413/5414/5418/5428/5429/5437/5454；GRB 060805A 9 篇：5398-5406），本暴通告中非 X 射线测光仅 GCN5413（UVOT 6 上限）、GCN5454（R~19.0）、GCN5429（I=20.5）三处，均已入库；external/rssgrbag（射电光变 140 行）与 external/grbsn_webtool 无本暴记录；ADS/SciX 检索 q=GRB 060805B 命中 6 篇（全为 GCN 通告）、full=060805B 命中 9 篇（另 2 篇为 2010ApJ...714..881B RHESSI 瞬发谱模型、2011A&A...536A..46B IBIS/PICsIT 巡天，据摘要均无余辉测光表）→ 无可补测光，新增 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -90,6 +96,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [],
