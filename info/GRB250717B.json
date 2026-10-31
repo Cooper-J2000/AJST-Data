@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB250717B",
-  "alias": [],
+  "alias": [
+    "bn250717572"
+  ],
   "ra": 44.1037,
   "dec": 26.3758,
-  "T0": "2025-07-17T13:44:22Z",
-  "T0_ref": null,
+  "T0": "2025-07-17T13:44:22.945704Z",
+  "T0_ref": "GCN 41107（Fermi/GBM trigger 774452667.945704，MET→UTC 扣 5 闰秒重算）；GCN 41111（13:44:22.95 UT）；FERMIGBRST 快照（bn250717572，13:44:22.946Z）同值互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 41110",
+  "pos_error": 8.9,
+  "pos_ref": "GCN 41119",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0/触发仪器/定位三元组修正：bot 原 Trigger_Instrument=Swift/XRT、T0=2025-07-17T13:44:22Z、ra/dec=44.1037/26.3758 配 pos_error=180″+pos_ref=GCN 41110（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」）。修正依据：①Fermi/GBM 触发——GCN 41107「At 13:44:22 UT … the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 250717B (trigger 774452667.945704 / 250717572)」，GCN 41111 终版 13:44:22.95 UT；MET 扣 5 闰秒（2001 纪元→2025 共 5 次）python 重算=13:44:22.945704Z，与快照 13:44:22.946Z 一致；Swift/BAT 未机载定位（GCN 41110 原文「Swift/BAT did not localize GRB 250717B onboard」），BAT-GUANO/BAT-GLIMPSE 离线定位 44.1179,26.3789（3′ radius，SNR 26.3）；Swift ToO 后随（GCN 41113/41119）→ Trigger_Instrument=Fermi/GBM。②bot 坐标 44.1037/26.3758 实为 GCN 41119 的 XRT Source 1（8.9″，radius, 90% conf），与 bot 所挂 pos_error=180″/pos_ref=GCN 41110 不匹配——pos_error/pos_ref 改正为 8.9″/GCN 41119（pos_error_confidence=90，原文明确）；BAT-GUANO 3′ 定位（GCN 41110）记此备查。注意：XRT Source 1 为未证认候选体（GCN 41119：低于 RASS 极限、无确切变暗证据，「we cannot confirm this as the afterglow」；GCN 41121 亦仅称「XRT candidate position」），以其作源位置沿用 bot 原选择并留此说明。③SVOM/GRM 同暴触发 T0=2025-07-17T13:44:23.100 UTC（GCN 41133，T90=4.5 +1.5/-2.0 s，15-5000 keV；fluence(10-1000 keV)=3.54 +0.40/-0.36e-6 erg/cm2），与 GBM 触发差 0.154 s<1 s，属双触发亚秒差不记 T0_offset（GCN 41133 引用定位时误标为「Fermi/GBM (RA,Dec=44.1179,26.3789, GCN#41110)」——该坐标实为 GCN 41110 的 BAT-GUANO 值，转引归属有误，备查）。alias「bn250717572」为 Fermi/GBM 官方触发编号（FERMIGBRST 快照 name_alt、GCN 41107 HEASARC 路径用名）。分类：GCN 41107 原文「likely LONG GRB」；t90=6.656±0.810 s（50-300 keV，FERMIGBRST 快照；GCN 41111 终版 T90 约 6.4 s 一致），按目录 t90 判 lgrb/sgrb → sub_tag=lgrb。其他量：fluence(10-1000 keV)=1.36±0.05e-6 erg/cm2、Epeak=75±5 keV（GCN 41111）。XRT 测光（GCN 41119 计数率/流量）属 X 射线，按约不入库。检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇命中 7 篇（41107/41110/41111/41113/41119/41121/41133），除 4 篇触发/ToO/GRM 通告无光学测光外，GCN 41121 COLIBRÍ/DDRAGO i>21.8 上限 1 行入库（time/mjd/time_err 改正）；GCN 41119 XRT Source 1 为 X 射线候选体不入测光；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）未见该源研究论文（arXiv 2607.15130 为 BAT-GLIMPSE 方法学文章仅转引 GCN 41110），articles 留空。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 已修正为 Fermi/GBM 触发时刻（trigger 774452667.945704，扣 5 闰秒）；bot 原值 13:44:22Z 整数秒与真值一致，但 Trigger_Instrument 原标 Swift/XRT 有误（实为 Fermi/GBM 触发、BAT-GUANO 离线恢复、XRT ToO 后随），原值与改证见 comment",
+    "t0_basis": "fermi_gbm_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
