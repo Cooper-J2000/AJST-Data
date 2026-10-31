@@ -1,29 +1,35 @@
 {
-  "transient_id": "GRB230228A",
-  "alias": ["GRB230228244"],
-  "ra": 18.37812,
-  "dec": 44.48293,
-  "T0": "2023-02-28T05:50:50.250Z",
-  "T0_ref": "Swift-BAT 触发通告页 https://gcn.gsfc.nasa.gov/other/1156572.swift（TRIGGER_NUM 1156572，GRB_TIME 21050.25 SOD = 05:50:50.25 UT）；GCN 33378 整秒 05:50:50 UT 一致",
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
-  "redshift": null,
-  "tag": ["grb"],
-  "pos_error": 2.1,
-  "pos_ref": "GCN 33382",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "Swift/BAT 触发 GRB 230228A（trigger 1156572），T0=2023-02-28T05:50:50.25 UT（触发通告页 GRB_TIME 21050.25 SOD；GCN 33378 整秒 05:50:50 一致，亚秒以触发仪器通告为准）。Fermi/GBM 独立触发 2023-02-28T05:50:51.193 UT（trigger 699256256/230228244，GCN 33389），与 BAT 差 0.94 s（<1 s，不写 T0_offset）。alias「GRB230228244」＝FERMIGBRST trigger_name（external/fermi_gbm 快照 name_alt）。t90=2.304±1.088 s（50-300 keV，FERMIGBRST，external/fermi_gbm 快照）；t90=2.18±0.40 s（15-350 keV，Swift-BAT 精化分析 GCN 33393）；按目录/通告 t90 判 sgrb。位置沿革：BAT on-board 18.403,+44.489（3′，GCN 33378）→ XRT prompt 18.37776,+44.48321（3.7″，GCN 33378，原库采用值）→ XRT enhanced 18.37804,+44.48289（1.9″，GCN 33379）→ XRT astrometrically corrected 18.37812,+44.48293（2.1″，90% confidence，GCN 33382，本库采用）。GCN 33557：GTC/OSIRIS z=23.6 恒亮源，作者建议为候选宿主（未确证，不建 host_galaxy）。原 bot 时间基准说明：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'。测光检索（2026-11-01）：仓内 gcn/archive 全文命中 15 篇（33378–33557，已逐篇核对；另 33386/33388/8727 为日期串「230228」误匹配的其他事件）；external/rssgrbag 0 行、grbsn_webtool 无此事件、uvot_grb/swift_grb 快照无此源；ADS 命中 15 条（全为上列 GCN 通告），full-text 另命中 2 篇研究论文——O'Connor+2024（MNRAS 533,1629，仅 X 射线视角样本表）与 Qin+2025（MNRAS 540,L6，仅 280 个 Swift GRB 样本名录），均无可入库的光学/射电测光；TNS 不适用（无 AT/SN 命名）→ 无新增行。",
-  "sub_tag": ["sgrb"],
-  "pos_error_unit": "arcsec",
-  "pos_error_confidence": "90",
-  "extra_data": {
-    "src": "gcn_llm_extract",
-    "t0_note": "T0 精化至 Swift-BAT 触发通告亚秒值 05:50:50.25 UT（audit 2026-11-01，Rusty-Harpoon@zcode）；bot 原值 t0_note='t0 为 meta trigger-time（真实触发时刻）'/t0_basis='meta_trigger'，已在 info comment 留底",
-    "t0_basis": "swift_bat_notice",
-    "bot_created": true
-  },
-  "articles": [],
-  "host_galaxy": null
+ "transient_id": "GRB230228A",
+ "alias": [
+  "GRB230228244"
+ ],
+ "ra": 18.37812,
+ "dec": 44.48293,
+ "T0": "2023-02-28T05:50:50.250Z",
+ "T0_ref": "Swift-BAT 触发通告页 https://gcn.gsfc.nasa.gov/other/1156572.swift（TRIGGER_NUM 1156572，GRB_TIME 21050.25 SOD = 05:50:50.25 UT）；GCN 33378 整秒 05:50:50 UT 一致",
+ "T0_offset": null,
+ "T0_offset_ref": null,
+ "Trigger_Instrument": "Swift/BAT",
+ "redshift": null,
+ "tag": [
+  "grb"
+ ],
+ "pos_error": 2.1,
+ "pos_ref": "GCN 33382",
+ "redshift_type": null,
+ "redshift_ref": null,
+ "comment": "Swift/BAT 触发 GRB 230228A（trigger 1156572），T0=2023-02-28T05:50:50.25 UT（触发通告页 GRB_TIME 21050.25 SOD；GCN 33378 整秒 05:50:50 一致，亚秒以触发仪器通告为准）。Fermi/GBM 独立触发 2023-02-28T05:50:51.193 UT（trigger 699256256/230228244，GCN 33389），与 BAT 差 0.94 s（<1 s，不写 T0_offset）。alias「GRB230228244」＝FERMIGBRST trigger_name（external/fermi_gbm 快照 name_alt；GCN 33389 原文用名 trigger 699256256/230228244）。t90=2.304±1.088 s（50-300 keV，FERMIGBRST，external/fermi_gbm 快照）；t90=2.18±0.40 s（15-350 keV，Swift-BAT 精化分析 GCN 33393）；按目录/通告 t90 判 sgrb。位置沿革：BAT on-board 18.403,+44.489（3′，GCN 33378）→ XRT prompt 18.37776,+44.48321（3.7″，GCN 33378，原库采用值）→ XRT enhanced 18.37804,+44.48289（1.9″，GCN 33379）→ XRT astrometrically corrected 18.37812,+44.48293（2.1″，90% confidence，GCN 33382，本库采用）。GCN 33557：GTC/OSIRIS z=23.6 恒亮源，作者建议为候选宿主（未确证，不建 host_galaxy）。原 bot 时间基准说明：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'。测光检索（2026-11-01）：仓内 gcn/archive 全文命中 15 篇（33378–33557，已逐篇核对；另 33386/33388/8727 为日期串「230228」误匹配的其他事件）；external/rssgrbag 0 行、grbsn_webtool 无此事件、uvot_grb/swift_grb 快照无此源；ADS 命中 15 条（全为上列 GCN 通告），full-text 另命中 2 篇研究论文——O'Connor+2024（MNRAS 533,1629，仅 X 射线视角样本表）与 Qin+2025（MNRAS 540,L6，仅 280 个 Swift GRB 样本名录），均无可入库的光学/射电测光；TNS 不适用（无 AT/SN 命名）→ 无新增行。",
+ "sub_tag": [
+  "sgrb"
+ ],
+ "pos_error_unit": "arcsec",
+ "pos_error_confidence": "90",
+ "extra_data": {
+  "src": "gcn_llm_extract",
+  "t0_note": "T0 精化至 Swift-BAT 触发通告亚秒值 05:50:50.25 UT（audit 2026-11-01，Rusty-Harpoon@zcode）；bot 原值 t0_note='t0 为 meta trigger-time（真实触发时刻）'/t0_basis='meta_trigger'，已在 info comment 留底",
+  "t0_basis": "swift_bat_notice",
+  "bot_created": true
+ },
+ "articles": [],
+ "host_galaxy": null
 }
