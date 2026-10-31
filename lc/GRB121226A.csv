@@ -1,35 +1,48 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-93.0,,s,56287.79949074074,R,17.5,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m telescope,GCN14107,,
-124.0,,s,56287.79984953704,w,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14105,,
+92.8,30,s,56287.7994987,R,17.5,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m telescope,GCN14107,第一帧拖尾 60 s，原文给窗口 t0+62.8–122.8 s，time=窗口中点、time_err=半跨（约定口径）；Rlim 17.5；USNO-B1 定标，未做银消改正，原文未声明星等系统,
 146.184,40.615,s,56287.8001062963,10keV,6.32029797946368e-07,1.35966335293305e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-153.0,,s,56287.80018518519,R,18.7,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m telescope,GCN14107,,
-179.0,,s,56287.80048611111,w,20.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
+153.0,15,s,56287.8001955,R,18.7,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m telescope,GCN14107,单帧 30 s 追踪模式，窗口 t0+138–168 s，time=中点、time_err=半跨；Rlim 18.7；USNO-B1 定标，未做银消改正，原文未声明星等系统,
+179.0,75,s,56287.8004964,uvot-white,20.6,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"white_FC，窗口 104–254 s（exp 147 s），time=中点、time_err=半跨；GCN 14105 初报同一 FC 曝光 typical 3σ 19.6 → GCN 14113 精化 20.6，取精化值并删除 14105 行；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
 206.851,20.065,s,56287.80080846065,10keV,1.04376443254577e-06,2.28196039455219e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-237.0,,s,56287.80115740741,R,19.4,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m telescope,GCN14107,,
+236.5,98.5,s,56287.8011619,R,19.4,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m telescope,GCN14107,多帧叠加，窗口 t0+138–335 s，time=中点、time_err=半跨；Rlim 19.4；USNO-B1 定标，未做银消改正，原文未声明星等系统,
 257.279,42.349,s,56287.80139211806,10keV,5.02304776208661e-07,1.12540411482985e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 399.758,100.454,s,56287.80304118056,10keV,1.52800671430403e-07,3.47141549267663e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-432.0,,s,56287.80341435185,G,19.0,,magnitude,,n,y,,,,,,,1.0,n,,BOOTES-4/MET 0.6m,GCN14106,,
-441.0,,s,56287.80351851852,uvot-u,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
+431.5,47.5,s,56287.8034189,G,19.0,,magnitude,,n,y,,,,,,,1.0,n,,BOOTES-4/MET 0.6m,GCN14106,无滤光片（unfiltered），19×5 s 联合图像 3σ 上限 19 mag；原文只给起点 t0+6m24s，按连续计窗口 384–479 s，time=中点、time_err=半跨（约定口径，真实曝光中点不可恢复）,
+441.5,124.5,s,56287.8035346,uvot-u,19.6,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"u_FC，窗口 317–566 s（exp 246 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
 569.931,69.719,s,56287.80501077547,10keV,1.72573959906661e-07,3.8936421656988e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 736.129,103.029,s,56287.80693436343,10keV,1.07080395616229e-07,1.97759039155577e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-3621.0,,s,56287.84032407408,uvot-uvw2,20.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
-3743.0,,s,56287.84173611111,g,20.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm telescope,GCN14108,,
-3743.0,,s,56287.84173611111,Ic,19.5,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm telescope,GCN14108,,
-3743.0,,s,56287.84173611111,Rc,20.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm telescope,GCN14108,,
+3621.0,2999,s,56287.8403344,uvot-uvw2,20.2,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"w2 累积，窗口 622–6620 s（exp 351 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
+3743.0,3180,s,56287.8417464,g,20.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm telescope,GCN14108,原文表：T0+0.04333 d、MID-UT 20:12:06、T-EXP 6360 s（起测 19:11:59 UT）；MID-UT−起测=3607 s 与 T-EXP/2 不自洽（原文内部不一致），time 取原文 MID-UT（=T0+3743 s）、time_err=T-EXP/2；g' 3σ 上限；GSC2.3 定标，未做银消改正，原文未声明星等系统,
+3743.0,3180,s,56287.8417464,Ic,19.5,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm telescope,GCN14108,原文表：T0+0.04333 d、MID-UT 20:12:06、T-EXP 6360 s（起测 19:11:59 UT）；MID-UT−起测=3607 s 与 T-EXP/2 不自洽（原文内部不一致），time 取原文 MID-UT（=T0+3743 s）、time_err=T-EXP/2；Ic 3σ 上限；GSC2.3 定标，未做银消改正，原文未声明星等系统,
+3743.0,3180,s,56287.8417464,Rc,20.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm telescope,GCN14108,原文表：T0+0.04333 d、MID-UT 20:12:06、T-EXP 6360 s（起测 19:11:59 UT）；MID-UT−起测=3607 s 与 T-EXP/2 不自洽（原文内部不一致），time 取原文 MID-UT（=T0+3743 s）、time_err=T-EXP/2；Rc 3σ 上限；GSC2.3 定标，未做银消改正，原文未声明星等系统,
 4393.779,354.647,s,56287.849268275466,10keV,1.72880146237666e-08,4.55402754989025e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 4921.982,293.632,s,56287.85538173612,10keV,1.86988255893302e-08,4.92822087634048e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 5473.024,398.952,s,56287.86175953704,10keV,1.43099097266947e-08,3.78129599701171e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-5681.0,,s,56287.86416666667,uvot-v,20.4,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
+5681.0,5035,s,56287.864177,uvot-v,20.4,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"v 累积，窗口 646–10716 s（exp 1121 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
 6120.524,493.153,s,56287.86925375,10keV,1.42701679222487e-08,3.75906269435254e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-6146.0,,s,56287.86954861112,uvot-uvm2,21.0,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
-6543.0,,s,56287.87414351852,uvot-uvw1,20.7,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
-8401.0,,s,56287.89564814815,uvot-u,20.9,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
-8985.0,,s,56287.90240740741,uvot-b,21.3,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
-9132.0,,s,56287.9041087963,w,21.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,,
-9796.0,,s,56287.91179398148,Ic,18.8,,magnitude,,n,y,,,,,,,1.0,n,,ARIES 1.04m telescope,GCN14109,,
-11300.0,,s,56287.92920138889,Rc,19.5,,magnitude,,n,y,,,,,,,1.0,n,,ARIES 1.04m telescope,GCN14109,,
+6146.0,5475,s,56287.8695589,uvot-uvm2,21.0,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"m2 累积，窗口 671–11621 s（exp 1298 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
+6543.0,5847,s,56287.8741538,uvot-uvw1,20.7,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"w1 累积，窗口 696–12390 s（exp 1163 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
+8401.0,8084,s,56287.8956585,uvot-u,20.9,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"u 累积，窗口 317–16485 s（exp 1544 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
+8984.5,8412.5,s,56287.9024119,uvot-b,21.3,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"b 累积，窗口 572–17397 s（exp 1317 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
+9132.0,9028,s,56287.9041191,uvot-white,21.6,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14113,"white 累积，窗口 104–18160 s（exp 1317 s），time=中点、time_err=半跨；UVOT photometric system（Breeveld+2011，AIPC 1358,373）→ mag_system=Vega；未做银消改正（E(B−V)=0.055，GCN 14113）",
+9796.5,600,s,56287.9118101,Ic,18.8,,magnitude,,n,y,,,,,,,1.0,n,,ARIES 1.04m telescope,GCN14109,300 s×4，原文纪元 Dec 26.9118 UT → time=9796.5 s；3σ 上限 Ic~18.8；USNO 定标，未做银消改正，原文未声明星等系统；GCN 14109 原文笔误：trigger 518731 应为 544027,
+11299.9,900,s,56287.9292105,Rc,19.5,,magnitude,,n,y,,,,,,,1.0,n,,ARIES 1.04m telescope,GCN14109,300 s×6，原文纪元 Dec 26.9292 UT → time=11299.9 s；3σ 上限 Rc~19.5；USNO 定标，未做银消改正，原文未声明星等系统；GCN 14109 原文笔误：trigger 518731 应为 544027,
 12489.395,5667.454,s,56287.94296753473,10keV,5.33809886339139e-09,8.99985353882352e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-38628.0,,s,56288.24549768519,r,25.0,,magnitude,,n,n,,,,,,,1.0,n,,GTC 10.4m,GCN14114,,
-39906.0,,s,56288.260289351856,R,23.0,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN14110,,
+37324.8,75,s,56288.2304247,z,23.65,0.37,magnitude,AB,n,n,,,,,,,1.0,n,GTC 10.4m,,Pandey+2019,2×75 s，t−t0(mid)=0.432 d；AB（表 5 声明 AB、3σ 上限、未做银消改正）；OT/宿主性质未定论；值取自 arXiv v1 表 5（OUP VoR 不可达：web_reader 500、WebFetch 403；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
+38102.4,212.5,s,56288.2394247,i,24.03,0.32,magnitude,AB,n,n,,,,,,,1.0,n,GTC 10.4m,,Pandey+2019,5×85 s，t−t0(mid)=0.441 d；AB（表 5 口径）；OT/宿主性质未定论；Dichiara+2021 将该 i 值用作宿主 SED 输入；值取自 arXiv v1 表 5（OUP VoR 不可达：web_reader 500、WebFetch 403；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
+38628.0,1339,s,56288.245508,r,25.0,,magnitude,,n,n,,,,,,,1.0,n,,GTC 10.4m,GCN14114,r'~25（约值探测，原文未给误差；SDSS r' 惯例 AB）；窗口 Dec 27.230–27.261 UT（10.3–11.1 hr），time=中点、time_err=半跨；该对应体性质文献未定论：GCN 14114 无法判定 OT/宿主，GCN 14139 称两历元余辉贡献可忽略，Pandey+2019 称衰减行为不能确证；宿主成协由 Nugent+2022 Gold Sample 确认,
+38966.4,280,s,56288.2494247,r,24.30,0.30,magnitude,AB,n,n,,,,,,,1.0,n,GTC 10.4m,,Pandey+2019,8×70 s，t−t0(mid)=0.451 d；AB（表 5 口径）；与同历元 GCN 14114（r'~25）为同一数据不同标定的两次发表，数值不一致故均保留；OT/宿主性质未定论；值取自 arXiv v1 表 5（OUP VoR 不可达：web_reader 500、WebFetch 403；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
+39906.0,900,s,56288.2602997,R,23.0,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN14110,3×600 s，中值时刻 06:14:49 UT（11.085 hr），time_err=半曝光；3σ 上限 R~23.0（USNO-B1 定标，未做银消改正，原文未声明星等系统）；Fong+2015 表 7 转引同一次测量（<2.1 μJy AB，δt=11.1 hr，extinction-corrected），按去重保留最初出处 GCN 14110,
+42912,4500,s,56288.2950913,g,24.68,0.34,magnitude,AB,n,n,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",GROND 叠加 150 min g'r'i'z'，mid=Dec 27 07:05 UT（T−T0=11.92 hr），time_err=半曝光；AB、未做银消改正（该文表注）；poor seeing；该文汇总表（表1）本行各列为「--」而分节文字给出数值（原文内部不一致），数值取自分节文字；2013-02-15 第二历元量级相近（未给数值）支持宿主发射；值取自 arXiv v1（A&A VoR 整站 JS 挑战不可达；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
+42912,4500,s,56288.2950913,r,24.05,0.13,magnitude,AB,n,n,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",同 g 行口径；r'=24.05±0.13；与同历元 GCN 14114（r'~25）/Pandey+2019（r=24.30±0.30，GTC）为不同望远镜的独立测量，均保留,Rusty-Harpoon@zcode
+42912,4500,s,56288.2950913,i,24.30,0.22,magnitude,AB,n,n,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",同 g 行口径；i'=24.30±0.22,Rusty-Harpoon@zcode
+42912,4500,s,56288.2950913,z,24.00,0.23,magnitude,AB,n,n,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",同 g 行口径；z'=24.00±0.23,Rusty-Harpoon@zcode
+42912,3600,s,56288.2950913,J,22.6,,magnitude,AB,n,y,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",GROND 叠加 120 min JHK，mid=Dec 27 07:05 UT（T−T0=11.92 hr），time_err=半曝光；AB、未做银消改正；3σ 上限；数值取自分节文字（该文汇总表本行为「--」，原文内部不一致）；值取自 arXiv v1（A&A VoR 整站 JS 挑战不可达；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
+42912,3600,s,56288.2950913,H,22.0,,magnitude,AB,n,y,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",同 J 行口径；H>22.0,Rusty-Harpoon@zcode
+42912,3600,s,56288.2950913,K,21.0,,magnitude,AB,n,y,,,,,,,1.0,n,MPG-ESO(2.2m),GROND,"Greiner+2024, A&A, 691, A158",同 J 行口径；K>21.0,Rusty-Harpoon@zcode
 45241.446,70992.404,s,56288.32204219908,10keV,9.55572693584617e-10,2.70066109760067e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-1333030.0,,s,56303.227002314816,r,24.68,0.15,magnitude,AB,n,n,,,,,,,1.0,n,,TNG,GCN14139,,
+151200,432,s,56289.5484247,5.8GHz,30,,uJy,,n,y,,,,,,,1.0,n,VLA,,"Fong+2015, ApJ, 815, 102, Table 8",3σ 上限；δt 相对触发（VoR 表 8 口径：Fν 为银消改正后，射电实际不受消光影响；σ 空列=上限）；GCN 14126 初报称 1.75 d 探测到暗弱 3σ 射电源，Fong+2015 VoR 明言「Flux densities reported here supercede those reported in GCN Circulars」→ 按上限入库；time_err=δt 末位半位（±0.005 d）,Rusty-Harpoon@zcode
+411264,432,s,56292.5584247,5.8GHz,45,,uJy,,n,y,,,,,,,1.0,n,VLA,,"Fong+2015, ApJ, 815, 102, Table 8",3σ 上限；δt 相对触发（VoR 表 8 口径：Fν 为银消改正后，射电实际不受消光影响；σ 空列=上限）；GCN 14126 初报称 1.75 d 探测到暗弱 3σ 射电源，Fong+2015 VoR 明言「Flux densities reported here supercede those reported in GCN Circulars」→ 按上限入库；time_err=δt 末位半位（±0.005 d）,Rusty-Harpoon@zcode
+1333030.0,3600,s,56303.2270126,r,24.68,0.15,magnitude,AB,n,n,,,,,,,1.0,n,,TNG,GCN14139,宿主星系测光：SDSS r 共 2 h，平均 2013-01-11.227 UT（15.4 d），r(AB)=24.68±0.15；与 0.5 d GTC 测光一致、无衰减，射电源重合使成协可靠（GCN 14139）；Nugent+2022 宿主 Gold Sample；time_err=T-EXP/2,
+4600800,775,s,56341.0484247,z,23.79,,magnitude,AB,n,y,,,,,,,1.0,n,GTC 10.4m,,Pandey+2019,31×50 s，t−t0(mid)=53.25 d；3σ 上限（对宿主/千新星的深限）；AB（表 5 口径）；值取自 arXiv v1 表 5（OUP VoR 不可达：web_reader 500、WebFetch 403；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
+4602528,420,s,56341.0684247,i,24.47,,magnitude,AB,n,y,,,,,,,1.0,n,GTC 10.4m,,Pandey+2019,12×70 s，t−t0(mid)=53.27 d；3σ 上限（对宿主/千新星的深限）；AB（表 5 口径）；值取自 arXiv v1 表 5（OUP VoR 不可达：web_reader 500、WebFetch 403；arXiv TeX+出版社页+ADS 三方交叉，见 audit/unverified.tsv）,Rusty-Harpoon@zcode
