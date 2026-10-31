@@ -4,24 +4,29 @@
   "ra": 340.75,
   "dec": 12.94,
   "T0": "2021-06-29T18:09:44Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 30342（IceCube 官方通告：18:09:44 UT，通告仅给整秒、无亚秒可用）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.194,
+  "Trigger_Instrument": "IceCube",
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 30342（IceCube 离线精化方向）：RA=340.75 (+1.11/-2.23 deg) Dec=+12.94 (+0.91/-0.93 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、四向不对称值照录；库内 ra/dec=340.75/12.94 与精化值一致（保留）",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "中微子轨迹事件（ICECUBE_Astrotrack_Bronze 流，平均天体物理纯度 30%，误报率 2.085/年，探测器正常状态；GCN 30342）。Trigger_Instrument 改正：bot 原值 Fermi/GBM 有误——Fermi/GBM 仅在事件时刻恰在观测该方向并给出伽马上限（GCN 30346），非触发仪器 → IceCube。T0：bot 值 18:09:44Z 与通告一致（通告仅整秒精度，无亚秒可用），T0_ref 填写；extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」改写留存。定位：bot ra/dec=340.75/12.94 与精化值一致；90% PSF containment 不对称（RA +1.11/−2.23°、Dec +0.91/−0.93°）→ pos_error 留空、值照录 pos_ref（沿用仓内已审 IceCube 条目惯例）。90% 区内无 Fermi 4FGL/3FGL 源（最近 4FGL J2252.6+1245，距 2.36°，GCN 30342）。redshift 由 0.194 改 null：该 z 是 ZTF 候选对应体 AT2021osi 宿主 AGN 的光谱红移（Gemini GMOS-N，宽 Balmer 线，GCN 30419），AT2021osi 为候选关联（2021-06-04 已由 ALeRCE 首报、早于中微子 25 天，未证实对应），红移不属本源（原 redshift_ref=「gcn_llm:circulars_meta」为 bot 伪出处）。tag/sub_tag 留空（中微子事件，沿用仓内已审 IceCube 条目惯例）。lc 唯一行=GCN 30349 ZTF 对候选对应体 AT2021osi 的 g=20.42±0.14 探测（upperlimit=n），行值与原文一致，comment 留证候选性质与锚定口径。后随通告：GCN 30346 Fermi-GBM、30347 Fermi-LAT、30348 INTEGRAL、30350 IceCube 附加中微子搜索均无光学测光（伽马/中微子，不入库）。测光检索留证（2026-10-28）：仓内 GCN 全文快照 45908 篇按「210629A」命中 7 篇（30342/30346/30347/30348/30349/30350/30419），按「2021osi|ZTF21abecljv」另命中 0 篇新增——光学测光仅 GCN 30349 一处，1 行保留改正、补 0 行；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS/SciX 网检（2026-10-28）未见该源研究论文，articles 留空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 与 GCN 30342 一致（通告仅整秒精度）；bot 的 meta_trigger 基础与官方通告一致，原值与改证见 comment",
+    "t0_basis": "gcn_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
