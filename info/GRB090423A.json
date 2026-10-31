@@ -1,23 +1,30 @@
 {
   "transient_id": "GRB090423A",
-  "alias": [],
-  "ra": 148.895833,
-  "dec": 18.116667,
-  "T0": "2009-04-23T07:55:25.390000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090423",
+    "BAT 350184",
+    "bn090423330",
+    "GRB090423330"
+  ],
+  "ra": 148.88858,
+  "dec": 18.14942,
+  "T0": "2009-04-23T07:55:19.349660Z",
+  "T0_ref": "Swift/BAT 触发时刻：GCN 9198（At 07:55:19 UT, trigger=350184）；Swift/BAT 官方目录 SWIFTGRB（trigger_time=2009-04-23T07:55:19.349660Z，仓内 extra_data.catalog_data.swift_bat 快照 retrieved 2026-07-21）；Tanvir+2009 (Nature 461,1254) SI 亦按触发 07:55:19.3 UT 计算历元。多触发仪器并存（Fermi/GBM 07:55:25.39 UT，GCN 9229），依规则取 Swift",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 8.23,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 1.4,
+  "pos_ref": "Evans+2009 (MNRAS 397, 1177) 增强 XRT 定位，经 HEASARC swiftgrbba 快照（extra_data.catalog_data.swiftgrbba，xrt_ra/xrt_dec/xrt_error_radius，retrieved 2026-07-21）；GCN 9205 增强位置 148.88830/+18.14937（1.7″, 90%）备查",
+  "redshift_type": "spec",
+  "redshift_ref": "Tanvir+2009 (Nature 461, 1254), doi:10.1038/nature08459（ISAAC/VLT 光谱+测光联合分析 z=8.23+0.06−0.07，SI）；Salvaterra+2009 (Nature 461, 1258) TNG 光谱 z=8.1+0.1−0.3",
+  "comment": "身份：Swift/BAT 触发（trigger 350184，GCN 9198，07:55:19 UT），Fermi/GBM 于 07:55:25.39 UT 亦触发（GCN 9229，trigger 262166127/090423330），T0 依「有 Swift 则以 Swift 为准」取 BAT 触发时刻；T0 改正后全部非 X 射线行 time/mjd 已重算，X 射线行 mjd 需维护者按 mjd=T0+time 重算。定位：原库 148.895833/+18.116667 为 MPE Greiner 表旧 X 射线位置（无误差），现取 Evans+2009 增强 XRT 定位（XRT 误差半径按惯例 90% 包含半径；GCN 9205 的 1.7″ 为同源官方值备查）。红移：Tanvir+2009 SI 谱+测光联合 z=8.23+0.06−0.07（取 spec，ISAAC Lyα break 主导）；Salvaterra+2009 TNG 光谱 z=8.1+0.1−0.3 并列。sub_tag：t90=10.304±1.055547 s（Swift/BAT 目录 15-350 keV，仓内 swift_bat 快照），按目录 t90 判 lgrb；并列值：GBM t90=7.168±2.4151 s（50-300 keV，FERMIGBRST）、GBM 跟进分析 11.5±2.0 s（10-300 keV，GCN 9416）；Type II（Minaev+2020、Zhang+2009）。alias 出处：GRB 090423（GCN 9198 等通告用名）、BAT 350184（Swift/BAT 目录 trigger 号）、bn090423330/GRB090423330（FERMIGBRST trigger_name；<GCN 9229> 原文用名 090423330）。测光检索留证（2026-11-01）：仓内 gcn/archive 全文命中 43 篇（GCN 9198–9582，含本源全部测光通告，均已通读）；external/rssgrbag lightcurve.jsonl 1 行（=lc 的 Chandra & Frail 2012 射电峰行）；grbsn_webtool 无该事件；ADS 命中约 80 篇，其中 Tanvir+2009 SI Table S1（40 行光学/NIR 测光，VoR 补充材料 PDF 已取并逐值核对）、Chandra+2010 (ApJL 712,L31) Table 3（VLA/CARMA 逐值核对）、de Ugarte Postigo+2012 (A&A 538,A44) Table 1（mm，arXiv 替代核对）已入库；GCN 9273 PdBI 3mm ~0.2 mJy（Apr 23–24 联合数据集，无精确时间锚点，不入库仅此备注）；GCN 9582 Spitzer/IRAC 3.6μm 46±17 nJy（27.2±0.3 AB，Jun 5.01–10.81 UT，~46 d）因库内无 IRAC 波段键暂未入库（PR 待决事项）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "derived": {
@@ -728,6 +735,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-01"
     }
   },
   "articles": [
@@ -765,7 +777,38 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2009arXiv09063057L/abstract",
       "bibtex": "@ARTICLE{2009arXiv09063057L,\n       author = {Lin Lin and Liang En Wei and Zhang Shuang Nan},\n       title = {GRB 090423: Marking the Death of a Massive Star at z=8.2},\n       journal = {arXiv e-prints},\n       year = {2009},\n       eprint = {0906.3057},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2009arXiv09063057L/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Tanvir+2009",
+      "url": "https://doi.org/10.1038/nature08459",
+      "title": "A γ-ray burst at a redshift of z≈8.2 (Nature 461, 1254)",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Salvaterra+2009",
+      "url": "https://doi.org/10.1038/nature08445",
+      "title": "GRB 090423 at a redshift of z≈8.1 (Nature 461, 1258)",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Chandra+2010",
+      "url": "https://doi.org/10.1088/2041-8205/712/1/L31",
+      "title": "Discovery of Radio Afterglow from the Most Distant Cosmic Explosion (ApJL 712, L31)",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "deUgartePostigo+2012",
+      "url": "https://doi.org/10.1051/0004-6361/201117848",
+      "title": "Pre-ALMA observations of GRBs in the mm/submm range (A&A 538, A44)",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "ChandraFrail2012",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "title": "The Radio Afterglow of GRB 090423 (Chandra & Frail 2012, ApJ 746, 156)",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
