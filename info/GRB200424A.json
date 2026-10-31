@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB200424A",
-  "alias": [],
+  "alias": [
+    "GRB 200424A"
+  ],
   "ra": 307.5055,
   "dec": -39.7001,
-  "T0": "2020-04-24T12:06:45Z",
-  "T0_ref": null,
+  "T0": "2020-04-24T12:07:10Z",
+  "T0_ref": "GCN 27634（INTEGRAL/IBAS 触发时刻 12:07:10 UT）＋ IBAS 官方结果页（ibas.iasf-milano.inaf.it/IBAS_Results.html，T start UTC=12:07:10，取数 2026-10-31）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.0,
   "pos_ref": "GCN 27676",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：INTEGRAL/IBAS 触发（GCN 27634，ra=307.5057 dec=−39.6939，1.5′ 90% c.l.）；Swift-XRT Source 1 确认为衰减余辉（GCN 27676，增强位置 307.50547,−39.70013，3.0″ 90% confidence，距 INTEGRAL 位置 22″；本库 ra/dec 即该位置）。T0：取 INTEGRAL/IBAS 触发时刻 2020-04-24T12:07:10Z（GCN 27634『has been detected by IBAS in the IBIS/ISGRI data at 12:07:10 UT』＋IBAS 官方结果页 ibas.iasf-milano.inaf.it/IBAS_Results.html 同条 T start UTC=12:07:10，取数 2026-10-31）；Swift 团队产品（GCN 27648 与 UK Swift ToO 页 www.swift.ac.uk/ToO_GRBs/00020989，均标注 Mission: INTEGRAL）用 T0=2020-04-24 12:06:45 UT，比 IBAS 触发早 25 s（疑为实时通告的最早触发时刻，权威级低于触发仪器官方值，列此备查）；GCN 27648 的 UVOT 窗口相对 12:06:45，入库时已换算 −25 s，LCO 相对时刻（6.68–7.27 h）经核与 12:07:10 自洽、直接换算（见各行 comment）。原 bot T0=12:06:45（原 extra_data：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，Issue #68 已证不可信）。别名『GRB 200424A』为 GCN 通告与 IBAS 官方结果页原文用名。t90=43.3±0.02 s（GCN 27642，AstroSat CZTI，40–200 keV，通告原文『long GRB』）→ 按通告 t90 判 lgrb；IBAS 官方结果页 T90=70 s（20–200 keV）并列备查。INTEGRAL 20–200 keV 积分流量下限 3e-6 erg/cm²（70 s 积分，光变受遥测饱和影响，GCN 27634）。测光检索（2026-10-31）：仓内 gcn/archive 按源名全文检索命中 7 篇（27634/27636/27637/27640/27642/27648/27676，逐篇读取；含光学数值 2 篇：27648 UVOT 6 波段上限、27637 LCO R/I 上限，均已在库）；external/rssgrbag、external/grbsn_webtool 无此事件；swiftgrbba/mpe_greiner/agile_mcal 仅目录参数（swiftgrbba 的 uvot_mag 六波段上限与 GCN 27648 一致）；ADS（abs『GRB 200424A』与 full『200424A』）命中 7 条，全部为 GCN 通告、无研究论文；TNS 不适用（GRB 类，无光学对应体编号）→ 无可用新增测光，本 PR 未新增行，仅对 8 行做历元/中点修正。X 射线数据（Swift-XRT 0.3–10 keV，GCN 27640/27676）暂不处理、未入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 INTEGRAL/IBAS 触发时刻（GCN 27634＋IBAS 官方结果页 T start UTC）",
+    "t0_basis": "gcn_27634_ibas",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
