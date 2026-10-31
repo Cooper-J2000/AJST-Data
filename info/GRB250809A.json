@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB250809A",
   "alias": [],
-  "ra": 233.00282,
-  "dec": -53.2964,
+  "ra": 233.00043,
+  "dec": -53.29626,
   "T0": "2025-08-09T16:53:19Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 41303",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.0,
   "pos_ref": "GCN 41304",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与 T0 核对（2026-10-31，Rusty-Harpoon@zcode）：Swift/BAT 于 2025-08-09T16:53:19 UT 在轨触发（trigger 1340954，GCN 41303），T0 取该触发时刻（原文未给亚秒，不自行补），T0_ref=GCN 41303；swiftgrbba 快照 trigger_time 同值互证，t0_basis=meta_trigger 不失真、保持原值。Trigger_Instrument 原 bot 写 Swift，按库内主流惯例（Swift/BAT 1055 例）改为 Swift/BAT（GCN 41303 原文 BAT triggered and located）。位置：原 ra/dec=233.00282/-53.2964 系 GCN 41303 首报 XRT 位置（4.3″，radius，90%），与 pos_ref=GCN 41304 不符；已改为 GCN 41304 prompt enhanced XRT 位置 ra/dec=233.00043/-53.29626（3.0″，radius，90% confidence → pos_error_confidence=90），原值留此备查。t90=17.79±2.77 s（Swift/BAT refined analysis，GCN 41321，15-350 keV；swiftgrbba 快照同值 17.79 s）——按通告/目录 t90 判 lgrb。鉴别：Fermi/GBM 同日触发 776449964/250809689（16:32:39.78 UT）经查非 GRB、系粒子事件（GCN 41306），与本源无关；IceCube-Cascade 250809A（GCN 41323，警报事件时刻 2025-08-09T13:57:28.55Z）为另一中微子事件，仅日期名撞名，勿混。UVOT 测光取自 GCN 41316（v/b/u 探测、uvw1/uvm2/uvw2 上限，光变峰附近，UVOT photometric system=Breeveld+2011 即 Vega，未做银消改正 E(B-V)=1.919）；LCOGT 2 行上限（GCN 41310）核对无误，仅补 time_err=窗口半宽并加注。X 射线数据（GCN 41313/41314、Swift Burst Analyser）不入库，暂不处理。测光检索（2026-10-31）：① 仓内 gcn/archive 全文检索「250809」/「1340954」命中 9 篇，其中本暴 GCN 7 篇（41303/41304/41310/41313/41314/41316/41321）全文逐篇读毕，含光学数值者仅 41316（UVOT 6 行）与 41310（LCOGT 2 行），另 2 篇为 GBM 非 GRB 撤回（41306）与 IceCube-Cascade（41323）非本暴；② GCN 站（gcn.nasa.gov/circulars?query=250809A）命中 8 篇、与仓内一致、无新增；③ ADS 检索「GRB 250809A」/「250809A」/「1340954」命中 7/8/3 条、全为上述 GCN 通告，无研究论文、无 redshift；④ external/rssgrbag、external/grbsn_webtool 无记录，swiftgrbba 快照与 GCN 一致；⑤ TNS 不适用（Swift GRB 命名，非 AT/SN 类）→ 共补 6 行 UVOT 测光（3 探测 + 3 上限），LCOGT 2 行未删未增。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
