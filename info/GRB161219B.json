@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB161219B",
   "alias": [
-    "SN2016jca"
+    "SN2016jca",
+    "GRB161219.78"
   ],
   "ra": 91.71429166666665,
   "dec": -26.79152777777778,
-  "T0": "2016-12-19T18:48:39Z",
-  "T0_ref": null,
+  "T0": "2016-12-19T18:48:39.308260Z",
+  "T0_ref": "Swift/BAT 触发 2016-12-19T18:48:39 UT（GCN 20296，trigger 727541）；亚秒 0.308260 s 取 Swift/BAT 官方目录快照（extra_data.catalog_data.swift_bat.trigger_time，与 GCN 整秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -17,10 +18,11 @@
   ],
   "pos_error": 0.5,
   "pos_ref": "https://www.wis-tns.org/object/2016jca",
-  "redshift_type": null,
-  "redshift_ref": "GCN 20323",
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 20321",
+  "comment": "T0 口径：T0 只能是触发时刻，取 BAT rate trigger（GCN 20296 整秒 + 目录快照亚秒 0.308260 s）；整张 lc 的 time/mjd 已统一到此 T0（mjd 7 位小数重算），481 行 Swift/XRT（10keV）行的 mjd 由维护者按 mjd=T0+time 机械重算（2026-10-31 §3.3 裁定）。红移：z=0.1475 为光谱红移（GCN 20321：Mg II/Mg I/Ca H&K 吸收线+星云发射线；GCN 20342 的 Ca II 吸收一致），原 redshift_ref 误写 GCN 20323（Konus-Wind 通告，无红移）已改为 GCN 20321。sub_tag 增 lgrb：t90=6.94±0.79 s（GCN 20308，15-350 keV），按通告 t90 判 lgrb；另 t90=6.932±0.793 s（Swift BAT 目录快照）一致。位置：(91.71429,-26.79153) 与 UVOT 精化位置（GCN 20296：0.5″ 90%；GCN 20306：0.42″ 90%）及 ALMA 定位（GCN 20328）一致；TNS 未标置信水平，pos_error_confidence 留空。alias 增 GRB161219.78（GCN 20330 MASTER 原文用名 GRB161219.78）。lc 处置摘要（2026-10-31，Rusty-Harpoon@zcode）：① Laskar+2018（ApJ 862,94）块 648 行：星等逐位等于 Laskar 机读表 mJy 流量的 AB 换算（−2.5lg(Fν/3631Jy)），经仓内 grbsn_webtool 快照 648/648 逐值核验，VoR MRT（IOP Radware/hCaptcha）未能逐行打开；MASTER/Terksol 10 行原文 CR（clear）未滤光，band R→G。② Ashall+2019（MNRAS 487,5824）块：值/误差 220/220 与 arXiv:1702.04339 TeX 表 1 一致，但 Dainotti 转写行历元失真（锚在 MJD 57741.216/57741.226，偏离 BAT 触发 +0.5676d/−0.5576d 不一致漂移）：与 grbsn_webtool 快照（Ashall MJD 历元，值逐位一致）重复的 89 行删除，无重复的 14 行按原文 MJD 重算 time/mjd；另删转写损坏 4 行（SDSS i 误作 Cousins I ×2；TNG 的 I 19.35、R 19.43 两行值属 MJD 57753.99 历元却误挂 57751.99，正确值已在库）。复查修正（2026-10-31 独立子代理核查）：B2 转写 LT 行中 11 行与保留的 14 行 Dainotti 行为同一次测量（Liverpool 望远镜，MJD 57750.00 V/i、57751.99 V/r/g 与 i 19.76 错值、57757.01 B/V/g/r/i，时刻差 ≤1.3 s、数值相同），按 §3.4 删除，保留按原文 MJD 重算的 Liverpool(2m) 行，Ashall 块余 105 行。③ Cano+2017（A&A 605,A107）块 220 行：值/时/误差 220/220 与 arXiv:1704.05401 v2 TeX 测光表一致（t−t0 相对触发，griz=AB、JHK=Vega 与原文声明一致），reference 由 Dainotti2024;arXiv1704.05401 改指 Cano+2017；grbsn_webtool 快照另有 3 行 GROND 转写与已入库 TeX 行为同一次测量（g 18.02@0.285 d、H 17.15@1.554 d、g 19.86，其一时间 9.297 d 与原文 9.296 d 不符），复查修正（2026-10-31）按 §3.4 删除重复；29 行 UVOT 仅载于 A&A VoR（DataDome 反爬未开，arXiv 无此表），值经 webtool 快照逐值核对、星等系统未核实留空。④ 射电：VLA 88 行=Laskar+2018 Tab.5（webtool Radio1 逐值核对，误差补自同源），ALMA 10 行=Tab.4（arXiv 正文表逐值核对），补 telescope/reference；Det（3σ 上限）标记 VoR MRT 不可得无法恢复，upperlimit 维持原状待 VoR 复核。⑤ Swift Burst Analyser 65 行：qdp Fν[Jy] 全量取回逐点核对（2026-10-31），mag=−2.5lg(Fν/3631Jy) 即 AB（原标 Vega 系 Dainotti 错标），time_err 补 qdp 半曝光，reference 改指数据源头。⑥ GCN 行逐条回核（20296/20299/20300/20305/20306/20313/20314/20321/20322/20328/20330/20332/20344/20442）：Dainotti 转写把 MASTER 15.90 探测、Watcher 18.06 探测、X-shooter r~19.5 粗测均误标为上限，已改；UVOT/LCO/MITSuME/SALT 行 time 改按原文窗口中点/半宽；删 3 行 Dainotti 重复（20296 白、20300 I、20332 J）；补 GCN 20313 VLA 14.75GHz ~0.9 mJy 1 行。测光检索留证（2026-10-31）：仓内 gcn/archive 24 篇命中本暴（20296–20442；20309 ISON/Terskol 无数值表仅光变图 URL，20342/20380 仅光谱，20331/20346 无测光）；external/grbsn_webtool 9 个数据文件已全量用作交叉核对源、external/rssgrbag 无该源记录；GCN 站档案 24 篇同上；ADS 检索（abs:\"GRB 161219B\" OR \"SN 2016jca\"）命中 36 篇（GCN 20 + 论文 16），2024–2026 无新测光文献（Fulton+2023/Shrestha+2023 为 GRB 221009A 论文的比较性提及，无本暴新表）→ 补 1 行（GCN 20313），其余无遗漏。VoR 不可达登记 audit/unverified.tsv 4 行（Laskar+2018 MRT / Cano+2017 UVOT 表 / Ashall+2019 VoR / CDS·VizieR 整站网络不可达）。",
   "sub_tag": [
+    "lgrb",
     "SN-lc",
     "SN-spec"
   ],
@@ -470,6 +472,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
