@@ -7,27 +7,34 @@
   "ra": 123.813909,
   "dec": -5.867007,
   "T0": "2021-01-16T06:59:45Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 29305; TNS AT2021any（2021TNSTR.168....1H）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 2.514,
-  "tag": [],
+  "Trigger_Instrument": "ZTF",
+  "redshift": 2.5131,
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 29307",
-  "comment": null,
+  "pos_ref": "GCN 29305",
+  "redshift_type": "spec",
+  "redshift_ref": "Ho+2022 (ApJ 938, 85) Table 1; GCN 29307",
+  "comment": "审核 2026-10-31（Rusty-Harpoon@zcode）。①身份：ZTF21aaeyldq = AT2021any（TNS 名，2021TNSTR.168....1H），ZTF 高时间分辨率巡天发现的快速衰减无宿主暂现源（GCN 29305：2021-01-16T06:59:45.6 UT 发现于 r=17.9，20.3 min 前末次非探测 r~20.28，Legacy Survey 无宿主 >24 mag）；GTC/OSIRIS 吸收线谱定红移（GCN 29307），判为 GRB afterglow 且「no high-energy trigger has been reported yet」；GRB 210116A（AstroSat LAXPC/CZTI，~05:53 UT）与发现仅差约 1 h，GCN 29344 判「unlikely… but does not rule it out」；Ho+2022（ApJ 938, 85）与 Li+2025（ApJ 985, 124）建模均按 on-axis 经典 GRB 被高能卫星漏测（orphan afterglow）解释 → 按 AT2020blt（ZTF20aajnksq）先例记 tag=grb；sub_tag 留空（无 GRB 探测、无 t90，不臆判 lgrb/sgrb）。原 Trigger_Instrument=Swift 系导入错误：Swift 仅做 ToO X-ray 跟踪（GCN 29313），并非触发，改 ZTF（巡天发现）。②T0：2021-01-16T06:59:45Z = ZTF 首次探测时刻（GCN 29305「discovered on UT 2021-01-16T06:59:45.6 at r=17.9」；TNS discovery date 06:59:45.600；GCN 29310 明言「T0 is 06:59:45.6 UT on 2021-01-16, first ZTF detection」），取整秒、.6 记入 lc 发现行（亚秒差不写 T0_offset，§3.2；先例 ZTF20aajnksq）。GCN 29321/29330 拟合所用「触发时刻」=末次非探测（06:37:45.6 / JD 2459230.77622，早于发现 ~22 min）系作者拟合历元，不采为标准 T0。原 extra_data t0_note「t0 为 meta trigger-time（真实触发时刻）」/t0_basis「meta_trigger」不成立（本源无触发），已改写，原值见本 comment 末段。③定位：ra/dec 逐位取自 GCN 29305（123.813909 −5.867007；TNS 同值）；原文未给误差 → pos_error 留空、未标置信水平。④红移：z=2.5131（Ho+2022 表1，同一 GTC/OSIRIS 谱 10 条吸收线；VoR 优先于 GCN 29307 的 2.514，同谱两出版值并列备查）；redshift_type=spec；Xu+2023/Gupta+2022 沿用 2.514。⑤lc（原 16 行 → 84 行，逐值对 gcn/archive 14 篇全文核对）：修正三类既有问题——(a) DOT/GTC/CAHA/LDT/KPED 各行原 time 用观测起点，按 §3.2/§3.8 改曝光中点并补 time_err；(b) NOT 三行改用 GCN 29310 原文 Tmid-T0 列（0.812/0.831/0.850 d，其 T0=06:59:45.6），原 time 为起点相对偏移；(c) CAHA Rc 行按 GCN 29321 原文「centered at 1.74430 d after discovery」改正（原 time 差 22 min，疑混入作者拟合历元）；GROND 三行 mjd 按 JD 2459230.77622+dt 直取、time 重算。同测量重析以 VoR 为准：DOT R 21.04±0.06（GCN 29308）→ 21.25±0.06（Gupta+2022 表2）、CAHA R 21.27±0.13（GCN 29312）→ 21.22±0.12（Gupta+2022 表2），差值留各行 comment；GTC 图像两次独立分析并存（GCN 29307 21.64±0.03 vs Ho+2022 表6 21.74±0.08，非转引不去重）。mag_system 补推定：ZTF/P48 为 AB（Masci+2019 摘要明言 AB）；NOT/KPED 经 Pan-STARRS 定标（Tonry+2012 AB 系统）；LDT 经 SDSS 定标（Fukugita+1996 AB）；DOT/CAHA 的 AB 由 Gupta+2022 表2 表注明言。⑥新增 68 行：TNS 末次非探测 1 行；Ho+2022 表6 P48 强制测光 7 行 + GTC 重析 1 行 + CAHA r 2 行 + 表8 VLA 8 历元 47 行（子带中心频率为 band、μJy 原样）；Gupta+2022 表2（VoR PDF 已实际打开）新增 CAHA B/V/I 第一历元 3 行、B/V/R/I 第二历元上限 4 行、DOT I 1 行、DOT r 上限 1 行（与 GCN 29364 同测量，Tmid 取 VoR）；GCN 29343 VLA 10GHz 1 行；另 2 行既有行以 VoR 值改判（DOT R、CAHA R）。X 射线不入库：GCN 29313（Swift/XRT 探测）与 Ho+2022 表7（3 历元计数率/流量）暂不处理；GROND NIR 未探测（GCN 29330 无值）。⑦测光检索（2026-10-31）：仓内 gcn/archive 全文检索命中 14 篇（29305/29307/29308/29309/29310/29312/29313/29316/29321/29327/29330/29343/29344/29364），全部打开核对；external/rssgrbag、grbsn_webtool 无本源记录；ADS API（token 可用）检索「ZTF21aaeyldq / AT2021any / ZTF20aaeyldq / AT 2021any」abs+全文共命中 22 篇——研究文章 Andreoni+2021、Gupta+2022、Xu+2023、Ho+2022、Li+2025（AAS 243 摘要除外），TNS 报告/AstroNote 3 篇，GCN 15 篇；TNS AT2021any 页已开（测光仅发现 17.9±0.06 与末次非探测 2 行，均入库）→ 结论：可用测光已集中入库，本轮新增 68 行、改判 2 行。⑧版本与渠道：Gupta+2022 VoR（Springer PDF）已打开逐值取数；Ho+2022、Andreoni+2021 的 IOP VoR 被 Radware 整站反爬拦（WebFetch 302→perfdrive、curl /pdf 得 challenge HTML），CDS-VizieR 三次超时、作者主页 404，按 §3.3 第 3 级以「arXiv 全文（已开）+ ADS 元数据 + 出版社页留痕」三方交叉取数，未通读 VoR（各行 comment 已注明，audit/unverified.tsv 已登记）；Xu+2023（A&A）VoR 403 DataDome，其表1–3 系 Ho+2022/Gupta+2022 转引（未取数入库），但 arXiv 版表1 的 MJD 列对 Gupta 来源行系统偏早 0.1268 d 且与 ∆t 列互不相洽（arXiv 版核对结论，VoR 未核）；Andreoni+2021 表2 记本源「Afterglow no GRB」、r 衰减 17.56 mag/d，其表3–7 强制测光不含本源；Li+2025 仅建模引用，无数值入库。⑨articles：保留 Andreoni+2021、Gupta+2022、Xu+2023，新增 Ho+2022（表6/8 取数）、Li+2025（分类/建模佐证）；删 Sarin+2022（AT2020blt 专篇，无本源数据，bot 误挂）。GCN 不入 articles。⑩alias：ZTF20aaeyldq 系 GCN 29343 标题误写（正文用 ZTF21aaeyldq），因有通告出处且 merged_from 记录同名而保留，特此说明。⑪原 extra_data 备查：t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis「meta_trigger」。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
+    "t0_note": "2026-10-31 审核修正：T0=2021-01-16T06:59:45Z 为 ZTF 首次探测时刻（GCN 29305 的 06:59:45.6 取整秒；TNS discovery date 同），非任何高能触发时刻——本源为光学发现的 orphan afterglow，无伽马触发（GCN 29307/29344），原值 t0_note「t0 为 meta trigger-time（真实触发时刻）」/t0_basis「meta_trigger」不成立，原值已留在 comment。",
+    "t0_basis": "GCN 29305; TNS AT2021any",
     "bot_created": true,
     "merged_from": [
       "ZTF20aaeyldq"
-    ]
+    ],
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [
     {
@@ -38,11 +45,18 @@
       "source": "bot"
     },
     {
-      "name": "Sarin+2022",
-      "title": "Low-efficiency long gamma-ray bursts: a case study with AT2020blt",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.512.1391S",
-      "bibtex": "@ARTICLE{2022MNRAS.512.1391S,\n       author = {{Sarin}, N. and {Hamburg}, R. and {Burns}, E. and {Ashton}, G. and {Lasky}, P.~D. and {Lamb}, G.~P.},\n        title = \"{Low-efficiency long gamma-ray bursts: a case study with AT2020blt}\",\n      journal = {\\mnras},\n     keywords = {gamma-ray bursts, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2022,\n        month = may,\n       volume = {512},\n       number = {1},\n        pages = {1391-1399},\n          doi = {10.1093/mnras/stac601},\narchivePrefix = {arXiv},\n       eprint = {2106.01556},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022MNRAS.512.1391S},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "name": "Ho+2022",
+      "title": "Cosmological Fast Optical Transients with the Zwicky Transient Facility: A Search for Dirty Fireballs",
+      "url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...938...85H",
+      "bibtex": "@ARTICLE{2022ApJ...938...85H,\n       author = {{Ho}, Anna Y.~Q. and {Perley}, Daniel A. and {Yao}, Yuhan and {Svinkin}, Dmitry and {de Ugarte Postigo}, A. and {Perley}, R.~A. and {Kann}, D. Alexander and {Burns}, Eric and {Andreoni}, Igor and {Bellm}, Eric C. and {Bissaldi}, Elisabetta and {Bloom}, Joshua S. and {Brink}, Thomas G. and {Dekany}, Richard and {Drake}, Andrew J. and {Ag{\\\"u}{\\'\\i} Fern{\\'a}ndez}, Jos{\\'e} Feliciano and {Filippenko}, Alexei V. and {Frederiks}, Dmitry and {Graham}, Matthew J. and {Hristov}, Boyan A. and {Kasliwal}, Mansi M. and {Kulkarni}, S.~R. and {Kumar}, Harsh and {Laher}, Russ R. and {Lysenko}, Alexandra L. and {Mailyan}, Bagrat and {Malacaria}, Christian and {Miller}, A.~A. and {Poolakkil}, S. and {Riddle}, Reed and {Ridnaia}, Anna and {Rusholme}, Ben and {Savchenko}, Volodymyr and {Sollerman}, Jesper and {Th{\\\"o}ne}, Christina and {Tsvetkova}, Anastasia and {Ulanov}, Mikhail and {von Kienlin}, Andreas},\n        title = \"{Cosmological Fast Optical Transients with the Zwicky Transient Facility: A Search for Dirty Fireballs}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, Transient sources, High energy astrophysics, Time domain astronomy, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2022,\n        month = oct,\n       volume = {938},\n       number = {1},\n          eid = {85},\n        pages = {85},\n          doi = {10.3847/1538-4357/ac8bd0},\narchivePrefix = {arXiv},\n       eprint = {2201.12366},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022ApJ...938...85H},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Li+2025",
+      "title": "The Nature of Optical Afterglows without Gamma-Ray Bursts: Identification of AT2023lcr and Multiwavelength Modeling",
+      "url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...985..124L",
+      "bibtex": "@ARTICLE{2025ApJ...985..124L,\n       author = {{Li}, Maggie L. and {Ho}, Anna Y.~Q. and {Ryan}, Geoffrey and {Perley}, Daniel A. and {Lamb}, Gavin P. and {Nayana}, A.~J. and {Andreoni}, Igor and {Anupama}, G.~C. and {Bellm}, Eric C. and {Berger}, Edo and {Bloom}, Joshua S. and {Burns}, Eric and {Caiazzo}, Ilaria and {Chandra}, Poonam and {Coughlin}, Michael W. and {El-Badry}, Kareem and {Graham}, Matthew J. and {Kasliwal}, Mansi and {Keating}, Garrett K. and {Kulkarni}, S.~R. and {Kumar}, Harsh and {Masci}, Frank J. and {Perley}, Richard A. and {Purdum}, Josiah and {Rao}, Ramprasad and {Rodriguez}, Antonio C. and {Rusholme}, Ben and {Sarin}, Nikhil and {Sollerman}, Jesper and {Srinivasaragavan}, Gokul P. and {Swain}, Vishwajeet and {Vanderbosch}, Zachary},\n        title = \"{The Nature of Optical Afterglows without Gamma-Ray Bursts: Identification of AT2023lcr and Multiwavelength Modeling}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, Transient sources, Surveys, Sky surveys, Radio transient sources, X-ray transient sources, High Energy Astrophysical Phenomena},\n         year = 2025,\n        month = may,\n       volume = {985},\n       number = {1},\n          eid = {124},\n        pages = {124},\n          doi = {10.3847/1538-4357/adc800},\narchivePrefix = {arXiv},\n       eprint = {2411.07973},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025ApJ...985..124L},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Gupta+2022",
