@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB230506B",
-  "alias": [],
-  "ra": 326.98168,
-  "dec": 44.51111,
-  "T0": "2023-05-06T12:45:18Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB230506531",
+    "GRB230506.53",
+    "BAT 1167266"
+  ],
+  "ra": 326.981667,
+  "dec": 44.511556,
+  "T0": "2023-05-06T12:45:18.718180Z",
+  "T0_ref": "GCN 33727（BAT 触发 2023-05-06 12:45:18 UT）；亚秒 .718180 取自 Swift/BAT 官方目录快照（external/swift_bat，trigger 1167266）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 2.6,
-  "pos_ref": "GCN 33737",
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error": 0.9,
+  "pos_ref": "GCN 33935",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核记录（Rusty-Harpoon@zcode，2026-10-31）。身份：Swift/BAT 触发 1167266（GCN 33727/33729，2023-05-06 12:45:18 UT），Fermi/GBM 同测（GCN 33758，12:45:18.768 UT，trigger 705069923/230506531），XRT/Chandra 位置一致，确证。触发仪器：原 'Swift/XRT' 有误——XRT 是 BAT 触发 114 s 后开始观测的跟进仪器，非触发仪器（GCN 33727 原文 'the Swift Burst Alert Telescope (BAT) triggered and located'），已改为 Swift/BAT。定位：ra/dec 取 GCN 33935 Chandra X-ray afterglow 位置 326.981667,+44.511556（0.9″，90% 置信，stat+sys；两历元间快速变暗确证为余辉）；原 ra/dec=326.98168,+44.51111 为 GCN 33737 XRT 增强位置（2.6″，90% 置信），移此备查；原 pos_ref=GCN 33737 与 pos_error_confidence 缺失已一并改齐。T0：秒级 12:45:18 见 GCN 33727；亚秒 .718180 取自 Swift/BAT 官方目录（swift.gsfc.nasa.gov/results/batgrbcat/，仓内 external/swift_bat 快照 2026-07-21 取数，trigger 1167266），与 Fermi/GBM 目录 12:45:18.768（FERMIGBRST，仓内 external/fermi_gbm 快照）亚秒矛盾，按规则有 Swift 以 Swift 为准；本次改 t0_basis=swift_bat_catalog（原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，值核实一致仅改依据记载）。lc 全表 time/mjd 已按新 T0 重算：GCN33740 LCOGT 2 行由窗口起点 04:09 UT 改窗口中点 04:25 UT（time_err=960 s）；GCN35180 VIRT 1 行原 time=62134 s 无出处，改为曝光起点 05:20:40.065 UT + 3860/2 s（原文另标 T_mid≈T+17 hrs 与计算一致；其自标 T+16.33 hrs 与绝对时刻差 0.26 h，取绝对时刻）。红移：未测（UVOT 光学候选证认为 Gaia DR3 恒星 BP=19.89,G=19.34，非余辉，GCN 33750；Chandra 亦仅见 X 射线点源，GCN 33935），redshift 留空。t90=61.54±10.89 s（Swift/BAT 官方目录与 GCN 33742 精化分析同值，15-350 keV）→ 按目录/通告 t90 判 lgrb；FERMIGBRST 目录 t90=38.4±12.8 s（50-300 keV，GCN 33758 约 38 s）一致。alias：GRB230506531（GCN 33758 原文 trigger 230506531；FERMIGBRST 目录原文用名 GRB230506531，trigger_name bn230506531）、GRB230506.53（GCN 33728 MASTER 原文用名 SWIFT GRB230506.53）、BAT 1167266（Swift/BAT 官方目录 name_alt）。UVOT：GCN 33733 的初版探测/上限不再入库——GCN 33750（UVOT team）证认 UVOT 数据与 Gaia DR3 恒星一致、非该暴光学余辉，其上限亦受该星污染，不能约束余辉。测光检索留证（2026-10-31）：仓内 gcn/archive（45 947 篇全文，覆盖至 GCN 46068）按源名 '230506B' 三路（subject/eventId/body）检索命中 11 篇（33727/33728/33729/33733/33737/33740/33742/33750/33758/33935/35180，全部逐篇通读；含光学数值 3 篇：MASTER 33728、LCOGT 33740、VIRT 35180；UVOT 33733 被 33750 撤销）；external/rssgrbag 0 行、grbsn_webtool 无此事件、swift_bat/swiftgrbba/fermi_gbm/uvot_grb/mpe_greiner 仅目录参数无光变表；ADS（api.adsabs.harvard.edu，2026-10-31）检索 \"GRB 230506B\" 命中 10 条、full:\"230506B\" 命中 11 条、\"1167266\" 命中 5 条，除 GCN 通告外无研究论文发表该暴测光；GCN 站 API 返回 HTML 无法程序化查询，以仓内全量归档 + ADS full-text 交叉替代，两者一致；TNS 不适用（GRB 类，无 TNS 命名）。补 7 行（GCN 33728 MASTER-Amur C(=clear) 上限 7 点）、改 3 行（LCOGT 2 行窗口中点化、VIRT 1 行中点重算），共 10 行，全部上限（该暴无光学探测）。银消光方向值 E(B-V)=0.293（GCN 33733 引 Schlegel+1998），各行原文均声明未做银消光改正，Gext_corr=n。",
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Swift/BAT 官方目录触发时刻（trigger 1167266）",
+    "t0_basis": "swift_bat_catalog",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
