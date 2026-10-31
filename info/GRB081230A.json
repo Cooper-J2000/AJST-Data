@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB081230A",
-  "alias": [],
-  "ra": 37.316667,
-  "dec": -25.133333,
-  "T0": "2008-12-30T20:36:12Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 081230",
+    "BAT 338633",
+    "Swift 338633"
+  ],
+  "ra": 37.3314,
+  "dec": -25.1477,
+  "T0": "2008-12-30T20:36:12.623340Z",
+  "T0_ref": "Swift/BAT 触发（trigger 338633）：external/swift_bat 与 external/swift_grb 目录快照 trigger_time=2008-12-30T20:36:12.623340Z（整秒一致按触发仪器亚秒值）；uvot_grb 快照 TRIGTIME=252362172.0 整秒一致；GCN 8753（20:36:12 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 2.0,
+  "redshift": 2.03,
   "tag": [
     "grb"
   ],
   "pos_error": 1.8,
   "pos_ref": "GCN 8756",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "phot",
+  "redshift_ref": "Kruehler+2011（A&A 526 A153，DOI 10.1051/0004-6361/201015327，z_phot=2.03+0.16/-0.14）",
+  "comment": "身份：Swift/BAT trigger 338633（GCN 8753，20:36:12 UT，BAT onboard 37.315,-25.142 ±3′）。定位：ra/dec 改为 Swift-XRT 增强位置 37.3314,-25.1477±1.8″（90% containment，GCN 8756；置信水平 90% 按原文，Swift/XRT 惯例）；原值 37.316667,-25.133333 为 MPE 目录粗位置 02h29m16s -25°08′，已替换；UVOT（GCN 8757，37.3311,-25.1475±0.9″）、ROTSE-III（GCN 8754）、GROND（GCN 8760）光学位置与之相符。红移：原值 2.0 为 MPE 目录舍入值（z_flag=ph），改为 Kruehler+2011 GROND+UVOT SED 光测红移 2.03+0.16/-0.14（redshift_type=phot；BATGRBCAT/SWIFTGRB 目录 z=2.03 同引该文）。t90=60.7±13.8 s（GCN 8759 Swift/BAT refined analysis，15–350 keV；swift_bat 目录 t90=60.692±13.426 s 一致），按目录 t90 判 lgrb。alias：GRB 081230（GCN 通告用名）、BAT 338633（BATGRBCAT name_alt）、Swift 338633（HEASARC SWIFTGRB name_alt）。lc 中 UVOT 行 mag_system=Vega 为惯例推定（UVOT flight system，GCN 8755/8757 载 Poole+2008；Breeveld+2011）；Roming2017 目录行经 Dainotti2024 VoR 机读表（grblc/data/mag_files/081230A_mag.txt）逐值核对一致。测光检索（2026-10-31）：仓内 gcn/archive 全文检索（源名+trigger 338633）命中 8 篇（8753/8754/8755/8756/8757/8758/8759/8760），其中 5 篇含光学测光或上限；external/rssgrbag 与 external/grbsn_webtool 无本源记录；ADS/SciX 检索「GRB 081230」命中 10 条，除上述 GCN 外仅 Kruehler+2011（GROND SED 表，已核对）与 GCN Report 196（Swift 快视汇总，报告全文未能在线取得、未从中取值）；GCN 站与 ADS 均无其他独立测光文献。本轮 lc 处置（Rusty-Harpoon@zcode，2026-10-31）：补 GCN 8755 初步 u=20.6±0.3 共 1 行；弃 GCN 8753 寻图初始上限 1 行（同曝光被 GCN 8757 探测取代）、Dainotti2024 MRT 错锚 ROTSE 行 1 行（700.8 s，测量起点实为 791 s）；删 Dainotti2024;8757 的 white 4136 s 转引重复行 1 行（同 GCN 8757 white 曝光，见 4135 s 行 comment）；Kruehler+2011 7 行 time 由 19440 s（Dainotti MRT 按 5.4 h 舍入）改回 VoR 原值 5.44 h=19584 s；GCN 8760 epoch1 4 行 time 21565→21564 s（GCN 原文）；GCN 8757 各行补窗口半宽 time_err 并将 reference 改指原文；全部非-XRT 行 mjd 按新 T0 重算（7 位小数）；86 行 Swift/XRT 10keV 行契约冻结未改动，其存量 mjd 与新 T0 差 0.62 s（<1 s 自洽容差）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -341,9 +345,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
+    {
+      "name": "Kruehler+2011",
+      "title": "Photometric redshifts for gamma-ray burst afterglows from GROND and Swift/UVOT",
+      "url": "https://doi.org/10.1051/0004-6361/201015327",
+      "source": "Rusty-Harpoon@zcode"
+    },
     {
       "name": "Dainotti+2024",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
@@ -352,5 +367,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
