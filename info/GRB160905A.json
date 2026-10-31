@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB160905A",
   "alias": [
-    "GRB 160905471"
+    "GRB 160905A",
+    "bn160905471"
   ],
-  "ra": 162.00999450683594,
-  "dec": -50.880001068115234,
-  "T0": "2016-09-05T11:18:59.910000Z",
-  "T0_ref": null,
+  "ra": 162.01,
+  "dec": -50.88,
+  "T0": "2016-09-05T11:18:55.912Z",
+  "T0_ref": "GCN 19889（Bissaldi, Fermi GBM Team）：'At 11:18:55.91 UT on 5 September 2016, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 160905A (trigger 494767139 / 160905471)'；Fermi GBM 官方目录 FERMIGBRST bn160905471 trigger_time=2016-09-05T11:18:55.912Z（与 GCN 整数秒一致，取触发仪器目录亚秒值）；GCN 19890（LAT）亦记 'At 11:18:55.91 ... Fermi-LAT detected high-energy emission'。原 T0=2016-09-05T11:18:59.910000Z 系 2FLGC trigger_met=494767139.91 纪元 2001-01-01 naive MET→UTC 换算、未扣 2006/2009/2012/2015 四次闰秒（python 复算 naive UTC 与原值逐位一致），Δ=3.998 s，按 2026-10-12 裁定（Issue #67）目录换算残差不作 T0_offset、直接改写 T0（先例 GRB081006/GRB081122A/GRB081224）；Swift/BAT 于 11:18:58.384380Z（external/swift_bat 快照；GCN 19887 记 11:18:58 UT、由 XRT 开测 11:19:56.0=BAT+57.7 s 反算 58.3 一致）触发，晚于 GBM 2.47 s，为同一暴独立触发，T0 取最早触发历元（2FLGC 系同型先例 GRB190727B）；Konus-Wind 触发 11:18:55.196 UT（GCN 19900，其自身触发口径）互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,13 +15,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 19890",
+  "pos_error": 288,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 19890（Fermi-LAT team）：'The best LAT on-ground location is found to be RA, Dec = 162.02, -50.88 (J2000) with an error radius of 0.08 deg (90% containment, statistical error only)' → 0.08 deg×3600=288 arcsec；Fermi LAT 2FLGC（fermilgrb）位置 162.01/−50.88（error_radius=0.1 deg）与之一致（0.08° 内），取目录值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52）。审核 2026-10-28（fsy）。① T0：GCN 19889 'At 11:18:55.91 UT on 5 September 2016, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 160905A (trigger 494767139 / 160905471)'；FERMIGBRST bn160905471 trigger_time=2016-09-05T11:18:55.912Z（整数秒一致，取触发仪器目录亚秒值）；GCN 19890（LAT）同记 11:18:55.91 检测到高能辐射。原 T0=2016-09-05T11:18:59.910000Z 系 2FLGC trigger_met=494767139.91 纪元 2001-01-01 naive MET→UTC 换算、未扣 2006/2009/2012/2015 四次闰秒（python 复算 naive UTC 与原值逐位一致），Δ=3.998 s；按 2026-10-12 裁定（Issue #67）目录换算残差不作 T0_offset、直接改写 T0（先例 GRB081006/GRB081122A/GRB081224）。Swift/BAT 于 11:18:58.384380Z（external/swift_bat 快照；GCN 19887 记 11:18:58 UT，由 XRT 开测 11:19:56.0=BAT+57.7 s 反算 58.3 一致）触发，晚于 GBM 2.47 s，为同一暴独立触发，T0 取最早触发历元（同型先例 GRB190727B）；Konus-Wind 触发 11:18:55.196 UT（GCN 19900，其自身触发口径）互证。② 定位：GCN 19890 'RA, Dec = 162.02, -50.88 (J2000) with an error radius of 0.08 deg (90% containment, statistical error only)' → pos_error=288″、pos_error_confidence=90；Fermi LAT 2FLGC（fermilgrb）位置 162.01/−50.88（error_radius=0.1 deg）与之一致，取目录值；原 ra/dec 162.00999450683594/−50.880001068115234 为 float32 残渣，按目录原精度恢复 162.01/−50.88（Issue #69，先例 GRB190727B）。③ 别名：GRB 160905A（GCN 19887/19889/19890 用名）+ bn160905471（FERMIGBRST trigger_name）；拼接形 GRB 160905471 按别名伪形规则（§3.10/Issue #69）移除，记于此。④ 分类：t90=33.5366±1.37863 s（FERMIGBRST 50-300 keV）按目录 t90 判 lgrb（2026-10-26 裁定口径）；GCN 19889 'duration (T90) of about 34 s (50-300 keV)'、GCN 19900 Konus-Wind 'long-duration' 一致；sub_tag 保留 Fermi-LAT（2FLGC 检测源，TS=147.355、最高光子约 8 GeV，GCN 19890）。⑤ 光变（原 1 行改 + 补 8 行，telescope=Swift/instrument=UVOT 按仓内 UVOT 行惯例）：(a) 原 1 行为 UVOT White 找图快报估计：GCN 19887 'UVOT took a finding chart exposure of 150 seconds with the White filter starting 66 seconds after the BAT trigger. ... The estimated magnitude is 15.88 with a 1-sigma error of about 0.14. No correction has been made for the expected extinction corresponding to E(B-V) of 0.46.'——原行 time=64.09 锚在未扣闰秒的旧 T0 上且取曝光起点而非中点，改窗口中点 time=138.5、time_err=75.0（T_BAT+66→T_BAT+216，BAT 历元→标准 T0 换算 −2.472 s，§3.2/§3.8）；band=w 改 uvot-white（w 是 Pan-STARRS 键，UVOT white 用 uvot-white）；mag_system=Vega（UVOT 光度系统 Vega 惯例，Breeveld et al. 2011, AIP Conf. Proc. 1358, 373，GCN 19897 明示）；同一 FC 曝光 GCN 19897 光度分析给 15.8±0.03（white_FC 67–216 s、147 s 曝光），为免同曝重复计不另立行、记于此。(b) 补 GCN 19897 UVOT 光度表 8 行（T_start/T_stop 以 BAT 触发为历元，换算 −2.472 s 入 T0 历元；表头 'using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)' → mag_system=Vega；均未做银河系消光改正 E(B−V)=0.45，Gext_corr=n）：white 67–2234 s（469 s 有效曝光）17.1±0.05；u_FC 280–530 s 18.3±0.15；u 280–2185 s 18.8±0.16；v 610–2285 s 17.4±0.12；b 536–2210 s 18.7±0.16；uvw1 660–2160 s >19.1、uvm2 635–2296 s >19.1、uvw2 586–2260 s >19.4（3σ 上限，upperlimit=y）。(c) 本源无 X-ray/射电行。⑥ §3.3 检索留证（2026-10-28）：GCN 网站（gcn.nasa.gov/circulars）源名 'GRB 160905A' 与触发号 711084/494767139/160905471 多通道检索 + 邻域扫描 GCN 19883–19960 号段，共得 8 条 160905A circular——19887（Swift 检测）、19889（Fermi GBM）、19890（Fermi-LAT）、19891（enhanced XRT 位置）、19894（XRT refined）、19896（BAT refined）、19897（UVOT Detection 光度表）、19900（Konus-Wind，γ）；19891/19894/19896 经原文核对无光学测光；外部快照 konus_wind、agile_mcal 无 160905 条目，rssgrbag 光变与 grbsn_webtool 事件集均无交集；文献检索（ADS/web）仅见 γ 射线现象学论文（Mao+2021 jitter 辐射、Liao+2025 谱线——后者已在 articles[]），无该源专用光学/射电余辉论文 → 无检索新增行（补入 8 行均来自 GCN 19897 已核对内容）；articles[] 维持 Liao+2025（研究论文，合规）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -279,6 +282,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
     }
   },
   "articles": [
