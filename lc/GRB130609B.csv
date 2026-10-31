@@ -1,7 +1,7 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
 82.7443,0.4549,s,56452.90280954051,10keV,0.000415977633309127,6.61486420757026e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 83.5779,0.4505,s,56452.902819188654,10keV,0.000381601142837061,6.39761731382178e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-84.0,,s,56452.90282407407,w,15.71,,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14841,,
+159,75,s,56452.9036970,uvot-white,15.71,,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14841,原文只给 fc 曝光起点 T0+84 s 与 nominal 150 s：time=起点+150/2=159 s、time_err=半曝光；band 原 w 实为 Pan-STARRS 键、按原文 White filter 改 uvot-white；mag_system=Vega 系 UVOT photometric system（GCN 14857 明示系统名 Breeveld+2011）；同次 fc 曝光 GCN 14857 地面精化测光 15.47±0.02 与在轨估计 15.71 非转引重复、两行并留,Rusty-Harpoon@zcode
 84.537,0.557,s,56452.90283028935,10keV,0.000268795362847269,4.83663210768726e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 85.64,0.552,s,56452.902843055555,10keV,0.000263435249935279,4.169239634076e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 86.585,0.4296,s,56452.90285399305,10keV,0.000277532756917359,3.98033728186732e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -696,14 +696,30 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 99524.472,9838.035,s,56454.05375546296,10keV,1.18798395217285e-08,3.13636168648195e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 109774.133,411.626,s,56454.17238579861,10keV,1.37142108951888e-08,3.47922303631356e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 124336.432,3350.0,s,56454.34093092592,10keV,7.70860697911193e-09,1.87937075843856e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-129980.0,,s,56454.40625,g,22.2,0.1,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
-129980.0,,s,56454.40625,r,21.7,0.1,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
-129980.0,,s,56454.40625,i,21.1,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
-129980.0,,s,56454.40625,z,20.9,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
-129980.0,,s,56454.40625,K,19.4,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
-129980.0,,s,56454.40625,H,19.8,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
-129980.0,,s,56454.40625,J,20.6,0.3,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,,
+129979.58348,375,s,56454.40625,g,22.2,0.1,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
+129979.58348,375,s,56454.40625,r,21.7,0.1,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
+129979.58348,375,s,56454.40625,i,21.1,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
+129979.58348,375,s,56454.40625,z,20.9,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
+129979.58348,300,s,56454.40625,K,19.4,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
+129979.58348,300,s,56454.40625,H,19.8,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
+129979.58348,300,s,56454.40625,J,20.6,0.3,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN14866,原文给 mid-time 2013-06-11 09:45 UT（分钟级）与总曝光 25 min（g'r'i'z'）/20 min（JHK）：time=09:45 UT−T0、T0 亚秒精化 +0.416520 s 后重算（原 129980 s）、time_err=总曝光/2,Rusty-Harpoon@zcode
 144311.817,12416.337,s,56454.57212751157,10keV,4.79855300455536e-09,1.0419321250292e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 180575.281,6913.967,s,56454.99184353009,10keV,5.77164780170727e-09,1.35303167155813e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 205216.465,15117.551,s,56455.27704241898,10keV,2.64240622039368e-09,5.67507981942976e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 310144.53,43081.838,s,56456.49148761574,10keV,1.47511544451494e-09,4.22613293794236e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
+159,75,s,56452.9036970,uvot-white,15.47,0.02,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+1234,657,s,56452.9161391,uvot-white,17.36,0.03,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+6863.5,817.5,s,56452.9812953,uvot-white,18.39,0.05,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+1370,571,s,56452.9177132,uvot-v,16.89,0.09,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+6557,100,s,56452.9777479,uvot-v,18.00,0.15,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+1209,657,s,56452.9158497,uvot-b,17.32,0.06,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+6658.5,817.5,s,56452.9789226,uvot-b,18.46,0.09,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+421.5,124.5,s,56452.9067351,uvot-u,16.31,0.04,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+1270.5,570.5,s,56452.9165615,uvot-u,17.15,0.08,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+6453.5,817.5,s,56452.9765500,uvot-u,18.15,0.09,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+1246,570,s,56452.9162780,uvot-uvw1,17.61,0.12,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+6249.5,817.5,s,56452.9741888,uvot-uvw1,18.75,0.15,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+1307,484,s,56452.9169840,uvot-uvm2,19.12,0.35,magnitude,Vega,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01,Rusty-Harpoon@zcode
+6761.5,99.5,s,56452.9801148,uvot-uvm2,19.66,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01；3σ 上限、原文 >19.66,Rusty-Harpoon@zcode
+1259.5,656.5,s,56452.9164342,uvot-uvw2,19.51,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01；3σ 上限、原文 >19.51,Rusty-Harpoon@zcode
+7053.5,801.5,s,56452.9834944,uvot-uvw2,20.39,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14857,原文表给 T_start/T_stop/Exp 与 3σ 测光（UVOT photometric system：Breeveld+2011 → Vega）：time=(T_start+T_stop)/2、time_err=半跨；未做银消改正 E(B-V)=0.01；3σ 上限、原文 >20.39,Rusty-Harpoon@zcode
