@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB120213A",
   "alias": [],
-  "ra": 300.987,
-  "dec": 65.413,
-  "T0": "2012-02-13T00:27:19Z",
-  "T0_ref": null,
+  "ra": 301.01211,
+  "dec": 65.41135,
+  "T0": "2012-02-13T00:27:19.539260Z",
+  "T0_ref": "GCN 12942（Swift/BAT 触发 00:27:19 UT，整数秒）；亚秒取触发仪器官方目录 Swift/BAT GRB Catalog（batgrbcat，仓内 extra_data.catalog_data 快照，retrieved 2026-07-21）trigger_time=2012-02-13T00:27:19.539260Z；HEASARC SWIFTGRB=00:27:19.539240Z（差 20 µs，互证）；GCN 12945 MASTER 指向时刻 00:28:08.528 UT 反算（−49 s）=00:27:19.528 亦一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +13,14 @@
     "grb"
   ],
   "pos_error": 1.7,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 12948",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "GRB 120213A = Swift/BAT trigger 514767（GCN 12942）。身份：XRT 增强定位（GCN 12948：301.01211, +65.41135，1.7 arcsec, 90% confidence）与 BAT on-board 定位（GCN 12942：301.032, +65.397，3 arcmin）及 BAT 地面定位（GCN 12946：300.987, +65.413，1 arcmin, 90%）互洽。修订：原 ra/dec=300.987/65.413 实为 GCN 12946 的 BAT 地面定位（1 arcmin），与 pos_error=1.7、pos_ref=GCN 12948 不自洽，已改为 pos_ref 所指 GCN 12948 的 XRT 增强定位；pos_error_confidence=90（GCN 12948 原文明示 90% confidence）。sub_tag=lgrb：t90=48.9±12.0 s（15-350 keV，GCN 12946 Swift/BAT 精化分析），按目录 t90 判 lgrb。T0 改为 00:27:19.539260Z 后，lc 中 293 行 Swift/XRT 10keV 行的 mjd 需由维护者按 mjd=T0+time 重算（整体 +0.53926 s），非 X 射线行已同步重算。测光检索留证（2026-11-01）：仓内 gcn/archive 全文检索 120213A / 514767 命中 7 篇（12942、12944、12945、12946、12948、12951、12952），其中 3 篇含光学数值：12942（UVOT White FC ~19.6）、12945（MASTER-II 5σ 16.15 mag）、12951（UVOT 9 波段 3σ 上限表），均已入库；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS 全文检索 120213A 命中 22 条，其中研究论文 15 篇均为样本统计类（X 射线 plateau / 中微子搜索 / UVOT-XRT 对比等），未提供该源可引用的测光表；该源无红移、无宿主星系报道 → 除 GCN 外无可用测光。本源由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -207,6 +210,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-01"
     }
   },
   "articles": [],
