@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB090201A",
-  "alias": [],
+  "alias": [
+    "GRB 090201"
+  ],
   "ra": 92.029167,
   "dec": -46.583333,
-  "T0": "2009-02-01T17:47:00.275000Z",
-  "T0_ref": null,
+  "T0": "2009-02-01T17:47:02.735980Z",
+  "T0_ref": "GCN 8865（Swift/BAT trigger 341749，整秒 17:47:02 UT）＋ Swift/BAT 官方目录亚秒值 02.735980（external/swift_bat 与 external/swift_grb 快照 trigger_time 一致；swiftgrbba/uvot_grb 快照整秒 17:47:02 相符）；原库 T0=17:47:00.275 系 GCN 8878 中 Konus-Wind 自身触发时刻（T0=64020.275 s UT），非触发仪器值，弃用",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,9 +16,9 @@
   ],
   "pos_error": 1.4,
   "pos_ref": "GCN 8872",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "Krühler+2015（A&A 581, A125，Swift/BAT 目录 z_ref 同；Covino+2013 脚注引其前身 Krühler 2013b）；Palmerio+2019 宿主表 z=2.1000（arXiv:1901.02457 表已核对）；Konus-Wind 目录 z_type=spectroscopic",
+  "comment": "身份：Swift/BAT 触发 341749（GCN 8865，2009-02-01 17:47:02 UT），XRT 增强位置（GCN 8872）与 VLT 候选余辉（GCN 8873，±0.5″）互证。别名「GRB 090201」为 GCN 通告原文用名（GCN 8865 等标题）。t90=74.264±1.681 s（Swift/BAT 目录，15-350 keV），按目录 t90 判 lgrb；GCN 8878 亦称 long GRB。测光核对：ROTSE-IIIc 3 组上限（GCN 8866，time 改曝光中点、time_err 补半宽；USNO-A2.0(R) 定标非 AB/Vega，mag_system 留空）；UVOT 7 行 3σ 上限（GCN 8874，time 原已为窗口中点，补 time_err=半宽；UVOT photometric system 据 Poole+2008 记 Vega）；GCN 8869 VLT/FORS2 边缘候选体（R~25.2/I~24.1）被 GCN 8871 判为大概率为场星系而非余辉，同批 J/H/K 3σ 上限（ISAAC，原库误记 FORS2）亦仅约束该候选体位置，5 行全部 discard=y；GCN 8873 在增强 XRT 位置发现真候选余辉；Covino+2013 表 A9（Rc/Ic/J/H/Ks 五点，arXiv:1303.4743 v2，OUP VoR 反爬 403 未通读）取代 GCN 初步值，本轮新增 5 行。ATCA 4.800+4.928 GHz 合并无探测 −0.430±0.280 mJy/beam（GCN 8955，2009-02-21/22 观测）：合并频段与日期表述歧义，未入库（PR 待决）。测光检索留证（2026-10-31）：仓内 gcn/archive 全文命中 12 篇（8865/8866/8868/8869/8870/8871/8872/8873/8874/8875/8878/8955，全部打开核对）；external/rssgrbag、external/grbsn_webtool 无 090201 记录；ADS 检索（2026-10-31）「GRB 090201」13 条、全文 20 条，除 GCN 外命中 Krühler+2015、Melandri+2012（暗暴分类仅用 GCN 值，无新测光）、Covino+2013（表 A9 已入库）、Palmerio+2019（宿主参数），逐文核对；本轮新增 5 行（全部 Covino+2013 表 A9）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -631,6 +633,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
@@ -661,7 +668,33 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract",
       "bibtex": "@ARTICLE{2024A&A...690A.261G,\n       author = {C. Guidorzi and R. Maccary and A. Tsvetkova and S. Kobayashi and L. Amati and L. Bazzanini and M. Bulla and A. E. Camisasca and L. Ferro and D. Frederiks and F. Frontera and A. Lysenko and M. Maistrello and A. Ridnaia and D. Svinkin and M. Ulanov},\n       title = {New results on the gamma-ray burst variability-luminosity relation},\n       journal = {A&A, 690, A261 (2024)},\n       year = {2024},\n       doi = {10.1051/0004-6361/202451401},\n       eprint = {2409.01644},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Covino+2013",
+      "title": "Dust extinctions for an unbiased sample of gamma-ray burst afterglows",
+      "url": "https://ui.adsabs.harvard.edu/abs/2013MNRAS.432.1231C/abstract",
+      "bibtex": "@ARTICLE{2013MNRAS.432.1231C,\n       author = {Covino, S. and Melandri, A. and Salvaterra, R. and Campana, S. and Vergani, S. D. and others},\n       title = {Dust extinctions for an unbiased sample of gamma-ray burst afterglows},\n       journal = {MNRAS},\n       year = 2013,\n       volume = 432,\n       pages = 1231,\n       doi = {10.1093/mnras/stt540},\n       eprint = {1303.4743},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2013MNRAS.432.1231C/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Krühler+2015",
+      "title": "GRB hosts through cosmic time. VLT/X-Shooter emission-line spectroscopy of 96 gamma-ray-burst-selected galaxies at 0.1 < z < 3.6",
+      "url": "https://ui.adsabs.harvard.edu/abs/2015A&A...581A.125K/abstract",
+      "bibtex": "@ARTICLE{2015A&A...581A.125K,\n       author = {Kr{{u}}hler, T. and others},\n       title = {GRB hosts through cosmic time. VLT/X-Shooter emission-line spectroscopy of 96 gamma-ray-burst-selected galaxies at 0.1 < z < 3.6},\n       journal = {A&A},\n       year = 2015,\n       volume = 581,\n       pages = {A125},\n       doi = {10.1051/0004-6361/201425561},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015A&A...581A.125K/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Palmerio+2019",
+      "title": "Are long gamma-ray bursts biased tracers of star formation? Clues from the host galaxies of the BAT6 extended sample",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019A&A...623A..26P/abstract",
+      "bibtex": "@ARTICLE{2019A&A...623A..26P,\n       author = {Palmerio, J. T. and others},\n       title = {Are long gamma-ray bursts biased tracers of star formation? Clues from the host galaxies of the BAT6 extended sample},\n       journal = {A&A},\n       year = 2019,\n       volume = 623,\n       pages = {A26},\n       doi = {10.1051/0004-6361/201834179},\n       eprint = {1901.02457},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019A&A...623A..26P/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 2.1,
+    "redshift_type": "spec",
+    "comment": "宿主为余辉位置处星系：Covino+2013 注明余辉探测已显著受宿主污染（表 A9 为 afterglow+host 混合测光，lc 已区分标注）；Palmerio+2019（BAT6 宿主样本，arXiv:1901.02457 表 z=2.1000、log(M*/M☉)=10.9）；Spitzer/IRAC 宿主观测属 Perley+2016b SHOALS 扩展样本（IRAC 测光表 VoR/机读表不可达，未录入 photometry）。",
+    "source": "Covino+2013; Palmerio+2019; Krühler+2015"
+  }
 }
