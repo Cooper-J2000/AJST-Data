@@ -8,7 +8,7 @@
   "ra": 142.804999,
   "dec": 38.254024,
   "T0": "2020-05-08T03:45:38Z",
-  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2020jmb（2026-10-31 取）",
+  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2020jmb（2026-10-31 取）；Ho+2023 附录A.16 首测 2020-05-08（g=19.52±0.21）、Bruch+2023 表7 首测 JD 2458977.6567=2020-05-08T03:45:41Z（与 T0 差 3 s）互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -17,18 +17,36 @@
     "sn"
   ],
   "pos_error": null,
-  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2020jmb（2026-10-31 取）",
+  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2020jmb（2026-10-31 取）；Ho+2023 表2 坐标互证（RA 09:31:13.19 +38:15:14.4，2026-10-31）",
   "redshift_type": "spec",
-  "redshift_ref": "TNS Redshift 字段：https://www.wis-tns.org/object/2020jmb（2026-10-31 取）",
-  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）",
+  "redshift_ref": "TNS Redshift 字段：https://www.wis-tns.org/object/2020jmb（2026-10-31 取）；Ho+2023 表2 同值 z=0.061 互证（2026-10-31）",
+  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）。\n2026-10-31 Rusty-Harpoon@zcode 审核：TNS 在线页本网络不可达（已登记 audit/unverified.tsv search-limited 行），导入元数据经两篇 VoR 文献互证——Ho+2023（ApJ 949, 120，DOI 10.3847/1538-4357/acc533）表2：ZTF20aayrobw＝SN 2020jmb、II 类、z=0.061、坐标与本条一致；Bruch+2023（ApJ 952, 119，DOI 10.3847/1538-4357/acd8be）表7：ZTF20aayrobw、SN II、EED=JD 2458977.190±0.470、坐标一致；另有 TNS 发现报告 TNSTR 1294（De 2020-05-10）与分类报告 TNSCR 1756（Dahiwale 2020-06-11，均经 ADS 题录核实存在）。T0 口径：超新星无触发，沿用导入的 TNS Discovery Date（与先例 AT2018cow/SN2019deh 一致）。\n测光检索（2026-10-31）：仓内 gcn/archive 45 947 篇全文按「2020jmb / ZTF20aayrobw / ATLAS20lwn / 坐标 142.805+38.254」0 命中，external/rssgrbag（74 源 140 行）、external/grbsn_webtool（63 事件）0 命中；GCN 站无触发号可查（SN 类源无 GCN 通告）；ADS API 检索「SN 2020jmb」「ZTF20aayrobw」「ATLAS20lwn」及 body 全文 → TNS 报告 2 篇 + 研究文献 2 篇（Ho+2023、Bruch+2023）；SIMBAD/CDS/VizieR 本网络超时。结论：唯一给出可取测光的正式文献为 Ho+2023 与 Bruch+2023（同为 P48 成像、不同管线），Ho+2023 表4 机读表 64 行（51 探测 + 13 个 5σ 上限）已逐行入库 lc/SN2020jmb.csv；Bruch+2023 表1 机读表 394 行（fpbot，maggy）与 Ho+2023 同历元差 <0.05 mag，按 §3.4 为同一批 P48 测量的另一管线产物，不重复入库，留档 https://content.cld.iop.org/journals/0004-637X/952/2/119/revision1/apjacd8bet1_mrt.txt。补 64 行。",
   "sub_tag": [
     "II"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "hermes_list_20261031"
+    "ingest_source": "hermes_list_20261031",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ho+2023",
+      "url": "https://doi.org/10.3847/1538-4357/acc533",
+      "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Bruch+2023",
+      "url": "https://doi.org/10.3847/1538-4357/acd8be",
+      "title": "The Prevalence and Influence of Circumstellar Material around Hydrogen-rich Supernova Progenitors",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
