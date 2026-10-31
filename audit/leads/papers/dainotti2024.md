@@ -25,6 +25,7 @@ time_sec / mag / mag_err / band / system / telescope / extcorr / source(GCN 号�
 | 源 | 表号 | 源级卡 | status | 增量判读 |
 |---|---|---|---|---|
 | GRB141028A | mag_files/141028A_mag.txt | 无（本卡即索引） | extracted（本暴 26 个测光点已逐值回 GCN 核对） | 转引型：数值与 GCN 同源、时间锚与系统标注需回原文，不开源级卡 |
+| GRB190627A | mag_files/190627A_mag.txt | 无（本卡即索引） | extracted（本暴 MRT 200 行逐行程序化比对一致：163 行 source=Alexei＝A. Pozanenko 2023 私人通信、18 行 source=Michal＝Swift/UVOT 私人通信（身份未溯源，见 PR #711 待决）、19 行 GCN 转引回核原文；含 source=Brice(24894)＝Brice Orange/VIRT 私人通信 1 行与 GCN 24894 同值） | 转引型 GCN 行已回改 GCN 出处并删 15 行重复；Alexei/Michal 为私人通信数据，保留 Dainotti 引用；该暴 MRT 的 GCN 24892 表 mid 列实为起点（差半曝 30 s）、24900/24911 ep3 的 mid 与起点+半曝差 113/14.6 s |
 
 ## 增量门槛判读
 
