@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB240123A",
   "alias": [],
-  "ra": 199.34946,
-  "dec": 60.61814,
+  "ra": 199.34861,
+  "dec": 60.61849,
   "T0": "2024-01-23T11:05:46.865580Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 35602（Swift-BAT trigger #1210276，11:05:46 UT）；亚秒值取自 Swift-BAT 官方目录（swift.gsfc.nasa.gov/results/batgrbcat/，仓内 external/swift_bat 快照 trigger_time 一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Glowbug",
@@ -16,16 +16,22 @@
   "pos_ref": "GCN 35616",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "位置统一取 GCN 35616 增强 XRT 位置（RA,Dec=199.34861,+60.61849，90% r=2.1 角秒，已填 pos_error_confidence=90）；bot 原 ra/dec 199.34946/60.61814 实为 GCN 35605 Mondy 光学位置（0.2 角秒），与 35616 相差约 1.9 角秒、在误差圆内，已按 pos_ref 统一。T0=Swift-BAT 触发时刻：GCN 35602 给 11:05:46 UT，亚秒值与 Swift-BAT 官方目录一致（external/swift_bat 快照）；Glowbug 起爆 2024-01-23 11:05:48.840、持续 6.1 s（GCN 35631）备查，差约 2 s 不改变 T0 取值（有 Swift 以 Swift 为准）。t90=115.30±54.93 s（15-350 keV，GCN 35622 Swift-BAT 精化分析），按通告 t90 判 lgrb；BAT 目录 t90=89.84±45.58 s（external/swift_bat 快照）同判 lgrb。测光检索（2026-10-31）：仓内 gcn/archive 按源名/触发号 1210276/坐标命中 14 篇本 GRB 通告（35601、35602、35605、35609、35610、35612、35616、35618、35619、35620、35622、35624、35628、35631，全文核对）+3 篇 IceCube-240123A 中微子通告（35604、35625、35640，非同一事件）；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无该源记录；ADS（api.adsabs.harvard.edu）abs+title 检索 13 条、full 检索 17 条，非 GCN 命中仅 Dafcikova+2026（ApJS 286,45，GRBAlpha/VZLUSAT-2 伽马射线目录，无光学测光，未采用）；TNS 不适用（无 AT/SN 编号、无宿主红移报道）→ 补 MASTER-Tunka 3sigma 上限 35 行（GCN35601）与 Mondy 帧 UL 3 行（GCN35605）。GCN 35620 另报 t-T0=0.400722 d 处有测光点，数值仅在近似图中（grb.rssi.ru 光变图），不从图读数，未入库。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
