@@ -1,13 +1,15 @@
 {
   "transient_id": "GRB100909A",
-  "alias": [],
-  "ra": 73.9506,
-  "dec": 54.6544,
+  "alias": [
+    "Swift 20147"
+  ],
+  "ra": 73.9476,
+  "dec": 54.6597,
   "T0": "2010-09-09T09:04:00Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 11260（INTEGRAL/IBAS 触发通告）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBAS",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,9 +18,12 @@
   "pos_ref": "GCN 11268",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "INTEGRAL/IBAS 于 2010-09-09 09:04 UT 触发，持续约 60 s，20-200 keV fluence 约 1e-6 erg/cm2（GCN 11260）；Swift 随后 TOO 跟进（Target ID 20147，GCN 11261）。t90=60 s（GCN 11260「lasting about 60 s」；uvot_grb 目录 t90=60.0、T90_REF=GCN11260），按目录 t90 判 lgrb，GCN 11260 亦径称 long GRB。位置取 XRT 增强位置 RA=73.9476 Dec=+54.6597（5.4 arcsec，90%，GCN 11268）；原库 ra/dec=73.9506/+54.6544 为 INTEGRAL 精化值（2 arcmin，90%，GCN 11260），与原 pos_ref=GCN 11268 不符，已改；HEASARC swiftgrbba 目录 xrt 值 73.94729/+54.65944（Evans+2009）备查。原库 Trigger_Instrument=Swift/BAT 有误（Swift 仅 TOO 跟进，uvot_grb DISC_BY=INTEGRAL，swift_grb bat_detection=U），已改 INTEGRAL/IBAS。GCN 11264（ROTSE）的 t_start-tGRB 列隐含触发 09:04:54 UT，与 GCN 11260 的 09:04 UT（分精度）差 54 s，T0 仍取触发仪器通告的 09:04:00Z。由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。测光检索（2026-10-31）：仓内 gcn/archive 全文 45947 篇按源名与坐标检索，命中本暴通告 9 篇（11260/11261/11263/11264/11265/11268/11269/11272/11273，另有 11766 仅提及本暴、14404 与 45164 为无关坐标误命中）；external/rssgrbag、external/grbsn_webtool 无记录；ADS abs/title 命中 9 篇（均为上述 GCN）、full 命中 10 篇（另 arXiv:1205.0518 仅列暴名、无测光）；TNS 访问 403（本源无 AT 名，不适用）→ 无已发表文献测光，全部测光出自上述通告；本轮新增 2 行（ROTSE 上限，GCN 11264）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "uvot_grb": {
@@ -112,6 +117,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [],
