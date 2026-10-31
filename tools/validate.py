@@ -50,6 +50,14 @@ TIME_UNIT_FACTOR = {'s': 1.0, 'sec': 1.0, 'm': 60.0, 'min': 60.0,
                     'h': 3600.0, 'hour': 3600.0, 'd': 86400.0, 'day': 86400.0}
 MJD_OFFSET = 40587.0          # datetime.timestamp()/86400 → MJD
 MJD_CONSIST_TOL_S = 1.0       # 与三层验收 L3 不变量同一容差
+# 数值列（非空时必须能被 float() 解析）：库侧 lightcurves 的这些列都是数值型，
+# 行里写 '~15'、'>21'、'15±0.2' 这类原文写法会在 ETL 的 INSERT 时报错，并让整批
+# 同步回滚（2026-10-31 维护者裁定）。近似/批注写法放 comment，数值列只写数字。
+# flux_density 另按必填处理（空值与非数值都算错误，见 check_lc）。
+LC_NUM_COLS = ('time', 'time_err', 'mjd', 'flux_density', 'flux_density_err',
+               'mag_Gextcor', 'mag_Gextcor_err', 'flux_density_Gextcor',
+               'flux_density_Gextcor_err', 'Gext_Alambda', 'weights')
+LC_NUM_COL_IDX = tuple((c, LC_HEADER.index(c)) for c in LC_NUM_COLS)
 
 # audit/leads/：多目标文献线索卡（人工维护，不参与审核状态机；契约见 audit/leads/README.md）
 LEADS_DIR = os.path.join(ROOT, 'audit', 'leads')
@@ -263,9 +271,13 @@ def check_lc(path, band_keys, t0_by_id=None):
     n_bad_width = n_bad_time = n_empty_band = n_bad_band = 0
     n_mjd_drift = 0
     n_empty_flux = 0
+    n_bad_flux_val = 0
+    n_bad_num = 0
     mjd_drift_ex = []
     bad_band_ex = []
     empty_flux_ex = []
+    bad_flux_val_ex = []
+    bad_num_ex = []
     for i, row in enumerate(rows[1:], start=2):
         if len(row) != len(LC_HEADER):
             n_bad_width += 1
@@ -299,6 +311,23 @@ def check_lc(path, band_keys, t0_by_id=None):
             if len(empty_flux_ex) < 3:
                 empty_flux_ex.append(f'行{i}(band={row[BAND_COL].strip() or "空"}, '
                                      f'telescope={row[LC_HEADER.index("telescope")].strip() or "空"})')
+        # 数值列必须能被 float() 解析（2026-10-31 维护者裁定）：空值放行（非必填列
+        # 允许留空），但写了内容就必须是纯数字，否则 ETL 写库时报错并让整批同步回滚
+        for col, ci in LC_NUM_COL_IDX:
+            v = row[ci].strip()
+            if not v or col == 'time':      # time 的数值性已在上面单独检查（警告级）
+                continue
+            try:
+                float(v)
+            except ValueError:
+                if col == 'flux_density':
+                    n_bad_flux_val += 1
+                    if len(bad_flux_val_ex) < 3:
+                        bad_flux_val_ex.append(f'行{i}(flux_density={v!r})')
+                else:
+                    n_bad_num += 1
+                    if len(bad_num_ex) < 3:
+                        bad_num_ex.append(f'行{i}({col}={v!r})')
         # band 两条车道（SCHEMA.md §3.1）；filters.json 不可用时只判频率/能量串车道
         b = row[BAND_COL].strip()
         if not b:
@@ -315,6 +344,15 @@ def check_lc(path, band_keys, t0_by_id=None):
         err(f'{name}: {n_empty_flux} 行 flux_density 为空 —— 每行都必须带量值（上限行的限度、'
             f'探测行的测量值），只写在 comment 里不算（《数据审核提示词》§3.3 / §8）'
             f'｜示例：' + '；'.join(empty_flux_ex))
+    if n_bad_flux_val:
+        err(f'{name}: {n_bad_flux_val} 行 flux_density 不是数值 —— 库侧 '
+            f'lightcurves.flux_density 是 NOT NULL 数值列，`~15`/`>21`/`15±0.2` 这类原文'
+            f'写法会让 ETL 写库时报错并使整批同步回滚；数值列只写数字，近似/上限语义写进 '
+            f'comment 与 upperlimit（《数据审核提示词》§3.3）｜示例：' + '；'.join(bad_flux_val_ex))
+    if n_bad_num:
+        warn(f'{name}: {n_bad_num} 行数值列写了非数字 —— 其余数值列（time_err、mjd、误差列、'
+             f'Gext_* 派生列、weights）在库内同样是数值型，写了内容就必须是纯数字，'
+             f'留空请直接置空（SCHEMA.md §3）｜示例：' + '；'.join(bad_num_ex))
     if n_empty_band:
         err(f'{name}: {n_empty_band} 行 band 为空（SCHEMA.md §3 band 为必填）')
     if n_bad_band:

@@ -106,7 +106,7 @@
 | `time_unit` | str | 是 | `s`/`sec`、`m`/`min`、`h`/`hour`、`d`/`day` |
 | `mjd` | float | 否 | 权威绝对时间（T0 + time 换算；T0 为空时为空）；**换算时计算并保留 7 位小数**（见 §1 顶部说明）；若直接来自来源则按来源精度写 |
 | `band` | str | 是 | 波段标识，见 §3.1（`filters.json` 键，或频率 / 能量串） |
-| `flux_density` | float | 是 | 原始流量密度值（或星等值）。**2026-10-29 起由 `validate.py` 以 ERROR 强制**：上限行的限度、探测行的测量值都必须写进本列，数值只写在 `comment` 里同样算违规 |
+| `flux_density` | float | 是 | 原始流量密度值（或星等值）。**2026-10-29 起由 `validate.py` 以 ERROR 强制**：上限行的限度、探测行的测量值都必须写进本列，数值只写在 `comment` 里同样算违规；**2026-10-31 起同时强制「必须是纯数字」**：`~15`、`>21`、`15±0.2` 这类原文写法会让 ETL 写库时报错并使整批同步回滚，近似/上限语义写进 `comment` 与 `upperlimit` |
 | `flux_density_err` | float | 否 | 原始误差（1σ） |
 | `flux_density_unit` | str | 是 | `mJy`、`uJy`、`cgs`(erg/cm²/s/Hz)、`magnitude` |
 | `mag_system` | str | 条件必填 | `AB`/`Vega`；`flux_density_unit=magnitude` 时必填；**原文未声明星等系统时留空**并在 `comment` 注明（惯例可推定时须写明推定依据）。2026-10-12 修订 |
@@ -125,6 +125,13 @@
 | `reference` | str | 否 | 文献引用或数据源 |
 | `comment` | str | 否 | 备注 |
 | `source` | str | 否 | 录入来源（账户名 / 管线标识） |
+
+**数值列解析（2026-10-31 起由 `validate.py` 逐行检查）**：`time`、`time_err`、`mjd`、
+`flux_density`、`flux_density_err`、`mag_Gextcor`、`mag_Gextcor_err`、
+`flux_density_Gextcor`、`flux_density_Gextcor_err`、`Gext_Alambda`、`weights` 在库内都是
+数值型列，非空时必须能被 `float()` 解析：`flux_density` 违规记 **ERROR**（ETL 阻断，
+见上表），其余列记 **WARN**。空值放行（`time_err`、`weights`、派生列等非必填列允许留空），
+但**写了内容就必须是纯数字**——`weights=n` 这类串列错位会在这里直接报 WARN（`flux_density_Gextcor_unit` 是字符串列，本检查兜不住，仍需按 `mJy`/空 的值域人工核）。
 
 ### 3.1 `band` 两条车道
 
