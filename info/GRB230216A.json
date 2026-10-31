@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB230216A",
-  "alias": [],
+  "alias": [
+    "BAT 1154815"
+  ],
   "ra": 113.95924,
   "dec": -8.0116,
   "T0": "2023-02-16T14:48:34.830740Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 33328（Swift/BAT 触发 2023-02-16 14:48:34 UT，trigger 1154815）；亚秒 .830740 取自 Swift/BAT 官方目录快照（external/swift_bat，trigger 1154815）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 33328",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核记录（Rusty-Harpoon@zcode，2026-10-31）。身份：Swift/BAT 触发 1154815（GCN 33328，2023-02-16 14:48:34 UT），BAT 精化分析 GCN 33336（T90=91.20±7.31 s，15–350 keV），XRT/UVOT 位置一致，mpe_greiner 快照记 OT=y，确证。定位：ra/dec=113.95924,−8.0116 取 GCN 33328 XRT 增强位置（1.9″，90% containment，原文给出置信水平，pos_error_confidence=90）；GCN 33331 另给天测改正位置 113.95906,−8.01133（2.3″，90%），并列备查；pos_ref 维持 33328（原 ra/dec 与 pos_error/pos_ref 组合自洽，未动）。T0：秒级 14:48:34 见 GCN 33328；亚秒 .830740 取自 external/swift_bat 快照（trigger 1154815），与原 meta_trigger 值相同，本次改 t0_basis=swift_bat_catalog（原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，值核实一致仅改依据记载）；GCN 33332 MASTER 由 18:14:07 UT − 12332 s 反推 T0≈14:48:35 UT，秒级互证。t90=91.2±7.539 s（Swift/BAT 目录 external/swift_bat，15–350 keV）→ 按目录 t90 判 lgrb；GCN 33336 给 T90=91.20±7.31 s（15–350 keV），两值一致。alias：BAT 1154815（Swift/BAT 官方目录 name_alt，trigger 1154815）。红移：未测；GCN 33328 载 XRT 位置 3.8″ 处有星系 WISEA J073550.15-080045.2，仅候选宿主且无红移，不建立 host_galaxy。测光检索留证（2026-10-31）：仓内 gcn/archive 全文按源名/触发号 1154815 检索命中 10 篇（33328/33329/33330/33331/33332/33335/33336/33340/33369/33373），逐篇读 body，含光学测光/上限 7 篇（UVOT 33328 与 33369、Zadko 33329、AKO 33330、MASTER 33332、C-GFT 33340、AZT-33IK 33373），33331/33335/33336 仅 X 射线/能谱参数；external/rssgrbag 0 行、grbsn_webtool 无此事件、swift_bat/swiftgrbba/uvot_grb/mpe_greiner 仅目录参数；GCN 站（gcn.nasa.gov）检索同样 10 篇、与仓内一致；ADS/SciX 检索（abs/title \"GRB 230216A\" 与触发号 1154815，2026-10-31）命中 10 条均为 GCN 通告、无研究论文，citations(GCN 33328/33369)=0；TNS 不适用（无光学暂现体编号）。共补 11 行（GCN 33369 UVOT 九行 + GCN 33332 MASTER 两行）。lc 处置：逐行重核 6 行（UVOT white 改窗口中点并改 band w→uvot-white、Zadko 改窗中点、AZT-33IK 两行改 t-T0(mid) 历元、AKO 改 JD(mid) 历元、C-GFT 复核保持观测起点并补注）；本源无 X 射线行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2023-02-16T14:48:34.830740Z：秒级 14:48:34 见 GCN 33328，亚秒取自 Swift/BAT 官方目录（trigger 1154815）",
+    "t0_basis": "swift_bat_catalog_trigger_1154815",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
