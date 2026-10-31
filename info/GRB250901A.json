@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB250901A",
-  "alias": [],
+  "alias": [
+    "sb25090101"
+  ],
   "ra": 356.18453,
   "dec": -15.74171,
-  "T0": "2025-09-01T18:14:22Z",
-  "T0_ref": null,
+  "T0": "2025-09-01T18:14:22.916Z",
+  "T0_ref": "GCN 41726（SVOM/ECLAIRs 精化分析：T0=2025-09-01T18:14:22.916）；GCN 41634（触发通告，2025-09-01T18:14:22 UTC，整数秒一致，亚秒取触发仪器值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 3.9,
-  "pos_ref": "GCN 41645",
+  "pos_error": 0.5,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 41646",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode（2026-10-31）。【T0】原值 2025-09-01T18:14:22Z（整秒）：GCN 41634 触发通告原文「At 2025-09-01T18:14:22 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 250901A (SVOM burst-id sb25090101)」；GCN 41726（ECLAIRs 精化分析）给 T0=2025-09-01T18:14:22.916，整数秒一致、亚秒取触发仪器值（§3.2/§3.8），T0 改为 2025-09-01T18:14:22.916Z，不写 T0_offset；lc 全表 time/mjd 已按新 T0 重锚（原 GCN 表以整秒 T0 为历元）。【Trigger_Instrument】由 SVOM 改为 SVOM/ECLAIRs（GCN 41634 原文明示 ECLAIRs 触发；库内 SVOM 源惯例写具体触发仪器）。【定位】坐标为 SVOM/VT 光学余辉位置 RA,Dec=356.18453,−15.74171（GCN 41646，误差约 0.5″，原文未标注置信水平故 pos_error_confidence 留空）；原库坐标即该值但 pos_ref 误标 GCN 41645、pos_error=3.9″，已改 pos_ref=GCN 41646、pos_error=0.5″。其他定位并列备查：Swift/XRT 356.1837,−15.7410（3.9″ 半径，90% C.L.，GCN 41645）；EP-FXT 356.1845,−15.7418（10″ 半径，90% C.L.，GCN 41650，与 XRT 差 4.0″）；SVOM/MXT 356.1835,−15.7952（194″ 半径含系统差，90% C.L.，GCN 41634）；ECLAIRs 星上 356.0950,−15.6712（7.61′ 半径、含 2′ 系统差，90% C.L.，GCN 41634）。【sub_tag】t90=16(+1/−3) s（GCN 41726，SVOM/ECLAIRs 4–120 keV 精化分析，68% C.L.）；GRM 光变 T90≈17 s（GCN 41634）；按通告 t90 判 lgrb。【alias】sb25090101（GCN 41634/41726 原文用名，SVOM burst-id）。【红移】无测量值；GCN 41646 由 VT_B−VT_R≈2.0 mag 颜色提示可能为中等红移 GRB（Wang et al. 2020, RAA），仅备查。【测光检索（2026-10-31）】仓内 gcn/archive 45 947 篇全文检索「250901A / sb25090101 / SVOM_FIELD00033 / 03000066」命中 8 篇（GCN 41634/41642/41645/41646/41649/41650/41661/41726，已逐篇读 body；快照覆盖至 GCN 46068、2026-10-29）；external/rssgrbag 0 命中、external/grbsn_webtool 无该事件；ADS/SciX 题录与全文检索「GRB 250901A / sb25090101 / SVOM_FIELD00033」命中 8 篇，与仓内同集、全部为 GCN 通告、无研究论文 → 结论：该暴全部通告已逐篇核对，光学测光共 5 行（原 4 行逐行回核并按精化 T0 重锚 + 新增 Swift/UVOT u 波段 3σ 上限 1 行，GCN 41661）；Swift/XRT 与 EP-FXT 的测光为 X 射线数据，不在审核范围、未入库。bot 原时间基准说明留档：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
