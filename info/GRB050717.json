@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB050717",
-  "alias": [],
-  "ra": 214.348,
-  "dec": -50.541,
-  "T0": "2005-07-17T10:30:52Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 050717",
+    "Swift 146372",
+    "BAT 146372"
+  ],
+  "ra": 214.351875,
+  "dec": -50.533444,
+  "T0": "2005-07-17T10:30:52.210Z",
+  "T0_ref": "GCN 3633（Swift/BAT 触发 10:30:52.21 UT）；Krimm+2006 §2.1 同值并明确「hereafter designated T0」",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,14 +16,22 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 3633",
+  "pos_error": 1.5,
+  "pos_ref": "Evans+2009 (MNRAS 397, 1177) Table 5 enhanced XRT position（arXiv:0812.3662；与仓内 HEASARC swiftgrbba 快照 xrt_ra/xrt_dec/xrt_error_radius 一致）",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份互证：Swift/BAT trigger #146372（GCN 3633）、BAT 精化位置 (214.352,-50.541)（GCN 3637）、Konus-Wind 触发 10:30:57.426 UT（GCN 3640，传播时延后与 BAT 触发自洽）；2005-07-17 当天无其他 GRB 建档，与 GRB050717A 等相近 ID 无涉（库内不存在该 ID）。T0 亚秒精化：GCN 3633/Krimm+2006 §2.1 触发 10:30:52.21 UT；Swift/BAT 官方目录快照 trigger_time=10:30:52.293760Z（HEASARC swift_bat，差 83.76 ms，按提示词 §3.8 优先级取 GCN，备查）。定位：ra/dec 取 Evans+2009 Table 5 增强 XRT 位置 14:17:24.45 −50:32:00.4（90% 置信半径 1.5″），换算十进制；原 ra=214.348/dec=-50.541（pos_ref GCN 3633）与 GCN 3633 机载位置 (214.332,-50.539) 亦不符，疑导入失真，弃用。sub_tag：t90=85.0±18.9 s（Swift/BAT 目录，15-350 keV，HEASARC swift_bat 快照），按目录 t90 判 lgrb；Krimm+2006 分类 classical long GRB 同向。alias 出处：GRB 050717（GCN 3633 等通告原文用名）、Swift 146372（HEASARC SWIFTGRB name_alt）、BAT 146372（Swift/BAT GRB Catalog name_alt）。测光检索（2026-11-01）：仓内 gcn/archive 45947 篇全文命中 10 篇（3633/3634/3636/3637/3638/3639/3640/3642/3643/3652，其中 4 篇含光学/NIR 数值），external/rssgrbag 0 行、external/grbsn_webtool 无该事件；ADS 检索「GRB 050717」命中 12 条（8 条即上述 GCN + Krimm+2006 ApJ 648,1117 及其 AIPC/arXiv 版 + Rossi+2008 会议文，后者无数值表）；GCN 3642 Tenagra 未给具体限量数值不入库、GCN 3643 LDSS-3 I 波段无数值；本 PR 补 8 行上限（GCN 3638 六行 + GCN 3652 两行），WIRC 4 行观测日期依 GCN 3643 更正、3 个视场源行置 discard",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-01"
+    },
     "catalog_data": {
       "uvot_grb": {
         "other": {
@@ -260,6 +272,13 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2006ApJ...648.1117K",
       "bibtex": "@ARTICLE{2006ApJ...648.1117K,\n       author = {{Krimm}, H.~A. and {Hurkett}, C. and {Pal'shin}, V. and {Norris}, J.~P. and {Zhang}, B. and {Barthelmy}, S.~D. and {Burrows}, D.~N. and {Gehrels}, N. and {Golenetskii}, S. and {Osborne}, J.~P. and {Parsons}, A.~M. and {Perri}, M. and {Willingale}, R.},\n        title = \"{GRB 050717: A Long, Short-Lag, High-Peak Energy Burst Observed by Swift and Konus}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts},\n         year = 2006,\n        month = sep,\n       volume = {648},\n       number = {2},\n        pages = {1117-1124},\n          doi = {10.1086/506009},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006ApJ...648.1117K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Evans+2009",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "bibtex": "@ARTICLE{2009MNRAS.397.1177E,\n       author = {{Evans}, P.~A. and {Beardmore}, A.~P. and {Page}, K.~L. and {Osborne}, J.~P. and {O'Brien}, P.~T. and {Willingale}, R. and others},\n        title = \"{Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs}\",\n      journal = {\\mnras},\n         year = 2009,\n       volume = {397},\n        pages = {1177},\n          doi = {10.1111/j.1365-2966.2009.14913.x},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2009MNRAS.397.1177E}\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
