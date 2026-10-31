@@ -1,27 +1,43 @@
 {
   "transient_id": "GRB210120A",
-  "alias": [],
+  "alias": [
+    "GRB210120299",
+    "bn210120299",
+    "GRB 210120.299",
+    "MASTER OT J105242.66+152355.0",
+    "AT2021axc"
+  ],
   "ra": 163.5,
   "dec": 17.0,
-  "T0": "2021-01-20T07:10:44Z",
-  "T0_ref": null,
+  "T0": "2021-01-20T07:10:44.704302Z",
+  "T0_ref": "GCN 29334（Fermi GBM Team，触发仪器官方通告）：At 07:10:44 UT on 20 Jan 2021, triggered and located GRB 210120A (trigger 632819449.704302 / 210120299)，亚秒 .704302 取自 MET 触发号小数部分；GCN 29361（GBM 终报）亦报 07:10:44.70 UT；仓内 FERMIGBRST 快照（external/fermi_gbm bn210120299 行）trigger_time=2021-01-20T07:10:44.704Z 交叉一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 10080.0,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "GCN 29335（BALROG/MPE 对 trigdat 632819449 自动拟合）：RA=163.5±2.8 deg, Dec=17.0±2.2 deg（1σ 统计，半径取分量最大者 2.8 deg=10080″），另报系统误差 1 deg；GBM 团队 GCN 29334 on-ground 统计误差 3.8 deg 同域；MASTER OT J105242.66+152355.0（GCN 29339，163.17775/+15.39861 deg）在误差椭圆内，且与仓内 FERMIGBRST 目录位（163.178/15.399 deg）一致",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "通告集甄别（2026-10-28，仓内 GCN 全文库逐篇实核）：本暴通告共 8 篇——GCN 29334（Fermi GBM Final Real-time Localization）、29335（BALROG）、29336（MASTER-Net 巡天报告，8 条上限表）、29338（GECAM-B 首例在飞触发+北斗短报文下传，GECAM 触发 2021-01-20T07:10:48.550，原文自引 Fermi GCN 29334/29335，确属本暴）、29339（MASTER OT 发现=MASTER OT J105242.66+152355.0 / AT2021axc）、29341（AZT-33IK R=22.14±0.27 确认衰减）、29345（1.3m DFOT R=22.60±0.16）、29361（GBM 终报）。近邻防污染：GCN 29337 属 GRB 210104A（3.6m DOT），29340/29342 属 GRB 210116/A，29343/29344 属 ZTF20/21aaeyldq，29346-29349 与 29358 属 GRB 210121A，29350/29355/29357 属 GRB 210124B 相关，均非本暴；无 Swift/AGILE 通告（subject+body 全扫 29300-29700 区间）。T0 口径：Fermi GBM 触发 632819449.704302 → 2021-01-20T07:10:44.704302Z；GECAM-B 触发 07:10:48.550 系该星自身在飞触发时延（双触发同暴以触发仪器 Fermi 为准），不记 T0_offset；MASTER 起始观测 07:13:07 UT（T0+143 s）为观测窗口起点，不入 T0。sub_tag：t90=22.2047±1.86374 s（仓内 FERMIGBRST 快照 external/fermi_gbm bn210120299 行，50-300 keV；GCN 29361 亦报 T90≈22.2 s），按目录 t90 判 lgrb。测光 11 行入库：GCN 29336 表 8 条上限（time=Tmid-T0、time_err=Expt/2，显式端点自洽抽查 ±1 s 内）+GCN 29339 发现图像 m_OT=18.6 探测 1 行（同窗 07:20:30/120 s，锚定 29336 表）+GCN 29341 AZT-33IK R=22.14±0.27（作者自报 t-T0(mid)=0.59510 d）+GCN 29345 DFOT R=22.60±0.16（作者自报堆叠中心 1.5937 d；bot 原行 time=135671 s 系误用堆叠起点 20:51:55 UT 当测点时刻，已改正，起点+半曝光与自报中心差 674.6 s 留档备查）。MASTER 无滤光片→band=G；USNO-B1.0 定标、原文未声明星等系统→mag_system 留空；DFOT 原文明示未做银消改正。笔误留档：GCN 29341 末句 'GRB 210112A' 系笔误（标题/正文均指本暴同一 OT）。alias 出处：GRB210120299＝GCN 29335 原文用名（BALROG 通告标题原文 'Fermi Trigger 632819449 / GRB 210120299'）；GRB 210120.299 与 bn210120299＝FERMIGBRST 目录 name_alt（仓内 external/fermi_gbm 快照；GCN 29361 原文用名写作 210120.299）；MASTER OT J105242.66+152355.0 与 AT2021axc＝GCN 29339 原文用名。文献检索（2026-10-28，Web 检索+MPE Greiner 表 grb210120A）：未见本暴专门研究论文，articles[] 留空。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-10-28"
+    }
   },
   "articles": [],
   "host_galaxy": null
