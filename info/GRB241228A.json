@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB241228A",
-  "alias": [],
-  "ra": 344.80173,
-  "dec": 18.61005,
-  "T0": "2024-12-28T03:57:10Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB241228165",
+    "BAT 1277277"
+  ],
+  "ra": 344.80186,
+  "dec": 18.61065,
+  "T0": "2024-12-28T03:57:15.160580Z",
+  "T0_ref": "GCN 38681（Swift-BAT 触发 2024-12-28 03:57:15 UT）；亚秒 .160580 取自 Swift/BAT 官方目录快照（external/swift_bat，trigger 1277277），整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 38681",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.3,
+  "pos_ref": "GCN 38683",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核记录（Rusty-Harpoon@zcode，2026-10-31）。身份：Swift/BAT 触发 1277277（GCN 38681，2024-12-28 03:57:15 UT），Fermi/GBM 同测（GCN 38695，03:57:10.17 UT，trigger 757051035/241228165），Konus-Wind 同测（GCN 38727，03:57:13.924 UT），XRT 位置互证，确证为同一事件；GRB 241228B（Fermi 触发 2024-12-28 04:13:05 UT，GCN 38682）为同日另一事件，与本源无关——原 lc 中 Mondy AZT-33IK 探测行（GCN 38709）实属 241228B，已迁出至 lc/GRB241228B.csv（见 PR 待决事项）。定位：ra/dec 取 GCN 38683 XRT 增强位置 344.80186,+18.61065（2.3″，90% 置信，原文给出置信水平）；原 ra/dec=344.80173,18.61005（1.9″，90%）为 GCN 38681 快报增强位置，已并列备查；BAT 地面定位 344.810,18.608（1.0′，90%，GCN 38701）。T0：秒级 03:57:15 见 GCN 38681；亚秒 .160580 取自 external/swift_bat 快照（trigger 1277277，Trig_time_UTC=2024-12-28T03:57:15.160580）；本次改 t0_basis=swift_bat_catalog（原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，原 T0=2024-12-28T03:57:10Z 与 GBM 触发时刻 03:57:10.17 一致，按触发仪器 Swift 优先改取 BAT 触发时刻，整表 mjd 已随新 T0 重算）。t90=8.068±0.533 s（Swift/BAT 官方目录，15–350 keV）→ 按目录 t90 判 lgrb；GCN 38701 给 T90=8.06±0.53 s（15–350 keV）、GCN 38695 给 Fermi/GBM T90≈8.3 s（50–300 keV），三值一致。alias：GRB241228165（GCN 38695 原文用名 trigger 757051035/241228165，FERMIGBRST 目录用名 GRB241228165）、BAT 1277277（Swift/BAT 官方目录 name_alt）。测光检索留证（2026-10-31）：仓内 gcn/archive 全文（45947 篇，覆盖至 GCN 46068）按源名检索命中 14 篇（38681/38683/38685/38686/38689/38693/38695/38701/38703/38709/38727/38730/38815/39684；含光学数值 8 篇：UVOT 38681/38685、GIT 38689、MASTER 38693、NOT 38703、Mondy 38709、DFOT 38815、VIRT 39684），另 GRB 241228B 通告 18 篇仅用于身份鉴别；external/rssgrbag 0 行、grbsn_webtool 无此事件、swift_bat/fermi_gbm/mpe_greiner 等仅目录参数；ADS 检索 \"GRB 241228A\" 命中 13 条（全为 GCN）、abs:\"241228\" 0 条、full:\"241228A\" 唯一非 GCN 命中 2026ApJ..1008..181X（Xin+2026，Swift/XRT jet-break 样本，本暴仅 X 射线拟合与光变图，无光学测光，不入库）；TNS 不适用（GRB 类）。lc 处置：原 7 行逐行回核——UVOT 行（GCN 38681 typical ~19.6）与 GCN 38685 white_FC 同一次白光 FC 曝光，以 38685 精化值替换并扩为 UVOT 7 行（含 v/b/u/w1 新增）；GIT/NOT/DFOT/VIRT 5 行按新 T0 重算并改窗口中点口径；新增 MASTER-SAAO 8 行上限（GCN 38693，Filter C=clear→band G）；Mondy 行迁出。本源 lc 无 X 射线行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2024-12-28T03:57:15.160580Z：秒级 03:57:15 见 GCN 38681，亚秒取自 Swift/BAT 官方目录（trigger 1277277）",
+    "t0_basis": "swift_bat_catalog_trigger_1277277",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
+    }
   },
   "articles": [],
   "host_galaxy": null
