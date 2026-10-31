@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB080906A",
-  "alias": [],
-  "ra": 227.891667,
-  "dec": -80.483333,
-  "T0": "2008-09-06T13:33:16Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080906",
+    "BAT 323984",
+    "Swift 323984"
+  ],
+  "ra": 228.04211,
+  "dec": -80.51787,
+  "T0": "2008-09-06T13:33:16.347220Z",
+  "T0_ref": "GCN 8186（Swift/BAT 触发 2008-09-06 13:33:16 UT，整秒）；亚秒 .347220 取自 Swift/BAT 官方目录快照（external/swift_bat，trigger 323984），按 §3.2 触发仪器亚秒优先；Konus 目录快照 13:33:16.347Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 2.1,
+  "redshift": 2.13,
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 8186",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.8,
+  "pos_ref": "GCN 8197（XRT 星表平差位置，1.8 arcsec，90%）",
+  "redshift_type": "phot",
+  "redshift_ref": "Kruehler+2011（A&A 526, A153，DOI 10.1051/0004-6361/201015327）测光红移 z_phot=2.13(+0.14/-0.20)",
+  "comment": "审核（Rusty-Harpoon@zcode，2026-10-31）。身份：Swift/BAT 触发 323984（GCN 8186 原文 trigger=323984；本源各目录快照一致）；GCN 8214 的 GRB 080906B 为 Fermi/GBM 另一独立事件（RA 185.5, Dec -8.6，本源无关，未合并）。位置备查：BAT 在轨 227.890 -80.486（3′，90%，GCN 8186）、BAT 地面 228.055 -80.540（1.7′，90%，GCN 8196）、UVOT 精化 15:12:10.65 -80:31:03.2（0.64″，90%，GCN 8198）。红移：Krühler+2011 测光红移 z=2.13(+0.14/-0.20)（由 uvw1 非探测驱动）；MPE Greiner 表 2.1(z_flag=ph)、GCN 8198 「z<2.6（约）」一致；各目录快照引用的「GCN 8212 refined Swift/UVOT photometric redshift (Holland)」在官方 GCN 库无对应通告——官方 GCN 8212 为 SGR J0501+4516 射电脉冲星搜索（Hessels et al.），系 ADS bibcode 2008GCN..8212....1H 与官方编号错位，Krühler+2011 亦引该通告并称其值与本文一致，故红移以 Krühler+2011（VoR 级）为准。sub_tag=lgrb：t90=148.212±19.6103 s（Swift/BAT 官方目录，15-350 keV；GCN 8196 给 147±21 s 一致），按目录 t90 判 lgrb。测光检索（2026-10-31）：仓内 gcn/archive 7 篇命中（8186/8194/8196/8197/8198/8216 为本源，8214 为 080906B）；external/rssgrbag、grbsn_webtool 无本源记录；ADS abs:\"080906\" 10 命中、full:\"GRB 080906\" 6 命中（除 GCN 与 Krühler+2011 外为 4 篇样本/统计类论文，无该暴测光表）→ 补 Krühler+2011 GROND 7 行 + UVOT 6 行（Tab.3/Tab.4）、GCN 8198 v/b/u 检出 3 行 + uvw1/uvm2/uvw2 2σ 上限 3 行；GCN 8186 白光行（band 误记 Pan-STARRS w）按 GCN 8198 精化值改写为 uvot-white；UVOT 目录行 40 行对 MAST UVOTGRB NOC 库（hlsp_uvotgrb_swift_uvot_all_multi_v1_noc-db.fits）逐值核对 40/40 一致并补 time_err（窗口半宽）；GROND（Dainotti2024;8194）7 行与 Watcher（Dainotti2024;8216）2 行确证为 GCN 8194/8216 同一测量的转写重复（数值一致），已删。X 射线行 244 行（band=10keV）零改动；因 T0 亚秒精化 +0.347220 s，X 射线行 mjd 需维护者按 mjd=T0+time 重算（2026-10-31 裁定口径）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -528,14 +532,19 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-10-31"
     }
   },
   "articles": [
     {
       "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {{Dainotti}, M.~G. and {De Simone}, B. and {Mohideen Malik}, R.~F. and {Pasumarti}, V. and {Levine}, D. and {Saha}, N. and {Gendre}, B. and {Kido}, D. and {Watson}, A.~M. and {Becerra}, R.~L. and {Belkin}, S. and {Desai}, S. and {Pedreira do E.~S.}, A.~C.~C. and {Das}, U. and {Li}, L. and {Oates}, S.~R. and {Cenko}, S.~B. and {Pozanenko}, A. and {Volnova}, A. and {Hu}, Y.-D. and {Castro-Tirado}, A.~J. and {Orange}, N.~B. and {Moriya}, T.~J. and {Fraija}, N. and {Niino}, Y. and {Rinaldi}, E. and {Butler}, N.~R. and {Gonz{\\'a}lez}, J. d. J.~G. and {Kutyrev}, A.~S. and {Lee}, W.~H. and {Prochaska}, X. and {Ramirez-Ruiz}, E. and {Richer}, M. and {Siegel}, M.~H. and {Misra}, K. and {Rossi}, A. and {Lopresti}, C. and {Quadri}, U. and {Strabla}, L. and {Ruocco}, N. and {Leonini}, S. and {Conti}, M. and {Rosi}, P. and {Ramirez}, L.~M.~T. and {Zola}, S. and {Jindal}, I. and {Kumar}, R. and {Chan}, L. and {Fuentes}, M. and {Lambiase}, G. and {Kalinowski}, K.~K. and {Jamal}, W.},\n        title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n      journal = {MNRAS},\n     keywords = {Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Cosmology and Nongalactic Astrophysics},\n         year = 2024,\n        month = oct,\n       volume = {533},\n       number = {4},\n        pages = {4023-4043},\n          doi = {10.1093/mnras/stae1484},\narchivePrefix = {arXiv},\n       eprint = {2405.02263},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}\n",
       "source": "bot"
     },
     {
@@ -551,7 +560,22 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract",
       "bibtex": "@ARTICLE{2024A&A...690A.261G,\n       author = {C. Guidorzi and R. Maccary and A. Tsvetkova and S. Kobayashi and L. Amati and L. Bazzanini and M. Bulla and A. E. Camisasca and L. Ferro and D. Frederiks and F. Frontera and A. Lysenko and M. Maistrello and A. Ridnaia and D. Svinkin and M. Ulanov},\n       title = {New results on the gamma-ray burst variability-luminosity relation},\n       journal = {A&A, 690, A261 (2024)},\n       year = {2024},\n       doi = {10.1051/0004-6361/202451401},\n       eprint = {2409.01644},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Kruehler+2011",
+      "title": "Photometric redshifts for gamma-ray burst afterglows from GROND and Swift/UVOT",
+      "url": "https://doi.org/10.1051/0004-6361/201015327",
+      "bibtex": "@ARTICLE{2011A&A...526A.153K,\n       author = {{Kr{\\\"u}hler}, T. and {Schady}, P. and {Greiner}, J. and {Afonso}, P. and {Bottacini}, E. and {Clemens}, C. and {Filgas}, R. and {Klose}, S. and {Koch}, T.~S. and {K{\\\"u}pc{\\\"u}-Yolda{\\textcommabelow s}}, A. and {Oates}, S.~R. and {Olivares E.}, F. and {Page}, M.~J. and {McBreen}, S. and {Nardini}, M. and {Nicuesa Guelbenzu}, A. and {Rau}, A. and {Roming}, P.~W.~A. and {Rossi}, A. and {Updike}, A. and {Yolda{\\textcommabelow s}}, A.},\n        title = \"{Photometric redshifts for gamma-ray burst afterglows from GROND and Swift/UVOT}\",\n      journal = {A&A},\n     keywords = {gamma rays bursts: general, techniques: photometric, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2011,\n        month = feb,\n       volume = {526},\n          eid = {A153},\n        pages = {A153},\n          doi = {10.1051/0004-6361/201015327},\narchivePrefix = {arXiv},\n       eprint = {1011.1205},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011A&A...526A.153K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}\n",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "bibtex": "@ARTICLE{2017ApJS..228...13R,\n       author = {{Roming}, Peter W.~A. and {Koch}, T. Scott and {Oates}, Samantha R. and {Porterfield}, Blair L. and {Bayless}, Amanda J. and {Breeveld}, Alice A. and {Gronwall}, Caryl and {Kuin}, N.~P.~M. and {Page}, Mat J. and {de Pasquale}, Massimiliano and {Siegel}, Michael H. and {Swenson}, Craig A. and {Tobler}, Jennifer M.},\n        title = \"{A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution}\",\n      journal = {ApJS},\n     keywords = {catalogs, gamma-ray burst: general, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2017,\n        month = feb,\n       volume = {228},\n       number = {2},\n          eid = {13},\n        pages = {13},\n          doi = {10.3847/1538-4365/228/2/13},\narchivePrefix = {arXiv},\n       eprint = {1701.03713},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2017ApJS..228...13R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}\n",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
