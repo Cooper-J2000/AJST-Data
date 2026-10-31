@@ -1,0 +1,37 @@
+# 文献索引：Anderson+2018（AMI 15.7 GHz GRB 余辉目录，137 暴逐历元射电测光/上限）
+
+- paper_key: anderson2018
+- paper: Anderson+2018, MNRAS 473, 1512（DOI 10.1093/mnras/stx2407；arXiv:1709.06232。VoR 未通读：OUP 全站反爬 403，按 §3.3 第 3 级以 arXiv TeX 全文 + ADS 元数据三方交叉，已逐值读取 arXiv 源 tables_ami_cat_mnras.tex）
+- date: 2026-11-01
+- helper: Rusty-Harpoon@zcode
+- sources: GRB120305A, GRB120308A, GRB120311A, GRB120320A, GRB120324A, GRB120326A, GRB120404A, GRB120422A, GRB120514A, GRB120521C, GRB120711B, GRB120722A, GRB120724A, GRB120729A, GRB120802A, GRB120803B, GRB120805A, GRB120811C, GRB120816A, GRB120819A, GRB120907A, GRB120911A, GRB120923A, GRB120927A, GRB121001A, GRB121011A, GRB121017A, GRB121028A, GRB121031A, GRB121108A, GRB121125A, GRB121128A, GRB121202A, GRB121211A, GRB121212A, GRB130102A, GRB130122A, GRB130131A, GRB130131B, GRB130216A, GRB130327A, GRB130418A, GRB130420A, GRB130420B, GRB130427A, GRB130502A, GRB130505A, GRB130508A, GRB130511A, GRB130514A, GRB130521A, GRB130603A, GRB130603B, GRB130604A, GRB130606A, GRB130608A, GRB130609A, GRB130610A, GRB130612A, GRB130625A, GRB130701A, GRB130806A, GRB130829A, GRB130831A, GRB130907A, GRB130912A, GRB131002A, GRB131024B, GRB131127A, GRB131128A, GRB140103A, GRB140108A, GRB140114A, GRB140129B, GRB140206A, GRB140209A, GRB140211A, GRB140215A, GRB140304A, GRB140311B, GRB140318A, GRB140320B, GRB140419A, GRB140423A, GRB140428A, GRB140430A, GRB140502A, GRB140508A, GRB140515A, GRB140516A, GRB140518A, GRB140521A, GRB140606B, GRB140623A, GRB140629A, GRB140703A, GRB140709A, GRB140709B, GRB140710A, GRB140713A, GRB140801A, GRB140817A, GRB140824A, GRB140903A, GRB140907A, GRB140930B, GRB141005A, GRB141015A, GRB141020A, GRB141026A, GRB141031B, GRB141109B, GRB141121A, GRB141130A, GRB141212A, GRB141212B, GRB141220A, GRB141225A, GRB150110B, GRB150120A, GRB150211A, GRB150212A, GRB150213B, GRB150302A, GRB150309A, GRB150314A, GRB150317A, GRB150323A, GRB150323C, GRB150413A
+
+## 为什么是文献级卡
+
+AMI Large Array 15.7 GHz 对 137 个 Swift GRB 的逐历元射电观测目录（Table 1：探测/可能探测；Table 2：非探测/稳源/Concat，
+两表列义相同：Date / Start MJD（2 位小数）/ Integration (h) / Days post-burst / Peak Flux (mJy/beam，forced Gaussian fit) /
+Sig (σ_s) / RMS (mJy/beam)）。footnote g：Days 列括号值为响应时间（分钟，仅 ≤0.01 d 历元给）；footnote h：`*` = >4σ_s 且
+与 Swift 位置符合的探测，其余为 Swift 位置强制拟合值（1σ 误差含 5% 定标误差）。库内射电快照 rssgrbag（Chandra & Frail 2012）
+只覆盖到 2012 年，本目录对 2012–2016 的 Swift GRB 是**新的射电测光/上限来源**，共 130 个库内源有数据。
+
+## 涉及源一览
+
+GRB130701A 已由 PR #715 审核入库（7 行 15.7GHz 上限，band=15.7GHz）。其余 129 个源全部在 Table 2（非探测），
+表号统一 `tables_ami_cat_mnras.tex` Table 2（逐暴多行），判读同下——不逐源列表，接手者按源名在表中检索。
+
+| 源 | 表号 | 源级卡 | status | 增量判读 |
+|---|---|---|---|---|
+| GRB130701A | Table 2 | 无（本 PR 已审核） | extracted | AMI 7 历元非探测，forced-fit 值入库（PR #715） |
+| 其余 129 源 | Table 2 | 无 | mention-only（未提取） | 逐历元 15.7GHz forced-fit 值/上限，历元锚点 Start MJD（2 位小数）+ 积分时长；接手时按 §3.8 窗口约定换算 |
+
+## 增量门槛判读
+
+- 全部 130 源**过增量门槛**（第 1 条：库内 GCN/目录检索不到的 15.7 GHz 逐历元数值）；
+- 但均为单历元 forced-fit 值/上限（无谱指数可用性存疑、Sig<4σ），源级卡留给各源审核时按需建立，
+  本卡承载完整索引（130 源清单见 sources 键）。
+
+## 待决
+
+- 是否要求为 129 个未审源逐个建源级卡：建议不（会复制整张目录表，且接手者按源名检索成本低于维护 129 张卡）；
+- Concat 行（无单一历元锚点）建议不入库，仅逐历元行入库；
+- 目录含 7 个库外源（GRB120403A, GRB120913A, GRB130419A, GRB140305A, GRB140606A, GRB140607A, GRB150101A，多为本目录的拼写变体或库内以别名收录）：是否开 new-source Issue 由维护者裁定，本卡暂不写入 out_of_repo 键（该键要求逐源已开 Issue）。
