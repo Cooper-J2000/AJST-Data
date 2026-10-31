@@ -1,13 +1,15 @@
 {
   "transient_id": "GRB161202A",
-  "alias": [],
-  "ra": 356.9031,
-  "dec": 19.6477,
+  "alias": [
+    "GRB 161202A"
+  ],
+  "ra": 356.90269,
+  "dec": 19.64648,
   "T0": "2016-12-02T23:12:52.703120Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 20227（Swift/BAT 触发 23:12:52 UT）；触发仪器目录：external/swift_bat summary_general_info trigger 725036 Trig_time_UTC=2016-12-02T23:12:52.703120Z；Fermi-LAT GCN 20229 t0=23:12:52.7 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,17 +18,43 @@
   "pos_ref": "GCN 20228",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "pos_error_confidence": "90",
+  "comment": "身份：GRB 161202A = Swift/BAT trigger 725036（rate trigger，GCN 20227；external/swift_bat 快照 XRT_detection=Yes）。多设备互证：Fermi-LAT（GCN 20229，RA 356.95 Dec +19.49、误差 0.13° 90%，与 GCN 20228 XRT 位置相容；注意 Ajello+2019 即 2FLGC（ApJ 878, 52）§4.1.2 明确该暴未在目录标准分析中复认——低显著度、光子少，GCN 探测不撤回但置信度降级）、AstroSat CZTI（GCN 20235，主峰 23:11:50 UT 即 BAT 触发前 62 s，T90=75.25 s）、Konus-Wind（GCN 20238，T0=23:11:48.822 UT，早于 BAT 触发）、MPE Greiner 目录快照 obs_date=2016-12-02。T0：取触发仪器 Swift/BAT 目录值 2016-12-02T23:12:52.703120Z（亚秒以触发仪器为准；GCN 20227 只给 23:12:52 UT，不自行补/删亚秒），bot 原值即此，本次核验通过、原 t0_basis=meta_trigger 描述与目录一致。分类：lgrb 按目录 t90=79.78±15.60 s（Swift/BAT 目录，trigger 725036）判；旁证 CZTI T90=75.25 s（GCN 20235）、Konus-Wind 总持续约 181 s（GCN 20238）；XRR 按 Bi+2018（ApJ 866, 97，DOI 10.3847/1538-4357/aadcf8）表 2 分类（Swift/BAT 样本，数据取自 Lien+2016：T90=118.50 s、α_PL=-1.57±0.03、S(15-150 keV)=850.0±15.1×10⁻⁸ erg/cm²、Epeak_obs=142.6(+207.0/-21.9) keV；其 T90 与 swift_bat 快照 79.78 s 并列备查，均远大于 2 s，lgrb 判定不受影响）。定位：GCN 20228 enhanced XRT position RA=356.90269、Dec=+19.64648，误差 1.6″（radius，90% confidence）；bot 原值 ra=356.9031/dec=19.6477 实为 GCN 20227 的初版 enhanced 位置（误差 2.4″），与 pos_ref=GCN 20228 的 1.6″ 错配，已按 20228 改正；HEASARC swiftgrbba 快照的后续精化值 xrt_ra=356.90271/xrt_dec=19.64647/1.4″ 并列备查。BAT 地面定位 RA 356.904、Dec +19.652、1.0′（GCN 20233）在 XRT 误差内。红移：无实测红移报道；Deng+2023（ApJ 943, 126，DOI 10.3847/1538-4357/acaefd）表 2（arXiv v1 表号；VoR 未通读）给 z_est=3.09，系 L–T–E 关系 pseudo-redshift（估计值，非实测），不入 redshift。银消光：E(B-V)=0.09（Schlegel+1998，GCN 20227/20232）。测光检索（2026-10-31）：仓内 gcn/archive 命中 11 篇（GCN 20227–20235、20238、20318，即全部已知观测通告，含光学/近红外上限 3 篇）；external/rssgrbag 0 行、external/grbsn_webtool 无该事件（无 SN 关联）；arXiv API 元数据检索（\"GRB 161202A\"/\"161202A\" 等 4 种写法）0 命中；Crossref 题名检索 20 条、OpenAlex 11 条（其中 9 条为 GCN 题录）均无新测光文献；web 检索另得 4 篇相关文献并逐篇打开：Ajello+2019（2FLGC，无测光表）、Bi+2018（XRF/XRR 分类表，无测光）、Deng+2023（pseudo-z 表，无测光）、Dichiara+2017（PoS(ICRC2017)620，HAWC TeV 非探测，161202A 仅出现在样本列表）→ 文献侧无可用测光表，测光仍以 GCN 非探测上限为准；本轮补 2 行（UVOT white_FC、white），修订 16 行（中点/半宽口径、time_err、mjd 精度、星等系统标注）。",
   "sub_tag": [
-    "lgrb"
+    "lgrb",
+    "XRR"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-10-31"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Bi+2018",
+      "url": "https://doi.org/10.3847/1538-4357/aadcf8",
+      "title": "Statistical Study of the Swift X-Ray Flash and X-Ray Rich Gamma-Ray Bursts",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Deng+2023",
+      "url": "https://doi.org/10.3847/1538-4357/acaefd",
+      "title": "Pseudo-redshifts of Gamma-Ray Bursts Derived from the L-T-E Correlation",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
