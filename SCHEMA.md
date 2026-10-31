@@ -149,7 +149,11 @@
   **不得**互相归一化或合并。
 - X 射线行语义：能量串（如 `10keV`）表示 **10 keV 处的单色流量密度 Fν**，**不是**能段
   积分流量；单位由该行 `flux_density_unit` 给出（库内 Swift/XRT 的 `10keV` 行多为 `Jy`，
-  来源 UKSSDC Swift Burst Analyser）。
+  来源 UKSSDC Swift Burst Analyser）。**X 射线行同样必须满足 `mjd = T0 + time`**：导入时的
+  `mjd` 由 `T0_old + time` 算出，因此 `T0` 一经改正，该源的 X 射线 `mjd` 须按
+  `mjd = T0_new + time` 机械重算（2026-10-31 维护者裁定；只动 `mjd` 一列，`time`、
+  `flux_density`、`band`、`upperlimit`、`comment` 等一律不动）。`validate.py` 的
+  「mjd 与 T0+time 不自洽」警告对 X 射线行同样生效。
 - `tools/validate.py` 逐行检查 `band`：为空、或不在上述两条车道内 → **错误**（见 §5）。
 
 ## 4. `filters.json` / `tags.json`
