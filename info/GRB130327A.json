@@ -1,24 +1,29 @@
 {
   "transient_id": "GRB130327A",
-  "alias": [],
-  "ra": 91.984,
-  "dec": 55.732,
-  "T0": "2013-03-27T01:47:34Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 130327A"
+  ],
+  "ra": 92.03858,
+  "dec": 55.71475,
+  "T0": "2013-03-27T01:47:34.014540Z",
+  "T0_ref": "Swift/BAT GRB Catalog (Lien et al. 2016) Trig_time_UTC=2013-03-27T01:47:34.014540（仓内 external/swift_bat 快照 summary_general_info，Trig_ID 552063，取数 2026-07-21）；GCN 14331：'At 01:47:34 UT'（整秒一致，亚秒以触发仪器目录为准）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": null,
+  "redshift": 3.9,
   "tag": [
     "grb"
   ],
   "pos_error": 1.9,
   "pos_ref": "GCN 14335",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "redshift_type": "upperlimit",
+  "redshift_ref": "GCN 14342",
+  "comment": "Swift/BAT rate trigger（trigger=552063，2013-03-27T01:47:34 UT，GCN 14331）。T0 亚秒取触发仪器官方目录 Trig_time_UTC=2013-03-27T01:47:34.014540；原库 T0=…34Z（整秒），亚秒差 0.0145 s，lc 非 X 射线行 mjd 已按新 T0 重算，X 射线 20 行（10keV，Burst Analyser）按规则未动（其 mjd 与新 T0 差 <1 s，容差内）。身份甄别：2013-03-27 同日 Swift/BAT 目录仅此一暴；另有同日不同事件 GRB 130327B（AGILE/MCAL，08:24:06 UT，RA 217.89 Dec −69.4，仓内 external/agile_mcal；Fermi GBM bn130327350，08:24:04 UT，external/fermi_gbm）——与本源（01:47:34 UT，RA≈92/Dec≈+55.7）无关，未混入；GCN 14352 曾把主题行笔误 130727A 后改正为 130327A。位置：ra/dec=92.03858/+55.71475 为增强 Swift-XRT 位置（GCN 14335，1.9″ radius，原文写明 90% confidence，故 pos_error_confidence=90）；原库 ra/dec=91.984/55.732 为 BAT ground 位置（GCN 14343：±2.2′，radius，systematic+statistical，90% containment），与 pos_ref=GCN 14335 的 1.9″ 不配套，已改齐，BAT 值移此备查。sub_tag=lgrb：T90=6.372±1.408 s（15–350 keV，Swift/BAT Catalog 快照）；GCN 14343 给 T90=9.0±2.8 s（含系统误差）——两值均 >2 s，判长暴（fluence 2.269e-7 与 2.3±0.5e-7 erg/cm2，15–150 keV，双源并列备查）。红移：仅有上限——Gemini/GMOS 2×900 s 光谱（Cucchiara & Cenko，GCN 14342）对余辉（source #2）无清晰吸收特征、无 Lyman break → z<3.9（以 source #2 为余辉为前提，该前提由 GCN 14352 变暗观测确证）；Littlejohns+2015 SED 拟合 zphot≲4（arXiv:1412.6530 v2）——取 spec 依据的 3.9，后者并列备查。余辉确证：XRT 083 s 起观测，光变 broken PL（α1=4.3，Tbreak1≈369 s，α2≈0.05，Tbreak2≈2.0e4 s，α3≈1.08；GCN 14341 与 GCN Report 428.1）；光学/NIR 余辉=RATIR Source 1（=Gemini source #2，RA 92.03875/Dec +55.71504±0.5″），25.4 h 后变暗至 RATIR 限以下（GCN 14352）；GCN 14333 的 PAIRITEL J=17.8±0.4 'afterglow candidate' 与 GCN 14334 Source 2（XRT 圈外场源）亮度相符，该场源经 GCN 14340/14352 确认不变暗、与暴无关。测光检索留证（2026-11-01，审核 fsy@zcode）：GCN 官网全清单检索命中 11 篇 Circulars（14331/14333/14334/14335/14337/14339/14340/14341/14342/14343/14352，逐篇实开）+ GCN Report 428.1（PDF 实读）；仓内 gcn/archive 未随仓库分发（本地无快照），external/rssgrbag、grbsn_webtool、uvot_grb、heasarc_grbcat 对 130327A 均 0 命中；arXiv API 元数据检索 '130327A' 0 命中；Web/全文检索命中研究文献 5 篇并逐一实开：Littlejohns+2015（MNRAS 449, 2919，RATIR 首夜堆叠测光表 Table 3 → 补 6 行 r'i'ZYJH）、Becerra+2023（arXiv:2308.07882，227 GRB 参数表仅列 T90=6.37±1.41，无测光行）、Anderson+2017（AMI 15.7 GHz，8 历元 forced-fit 非探测：MJD 56378.52/56379.68/56385.60/56389.78/56391.60/56399.57/56406.69/concat，峰值 −0.31–1.10 mJy/beam、RMS 0.08–0.12 mJy/beam，表列无逐历元上限值，未折算入库）、Obenberger+2014（LWA 37.9 MHz prompt 搜索，1σ RMS=90 Jy，无逐暴上限值，未入库）、Volnova+2021（An Acad Bras Cienc 93(Suppl.1):e20200883，Table II 该暴行=转引 GCN 14337，无新值）→ 结论：共补 6 行（Littlejohns+2015），无其他可入库测光。SIMBAD 连接失败（TLS reset）未核到第三方别名，alias 仅收录 GCN 原文用名 'GRB 130327A'（各 GCN 原文均用此名）。由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "swift_bat": {
@@ -164,8 +169,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-01"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Littlejohns+2015",
+      "url": "https://doi.org/10.1093/mnras/stv479",
+      "title": "A detailed study of the optical attenuation of gamma-ray bursts in the Swift era",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
