@@ -1,24 +1,30 @@
 {
   "transient_id": "GRB120116A",
-  "alias": [],
-  "ra": 16.24,
-  "dec": 33.927,
-  "T0": "2012-01-16T18:06:28Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 511866",
+    "Swift 511866"
+  ],
+  "ra": 16.24134,
+  "dec": 33.93057,
+  "T0": "2012-01-16T18:06:28.050200Z",
+  "T0_ref": "Swift/BAT GRB Catalog (Trig_ID 511866) Trig_time_UTC=2012-01-16T18:06:28.050200(仓内 external/swift_bat 快照 2026-07-21 直读)；HEASARC SWIFTGRB trigger_time 同值互证；GCN 12834 整秒 18:06:28 UT 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": null,
+  "redshift": 5.95,
+  "redshift_type": "est",
+  "redshift_ref": "Deng+2023, ApJ 943, 126 (Table 2 伪红移, L-T-E 关系; DOI 10.3847/1538-4357/acaefd)",
   "tag": [
     "grb"
   ],
   "pos_error": 1.7,
-  "pos_ref": "GCN 12846",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
+  "pos_ref": "GCN 12846",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核(2026-11-01, fsy@zcode)：T0 取触发仪器官方目录亚秒值 Swift/BAT Catalog Trig_time_UTC=2012-01-16T18:06:28.050200（原库为整秒，按§3.2 精化）。ra/dec 原库 16.24/33.927 实为 GCN 12839 BAT refined 位置(16.240/33.927 ±1.0 arcmin 90% 含系统差)，与 pos_ref=GCN 12846 不自洽；已对齐 GCN 12846 enhanced XRT 位置 16.24134/+33.93057 (1.7 arcsec, radius, 90% confidence, 原文声明)；swiftgrbba 快照 xrt 位置 16.24133/33.93061 ±1.4 arcsec (置信水平未标注) 备查。T90=38.044±4.148 s (15-350 keV, Swift/BAT Catalog)；GCN 12839: T90=41.0±5.0 s (15-350 keV)；swiftgrbba/SWIFTGRB: 41.0/38.1 s (15-150 keV) → 长暴。红移为伪红移 z=5.95 (无误差，Deng+2023 ApJ DOI 10.3847/1538-4357/acaefd Table 2 VoR 开放获取，由 X 射线 plateau L-T-E 关系估计，非实测)；该暴无实测红移 (Gemini 候选体无光谱且 chance alignment 原文称 non-negligible)。测光检索(2026-11-01)：GCN 站全清单 16 篇(12834-12844,12846-12848,12899,12906)逐一实开，其中含测光/上限 13 篇；仓内 external/rssgrbag 无该源记录、grbsn_webtool 无此事件；arXiv API 检索(all:120116A) 0 命中；ADS/SciX 与文献检索未见专门余辉论文，样本文 Deng+2023 仅伪红移 → 补 8 行：GCN 12835 MASTER-II G>15.0(1 行)、GCN 12837 IAC80 I>21.8(1 行)、GCN 12906 爆前底片 V 上限(6 行)。X 射线 10keV 53 行未审核、保持原样。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "extra_data": {
     "catalog_data": {
       "swift_bat": {
@@ -207,8 +213,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-01"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Deng+2023",
+      "url": "https://doi.org/10.3847/1538-4357/acaefd",
+      "title": "Pseudo-redshifts of Gamma-Ray Bursts Derived from the L–T–E Correlation",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
