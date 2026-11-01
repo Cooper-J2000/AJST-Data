@@ -1,35 +1,43 @@
 {
   "transient_id": "GRB220831A",
-  "alias": [],
+  "alias": [
+    "GRB220831581"
+  ],
   "ra": 24.25359,
   "dec": -41.59325,
-  "T0": "2022-08-31T13:56:32Z",
-  "T0_ref": null,
+  "T0": "2022-08-31T13:56:32.93Z",
+  "T0_ref": "GCN 32511（Fermi GBM Team：At 13:56:32.93 UT on 31 Aug 2022 triggered，trigger 683646997/220831581）；FERMIGBRST 官方目录快照（external/fermi_gbm，bn220831581）trigger_time=2022-08-31T13:56:32.925Z 互证（差 5 ms，按 §3.8 取 GCN ① 级值 32.93）；Freeburn+2025（MNRAS 537, 2061, VoR）§2.1 亦以 13:56:32.93 UT 定义 T0；Swift/BAT-GUANO 通告（GCN 32506）记 T0 13:56:33 UTC 为取整值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 32513",
+  "pos_error": 6.8,
+  "pos_ref": "GCN 32510",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-11-01，PR #737）：(1) T0 更正 13:56:32 → 13:56:32.93、Trigger_Instrument Swift/XRT → Fermi/GBM：Swift/BAT 未在轨触发（BAT failed trigger #1122435，GUANO 事后恢复 10 s 事件数据并定位，GCN 32506）；Fermi/GBM 在轨触发于 13:56:32.93 UT（GCN 32511，trigger 683646997/220831581），为真实触发仪器；bot 原注记 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger。bot 原 T0=13:56:32 系截断（另见 GRB210827A 同形态先例）。(2) 定位：ra/dec=24.25359/−41.59325 实为 Swift/XRT 低显著源位置（GCN 32510 原文：RA 24.25359, Dec −41.59325，误差 6.8″ 半径 90% conf，距 BAT 位置 41″），原 pos_ref=GCN 32513 与坐标不符（32513 的 HAWK-I 候选体位置为 01:37:00.95, −41:35:34.37）→ pos_ref 改 GCN 32510、pos_error=6.8″（90%）。Freeburn+2025（VoR）§2.2 重分析认为该 XRT 检测可能为伪（合并两 ObsID 后无 >3σ），但 OIR 余辉位置与其成协并精化：GCN 32516（01:37:00.965, −41:35:34.60）、GCN 32535（01:37:00.9864, −41:35:34.296，未给误差）。(3) 分类/sub_tag 留空待决：FERMIGBRST t90=1.728±1.42 s（50–300 keV）；Freeburn+2025 实测 T90(GBM nb,20–100 keV)=1.83+0.50/−0.10 s、T90(BAT battblocks)=1.3±0.3 s（SGRB 区），但 VoR 标题/结论归为 intermediate（P_NC≈0.48–0.54，原文自认不能断言），且受控词表无 intermediate 类目 → 冲突留空。(4) 红移 null：hostless（深成像无宿主至 mi≳26.6 AB，VoR Table 2）；VoR 的 z=2.4 系 Amati 关系伪红移推算、z<0.4 亦未排除，不入 redshift。(5) alias 新增 GRB220831581：FERMIGBRST trigger_name 原文用名（GCN 32511：trigger 683646997/220831581）。(6) ATCA 历元更正：GCN 32529 原文「began on 2022 Sept 14 UT（4 days post-burst）」自相矛盾（Sept 14=13.4 d≠4 d），VoR §2.4/Table 1 认定两历元为 4.1/11.2 d，两行按 4.1 d 重锚（详见行 comment）；GCN 32542 的 Gemini/FLAMINGOS-2 J~24.5 检测被 VoR 附录 A 判为图像伪迹（discard=y）。(7) 测光检索留证（2026-11-01）：仓内 gcn/archive 11 篇全文实读（32506/32508/32510/32511/32513/32516/32521/32529/32535/32542/32548，含全部测光数值）、external/fermi_gbm、swiftgrbba、swift_bat、rssgrbag、grbsn_webtool 无本源测光表；Freeburn+2025 VoR 全文（OUP OA，MNRAS 537, 2061–2078）Table 1 逐值核对：新增 22 行（DECam 重测 10、GMOS 重测 2、HAWK-I 新历元 4、FORS2 3、ATCA 11.2 d 2、GMOS z 上限 1），28 行既有行时间/mjd 精度修正如各行 comment；VoR 与 GCN 的 DECam/GMOS 值系不同定标/测光方法，两版并留。本源 lc 无 X 射线行（能量串 band），T0 更正无 X 射线 mjd 重算需求。ADS/SciX API 无 token（实测 HTTP 401）检索通道受限，已登记 audit/unverified.tsv（search-limited）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Fermi/GBM 触发时刻（GCN 32511：13:56:32.93 UT，trigger 683646997/220831581）；bot 原注记 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger",
+    "t0_basis": "gcn_trigger_notice",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-01"
+    }
   },
   "articles": [
     {
       "name": "Freeburn+2025",
       "title": "GRB 220831A: a hostless, intermediate gamma-ray burst with an unusual optical afterglow",
-      "url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2061F",
+      "url": "https://doi.org/10.1093/mnras/staf147",
       "bibtex": "@ARTICLE{2025MNRAS.537.2061F,\n       author = {{Freeburn}, James and {O'Connor}, Brendan and {Cooke}, Jeff and {Dobie}, Dougal and {M{\\\"o}ller}, Anais and {Tejos}, Nicolas and {Zhang}, Jielai and {Beniamini}, Paz and {Auchettl}, Katie and {DeLaunay}, James and {Dichiara}, Simone and {Fong}, Wen-fai and {Goode}, Simon and {Gordon}, Alexa and {Kilpatrick}, Charles D. and {Lien}, Amy and {Mihalenko}, Cassidy and {Ryan}, Geoffrey and {Siellez}, Karelle and {Suhr}, Mark and {Troja}, Eleonora and {Van Bemmel}, Natasha and {Webb}, Sara},\n        title = \"{GRB 220831A: a hostless, intermediate gamma-ray burst with an unusual optical afterglow}\",\n      journal = {\\mnras},\n     keywords = {Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2025,\n        month = feb,\n       volume = {537},\n       number = {2},\n        pages = {2061-2078},\n          doi = {10.1093/mnras/staf147},\narchivePrefix = {arXiv},\n       eprint = {2411.14749},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2061F},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
