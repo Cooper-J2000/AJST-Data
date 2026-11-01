@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB150722A",
-  "alias": [],
-  "ra": 218.297,
-  "dec": -35.196,
-  "T0": "2015-07-22T09:57:53Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 150722A",
+    "BAT 649916"
+  ],
+  "ra": 218.278,
+  "dec": -35.19588,
+  "T0": "2015-07-22T09:57:53.112440Z",
+  "T0_ref": "GCN 18042（BAT 触发 09:57:53 UT，整秒）；亚秒取触发仪器官方值：Swift/BAT 精化分析页 2015-07-22T09:57:53.112440 UTC（含 UTCF 改正，https://gcn.gsfc.nasa.gov/notices_s/649916/BA/，取数 2026-11-01），与仓内 external/swift_bat 目录快照 trigger_time（2015-07-22T09:57:53.112440Z）一致；swiftgrbba 表 trigger_time 09:57:53.000 系截断至整秒",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,9 +19,12 @@
   "pos_ref": "GCN 18044",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核修正（2026-11-01，wa1kmoon@zcode）：① T0 亚秒取触发仪器官方值 09:57:53.112440 UTC（Swift/BAT 精化分析页含 UTCF 改正，与仓内 swift_bat 目录快照一致；GCN 18042 给整秒 09:57:53 UT；swiftgrbba 09:57:53.000 系截断）。2015-07-22 在 2015-06-30 闰秒之后（UTC-TAI=36 s），BAT 页面值已含 UTCF 改正、与 GCN 整秒无 36 s 级偏差，交叉验证通过。② 定位污染修正：原 ra=218.297/dec=-35.196 实为 Swift/BAT 地面精化定位（GCN 18048，误差 2.8′，90%），与 pos_error=1.7″/pos_ref=GCN 18044（XRT 增强定位）不匹配；现改为 GCN 18044 增强型 XRT 定位 RA=218.27800、Dec=-35.19588（1.7″，半径，90% 置信）。备查：BAT 地面精化 218.2973/−35.1959（2.84′，90%，gcn.gsfc.nasa.gov/notices_s/649916/BA）；UKSSDC XRT catalog 现行值 218.27801/−35.19586（2.0″）；BAT 在轨定位 218.272/−35.197（3′，GCN 18042）。③ 分类：t90=67.312±11.765 s（Swift/BAT GRB Catalog，15-350 keV；GCN 18048 给 67±12 s）——按目录 t90 判 lgrb。④ 红移：各来源（GCN 18042-18049、swiftgrbba、UKSSDC XRT catalog）均无红移记载，保持 null。⑤ 测光检索（2026-11-01）：仓内 gcn/archive 全文命中 7 篇（GCN 18042/18043/18044/18046/18047/18048/18049），其中 GCN 18046 给 8 条 UVOT 3σ 上限、GCN 18049 给 2 条 LCOGT r'/i' 上限，共 10 行已入库（均带时间锚点）；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 无本源记录；arXiv API 检索 0 命中；OpenAlex 命中 5 条（均为上述 GCN 通告的元数据）；ADS/SciX API 无凭据实测 HTTP 401，通道受限已登记 audit/unverified.tsv（search-limited，不得当作「无文献」）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "swift_bat": {
@@ -162,8 +168,32 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-01"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Breeveld+2011",
+      "url": "https://doi.org/10.1063/1.3621807",
+      "title": "An Updated Ultraviolet Calibration for the Swift/UVOT",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
