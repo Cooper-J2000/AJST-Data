@@ -1,22 +1,25 @@
 {
   "transient_id": "GRB050730A",
-  "alias": [],
-  "ra": 212.066667,
-  "dec": -3.766667,
+  "alias": [
+    "GRB 050730",
+    "BAT 148225"
+  ],
+  "ra": 212.07158,
+  "dec": -3.77169,
   "T0": "2005-07-30T19:58:23Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 3704（Swift/BAT 触发通告：At 19:58:23 UT, Swift-BAT triggered, trigger=148225，整秒精度）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 3.97,
+  "redshift": 3.96855,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.4,
+  "pos_ref": "UKSSDC Swift-XRT enhanced position（trigger 00148225；Evans et al. 2009, MNRAS, 397, 1177）；仓内 swiftgrbba 目录快照（HEASARC，retrieved 2026-07-21）",
+  "redshift_type": "spec",
+  "redshift_ref": "Prochaska et al. 2005, GCN 3732（Magellan/MIKE 谱线 profiles）",
+  "comment": "审核（wa1kmoon@zcode，2026-11-03）。①定位：原 ra/dec=212.066667,−3.766667 为 MPE Greiner 表粗位（14h08m16s −03°46′，Error 4′）bot 残留，改为 Swift-XRT enhanced（trig 148225）：212.07158,−3.77169，误差 1.4″（90% containment，Evans+2009 惯例）；备查：UVOT 精确定位 14:08:17.09 −03:46:18.9 ±1″（GCN 3704，SGA POS_ERR 0.6″）、VLA 射电位 14:08:17.11 −03:46:17.2±0.2″（GCN 3761）；在线复核 2026-11-03 UKSSDC xrt_positions 页=14:08:17.17 −03:46:18.7 ±1.4″（enhanced），与快照一致。②T0 亚秒备查：batgrbcat refined 目录给 19:58:23.199020 UTC（swift_bat/swift_grb/konus 快照同），GCN 3704/3715 只给整秒；是否采纳亚秒需全表 time 平移 −0.199 s，见 PR 待决。③红移（光谱链）：GCN 3709 Magellan z=3.967（初测）→ GCN 3710 WHT z=3.97（确认）→ GCN 3732 MIKE z=3.96855±0.00005（采纳）→ GCN 3746 VLT z=3.968；Chen et al. 2005, ApJ, 634, L25（z=3.9694）；目录值并列：3.9693±0.00005（SWIFTGRB，type S）、3.96855（batgrbcat）、3.967（MPE）。未检索到可信的「红移上限/光度红移」主张，红移为光谱型。④t90=154.6±18.6 s（Swift/BAT 目录 refined，15–350 keV）；SGA/uvot_grb 156.5 s、SWIFTGRB 145.05 s（15–150 keV）并列；按目录 t90 判 lgrb（§3.9）。⑤身份/同日划界：Swift 触发 148225（2005-07-30 19:58:23 UT）唯一对应本源；catalog_data 各目录 target_id/TRIGTIME 一致；前后相邻触发 147478（GRB050724，Jul 24）与 148522（GRB050801，Jul 31），本源全部 GCN（3704–3810）与测光均属 148225，无同日跨触发污染。⑥lc 逐行核对：非 X 射线行 198 行核对 GCN 3704/3705/3706/3708/3711/3712/3716→3727（勘误链 +0.23 mag）/3717/3718/3720/3727/3741/3746/3761/3775/3778/3781/3810 全文与 Dainotti 2024 目录（grbLC 数据文件）、Pandey+2006 arXiv v2 表2、Perri+2007 arXiv 表1、Oates+2009、Kann+2010 arXiv 表、Roming+2017 HLSP：删同测量转引重复 13 行、改正 20 余行（GCN 3716/3718 勘误链、UVOT B 两处时间错位、GCN 3810 窗口起点误作中点、GCN 3781 合并图无锚改窗口中点、VLA band 85GHz→8.5GHz、Kann 表 4 行望远镜 SMARTS→RTT150、Perri 晚期 4 行时间 舍入改正），uvotgrb HLSP noc-db 6 行 B 波段与 GCN 3717 矛盾（约 2.4 mag）置 discard=y 保留；补 GCN 3708 J~16.3 一行；X 射线 582 行（band=10keV）原样未动（其 mjd 若随 T0 亚秒重算由维护者统一执行）。⑦测光检索留证（2026-11-03）：仓内 gcn/archive 45 563 篇全文本机在手，GRB050730 相关通告 19 篇全文逐篇核对（GCN 3704/3705/3706/3708/3711/3712/3714/3715/3716/3717/3718/3720/3722/3727/3741/3746/3761/3775/3778/3781/3810）；external/rssgrbag 已在 catalog_data（radio peak 8.46GHz 212μJy@9.1d 已入库为 Chandra & Frail 2012 行）、external/grbsn_webtool 无该源；外部：arXiv API 命中 22 篇（本暴专属 6 篇，测光相关 4 篇已逐值核对入库：Pandey+2006、Perri+2007、Oates+2009、Kann+2010）、Crossref 题录 5 条（DOI 全部核实）；aanda.org/IOP/OUP 全文与 CDS-VizieR 在本网络不可达（DataDome 403/连接失败，见 audit/unverified.tsv 5 行）；ADS/SciX 无 token（通道级登记，检索结论不当作「无文献」）。结论：新增测光 1 行、改正/勘误 20 余行、去重 13 行，余量与原文一致；VoR 不可得的 4 篇按 arXiv 替代并在行 comment 标注。",
   "sub_tag": [
     "lgrb"
   ],
@@ -570,6 +573,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [
@@ -600,7 +608,43 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2006A&A....46....0P/abstract",
       "bibtex": "@ARTICLE{2006A&A....46....0P,\n       author = {S. B. Pandey and A. J. Castro-Tirado and S. McBreen and M. D. Perez-Ramirez and M. Bremer and M. A. Guerrero and A. Sota and B. E. Cobb and M. Jelinek and A. de Ugarte Postigo and J. Gorosabel and S. Guziy and C. Guidorzi and C. D. Bailyn and T. Munoz-Darias and A. Gomboc and A. Monfardini and C. G. Mundell and N. Tanvir and A. J. Levan and B. C. Bhatt and D. K. Sahu and S. Sharma and O. Bogdanov and J. A. Combi},\n       title = {Multi-wavelength afterglow observations of the high redshift GRB 050730},\n       journal = {Astron.Astrophys. 460 (2006) 415-424},\n       year = {2006},\n       doi = {10.1051/0004-6361:20065010},\n       eprint = {astro-ph/0607471},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006A&A....46....0P/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Perri+2007",
+      "title": "The exceptionally extended flaring activity in the X-ray afterglow of GRB 050730 observed with Swift and XMM-Newton",
+      "url": "https://doi.org/10.1051/0004-6361:20066227",
+      "bibtex": "@ARTICLE{2007A&A...471...83P,\n  author = {{Perri}, M. and {Guetta}, D. and {Antonelli}, L.~A. and others},\n  title = {The exceptionally extended flaring activity in the X-ray afterglow of GRB 050730},\n  journal = {A&A}, volume = {471}, pages = {83}, year = {2007},\n  doi = {10.1051/0004-6361:20066227}, eprint = {0704.1297}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Oates+2009",
+      "title": "A statistical study of gamma-ray burst afterglows measured by the Swift Ultra-violet Optical Telescope",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14544.x",
+      "bibtex": "@ARTICLE{2009MNRAS.395..490O,\n  author = {{Oates}, S.~R. and others},\n  title = {A statistical study of gamma-ray burst afterglows measured by the Swift Ultra-violet/Optical Telescope},\n  journal = {MNRAS}, volume = {395}, pages = {490}, year = {2009},\n  doi = {10.1111/j.1365-2966.2009.14544.x}, eprint = {0901.3597}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Kann+2010",
+      "title": "The Afterglows of Swift-era Gamma-Ray Bursts. I. Comparing pre-Swift and Swift era Long/Short GRB Optical Afterglows",
+      "url": "https://doi.org/10.1088/0004-637X/720/2/1513",
+      "bibtex": "@ARTICLE{2010ApJ...720.1513K,\n  author = {{Kann}, D.~A. and others},\n  title = {The Afterglows of Swift-era Gamma-Ray Bursts. I.},\n  journal = {ApJ}, volume = {720}, pages = {1513}, year = {2010},\n  doi = {10.1088/0004-637X/720/2/1513}, eprint = {0712.2186}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "bibtex": "@ARTICLE{2017ApJS..228...13R,\n  author = {{Roming}, P.~W.~A. and others},\n  title = {A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution},\n  journal = {ApJS}, volume = {228}, pages = {13}, year = {2017},\n  doi = {10.3847/1538-4365/228/2/13}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Chandra+2012",
+      "title": "A Radio-Selected Sample of Gamma-Ray Burst Afterglows",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "bibtex": "@ARTICLE{2012ApJ...746..156C,\n  author = {{Chandra}, P. and {Frail}, D.~A.},\n  title = {A Radio-Selected Sample of Gamma-Ray Burst Afterglows},\n  journal = {ApJ}, volume = {746}, pages = {156}, year = {2012},\n  doi = {10.1088/0004-637X/746/2/156}\n}",
+      "source": "wa1kmoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
