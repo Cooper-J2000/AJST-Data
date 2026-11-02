@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB061102",
-  "alias": [],
-  "ra": 148.394,
-  "dec": -17.022,
-  "T0": "2006-11-02T01:00:31Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 061102",
+    "BAT 236430",
+    "Swift 236430"
+  ],
+  "ra": 148.406833,
+  "dec": -17.024028,
+  "T0": "2006-11-02T01:00:31.223660Z",
+  "T0_ref": "GCN 5776（Swift/BAT 触发并定位 GRB 061102，trigger=236430，触发时刻 01:00:31 UT）；亚秒取触发仪器官方目录 refined trigger_time=2006-11-02T01:00:31.223660Z（Swift/BAT 目录 batgrbcat，注明含 UTCF 改正；仓内 swift_bat/swift_grb 快照同值，uvot_grb 快照 TRIGTIME=184122031.0 整秒互证）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,14 +16,22 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 5776",
+  "pos_error": 4.9,
+  "pos_ref": "GCN 5783（Swift/XRT 精化定位 RA=09h53m37.64s Dec=-17d01'26.5\" J2000，=148.406833,-17.024028；误差 4.9″，90% containment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份核验：Swift/BAT 于 2006-11-02 01:00:31 UT 触发并定位 GRB 061102（trigger=236430，GCN 5776）；BAT 星上定位 148.405,-17.066（±3′，90%，GCN 5776）、BAT 地面定位 148.393,-17.000（±2.7′，90%，GCN 5777）、XRT 精化定位（GCN 5783）互证。同日他触发划界：GRB 061102B（trigger 236481，06:13:16 UT，GCN 5778；后报可能为宇宙线 shower 事件，GCN 5781）为另一 BAT 触发，与本源无涉，库内无该条目。T0：GCN 5776 整秒 01:00:31 UT，亚秒取触发仪器官方目录 refined 值 .223660（含 UTCF 改正），亚秒差 224 ms 已在 PR 报告。位置：原库 ra/dec=148.394,-17.022 与 pos_ref=GCN 5776（±3′）口径错配——该坐标既非 GCN 5776 星上定位（148.405,-17.066）亦非 GCN 5777 地面解（148.393,-17.000），实近 batgrbcat BAT refined 值 148.3921,-17.0292（±2.597′，90%）；已改取 XRT 精化位置（GCN 5783，4.9″，90%），pos_error 单位/口径与 pos_ref 原文一致；XRT 初始定位（GCN 5776，6.1″，90%）与精化值相距 1.8″ 备查。sub_tag：t90=45.544±9.688 s（Swift/BAT 目录 batgrbcat，15-350 keV；SGA 45.6 s；GCN 5777 早值 17.6±1 s），按目录 t90 判 lgrb（三值均远大于 2 s，判类无冲突）。lc 核对：17 行 Swift/XRT（band=10keV）为 X 射线行，按契约未审不动——T0 亚秒改动后其 mjd 须按 mjd=T0+time 由维护者在合入前重算（差 0.224 s，<1 s 校验容差）；10 行 Swift/UVOT 均为 3σ 上限，与 GCN 5784（finding chart 2 行 + coadd 7 行）逐值核对一致，原库 time 为观测窗口起点（bot 残留），已按 GCN 5784 起止时刻改窗口中点、time_err=窗口半跨（原文只给起止与曝光，中点/半宽为约定口径），band=w（filters.json 的 Pan-STARRS w 键，误配）改 uvot-white，mag_system 原文未声明、按 UVOT 惯例推定 Vega（Breeveld+2011），mjd 按 T0 重算保留 7 位小数；GCN 5776 的 White finding chart 初值 18.5 mag（起 +110 s、曝光 100 s）与 GCN 5784 精化的同一 White FC 曝光（112-209 s、19.9 mag）为同一次测量，前者置 discard=y 留痕、取更正后值并指向含值通告 GCN 5784。无红移记录（XRT/UVOT 均未探测到余辉，无光谱）。测光检索（2026-11-03）：仓内 gcn/archive 45 889 篇全文扫描，命中 6 篇——5776/5777/5783/5784 属本源（测光仅 GCN 5784 的 9 行 UVOT 上限）、5778/5780 属 061102B；arXiv API 全文检索 \"GRB 061102\" 0 篇；OpenAlex 检索 25 条命中均为 GCN 题录或无关文献，Crossref 无本源专文；UKSSDC Burst Analyser 00236430 在线页确认（T90 45.5 s、UVOT 无探测，与库一致）；ADS/SciX 无 API token（HTTP 401），检索通道记 search-limited，不据此断言无文献。补行 0 行（GCN 5784 九行上限库内已全，仅重算时间口径）。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "uvot_grb": {
         "other": {
@@ -256,6 +268,19 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts (A&A 469, 379)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs (MNRAS 397, 1177)",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
