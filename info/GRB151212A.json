@@ -1,25 +1,33 @@
 {
   "transient_id": "GRB151212A",
   "alias": [],
-  "ra": 68.109,
-  "dec": -3.775,
+  "ra": 68.15067,
+  "dec": -3.96253,
   "T0": "2015-12-12T14:00:27Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 18685",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "MAXI",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 2.1,
+  "pos_error_confidence": "90",
+  "pos_ref": "UKSSDC enhanced Swift-XRT position (xrt_positions/00020570)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份核验（2026-11-03）：MAXI/GSC 新星警报于 UT 2015-12-12T14:00:27 触发（GCN 18685），T0 即触发时刻（MAXI 只给整秒精度）；Swift 为 tiled 后随观测（TILED_GRB00050，obs 00020570，GCN 18686-18689），原 Trigger_Instrument=Swift/BAT 系 bot 残留，已改为 MAXI（先例 GRB150518A 同口径）。同日他触发划界：Fermi/GBM bn151212030（00:42:58 UT）、bn151212064（=GRB151212B，01:32:04 UT，CALET GCN 18706）坐标与时刻均与本事件无关。定位：原 ra/dec=68.109,-3.775 为 MAXI 粗位（~0.5°，bot 抄自 BA 目录触发位），已改正为 UKSSDC enhanced Swift-XRT 精化位（catalog 快照 68.15067,-3.96253，误差半径 2.1″，UKSSDC 明示为 90% 包含半径）；GCN 18687 初值 68.1521,-3.9615±5.2″(90%)；2026-11-03 在线 xrt_positions/00020570 页为 68.15064,-3.96255、90% Error radius 2.7″（与快照同口径，取仓内快照值）；GROND 光学余辉位 68.150,-3.9626±0.5″（GCN 18688）相互一致。分类：lgrb 按 Greiner+2024（A&A 691,A158）表B.1 L/S 列=L（来源表长短分类，§3.9；VoR 该表全文在 CDS，本机 CDS 不可达，值由 arXiv v1 HTML 表3 实读：151212A L、GROND-Start 1213-03:27:48、Δt=48441 s、Det=y、ref GCN 18688）；无 t90 来源，不另判。红移：GROND 未估 z，无文献值，null。测光检索留证（2026-11-03）：仓内 gcn/archive 全文检索 \"151212\" 命中 8 篇，本源相关 6 篇——GCN 18685（MAXI，前后过境 2-10 keV 20 mCrab 上限为 X 射线数据不入库）、18686（Swift tiled）、18687（XRT 探测）、18688（GROND）、18689（UVOT u>21.4）、18725（iTelescope R~17.0 上限）；18706 为同日 GRB151212B。external/rssgrbag、grbsn_webtool、uvot_grb 快照均无本源记录；UKSSDC Burst Analyser 页（2026-11-03）仅 XRT 产品无 UVOT 表，UVOT 产品子页 404。外部检索：ADS/SciX 无 API token（实测 HTTP 401，已登记 audit/unverified.tsv search-limited，不作为「无文献」结论）；arXiv API 题录检索 \"GRB 151212A\" 0 命中；OpenAlex 命中 6 条=5 篇 GCN+Greiner+2024；Crossref 无相关命中；Greiner+2024 VoR（A&A 691,A158 HTML，经 DOI 实取）B.42 节已通读：仅文字确认第 2/3 晚 >1.3 mag 衰减（无数值、无时间锚点，不入 lc）。补行 1 行（iTelescope 上限），UVOT/GROND 7 行重锚。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "swiftgrbba": {
         "other": {
@@ -66,6 +74,13 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "title": "The GROND gamma-ray burst sample - I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
