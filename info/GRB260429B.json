@@ -5,30 +5,29 @@
   ],
   "ra": 240.58812,
   "dec": -9.60116,
-  "T0": "2026-04-29T23:24:02Z",
-  "T0_ref": null,
+  "T0": "2026-04-29T14:41:11Z",
+  "T0_ref": "GCN 44426 (Einstein Probe/WXT transient onset)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM/C-GFT",
+  "Trigger_Instrument": "Einstein Probe/WXT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 44738",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Source identity: EP260429a / GRB 260429B. Adopted T0 is the EP-WXT transient onset in GCN 44426, 2026-04-29 14:41:11 UTC. The previous bot value 2026-04-29T23:24:02Z instead matches the unrelated Fermi GBM event GRB260429975 in external/fermi_gbm (RA 283.92 deg, Dec +18.1 deg), not this source; GCN 44429 also identifies that separate event as Fermi GRB 260429A. Trigger_Instrument corrected from SVOM/C-GFT to Einstein Probe/WXT. Adopted coordinates are the COLIBRÍ optical counterpart candidate in GCN 44738 (RA 240.58812, Dec -9.60116; quoted uncertainty 0.5 arcsec, confidence level unstated); GCN 44445 reports the likely X-ray afterglow EPF_J160221.2-093607 at a consistent position. The candidate is offset about 2.55 arcmin from the WXT centroid in GCN 44426; its association is suggested by fading and spatial coincidence with the likely FXT afterglow, not yet confirmed. GCN 44443 gives AstroSat CZTI T90=34 (+6/-9) s; sub_tag=lgrb follows that catalog T90 classification. GCN 44434 title/event identify GRB 260429B / EP260429a, although one body sentence says “EP GRB 260429A”; treated as a body typo, not a separate source. Photometry search (2026-11-02): repository gcn/archive is absent; external/rssgrbag lightcurve snapshot has 139 rows and no 260429 match; external/grbsn_webtool/SourceData has no matching event directory. GCN site/event pages for EP260429a and GRB 260429B yielded 7 related circulars reviewed (44426, 44433, 44434, 44437, 44443, 44445, 44738); optical measurements/limits were added or retained as detailed per-row. Exact-name public web searches found no research paper result, but ADS/SciX API search remains limited because no API credential is available; this is not evidence that no literature exists.",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
     "bot_created": true
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
