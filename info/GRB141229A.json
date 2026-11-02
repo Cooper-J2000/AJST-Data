@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB141229A",
-  "alias": [],
+  "alias": [
+    "GRB141229492",
+    "bn141229492",
+    "BAT 00085478004"
+  ],
   "ra": 72.4283,
   "dec": -19.23282,
-  "T0": "2014-12-29T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2014-12-29T11:48:59.84Z",
+  "T0_ref": "GCN 17249 (Fermi/GBM trigger at 11:48:59.84 UT; trigger 441546542 / 141229492)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 4.7,
   "pos_ref": "GCN 17251",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份与定位：Fermi/GBM GCN 17249 明确将 2014-12-29 11:48:59.84 UT 事件命名为 GRB 141229A，触发号 441546542 / 141229492；Swift GCN 17247/17251/17256、Konus-Wind GCN 17260 与 MAXI GCN 17246 均跟进同一事件。GCN 17249 明列 Fermi trigger suffix 141229492；FERMIGBRST 官方目录快照的原始 name_alt 为 GRB141229492、bn141229492。Swift/BAT 官方目录原名别称为 BAT 00085478004。采用 Swift/XRT GCN 17251 位置 RA=72.42830°, Dec=−19.23282°，位置误差 4.7″、90% 半径；该通告称其为可能衰减的未编目 X 射线源，但“无法安全确认余辉身份”，故坐标应理解为候选 XRT 源而非已确证光学余辉位置。redshift 维持 null；本轮未在核实到的通告/本地快照中见到已确认红移，不作无红移结论。宿主未确证，不建立 host_galaxy。\nT0 与分类：原 T0=2014-12-29T00:00:00Z 是导入的午夜占位，现改用触发仪器 Fermi/GBM 的官方 GCN 17249 时刻 11:48:59.84 UT。Swift/BAT GCN 17256 明确说事件发生于 Swift 预定转向期间、未 onboard 检出，常规 BAT 自动产品不可用；Swift 官方快照中的 11:48:59.019 是地面分析事件时间，不取代 Fermi 触发时刻。MAXI GCN 17246 的 11:49:02 是扫描触发报告时刻；Konus GCN 17260 的 T0=11:49:02.652 为 Konus 触发时刻，二者不作为本源统一 T0。类型确认为 GRB（GCN 17249/17260），但 sub_tag 暂留空：Swift-BAT 官方目录/GCN 17256 给 T90=7±1 s（15–350 keV；本地 BAT 快照 6.4±1.6 s），Fermi GCN 17249 约 11 s（50–300 keV；本地 GBM 快照 13.824±6.66092 s），Konus GCN 17260 单脉冲约 7.6 s 且称其为 long-duration；而本地 AGILE-MCAL 目录同一事件给 T90=0.960±0.032 s（0.4–100 MeV）。由于目录/能段时长与长暴标签相冲突，按仓库规则不臆定 lgrb/sgrb，待维护者裁定。\n测光逐行：GCN 17252 原文给 Nanshan 1m 两个 300 s R 图像历元 2014-12-29 15:26:23、18:36:14 UT，各 R>20.5；通告未说明所列时刻是曝光起点还是中点，故保留来源所列绝对历元，time_err=150 s 表示半曝光时间的时刻不确定度。GCN 17253 给 CAHA 1.23m I 波段起始时刻 Dec 29.93278 UT、I>21 Vega；未给曝光时长，保留来源起始历元，真实中点不可恢复。GCN 17259 还报 MASTER-SAAO 2014-12-29 20:57:10.861 UT 起始观测，未滤光，表列 T_trig−Tmid=34986 s（按表意采用触发后曝光中点），总曝光 3600 s（20 coadds）、Mlim=22.3；若将 3600 s 视作连续曝光，起始时刻加 1800 s 得 21:27:10.861 UT，而表列中点换算为 21:32:05.84 UT，晚约 295 s。通告未列各帧间隔，故保留表列中点作为 time；间隔可能解释差值，但无法由原文验证。新增 G 波段上限，time_err=1800 s（总曝光一半的名义半宽；coadd 实际墙钟窗未给）。同一 GCN 的 Kislovodsk 行 Mlim=19.6、12×180 s，但通告未注明滤光片/无滤光，故不猜 band、不录入。\n文献与检索范围（2026-11-03）：本地未发现 GRB141229A 专属 audit/leads 卡或研究论文条目。仓内 gcn/archive 不在当前检出目录；外部快照核对 external/fermi_gbm（141229492）、swift_bat（GRB141229A/BAT 00085478004）、swiftgrbba、agile_mcal；rssgrbag 与 grbsn_webtool 未见该源条目。GCN 官方事件材料逐份核读 17246、17247、17249、17251、17252、17253、17256、17259、17260；同号 17250 是非 GRB 触发，排除。ADS/SciX 检索按用户要求留待补跑，已登记 search-limited；因此不得据此宣称文献/测光穷尽。articles 仅登记本轮实际使用的研究论文，本轮未核实并采用研究论文。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 官方触发时刻（GCN 17249）",
+    "t0_basis": "official_trigger_gcn",
+    "bot_created": true,
+    "audit": {
+      "status": "draft",
+      "auditor": "Codex",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
