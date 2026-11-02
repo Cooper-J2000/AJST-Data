@@ -2,27 +2,37 @@
   "transient_id": "GRB250114B",
   "alias": [],
   "ra": 48.8582,
-  "dec": -2.2936,
+  "dec": -2.294,
   "T0": "2025-01-14T13:15:37Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 38938 (INTEGRAL/IBAS trigger at 2025-01-14 13:15:37 UT)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 7.6,
-  "pos_ref": "GCN 38961",
+  "pos_ref": "GCN 38961 (Swift-XRT Source 2; J2000; 90% error radius 7.6 arcsec)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份核对（2026-11-03）：GCN 38938 明确称其为约1秒的 short GRB，由 INTEGRAL/IBAS 于 2025-01-14 13:15:37 UT 探测；依触发仪器通告采用该 T0。Swift ToO 页面列 13:15:36 UT，差1秒，不写 T0_offset。GCN 38961 将 Swift-XRT Source 2 认定为 afterglow，坐标 RA=48.8582°、Dec=-2.2940°，90%半径7.6 arcsec；采用该定位。GCN 38950 的光学位置 Dec=-2.2936°，与XRT位置相差约1.44 arcsec，吻合。分类依据GCN 38938的short-GRB描述，tag=grb、sub_tag=sgrb。GCN 38952提到距光学余辉约1.5 arcsec、r=24.4的近邻星系，偶然对齐概率约5%；宿主关联未确认，host_galaxy留空。Swift官方XRT曲线页面列有Source 2产品，GCN 38961报告该源后续变暗；但ASCII曲线端点本轮web cache miss、沙箱DNS失败，未能取到逐点数据，故未补X射线行，限制已登记 audit/unverified.tsv。ADS/SciX按本轮安排暂未检索并登记search-limited。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
