@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB211130A",
-  "alias": [],
-  "ra": 18.8,
-  "dec": -28.5,
-  "T0": "2021-11-30T15:16:27Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB211130636",
+    "bn211130636"
+  ],
+  "ra": 21.148,
+  "dec": -27.829,
+  "T0": "2021-11-30T15:16:27.028088Z",
+  "T0_ref": "GCN 31151（Fermi/GBM Team Final Real-time Localization）原文 trigger MET=659978192.028088 s：2001-01-01T00:00:00 UTC 纪元 + MET = 2021-11-30T15:16:32.028088（天真值），扣 5 闰秒（2006/2009/2012-07/2015-07/2017-01 生效）→ 2021-11-30T15:16:27.028088 UTC；GBM 7 份通告 GRB_TIME 54987.03 SOD {15:16:27.03} UT、HEASARC FERMIGBRST trigger_time=MJD 59548.636423936（=15:16:27.0281 UT，仓内 external/fermi_gbm 快照）与 GCN 31161 'about 54987 s UT (15:16:27)' 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 3845.2,
+  "pos_ref": "GCN 31161（IPN 3σ 误差盒中心 21.148/-27.829；盒约 734 平方角分、最大维 2.1°、最小 6.5′）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Fermi/GBM 触发 659978192（bn211130636），GCN 31151 定名 GRB 211130A；FERMIGBRST（仓内快照）当日仅此一条触发，无 211130B；Swift 各快照（swift_bat/swift_grb/swiftgrbba/uvot_grb）与 GCN 事件页全清单 6 篇均无 Swift 参与；Konus-Wind、INTEGRAL/SPI-ACS、BepiColombo/MGNS 亦探测（GCN 31161/31162）。T0：原值 2021-11-30T15:16:27Z 系 bot 占位（原 extra_data.t0_basis=meta_trigger），审核改锚 GCN 31151 trigger MET 659978192.028088 s （扣 5 闰秒）→ 15:16:27.028088 UTC；互证：FERMIGBRST MJD 59548.636423936、GBM 通告 GRB_TIME 54987.03 SOD、GCN 31161 'about 54987 s UT (15:16:27)'；Konus-Wind 自身触发 T0=54992.505 s UT（15:16:32.505，GCN 31162）系 Konus 独立触发时刻，非 GBM 锚点，仅备查。位置：原 ra/dec=18.8/-28.5 系 BALROG 定位（GCN 31152：RA 18.8±3.0°、Dec -28.5±3.8° 为 1σ 统计，另有 2° 系统误差）；审核改用 IPN 3σ 误差盒中心 21.148/-27.829（GCN 31161；盒约 734 平方角分、最大维 2.1°、最小 6.5′；pos_error=3845.2″ 为盒心至四角最大角距，对角线之半 3791.9″、面积等效圆半径 15.3′ 同量级备查）；GBM final 定位 18.3/-24.3（1.4° 统计，GCN 31151；Final Position 通告 1.45° statistical only）；MeerLICHT 候选体 RA=01:24:52.46（21.2186°）、Dec=-27:41:57.48（-27.6993°），Gaia DR2 定标、三个历元呈变暗，距 IPN 盒中心 8.7′、位于盒北缘外，未获后续证认（GCN 31196），故不采用为源位置、仅记于此。t90=218.629±0.572 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb；GCN 31151 'likely LONG GRB'、GCN 31161/31162 'long-duration' 同证；Konus-Wind 总持续时间 ~21.4 s（GCN 31162）并列备查。别名出处：GCN 31152 标题原文 'Fermi Trigger 659978192 / GRB 211130636'（GRB 211130636 空格式）；FERMIGBRST（HEASARC）name=GRB211130636、trigger_name=bn211130636。测光检索（2026-11-03）：仓内 gcn/archive 未随仓分发（本机无快照）；external/rssgrbag、grbsn_webtool、uvot_grb、swift_* 快照 0 命中；fermi_gbm 仅本条目录参数、fermi_lat 0 命中；GCN 官网事件页全清单 6 篇逐篇实开（31151/31152/31154/31161/31162/31196），MASTER GCN 31154 C 滤片上限 8 行入库（P- 偏振片 7 行含 540 s Coadd 17.5 mag 无对应 band 键未入库，见 PR 待决）；arXiv API 三式检索 '211130A' 0 命中；SciX API 无凭据（异步无结果）、ADS API 401 → search-limited，未据此下「无文献」结论。共补 8 行。无红移测量；PanSTARRS 与 Legacy Survey DR9 该位置无 underlying source（GCN 31196）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=GCN 31151 原文 trigger MET 659978192.028088 s（Fermi MET 纪元 2001-01-01T00:00:00 UTC，扣 5 闰秒）→ 2021-11-30T15:16:27.028088Z；FERMIGBRST trigger_time（MJD 59548.636423936）一致；原 bot 值 2021-11-30T15:16:27Z（t0_basis=meta_trigger）整秒占位",
+    "t0_basis": "GCN 31151 trigger MET；FERMIGBRST trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-02"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "3sigma"
 }
