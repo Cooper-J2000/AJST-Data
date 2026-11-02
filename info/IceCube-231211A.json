@@ -1,27 +1,36 @@
 {
   "transient_id": "IceCube-231211A",
-  "alias": [],
+  "alias": [
+    "IC231211A",
+    "IceCube Alert 231211.03"
+  ],
   "ra": 311.48,
   "dec": 10.28,
-  "T0": "2023-12-11T00:47:31Z",
-  "T0_ref": null,
+  "T0": "2023-12-11T00:47:31.79Z",
+  "T0_ref": "GCN 35328（IceCube 离线精化事件时刻）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 35328（90% PSF 定位；RA/Dec 误差均不对称，不能表示为单一半径）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核记录（LHe496@Codex，2026-11-02）：身份与 T0 依据 IceCube 官方 GCN 35328：2023-12-11 00:47:31.79 UT 的 ICECUBE_Astrotrack_Bronze track-like 中微子事件，离线定位 RA=311.48 (+1.15/−2.33)°、Dec=+10.28 (+0.67/−0.68)°（90% PSF containment）；因此 Trigger_Instrument=IceCube，T0 保留通告百分秒精度，因不对称误差无法表为圆半径，pos_error 留空、pos_error_confidence=90。别名 IC231211A 见 GCN 35329，IceCube Alert 231211.03 见 GCN 35321。GCN 35329 报告 4FGL J2049.9+1002/PKS 2047+098 位于 90% 区域内且 gamma 射线高态；GCN 35414 的 FRAM 光学上限针对该 blazar 场，关联仍未确证，逐行保留候选目标属性，不据此宣称已找到中微子源。GCN 35321 的 MASTER 报告为 errorbox 平铺（4 行上限，C=clear，坐标分别为 20:50:45.88 +10:30:00.6、20:49:14.40 +11:07:58.1、20:57:18.96 +11:09:47.1、20:50:45.01 +10:29:41.5），并非本条目的单一源位置测光，未并入 lc；GCN 35332 为额外中微子搜索，不是光学测光。测光检索（2026-11-02）：本仓无 gcn/archive（0 篇可检）；external/rssgrbag 与 external/grbsn_webtool 以 IceCube-231211A/231211A/4054005/PKS 2047+098 检索均 0 命中；GCN 事件页含 4 篇（35328、35329、35332、35414），另检索并打开其引用的 GCN 35321，共核阅 5 篇；仅 35414 提供明确光学上限，已保留 2 行。web 文献检索 IceCube-231211A/IC231211A 命中通用 IceCube/AGN 论文，未发现有可直接补入的事件专属光学数据表；本次未使用图中估读数据。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 IceCube 官方 GCN 35328 离线精化的真实中微子事件时刻",
+    "t0_basis": "GCN 35328",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-02"
+    }
   },
   "articles": [],
   "host_galaxy": null
