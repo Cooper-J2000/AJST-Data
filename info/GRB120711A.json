@@ -1,22 +1,25 @@
 {
   "transient_id": "GRB120711A",
-  "alias": [],
-  "ra": 94.704167,
-  "dec": -71.016667,
-  "T0": "2012-07-11T02:44:53.290000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB120711115",
+    "GRB 120711.115"
+  ],
+  "ra": 94.6783,
+  "dec": -70.99905,
+  "T0": "2012-07-11T02:44:48Z",
+  "T0_ref": "GCN 13434（INTEGRAL/IBAS 触发 02:44:48 UT）；Martin-Carrillo+2014（A&A 567, A84）全文同以该时刻为 T0",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": 1.405,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
+  "pos_error": 1.7,
+  "pos_ref": "GCN 13442（Swift-XRT enhanced，1.7″ 90% 置信；与 PROMPT 光学位置差 0.3″，GCN 13430）",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 13441",
-  "comment": null,
+  "comment": "GRB 120711A = INTEGRAL trigger 6599（IBAS，02:44:48 UT，GCN 13434）；Fermi/GBM 触发 02:44:53.29 UT（GCN 13437；FERMIGBRST 目录 02:44:53.294）；Konus-Wind T0=02:45:55.810（GCN 13446，主峰历元）。T0 取 INTEGRAL/IBAS 触发时刻：Swift/XRT、Swift/UVOT（GCN 13442/13448 明确以 INTEGRAL trigger 起算）与 Martin-Carrillo+2014 全部测光均以该时刻为历元，故弃用原 GBM 历元（02:44:53.29）。别名 GRB120711115、GRB 120711.115：GCN 13437 原文用名 trigger 363667496 / 120711115，FERMIGBRST name_alt 亦作 GRB 120711.115。t90=44.0327±0.72409 s（50-300 keV，FERMIGBRST），按目录 t90 判 lgrb。红移 z=1.405（Gemini/GMOS-S 吸收线，GCN 13441）；swift_grb 目录快照作 1.451，与 GCN/文献不一致，以 GCN 为准（快照不改）。测光检索（2026-11-03）：仓内 gcn/archive 命中 22 条（GRB120711A 相关 GCN 13430-13452/13463/13468/13485/13513 共 20 篇全部通读）；rssgrbag、grbsn_webtool 无该源记录；ADS 检索「GRB 120711A」命中 26 条（GCN 20 篇 + 研究文章 6 篇），其中仅 Martin-Carrillo+2014 载有可入库测光表（284 行已逐值核对），MAXI（GCN 13436）为 X 射线、INTEGRAL/SPI 与 Fermi/LAT 为伽马射线，不入库；据此补入 MASTER（GCN 13443）1 行、ATCA 34GHz 上限（GCN 13451/13463/13485）3 行。lc 各组原按 GBM 历元折算 mjd，本次按新 T0 统一重算（mjd=T0+time，7 位小数）；X 射线行（band=10keV，218 行）不审核，其 mjd 需维护者按 mjd=T0_new+time 重算。Gext_corr=y 遍布 Dainotti 来源行而原表均未做银消光改正（Martin-Carrillo+2014 表注明确），疑似导入管线系统性问题，本 PR 不动，见 PR 说明。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
@@ -668,35 +671,19 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [
-    {
-      "name": "Giuliani+2014",
-      "title": "A search for lines in the bright X-ray afterglow of GRB 120711A",
-      "url": "https://ui.adsabs.harvard.edu/abs/2014A&A...563A...6G",
-      "bibtex": "@ARTICLE{2014A&A...563A...6G,\n       author = {{Giuliani}, A. and {Mereghetti}, S.},\n        title = \"{A search for lines in the bright X-ray afterglow of GRB 120711A}\",\n      journal = {\\aap},\n     keywords = {X-rays: bursts, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2014,\n        month = mar,\n       volume = {563},\n          eid = {A6},\n        pages = {A6},\n          doi = {10.1051/0004-6361/201321604},\narchivePrefix = {arXiv},\n       eprint = {1307.8345},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2014A&A...563A...6G},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
-    },
     {
       "name": "Martin-Carrillo+2014",
       "title": "GRB 120711A: an intense INTEGRAL burst with long-lasting soft ensuremathgamma-ray emission and a powerful optical flash",
       "url": "https://ui.adsabs.harvard.edu/abs/2014A&A...567A..84M",
       "bibtex": "@ARTICLE{2014A&A...567A..84M,\n       author = {{Martin-Carrillo}, A. and {Hanlon}, L. and {Topinka}, M. and {LaCluyz{\\'e}}, A.~P. and {Savchenko}, V. and {Kann}, D.~A. and {Trotter}, A.~S. and {Covino}, S. and {Kr{\\\"u}hler}, T. and {Greiner}, J. and {McGlynn}, S. and {Murphy}, D. and {Tisdall}, P. and {Meehan}, S. and {Wade}, C. and {McBreen}, B. and {Reichart}, D.~E. and {Fugazza}, D. and {Haislip}, J.~B. and {Rossi}, A. and {Schady}, P. and {Elliott}, J. and {Klose}, S.},\n        title = \"{GRB 120711A: an intense INTEGRAL burst with long-lasting soft {\\ensuremath{\\gamma}}-ray emission and a powerful optical flash}\",\n      journal = {\\aap},\n     keywords = {gamma-ray burst: individual: GRB 120711A, gamma-ray burst: individual: GRB 041219A, gamma-ray burst: individual: GRB 130427A, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2014,\n        month = jul,\n       volume = {567},\n          eid = {A84},\n        pages = {A84},\n          doi = {10.1051/0004-6361/201220872},\narchivePrefix = {arXiv},\n       eprint = {1405.7396},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2014A&A...567A..84M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Hascoet+2015",
-      "title": "Measuring Ambient Densities and Lorentz Factors of Gamma-Ray Bursts from GeV and Optical Observations",
-      "url": "https://ui.adsabs.harvard.edu/abs/2015ApJ...813...63H",
-      "bibtex": "@ARTICLE{2015ApJ...813...63H,\n       author = {{Hasco{\\\"e}t}, Romain and {Vurm}, Indrek and {Beloborodov}, Andrei M.},\n        title = \"{Measuring Ambient Densities and Lorentz Factors of Gamma-Ray Bursts from GeV and Optical Observations}\",\n      journal = {\\apj},\n     keywords = {gamma-ray burst: general, plasmas, radiative transfer, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2015,\n        month = nov,\n       volume = {813},\n       number = {1},\n          eid = {63},\n        pages = {63},\n          doi = {10.1088/0004-637X/813/1/63},\narchivePrefix = {arXiv},\n       eprint = {1504.06369},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015ApJ...813...63H},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Biltzinger+2022",
-      "title": "Improving INTEGRAL/SPI data analysis of GRBs",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022A&A...663A.102B",
-      "bibtex": "@ARTICLE{2022A&A...663A.102B,\n       author = {{Biltzinger}, Bj{\\\"o}rn and {Greiner}, Jochen and {Burgess}, J. Michael and {Siegert}, Thomas},\n        title = \"{Improving INTEGRAL/SPI data analysis of GRBs}\",\n      journal = {\\aap},\n     keywords = {methods: data analysis, gamma rays: general, gamma-ray burst: general, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Instrumentation and Methods for Astrophysics},\n         year = 2022,\n        month = jul,\n       volume = {663},\n          eid = {A102},\n        pages = {A102},\n          doi = {10.1051/0004-6361/202243189},\narchivePrefix = {arXiv},\n       eprint = {2201.10310},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022A&A...663A.102B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     },
     {
@@ -735,5 +722,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
