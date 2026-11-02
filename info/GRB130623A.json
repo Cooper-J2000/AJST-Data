@@ -16,7 +16,7 @@
   "pos_ref": "GCN 15080",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "身份与位置：Swift/BAT ground-analysis 触发（GCN 14921；T0=2013-06-23 11:42:44.7 UTC），BAT 粗定位 (20.723,-77.784)，90% 半径 4 arcmin；Swift/XRT 精定位 (20.85346,-77.77338)，90% 半径 4.5 arcsec（GCN 14926；与 BAT 坐标相距 106 arcsec）。本条目采用 GROND afterglow 坐标 (20.859063,-77.773361)，每坐标误差 0.3 arcsec（GCN 15080）；与 XRT 位置角距约 4.3 arcsec，符合“位于 XRT 误差圈边缘”，且两次 GROND 观测 r 波段变暗近 3 mag，确认余辉。GCN 未给 0.3 arcsec 的置信水平，故 pos_error_confidence 留空。Fermi GCN 14940 的触发时刻为 11:42:47.05 UT（差 2.35 s），按 §3.8 优先采用 Swift 官方 GCN 14921。GCN 14921 描述为 long GRB，t90=15±2 s（15–150 keV；GCN 14921），按通告分类设 sub_tag=lgrb。GCN 15080 的 g 波段探测仅推出 z<3，不是红移测量，redshift 留空。首历元 GCN 15080 同时给出 2013-06-25 09:15 UT 与“触发后 33.7 h”，两者差约 11 h 50 min；7 条首历元光变行冻结，待维护者裁定时间口径。第二历元绝对 UT 与“42 days”约略相容；只给观测开始与滤镜组总曝光，未给观测终止/逐滤镜曝光时刻，按开始时刻锚定，实际曝光中点不可恢复。",
+  "comment": "身份与位置：Swift/BAT ground-analysis 触发（GCN 14921；T0=2013-06-23 11:42:44.7 UTC），BAT 粗定位 (20.723,-77.784)，90% 半径 4 arcmin；Swift/XRT 精定位 (20.85346,-77.77338)，90% 半径 4.5 arcsec（GCN 14926；与 BAT 坐标相距 106 arcsec）。本条目采用 GROND afterglow 坐标 (20.859063,-77.773361)，每坐标误差 0.3 arcsec（GCN 15080）；与 XRT 位置角距约 4.3 arcsec，符合“位于 XRT 误差圈边缘”，且两次 GROND 观测 r 波段变暗近 3 mag，确认余辉。GCN 未给 0.3 arcsec 的置信水平，故 pos_error_confidence 留空。Fermi GCN 14940 的触发时刻为 11:42:47.05 UT（差 2.35 s），按 §3.8 优先采用 Swift 官方 GCN 14921。GCN 14921 描述为 long GRB，t90=15±2 s（15–150 keV；GCN 14921），按通告分类设 sub_tag=lgrb。GCN 15080 的 g 波段探测仅推出 z<3，不是红移测量，redshift 留空。首历元 GCN 15080 同时给出 2013-06-25 09:15 UT 与“触发后 33.7 h”，两者差约 11 h 50 min；Greiner+2024 A&A 691 A158 的 CDS Table 5（J/A+A/691/A158/tableb1.dat）对 GRB130623A 列 `GROND-Start=0625-09:14:46`、`T-To=163922 s`、检测标记 y、GCN 15080；CDS ReadMe 定义前者为观测起始时刻、后者为相对触发延时。该独立表记录与绝对 UT 起始时刻相符，但仍未裁定该 A 档冲突；7 条首历元光变行冻结，待维护者裁定时间口径。CDS Table 5 只提供观测起始时刻/触发延时和检测标记，不提供该次 GROND 的逐滤镜测光，未据此新增测光值。第二历元绝对 UT 与“42 days”约略相容；只给观测开始与滤镜组总曝光，未给观测终止/逐滤镜曝光时刻，按开始时刻锚定，实际曝光中点不可恢复。",
   "sub_tag": [
     "lgrb"
   ],
@@ -223,7 +223,12 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659"
+    }
+  ],
   "host_galaxy": null,
   "pos_error_confidence": null
 }
