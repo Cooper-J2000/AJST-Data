@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB130623A",
   "alias": [],
-  "ra": 20.723,
-  "dec": -77.784,
+  "ra": 20.859063,
+  "dec": -77.773361,
   "T0": "2013-06-23T11:42:44.700000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 14921（Swift/BAT 团队：2013-06-23 11:42:44.7 UTC；Fermi GCN 14940 为 11:42:47.05，按有 Swift 时优先采用 Swift）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +12,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 4.5,
-  "pos_ref": "GCN 14926",
+  "pos_error": 0.3,
+  "pos_ref": "GCN 15080",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份与位置：Swift/BAT ground-analysis 触发（GCN 14921；T0=2013-06-23 11:42:44.7 UTC），BAT 粗定位 (20.723,-77.784)，90% 半径 4 arcmin；Swift/XRT 精定位 (20.85346,-77.77338)，90% 半径 4.5 arcsec（GCN 14926；与 BAT 坐标相距 106 arcsec）。本条目采用 GROND afterglow 坐标 (20.859063,-77.773361)，每坐标误差 0.3 arcsec（GCN 15080）；与 XRT 位置角距约 4.3 arcsec，符合“位于 XRT 误差圈边缘”，且两次 GROND 观测 r 波段变暗近 3 mag，确认余辉。GCN 未给 0.3 arcsec 的置信水平，故 pos_error_confidence 留空。Fermi GCN 14940 的触发时刻为 11:42:47.05 UT（差 2.35 s），按 §3.8 优先采用 Swift 官方 GCN 14921。GCN 14921 描述为 long GRB，t90=15±2 s（15–150 keV；GCN 14921），按通告分类设 sub_tag=lgrb。GCN 15080 的 g 波段探测仅推出 z<3，不是红移测量，redshift 留空。首历元 GCN 15080 同时给出 2013-06-25 09:15 UT 与“触发后 33.7 h”，两者差约 11 h 50 min；7 条首历元光变行冻结，待维护者裁定时间口径。第二历元绝对 UT 与“42 days”约略相容；只给观测开始与滤镜组总曝光，未给观测终止/逐滤镜曝光时刻，按开始时刻锚定，实际曝光中点不可恢复。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -222,5 +224,6 @@
     }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
