@@ -3,28 +3,34 @@
   "alias": [],
   "ra": 170.101,
   "dec": 19.633,
-  "T0": "2020-05-14T02:21:15Z",
-  "T0_ref": null,
+  "T0": "2020-05-14T02:21:11.346Z",
+  "T0_ref": "GCN 27743 (CALET/CGBM trigger at 2020-05-14 02:21:11.346 UTC; adopted per user adjudication)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "MAXI/GSC",
+  "Trigger_Instrument": "CALET/CGBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 27735 (MAXI/GSC position, assuming source flux constant over scan; J2000)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份与时间：按用户裁定，以 CALET/CGBM 在 2020-05-14 02:21:11.346 UTC 的触发时刻作标准 T0（GCN 27743）。MAXI/GSC 的同源触发时刻为 02:21:15.000 UT（GCN 27735），比所选 T0 晚 3.654 s；AstroSat/CZTI 报同源峰值 02:21:14.435 UT（GCN 27753），比所选 T0 晚 3.089 s。MITSuME 光变时间按所选 CALET T0 重算。MAXI 位置 (170.101°, +19.633°) 是假设扫描期间流量恒定所得；GCN 27735 给统计 90% 椭圆半长轴 0.26°、半短轴 0.21°、长轴自北逆时针 46.0°，另有 0.1° 的 90% 系统误差半径，并另列非恒定假设误差框。椭圆与系统误差不能由单个 pos_error 表达，因此字段留空，口径完整记录于此。CALET T90=5.1±1.1 s、T50=2.5±1.1 s（40–1000 keV，GCN 27743）；AstroSat/CZTI T90=9.64 s（GCN 27753，未报告误差与能段）。这些通告没有给出 long/short 文字分类，故不从 T90 自行推导 sub_tag，保持空列表。未见红移或确认宿主。\n测光核验（2026-11-03）：本地 gcn/archive 不存在；external/rssgrbag 与 external/grbsn_webtool 未命中 GRB200514A。GCN 事件页收录 27735（MAXI/GSC 触发）、27743（CALET/CGBM 触发）、27744（MITSuME 光学上限）、27753（AstroSat/CZTI 检测）；MAXI GRB list 与 MPE GRB overview 交叉检查，未见额外光学/射电测光。GCN 27744 Table 明列 9 个拼接观测场、每场 g/Rc/Ic 的 5σ 上限，共 27 行，已逐值录入；表给 MID-UT 与总曝光时长，time_err 取总曝光的一半，未将拼接窗口误作 T0。fallback 网页文献检索以 GRB 200514A、GRB200514A、MAXI GRB200514A 与 MITSuME 变体检索，未识别到可用于本条目的研究论文；按用户安排 ADS/SciX 本轮未检索，不能据此声称文献查全或无其他文献，已登记 search-limited。GCN 27744 称观测覆盖 MAXI 误差区约 65%，只报告未发现明亮光学瞬变（除已知高自行星）；TNS 无 AT 名称不适用。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
