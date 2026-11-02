@@ -1,25 +1,26 @@
 {
   "transient_id": "GRB090618A",
   "alias": [],
-  "ra": 294.020833,
-  "dec": 78.35,
-  "T0": "2009-06-18T08:28:26.660000Z",
-  "T0_ref": null,
+  "ra": 293.99456,
+  "dec": 78.35676,
+  "T0": "2009-06-18T08:28:29Z",
+  "T0_ref": "GCN 9512",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.54,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "GCN 9518",
-  "comment": null,
+  "pos_error": 0.74,
+  "pos_ref": "GCN 9512",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 9518; GCN 9542",
+  "comment": "T0 采用 Swift/BAT trigger 355083 的 2009-06-18 08:28:29 UT（GCN 9512）；Fermi/GBM 目录时刻 08:28:26.660 UT 相差 2.34 s。UVOT 精化位置 RA=293.99456°, Dec=+78.35676°, 误差半径 0.74 arcsec（90%，GCN 9512）。z=0.54 为光谱红移（GCN 9518、9542）。Swift/BAT 官方表 T90=113.2±6 s，按目录时长标为 lgrb。X 射线行按审核范围保持原样；维护者需在合并前依新 T0 机械重算这些行的 MJD。GCN 9592 首条 AMI 观测日期小数与 UT 窗口不一致，该行冻结待维护者裁定。",
   "sub_tag": [
     "XRR",
-    "SN-candidate"
+    "SN-candidate",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
@@ -1042,9 +1043,9 @@
   "articles": [
     {
       "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "title": "An optical gamma-ray burst catalogue with measured redshift – I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {{M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An optical gamma-ray burst catalogue with measured redshift -- I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {MNRAS},\n       volume = {533},\n       pages = {4023--4043},\n       year = {2024},\n       doi = {10.1093/mnras/stae1484},\n}",
       "source": "bot"
     },
     {
@@ -1088,7 +1089,26 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2011ApJ...201....1R/abstract",
       "bibtex": "@ARTICLE{2011ApJ...201....1R,\n       author = {A. R. Rao and J. P. Malkar and M. K. Hingar and V. K. Agrawal and S. K. Chakrabarti and A. Nandi and D. Debnath and T. B. Kotoch and R. Sarkar and T. R. Chidambaram and P. Vinod and S. Sreekumar and Y. D. Kotov and A. S. Buslov and V. N. Yurov and V. G. Tyshkevich and A. I. Arkhangelskij and R. A. Zyatkov and Sachindra Naik},\n       title = {Detection of GRB 090618 with RT-2 Experiment Onboard the Coronas-Photon Satellite},\n       journal = {2011, The Astrophysical Journal, 728, 42},\n       year = {2010},\n       doi = {10.1088/0004-637X/728/1/42},\n       eprint = {1012.0641},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011ApJ...201....1R/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Cano+2011",
+      "title": "A tale of two GRB-SNe at a common redshift of z=0.54",
+      "url": "https://doi.org/10.1111/j.1365-2966.2010.18164.x",
+      "bibtex": "@ARTICLE{2011MNRAS.413..669C,\n       author = {Cano, Z. and Bersier, D. and Guidorzi, C. and others},\n       title = {A tale of two GRB-SNe at a common redshift of z=0.54},\n       journal = {MNRAS},\n       volume = {413},\n       pages = {669--685},\n       year = {2011},\n       doi = {10.1111/j.1365-2966.2010.18164.x},\n}"
+    },
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "bibtex": "@ARTICLE{2017ApJS..228...13R,\n       author = {Roming, P. W. A. and others},\n       title = {A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution},\n       journal = {ApJS},\n       volume = {228},\n       pages = {13},\n       year = {2017},\n       doi = {10.3847/1538-4365/228/2/13},\n}"
+    },
+    {
+      "name": "Oates+2012",
+      "title": "A correlation between the intrinsic brightness and average decay rate of Swift/UVOT gamma-ray burst optical/ultraviolet light curves",
+      "url": "https://doi.org/10.1111/j.1745-3933.2012.01331.x",
+      "bibtex": "@ARTICLE{2012MNRAS.426L.86O,\n       author = {Oates, S. R. and Page, M. J. and De Pasquale, M. and Schady, P. and Breeveld, A. A. and Holland, S. T. and Kuin, N. P. M. and Marshall, F. E.},\n       title = {A correlation between the intrinsic brightness and average decay rate of Swift/UVOT gamma-ray burst optical/ultraviolet light curves},\n       journal = {MNRAS Letters},\n       volume = {426},\n       pages = {L86--L90},\n       year = {2012},\n       doi = {10.1111/j.1745-3933.2012.01331.x},\n}"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
