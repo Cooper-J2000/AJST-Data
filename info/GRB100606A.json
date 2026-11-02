@@ -2,9 +2,9 @@
   "transient_id": "GRB100606A",
   "alias": [],
   "ra": 350.62704,
-  "dec": -66.24128,
-  "T0": "2010-06-06T19:12:43.712000Z",
-  "T0_ref": null,
+  "dec": -66.24127,
+  "T0": "2010-06-06T19:12:41.811980Z",
+  "T0_ref": "Swift/BAT trigger 424031, GCN 10824 (19:12:41 UT; official Swift/BAT GRB table and HEASARC SwiftGRB catalog give 2010-06-06T19:12:41.811980Z)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,9 +14,9 @@
   ],
   "pos_error": 1.8,
   "pos_ref": "GCN 10827",
-  "redshift_type": null,
-  "redshift_ref": "catalog:minaev2020",
-  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Krühler+2015, A&A 581, A125, Table 1; DOI:10.1051/0004-6361/201425561",
+  "comment": "审核依据：T0 原值 2010-06-06T19:12:43.712000Z 来自 Konus-Wind（external/konus_wind；与触发时刻不符），改取 Swift/BAT 触发 424031 的官方时刻 2010-06-06T19:12:41.811980Z（GCN 10824 报 19:12:41 UT；Swift/BAT 与 HEASARC SwiftGRB 官方快照给出同一亚秒值）。Konus-Wind 19:12:43.712 UT 差 +1.900020 s，作为不同仪器触发差备查，不写 T0_offset。坐标/定位取 GCN 10827：RA=350.62704°, Dec=−66.24127°, 1.8″ radius, 90% confidence。红移 z=1.5545 为 Krühler+2015 (A&A 581, A125) Table 1 的 X-Shooter 宿主星系发射线红移，spec-host。分类依据：Swift/BAT 官方目录 t90=480 s（15–350 keV；GCN 10828 refined analysis 亦报告长持续暴），按目录 t90 判 lgrb。\n测光：GCN 10824 的 UVOT White FC 初报 >19.6 与 GCN 10830 表中同一 FC 的正式 3σ 上限 >21.08 重复，保留前者并 discard；采用 GCN 10830。UVOT 均为 Poole+2008 光度系统（Vega），原通告未做银消修正，E(B−V)=0.03。GCN 10830 给 T_start/T_stop 窗口，按窗口中点/半宽记时。GCN 10869 WiFeS：两次 900 s 曝光起始 19:49:20 UT，栈图 5σ AB 上限，按总曝光 1800 s 估中点；原文未报告曝光间隙。GCN 10835 GROND：04:27 UT 开始，光学 270 min、JHK 80 min 总积分；按 start+总积分一半估中点，AB，原文未给间隙或逐滤镜窗口；括号内 g′/r′值是候选宿主星系亮度，保留但 discard。GCN 10831 Gemini-South：06:02 UT 开始，各滤镜 900 s；r≈25 扩展源由宿主主导，候选宿主测量保留但 discard；通告另明确给 afterglow r>25，按曝光中点补入上限。\n文献/数据检索（2026-11-02）：本地 external 快照已查 Swift BAT/GRB、UVOTGRB、Konus-Wind、AGILE-MCAL、MPE、Swift-XRT；事件 GCN 页面共 11 circulars，逐一核对有相关测光的 10824/10830/10831/10835/10869，另外 10827/10828/10829/10836 为定位/高能参数或T0相关。正式出版的 Krühler+2015 及 Minaev+2020、Tsvetkova+2021 题录/摘要已检索；ADS/SciX API token 不可用，故完整引文检索覆盖受限，见 audit/unverified.tsv。未发现需增补的其他有明确时间锚点光学测光表；X 射线行按规则原字节保留，未改任何列；其既有 MJD 与当前 Swift T0+time 相差 1.900020 s（旧 T0 对应 Konus-Wind 19:12:43.712 UT）。该项因 X 射线行不得改动，列为维护者待决：请决定后续是否允许对 MJD 作机械校准。",
   "sub_tag": [
     "lgrb"
   ],
@@ -504,9 +504,9 @@
   "articles": [
     {
       "name": "Minaev+2020",
-      "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract",
-      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
+      "title": "The Ep,i-Eiso correlation: type I gamma-ray bursts and the new classification method",
+      "url": "https://doi.org/10.1093/mnras/stz3611",
+      "bibtex": "@ARTICLE{2019MNRAS.492.1919M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i-Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       volume = {492},\n       pages = {1919--1936},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv}\n}",
       "source": "bot"
     },
     {
@@ -515,7 +515,14 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract",
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Krühler+2015",
+      "title": "GRB hosts through cosmic time: VLT/X-Shooter emission-line spectroscopy of 96 gamma-ray-burst-selected galaxies at 0.1 < z < 3.6",
+      "url": "https://doi.org/10.1051/0004-6361/201425561",
+      "bibtex": "@ARTICLE{2015A&A...581A.125K, author={T. Krühler and D. Malesani and J. P. U. Fynbo and others}, title={GRB hosts through cosmic time: VLT/X-Shooter emission-line spectroscopy of 96 gamma-ray-burst-selected galaxies at 0.1 < z < 3.6}, journal={Astronomy & Astrophysics}, volume={581}, pages={A125}, year={2015}, doi={10.1051/0004-6361/201425561}"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
