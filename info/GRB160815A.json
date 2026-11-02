@@ -1,21 +1,25 @@
 {
   "transient_id": "GRB160815A",
   "alias": [],
-  "ra": 288.5401,
-  "dec": 84.314,
+  "ra": 288.54101,
+  "dec": 84.31383,
   "T0": "2016-08-15T11:45:11Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 19794",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
   "pos_ref": "GCN 19796",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份与元数据核验（2026-11-02）：GCN 19794 报 Swift/BAT trigger 708598，T0=2016-08-15 11:45:11 UT；采用该触发仪器来源的秒精度，故与 Fermi/GBM GCN 19797 的 11:45:11.64 UT 相比不补亚秒。Swift 官方 GCN 19796 的增强 J2000 定位为 RA=288.54101 deg、Dec=+84.31383 deg、半径1.7 arcsec（90%），已替换早期 UVOT 候选定位。GCN 19799 给 BAT t90=8.6±1.8 s（15–350 keV）；按目录 t90 判 lgrb。Swift 官方 GRB 页面未列红移或宿主；redshift/host_galaxy 保持 null。articles 仅收研究文章，不含 GCN；本次用于可见光数据的首要出处为 GCN 19795、GCN 19801、GCN 19807，另从 NAOJ 公开的 MITSuME 用户会议资料 Appendix (20) 核实到三条额外上限。测光检索（2026-11-02）：本 clone 不含 gcn/archive；external/rssgrbag 与 external/grbsn_webtool 中无本源记录；Swift 官方 GCN event 页列 9 篇 Circular，其中 3 篇含光学/UV 数值（19795、19801、19807），全部逐行查看并将其 10 条测光记录与现表对照；公开网页文献检索命中 Swift 官方目录、X-ray 分析研究及 NAOJ MITSuME 用户会议资料，后者新增 3 条限值。ADS/SciX 本轮未接 token（见 audit/unverified.tsv），Crossref/arXiv/OpenAlex API URL 经网页检索工具请求均不可达，故文献检索仍受限，不能据此断言无其他发表数据。TNS 不适用于本 GRB；本 PR 新增3行、修订10行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
@@ -24,5 +28,6 @@
     "bot_created": true
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
