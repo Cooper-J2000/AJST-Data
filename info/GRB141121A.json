@@ -1,27 +1,32 @@
 {
   "transient_id": "GRB141121A",
   "alias": [],
-  "ra": 122.666667,
-  "dec": 22.233333,
-  "T0": "2014-11-21T03:50:43Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "ra": 122.66928,
+  "dec": 22.21728,
+  "T0": "2014-11-21T03:50:43.185060Z",
+  "T0_ref": "Swift/BAT GRB catalog trigger 619182（batgrbcat：2014-11-21T03:50:43.185060Z，2026-11-03 在线复核与仓内快照一致）；GCN 17075 = 03:50:43 UT；swift_gnd_ana 页 = 03:50:43.18",
+  "T0_offset": -870,
+  "T0_offset_ref": "GCN 17108（Konus-Wind：第一 episode 起于 ~T0(BAT)-870 s；SPI-ACS/INTEGRAL GCN 17110 与 IPN GCN 17112 证实该 pre-trigger episode 属于本暴）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.47,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 17085 (Swift/UVOT: RA 122.66928, Dec 22.21728, 0.5 arcsec radius, 90% confidence)",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 17081",
-  "comment": null,
+  "comment": "身份：Swift/BAT trigger 619182（GCN 17075，T0 亚秒取自 BAT 目录，swift_gnd_ana 页 03:50:43.18 互证）；MAXI/GSC 在 T0-356 s 扫描探测（GCN 17077）、Konus-Wind 第一 episode 起于 ~T0-870 s（GCN 17108），并经 SPI-ACS（GCN 17110）与 IPN 三角定位（GCN 17112， annulus 距 XRT 位置 32″）证实属本暴 → T0_offset=-870 s（纯元数据，不改光变时间轴）。位置：UVOT 122.66928,+22.21728（0.5″, 90%, GCN 17085，本条 ra/dec）；XRT 增强定位 122.66947,+22.21741（1.5″, 90%, GCN 17080）；GROND 余辉 08:10:40.62 +22:13:01.8（0.3″, GCN 17078）、RATIR 天测 08:10:40.61 +22:13:01.7（GCN 17115 errata，宿主候选在 OT 以西）。红移 z=1.47（Keck I/LRIS 吸收线，GCN 17081）→ redshift_type=spec。sub_tag=lgrb：按目录 t90=481.004±38.063 s（Swift/BAT catalog，15-350 keV；在线页 2026-11-03 复核与快照一致；GCN 17083 给 549.9±37.4 s）判 lgrb；Cucchiara+2015 与 Konus-Wind（总持续 ~1200 s，GCN 17108）另有 ultra-long 表述。宿主候选（不建立 host_galaxy）：GCN 17105 报 OT 东 2.3″ r=23.22 源，GCN 17115 errata 更正为以西（与 GCN 17111 一致：R=22.95±0.11，西 3″）；GCN 17128 提示或存在更近宿主成分；DCT/Keck 后期测光仍以余辉为主（GCN 17191）。检索留证（2026-11-03）：仓内 gcn/archive 按subject/eventId 命中 48 篇全读，测光已全部入库或核对；external/rssgrbag、external/grbsn_webtool 无该源记录；ADS '141121A' 命中 47 条 = 45 篇 GCN + 1 篇正式文献 Cucchiara+2015（ApJ 812,122；Table 1 光学/UVOT、Table 2 射电全量核对入库）+ Dainotti+2024 目录（其 166 行转入数据逐值核对）；Anderson+2018（MNRAS 473,1512）AMI 15.7GHz 23 历元补入。X 射线行 257 行（band=10keV，UKSSDC Burst Analyser）按契约保持原样（T0 改正后其 mjd 需维护者按 mjd=T0+time 重算）；GCN 17077（MAXI）、17086（XRT）为 X 射线数据不在审核范围。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    },
     "derived": {
       "best": {
         "alpha": {
@@ -279,17 +284,23 @@
   },
   "articles": [
     {
+      "name": "Cucchiara+2015",
+      "title": "Happy Birthday Swift: Ultra-long GRB141121A and its broad-band Afterglow",
+      "url": "https://doi.org/10.1088/0004-637X/812/2/122",
+      "bibtex": "@ARTICLE{2015ApJ...812..122C,\n       author = {Cucchiara, A. and Veres, P. and Corsi, A. and Cenko, S. B. and Perley, D. A. and Lien, A. Y. and Marshall, F. E. and Pagani, C. and Toy, V. L. and Capone, J. I. and Frail, D. A. and Horesh, A. and Modjaz, M. and Butler, N. R. and Littlejohns, O. M. and Watson, A. M. and Kutyrev, A. S. and Lee, W. H. and Richer, M. G. and Klein, C. R. and Fox, O. D. and Prochaska, J. X. and Bloom, J. S. and Troja, E. and Ramirez-Ruiz, E. and de Diego, J. A. and Georgiev, L. and Gonz{\\'a}lez, J. and Rom{\\'a}n-Z{\\'u}{\\~n}iga, C. and Gehrels, N. and Moseley, H.},\n       title = \"Happy Birthday Swift: Ultra-long GRB 141121A and Its Broadband Afterglow\",\n       journal = {The Astrophysical Journal},\n       year = 2015,\n       month = oct,\n       volume = 812,\n       number = 2,\n       eid = {122},\n       pages = {122},\n       doi = {10.1088/0004-637X/812/2/122},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015ApJ...812..122C/abstract},\n}",
+      "source": "bot"
+    },
+    {
+      "name": "Anderson+2018",
+      "title": "The Arcminute Microkelvin Imager catalogue of gamma-ray burst afterglows at 15.7 GHz",
+      "url": "https://doi.org/10.1093/mnras/stx2407",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
       "name": "Dainotti+2024",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
       "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Cucchiara+2015",
-      "title": "Happy Birthday Swift: Ultra-long GRB141121A and its broad-band Afterglow",
-      "url": "https://ui.adsabs.harvard.edu/abs/2015arXiv151000996C/abstract",
-      "bibtex": "@ARTICLE{2015arXiv151000996C,\n       author = {A. Cucchiara and P. Veres and A. Corsi and S. B. Cenko and D. A. Perley and A. Lien F. E. Marshall and C. Pagani and V. L. Toy and J. I. Capone and D. A. Frail and A. Horesh and M. Modjaz and N. R. Butler and O. M. Littlejohns and A. M. Watson and A. S. Kutyrev and W. H. Lee and M. G. Richer and C. R. Klein and O. D. Fox and J. X. Prochaska and J. S. Bloom and E. Troja and E. Ramirez-Ruiz and J. A. de Diego and L. Georgiev and J. Gonzalez and C. G. Roman-Zuniga and N. Gehrels and H. Moseley},\n       title = {Happy Birthday Swift: Ultra-long GRB141121A and its broad-band Afterglow},\n       journal = {arXiv e-prints},\n       year = {2015},\n       doi = {10.1088/0004-637X/812/2/122},\n       eprint = {1510.00996},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015arXiv151000996C/abstract},\n}",
       "source": "bot"
     }
   ],
