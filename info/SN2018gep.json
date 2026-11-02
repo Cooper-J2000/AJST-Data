@@ -2,33 +2,57 @@
   "transient_id": "SN2018gep",
   "alias": [
     "SN 2018gep",
+    "AT2018gep",
     "ATLAS18vah",
     "ZTF18abukavn"
   ],
   "ra": 250.950838,
   "dec": 41.045383,
   "T0": "2018-09-09T03:55:17Z",
-  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2018gep（2026-10-31 取）",
+  "T0_ref": "TNS Discovery Date（2018-09-09 03:55:17.000，2026-11-03 复核）：https://www.wis-tns.org/object/2018gep；=首个 ZTF 探测（Ho+2019 表5 首行 JD 2458370.6634 = 03:55:17.8，一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
-  "redshift": 0.032,
+  "redshift": 0.03154,
   "tag": [
     "sn"
   ],
   "pos_error": null,
-  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2018gep（2026-10-31 取）",
+  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2018gep（2026-11-03 复核）",
   "redshift_type": "spec",
-  "redshift_ref": "TNS Redshift 字段：https://www.wis-tns.org/object/2018gep（2026-10-31 取）",
-  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）",
+  "redshift_ref": "Ho+2019 表1（DOI 10.3847/1538-4357/ab55ec）：z=0.03154，宿主窄发射线；并列：TNS Redshift 0.032（2026-11-03 取）",
+  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）。2026-11-03 Rusty-Harpoon@zcode 完整审核，补光变 589 行。身份：TNS AT2018gep/SN 2018gep（SN Ic-BL；RA/DEC 16:43:48.201 +41:02:43.38 = 250.950837548 +41.0453830323，与 info 一致；发现星等 r=20.48±0.26 与 Ho+2019 表5 首行一致）；内部名 ZTF18abukavn（TNS ZTF 报告）、ATLAS18vah（TNS ATLAS_Bot1 报告 49202，2026-11-03 取）。T0=TNS Discovery Date=首个 ZTF 探测；注意 Ho+2019 正文另有拟合历元 t0≈UT 2018-09-09 03:30（g 波段二次拟合零流量点，早于首探测 25±2 min，仅为其表内 dt/Δt 相位历元，未采用为库 T0）。红移取 VoR 值 0.03154（Ho+2019 表1）；并列：TNS 0.032（Global SN Project 分类报告，宿主窄 H 线）、ATel 12030/12047 的 0.033。光变构成：Ho+2019 表5 机读表 427 行（表内 53 行完全重复已去重）+ 表2 射电 9 行；Pritchard+2021 表1 机读表 150 行 + 排版表 5 行（其机读表 13 行 ZTF 与 Ho+2019 逐值一致系转引已删；66 行 UVOT 为不同重归约、与 Ho+2019 同期值有 0.1–0.6 mag 系统差，§3.4 拿不准不删、两版并存；LCO 段机读表与排版表存在历元/误差列不一致，两版并存、待维护者裁决）；TNS 补 3 行（ZTF r>20.47 末非探测、ATLAS cyan 18.993±0.125 探测与 >19.47 非探测）。ATel 12032 的 12 个 UVOT 点与 Ho+2019 表5 同 JD 但差约 0.08–0.1 mag（早期定标），以 VoR 为准未入库；ATel 12056 的 VLA 10 GHz 91±4 μJy 被 Ho+2019 表2 VoR（9.7 GHz 34±4 μJy）取代；ATel 12055 Xinglong GWAC 仅给 R=16.0→16.5 衰落范围、无逐点时刻，不入库；Ho+2019 正文前期 stacked 预发现探测（m≈22）无精确时间锚点，不入库。测光检索（2026-11-03）：仓内 gcn/archive 45947 篇全文检索 2018gep/ATLAS18vah/ZTF18abukavn 0 命中、external/rssgrbag（140 行）0 命中、external/grbsn_webtool/SourceData（63 事件）0 命中；ADS 检索命中 18 条（研究论文：Ho+2019、Pritchard+2021、Leung+2021（模型论文，arXiv 源码核查无新测光表）、Wang+2022 等（对比提及，无本源新表）；其余为 ATel/TNS/目录条目），ATel 6 篇全部核对（12030/12032/12047/12055/12056/12062，仅 12032/12056 含测光且均被 VoR 取代）、TNS 对象页 4 行测光（1 行与 Ho 重复）→ 补 594 行。",
   "sub_tag": [
     "Ic-BL"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "hermes_list_20261031"
+    "ingest_source": "hermes_list_20261031",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ho+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab55ec",
+      "title": "Evidence for Late-stage Eruptive Mass Loss in the Progenitor to SN2018gep, a Broad-lined Ic Supernova: Pre-explosion Emission and a Rapidly Rising Luminous Transient",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Pritchard+2021",
+      "url": "https://doi.org/10.3847/1538-4357/ac00bc",
+      "title": "The Exotic Type Ic Broad-lined Supernova SN 2018gep: Blurring the Line between Supernovae and Fast Optical Transients",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": {
+    "redshift": 0.03154,
+    "redshift_type": "spec",
+    "comment": "TNS 宿主名 SDSS J164348.22+410243.3（https://www.wis-tns.org/object/2018gep，2026-11-03 取）；z=0.03154 由宿主窄发射线（Ho+2019 表1）；宿主恒星质量 1.3e8 Msun、SFR 0.12 Msun/yr、氧丰度约 1/5 太阳（Ho+2019 表1）。坐标未单独取值，暂缺。",
+    "source": "Ho+2019 表1（DOI 10.3847/1538-4357/ab55ec）；TNS"
+  }
 }
