@@ -12,12 +12,19 @@ uvotgrb HLSP（MAST，v1 2017-01）是 Swift/UVOT 余辉测光的权威机读汇
 与 noc-db（归一化最优叠加，Morgan+2008 方法）两个数据库 + grb-cat 参数表，覆盖 538 个 GRB（2005-01-17 至
 2010-12-25）。本库大量 Swift 源的 UVOT 行即来自 noc-db（lc reference 写作
 「Roming et al. 2017, ApJS, 228, 13 (MAST HLSP uvotgrb, noc-db)」），另有 Dainotti2024 的 UVOT 行同源。
-sources 列由本库 info 的 catalog_data.uvot_grb 程序化求出（521 源，2026-11-03）。
+sources 列由本库 info 的 catalog_data.uvot_grb 程序化求出（521 源，2026-11-03）；另按 lc `reference` 全库扫描统计得 104 源（写作「Roming et al. 2017, ApJS, 228, 13 (MAST HLSP uvotgrb, noc-db)」或经 Dainotti2024 转引，2026-11-03）——两种口径并注：catalog 口径为超集，reference 口径为已实际引用者。本卡由两次独立审核（GRB090510A #795、GRB050730A #809）分别建卡后合并（2026-11-03，helper 同为 Rusty-Harpoon@zcode）。
 
 机读表取数：https://archive.stsci.edu/missions/hlsp/uvotgrb/hlsp_uvotgrb_swift_uvot_all_multi_v1_noc-db.fits
 （列 OBJECT/FILTER/TIME/TSTART/TSTOP/EXPOSURE/MAG/MAG_ERR/SIGMA 等；TIME 为相对 BAT 触发秒；
 MAG 为 UVOT Vega 系统；B/V 以外的滤光片行带 SCALE_FACT 归一化因子）。readme：
 https://archive.stsci.edu/missions/hlsp/uvotgrb/hlsp_uvotgrb_swift_uvot_all_multi_v1_readme.txt
+
+关键口径（两源实测核对，2026-11-03）：
+- `noc-db.TIME` 与 `image-event-*.TSINCE_BUR` 均以 **Swift/BAT 触发时刻为历元**（`TRIGTIME` 列为 BAT MET）；
+- `noc-db` 共加行 `TIME` 为曝光加权中点、`TSTART/TSTOP` 为窗口、`EXPOSURE` 为窗口内总曝光（time_err=EXPOSURE/2 的依据）；
+- 星等系统为 UVOT Photometric System（Vega 惯例，Breeveld+2011）；
+- 3″/5″ 孔径值与 noc-db 共加值不同（不同孔径/共加口径），不得混用或互相去重；
+- 镜像备注（2026-11-03 复核）：MAST 直链若 404，同一 NOC_db.fits 可从 https://swift.gsfc.nasa.gov/results/uvot_grbcat2/NOC_db.fits 取。
 
 GRB050730A 审验记录（2026-11-03）：noc-db 中 GRB050730 共 32 行，与本库 30 行 Roming reference +
 2 行（原 Dainotti;Roming2017 转引）逐值（TIME/MAG/MAG_ERR）一致，已把那 2 行 reference 改指本目录。
@@ -30,6 +37,8 @@ GRB050730A 审验记录（2026-11-03）：noc-db 中 GRB050730 共 32 行，与�
 | 源 | 表号 | 源级卡 | status | 增量判读 |
 |---|---|---|---|---|
 | GRB050730A | noc-db.fits OBJECT=GRB050730 | 无（本卡即索引） | extracted（32 行逐值程序化比对一致） | noc-db 为该源 UVOT 的最终定标值；与 GCN 3717/Perri+2007 同曝光不同定标并存（非舍入一致，不互删） |
+| GRB090510A | noc-db.fits（OBJECT='GRB090510' 57 行） | 无（本卡即索引） | extracted（57 行已逐值核对并入该源 PR #795） | 原始目录数据：time 列=BAT 触发后秒，mjd 须按 T0+time 重算 |
+| 其余 519 源 | 同一 noc-db / image-event-3db/5db | 无 | mention-only | 同口径判读；接手者直接下载 HLSP FITS 逐值核对 |
 
 ## 增量门槛判读
 
@@ -37,6 +46,7 @@ GRB050730A 审验记录（2026-11-03）：noc-db 中 GRB050730 共 32 行，与�
 - 但 noc-db 的 time 口径（TIME=曝光中点，TSTART/TSTOP 可查）与 GCN 文字中的窗口/中点常不一致——
   接手者回原文核对时间轴时可直接用 noc-db 的 TSTART/TSTOP，无需再问。
 - 同一曝光在 GCN 通告、Perri 类专篇、本目录间数值不同属定标差异，按 §3.4 并存保留，不按重复删除。
+- 库内行 `reference` 若仍是 `Dainotti2024;Roming2017` 链，接手审核时按各源审核改为最初出处引用（GRB090510A/GRB050730A 同法）。
 
 ## 待决
 
