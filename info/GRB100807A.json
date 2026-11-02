@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB100807A",
-  "alias": [],
-  "ra": 55.283,
-  "dec": 67.665,
-  "T0": "2010-08-07T09:13:13Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 100807A"
+  ],
+  "ra": 55.30042,
+  "dec": 67.67158,
+  "T0": "2010-08-07T09:13:13.622520Z",
+  "T0_ref": "Swift/BAT 触发 #431128：GCN 11067（\"At 09:13:13 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 100807A\"，整秒）；亚秒 .622520 取触发仪器 Swift/BAT 官方目录（external/swift_bat 与 HEASARC swiftgrb 快照 trigger_time=2010-08-07T09:13:13.622520Z 一致），按 §3.2 触发仪器亚秒优先",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,9 +18,12 @@
   "pos_ref": "GCN 11070",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份核验（2026-11-03）：Swift/BAT trigger #431128（GCN 11067/11069）；原库坐标 55.283,67.665 为 BAT 地面位置（1.9′，90%，GCN 11069），本次改记 XRT 增强位置 RA,Dec=55.30042,+67.67158（1.9″，90% 置信，GCN 11070，与原 pos_ref 一致），与 P60 光学余辉 03:41:12.43 +67:40:17.4（GCN 11073）一致；UKSSDC 现行 XRT 位置 55.30071/67.67153（1.6″，swiftgrbba 目录快照）备查。别名「GRB 100807A」为 GCN 通告原文用名（GCN 11067 subject）。t90=7.9±1.6 s（GCN 11069，15-350 keV；Swift/BAT 目录 7.744±1.438 s），按通告/目录 t90 判 lgrb。T0 改为触发仪器目录亚秒值 .622520 后，全部非 X 射线行 mjd 按 mjd=T0+time 重算（7 位小数）；X 射线行（band=10keV，24 行）未改未删未增，其 mjd 需随 T0 重算（2026-10-31 裁定，留维护者执行）。测光检索（2026-11-03）：仓内 gcn/archive 45947 篇全文检索 GRB100807A/100807A/431128，命中 11 篇 Circular（11067/11068/11069/11070/11072/11073/11074/11075/11078/11080/11147）全部读取核对，光学测光已逐行核；external/rssgrbag（射电 140 行/74 源）、external/grbsn_webtool（63 事件）无本源记录；ADS API（api.adsabs.harvard.edu）全文检索命中 13 条＝上述 12 条通告级条目（11 Circular + GCN Report 295.1 题录）+ X 射线耀发样本文章 arXiv:2610.31360（仅 X 射线谱参量，超出本库审核范围，无光学测光）；GCN Report 295.1（Swift 团队报告，含 Zeiss-1000/Palomar 观测日志）gcn.gsfc.nasa.gov/gcn/reports/295_1、gcn.nasa.gov 多路径 404 不可达，已登记 audit/unverified.tsv → 无新增可用测光，补 0 行（GCN 11067 初报 white FC 行并入 GCN 11072 精化行，删 1 行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "catalog_data": {
       "uvot_grb": {
@@ -253,6 +258,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [],
