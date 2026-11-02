@@ -1,15 +1,15 @@
 {
   "transient_id": "GRB090531B",
   "alias": [
-    "GRB 090531775"
+    "GRB 090531B"
   ],
-  "ra": 252.05999755859375,
-  "dec": -36.04999923706055,
-  "T0": "2009-05-31T18:35:58.492000Z",
-  "T0_ref": null,
+  "ra": 252.0748,
+  "dec": -36.035,
+  "T0": "2009-05-31T18:35:56.171780Z",
+  "T0_ref": "Swift/BAT trigger 353728; Swift/BAT GRB catalog exact trigger time (GCN 9461 discovery notice)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -18,7 +18,7 @@
   "pos_ref": "GCN 9463",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "身份：Swift trigger 353728（GCN 9461）与 Fermi/GBM trigger 090531775（GCN 9501 明确称亦被 Swift/BAT 探测）为同一事件；别名 GRB 090531.775 见 Fermi 2FLGC/FERMIGBRST。统一 T0 采用 Swift/BAT catalog 的 2009-05-31T18:35:56.171780Z；Fermi/GBM catalog 为 18:35:56.492Z（晚 0.32022 s），GCN 9461 整秒为 18:35:56 UT。坐标采用 Swift/XRT 最佳位置 GCN 9463（RA=252.0748°, Dec=−36.0350°, 3.4 arcsec，90%）。目录 T90 口径不一致：Swift/BAT catalog 54.996±6.13174 s（15–350 keV；Swift GRB page 取整 80 s），GBM catalog 0.768±0.230755 s（50–300 keV），GCN 9501 约 2 s（8–1000 keV）；不据此增添 sgrb/lgrb 分类。sub_tag Fermi-LAT 保留，依据 Ajello+2019 2FLGC（LLE-only detection）。测光来源为 GCN 9462、9470、9471、9480、9481；UVOT 9469 数据按 9471 更正（曝光时间加倍并使用更正值），9464 White 初报与更正 White 同帧，已将初报行 discard。ROTSE 使用曝光中点；GROND 窗口限值用窗口中点；ANDICAM 使用通告明确的中间时刻。所有测光未作银消改正。2026-11-02 检索留证：仓库无 gcn/archive；检索 external/rssgrbag 与 external/grbsn_webtool 合计 800 个文件，未找到 GRB090531B 匹配；外查 GCN 官网事件页/通告与 Swift、Fermi/GBM、Fermi/LAT 官方目录，核对到 2 个 ROTSE 点、1 个 Miyazaki 限值、7 个 UVOT 记录（含一条同帧 discard）、7 个 GROND 首轮限值和 2 个 ANDICAM 限值，逐行复核并修正 20 条非 X 射线记录。ADS/SciX API token 未配置，API文献检索通道受限；不据此声称文献穷尽，见 audit/unverified.tsv。",
   "sub_tag": [
     "Fermi-LAT"
   ],
@@ -414,6 +414,20 @@
       }
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "LHe496@Codex"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
