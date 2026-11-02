@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB050730A",
-  "alias": [],
-  "ra": 212.066667,
-  "dec": -3.766667,
+  "alias": [
+    "GRB050730",
+    "BAT 148225",
+    "Swift 148225"
+  ],
+  "ra": 212.07121,
+  "dec": -3.77192,
   "T0": "2005-07-30T19:58:23Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 3704（Swift/BAT trigger 148225，19:58:23 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.0,
+  "pos_ref": "GCN 3704（Swift/UVOT，14h08m17.09s -03°46'18.9\"，±1\" radius 90% c.l.）",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 3709（Magellan/MIKE，z=3.967）；GCN 3710（WHT，z=3.97）确认",
+  "comment": "身份：Swift/BAT 触发 148225（2005-07-30 19:58:23 UT），BAT 在轨定位 RA,Dec=212.065,-3.762 (3' 90%)，UVOT/XRT 后随定位与各 GCN/文献一致；当日无第二个 GRB，尾缀 A 为库内当日多源编号惯例。T0 亚秒：Swift/BAT 目录触发时刻 19:58:23.199020 UT（swift_bat/konus_wind 目录一致），校验器 ISO8601 不收亚秒，按契约取整数秒入库，光变 mjd 轴与 19:58:23 自洽；亚秒差异不写 T0_offset（<1 s）。红移各值并列：3.967（GCN 3709 Magellan/MIKE）、3.97（GCN 3710 WHT）、3.968（GCN 3746 VLT/UVES）、3.9693±0.00005（Fynbo+2009，HEASARC swiftgrb 转载）；字段取 3.97（GCN 3710）。sub_tag=lgrb 依据 t90=154.6±18.6 s（Swift/BAT 目录，15-350 keV），按目录 t90 判 lgrb。定位补充：XRT 精化 14:08:17.5 -03:46:19 ±6\"（GCN 3722）；SGA/uvot_grb POS_ERR=0.6\"；swiftgrbba error_radius=1.3\"。UVOT 各版本定标并存说明：同一批 UVOT 曝光在 GCN 3717（预备零点）、Perri+2007（VoR 已做银消改正 E(B-V)=0.049，Gext_corr=y）、MAST HLSP uvotgrb noc-db（Roming+2017）中数值不同（不同零点/孔径/改正），按 §3.4 非舍入一致不算重复、全部保留；Oates+2009 逐点星等不可溯源已置 discard。测光检索（2026-11-03）：仓内 gcn/archive 全文检索 45947 篇命中 27 篇含 050730（18 篇带测光，已逐篇回原文核对，未新补行——命中测光均已在库）；external/rssgrbag 命中 1 行（8.46GHz 212 µJy @9.1d，在库）；external/grbsn_webtool 无 050730；ADS 检索 \"GRB 050730\" 命中 41 条（2025A&A...442L..21S 光谱、2007A&A...471...83P、2009MNRAS.395..490O、2011ApJ...734...96K、2024MNRAS.533.4023D 均已核对/登记，其余为光谱/宿主类文献无测光表）→ 补 0 行。",
   "sub_tag": [
     "lgrb"
   ],
@@ -570,6 +574,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [
@@ -600,7 +609,38 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2006A&A....46....0P/abstract",
       "bibtex": "@ARTICLE{2006A&A....46....0P,\n       author = {S. B. Pandey and A. J. Castro-Tirado and S. McBreen and M. D. Perez-Ramirez and M. Bremer and M. A. Guerrero and A. Sota and B. E. Cobb and M. Jelinek and A. de Ugarte Postigo and J. Gorosabel and S. Guziy and C. Guidorzi and C. D. Bailyn and T. Munoz-Darias and A. Gomboc and A. Monfardini and C. G. Mundell and N. Tanvir and A. J. Levan and B. C. Bhatt and D. K. Sahu and S. Sharma and O. Bogdanov and J. A. Combi},\n       title = {Multi-wavelength afterglow observations of the high redshift GRB 050730},\n       journal = {Astron.Astrophys. 460 (2006) 415-424},\n       year = {2006},\n       doi = {10.1051/0004-6361:20065010},\n       eprint = {astro-ph/0607471},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006A&A....46....0P/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Oates+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14544.x",
+      "title": "A statistical study of gamma-ray burst afterglows measured by the Swift Ultraviolet Optical Telescope",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Perri+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20066227",
+      "title": "The exceptionally extended flaring activity in the X-ray afterglow of GRB 050730 observed with Swift and XMM-Newton",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Kann+2011",
+      "url": "https://doi.org/10.1088/0004-637X/734/2/96",
+      "title": "The Afterglows of Swift-era Gamma-Ray Bursts. II. Type I GRB versus Type II GRB Optical Afterglows",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "ChandraFrail+2012",
+      "url": "https://doi.org/10.1088/0004-637X/746/1/156",
+      "title": "An Expanded VLA/ATCA Catalog of Radio Afterglows of Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
