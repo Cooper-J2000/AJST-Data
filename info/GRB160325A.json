@@ -1,29 +1,37 @@
 {
   "transient_id": "GRB160325A",
   "alias": [
-    "GRB 160325291"
+    "GRB160325291",
+    "GRB 160325.291"
   ],
-  "ra": 16.209999084472656,
-  "dec": -72.66000366210938,
-  "T0": "2016-03-25T06:59:25.510000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "ra": 15.65055,
+  "dec": -72.69659,
+  "T0": "2016-03-25T06:59:21.51Z",
+  "T0_ref": "GCN 19224（Fermi/GBM 触发 06:59:21.51 UT）；FERMIGBRST 目录 MJD 57472.291221191=06:59:21.511 互证",
+  "T0_offset": -17.9,
+  "T0_offset_ref": "GCN 19234（BAT 光变 ~T-60 s 起 ≈ 06:59:03.6 UT，早于 GBM 触发；约值，BAT slew 中 T-93 s 才入 FoV）",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1.7,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 19229（Swift/XRT 增强定位，90% containment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。身份：Fermi/GBM 触发 480581965 / bn160325291（GCN 19224）、Swift/BAT trigger 680436（GCN 19222/19234）；同日 FERMIGBRST 仅此一触发。T0 改判：原 06:59:25.510000 出自 2FLGC trigger_met=480581965.51 的换算，与触发仪器通告 GCN 19224（06:59:21.51 UT）及 FERMIGBRST 目录（MJD 57472.291221191=06:59:21.511）差 4 s，按提示词 §3.8 优先级取 06:59:21.51；正式文献 Sharma+2020（MNRAS 493, 5218）与 Gupta+2024（ApJ 972, 166）均用 06:59:21.51 UT。lc 全表 26 行已按新 T0 重算（本源 lc 无 X 射线行），UVOT 行历元=BAT 触发（Swift/BAT 目录 07:00:03.619 UT，GCN 19222 经 XRT 起始 07:01:10.0=T+66.4 s 互证），BAT−GBM offset=42.109 s。位置：改用 Swift/XRT 增强定位（GCN 19229：15.65055,−72.69659，1.7″，90%）；备查：UVOT 检测位（GCN 19228：15.65118,−72.69634，0.61″，90%）、BAT 地面位（GCN 19234：15.697,−72.702，1.0′，90%）、LAT 地面位（GCN 19227：16.14,−72.66，0.17°，90%，statistical only）、2FLGC 目录位（16.21,−72.66，0.24°，原 ra/dec 取值）。t90=42.9448±0.572433 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb。alias：GRB160325291=FERMIGBRST trigger_name、GRB 160325.291=2FLGC 目录名（GCN 19224 原文用名 160325291，trigger 480581965/160325291）。红移：无实测值（Sharma+2020 建模假设 z=2 非实测；Gupta+2024 GTC/DOT 宿主搜索未得本暴红移），保持 null。catalog_data 疑误（只读未改，报 PR）：fermi_lat.trigger_time=2016-03-25T06:59:21.002Z 与其自身 trigger_met=480581965.51（标准换算 06:59:25.51）矛盾，且与 GCN 19224 均不合；swiftgrbba.trigger_time=07:00:03.000Z 为秒级截断（BAT 目录 07:00:03.619340）。测光检索（2026-11-03）：仓内 gcn/archive 全文命中 14 篇、其中本暴 13 篇（19222/19223/19224/19227/19228/19229/19230/19231/19232/19233/19234/19244/19353）逐篇核对，19230/19353 无数值表（Skynet 仅光变图链接，读图不入库），19232/19244 为 X/γ 射线；external/rssgrbag、grbsn_webtool、uvot_grb 无记录，swift_xrt_live 位置互证；arXiv API 检索命中 2 篇（Sharma+2020、Gupta+2024，均 prompt 极化研究、无光学测光表，Sharma+2020 §5 为 XRT 数据不入库）＋ OpenAlex 全文 26 条（新增仅 Zhao+2020 ApJ 10.3847/1538-4357/aba43a 顺带引用、无数据）＋ Crossref 1 篇；CDS VizieR 三镜像不可达（Strasbourg 超时、CFA 502、china-vo 超时，另登记 unverified.tsv）→ 未补新行（+0 行）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
