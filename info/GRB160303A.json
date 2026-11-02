@@ -1,30 +1,45 @@
 {
   "transient_id": "GRB160303A",
   "alias": [],
-  "ra": 168.7005,
-  "dec": 22.7424,
-  "T0": "2016-03-03T10:54:42Z",
-  "T0_ref": null,
+  "ra": 168.70075,
+  "dec": 22.74213,
+  "T0": "2016-03-03T10:54:42.058240Z",
+  "T0_ref": "Swift/BAT 官方目录 Trig_time_UTC=2016-03-03T10:54:42.058240（MET 478695297.984；仓内快照 external/swift_bat/summary_general_info/summary_general.txt，2026-11-03 取用）；GCN 19126 整秒值 10:54:42 UT 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": null,
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 2.3,
   "tag": [
     "grb"
   ],
-  "pos_error": 1.8,
   "pos_ref": "GCN 19132",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "upperlimit",
+  "redshift_ref": "GCN 19154",
+  "comment": "Swift/BAT 触发（trigger 677495，GCN 19126，通告题名 possibly short）。T0 取触发仪器官方目录的亚秒值（§3.2：多个来源只在亚秒上不同时以触发仪器为准），GCN 19126 整秒值一致，无 T0_offset。坐标取 GCN 19132 星像改正 XRT 位置（1.8″，90% 置信；原库 ra/dec=168.7005/+22.7424 为 GCN 19126 初值，与 pos_ref=GCN 19132 不符，已更正）；Swift-XRT 在线目录快照最新值 RA=168.70067, Dec=+22.74204（external/swift_xrt_live，备查）。t90=5.0±0.8 s（15–350 keV，GCN 19148 BAT 精化分析：~0.4 s 短脉冲 + 低显著性尾巴至 ~T+5 s，自动结果随时间分箱在 T90~0.4–18 s 间摆动，lag=24±24 ms 不能定类）；Swift BAT 目录 T90=T90_stop−T90_start=4.964−(−0.012)=4.976 s（external/swift_bat/summary_burst_durations.txt）。sub_tag=sgrb 依 Fong+2022（ApJ 940, 56）分类表「SGRB」（该文正文：γ 射线性质单独不能定类，但宿主光谱无发射线 + 宿主大偏移支持老年星族起源，归入短暴样本；BRIGHT 官方库 type_GRB=short 同）。红移上限 z<2.3：VLT/X-shooter 光谱 trace 至 3000 Å 而 Lyman break 不在覆盖内（GCN 19154）。候选宿主（不建 host_galaxy）：GTC/OSIRIS 延展源 r=25.8±0.3（AB），距 OT 1.7″±0.3″ NE、机会重合概率 14%（GCN 19160）；Fong+2022 定 Silver 级、Pcc=0.096，宿主位置 RA=11:14:48.119 Dec=+22:44:33.420，HST/WFC3 F110W=23.77±0.02 AB，光度红移 z=1.01（Prospector；arXiv v1 表给 +0.19/−0.40，BRIGHT 官方库给 +0.18/−0.23），宿主偏移 1.01″±0.11；该文宿主测光（AB，宿主静态量、无单历元时刻，不入 lc）：g>25.75、r=25.80±0.30（转引 GCN 19160）、i=25.33±0.24、z=23.67±0.16、F110W=23.77±0.02、J>22.01、K=22.83±0.39。lc 405678 s 的 GTC r 行即该候选宿主测量，已置 discard=y。测光检索留证（2026-11-03）：仓内 gcn/archive 全文检出该暴通告 19 篇（GCN 19126–19160 区间全部通读），external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无该源记录；ADS 命中 27 篇（全为 GCN 通告，无专篇文献）＋全文检索命中 5 篇非 GCN 文献（Fong+2022 已核并采用；Selsing+2019 仅光谱样本、无该源测光表；Fong+2021、Cavallo+2023、Liang+2026 mention-only）；据此补 11 行（GCN 19127×2、19131×6、19133×1、19149×1、19151×1）并补全既有行 time_err/mag_system/band 口径。",
+  "sub_tag": [
+    "sgrb"
+  ],
+  "pos_error": 1.8,
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Fong+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d0",
+      "title": "Short GRB Host Galaxies. I. Photometric and Spectroscopic Catalogs, Host Associations, and Galactocentric Offsets",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
