@@ -2,27 +2,37 @@
   "transient_id": "GRB250114B",
   "alias": [],
   "ra": 48.8582,
-  "dec": -2.2936,
+  "dec": -2.294,
   "T0": "2025-01-14T13:15:37Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 38938",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 7.6,
   "pos_ref": "GCN 38961",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "短暴（sgrb）：INTEGRAL/IBAS 探测，GCN 38938 原文 \"a short gamma ray burst lasting about 1 s\"，按探测方分类判 sgrb。T0=2025-01-14T13:15:37 UT 为 IBAS 触发时刻（GCN 38938）；Swift/XRT 通告 GCN 38949/38961 的相对时长（T0+11.3 ks 至 T0+44.6 ks / T0+153.7 ks）与该 T0 自洽（Swift ToO 触发号 00021756，GCN 38941）。位置取 XRT 余辉 Source 2：RA,Dec=48.8582,-2.2940（7.6 arcsec 半径，90% conf.，GCN 38961，与 GCN 38949 一致）；MITSuME 光学候选体位置 Dec=-2.2936（GCN 38950，与 XRT 位置差约 1.4 arcsec，在误差半径内）。候选宿主（r=24.4 星系，offset 约 1.5 arcsec，机遇对齐概率约 5%，GCN 38952）未定论，不建立 host_galaxy。测光检索（2026-11-03）：仓内 gcn/archive（45 947 篇全文）检索 \"250114B\" 命中 9 篇（38938/38941/38942/38947/38949/38950/38952/38960/38961），与 GCN 站 event 页（gcn.nasa.gov/circulars/events/grb-250114b）列表一致；其中 38942/38947/38950/38952/38960 五篇含光学上限/探测，38949/38961 仅 X 射线，38938/38941 无测光；external/rssgrbag（140 行/74 源）与 external/grbsn_webtool（63 事件）无本源记录；ADS API（api.adsabs.harvard.edu，2026-11-03）查询 \"GRB 250114B\" 与 \"250114B\" 各命中 9 条，全部为 GCN 通告、无研究论文。结论：光学测光共 5 篇通告，全部入库；本次补 SVOM/VT 两行上限（GCN 38960），lc 共 11 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
