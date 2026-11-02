@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB130310A",
   "alias": [
-    "GRB 130310840"
+    "GRB 130310A",
+    "GRB130310840",
+    "GRB 130310.840",
+    "bn130310840"
   ],
-  "ra": 142.3800048828125,
-  "dec": -17.100000381469727,
-  "T0": "2013-03-10T20:09:44.500000Z",
-  "T0_ref": null,
+  "ra": 142.34,
+  "dec": -17.23,
+  "T0": "2013-03-10T20:09:41.503000Z",
+  "T0_ref": "Fermi/GBM 触发 384638984 / bn130310840：GCN 14283 原文「At 20:09:41.50 UT on 10 March 2013」；FERMIGBRST trigger_time 2013-03-10T20:09:41.503Z（仓内 external/fermi_gbm 快照，ms 精度，与通告四舍五入一致），亚秒取触发仪器",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,16 +17,22 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.45,
+  "pos_ref": "GCN 14282（Fermi-LAT 检测与定位：R.A., Dec = 142.34, -17.23 J2000，90% containment radius 0.45 deg，仅统计误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 (wa1kmoon@zcode, 2026-11-03)：身份＝GRB 130310A＝Fermi/GBM trigger 384638984 / 130310840（GCN 14282/14283 原文用名；仓内 gcn/archive 全文共 10 篇：14282、14283、14284、14285、14288、14289、14290、14310、14316、14350），同日 FERMIGBRST 无其他触发，无同日混淆。(1) T0 改正：bot 原值 2013-03-10T20:09:44.500000Z 系 2FLGC trigger_met 384638984.5 自 2001-01-01T00:00:00 UTC 纪元直换、漏扣 3 跳闰秒（2006-01-01/2009-01-01/2012-07-01）的产物（Issue #67 同型；epoch+MET 恰得 20:09:44.500，为 LAT LLE 脉冲峰附近而非触发时刻，GCN 14282 原文即称检测在「about 3s after Fermi-GBM trigger time」）；GBM 触发取 20:09:41.503（GCN 14283 与 FERMIGBRST，见 T0_ref）。2FLGC 表内 trigger_time 2013-03-10T20:09:41.003Z 与 FERMIGBRST 差 0.5 s，属衍生目录口径差，未采用备查。Konus-Wind 触发 20:09:48.897（GCN 14285）、Suzaku/WAM 20:09:45（GCN 14310）、IPN ~20:09:45（GCN 14284）互洽。lc 全表 4 行 time/mjd 已按新 T0 与 GCN 14350 两历元窗口重算（T0 变动 3 s+bot 行时间错置，本源无 X 射线行）。(2) 定位：ra/dec 取 GCN 14282 Fermi-LAT 定位 142.34/-17.23（90% 包含半径 0.45 deg，仅统计误差）；FERMIGBRST 目录位置同值；bot 原 ra/dec 142.38/-17.10（float32 残渣）为 2FLGC 表值（error_radius 0.47 deg），未采用备查；Swift/XRT 候选余辉（GCN 14288，141.901,-17.1044，误差 3.6″ 90%）已被 GCN 14290 官方 RETRACT，不采用；IPN 3σ 误差盒 465 平方角分（GCN 14284）。(3) T90 冲突：FERMIGBRST t90=16.0003±2.56085 s（50-300 keV，t90_start=+4.096 s，仓内快照）→ 按 §3.9 目录 t90 判 lgrb；但 GBM 触发通告（GCN 14283）与已发表文献 Qin+2021（RAA 21, 072，VoR 已核）均给 T90≈2.4 s（50-300 keV），Konus-Wind 总时长~3 s（GCN 14285）、Suzaku/WAM T90~0.3 s（GCN 14310）、IPN 称 short-duration hard-spectrum（GCN 14284）、Li+2023 与 2025 ApJ sGRB-EE 样本均视为 sGRB——目录 t90 与通告/文献矛盾，sub_tag 的 lgrb/sgrb 留空待决（保留 Fermi-LAT）。(4) 光变：原有 4 行 RATIR（GCN 14350）r'/i' 测光逐值核对一致（原文 AB 系统、未做银消改正、相对 USNO-B1 定标），测光对象为 Swift XRT 候选源 #5（141.881334,-17.147639 ±0.5″，GCN 14316），RATIR 原文判「has not faded and is therefore unlikely to be the afterglow」（Qin+2021 亦称 no certain optical candidate detected）→ discard=y；bot 原 time 97935.5/269835.5 s（触发后 1.1335/3.1231 d）落在 GCN 14350 自述两历元窗口（触发后 1.31-1.47 d 与 3.31-3.45 d）之外，按 §3.8 窗口中点口径重算，time_err=半宽。新增 1 行：Volnova+2021（IKI GRB-FuN，Anais ABC 93(suppl 1) e20200883，VoR SciELO 全文已核）表 II 未发表行（GCN 列 n/a）——ISON-Kislovodsk SANTEL-400A 0.4 m，观测开始=触发后 1.0 d，3σ 未滤光上限 20.5（相对 USNO-B1.0 的 R 星等口径）。GROND 曾对该暴多指向观测（Klose+2024, A&A 691, A158 表 4：GROND-Start 2013-03-12 06:57:18 UT，Δt=125256 s，无余辉探测，正文称该暴误差盒远大于 GROND 视场；VoR 未给该暴限星等数值）→ 无可入库数值。Gemini/GMOS 观测到的两静态源 G1/G2（GCN 14289，原文笔误误书为 'GRB 130313A'）不衰减、性质未定，不入库。无红移：Qin+2021 假设 z~0.1-8 系列值属推导假设，非实测，redshift 保持 null。(5) 测光检索留证（2026-11-03，wa1kmoon@zcode）：仓内 gcn/archive 全文 10 篇（含测光数值者仅 GCN 14289 与 14350）、external/rssgrbag（射电）/grbsn_webtool/uvot_grb 无本源记录；arXiv API 全库检索「GRB 130310A」1 篇（Li+2023，QPO 理论，无测光表）；OpenAlex 命中 26 条，去 GCN 后逐一核对：Qin+2021（无光学测光）、Tong 2022（RNAAS 磁星年龄注记，提及「有报告称 130310A 或源于磁星巨耀发」，无数据）、Klose+2024（GROND 样本，无该暴数值）、Volnova+2021（补 1 行）、Pal+2025 类 sGRB-EE 样本（仅正文转引 Li+2023）；ADS/SciX 无 token（HTTP 401，检索通道受限已登记 audit/unverified.tsv），IOP 全站 Radware 反爬（Qin+2021 与 Tong 2022 VoR 经 RAA 官网/OpenAlex 元数据替代核对）。合计补 1 行、改写 4 行，T0/定位/别名/置信水平同步改正。别名出处（§3.10）：bot 原别名「GRB 130310840」（空格+9 位拼接形）与任何来源原文写法均不符，已清理替换为：GRB 130310A（GCN 14282/14283 subject 原文用名）、GRB130310840（FERMIGBRST trigger_name；GCN 14282 原文「GBM trigger 130310840/384638984」原文用名）、GRB 130310.840（2FLGC/FERMIGBRST name_alt 原文用名，即 GCN 14282 所报 GBM trigger 130310840 的目录化命名；仓内 external/fermi_gbm 快照）、bn130310840（FERMIGBRST 目录名）。",
   "sub_tag": [
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -41,6 +50,8 @@
           "flnc_band_epeak": 2501.2463,
           "flnc_comp_epeak": 3405.4939,
           "flux_1024_error": 0.446617,
+          "flux_batse_64_error": 1.72649,
+          "flux_batse_256_error": 0.767533,
           "flux_batse_1024": 18.2254,
           "fluence_batse_error": 3.512e-08,
           "flux_batse_64_error": 1.72649,
@@ -166,6 +177,18 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...955...98L",
       "bibtex": "@ARTICLE{2023ApJ...955...98L,\n       author = {{Li}, Yan and {Shen}, Rong-Feng and {Zhang}, Bin-Bin},\n        title = \"{Quasiperiodic Oscillation in Short Gamma-Ray Bursts from Black Hole-Neutron Star Mergers}\",\n      journal = {\\apj},\n     keywords = {Stellar mass black holes, Neutron stars, Gravitational wave sources, Gamma-ray bursts, Relativistic jets, 1611, 1108, 677, 629, 1390, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2023,\n        month = oct,\n       volume = {955},\n       number = {2},\n          eid = {98},\n        pages = {98},\n          doi = {10.3847/1538-4357/acefbf},\narchivePrefix = {arXiv},\n       eprint = {2308.06151},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2023ApJ...955...98L},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Volnova+2021",
+      "title": "IKI GRB-FuN: observations of GRBs with small-aperture telescopes",
+      "url": "https://doi.org/10.1590/0001-3765202120200883",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Klose+2024",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
