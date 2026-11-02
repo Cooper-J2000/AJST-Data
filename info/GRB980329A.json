@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB980329A",
-  "alias": [],
+  "alias": [
+    "GRB 980329",
+    "GRB980329",
+    "BATSE 6665"
+  ],
   "ra": 105.670833,
   "dec": 38.845,
   "T0": "1998-03-29T03:44:29Z",
-  "T0_ref": null,
+  "T0_ref": "IAUC 6853（Frontera et al. 1998，BeppoSAX GRBM 触发：Mar. 29.1559 UT ≈ 03:44:29.8）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "BeppoSAX/GRBM",
@@ -12,11 +16,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 38",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 180,
+  "pos_ref": "IAUC 6853（BeppoSAX WFC：R.A.=7h02m41s, Decl.=+38°50.7′ J2000, error radius 3′）",
+  "redshift_type": "phot",
+  "redshift_ref": "MPE Greiner GRB localization table（z_flag=ph，retrieved 2026-07-21）",
+  "comment": "身份核验：BeppoSAX GRBM 触发（同时被 BATSE 记为 trigger 6665，IAUC 6856）、WFC 定位 7h02m41s +38°50.7′（3′，IAUC 6853，与 ra/dec 105.670833/+38.845 一致）；NFI 后随观测证认 X 射线余辉 1SAX J0702.6+3850（IAUC 6854）；VLA 8.4 GHz 变源 VLA J0702+3850（GCN 40）；光学/IR 余辉与宿主证认链见 GCN 41/44/48、Palazzi+1998 (A&A 336, L95)、Fruchter+1999 (ApJ 512, L1)、Yost+2002 (ApJ 577, 155)。GCN 49 给出 Ulysses×BeppoSAX/GRBM IPN 环带（半宽 0.022°）与 WFC 误差圆相交，含 NFI/射电/光学源，佐证同一事件。定名史：文献通称 GRB 980329。||T0：IAUC 6853 原文「Mar. 29.1559 UT」（精度 ~9 s），即 03:44:29.8，T0 按来源精度写到秒；其余触发时刻并列备查——BATSE trigger 6665 Mar 29.15600（IAUC 6856）=03:44:38.4、HEASARC BATSE 目录 03:44:38.497（Earth crossing time）、HEASARC SAXGRBMGRB 目录 03:44:26.000、Greiner MPE 页 03:44:27；均为仪器间/目录间口径差，非触发后调整，不写 T0_offset。本源无 X 射线能量串行，T0 未改动，lc 全表 mjd 与 T0+time 自洽。||pos_error=180″（3′）取自 IAUC 6853 原文；来源未标注置信水平，pos_error_confidence 留空。||redshift：z=3.5 为测光估计——唯一可溯数值出处是 Greiner MPE 表（z_flag=ph，redshift_type 故记 phot）；原始文献未能追到（A 档待决，见 PR 说明）。文献仅有定性讨论：Palazzi+1998 讨论 z~1 星暴遮蔽情景；Fruchter+1999 提出 z~5 假说；Yost+2002 由宿主色排除 z≳5（模型 z=1/2/3 均可拟合）；Chandra & Frail 2012 (rssgrbag) 表列 z=2.0、z_max=3.9；HEASARC GRBCAT 记 ~5。||sub_tag=lgrb 依目录 t90：t90=19.0±2.2 s（40-700 keV，HEASARC SAXGRBMGRB）、t90=18.56±0.264 s（>20 keV，BATSE 目录）——按目录 t90 判 lgrb。||alias 出处：「GRB 980329」IAUC 6853 与 GCN 36-55 正文用名；「GRB980329」GCN 36-55 通告 subject；「BATSE 6665」IAUC 6856「as trigger 6665」+HEASARC BATSE 目录 name_alt。||测光检索（2026-11-03）：仓内 gcn/archive 全文命中 14 篇 980329 相关（GCN 36-55、59、157、778，全部读全文）；IAUC 6853/6854/6855/6856/6860/6864/6865/6866/6868 取自 CBAT 官方档案（VoR，http://www.cbat.eps.harvard.edu/iauc/）；文献 VoR：Palazzi+1998 与 Gorosabel+1999 用 ADS articles 扫描 PDF 通读（含 Table 1 逐行核对）；Reichart+1999 (ApJ 517, 692)、Fruchter+1999 (ApJ 512, L1) 经 arXiv 全文（IOP 整站连接被阻断）；Yost+2002 (ApJ 577, 155) VoR 不可达，取 arXiv v2（astro-ph/0204141）Table 1-4，登记 audit/unverified.tsv；ADS/SciX API 无 token（HTTP 401），通道级受限亦登记；OpenAlex/Crossref 交叉核对题录。结果：新增 34 行（Palazzi+1998 VoR Table 1 增补 8 行、GCN 52 两行、Yost+2002 VLA 8.46/4.86GHz ≥2σ 探测 20 行、GCN 778 HST/STIS 宿主 3 行、原 GCN 47/48 行重锚后并入），删并同测重复 26 行（bot 误标仪器/望远镜 6 行、同一测量多来源转引 14 行、被 VoR/重新定标取代 6 行），改写其余；保留的 2 行 rssgrbag 目录峰值行未动。未入库：Yost+2002 Table 2 的 1.43 GHz 数据（原文称仅整体显著）与 <2σ 点、Table 3 重定标亚毫米值（与 Smith+1999 同观测不同定标，已在对应 353GHz 行 comment 并列）。||审核：wa1kmoon@zcode，2026-11-03。",
   "sub_tag": [
     "lgrb"
   ],
@@ -401,6 +405,11 @@
         ],
         "trigger_time": "1998-03-29T03:44:38.000Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [
@@ -412,19 +421,41 @@
       "source": "bot"
     },
     {
-      "name": "Fruchter+1998",
-      "title": "Was GRB~980329 at z ~ 5?",
-      "url": "https://ui.adsabs.harvard.edu/abs/1998astro0224F/abstract",
-      "bibtex": "@ARTICLE{1998astro0224F,\n       author = {Andrew S. Fruchter},\n       title = {Was GRB~980329 at z ~ 5?},\n       journal = {arXiv e-prints},\n       year = {1998},\n       doi = {10.1086/311864},\n       eprint = {astro-ph/9810224},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/1998astro0224F/abstract},\n}",
+      "name": "Fruchter+1999",
+      "title": "Was GRB 980329 at z ~ 5?",
+      "url": "https://ui.adsabs.harvard.edu/abs/1999ApJ...512L...1F/abstract",
+      "bibtex": "@ARTICLE{1999ApJ...512L...1F, author={Fruchter, A. S.}, title=\"{Was GRB 980329 at z ~ 5?}\", journal={\\apjl}, year=1999, volume=512, pages={L1}, doi={10.1086/311864}, eprint={astro-ph/9810224}}",
       "source": "bot"
     },
     {
-      "name": "Reichart+1998",
-      "title": "Optical and Near Infrared Observations of the Afterglow of GRB 980329 from 15 Hours to 10 Days",
-      "url": "https://ui.adsabs.harvard.edu/abs/1998astro6082R/abstract",
-      "bibtex": "@ARTICLE{1998astro6082R,\n       author = {Daniel E. Reichart and Donald Q. Lamb and Mark R. Metzger and Jean M. Quashnock and David M. Cole and Francisco J. Castander and Sylvio Klose and James E. Rhoads and Andrew S. Fruchter and Asantha R. Cooray and Daniel E. Vanden Berk},\n       title = {Optical and Near Infrared Observations of the Afterglow of GRB 980329 from 15 Hours to 10 Days},\n       journal = {arXiv e-prints},\n       year = {1998},\n       doi = {10.1086/307210},\n       eprint = {astro-ph/9806082},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/1998astro6082R/abstract},\n}",
+      "name": "Reichart+1999",
+      "title": "Optical and Near-infrared Observations of the Afterglow of GRB 980329 from 15 Hours to 10 Days",
+      "url": "https://ui.adsabs.harvard.edu/abs/1999ApJ...517..692R/abstract",
+      "bibtex": "@ARTICLE{1999ApJ...517..692R, author={Reichart, D. E. and Lamb, D. Q. and Metzger, M. R. and others}, title=\"{Optical and Near-infrared Observations of the Afterglow of GRB 980329 from 15 Hours to 10 Days}\", journal={\\apj}, year=1999, volume=517, pages={692-699}, doi={10.1086/307210}, eprint={astro-ph/9806082}}",
       "source": "bot"
+    },
+    {
+      "name": "Palazzi+1998",
+      "title": "Optical and near-infrared follow-up observations of GRB980329",
+      "url": "https://ui.adsabs.harvard.edu/abs/1998A%26A...336L..95P/abstract",
+      "bibtex": "@ARTICLE{1998A&A...336L..95P, author={Palazzi, E. and Pian, E. and Masetti, N. and others}, title=\"{Optical and near-infrared follow-up observations of GRB980329}\", journal={\\aap}, year=1998, volume=336, pages={L95-L99}, eprint={astro-ph/9806103}}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Gorosabel+1999",
+      "title": "Early detection of the optical counterpart to GRB 980329",
+      "url": "https://ui.adsabs.harvard.edu/abs/1999A%26A...347L..31G/abstract",
+      "bibtex": "@ARTICLE{1999A&A...347L..31G, author={Gorosabel, J. and Castro-Tirado, A. J. and Pedrosa, A. and others}, title=\"{Early detection of the optical counterpart to GRB 980329}\", journal={\\aap}, year=1999, volume=347, pages={L31-L34}, eprint={astro-ph/9906208}}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Yost+2002",
+      "title": "The Broadband Afterglow of GRB 980329",
+      "url": "https://doi.org/10.1086/342175",
+      "bibtex": "@ARTICLE{2002ApJ...577..155Y, author={Yost, S. A. and Frail, D. A. and Harrison, F. A. and others}, title=\"{The Broadband Afterglow of GRB 980329}\", journal={\\apj}, year=2002, volume=577, pages={155-163}, doi={10.1086/342175}, eprint={astro-ph/0204141}}",
+      "source": "wa1kmoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
