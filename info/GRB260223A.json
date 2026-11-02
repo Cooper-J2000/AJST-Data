@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB260223A",
-  "alias": [],
+  "alias": [
+    "GRB 260223A",
+    "bn260223174"
+  ],
   "ra": 111.0883,
   "dec": -29.4179,
-  "T0": "2026-02-23T04:11:09Z",
-  "T0_ref": null,
+  "T0": "2026-02-23T04:11:09.811Z",
+  "T0_ref": "GCN 43835（Fermi/GBM 团队官方通告）：At 04:11:09.81 UT on 23 February 2026, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 260223A（trigger 793512674/260223174）；GCN 43808（GBM 实时定位）记整秒 04:11:09 UT；亚秒取触发仪器官方目录 FERMIGBRST trigger_time=2026-02-23T04:11:09.811Z（external/fermi_gbm 快照，bn260223174）；MPE BALROG trigger_timestamp=2026-02-23T04:11:09.810Z（grb.mpe.mpg.de/grb/GRB260223174/json，2026-11-03 取数）同秒互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": "GCN 43811",
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 43811（DDOTI 光学对应体：RA = 07:24:21.20 (111.0883 deg), DEC = -29:25:04.4 (-29.4179 deg)；原文未给定位误差）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode 2026-11-03。身份：GRB 260223A＝Fermi/GBM 于 2026-02-23 04:11:09.81 UT 触发的暴（trigger 793512674 / bn260223174）。T0：原 bot 值 04:11:09Z 为整秒截断，亚秒取触发仪器官方目录 FERMIGBRST trigger_time=2026-02-23T04:11:09.811Z（与 GCN 43835 的 .81、BALROG .810 同秒），按 §3.2/§3.8 直接改进 T0，不写 T0_offset；原 extra_data t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」（Issue #68 不可信）已改写，原值记于此。同日他触发划界：EP260223a（GCN 43817，EP/WXT X 射线暂现）RA/Dec=92.774/56.577、T0=2026-02-23T11:20:27 UT，与本暴（04:11:09.81 UT，111.0883/-29.4179）完全无关，其后续（GCN 43818/43822/43826/43831）不入本源；sb26021801（GCN 43819）亦无关。定位：ra/dec=111.0883/-29.4179 为 GCN 43811 的 DDOTI 光学对应体位置，FERMIGBRST 快照同位（111.088/-29.4179，error_radius=0.001 deg，疑为目录并入光学精化位置的记录方式，仅备查）、MPE Greiner 表（07h24m21s -29°25'，Instrument=DDOTI，OT=y、IPN=y——无公开 IPN 通告，备查）一致；GCN 43811 未给定位误差与置信水平，pos_error/pos_error_confidence 留空；GBM 初定位 110.5/-29.4（±1.7 deg 统计，GCN 43808）与 BALROG 109.5/-28.9（1σ 1.7 deg＋系统 1 deg，GCN 43810）仅备查。触发仪器：原值 Fermi 改 Fermi/GBM；SVOM/GRM（sb26022301，T0_SVOM=04:11:28.000 为 SVOM 自身触发钟，GCN 43815）、Glowbug（GCN 43824）、GRID（GCN 43871）均为后随探测互证。分类：T90=38.9129±2.36027 s（50-300 keV，FERMIGBRST 快照 bn260223174）按目录 t90 判 lgrb；GCN 43835 记 T90~39 s（50-300 keV）同值；SVOM/GRM T90=26(+8/-4) s（15-5000 keV，GCN 43815）、GRID T90≈22.2±3.0 s（30-2000 keV，GCN 43871）互证均长。红移：13 篇通告均无光谱/红移/宿主判据，redshift 留 null。测光检索（2026-11-03）：仓内 gcn/archive 全文检索 260223 命中 18 篇（其中本暴通告 13 篇 43808-43871 逐篇打开；另 5 篇为同日他事件 EP260223a/sb26021801）；本地 archive 覆盖至 GCN 46010（2026-10-22）且 43800-46010 无缺口；GCN 网站搜索「260223A」13 results 与仓内完全一致（无漏收）；external/rssgrbag 0 行、grbsn_webtool 无该事件、uvot_grb 无记录；arXiv API「GRB 260223A」「260223A」均 0 命中、OpenAlex 0、ATel 无命中、TNS 60arcsec 锥搜（DDOTI 位置）No results found；ADS/SciX 无 token 实测 401（已登记 audit/unverified.tsv，ADS 侧检索结论记为未覆盖，不得当作无文献）。补行：新增 MASTER-OAFA 清带上限 20 行（GCN 43809，原文给 Tmid-T0 与 Expt 时间锚点；C 滤光片＝无滤光片→G）；7DT 其余 19 个 medium-band（m400-m850）探测/上限因 filters.json 缺对应键暂不入库（PR 待决）；已有 12 行（DDOTI/7DT/COLIBRI/SVOM-VT）逐行实核并统一到标准 T0 口径。alias 收 GRB 260223A（各通告用名）与 bn260223174（FERMIGBRST 官方名）；其 name_alt 的 GRB260223174 / GRB 260223.174 为「日期+触发序列」拼接形（GCN 43810 原文亦用 GRB 260223174），按 Issue #69 口径不入 alias，仅记于此。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Fermi/GBM 触发 793512674 时刻 2026-02-23T04:11:09.811Z（GCN 43835 给 04:11:09.81 UT；FERMIGBRST 快照同值）；原 bot 值 04:11:09Z 为整秒",
+    "t0_basis": "GCN 43835 + FERMIGBRST bn260223174（external/fermi_gbm 快照）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
   "host_galaxy": null
