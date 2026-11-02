@@ -4,8 +4,8 @@
     "AT Mic",
     "V* AT Mic"
   ],
-  "ra": 310.4508,
-  "dec": -32.4345,
+  "ra": 310.4631635417,
+  "dec": -32.4352300833,
   "T0": "2026-07-15T16:23:04Z",
   "T0_ref": "GCN 45169",
   "T0_offset": null,
@@ -15,12 +15,12 @@
   "tag": [
     "stellar-flare"
   ],
-  "pos_error": 29.15,
-  "pos_error_confidence": "90",
-  "pos_ref": "GCN 45169（SVOM/MXT 最佳未编目X射线源位置 RA=310.4508, Dec=-32.4345；90% C.L. 半径29.15″；早期机载定位，原文称后续可改进）",
+  "pos_error": null,
+  "pos_error_confidence": null,
+  "pos_ref": "SIMBAD V* AT Mic（ICRS J2000：RA=310.4631635417°, Dec=−32.4352300833°；位置不确定度椭圆 40.65×30.72 mas；proper motion μRAcosDec=+270.45、μDec=−365.60 mas/yr）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "身份与分类：SVOM触发号sb26071506保留为transient_id；GCN 45190将其确认为AT Mic的恒星耀斑，故alias加入AT Mic与GCN原文别称V* AT Mic，tag=stellar-flare（受控词表）。GCN 45169称星为V* AT Mic，位于ECLAIRs/MXT误差框；该星是双/多星系统（SIMBAD）。T0按触发方官方GCN 45169：2026-07-15T16:23:04Z（SVOM/ECLAIRs），不是VT首帧时间；原bot T0=2026-07-15T16:28:06Z及t0_note/t0_basis=meta_trigger误把该VT开始时间当作真实触发，现改为官方T0，旧值与旧基准在此留档；T0_offset=null。定位核对：GCN 45169 ECLAIRs坐标310.3570,-32.4133（90%半径8.57′）及MXT坐标310.4508,-32.4345（90%半径29.15″）；SIMBAD V* AT Mic ICRS J2000 20:41:51.15925,-32:26:06.8283（=310.46316354,-32.43523008），来源坐标不确定度椭圆40.65×30.72 mas，proper motion +270.45,-365.60 mas/yr（2007A&A...474..653V）。最佳事件定位按GCN 45169 MXT未编目X射线源位置填写（pos_error=29.15″，90% C.L.）；SIMBAD/VSX星表点与MXT中心简单角距约38″，用SIMBAD自行向量传播至2026-07-15后与MXT中心球面距约46.4″（J2000位置距37.7″）。但传播后46.4″大于MXT定位所报29.15″的90%半径，与GCN「位于MXT误差框内」的表述存在需澄清之处；坐标口径待用户裁定。目前暂保留MXT最佳事件定位为ra/dec与pos_error，建议决定是继续用该事件定位还是改用自行传播后的AT Mic星表位置；GCN亦注明早期定位可改进。光变原始出处为GCN 45190：VT_B约10.9降至约11.2 mag，VT_B/VT_R同步观测；原文未给mag system、单点误差、曝光时长或逐点准确时刻。GCN 45190报VT起始2026-07-15T16:28:06 UTC，但另称327秒post-trigger，与官方T0差302秒；GCN 45169中327.68秒是触发图像时间窗长度。遵循绝对UTC锚点，具体光变时间口径暂留待决，现有MJD分别为16:28:06 UT和17:52:06 UT（后者仅以约1.4 h描述推得，非精确时刻）。GCN 45170 MASTER-SAAO报两次clear图像通用帧深18.1/14.7；坐标为视场坐标，视场可能覆盖AT Mic，但通告未给AT Mic位置的局部限星等或单独测光，不能把通用帧深当作该星的非探测上限，故未录为源级光变行。文献：GCN 45190引用Li+2026处理方法；该文正式刊于RAA 26(10),104024，DOI:10.1088/1674-4527/ae75cd。RAA出版商页核对正式版元数据，arXiv v1 HTML用于查阅方法与覆盖范围（VoR PDF的DOI链接缓存请求失败、直连iopscience主机DNS解析失败）；文章截至2025-12-03，不含本次2026-07事件，无对应机读测光表，因而数据值仅据GCN 45190。测光检索（2026-11-02）：仓内gcn/archive不存在，external/rssgrbag、external/grbsn_webtool按源ID/AT Mic/触发号检索无命中；TNS精确网页检索源ID和AT Mic耀斑无命中（此为已命名恒星耀斑，非AT/SN/CV新源）；AAVSO官方VSX/AID API按AT Mic、JD 2461236.0–2461238.0检索返回星表元数据但测光数据区仅表头、无观测行（AUID 000-BCW-378），Data Download界面403；TESS官方Sector 106（2026-07-11至08-09）期间AT Mic距Camera 1视场中心23.72°，对照单相机约24°×24°视场（半宽约12°）可知目标在该相机足迹外；其他相机更远；Sector 105于07-11结束，因此无本事件TESS覆盖；GCN在线事件页命中3篇（45169、45170、45190，均逐篇核对），其中仅45190给出本次VT-B测光；ADS/SciX API无token，网页引擎精确查询未命中（检索通道受限，不代表文献穷尽）；arXiv与RAA出版商页检索找到Li+2026仪器方法综述，未发现针对该耀斑的后续论文或机器可读测光表。结论：保留并核对现有2个GCN 45190 VT_B数据点；MASTER上限不属于该星测光；未发现其他能加入的光学测量。审核认领：2026-11-02 LHe496@Codex。",
+  "comment": "身份与分类：SVOM触发号sb26071506保留为transient_id；GCN 45190将其确认为AT Mic的恒星耀斑，故alias加入AT Mic与GCN原文别称V* AT Mic，tag=stellar-flare（受控词表）。GCN 45169称星为V* AT Mic，位于ECLAIRs/MXT误差框；该星是双/多星系统（SIMBAD）。T0按触发方官方GCN 45169：2026-07-15T16:23:04Z（SVOM/ECLAIRs），不是VT首帧时间；原bot T0=2026-07-15T16:28:06Z及t0_note/t0_basis=meta_trigger误把该VT开始时间当作真实触发，现改为官方T0，旧值与旧基准在此留档；T0_offset=null。定位核对：GCN 45169 ECLAIRs坐标310.3570,-32.4133（90%半径8.57′）及MXT坐标310.4508,-32.4345（90%半径29.15″）；SIMBAD V* AT Mic ICRS J2000 20:41:51.15925,-32:26:06.8283（=310.46316354,-32.43523008），来源坐标不确定度椭圆40.65×30.72 mas，proper motion +270.45,-365.60 mas/yr（2007A&A...474..653V）。坐标采用SIMBAD的AT Mic星表ICRS J2000位置（RA=310.4631635417°、Dec=−32.4352300833°），不把MXT瞬时定位误差赋给恒星坐标，故pos_error及置信水平留空。MXT中心来自GCN 45169（RA=310.4508°、Dec=−32.4345°，90%半径29.15″）；AT Mic星表J2000位置距该中心约38″，按自行传播到事件历元后约46″。这与GCN 45169称该星位于MXT误差框内不完全相符，保留差异说明；该通告亦称早期定位可改进。光变原始出处为GCN 45190：VT_B约10.9降至约11.2 mag，VT_B/VT_R同步观测；原文未给mag system、单点误差、曝光时长或逐点准确时刻。GCN 45190报VT绝对起始时刻；时间口径的来源冲突与处置见下文。按绝对UTC锚点记录光变时间：首点为GCN 45190所列观测开始时刻2026-07-15 16:28:06 UTC（相对T0=+302 s）；曝光时长及中点未知，因此按开始时刻记，time_err留空。第二点原文仅称约1.4 h后，按此近似时距记为17:52:06 UTC、T0+5342 s，time_err=180 s。GCN 45190另称+327 s，与绝对时刻相差25 s；GCN 45169的327.68 s是触发图像时间窗长度，并非另一触发时刻。两行MJD均按上述UTC绝对时刻换算。GCN 45170 MASTER-SAAO报两次clear图像通用帧深18.1/14.7；坐标为视场坐标，视场可能覆盖AT Mic，但通告未给AT Mic位置的局部限星等或单独测光，不能把通用帧深当作该星的非探测上限，故未录为源级光变行。文献：GCN 45190引用Li+2026处理方法；该文正式刊于RAA 26(10),104024，DOI:10.1088/1674-4527/ae75cd。RAA出版商页核对正式版元数据，arXiv v1 HTML用于查阅方法与覆盖范围（VoR PDF的DOI链接缓存请求失败、直连iopscience主机DNS解析失败）；文章截至2025-12-03，不含本次2026-07事件，无对应机读测光表，因而数据值仅据GCN 45190。测光检索（2026-11-02）：仓内gcn/archive不存在，external/rssgrbag、external/grbsn_webtool按源ID/AT Mic/触发号检索无命中；TNS精确网页检索源ID和AT Mic耀斑无命中（此为已命名恒星耀斑，非AT/SN/CV新源）；AAVSO官方VSX/AID API按AT Mic、JD 2461236.0–2461238.0检索返回星表元数据但测光数据区仅表头、无观测行（AUID 000-BCW-378），Data Download界面403；TESS官方Sector 106（2026-07-11至08-09）期间AT Mic距Camera 1视场中心23.72°，对照单相机约24°×24°视场（半宽约12°）可知目标在该相机足迹外；其他相机更远；Sector 105于07-11结束，因此无本事件TESS覆盖；GCN在线事件页命中3篇（45169、45170、45190，均逐篇核对），其中仅45190给出本次VT-B测光；ADS/SciX API无token，网页引擎精确查询未命中（检索通道受限，不代表文献穷尽）；arXiv与RAA出版商页检索找到Li+2026仪器方法综述，未发现针对该耀斑的后续论文或机器可读测光表。结论：保留并核对现有2个GCN 45190 VT_B数据点；MASTER上限不属于该星测光；未发现其他能加入的光学测量。审核认领：2026-11-02 LHe496@Codex。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
