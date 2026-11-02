@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB060919",
-  "alias": [],
-  "ra": 276.9,
-  "dec": -50.994,
-  "T0": "2006-09-19T07:48:39Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 060919",
+    "BAT 230115",
+    "Swift 230115"
+  ],
+  "ra": 276.92417,
+  "dec": -51.01447,
+  "T0": "2006-09-19T07:48:38.674380Z",
+  "T0_ref": "Swift/BAT 触发时刻：batgrbproduct 官方产品页 UTC 2006-09-19T07:48:38.674380（含 UTCF 改正，https://gcn.gsfc.nasa.gov/notices_s/230115/BA/）；Swift/BAT GRB Catalog 与 HEASARC SWIFTGRB 同值；GCN 5575 仅给 07:48:38 UT；swiftgrbba 的 07:48:39.000 为取整",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +16,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 5575",
+  "pos_error": 1.7,
+  "pos_ref": "UKSSDC Swift-XRT enhanced position（Swift SGA）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT 触发 230115（GCN 5575），2006-09-19 当日唯一 Swift 触发（仓内 uvot_grb/swift_bat/swift_grb/swiftgrbba/heasarc_grbcat/mpe_greiner 快照均无同日他触发）；catalog_data.uvot_grb TRIGTIME=180344918 s（Swift MET，历元 2001-01-01）复算=2006-09-19T07:48:38Z，与触发时刻一致。\n定位链：GCN 5575 on-board 3′（90%）→ GCN 5578 BAT ground 276.900,−50.994 ±1.6′（90%；原库 ra/dec 即此值，但 pos_error=180″/pos_ref=GCN 5575 系 on-board 口径错配）→ GCN 5577 XRT refined 276.925875,−51.014 ±4.1″（90%）→ 采纳 UKSSDC enhanced XRT 位置 276.92417,−51.01447 ±1.7″（90%，Swift SGA；uvot_grb 目录 POS_ERR=1.7/POS_REF=SGA 与 swiftgrbba xrt_error_radius=1.7 双快照互证）。alias 出处：swiftgrbba name_alt「GRB 060919」、Swift/BAT 目录 name_alt「BAT 230115」、SWIFTGRB name_alt「Swift 230115」。\nt90=9.1±0.2 s（GCN 5578，15–350 keV）；Swift/BAT GRB 目录 t90=9.0±1.67 s、SWIFTGRB t90=9.01 s、Becerra+2023（MNRAS 525, 3262）同引 9.00±1.67 s；按目录 t90 判 lgrb。\n候选宿主：Rossi+2012（A&A 545, A77）VLT/FORS1 RC 2930 s（2008-04-10）在 XRT 误差圈内检出暗星系 object A（18:27:41.78,−51:00:51.0，RC=26.14±0.24 AB，p≈0.05），未确证 → 不建 host_galaxy；该文判定 GRB 060919 非 dark burst，其 918 s v>20.2 上限系由 GCN 5580 数据再推导，非独立测量，未另立行。\n测光检索（2026-11-03）：仓内 gcn/archive 命中 6 篇（GCN 5575–5580 全文逐篇核对，光学/UV 上限 11 行重写 + 新增 TAROT coadd R>15.9 共 1 行）；external/rssgrbag、grbsn_webtool、guidorzi2025、liang2023、wang2022、minaev2020、konus_wind、saxgrbmgrb、heasarc_grbcat、batse、fermi_gbm/lat 均 0 命中，mpe_greiner 仅目录条目；arXiv API 元数据检索 0 命中；OpenAlex 全文检索 5 命中（GCN 5575/5579、Rossi+2012、Rossi 2012 博士论文、Becerra+2023），逐篇判读无新增可入库测光；VizieR（CDS/CFA 镜像均 502）未能核对 Klotz+2009 TAROT 目录表（J/A+A/503/373）；ADS/SciX 无 API token（HTTP 401，检索通道受限，见 audit/unverified.tsv，不据此下「无文献」结论）→ 补 1 行、改写 11 行光学/UV 行（T0 重锚 +0.326 s、曝光中点/窗口中点口径、uvot-white 键、Vega 系统）。\nX 射线行（band=10keV，8 行，UKSSDC Burst Analyser）：内容未改动（仅随全表按 time 重排插入位置，行序与数值保持）；本源 T0 改动后其 mjd 需按 mjd=T0+time 由维护者机械重算（Δ=0.326 s，现库值差在 1 s 容差内）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -251,8 +257,27 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Rossi+2012",
+      "url": "https://doi.org/10.1051/0004-6361/201117201",
+      "title": "A deep search for the host galaxies of gamma-ray bursts with no detected optical afterglow",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
