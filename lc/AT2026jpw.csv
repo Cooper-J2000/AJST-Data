@@ -1,18 +1,22 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-141808.0,,s,61145.61180555555,r,21.55,0.07,magnitude,,n,n,,,,,,,1.0,n,,LOT,GCN44301,,
-158410.0,,s,61145.80395833333,R,21.49,0.05,magnitude,,n,n,,,,,,,1.0,n,,ZTSh/CrAO 2.6-m,GCN44316,,
-159192.0,,s,61145.813009259255,Rc,21.6,0.1,magnitude,,n,n,,,,,,,1.0,n,,Zeiss-1000 1m (SAO RAS),GCN44304,,
-160713.0,,s,61145.830613425926,I,21.59,0.08,magnitude,,n,n,,,,,,,1.0,n,,ZTSh/CrAO 2.6-m,GCN44316,,
-164620.0,,s,61145.87583333333,r,21.85,0.05,magnitude,AB,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN44303,,
-168221.0,,s,61145.91751157407,Rc,22.0,0.1,magnitude,,n,n,,,,,,,1.0,n,,Zeiss-1000 1m (SAO RAS),GCN44304,,
-190718.0,,s,61146.177893518514,g,22.51,0.06,magnitude,AB,n,n,,,,,,,1.0,n,,DDRAGO/COLIBRI,GCN44309,,
-190718.0,,s,61146.177893518514,r,22.1,0.06,magnitude,AB,n,n,,,,,,,1.0,n,,DDRAGO/COLIBRI,GCN44309,,
-190718.0,,s,61146.177893518514,i,21.87,0.08,magnitude,AB,n,n,,,,,,,1.0,n,,DDRAGO/COLIBRI,GCN44309,,
-190718.0,,s,61146.177893518514,z,21.55,0.07,magnitude,AB,n,n,,,,,,,1.0,n,,DDRAGO/COLIBRI,GCN44309,,
-197634.0,,s,61146.25793981481,VT-R,21.5,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN44314,,
-250558.0,,s,61146.87048611111,R,22.11,0.02,magnitude,,n,n,,,,,,,1.0,n,,ZTSh 2.6-m telescope (CrAO),GCN44353,,
-255628.0,,s,61146.92916666666,15.5GHz,0.28,0.07,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN44379,,
-338188.0,,s,61147.88472222222,15.5GHz,0.44,0.08,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN44379,,
-401386.0,,s,61148.61618055555,R,22.8,,magnitude,,n,y,,,,,,,1.0,n,,"AZT-33IK 1.5-m telescope (Sayan Solar Observatory, Mondy)",GCN44353,,
-426028.0,,s,61148.90138888889,15.5GHz,0.36,0.09,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN44379,,
-492148.0,,s,61149.666666666664,10GHz,0.2,,mJy,,n,n,,,,,,,1.0,n,,ATCA,GCN44385,,
+-170240,90,s,61142.0001389,GOTO-L,20.5,,magnitude,AB,n,y,,,,,,,1.0,n,GOTO-North,GOTO-2,GCN44301,GCN 44301：最近一次预发现非探测，L>20.5 (3σ)，时刻按 TNS report 300181 的 2026-04-12 00:00:12 UT；GCN 将时刻舍入为 00:00 UT 并给 3σ 深度。TNS 页面登记 180 s 曝光与上限20 AB（未给置信水平/与GCN深度差0.5 mag），采用 GCN 明确标置信度的3σ值，time_err=90 s；band为GOTO L(400–700 nm)，未作银消改正。,LHe496@Codex
+0,90,s,61143.9705093,GOTO-L,19.00,0.08,magnitude,AB,n,n,,,,,,,1.0,n,GOTO-North,GOTO-2,GCN44301,GCN 44301：发现点 L=19.00±0.08 AB；4×45 s 序列，T0 取发现/首检时间 2026-04-13 23:17:32 UT（TNS report 300181 提供 23:17:32.928 UT）；time=0，time_err=90 s；GCN 原文称 L band 400–700 nm，映射本库 GOTO-L；未作银消改正。,LHe496@Codex
+14635,,s,61144.1398958,GOTO-L,19.61,0.18,magnitude,AB,n,n,,,,,,,1.0,n,GOTO-North,GOTO-2,GCN44301,GCN 44301：L=19.61±0.18 AB at 2026-04-14 03:21:27 UT；相对 T0 的绝对时差为14635 s（4.0653 h；通告约写+4.06 h）；该点曝光时长未给，time_err 留空；未作银消改正。,LHe496@Codex
+141808,,s,61145.6118056,r,21.55,0.07,magnitude,AB,n,n,,,,,,,1.0,n,Lulin 1-m Telescope,LOT,GCN44301,GCN 44301：LOT 首历元开始时刻 2026-04-15 14:41 UT（t0+39.40 h，GCN MJD 61145.612），r=21.55±0.07 AB；通告未给该测光堆栈的曝光时长/中点，暂以首历元 UT 作时间代理，真实曝光中点不可恢复；未作银消改正。,LHe496@Codex
+159312,900,s,61145.8143981,R,21.49,0.05,magnitude,,n,n,,,,,,,1.0,n,Shajn 2.6-m telescope (CrAO),ZTSh,GCN44316,GCN 44316：UT start 2026-04-15 19:17:42；15×120 s；采用原表明确标注的 t−T0(mid)=1.84388 d (=159312 s，和 UT start+900 s 相符，舍入差约2 s)；R=21.49±0.05，USNO-B1.0 R2 定标、星等系统未声明；未作银消改正。,LHe496@Codex
+161973,1260,s,61145.8451968,I,21.59,0.08,magnitude,,n,n,,,,,,,1.0,n,Shajn 2.6-m telescope (CrAO),ZTSh,GCN44316,GCN 44316：UT start 2026-04-15 19:56:05；21×120 s；采用原表 t−T0(mid)=1.87469 d (=161973 s，吻合 UT start+1260 s)；I=21.59±0.08，USNO-B1.0 R2 定标、星等系统未声明；未作银消改正。,LHe496@Codex
+162384,1200,s,61145.8499537,Rc,21.6,0.1,magnitude,,n,n,,,,,,,1.0,n,Zeiss-1000 1m (SAO RAS),Zeiss-1000,GCN44304,GCN 44304：UT start 2026-04-15T19:30:44、8×300 s；原表直接标注 t−T0(mid)=1.87945 d，对标准 T0 换算 midpoint=162384 s（2026-04-15 20:23:56 UT）。连续曝光假设的 start+总曝光/2 为160392 s（19:50:44），与表列 midpoint 相差1992 s（33分12秒）；把表列 midpoint 作为原文明确给出的时间口径，差值可由未列出的曝光间隔造成，但原始序列日志未取得。time_err=总曝光一半1200 s。Rc=21.6±0.1；USNO-B1 R2 定标、星等系统未声明；未作银消改正。,LHe496@Codex
+165370,750,s,61145.8845139,r,21.85,0.05,magnitude,AB,n,n,,,,,,,1.0,n,Nordic Optical Telescope,ALFOSC,GCN44303,GCN 44303：NOT/ALFOSC，SDSS-r，3×500 s，2026-04-15 21:01:12 UT 起；按连续总曝光半时长取中点 21:13:42 UT；r=21.85±0.05 AB；Pan-STARRS 定标，未作银消改正。,LHe496@Codex
+170853,1950,s,61145.9479745,Rc,22.0,0.1,magnitude,,n,n,,,,,,,1.0,n,Zeiss-1000 1m (SAO RAS),Zeiss-1000,GCN44304,GCN 44304：UT start 2026-04-15T22:01:13、13×300 s；原表直接标注 t−T0(mid)=1.97747 d，对标准 T0 换算 midpoint=170853 s（2026-04-15 22:45:05 UT）。连续曝光假设的 start+总曝光/2 为170171 s（22:33:43），与表列 midpoint 相差682 s（11分22秒）；把表列 midpoint 作为原文明确给出的时间口径，差值可由未列出的曝光间隔造成，但原始序列日志未取得。time_err=总曝光一半1950 s。Rc=22.0±0.1；USNO-B1 R2 定标、星等系统未声明；未作银消改正。,LHe496@Codex
+172375,1260,s,61145.9655903,G,21.5,0.6,magnitude,,n,n,,,,,,,1.0,n,MASTER-Tavrida,MASTER,GCN44306,GCN 44306：无滤光片/未注明滤光片的 MASTER summary image，m_OT≈21.5±0.6，另报 m_lim=22.2（原文未标置信水平，不另建限值行）；记录原文时刻 2026-04-15 23:10:27 UT，曝光2520 s，但通告未说明该时刻为起点还是中点，暂保留所报时间并将半曝光1260 s作为时间不确定度；未给星等系统，依规则 G 承载无滤光/宽带并注明。,LHe496@Codex
+190718,1711,s,61146.1778935,g,22.51,0.06,magnitude,AB,n,n,,,,,,,1.0,n,COLIBRÍ,DDRAGO,GCN44309,GCN 44309：观测窗 2026-04-16 03:47:39–04:44:41 UT；按窗口中点 04:16:10 UT 记录，半宽 1711 s（通告未给各滤镜子窗，实际滤镜曝光中点不可恢复）；g/r/i/z 分别 15/15/15/45 min 同步曝光；AB 系统，Pan-STARRS DR1 定标，未作银消改正。,LHe496@Codex
+190718,1711,s,61146.1778935,r,22.1,0.06,magnitude,AB,n,n,,,,,,,1.0,n,COLIBRÍ,DDRAGO,GCN44309,GCN 44309：观测窗 2026-04-16 03:47:39–04:44:41 UT；按窗口中点 04:16:10 UT 记录，半宽 1711 s（通告未给各滤镜子窗，实际滤镜曝光中点不可恢复）；g/r/i/z 分别 15/15/15/45 min 同步曝光；AB 系统，Pan-STARRS DR1 定标，未作银消改正。,LHe496@Codex
+190718,1711,s,61146.1778935,i,21.87,0.08,magnitude,AB,n,n,,,,,,,1.0,n,COLIBRÍ,DDRAGO,GCN44309,GCN 44309：观测窗 2026-04-16 03:47:39–04:44:41 UT；按窗口中点 04:16:10 UT 记录，半宽 1711 s（通告未给各滤镜子窗，实际滤镜曝光中点不可恢复）；g/r/i/z 分别 15/15/15/45 min 同步曝光；AB 系统，Pan-STARRS DR1 定标，未作银消改正。,LHe496@Codex
+190718,1711,s,61146.1778935,z,21.55,0.07,magnitude,AB,n,n,,,,,,,1.0,n,COLIBRÍ,DDRAGO,GCN44309,GCN 44309：观测窗 2026-04-16 03:47:39–04:44:41 UT；按窗口中点 04:16:10 UT 记录，半宽 1711 s（通告未给各滤镜子窗，实际滤镜曝光中点不可恢复）；g/r/i/z 分别 15/15/15/45 min 同步曝光；AB 系统，Pan-STARRS DR1 定标，未作银消改正。,LHe496@Codex
+197705,105,s,61146.2587616,VT-R,21.5,0.2,magnitude,AB,n,n,,,,,,,1.0,n,SVOM,VT,GCN44314,GCN 44314：表列 mid time=54.918 h、3×70 s，按表列 midpoint 计算 time=197705 s；通告另记开始观测场为 2026-04-16 06:11:26 UT，表列 midpoint 对应约06:12:37 UT（比开始晚71 s，较名义半总曝光105 s早34 s）。保留原表 midpoint；VT_R=21.5±0.2 AB；未作银消改正。,LHe496@Codex
+252839,2280,s,61146.8968866,R,22.11,0.02,magnitude,,n,n,,,,,,,1.0,n,Shajn 2.6-m telescope (CrAO),ZTSh,GCN44353,GCN 44353：ZTSh/CrAO UT start 2026-04-16 20:53:30；38×120 s；表列 t−T0(mid)=2.92638 d (=252839 s，吻合 start+2280 s)；R=22.11±0.02，USNO-B1.0 R2 定标，星等系统未声明；未作银消改正。,LHe496@Codex
+264628,9000,s,61147.0333333,15.5GHz,0.28,0.07,mJy,,n,n,,,,,,,1.0,n,AMI-LA,AMI-LA,GCN44379,GCN 44379：AMI-LA 15.5 GHz，观测窗 2026-04-16 22:18–2026-04-17 03:18 UT (5 h)；按窗口中点记时，time_err=半窗口时长；通告给出峰值流量与误差，未作银消校正说明。,LHe496@Codex
+349888,11700,s,61148.0201389,15.5GHz,0.44,0.08,mJy,,n,n,,,,,,,1.0,n,AMI-LA,AMI-LA,GCN44379,GCN 44379：AMI-LA 15.5 GHz，观测窗 2026-04-17 21:14–2026-04-18 03:44 UT (6.5 h)；按窗口中点记时，time_err=半窗口时长；通告给出峰值流量与误差，未作银消校正说明。,LHe496@Codex
+403487,2100,s,61148.6404977,R,22.8,,magnitude,,n,y,,,,,,,1.0,n,"AZT-33IK 1.5-m telescope (Sayan Solar Observatory, Mondy)",AZT-33IK,GCN44353,GCN 44353：AZT-33IK/Mondy UT start 2026-04-18 14:47:18；35×120 s；表列 t−T0(mid)=4.66999 d (=403487 s，吻合 start+2100 s)；3σ 上限 R>22.8，USNO-B1.0 R2 定标，星等系统未声明；未作银消改正。,LHe496@Codex
+438628,12600,s,61149.0472222,15.5GHz,0.36,0.09,mJy,,n,n,,,,,,,1.0,n,AMI-LA,AMI-LA,GCN44379,GCN 44379：AMI-LA 15.5 GHz，观测窗 2026-04-18 21:38–2026-04-19 04:38 UT (7 h)；按窗口中点记时，time_err=半窗口时长；通告给出峰值流量与误差，未作银消校正说明。,LHe496@Codex
+493948,1800,s,61149.6875000,10GHz,0.2,,mJy,,n,n,,,,,,,1.0,n,ATCA,ATCA,GCN44385,GCN 44385：ATCA 2026-04-19 15:30–16:30 UT，按一小时窗口中点 16:00 UT 记时、半宽1800 s；报告约0.2 mJy at 10 GHz（近似值，原文未给统计误差），并称附近频率有自吸收谱。,LHe496@Codex

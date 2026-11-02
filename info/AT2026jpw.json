@@ -1,28 +1,36 @@
 {
   "transient_id": "AT2026jpw",
-  "alias": [],
+  "alias": [
+    "GOTO26djh"
+  ],
   "ra": 200.555049,
-  "dec": 37.03754,
+  "dec": 37.037543,
   "T0": "2026-04-13T23:17:32Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 44301 (GOTO discovery at 2026-04-13 23:17:32 UT); TNS AT 2026jpw discovery report 300181 (2026-04-13 23:17:32.928 UT)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM/C-GFT",
+  "Trigger_Instrument": null,
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 44301 (J2000 coordinates); TNS AT 2026jpw discovery report 300181",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份/分类核对（2026-11-03）：GCN 44301 与 TNS report 300181 确认 AT2026jpw = GOTO26djh，GOTO 光学巡天发现；TNS 的类型、红移和宿主均为空，且无分类报告。GCN 44301 称 fast-fading transient / candidate orphan afterglow，明确指出本地恒星起源尚不能排除；GCN 44305 的 EP/FXT 软 X 射线对应体支持高能爆发余辉解释，但未确认 GRB，因此不加 grb 或其他分类 tag。GCN 44309 仅称多滤镜颜色“suggests a photo-z < 2.7 using typical IGM absorption”；这是初步颜色推断而非测得红移，故 redshift 保持 null。无确定宿主或光学红移；GOTO/TNS 发现位置未给不确定度。GCN 44305 另报告 EP/FXT 未编目 X 射线源位置 13:22:13.34,+37:02:26.88、误差15″，与 GOTO 位置相容；这是后续 X 射线对应体定位，不替代更精确的光学坐标。T0 采用 GOTO 首次发现时刻（非高能触发）；TNS 给出 23:17:32.928 UT，GCN 给出 23:17:32 UT，按 GCN 精度取整秒。原 bot 字段误写 Trigger_Instrument=SVOM/C-GFT，且 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）', t0_basis='meta_trigger'; 两项已纠正/不再作为真实触发依据。TNS 最后非探测行显示 20 AB，而 GCN 44301 给出 L>20.5 (3σ)；光变表采用明确标置信度的 GCN 限值并保留差异说明。ADS/SciX 文献/引文检索通道本轮未覆盖（无 API 凭据；search-limited，登记 audit/unverified.tsv）；不能据此断言无其他文献或测光。已核对 GCN 44301、44303–44306、44309、44314、44316、44353、44379、44385 与 TNS 公开页；光学/射电初报与时间基准按各通告记录。GCN 44304 两行已采用原表明确标注的 t−T0(mid) 作为 midpoint；相对按连续总曝光估算的 midpoint 差1992 s和682 s，可能来自未列出的帧间间隔，完整数值及缺少原始序列日志的限制已写进行注释。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 使用 GOTO 首次光学发现时刻作为本源时间轴零点，不代表高能触发。",
+    "t0_basis": "discovery",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
