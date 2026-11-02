@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB160123A",
-  "alias": [],
-  "ra": 150.277,
-  "dec": -33.79,
-  "T0": "2016-01-23T08:58:20Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 671447"
+  ],
+  "ra": 150.31272,
+  "dec": -33.77522,
+  "T0": "2016-01-23T08:58:20.166340Z",
+  "T0_ref": "Swift/BAT 官方目录（batgrbcat，trigger 671447）快照 trigger_time=2016-01-23T08:58:20.166340Z（swift.gsfc.nasa.gov/results/batgrbcat/，2026-07-21 取）；GCN 18926 一致（At 08:58:20 UT, the Swift BAT triggered，整秒）；swiftgrbba 快照 08:58:20.000Z 为舍入，不取",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +15,14 @@
     "grb"
   ],
   "pos_error": 1.8,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 18927",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份核验（2026-11-03）：Swift/BAT trigger 671447（GCN 18926），XRT 增强位置 RA,Dec=150.31272,-33.77522（1.8 arcsec，90%，GCN 18927）；原库 ra/dec=150.277,-33.790 误为 BAT 精化位置（GCN 18929，1.6 arcmin）而 pos_ref/pos_error 取 GCN 18927，已改 GCN 18927 值自洽；swiftgrbba 快照 xrt 位置 150.31267,-33.77522（±1.5 arcsec）与 swift.ac.uk/xrt_positions/00671447 在线值 150.31265,-33.77517（2.2 arcsec，90%，2026-11-03 取）备查，均在 90% 误差内一致。t90=3.95±0.62 s（15-350 keV，GCN 18929；batgrbcat 快照 3.952±0.623 s 一致），按目录 t90 判 lgrb/sgrb。测光检索（2026-11-03）：仓内 gcn/archive 全文检索 GRB 160123A / 671447 命中 9 篇（18926/18927/18928/18929/18930/18931/18932/18936/18942；其中 6 篇含光学上限：18926 UVOT FC、18928 LCOGT、18931 UVOT、18932 NOT、18936 GROND、18942 TAROT，均已入库）；external/rssgrbag 射电光变无该源；external/grbsn_webtool 63 事件集无该源；ADS API（api.adsabs.harvard.edu，2026-11-03）检索 \"GRB 160123A\" 题录+全文命中 9 篇、全部为上述 GCN Circular，无已发表研究论文给出该源测光；TNS 不适用（GRB 类）。补 TAROT 3 行上限（GCN 18942）；GCN 18926 的 u FC 初步限 ~19.2 与 GCN 18931 u_FC 精化值 19.9 为同一次测量，保留 18931 行、18926 行并入其 comment；UVOT 白光行 band 由 w（filters.json 中为 Pan-STARRS w 键，原库误用）改 uvot-white；UVOT/LCOGT/NOT/GROND 各行按原文观测窗口改「中点/半宽」口径并补 time_err。X 射线行（band=10keV，17 行）未动；T0 补亚秒后其 mjd 需按 mjd=T0+time 重算（维护者侧执行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -161,6 +166,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [],
