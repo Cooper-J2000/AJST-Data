@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB180224A",
-  "alias": [],
-  "ra": 202.6837,
-  "dec": 38.07906,
-  "T0": "2018-02-24T22:21:44Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB180224.93",
+    "GRB180224.94"
+  ],
+  "ra": 202.68377,
+  "dec": 38.07902,
+  "T0": "2018-02-24T22:21:07Z",
+  "T0_ref": "GCN 22442 (Swift/BAT trigger 811561)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.7,
-  "pos_ref": "GCN 22443",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 0.46,
+  "pos_ref": "GCN 22454",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0=2018-02-24 22:21:07 UT is the Swift/BAT trigger (GCN 22442; trigger 811561); the previously stored 22:21:44 UT is the MASTER-Kislovodsk pointing time in GCN 22444, not the trigger. Afterglow position uses the UVOT position in GCN 22454: RA=202.68377 deg, Dec=+38.07902 deg, 90% error radius 0.46 arcsec. GCN 22447 gives BAT T90=10.9±3.6 s (15–350 keV; 90% errors); the Swift sample table in Becerra et al. 2023 Table 3 lists 10.92±3.57 s. The duration is >2 s, so sub_tag=lgrb follows the catalog T90 rule. No secure redshift is reported in the reviewed sources; GCN 22446 only suggests SDSS J133044.06+380443.0 as a possible host, so host_galaxy remains null. GCN 22444 MASTER used “GRB180224.93” and “GRB180224.94” as event labels; retained as sourced aliases. Sparse-photometry search (2026-11-02): local gcn/archive absent; external/rssgrbag 0 matches; external/grbsn_webtool 0 source matches; external/mpe_greiner has one event metadata row but no photometry; Swift catalogs provide trigger and UVOT summary only. Official GCN event archive has 9 circulars; 6 optical/UV follow-up circulars (22442, 22444, 22446, 22448, 22452, 22454) were inspected. Crossref query returned 100 results with no exact source-title/abstract hit; arXiv exact-phrase API returned 0; OpenAlex returned 12 records including 7 GCN notices/circulars. Web/publisher search found two relevant journal papers: Becerra et al. 2023 Table 3 (T90 only) and Ror et al. 2025 (UVOT/XRT model analysis, no per-exposure table); neither supplies new raw photometry rows. Added 10 source-anchored rows from GCN 22444 and 22454. GCN 22448 AbAO remains excluded pending user ruling; the GCN 22452 OASDG row uses its absolute start plus the reported 9×180 s sequence midpoint (the circular’s relative 1.21 h is approximate).",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
+    "t0_note": "T0 is Swift/BAT trigger 2018-02-24 22:21:07 UT from GCN 22442; previous 22:21:44 UT was the MASTER-Kislovodsk pointing time (GCN 22444).",
+    "t0_basis": "swift_bat_trigger",
     "bot_created": true
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Becerra+2023",
+      "title": "Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, COATLI, and RATIR observations",
+      "url": "https://doi.org/10.1093/mnras/stad2513",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Ror+2025",
+      "title": "Investigating temporal features in Swift GRB afterglows: a comparative study of UVOT and XRT data",
+      "url": "https://doi.org/10.1093/mnras/staf1514",
+      "source": "LHe496@Codex"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
