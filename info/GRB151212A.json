@@ -1,25 +1,31 @@
 {
   "transient_id": "GRB151212A",
   "alias": [],
-  "ra": 68.109,
-  "dec": -3.775,
+  "ra": 68.1521,
+  "dec": -3.9615,
   "T0": "2015-12-12T14:00:27Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 18685（MAXI/GSC nova alert 触发时刻 2015-12-12T14:00:27 UT；MAXI 告警页 NOVA ID=7368487901 同值印证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 5.2,
+  "pos_ref": "GCN 18687（Swift-XRT 余辉精化定位，radius 90% confidence）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "身份：MAXI/GSC nova alert 触发（2015-12-12T14:00:27 UT，GCN 18685），定位 68.109,-3.775（统计 ~0.5°、系统 0.1°，90% 包含半径）；Swift tiled 后随（GCN 18686）发现 XRT 余辉 RA,Dec=68.1521,-3.9615（±5.2″ radius, 90% conf.，GCN 18687，距 MAXI 位置 11.5′），GROND 光学候选体 68.150,-3.9626（±0.5″，位于增强 XRT 误差圈边缘，GCN 18688）；原 Trigger_Instrument 记 Swift/BAT 有误，改为 MAXI/GSC；原 ra/dec 为 MAXI 粗定位，改为 GCN 18687 XRT 精化定位；MAXI 告警页 NOVA ID=7368487901（maxi.riken.jp/alert/novae/7368487901/，取数 2026-11-03）触发时刻同值印证；无红移；无 T90/时长量（MAXI 扫描观测，无目录 t90），sub_tag 留空；由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)，X 射线行（10keV）未审核、保持原样。测光检索（2026-11-03）：仓内 gcn/archive 45947 篇全文 grep 'GRB 151212'/'151212A' 命中 6 篇（GCN 18685/18686/18687/18688/18689/18725，另 18706 为同日 GRB151212B 不属本源），已逐篇打开核对；external/rssgrbag 140 行、external/grbsn_webtool、external/uvot_grb 无本源记录（mpe_greiner/swiftgrbba 仅目录级参数）；ADS 检索 \"GRB 151212A\" 与 \"151212A\" 各命中 5 条，均为 GCN 通告（2015GCN.18685/18686/18687/18688/18725....1），与仓内 archive 一致、无遗漏通告，无研究论文命中；GCN 站网页搜索为动态页未返回有效结果，以 ADS+仓内 archive 双路为准；TNS 不适用（GRB，无 TNS 命名）。结论：可用测光仅 GCN 18688（GROND g'r'i'z'JH）、GCN 18689（UVOT u 上限）、GCN 18725（iTelescope Red 上限）；补 1 行 iTelescope R ~17.0 上限；修订 UVOT/GROND 行时间口径（曝光中点）；无其他漏收测光",
   "sub_tag": [],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "swiftgrbba": {
         "other": {

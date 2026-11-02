@@ -1,7 +1,7 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
 8478.746,116.978,s,57368.681779467595,10keV,5.69936090337706e-08,1.1895496199182e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 13960.198,167.21,s,57368.745222199075,10keV,9.40222228299447e-08,1.50710724259142e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-42183.0,,s,57369.071875,uvot-u,21.4,,magnitude,,n,y,,,,,,,1.0,n,,UVOT,GCN18689,,
+45287.5,3104.5,s,57369.1078067,uvot-u,21.4,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,UVOT,GCN18689,"原文（GCN 18689）给曝光窗口 T_start=42183 s、T_stop=48392 s、总曝光 2939 s，3σ 上限 U>21.4；time 改为窗口中点 45287.5 s、time_err=半宽 3104.5 s（§3.8 约定口径，真实曝光中点不可恢复）；mag_system=Vega 按 UVOT 测光系统惯例（GCN 原文引 Breeveld+2011）；未做银消光改正（原文声明 E(B-V)=0.04，Schlegel+1998）",Rusty-Harpoon@zcode
 42559.416,467.258,s,57369.076231666666,10keV,4.78250147563425e-08,1.26195843749228e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 43317.967,563.689,s,57369.08501119213,10keV,5.06436998005128e-08,1.29268085359259e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 47206.268,149.744,s,57369.13001467593,10keV,3.96673504187166e-08,8.92333304262347e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -9,9 +9,10 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 47833.73,201.912,s,57369.137276967595,10keV,2.00156899845462e-08,5.23773628239013e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 48085.347,135.1,s,57369.14018920139,10keV,2.75809415493058e-08,7.22391925973676e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 48269.256,134.806,s,57369.14231777778,10keV,2.51764518379368e-08,6.40600913881055e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-50733.0,,s,57369.17083333334,z,23.3,0.3,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN18688,,
-50733.0,,s,57369.17083333334,g,24.3,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN18688,,
-50733.0,,s,57369.17083333334,i,23.1,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN18688,,
-50733.0,,s,57369.17083333334,H,20.7,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN18688,,
-50733.0,,s,57369.17083333334,J,21.2,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN18688,,
-50733.0,,s,57369.17083333334,r,23.6,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,GROND,GCN18688,,
+50760.0,180.0,s,57369.1711458,z,23.3,0.3,magnitude,AB,n,n,,,,,,,1.0,n,MPG/ESO 2.2m,GROND,GCN18688,"原文（GCN 18688）只给 mid-time 14.1 hrs after the burst，time=14.1 h=50760 s，等效不确定度 ±0.05 h=180 s；g'r'i'z'JH 同时观测，AB 系统按原文声明（对 SDSS 与 2MASS 场星定标）；观测始于 2015-12-13 03:27 UT（触发后 13.5 h）；未做银消光改正（原文声明 E(B-V)=0.03，Schlegel+1998）；mag 与误差逐值核对与原文一致",Rusty-Harpoon@zcode
+50760.0,180.0,s,57369.1711458,g,24.3,0.2,magnitude,AB,n,n,,,,,,,1.0,n,MPG/ESO 2.2m,GROND,GCN18688,"同 z 行口径：time=14.1 h=50760 s ±180 s；AB 按原文声明",Rusty-Harpoon@zcode
+50760.0,180.0,s,57369.1711458,i,23.1,0.2,magnitude,AB,n,n,,,,,,,1.0,n,MPG/ESO 2.2m,GROND,GCN18688,"同 z 行口径：time=14.1 h=50760 s ±180 s；AB 按原文声明",Rusty-Harpoon@zcode
+50760.0,180.0,s,57369.1711458,H,20.7,,magnitude,AB,n,y,,,,,,,1.0,n,MPG/ESO 2.2m,GROND,GCN18688,"同 z 行口径：time=14.1 h=50760 s ±180 s；AB 按原文声明；上限行 H>20.7",Rusty-Harpoon@zcode
+50760.0,180.0,s,57369.1711458,J,21.2,,magnitude,AB,n,y,,,,,,,1.0,n,MPG/ESO 2.2m,GROND,GCN18688,"同 z 行口径：time=14.1 h=50760 s ±180 s；AB 按原文声明；上限行 J>21.2",Rusty-Harpoon@zcode
+50760.0,180.0,s,57369.1711458,r,23.6,0.2,magnitude,AB,n,n,,,,,,,1.0,n,MPG/ESO 2.2m,GROND,GCN18688,"同 z 行口径：time=14.1 h=50760 s ±180 s；AB 按原文声明",Rusty-Harpoon@zcode
+32374.5,1021.5,s,57368.9583472,R,17.0,,magnitude,,n,y,,,,,,,1.0,n,iTelescope.Net,T18 (Plane Wave CDK),GCN18725,"补行：iTelescope Red 滤光片（原文 'Red filter'），记 filters.json 键 R（Generic/Johnson）；20×60 s 曝光合成（总曝光 1200 s），原文只给观测窗口 2015-12-12 22:43:00–23:17:03 UT，time=窗口中点 32374.5 s、time_err=半宽 1021.5 s（§3.8）；5σ 上限 ~17.0（flux_density 记 17.0，近似语义留此备注），定标于 USNO-B1 目录，原文未声明星等系统；在 XRT 余辉位置（GCN 18687）个体与叠加像均未探测",Rusty-Harpoon@zcode
