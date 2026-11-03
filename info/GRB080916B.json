@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB080916B",
-  "alias": [],
+  "alias": [
+    "BAT 324907",
+    "Swift 324907"
+  ],
   "ra": 163.66575622558594,
   "dec": 69.06608581542969,
   "T0": "2008-09-16T14:44:47Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 8240 (Swift/BAT trigger 324907)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +16,13 @@
     "grb"
   ],
   "pos_error": 0.800000011920929,
-  "pos_ref": "SGA (UVOTGRB)",
+  "pos_ref": "GCN 8252 (Swift/UVOT; 90% confidence)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "源身份由 Swift/BAT trigger 324907（GCN 8240）确认；BAT T0=2008-09-16T14:44:47Z。t90=33.544±6.96964 s（Swift/BAT GRB Catalog，15–350 keV），按目录 t90 判 lgrb；GCN 8250 独立报告 32±8 s。坐标取 GCN 8252 的 UVOT 余辉位置 RA=10:54:39.78, Dec=+69:03:57.9，误差半径 0.8 arcsec（90%）；与 UVOTGRB HLSP 位置一致。红移按用户裁定保留 null，并注明 Qin & Chen (2013) Table 1 与 Swift/MPE 官方目录不一致：论文表列 080916B z=4.35（Ref. 7），同表另列 080916C z=4.35（Ref. 6），而 Swift 官方 GRB 080916B 页面及 MPE GRB catalog 对 Swift 080916B 均无红移记录；未确认该数值归属，不将二级汇编的 4.35 录为本源红移。GCN 8252 报告 UVOT 初始 white 20.50±0.21 与第二轨道 white >21.27，并给出 v/b/u/uvw1/uvm2/uvw2 3σ 上限；初始 white 检测窗与四个短 NOC 白光点重叠，NOC 白光点 t=1542.7 s 的时间范围仅与该窗部分重叠且中点在窗外；第二轨道 white 限值窗与 MAST UVOTGRB NOC-db 长时间合并点范围重叠。因此保留 NOC 逐点/合并记录，不另重复录入对应 GCN coadd 或上限。NOC B 两点显著度为 2.2σ、2.8σ，均与同窗 GCN 3σ 合成上限 b>20.32 相容。其余无 NOC 对应点的五个滤镜上限按 GCN 窗口中点/半宽补录。检索留证（2026-11-03）：仓内 gcn/archive 不存在；external/rssgrbag 与 external/grbsn_webtool/SourceData 以 GRB080916B 精确检索均无行；GCN 官方事件页核阅 6 篇本源 Circular（8240、8242、8247、8250、8252、8260），其中非 X 射线新增约束来自 8252；MAST UVOTGRB NOC-db 共 8 条源记录，逐字段核对现有 8 条光学点；补入 GCN 8252 中未见 NOC 对应点的 v/u/uvw1/uvm2/uvw2 五条上限。ADS/SciX 依用户此前裁定留待补跑；本轮不据未覆盖通道声称文献检索已穷尽。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -255,8 +260,30 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope"
+    },
+    {
+      "name": "Qin & Chen 2013",
+      "url": "https://doi.org/10.1093/mnras/sts547",
+      "title": "Statistical classification of gamma-ray bursts based on the Amati relation"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
