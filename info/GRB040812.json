@@ -3,10 +3,10 @@
   "alias": [
     "XRF040812"
   ],
-  "ra": 246.535,
-  "dec": -44.684,
-  "T0": "2004-08-13T00:25:00Z",
-  "T0_ref": null,
+  "ra": 246.509375,
+  "dec": -44.73038888888889,
+  "T0": "2004-08-12T06:01:50Z",
+  "T0_ref": "GCN 2640",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
@@ -15,23 +15,36 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": "GCN 2648",
+  "pos_ref": "GCN 2648; GCN 2655",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "Identity/T0: INTEGRAL/IBAS alert #1901 is GRB 040812 (GCN 2640), detected 2004-08-12 06:01:50 UT; D’Avanzo+2007 independently gives 2004 Aug 12.251 UT. Adopt GCN 2640 trigger time. Position is fading Chandra source #2 (16:26:02.25, -44:43:49.4; GCN 2648/2655), which D’Avanzo+2007 identifies with the optical afterglow; GCN 2655 reports its decline between Chandra epochs. No positional uncertainty for this refined source is quoted, so pos_error remains null. The former coordinates instead matched the non-afterglow VLA candidate in GCN 2643. D’Avanzo+2007 only estimates z=0.3–0.7 from host properties/spectrum; no secure redshift is adopted. Photometry search (2026-11-02): no gcn/archive snapshot exists in this checkout; rssgrbag lightcurve has 0 matching rows and normalized metadata has one GRB040812 entry with radio_ag_flag=N; grbsn_webtool has the Soderberg HST mirror table. Reviewed 11 relevant official GCN circulars (2640, 2642, 2643, 2645, 2648-2651, 2653, 2655-2656); they yield no additional usable afterglow photometry beyond the discarded preliminary VLT limit and the HST limits entered from Soderberg+2005b. ADS/SciX direct full text was unavailable; title/bibcode fallback located the D’Avanzo+2007 and Soderberg+2005b studies. The fifth GMRT source in GCN 2653 is an extended field source hundreds of arcseconds from the afterglow and was not added.",
   "sub_tag": [
     "XRF"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
+    "t0_note": "T0 corrected to the INTEGRAL/IBAS trigger time in GCN 2640",
+    "t0_basis": "GCN 2640 trigger time",
     "bot_created": true,
     "merged_from": [
       "XRF040812"
     ]
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "D'Avanzo+2007",
+      "url": "https://doi.org/10.1393/ncb/i2007-10281-2",
+      "title": "Discovery of the optical afterglow of XRF 040812: VLT and Chandra observations",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Soderberg+2005b",
+      "url": "https://doi.org/10.1086/430405",
+      "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
+      "source": "LHe496@Codex"
+    }
+  ],
   "host_galaxy": null
 }
