@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB240805B",
   "alias": [],
-  "ra": 254.2153,
-  "dec": 18.3175,
-  "T0": "2024-08-05T14:55:19Z",
-  "T0_ref": null,
+  "ra": 254.21255,
+  "dec": 18.31958,
+  "T0": "2024-08-05T14:28:54.126720Z",
+  "T0_ref": "Swift/BAT 触发 #1246989：GCN 37043（14:28:54 UT，整数秒）；亚秒取 Swift-BAT 官方目录 trigger_time=2024-08-05T14:28:54.126720（仓内 external/swift_bat/summary_general_info 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.1,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 37053",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 改正：原库 T0=2024-08-05T14:55:19Z 系导入误取 GCN 37050 的 JinShan 观测开始时刻（原文 observation started at 14:55:19 UT），非触发时刻；本审改为 Swift/BAT 触发时刻 2024-08-05T14:28:54.126720Z（GCN 37043 整数秒 14:28:54 + Swift-BAT 官方目录亚秒；GCN 37043 内 XRT 开机 14:30:12.5 UT=触发后 78.4 s 与之自洽；GCN 37051/37074/37076/37192 的相对时刻亦均自洽）。原 extra_data.t0_note=『t0 为 meta trigger-time（真实触发时刻）』/t0_basis=meta_trigger（bot 写入，已失真，原值留此备查）。坐标改用 enhanced Swift-XRT 位置 RA,Dec=254.21255,+18.31958（GCN 37053，3.1 arcsec，90% confidence）；原库 254.2153,+18.3175 为 GCN 37043 的 XRT 初始位置（4.8 arcsec，90%）。Trigger_Instrument 由 Swift/XRT 改为 Swift/BAT（BAT 触发定位，XRT 发现余辉并精化位置）。sub_tag=lgrb 依据 t90=64.99±2.56 s（GCN 37084 Swift/BAT 精化分析，15-350 keV；Swift-BAT 目录 T90=64.996 s），按 t90 判 lgrb。身份：GRB 240805A 为另一独立暴（Swift/BAT 触发 2024-08-05T02:02:22Z，trigger 1246907，ra 190.911/dec -53.622；Fermi/GBM 触发为 02:02:20.31，ra 192.1/dec -52.9），无混淆。红移：全部 16 篇相关 GCN 与文献检索均无红移测量，保持 null。测光检索（2026-11-03）：仓内 gcn/archive 命中 16 篇全文（37043/37050/37051/37052/37053/37055/37057/37059/37060/37062/37072/37074/37076/37084/37086/37192，其中 12 篇含光学测光或上限数值）；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无该源记录；external/swiftgrbba 仅用于身份与 T0 互证。外部检索：ADS API 命中 16 篇（与仓内 archive 完全一致，全部为 GCN 通告，无已发表研究论文，2026-11-03 查询）；GCN 站 API 当日不可用（404），以 ADS 实时 GCN 索引作等价证据。结论：全部可用测光已入库——本审新增 13 行（UVOT 9 行、MASTER-Tavrida 2 行、Terskol 1 行、Nastro Verde 1 行）、修订 18 行；GCN 37076（Bassano Bresciano，两个窗口 Vlim=21.2）原文未描述波段口径、亦未声明无滤光片，暂不入库，见 PR 待决事项。lc 全表 31 行 time/mjd 均按本 T0 统一重算。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=Swift/BAT 触发时刻（trigger #1246989），2026-11-03 审核改正；原 bot 值 2024-08-05T14:55:19Z 为 GCN 37050 JinShan 观测开始时刻，已弃用（原值留存于 comment）",
+    "t0_basis": "trigger_instrument",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
   "host_galaxy": null
