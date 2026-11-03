@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB250605A",
-  "alias": [],
-  "ra": 166.9571,
-  "dec": -19.7882,
-  "T0": "2025-06-05T18:53:08Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "alias": [
+    "GRB 250605A",
+    "BAT 1321323"
+  ],
+  "ra": 166.95715,
+  "dec": -19.78841,
+  "T0": "2025-06-05T18:52:31.270Z",
+  "T0_ref": "GCN 40633 (Page et al., Swift team): 'At 18:52:31.27 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 250605A (trigger=1321323)'; swift_bat 目录快照 trigger_time=2025-06-05T18:52:31.274380Z 与 swiftgrbba 快照 18:52:31.270 互证, 整数秒一致, 按《数据审核提示词》§3.2/§3.8 取触发仪器官方 GCN 亚秒值",
+  "T0_offset": -100.284,
+  "T0_offset_ref": "Swift/BAT 目录 T100_start=-100.284 s (external/swift_bat 快照 summary_general_info/summary_burst_durations.txt, 相对自动触发); GCN 40667 ('very dim extended emission between ~T0-100 sec to T0-10') 互证",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.0,
-  "pos_ref": "GCN 40642",
+  "pos_ref": "GCN 40642 (Evans et al., Swift-XRT team, enhanced position): RA, Dec = 166.95715, -19.78841, 2.0 arcsec (radius, 90% confidence, 原文明确标注)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 (fsy@zcode, 2026-11-04)。身份: Swift/BAT trigger 1321323 (GCN 40633 原文 'At 18:52:31.27 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 250605A (trigger=1321323)'); BAT refined (GCN 40667, 位 166.963/-19.786, 1.2 arcmin 90%)、XRT enhanced (GCN 40642)、SVOM/VT ToO (GCN 40645 引 40633/40644) 同暴互证; swift_bat 目录快照 2025-06-05 当日唯一 Swift 触发即本源 (BAT 1321323), mpe_greiner 快照 GRB 250605A obs_date 2025-06-05 一致; 同日近邻甄别: GCN 站 query=250605B 0 命中, query=250605A 命中 7 篇 (40633/40634/40642/40644/40645/40657/40667) 全部涉及本暴, 仓内 info/ 无 GRB250605B, 无同日混淆源。T0: 原库 2025-06-05T18:53:08Z (bot meta_trigger 值, extra_data.t0_basis/t0_note 原值) 无任何通告出处, 与 BAT 触发差 +36.73 s, 废弃; 改取触发仪器 Swift/BAT 官方 GCN 触发时刻 18:52:31.27 UT (GCN 40633, §3.2/§3.8 优先级①); swift_bat 快照 trigger_time=2025-06-05T18:52:31.274380Z 与 swiftgrbba 快照 18:52:31.270 互证 (差 ≤4.4 ms); 本源无 X 射线行, 12 行光学/UV 行 time/mjd 已按新 T0 重算。T0_offset=-100.284 s: BAT 目录 T100_start=-100.284 s (external/swift_bat 快照 summary_general_info/summary_burst_durations.txt, 相对自动触发), GCN 40667 'very dim extended emission between ~T0-100 sec to T0-10' 互证, 爆发早于自动触发 (纯元数据, 光变时间轴未动)。pos: 原库 ra/dec=166.9571/-19.7882 系 GCN 40633 XRT 初报位 (5.5 arcsec, 90%), 与 pos_ref=GCN 40642/pos_error=2.0 不配套; 改取 XRT enhanced 位 RA,Dec=166.95715,-19.78841, 2.0 arcsec (radius, 90% confidence, GCN 40642 原文明示); 备查: BAT onboard 166.977/-19.795 (3 arcmin, 90%, GCN 40633)、BAT ground 166.963/-19.786 (1.2 arcmin, 90%, GCN 40667)、swiftgrbba 快照 xrt 位 166.95717/-19.78842 (与 40642 差 0.00002 度)。红移: 各通告均未测得, 留空; GCN 40634 提 Legacy Survey 档案源 i=23.54 与候选对应体位置一致或为宿主 (候选, 不建 host_galaxy)。sub_tag=lgrb: t90=175.784±5.079 s (Swift/BAT 目录 external/swift_bat 快照, 15-350 keV), 按目录 t90 判 lgrb; GCN 40667 精化 t90=176.05±5.15 s (15-350 keV) 互证。alias: 'GRB 250605A' 系 GCN 通告原文用名 (subject: GRB 250605A: Swift detection of a burst); 'BAT 1321323' 系 swift_bat 目录 name_alt。X 射线: GCN 40644 (XRT refined) 与 swiftgrbba 快照有 X 射线数据, 按范围暂不入库。测光检索留证 (2026-11-04): 1) GCN 站 query=250605A 命中 7 篇全部实开 (光学数值出自 40633 white FC 初报/40634 LT/40645 VT/40657 UVOT 精化 8 行), 另 query=1321323 命中 2 篇已含于 7 篇, query=250605B 0 命中; 2) 仓内: gcn/archive 不在本机, external/rssgrbag 无本源记录, external/grbsn_webtool/SourceData 无本源事件, external/uvot_grb 与 heasarc_grbcat/swift_grb 无本源行, swift_bat/swiftgrbba/mpe_greiner 仅目录级参数; 3) arXiv 搜索页 '250605A'/'GRB 250605A'/'GRB 250605' 均 0 命中 (API 端点返回空响应, 改用网页版实查); OpenAlex 命中 1 篇 SVOM/VT 综述 (arXiv 2604.24266, accepted in RAA SVOM special issue), 其 Table 3 行 23 纯转引 GCN 40645 (VT_R >23.6 @ 11.280 h), 无增量不入库; ADS/SciX 无 API 凭据 (通道级 search-limited 已在 main audit/unverified.tsv 登记, 不据此断言无文献); 4) 结论: 可入库光学上限新增 7 行 (GCN 40657), 连同改核 5 行共 12 行, 全光学/UV、无 X 射线行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2025-06-05T18:52:31.270Z 为 Swift/BAT 触发时刻 (GCN 40633, trigger=1321323); 审核前 bot 值 2025-06-05T18:53:08Z (t0_basis=meta_trigger) 已废弃, 原值保留于 comment",
+    "t0_basis": "swift_bat_trigger_gcn40633",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
