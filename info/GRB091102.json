@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB091102",
-  "alias": [],
-  "ra": 72.622,
-  "dec": -72.527,
+  "alias": [
+    "GRB 091102A"
+  ],
+  "ra": 72.6161,
+  "dec": -72.5197,
   "T0": "2009-11-02T14:34:38Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10117 (Swift/BAT trigger 374598; 2009-11-02 14:34:38 UT)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,8 +18,10 @@
   "pos_ref": "GCN 10120",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "T0 采用 Swift/BAT GCN 10117 明确报告的 2009-11-02 14:34:38 UT（只保留原文秒精度）；Fermi GCN 10126 将同一事件称为 GRB 091102A，T0=14:34:38.36，故添加该别名，但不以目录亚秒数改写 GCN T0。位置采用 Swift/XRT GCN 10120 UVOT-enhanced RA=72.61610°, Dec=−72.51970°，90% 半径 2.2″；原有 72.622°, −72.527° 是 GCN 10121 BAT refined position，不能与 2.2″ XRT 误差混用。Swift BAT catalog t90=6.648±0.467 s（15–350 keV）；按目录 t90 判 lgrb。GCN 10118 finding-chart White 图像因拥挤星场未给可用上限；GCN 10124 有正式 UVOT 上限。GCN 10119/10122/10123/10124/10127/10129/10132 已逐项核；GCN 10129 的 APEX 限值采用 de Ugarte Postigo+2012 VoR 3σ=20 mJy。2026-11-03 检索记录：本地 gcn/archive 不存在；external/rssgrbag 对 GRB091102 无行，external/grbsn_webtool/SourceData 无命中；官方 GCN 事件页共查 17 条（10117–10132 与 10169），Swift/BAT/XRT/UVOT 目录均已查；精确源名公开网页检索命中 1 篇可访问 VoR（de Ugarte Postigo+2012）。补录 10 条非X测光行（含 APEX 论文行）。ADS/SciX API 凭据按用户裁定留待补跑，故本轮文献覆盖不完整，不据此声称无其他论文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -330,6 +334,14 @@
       }
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "de Ugarte Postigo+2012",
+      "url": "https://doi.org/10.1051/0004-6361/201117848",
+      "title": "Pre-ALMA observations of GRBs in the mm/submm range",
+      "source": "LHe496@Codex"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
