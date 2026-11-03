@@ -9,7 +9,7 @@
   "ra": 350.58958333,
   "dec": 77.26194444,
   "T0": "1998-05-19T12:20:12.641Z",
-  "T0_ref": "HEASARC CGRO/BATSE GRB Catalog trigger 6764（仓内 extra_data.catalog_data.batse 快照）trigger_time=1998-05-19T12:20:12.641 UTC；互证：GCN 86（BATSE 官方通告）May 19.51403=12:20:12.19±0.43 s（日分数 5 位舍入）；Halpern+1999 (ApJ 517, L105) 'BATSE trigger on May 19.514035 UT'（=12:20:12.62，与目录差 0.02 s）；BeppoSAX 官方 GCN 74/75 'about 12:20:00 UT'（分钟精度，相容）",
+  "T0_ref": "HEASARC CGRO/BATSE GRB Catalog trigger 6764（仓内 external/batse 快照 normalized.jsonl（HEASARC batsegrb））trigger_time=1998-05-19T12:20:12.641 UTC；互证：GCN 86（BATSE 官方通告）May 19.51403=12:20:12.19±0.43 s（日分数 5 位舍入）；Halpern+1999 (ApJ 517, L105) 'BATSE trigger on May 19.514035 UT'（=12:20:12.62，与目录差 0.02 s）；BeppoSAX 官方 GCN 74/75 'about 12:20:00 UT'（分钟精度，相容）",
   "T0_offset": -70,
   "T0_offset_ref": "Halpern+1999 (ApJ 517, L105) VoR：「The onset of 2-27 keV emission from GRB 980519 in the WFC preceded the BATSE trigger on May 19.514035 UT by about 70 s (in 't Zand et al. 1999)」；in 't Zand+1999 (ApJ 516, L57) 原文未打开（IOP 反爬，见 audit/unverified.tsv），取 Halpern VoR 转述值；纯元数据、不改光变时间轴",
   "Trigger_Instrument": "BeppoSAX/WFC",
@@ -21,261 +21,12 @@
   "pos_ref": "Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "审核（fsy@zcode，2026-11-05）。身份：GRB 980519=BeppoSAX/WFC+GRBM 触发（GCN 74/75 官方通告，'about 12:20:00 UT of May 19'）、BATSE trigger 6764（GCN 86：May 19.51403；HEASARC batse 快照）、Ulysses+BATSE IPN 环带（GCN 81：中心 329.485/−11.873、半径 89.981°、全宽 4.9′，与 WFC 精化圆及 OT 位相容）、C&F12 Table 1 Inst=B（B≡BeppoSAX，无 T≡IPN 标记）。原 T0=1998-05-20T01:22:11Z 无出处（T0_ref=null）且晚于 OT 首测（May 19.87，GCN 78），恰等于 GCN 124 中 Wise 1m B 波段 1800 s 曝光中点 01:22:11 UT（May 20），判为管线误锚观测时刻；现改锚 BATSE 目录 trigger 6764（T0_ref 详列互证链）。T0_offset=−70 s 依据见 T0_offset_ref（真实起始辐射早于自动触发）。定位：ra/dec 沿用 rssgrbag 导入值=C&F12 Table 1 位置列 23:22:21.5 +77:15:43（即 OT/射电余辉位置）；并列测定——OT 位 23:22:21.49 +77:15:43.3（误差半径 0.35″，置信水平未标注，Halpern+1999）；VLA 射电拟合位 23h22m21.50(±0.02s) +77°15′43.25″(±0.06″)（Frail+2000）；GCN 89 ±0.1″/每坐标；SAX WFC 精化圆 350.561 +77.255 r=3′（GCN 75）；IPN 环带（GCN 81）仅有环带+圆交集，最终定位以亚角秒 OT 为准，故不采用「盒心+外接圆」口径（GRB021023/GRB211130A 先例适用于无更优定位时），pos_error 置 null（C&F12 未给位置误差），pos_error_confidence 留空（未标注）。sub_tag=lgrb：t90=23.808±1.032 s（HEASARC BATSE 目录 >20 keV，仓内快照）；按目录 t90 判 lgrb；SAX/GRBM t90=28±5.1 s（40-700 keV）、rssgrbag t90=30 s 相符。红移：无测定；Jaunsen+2001 由未见 SN1998bw 型再亮推断 z≳1.5（模型依赖下限，仅备查、不入字段）。宿主：晚时深测得 OT 位暗源 Rc=26.05±0.22（GCN 148）与 R=26.1±0.3（GCN 149），原文均 presumed；HST/STIS 于 OT 北 0.7″ 见双星系（GCN 698，亮 27.0±0.1 AB、暗 28.0±0.3 AB）；候选未定论→不建 host_galaxy；此 2 行晚时测光未入 lc（宿主候选测光，非瞬变体）。alias 出处：BATSE 6764（HEASARC batse 快照 name_alt + GCN 75 'BATSE trigger n.6764'）；GB980519（GCN 74/75 原文用名）；1SAX J2322.3+7716（IAUC 6912 X 射线源名，见 GCN 89 与 Frail+2000）；VLA J232221.5+771543（Frail+2000 VoR 命名）。原文笔误备查：GCN 85 标题作 GRB970519（正文系 980519）；Halpern+1999 §1 'GRB 980159' 应为 980519；GCN 78 NOT 初始 I 零点被 GCN 80/84 证误（'may instead refer to the V band'），库内不取其值。光变：原 2 行=C&F12 Table 4 拟合峰值（fit，observer frame，自触发起算；核对一致，mjd 已按新 T0 重算）；新增射电 25 行（Frail+2000 Table 1 VoR：13 历元×8.46/4.86/1.43 GHz，time=起点 UT+TOS/2−T0，time_err=TOS/2，上限判据 σ=S/rms<3 或原文明言未探测→y）；亚毫米 2 行（Smith+1999：850/450 µm→353/665 GHz，仅日期锚点）；光学 55 行（Jaunsen+2001 Table 2 之 NOT 31 行；Halpern+1999 Table 1 之 MDM/WIYN/Palomar/USNO/MRO/APO/Keck/Wise/Yerkes 20 行含 3 上限；GCN 90 Yerkes I 限量 1 行；GCN 85 OCA 无滤光片 3 行 band=G）；光学各行 mag_system 留空（原文未声明系统；Landolt/USNO 与 Johnson-Cousins 定标链见各行 comment）。测光检索（2026-11-04）：GCN 站 query=980519 服务端检索 16 命中（15 篇涉本源：78/79/80/81/82/84/85/87/88/89/91/92/148/149/698，其中 85 标题系 970519 笔误；1 篇 1911 系 GRB 030226 误匹配）；另实开 74/75/83/86/90（同暴触发/定位/光学）与 96/124（经 Halpern+1999 引文链），76/77/93/94/161/189/196 核为无关（76/93 触发机制、77 GRB980515、94 SGR、161/189/196 系其他暴）——共实开 30 篇、涉本源 22 篇；仓内 gcn/archive 本地未存、external/rssgrbag 2 行（fit 峰值，已核对 Table 4）、external/grbsn_webtool 与 uvot_grb 无本源记录；ADS/SciX 无 API 凭据且网页被人机验证拦截（通道受限，未据以下「无文献」结论）；arXiv API 'GRB 980519' 13 命中，逐篇实开 4 篇（Halpern+1999、Frail+2000、Jaunsen+2001、Smith+1999）+C&F12 IOP VoR，共补 82 行。VoR 受阻留痕：Jaunsen+2001/Smith+1999 以 arXiv TeX 替代、in 't Zand+1999 未打开（70 s 主张经 Halpern+1999 VoR 转述）——均登记 audit/unverified.tsv；X 射线数据（BeppoSAX NFI，Nicastro+1998/1999）按范围不入库。",
+  "comment": "审核（fsy@zcode，2026-11-05）。身份：GRB 980519=BeppoSAX/WFC+GRBM 触发（GCN 74/75 官方通告，'about 12:20:00 UT of May 19'）、BATSE trigger 6764（GCN 86：May 19.51403；external/batse 快照）、Ulysses+BATSE IPN 环带（GCN 81：中心 329.485/−11.873、半径 89.981°、全宽 4.9′，与 WFC 精化圆及 OT 位相容）、C&F12 Table 1 Inst=B（B≡BeppoSAX，无 T≡IPN 标记）。原 T0=1998-05-20T01:22:11Z 无出处（T0_ref=null）且晚于 OT 首测（May 19.87，GCN 78），恰等于 GCN 124 中 Wise 1m B 波段 1800 s 曝光中点 01:22:11 UT（May 20），判为管线误锚观测时刻；现改锚 BATSE 目录 trigger 6764（T0_ref 详列互证链）。T0_offset=−70 s 依据见 T0_offset_ref（真实起始辐射早于自动触发）。定位：ra/dec 沿用 rssgrbag 导入值=C&F12 Table 1 位置列 23:22:21.5 +77:15:43（即 OT/射电余辉位置）；并列测定——OT 位 23:22:21.49 +77:15:43.3（误差半径 0.35″，置信水平未标注，Halpern+1999）；VLA 射电拟合位 23h22m21.50(±0.02s) +77°15′43.25″(±0.06″)（Frail+2000）；GCN 89 ±0.1″/每坐标；SAX WFC 精化圆 350.561 +77.255 r=3′（GCN 75）；IPN 环带（GCN 81）仅有环带+圆交集，最终定位以亚角秒 OT 为准，故不采用「盒心+外接圆」口径（GRB021023/GRB211130A 先例适用于无更优定位时），pos_error 置 null（C&F12 未给位置误差），pos_error_confidence 留空（未标注）。sub_tag=lgrb：t90=23.808±1.032 s（HEASARC BATSE 目录 >20 keV，仓内 external/batse 快照）；按目录 t90 判 lgrb；SAX/GRBM t90=28±5.1 s（40-700 keV）、rssgrbag t90=30 s 相符。红移：无测定；Jaunsen+2001 由未见 SN1998bw 型再亮推断 z≳1.5（模型依赖下限，仅备查、不入字段）。宿主：晚时深测得 OT 位暗源 Rc=26.05±0.22（GCN 148）与 R=26.1±0.3（GCN 149），原文均 presumed；HST/STIS 于 OT 北 0.7″ 见双星系（GCN 698，亮 27.0±0.1 AB、暗 28.0±0.3 AB）；候选未定论→不建 host_galaxy；此 2 行晚时测光未入 lc（宿主候选测光，非瞬变体）。alias 出处：BATSE 6764（external/batse 快照 name_alt + GCN 75 'BATSE trigger n.6764'）；GB980519（GCN 74/75 原文用名）；1SAX J2322.3+7716（IAUC 6912 X 射线源名，见 GCN 89 与 Frail+2000）；VLA J232221.5+771543（Frail+2000 VoR 命名）。原文笔误备查：GCN 85 标题作 GRB970519（正文系 980519）；Halpern+1999 §1 'GRB 980159' 应为 980519；GCN 78 NOT 初始 I 零点被 GCN 80/84 证误（'may instead refer to the V band'），库内不取其值。光变：原 2 行=C&F12 Table 4 拟合峰值（fit，observer frame，自触发起算；核对一致，mjd 已按新 T0 重算）；新增射电 25 行（Frail+2000 Table 1 VoR：13 历元×8.46/4.86/1.43 GHz，time=起点 UT+TOS/2−T0，time_err=TOS/2，上限判据 σ=S/rms<3 或原文明言未探测→y）；亚毫米 2 行（Smith+1999：850/450 µm→353/665 GHz，仅日期锚点）；光学 55 行（Jaunsen+2001 Table 2 之 NOT 31 行；Halpern+1999 Table 1 之 MDM/WIYN/Palomar/USNO/MRO/APO/Keck/Wise/Yerkes 20 行含 3 上限；GCN 90 Yerkes I 限量 1 行；GCN 85 OCA 无滤光片 3 行 band=G）；光学各行 mag_system 留空（原文未声明系统；Landolt/USNO 与 Johnson-Cousins 定标链见各行 comment）。测光检索（2026-11-04）：GCN 站 query=980519 服务端检索 16 命中（15 篇涉本源：78/79/80/81/82/84/85/87/88/89/91/92/148/149/698，其中 85 标题系 970519 笔误；1 篇 1911 系 GRB 030226 误匹配）；另实开 74/75/83/86/90（同暴触发/定位/光学）与 96/124（经 Halpern+1999 引文链），76/77/93/94/161/189/196 核为无关（76/93 触发机制、77 GRB980515、94 SGR、161/189/196 系其他暴）——共实开 30 篇、涉本源 22 篇；仓内 gcn/archive 本地未存、external/rssgrbag 2 行（fit 峰值，已核对 Table 4）、external/grbsn_webtool 与 uvot_grb 无本源记录；ADS/SciX 无 API 凭据且网页被人机验证拦截（通道受限，未据以下「无文献」结论）；arXiv API 'GRB 980519' 13 命中，逐篇实开 4 篇（Halpern+1999、Frail+2000、Jaunsen+2001、Smith+1999）+C&F12 IOP VoR，共补 82 行。VoR 受阻留痕：Jaunsen+2001/Smith+1999 以 arXiv TeX 替代、in 't Zand+1999 未打开（70 s 主张经 Halpern+1999 VoR 转述）——均登记 audit/unverified.tsv；X 射线数据（BeppoSAX NFI，Nicastro+1998/1999）按范围不入库。注：本 info 已按仓库 v2.37（main 126e9a85）口径重排——extra_data 仅存 audit、catalog_data 删除，目录参数原料见 external/（batse/saxgrbmgrb/rssgrbag 等 normalized.jsonl），与 main 现版同构、合入时取本侧即无回退。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
-    "catalog_data": {
-      "batse": {
-        "other": {
-          "overwrite": "N",
-          "earth_angle": 99.67,
-          "overwritten": "N",
-          "error_radius": 1.07
-        },
-        "params": {
-          "t50": {
-            "v": 7.616,
-            "err": 0.143,
-            "band": ">20 keV (sum of 4 LAD channels)"
-          },
-          "t90": {
-            "v": 23.808,
-            "err": 1.032,
-            "band": ">20 keV (sum of 4 LAD channels)"
-          },
-          "fluence_1": {
-            "v": 1.2661e-06,
-            "err": 2.1056e-08,
-            "band": "20-50 keV"
-          },
-          "fluence_2": {
-            "v": 1.3235e-06,
-            "err": 2.1324e-08,
-            "band": "50-100 keV"
-          },
-          "fluence_3": {
-            "v": 4.2961e-06,
-            "err": 7.5801e-08,
-            "band": "100-300 keV"
-          },
-          "fluence_4": {
-            "v": 2.5523e-06,
-            "err": 8.3382e-07,
-            "band": ">300 keV"
-          },
-          "peak_flux_64ms": {
-            "v": 4.9664,
-            "dt": "64ms",
-            "err": 0.2905,
-            "band": "50-300 keV"
-          },
-          "peak_flux_256ms": {
-            "v": 4.7227,
-            "dt": "256ms",
-            "err": 0.143,
-            "band": "50-300 keV"
-          },
-          "peak_flux_1024ms": {
-            "v": 3.7931,
-            "dt": "1024ms",
-            "err": 0.0672,
-            "band": "50-300 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/w3browse/all/batsegrb.html",
-          "name": "CGRO/BATSE GRB Catalog (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "BATSE 6764"
-        ],
-        "trigger_time": "1998-05-19T12:20:12.641Z"
-      },
-      "rssgrbag": {
-        "other": {
-          "ref_codes": "13,[],[],[],37,37,61,61",
-          "opt_ag_flag": "Y",
-          "radio_peaks": [
-            {
-              "freq_GHz": 4.86,
-              "peak_time_d": 17.9,
-              "peak_flux_uJy": 330.0,
-              "rf_peak_time_d": null,
-              "peak_time_d_err": 2.4,
-              "peak_flux_uJy_err": 47.0,
-              "rf_peak_time_d_err": null
-            },
-            {
-              "freq_GHz": 8.46,
-              "peak_time_d": 12.6,
-              "peak_flux_uJy": 205.0,
-              "rf_peak_time_d": null,
-              "peak_time_d_err": 1.3,
-              "peak_flux_uJy_err": 23.0,
-              "rf_peak_time_d_err": null
-            }
-          ],
-          "opt_flux_11h": {
-            "v": 62.4,
-            "band": "R (0.7 micron)",
-            "unit": "microJy"
-          },
-          "xray_ag_flag": "Y",
-          "radio_ag_flag": "Y",
-          "xray_flux_11h": {
-            "v": 3.9e-13,
-            "band": "1.6-10 keV",
-            "unit": "erg/s/cm^2"
-          },
-          "jet_break_time": {
-            "v": 0.55,
-            "unit": "d"
-          },
-          "instrument_code": "B",
-          "radio_telescope": "VLA",
-          "cbm_number_density": {
-            "v": 0.14,
-            "unit": "cm^-3"
-          }
-        },
-        "params": {
-          "t90": {
-            "v": 30.0,
-            "err": null,
-            "band": null
-          },
-          "fluence": {
-            "v": 5.43e-06,
-            "err": null,
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/gamma-ray-bursts/rssgrbag.html",
-          "name": "Radio-Selected GRB Afterglow Catalog (Chandra & Frail 2012)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      },
-      "saxgrbmgrb": {
-        "other": {
-          "bii": 15.24884088,
-          "lii": 117.95242891,
-          "t_other": 40.0,
-          "peak_flux": 1.053e-06,
-          "error_radius": 0.1,
-          "ref_position": "W",
-          "high_res_flag": "N",
-          "t_other_error": 0.7,
-          "peak_flux_error": 7.5e-08,
-          "detection_unit_1": 3,
-          "detection_unit_2": 3,
-          "detection_unit_3": 2,
-          "rebinning_factor": 1,
-          "t_above_fraction": 35.0,
-          "earth_limb_elevation": 12.4,
-          "t_above_num_intervals": 4,
-          "t_above_fraction_error": 1.4
-        },
-        "params": {
-          "t90": {
-            "v": 28.0,
-            "err": 5.1,
-            "band": "40-700 keV"
-          },
-          "fluence": {
-            "v": 8.58e-06,
-            "err": 5.2e-07,
-            "band": "40-700 keV"
-          },
-          "spectral_index": {
-            "v": 1.95,
-            "err": 0.13,
-            "model": "PL"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/gamma-ray-bursts/saxgrbmgrb.html",
-          "name": "BeppoSAX/GRBM GRB Catalog (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "1998-05-19T12:20:22.000Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "OT": "y",
-          "RA": "y",
-          "XA": "y",
-          "IPN": "y",
-          "IAUC": "6910",
-          "Error": "3'",
-          "obs_date": "1998-05-19",
-          "Instrument": "SAX/WFC",
-          "GRB X-ray position": "23h22m14s +77° 15.3'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      },
-      "heasarc_grbcat": {
-        "other": {
-          "region": [
-            "annulus",
-            "circle"
-          ],
-          "time_def": "Earth Crossing Time",
-          "flux_flag": "N",
-          "grbcat_id": 3907,
-          "observatories": [
-            "IPN/ULYSSES/BeppoSAX",
-            "BATSE-CGRO",
-            "BeppoSAX",
-            "IPN"
-          ],
-          "afterglow_flag": "N"
-        },
-        "params": {
-          "t50": {
-            "v": 7.616,
-            "err": 0.143,
-            "band": null
-          },
-          "t90": {
-            "v": 23.808,
-            "err": 1.032,
-            "band": null
-          },
-          "fluence": {
-            "v": 4.296e-06,
-            "err": 7.58e-08,
-            "band": "100-300 keV"
-          },
-          "peak_flux": {
-            "v": 4.966,
-            "err": 0.2905,
-            "band": "50-300 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/all/grbcat.html",
-          "name": "HEASARC GRBCAT",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "1998-05-19T12:20:12.000Z"
-      }
-    },
     "audit": {
       "status": "reviewed",
       "auditor": "fsy",
@@ -319,5 +70,6 @@
       "source": "fsy"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
