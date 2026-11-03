@@ -1,24 +1,31 @@
 {
   "transient_id": "GRB101023A",
-  "alias": [],
+  "alias": [
+    "GRB 101023A",
+    "GRB 101023.951",
+    "bn101023951"
+  ],
   "ra": 317.9635925292969,
   "dec": -65.3876953125,
-  "T0": "2010-10-23T22:50:12Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0": "2010-10-23T22:50:12.387740Z",
+  "T0_ref": "Swift/BAT 触发:GCN 11363(22:50:12 UT,trigger 436981);亚秒取 Swift/BAT 官方目录 swift_bat/swiftgrb 快照(仓内快照 trigger_time)22:50:12.387740Z,uvot_grb 快照 TRIGTIME MET 309567012.0(=22:50:12.0)整秒互证",
+  "T0_offset": -7.6607,
+  "T0_offset_ref": "Fermi/GBM 先于 BAT 触发:FERMIGBRST bn101023951 trigger_time 2010-10-23T22:50:04.727Z (仓内快照;GCN 11376 给 22:50:04.73 UT),比 BAT 触发早 7.6607 s;Konus-Wind(GCN 11384)光变起始 ~T0(Konus)−65 s≈22:49:59.7 UT 亦在 BAT 触发前。取 GBM 触发时刻作 BAT 触发前已有辐射的证据,偏移为下限(真实爆发起点可能更早)",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 0.6000000238418579,
-  "pos_ref": "SGA (UVOTGRB)",
+  "pos_ref": "GCN 11371 (Swift/UVOT)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "GRB 101023A 身份:Swift/BAT trigger 436981(GCN 11363,22:50:12 UT 触发并定位)= Fermi/GBM trigger 309567006 / 101023.951(GCN 11376,22:50:04.73 UT 触发,GBM 定位与 Swift 一致;GCN 11376 原文用名 trigger 309567006 / 101023.951)= Konus-Wind 触发 22:51:04.703 UT(GCN 11384,原文称 The long GRB 101023A)= AGILE/MCAL(2nd AGILE-MCAL 目录,名 GRB101023A)。仓内 gcn/archive 全文检索命中本源通告 12 篇(11363/11364/11365/11366/11367/11368/11369/11371/11376/11379/11384/11459),逐一通读,未发现与他暴混串(同日 Swift 触发号中仅 436981 属本源)。\nT0:取触发仪器 Swift/BAT 目录亚秒值 22:50:12.387740Z(GCN 11363 整秒一致);T0_offset=−7.6607 s 见 T0_offset_ref。原 bot 值 22:50:12Z(整秒)按 §3.2 精化。全表 283 行按 mjd=T0+time 重算(含 236 行 X 射线行,只动 mjd 列);其中 Gemini/GROND/miniTAO 共 11 行原文给钟面时刻,time 相应平移 −0.38774 s、mjd 保持钟面时刻。\n定位:ra/dec=317.96360,−65.38769 为 Swift/UVOT 余辉位(GCN 11371,不确定度 0.6″,来源未标注置信水平);Swift/UVOTGRB 目录(SGA)同位同误差(POS_ERR=0.6″),Gemini(GCN 11366,21:11:51.24 −65:23:15.84)与 GROND(GCN 11369)位置互洽;XRT enhanced(GCN 11365)=317.96358,−65.38852,1.7″(90%);BAT 地面位(GCN 11367)1.4′(90%)备查。\nsub_tag=lgrb:t90=80.8±2.2 s(GCN 11367,Swift/BAT 精化分析,15-350 keV);目录值 80.68–80.82 s(swiftgrb/swiftgrbbA/uvot_grb 快照)一致,按目录 t90 判 lgrb;Konus-Wind 亦称 long(GCN 11384)。\n光变逐行核对:GCN 11371 UVOT 表 9 行按 T_start/T_stop 窗口中点+半宽改算(white fc 93/193 s 19.4±0.2;white 5895/10094 s 21.7±0.4(2.8σ);v>20.2;b>20.2;u 4139/4339 s 20.5±0.6(2σ,照录为探测);u 21640/22548 s >21.1;w1>21.1;m2>21.2;w2>21.0)。原 bot time=T_start−8 s 系历元错位(疑按 GCN 11376 的 GBM 触发 22:50:04 历元),已全部改正;GCN 11363 行(w 19.6 上限)与 GCN 11371 white fc 为同一 100 s 曝光,按勘误链合并(取 11371 精化值 19.4±0.2),删转引行 1 行。GCN 11364 REM 两上限行(H~14.8/H~15.5,爆后 37/63 min,2MASS 定标→Vega);GCN 11366 Gemini r~20.5(00:38 UT 起,未给曝光时长,time 取开始时刻;第二历元 01:26 UT 变暗 ~0.35 mag 为近似值,仅注 comment 未单列行);GCN 11369 GROND 七色(01:47 UT 中点,coadd 24/20 min,AB,银消光未改 E(B−V)=0.033,K 波段疑受近旁亮星沾染);GCN 11379 miniTAO Ks/H/J(Mid-UT 02:53:05/03:07:41/03:24:36 UT,总曝光 540 s,AB)。Roming+2017 noc-db 25 行与 MAST HLSP noc-db FITS(2026-11-04 实取 archive.stsci.edu/missions/hlsp/uvotgrb/…noc-db.fits)逐值核对一致(TIME/MAG/MAG_ERR 全同,time_err=半窗宽)。UVOT 各行星等系统按 UVOT 光度系统为 Vega(Poole+2008,GCN 11371 原文引;noc-db 为官方 HLSP 同系统);Gemini r 行原文未声明系统,留空备查。\n红移:无光谱/实测红移。GCN 11459(ICRANet)由 Amati 关系暂定 z=0.7–1.0;Penacchioni+2012(A&A 538, A58)估 z~0.9±0.084(stat)±0.2(sys),均非实测,redshift 保持 null;无 SN 关联报道(GCN 11459)。\n测光检索(2026-11-04):仓内 gcn/archive 全文检索命中本源 12 篇(其中 6 篇含光学/NIR 数值,已全部入库或核对改写,新增 0 行、合并删 1 行、实质改写 47 行+全表 mjd 重算);external/rssgrbag(射电光变 140 行/74 源)与 grbsn_webtool(63 事件)无本源记录;OpenAlex search=\"GRB 101023\" 命中 29 篇、Crossref query 命中同集、arXiv API 复检——相关研究文献仅 Penacchioni+2012(A&A 538, A58;GBM 谱分析,表 1/2 无光学测光;arXiv:1112.2970 v2 LaTeX 源已实取通读)及其会议版(IJMP CS 2013, DOI 10.1142/s2010194513011409;PoS(GRB 2012)042),均无可入库测光;ADS/SciX API 无凭据,实测 HTTP 401(2026-11-04),已登记 audit/unverified.tsv search-limited 行,ADS 侧检索结论视为未覆盖。\narticles:仅保留 Penacchioni+2012(A&A 538, A58);bot 条目 Penacchioni+2011(arXiv:1111.2225,无期刊发表记录)系同组早期版本、内容被 1112.2970/A&A 发表版取代,已移除。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "catalog_data": {
       "uvot_grb": {
@@ -390,6 +397,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
     }
   },
   "articles": [
@@ -398,13 +410,6 @@
       "title": "Evidence for a proto-black hole and a double astrophysical component in GRB 101023",
       "url": "https://ui.adsabs.harvard.edu/abs/2012A&A....53....8P/abstract",
       "bibtex": "@ARTICLE{2012A&A....53....8P,\n       author = {A. V. Penacchioni and R. Ruffini and L. Izzo and M. Muccino and C. L. Bianco and L. Caito and B. Patricelli and L. Amati},\n       title = {Evidence for a proto-black hole and a double astrophysical component in GRB 101023},\n       journal = {Astron.Astrophys. 538 (2012) A58},\n       year = {2012},\n       doi = {10.1051/0004-6361/201118403},\n       eprint = {1112.2970},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012A&A....53....8P/abstract},\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Penacchioni+2011",
-      "title": "Evidences for a double component in GRB 101023",
-      "url": "https://ui.adsabs.harvard.edu/abs/2011arXiv11112225P/abstract",
-      "bibtex": "@ARTICLE{2011arXiv11112225P,\n       author = {A. V. Penacchioni and R. Ruffini and L. Izzo and M. Muccino and B. Patricelli and C. L. Bianco and L. Caito},\n       title = {Evidences for a double component in GRB 101023},\n       journal = {arXiv e-prints},\n       year = {2011},\n       eprint = {1111.2225},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011arXiv11112225P/abstract},\n}",
       "source": "bot"
     }
   ],
