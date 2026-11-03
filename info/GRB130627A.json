@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB130627A",
-  "alias": [],
-  "ra": 184.415,
-  "dec": -37.114,
-  "T0": "2013-06-27T08:55:03Z",
-  "T0_ref": null,
+  "alias": [
+    "bn130627372",
+    "BAT 559132"
+  ],
+  "ra": 184.41524,
+  "dec": -37.08699,
+  "T0": "2013-06-27T08:55:03.453140Z",
+  "T0_ref": "GCN 14933（BAT triggered at 08:55:03 UT, trigger 559132）；Swift/BAT 官方目录快照 trigger_time=2013-06-27T08:55:03.453140 UTC（external/swift_bat，亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +16,14 @@
     "grb"
   ],
   "pos_error": 1.6,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 14945",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核 fsy@zcode（2026-11-01）：(1) 定位修正（关键）：原 ra/dec=184.415/-37.114 系导入时取 GCN 14951 BAT 精化定位（RA,Dec=184.415、-37.114，误差 2.8′ 半径 sys+stat 90% 包含）的坐标、却配了 GCN 14945 的 XRT 误差 1.6″ 与 pos_ref；仓内 swiftgrbba（xrt_ra=184.41525、xrt_dec=-37.087）与 swift_xrt_live（184.41527、-37.08679）快照亦与 -37.114 相差约 98″。现按 pos_ref=GCN 14945 原文（「RA, Dec = 184.41524, -37.08699」「with an uncertainty of 1.6 arcsec (radius, 90% confidence)」）改为 ra=184.41524、dec=-37.08699，pos_error_confidence=90（原文明确给出）。(2) T0：原值 2013-06-27T08:55:03Z（整秒）精化为 08:55:03.453140Z——GCN 14933 只给整秒（08:55:03 UT，trigger 559132），Swift/BAT 官方目录快照（external/swift_bat）给亚秒 08:55:03.453140（MET 394016114.176），按《数据审核提示词》§3.2/§3.8「只在亚秒不同时以触发仪器亚秒值为准」采用；GCN 14935 由 XRT 起始 09:44:39.3 UT = T0+2975.9 s 反算得 08:55:03.4 互证。Fermi/GBM 亦触发（trigger 394016108 = bn130627372，08:55:05.93 UT，GCN 14941），按「有 Swift 以 Swift 为准」仍锚 BAT 触发（GBM 晚 2.48 s）。19 行 10keV X 射线行按审核红线原样保留（其 mjd 与旧整秒 T0 自洽；换用亚秒 T0 后差 0.453 s，在 1 s 自洽容差内）。(3) sub_tag：t90=18.048±5.473 s（15-350 keV；Swift/BAT GRB Catalog）按目录 t90 判 lgrb；GCN 14951 给 T90=30.8±12.3 s（15-350 keV）、Fermi GBM t90≈28 s（50-300 keV，GCN 14941）——多来源均 >2 s。(4) alias：BAT 559132 = Swift/BAT 触发号（GCN 14951 trigger #559132；external/swift_bat name_alt）；bn130627372 = FERMIGBRST trigger_name（GCN 14941 亦记 trigger 394016108 即 130627372；该目录 name_alt 另有 GRB 130627.372 形，因命中别名伪形普查正则未收进 alias，在此备查）。(5) 测光检索（2026-11-01）：仓内克隆未含 gcn/archive；external/rssgrbag/lightcurve.jsonl 0 行、grbsn_webtool/SourceData 无本源事件、uvot_grb 与 swift_grb 无记录（仅目录级，已用于身份/T0 互证）；GCN 官网站（gcn.nasa.gov）检索 130627A 命中 8 篇（14933/14934/14935/14941/14945/14948/14949/14951，Swift 7 篇 + Fermi GBM 1 篇；无任何地面望远镜跟随通告）；arXiv API「GRB 130627A」「130627A」均 0 命中；ADS/SciX 经 Web 检索命中 2 条（均为 GCN 记录本身；谱参数样本文 Katsukura+2020、Bi+2018 不含光变表）→ 依 GCN 14949 新增 UVOT 3σ 上限 8 行（white FC、white 叠加、v、b、u、uvw1、uvm2、uvw2；窗口相对 BAT 触发、time 取窗口中点、time_err=半窗宽；mag_system=Vega 系推定）；补 8 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -235,6 +241,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-01"
     }
   },
   "articles": [],
