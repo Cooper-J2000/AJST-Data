@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB251104A",
-  "alias": [],
+  "alias": [
+    "sb25110404"
+  ],
   "ra": 26.5099,
   "dec": 15.5077,
-  "T0": "2025-11-05T05:32:28Z",
-  "T0_ref": null,
+  "T0": "2025-11-04T17:30:58Z",
+  "T0_ref": "GCN 42581",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 443.4,
+  "pos_ref": "GCN 42581",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：SVOM/ECLAIRs 触发并定位（GCN 42581 原文 At 2025-11-04T17:30:58 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 251104A），SVOM burst-id sb25110404（GCN 42581 原文用名，收 alias）；本次仅 ECLAIRs/IMT 图像触发（6 alerts、最佳 SNR 10.82、[5-8] keV、655.36 s 图像窗口起点 2025-11-04T17:28:14），未 slew、MXT/VT 均未观测；同日无 251104B（GCN 事件页 404），近邻 GRB 251105A 系另一暴（Fermi/GBM trigger 784010471、2025-11-05T04:41:06.40 UT、GCN 42596），与 bot 假 T0（05:32:28）亦不同，无混同。T0：原值 2025-11-05T05:32:28Z 实为 GCN 42592 COLIBRI 观测窗口起点（原文 We observed from 2025-11-05 05:32:28 to 06:59:02 UTC），非触发时刻（Issue #84 同型残留）；审核改锚触发仪器官方通告 GCN 42581 的 ECLAIRs 触发时刻 2025-11-04T17:30:58 UTC（原文精度整秒、不补亚秒）；T0_offset 不适用（无 >1 s 触发时刻调整证据）。互证：GCN 42592 自述窗口为触发后 12.02-13.46 h（换算 43290-48484 s、与 T0=17:30:58 自洽）；mpe_greiner 快照 obs_date=2025-11-04 互证日期。位置：GCN 42581 ECLAIRs/IMT 最佳 alert 定位 RA=26.5099、Dec=15.5077（J2000）、90% C.L. 半径 7.39 角分（原文注明含 2 角分系统差、quadrature 合入）→ pos_error=443.4″、pos_error_confidence=90；无更精定位（MXT/VT 未观测、事件页无他仪定位通告）。sub_tag：两篇通告均无 t90/时长分类信息（仅 IMT 图像触发）、按 §3.9 不判 lgrb/sgrb、留空。测光检索（2026-11-04）：GCN 官网事件页全清单 2 篇（42581/42592）＋站内全文检索「251104A」命中 2 篇、「sb25110404」命中 1 篇（无事件页外新增）；仓内快照 mpe_greiner 1 条（仅身份/定位字段、无光变表）、rssgrbag/grbsn_webtool/uvot_grb/fermi_gbm/swift_bat/swiftgrbba/heasarc_grbcat/konus_wind 等 0 命中；arXiv API 三查询（251104A/sb25110404/GRB 251104）0 命中；ADS/SciX 通道受限（API 无凭据 401、SciX 公开接口 202 WAF 拦截、search-limited、不据此断言无文献）→ 结论：本源全部已知测光即 GCN 42592 的 r/z 两条 5σ 上限、补 0 行；未发现 X 射线测光（MXT 未观测）。原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 系 bot 所写且失真（bot T0 为观测窗口起点）、已按 §3.10 改写。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=GCN 42581 原文 ECLAIRs 触发时刻 2025-11-04T17:30:58 UTC（整秒照写）；原 bot 值 2025-11-05T05:32:28Z（t0_basis=meta_trigger）实为 GCN 42592 COLIBRI 观测窗口起点、已改正（见 comment）",
+    "t0_basis": "GCN 42581 ECLAIRs trigger（官方触发通告）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
