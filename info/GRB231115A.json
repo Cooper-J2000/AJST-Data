@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB231115A",
-  "alias": [],
-  "ra": 148.971139,
-  "dec": 69.6730597,
-  "T0": "2023-11-15T04:44:17Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 231115A",
+    "GRB 231115AS",
+    "GRB231115650",
+    "bn231115650"
+  ],
+  "ra": 148.997,
+  "dec": 69.684,
+  "T0": "2023-11-15T15:36:21.20Z",
+  "T0_ref": "GCN 35044（Fermi/GBM 官方通告：At 15:36:21.20 UT on 15 November 2023, the Fermi GBM triggered and located GRB 231115A, trigger 721755386/231115650）；Insight-HXMT/HE GCN 35060 同记 T0=2023-11-15T15:36:21.200；external/fermi_gbm 快照（FERMIGBRST）trigger_time=2023-11-15T15:36:21.201Z 亚秒交叉一致；Minaev+2024 亦以 15:36:21.20 UT 为时标零点。原 T0=2023-11-15T04:44:17Z 系 GCN 35050 中 GOTO 爆前巡天观测时刻（原文明言触发前 10.87 h），属 §3.2 观测窗口时刻误入 T0，废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "IceCube",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 90,
+  "pos_ref": "Minaev+2024（Astron. Lett. 50, 1，DOI 10.1134/S1063773724600152）ISGRI 精化定位 R.A.=09h55m59.28s Dec=+69°41′02″.40（148.997, +69.684, J2000），不确定度 1.5′（ISGRI S/N 图 90% 等值线）；备查：GCN 35037 IBAS 初值 149.000901/69.680130 ±2′（90% c.l.）、GCN 35042 引 INTEGRAL notice 10427 位置 149.033/69.689（半径 0.0512°）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 wa1kmoon@zcode（2026-11-01），PR #735。\n\n【身份与分类】2023-11-15T15:36:21.20 UT 短硬事件，INTEGRAL/IBAS 定位与 M82（d≈3.5 Mpc）重合（GCN 35037/35036），Burns（GCN 35038）估计「M82 巨耀发 vs 偶合背景 sGRB」Bayes 因子 ~1.8e5:1。同行评审文献一致判为河外磁耀发（MGF）：Mereghetti+2024（Nature 629, 58，VoR 摘要原文「unambiguously qualify this burst as a giant flare from a magnetar in M82」）、Minaev+2024（AstL 50, 1：「first well-localized giant flare of an extragalactic SGR」）、Yin+2024（ApJL 963, L10）、Trigg+2025（A&A 694, A323：「indeed a MGF」）；正式保留意见并列：Wang+2024（ApJ 969, 127：若为宇宙学 sGRB 需 z~1，现有 X 射线/GeV 上限尚不足以完全排除）、Schosser+2025（MNRAS 537, 1430：此类 MGF 认证的误认率估计 ~15.7%）。触发仪器：Fermi/GBM（命名者，trigger 721755386/231115650）；另被 INTEGRAL/IBIS（GCN 35037，15:36:22 UT）、Konus-Wind（GCN 35062，T0=15:36:23.509）、Glowbug（GCN 35045，onset 15:36:20.184）、Insight-HXMT/HE（GCN 35060，15:36:21.200）、Swift/BAT-GUANO（GCN 35065，GUANO 离线挽救、非自主触发）探测；原 Trigger_Instrument=IceCube 有误（IceCube 仅中微子搜寻上限，GCN 35053），已改。t90=0.032±0.036 s（50–300 keV，external/fermi_gbm 快照 FERMIGBRST）；T90=65±1 ms（10–850 keV，Minaev+2024）；~0.03 s（GCN 35044）。文献分类为 MGF 而 tags.json 虽有 main 类目 `sgr`（描述即 Soft Gamma Repeater / Magnetar giant flare，先例 GRB051103 tag=['grb','sgr']），但填 sub_tag=sgrb 会误示并合起源，故 sub_tag 留空；是否加 main tag 'sgr' 与是否增设 mgf 类目一并留待决（PR 待决事项）。\n\n【T0】原 T0=2023-11-15T04:44:17Z 为 GCN 35050 中 GOTO 爆前巡天观测时刻（covered the field at 04:44:17 UT，触发前 10.87 h），§3.2 观测窗口时刻误入 T0，废弃。新 T0=2023-11-15T15:36:21.20Z（依据见 T0_ref）。备查：INTEGRAL IBAS 15:36:22（GCN 35037；GCN 35053 引 15:36:22.88）、Konus-Wind 15:36:23.509（GCN 35062）、Glowbug onset 15:36:20.184（GCN 35045）——仪器间亚秒~秒级差属口径差，不写 T0_offset。全表 62 行 time/mjd 已按新 T0 机械重算（原以 04:44:17 为历元，历元差 39124.2 s）；本源 lc 无 X 射线能量串行，无 mjd 随 T0 重算的 X 射线行问题。extra_data 原值：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」，与实际不符，已改写。\n\n【定位】原 ra/dec=148.971139/69.6730597 实为 GCN 35092 Wendelstein 差分成像新源 W231115a 的坐标（M82 盘内场源，Minaev+2024 明确 W231115a/b 与 GRB 231115A 无关），属定位污染，已清除；对应 lc 两行探测已置 discard=y。现值改用 Minaev+2024 精化定位（见 pos_ref），pos_error_confidence=90（原文 90% 等值线）。\n\n【红移/宿主】redshift/host_galaxy 留 null：M82 关联（d≈3.5 Mpc）证据充分（Mereghetti+2024、Minaev+2024 结论），但 Wang+2024/Schosser+2025 对 MGF 起源保有正式保留意见，按「候选宿主不建立」处理；是否建立 host_galaxy=M82 并填红移交维护者裁决（PR 待决事项）。\n\n【alias 证据串】「GRB 231115A」（GCN 各通告 subject 原文用名）；「GRB 231115AS」（external/mpe_greiner 快照 name_alt 原文用名，short_grb 标记）；「GRB231115650」「bn231115650」（external/fermi_gbm 快照 FERMIGBRST trigger_name/name_alt；GCN 35035 原文 trigger 721755386.20138 / 231115650）。\n\n【候选对应体 AT2023xvj】GROWTH-India 0.7m 报候选 r′≈19.2（GCN 35041，09:56:00.2+69:40:29.2，距 INTEGRAL 位置 0.3′）；GCN 35055 复核发现 PS1 参考图伪影增亮（SDSS 参考手工差分不探测，限 19.3），告诚 treat as candidate, not secure counterpart；Minaev+2024 明言 found to be an artifact。故不入 alias，其探测行不入 lc（无逐帧时刻且已被否证）；HST 档案检查（GCN 35043）无独立候选。各队上限均在 AT2023xvj 位置或 INTEGRAL 误差圈内（见各行 comment）。\n\n【测光检索（2026-11-01，§3.3 留证）】仓内 gcn/archive 全文（45 563 篇）检索 231115A 命中 38 篇（GCN 35035–35296，逐篇通读）：含光学/UV 测光或上限 16 篇（35039/35041/35046/35048/35050/35051/35052/35056/35057/35064/35067/35077/35078/35091/35092/35296），其余 22 篇仅伽马/X 射线/中微子/射电/VHE 上限无测光；external/rssgrbag、external/grbsn_webtool 无该事件记录；external/fermi_gbm、swift_bat、mpe_greiner、heasarc_grbcat、konus_wind 快照仅触发/定位/伽马参数，无光学测光。外部文献（本机直连 TLS 被中间人证书拦截，经服务端网页抓取通道逐篇打开）：Mereghetti+2024 Nature VoR 摘要页+Data availability 可达（正文付费墙，未从该文取逐行值，分类结论与 arXiv 2312.14645v2 摘要一致）；Minaev+2024 Springer VoR 摘要+参考文献可达、正文付费墙，表 4 十二行经 arXiv 2402.08623v1 HTML 全文逐行核对（→新增 ISON-Kitab RC-36、AbAO AS-32 两行，均登记 unverified.tsv substituted）；Trigg+2025、Yin+2024、Wang+2024、Schosser+2025 经 arXiv 摘要页核对（均无光学测光表，仅分类结论）；ADS/SciX API 无 token（实测 HTTP 401），通道受限登记 unverified.tsv（search-limited），不得据此称「无文献」——本源文献已由 GCN 全文+上述 5 篇覆盖。MASTER 通报（GCN 35039/35042/35046）为误差框 tile 极限：同系列 GCN 35039 表逐行给坐标，各 tile 距 M82 仍约 2°（Tmid=4725 s、C>18.8 行坐标 09h53m24s+67d39m）；Minaev+2024 表 4 将该行作为本暴光学上限引用，疑为 tile 极限误归属，两说并列、保守不入库（PR 待决事项）；GCN 35039 的 17 行（坐标距源 ~2°）亦不入库。结论：修订 62 行（T0 重算+时间口径补注+缺注系统补注）、新增 5 行（ZTF 2、GOTO 1、ISON-Kitab 1、AbAO 1）、Wendelstein 2 行场源探测置 discard=y；核对不上而 discard 的行另有 0 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "原值「t0 为 meta trigger-time（真实触发时刻）」失真：原 T0=2023-11-15T04:44:17Z 实为 GOTO 爆前巡天观测时刻（GCN 35050，触发前 10.87 h），非触发时刻；已改写为触发仪器官方通告时刻，原值留档于 comment",
+    "t0_basis": "GCN 35044（Fermi/GBM 官方通告触发时刻）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-01"
+    }
   },
   "articles": [
     {
