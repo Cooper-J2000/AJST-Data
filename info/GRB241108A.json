@@ -1,27 +1,37 @@
 {
   "transient_id": "GRB241108A",
-  "alias": [],
-  "ra": 123.6378,
-  "dec": -7.0861,
-  "T0": "2024-11-08T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "sb24110802"
+  ],
+  "ra": 123.72,
+  "dec": -7.19,
+  "T0": "2024-11-08T07:09:55Z",
+  "T0_ref": "GCN 38132",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 724.0,
   "pos_ref": "GCN 38132",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：SVOM/ECLAIRs 于调试阶段触发并定位（GCN 38132 原文：the SVOM/ECLAIRs telescope detected and localized the likely weak long duration GRB 241108A (SVOM trigger reference: sb24110802) at 2024-11-08T07:09:55 UTC (Tb)）；SVOM burst-id sb24110802（GCN 38132 原文用名，收 alias）；触发细节：Image Trigger（IMT）单条 Alert、20-120 keV 能段 20.48 s 窗口 S/N 7.1（窗口起点即 Tb）、Alert 于进入 SAA 前 75 s 发出、因显著度低于 slew 阈值未 slew；同日无 GRB 241108B（GCN 站检索 0 命中），近邻 GRB 241107A 系另一暴（SVOM/GRM、T0=2024-11-07T14:15:49Z、ra=111.312/dec=-24.496、pos_ref=GCN 38177），与本源无混同。T0：原值 2024-11-08T00:00:00Z 系纯日期占位（Issue #84 最重形态、bot t0_basis=meta_trigger 残留，其下 lc 2 行 time/mjd 系按占位 T0 写入），审核改锚触发仪器官方通告 GCN 38132 的 ECLAIRs 触发时刻 2024-11-08T07:09:55 UTC（Tb、原文精度整秒、不补亚秒）；互证：Swift-XRT ToO 页（swift.ac.uk/ToO_GRBs/00021729）采用 T0=2024-11-08 07:09:55 UT，GCN 38133 自述窗口为触发后 1.63-5.41 h、GCN 38145 自述 1.08-1.24 d，按窗口端点与 Tb 精算（1.618-5.401 h、1.077-1.238 d）均自洽；T0_offset 不适用（无 >1 s 触发时刻调整证据）。位置：GCN 38132 ECLAIRs 定位 RA,Dec=123.72,-7.19（J2000），原文给统计误差 11.9 角分、并建议以 quadrature 另加 2 角分系统差 → 合成 sqrt(11.9^2+2^2)=12.07 角分=724.0 角秒（pos_error）；置信水平原文未标注 → pos_error_confidence 留空（§3.9）；互证：external/mpe_greiner 快照条目 GRB 241108A（ra=123.7208、dec=-7.1833、Error 12、Instrument SVOM）与 ECLAIRs 定位一致。Swift-XRT 后随（GCN 38139：T0+43.8-50.6 ks、PC 模式 2.9 ks）检出 1 个非目录 X 射线源 RA,Dec=123.6378,-7.0861（J2000、误差 4.7 角秒 90% conf.）、距 ECLAIRs 定位 494 角秒，原文明言 at the present time we cannot confirm this as the afterglow（低于 RASS 极限、无明确变暗），GCN 38145 在该方向亦未见新光学源 → 原 bot ra/dec=123.6378,-7.0861 实取自该未证实候选体且 pos_ref 误标 GCN 38132，审核改回触发仪器 ECLAIRs 定位（本源唯一归因于 GRB 本体的位置），XRT 候选体参数录此备查。sub_tag：GCN 38132 原文称 likely weak long duration GRB（触发仪器团队定性），但无 t90 目录值、亦无研究文献分类，按 §3.9 不自行判 lgrb/sgrb、留空（PR 待决事项报告）。测光检索（2026-11-04）：GCN 站内全文检索「241108A」命中 5 篇（38132/38133/38135/38139/38145，逐篇实开；仅 38133/38145 含光学上限、即 lc 已入库 2 行；38135/38139 为 Swift ToO/XRT、X 射线不入库）、「sb24110802」命中 1 篇（38132）；仓内 gcn/archive 快照不在工作副本（未提交，CONTRIBUTING §2），external/rssgrbag（74 源）/grbsn_webtool（63 事件）/uvot_grb/fermi_gbm/swift_bat/heasarc_grbcat 等检索 0 命中、mpe_greiner 1 条（仅身份/定位字段、无时刻无测光）；arXiv API 三查询（GRB 241108A / 241108A / sb24110802）0 命中；SciX 公开检索页空返回、ADS API 无凭据（search-limited、不据此断言无文献），Web 检索未见研究论文（仅 Atteia First Results of SVOM/ECLAIRs 会议幻灯列名本源、无测光无红移）→ 结论：本源全部已知测光即 GCN 38133/38145 的 r 波段 2 条上限（0 新增）；无红移测量；发现的 X 射线数据（GCN 38139 XRT 源、Swift ToO 页）按范围约定不入库。原 extra_data.t0_note/t0_basis=meta_trigger 系 bot 所写且失真（bot T0 为占位日期）、已按 §3.10 改写。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=GCN 38132 原文 ECLAIRs 触发时刻 2024-11-08T07:09:55 UTC（Tb，整秒照写）；原 bot 值 2024-11-08T00:00:00Z（t0_basis=meta_trigger）系纯日期占位、已重锚（见 comment）",
+    "t0_basis": "GCN 38132 ECLAIRs trigger（官方触发通告）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-05"
+    }
   },
   "articles": [],
   "host_galaxy": null
