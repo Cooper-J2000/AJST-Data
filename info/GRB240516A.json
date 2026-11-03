@@ -1,27 +1,41 @@
 {
   "transient_id": "GRB240516A",
-  "alias": [],
+  "alias": [
+    "GRB 240516A",
+    "BAT 1228797",
+    "GRB240516150"
+  ],
   "ra": 212.8071,
   "dec": -63.4878,
   "T0": "2024-05-16T03:36:28.304860Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "GCN 36493（Swift/BAT 官方通告原文：At 03:36:28 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240516A, trigger=1228797，整秒）；亚秒 .304860 取自 Swift/BAT 官方目录（仓内 external/swift_bat 快照 summary_general.txt 行 GRB240516A：Trig_time_UTC=2024-05-16T03:36:28.304860，trigger 1228797；同表 Trig_time_met 列为 Swift machine time 不可按 2001 纪元换算，以 UTC 列为准），依 §3.2/§3.8 取触发仪器亚秒值；Fermi/GBM 触发 03:36:24.84 UT（trigger 737523389/240516150，GCN 36499；仓内 external/fermi_gbm 快照 trigger_time=2024-05-16T03:36:24.838Z）并列备查，T0 依 §3.2 以 Swift 为准",
+  "T0_offset": -5.0,
+  "T0_offset_ref": "GCN 36510（Swift-BAT 精化分析：mask-weighted 光变原文 starts at ~T-5 s, peaks at ~T-2 s——辐射早于自动触发，依 §3.2 取负值；原文为近似读数；纯元数据，不改写 lc time 轴）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 6.1,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 36493",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy@zcode，2026-11-04）。【身份】GRB 240516A = Swift/BAT trigger 1228797：GCN 36493 原文 At 03:36:28 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240516A (trigger=1228797)；仓内 external/swift_bat 官方目录快照同行互证（GRB240516A｜1228797｜Trig_time_UTC=2024-05-16T03:36:28.304860｜RA_ground=212.7831｜DEC_ground=-63.49352）；Fermi/GBM 同触发（GCN 36499：trigger 737523389/240516150，03:36:24.84 UT，GBM on-ground location consistent with the Swift BAT position）。同日 GRB 240516B 为另一事件、未混入：GCN 36527（AstroSat CZTI）原文 separated by only ~266 seconds from GRB 240516A、quadrant 相对强度指示不同方向、the two events are indeed separate GRBs。【位置】Swift/XRT enhanced RA,Dec=212.8071,-63.4878，6.1 arcseconds (radius, 90% containment)（GCN 36493 原文，pos_error_confidence=90 据原文）；BAT 地面精化位 212.784,-63.495、1.6 arcmin 90% （GCN 36510）并列备查。【T0_offset】见 T0_offset_ref：GCN 36510 光变 starts at ~T-5 s，辐射早于自动触发；GCN 36493 曾记 peak at ~1 sec after the trigger、36510 记 peaks at ~T-2 s，均为近似，并列备查。【分类】t90=85.12±31.15 s（Swift/BAT 官方目录快照 external/swift_bat，15-350 keV），按目录 t90 判 lgrb；并列备查：GCN 36510 t90=94.69±34.00 s（15-350 keV）、FERMIGBRST t90=46.34±3.57 s（50-300 keV）、AstroSat CZTI t90=22±2 s（Veto 100-500 keV，GCN 36503），均 >2 s、无冲突。【别名】「GRB 240516A」为 GCN 原文用名（GCN 36493 主题行）；「BAT 1228797」为 Swift/BAT 目录 name_alt；「GRB240516150」为 FERMIGBRST trigger_name（GCN 36499 原文用名 trigger 737523389/240516150）。【测光检索（2026-11-04）】入口与篇数：GCN 站全文检索 240516A 命中 9 篇（36493/36496/36499/36502/36503/36508/36510/36517/36527）＋触发号 1228797、240516150 复核，逐篇实开（gcn/archive 不随仓分发，以 GCN 官网全档案替代）；external/rssgrbag（Chandra & Frail 2012，140 行）与 external/grbsn_webtool（63 事件）无本源记录；arXiv API（all:\"GRB 240516A\"、all:\"240516A\"）均 0 命中；OpenAlex 0 命中；Crossref 无相关条目；Web 检索无专门研究文献（MPE grb240516A 汇总页仅转引同批 GCN）；ADS/SciX API 无凭据（无 token 实测 HTTP 202 空响应、无结果返回），ADS 侧结论记为未覆盖、不据此得出「无文献」（本 PR 分支基线 b8015bf1 未含 audit/unverified.tsv，该行无法随本 PR 登记，已在 PR 说明留证）。结论：可用测光/上限全部来自 GCN，无已发表测光表；补 7 行（GCN 36517 UVOT 上限 6 行、GCN 36496 GOTO 上限 1 行），改正 4 行（GCN 36508 ATCA：band 90GHz→9GHz 恢复原文频段、0.186 mJy→186 uJy 恢复原文 μJy/beam、time 由窗口起点改窗口中点并补 time_err，详见行 comment）；GCN 36502 Swift-XRT 上限为 X 射线数据，按 §3.3 不入库。无红移测量，redshift 保持 null。【目录快照异常报告】external/fermi_gbm 快照本源 ra=212.807/dec=-63.4878/error_radius=0.017 deg 与 GBM 实际定位不符（GCN/MPE 通告：flight 210.333,-62.000 err 14.10 deg；final 209.320,-57.960 err 4.61 deg，疑似误填 Swift/XRT 位置），快照只读未改，报 PR 说明。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
