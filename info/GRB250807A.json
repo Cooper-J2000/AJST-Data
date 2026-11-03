@@ -1,31 +1,40 @@
 {
   "transient_id": "GRB250807A",
-  "alias": [],
-  "ra": 51.44829,
-  "dec": -47.88782,
-  "T0": "2025-08-07T10:46:06Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB250807.45",
+    "sb25080702"
+  ],
+  "ra": 51.44795,
+  "dec": -47.88761,
+  "T0": "2025-08-07T10:46:08.440Z",
+  "T0_ref": "GCN 41262（Swift/BAT 触发时刻 10:46:08.44 UT，trigger=1340514）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 2.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 41270",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：Swift/BAT 触发 GRB 250807A（trigger=1340514，GCN 41262），Konus-Wind（GCN 41295）、SVOM/GRM（GCN 41283）、AstroSat CZTI（GCN 41281，bright long burst）亦触发，坐标/T0/命名互证一致。T0：GCN 41262 给 Swift/BAT 触发时刻 10:46:08.44 UT（多触发仪器值矛盾时按 §3.2 以 Swift 为准）；其余仪器值并列备查：Konus-Wind T0=38766.990 s UT=10:46:06.990（GCN 41295）、SVOM/GRM T0=2025-08-07T10:46:06.700（GCN 41283）；原库 T0=2025-08-07T10:46:06Z 为 bot meta_trigger 值（近似 SVOM/GRM/Konus 触发时刻），审核后废弃。坐标：采用 Swift-XRT 增强定位 RA=51.44795, Dec=-47.88761、误差 2.0″（90% containment，GCN 41270），与原库 pos_ref/pos_error 对齐（原 ra/dec 51.44829/-47.88782 实为 GCN 41262 的 UVOT 找星像位置，与 pos_ref 不自洽）；备查：UVOT 找星像 51.44829/-47.88782（0.75″，90%，GCN 41262）、SVOM/VT 51.448126/-47.887663（0.5″，GCN 41274）。红移：各通告均未测得，留空。t90=75.46±2.19 s（Swift-BAT 15-350 keV，GCN 41318）；t90=44(+2/-3) s（AstroSat CZTI 20-200 keV，GCN 41281）；t90=71.0(+4.5/-7.0) s（SVOM/GRM 15-5000 keV，GCN 41283）——按通告 t90 判 lgrb。别名出处：GRB250807.45 系 <GCN 41282> MASTER 原文用名（原文 \"Swift GRB250807.45 (trigger No 1340514)\"）；sb25080702 系 <GCN 41283> SVOM/GRM trigger reference 原文用名。X 射线：GCN 41290 有 Swift-XRT 谱与流量数据，X 射线测光按契约暂不入库。测光检索（2026-11-03）：仓内 gcn/archive 45 947 篇全文 grep \"250807A\"/\"1340514\" 命中 11 篇 GCN（41262/41270/41274/41281/41282/41283/41290/41291/41295/41299/41318，已逐篇核对，光学数值出自 41262/41274/41282/41291/41299）；external/rssgrbag 与 external/grbsn_webtool 无该源记录，swiftgrbba/mpe_greiner 快照仅目录级参数；ADS（api.adsabs.harvard.edu）检索 \"GRB 250807A\" 与 \"250807A\" 各命中 10 篇，全部为 GCN 通告、无正式论文；GCN 站（gcn.nasa.gov/circulars/41262）与 UKSSDC XRT 产品页（swift.ac.uk/xrt_products/01340514）可达。→ 补 7 行（GCN 41291 五行 UVOT 测光/上限、GCN 41299 一行 VT_R、GCN 41282 一行 MASTER-OAFA 上限），另将 white 行由 GCN 41262 初估 17.98±0.14 更新为 GCN 41291 精测 18.00±0.04。审核：Rusty-Harpoon@zcode，2026-11-03。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2025-08-07T10:46:08.440Z 为 Swift/BAT 触发时刻（GCN 41262）；审核前 bot 值 2025-08-07T10:46:06Z（t0_basis=meta_trigger）已废弃，原值留 info.comment 备查",
+    "t0_basis": "swift_bat_trigger_gcn41262",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
   "host_galaxy": null
