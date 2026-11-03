@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB190123A",
-  "alias": [],
-  "ra": 53.22071,
-  "dec": 45.52425,
-  "T0": "2019-01-23T12:19:18Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 190123A",
+    "BAT 885314",
+    "bn190123513"
+  ],
+  "ra": 53.2206,
+  "dec": 45.52531,
+  "T0": "2019-01-23T12:19:13.191160Z",
+  "T0_ref": "GCN 23769（Swift/BAT trigger 885314，12:19:13 UT）；亚秒取触发仪器官方目录 batgrbcat（仓内 external/swift_bat，Trig_time_UTC=2019-01-23T12:19:13.191160Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.3,
   "pos_ref": "GCN 23771",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 wa1kmoon@zcode（2026-11-04）。(1) 身份：GRB190123A = Swift/BAT trigger 885314（GCN 23769 原文 'the Swift Burst Alert Telescope (BAT) triggered and located GRB 190123A (trigger=885314)'，触发时刻 12:19:13 UT；batgrbcat 同），Fermi/GBM 于 12:19:18.218 UT 独立触发（trigger 569938763 / bn190123513，GCN 23773），两仪器定位一致；同日无其他 GRB 建档，无混并风险。别名出处：GRB 190123A（GCN 23769 主题行/正文用名）、BAT 885314（batgrbcat name_alt）、bn190123513（fermi_gbm 目录 name_alt；GCN 23773 原文 '190123513'）。(2) T0：原 bot T0=2019-01-23T12:19:18Z 系 GBM 触发时刻的截断（fermi_gbm 目录 trigger_time=12:19:18.218Z），extra_data 原值 t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）' 无出处（Issue #84 同型 bot 残留），废弃。标准 T0=2019-01-23T12:19:13.191160Z——触发仪器 Swift/BAT 官方目录 batgrbcat 亚秒值（GCN 23769 整秒 12:19:13 与之一致），全表 24 行已按 mjd=T0+time 重算自洽（原 bot 时间普遍少锚 4.808840 s，MITSuME/NEXT/AROMA/GOTO/COATLI 各行另见行内 comment）。T0_offset 不适用（GBM 晚 5.0 s 系另一触发仪器的触发时刻差，非爆发时刻偏移）。(3) 定位：改取 GCN 23771 enhanced Swift-XRT 精化位 RA,Dec=53.22060,+45.52531（astrometrically corrected，2.3 arcsec radius、90% confidence，原文明确置信水平）——原 bot 坐标 53.22071,+45.52425 实为 GCN 23769 初报 XRT 位（4.0″/90%），与 pos_ref=GCN 23771 及 pos_error=2.3″ 错配，已整体改锚 23771。batgrbcat BAT 地面位 53.17814,+45.50385（1.74′/90%）、swiftgrbba 快照 XRT 终位 53.22054,+45.52531（1.6″）备查。(4) 测光：lc 24 行全部回原文重锚——UVOT 8 行（GCN 23784 表，起点/终点窗口取中点、time_err=半宽、Breeveld+2011 系统=Vega、band w→uvot-white）；GCN 23769 对 FC 曝光的 typical ~19.6 行被 GCN 23784 实测 white_FC>20.3 取代、按 §3.4 去重删除；MITSuME 9 行按 GCN 23778 表 MID-UT 绝对钟面重锚（其 T0+ 列自洽于内部 T0 12:19:18=GBM 触发；第 3 组 T0+ 与 MID-UT 自差 173 s 以 MID-UT 为准）；NEXT/GOTO/COATLI 按连续窗口取中点；BOOTES-4/GMG 原文只给起点未给时长，time=起点留痕；AZT-33IK 按 UT_start+Exp/2 重锚（其 t−T0=0.28248 d 隐含内部 T0 与 BAT 触发差 ~24 s，不采用）；COATLI 窗口第二日期原文笔误 01-23 应为 01-24（按 14.2–22.6 h after trigger 判定）。全行 mag_system 依据见各行 comment；上限行 20 行 upperlimit=y；无 X 射线行（Swift/XRT 光变未导入，GCN 23775 精化分析仅作备查，X 射线不入库）。(5) 分类：t90=25.124±4.069 s（Swift/BAT 目录 batgrbcat，15–350 keV；GCN 23780 精化分析 24.4±4.3 s 15–350 keV；Fermi/GBM 16.896±6.085 s 50–300 keV），按目录 t90 判 lgrb。(6) 测光检索留证（2026-11-04）：仓内 gcn/archive 全文检索 '190123A/885314/190123513' 命中 15 篇（23769/23770/23771/23772/23773/23774/23775/23777/23778/23780/23781/23784/23786/23788/23789，全为涉本源通告），全部逐篇通读，可用测光=GCN 23769/23771/23772/23774/23777/23778/23781/23784/23786/23788/23789，原 25 行全部回原文核对：改写 24 行、按 §3.4 去重删 1 行（GCN 23769 FC typical ~19.6 行），现 24 行；external/rssgrbag（射电 140 行/74 源）无本源、external/grbsn_webtool 无 1901 事件；外部 arXiv API（abs:\"190123A\" 0 命中）、OpenAlex（title/fulltext 检索 11 条均为本源 GCN 通告）、Crossref（题名 0 命中）——无任何研究文献，articles[] 留空；TNS 不适用（GRB 类）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "标准 T0 经 wa1kmoon@zcode 2026-11-04 审核修正为 Swift/BAT trigger 885314 触发时刻 2019-01-23T12:19:13.191160Z（GCN 23769；batgrbcat 亚秒）；原 bot 值 2019-01-23T12:19:18Z 为 GBM 触发时刻截断（fermi_gbm 12:19:18.218Z），t0_basis=meta_trigger 无出处，废弃",
+    "t0_basis": "Swift/BAT trigger 885314（GCN 23769；batgrbcat/external/swift_bat Trig_time_UTC）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
