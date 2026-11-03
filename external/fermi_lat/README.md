@@ -168,3 +168,4 @@
 6. **两个文件行数不同**（228 vs 231）：FITS 为 DR1 快照，W3Browse 在线表多 3 个 2022 年 GRB；但 FITS 独有 97-bin 光变曲线列。按需求选用或合并。
 7. **BatchDisplay ASCII 格式**：首行 `BatchStart`、末行 `BatchEnd`，第 2 行为管道分隔表头，第 3 行为 `+---` 分隔线，数据行以 `|GRB` 开头；坐标为 `hh mm ss.s` / `±dd mm ss` 字符串而非十进制度。
 8. **TS 与显著性**：`like_*_ts` 是似然比检验统计量（TS≈σ²），不是 σ；`lle_bbbd_sig` 才是 σ。
+9. **`redshift` 列可能混入场源红移**（Issue #245）：LAT 定位框内编目星系/类星体的红移曾被当成暴红移收入。已一手核实 2 例：GRB 210826A（z=0.05 为框内编目星系，GCN 30725 Source 8）、GRB 211018A（z=0.64 为 884″ 外编目类星体，GCN 31010 Source 2，已扩散至 IceCube GRBweb 与 Aldowma+2025/Zhang+2025）。`parse.py` 对这两例在 `params.redshift` 上置 `provenance: "field_object"`（值保留备查，导入侧必须拒收）；其余 43 条 z 经本地 GCN 归档初筛（2026-11-04，「catalogued galaxy/quasar」措辞匹配）未见新候选，但未经逐条一手溯源，采信时仍须核对归属该暴的证据（光谱认证/宿主/余辉位置测量）。

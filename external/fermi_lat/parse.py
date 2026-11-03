@@ -9,6 +9,11 @@ Notes (see README.md):
   HEASARC; FITS stores units of 1e52 erg). Verified against gll_2flgc_dr1.fits:
   GRB210826293 FITS 0.0053310185 x 1e52 = 5.33102e+49 == ASCII value.
 - ra/dec are sexagesimal strings; time is UTC 'YYYY-MM-DD HH:MM:SS.mmm'.
+- redshift may be polluted by catalogued field galaxies/QSOs inside the LAT
+  error box (Issue #245). Confirmed cases are marked in place:
+  params['redshift']['provenance'] = 'field_object' (value kept for the
+  record; importers must reject these). Add to FIELD_OBJECT_Z only with
+  first-hand GCN/paper evidence.
 """
 import json
 import os
@@ -20,6 +25,20 @@ import astropy.units as u
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "fermilgrb_w3browse_full.txt")
 OUT = os.path.join(HERE, "normalized.jsonl")
+
+# Issue #245: catalog redshift actually belongs to a catalogued field
+# galaxy/QSO in the error box, not to the burst. Keyed by GCN name.
+FIELD_OBJECT_Z = {
+    # GCN 30725 (Swift-XRT): 8 uncatalogued sources, none fading; "Source 8
+    # is consistent with a catalogued galaxy at redshift z = 0.05".
+    # Data side nulled in PR #232.
+    "GRB 210826A": "z=0.05 为定位框内编目星系（GCN 30725 Source 8），非暴红移",
+    # GCN 31010: Sources 2/4 are catalogued QSOs at 884"/636" from the LAT
+    # position (z=0.64/1.09); no afterglow confirmed. Propagated to IceCube
+    # GRBweb and Aldowma+2025/Zhang+2025 via Dichiara et al. 2021.
+    # Data side nulled in PR #218.
+    "GRB 211018A": "z=0.64 为 884″ 外编目类星体（GCN 31010 Source 2），非暴红移",
+}
 
 
 def f(x, zero_missing=True):
@@ -103,6 +122,9 @@ def main():
         z = f(row["redshift"])
         if z is not None:
             params["redshift"] = {"v": z}
+            if name in FIELD_OBJECT_Z:
+                params["redshift"]["provenance"] = "field_object"
+                params["redshift"]["note"] = FIELD_OBJECT_Z[name]
 
         # --- other (catalog-specific, raw column names) -------------------
         other = {}
