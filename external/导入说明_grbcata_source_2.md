@@ -1,5 +1,8 @@
 # 外部数据导入说明（grbcata_source_2.md 批次）
 
+> ⚠️ 历史记录：本文所述导入产物（`extra_data.catalog_data`）已于 2026-11-04 从库与数据仓删除，
+> 外部目录原始文件仍保留在本目录作再推导原料；现行体系见 `docs/TECHNICAL.md` §8.5/§8.13。
+
 > 日期：2026-07-22
 > 执行：Kimi Code（按 SCHEMA.md 契约与既有流程）
 > 数据源清单：`grbcata_source_2.md`（项目内部清单文件，未随本仓库发布）
