@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB140709B",
-  "alias": [],
-  "ra": 146.04,
-  "dec": 63.536,
-  "T0": "2014-07-09T15:15:45Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB140709637",
+    "GRB 140709.637",
+    "bn140709637"
+  ],
+  "ra": 146.05423,
+  "dec": 63.52934,
+  "T0": "2014-07-09T15:15:45.004740Z",
+  "T0_ref": "Swift/BAT 触发 2014-07-09T15:15:45 UT（GCN 16551，trigger 603866）；亚秒取 Swift/BAT 目录 BATGRBCAT trigger_time=2014-07-09T15:15:45.004740Z（catalog_data 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,12 +18,20 @@
   ],
   "pos_error": 2.1,
   "pos_ref": "GCN 16556",
+  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT trigger 603866（GCN 16551：At 15:15:45 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 140709B）；Fermi/GBM 同暴触发 trigger 426611875/140709637（GCN 16561，其 15:17:52.85 UT 为 GBM 自身触发时刻，不用作 T0）。T0：GCN 16551 触发时刻 15:15:45 UT + BATGRBCAT 目录亚秒 .004740；原库 T0=2014-07-09T15:15:45Z 锚点即触发时刻（非观测窗口残留），本次仅补目录亚秒，全表 mjd 已按 mjd=T0+time 重算（9 位小数，含 10keV 行按 2026-10-31 裁定机械重算）。定位：原库 ra/dec=146.040/63.536 实为 BAT 地面定位（GCN 16560，1.1 arcmin，90% containment），却配了 XRT enhanced 的 2.1″ 误差与 GCN 16556 引用——口径错配；已改为 XRT enhanced 位 RA,Dec=146.05423,+63.52934（2.1 arcsec，radius，90% confidence，GCN 16556）；BAT 地面位（146.040,63.536，1.1′，90%，GCN 16560）与星载位（146.071,+63.505，3′，90%，GCN 16551）并列备查。分类：t90=156.732±26.230 s（Swift/BAT 目录 BATGRBCAT，15-350 keV；GCN 16560 给 T90=155.0±22.3 s；FERMIGBRST t90=156.416±7.940 s，50-300 keV），按目录 t90 判 lgrb。测光（2026-11-03 审核，wa1kmoon@zcode）：原库由 UKSSDC Burst Analyser XRT 光变导入新建（Evans+2007,2009），136 行 10keV 保持原样仅重算 mjd；UVOT 行原为 GCN 16551 粗估典型 3σ 上限 ~19.2 且把曝光起点当时刻——改按 UVOT 团组 GCN 16622 实测 u_FC>20.6（97–346 s 窗口中点，Vega，Breeveld+2011），并补 GCN 16622 其余 8 行（white/white_FC/v/b/u/w1/m2/w2）；Khureltogot 3 行改按原文表 t-T0（0.01334/0.01940 d）与单帧 60 s 中点入库；Tien Shan 2 行改按原文 t-T0（0.09193/1.06090 d）；新增 MASTER-II Tunka 2 行（GCN 16552：首组 20 s 曝光 5σ<17.1 于 T0+94 s 起、94–289 s 窗口 <18.2）；GCN 16557（OSN 1.5m，I-band，T0+5.5 h 起 10×150 s）只给 DSS-2 极限无数值，不入库。测光检索（2026-11-03）：仓内 gcn/archive 全文 11 篇（16551/16552/16556/16557/16558/16560/16561/16562/16571/16622/16651，其中 4 篇含光学上限数值、1 篇 UVOT 上限表、1 篇无数值上限）；external/rssgrbag 与 grbsn_webtool 无该源记录；OpenAlex 命中 11 篇（7 篇即上列 GCN；Volnova+2021 IKI GRB-FuN 样本表仅转引 GCN 16571 的 >19.5 无新增数据；余为样本类/X 射线耀发统计类不涉本源光学测光）；Crossref 无题名命中；arXiv API 全字段检索 0 命中 → 光学测光以 GCN 通告为准，共改 6 行、补 10 行。别名 GRB140709637 / GRB 140709.637 / bn140709637（<GCN 16561> 原文用名 \"the Fermi Gamma-Ray Burst Monitor triggered and located GRB 140709B (trigger 426611875 / 140709637)\"；FERMIGBRST trigger_name/name_alt 同形）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "fermi_gbm": {
         "other": {
@@ -239,6 +251,13 @@
       }
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Volnova+2021",
+      "url": "https://doi.org/10.1590/0001-3765202120200883",
+      "title": "IKI GRB-FuN: observations of GRBs with small-aperture telescopes",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
