@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB100915A",
-  "alias": [],
-  "ra": 315.664,
-  "dec": 65.676,
-  "T0": "2010-09-15T01:31:05Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 434178",
+    "Swift 434178"
+  ],
+  "ra": 315.6944,
+  "dec": 65.67303,
+  "T0": "2010-09-15T01:31:05.822060Z",
+  "T0_ref": "Swift/BAT GRB Catalog（trigger 434178，trigger_time=2010-09-15T01:31:05.822060Z，本仓 catalog_data.swift_bat 快照）；GCN 11277 原文 'At 01:31:05 UT, the Swift Burst Alert Telescope (BAT) triggered'；GCN Report 302.1 Fig.1 注 'T0 is 01:31:05.8 UT'，三者一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +16,14 @@
     "grb"
   ],
   "pos_error": 1.6,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 11279",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发 GRB 100915A（trigger #434178，GCN 11277 原文 'At 01:31:05 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 100915A (trigger=434178)'），XRT/UVOT 后随确认，身份无混淆。T0：取触发仪器官方目录 Swift/BAT GRB Catalog 亚秒值 2010-09-15T01:31:05.822060Z（原库为整秒 01:31:05.000Z，按 §3.2 以触发仪器亚秒值改锚）；GCN Report 302.1 Fig.1 注 'T0 is 01:31:05.8 UT' 互证；无 T0_offset。定位：原库 ra/dec=315.664/65.676 实为 BAT 地面定位（GCN 11281，2.0 arcmin，90% containment），与 pos_ref=GCN 11279 及 1.6 arcsec 口径错配（导入残留），已改 XRT enhanced 位置 RA=315.6944，Dec=+65.67303，误差 1.6 arcsec（radius，90% confidence，GCN 11279 原文；GCN Report 302.1 §3 同值）。分类：lgrb，t90=199.196±26.189 s（15-350 keV，Swift/BAT GRB Catalog 目录字段），GCN 11281 与 GCN Report 302.1 一致给 T90(15-350 keV)=200±31 s，按目录 t90 判 lgrb；BAT 谱模型原 GCN 11281 误报 CPL，GCN 11283 勘误为简单幂律（Γ=1.50±0.24），目录 fluence_model=PL 一致。测光核对（2026-11-03，逐行回原文）：UVOT 9 行（GCN 11282 表）按曝光窗口改中点/半宽口径，band 'w'（Pan-STARRS 键）误挂已改 uvot-white，mag_system=Vega 推定依据 Poole+2008（GCN 11282 原文声明 UVOT photometric system）；其中 white 拼接（>22.83→>22.78）、u 拼接（>21.52→>21.34）、v（T_start 123→631）三行按 GCN Report 302.1 的更新值（原值留于行 comment）；GCN 11277 white fc 'typical ~19.6' 行与 GCN 11282 实测 fc 限 >21.46 为同曝光两口径，均保留；GRT 行（GCN 11285）按观测窗口 01:33:32-05:49:30 UT 改中点口径；MITSuME 6 行（GCN 11287）补 time_err=半曝光；AZT-33IK 2 行（GCN 11323）原 time=44755/50995 s 与原文 t-t0=0.53437/0.60644 d 不符，已按 t-t0 改正并补 time_err；全部光学行为上限（upperlimit=y），无任何探测。新增 TAROT 2 行（GCN 11292：t0+97-157 s R>17.2、t0+174-394 s R>19.0，bot 导入漏收）。X 射线 32 行 10keV（UKSSDC Burst Analyser，Evans+2007,2009）按契约不审；因 T0 改动 0.822 s，其 mjd 已按 mjd=T0+time 机械重算（只动 mjd 列，2026-10-31 裁定）。测光检索（2026-11-03）：仓内 gcn/archive 全文命中 10 篇（11277/11279/11280/11281/11282/11283/11285/11287/11292/11323，逐篇通读测光段落，仅 11292 有库外测光，补 2 行）；GCN Report 302.1 实取 PDF 并采纳其 UVOT 更新值；external/rssgrbag 与 external/grbsn_webtool 无本源记录；OpenAlex 检索 12 命中（10 篇 GCN + Zhang+2014 ApJ 787,66（arXiv:1310.2540，OpenAlex 全文命中源名；Swift t_burst 样本研究，题录/摘要确认无光学测光表，arXiv 全文端点反复 502 未通读，未据其入库任何数值）+ Becerra+2023 MNRAS 525,3262 样本表仅 E(B-V)=0.51/T90=199.20±26.19 无光学值，arXiv:2308.07882 实读核对 + 1 篇学位论文）；Crossref 检索无本源测光表；ADS/SciX 无 API token（HTTP 401）通道受限，已登记 audit/unverified.tsv，不作「无文献」结论。结论：除已入库上限外无其他可用测光，共补 2 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -252,8 +258,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Becerra+2023",
+      "url": "https://doi.org/10.1093/mnras/stad2513",
+      "title": "Understanding the Nature of the Optical Emission in Gamma-Ray Bursts: Analysis from TAROT, COATLI, and RATIR Observations",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
