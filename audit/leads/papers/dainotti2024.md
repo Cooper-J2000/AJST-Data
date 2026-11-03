@@ -26,6 +26,7 @@ time_sec / mag / mag_err / band / system / telescope / extcorr / source(GCN 号�
 |---|---|---|---|---|
 | GRB141028A | mag_files/141028A_mag.txt | 无（本卡即索引） | extracted（本暴 26 个测光点已逐值回 GCN 核对） | 转引型：数值与 GCN 同源、时间锚与系统标注需回原文，不开源级卡 |
 | GRB190627A | mag_files/190627A_mag.txt | 无（本卡即索引） | extracted（本暴 MRT 200 行逐行程序化比对一致：163 行 source=Alexei＝A. Pozanenko 2023 私人通信、18 行 source=Michal＝Swift/UVOT 私人通信（身份未溯源，见 PR #711 待决）、19 行 GCN 转引回核原文；含 source=Brice(24894)＝Brice Orange/VIRT 私人通信 1 行与 GCN 24894 同值） | 转引型 GCN 行已回改 GCN 出处并删 15 行重复；Alexei/Michal 为私人通信数据，保留 Dainotti 引用；该暴 MRT 的 GCN 24892 表 mid 列实为起点（差半曝 30 s）、24900/24911 ep3 的 mid 与起点+半曝差 113/14.6 s |
+| GRB181110A | mag_files/181110A_mag.txt | 无（本卡即索引） | extracted（MRT 118 行与本库原转引行 1:1 对应；102 行 source=BurstAnalyser 逐行对 UKSSDC burst_analyser/00871316 的 uvot qdp 核对一致，16 行 GCN 转引回核 GCN 23414/23415/23416/23422/23423 原文） | **MRT 的 system 列把 BurstAnalyser UVOT 行标 Vega，实为 AB**（值=−2.5lg(F_Jy/3631) 精确成立；其官方 magAB_extcorr 版未加 Vega→AB shift、差值恰为银消光 A_λ，证实原始值本就是 AB——上游误标，PR #794 已按 §3.10 原文笔误处理改标 AB）；MRT 的 GCN 23416 行 band 误标 R（原文 unfiltered）、GCN 23422 行 time=56910 s 与原文历元不符（原文中点 55558.68/55648.68 s），两处转引行已删、保留 GCN 原发行 |
 
 ## 增量门槛判读
 
