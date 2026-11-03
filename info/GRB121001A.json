@@ -1,24 +1,31 @@
 {
   "transient_id": "GRB121001A",
-  "alias": [],
-  "ra": 276.029,
-  "dec": -5.667,
-  "T0": "2012-10-01T18:23:02Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 121001A",
+    "Swift 535026",
+    "BAT 535026"
+  ],
+  "ra": 276.03227,
+  "dec": -5.66587,
+  "T0": "2012-10-01T18:23:02.288260Z",
+  "T0_ref": "Swift/BAT trigger 535026（GCN 13831：18:23:02 UT；Swift/BAT GRB Catalog external/swift_bat 快照 Trig_time_UTC=2012-10-01T18:23:02.288260 直读）",
+  "T0_offset": -25,
+  "T0_offset_ref": "GCN 13836（光变 starting near T-25sec，触发前已有辐射，近似值）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
+  "redshift_type": null,
+  "redshift_ref": null,
+  "pos_error": 1.8,
+  "pos_error_confidence": "90",
+  "pos_error_unit": "arcsec",
+  "pos_ref": "GCN 13837",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（fsy, 2026-11-01）：(1) 身份=Swift/BAT trigger 535026（GCN 13831：'At 18:23:02 UT ... triggered and located trigger 535026'）；BAT 初判疑似银河系 X 射线暴（13831），GCN 13836 BAT 细化分析确证为 GRB（FRED 型、持续 >100 s、T90(15-350 keV)=147±24 s），并澄清视场内 HETE J1900.1-2455 的 X 射线暴与本触发无关；命名 GRB 121001A 沿自 GCN 13832/13833/13834；GCN 站全清单 13831–13840 共 10 篇（均逐篇实开），无 GRB 121001B 等同日近邻命名、无重复建档。(2) T0 旧值整秒 2012-10-01T18:23:02Z 按触发仪器亚秒值精化：Swift/BAT GRB Catalog（external/swift_bat 快照 summary_general.txt）Trig_time_UTC=2012-10-01T18:23:02.288260（trigger 535026 直读；该目录 Trig_time_met 为 Swift machine time，未按 2001 纪元换算），GCN 13831 整秒值一致；29 行 10keV（Burst Analyser）行的 mjd 系按整秒 T0 计，与精化后 T0 差 0.288 s < 1 s 容差，X 射线行按审核红线保持原样。(3) T0_offset=-25 s：GCN 13836 光变 'starting near T-25sec'（近似值）。(4) 位置：旧 ra/dec=276.029/-5.667 实为 GCN 13836 BAT 地面定位（2.4′、90% containment），与 pos_error=1.8″（XRT enhanced）错配；现按 GCN 13837 enhanced Swift-XRT position 改 ra/dec=276.03227/-5.66587（1.8″ radius，90% confidence，原文写明）；并列备查：XRT live catalog（external/swift_xrt_live 快照 2026-07-21）276.03274/-5.66587、Err90=2.1″，GROND 余辉位置 18:24:07.84/-05:39:55.30（GCN 13840）、Zeiss-600 18:24:07.8/-05:39:55.3（GCN 13833）、IAC80 18:24:07.88/-05:39:55.0±0.9″（GCN 13835）。(5) sub_tag=lgrb：T90=147.824±18.605 s（15-350 keV，Swift/BAT GRB Catalog）与 147±24 s（GCN 13836）一致，无来源冲突。(6) 红移：GCN 全清单与检索文献均无实测红移，swift_xrt_live Redshift=N/A，保持 null。(7) 测光检索（2026-11-01）：仓内 gcn/archive 未随库分发，改 GCN 官网站内检索——引号精确检索 '121001A'（7 篇）∪ '535026'（6 篇）= Circular 13831–13840 共 10 篇逐篇实开，无编号 >13840 的后续通告；ROTSE-III 7 条上限、MASTER 1 条上限、BOOTES-2/TELMA I~19.7 探测 1 条入库（本次新增 9 行），UVOT 8 条上限、GROND 7 条、Zeiss-600 1 条原有行逐值核对并修正时间/波段口径；IAC80 'decay from I~19 to I~20 (Vega)'（19:38–21:32 UT，18×240 s）两个近似值无各自明确时刻，不入 lc 仅此备查；arXiv API 检索 'GRB 121001A' 0 命中；Jelínek+2016（Adv. Astron. 2016, DOI 10.1155/2016/1928465，BOOTES 十年综述）正文记 'detected in I-band with I∼19.7 (Vega) ... between 20:49–21:52 UT'，其表 2 误记 'I >19.7'（与其正文矛盾，转引自 GCN 13835）；无本源专门研究论文；仓内 rssgrbag/grbsn_webtool/uvot_grb 快照无本源测光记录。(8) 原文笔误：GCN 13840 'Evans et al. (GCN # 18837)' 应为 13837。(9) alias：'GRB 121001A'（GCN 13833–13840 主题用名）、'Swift 535026'（external/swift_grb name_alt）、'BAT 535026'（external/swift_bat name_alt）。UVOT mag_system=Vega 依据 GCN 13839 原文 'UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)'；UVOT/GROND/Zeiss 各行星等均未做银消改正（GCN 13839：E(B-V)=1.36；GCN 13840：E(B-V)~1.3，原文声明）。",
   "tag": [
     "grb"
   ],
-  "pos_error": 1.8,
-  "pos_ref": "GCN 13837",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "sub_tag": [
+    "lgrb"
+  ],
   "extra_data": {
     "catalog_data": {
       "swift_bat": {
@@ -209,8 +216,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-01"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Jelínek+2016",
+      "url": "https://doi.org/10.1155/2016/1928465",
+      "title": "A decade of GRB follow-up by BOOTES in Spain (2003-2013)",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
