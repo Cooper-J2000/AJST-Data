@@ -1,22 +1,28 @@
 {
   "transient_id": "GRB150403A",
-  "alias": [],
-  "ra": 311.504167,
-  "dec": -62.7,
-  "T0": "2015-04-03T21:54:10.950000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB150403913",
+    "bn150403913",
+    "GRB 150403.913",
+    "BAT 637044"
+  ],
+  "ra": 311.50504,
+  "dec": -62.71106,
+  "T0": "2015-04-03T21:54:16.809780Z",
+  "T0_ref": "Swift/BAT refined trigger 637044（batgrbproduct UTC 21:54:16.809780，含 UTCF；GCN 17665/17675）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 2.06,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
+  "pos_error": 1.4,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 17666（Swift-XRT enhanced）",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 17672",
-  "comment": null,
+  "comment": "身份：GRB 150403A＝Swift/BAT 触发 637044（GCN 17665）＝Fermi/GBM trigger 449790853/150403913（GCN 17674），Fermi/LAT 亦探测（GCN 17667）；同日无同源混淆（GRB 150404A 为次日另一事件）。T0 取 Swift/BAT refined 触发时刻 2015-04-03T21:54:16.809780Z（batgrbproduct trigger 637044，含 UTCF；GCN 17665/17675）；GBM 早约 5.86 s 触发（21:54:10.95 UT，GCN 17674；FERMIGBRST 21:54:10.952），多触发仪器冲突按「有 Swift 以 Swift 为准」取 BAT。定位取 Swift-XRT enhanced（GCN 17666）RA,Dec=311.50504,−62.71106，1.4″（90%）；UVOT（GCN 17673）311.50479,−62.71139，0.42″（90%）备查；原库 ra/dec=311.504167,−62.7 为 MPE arcmin 粗位（20h46m01s −62°42′），已改正。红移 z=2.06 为 VLT/X-shooter 吸收线+Lyα trough 光谱红移（GCN 17672）→ spec。sub_tag：t90=22.2724±0.80956 s（FERMIGBRST，50–300 keV），按目录 t90 判 lgrb；Fermi-LAT 探测（GCN 17667）。alias 出处：「GRB150403913」（FERMIGBRST name_alt 原文用名；GCN 17674 原文 trigger 449790853/150403913）、「GRB 150403.913」（FERMIGBRST/2FLGC name_alt 原文用名，同事件 GCN 17674）、「bn150403913」（FERMIGBRST burst name）、「BAT 637044」（Swift/BAT 目录 name_alt）。lc：1798 行中 1751 行 Swift/XRT 10keV（Burst Analyser）未动，T0 改锚 BAT 后其 mjd 需按 mjd=T0+time 重算（留维护者合入前执行）；非 X 射线 47 行：38 行 UVOT V 逐值核对 Dainotti+2024 目录（grbLC mag_files/150403A_mag.txt，Oates 提供，Vega，历元=BAT 触发）、6 行 GCN 17673 UVOT（补窗口半宽 time_err）、GCN 17665 White FC 行 band w→uvot-white 且 time 改曝光中点、MASTER 行 band R→G（无滤光片）且 UL→探测（GCN 原文 We detect a faint OT）、VLT/X-shooter 行 time 按 GCN 10.85 h 锚、删 1 行 Dainotti 对 GCN 17672 的同测量转引。官方 UVOT 产品不可达（gcn.gsfc notices_s/637044/UVOT 404、UKSSDC burst_analyser 无 UVOT 段、swift_gnd_ana UVOT 列空）。测光检索（2026-11-03）：仓内 gcn/archive 命中 14 篇（相关 17665/17666/17667/17668/17672/17673/17674/17675/17677/17680，含光学数值 4 篇）；external/uvot_grb、grbsn_webtool 无本源记录；Ershova+2020（ARep 64, 126）VoR Table 20 本暴行为 GCN 17680 纯转引（ΔT_notice 20418 s、ΔT_trigger 20434 s、m_OT 19.2、SAAO、WF，坐标=UVOT 位置），其引 GCN 17680 无撤回记录，首帧限 W 19.4(720) 时间锚不明确未入库；ADS/SciX 无 API token 未覆盖（audit/unverified.tsv search-limited）→ 补 0 行、改 47 行、删 1 行。||核查更正（2026-11-03）：①GCN 17673 四行探测的 flux_density_err（0.02/0.03/0.08/0.21）初稿无留痕置空，已按 GCN/grbLC 双源恢复；②alias「GRB 150403913」改无空格原形（FERMIGBRST name_alt 原文形态）；③T0_offset 待决注记：GCN 17675 自述 T−170 s 起有弱辐射——是否记 T0_offset=-170 s 留维护者裁定（「真实爆发起点」无单一定义，本审核未填）；④Ershova+2020 VoR 核对时点为线索卡记载的 2026-10-24（本次复核端 Springer 502 不可达，转录行经 GCN 17680 原文逐值互证）；⑤UVOT 官方产品通道不可达（notices_s/UVOT 404、UKSSDC 无 UVOT 段、swift_gnd_ana 列空）已登记 audit/unverified.tsv。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
@@ -893,9 +899,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [
+    {
+      "name": "Ershova+2020",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "source": "wa1kmoon@zcode"
+    },
     {
       "name": "Topcu+2025",
       "title": "First IFU observations of two GRB host galaxies at cosmic noon with JWST/NIRSpec",
