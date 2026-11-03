@@ -1,25 +1,37 @@
 {
   "transient_id": "GRB060211B",
-  "alias": [],
-  "ra": 75.085,
-  "dec": 14.959,
+  "alias": [
+    "GRB 060211B",
+    "Swift 181156",
+    "BAT 181156"
+  ],
+  "ra": 75.071667,
+  "dec": 14.949694,
   "T0": "2006-02-11T15:55:15Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "GCN 4739",
+  "T0_offset": -12,
+  "T0_offset_ref": "GCN 4747",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 4747",
+  "pos_error": 3.9,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 4745",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT 触发号 181156（GCN 4739，BAT 位置 75.069,+14.958 ±3'）；当日 09:39 UT 另有 GRB 060211A（触发 181126，BAT 位置 58.4,+21.5），坐标与触发号均可区分；GCN 4766 将触发 181156 误写作「GRB 060211a」、GCN 4747 写作「BAT GRB 060211」，均以触发号 181156 为准。T0=15:55:15 UT 取自触发仪器官方通告 GCN 4739（§3.8 ①）；Swift/BAT 官方目录给出 15:55:14.766340（MET 161366114.766340），MASTER GCN 4741 引 GRB_TIME 15:55:14.76，swiftgrbba/SGA 分别记 15:55:15.000/15:55:14，与 GCN 4739 差 0.234 s（≥60 ms，已在 PR 说明报告）。T0_offset=-12 s：GCN 4747 BAT 精化分析称 burst started at T-12 s（触发前已有小峰）。位置：ra/dec 取 GCN 4745 XRT 精化位置 05h00m17.2s +14d56'58.9\"（=75.071667,+14.949694），误差 3.9\"（90% containment，原文标注）；原库 75.085/14.959 与 GCN 4747（75.076,14.954）及 GCN 4745 均不符，判为导入残留；HEASARC swiftgrbba（Evans+2009）精化 XRT 位置 75.0715,+14.94939、r=1.6\" 备查。alias：GRB 060211B（GCN 4739 原文用名）、Swift 181156（HEASARC SWIFTGRB name_alt）、BAT 181156（Swift/BAT GRB Catalog name_alt）。sub_tag：t90=27.732±7.754 s（Swift/BAT GRB Catalog，15-350 keV）；另 GCN 4747 给 T90=29±5 s、SGA t90=27.7 s；按目录 t90 判 lgrb。测光检索（2026-11-03）：仓内 gcn/archive 45 947 篇全文检索「060211」「181156」，命中 23 篇、其中属于本暴 13 篇（GCN 4739/4741/4743/4744/4745/4747/4752/4758/4759/4766/4772/4778/4925，逐篇读过），含光学/NIR 测光值的 8 篇已逐行核对；external/rssgrbag 0 命中，grbsn_webtool 无本暴事件，uvot_grb 仅目录参数；ADS 检索「GRB 060211B」元数据命中 8 篇（全为 GCN）、full-text 命中 11 篇，其中非 GCN 的 3 篇逐篇打开核查：Lipunov+2007（Astronomy Reports 51,1004，arXiv:0711.0037）表仅转引 GCN 4741（282 s，14m.5）、Zheng+2009（RAA 9,1103，arXiv:0906.2244）仅样本名单、Huja+2009（A&A 504,67，arXiv:0905.4821）仅目录 T90 转引，均无增量测光；GCN 4739 的 UVOT「typical ~18th mag」为模板文字、无具体值，被 GCN 4778 取代 → 共补 2 行（GCN 4741 MASTER 无滤光片 >14.5 @282 s、GCN 4744 Maidanak R>19.3 @1389 s）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    },
     "catalog_data": {
       "uvot_grb": {
         "other": {
