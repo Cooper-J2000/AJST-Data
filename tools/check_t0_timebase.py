@@ -111,8 +111,9 @@ def git(*a, cwd=None):
 
 
 def changed_info(base, head, cwd=None):
-    out = git('diff', '--name-only', '--diff-filter=AM', f'{base}...{head}', cwd=cwd)
-    if not out.strip():                       # 浅克隆没有 merge-base 时退化为两点 diff
+    try:
+        out = git('diff', '--name-only', '--diff-filter=AM', f'{base}...{head}', cwd=cwd)
+    except RuntimeError:                      # 浅克隆没有 merge-base（CI 深 1）→ 两点 diff
         out = git('diff', '--name-only', '--diff-filter=AM', base, head, cwd=cwd)
     return [p for p in out.splitlines() if p.startswith('info/') and p.endswith('.json')]
 
@@ -167,8 +168,15 @@ def from_pr(repo, n, token):
 
     pr = gh_api(f'/repos/{repo}/pulls/{n}', token)
     base_sha, head_sha = pr['base']['sha'], pr['head']['sha']
+    files, page = [], 1
+    while True:
+        batch = gh_api(f'/repos/{repo}/pulls/{n}/files?per_page=100&page={page}', token)
+        files.extend(batch)
+        if len(batch) < 100 or page >= 10:
+            break
+        page += 1
     results = []
-    for f in gh_api(f'/repos/{repo}/pulls/{n}/files?per_page=100', token):
+    for f in files:
         path = f['filename']
         if not (path.startswith('info/') and path.endswith('.json')) or f['status'] not in ('modified', 'added'):
             continue

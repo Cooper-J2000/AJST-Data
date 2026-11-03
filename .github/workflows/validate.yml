@@ -61,8 +61,13 @@ jobs:
       # 背景：2026-11-03 批次 23 个改 T0 的 PR 里 8 个把 X 射线块漏在旧历元（整块偏 1.9 s ~ 21 h）。
       # validate.py 对这一族只有警告级，作者普遍不知道「改 T0 要重算」→ 这里变红。
       # 不规定修法：mjd := T0+time（XRT/BA 口径）或 time 随 T0 平移（旧历元口径）都通过。
+      # 走 REST API（`--pr`）而不是 git diff：checkout 是 depth=1 的 merge ref，拿不到 merge-base，
+      # 两点 diff 会把主分支上别的 PR 的 T0 改动算进来（假阳性）。
       - name: T0 rebase guard (mjd must equal T0 + time)
         if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}" || true
-          python3 tools/check_t0_timebase.py --base "origin/${{ github.base_ref }}" --head HEAD --strict
+          python3 tools/check_t0_timebase.py \
+            --repo "${{ github.repository }}" \
+            --pr "${{ github.event.pull_request.number }}" --strict
