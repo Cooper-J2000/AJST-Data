@@ -115,3 +115,4 @@ GRBname, z, Method（ba=吸收线光谱 / he=宿主星系光谱 / bp=测光 / hp
 10. **GRB 041219A 的 Trig_ID 为 N/A**（用 obsID 分析），联表时建议以 GRBname 为主键、Trig_ID 为辅。
 11. T90 对个别暴可能是下限或受数据缺口影响，见 `summary_GRBlist/T100_might_be_lower_limits.txt`、`Data_gap_in_T100.txt` 等列表。
 12. 该在线目录持续更新，本快照截至 GRB 250605A；后续复采会得到更多行。
+13. **`XRT_detection` 列不随 XRT 后续探测回填**（Issue #244）：它记录的是触发后自动流水线的即时状态。252 个 `No` 行中有 25 个在 `swift_xrt_live` 光变库有条目，其中 **15 个 Err90 < 5″**（有真实定位，与「未探测」不相容）：GRB 041223、050820B、070913、070917、071010A、071010B、071011、080405、080515、090118、090531A、090823、120624B、120803A、220518A。**「有无 X 射线对应体」一律以 XRT 通告（GCN）或 `swift_xrt_live` 为准，本列不参与判断**；用本列做统计须先扣掉这 15 个已知反例。`parse.py` 已把原值保留在 `other.XRT_detection`，并对这 15 个源置 `other.xrt_detection_conflict: true`（值不改）。

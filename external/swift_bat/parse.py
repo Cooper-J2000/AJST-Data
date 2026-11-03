@@ -25,6 +25,12 @@ Decisions (see README.md pitfalls):
   * Join key is GRBname (Trig_ID can be N/A, e.g. GRB 041219A).
   * Base table is summary_general.txt (1668 rows); redshift rows not in the
     main table are ignored.
+  * XRT_detection (raw column) goes to other; it records the immediate
+    post-trigger pipeline state and is NOT updated when XRT later detects
+    the burst (Issue #244). Cross-check against swift_xrt_live: when the
+    catalog says "No" but the XRT live catalog has an entry with
+    Err90 < 5 arcsec, other['xrt_detection_conflict'] is set to True
+    (raw value left unchanged).
 """
 
 import json
@@ -89,6 +95,26 @@ def norm_name(raw):
     return None
 
 
+def read_xrt_live_positions():
+    """swift_xrt_live catalog -> {GRB name: Err90 arcsec}. Pipe-separated
+    table with an HTML '<pre>' header line; columns: GRB | RA | Dec | Err90."""
+    path = os.path.join(HERE, "..", "swift_xrt_live", "swift_xrt_live_cat_full.txt")
+    pos = {}
+    if not os.path.exists(path):
+        return pos
+    with open(path) as f:
+        for line in f:
+            if line.startswith("<") or "|" not in line:
+                continue
+            cells = [c.strip() for c in line.split("|")]
+            if len(cells) < 4 or not cells[0].startswith("GRB"):
+                continue
+            err = fnum(cells[3])
+            if err is not None:
+                pos[cells[0]] = err
+    return pos
+
+
 def main():
     general = read_table("summary_general_info/summary_general.txt")
     best_model = {r[0]: r[2] for r in read_table("summary_T100/best_model.txt")}
@@ -101,6 +127,7 @@ def main():
     fl_pow = {r[0]: r for r in read_table("summary_T100/summary_pow_energy_fluence.txt")}
     fl_cpl = {r[0]: r for r in read_table("summary_T100/summary_cutpow_energy_fluence.txt")}
     zrows = {r[0]: r for r in read_table("summary_general_info/GRBlist_redshift_BAT.txt")}
+    xrt_live = read_xrt_live_positions()
 
     out = []
     for g in general:
@@ -184,9 +211,17 @@ def main():
 
         # --- a few important raw columns from the main table ---
         for idx, col in ((6, "Image_position_err"), (7, "Image_SNR"),
-                         (14, "pcode"), (15, "Trigger_method")):
+                         (14, "pcode"), (15, "Trigger_method"),
+                         (16, "XRT_detection")):
             if g[idx] not in MISSING:
                 rec["other"][col] = g[idx]
+
+        # XRT_detection conflict flag (Issue #244): catalog "No" contradicted
+        # by a real XRT localization in the live catalog -> flag, keep raw.
+        if rec["other"].get("XRT_detection") == "No" and name is not None:
+            err90 = xrt_live.get(name)
+            if err90 is not None and err90 < 5.0:
+                rec["other"]["xrt_detection_conflict"] = True
 
         out.append(rec)
 
