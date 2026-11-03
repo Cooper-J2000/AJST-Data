@@ -1,0 +1,9 @@
+# 未能核实的文献材料登记表（人写，工具只读）
+# 用途：审核时「完整数据表/机读表见正式发表版」「表 N 见在线材料」这类追不到的东西，
+#       除写进该行 comment 与 PR 说明外，必须在这里留一行——PR 合并后正文会沉底，
+#       这张表是唯一的汇总入口（契约见 audit/README.md「unverified.tsv」小节）。
+# 列：source_id / pr / paper / missing / attempted / blocker / substitute / status / date
+# source_id 写 `*` = 通道级问题（缺凭据、站点整站不可达），不绑定单个源。
+# status: substituted（已用 arXiv/摘要/其他版本替代，覆盖范围见 substitute） | missing（完全没拿到，相关行列未入库） | search-limited（检索通道受限，不是某篇论文拿不到）
+source_id	pr	paper	missing	attempted	blocker	substitute	status	date
+*	824	—（通道级，非单篇）	ADS / SciX 的全文与引文检索通道	审核 agent 侧无 ADS/SciX API token：api.adsabs.harvard.edu 实测 HTTP 401；scixplorer.org 公开检索接口 202 + x-amzn-waf-action: challenge（AWS WAF 拦截，curl 2026-11-03）	缺凭据 + 整站级反爬，非文献不可得	无（ADS 侧检索结论记为未覆盖，不得当作「无文献」；arXiv API 全文检索可达且 0 命中，见 info.comment）	search-limited	2026-11-03
