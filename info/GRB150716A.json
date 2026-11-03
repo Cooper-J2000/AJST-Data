@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB150716A",
-  "alias": [],
-  "ra": 278.481,
-  "dec": -12.978,
-  "T0": "2015-07-16T07:06:43Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 150716A",
+    "BAT 649157"
+  ],
+  "ra": 278.4879,
+  "dec": -12.9802,
+  "T0": "2015-07-16T07:06:43.060080Z",
+  "T0_ref": "GCN 18027（Swift/BAT 触发 07:06:43 UT，trigger 649157）；亚秒取 Swift/BAT GRB Catalog（batgrbcat）trigger_time=2015-07-16T07:06:43.060080Z；swiftgrbba 目录 07:06:43.000Z 为整秒截断，并列备查",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,14 +16,29 @@
     "grb"
   ],
   "pos_error": 4.1,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 18030",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "GRB 150716A = Swift/BAT trigger 649157（GCN 18027：At 07:06:43 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 150716A (trigger=649157)）。T0=触发时刻 07:06:43 UT（GCN 18027），亚秒取 batgrbcat trigger_time=2015-07-16T07:06:43.060080Z；无 >1 s 的 T0_offset 证据。原库坐标 278.481,-12.978 实为 GCN 18034 的 BAT 地面计算位置（1.1′，90% containment），而 pos_ref 原指向 GCN 18030，属定位口径错配（bot 残留）；本次改锚 XRT 精化位置 RA,Dec=278.4879,-12.9802、4.1″（radius，90% confidence，GCN 18030 原文）并补 pos_error_confidence=90；备查：GCN 18027 机上定位 278.466,-13.017（3′，90%）、GCN 18027 XRT 早期位 278.4873,-12.9787（5.3″，90%）、GCN 18034 BAT 地面位 278.481,-12.978（1.1′，90%）。分类：t90=44±6 s（15-350 keV，GCN 18034）；batgrbcat t90=42.568±5.589 s（15-350 keV）；Becerra+2023（MNRAS 525, 3262）表 3 同列 t90=42.57±5.59 s——按目录 t90 判 lgrb。红移无测量；银消 E(B-V)=1.43（Schlegel+1998，GCN 18033）。别名出处：GCN 18027 通告原文用名 GRB 150716A（<GCN 18027> 原文用名 GRB 150716A）；BAT 649157 为 batgrbcat name_alt（GCN 18034：BAT GRB 150716A (trigger #649157)）。测光修订（本次）：新增 Swift/UVOT 3σ 上限 8 行（GCN 18033 表，Vega 系统、未消光改正）与 KAIT clear 上限 1 行（GCN 18036，band=G）；P60 2 行补 time_err 与定标说明（GCN 18029，USNO-B1 I2=17.66 定标，系统未声明）；RATIR 4 行按 §3.8 由观测窗口（0.06-3.61 h / 20.69-27.82 h after BAT trigger）重取中点与半宽、补 mag_system=AB（GCN 18028/18032 明示 AB）；X 射线行（band=10keV，30 行）未审核未改动，其 mjd 已按 mjd=T0_new+time 机械重算（2026-10-31 裁定），time/流量/band 均未动。注意：GCN 18032 判 RATIR 源显著在 enhanced XRT 误差区外、非余辉，且 RATIR 未能证实 P60 源——两个光学候选均未被确证为余辉，测量行保留、各行 comment 注明。测光检索（2026-11-04）：仓内 gcn/archive 全文检索命中本暴 8 篇（18027/18028/18029/18030/18032/18033/18034/18036；含光学数值 4 篇、UVOT 上限 1 篇），已全部入库；external/rssgrbag、external/grbsn_webtool 无本暴记录，external/uvot_grb 等仅目录级参数（用于身份与 T0 互证）。arXiv API all:\"GRB 150716A\" 0 命中；OpenAlex 9 命中（6 条为本暴 GCN 通告本身），研究文献 3 篇均无本暴光学测光表：Becerra+2023（仅表 3 参数行 trigger 649157/E(B-V)=1.43/t90=42.57±5.59 s）、HAWC Collaboration+2017（ApJ，DOI 10.3847/1538-4357/aa756f，仅 LAT ≥GeV 限量，能量串不在审核范围）、HAWC ICRC 会议集（DOI 10.22323/1.301.0620，同前，未取数）；Crossref query.bibliographic 无额外命中。swiftgrbba 快照 uvot_mag 字段「UVM2>29.38」与 GCN 18033 表 uvm2>19.38 矛盾（快照笔误，目录快照不改，此报告备查）。ADS/SciX 无 API 凭据（HTTP 401），检索通道受限已在 audit/unverified.tsv 通道级行登记，不据此得出「无文献」结论。原库 comment「由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)」为导入记录，保留此句备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
+  },
+  "articles": [
+    {
+      "name": "Becerra+2023",
+      "url": "https://doi.org/10.1093/mnras/stad2513",
+      "title": "Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, COATLI, and RATIR observations",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
