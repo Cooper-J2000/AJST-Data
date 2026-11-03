@@ -1,26 +1,81 @@
 {
   "transient_id": "GRB150831A",
-  "alias": [],
-  "ra": 221.034,
-  "dec": -25.619,
-  "T0": "2015-08-31T10:34:12Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 150831A",
+    "BAT 653838",
+    "GRB 150831AS"
+  ],
+  "ra": 221.02422,
+  "dec": -25.63499,
+  "T0": "2015-08-31T10:34:12.898940Z",
+  "T0_ref": "GCN 18209（Swift/BAT 触发 10:34:12 UT，trigger=653838，整秒）；亚秒取触发仪器官方精化分析页 2015-08-31T10:34:12.898940 UTC（含 UTCF 改正，https://gcn.gsfc.nasa.gov/notices_s/653838/BA/，取数 2026-11-04）；仓内 external/swift_bat 目录快照 trigger_time=2015-08-31T10:34:12.898960Z 与页面值差 20 μs（毫秒以下同值）；swiftgrbba 快照 10:34:12.000 系截断至整秒",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 1.18,
+  "redshift": 1.09,
   "tag": [
     "grb"
   ],
   "pos_error": 1.7,
   "pos_ref": "GCN 18212",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "redshift_type": "phot",
+  "redshift_ref": "Fong+2022（ApJ 940, 56; DOI 10.3847/1538-4357/ac91d0）候选宿主 photo-z=1.09(+0.1/−0.19)；与 mpe_greiner 目录 z=1.18 冲突，见 comment ④",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（2026-11-04，wa1kmoon@zcode）：① T0 亚秒取触发仪器官方值 10:34:12.898940 UTC（Swift/BAT 精化分析页，含 UTCF 改正；与仓内 external/swift_bat 目录快照 trigger_time=10:34:12.898960Z 差 20 μs；GCN 18209 给整秒 10:34:12 UT；swiftgrbba 快照 10:34:12.000 系截断）。Konus-Wind 自触发 10:34:09.519 UT（GCN 18226，其最亮段在 BAT 触发之前，系 Konus 自有 T0 口径，不改本库 T0）；INTEGRAL IBAS 起始 10:34:12 UT（GCN 18210）互证。原 T0=2015-08-31T10:34:12Z 为整秒截断值；全表 mjd 已按 mjd=T0+time 重算（28 行 X 射线行只动 mjd 列，其余列未动）。② 定位污染修正：原 ra/dec=221.034/-25.619 实为 Swift/BAT 地面精化定位（GCN 18214，误差 1.3′，90%），与 pos_error=1.7″/pos_ref=GCN 18212（XRT 增强定位）不匹配；现改为 GCN 18212 增强型 XRT 定位 RA=221.02422、Dec=-25.63499（1.7″，半径，GCN 明示 90% 置信）。备查：BAT 地面精化 221.034/-25.619（1.3′，90%，GCN 18214；swift_bat 目录 221.0334/-25.61328）；BAT 在轨 221.023/-25.649（3′，90%，GCN 18209）；INTEGRAL IBIS/ISGRI 221.0207/-25.6474（3′，90%，GCN 18210）；swiftgrbba 快照 xrt 位 221.02421/-25.63494（1.6″）；O'Connor+2022 所用 XRT 位 221.0243/-25.6351（2.2″，90%）。Svinkin+2022（IPN Konus 短暴二表）将本源列为 27 个被 Swift 精确定位、用于验证三角定位的源之一，无更优定位。③ 分类 sgrb：GCN 18214 T90=1.15±0.23 s（15-350 keV），且 8 ms 谱滞后（100-350/25-50 keV：−2±5 ms）与短暴一致；swift_bat 目录 t90=0.92±0.116 s（15-350 keV）——按目录 t90 判 sgrb；Fong+2022 分类 SGRB（f_NC=0.88）、Higgins+2017（INTEGRAL T90≈2 s）、Konus-Wind 总时长 ~1 s（GCN 18226）均一致。④ 红移：Fong+2022 候选宿主（宿主位 RA=221.02475、Dec=-25.63494，距 XRT 位 1.48″±1.18″）photo-z=1.09(+0.1/−0.19)（r=24.434±0.446 AB，Silver 级，Pcc=0.037），字段按 VoR 取该值、type=phot；O'Connor+2022 深场（VLT/FORS2 R>25.8 于 2016-09-01、I>24.5 于 2017-03-07、Gemini/GMOS-S i>25.7 于 2020-07-29，均 3σ）判「observationally hostless」（其 XRT 位内星系 R=24.95±0.10、i=25.1±0.3，Pcc≈32%）；mpe_greiner 目录 z=1.18（z_flag=h=宿主红移；该目录红移附页 grbrsh.html 无本源条目，1.18 出处不明）并列备查。两篇 2022 文献对宿主结论冲突（Fong Silver 候选 vs O'Connor hostless），host_galaxy 不建立；Fong 候选宿主测光（AB，Fong+2022 Table 3）备查：g=26.00±0.32、r=24.43±0.45、i=24.67±0.10、z=23.74±0.10、Y>21.93、J=23.59±0.30、H=22.87±0.32、K=22.63±0.30；O'Connor+2022 备查：XRT 位内星系 R=24.95±0.10（2016-09-01）、i=25.1±0.3（2020-07-29）。⑤ 测光检索（2026-11-04）：仓内 gcn/archive 全文检索 150831A 命中 10 篇（GCN 18209/18210/18211/18212/18214/18216/18218/18219/18226/18235）；UVOT 上限（GCN 18209 FC+GCN 18218 共 9 行）、ISON-SSO（GCN 18211，1 行）、GROND（GCN 18219，7 行）、VLA 9.8 GHz（GCN 18235，2 行）、Higgins+2017 UVOT 全程叠加上限（7 行）入库；GCN 18216（XRT 谱与衰减）为 X 射线信息不入 lc；GCN 18210/18226 为伽马波段探测信息记本 comment；external/rssgrbag、external/grbsn_webtool 无本源记录；arXiv API（export.arxiv.org）检索 'GRB 150831A'/'150831A' 均 0 命中；OpenAlex 25 条命中（8 条为上述 GCN 通告元数据）；研究文献 Higgins+2017/Fong+2022/O'Connor+2022/Greiner+2024 已实取 arXiv 版核对（VoR 分别被 OUP Cloudflare、IOP Radware、A&A DataDome 拦截，已登记 audit/unverified.tsv）；ADS/SciX API 无凭据实测 HTTP 401，通道受限（search-limited，不得当作「无文献」）。行数账：删 0 行，新增 10 行（u_FC 1、VLA 2、Higgins+2017 7），改写 16 行（white_FC 去重合并 1、UVOT coadd 7、ISON 1、GROND 7），X 射线 28 行只重算 mjd。⑥ alias：补 GRB 150831A（GCN 通告用名）、BAT 653838（swift_bat 目录 name_alt）、GRB 150831AS（Greiner 目录原形，其后缀 S 系该目录短暴标注，grbgen.html 行名 150831AS）。⑦ 与同日 GRB150831B 严格区分：B 为 BAT trigger=653978（2015-08-31T22:19:27 UT，RA 271.021/Dec −27.252；GCN 18215/18217/18220/18221/18222/18223/18227），与本源（trigger=653838，10:34:12 UT，RA 221.0）相距约 45°，非同暴。⑧ 其他备查：GCN 18226 原文笔误「Swift trigger 648437」（应为 653838，GCN 18209/18214 同证）；BAT fluence 3.8±0.3×10⁻⁷ erg/cm²（15-150 keV）、1-s 峰值光子流量 3.4±0.3 ph/cm²/s（GCN 18214）；Konus-Wind fluence (2.4±0.4)×10⁻⁶ erg/cm²（20 keV-10 MeV，GCN 18226）；INTEGRAL fluence ~3×10⁻⁷ erg/cm²（20-200 keV，GCN 18210）。⑨ UVOT 波段键修正：原 2 行 band=w 系 Pan-STARRS w 键误用（filters.json w=5980.7 nm 级非 UVOT white），改 uvot-white；7 行 UVOT coadd 的 time 原为导入中点偏差（恒比 (T_start+T_stop)/2 小 2 s），按 GCN 18218 窗口端点重算并补 time_err=半窗宽。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "date": "2026-11-04",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Breeveld+2011",
+      "title": "An Updated Ultraviolet Calibration for the Swift/UVOT",
+      "url": "https://doi.org/10.1063/1.3621807",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Higgins+2017",
+      "title": "Investigating the nature of the INTEGRAL gamma-ray bursts and sub-threshold triggers with Swift follow-up",
+      "url": "https://doi.org/10.1093/mnras/stx1163",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Fong+2022",
+      "title": "Short GRB Host Galaxies. I. Photometric and Spectroscopic Catalogs, Host Associations, and Galactocentric Offsets",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d0",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "O'Connor+2022",
+      "title": "A deep survey of short GRB host galaxies over z ~ 0-2: implications for offsets, redshifts, and environments",
+      "url": "https://doi.org/10.1093/mnras/stac1982",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Greiner+2024",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
