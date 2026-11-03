@@ -1,23 +1,26 @@
 {
   "transient_id": "GRB111210A",
   "alias": [],
-  "ra": 191.493,
-  "dec": -7.173,
-  "T0": "2011-12-10T14:37:03Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "ra": 191.47684,
+  "dec": -7.16593,
+  "T0": "2011-12-10T14:37:03.186460Z",
+  "T0_ref": "Swift/BAT Catalog trigger 509419 (Trig_time_UTC=2011-12-10T14:37:03.186460Z, external/swift_bat); GCN 12650 (14:37:03 UT)",
+  "T0_offset": -2.328,
+  "T0_offset_ref": "Swift/BAT Catalog T100_start=-2.328 s (summary_burst_durations); GCN 12651 (first peak starting at ~T-2.3 sec)",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 2.1,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 12652",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。位置: ra/dec 取 GCN 12652 XRT enhanced 位置 (191.47684, -7.16593, 2.1 arcsec, 原文注明 radius, 90% confidence, 故 pos_error_confidence=90); 原 ra/dec (191.493, -7.173) 为 GCN 12651 BAT ground 位置 (1.7 arcmin, 90%), 与 pos_ref 不一致, 已按 pos_ref 改正, BAT 值并列备查。T0: 取 Swift/BAT Catalog (trigger 509419) Trig_time_UTC=2011-12-10T14:37:03.186460Z (external/swift_bat 快照), GCN 12650 整秒值 14:37:03 UT 一致; T0_offset=-2.328 s: BAT T100_start=-2.328 s (Swift/BAT Catalog summary_burst_durations), GCN 12651 掩码加权光变第一峰 starting at ~T-2.3 sec, 爆发开始早于自动触发。sub_tag=lgrb: GCN 12653 (BAT team 谱滞后分析) 原文 'These lag values place this burst in the long burst category'; T90=2.516±0.132 s (15-350 keV, Swift/BAT Catalog), GCN 12651 给 2.52±0.13 s, 一致。候选宿主: GCN 12661 (SDSS DR8 先前成像) g=23.9, r=23.0, i=22.9, z=23.0±0.3, 与 Gemini 候选对应体 (GCN 12657) 一致, 原文判断为 candidate host galaxy, likely z<4, 非实测红移, 故 redshift=null, host_galaxy 不建立。测光检索 (2026-11-02): GCN 站逐篇核查 12630-12900 区间, 命中本源 13 篇 (12650/12651/12652/12653/12654/12655/12657/12659/12660/12661/12662/12665/12713), 光学数值均已在库; 仓内无 gcn/archive 本地快照, external/rssgrbag / grbsn_webtool / uvot_grb 无本源记录; arXiv API 全文检索 'GRB 111210A' 0 命中, WebSearch 无专门研究论文 (仅 Swift ground analysis GCN Report 352, 未含可入库新测光) → 补 0 行。lc 中 3 行 10keV (Swift Burst Analyser) 为 X 射线行, 按规则本次不审核。SIMBAD 检索不可达 (TLS 连接失败), alias 未新增; GCN 原文用名 GRB 111210A 与 id 一致。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -208,6 +211,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-02"
     }
   },
   "articles": [],
