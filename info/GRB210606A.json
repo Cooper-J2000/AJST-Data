@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB210606A",
-  "alias": [],
-  "ra": 177.63,
-  "dec": -0.47,
-  "T0": "2021-06-06T03:56:02Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB210606164",
+    "bn210606164"
+  ],
+  "ra": 170.9411,
+  "dec": 0.81293,
+  "T0": "2021-06-06T03:56:02.123Z",
+  "T0_ref": "GCN 30131（Fermi GBM Final Real-time Localization：trigger 644644567.122922, UTC = MET - 5 闰秒 = 03:56:02.122922）；HEASARC FERMIGBRST bn210606164 trigger_time = 2021-06-06T03:56:02.123Z（仓内 external/fermi_gbm 快照，亚秒取触发仪器目录值）；GCN 30210 作 03:56:02.12 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.3,
+  "pos_ref": "GCN 30172（Swift-XRT 增强位置）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 2026-11-04（fsy@zcode）。身份：Fermi/GBM 触发的长暴（trigger 644644567 / bn210606164, GCN 30131, 30210）；Swift/BAT 未触发、由 GBM 通告触发 GUANO 离线恢复检出（GCN 30134），Swift-XRT 检出 likely afterglow（GCN 30172）；同日 GRB 210606B（bn210606945 / trigger 644712030, GECAM GCN 30138, BALROG GCN 30139, AGILE GCN 30142）为另一事件，未混入。T0：触发仪器 GBM 官方值——GCN 30131 trigger 644644567.122922（MET）扣 5 闰秒 = 03:56:02.122922 UTC；HEASARC FERMIGBRST bn210606164 trigger_time = 2021-06-06T03:56:02.123Z（MJD 59371.16391346, 仓内 external/fermi_gbm 快照）；GCN 30210 作 03:56:02.12 UT；按 §3.8 取目录毫秒值 2021-06-06T03:56:02.123Z（bot 原值整秒 03:56:02Z，亚秒为补全）。互证：GCN 30134 引 T0 = 2021-06-06 03:56:02 UTC；GCN 30135 观测窗 04:12:31.000-06:46:24.000 UTC 自述 '0.27 to 2.83 hours after the event'（04:12:31 - T0 = 988.9 s）；GCN 30141 '~17.2 h post burst'（21:08 UT - T0 = 61918 s）——均相洽。定位：取 Swift-XRT 增强位置 RA=170.94110, Dec=+0.81293（2.3 arcsec radius, 90% confidence, 4.6 sigma 变暗的 likely afterglow, GCN 30172）；并列备查——Swift/BAT-GUANO RA,Dec = 170.904, +0.718（uncertainty 4 arcmin, GCN 30134）、GBM final real-time RA=177.6, Dec=-0.5（statistical uncertainty 11.4 degrees, GCN 30131；bot 原坐标 177.63, -0.47 系 GCN 30135 所引 'Fermi GBM Final Position'，随本审核更正为 XRT 值）、仓内快照 swift_xrt_live 170.9411, +0.81286（Err90=2.5 arcsec）与 swiftgrbba xrt 170.94108, +0.81292（2.3 arcsec）一致。sub_tag lgrb：t90=11.008±5.1836 s（50-300 keV, HEASARC FERMIGBRST bn210606164 仓内快照），GCN 30210 亦报 T90≈11 s（50-300 keV），GCN 30131 称 likely LONG GRB——按目录 t90 判 lgrb。alias「GRB210606164」为 HEASARC FERMIGBRST 目录 trigger_name（<GCN 30131> 原文用名 'trigger 644644567.122922 / 210606164'，目录名作 GRB210606164）；「bn210606164」为 GBM/HEASARC 官方 bn 名（GCN 30131 quicklook 路径 bn210606164）。红移：全部来源未见测量，保持 null。extra_data 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，随本审核改写。测光检索留证（2026-11-04）：（1）GCN 站全文检索 '210606A' 命中 8 篇（30131/30132/30134/30135/30136/30141/30172/30210, 逐篇实开），触发号 '644644567' 命中同前 3 篇——其中 GCN 30132 给出 5 个带 Tmid-T0 锚点的 MASTER-OAFA clear 滤光上限（新增 5 行）；GCN 30135（DDOTI）与 GCN 30141（OSN）对应库内已有 3 行（按 §3.8 改窗口/序列中点口径，见各行 comment）；GCN 30172 为 X 射线余辉定位（X 射线数据不入库）；GCN 30136 为 ToO 公告，GCN 30131/30210 为触发与 GBM 谱参数（fluence=(0.845±0.144)e-6 erg/cm2 (10-1000 keV)、1-s peak photon flux=2.5±0.3 ph/s/cm2、Epeak=195±62 keV, GCN 30210），均无光学测光。（2）仓内快照：rssgrbag 光变、grbsn_webtool SourceData、uvot_grb、heasarc_grbcat、konus_wind、agile_mcal、fermi_lat、saxgrbmgrb 无本源记录；fermi_gbm、swiftgrbba、swift_xrt_live、mpe_greiner 用于身份与参数互证（目录级，非测光源）。（3）研究文献：arXiv API 检索 all:'210606A' 与 all:'GRB 210606A' 均 0 命中；SciX API 无凭据（HTTP 202 空响应，记 search-limited，不据此下'无文献'结论）；Web 检索另见 DeLaunay & Tohuvavohu 2022（NITRATES, ApJ, DOI 10.3847/1538-4357/ac9d38, GUANO 亚阈值搜索方法文，无本源测光）与 Brightman+2026（Fast X-ray transients in NuSTAR data, arXiv:2601.14375, 样本交叉提及，无本源测光）——无已发表论文提供本源测光，articles 不登记。结论：新增 MASTER-OAFA 上限 5 行；DDOTI 2 行与 OSN 1 行改窗口/序列中点口径并按新 T0 重算 time/mjd（7 位小数）；无红移、无文献测光。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=触发仪器 GBM 官方值：GCN 30131 MET 644644567.122922 扣 5 闰秒 = 03:56:02.122922 UTC，取 FERMIGBRST 目录毫秒值 2021-06-06T03:56:02.123Z（仓内 external/fermi_gbm 快照）；Swift 无自有触发（BAT-GUANO 离线恢复，GCN 30134 沿用 GBM T0）；原 bot 值 2021-06-06T03:56:02Z（整秒）已补亚秒",
+    "t0_basis": "gcn_and_catalog_verified",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
