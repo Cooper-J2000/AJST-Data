@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB191227A",
-  "alias": [],
-  "ra": 318.0,
-  "dec": -16.9,
-  "T0": "2019-12-27T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB191227.07"
+  ],
+  "ra": 319.172,
+  "dec": -16.717,
+  "T0": "2019-12-27T01:39:37Z",
+  "T0_ref": "GCN 26595 (Swift/BAT trigger 946344; integer-second precision)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 26598",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 72,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 26608",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "GCN 26595 给出 Swift/BAT trigger 946344 的 T0=2019-12-27 01:39:37 UT（仅报整数秒）；GBM GCN 26593/26599 报 01:39:24/24.72 UT，HXMT GCN 26618 报 01:39:34.400，Konus-Wind GCN 26614 报 01:39:30.414。按提示词 §3.8，多触发仪器且存在 Swift 时以 Swift 为 T0；无 T0_offset。GCN 26608 给精化 BAT 位置 RA=319.172, Dec=-16.717 deg、90% 半径 1.2 arcmin（转换为 72 arcsec）；Fermi-LAT GCN 26598 的 RA=318.0, Dec=-16.9 deg、90% 半径 0.33 deg 是较粗的独立位置。GCN 26593 称 likely LONG GRB；Swift/BAT GCN 26608 给 T90=58.5±14.4 s（15–350 keV），故 sub_tag=lgrb 依据通告分类。GCN 26594/26596 使用原名「GRB191227.07」（记录为有出处别名）。GCN 26596 报 MASTER-OAFA 在 2019-12-27 01:40:28 UT 的首个 10 s 曝光发现 OT，T−Tmid=56 s、mag=14.4；GCN 26594 对同一曝光给 C=clear/unfiltered 的5σ上限>15.8。按用户裁定保留GCN 26596的14.4检测，并将26594同曝上限保留为discard行。GCN 26596另称该观测组约15.3 mag的5σ灵敏度，但未给独立时刻/曝光，故只作近似组级灵敏度说明，不增独立行；14.4 mag亮于该阈值，与检测相容。GCN 26594后续tmid=97, 144, 201, 274 s的C=clear/unfiltered上限按规则映射G后保留。GCN 26597 的 MITSuME 表给 MID-UT=08:57:46.67、总曝光3360 s及 g′/Rc/Ic 上限；表列约 T0+6.75 h 与绝对 MID-UT 不一致，按本库统一 Swift T0，采用明确绝对 MID-UT 重算，time_err=1680 s。现有3条 MITSuME 行原MJD比表列MID-UT晚0.33 s，已按绝对MID-UT重算MJD至7位小数。元数据/无红移核对：本地 Swift/BAT、Swift GRB table、Fermi GBM/LAT、MPE、MASTER 数据和 GCN 26593–26618；本轮未运行 ADS/SciX 文献检索（按用户指示留待补跑），因此文献查全受限。同曝冲突已由用户裁定采用GCN 26596检测；独立复核已通过其余数据。",
+  "sub_tag": [
+    "lgrb",
+    "Fermi-LAT"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 按 Swift/BAT GCN 26595 触发时刻；原始 meta trigger-time 为 2019-12-27T00:00:00Z，错误地只有日期零点",
+    "t0_basis": "Swift/BAT GCN 26595 trigger time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
   "host_galaxy": null
