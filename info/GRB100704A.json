@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB100704A",
   "alias": [],
-  "ra": 133.639,
-  "dec": -24.202,
+  "ra": 133.64129638671875,
+  "dec": -24.20275115966797,
   "T0": "2010-07-04T03:35:08Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10929",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +12,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "pos_error": 1.399999976158142,
+  "pos_ref": "Swift/UVOT GRB Afterglow Catalog (Roming+2017; POS_REF=SGA)",
+  "redshift_type": "est",
+  "redshift_ref": "GCN 10940",
+  "comment": "Swift/BAT 于 2010-07-04 03:35:08 UT 触发（GCN 10929）；Greiner+2024 Table 5 分类为 L，Swift/BAT GCN 10932 给 T90=197.5±23.3 s，故 sub_tag=lgrb。采用本地 MAST/Swift UVOTGRB 目录（Roming+2017）坐标 RA=133.641296 deg, Dec=-24.202751 deg、POS_ERR=1.4 arcsec（目录未标置信水平）；较早 GCN 10930 给出 RA=133.64132 deg, Dec=-24.20269 deg、1.7 arcsec（90%）。z=3.6 不是光谱红移：GCN 10940 的 XRT 吸收柱-红移拟合在 2σ 下偏好 z=3.6(+1.1/-1.2)，但低红移解未排除，故标为估计值。\n\n审核（2026-11-01）：盘点本地 469 行（按指引未触碰 458 条 10keV X 射线行，并逐字节比较确认未变；11 条既有光学/UV 行全部按原出处校正并署名，新增 7 条 Greiner+2024 GROND 上限）。本地 external 快照核对 uvot_grb、swiftgrbba、swift_grb、swift_bat、fermi_gbm 与 mpe_greiner 共 6 个目录记录；GCN 官方事件页核对 9 篇通告，10929/10934 UVOT 与 10931 MOA 数值一致；GCN 10934 的 9 条 UVOT 表行按窗口中点与半跨度处理（真实加权中点不可恢复），10929 的 19.6 典型初报未提供窗口且已标记 discard；MOA 按单次 180 s 曝光中点处理；10929 白光初报由 10934 同次 finding-chart 上限更新，保留但 discard=y。Greiner+2024 Table 2 七项表值取自 arXiv v1 网页 PDF；VoR 与 CDS machine tablea2 原始文件未取到，已在 audit/unverified.tsv 记录替代范围。文献回退检索（Crossref 8 个书目/题名变体、arXiv 3 种写法、OpenAlex 2 次、网页检索；SIMBAD TAP 本地 TLS 失败，ADS/SciX 未覆盖，见本批共享通道行）：Greiner+2024 为新增直接测光，Bannister+2012 为 1076 s/DM 195/6.2σ 单脉冲候选但未给可入库流量值，故未添加射电光变行；Deng+2014 与 Wei+2015 只讨论可能的 FRB/GRB 关联。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -346,6 +348,12 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "reviewer": "LHe496@Codex",
+      "pr": 731,
+      "review_date": "2026-11-01"
     }
   },
   "articles": [
@@ -355,7 +363,32 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2015PhRvL.115z1101W",
       "bibtex": "@ARTICLE{2015PhRvL.115z1101W,\n       author = {{Wei}, Jun-Jie and {Gao}, He and {Wu}, Xue-Feng and {M{\\'e}sz{\\'a}ros}, Peter},\n        title = \"{Testing Einstein's Equivalence Principle With Fast Radio Bursts}\",\n      journal = {\\prl},\n     keywords = {04.80.Cc, 95.30.Sf, 98.70.Dk, 98.70.Rz, Experimental tests of gravitational theories, Relativity and gravitation, Radio sources, gamma-ray sources, gamma-ray bursts, Astrophysics - High Energy Astrophysical Phenomena, General Relativity and Quantum Cosmology},\n         year = 2015,\n        month = dec,\n       volume = {115},\n       number = {26},\n          eid = {261101},\n        pages = {261101},\n          doi = {10.1103/PhysRevLett.115.261101},\narchivePrefix = {arXiv},\n       eprint = {1512.07670},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015PhRvL.115z1101W},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Greiner+2024",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Bannister+2012",
+      "title": "Limits on prompt, dispersed radio pulses from gamma-ray bursts",
+      "url": "https://doi.org/10.1088/0004-637X/757/1/38",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Deng+2014",
+      "title": "Cosmological Implications of Fast Radio Burst/Gamma-Ray Burst Associations",
+      "url": "https://doi.org/10.1088/2041-8205/783/2/L35",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "source": "LHe496@Codex"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
