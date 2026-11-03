@@ -1,29 +1,41 @@
 {
   "transient_id": "GRB251214B",
-  "alias": [],
-  "ra": 330.21095,
-  "dec": -9.16335,
-  "T0": "2025-12-14T09:02:18Z",
-  "T0_ref": null,
+  "alias": [
+    "MASTER OT J220050.55-090945.8",
+    "GRB251214377",
+    "bn251214377"
+  ],
+  "ra": 330.21053,
+  "dec": -9.1629,
+  "T0": "2025-12-14T09:02:17Z",
+  "T0_ref": "GCN 43089（Swift/BAT 触发时刻 09:02:17 UT；官方目录 swiftgrbba 快照同为 09:02:17.000）；多触发仪器互不一致（Fermi/GBM 09:02:18.028 UT，GCN 43120；GECAM-B 09:02:19.10 UT，GCN 43113），按 §3.8 有 Swift 以 Swift 为准",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.709,
   "tag": [
     "grb"
   ],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 43089",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 0.43,
+  "pos_ref": "GCN 43105",
+  "redshift_type": "phot",
+  "redshift_ref": "GCN 43123",
+  "comment": "GRB 251214B＝Swift/BAT trigger 1423875＋Fermi/GBM trigger 787395743（251214377）＋GECAM-B 触发，三方触发互证同一事件（GCN 43089/43088/43113）。T0 取 Swift/BAT 触发 09:02:17 UT（GCN 43089）；Fermi/GBM 09:02:18.028 UT（FERMIGBRST 目录快照，GCN 43120 写 09:02:18.03；MET 787395743.028 朴素换算偏 5 s＝2001 年以来 5 个闰秒，已核）、GECAM-B 09:02:19.10 UT（GCN 43113）并列备查；原 bot 值 T0=2025-12-14T09:02:18Z（t0_basis=meta_trigger）已按 §3.8 改锚，lc 全表 time/mjd 按新 T0 重算自洽。定位采用 Swift/UVOT 精化位 330.21053/−9.16290、0.43″（半径，90% 置信，GCN 43105）；链条备查：BAT 板载 330.217/−9.167 ±3′（GCN 43089）→ BAT 地面 330.222/−9.155 ±1.2′ 90%（GCN 43129）→ XRT 增强位 330.21095/−9.16335 ±1.9″ 90%（GCN 43089）与 330.21069/−9.16291 ±2.1″ 90%（GCN 43098）→ UVOT 0.43″ 90%（GCN 43105，采纳）。红移：宿主候选星系（Legacy Survey 亮星系）光度红移 z=0.709±0.078（Duncan 2022 标定，GCN 43123）记入 redshift（type=phot）；MASTER 报 SDSS z_phot=0.6634（GCN 43095）、COLIBRÍ 报 z=0.70±0.07（GCN 43103）并列备查；VLT/X-shooter 谱未测出发射线，红移未获光谱证实（GCN 43131）。t90=17.7(+1.8/−1.2) s（GECAM-B 约 70–6000 keV，GCN 43113）；T90≈15 s（Fermi/GBM 50–300 keV，GCN 43120；FERMIGBRST 目录 15.36±4.10 s）；T90=9.38±0.73 s（Swift/BAT 15–350 keV，GCN 43129），按通告 t90 判 lgrb（GBM 亦报 likely LONG，GCN 43088）。别名：「MASTER OT J220050.55-090945.8」（<GCN 43095> 原文用名「MASTER OT J220050.55-090945.8」）；「GRB251214377」「bn251214377」（<GCN 43088> 原文 trigger 编号 251214377、官方 skymap 文件名 bn251214377；FERMIGBRST trigger_name）。测光检索（2026-11-04）：仓内 gcn/archive（45889 篇 Circular 全文）命中本源 21 篇（43088/43089/43091/43093/43095/43097/43098/43100/43103/43105/43112/43113/43120/43123/43124/43129/43131/43132/43134/43141/43149），gcn.nasa.gov 在线检索确认全网恰此 21 篇、无仓外新通告；OpenAlex（1 命中、无关）、Crossref（0）、arXiv（0）均无研究文献；external/grbsn_webtool 与 external/rssgrbag 无记录；ADS/SciX 无 API 凭据（HTTP 401），检索通道受限，已登记 audit/unverified.tsv（source_id=*，search-limited），不据此断言「无文献」。行数账：原 24 行全表按新 T0 重算（原 bot 行多处把曝光起点当 time、time_err 缺失、UVOT white 误用 Pan-STARRS w 键，均已改）；GCN 43089 寻星图与 GCN 43105 white 为同一曝光，按 §3.4 去重保留 GCN 43105 精化值（43089 板载估值 17.47 留档行 comment）；新增 GCN 43105 UVOT 6 行、GCN 43091 MASTER-Tunka 上限 12 行、GCN 43095 MASTER 检出 1 行、GCN 43149 VIRT 上限 1 行，共 44 行；GCN 43112 XRT 数据为 X 射线，按契约不入库、暂不处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 Swift/BAT 触发时刻（GCN 43089，09:02:17 UT）；原 bot 值 t0=2025-12-14T09:02:18Z（t0_basis=meta_trigger，Fermi meta trigger，GCN 43088）已按 §3.8 多触发仪器规则改锚，原值留 info comment 备查",
+    "t0_basis": "swift_bat_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
