@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB140430A",
-  "alias": [],
-  "ra": 102.929167,
-  "dec": 23.016667,
-  "T0": "2014-04-30T20:33:36Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 140430A",
+    "BAT 597722"
+  ],
+  "ra": 102.93589,
+  "dec": 23.02367,
+  "T0": "2014-04-30T20:33:36.527160Z",
+  "T0_ref": "GCN 16190（Swift/BAT 触发通告：At 20:33:36 UT, the Swift Burst Alert Telescope (BAT) triggered, trigger=597722，整秒精度）；亚秒取触发仪器官方值 trigger_time=2014-04-30T20:33:36.527160Z（MET 420582828.48；batgrbproduct 官方通告页与仓内 Swift/BAT 目录快照一致，Konus-Wind 目录 20:33:36.527 同值，swiftgrbba 20:33:36.000 为截断）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,11 +15,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
+  "pos_error": 0.62,
+  "pos_ref": "GCN 16190（Swift/UVOT 精化定位，90% 含半径 0.62″）",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 16194",
-  "comment": null,
+  "comment": "Swift/BAT 触发 597722（GCN 16190）。定位：UVOT 精化位置（GCN 16190，0.62″/90%）；XRT enhanced 1.9″/90%（GCN 16195）与 NOT 0.3″（GCN 16193）互证，原库坐标为 MPE Greiner 粗定位（3′）已替换。z=1.60：VLT/X-shooter 吸收线+[O III] 发射（GCN 16194）；GTC 光谱 z=1.600±0.001（Kopac+2015）互证 → redshift_type=spec。sub_tag=lgrb：按目录 t90=173.588±3.707 s（Swift/BAT catalog，15-350 keV）判 lgrb；GCN 16200 同值 173.6±3.7 s。测光检索（2026-11-04）：仓内 gcn/archive 全文命中 14 篇（GCN 16190-16222 全部已读，其中 8 篇含光学测光/上限，均已核对入库）；external/ 的 uvot_grb、rssgrbag、grbsn_webtool 无本源记录，swift_bat/mpe_greiner/swiftgrbba/swift_xrt_live 仅用于身份与 T0 互证；ADS 命中 16 条，非 GCN 文献 2 篇：Kopac+2015（ApJ 813,1，Table 4 已逐值核对入库）；Shrestha+2022（MNRAS 516,1584，RINGO3 均匀再归约）测光仅见图无数表，不入库（其偏振上限亦非测光）。UKSSDC Burst Analyser qdp 逐点核对：UVOT 67 点全部在库（Fν→AB 换算核验），X 射线 201 点时间全等。X 射线行（band=10keV，201 行）不在审核范围，未改未删，仅因 T0 改正机械重算 mjd（mjd=T0+time）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -349,6 +352,11 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
     }
   },
   "articles": [
@@ -374,5 +382,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
