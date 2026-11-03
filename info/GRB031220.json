@@ -1,37 +1,46 @@
 {
   "transient_id": "GRB031220",
-  "alias": [],
+  "alias": [
+    "H2976",
+    "GRB 031220"
+  ],
   "ra": 69.9348,
   "dec": 7.3436,
-  "T0": "2003-12-20T10:00:00Z",
-  "T0_ref": null,
+  "T0": "2003-12-20T03:29:56.700Z",
+  "T0_ref": "GCN 2496",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1.0,
+  "pos_error_confidence": null,
+  "pos_ref": "GCN 2523",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB031220=HETE-2 trigger 2976。GCN 2502 原文「localized by the HETE satellite (HETE trigger 2976)」、GCN 2503 标题 GRB031220(=H2976)（alias「H2976」出处即此）；alias「GRB 031220」为 GCN 2496/2513 标题原文空格用名；heasarc_grbcat 快照（grbcat_id 5755）observatories=HETE2、mpe_greiner 快照 HETE X-ray 位置 04h39m34s +07°22′（11′）互证。T0：bot 原值 2003-12-20T10:00:00Z 为占位粗值（无来源），已废止。改取 GCN 2496 原文「GRB 031220 (HETE trigger 2976; trigger time 03:29:56.7 UT)」→ T0=2003-12-20T03:29:56.700Z。互证：GCN 2510 同值（原文「triger time 03:29:56.7 UT」，拼写照录）；heasarc_grbcat 快照 2003-12-20T03:29:56Z（秒级截断，一致）；Melandri+2006（arXiv v1）「detected by HETE2 satellite on 2003 December 20.1458 UT (HETE2 trigger 2976)」（=03:29:57.1，日内 4 位小数精度，一致）；GCN 2495（ROTSE 首图 2003-12-20 05:16:14 UT=触发后 1.77 h）；GCN 2502（Chandra 于 25 Dec 18:18 UT 开始观测、原文「spanned the interval 5.6-6.1 days after the burst」，与新 T0 自洽）。原 extra_data：t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger（bot），已改写，原值留此备查。Trigger_Instrument：HETE-2（HETE 卫星 SXC 误差框定位；库内已有 15 例 HETE-2 先例）。位置：ra/dec=Chandra 源 #1（X 射线余辉候选，GCN 2523「The most likely afterglow candidate on the basis of X-ray data is then source #1」）的精化值 04:39:44.35 +07:20:36.99（GCN 2502 首测 36.74″ 并列备查）；pos_error=1.0″ 为 GCN 2502 源 #1 统计误差（dR=0.009 s×15≈0.13″、dD=0.13″）与其姿态重建系统误差「about 1''」象限叠加所得；GCN 2503 对 Chandra 源曾按保守值 0.6″ 使用（并列备查）；来源未标注置信水平，pos_error_confidence 留空。分类：sub_tag=XRR 依 GCN 2503 原文「the X-ray rich GRB031220 (HETE trigger 2976)」；Melandri+2006 将本暴归为 Dark Burst（无光学余辉确认，表 3 星等视为宿主/上限性质）。瞬时辐射量（Melandri+2006，arXiv v1，6-120 keV，HETE2 trigger 2976）：Epeak=49.24 keV、fluence=1.946e-06 erg/cm2、持续约 23.7 s、计数率 466 counts/s；未据「lasted ~23.7 s」自行判 lgrb（原文未给出 T90 定义、亦无来源显式长短分类，见 PR 待决事项）。红移：无实测；Melandri+2006 光度学估计 best afterglow candidate 源 #1 Zphot=1.90±0.30（基于候选宿主 SED 拟合，非实测、宿主身份未确证，故 redshift 字段保持 null，值列此备查）。测光检索（2026-11-03）：仓内 gcn/archive 未生成本机不可查、external/rssgrbag 与 external/grbsn_webtool 与 external/uvot_grb 均无记录、heasarc_grbcat 与 mpe_greiner 快照仅目录级参数；GCN 站三路检索（GRB031220/H2976/「GRB 031220」）共命中 11 篇并全部实开：2494（Lulin R 20.9 上限）、2495（ROTSE 无滤光 19.2 上限@1.9 h）、2496（TokyoTech 无滤光 16.5 上限）、2497（Subaru I 带无数值）、2498（Kyoto 无滤光 ~17.8 上限）、2499（Palomar r′ R~23/R~22.5 上限）、2502 与 2523（Chandra X 射线，不入库）、2503（TNG R 五值）、2510（Miyazaki 无滤光 17.51 上限）、2513（CTIO R 七值）；外部文献检索：arXiv API 短语命中 0、Semantic Scholar 429 限流、ADS/SciX 无凭据（search-limited，不据此下「无文献」结论）；研究文献以 Melandri+2006（A&A 451, 27 = astro-ph/0510604）闭环：其表 2/3 载 Subaru I、TNG R/K′、CAHA JHK′、BUSCA U BRI 六候选源多历元测光，但为银消改正后星等（E(B−V)=0.146，Schlegel+1998）、性质为宿主候选且 VoR 不可得（A&A 站 DataDome 403、ADS scanned PDF AccessDenied、CDS 连接重置，仅 arXiv v1 全文），同测量以 GCN 原始值为准、新历元表未入库（PR 待决事项）。本源 lc 无 X 射线行；检索发现的 Chandra X 射线测光（GCN 2502/2523、Melandri+2006 表 1）按范围约定不入库。",
   "sub_tag": [
     "XRR"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 已更正为 HETE-2 触发时刻 2003-12-20T03:29:56.700Z（GCN 2496 原文 trigger time 03:29:56.7 UT）；bot 原值 2003-12-20T10:00:00Z（meta_trigger 占位粗值）废止，原值与判据留存于 comment",
+    "t0_basis": "GCN 2496（HETE-2 trigger 2976；GCN 2510 同值、heasarc_grbcat 快照 03:29:56Z、Melandri+2006 Dec 20.1458 UT 互证）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-02"
+    }
   },
   "articles": [
     {
       "name": "Melandri+2006",
       "title": "Multi-wavelength analysis of the field of the dark burst GRB 031220",
-      "url": "https://ui.adsabs.harvard.edu/abs/2006A&A...451...27M",
+      "url": "https://doi.org/10.1051/0004-6361:20053641",
       "bibtex": "@ARTICLE{2006A&A...451...27M,\n       author = {{Melandri}, A. and {Gendre}, B. and {Antonelli}, L.~A. and {Grazian}, A. and {de Ugarte Postigo}, A. and {Gorosabel}, J. and {Piro}, L. and {Kosugi}, G. and {Kawai}, N. and {de Pasquale}, M. and {Garmire}, G.~P.},\n        title = \"{Multi-wavelength analysis of the field of the dark burst GRB 031220}\",\n      journal = {\\aap},\n     keywords = {gamma, rays: bursts, gamma rays: observations, X-rays: general, galaxies: photometry, Astrophysics},\n         year = 2006,\n        month = may,\n       volume = {451},\n       number = {1},\n        pages = {27-33},\n          doi = {10.1051/0004-6361:20053641},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0510604},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006A&A...451...27M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
     }
