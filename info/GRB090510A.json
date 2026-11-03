@@ -1,22 +1,31 @@
 {
   "transient_id": "GRB090510A",
-  "alias": [],
+  "alias": [
+    "GRB 090510",
+    "GRB090510A",
+    "GRB090510016",
+    "GRB 090510.016",
+    "bn090510016",
+    "BAT 351588",
+    "Swift 351588",
+    "GRB 090510S"
+  ],
   "ra": 333.554167,
   "dec": -26.566667,
-  "T0": "2009-05-10T00:23:01.220000Z",
-  "T0_ref": null,
+  "T0": "2009-05-10T00:23:00.000Z",
+  "T0_ref": "GCN 9331（Swift/BAT trigger 351588，00:23:00 UT）；Swift 目录 TRIGTIME 263607780.0（uvot_grb/SWIFTGRB 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.903,
   "tag": [
     "grb"
   ],
   "pos_error": 1.4,
   "pos_ref": "GCN 9339",
-  "redshift_type": null,
-  "redshift_ref": "GCN 9353",
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "McBreen et al. 2010, A&A, 516, A71（宿主 [OII]/Hβ 发射线，z=0.903±0.001）；GCN 9353（VLT/FORS2，z=0.903±0.003）",
+  "comment": "短暴 GRB 090510A（Swift/BAT trigger 351588；Fermi GBM trigger 263607781/bn090510016；与同日 GRB 090510B（GBM trigger 263634461/090510325，07:47:39.51 UT，GCN 9347）为不同事件，未合并）。T0=Swift/BAT 触发时刻 00:23:00 UT（GCN 9331；Swift 目录 TRIGTIME 263607780.0）。三仪器触发时刻并列：GBM 00:22:59.97（GCN 9336；FERMIGBRST 目录 00:22:59.971）、LAT 机载触发 00:23:01.22（GCN 9334；为修订前本库 T0 的出处，系 LAT 对主峰的机载触发，晚于 GBM 触发 1.25 s）；多个触发仪器矛盾时按提示词 §3.2 取 Swift。BAT 精细化分析 T90=0.3±0.1 s（15–350 keV，GCN 9337）；t90=0.960±0.138 s（50–300 keV，FERMIGBRST），按目录 t90 判 sgrb。红移 z=0.903：McBreen+2010（A&A 516 A71）宿主发射线 z=0.903±0.001（已发表，取为字段依据）；GCN 9353（VLT/FORS2）z=0.903±0.003；redshift_type=spec。定位=Swift/XRT 增强位置 RA=333.55271 Dec=-26.58266（GCN 9339，1.4″，90% 置信）。宿主候选两个（GCN 9351：333.55220,-26.584525 与 333.54963,-26.582294，wh 均 21.61±0.17）——候选未定论，按 §3.10 不建立 host_galaxy。别名均取自 extra_data.catalog_data 各目录 name_alt（FERMIGBRST/2FLGC/AGILE-MCAL/SWIFTGRB/UVOTGRB/MPE Greiner 表；GRB090510A 见 AGILE-MCAL 目录，用于与 090510B 区分）。GRB090510016 与 GRB 090510.016 为 GCN 9334、GCN 9336 通告与 FERMIGBRST/2FLGC 目录的原文用名（Fermi trigger 263607783 / 090510016）。时间轴：全表 T0 统一为 BAT 触发时刻。修订前 info T0 为 LAT 机载触发 00:23:01.22，原 mjd 曾按旧 T0 计算、绝对时刻系统性偏晚 1.22 s；本次把光学/UV 行按 mjd=T0_new+time 重算（time 列本身即各来源 BAT 历元值，未改动），GCN 9332/9342 行 time 按 §3.2/§3.8 由原文窗口重取中点，X 射线行（band=10keV，73 行）保持原样、其 mjd 需维护者按 mjd=T0_new+time 机械重算（2026-10-31 裁定）。测光检索（2026-11-03）：仓内 gcn/archive 命中 25 篇含 090510（其中本暴通告 19 篇、同日 090510B 与后续类比文献 6 篇），含光学数值仅 GCN 9332/9338/9342/9351/9352 五篇；external/rssgrbag、external/grbsn_webtool 无记录，external/uvot_grb 仅目录级参数（用于身份与 T0 互证）。ADS 检索「GRB 090510」命中约 40 篇，其中光学测光实质来源：De Pasquale+2010（UVOT 光变仅图无表，不取数）、McBreen+2010（无测光表）、Nicuesa Guelbenzu+2012 表1（101 行逐值核对入库）、Roming+2017 noc-db（57 行逐值核对入库）。补行 9 行：GCN 9351 白光叠加探测 1 行、GCN 9352 GROND 叠加 g'r'i'z' + J/H/K 上限 7 行、GCN 9354 VLA 8.46 GHz 合并上限 1 行。VizieR 全镜像（CDS/CFA/china-vo/NAOJ）本次会话网络不可达，检索通道受限。",
   "sub_tag": [
     "sgrb",
     "Fermi-LAT"
@@ -904,6 +913,11 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
   },
   "articles": [
@@ -941,7 +955,32 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract",
       "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Nicuesa Guelbenzu+2012",
+      "title": "The late-time afterglow of the extremely energetic short burst GRB 090510 revisited",
+      "url": "https://ui.adsabs.harvard.edu/abs/2012A%26A...538L...7N/abstract",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://ui.adsabs.harvard.edu/abs/2017ApJS..228...13R/abstract",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "McBreen+2010",
+      "title": "Optical and near-infrared follow-up observations of four Fermi/LAT GRBs: redshifts, afterglows, energetics, and host galaxies",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010A%26A...516A..71M/abstract",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "De Pasquale+2010",
+      "title": "Swift and Fermi Observations of the Early Afterglow of the Short Gamma-Ray Burst 090510A",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010ApJ...709L.146D/abstract",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
