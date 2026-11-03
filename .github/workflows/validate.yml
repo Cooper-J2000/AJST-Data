@@ -57,3 +57,12 @@ jobs:
           GITHUB_EVENT_PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
           GITHUB_EVENT_PULL_REQUEST_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
         run: python3 tools/check_pr_scope.py --strict
+      # 阻断级守卫：本 PR 改了 T0 就必须让 lc 行 `mjd = T0 + time` 自洽（2026-11-03 新增）。
+      # 背景：2026-11-03 批次 23 个改 T0 的 PR 里 8 个把 X 射线块漏在旧历元（整块偏 1.9 s ~ 21 h）。
+      # validate.py 对这一族只有警告级，作者普遍不知道「改 T0 要重算」→ 这里变红。
+      # 不规定修法：mjd := T0+time（XRT/BA 口径）或 time 随 T0 平移（旧历元口径）都通过。
+      - name: T0 rebase guard (mjd must equal T0 + time)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}" || true
+          python3 tools/check_t0_timebase.py --base "origin/${{ github.base_ref }}" --head HEAD --strict
