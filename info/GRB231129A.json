@@ -1,22 +1,25 @@
 {
   "transient_id": "GRB231129A",
-  "alias": [],
-  "ra": 317.54581,
-  "dec": 41.52062,
+  "alias": [
+    "GRB231129.21"
+  ],
+  "ra": 317.54381,
+  "dec": 41.52204,
   "T0": "2023-11-29T05:05:59.096760Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "T0_ref": "GCN 35208 (Gropp et al., Swift team): \"At 05:05:59 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 231129A (trigger=1199764)\"; 亚秒 .096760 取自仓内 Swift-BAT 目录快照 (external/swift_bat, Trig_time_UTC=2023-11-29T05:05:59.096760), 与 GCN 整秒一致",
+  "T0_offset": -1.748,
+  "T0_offset_ref": "Swift/BAT 目录 external/swift_bat 快照 summary_burst_durations.txt: T100_start=-1.748 s (辐射始于自动触发之前); GCN 35241 能谱积分窗 T-1.75 起 互证",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 2.2,
-  "pos_ref": "GCN 35220",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 35220 (Goad et al., Swift-XRT team enhanced position): RA,Dec=317.54381,+41.52204, 2.2 arcsec (radius, 90% confidence); GCN 35208 XRT 初报位 317.54581/41.52062 (4.0 arcsec, 90%) 备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 (fsy@zcode, 2026-11-04)。身份: Swift/BAT trigger 1199764 (GCN 35208 原文 At 05:05:59 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 231129A); INTEGRAL/IBAS (GCN 35209, 触发 05:05:59 UT, 位 317.53411/+41.51942, 1.5 arcmin 90%; 原文笔误 November 25 应为 November 29, 通告签发日即 11-29)、GECAM-C (GCN 35210, 设备触发 T0=05:06:01.850 UTC, 差 2.75 s 不作锚)、VZLUSAT-2 (GCN 35248, 峰 05:06:01 UTC) 同暴互证; mpe_greiner 快照位 317.5375/41.55 一致。同日近邻甄别: GRB 231129B (MAXI/GSC, GCN 35214, 探测 14:03:05 UT 晚本源约 9 h, 位 RA 285.662/Dec +40.278, 距本源 24.0 度) 与 GRB 231129C (MAXI, Dec -81.6) 均为独立事件, 无混淆; GCN 检索 (2026-11-04) 未见任何 EP (爱因斯坦探针) 系列通告涉及本源。T0: 整秒与 GCN 35208 一致, 亚秒 .096760 取自 Swift/BAT 目录快照 (external/swift_bat summary_general.txt, Trig_time_UTC=2023-11-29T05:05:59.096760; MET 列为设备时未作换算依据); extra_data.t0_basis=meta_trigger 之原值经核即 BAT 目录触发时刻, 保留未改。T0_offset=-1.748 s: BAT 目录 T100_start=-1.748 s (external/swift_bat summary_burst_durations.txt), 辐射始于自动触发之前; GCN 35241 能谱积分窗 T-1.75 至 T+118.97 s 互证。pos: 改取 XRT enhanced 位 (GCN 35220) RA,Dec=317.54381,+41.52204, 2.2 arcsec (radius, 90% confidence); 原库 ra/dec=317.54581/41.52062 系 GCN 35208 XRT 初报位 (4.0 arcsec, 90%), 与 pos_ref=GCN 35220 及 pos_error=2.2 不配套, 已改正; BAT refined 位 317.541/41.530 (1.0 arcmin, 90%, GCN 35241) 备查。sub_tag=lgrb: t90=106.324±2.018 s (Swift/BAT 目录 external/swift_bat 快照, 15-350 keV), 按目录 t90 判 lgrb; GCN 35241 精化 t90=105.46±1.83 s (15-350 keV) 互证。alias「GRB231129.21」: GCN 35212 MASTER 原文用名 (subject: Integral GRB231129.21: Global MASTER-Net observations report; INTEGRAL trigger No 10436 十进制日名)。测光检索留证 (2026-11-04): 1) GCN 站 query=231129A 命中 12 篇 (35208/35209/35210/35218/35220/35232/35233/35237/35239/35241/35243/35248) 全部实开, 另按 GCN 35239 引证实开 MASTER 报告 GCN 35212, 共 13 篇; query=231129B 命中 3 篇 (35214/35215/35247) 用于同日甄别; 2) 仓内: gcn/archive 不在本机, external/rssgrbag 无本源记录, external/grbsn_webtool/SourceData 无本源事件, external/uvot_grb 无本源, swift_bat/swiftgrbba/mpe_greiner 仅目录级参数 (swiftgrbba 含 X 射线 Burst Analyser 数据); 3) arXiv API (all:\"GRB 231129A\"/\"GRB 231129\"/231129A, 2026-11-04) 0 命中 (API 经 sanity 查询验证有效); 4) ADS/SciX 无 API 凭据实测 HTTP 401 -> 检索通道 search-limited (main 已有通道级登记, 不据此断言无文献)。结论: 可入库光学上限共 4 处新源 (UVOT 7 行 GCN 35233, JinShan 1 行 GCN 35237, BOOTES-5 1 行 GCN 35239, MASTER-Tunka 15 行 GCN 35212), 连同改核 5 行共 29 行; 无红移测量, redshift 留空。X 射线: GCN 35218 (XRT refined) 与 swiftgrbba 快照有 X 射线数据, 按范围暂不入库。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,7 +28,12 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
