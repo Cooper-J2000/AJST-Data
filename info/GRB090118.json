@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB090118",
-  "alias": [],
-  "ra": 49.865,
-  "dec": 18.478,
-  "T0": "2009-01-18T13:54:02Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090118"
+  ],
+  "ra": 49.8276,
+  "dec": 18.4148,
+  "T0": "2009-01-18T13:55:05.598Z",
+  "T0_ref": "Swift/BAT 官方目录 burst report（Trigger 00031292/054，2014-11-11 重处理）：BAT Trigger Time UTC 2009-01-18T13:55:05.598，注明系 ground analysis 的 T100 start（swift.gsfc.nasa.gov/results/batgrbcat/GRB090118/web/report.html，取数 2026-11-03）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,11 +15,14 @@
     "grb"
   ],
   "pos_error": 7.1,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 8828",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "BATSS slew 探测暴（ground detected during slew，Swift 无在轨触发）。T0 取 Swift/BAT 官方目录 burst report 的 Trigger Time 13:55:05.598 UT（ground analysis 的 T100 start，目录晚于 GCN 8825 且为人工核定口径，目录优先于通告）；GCN 8825 只给 slew 起点 13:54:02 UT（94 s）与爆发相对时段（T+66 s 起持续 19 s，T+71/74/81 三次峰，T90=16 s），按 T+66 反算得 13:55:08 UT（整数秒），与目录值差 2.4 s，取目录亚秒值；HEASARC SWIFTGRB 给 13:55:17.18（衍生目录，仅备查）；Swift 自身记录（uvot_grb TRIG_UT、swiftgrbba trigger_time）为 13:54:02，即 slew 起点而非触发时刻（§3.2/Issue #84 口径，原库 T0 据此改正）。T0_offset 不适用：本暴无设备自动触发（ground-detected during slew），13:54:02 为 slew 起点而非触发时刻。位置：ra/dec 取 Swift/XRT fading source RA,Dec=49.8276,+18.4148，误差 7.1″（radius，90% confidence，GCN 8828），GCN 8840 确认该源为余辉；原库 ra/dec=49.865,+18.478 为 BATSS 地面定位（3.69′，90%，含系统差，GCN 8825），与 pos_error=7.1″、pos_ref=GCN 8828 不自洽，故改正；Swift/BAT 目录 mosaic refined position RA=49.8047,Dec=18.4472 ±1.54′（90%，按 SNR 估计）备查。光学/NIR 候选体（KPNO RA 03:19:18.6 Dec +18:24:54.3，GCN 8829）位于 XRT 位置附近，但 GCN 8850 判定其 SED 与低红移星系一致、很可能非本暴余辉；相关测光行保留并在行 comment 注明。t90=13.524±1.883 s（15-350 keV，Swift/BAT 官方目录）；另 uvot_grb t90=16.0 s（15-350 keV）/ swiftgrbba t90=16.0 s（15-150 keV）、HEASARC SWIFTGRB t90=23.48 s；按目录 t90 判 lgrb。alias「GRB 090118」：<GCN 8825> 等 10 篇通告原文用名。测光检索（2026-11-03）：仓内 gcn/archive 45947 篇全文检索「090118」命中 10 篇（GCN 8825/8826/8827/8828/8829/8830/8831/8832/8840/8850，逐篇核对，其中 8 篇含光学/NIR 测光或上限）；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 external/grbsn_webtool/SourceData 无该源；ADS 检索「GRB 090118」命中 10 条、full-text 命中 9 条（均仅为上述 GCN 通告，无独立研究论文，亦无补充机读表）；TNS 不适用（GRB，无 TNS 命名）。结论：该暴全部测光出处即上述 10 篇 GCN；新增 3 行（GCN 8850 首历元 JHK 上限），更新 16 行（全部非 X 射线行的 time 随 T0 重算，其中 8 行另有数值/波段/系统级修订）。原库由 UKSSDC Burst Analyser XRT 光变导入新建（Evans+2007,2009）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -230,8 +235,20 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
