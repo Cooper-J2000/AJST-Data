@@ -1,27 +1,40 @@
 {
   "transient_id": "GRB230201B",
-  "alias": [],
-  "ra": 27.4,
-  "dec": 16.5,
-  "T0": "2023-02-01T19:56:48Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB230201831",
+    "bn230201831"
+  ],
+  "ra": 27.39,
+  "dec": 16.51,
+  "T0": "2023-02-01T19:56:48.104426Z",
+  "T0_ref": "GCN 33247（Fermi/GBM Team Final Real-time Localization）原文 trigger MET=696974213.104426 s：2001-01-01T00:00:00 UTC 纪元 + MET = 2023-02-01T19:56:53.104426（天真值），扣 5 闰秒（2006/2009/2012-07/2015-07/2017-01 生效）→ 2023-02-01T19:56:48.104426 UTC；与 FERMIGBRST（HEASARC）trigger_time=MJD 59976.83111232（=19:56:48.10445 UT）及仓内 external/fermi_gbm 快照 trigger_time=2023-02-01T19:56:48.104Z 一致（≤0.1 ms）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 7776,
+  "pos_error_confidence": "1sigma",
+  "pos_ref": "FERMIGBRST（HEASARC Fermi GBM Burst Catalog）ra=27.39 dec=16.51、error_radius=2.16 deg（列文档定义：统计 1σ，GBM 误差椭圆平均；仓内 external/fermi_gbm 快照 2026-07-19 版）；GCN 33247 实时定位 RA=27.4 Dec=16.5（statistical uncertainty 2.2 deg）为同一值舍入，备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy@zcode（2026-11-01）。通告集甄别（GCN 站全文检索，2026-11-01）：本源通告共 3 篇——GCN 33247（Fermi/GBM Team Final Real-time Localization：trigger 696974213.104426/230201831，At 19:56:48 UT 1 Feb 2023，RA 27.4 Dec 16.5 J2000，statistical uncertainty 2.2 deg，likely LONG GRB）、GCN 33249（MASTER-Net 上限表）、GCN 33259（TURBO 上限）；再按 '230201831'（1 篇=33247）与 '696974213'（0 篇）检索复核无遗漏。近邻源甄别：GRB 230201A=Fermi trigger 696922778.405158/230201236（05:39:33 UT，RA 346.5 Dec 43.8，likely SHORT；GCN 33242/33245），与 B 非同事件；IceCube-230201A 系中微子候选（GCN 33244：2023-02-01T06:20:54.42 UT，RA 345.41 Dec +12.10），与本源时刻/位置均不重合，其后续观测（Fermi-LAT 33248、IceCube 33256、BOOTES-4 33270）属库内独立条目 IceCube-230201A，不入本源。|| T0：原库值 2023-02-01T19:56:48Z 整秒正确、欠亚秒。现取 GCN 33247 原文 trigger MET=696974213.104426 s（Fermi MET 纪元 2001-01-01T00:00:00 UTC）：纪元+MET=2023-02-01T19:56:53.104426（天真值），扣 2006/2009/2012-07/2015-07/2017-01 生效的 5 闰秒 → 2023-02-01T19:56:48.104426 UTC（Python 独立重算自洽）；与 FERMIGBRST 目录 trigger_time=MJD 59976.83111232（=19:56:48.10445 UT）及仓内快照 trigger_time=2023-02-01T19:56:48.104Z 一致（≤0.1 ms）；较原值 +104.426 ms（≥60 ms，PR 已报告）。|| 坐标：ra/dec/pos_error 改取 FERMIGBRST 目录行（27.39/16.51、error_radius=2.16 deg=7776″；该列文档定义统计 1σ、GBM 误差不对称，故 pos_error_confidence=1sigma）；GCN 33247 实时值 27.4/16.5（2.2 deg）为同一值的舍入。|| t90=84.7376±2.99646 s（50-300 keV，FERMIGBRST 仓内快照），按目录 t90 判 sub_tag=lgrb；GCN 33247 原文亦称 likely LONG GRB。目录量 t90_start=−2.04807 s（T90 区间起点早于触发 2.05 s，系 5% 注量点而非爆发起点判定，未据此设 T0_offset）。|| alias：GRB230201831=FERMIGBRST 目录 name 列原值、bn230201831=trigger_name 列（仓内 external/fermi_gbm 快照 2026-07-19 版；伪形豁免证据：HEASARC FERMIGBRST 目录原文用名，Issue #69 规则）；GRB 230201B 为 GCN 33247 原文用名（=本源 id，不重复收录）。|| 测光：新增 GCN 33249 MASTER 上限 9 行（Tmid−T0=656/810/1007/1206/48914/48993/49232/49312/49393 s，历元 19:56:48 UT；原文滤光片 C=clear 无滤光片→band=G；lim 16.1–16.7 mag；原文未声明星等系统；1–4 行站点列原文即 'MASTER-' 缺名；原文 UTC 起点为截断秒，第 1/3/8 行其 Tmid 与起点+Expt/2 自差 1 s，故以原文 Tmid 列为准）；TURBO 2 行（GCN 33259）原 time=25272.0 系观测窗口起点，按 §3.8 改窗口中点 03:06:00 UT（起点+跨度/2 为约定口径，真实曝光中点不可恢复，time_err=480 s）；全表 time 按 T0 精化量 −0.104426 s 重算，mjd=T0+time 保 7 位小数。|| 测光检索留证（2026-11-01）：① 仓内 external/rssgrbag/lightcurve.jsonl（140 行）与 external/grbsn_webtool/SourceData（63 事件）grep '230201' 零命中，gcn/archive 不在仓内（SCHEMA §1 不入库，全文检索以 GCN 官网替代）；② GCN 站全文：'GRB 230201B' 3 篇（33247/33249/33259，逐篇打开核对）、'230201831' 1 篇、'696974213' 0 篇；③ arXiv API（all:\"230201B\"）0 命中，SciX 网页 JS 渲染不可达，web 检索另核 IceCube GRBweb 与 MPE Fermi 通告列表页，均无研究论文测光；④ 结论：除 33249/33259 的上限外无其他有锚点测光；本次补 MASTER 9 行、修订 TURBO 2 行，共 11 行。|| 原 bot 注记（本次改写，按 §3.10 留底）：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'（Issue #68 已知不可信标记）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=GCN 33247 原文 trigger MET 696974213.104426 s（Fermi MET 纪元 2001-01-01T00:00:00 UTC，扣 5 闰秒）→ 2023-02-01T19:56:48.104426Z；FERMIGBRST trigger_time（MJD 59976.83111232；快照 48.104Z）一致",
+    "t0_basis": "GCN 33247 trigger MET；FERMIGBRST trigger_time",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-01"
+    }
   },
   "articles": [],
   "host_galaxy": null
