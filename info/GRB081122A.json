@@ -8,7 +8,7 @@
   ],
   "ra": 338.82,
   "dec": 37.57,
-  "T0": "2008-11-22T12:28:12.211Z",
+  "T0": "2008-11-22T12:28:12.211000Z",
   "T0_ref": "GCN 8549；Fermi GBM 目录（2026-10-12 按裁定把 -0.999 s 的亚秒差直接写入 T0，原记 T0_offset=-0.999、原 T0_ref=「2FLGC trigger_met 249049693.21 的 naive MET→UTC 换算（未扣闰秒，见 extra_data.t0_note）」）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -17,7 +17,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 972,
+  "pos_error": 972.0,
   "pos_ref": "Fermi 2FLGC (HEASARC fermilgrb): Error_Radius = 0.27 deg = 972 arcsec",
   "redshift_type": null,
   "redshift_ref": null,
@@ -27,123 +27,15 @@
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
-    "catalog_data": {
-      "fermi_gbm": {
-        "other": {
-          "bii": -15.88503234,
-          "lii": 96.66212727,
-          "flux_256": 17.9178,
-          "flux_1024": 12.1936,
-          "t50_start": 0.76797,
-          "t90_start": -0.256048,
-          "error_radius": 1.0,
-          "fluence_batse": 4.61499e-06,
-          "flux_batse_64": 9.43726,
-          "flux_256_error": 0.522983,
-          "flux_batse_256": 8.97009,
-          "flnc_band_epeak": 202.65231,
-          "flnc_comp_epeak": 224.91728,
-          "flux_1024_error": 0.23816,
-          "flux_batse_1024": 6.08537,
-          "fluence_batse_error": 4.45882e-08,
-          "flux_batse_64_error": 1.04938,
-          "flux_batse_256_error": 0.522983,
-          "flux_batse_1024_error": 0.23816,
-          "flnc_band_epeak_neg_err": 23.389206,
-          "flnc_band_epeak_pos_err": 23.389206,
-          "flnc_best_fitting_model": "flnc_comp",
-          "flnc_comp_epeak_neg_err": 15.001419,
-          "flnc_comp_epeak_pos_err": 15.001419
-        },
-        "params": {
-          "t50": {
-            "v": 13.5682,
-            "err": 0.36205,
-            "band": "50-300 keV"
-          },
-          "t90": {
-            "v": 23.2964,
-            "err": 2.11108,
-            "band": "50-300 keV"
-          },
-          "epeak": {
-            "v": 224.91728,
-            "err": [
-              15.001419,
-              15.001419
-            ],
-            "frame": "obs",
-            "model": "CPL"
-          },
-          "fluence": {
-            "v": 7.54405e-06,
-            "err": 7.85417e-08,
-            "band": "10-1000 keV"
-          },
-          "peak_flux": {
-            "v": 21.5078,
-            "dt": "64ms",
-            "err": 1.11095,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
-          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB081122520",
-          "GRB 081122.520",
-          "bn081122520"
-        ],
-        "trigger_time": "2008-11-22T12:28:12.211Z"
-      },
-      "fermi_lat": {
-        "other": {
-          "tl100": 43.04,
-          "tl100_error": 16.165,
-          "trigger_met": 249049693.21,
-          "error_radius": 0.27,
-          "like_best_ts": 36.6265,
-          "like_best_fluence": 1.55561e-06,
-          "like_best_grbindex": -1.77484,
-          "ext_emission_max_ene": 2500.0,
-          "ext_emission_max_ene_t": 66.53,
-          "like_best_fluence_error": 1.7339e-06,
-          "like_best_grbindex_error": 0.355714
-        },
-        "params": {
-          "t90": {
-            "v": 23.296,
-            "err": 2.111,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 7.5441e-06,
-            "err": 7.8542e-08,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 081122.520"
-        ],
-        "trigger_time": "2008-11-22T12:28:11.997Z"
-      }
-    },
-    "t0_basis": "GCN 8549",
-    "t0_note": "T0=2008-11-22T12:28:12.211Z（来源：GCN 8549；Fermi GBM 目录）。2026-10-12 维护者裁定：亚秒级差异直接写入 T0，不再用 T0_offset（要求 |offset| > 1 s）；原 t0_note=「库中 T0=2008-11-22T12:28:13.210 为 bot 对 2FLGC trigger_met=249049693.21 按 2001-01-01T00:00:00 UTC 纪元直接换算、未扣除 2006-01-01 跳秒（2008-11 累计 1 s）所得（naive 换算=12:28:13.210，与库中 T0 逐位一致），比真实触发时刻晚 0.999 s。按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-0.999 s（提前为负），不改写光变时间轴。注：2FLGC 表内 UTC 字段为 12:28:11.997，与 GBM 目录（12.211）相差 0.214 s，属目录间口径差异；T0_offset 采用 GCN 8549/GBM 目录口径（GCN 只给到 0.01 s，按其值偏移为 -1.000）。」、原 t0_basis='GCN 8549 + Fermi GBM 目录（fermigbrst，MJD 54792.519585779）；二者一致给出真实触发 2008-11-22T12:28:12.21 UTC' 记于此。",
     "audit": {
+      "date": "2026-10-05",
       "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-05"
-    }
+      "auditor": "fsy"
+    },
+    "t0_note": "T0=2008-11-22T12:28:12.211Z（来源：GCN 8549；Fermi GBM 目录）。2026-10-12 维护者裁定：亚秒级差异直接写入 T0，不再用 T0_offset（要求 |offset| > 1 s）；原 t0_note=「库中 T0=2008-11-22T12:28:13.210 为 bot 对 2FLGC trigger_met=249049693.21 按 2001-01-01T00:00:00 UTC 纪元直接换算、未扣除 2006-01-01 跳秒（2008-11 累计 1 s）所得（naive 换算=12:28:13.210，与库中 T0 逐位一致），比真实触发时刻晚 0.999 s。按《数据审核提示词》§3.2 不改 T0，记 T0_offset=-0.999 s（提前为负），不改写光变时间轴。注：2FLGC 表内 UTC 字段为 12:28:11.997，与 GBM 目录（12.211）相差 0.214 s，属目录间口径差异；T0_offset 采用 GCN 8549/GBM 目录口径（GCN 只给到 0.01 s，按其值偏移为 -1.000）。」、原 t0_basis='GCN 8549 + Fermi GBM 目录（fermigbrst，MJD 54792.519585779）；二者一致给出真实触发 2008-11-22T12:28:12.21 UTC' 记于此。",
+    "t0_basis": "GCN 8549"
   },
   "articles": [
     {

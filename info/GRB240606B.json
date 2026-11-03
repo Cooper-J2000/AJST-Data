@@ -5,7 +5,7 @@
   ],
   "ra": 40.29507,
   "dec": -60.61201,
-  "T0": "2024-06-06T13:33:06.050Z",
+  "T0": "2024-06-06T13:33:06.050000Z",
   "T0_ref": "GCN 36633（GECAM-B 官方通告，trigger 392）：GECAM-B was triggered both in-flight and on-ground … at 2024-06-06T13:33:06.050 UTC (T0)；后续全部跟进链（Swift GUANO GCN 36628、XRT GCN 36631、7DT GCN 38724）均以该 T0 为基准；Fermi/GBM 亦在轨触发 13:33:06.087Z（FERMIGBRST trigger 739373591/240606565，GCN 36640 记 13:33:06.09 UT），Konus-Wind 13:33:07.583（其自算触发时刻，GCN 36646）备查",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,6 @@
     "grb"
   ],
   "pos_error": 2.4,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 36631",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-26",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 GECAM-B 触发时刻 2024-06-06T13:33:06.050Z（GCN 36633，trigger 392，补亚秒）；Trigger_Instrument 由 Swift/XRT 更正为 GECAM（XRT 仅余辉跟进，GRB220710A 先例）；原值保留于 comment",
     "t0_basis": "GCN 36633（GECAM-B 官方通告；GUANO/XRT/7DT 跟进链同基准）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-26"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

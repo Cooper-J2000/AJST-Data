@@ -5,7 +5,7 @@
   ],
   "ra": 5.1,
   "dec": 44.5,
-  "T0": "2024-05-14T04:03:45.040Z",
+  "T0": "2024-05-14T04:03:45.040000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2024-05-14T04:03:45.040Z（trigger 737352230.039954 / 240514169，MJD 60444.169271296）；GCN 36469（初报通告）At 04:03:45 UT 整秒；GCN 36481（精化通告）04:03:45.04 UT；GCN 36507（IPN）14625 s UT（04:03:45）三方互证",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,6 @@
     "grb"
   ],
   "pos_error": 4.0,
-  "pos_error_confidence": "1sigma",
   "pos_ref": "GCN 36481（GBM 精化通告）：on-ground calculated location RA=5.1 Dec=44.5，statistical uncertainty 4.0 degrees；仓内 ra/dec 原值 5.1/44.5 与之一致（GCN 36491 确认十进坐标为正确值，其后的 J2000 等价表述系初报残留笔误）；tdat 行 ra=5.07 dec=44.52 error_radius=3.99 为同一定位更高精度表述；初报 GCN 36469 定位（RA=341.9 Dec=-1.3，43.6 deg）已被 36481 替代，作废",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "sgrb"
   ],
   "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-26",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 737352230.039954 trigger_time=2024-05-14T04:03:45.040Z）；原 bot 值 2024-05-14T04:03:44Z 与触发时刻差 1 s，原值保留于 comment",
     "t0_basis": "FERMIGBRST trigger_time（GCN 36469/36481/36507 整秒与亚秒互证）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-26"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

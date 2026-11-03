@@ -5,17 +5,16 @@
   ],
   "ra": 107.774,
   "dec": 20.091,
-  "T0": "2001-03-24T11:37:31.990Z",
+  "T0": "2001-03-24T11:37:31.990000Z",
   "T0_ref": "RXTE ASM Burst Position Notice：GRB_TIME 41851.99 SOD {11:37:31.99} UT（触发仪器通告，NOTICE_DATE 2001-03-24 22:23:23 UT；全文经 MPE Greiner 目录页逐字转录核对）。三位小数写法与库内同型先例一致（GRB170228A 19:03:00.710Z、GRB100427A 08:32:08.710Z、GRB170921B 04:02:11.510Z：源给两位小数、写入补零为三位）；互证：GCN 1021（GRBM 11:32:46 UT+285.4 s=11:37:31.4 UT，差 0.59 s 亚秒级）、GCN 1019（010324.484 UTD 截断自洽）",
-  "T0_offset": -366,
+  "T0_offset": -366.0,
   "T0_offset_ref": "GCN 1021（BeppoSAX/GRBM 通告）：GRB 实际 onset 比 ASM 自动触发早约 360–366 s——原文「The trigger time of ASM occurs in correspondence of the tail of the last peak」，且「about 80 s」之前已有辐射；按 §3.2「自动触发前已有辐射取负值」记 −366 s（ASM 11:37:31.99 − onset≈11:31:26）。§3.2：T0_offset 为纯元数据，不改写 time 轴",
   "Trigger_Instrument": "RXTE/ASM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 468,
-  "pos_error_confidence": "90",
+  "pos_error": 468.0,
   "pos_ref": "RXTE ASM Burst Position Notice：GRB_RXTE_ERROR 0.130 deg radius (stat+sys, 90%)；RA 107.774°/Dec +20.091°（J2000），误差盒 4 角 RA 107.653–107.919°/Dec 19.906–20.241°（转录出处见 comment）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-30",
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode"
+    },
     "t0_note": "T0 已审核修正为触发仪器 RXTE ASM 通告触发时刻（原 bot 值 2001-03-24T00:30:00Z 为占位失真，原 t0_basis=meta_trigger 亦失真，见 comment）",
     "t0_basis": "rxte_asm_burst_position_notice",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-10-30"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

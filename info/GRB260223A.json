@@ -6,7 +6,7 @@
   ],
   "ra": 111.0883,
   "dec": -29.4179,
-  "T0": "2026-02-23T04:11:09.811Z",
+  "T0": "2026-02-23T04:11:09.811000Z",
   "T0_ref": "GCN 43835（Fermi/GBM 团队官方通告）：At 04:11:09.81 UT on 23 February 2026, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 260223A（trigger 793512674/260223174）；GCN 43808（GBM 实时定位）记整秒 04:11:09 UT；亚秒取触发仪器官方目录 FERMIGBRST trigger_time=2026-02-23T04:11:09.811Z（external/fermi_gbm 快照，bn260223174）；MPE BALROG trigger_timestamp=2026-02-23T04:11:09.810Z（grb.mpe.mpg.de/grb/GRB260223174/json，2026-11-03 取数）同秒互证",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -16,7 +16,6 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_error_confidence": null,
   "pos_ref": "GCN 43811（DDOTI 光学对应体：RA = 07:24:21.20 (111.0883 deg), DEC = -29:25:04.4 (-29.4179 deg)；原文未给定位误差）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,16 +24,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-11-03",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 为 Fermi/GBM 触发 793512674 时刻 2026-02-23T04:11:09.811Z（GCN 43835 给 04:11:09.81 UT；FERMIGBRST 快照同值）；原 bot 值 04:11:09Z 为整秒",
     "t0_basis": "GCN 43835 + FERMIGBRST bn260223174（external/fermi_gbm 快照）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-03"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

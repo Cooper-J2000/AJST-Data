@@ -6,7 +6,7 @@
   ],
   "ra": 167.77999877929688,
   "dec": 45.709999084472656,
-  "T0": "2016-03-14T22:17:53.734Z",
+  "T0": "2016-03-14T22:17:53.734000Z",
   "T0_ref": "GCN 19198（Hui, Fermi GBM team）：'At 22:17:53.73 UT on 14 March 2016'；FERMIGBRST (fermigbrst, bn160314929) trigger_time=2016-03-14T22:17:53.734 UTC（仓内快照 retrieved 2026-07-21；2026-10-24 HEASARC TAP 复核 trigger_time=MJD 57461.929094146 = 2016-03-14T22:17:53.734214 UTC）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 2340,
+  "pos_error": 2340.0,
   "pos_ref": "GCN 19197（Fermi-LAT team，人工核实）：best LAT on-ground location RA=167.56, Dec=+45.67, 0.65 deg（90% containment, statistical error only）→ 2340″；FERMIGBRST 行同值，MPE Greiner 表同位（Error 39′=0.65°）。另记未采用值：FERMILGRB (heasarc fermilgrb, 2FLGC 导入行) error_radius=0.79 deg＝2844″，文档仅称 \\\"localization error from LAT transient factory analysis\\\"、未标注置信水平（仓内快照 retrieved 2026-07-21，2026-10-24 HEASARC TAP 复核一致）；维护者 2026-10-24 裁定改采用有明确 90% 置信水平的 GCN 19197 值。库内 ra/dec 仍取 FERMILGRB 行（167.78/+45.71），两定位相距约 0.16° 远小于误差圆，非冲突",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,136 +24,12 @@
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "fermi_gbm": {
-        "other": {
-          "bii": 62.67813421,
-          "lii": 163.52035647,
-          "flux_256": 3.55084,
-          "flux_1024": 3.05606,
-          "t50_start": 2.81602,
-          "t90_start": -3.8401,
-          "error_radius": 0.65,
-          "fluence_batse": 2.50156e-06,
-          "flux_batse_64": 1.83397,
-          "flux_256_error": 0.490697,
-          "flux_batse_256": 1.44398,
-          "flnc_band_epeak": 736.83679,
-          "flnc_comp_epeak": 716.59839,
-          "flux_1024_error": 0.234281,
-          "flux_batse_1024": 1.1258,
-          "fluence_batse_error": 3.19995e-08,
-          "flux_batse_64_error": 0.464551,
-          "flux_batse_256_error": 0.209061,
-          "flux_batse_1024_error": 0.0968358,
-          "flnc_band_epeak_neg_err": 178.67926,
-          "flnc_band_epeak_pos_err": 178.67926,
-          "flnc_best_fitting_model": "flnc_comp",
-          "flnc_comp_epeak_neg_err": 141.44153,
-          "flnc_comp_epeak_pos_err": 141.44153
-        },
-        "params": {
-          "t50": {
-            "v": 13.5682,
-            "err": 2.06397,
-            "band": "50-300 keV"
-          },
-          "t90": {
-            "v": 98.5617,
-            "err": 5.43068,
-            "band": "50-300 keV"
-          },
-          "epeak": {
-            "v": 716.59839,
-            "err": [
-              141.44153,
-              141.44153
-            ],
-            "frame": "obs",
-            "model": "CPL"
-          },
-          "fluence": {
-            "v": 4.46708e-06,
-            "err": 5.85579e-08,
-            "band": "10-1000 keV"
-          },
-          "peak_flux": {
-            "v": 5.15157,
-            "dt": "64ms",
-            "err": 1.11257,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
-          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB160314929",
-          "GRB 160314.929",
-          "bn160314929"
-        ],
-        "trigger_time": "2016-03-14T22:17:53.734Z"
-      },
-      "fermi_lat": {
-        "other": {
-          "tl100": 1152.0,
-          "tl100_error": 156.77499,
-          "trigger_met": 479686677.73,
-          "error_radius": 0.79,
-          "like_best_ts": 28.4487,
-          "like_best_fluence": 1.24305e-05,
-          "like_best_grbindex": -2.14383,
-          "ext_emission_max_ene": 880.0,
-          "ext_emission_max_ene_t": 628.71997,
-          "like_best_fluence_error": 8.26181e-06,
-          "like_best_grbindex_error": 0.327521
-        },
-        "params": {
-          "t90": {
-            "v": 98.562,
-            "err": 5.431,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 4.4671e-06,
-            "err": 5.8558e-08,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 160314.929"
-        ],
-        "trigger_time": "2016-03-14T22:17:52.996Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "Error": "39",
-          "obs_date": "2016-03-14",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "11h10m14s +45° 40'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
-    },
     "audit": {
+      "date": "2026-10-24",
       "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-10-24"
+      "auditor": "Rusty-Harpoon@zcode"
     }
   },
   "articles": [
@@ -164,6 +40,5 @@
       "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null,
-  "pos_error_confidence": "90"
+  "host_galaxy": null
 }

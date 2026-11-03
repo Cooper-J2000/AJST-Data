@@ -15,7 +15,6 @@
     "grb"
   ],
   "pos_error": 3.2,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 36882（Swift-XRT 增强定位，astrometrically corrected：RA,Dec=122.33591,-37.08814，3.2 arcsec 90% 包含半径，距 BAT 定位 103″）；原库 ra/dec=122.3378/-37.0923 系 GCN 36851 XRT promptly downlinked 位置（6.4″/90%），与 36882 增强定位相距约 16.2″（计算），已统一升级为增强定位",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-26",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1242223，swift_bat 目录 2024-07-12T03:27:12.831520Z）；原 bot 值 2024-07-12T09:21:00Z 系 GCN 36874 ATCA 观测窗口止点误植（Issue #84 系族），原值与判据保留于 comment",
     "t0_basis": "swift_bat trigger_time（GCN 36851 整秒互证）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-26"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

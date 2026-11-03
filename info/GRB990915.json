@@ -6,7 +6,7 @@
   ],
   "ra": 107.3945,
   "dec": 72.9378,
-  "T0": "1999-09-15T23:15:22.553Z",
+  "T0": "1999-09-15T23:15:22.553000Z",
   "T0_ref": "HEASARC BATSE GRB catalog (batsegrb trigger 7766)",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,8 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 855,
-  "pos_error_confidence": null,
+  "pos_error": 855.0,
   "pos_ref": "Hurley+2011, ApJS 196, 1, Table 3 (IPN box center)",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,22 +24,23 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-27",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0 经 fsy 2026-10-27 审核修正为 BATSE 触发时刻（原 bot 值 1999-09-15T00:00:00Z 为名字日期占位，t0_basis=name_date；原值见 comment）",
     "t0_basis": "HEASARC BATSE GRB catalog (batsegrb trigger 7766)",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-27"
-    }
+    "bot_created": true
   },
   "articles": [
     {
       "name": "Hurley+2011",
-      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
       "title": "The Interplanetary Network Supplement to the BATSE 5B Catalog of Cosmic Gamma-Ray Bursts",
+      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
       "source": "fsy"
     }
   ],

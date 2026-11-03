@@ -6,7 +6,7 @@
   ],
   "ra": 302.81,
   "dec": -15.28,
-  "T0": "2026-05-29T02:49:57.917Z",
+  "T0": "2026-05-29T02:49:57.917000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2026-05-29T02:49:57.917Z（GBM trigger 801715802.916756 / 260529118，即 260529.118）；GCN 44733（GBM 团队）记 At 02:49:57 UT on 29 May 2026（整秒一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -24,16 +24,17 @@
     "lgrb"
   ],
   "pos_error_unit": "deg",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-27",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 801715802.916756 / 260529118）：GCN 44733 记 02:49:57 UT（整秒），亚秒 02:49:57.917 取官方目录 FERMIGBRST trigger_time；原 bot 值 2026-05-29T04:55:50Z 系 GCN 44737 GOTO 观测窗口结束时刻，已弃用（原值与排查见 comment）",
     "t0_basis": "GCN 44733 + fermi_gbm",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-27"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

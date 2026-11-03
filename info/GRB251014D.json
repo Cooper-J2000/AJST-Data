@@ -5,7 +5,7 @@
   ],
   "ra": 323.9208,
   "dec": -41.85533,
-  "T0": "2025-10-14T21:54:40.550Z",
+  "T0": "2025-10-14T21:54:40.550000Z",
   "T0_ref": "GCN 42274（Swift/BAT 触发通告）：At 21:54:40.55 UT triggered and located GRB 251014D（trigger=1404126，触发仪器自给亚秒）；仓内 swift_bat 快照未含该触发（快照截断于此）；GCN 42315（BAT 精化）同 trigger 号",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,6 @@
     "grb"
   ],
   "pos_error": 3.4,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 42284（Swift-XRT 增强定位：RA,Dec=323.92080,-41.85533，3.4 arcsec 90% 包含半径）——衰减 >3σ 的未编目 X 射线源，likely the GRB afterglow；原库 ra=323.9208 与之一致（末位 0 省略）；BAT 定位备查：on-board 323.918/-41.839（3′，GCN 42274）、地面 323.933/-41.873（2.7′，GCN 42315）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-26",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1404126，GCN 42274 亚秒值 2025-10-14T21:54:40.550Z）；原 bot 值 2025-10-14T00:28:30Z 在全部通告中无出处（早 21.4 h，bot 无源抽取），原值保留于 comment",
     "t0_basis": "GCN 42274（Swift/BAT 触发通告亚秒值）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-26"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

@@ -16,7 +16,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1692,
+  "pos_error": 1692.0,
   "pos_ref": "HEASARC fermilgrb (2FLGC, Axelsson+2019)",
   "redshift_type": null,
   "redshift_ref": null,
@@ -26,64 +26,27 @@
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
-    "catalog_data": {
-      "fermi_lat": {
-        "other": {
-          "tl100": 463.92001,
-          "tl100_error": 201.94501,
-          "trigger_met": 240792050.08,
-          "error_radius": 0.47,
-          "like_best_ts": 23.2328,
-          "like_best_fluence": 1.69879e-05,
-          "like_best_grbindex": -1.78464,
-          "ext_emission_max_ene": 1700.0,
-          "ext_emission_max_ene_t": 9018.86035,
-          "like_best_fluence_error": 1.88383e-05,
-          "like_best_grbindex_error": 0.400445
-        },
-        "params": {
-          "t90": {
-            "v": 13.376,
-            "err": 0.41,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 1.7392e-06,
-            "err": 2.4448e-08,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 080818.945"
-        ],
-        "trigger_time": "2008-08-18T22:40:49.002Z"
-      }
-    },
-    "t0_basis": "bot T0=2008-08-18T22:40:50.080Z 为 2FLGC 表 trigger_met=240792050.08 s (Fermi MET, 纪元 2001-01-01T00:00 UTC) 的直接换算 (240792050.08-2786*86400=当日 81650.08 s), 未扣 2006-01-01 的 1 个跳秒; 权威触发时刻取 HEASARC fermigbrst: MJD 54696.945012489 = 22:40:49.079Z (von Kienlin+2014 目录值; GCN 8116 记 22:40:49 UT; 2FLGC 表 time=MJD 54696.9450116 = 22:40:49.002Z 为另一口径)",
-    "t0_note": "真实触发比库中 T0 早 1.001 s (恰为 2006 年跳秒+1ms 舍入), 按《数据审核提示词》§3.2 不改 T0, 记 T0_offset=-1.001 s (提前为负); 无光变表, 不涉及时间轴改写",
     "audit": {
+      "date": "2026-10-05",
       "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-05"
-    }
+      "auditor": "fsy"
+    },
+    "t0_note": "真实触发比库中 T0 早 1.001 s (恰为 2006 年跳秒+1ms 舍入), 按《数据审核提示词》§3.2 不改 T0, 记 T0_offset=-1.001 s (提前为负); 无光变表, 不涉及时间轴改写",
+    "t0_basis": "bot T0=2008-08-18T22:40:50.080Z 为 2FLGC 表 trigger_met=240792050.08 s (Fermi MET, 纪元 2001-01-01T00:00 UTC) 的直接换算 (240792050.08-2786*86400=当日 81650.08 s), 未扣 2006-01-01 的 1 个跳秒; 权威触发时刻取 HEASARC fermigbrst: MJD 54696.945012489 = 22:40:49.079Z (von Kienlin+2014 目录值; GCN 8116 记 22:40:49 UT; 2FLGC 表 time=MJD 54696.9450116 = 22:40:49.002Z 为另一口径)"
   },
   "articles": [
     {
       "name": "Axelsson+2019",
-      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "title": "A decade of Gamma-Ray Bursts observed by Fermi-LAT: The 2nd GRB catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "source": "fsy"
     },
     {
       "name": "vonKienlin+2014",
-      "url": "https://doi.org/10.1088/0067-0049/211/1/13",
       "title": "The 2nd Fermi GBM Gamma-Ray Burst Catalog: The First Four Years",
+      "url": "https://doi.org/10.1088/0067-0049/211/1/13",
       "source": "fsy"
     }
   ],

@@ -54,7 +54,7 @@
 | `comment` | string\|null | `null` | 备注 |
 | `tag` | string[] | `[]` | 主标签（如 `grb`、`sn`；受控词表见 `tags.json`） |
 | `sub_tag` | string[] | `[]` | 副标签（如 `lgrb`、`snii`） |
-| `extra_data` | object\|null | `null` | 自由扩展字段（入库来源、抓取标记等），不做 schema 约束 |
+| `extra_data` | object\|null | `null` | 自由扩展字段（入库来源、抓取标记等），不做 schema 约束；其中 `params` 子键为规格统一物理量（`{"<key>": {"v","err","src"}}` 平铺结构，键注册表在代码仓库 `backend/params_registry.json`），其余子键自由扩展不变 |
 | `articles` | object[] | `[]` | 研究文章，见 §2.1 |
 | `host_galaxy` | object\|null | `null` | 宿主星系，见 §2.2 |
 

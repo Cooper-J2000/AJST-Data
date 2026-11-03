@@ -6,7 +6,7 @@
   ],
   "ra": 31.3,
   "dec": 45.6,
-  "T0": "2015-11-07T20:24:52.297Z",
+  "T0": "2015-11-07T20:24:52.297000Z",
   "T0_ref": "GCN 18570（'At 20:24:52.30 UT on 07 November 2015, the Fermi Gamma-ray Burst Monitor triggered and located GRB 151107B (trigger 468620696 / 151107851)'）；Fermi GBM 目录 FERMIGBRST bn151107851 trigger_time=2015-11-07T20:24:52.297Z，亚秒精度取目录值（与 GCN 18570 的 52.30 UT 一致；MET 468620696 按真实 UTC 扣 4 闰秒恰得 20:24:52，无 Issue #67 型 naive 换算残差）；AGILE MCAL 快照同爆记录 trigger 20:24:59（MCAL 自身触发历元，相互印证）；CALET CGBM 20:24:54.77 为 CGBM 触发时刻（GCN 18605）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,8 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 6120,
-  "pos_error_confidence": "1sigma",
+  "pos_error": 6120.0,
   "pos_ref": "GCN 18570（'RA = 31.3, DEC = 45.6, with an uncertainty of 1.7 degrees (radius, 1-sigma containment, statistical only; there is additionally a systematic error which we have characterized as a core-plus-tail model, with 90% of GRBs having a 3.7 deg error and a small tail suffering a larger than 10 deg systematic error. [Connaughton et al. 2015, ApJS, 216, 32]'）；Fermi GBM 目录 FERMIGBRST bn151107851 error_radius=1.67 deg 一致；1.7 deg×3600=6120 arcsec，core-plus-tail 系统误差无法并入单一半径值记于此；MASTER GCN 18576 所引 GCN socket 自动定位框（RA=00:42:28 Dec=+48:48:58 r=4.5°）与 GCN 18570 不一致，未采纳",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,16 +24,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-28",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "t0 为 Fermi GBM 真实触发时刻（GCN 18570 + FERMIGBRST 目录值，2026-10-28 审核改写）",
     "t0_basis": "gcn_and_catalog_verified",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-28"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

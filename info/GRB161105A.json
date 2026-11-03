@@ -16,7 +16,6 @@
     "grb"
   ],
   "pos_error": 1.7,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 20135（Enhanced Swift-XRT position）：'RA, Dec = 120.18375, -44.77529 ... with an uncertainty of 1.7 arcsec (radius, 90% confidence)'（XRT-UVOT 对准 + USNO-B1 场源匹配改正，Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177）；GCN 20131 初步增强位置 120.1839/−44.7753（2.6″, 90%）一致；原 ra/dec 取 20131 值，本次统一为 20135 精化值（与 pos_error=1.7″ 同源）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,16 +24,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-28",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "t0 为 Swift BAT 真实触发时刻（GCN 20131 + external/swift_bat 目录快照，2026-10-28 审核改写）",
     "t0_basis": "gcn_and_catalog_verified",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-28"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

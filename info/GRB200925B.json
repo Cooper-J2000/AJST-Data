@@ -5,7 +5,7 @@
   ],
   "ra": 246.78575,
   "dec": 78.39067,
-  "T0": "2020-09-25T21:50:37.022Z",
+  "T0": "2020-09-25T21:50:37.022000Z",
   "T0_ref": "GCN 28499（Swift/BAT 触发通告，原文 'At 21:50:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200925B (trigger=997453)'，整秒）；external/swift_bat 官方目录快照（Swift/BAT GRB Catalog）trigger 997453：Trig_time_UTC=2020-09-25T21:50:37.022000（MET 622763462.720）→ 亚秒精化 T0=2020-09-25T21:50:37.022Z（核查修复：交付版取整秒并注「无亚秒可用」系遗漏目录亚秒，依 GRB250321A 等库内 Swift/BAT 同款先例采用目录亚秒）；external/swiftgrbba 快照 trigger_time=2020-09-25T21:50:37.000Z 为同值整秒表示；Hennessy+2025（MNRAS 544, 53）§2.1 同 21:50:37 UT。bot 原值 2020-09-25T22:27:07Z 系 GCN 28501 OSN 观测序列起始时刻误作 T0（Issue #84 家族），已改正",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -26,14 +26,14 @@
   "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-28",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 997453，swift_bat 目录亚秒 .022）",
     "t0_basis": "swift_bat 目录快照 trigger_time=2020-09-25T21:50:37.022000Z（trigger 997453）亚秒精化 + GCN 28499 原文 21:50:37 UT（整秒）同值；bot 原值 2020-09-25T22:27:07Z 系 OSN 观测起点（GCN 28501）误作 T0，已改正",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-28"
-    }
+    "bot_created": true
   },
   "articles": [
     {

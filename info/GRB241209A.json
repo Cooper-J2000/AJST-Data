@@ -17,7 +17,6 @@
   ],
   "pos_error": 2.2,
   "pos_ref": "GCN 38486",
-  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
   "comment": "审核（wa1kmoon@zcode，2026-11-01）。① 触发：Swift/BAT 触发 1273071（GCN 38476，05:35:44 UT，单短峰 T90≈0.25 s，Fermi-GBM 同暴亦触发）；Trigger_Instrument 原为 'Einstein Probe' 系导入错误——EP-FXT 仅事后盯梢（GCN 38517），改为 Swift/BAT。② T0=2024-12-09T05:35:44.072300Z 保持不变：即 Swift/BAT 官方目录触发时刻（仓内 external/swift_bat 快照），GCN 38476 整秒一致；Fermi/GBM 目录 05:35:44.162Z（GCN 38502）差 0.090 s，亚秒差按 Swift 优先（提示词 §3.8）；bot 原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'，现按上述口径改写。③ 定位：原 ra/dec=155.39642,6.32902 实为 HAWK-I 近红外候选体坐标（GCN 38506，±0.5″），与 pos_error=1.9″、pos_ref=GCN 38479 口径错配；改用 GCN 38486 精化位置 155.39648,+6.32872（±2.2″，90%，astrometrically corrected）；链：GCN 38479 prompt enhanced 155.39704,6.32828 ±1.9″(90%) → GCN 38486；Chandra 10:21:35.207,+06:19:42.73 ±0.3″（GCN 38538）；仓内 swiftgrbba 目录 xrt 155.39629,6.32861 ±2.0″ 备查。④ 红移置 null：XRT 误差框内两个星系——较暗者 z=1.490（VLT/X-shooter，GCN 38487），较亮者 z=0.784（OSIRIS+/GTC，GCN 38535 称 most likely host，与 Legacy Survey photo-z 0.78±0.08 一致）；Chandra X 射线源距较暗（z=1.490）星系仅 ~0.6″（GCN 38538），宿主归属未定论，按候选宿主红移规则不入字段（原库挂 0.784 系候选体红移污染）。⑤ tag=grb；sub_tag=sgrb 按目录 t90=0.256±0.091 s（Swift/BAT 目录，15–350 keV；另 GBM t90=0.128±0.181 s，50–300 keV，GCN 38502）判 lgrb/sgrb。⑥ alias 出处：'GRB241209233' 为 FERMIGBRST trigger_name（仓内 external/fermi_gbm 快照；<GCN 38474> 原文用名 'trigger 755415349.162358 / 241209233'）；'GRB241209.23' 为 MASTER 用名（<GCN 38475> 标题原文用名 'Swift GRB241209.23'）。⑦ 测光检索留证（2026-11-01）：仓内 gcn/archive 全文检索 241209A/1273071/241209233 命中 21 篇（GCN 38474–38608，其中测光类 12 篇）、external/rssgrbag 与 external/grbsn_webtool 均 0 命中；外部 Crossref 0 相关、OpenAlex 1 结果（UNLV 学位论文，无关）、INSPIRE 0 命中、ADS/SciX API 无 token 实测 HTTP 401（通道受限，已记 audit/unverified.tsv，不据此外推「无文献」）、arXiv API/网站本机 TLS 证书链不可达（curl 与 WebFetch 均失败）。结论：未发现给出本源测光表的研究论文；有锚点上限已入库——GCN 38483 MASTER-OAFA 全表（10h21m 指向系列，覆盖 BAT/XRT 位置）146 行、GCN 38500 TAROT/TCH、38504 COLIBRÍ、38509 BOOTES-7 各 1 行，共 149 行新增；GCN 38475 为 MASTER 快报，其单行（Tmid 261 s、19.3 mag）与 38483 表重复，未另列入库。⑧ 未入库记录：GOTO 上限 L>20.5（GCN 38481，两历元 05:42:56/05:50:51 UT 各 4×90 s，L 波段 400–700 nm；filters.json 确有 GOTO-L 键（先例 GRB180626B/GRB240502A），两行已入库——初审误判无键，核查已纠正）；CAHA 2.2m 22.1 mag co-add 上限（GCN 38509，06:03 UT 起 3×60 s，原文未说明滤光片，无法定 band）；EP-FXT 0.5–10 keV ~3E-14 erg/cm2/s（GCN 38517）与 Chandra（GCN 38538）为 X 射线数据，暂不处理；本源 lc 无能量串 X 射线行。⑨ 原文笔误：GCN 38535 正文把 GCN 38478（实为 GRB 241209B，SVOM）列为本暴通告之一。⑩ 已有行修正：UVOT 行 band 'w'→'uvot-white'、time 改曝光中点 184 s（原 108.928 s 为起测时刻）；REM 三行 time 改按原文中点 1788/2526/4027.8 s（原导入值偏差 1–2 s）；VLT 行 time 改 2665.53 s（Dec 9.264 UT 精确换算，原文另记 0.77 hr 自差约 1.8 min 已注明）；ATCA 两行 time 改窗口中点 480255.93 s、补 time_err=10800 s，flux_density 浮点噪声清理（0.036000000000000004→0.036、0.051000000000000004→0.051）；全部行 mjd 按 T0+time 重算至 7 位小数。",
@@ -25,16 +24,17 @@
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-11-01",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0=Swift/BAT 目录触发时刻 2024-12-09T05:35:44.0723（GCN 38476 整秒一致；Fermi/GBM 目录 05:35:44.162Z 差 0.090 s，按 Swift 优先）",
     "t0_basis": "swift_bat_catalog",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-01"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

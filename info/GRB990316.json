@@ -6,7 +6,7 @@
   ],
   "ra": 152.08,
   "dec": -4.44,
-  "T0": "1999-03-16T09:40:39.545Z",
+  "T0": "1999-03-16T09:40:39.545000Z",
   "T0_ref": "CGRO/BATSE trigger 7475 触发时刻：BATSE 目录（HEASARC batsegrb，external/batse 快照）trigger_num=7475 行 time=MJD 51253.4032354792、seconds_trigger=34839.5454 s（=1999-03-16T09:40:39.545 UT）；Hurley+2011（ApJS 196,1）表1 'the Universal Time of the burst at Earth' 记 09:40:39（整秒，一致）；GCN 277 记本源为 'BATSE Trigger 7475'、LOTIS 首帧始于爆发后 13.6 s。GRBCAT 原始 tdat（heasarc_grbcat.tdat.gz）990316A 实有三行：旧行 time=09:38:58.000Z、精化行 09:40:39.500Z（与触发时刻一致）、IPN 行 09:40:39.000Z（与 Hurley+2011 一致）——仓内 normalized.jsonl 取 09:38:58.000Z 系 parse.py 对同 id 多行取众数时命中旧行的快照归一化 artifact，非 time_def 定义差；按 §3.8 取触发仪器目录值（快照 normalized 值与原始 tdat 精化行差 101.5 s，≥60 ms 已在 PR 说明报告；T0 另获 GRBCAT 精化行+IPN 行+Hurley+2011+BATSE 目录四重佐证）；GCN 276 'some 7.5 hours after the outburst' 与其观测 mean UT 17:34 自洽（17:34−09:40:39≈7.9 h，原文约数）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 936,
+  "pos_error": 936.0,
   "pos_ref": "Hurley+2011（ApJS 196,1，The Interplanetary Network Supplement to the BATSE 5B Catalog）表1 行 '990316 09:40:39 7475 152.08 -4.44 0.26 152.198 -9.354 6.868 0.316'：BATSE 误差圆中心 152.08/−4.44（J2000，col 4-5）、总 1σ 统计半径 0.26°（col 6）；IPN 环带（col 7-10：极点 152.198/−9.354、角半径 6.868°、3σ 半宽 0.316°，日心系框架；本源仅此一条环带，表2 无误差盒）；arXiv:astro-ph/0605726 HTML 全文核对列定义（2026-10-27 取）；HEASARC batsegrb 目录 ra/dec 同值；GCN 277 'BATSE 3 sigma (0.3 deg statistical + 1.6 deg systematic) error circle'。原库 pos=151.5667/−5.2253（pos_ref=GCN 276）为 Wise 1m 观测视场中心，非本源定位，已改",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,25 +24,25 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-27",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0 = CGRO/BATSE trigger 7475 触发时刻（BATSE 目录 MJD 51253.4032354792 = 1999-03-16T09:40:39.545Z；Hurley+2011 表1 记 09:40:39）；bot 原值 1999-03-16T00:30:00Z 为 meta_trigger 占位、无可溯源出处（Issue #68），已按 §3.2 重锚；原 t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已改写，见 comment",
     "t0_basis": "batsegrb_trigger_7475",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-27"
-    }
+    "bot_created": true
   },
   "articles": [
     {
       "name": "Hurley+2011",
-      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
       "title": "The Interplanetary Network Supplement to the BATSE 5B Catalog of Cosmic Gamma-Ray Bursts",
+      "url": "https://doi.org/10.1088/0067-0049/196/1/1",
       "source": "fsy"
     }
   ],
-  "host_galaxy": null,
-  "pos_error_confidence": "1sigma"
+  "host_galaxy": null
 }

@@ -7,7 +7,7 @@
   ],
   "ra": 137.93,
   "dec": 14.16,
-  "T0": "2021-05-12T18:56:03.318Z",
+  "T0": "2021-05-12T18:56:03.318000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-05-12T18:56:03.318Z（trigger 642538568 / GRB210512789，MJD 59346.78892729）；GCN 30004 反算互证（started inspect … 1282 sec after trigger time at 2021-05-12 19:17:25 UT → 18:56:03 UT 整秒）；GCN 30006 观测窗口（触发后 9.5–12.1 h ↔ 04:27–06:59 UT）反算 T0≈18:56–18:58 自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -17,7 +17,6 @@
     "grb"
   ],
   "pos_error": 14.51,
-    "pos_error_confidence": "1sigma",
   "pos_ref": "FERMIGBRST 642538568 终值 GBM 定位（ra=137.93 dec=14.16 error_radius=14.51 deg）；GCN 30006 引用同一终值 final GBM position 09:11:43.20 +14:09:36.0 J2000 逐位一致；GCN 30004 初报口径 (09h 44m 43.20s +14d 10m 48.0s, R=11.56 deg) 相距约 8.0 deg 备查",
   "redshift_type": null,
   "redshift_ref": null,
@@ -26,16 +25,17 @@
     "sgrb"
   ],
   "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-25",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 642538568 trigger_time=2021-05-12T18:56:03.318Z）；原 bot 值 2021-05-13T06:59:00Z 系 GCN 30006 DDOTI 观测窗口止点误植（Issue #84 系族），原值与判据保留于 comment",
     "t0_basis": "FERMIGBRST trigger_time（GCN 30004 反算整秒互证）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-25"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

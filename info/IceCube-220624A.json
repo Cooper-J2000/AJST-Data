@@ -1,9 +1,12 @@
 {
   "transient_id": "IceCube-220624A",
-  "alias": ["IC220624A", "IceCube Alert 220624.68"],
+  "alias": [
+    "IC220624A",
+    "IceCube Alert 220624.68"
+  ],
   "ra": 224.12,
   "dec": 41.31,
-  "T0": "2022-06-24T16:13:16.410Z",
+  "T0": "2022-06-24T16:13:16.410000Z",
   "T0_ref": "GCN 32260（触发仪器 IceCube 官方通告）：首段 On 2022-06-24 at 16:13:16.41 UT、精化段 Time: 16:13:16.41 UT；AMON 通告 136766_7637140 rev0/rev1 DISCOVERY_TIME 58396 SOD {16:13:16.40} UT（2026-11-01 实读，与通告差 10 ms，亚秒容差内）；原库 16:13:16Z 为整秒截断，补触发仪器亚秒 .41（写作 .410 仅为三位小数可解析、不增精度，同已合并先例 IceCube-260722A 的 .820）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -11,19 +14,23 @@
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 32260（IceCube 离线精化方向）：RA=224.12 (+2.23/-1.95 deg)、Dec=+41.31 (+1.56/-1.56 deg)（90% PSF containment）——不对称区间无单一半径 → pos_error 留空（同库先例 IceCube-220822A/230217A 等）；AMON rev1 单值 SRC_ERROR 109.80′=6588.0″（stat-only，90%）备查；库内 ra/dec=224.12/41.31 与精化值逐位一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
   "comment": "审核 Rusty-Harpoon@zcode（2026-11-01）。【身份】IceCube 高能中微子 track-like 候选事件（ICECUBE_Astrotrack_GOLD 流，平均天体物理纯度 50%，FAR=0.173 yr^-1，GCN 32260；AMON 原始通告 gcn.gsfc.nasa.gov/notices_amon_g_b/136766_7637140.amon RUN 136766/EVENT 7637140 rev0/rev1 实读 2026-11-01：ENERGY 192.97 TeV、SIGNALNESS 0.6087、FAR 0.1732 yr^-1），非 GRB；tags.json 无中微子类目，tag/sub_tag 留空（待维护者扩表，同库各 IceCube 源）。90% 区域内无 Fermi 4FGL/3FHL 源，最近 4FGL J1504.6+4343 距 2.84 deg（GCN 32260）。同日 GRB 220624A（Fermi/GBM bn220624124，T0=2022-06-24 02:58:35 UTC，GCN 32256）为另一独立事件，与库内本源无涉。【别名】IC220624A ← GCN 32285 原文用名「IC220624A」（GCN 32357 亦用）；IceCube Alert 220624.68 ← GCN 32266 原文用名（MASTER 引初始 AMON 告警 trigger No 7637140，其初版定位 14h57m35.28s +40d41m09.6s 与 AMON rev0 一致，同一事件）。【T0】bot 原值 2022-06-24T16:13:16Z 为 GCN 32260 亚秒值 16:13:16.41 的整秒截断，按触发仪器自给亚秒补足（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」语义不变，保留）。【红移】bot 原值 redshift=0.176463（redshift_ref=gcn_llm:circulars_meta; GCN 32285）系该通告所载 blazar WISEA J145820.77+412101.9（aka 3HSP J145820.8+412102，SDSS DR13 z=0.176463±0.000027）的红移——该 blazar 是 Fermi J1458.0+4119（90% 区域内 0.2 deg 处 ~4.5σ 伽马超出的可能对应体）的候选对应体，并非本中微子事件的确证对应体：本事件无确证对应体（ZTF ToO 无候选 GCN 32270；后续候选 AT2022nit 判 SN Ia z≈0.16、AT2021bei 判 AGN 耀发 z≈0.48 均被排除，GCN 32357），红移不成立，按 §3.7「不成立的字段置 null」处置，bot 原值留档于此。【定位】90% PSF containment 不对称（RA +2.23/-1.95 deg、Dec ±1.56 deg，GCN 32260），pos_error 留空、pos_error_confidence=90 照原文；AMON rev1 圆半径 109.80′（stat-only 90%）备查。【测光检索留证】（2026-11-01）：① 仓内 gcn/archive 45947 篇全文递归检索「220624A / 220624 / 7637140 / 220624.68 / 145820」，命中本事件相关通告 9 篇（32260、32266、32270、32274、32275、32285、32290、32293、32357，逐篇打开核对），另 12 篇「220624」命中均属同日 GRB 220624A/B 或无关数字串；含可用测光锚点的仅 GCN 32270（ZTF g/r 典型深度 20.5 mag，原有 2 行）与 GCN 32266（MASTER-SAAO 4 行 C 波段上限 17.6–18.4 mag，本次补入）；GCN 32274（HAWC）与 32275（IceCube 附加中微子搜索）为 TeV/GeV 能段积分灵敏度（E^2 dN/dE / GeV cm^-2），非 Fν 测光、不适配 flux_density 列，不入库（数值见 PR 说明）；GCN 32285（Fermi-LAT >100 MeV 流量上限）与 32290/32293（Swift/XRT）为伽马/X 射线，按 §7 不入库；GCN 32357 无测光数值。② external/rssgrbag、external/grbsn_webtool 无本事件记录（grep 0 命中）。③ GCN 站 gcn.nasa.gov/circulars/32260 抽查可达（2026-11-01）、AMON 通告 gcn.gsfc.nasa.gov 实测 rev0/rev1。④ ADS（api.adsabs.harvard.edu，2026-11-01）：「IC220624A / IceCube-220624A / IceCube 220624A / Fermi J1458.0+4119 / J1458+4121 / 3HSP J145820.8」去重后命中 13 条——研究文献仅 1 篇（2024PrA....42..276Z，Zeng+2024《天文学报》42, 276，J1458+4121 的 VLBI/VLA 档案研究；ADS 摘要实读：内容为该对应体候选 blazar 的 VLBA 成像与频谱，非本事件测光；VoR 全文未获取，即便含 blazar 流量测光亦不属本事件对应体测光，不入库）；其余为 GCN 8 篇与 ATel 4 篇的题录。⑤ ATel 15478=GCN 32285 同文、15482=GCN 32290 同文（天文电报中心站 astronomerstelegram.org 直连被拦「We're Sorry!」，经 web reader 代理实读全文）；ATel 15489（TELAMON/Effelsberg，2022-07-01）：90% 区域内 4 个致密射电源 6.30/6.55 GHz 探测仅文字「接近 RFC 历史水平」无数值；J1506+4239（区域外 0.13 deg 背景耀变体）多频段流量与本事件无关；WISEA J145820.77+412101.9 45 mm 非探测未给数值上限——均无可入库数值。ATel 15493（Nesci，Foligno 30 cm，R(Cousins)，2022-07-01T20:38 UT，600 s）：rmag=17.56±0.06，测的是区域 blazar WISEA J145820.77+412101.9（Fermi J1458.0+4119 对应体候选）而非本事件对应体，不入库（存疑外部数据不合入，§3.1）。⑥ TNS 不适用（本事件无 TNS 编号；两个 ZTF 候选 AT2022nit/AT2021bei 为独立条目且均被 GCN 32357 排除）。结论：可入库测光 = ZTF 2 行（原有，随 T0 重算）+ MASTER-SAAO 4 行（本次新增），共 6 行；无本事件的探测记录。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-11-01",
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode"
+    },
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true,
-    "audit": {"status": "reviewed", "auditor": "Rusty-Harpoon@zcode", "date": "2026-11-01"}
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

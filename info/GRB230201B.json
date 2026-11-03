@@ -15,8 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 7776,
-  "pos_error_confidence": "1sigma",
+  "pos_error": 7776.0,
   "pos_ref": "FERMIGBRST（HEASARC Fermi GBM Burst Catalog）ra=27.39 dec=16.51、error_radius=2.16 deg（列文档定义：统计 1σ，GBM 误差椭圆平均；仓内 external/fermi_gbm 快照 2026-07-19 版）；GCN 33247 实时定位 RA=27.4 Dec=16.5（statistical uncertainty 2.2 deg）为同一值舍入，备查",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,16 +24,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-11-01",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0=GCN 33247 原文 trigger MET 696974213.104426 s（Fermi MET 纪元 2001-01-01T00:00:00 UTC，扣 5 闰秒）→ 2023-02-01T19:56:48.104426Z；FERMIGBRST trigger_time（MJD 59976.83111232；快照 48.104Z）一致",
     "t0_basis": "GCN 33247 trigger MET；FERMIGBRST trigger_time",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-11-01"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

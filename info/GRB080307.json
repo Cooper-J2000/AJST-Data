@@ -7,7 +7,7 @@
   ],
   "ra": 136.62799,
   "dec": 35.13896,
-  "T0": "2008-03-07T11:23:30.8141Z",
+  "T0": "2008-03-07T11:23:30.814100Z",
   "T0_ref": "Swift/BAT 触发时刻：batgrbproduct 页 TRIGTIME 226581813.44 MET = 2008-03-07T11:23:30.814100 UTC（https://gcn.gsfc.nasa.gov/notices_s/305011/BA/），与 HEASARC Swift/BAT 及 SWIFTGRB 目录 trigger_time 一致；GCN 7373（trigger 305011）整数秒自洽；GCN 7363（KANATA 11:31:18 UT=T+467 s）与 GCN 7374（RAPTOR 11:24:30.81 UT=T+60.0 s）独立互证",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -18,7 +18,6 @@
   ],
   "pos_error": 1.8,
   "pos_ref": "GCN 7366",
-  "pos_error_confidence": "90",
   "redshift_type": null,
   "redshift_ref": null,
   "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT trigger 305011（GCN 7362），Swift 名 GRB 080307；HEASARC swiftgrb / Swift/BAT 目录 name_alt 分别为 Swift 305011 / BAT 305011（入 alias）。T0 原为整秒，按触发仪器（Swift/BAT）亚秒修正为 11:23:30.8141 UTC。坐标原值 136.629, +35.151 实为 BAT 地面定位（GCN 7373 给 136.629, 35.151，误差 1.6′），与 pos_ref=GCN 7366 错配；已改为 GCN 7366 XRT enhanced 定位 136.62799, +35.13896，误差 1.8″（90% 包含半径，故 pos_error_confidence=90）；Burst Analyser 目录复算位置 136.62867, +35.13875（1.4″）备查。Gemini-N/GMOS i=22.4 点源（GCN 7369：09:06:30.78 +35:08:20.0）与 XRT 定位一致，确认为余辉；UVOT 候选体（GCN 7362）被 GCN 7367 撤回、BOAO R 探测（GCN 7364）被 GCN 7368 撤回，均已在 lc 置 discard=y。红移：无光谱值——MPE 表 z=6.1 为上限（z_flag=ul，原 redshift_ref=catalog:mpe_greiner 随 null 移此备查）；XRT NH 关系 z<4.0（GCN 7376）；BAT high-z 判据 85% 概率 z>3.5（GCN 7365/7373），均非实测，redshift 置 null。t90=125.9±24.6 s（15-350 keV，GCN 7373；Swift/BAT 目录 124.0±23.3 s、uvot_grb 目录 125.9 s、HEASARC swiftgrb 122.22 s、batgrbproduct 页 101.42±24.68 s，相互一致且均远大于 2 s）→ 按目录 t90 判 lgrb。测光检索（2026-11-03）：仓内 gcn/archive 全文命中 20 篇（GCN 7362–7408，其中 14 篇含光学数值/上限，已逐篇核对入库或记 comment；初稿误记 21 篇/7362–7400，核查更正）；external/rssgrbag、external/grbsn_webtool 无本源记录；ADS/SciX 无 API token（实测 HTTP 401，已登记 audit/unverified.tsv status=search-limited，ADS 侧检索结论记为未覆盖）；arXiv API（export.arxiv.org）连接超时不可达；OpenAlex 命中 21 条、Crossref 命中 8 条，研究文献仅 Page+2009（MNRAS 395, 328，X 射线光变）及其 AIP 会议版（doi:10.1063/1.3155878），无已发表光学测光表 → 光学数据全部来自 GCN 通告；本次新增 GCN 7375（UVOT coadd 上限 7 行）、GCN 7400（SR-22 上限 1 行）、GCN 7405（MAGNUM JHK 上限 3 行）、GCN 7408（GAO Rc/Ic 上限 2 行）共 13 行；核对/按新 T0 重算既有非 X 射线行 19 行（其中相对时长锚定的 14 行按 GCN 7374 自洽证据统一锚定真触发 T0=11:23:30.8141），撤回行 2 行置 discard=y。X 射线行（band=10keV，163 行）未动；T0 修正后其 mjd 须按 mjd=T0_new+time 由维护者重算（PR 待决）。",
@@ -26,259 +25,12 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "audit": {
+      "date": "2026-11-03",
       "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-03"
-    },
-    "catalog_data": {
-      "uvot_grb": {
-        "other": {
-          "OBJECT": "GRB080307",
-          "BAT_PIT": "PL",
-          "DISC_BY": "Swift",
-          "POS_ERR": 1.399999976158142,
-          "POS_REF": "SGA",
-          "T90_REF": "SGA",
-          "TRIG_UT": "2008-067-11:23:30",
-          "TRIGTIME": 226581810.0
-        },
-        "params": {
-          "t90": {
-            "v": 125.9000015258789,
-            "err": null,
-            "band": "15-350 keV"
-          },
-          "fluence": {
-            "v": 8.700000080352766e-07,
-            "cl": 90,
-            "err": 1.199999957179898e-07,
-            "band": "15-150 keV"
-          },
-          "peak_flux": {
-            "v": 0.4000000059604645,
-            "cl": 90,
-            "dt": "1s",
-            "err": 0.10000000149011612,
-            "band": "15-150 keV"
-          },
-          "spectral_index": {
-            "v": 1.7799999713897705,
-            "cl": 90,
-            "err": 0.20999999344348907
-          }
-        },
-        "source": {
-          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
-          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2008-03-07T11:23:30Z"
-      },
-      "swift_bat": {
-        "other": {
-          "pcode": "0.8125",
-          "15_25kev": 1.541413e-07,
-          "25_50kev": 2.508991e-07,
-          "15_350kev": 1.466086e-06,
-          "50_100kev": 3.091285e-07,
-          "Image_SNR": "1.622477e+01",
-          "100_150kev": 2.130782e-07,
-          "100_350kev": 7.518983e-07,
-          "15_25kev_hi": 1.795722e-07,
-          "25_50kev_hi": 2.770698e-07,
-          "15_25kev_low": 1.293985e-07,
-          "15_350kev_hi": 1.794648e-06,
-          "25_50kev_low": 2.247135e-07,
-          "50_100kev_hi": 3.602377e-07,
-          "100_150kev_hi": 2.707317e-07,
-          "100_350kev_hi": 1.038889e-06,
-          "15_350kev_low": 1.186313e-06,
-          "50_100kev_low": 2.583326e-07,
-          "fluence_model": "PL",
-          "100_150kev_low": 1.61804e-07,
-          "100_350kev_low": 5.248547e-07,
-          "Trigger_method": "rate trigger",
-          "T100_best_model": "PL",
-          "Image_position_err": "1.552594e+00"
-        },
-        "params": {
-          "t50": {
-            "v": 50.0,
-            "err": 28.28427,
-            "band": "15-350 keV"
-          },
-          "t90": {
-            "v": 124.0,
-            "err": 23.34524,
-            "band": "15-350 keV"
-          },
-          "alpha": {
-            "v": -1.69897,
-            "cl": 90,
-            "err": [
-              0.19328000000000012,
-              0.19874999999999998
-            ]
-          },
-          "fluence": {
-            "v": 9.272549e-07,
-            "cl": 90,
-            "err": [
-              1.1929309999999992e-07,
-              1.170981e-07
-            ],
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
-          "name": "Swift/BAT GRB Catalog",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "BAT 305011"
-        ],
-        "trigger_time": "2008-03-07T11:23:30.814100Z"
-      },
-      "swift_grb": {
-        "other": {
-          "bat_plsl": "1.704",
-          "det_flag": "S",
-          "target_id": "305011",
-          "bat_plsl_err": "0.198",
-          "redshift_ref": "2008GCN..7365....1P",
-          "bat_detection": "Y",
-          "redshift_type": "GL",
-          "bat_peak_model": "PL",
-          "supernova_flag": "N",
-          "bat_fluence_model": "PL"
-        },
-        "params": {
-          "t50": {
-            "v": 45.23,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "t90": {
-            "v": 122.22,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 9.27e-07,
-            "err": 1.18e-07,
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 3.5,
-            "err": null
-          },
-          "peak_flux": {
-            "v": 0.37,
-            "dt": "1s",
-            "err": 0.123,
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
-          "name": "HEASARC SWIFTGRB",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "Swift 305011"
-        ],
-        "trigger_time": "2008-03-07T11:23:30.814100Z"
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 935489000000000000000,
-          "xrt_ra": 136.62867,
-          "comment": "BAT: This burst satisfies Sakamoto/Ukwatta Swift-BAT possible high-z criteria (arXiv:0802.3815)",
-          "ref_bat": "GCN 7362; GCN 7365; GCN 7373",
-          "ref_xrt": "GCN 7362; GCN 7366; GCN 7376; Evans et al., 2009; MNRAS, 397, 1177",
-          "xrt_dec": 35.13875,
-          "advocate": "Stephen Holland",
-          "ref_uvot": "GCN 7362; GCN 7367; GCN 7375",
-          "uvot_mag": "B>21.4; U>21.1; UVW1>20.9; UVM2>20.6; UVW2>20.7; White>22.3",
-          "other_obs": "TNT (0.8m), Gemini North",
-          "ref_other": "GCN Report 131.1",
-          "target_id": 305011,
-          "uvot_vmag": 20.7,
-          "xrt_gamma": 1.83497,
-          "trigger_obs": "Swift",
-          "error_radius": 1.6,
-          "xrt_lc_index": 0.4713,
-          "xrt_11hr_flux": 1.010324e-13,
-          "xrt_24hr_flux": 6.9244e-14,
-          "xrt_first_obs": 99.32,
-          "uvot_first_obs": 105.0,
-          "uvot_vmag_flag": 1,
-          "xrt_early_flux": 7.63e-10,
-          "xrt_error_radius": 1.4,
-          "bat_spectral_model": "PL"
-        },
-        "params": {
-          "t90": {
-            "v": 125.9,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 8.7e-07,
-            "cl": 90,
-            "err": 1.2e-07,
-            "band": "15-150 keV"
-          },
-          "peak_flux": {
-            "v": 0.4,
-            "cl": 90,
-            "dt": "1s",
-            "err": 0.1,
-            "band": "15-150 keV"
-          },
-          "spectral_index": {
-            "v": 1.78,
-            "cl": 90,
-            "err": 0.21
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 080307"
-        ],
-        "trigger_time": "2008-03-07T11:23:30.000Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "OT": "n",
-          "XA": "y",
-          "Error": "3'",
-          "z_flag": "ul",
-          "obs_date": "2008-03-07",
-          "Instrument": "Swift",
-          "GRB X-ray position": "09h06m32s +35° 10'"
-        },
-        "params": {
-          "redshift": {
-            "v": 6.1
-          }
-        },
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+      "auditor": "wa1kmoon@zcode"
     }
   },
   "articles": [

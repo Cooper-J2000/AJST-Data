@@ -6,7 +6,7 @@
   ],
   "ra": 112.27999877929688,
   "dec": 13.569999694824219,
-  "T0": "2015-02-10T22:26:24.283Z",
+  "T0": "2015-02-10T22:26:24.283000Z",
   "T0_ref": "GCN 17432 + FERMIGBRST (heasarc FERMIGBRST trigger_time)",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1548,
+  "pos_error": 1548.0,
   "pos_ref": "Ajello+2019 (2FLGC); HEASARC FERMILGRB",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,166 +25,39 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "fermi_gbm": {
-        "other": {
-          "bii": 14.38438949,
-          "lii": 206.21888256,
-          "flux_256": 22.259,
-          "flux_1024": 19.1217,
-          "t50_start": 1.08799,
-          "t90_start": 0.00263405,
-          "error_radius": 2.2,
-          "fluence_batse": 7.08356e-06,
-          "flux_batse_64": 11.0362,
-          "flux_256_error": 0.68739,
-          "flux_batse_256": 9.37025,
-          "flnc_band_epeak": 2944.6558,
-          "flnc_comp_epeak": 2942.8257,
-          "flux_1024_error": 0.348639,
-          "flux_batse_1024": 7.78462,
-          "fluence_batse_error": 1.36008e-08,
-          "flux_batse_64_error": 0.828184,
-          "flux_batse_256_error": 0.381767,
-          "flux_batse_1024_error": 0.159316,
-          "flnc_band_epeak_neg_err": 221.41042,
-          "flnc_band_epeak_pos_err": 221.41042,
-          "flnc_best_fitting_model": "flnc_comp",
-          "flnc_comp_epeak_neg_err": 188.74927,
-          "flnc_comp_epeak_pos_err": 188.74927
-        },
-        "params": {
-          "t50": {
-            "v": 7.42413,
-            "err": 0.362051,
-            "band": "50-300 keV"
-          },
-          "t90": {
-            "v": 31.2939,
-            "err": 0.602382,
-            "band": "50-300 keV"
-          },
-          "epeak": {
-            "v": 2942.8257,
-            "err": [
-              188.74927,
-              188.74927
-            ],
-            "frame": "obs",
-            "model": "CPL"
-          },
-          "fluence": {
-            "v": 2.21987e-05,
-            "err": 2.68736e-08,
-            "band": "10-1000 keV"
-          },
-          "peak_flux": {
-            "v": 25.7884,
-            "dt": "64ms",
-            "err": 1.64864,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
-          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB150210935",
-          "GRB 150210.935",
-          "bn150210935"
-        ],
-        "trigger_time": "2015-02-10T22:26:24.283Z"
-      },
-      "fermi_lat": {
-        "other": {
-          "tl100": 168.61,
-          "lle_t90": 2.521,
-          "tl100_error": 18.175,
-          "trigger_met": 445299987.29,
-          "error_radius": 0.43,
-          "like_best_ts": 157.025,
-          "like_best_fluence": 2.80424e-06,
-          "like_best_grbindex": -2.23704,
-          "ext_emission_max_ene": 2500.0,
-          "ext_emission_max_ene_t": 169.37,
-          "like_best_fluence_error": 1.51286e-06,
-          "like_best_grbindex_error": 0.29666
-        },
-        "params": {
-          "t90": {
-            "v": 31.294,
-            "err": 0.602,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 2.2199e-05,
-            "err": 2.6874e-08,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 150210.935"
-        ],
-        "trigger_time": "2015-02-10T22:26:24.000Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "IPN": "y",
-          "Error": "20",
-          "obs_date": "2015-02-10",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "07h28m36s +13° 16'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
-    },
     "audit": {
+      "date": "2026-10-24",
       "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-10-24"
+      "auditor": "Rusty-Harpoon@zcode"
     }
   },
   "articles": [
     {
       "name": "Ajello+2019",
-      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Ershova+2020",
-      "url": "https://doi.org/10.1134/S1063772920020018",
       "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "url": "https://doi.org/10.1134/S1063772920020018",
       "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Jiang+2023",
-      "url": "https://doi.org/10.1093/mnras/stac3504",
       "title": "Outliers in the Ep,z-Egamma relation of Fermi-GBM long-duration gamma-ray bursts",
+      "url": "https://doi.org/10.1093/mnras/stac3504",
       "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Nuessle+2024",
-      "url": "https://doi.org/10.3847/1538-4357/ad6a56",
       "title": "GRB Progenitor Classification from Gamma-Ray Burst Prompt and Afterglow Observations",
+      "url": "https://doi.org/10.3847/1538-4357/ad6a56",
       "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null,
-  "pos_error_confidence": "90"
+  "host_galaxy": null
 }

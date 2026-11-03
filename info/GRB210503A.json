@@ -5,7 +5,7 @@
   ],
   "ra": 328.93,
   "dec": 66.03,
-  "T0": "2021-05-03T19:34:09.461Z",
+  "T0": "2021-05-03T19:34:09.461000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2021-05-03T19:34:09.461Z（trigger 641763254.461374 / 210503815）；GCN 29927（GBM 团队）记 At 19:34:09 UT on 3 May 2021（整秒）与 MET 641763254.461374 同源；GCN 29928（MASTER）580 sec after trigger time at 19:43:49 UT 反算 19:34:09 UT 整秒互证；GCN 29935 观测窗口（11.5–16 h ↔ 07:02–11:38 UT）反算自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,6 @@
     "grb"
   ],
   "pos_error": 5.1,
-    "pos_error_confidence": "1sigma",
   "pos_ref": "ra/dec=328.93/66.03 为 FERMIGBRST 终值定位（GCN 29935 引用同一 Fermi GBM Final Position 328.93d +66.03d 逐位一致）；pos_error=5.1 deg 为 GCN 29927 初报 statistical uncertainty（=tdat error_radius，1σ）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "lgrb"
   ],
   "pos_error_unit": "deg",
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-25",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 641763254.461374 trigger_time=2021-05-03T19:34:09.461Z）；原 bot 值 2021-05-04T11:38:00Z 系 GCN 29935 DDOTI 观测窗口止点误植（Issue #84 系族），原值与判据保留于 comment",
     "t0_basis": "FERMIGBRST trigger_time（GCN 29927/29928 整秒互证）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-25"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

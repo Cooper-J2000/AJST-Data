@@ -21,77 +21,14 @@
   "comment": "身份与T0按Swift/BAT trigger 345945：GCN 8964于23:29:13 UT报告Swift触发；GCN 8969给出增强XRT位置RA=284.97425°, Dec=-25.26099°，90%半径2.0″。GCN 8975标题的原文用名GRB090309A作为别名（<GCN 8975> 原文用名）。库内FERMIGBRST记录trigger 258315909/GRB090309.767、T0=18:25:07.193 UT对应独立Fermi事件，见GCN 8971；已从本Swift源extra_data中移除，并已在new-source Issue #751登记。现有20条Swift/XRT 10keV行按规定逐字保持未改；其MJD与新T0+time相差约−18246.069 s（−5:04:06.069），属于旧的Fermi T0锚定，按规则交维护者处理，审查代理未重算。GCN 8964的白光finding-chart浅上限（约19 mag）与GCN 8973第一条同一曝光；保留原行并discard=y，按GCN 8973的最终3σ >21.0替代。GCN 8973列出的全部UVOT上限按各T_start/T_stop中点记录，time_err为半窗口；原文为UVOT photometric system（Poole+2008），未明示Vega/AB，按本库缺省记Vega，未做银河消光改正（E(B−V)=0.23）。GROND GCN 8975明确对应Swift trigger 345945，给出g′r′i′z′JHK的AB系统上限，未作银河消光改正。该通告只给整夜开始07:22 UT、持续2.5 h，并称上限来自其中1 h堆叠，未给堆叠具体时段；暂以整段观测窗口中点08:37 UT和半宽4500 s作为保守时间代表，非伪称为堆叠精确中点。GCN 8967报Swift/BAT的T90=3.0±1.4 s；未将边界值强行分类，sub_tag留空。测光检索（2026-11-02）：仓内gcn/archive目录不存在；external/rssgrbag与external/grbsn_webtool无GRB090309命中；GCN事件页检得11篇相关通告，核对到Swift/UVOT 8964、8973与GROND 8975，Fermi 8971属于不同事件；本轮有锚点的光学/UV上限新增15行（另保留1条已discard的初报）。ADS/SciX因无API凭据未覆盖，详见audit/unverified.tsv；不能据此断言无更多文献。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "swift_grb": {
-        "other": {
-          "bat_plsl": "1.3",
-          "det_flag": "S",
-          "target_id": "345945",
-          "bat_plsl_err": "0.337",
-          "bat_detection": "Y",
-          "bat_peak_model": "PL",
-          "supernova_flag": "N",
-          "bat_fluence_model": "PL"
-        },
-        "params": {
-          "t50": {
-            "v": 1.0,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "t90": {
-            "v": 3.0,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 1.4e-07,
-            "err": 2.68e-08,
-            "band": "15-150 keV"
-          },
-          "peak_flux": {
-            "v": 0.947,
-            "dt": "1s",
-            "err": 0.182,
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
-          "name": "HEASARC SWIFTGRB",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "Swift 345945"
-        ],
-        "trigger_time": "2009-03-09T23:29:13.262340Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "XA": "y",
-          "Error": "3",
-          "obs_date": "2009-03-09",
-          "Instrument": "Swift",
-          "GRB X-ray position": "18h59m55s -25° 16'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
-    },
     "audit": {
+      "date": "2026-11-02",
       "status": "reviewed",
-      "auditor": "LHe496@Codex",
-      "date": "2026-11-02"
+      "auditor": "LHe496@Codex"
     }
   },
   "articles": [],
-  "host_galaxy": null,
-  "pos_error_confidence": "90"
+  "host_galaxy": null
 }

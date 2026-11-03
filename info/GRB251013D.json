@@ -5,7 +5,7 @@
   ],
   "ra": 46.901,
   "dec": 8.8,
-  "T0": "2025-10-13T18:17:00.388Z",
+  "T0": "2025-10-13T18:17:00.388000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2025-10-13T18:17:00.388Z（trigger 782072225.388414 / 251013762）；GCN 42224 整秒 18:17:00 UT、GCN 42280 亚秒 18:17:00.39 UT、GCN 42244（GUANO）T0: 2025-10-13T18:17:00.39 UTC 三方互证",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,6 @@
     "grb"
   ],
   "pos_error": 300.0,
-  "pos_error_confidence": null,
   "pos_ref": "GCN 42244（Swift/BAT-GUANO 弧分级定位）：RA, Dec = 46.901, 8.800 deg，estimated uncertainty of 5 arcmin radius（NITRATES sqrt(TS)=27.6，16.384 s bin，T0 起）；原文未标注置信水平（pos_error_confidence 留空）；原库 ra/dec=46.8919/8.7859 系 GCN 42291 XRT Source 1 位置（5.6″/90%，未确认余辉候选）误配 GUANO 误差，已回退为 GUANO 官方定位",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,16 +23,17 @@
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-26",
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode"
+    },
     "t0_note": "T0 已更正为 Fermi/GBM 触发时刻（FERMIGBRST trigger 782072225.388414 trigger_time=2025-10-13T18:17:00.388Z，补亚秒）；定位回退为 BAT-GUANO 官方值（XRT 候选未证实，原值保留于 comment）",
     "t0_basis": "FERMIGBRST trigger_time（GCN 42224/42280/42244 互证）",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-10-26"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

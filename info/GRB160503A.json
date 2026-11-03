@@ -6,7 +6,7 @@
   ],
   "ra": 358.99,
   "dec": -1.24,
-  "T0": "2016-05-03T13:36:32.008Z",
+  "T0": "2016-05-03T13:36:32.008000Z",
   "T0_ref": "GCN 19380（Mailyan & Toelge, Fermi/GBM Team）：'At 13:36:32.008 UT on 03 May 2016, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 160503A (trigger 483975396 / 160503567)'；FERMIGBRST（HEASARC）bn160503567 trigger_time=2016-05-03T13:36:32.008Z（仓内快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 3168,
+  "pos_error": 3168.0,
   "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，ERR=0.88°，90% 包含、统计误差，Ajello+2019 §4.1；fermilgrb_w3browse_full.txt 2026-10-24 复核）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,75 +24,21 @@
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "fermi_lat": {
-        "other": {
-          "tl100": 17750.66992,
-          "tl100_error": 72.635,
-          "trigger_met": 483975396.0,
-          "error_radius": 0.88,
-          "like_best_ts": 37.4564,
-          "like_best_fluence": 9.90462e-06,
-          "like_best_grbindex": -2.83896,
-          "ext_emission_max_ene": 520.0,
-          "ext_emission_max_ene_t": 12969.5498,
-          "like_best_fluence_error": 2.90814e-06,
-          "like_best_grbindex_error": 0.371318
-        },
-        "params": {
-          "t90": {
-            "v": 28.672,
-            "err": 1.493,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 2.1269e-06,
-            "err": 5.1707e-08,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 160503.567"
-        ],
-        "trigger_time": "2016-05-03T13:36:31.997Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "Error": "32",
-          "obs_date": "2016-05-03",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "00h02m10s -01° 56'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
-    },
     "audit": {
+      "date": "2026-10-24",
       "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-10-24"
+      "auditor": "Rusty-Harpoon@zcode"
     }
   },
   "articles": [
     {
       "name": "Ajello+2019",
-      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null,
-  "pos_error_confidence": "90"
+  "host_galaxy": null
 }

@@ -6,7 +6,7 @@
   ],
   "ra": 30.28,
   "dec": -14.16,
-  "T0": "2022-04-03T10:10:02.661Z",
+  "T0": "2022-04-03T10:10:02.661000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST 快照（external/fermi_gbm/normalized.jsonl，bn220403424）trigger_time=2022-04-03T10:10:02.661Z；GCN 31818（GBM Final Real-time Localization）原文 trigger MET 670673407.661128（MET 扣 5 跳秒 Python 独立重算=2022-04-03T10:10:02.661128 UTC，至 ms 一致）、检测时刻 10:10:02 UT；GCN 31824（BAT-GUANO）引「GRB 220403A，detected by Fermi/GBM with T0: 2022-04-03T10:10:02 UTC (GCN 31818)」；GCN 31819 MASTER prose「25957 sec after trigger time at 2022-04-03 17:22:40 UT」与 T0 自洽（17:22:40−T0=25957.339 s）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,7 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 33948,
+  "pos_error": 33948.0,
   "pos_ref": "FERMIGBRST 目录快照 bn220403424（HEASARC Fermi GBM 触发目录）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -27,14 +27,14 @@
   "pos_error_confidence": "1sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-28",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0 为 Fermi/GBM 触发时刻（trigger 670673407.661128 / bn220403424，FERMIGBRST 快照 trigger_time=2022-04-03T10:10:02.661Z；GCN 31818 MET 一致）；bot 原写法 t0=2022-04-03T21:35:37Z 实为 GCN 31822 Tautenburg 观测开始时刻、非触发时刻，原 note 见 comment",
     "t0_basis": "fermi_gbm_catalog_bn220403424",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-28"
-    }
+    "bot_created": true
   },
   "articles": [],
   "host_galaxy": null

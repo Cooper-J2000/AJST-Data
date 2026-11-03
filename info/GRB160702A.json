@@ -5,7 +5,7 @@
   ],
   "ra": 231.09,
   "dec": 9.07,
-  "T0": "2016-07-02T12:22:24.054Z",
+  "T0": "2016-07-02T12:22:24.054000Z",
   "T0_ref": "GCN 19667（Frederiks+2016，Konus-Wind 团队）：'The short GRB 160702A ... triggered Konus-Wind at T0=44544.054 s UT (12:22:24.054)'；Konus-Wind 为触发仪器（GCN 19666 IPN 通告列 Konus-Wind/INTEGRAL SPI-ACS/HEND/Swift-BAT 探测，Ajello+2019 §4.1 列本暴为 6 个由 IPN 通告、未触发 GBM 的 LAT 暴之一）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -14,7 +14,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 756,
+  "pos_error": 756.0,
   "pos_ref": "Ajello+2019, ApJ 878, 52 (2FLGC) Table 2（LAT LTF 定位，ERR=0.21°=756″，90% 包含、统计误差，Ajello+2019 §4.1；FERMILGRB 行 fermilgrb_w3browse_full.txt 2026-10-24 复核）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -24,78 +24,27 @@
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "fermi_lat": {
-        "other": {
-          "tl100": 274.06,
-          "tl100_error": 137.03,
-          "trigger_met": 489154948.0,
-          "error_radius": 0.21,
-          "like_best_ts": 33.0942,
-          "like_best_fluence": 1.77511e-05,
-          "like_best_grbindex": -1.37673,
-          "ext_emission_max_ene": 4800.0,
-          "ext_emission_max_ene_t": 1941.52002,
-          "like_best_fluence_error": 1.86534e-05,
-          "like_best_grbindex_error": 0.35563
-        },
-        "params": {
-          "t90": {
-            "v": 0.2,
-            "err": null,
-            "band": "50-300 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 160702.516",
-          "0"
-        ],
-        "trigger_time": "2016-07-02T12:22:24.004Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "IPN": "y",
-          "Error": "72*22",
-          "obs_date": "2016-07-02",
-          "Instrument": "IPN",
-          "GRB X-ray position": "15h23m33s +08° 43'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
-    },
     "audit": {
+      "date": "2026-10-24",
       "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-10-24"
+      "auditor": "Rusty-Harpoon@zcode"
     }
   },
   "articles": [
     {
       "name": "Ajello+2019",
-      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
       "source": "Rusty-Harpoon@zcode"
     },
     {
       "name": "Tang+2021",
-      "url": "https://doi.org/10.3847/1538-4357/ac26ba",
       "title": "Prevalence of Extra Power-Law Spectral Components in Short Gamma-Ray Bursts",
+      "url": "https://doi.org/10.3847/1538-4357/ac26ba",
       "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null,
-  "pos_error_confidence": "90"
+  "host_galaxy": null
 }

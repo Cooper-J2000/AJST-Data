@@ -24,54 +24,21 @@
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
-    "catalog_data": {
-      "fermi_lat": {
-        "other": {
-          "tl100": 681.84998,
-          "tl100_error": 254.045,
-          "trigger_met": 287757883.0,
-          "error_radius": 0.06,
-          "like_best_ts": 42.4741,
-          "like_best_fluence": 1.8161e-05,
-          "like_best_grbindex": -1.68199,
-          "ext_emission_max_ene": 34000.0,
-          "ext_emission_max_ene_t": 3389.03003,
-          "like_best_fluence_error": 1.40046e-05,
-          "like_best_grbindex_error": 0.283825
-        },
-        "params": {
-          "t90": {
-            "v": 60.0,
-            "err": null,
-            "band": "50-300 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 100213.531",
-          "0"
-        ],
-        "trigger_time": "2010-02-13T12:44:41.001Z"
-      }
+    "audit": {
+      "date": "2026-10-05",
+      "status": "reviewed",
+      "auditor": "fsy"
     },
     "t0_note": "库中 T0=2010-02-13T12:44:43Z 为 FERMILGRB（2FLGC）trigger_met=287757883.000 未扣闰秒的直换值；真实触发时刻为 2010-02-13T12:44:41.001 UTC（2FLGC Table 2 给 12:44:41；HEASARC FERMILGRB time 列），比库中 T0 早 2.0 s，记 T0_offset=-2.0。T0_offset 为纯元数据，不改写光变时间轴（本源无 lc，实际无影响）。",
-    "t0_basis": "fermi_met_naive（FERMILGRB trigger_met=287757883.000 直换未扣闰秒）；true trigger 2010-02-13T12:44:41.001 UTC per 2FLGC Table 2 (Ajello+2019) / HEASARC FERMILGRB time=2010-02-13 12:44:41.001, see T0_offset",
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-05"
-    }
+    "t0_basis": "fermi_met_naive（FERMILGRB trigger_met=287757883.000 直换未扣闰秒）；true trigger 2010-02-13T12:44:41.001 UTC per 2FLGC Table 2 (Ajello+2019) / HEASARC FERMILGRB time=2010-02-13 12:44:41.001, see T0_offset"
   },
   "articles": [
     {
       "name": "Ajello+2019",
-      "url": "https://arxiv.org/abs/1906.11403",
       "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "url": "https://arxiv.org/abs/1906.11403",
       "source": "fsy"
     }
   ],

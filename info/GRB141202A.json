@@ -6,7 +6,7 @@
   ],
   "ra": 143.1,
   "dec": 54.404,
-  "T0": "2014-12-02T11:17:05.606Z",
+  "T0": "2014-12-02T11:17:05.606000Z",
   "T0_ref": "触发仪器 Fermi/GBM 官方目录 FERMIGBRST trigger_time=2014-12-02T11:17:05.606Z（GBM trigger 439211828 / 141202470，MJD 56993.470203769；external/fermi_gbm 快照，2026-07-21 取数）；GCN 17133（GBM 团队）记 At 11:17:05.61 UT on the 2nd of December 2014（亚秒一致）；GCN 17131（IPN）记 about 40626 s UT（11:17:06）秒级一致",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -15,8 +15,7 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 398,
-  "pos_error_confidence": "3sigma",
+  "pos_error": 398.0,
   "pos_ref": "Svinkin+2022, ApJS 259, 34, Table 4",
   "redshift_type": null,
   "redshift_ref": null,
@@ -25,16 +24,17 @@
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "3sigma",
   "extra_data": {
     "src": "gcn_llm_extract",
+    "audit": {
+      "date": "2026-10-28",
+      "status": "reviewed",
+      "auditor": "fsy"
+    },
     "t0_note": "T0 为触发仪器 Fermi/GBM 官方目录 FERMIGBRST 触发时刻（亚秒 05.606，GCN 17133 记 05.61 一致）；bot 原标注 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」失实，原值原标注见 comment",
     "t0_basis": "fermigbrst_trigger_time",
-    "bot_created": true,
-    "audit": {
-      "status": "reviewed",
-      "auditor": "fsy",
-      "date": "2026-10-28"
-    }
+    "bot_created": true
   },
   "articles": [
     {
