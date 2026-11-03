@@ -1,25 +1,28 @@
 {
   "transient_id": "GRB200219A",
   "alias": [
-    "GRB 200219317"
+    "GRB 200219317",
+    "GRB 200219A"
   ],
-  "ra": 342.8800048828125,
-  "dec": -60.20000076293945,
-  "T0": "2020-02-19T07:36:54.100000Z",
-  "T0_ref": null,
+  "ra": 342.63837,
+  "dec": -59.11954,
+  "T0": "2020-02-19T07:36:49Z",
+  "T0_ref": "Swift/BAT trigger 957271；GCN 27125 给触发时刻 2020-02-19 07:36:49 UT（整秒精度）。Fermi/GBM GCN 27137 为 07:36:49.10 UT、Swift/BAT 目录为 07:36:49.1391 UT，均一致（差<0.14 s）；按触发仪器通告保留整秒精度。",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.48,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "pos_error": 1.8,
+  "pos_ref": "GCN 27138 (Swift/XRT enhanced position; 90% error radius 1.8 arcsec)",
+  "redshift_type": "phot",
+  "redshift_ref": "Fong+2022, DOI:10.3847/1538-4357/ac91d1 (Gold host galaxy phot-z=0.48±0.02)",
+  "comment": "身份/T0：Swift/BAT trigger 957271，GCN 27125 给 2020-02-19 07:36:49 UT；Fermi/GBM GCN 27137 为 07:36:49.10 UT，Swift/BAT 目录为 07:36:49.1391 UT，差<0.14 s，按通告整秒精度。位置采用 Swift/XRT enhanced GCN 27138（RA=342.63837°, Dec=−59.11954°, 90%半径1.8″）。Svinkin+2022 Table 4 提供 IPN 99.73% 定位区域，独立交叉核验但远不及 XRT 精确，不构成位置改进。GCN 27126 的 MASTER 自动候选与 Fong+2022 Gold host 坐标相符。分类：Swift/BAT T90=288±50.6 s（GCN 27148）与 Fermi/GBM T90=1.152±1.032 s（GCN 27137/目录）不同；GCN 27148 报短初始脉冲及约87 s extended emission；Fong+2022 Table B1 判为 SGRB-EE，因此标 EE+sgrb，保留不同仪器 T90 差异并不标 lgrb。Fermi-LAT 检出按 2FLGC (Ajello+2019) 保留。宿主：Fong+2022 Table 2 为 Gold association（Pcc=2.2×10⁻³），phot-z=0.48±0.02，r_AB=20.661±0.05；host_galaxy 中只录宿主量。Jeong+2024 Table A1 是宿主汇编转引，Table 2 的 zphot=0.457(+0.177/−0.208) 为作者 SED 派生且分布双峰，不替代 Fong 红移，也不是瞬变体测光。\n测光检索（2026-11-03）：仓内 gcn/archive 无本源归档目录；external/rssgrbag、external/grbsn_webtool 无可用本源光变表。GCN事件页返回14条，另由旧版GCN归档确认 GCN 27124（Swift GRB200219.32）。核对的身份/定位/分类通告为27123、27125、27126、27137、27138、27148、27305；测光通告为27124、27164、27165、27245。新增 GCN 27124 的6个MASTER clear上限（通告给Tmid−T0）；GCN 27164 FRAM r′限值按6.45–15.39 min窗口中点计时；GCN 27165的9个UVOT独立滤镜/产品按各自start–end窗口中点录入、半窗宽写time_err，使用最终3σ限值；UVOT为Vega且未作银消改正。GCN 27125典型白光值由GCN 27165最终finding-chart限值取代，不重复录入。Chastain+2024 Table 1/2提供5个MeerKAT和2个ATCA直接forced integrated flux；其中ATCA 3.49–3.77 d与GCN 27245同一观测，采用论文数据替换GCN初报限值，不重复计数；所有forced flux均未显著探测。ADS/SciX全文与引文检索按用户明确裁定留待补跑，已在audit/unverified.tsv登记search-limited，本轮不宣称该通道查全。",
   "sub_tag": [
+    "EE",
+    "sgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
@@ -286,6 +289,11 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
     }
   },
   "articles": [
@@ -295,7 +303,49 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2020ApJ...898L...6L",
       "bibtex": "@ARTICLE{2020ApJ...898L...6L,\n       author = {{L{\\\"u}}, Hou-Jun and {Yuan}, Yong and {Lan}, Lin and {Zhang}, Bin-Bin and {Zou}, Jin-Hang and {Peng}, Zong-Kai and {Shen}, Jun and {Liang}, Yun-Feng and {Wang}, Xiang-Gao and {Liang}, En-Wei},\n        title = \"{Evidence for Gravitational-wave-dominated Emission in the Central Engine of Short GRB 200219A}\",\n      journal = {\\apjl},\n     keywords = {Gamma-ray bursts, Gravitational waves, 629, 678, Astrophysics - High Energy Astrophysical Phenomena, High Energy Physics - Phenomenology},\n         year = 2020,\n        month = jul,\n       volume = {898},\n       number = {1},\n          eid = {L6},\n        pages = {L6},\n          doi = {10.3847/2041-8213/aba1ed},\narchivePrefix = {arXiv},\n       eprint = {2007.01124},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2020ApJ...898L...6L},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Fong+2022",
+      "title": "Short GRB Host Galaxies. I. Photometric and Spectroscopic Catalogs, Host Associations, and Galactocentric Offsets",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d1",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Svinkin+2022",
+      "title": "The Third Interplanetary Network Catalog of Gamma-Ray Bursts",
+      "url": "https://doi.org/10.3847/1538-4365/ac4607",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Jeong+2024",
+      "title": "Host Galaxy Properties of Gamma-Ray Bursts Involving Neutron Star Binary Mergers and Their Impact on Kilonovae Rates",
+      "url": "https://doi.org/10.3847/1538-4357/ad6b2a",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Chastain+2024",
+      "title": "Constraints on short gamma-ray burst physics and their host galaxies from systematic radio follow-up campaigns",
+      "url": "https://doi.org/10.1093/mnras/stae1568",
+      "source": "LHe496@Codex"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 342.63795,
+    "dec": -59.1198830556,
+    "redshift": 0.48,
+    "redshift_err": 0.02,
+    "redshift_type": "phot",
+    "photometry": [
+      {
+        "band": "r",
+        "mag": 20.661,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table 2"
+      }
+    ],
+    "comment": "Fong+2022 Table 2 确认为 Gold host association（Pcc=2.2×10⁻³），列宿主 r_AB=20.661±0.05 与 phot-z=0.48±0.02；这些是宿主量，不是瞬变体测光。Jeong+2024 的宿主汇编/SED值为转引或派生，不作为独立瞬变测光或更优红移。",
+    "source": "Fong+2022, DOI:10.3847/1538-4357/ac91d1"
+  },
+  "pos_error_confidence": "90"
 }
