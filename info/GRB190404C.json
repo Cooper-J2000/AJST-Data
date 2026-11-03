@@ -1,28 +1,45 @@
 {
   "transient_id": "GRB190404C",
-  "alias": [],
-  "ra": 221.00373,
-  "dec": -22.67584,
-  "T0": "2019-04-04T13:36:27Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 190404B"
+  ],
+  "ra": 220.84256,
+  "dec": -22.66386,
+  "T0": "2019-04-04T13:14:08.000Z",
+  "T0_ref": "GCN 24049（Yamada+2019，MAXI team）：The MAXI/GSC nova alert system triggered on a bright uncatalogued X-ray transient source at 13:14:08 UT on 2019 April 04（原文整秒，.000 仅格式位）；GCN 24089（MITSuME）观测起始 2019-04-04 13:36:27 UT＝触发后 1339 s 反算同值；swiftgrbba 官方目录快照 trigger_time=2019-04-04T13:14:08.000Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.8,
+  "pos_ref": "GCN 24062（D'Elia+2019，Swift-XRT team）：enhanced XRT position RA,Dec = 220.84256, -22.66386（14h 43m 22.21s, -22d 39' 49.9\"），2.8 arcsec (radius, 90% confidence)，距 MAXI 位置 4.1 角分；UKSSDC TILED_GRB00079 页同值（Source 3 manually confirmed as the GRB afterglow）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "GRB 190404C＝MAXI/GSC nova-alert 于 2019-04-04 13:14:08 UT 触发的未编目 X 射线暂现源（GCN 24049），Swift-XRT 证认 X 射线余辉（GCN 24062）。命名史：GCN 24049 正文将该事件（MAXI new-transient ML 中曾名 GRB 190404B）改称 GRB 190404C，GROWTH-India（24051）、Swift-XRT（24054/24062）、MITSuME（24089）等后续通告沿用 GRB 190404C；MAXI 团队 2019-04-14 更正（GCN 24120）最终定名 GRB 190404B（24048/24049 两通告主题行的 140404B/140404C 系原文笔误，9 误作 4）——本条目 id 维持 GRB190404C，GRB 190404B 收入 alias；注意：更正前 CALET（GCN 24055）与 Konus-Wind（GCN 24083）所称 GRB 190404B 实为 12:24:20 UT 的另一 MAXI 触发，与本源无关。同日近邻源甄别：Fermi/GBM 触发 bn190404293（2019-04-04T07:01:21.925Z，仓内 fermi_gbm 快照，位置 121.39,+55.42）；MAXI 12:24:20 UT 触发（GCN 24048，00h48m21s +27°29′09″，更正后定名 GRB 190404A，CALET/Konus 的探测与 T90=87.5±18.8 / ~85.4 s 属该事件）——均与本源（13:14:08 UT，14h43m−22°38′）无关。T0：原 bot 值 2019-04-04T13:36:27Z 实为 MITSuME 跟随观测起始时刻（GCN 24089：observation started at 2019-04-04 13:36:27 UT＝触发后 1339 s；Issue #84 模式），已改为触发时刻 13:14:08 UT（原文整秒，.000 仅格式位）；MAXI 自动通告 EVENT_TIME=13:14:34.00 UT（1 s 时间标；MPE 目录页 grb190404B.html 录得，Crupi+2023 同引）与人工核实的 Circular 相差 26 s，按《数据审核提示词》§3.8/§4 取 Circular；MITSuME 观测起始 13:36:27 UT＝触发+1339 s 反算、swiftgrbba 官方目录快照 trigger_time=2019-04-04T13:14:08.000Z 均互证。位置：原 bot 值 ra=221.00373, dec=-22.67584 即 GROWTH-India 光学候选体位置（14:44:00.896, -22:40:33.02，GCN 24051），该候选已被原作者撤回（GCN 24056：实为小行星 2010 FQ3，其后图像中更暗源为背景星），现改为 Swift-XRT enhanced 余辉位置 220.84256, -22.66386（2.8 arcsec 半径，90% confidence，距 MAXI 位置 4.1′）；MAXI 定位（220.987, -22.632，90% C.L. 长短半轴 0.13/0.11 deg + 0.1 deg 系统差）与自动通告定位（误差 1.0 deg，90% stat+sys）备查。物理量备查：MAXI 扫描平均流量=378±40 mCrab（4.0-10.0 keV，GCN 24049；前一次过境 11:41 UT 上限 20 mCrab）；MAXI 官方事件页 maxi.riken.jp/grbs/190404b/：SN=32.9、流量 1.09±0.08e-8 erg/cm2/s、硬度 0.27±0.06（1 s 时标）；Swift-XRT 余辉幂律衰减指数 alpha=0.72(+0.39,-0.22)，观测区间 T0+7.4 ks 至 T0+335.5 ks（GCN 24062；UKSSDC TILED_GRB00079：Source 3 manually confirmed，4.3σ 变暗）；本事件无 T90 测量（Konus/CALET 的 T90 属 GRB 190404A）→ sub_tag 留空，见 PR 待决事项。测光检索留证（2026-11-03）：①仓内 external/rssgrbag（光变 140 行）与 external/grbsn_webtool（SourceData 63 事件）grep「190404」均无记录；仓内不含 gcn/archive（SCHEMA §1 排除项），以 GCN 官方档案索引（gcn.gsfc.nasa.gov/gcn3_arch_old142.html，24000-24999 号段主题全列）＋官网事件页 grb-190404c（5 篇）/grb-190404b（3 篇）替代，逐篇实开 gcn.nasa.gov/circulars/ 共 11 篇（24048、24049、24050、24051、24054、24055、24056、24062、24083、24089、24120；其中 24055/24083 属上述命名冲突所涉事件）；②arXiv API 元数据检索 190404C / 190404B 各 0 命中；全文唯一命中 Crupi+2023（arXiv:2303.15936，mention-only：引 MAXI 通告 EVENT_TIME 13:14:34.00 UT，无本源测光）；③SciX 网页为 SPA 无法渲染（API 需 token），以全网检索替代（2 次），未发现本源研究论文测光；Greiner 官方目录页 grb190404B.html 所列参考文献仅 GCN 通告；④TNS 不适用（GRB，非 AT/SN 类）。结论：无有明确时间锚点的新测光可补——MITSuME 另 10 个 coadd 视场上限（g'>17.0-18.4 等）只给各视场起始时刻、未给曝光窗跨度，中点不可恢复，不入库仅此留证；本 PR 补 0 行；Swift-XRT 有 X 射线光变（UKSSDC TILED_GRB00079 / Burst Analyser），X 射线数据暂不在审核范围。extra_data 原 t0_note=『t0 为 meta trigger-time（真实触发时刻）』、t0_basis=『meta_trigger』系 bot 失真注记，已改写，原值留此备查。",
   "sub_tag": [],
+  "pos_error_confidence": "90",
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0=2019-04-04T13:14:08.000Z 为 MAXI/GSC nova-alert 触发时刻（GCN 24049，原文整秒，.000 仅格式位）；bot 原值 2019-04-04T13:36:27Z 为 MITSuME 跟随观测起始时刻（GCN 24089），已更正，原注记见 comment",
+    "t0_basis": "触发仪器 MAXI 官方 Circular（GCN 24049，人工核实）＋GCN 24089 观测起始反算互证＋swiftgrbba 官方目录快照；bot 原 t0_basis=『meta_trigger』已失真，见 comment",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-02"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Crupi+2023",
+      "url": "https://arxiv.org/abs/2303.15936",
+      "title": "Searching for long faint astronomical high energy transients: a data driven approach",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
