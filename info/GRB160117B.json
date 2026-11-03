@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB160117B",
-  "alias": [],
-  "ra": 132.191667,
-  "dec": -16.333333,
-  "T0": "2016-01-17T13:59:27Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 670800"
+  ],
+  "ra": 132.19454,
+  "dec": -16.36675,
+  "T0": "2016-01-17T13:59:27.649320Z",
+  "T0_ref": "GCN 18875（Swift/BAT 触发 13:59:27 UT，trigger 670800）；亚秒取 Swift/BAT 目录 trigger_time=2016-01-17T13:59:27.649320Z（extra_data.catalog_data.swift_bat 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,15 +15,21 @@
     "grb"
   ],
   "pos_error": 2.0,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 18880",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 18886",
-  "comment": null,
+  "comment": "Swift/BAT 触发 GRB（trigger 670800，GCN 18875）。sub_tag：t90=11.536±2.608 s（Swift/BAT BATGRBCAT，仓内 extra_data.catalog_data.swift_bat 快照）按目录 t90 判 lgrb。红移 z=0.87 为 VLT/X-shooter 吸收+发射线光谱红移（GCN 18886，spec）；TNG 复核 z=0.86±0.01（GCN 18915）。定位取 GCN 18880 增强 XRT 位置（132.19454,-16.36675，2.0 arcsec，原文 90% 置信），原 ra/dec（dec=-16.333333）系 MPE 表弧分截断残值，已改。T0：GCN 18875 触发 13:59:27 UT，亚秒取 Swift/BAT 目录 trigger_time；lc 的 time 保留原文相对整秒触发的口径（源精度 1 s），非 X 射线行 mjd=T0+time 已按新 T0 重算；X 射线行（10keV）mjd 需维护者按 mjd=T0_new+time 机械重算（2026-10-31 裁定）。勘误链：GCN 18907 正式撤回 GCN 18900 的 RATIR 3σ 上限（原文 the previously reported, incorrect, limits should not be considered），GCN 18900 三行已 discard=y：r/i 由 18907 检出值取代，z 无更正值。另 3 行 reference=Dainotti2024;Nissim 的 RATIR 行无法溯源（Dainotti+2024 机读目录未获取，见 audit/unverified.tsv），暂 discard。Ershova+2020（Astronomy Reports 64,126，VoR Springer PDF 2026-11-03 已打开）Table 20 本暴行＝GCN 18877 转引（m_OT=17.5、首帧上限 W 17.0(60)、MASTER-Amur、ΔT_notice=19 s/ΔT_trigger=35 s 为未覆盖误差框的首次指向），无增量不新增行；其引用 GCN 18877 经档案核查无撤回。测光检索（2026-11-03）：仓内 gcn/archive（全文，截至 GCN 46010/2026-10-22）命中本源 17 篇，另按 160117B/18877/670800 全档案 grep 无其他撤回/更正通告；GCN 站 Swift GUA UVOT 表（notices_s/670800/UVOT/uproduct_lc.txt，57 行曝光）已取并逐行核对；OpenAlex 23 命中（12 篇本源 GCN、Ershova+2020、Selsing+2018 XS-GRB 附录 B.105 仅光谱无测光表已下载核对、其余样本类文章未逐篇取表）；arXiv API 「GRB 160117B」0 篇；Crossref 宽匹配 3940 无本源专文；CDS VizieR 不可达（000）。补 23 行：VLA 21.8 GHz ~0.1 mJy（GCN 18908）；GUA UVOT uvw1/uvw2/uvm2 22 行（17 个库外新历元 + 5 个同曝光 GUA 终值，与 GCN 18881 行并存，口径与 white/b/u/v 双行一致）。alias 增 BAT 670800（catalog_data.swift_bat.name_alt 官方目录名）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    },
     "derived": {
       "best": {
         "alpha": {
@@ -217,6 +225,18 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Ershova+2020",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Selsing+2018",
+      "title": "The X-shooter GRB afterglow legacy sample (XS-GRB)",
+      "url": "https://doi.org/10.1051/0004-6361/201832835",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
