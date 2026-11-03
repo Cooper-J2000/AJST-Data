@@ -4,10 +4,10 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 161.3212,0.2623,s,55050.62717964352,10keV,0.000130428140520833,1.94435710664814e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 161.9135,0.3336,s,55050.627186498845,10keV,0.000116837527806284,1.77503269681813e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 162.5894,0.3423,s,55050.62719432176,10keV,0.000135064828731787,2.01347901701889e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-163.0,,s,55050.62719907407,w,19.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN9746,,
+238.47752,74.5,s,55050.6280729,uvot-white,19.2,,magnitude,,n,y,,,,,,,1.0,y,Swift,Swift/UVOT,GCN9746,GCN 9746 的初始 finding-chart 灵敏度概述（约 >19.2 mag）；与 GCN 9751 的 white_FC 属同一首帧。保留历史值但 discard=y，采用 GCN 9751 的逐帧详细值 >21.2 mag（见同帧行）。以 GCN 9751 T_start=164、T_stop=313 s 窗口中点/半宽记时；原文给 Exp=147 s。Swift/UVOT photometric system（GCN 9751 引 Poole+2008），未明确写 Vega/AB，故 mag_system 留空；未作银河消光改正。,LHe496@Codex
 163.1334,0.3187,s,55050.62720061806,10keV,0.000132333940203954,1.9512132665563e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 163.7593,0.452,s,55050.62720786227,10keV,8.63735142977365e-05,1.28761573607896e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-164.0,,s,55050.62721064815,w,21.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN9751,,
+238.47752,74.5,s,55050.6280729,uvot-white,21.2,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN9751,GCN 9751 white_FC：窗口 T_start=164、T_stop=313 s，>21.2 mag，3σ，Exp=147 s。按表列窗口中点/半宽计时。与 GCN 9746 同一首帧的概略 >19.2 mag 为重复初报，已保留并 discard。UVOT photometric system（Poole+2008），原文未明示 Vega/AB，mag_system 留空；未作银河消光改正，E(B−V)=0.18。,LHe496@Codex
 164.5311,0.3278,s,55050.62721679514,10keV,9.49964581423096e-05,1.44322039149468e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 165.2216,0.3628,s,55050.62722478704,10keV,8.34413174991184e-05,1.24390134572524e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 165.8768,0.3787,s,55050.627232370374,10keV,6.55509079436582e-05,1.01506975553132e-05,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -123,22 +123,25 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 287.316,3.091,s,55050.62863791667,10keV,1.49623377112333e-06,2.73177132209496e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 292.618,2.711,s,55050.62869928241,10keV,3.25474372186272e-06,5.94239464816294e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 298.437,4.669,s,55050.62876663195,10keV,4.01441873532168e-06,7.32938176250142e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-322.0,,s,55050.62903935185,uvot-u,20.1,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN9751,,
+252.97752,15,s,55050.6282407,G,12.6,,magnitude,,n,y,,,,,,,1.0,n,University of Miyazaki 30-cm telescope,Unfiltered CCD camera,GCN9747,GCN 9747：未滤光 CCD，1×30 s；窗口 15:04:25–15:04:55 UT，按窗口中点/半宽记录。USNO-A2.0 校准；原文未声明星等系统。无滤光片按仓库规则映射为 G，非 Gaia 测光系统，请勿视作标准 Gaia-G。,LHe496@Codex
+446.47752,124.5,s,55050.6304803,uvot-u,20.1,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN9751,GCN 9751 的 u_FC 与 u 两项完全相同（322–571 s、246 s、>20.1），去重为一行；按所列窗口中点/半宽计时。3σ，上限未作银河消光改正，E(B−V)=0.18。UVOT photometric system（Poole+2008），原文未明示 Vega/AB，mag_system 留空。,LHe496@Codex
 329.577,18.758,s,55050.62912704861,10keV,1.4213814533054e-06,3.10706588774162e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 368.134,25.426,s,55050.62957331019,10keV,7.61862672334329e-07,1.70976694686926e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 454.23,89.769,s,55050.63056979167,10keV,1.97133650509481e-07,4.44830448409503e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-509.0,,s,55050.631203703706,Ic,18.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN9752,,
-509.0,,s,55050.631203703706,Rc,18.5,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN9752,,
-509.0,,s,55050.631203703706,g,18.3,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN9752,,
+508.97752,270,s,55050.6312037,Ic,18.2,,magnitude,,n,y,,,,,,,1.0,n,Okayama Astrophysical Observatory 50-cm telescope,MITSuME three-color CCD camera,GCN9752,GCN 9752：MID-UT=2009-08-07 15:08:56，T-EXP=540 s；按绝对 MID-UT 相对 Swift/BAT 精确 T0=15:00:27.022480 UT 计算 time，time_err=半总曝光。3σ上限，使用 USNO-B1 校准；原文未声明星等系统，mag_system 留空。,LHe496@Codex
+508.97752,270,s,55050.6312037,Rc,18.5,,magnitude,,n,y,,,,,,,1.0,n,Okayama Astrophysical Observatory 50-cm telescope,MITSuME three-color CCD camera,GCN9752,GCN 9752：MID-UT=2009-08-07 15:08:56，T-EXP=540 s；按绝对 MID-UT 相对 Swift/BAT 精确 T0=15:00:27.022480 UT 计算 time，time_err=半总曝光。3σ上限，使用 USNO-B1 校准；原文未声明星等系统，mag_system 留空。,LHe496@Codex
+508.97752,270,s,55050.6312037,g,18.3,,magnitude,,n,y,,,,,,,1.0,n,Okayama Astrophysical Observatory 50-cm telescope,MITSuME three-color CCD camera,GCN9752,GCN 9752：MID-UT=2009-08-07 15:08:56，T-EXP=540 s；按绝对 MID-UT 相对 Swift/BAT 精确 T0=15:00:27.022480 UT 计算 time，time_err=半总曝光。3σ上限，使用 USNO-B1 校准；原文未声明星等系统，mag_system 留空。,LHe496@Codex
 595.977,63.359,s,55050.63221038195,10keV,1.01298374934223e-07,2.27838593620549e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 725.539,96.772,s,55050.63370994213,10keV,5.47373496902056e-08,1.23491382463829e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 906.696,84.385,s,55050.635806666665,10keV,8.21127426054398e-08,1.85252181967015e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1048.472,122.356,s,55050.63744759259,10keV,5.42330748888669e-08,1.37102198310066e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1288.999,118.171,s,55050.64023146991,10keV,6.50307348466321e-08,1.69691823707976e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1588.335,269.49,s,55050.64369600695,10keV,5.72153093804227e-08,1.0278876498708e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-3603.0,,s,55050.66701388889,Rc,19.1,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN9752,,
-3603.0,,s,55050.66701388889,g,18.9,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN9752,,
-3603.0,,s,55050.66701388889,Ic,18.7,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN9752,,
+594.97752,431,s,55050.6321991,uvot-white,21.1,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN9751,GCN 9751 white（164–1026 s，295 s，>21.1，3σ）全段合成上限；按所列窗口中点/半宽计时。窗口包含/重叠首个 white_FC 曝光，因此与该单帧行不是统计独立样本，保留为通告单列的不同合成产品。UVOT photometric system（Poole+2008），原文未明示 Vega/AB，mag_system 留空；未作银河消光改正，E(B−V)=0.18。,LHe496@Codex
+1018.47752,780.5,s,55050.6371007,G,18.5,,magnitude,,n,y,,,,,,,1.0,n,University of Miyazaki 30-cm telescope,Unfiltered CCD camera,GCN9747,GCN 9747：未滤光 CCD，19×30 s；通告给 15:04:25–15:30:26 UT 观测窗口，按窗口中点/半宽记录。窗口宽1561 s、总曝光570 s，帧间间隔未给；USNO-A2.0 校准，原文未声明星等系统。无滤光片按仓库规则映射为 G，非 Gaia 测光系统，请勿视作标准 Gaia-G。,LHe496@Codex
+3602.97752,2430,s,55050.6670139,Rc,19.1,,magnitude,,n,y,,,,,,,1.0,n,Okayama Astrophysical Observatory 50-cm telescope,MITSuME three-color CCD camera,GCN9752,GCN 9752：MID-UT=2009-08-07 16:00:30，T-EXP=4860 s；按绝对 MID-UT 相对 Swift/BAT 精确 T0=15:00:27.022480 UT 计算 time，time_err=半总曝光。3σ上限，使用 USNO-B1 校准；原文未声明星等系统，mag_system 留空。,LHe496@Codex
+3602.97752,2430,s,55050.6670139,g,18.9,,magnitude,,n,y,,,,,,,1.0,n,Okayama Astrophysical Observatory 50-cm telescope,MITSuME three-color CCD camera,GCN9752,GCN 9752：MID-UT=2009-08-07 16:00:30，T-EXP=4860 s；按绝对 MID-UT 相对 Swift/BAT 精确 T0=15:00:27.022480 UT 计算 time，time_err=半总曝光。3σ上限，使用 USNO-B1 校准；原文未声明星等系统，mag_system 留空。,LHe496@Codex
+3602.97752,2430,s,55050.6670139,Ic,18.7,,magnitude,,n,y,,,,,,,1.0,n,Okayama Astrophysical Observatory 50-cm telescope,MITSuME three-color CCD camera,GCN9752,GCN 9752：MID-UT=2009-08-07 16:00:30，T-EXP=4860 s；按绝对 MID-UT 相对 Swift/BAT 精确 T0=15:00:27.022480 UT 计算 time，time_err=半总曝光。3σ上限，使用 USNO-B1 校准；原文未声明星等系统，mag_system 留空。,LHe496@Codex
 5389.799,281.012,s,55050.68769443287,10keV,1.16993928372025e-08,3.18719049687258e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 5652.686,97.974,s,55050.69073710648,10keV,3.99657809696969e-08,9.14284028983894e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 5852.594,101.935,s,55050.693050856484,10keV,3.01397606958154e-08,6.82863735042375e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -169,12 +172,13 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 23569.86,434.757,s,55050.89811180555,10keV,1.34943838846847e-08,3.54389838176751e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 24439.345,548.65,s,55050.908175289354,10keV,9.06422612832668e-09,2.40634825866672e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 29006.136,1757.018,s,55050.961031666666,10keV,3.58674556471618e-09,1.01087003033206e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-31497.0,,s,55050.98986111111,R,22.1,,magnitude,,n,y,,,,,,,1.0,n,,Liverpool Telescope,GCN9753,,
-31497.0,,s,55050.98986111111,R,22.4,0.2,magnitude,,n,n,,,,,,,1.0,n,,Liverpool Telescope,GCN9753,,
-33444.0,,s,55051.012395833335,I,22.0,,magnitude,,n,y,,,,,,,1.0,n,,Liverpool Telescope,GCN9753,,
-33444.0,,s,55051.012395833335,I,21.6,0.2,magnitude,,n,n,,,,,,,1.0,n,,Liverpool Telescope,GCN9753,,
+32435.97752,936,s,55051.0007292,R,22.1,,magnitude,,n,y,,,,,,,1.0,n,Liverpool Telescope (2-m),,GCN9753,GCN 9753 对 XRT 位置未探测的R波段 3σ上限；表列窗口 8.75–9.27 h（6×300 s）。按该窗口中点/半宽记时；报告的总曝光为1800 s。2026-11-02维护者裁定：GCN未明言候选源测光对应哪一历元；候选R检测行按上下文推定与此R窗口同历元，具体归属属推断。使用 USNO-B1 校准，原文未声明系统，mag_system 留空。,LHe496@Codex
+32435.97752,936,s,55051.0007292,R,22.4,0.2,magnitude,,n,n,,,,,,,1.0,n,Liverpool Telescope (2-m),,GCN9753,GCN 9753 报告 XRT 中心外 4.2″ 未编目候选源 R=22.4±0.2 mag，但未明确测光历元。按维护者 2026-11-02 裁定，结合通告所列 R 窗口 8.75–9.27 h，将时刻推定为窗口中点/半宽 9.01±0.26 h（+32435.97752±936 s）。此为基于上下文的历元归属推断，通告未明确说明候选测光来自该窗口；作者称无法判断是否变暗。使用 USNO-B1 校准，原文未声明系统，mag_system 留空。,LHe496@Codex
+34541.97752,1098,s,55051.0251042,I,22.0,,magnitude,,n,y,,,,,,,1.0,n,Liverpool Telescope (2-m),,GCN9753,GCN 9753 对 XRT 位置未探测的I波段 3σ上限；表列窗口 9.29–9.90 h（6×300 s）。按该窗口中点/半宽记时；报告的总曝光为1800 s。2026-11-02维护者裁定：GCN未明言候选源测光对应哪一历元；候选I检测行按上下文推定与此I窗口同历元，具体归属属推断。使用 USNO-B1 校准，原文未声明系统，mag_system 留空。,LHe496@Codex
+34541.97752,1098,s,55051.0251042,I,21.6,0.2,magnitude,,n,n,,,,,,,1.0,n,Liverpool Telescope (2-m),,GCN9753,GCN 9753 报告 XRT 中心外 4.2″ 未编目候选源 I=21.6±0.2 mag，但未明确测光历元。按维护者 2026-11-02 裁定，结合通告所列 I 窗口 9.29–9.90 h，将时刻推定为窗口中点/半宽 9.595±0.305 h（+34541.97752±1098 s）。此为基于上下文的历元归属推断，通告未明确说明候选测光来自该窗口；作者称无法判断是否变暗。使用 USNO-B1 校准，原文未声明系统，mag_system 留空。,LHe496@Codex
 35375.52,1367.661,s,55051.03475138889,10keV,3.18321290174929e-09,7.41685786512477e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 43776.268,4342.246,s,55051.13198226852,10keV,2.24437609377866e-09,4.52156910212418e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 55881.331,4564.448,s,55051.272087164354,10keV,1.77223700389844e-09,4.26947378679216e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 71689.466,16907.308,s,55051.455051689816,10keV,6.62538559351932e-10,1.82686557961398e-10,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 141542.218,235522.972,s,55052.26353261574,10keV,9.08643257278963e-11,4.39211185287465e-11,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
+38520.00000,800,s,55051.0711461,I,18.9,,magnitude,,n,y,,,,,,,1.0,n,Dark Sky Observatory 14-inch (Skynet),,GCN9924,GCN 9924：表列 mean time since trigger=10.7 h，10×160 s，I 波段 3σ上限 18.9；按表列相对 T0 中点记时，time_err=总曝光一半。作者报告使用 807 颗 USNO-B1 星校准并给出 1σ 系统/统计校准误差 0.489/0.000 mag；原文未声明星等系统。,LHe496@Codex
