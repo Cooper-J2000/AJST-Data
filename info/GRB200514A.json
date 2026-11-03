@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB200514A",
-  "alias": [],
+  "alias": [
+    "GRB 200514A"
+  ],
   "ra": 170.101,
   "dec": 19.633,
   "T0": "2020-05-14T02:21:15Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 27735（MAXI/GSC nova alert 触发时刻 2020-05-14 02:21:15 UT，触发仪器官方通告；原文 \"triggered on a bright uncatalogued X-ray transient source at 02:21:15 UT on 2020 May 14\"，只给整秒、不自行补亚秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "MAXI/GSC",
@@ -13,17 +15,24 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 27735（(170.101 deg, 19.633 deg)=(11 20 24, +19 37 58) J2000，恒量假设；统计 90% C.L. 椭圆误差区长/短半径 0.26°/0.21°、长轴自北逆时针 46.0°、另系统 0.1°（90% 包含半径）；非圆误差框 pos_error 留 null，矩形框四角见 comment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode 2026-11-03。身份：GRB 200514A = MAXI/GSC nova alert 于 2020-05-14 02:21:15 UT 触发的未编目 X 射线暂现（GCN 27735），扫描均流 209±38 mCrab（4.0-10.0 keV、1σ）；CALET/CGBM 独立探测（触发 02:21:11.346 UTC，trigger #1273457651，GCN 27743）、AstroSat/CZTI Veto 探测（光变峰 02:21:14.435 UT，GCN 27753），两通告均按 GCN 27735 定位跟进、互证身份；MPE 快照（external/mpe_greiner）同记该事件（obs_date=2020-05-14、11h19m53s +20°08′、Instrument=MAXI、无触发时刻、IPN=y）；同日另有 Fermi/GBM 短暴 GRB 200514B（trigger 611140062，GCN 27736/27748/27755/27774），与本源无关、未混入。T0：保留 2020-05-14T02:21:15Z＝MAXI/GSC 触发时刻（触发仪器官方通告、§3.8 优先级①，bot 原值本已正确）；MAXI 只给整秒；CALET 触发 02:21:11.346 UTC 与 CZTI 峰 02:21:14.435 UT 是其他仪器各自的触发/峰值口径、并非对本源 T0 的调整（CALET 脉冲 T+1.6 至 T+7.5 s，即 02:21:12.9-02:21:18.8 UTC，覆盖 MAXI 触发时刻），不写 T0_offset。位置：保留 ra/dec=170.101/19.633（GCN 27735 逐字）；定位误差为非圆形态、pos_error 留 null：恒量假设下统计 90% C.L. 椭圆误差区长/短半径 0.26°/0.21°、长轴自北逆时针 46.0°、另有系统 0.1°（90% 包含半径）；无常量假设下矩形误差框四角 (169.291,18.660)/(169.683,18.463)/(170.979,20.746)/(170.584,20.945) J2000。分类：tag=['grb']；t90=5.1±1.1 s（CALET/CGBM SGM，40-1000 keV，GCN 27743）、另 T90=9.64 s（AstroSat/CZTI Veto 合并光变，GCN 27753），两者一致 >2 s，按通告 t90 判 lgrb/sgrb → lgrb。红移：无信息、null。alias：补 GCN 用名 GRB 200514A（带空格；GCN 27735/27743/27744/27753 主题行均用此名）。原 bot 时间基准说明（t0_note：t0 为 meta trigger-time（真实触发时刻）；t0_basis：meta_trigger）改写为触发仪器官方通告、原值保留于本句。测光：lc 27 行全部为 GCN 27744 MITSuME 50cm Akeno 三色（g'/Rc/Ic）铺盖观测 co-add 像 5σ 上限（9 个 field × 3 band），逐行与原文表核对一致（数值、波段、MID-UT、曝光时间均符）；本次补 time_err=半曝光、各行 comment 补 field 号与原文表述；原表 \"The magnitudes are expressed in the AB system\"，mag_system=AB 为原文声明；原文明确三色滤光、无滤光片情形不适用。MAXI 前次/下次过境（00:45 UT / 03:54 UT）无显著超额、上限各 20 mCrab（X 射线 mCrab 口径、非光学测光、不入 lc，GCN 27735）。测光检索（2026-11-03）：仓内 gcn/archive 45 947 篇全文检索 200514 命中 15 篇（其中 GRB 200514A 4 篇：27735 探测、27743 CALET、27744 MITSuME 上限 27 行、27753 CZTI，均无其他光学测光；其余 11 篇中 10 篇为同日 Fermi 短暴 GRB 200514B、1 篇为时间戳数字串误命中（GCN 7188，SN 2008D 红外光谱，与本源无关））；external/rssgrbag（140 行）0 命中、grbsn_webtool 无该事件、uvot_grb 0 命中、mpe_greiner 1 条（仅元数据）；ADS API 检索 \"GRB 200514A\" 与 \"200514A\" 各命中 4 篇（均 GCN Circular，无研究论文）、full:\"200514A\" 命中 5 篇（第 5 篇 2024ApJ...971..114L 为 GWAC 冷星耀发样本、与本项目无关）；TNS 不适用（GRB 非 AT/SN/CV 类）。结论：无新可用测光、补 0 行、重锚 0 行、无 X 射线行、无 discard、无去重。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "T0 为 MAXI/GSC nova alert 触发时刻 2020-05-14 02:21:15 UT（GCN 27735，触发仪器官方通告，只给整秒）；原 bot 说明「t0 为 meta trigger-time（真实触发时刻）」指向同一值",
+    "t0_basis": "GCN 27735（MAXI/GSC trigger）",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
   },
   "articles": [],
   "host_galaxy": null
