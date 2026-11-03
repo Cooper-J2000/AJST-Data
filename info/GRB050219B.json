@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB050219B",
-  "alias": [],
-  "ra": 81.306,
-  "dec": -57.758,
-  "T0": "2005-02-19T00:05:51Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 106442"
+  ],
+  "ra": 81.316875,
+  "dec": -57.75813889,
+  "T0": "2005-02-19T21:05:51Z",
+  "T0_ref": "GCN Circular 3044 (Swift/BAT trigger time)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,11 +14,11 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 240.0,
-  "pos_ref": "GCN 3044",
+  "pos_error": 1.5,
+  "pos_ref": "Evans et al. 2009, Table 5 (enhanced XRT position)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "身份/时间：Swift/BAT触发采用GCN 3044给出的2005-02-19 21:05:51 UT；Swift/BAT官方目录另列21:05:51.256640，差0.256640 s，按GCN锚定规则取正式GCN整数秒。旧T0=00:05:51来自HEASARC GRBCAT错时分。Swift/BAT事件号106442；T90=30.7 s（15–350 keV，Swift官方GRB表），据目录T90标记lgrb。位置采用Evans et al. (2009) Table 5增强XRT位置：05:25:16.05 −57:45:29.3，半径1.5 arcsec，90%包含半径。\nGCN 3047的Ks候选靠近被GCN 3049撤回的GCN 3045旧位置，距修正XRT位置约19″，且没有星等/上限数值，未录为LC行。GCN 3096的GNIRS光谱未见连续谱/谱线，无红移测量；不采用条件性宿主假设的红移。GCN 3064的R/Ks两条VLT记录按原文Mean date UT和标准T0换算，time分别为+15805.8 s、+358122.6 s；原文未声明星等系统，留空。Roming+2006 Table 1的Ks=21.5是GCN 3064 Ks=21.47的舍入摘要，未重复录入；其UVOT R=17.81是外推值，不是独立R滤镜测量。\nUVOT：按用户裁定，采用Roming et al. (2009)正式发表版Table 3的78个逐帧数据；所有原库GCN 3046/3050 coadd与Table 3重叠的 constituent exposures 均保留为逐帧行，GCN coadd只在相关行comment中说明、不另重复计入。Table 3以SNR≥3记测量；SNR<3按该表3σ语义以magLim记upper limit，因此本次新增29个测量和49个3σ上限。时间取Table 3曝光中点；time_err取Telp/2。Table TrigT=130539951.3 MET（0.1 s取整）、TrigUT=21:05:51.256；相对GCN整数秒T0换算时按TrigUT的0.256 s差值修正，comment逐行给出Tstart/Tstop/midpoint、image文件名及换算。原文未明确Vega/AB制；按UVOT惯例写Vega（Breeveld et al. 2008）。Roming+2017正式同行评审的MAST数据是对同一组78帧的后续重处理、upper limit阈值改为2σ；未发现正式勘误或明确替代2009 Table 3的说明，按仓库VoR优先规则采用2009正式表。MAST summary列Peak Filter=U、Peak Mag=19.72但未给该峰时刻/单帧来源，故不把summary值转成额外测量。Besson+2007只在RICE livetime表提及本事件，没有测光增量。\n检索留证（2026-11-01）：仓内无gcn/archive目录；external/rssgrbag与external/grbsn_webtool均无本源测光记录；核读GCN事件页相关通告3042、3043、3044、3045、3046、3047、3049、3050、3052、3064、3096，GCN 3064提供两条VLT光学/红外数据。ADS/SciX API因本轮无凭据未覆盖；Crossref/arXiv/OpenAlex/Unpaywall回退检索不是穷尽结果，共享audit/unverified.tsv中PR #731的search-limited记录适用于本批#731/#732/#733，本PR不重复登记通道级行。\nX射线：所有原始X-ray LC字段均保持未改；因T0更正后原mjd与time不再自洽，维护者须于合并前仅按新T0和不变time机械重算X-ray mjd。",
   "sub_tag": [
     "lgrb"
   ],
@@ -288,8 +290,43 @@
         "name_alt": [],
         "trigger_time": "2005-02-19T00:05:51.000Z"
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-01"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Roming+2009",
+      "url": "https://doi.org/10.1088/0004-637X/690/1/163"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x"
+    },
+    {
+      "name": "Roming+2006",
+      "url": "https://doi.org/10.1086/509917"
+    },
+    {
+      "name": "Besson+2007",
+      "url": "https://doi.org/10.1016/j.astropartphys.2006.07.008"
+    },
+    {
+      "name": "Akerlof+2007",
+      "url": "https://doi.org/10.1086/524714"
+    },
+    {
+      "name": "Breeveld+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
