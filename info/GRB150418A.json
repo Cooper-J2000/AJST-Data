@@ -1,22 +1,24 @@
 {
   "transient_id": "GRB150418A",
-  "alias": [],
+  "alias": [
+    "GRB 150418A"
+  ],
   "ra": 160.51,
   "dec": -4.91,
   "T0": "2015-04-18T00:52:08Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "GCN 17719（MAXI/GSC 触发 UT 2015-04-18T00:52:08）",
+  "T0_offset": -16,
+  "T0_offset_ref": "GCN 17727（Konus-Wind 待命模式光变起点 ~T0(MAXI)−16 s，约值）",
   "Trigger_Instrument": "MAXI/GSC",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 17719（矩形误差框 + 0.1 deg 系统误差@90% 包含半径；ra/dec 为误差框四角平均值）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（fsy，2026-11-02）：MAXI/GSC 新星警报系统于 2015-04-18T00:52:08 UT 触发亮 X 射线暂现源（GCN 17719，MAXI 团队）；矩形误差框四角 (159.791, -4.326)、(159.898, -4.194)、(161.225, -5.494)、(161.114, -5.624) J2000，另有 0.1 deg 系统误差（90% 包含半径）；扫描平均流量 597±45 mCrab（4-10 keV），前次过境（4 月 17 日 23:19 UT）上限 20 mCrab。ra/dec=160.51/-4.91 为误差框四角平均值（本库既有值，保留）；原文只给矩形框未给圆形半径，pos_error 保持 null（UKSSDC 事件页将框折算为 1.0 deg，swift.ac.uk/xrt_products/TILED_GRB00041/，2026-11-03 实查，未采纳）。T0 按触发仪器官方 GCN 17719 取 00:52:08（原文整秒精度照写）；MAXI 官网 GRB 列表给 00:52:14（maxi.riken.jp/grbs/，2026-11-03 实查）、UKSSDC 元数据页给 T0 00:52:01（自动产品），分歧备查，按规则以触发仪器 Circular 为准。Swift/BAT 当日无触发：仓内 swift_bat 快照 4 月触发序列为 150403A/150407A/150413A→150423A（跳过 4 月 18 日），GCN 17720 明言 Swift 系对该 MAXI 暴做 tiled 跟随，HEASARC swiftmastr 当日相关观测目标名均为 GRB Discovered Elsewhere（外部触发跟随，2026-11-03 实查）——Trigger_Instrument=MAXI/GSC 维持、无 Swift 触发号。Konus-Wind 待命模式独立探测（GCN 17727），原文称 The long GRB 150418A、光变双峰、起点约 T0(MAXI)−16 s、总持续约 29 s，据此 sub_tag=lgrb（来源原文分类）；爆发起点早于自动触发约 16 s，按规则记 T0_offset=-16（约值）。Konus 注量 2.94(-0.37/+0.47)×10^-6 erg/cm2、2.944 s 峰流量 2.71(-0.37/+0.49)×10^-7 erg/cm2/s（20-1200 keV、1σ、GCN 17727）。Swift-XRT tiled 观测（T0+12.9~32.6 ks、共 3.7 ks/7 瓦片）发现 2 个未编目 X 射线源（Source 1: 160.2608/-4.7593；Source 2: 160.6825/-5.3357，GCN 17722）；后续对 Source 1 的 3.7 ks 观测无探测，且两次观测背景偏高、团队提示 Source #1/#2 可能为背景涨落伪探测（GCN 17725）——lc 两行 UVOT 上限的锚定位置是否为余辉存疑，数据按原样保留。光学检索（2026-11-02/03）：GCN 事件页全清单共 6 篇（17719/17720/17722/17725/17726/17727，gcn.nasa.gov 逐篇实开；间隔号 17721/17723/17724 查为其他事件），唯一光学量即 GCN 17726 的 2 条 UVOT u 上限（已逐行核对入库）；仓内 gcn/archive 未随仓分发（CONTRIBUTING §2）、external/rssgrbag 与 grbsn_webtool 0 命中、swift_bat/uvot_grb/swift_grb/heasarc_grbcat/konus_wind（ApJ 850,161 与 ApJ 908,83 目录表）0 命中；arXiv 元数据检索 \"150418A\" 0 命中、Web 检索无该暴专门论文（仅一份博士论文将其列为时标研究样本、无测光表）→ 无有锚点可补测光、新增 0 行。发现的 X 射线量（MAXI 扫描流量、XRT 计数率/流量）按范围规则不入库。无红移测量、无宿主星系。alias 补 GCN 原文用名 GRB 150418A（带空格）。mag_system=Vega 推定依据 Breeveld+2011（arXiv:1102.4717，UVOT 定标惯例；两行原文均未声明星等系统）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,8 +27,20 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-02"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Breeveld+2011",
+      "url": "https://arxiv.org/abs/1102.4717",
+      "title": "An Updated Ultraviolet Calibration for the Swift/UVOT",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
