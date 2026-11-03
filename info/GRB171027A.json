@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB171027A",
-  "alias": [],
-  "ra": 61.68989,
-  "dec": -2.621,
+  "alias": [
+    "GRB 171027A",
+    "BAT 783479"
+  ],
+  "ra": 61.69071,
+  "dec": -2.62207,
   "T0": "2017-10-27T08:23:06.622860Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "T0_ref": "GCN 22053（Swift/BAT trigger=783479：At 08:23:06 UT，整秒）；亚秒值取触发仪器官方通告页 https://gcn.gsfc.nasa.gov/notices_s/783479/BA/（Trig_time_UTC=2017-10-27T08:23:06.622860 [includes UTCF correction]）与 Swift/BAT 官方目录快照（external/swift_bat summary_general.txt Trig_time_UTC 同值）；GCN 22070（Konus-Wind）引 T0(BAT)=08:23:06.623 UT 互证",
+  "T0_offset": -2.0,
+  "T0_offset_ref": "GCN 22066（BAT mask-weighted light curve starts at ~T-2 s，辐射早于自动触发，取负）；GCN 22070 谱窗自 T0(BAT)-1.661 s 起互证；原文为近似表述 ~T-2 s",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 1.4,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 22062",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（fsy@zcode，2026-11-01）。【身份】Swift/BAT 触发 GRB 171027A：GCN 22053 原文 At 08:23:06 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 171027A (trigger=783479)；external/swift_bat 与 external/swiftgrbba 目录快照同名且 trigger=783479 互证。GCN 事件页全清单 15 篇（22053-22073）逐篇实开均属本暴；同日无第二源（GCN 22067/22068/22072/22074 属另一事件的通告（非本暴，trigger 号见各通告原文））。Trigger_Instrument 精化为 Swift/BAT；alias 补 GCN/目录用名 GRB 171027A（swift_bat 快照 name 字段、GCN 主题行用名）与 BAT 783479（swift_bat 快照 name_alt）。【T0】值不变：亚秒 06.622860 本就出自触发仪器官方来源（BAT 精化分析页 2017-10-27T08:23:06.622860 [includes UTCF correction]；external/swift_bat 快照 Trig_time_UTC 同值），本次补 T0_ref；GCN 22053 整秒 08:23:06、GCN 22070 T0(BAT)=08:23:06.623 UT 互证。T0_offset=-2.0 s：GCN 22066 原文 mask-weighted light curve starts at ~T-2 s（辐射早于自动触发，取负；Konus-Wind 谱窗自 T0(BAT)-1.661 s 起，GCN 22070 互证；原文为近似表述）。【定位】原 ra/dec=61.68989/-2.621 为 GCN 22053 XRT 在轨位置（3.6 arcsec, radius, 90% containment），与 pos_ref=GCN 22062 不符；改用 GCN 22062 细化位置 61.69071/-2.62207（原文 1.4 arcsec (radius, 90% confidence)，来源明确给出置信水平→pos_error_confidence=90）。备查：GCN 22054 增强位置 61.6907/-2.6223（2.1 arcsec, 90%）；BAT 地面精化 61.683/-2.601（1.2 arcmin, sys+stat, 90% containment，GCN 22066）；swiftgrbba 快照 xrt_ra/dec=61.69075/-2.62211（xrt_error_radius=1.4）。【lgrb 判据】T90(15-350 keV)=96.6±4.8 s（GCN 22066；external/swift_bat 快照 t90=96.772±4.90697 s）；GCN 22070 原文 The long GRB 171027A。物理量备查：fluence(15-150 keV)=7.5±0.2E-6 erg/cm2（GCN 22066，90% conf.）；Konus-Wind 能流 (1.78±0.21)E-5 erg/cm2（20 keV-10 MeV，GCN 22070）；T100（BAT 精化光变）约 T-2 至 T+150 s。【红移】无权威值：VLT/X-shooter 仅得上限未测到源（GCN 22060），无已发表光谱红移；GCN 22061 SED photo-z 两解矛盾（高 A_V 解 z<3.85，90% conf.；A_V=0 解 z=9±1），非权威测量，redshift 保持 null；ADS/arXiv/grbhosts.org 检索（2026-11-01）未见本源红移。【宿主】无确定宿主（光学/NIR 仅上限，无宿主测光），host_galaxy 保持 null。【lc 审核】17 行逐行核对：RATIR 6 行（GCN 22057）时间由窗口起点 53.3771 s 改为窗口中点 990 s（窗口 0.04-0.51 h after BAT trigger，time_err=半宽 846 s）、mag_system 补 AB（原文声明）、band Z→z（RATIR 该滤光片按 SDSS 定标，Huang+2017 PASJ DOI 10.1093/pasj/psw124）；GROND 4 行按 GCN 22058 更正值替换（PanSTARRS 定标 AB，原 22056 值系 GROND 零点定标）、time 改中点 1836 s；LCO 3 行 time 改窗口中点 1796.3771 s（08:39:29-09:06:37 UT）；X-shooter 2 行按获取相机序列推算中点；UVOT FC 行（原 19.6，GCN 22053）系 typical 句式非本暴实测，置 discard=y，以 GCN 22064 white_FC>20.6 实测取代；RATIR H 行与 GCN 22061 复述（同值同误差 19.12±0.06、窗口嵌套）判为同一测量转引，删 22061 行（§3.4，其 H 衰减 t^(-1.0±0.1) 记于该 H 行 comment）。新增 29 行：MASTER-OAFA 19（GCN 22055 表）、UVOT 9（GCN 22064 表）、KAIT 1（GCN 22073），X 射线数据未发现/不入库（GCN 22063 为 XRT 分析，不入 lc）。测光检索留证（2026-11-01）：GCN 事件页全清单 15 篇逐篇实开（光学测光/上限 7 篇：22055/22056+22058/22057/22059/22060/22064/22073）、触发号 783479 全 15 篇 grep 无漏、仓内 rssgrbag 0 命中、grbsn_webtool 无本源、arXiv API（GRB 171027A/171027A）0 命中、Aksulu+2022（arXiv:2106.14921，26 暴样本）与 Becerra+2023（arXiv:2308.07882，227 暴样本）样本表均不含本源 → 补 29 行。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,8 +29,20 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-01"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Huang+2017",
+      "url": "https://doi.org/10.1093/pasj/psw124",
+      "title": "ALMA and RATIR observations of GRB131030A",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
