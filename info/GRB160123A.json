@@ -1,23 +1,28 @@
 {
   "transient_id": "GRB160123A",
-  "alias": [],
-  "ra": 150.277,
-  "dec": -33.79,
-  "T0": "2016-01-23T08:58:20Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 160123A",
+    "BAT 671447"
+  ],
+  "ra": 150.31272,
+  "dec": -33.77522,
+  "T0": "2016-01-23T08:58:20.166340Z",
+  "T0_ref": "GCN 18926（Malesani et al., Swift team）：'At 08:58:20 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160123A (trigger=671447)'（整秒）；Swift/BAT 官方目录（仓内 external/swift_bat 快照 summary_general.txt，Trig_time_UTC 列直读，目录取数 2026-07-21）trigger_time=2016-01-23T08:58:20.166340Z；整数秒一致，按《数据审核提示词》§3.2/§3.8 取触发仪器官方目录亚秒值",
+  "T0_offset": -2.048,
+  "T0_offset_ref": "Swift/BAT Catalog summary_burst_durations（external/swift_bat 快照）：T100_start=-2.048 s（T100 区间 -2.048–3.000 s），触发前已有辐射，按 §3.2 取负值",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 1.8,
-  "pos_ref": "GCN 18927",
+  "pos_ref": "GCN 18927（Beardmore et al., Swift-XRT team，astrometrically corrected enhanced position）：RA, Dec = 150.31272, -33.77522，1.8 arcsec（radius, 90% confidence，原文明确标注）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发 GRB（trigger 671447）。审核 fsy（2026-11-02）：(1) 身份与触发：GCN 18926 'At 08:58:20 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160123A (trigger=671447)'；BAT T90=3.95±0.62 s（15-350 keV, GCN 18929；swift_bat 快照 t90=3.952±0.623 s 同能段）、fluence=3.5±0.4e-7 erg/cm2（15-150 keV, 90%）、1 s 峰光子流量 1.3±0.2 ph/cm2/s（15-150 keV, GCN 18929）；swift_bat 快照 2016-01-23 当日唯一 Swift 触发即本源；同日 Fermi/GBM 触发 2016-01-23T02:17:25.583Z（RA 314.22, Dec -22.18, 仓内 fermi_gbm 快照 name_alt bn160123095）为另一事件, 与本源无涉。(2) T0：原库值 2016-01-23T08:58:20Z 与 GCN 18926 整秒一致；按 §3.2/§3.8 取触发仪器 Swift/BAT 官方目录亚秒值 → T0=2016-01-23T08:58:20.166340Z（external/swift_bat 快照 summary_general.txt Trig_time_UTC 列直读；MET 列 475232315.904 为 machine time, 不按 2001 纪元换算）。T0 精化 +0.16634 s, 19 行光学/UVOT 行 time/mjd 已按新 T0 重算；17 行 10keV X 射线行按范围约定原样保留（其 mjd 与新 T0 差 0.166 s <1 s 容差, 合入前需按 mjd=T0_new+time 机械重算, 2026-10-31 裁定）。T0_offset=-2.048 s：swift_bat 快照 summary_burst_durations T100_start=-2.048 s（T100 区间 -2.048–3.000 s）, 触发前已有辐射取负；GCN 18929 'one peak starting at ~T-15 sec' 为目视量级描述, 并列备查。(3) 坐标：原 ra/dec=150.277,-33.79 为 GCN 18929 BAT 地面精化位置（1.6 arcmin, sys+stat, 90% containment）, 与原 pos_error=1.8″/pos_ref=GCN 18927 错配——GCN 18927 的 1.8″ 属其 astrometrically corrected 增强位置 150.31272,-33.77522。已统一采用 GCN 18927 位置（1.8″ radius, 90% confidence, 原文明确标注）；BAT 星上 150.286,-33.779（3′, 90% containment, GCN 18926）并列备查；swiftgrbba 快照 xrt_ra/xrt_dec=150.31267,-33.77522（1.5″, UKSSDC 后续更新值）。(4) 红移：无任何来源给红移（Becerra+2023 表 3 z 列为 '...'）, 保持 null。(5) sub_tag：t90=3.952±0.623 s（15-350 keV, Swift/BAT Catalog；GCN 18929 一致 3.95±0.62 s）, 按目录 t90 判 lgrb。(6) 测光检索（2026-11-02, 按 §3.3 留证）：GCN 站 gcn.nasa.gov 逐篇实开 circulars 18915-18995 共 81 篇（.json 全文）, 命中本源 9 篇：18926/18927/18928/18929/18930/18931/18932/18936/18942, 其中光学定量数据 18928（LCOGT R~21.0）、18931（UVOT 上限表 9 行）、18932（NOT J>19.5）、18936（GROND 7 波段上限）、18942（TAROT R>17.3/18.1/18.8）及 18926（UVOT U FC 预报上限 ~19.2）；GCN 18942 TAROT 3 行为原库漏收, 本次补入 lc（补 3 行）；18929/18930 为 BAT/XRT 高能分析（仅 X 射线, 不入库）；18927 为增强位置通告。仓内快照：swift_bat/swiftgrbba/mpe_greiner 命中（目录级参数与亚秒 trigger_time）, rssgrbag/lightcurve.jsonl、grbsn_webtool/SourceData、uvot_grb、swift_grb 无该源记录。研究文献：arXiv API（export.arxiv.org, all:'GRB 160123A' 与 all:'160123A'）0 篇、INSPIRE API 0 篇；Web 检索命中 Becerra et al. 2023（MNRAS 525, 3262, DOI 10.1093/mnras/stad2513, arXiv:2308.07882, TAROT/COATLI/RATIR 样本文章含本源）——已实开 arXiv TeX 源：其表 3 仅给 E(B-V)=0.10 与 t90=3.95±0.62（与 GCN 一致）, 光变仅图无数表（'The data underlying this article will be shared on reasonable request to the corresponding author'）, 无可入库测光；该文 VoR（OUP）整站 403（Radware）未通读, CDS/VizieR（J/MNRAS/525/3262）网络不可达；ADS/SciX API 无凭据 HTTP 401, 检索通道记 search-limited, 不得据此断言无文献。结论：补 TAROT 3 行, 光学/UVOT 行共 22 行（原 19 行逐行修订）。(7) alias：'GRB 160123A' 为 GCN 通告用名与 swift_bat 快照 name 原形；'BAT 671447' 为 swift_bat 快照 name_alt 原形（官方目录触发号形）。(8) X 射线：Swift/XRT 有观测（GCN 18930, 衰减指数 0.72±0.05）, 库内 17 行 10keV 行按范围约定未审核、未改动。(9) 光学行修订摘要：9 行 UVOT（GCN 18931 表）time 由窗口起点改为窗口中点（原文给 T_start/T_stop, 中点/半宽为 §3.8 口径）, mag_system 补 Vega（原文引 Breeveld+2011）, band 键形 w→uvot-white（原库 w 为 Pan-STARRS w 键, 本行设备为 Swift/UVOT white）；1 行 UVOT u（GCN 18926）time 由起点 295 s 改中点 420 s, 同一 FC 曝光被 GCN 18931 精化为 >19.9（数值不一致不构成确证重复, 两行并存保留）；LCOGT/NOT/GROND 各行 time 由观测起点改窗口中点（LCOGT +1500 s/20x150s、NOT +810 s/27x60s、GROND +3600 s/2hr）, time_err=半宽；reference 形态统一为 'GCN nnnnn'（带空格, 全库一致形态）；以上各行 mjd 均按新 T0 重算（7 位小数）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -161,8 +166,21 @@
         "name_alt": [],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-02"
     }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Becerra+2023",
+      "url": "https://doi.org/10.1093/mnras/stad2513",
+      "title": "Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, COATLI, and RATIR observations",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
