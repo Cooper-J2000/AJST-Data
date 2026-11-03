@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB081226A",
-  "alias": [],
-  "ra": 120.478,
-  "dec": -69.014,
+  "alias": [
+    "GRB081226044",
+    "GRB 081226.044",
+    "bn081226044"
+  ],
+  "ra": 120.501875,
+  "dec": -69.03041666666667,
   "T0": "2008-12-26T01:03:37Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 8729 (Swift/BAT trigger 338177; 2008-12-26 01:03:37 UT); GCN 8785 confirms coincident Fermi/GBM trigger 251946218",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +16,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 4.5,
-  "pos_ref": "GCN 8729",
+  "pos_error": 0.2,
+  "pos_ref": "Nicuesa Guelbenzu et al. 2012 Table 1 (optical transient; J2000; 0.2 arcsec error, confidence not specified)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核（LHe496@Codex）：T0=2008-12-26T01:03:37Z，取 Swift/BAT GCN 8729 的整秒触发时刻；Fermi/GBM GCN 8785 确认同一触发，未形成第二个源；GCN 8785 原文用名 GRB081226044、GRB 081226.044、bn081226044，故收录为 alias。GRB 081226B 是同日另一独立 INTEGRAL 事件，不能并作本源。分类采用 Swift/BAT GCN 8735 的 T90=0.4±0.1 s（15–350 keV），按来源 T90 判 sgrb。位置从错误混配的 BAT 地面坐标 120.478°, −69.014° 改为 Nicuesa Guelbenzu et al. 2012 Table 1 的光学余辉位置 RA=08:02:00.45, Dec=−69:01:49.5 (J2000)，即 120.501875°, −69.0304167°；表列误差 0.2″ 未注明置信水平。该文明确无已知红移；其能量估算中假设 z=0.5，不是红移测量，因此 redshift 保持 null。宿主 object C 由论文明确识别，第二历元 g′=25.88±0.24、r′=25.79±0.34 AB，余辉距其中心 <0.5″；未报告宿主中心坐标或红移。GROND Table 6 的 28 个逐滤镜条目已录入，论文说明全表星等为 AB 且已做银河系消光改正；该表明确取代 GCN 8731 的初报，故其 r′=24.3 记录保留作来源追踪并设 discard=y。UVOT GCN 8737 上限按各滤镜窗口中点/半宽修正时间，保留原文 Vega 系统且不作消光改正。无滤镜 ROTSE GCN 8730 两条按仓库约定使用 band=G 并注明原文为 unfiltered、USNO A2.0(R) 标定。ATCA 射电行按维护者裁定录入：GCN 8952 报 2009-02-21 01:00 至 2009-02-22 22:00 UT 的全观测窗，4.800/4.928 GHz 数据合并后未检出，位置处为 0.115±0.180 mJy/beam (1σ)。按该全窗中点记 time=+57.935 d、time_err=0.9375 d（窗半宽；精确曝光中点未恢复）。Fong et al. 2015 Table 8 将同次观测汇总为 ATCA 4.9 GHz、δt=58.9 d、<540 μJy；表中 δt 仅保留 0.1 d，定义为相对伽马触发时间但未明言是曝光中点，舍入后与 GCN 窗口相容。GCN 噪声 0.180 mJy 的 3σ 为 0.540 mJy，与 Fong 上限一致。文献级卡 fong2015/greiner2024 已读，本源均是汇总表/样本索引；Nicuesa Guelbenzu et al. 2012 Table 6 是直接逐点来源。外部资料核阅 GCN 8729/8730/8731/8732/8733/8735/8736/8737/8738/8785/8952 与 Swift 官方 trigger/region 记录；测光检索（2026-11-03）：仓内 gcn/archive 不存在；external/rssgrbag 与 external/grbsn_webtool 已检查，未见本源独立光变文件；GCN 官方 Circulars 已逐条打开相关 11 篇（8729、8730、8731、8732、8733、8735、8736、8737、8738、8785、8952），其中可用的非 X 测光/上限来源已入表或按正式论文取代初报。ADS/SciX 本轮按用户既定裁定留待补跑，文献检索仍 search-limited，不声称穷尽。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
   "extra_data": {
     "catalog_data": {
@@ -326,6 +332,11 @@
         ],
         "trigger_time": null
       }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "LHe496@Codex",
+      "date": "2026-11-03"
     }
   },
   "articles": [
@@ -335,7 +346,39 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2012A&A...548A.101N",
       "bibtex": "@ARTICLE{2012A&A...548A.101N,\n       author = {{Nicuesa Guelbenzu}, A. and {Klose}, S. and {Greiner}, J. and {Kann}, D.~A. and {Kr{\\\"u}hler}, T. and {Rossi}, A. and {Schulze}, S. and {Afonso}, P.~M.~J. and {Elliott}, J. and {Filgas}, R. and {Hartmann}, D.~H. and {K{\\\"u}pc{\\\"u} Yolda{\\textcommabelow s}}, A. and {McBreen}, S. and {Nardini}, M. and {Olivares E.}, F. and {Rau}, A. and {Schmidl}, S. and {Schady}, P. and {Sudilovsky}, V. and {Updike}, A.~C. and {Yolda{\\textcommabelow s}}, A.},\n        title = \"{Multi-color observations of short GRB afterglows: 20 events observed between 2007 and 2010}\",\n      journal = {\\aap},\n     keywords = {gamma-ray burst: general, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Cosmology and Nongalactic Astrophysics},\n         year = 2012,\n        month = dec,\n       volume = {548},\n          eid = {A101},\n        pages = {A101},\n          doi = {10.1051/0004-6361/201219551},\narchivePrefix = {arXiv},\n       eprint = {1206.1806},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012A&A...548A.101N},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Fong+2015",
+      "url": "https://doi.org/10.1088/0004-637X/815/2/102",
+      "title": "A Decade of Short-Duration Gamma-Ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and Jet Opening Angles",
+      "source": "LHe496@Codex"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "photometry": [
+      {
+        "band": "g",
+        "mag": 25.88,
+        "mag_err": 0.24,
+        "mag_sys": "AB",
+        "source": "NicuesaGuelbenzu+2012"
+      },
+      {
+        "band": "r",
+        "mag": 25.79,
+        "mag_err": 0.34,
+        "mag_sys": "AB",
+        "source": "NicuesaGuelbenzu+2012"
+      }
+    ],
+    "comment": "Nicuesa Guelbenzu et al. 2012 identifies the very faint underlying host as object C; afterglow offset from its center is <0.5 arcsec. Host appears only in second-epoch g′/r′ images; no redshift is known. Host-center coordinates are not separately reported.",
+    "source": "NicuesaGuelbenzu+2012"
+  },
+  "pos_error_confidence": null
 }
