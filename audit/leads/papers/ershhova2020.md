@@ -42,7 +42,7 @@
 | GRB140129B | 表 13、表 20 | `audit/leads/GRB140129B.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 13），接手者须核专篇表是否含 GCN 拿不到的量 |
 | GRB140206A | 表 20 | `audit/leads/GRB140206A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB140304A | 表 20 | `audit/leads/GRB140304A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
-| GRB140311B | 表 11、表 20 | `audit/leads/GRB140311B.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 11），接手者须核专篇表是否含 GCN 拿不到的量 |
+| GRB140311B | 表 11、表 20 | ~~`audit/leads/GRB140311B.md`~~（#126/#120 卡已随审核 PR #858 删除） | 已审核（2026-11-04） | 表 11 九行星等与 GCN 15960 全同（转引），新增 Err. m 已并入 lc；表 20 为 GCN 汇总转引且首帧上限与正文/GCN 矛盾，未采纳 |
 | GRB140508A | 表 12、表 20 | `audit/leads/GRB140508A.md`（#126） | mention-only | **过门槛候选**：有专篇测光表（表 12），接手者须核专篇表是否含 GCN 拿不到的量 |
 | GRB140512A | 表 14、表 20 | `audit/leads/GRB140512A.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 14），接手者须核专篇表是否含 GCN 拿不到的量 |
 | GRB140629A | 表 20 | `audit/leads/GRB140629A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
