@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB140730A",
-  "alias": [],
-  "ra": 56.35,
-  "dec": -66.58,
-  "T0": "2014-07-30T19:43:51Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "BAT 607742"
+  ],
+  "ra": 56.39911,
+  "dec": -66.54516,
+  "T0": "2014-07-30T19:43:51.315580Z",
+  "T0_ref": "Swift/BAT 官方目录快照 trigger_time=2014-07-30T19:43:51.315580 UTC（external/swift_bat summary_general_info/summary_general.txt Trig_time_UTC 列，亚秒直读）；GCN 16642 原文 At 19:43:51 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 140730A (trigger=607742)（整秒一致）",
+  "T0_offset": -14.808,
+  "T0_offset_ref": "Swift/BAT 官方目录快照 summary_burst_durations T100_start=-14.808 s（相对 BAT trigger）；GCN 16652 原文 The first major pulse starts at ~T-14 s 一致",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
@@ -16,11 +18,27 @@
   "pos_ref": "GCN 16644",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-11-04）。原 comment：由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。(1) T0：原值 2014-07-30T19:43:51Z（整秒）改为触发仪器官方目录亚秒值 2014-07-30T19:43:51.315580Z（external/swift_bat 快照 Trig_time_UTC 直读；GCN 16642 整秒 19:43:51 UT 一致；swiftgrbba 快照 19:43:51.000 为同值低精度），lc 非 X 射线行 mjd 已按新 T0 重算（7 位小数）。(2) T0_offset=-14.808 s：BAT 官方目录 T100_start=-14.808 s，GCN 16652 原文 first major pulse starts at ~T-14 s——首个主脉冲早于自动触发约 14 s（|offset|>1 s），按《数据审核提示词》§3.2 记偏移，不改写光变时间轴。(3) 定位修正：原 ra/dec=56.35/-66.58 系 BAT 精化定位（GCN 16652：RA,Dec=56.350,-66.580，uncertainty 2.1 arcmin radius, sys+stat, 90% containment），与 pos_ref=GCN 16644（XRT enhanced RA,Dec=56.39911,-66.54516，uncertainty 1.8 arcsec, radius, 90% confidence）不符，改为 GCN 16644 值；pos_error_confidence=90（原文明确给出）；swiftgrbba 快照 XRT 位置 56.39896/-66.54517（1.5″）同源一致；BAT 精化位置与 XRT 位置相距约 2.4′，略超 BAT 2.1′ 90% 半径（90% 包含的正常尾部，备查）。(4) sub_tag：lgrb 依 t90=40.896±3.37763 s（Swift/BAT 官方目录，15-350 keV，external/swift_bat 快照；并列：GCN 16652 给 41.3±3.7 s 同能段，swiftgrbba 快照 41.3 s 15-150 keV），按目录 t90 判；XRF 依研究文章分类（Bi et al. 2018, ApJ 866, 97，VoR 机读表 apjaadcf8t2_mrt.txt ID=XRF 140730A：Epeak_obs=16.2 keV、T90=40.90 s、z 空，数值出自 Lien et al. 2016）。(5) 红移：无测量（UVOT/LCO/GROND 对 XRT 误差圈均只给上限，Bi+2018 z 列空），redshift 保持 null。(6) 身份：Swift/BAT trigger 607742（GCN 16642 原文＋BAT 目录快照 Trig_ID=607742）；GCN event 页全清单 8 篇（16642/16643/16644/16645/16646/16647/16652/16664）全部实开核对；同日无近邻源（GCN 与文献均无 GRB 140730B，仓内 fermi_gbm/swift_bat 快照 2014-07-30 仅此事件）；别名 BAT 607742 出处=Swift/BAT 官方目录 name_alt。(7) 测光检索（2026-11-04）：GCN event 页＋触发号检索共 8 篇、全部实开，含光学/UV 上限的 4 篇（16642/16645/16647/16664）逐行核对；arXiv API（all:\"GRB 140730A\"/\"140730A\"/\"Swift GRB 140730\"）0 命中；Web 检索另命中样本文章（IceCube+2022、Deng+2023、Zhou+2026，均无该源新测光，未使用）；SciX/ADS API 无凭据（HTTP 401）；仓内 rssgrbag（射电光变）/grbsn_webtool/uvot_grb 快照 0 命中 → 光学上限仍以 GCN 4 篇为全部来源，新增 0 行。(8) 光学 19 行逐行核对：GCN 16645 九行按其表窗口重算中点/半宽并补 time_err（原 3343/3689/5570 三行中点有 0.5 s 舍入差，已正）；band=white 两行改为 uvot-white（原 w 键在 filters.json 中为 Pan-STARRS w 5980.7 Å，与 UVOT white 3325.21 Å 不符）；GCN 16642 White FC 行 time 原为曝光起点 68 s，改为中点 143 s；GCN 16647 两行补 time_err=300 s（120x5 s 半曝光），mag_system 留空（原文未声明系统，USNO-B1 定标）；GCN 16664 七行 time 原为观测起点 219129 s，改为 g'r'i'z' 窗口中点 220254 s（time_err=1125 s），AB 系为原文明确（3-sigma AB magnitudes）；UVOT 九行 mag_system=Vega（GCN 16645 原文引用其光度系统即 Breeveld et al. 2011 标定）；全部光学行未做银消改正（原文明确，E(B-V)=0.09, Schlegel+1998）。(9) X 射线 22 行（10keV，UKSSDC Burst Analyser）零改动；T0 平移 0.31558 s 使其 mjd 与 T0+time 差 0.316 s，在 1 s 容差内，按 2026-10-31 维护者裁定由维护者合入前统一重算。",
+  "sub_tag": [
+    "lgrb",
+    "XRF"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "pos_error_confidence": "90",
+  "articles": [
+    {
+      "name": "Bi+2018",
+      "url": "https://doi.org/10.3847/1538-4357/aadcf8",
+      "title": "Statistical Study of the Swift X-Ray Flash and X-Ray Rich Gamma-Ray Bursts",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
+  }
 }
