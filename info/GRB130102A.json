@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB130102A",
-  "alias": [],
-  "ra": 311.435,
-  "dec": 49.838,
-  "T0": "2013-01-02T18:10:53Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 130102A",
+    "BAT 544784"
+  ],
+  "ra": 311.42346,
+  "dec": 49.81764,
+  "T0": "2013-01-02T18:10:53.944400Z",
+  "T0_ref": "GCN 14127（At 18:10:53 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 130102A, trigger=544784，整秒）；亚秒取触发仪器官方目录 trigger_time=2013-01-02T18:10:53.944400Z（Swift/BAT GRB Catalog，仓内 external/swift_bat 快照；swiftgrbba 18:10:53.000Z 为整秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,14 +16,29 @@
     "grb"
   ],
   "pos_error": 1.6,
+  "pos_error_confidence": "90",
   "pos_ref": "GCN 14129",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT trigger 544784（GCN 14127，image trigger）；同日 GRB 130102B 为 MAXI/GSC 独立事件（GCN 14130，位置 309.58,-72.38），与本源无关，勿混淆。定位改 GCN 14129 Swift-XRT 增强位置 RA,Dec=311.42346,+49.81764（1.6″，90% containment）；原 ra/dec=311.435,49.838 实为 GCN 14133 BAT 地面位置（2.3′，90%），与其 pos_ref=GCN 14129 及 1.6″ 误差不符，已让位（swiftgrbba 快照 xrt_ra/xrt_dec 同 GCN 14129）。位于银道面附近（l=88.33°, b=4.22°，GCN 14127），Galactic N_H=7.96e21 cm^-2（GCN 14127），E(B−V)=1.90（Schlegel+1998，GCN 14136）。t90=77.5±18.2 s（GCN 14133；swiftgrbba 表 t90=77.5 s，15-150 keV），按目录 t90 判 lgrb；Swift/BAT 目录 t90=132.78±17.77 s（15-350 keV）同 >2 s，两表不冲突。测光检索（2026-11-04）：仓内 gcn/archive 全文检索「130102」命中 14 篇，其中本暴相关 8 篇（14127-14129、14131-14134、14136；14130/14135/14137 属 GRB 130102B，15389/15674/15685 为他暴笔误或勘误提及）；external/ uvot_grb、rssgrbag、grbsn_webtool、konus_wind、fermi_gbm 快照无本源记录；ADS 检索「GRB 130102A」命中 9 条（8 篇 GCN + GCN Report 411.1），全文检索另命中 Ershova+2020（ARep 64, 126，已开 PDF 核对其表 20 该暴行=GCN 14132 转引，无增量）→ 无其他文献测光；补 GCN 14136 UVOT 上限 9 行、GCN 14132 MASTER 上限 2 行；GCN 14127 FC 模板句行弃用（同帧实测值在 GCN 14136）。T0 改亚秒值后全表 41 行 mjd 按 mjd=T0+time 重算（含 26 条 10keV X 射线行，仅动 mjd 列）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ershova+2020",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
+    }
+  }
 }
