@@ -3,10 +3,10 @@
   "alias": [
     "GRB 130310840"
   ],
-  "ra": 142.3800048828125,
-  "dec": -17.100000381469727,
-  "T0": "2013-03-10T20:09:44.500000Z",
-  "T0_ref": null,
+  "ra": 142.38,
+  "dec": -17.1,
+  "T0": "2013-03-10T20:09:41.503Z",
+  "T0_ref": "GCN 14283（GBM 触发 20:09:41.50 UT）；FERMIGBRST 官方目录 trigger_time=2013-03-10T20:09:41.503Z（HEASARC，2026-11-03 TAP 在线值与仓内快照一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,17 +14,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.47,
+  "pos_ref": "FERMILGRB/2FLGC（HEASARC，2026-11-03 TAP 在线值与仓内快照 external/fermi_lat 一致：RA=142.38, Dec=-17.1, error_radius=0.47 deg，LAT transient analysis 定位）；并列备查：FERMIGBRST/GCN 14282 LAT 定位 RA,Dec=142.34,-17.23（90% containment，statistical only，0.45 deg）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。T0 改判：原 T0=2013-03-10T20:09:44.500000Z（T0_ref 空）系 MET 384638984.5 未扣闰秒的裸换算（至 2013-03 已积累 3 闰秒，同 Issue #67 模式），改为 GBM 触发时刻 2013-03-10T20:09:41.503Z：GCN 14283 原文 20:09:41.50 UT、FERMIGBRST trigger_time=20:09:41.503Z（MJD 56361.84006369）、Qin+2021 (RAA 21, 72, DOI 10.1088/1674-4527/21/3/72) VoR 同取 20:09:41.50 UT 定义为 T0；FERMILGRB/2FLGC 目录 trigger_time=20:09:41.003（与 FERMIGBRST 差 0.5 s，目录换算口径差，不写 T0_offset）；LAT 探测时刻约 20:09:44 UT（GCN 14282）不是触发时刻。位置：ra/dec=142.38/-17.1 与 pos_error=0.47 deg 取 FERMILGRB/2FLGC（LAT transient analysis 定位，HEASARC 文档未标注误差置信水平，pos_error_confidence 留空）；FERMIGBRST/GCN 14282 的 LAT 定位 142.34/-17.23、0.45 deg 并列备查，两者误差圈高度重叠。别名「GRB 130310840」：GCN 14283 原文用名（trigger 384638984 / 130310840），GCN 14282 原文用名（GBM trigger 130310840/384638984）。t90=16.0003±2.56085 s（50-300 keV，t90_start=4.09604 s，FERMIGBRST 目录）按目录 t90 判 lgrb；但 GCN 14283 初步 T90~2.4 s、GCN 14284 称 short-duration、GCN 14310 称 bright short、Konus 总时长~3 s（GCN 14285），Li+2023 与 Tong 2022 亦按 sGRB/磁星巨耀发处理——目录 t90 与通告/文献分类冲突，lgrb/sgrb 留空待决；保留 sub_tag=Fermi-LAT（LAT 探测确证，GCN 14282 与 2FLGC）。余辉：Swift XRT 于 GCN 14288 报候选余辉（RA,Dec=141.901,-17.1044，3.6″ 90%），GCN 14290 正式撤回；GCN 14316 复测共 5 源、仅源#5 在 IPN 误差框内；RATIR（GCN 14350）测得源#5（RA,Dec=141.881334,-17.147639±0.5″）两历元 r′i′ 测光、未变暗、判不太可能是本源余辉；lc 现有 4 行即为该源#5 测光，已按 GCN 14350 原文历元（1.31–1.47 d / 3.31–3.45 d）取窗口中点修正 time/time_err/mjd、补 mag_system=AB 并置 discard=y。GCN 14289 标题为 GRB 130310A 但正文观测对象是 GRB 130313A（Gemini/GMOS，G1/G2），不属本源，不入库。测光检索（2026-11-03）：仓内 gcn/archive 45 947 篇全文检索命中 10 篇（GCN 14282/14283/14284/14285/14288/14289/14290/14310/14316/14350，含光学数值的仅 GCN 14350 四行，GCN 14289 实为 130313A），external/rssgrbag、external/grbsn_webtool、external/uvot_grb 均无记录；GCN 站核对 GCN 14350 与存档一致；ADS（2026-11-03，API 检索）按名命中 13 条=上述 10 篇 GCN+3 篇研究论文（Qin+2021 RAA 21, 72；Tong 2022 RNAAS 6, 115；Li+2023 ApJ 955, 98，均为 prompt γ 射线分析、无测光表，Qin+2021 VoR 明言「no certain Swift/XRT or optical candidate detected」）；结论：本源无确证余辉测光，除 GCN 14350 源#5 的 4 行外无其他测光；补 0 行（现有 4 行逐行核对并修正）。",
   "sub_tag": [
     "Fermi-LAT"
   ],
-  "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_unit": "deg",
   "articles": [
     {
       "name": "Qin+2021",
@@ -39,7 +37,21 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...955...98L",
       "bibtex": "@ARTICLE{2023ApJ...955...98L,\n       author = {{Li}, Yan and {Shen}, Rong-Feng and {Zhang}, Bin-Bin},\n        title = \"{Quasiperiodic Oscillation in Short Gamma-Ray Bursts from Black Hole-Neutron Star Mergers}\",\n      journal = {\\apj},\n     keywords = {Stellar mass black holes, Neutron stars, Gravitational wave sources, Gamma-ray bursts, Relativistic jets, 1611, 1108, 677, 629, 1390, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2023,\n        month = oct,\n       volume = {955},\n       number = {2},\n          eid = {98},\n        pages = {98},\n          doi = {10.3847/1538-4357/acefbf},\narchivePrefix = {arXiv},\n       eprint = {2308.06151},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2023ApJ...955...98L},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "source": "bot"
+    },
+    {
+      "name": "Tong2022",
+      "url": "https://doi.org/10.3847/2515-5172/ac7524",
+      "title": "On the Age of the Magnetar Inside GRB 130310A",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
+    }
+  }
 }
