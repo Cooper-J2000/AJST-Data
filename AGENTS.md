@@ -40,6 +40,16 @@
 
 ## 最近更新（外部 agent 请注意版本）
 
+- **2026-11-04**：`extra_data` 骨架固化（v2.37），**旧键不得写回**：
+  `catalog_data`（1403 个源的目录原样 dump）与 `derived`（603 个源的派生量）已全库删除。
+  `tools/validate.py` 对这两个**键**报 **ERROR**（CI 红）；判据是「键」，`t0_note` 等文字里提到不算违规。
+  派生量按 `params` 规格写（`{"<key>": {"v","err","src"}}` + `params_computed`，键须在
+  `backend/params_registry.json` 注册），外部目录原件留在 `external/`。**解 rebase/merge 冲突时禁止用
+  「保留 ours」把这两个键恢复**（本批 55 个 PR 里 28 个的分支仍是旧结构，逐个剥离过）。
+  条文：`SCHEMA.md` §2.1a、《数据审核提示词》§3.5、PR 模板「元数据硬检查」栏。
+**同批另立两条数据卫生口径**：`discard`/`upperlimit`/`Gext_corr` 全库基线 **0 行为空**（新行写 `y`/`n`，
+不要留空）；`sub_tag` 只填 `tags.json` 受控词表词条，表里的 `--`/`UB^` 这类占位符是「无值」，**必须留空**
+（曾因此被 ETL 注册成两个垃圾 tag）。
 - **2026-10-29**：三条契约硬化（本批 155 个 PR 审核暴露）：
   1. **PR 有评论就要回**（§2 第 2 条 / §5 第 8 项）：领新源前先 `gh pr list --author @me --state open` 扫自己 PR 的
      维护者评论，改数据 + 回复 `commit sha`（或不采纳理由）后才允许继续；PR 模板新增「前序 PR 反馈处理」栏。

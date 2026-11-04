@@ -123,6 +123,25 @@ POS_ERROR_CONF = {'90', '68', '3sigma', '1sigma'}
 alias_junk = []
 alias_exempt = []
 gcn_articles = []
+tagvocab_bad = []
+# 受控词表越界（tag/sub_tag 不在 tags.json 里）：逐项收集、汇总成一条警告
+TAGVOCAB_CACHE = {}
+
+
+def tag_vocab():
+    """tags.json 的 name 集合（懒加载；缺文件时返回 None 表示跳过该项检查）。"""
+    if 'v' in TAGVOCAB_CACHE:
+        return TAGVOCAB_CACHE['v']
+    vocab = None
+    p = os.path.join(ROOT, 'tags.json')
+    if os.path.exists(p):
+        try:
+            d = json.load(open(p, encoding='utf-8'))
+            vocab = {x.get('name') for x in d if isinstance(x, dict) and x.get('name')}
+        except Exception:
+            vocab = None
+    TAGVOCAB_CACHE['v'] = vocab
+    return vocab
 
 
 def _alias_has_evidence(alias, blob):
@@ -202,6 +221,15 @@ def check_info(path):
             for i, v in enumerate(d[key]):
                 if not isinstance(v, str):
                     err(f'{name}: {key}[{i}] 应为字符串，实为 {v!r}')
+    # 受控词表越界（警告级）：tag/sub_tag 只能用 tags.json 里的 name。
+    # 历史坑：Ho+2023 批次把表格占位符 `--` / `UB^` 当 sub_tag 写入，ETL 据此注册出两个垃圾 tag
+    # （0 个源关联），库侧 tags 与 tags.json 长期不一致。占位符一律留空。
+    _vocab = tag_vocab()
+    if _vocab:
+        for key in ('tag', 'sub_tag'):
+            for v in (d.get(key) or []):
+                if isinstance(v, str) and v not in _vocab:
+                    tagvocab_bad.append(f'{name}:{key}={v}')
 
     # 别名格式（警告级，见《数据审核提示词》§3.10）
     al = d.get('alias')
@@ -770,8 +798,11 @@ def main():
                     f'不计入（例：{", ".join(alias_exempt[:3])}）')
         warn(msg)
     elif alias_exempt:
-        warn(f'alias 伪形背书豁免：{len(alias_exempt)} 项有「<GCN nnn> 原文用名」证据串，不计入普查'
-             f'（例：{", ".join(alias_exempt[:3])}）——见《数据审核提示词》§3.10')
+        warn(f'alias 伪形背书豁免：{len(alias_exempt)} 项有「<GCN nnn> 原文用名」证据串，不计入普查')
+    if tagvocab_bad:
+        warn(f'tag/sub_tag 越出受控词表：{len(tagvocab_bad)} 项（例：{", ".join(tagvocab_bad[:3])} …）'
+             f'——只能用 tags.json 里的 name；表格占位符（`--`、`UB^` 之类）一律留空，'
+             f'否则 ETL 会把它们注册成垃圾 tag（见 AGENTS.md 2026-11-04 条）')
 
     if gcn_articles:
         warn(f'articles 含 GCN 通告：{len(gcn_articles)} 条（例：{", ".join(gcn_articles[:3])} …）——'
