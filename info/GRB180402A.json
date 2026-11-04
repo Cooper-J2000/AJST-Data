@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB180402A",
-  "alias": [],
-  "ra": 251.9335,
-  "dec": -14.9683,
-  "T0": "2018-04-02T09:44:59Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB180402406"
+  ],
+  "ra": 251.93358,
+  "dec": -14.96858,
+  "T0": "2018-04-02T09:44:59.279Z",
+  "T0_ref": "GCN 22580(Swift/BAT trigger 821103,09:44:59 UT);亚秒取触发仪器 Swift/BAT 官方目录 2018-04-02T09:44:59.279Z(HEASARC BAT GRB Catalog,仓内 external/swift_bat 快照)",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.1,
-  "pos_ref": "GCN 22580",
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 22586;UKSSDC Swift BAT-XRT 目录 trigger 821103 精化位(仓内 external/swiftgrbba 快照)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份:Swift/BAT trigger 821103(GCN 22580),Fermi/GBM trigger 544355104(GCN 22585 原文用名 180402406,即 FERMIGBRST 目录名 GRB180402406),Konus-Wind T0=09:45:00.353(GCN 22588);同日无他暴混淆,GBM 目录另有同日独立源 GRB180402481(11:32 UT)非本源。T0=2018-04-02T09:44:59.279Z 取触发仪器 Swift/BAT 官方目录亚秒值(HEASARC BAT GRB Catalog,仓内 external/swift_bat 快照;GCN 22580 整秒 09:44:59 UT 一致);GBM 09:44:59.367Z(GCN 22585)与 Konus-Wind 09:45:00.353(GCN 22588)备查。t90=0.18±0.03 s(15-350 keV,Swift/BAT 目录 external/swift_bat;GCN 22584 同值)按目录 t90 判 sgrb;GBM T90=0.448±0.326 s(GCN 22585)在误差内不冲突。定位:ra/dec=251.93358/-14.96858、pos_error=2.1″(90%)取 UKSSDC Swift BAT-XRT 目录精化位(仓内 external/swiftgrbba 快照 xrt_* 字段;GCN 22586 为 251.9336/-14.9686、2.1″、90% confidence;GCN 22580 BAT on-board 3′/90% 未采用)。原 extra_data t0_note「t0 为 meta trigger-time(真实触发时刻)」/t0_basis「meta_trigger」保留,本次仅按 BAT 目录补亚秒,光变 time 相对触发时刻不变。光变修订:UVOT 各行(GCN 22587)time 由窗口起点改为窗口中点、time_err=半宽,band 由 w 改 uvot-white(w 为 Pan-STARRS 键),补 u_FC 与 white_FC 两行,mag_system=Vega(GCN 22587 明示引 Breeveld+2011 UVOT 光度系统);LCO 行(GCN 22581)time 由中点 23.7 min post GRB 重算为 1422 s、补 AB 推定依据;RATIR 行(GCN 22582)time=观测窗口 1.8 min-2.33 h 中点 4248 s(bot 4213 s 误用舍入日小数 2.41-2.50);ISON 两行(GCN 22617)补 time_err;新增 KAIT 行(GCN 22583)。全表 mjd=T0+time 重算自洽;本源 lc 无 X 射线能量串行。测光检索(2026-11-04):仓内 gcn/archive 全文命中 11 篇(22580-22588、22600、22617),含光学数值/上限者 22581/22582/22583/22587/22617 共 5 篇,全部逐行核对入库;OpenAlex 全文检索 21 命中(8 篇为 GCN;研究论文逐题查核:Volnova+2021 IKI GRB-FuN Table II 仅转引 GCN 22617、O'Connor+2022 明确因银河消光 AV>1.5 mag 排除本源、Lan+2021 与 Minaev+2021 仅 prompt 谱,均无新光学测光);Crossref 检索无额外命中;ADS/SciX API 无 token(HTTP 401)通道受限,已在 audit/unverified.tsv 登记(* 通道级 search-limited)。共补 1 行(KAIT,GCN 22583)。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
   },
   "articles": [],
   "host_galaxy": null
