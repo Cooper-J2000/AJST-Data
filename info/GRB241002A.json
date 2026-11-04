@@ -1,29 +1,40 @@
 {
   "transient_id": "GRB241002A",
-  "alias": [],
+  "alias": [
+    "BAT 1257556"
+  ],
   "ra": 140.94825,
   "dec": 39.83161,
-  "T0": "2024-10-02T06:14:18Z",
-  "T0_ref": null,
+  "T0": "2024-10-02T00:50:22.875360Z",
+  "T0_ref": "Swift/BAT 目录快照 external/swift_bat（trigger 1257556，trigger_time=2024-10-02T00:50:22.875360Z）；GCN 37662 整秒互证（00:50:22 UT）；官方通告页 gcn.gsfc.nasa.gov/other/1257556.swift GRB_TIME=3022.87 SOD=00:50:22.87 UT 同值互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.9,
   "pos_ref": "GCN 37665",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 修正（Issue #84 家族）：bot 原值 2024-10-02T06:14:18Z（extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」）并非本源触发时刻——该值与同日近邻源 GRB 241002B（Fermi/GBM，ra=328.32006 dec=-58.94706，T0=2024-10-02T06:14:18.763Z）的触发时刻仅差亚秒，属同日近邻源导入混装；本源真实触发=Swift/BAT trigger 1257556：GCN 37662「At 00:50:22 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 241002A (trigger=1257556)」，亚秒取 Swift/BAT 目录快照 external/swift_bat trigger_time=2024-10-02T00:50:22.875360Z（整数秒与 GCN 37662 一致；官方通告页 gcn.gsfc.nasa.gov/other/1257556.swift GRB_TIME=3022.87 SOD=00:50:22.87 UT，与目录值差 5.4 ms，<60 ms 阈值；GCN 37666/37680/37744 各观测时刻按新 T0 反算均自洽）。Trigger_Instrument 由 Swift/UVOT 改为 Swift/BAT（UVOT 为后随观测设备，GCN 37662/37683）。位置：GCN 37665 XRT 增强定位 RA,Dec=140.94825,+39.83161（2.9″，radius, 90% confidence → pos_error_confidence=90）；BAT 地面定位 140.942,39.829（1.0′，90%，GCN 37705）与 XRT 初版 140.9500,39.8324（5.8″，90%，GCN 37662）并列备查。分类：t90=46.81±10.52 s（15-350 keV，Swift/BAT refined analysis GCN 37705；Swift/BAT 目录快照同源 t90=43.304±4.392 s，两值一致判长）→ 按目录/通告 t90 判 lgrb → sub_tag=lgrb；GCN 37662 报 BAT 在轨光变「duration of about 20 sec」量级一致备查。alias「BAT 1257556」为 Swift/BAT 目录快照 name_alt（官方目录触发名）。X 射线测光（GCN 37681 XRT 精化分析）按约不入库。同日近邻源甄别：GRB 241002B（Fermi/GBM）、GRB 241002C（SVOM/ECLAIRs，ra=62.45 dec=-7.91）触发时刻/位置均不合，非同源。测光检索留证（2026-11-04）：GCN 官网检索「241002A」命中 8 篇全部实开（37662/37665/37666/37680/37681/37683/37705/37744），其中测光/上限 4 篇——37666（OSN 1.5m I>22.0，+1 行）、37680（LCOGT 1m r/i，原 2 行 time 重算）、37683（Swift/UVOT 8 波段上限，+8 行）、37744（NOT r>23.2/z>22.5 AB，+2 行）；仓内 external 快照：swift_bat/swiftgrbba/mpe_greiner 命中本源（均目录级参数、无光变表），rssgrbag、grbsn_webtool、uvot_grb 无本源记录；arXiv API 检索「GRB 241002A」「241002A」0 篇（2026-11-04），ADS/SciX API 无凭据（HTTP 401）通道受限、通用网络检索亦未见研究论文——按 §3.10 不得据此断言「无文献」，文献层结论记为「未见可引用测光表」；本次共新增 11 行、原 2 行 LCOGT 行 time 重算（绝对时刻 mjd 不变）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
+  "articles": [],
+  "host_galaxy": null,
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
-  },
-  "articles": [],
-  "host_galaxy": null
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-05"
+    }
+  }
 }
