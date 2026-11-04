@@ -1,7 +1,8 @@
 {
   "transient_id": "GRB040812",
   "alias": [
-    "XRF040812"
+    "XRF040812",
+    "GRB 040812X"
   ],
   "ra": 246.509375,
   "dec": -44.73038888888889,
@@ -18,11 +19,39 @@
   "pos_ref": "GCN 2648; GCN 2655",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "Identity/T0: INTEGRAL/IBAS alert #1901 is GRB 040812 (GCN 2640), detected 2004-08-12 06:01:50 UT; D’Avanzo+2007 independently gives 2004 Aug 12.251 UT. Adopt GCN 2640 trigger time. Position is fading Chandra source #2 (16:26:02.25, -44:43:49.4; GCN 2648/2655), which D’Avanzo+2007 identifies with the optical afterglow; GCN 2655 reports its decline between Chandra epochs. No positional uncertainty for this refined source is quoted, so pos_error remains null. The former coordinates instead matched the non-afterglow VLA candidate in GCN 2643. D’Avanzo+2007 only estimates z=0.3–0.7 from host properties/spectrum; no secure redshift is adopted. Photometry search (2026-11-02): no gcn/archive snapshot exists in this checkout; rssgrbag lightcurve has 0 matching rows and normalized metadata has one GRB040812 entry with radio_ag_flag=N; grbsn_webtool has the Soderberg HST mirror table. Reviewed 11 relevant official GCN circulars (2640, 2642, 2643, 2645, 2648-2651, 2653, 2655-2656); they yield no additional usable afterglow photometry beyond the discarded preliminary VLT limit and the HST limits entered from Soderberg+2005b. ADS/SciX direct full text was unavailable; title/bibcode fallback located the D’Avanzo+2007 and Soderberg+2005b studies. The fifth GMRT source in GCN 2653 is an extended field source hundreds of arcseconds from the afterglow and was not added.",
+  "comment": "Identity/T0: INTEGRAL/IBAS alert #1901 is GRB 040812 (GCN 2640), detected 2004-08-12 06:01:50 UT; D’Avanzo+2007 independently gives 2004 Aug 12.251 UT. Adopt GCN 2640 trigger time. Position is fading Chandra source #2 (16:26:02.25, -44:43:49.4; GCN 2648/2655), which D’Avanzo+2007 identifies with the optical afterglow; GCN 2655 reports its decline between Chandra epochs. No positional uncertainty for this refined source is quoted, so pos_error remains null. The former coordinates instead matched the non-afterglow VLA candidate in GCN 2643. D’Avanzo+2007 only estimates z=0.3–0.7 from host properties/spectrum; no secure redshift is adopted. Photometry search (2026-11-02): no gcn/archive snapshot exists in this checkout; rssgrbag lightcurve has 0 matching rows and normalized metadata has one GRB040812 entry with radio_ag_flag=N; grbsn_webtool has the Soderberg HST mirror table. Reviewed 11 relevant official GCN circulars (2640, 2642, 2643, 2645, 2648-2651, 2653, 2655-2656); they yield no additional usable afterglow photometry beyond the discarded preliminary VLT limit and the HST limits entered from Soderberg+2005b. ADS/SciX direct full text was unavailable; title/bibcode fallback located the D’Avanzo+2007 and Soderberg+2005b studies. The fifth GMRT source in GCN 2653 is an extended field source hundreds of arcseconds from the afterglow and was not added. Re-audit 2026-11-03 (Rusty-Harpoon@zcode; gcn/archive snapshot now available): full-text sweep of all 45947 archived circulars for '040812' hits 13 (2640, 2642, 2643, 2644, 2645, 2648, 2649, 2650, 2651, 2653, 2655, 2656, 2824), all read in full; GCN 2644 is a verbatim duplicate of 2645; GCN 2642 (SMARTS/ANDICAM BVR IYJHK from 18.4 h postburst) and GCN 2644/2645 (Keck/LCO I-band at +47 min, +104 min, +1.75 d) and GCN 2653 ('no detectable emission' at the VLA position) quote no numeric limits, so no rows from them; GCN 2643 2-sigma box limits (0.14 mJy at 4.9 GHz, 0.16 mJy at 8.5 GHz) entered as two upperlimit rows anchored at 2004-08-14.15 UT (the 2-arcmin box contains the Chandra #2 afterglow), i.e. 2 rows added. ADS re-search: phrase 'GRB 040812 OR XRF 040812' 9 hits (6 GCN + D'Avanzo 2006NCimB.121.1467D + 2 GCN duplicates); full-text 'XRF040812' 3 hits, all GCN; no further papers. Soderberg+2005b Table 1 re-verified line by line from arXiv v1 (astro-ph/0502553) and independently against the in-repo grbsn_webtool mirror (SourceData/GRB020903/OriginalFormats/GRB020903_Optical4.txt, character-identical): F625W >26.99 AB at dt=32.0 d (2000 s), F775W >26.38 AB at dt=32.1 d (2120 s), second-epoch Oct 4.8 cells are dashes; VoR re-attempt 2026-11-03 again blocked by IOP/Radware captcha, re-registered in audit/unverified.tsv. D'Avanzo VoR (Il Nuovo Cimento B 121, 1467-1468) is subscription-only at sif.it (DOI resolved to the SIF article page; fulltext link leads to a login page); content verified from arXiv v1 astro-ph/0612644 (registered in audit/unverified.tsv): INTEGRAL discovery 2004 Aug 12.251 UT, Chandra candidate behind the occulting bar in both VLT epochs and visible in 2/10 dithered frames per epoch (confirms discard of the GCN 2651 I~24 row), no tabulated photometry (Fig. 1 only), host I=21.5 observed and I=19.97+-0.12 after Galactic-absorption correction, z=0.3-0.7 estimate only. t90=19.0 s (rssgrbag snapshot, band unspecified; GCN 2640 calls the event a 20 s long GRB): sub_tag lgrb added per catalog t90 alongside XRF, which follows the discovery teams' own naming (GCN 2649/2651/2653/2656; D'Avanzo+2006; Soderberg+2005b). Alias 'GRB 040812X' added (MPE Greiner catalog snapshot, external/mpe_greiner). Host galaxy established from Soderberg+2005b sec 3.3.2 (extended source 0.33 arcsec from the nominal CXO position, F625W=24.50+-0.06 AB observed) with D'Avanzo+2006 confirming the afterglow faded to the host level by 220 d; redshift stays null (estimate only).",
   "sub_tag": [
+    "lgrb",
     "XRF"
   ],
   "pos_error_unit": "arcsec",
+  "articles": [
+    {
+      "name": "D'Avanzo+2007",
+      "url": "https://doi.org/10.1393/ncb/i2007-10281-2",
+      "title": "Discovery of the optical afterglow of XRF 040812: VLT and Chandra observations",
+      "source": "LHe496@Codex"
+    },
+    {
+      "name": "Soderberg+2005b",
+      "url": "https://doi.org/10.1086/430405",
+      "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
+      "source": "LHe496@Codex"
+    }
+  ],
+  "host_galaxy": {
+    "photometry": [
+      {
+        "band": "F625W",
+        "mag": 24.5,
+        "mag_err": 0.06,
+        "mag_sys": "AB",
+        "source": "Soderberg+2005b"
+      }
+    ],
+    "comment": "Extended source 0.33 arcsec (<1sigma) from the nominal CXO position (16:26:02.25, -44:43:49.4 = GCN 2648 source #2), interpreted as the host galaxy of XRF 040812 (Soderberg+2005b sec 3.3.2, HST/ACS F625W); D'Avanzo+2006 (arXiv:astro-ph/0612644) confirms the afterglow faded to the host level by 220 d after the burst. F625W=24.50+-0.06 is the observed magnitude (AB per the paper's HST photometry convention, Sirianni et al. 2005 conversions, same as its Table 1 'HST mag (AB)' column); the corresponding R=20.68+-0.05 (foreground-extinction corrected, same source) is a derived value and was not entered. D'Avanzo+2006 gives host I=21.5 observed and I=19.97+-0.12 after Galactic-absorption correction (magnitude system not declared in that paper); z=0.3-0.7 is a rough estimate, not a measurement, so no host redshift is recorded. No independent host coordinates beyond the 0.33-arcsec offset from the CXO position (offset direction unpublished), so ra/dec omitted.",
+    "source": "Soderberg+2005b sec 3.3.2 (DOI 10.1086/430405); D'Avanzo+2006 (DOI 10.1393/ncb/i2007-10281-2)"
+  },
   "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
@@ -31,21 +60,11 @@
     "bot_created": true,
     "merged_from": [
       "XRF040812"
-    ]
-  },
-  "articles": [
-    {
-      "name": "D'Avanzo+2007",
-      "title": "Discovery of the optical afterglow of XRF 040812: VLT and Chandra observations",
-      "url": "https://doi.org/10.1393/ncb/i2007-10281-2",
-      "source": "LHe496@Codex"
-    },
-    {
-      "name": "Soderberg+2005b",
-      "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
-      "url": "https://doi.org/10.1086/430405",
-      "source": "LHe496@Codex"
+    ],
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03"
     }
-  ],
-  "host_galaxy": null
+  }
 }
