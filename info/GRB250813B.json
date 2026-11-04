@@ -1,33 +1,42 @@
 {
   "transient_id": "GRB250813B",
-  "alias": [],
-  "ra": 22.44961,
-  "dec": 12.45222,
-  "T0": "2025-08-13T01:46:03Z",
-  "T0_ref": null,
+  "alias": [
+    "sb25081303",
+    "GRB 250813.952",
+    "bn250813952"
+  ],
+  "ra": 336.7505,
+  "dec": 12.4613,
+  "T0": "2025-08-13T22:51:12Z",
+  "T0_ref": "GCN 41354",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM/VT",
-  "redshift": 1.75,
+  "Trigger_Instrument": "SVOM/ECLAIRs",
+  "redshift": 1.752,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 41363",
-  "comment": null,
+  "pos_error": 3.7,
+  "pos_ref": "GCN 41359",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 41363",
+  "comment": "审核 fsy 2026-11-03。身份：SVOM/ECLAIRs 于 2025-08-13T22:51:12 UTC 触发并定位（SVOM burst-id sb25081303，GCN 41352；其 v1 误名 GRB 250813A，GCN 41354 更正）。原库 T0=2025-08-13T01:46:03Z 与红移 1.75 均为 bot 无核抽取：该 T0 实为同日另一暴 GRB 250813A（Fermi/GBM bn250813074，触发 01:46:03.86 UT，GCN 41343）的触发时刻，本源 T0 已改正为 ECLAIRs 触发时刻；Fermi/GBM 亦触发本源（trigger 776818276/250813952，T0=22:51:11.24 UT，GCN 41376，与 ECLAIRs 值差 0.76 s）。定位取 Swift/XRT 336.7505,+12.4613（误差 3.7″ 半径、90% C.L.，GCN 41359）；并列备查：Ondrejov D50 光学 22h27m00.15s,+12d27m44.5s（GCN 41353）、EP-FXT 336.7507,+12.4617（10″ 90%，GCN 41361）、SVOM/MXT 精化 22h26m58.6s,+12d27m08s（54″ 90%，GCN 41368；原库 ra=22.44961 系该值误以小时为单位存入，1h=15°）、ECLAIRs 336.728,12.498（2.17′ 90%，GCN 41352/41354）。红移 z=1.752：VLT/X-shooter 吸收线谱（C II、Si IV、Si II、C IV、C I、Al II、Al III、Mn I、Fe II、Fe II*、Mn II、Mg II、Mg I、Ca II，连续谱蓝端至 ~3590 Å，GCN 41363），GCN 41368/41383/41412 转引 1.75/1.752。分类 lgrb：t90=26.8 +0.4/-0.5 s（SVOM/ECLAIRs，4-120 keV，68% C.L.，GCN 41412）；t90=24.9±0.76 s（SVOM/GRM，15-5000 keV，GCN 41383）；t90≈24.1 s（Fermi/GBM，50-300 keV，GCN 41376）；按通告 t90 判 lgrb，GCN 41352 主题亦称 bright long burst。Eiso=(1.34 +0.07/-0.08)e53 erg（1 keV-10 MeV 静止系，GCN 41412；GRM 值 (1.16 +0.20/-0.18)e53，GCN 41383）。别名：sb25081303（GCN 41352/41354 原文用名 SVOM burst-id）；GRB 250813.952 与 bn250813952（GCN 41376 原文用名 trigger 776818276/250813952，FERMIGBRST 官方目录 name_alt）。测光检索（2026-11-03）：GCN 官网事件页 grb-250813b 全清单 17 篇（41352-41449）逐一实开，其中含光学数值/上限 10 篇；仓内 external 快照 fermi_gbm/mpe_greiner/swiftgrbba 有本源条目（目录级参数），rssgrbag/grbsn_webtool/uvot_grb 无记录；arXiv API 全文检索「250813B」「GRB 250813B」「sb25081303」均 0 命中（WebSearch 亦未见期刊论文），ADS/SciX 无凭据（API HTTP 401、SciX 公开接口 WAF 拦截）→ search-limited，已登记 audit/unverified.tsv，不据此断言无文献。补 8 行：SVOM/VT 4（GCN 41369）、Swift/UVOT u 上限 1（GCN 41449）、Calapai G 上限 1（GCN 41388）、Ondrejov D50 约值 2（GCN 41355，discard=y）。MASTER（GCN 41374）覆盖 GBM 初始误差盒（22h11m+19d14m，R=7.28°），各 tile 距余辉位置 ≥3.8°，无适用于余辉的上限。发现 X 射线测光（Swift/XRT GCN 41359、EP-FXT GCN 41361、SVOM/MXT GCN 41368），按 §3.3 暂不入库。GCN 41363/41370 原文笔误引「GCN 42354」（应为 41354；42354 实为 GRB 251016A 的通告）。bot 原 extra_data.t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger，其 meta 时刻误锚同日近邻暴，已改写。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
+  "articles": [],
+  "host_galaxy": null,
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
-  },
-  "articles": [],
-  "host_galaxy": null
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-03"
+    }
+  }
 }
