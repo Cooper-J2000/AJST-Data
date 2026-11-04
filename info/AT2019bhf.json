@@ -6,7 +6,7 @@
   "ra": 227.316563,
   "dec": 16.239589,
   "T0": "2019-02-12T13:04:48Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）表 1 Discovery date（g-ZTF 首测发现历元）；与 TNS AT 报告 #30324（2019TNSTR.299....1F）发现时刻逐字一致，TNS g-ZTF 光变首行 JD 2458527.045 即该历元",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -15,17 +15,22 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）表 1 坐标（J2000）；TNS 对象页十进制坐标 227.3165642/+16.2395896 与本库值差 ≤0.006″（同一对象）",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告 2020TNSCR2246....1D（Dahiwale & Fremling，LDT/DeVeny 2019-05-29 分类光谱）＝TDECat 表 1＝vanVelzen+2021 表 2",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 7121 行。\n\n【身份核验（2026-11-05，TNS 对象页 + TDECat 表 1 官方 GitHub TDE_catalogue_all.csv + ADS 互证一致）】TNS 对象页：TDE 2019bhf（前缀 2025-01-26 由 admin 改为 TDE），RA/DEC(2000) 15:09:15.975 +16:14:22.52（十进制 227.3165642/+16.2395896，与本库 TDECat 表 1 值差 ≤0.006″），类型 TDE，internal name ZTF19aakswrb，发现 2019-02-12 13:04:48 UT（g-ZTF 20.48 AB，30 s 曝光）。vanVelzen+2021 表 1/2：AT2019bhf＝ZTF19aakswrb＝GOT 昵称 Varys，其 17 个 ZTF TDE 样本成员，光谱分类 TDE-H（DCT/DeVeny 2019-05-29，phase 90 d）、z=0.1206；Hammerstein+2023 表 1：改判 TDE-H+He（对 vanVelzen+2021 的复核：光谱出现 He II/N III λ4640 宽 bumps；早谱 P60/SEDM 2019-03-30 phase 28、晚谱 LDT/DeVeny 2019-06-29 phase 119）、z=0.121（表内舍入）；Langis+2026 正文：三家分类互有出入，其另类分类列 AT 2019bhf→TDE-H。光谱次类在 tags.json 无受控词条，sub_tag 留空、分类并列见 PR 待决。alias 仅 ZTF19aakswrb（TNS internal name＝TDECat ZTF name/Discovery internal name）；GOT 昵称 Varys 系文献内部用名、非 SIMBAD/TNS/GCN/目录用名，不入 alias。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ZTF/P48）。pos_error：来源未给定位误差，留空（§3.9 不自行声称）。\n\n【T0 口径】TDECat 表 1 与 TNS 发现报告一致给 2019-02-12 13:04:48（秒精度；TNS 界面 .000 为格式补零，未自行补亚秒）；T0_mjd=58526.545，全表 time=(mjd−58526.545)×86400 s。T0_offset 不适用（TDE 无设备自动触发时刻可言）。\n\n【红移】z=0.1206：TNS 分类报告 2020TNSCR2246....1D（2020-07-23 收报）＝TDECat 表 1＝vanVelzen+2021 表 2（分类光谱 DCT/DeVeny 2019-05-29；该文 §3 原文 for most of our sources … the redshift is obtained from the spectrum of the TDE）→ redshift_type 由 value 改判 spec（§3.5，光谱红移；无独立发表的宿主光谱红移，不判 spec-host）。\n\n【测光入库 7121 行】＝TDECat 官方补充仓库 target_AT2019bhf_photometry.csv（github.com/dlangis/TDECat Section 2: Photometry/Optical and Infrared，2026-11-05 下载）8379 行 − 同历元同值重复行 1303 行（§3.4 去重保留首行，全部为 ZTF 误差实现变体）− ATLAS(H) 1 行（波段名无法唯一判读，PR 待决）＝7075 行 + TDECat UVOT 机读表 7 值（2 历元 W2/M2/W1/U/B/V）+ TNS 对象页测光 3 行（phot 54623/54624/54625）+ vanVelzen+2021 光度文件 Varys.dat 探测行 36 行。口径：TDECat/BHTOM 编译行为总流量含宿（非差分；ZTF 爆发前 206 行 zg≈19.5–19.8 即宿主 g 基线水平），ZTF 同曝光双管道并存（短精度 MJD 行=BHTOM 编译、长精度 MJD 行=ALeRCE magpsf_corr 口径，系统差 ~0.02–0.09 mag）；TNS 行与 vanVelzen+2021 行为差分/扣宿主口径，与 TDECat 行并存不互删（§3.4 非同值）；星等系统按 Langis+2026 §3.1 原文（2026-11-05 VoR HTML 浏览器实取核读）：ZTF/ATLAS/iPTF/Pan-STARRS/ASAS-SN g=AB，CRTS/ASAS-SN V/Swift/NEOWISE=Vega，LINEAR 未声明→mag_system 留空（§3.3）；CRTS(CL)/LINEAR(CL) 无滤光片→band=G 承载；UVOT 两套并存：TDECat UVOT 行=Vega、银消改正未扣宿主（论文 §3.3 原文 All magnitudes were corrected for Galactic extinction … not host subtracted，Gext_corr=y），vanVelzen+2021 UVOT 行=AB、host-subtracted（其 §4 UVOT 小节 uvotsource 5″ 孔径），两者口径不同均保留。Varys.dat 时标为静止系 day_since_peak（文件头声明 measured in TDE rest frame），mjd=58543.40+day×1.1206（z=0.1206；t_peak 精度 0.01 d≈14 min；与 TDECat UVOT 同历元比对系统差 ≤0.06 d）；其 28 行 flux=0 非探测未入库（原文未给上限值，仅静止系光度误差 err_lum，无法不臆造地填 flux_density）；vanVelzen+2021 表 5 t_peak=58542.1(+2.5/−8.1) MJD 与其数据文件头 t_peak=58543.40 MJD 并列备查（文件内部自洽以其头部为准）；Hammerstein+2023 光变形状表 t_peak=58543.90(+1.47/−1.87) MJD。宿主 lgMstar=10.26(+0.16/−0.15)（Hammerstein+2023 宿主表）。TDECat 官方 X 射线文件（AT2019bhf_xray_lightcurve.csv，Swift/XRT 2 历元上限）按规则不入库（发现 X 射线数据，暂不处理）。\n\n【同历元矛盾行（待决）】TNS 行 54623（2019-02-12 12:34:33 UT，r-ZTF [Last non detection] 上限 19.96 AB）与 TDECat zr 行 18.554（MJD 58526.5240625，两历元相差 ±6 s，同一 30 s 曝光口径内）互相矛盾：若该帧 r=18.55 则 TNS 不应记 19.96 非探测。两值均保留并各自 comment 注明，处置见 PR 待决。\n\n【测光检索留证（2026-11-05）】①仓内 gcn/archive 45947 篇全文检索 AT2019bhf/ZTF19aakswrb＝0 命中；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 normalized.jsonl、external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准＝0 命中；③ADS API：\"AT2019bhf\"/\"ZTF19aakswrb\"/2019bhf 检索命中 2 篇＝2019TNSTR.299....1F（ZTF 发现报告）、2020TNSCR2246....1D（ZTF 分类报告），无本源专文；④TNS 对象页、TDECat GitHub（主表＋逐源光度/UVOT/X-ray 文件）、vanVelzen+2021 与 Hammerstein+2023 的 arXiv 源码（含数据文件/表）已实际打开逐值核对；Langis+2026 VoR HTML（aanda.org，浏览器过 DataDome）已实取核读 §3.1/§3.3；IOP（vanVelzen/Hammerstein VoR 与机读数据）Radware 反爬、curl 与浏览器双通道均 captcha（audit/unverified.tsv 已登记 substituted/missing 各一行）；结论：非零测光，补 7121 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "ingest_source": "scix_tdecat_20261104",
     "discovery_mag": "20.48",
-    "discovery_filter": "g-ZTF"
+    "discovery_filter": "g-ZTF",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
@@ -33,6 +38,18 @@
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L",
       "source": "bot"
+    },
+    {
+      "name": "vanVelzen+2021",
+      "title": "Seventeen Tidal Disruption Events from the First Half of ZTF Survey Observations: Entering a New Era of Population Studies",
+      "url": "https://doi.org/10.3847/1538-4357/abc258",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Hammerstein+2023",
+      "title": "The Final Season Reimagined: 30 Tidal Disruption Events from the ZTF-I Survey",
+      "url": "https://doi.org/10.3847/1538-4357/aca283",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
