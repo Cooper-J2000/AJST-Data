@@ -1,20 +1,24 @@
 {
   "transient_id": "IceCube-210510A",
-  "alias": [],
+  "alias": [
+    "IC210510A",
+    "IceCube Alert 210510.20"
+  ],
   "ra": 268.42,
   "dec": 3.81,
-  "T0": "2021-05-10T04:50:10Z",
-  "T0_ref": null,
+  "T0": "2021-05-10T04:50:10.730Z",
+  "T0_ref": "GCN 29976（IceCube 官方通告：On 21/05/10 at 04:50:10.73 UT IceCube detected a track-like event，源精度 2 位小数、按校验器要求写 3 位 .730 不虚增）；AMON 原始通告 gcn.gsfc.nasa.gov/notices_amon_g_b/135270_69188496.amon（RUN 135270/EVENT 69188496，rev0）DISCOVERY_TIME 19344 TJD 17410 SOD {04:50:10.73} UT（2026-11-04 实读，与通告亚秒逐位一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 29976（IceCube 离线精化方向）：RA=268.42 (+1.47, -1.60 deg 90% PSF containment) J2000、Dec=3.81 (+0.68, -0.64 deg 90% PSF containment) J2000——不对称区间不适配圆半径，pos_error 留空、四向不对称值照录（沿用仓内已审 IceCube 条目惯例）；AMON rev0 单值 SRC_ERROR 30.80′=1848.0″（stat-only，90% containment）、SRC_ERROR50 12.00′ 备查，初版 rev0 定位 267.9106/+4.0004；库内 ra/dec=268.42/3.81 与精化值逐位一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "中微子轨迹事件（ICECUBE_Astrotrack_Bronze 警报流，平均天体物理纯度 30%，误报率 3.944/年，探测器正常状态；GCN 29976 触发通告）。审核 fsy@zcode（2026-11-04）。【身份】IceCube 高能中微子 track-like 候选事件，非 GRB；AMON RUN 135270/EVENT 69188496（GCN 29982 MASTER 通告 trigger No 69188496 同证一事件）；tag/sub_tag 留空（tags.json 无中微子事件类目，沿用仓内已审 IceCube 条目惯例，待维护者扩表）。同日近邻事件甄别：同日 Fermi GRB 210510A（bn210510806，trigger 642367205.830352，19:20:00 UT 触发，RA=192.3/Dec=44.9，GCN 29981；仓内 external/fermi_gbm 快照 trigger_time=2021-05-10T19:20:00.830Z 同值）晚于本事件约 14.5 h、相距约 80 deg，无任何通告提出两者关联 → 独立事件（各自条目）；「GRB 210510A」相关通告（GCN 29981/29986/29993/30004/30005）均属该伽马暴，非本源；本日无第二个 IceCube 实时警报（GCN 29970–30420 subject 连续全扫）；本事件未被撤回（GCN 30056 撤回通告属 AMON 135302_36915486，另一事件）。【别名】IC210510A ← GCN 29995 原文用名「the high-energy IC210510A neutrino event (GCN 29976)」（Stein+2023 表亦用 IC210510A）；IceCube Alert 210510.20 ← GCN 29982 原文用名「the IceCube Alert 210510.20 (trigger No 69188496, 17h 51m 38.64s, +04d 00m 00.0s, R=0.51)」（初版定位与 R=0.51 deg=30.80′ 均与 AMON rev0 一致）。【T0】bot 原值 2021-05-10T04:50:10Z 为触发仪器亚秒值 04:50:10.73（GCN 29976 与 AMON DISCOVERY_TIME 两处一致）的整秒截断，按 §3.2 补足亚秒 → 04:50:10.730Z；GCN 29980「0.9 to 6.7 hours after the trigger」与 GCN 29999「approximately 5.1 hours after event time」以各自绝对时刻反算 T0 均相合（05:44−T0=0.897 h、11:33−T0=6.714 h、09:56−T0=5.097 h）；T0_offset 无（无 >1 s 偏移证据）。【定位】90% PSF containment 不对称（RA +1.47/−1.60°、Dec +0.68/−0.64°）→ pos_error 留空、pos_error_confidence=90（原文明示 90% PSF containment）、四向值照录 pos_ref；伽马源：GCN 29976 称 90% 区域内无 Fermi 4FGL/3FHL 源、最近 4FGL J1756.3+0236 距 1.37°；GCN 29995（Fermi-LAT 分析）则称 4FGL J1747.6+0324（未知对应体）位于 90% 区域内、>100 MeV 不显著（>5σ）——两通告并列备查（不影响本库字段，区域几何上两者均可自洽，非本库裁决事项）。【红移】全部来源无测量，redshift/redshift_type/redshift_ref 保持 null。【测光检索留证】（2026-11-04）：① GCN 官网——事件页 gcn.nasa.gov/circulars/events/icecube-210510a 列 7 篇，加通告号连续扫描 29970–30420 subject 补出未列于事件页的 GCN 29982（用别名「IceCube Alert 210510.20」故不在事件页），本事件相关通告共 8 篇逐篇实开（29976 IceCube 触发、29980 DDOTI、29982 MASTER-SAAO、29995 Fermi-LAT、29999 ZTF、30001 Fermi-GBM、30003 IceCube 附加中微子搜索、30376 INTEGRAL）；② 仓内快照——本克隆无 gcn/archive/（SCHEMA §1 载明不进仓库），以 GCN 官网逐号全扫等效替代；external/rssgrbag（lightcurve.jsonl）、external/grbsn_webtool（SourceData 63 事件）grep 本源 0 命中；external/fermi_gbm 命中 bn210510806 系上述无关伽马暴；③ 文献——ADS/SciX API 无凭据（HTTP 401，记 search-limited，不据此下「无文献」结论）；arXiv API 三组查询（「IceCube-210510A」「IC210510A」「210510A AND neutrino」）均 0 命中；Web 检索补通道命中研究文献 1 篇：Stein+2023（MNRAS 521, 5046–5063, DOI 10.1093/mnras/stad767，Crossref 核验；VoR Oxford 整站 Cloudflare 反爬未获全文，取 Caltech 机构库 AAM PDF 与 arXiv v3 全文实读）——其 Table 1 收录本事件（90% area 4.0 sq deg、ZTF obs 3.7 sq deg、latency 5.1 h、signalness 28%，与 GCN/AMON 一致），Table 23 列 6 个 AMPEL 存档候选（恒星/AGN 变源/未分类，峰值星等 15.0–21.0，无时间锚点、非对应体）→ 无可入库测光；TNS 不适用（本事件无 TNS 编号）；④ 结论——可入库测光 = DDOTI 1 行 + ZTF g/r 2 行（原有 3 行，时间口径随 T0/窗口改正）+ MASTER-SAAO 1 行（本次新增，GCN 29982）共 4 行，全部为上限，无对应体探测记录；GCN 29999 的 05-11/05-12 g 波段复测（30 s）未给深度数值、无锚可入；GCN 29995（>100 MeV 光子上限 ph cm^-2 s^-1）、30003（E^2 dN/dE 中微子上限 TeV cm^-2）、30376（INTEGRAL 75–2000 keV 流量上限 erg/cm²）、30001（事件前后 ±24.1/10.4 min 被地球遮挡、GBM 不约束）为伽马/中微子能段积分灵敏度，非 Fν 测光，按 §7 不入库。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
@@ -22,8 +26,20 @@
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Stein+2023",
+      "url": "https://doi.org/10.1093/mnras/stad767",
+      "title": "Neutrino follow-up with the Zwicky Transient Facility: Results from the first 24 campaigns",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
