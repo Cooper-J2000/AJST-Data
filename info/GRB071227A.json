@@ -1,27 +1,100 @@
 {
   "transient_id": "GRB071227A",
-  "alias": [],
-  "ra": 58.120833,
-  "dec": -55.95,
-  "T0": "2007-12-27T20:13:47.710000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 071227",
+    "GRB071227",
+    "Swift 299787",
+    "BAT 299787",
+    "GRB 071227S"
+  ],
+  "ra": 58.13002,
+  "dec": -55.98419,
+  "T0": "2007-12-27T20:13:47.043260Z",
+  "T0_ref": "GCN 7147（Swift/BAT 触发 20:13:47 UT）；Swift/BAT Catalog（HEASARC swiftgrbcat，trigger #299787）触发时刻 2007-12-27T20:13:47.043260Z",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 0.383,
+  "redshift": 0.381,
   "tag": [
     "grb"
   ],
   "pos_error": 2.0,
   "pos_ref": "GCN 7153",
-  "redshift_type": null,
-  "redshift_ref": "GCN 7152",
-  "comment": null,
+  "redshift_type": "spec-host",
+  "redshift_ref": "D'Avanzo+2009（A&A 498 711，DOI 10.1051/0004-6361/200811294）",
+  "comment": "身份：Swift/BAT trigger #299787（GCN 7147，2007-12-27 20:13:47 UT，三尖峰短暴），同日仓内/gcn 仅此一事件；AGILE-MCAL 目录用名 GRB071227A（即本源 id）。T0：原库 20:13:47.71 出自 GCN 7158 Suzaku/WAM 自报 T0（非触发仪器），按 §3.8 有 Swift 以 Swift 为准，改用 Swift/BAT 官方目录触发时刻 .043260；GCN 7147 整秒一致；Konus-Wind 自报 T0=20:13:48.722（GCN 7155）备查；差值均为亚秒级/他星钟差，不写 T0_offset。全表 time/mjd 已按新 T0 重定：X 射线 29 行（10keV）仅机械重算 mjd=T0+time，其余列未动；GCN 行按通告原文窗口/历元重锚，Dainotti MRT 行按新历元平移。定位：ra/dec 改 GCN 7153 XRT 增强定位 58.13002,−55.98419（2.0″，半径，90% 置信，原文明示→pos_error_confidence=90）；原值为 BAT 在轨粗定位（3′）。UVOT 候选源（GCN 7150）58.129258,−55.983514（0.6″，90%）即宿主星系方向，备查。红移：宿主光谱 z=0.381±0.001（D'Avanzo+2009 多条发射/吸收线，spec-host）；并列备查：GCN 7152 z=0.383（初步波长定标 [O II]）、GCN 7154 z=0.384（Magellan [O III]，初稿）、Swift/BAT 目录 0.381、uvot_grb/swift_grb 0.383、Konus/Minaev 0.384；取正式发表值。sub_tag=sgrb：研究文章一致分类 short/hard GRB（GCN 7148 t90=1.8±0.4 s（15-350 keV，短暴）＋GCN 7156「very likely a short GRB」；D'Avanzo+2009、Guelbenzu+2012 均入短暴样本；Minaev+2020 grb_type=I、Konus Type I）；备查：Swift/BAT 目录 t90=142.48±48.37 s（15-350 keV，含延展发射，EE 暴），GCN 7156 提示 T+~100 s 延展发射，Eyles+2019 讨论其为 EE SGRB——分类按来源表/研究文章（§3.9），不依 t90 现算。alias 出处：「GRB 071227」GCN 7147 原文用名；「GRB071227」Swift 官方目录 OBJECT 名（uvot_grb/TRIG_UT）；「Swift 299787」HEASARC swiftgrb name_alt；「BAT 299787」Swift/BAT Catalog name_alt；「GRB 071227S」MPE Greiner 定位表用名。host_galaxy：宿主为边向晚型旋涡（D'Avanzo+2009 宿主中心 03:52:31.02,−55:59:01.0；OT 位于星系 SE 边缘，投影距 2.9″±0.4″；GCN 7157 减像确证 OT，给 3.1″≈16.1 kpc）；GCN 7151 测总星等 R=19.3、D'Avanzo+2009 测 R~20.6（口径不同，并列备查）；Eyles+2019：盘半径~20 kpc、倾角~73°、SFR 0.6 M⊙/yr、12+log(O/H)=8.2–8.8。lc 中 R=19.3 一行已在 comment 注明为宿主测光。测光检索留证（2026-11-04，审核人 Rusty-Harpoon@zcode）：仓内 gcn/archive 命中 12 篇（7147-7158）全文逐篇核对——含测光数值者 7147/7149/7150/7151（均已入库），7152/7154 仅光谱红移、7157 减像测 OT 无星等、其余为高能；external/rssgrbag、external/grbsn_webtool 无本源记录；external/uvot_grb 等仅目录参数（身份/T0 互证用）；ADS 检索「GRB 071227」21 条命中：12 GCN＋D'Avanzo+2009（AIPC 会议版+A&A 专篇）＋Caito+2010（A&A 521 A80，理论文，arXiv TeX 核无测光表）＋Caito+2011（会议重发）＋Bernardini+2012（MSAIS 综述）＋Guelbenzu+2012（GROND 样本，表 2 第一夜 6 波段上限 + appendix1 第二夜 6 波段深上限（29 hrs after the burst，相对时长锚点）→ 共 12 行已入库）＋Guelbenzu+2014（宿主专篇，宿主数据）＋Eyles+2019（MNRAS 489 13，表 1/2 有本源测光→已逐值核对）＋两篇 2026 Amati 关系论文（无测光）；GCN 站与 ADS 命中一致，无遗漏通告。新增 6 行（GROND 上限），删 9 行转引重复，改写 33 行。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "articles": [
+    {
+      "name": "Dainotti+2024",
+      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
+      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
+      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "source": "bot"
+    },
+    {
+      "name": "Minaev+2020",
+      "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract",
+      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
+      "source": "bot"
+    },
+    {
+      "name": "Tsvetkova+2021",
+      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
+      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract",
+      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
+      "source": "bot"
+    },
+    {
+      "name": "Caito+2010",
+      "title": "GRB 071227: an additional case of a disguised short burst",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010A&A....52....1C/abstract",
+      "bibtex": "@ARTICLE{2010A&A....52....1C,\n       author = {Letizia Caito and Lorenzo Amati and Maria Grazia Bernardini and Carlo Luciano Bianco and Gustavo De Barros and Luca Izzo and Barbara Patricelli and Remo Ruffini},\n       title = {GRB 071227: an additional case of a disguised short burst},\n       journal = {Astron.Astrophys. 521 (2010) A80},\n       year = {2010},\n       doi = {10.1051/0004-6361/201014640},\n       eprint = {1006.4842},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010A&A....52....1C/abstract},\n}",
+      "source": "bot"
+    },
+    {
+      "name": "Guelbenzu+2014",
+      "title": "Another short-burst host galaxy with an optically obscured high star formation rate: The case of GRB 071227",
+      "url": "https://ui.adsabs.harvard.edu/abs/2014arXiv14055366G/abstract",
+      "bibtex": "@ARTICLE{2014arXiv14055366G,\n       author = {A. Nicuesa Guelbenzu and S. Klose and M. J. Michalowski and S. Savaglio and D. A. Kann and A. Rossi and L. K. Hunt and J. Gorosabel and J. Greiner and M. R. G. McKenzie and E. Palazzi and S. Schmidl},\n       title = {Another short-burst host galaxy with an optically obscured high star formation rate: The case of GRB 071227},\n       journal = {arXiv e-prints},\n       year = {2014},\n       doi = {10.1088/0004-637X/789/1/45},\n       eprint = {1405.5366},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2014arXiv14055366G/abstract},\n}",
+      "source": "bot"
+    },
+    {
+      "name": "D'Avanzo+2009",
+      "title": "The optical afterglows and host galaxies of three short/hard gamma-ray bursts",
+      "url": "https://ui.adsabs.harvard.edu/abs/2009A&A...498..711D/abstract",
+      "bibtex": "@ARTICLE{2009A&A...498..711D,\n       author = {P. D'Avanzo and D. Malesani and S. Covino and S. Piranomonte and A. Grazian and D. Fugazza and others},\n        title = {The optical afterglows and host galaxies of three short/hard gamma-ray bursts},\n      journal = {Astronomy and Astrophysics},\n         year = 2009,\n       volume = 498,\n        pages = {711},\n          doi = {10.1051/0004-6361/200811294},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Eyles+2019",
+      "title": "An unusual transient following the short GRB 071227",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.489...13E/abstract",
+      "bibtex": "@ARTICLE{2019MNRAS.489...13E,\n       author = {R. A. J. Eyles and P. T. O'Brien and K. Wiersema and R. L. C. Starling and B. P. Gompertz and G. P. Lamb and others},\n        title = {An unusual transient following the short GRB 071227},\n      journal = {Monthly Notices of the Royal Astronomical Society},\n         year = 2019,\n       volume = 489,\n        pages = {13},\n          doi = {10.1093/mnras/stz2040},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Guelbenzu+2012",
+      "title": "Multi-color observations of short GRB afterglows: 20 events observed between 2007 and 2010",
+      "url": "https://ui.adsabs.harvard.edu/abs/2012A&A...548A.101N/abstract",
+      "bibtex": "@ARTICLE{2012A&A...548A.101N,\n       author = {A. Nicuesa Guelbenzu and S. Klose and others},\n        title = {Multi-color observations of short GRB afterglows: 20 events observed between 2007 and 2010},\n      journal = {Astronomy and Astrophysics},\n         year = 2012,\n       volume = 548,\n        pages = {A101},\n          doi = {10.1051/0004-6361/201219551},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": {
+    "ra": 58.12925,
+    "dec": -55.983611,
+    "redshift": 0.381,
+    "redshift_err": 0.001,
+    "redshift_type": "spec-host",
+    "comment": "边向晚型旋涡宿主（盘半径~20 kpc，倾角~73°，Eyles+2019）。宿主中心坐标 03:52:31.02,−55:59:01.0（D'Avanzo+2009）；OT 位于星系 SE 边缘，投影距 2.9″±0.4″（D'Avanzo+2009；GCN 7157 给 3.1″≈16.1 kpc）。总星等并列：R=19.3（GCN 7151，300 s IMACS）；R~20.6（D'Avanzo+2009，VLT 后期监测，口径不同）。宿主测光与瞬变体测光已在 lc 行 comment 区分。z=0.381±0.001 为宿主光谱红移（多条发射/吸收线）。",
+    "source": "GCN 7151; GCN 7157; D'Avanzo+2009（A&A 498 711）; Eyles+2019（MNRAS 489 13）"
+  },
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "eiso": {
@@ -73,44 +146,11 @@
         "src": "konus_wind"
       }
     },
-    "params_computed": "2026-11-04"
-  },
-  "articles": [
-    {
-      "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Minaev+2020",
-      "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract",
-      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Tsvetkova+2021",
-      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract",
-      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Caito+2010",
-      "title": "GRB 071227: an additional case of a disguised short burst",
-      "url": "https://ui.adsabs.harvard.edu/abs/2010A&A....52....1C/abstract",
-      "bibtex": "@ARTICLE{2010A&A....52....1C,\n       author = {Letizia Caito and Lorenzo Amati and Maria Grazia Bernardini and Carlo Luciano Bianco and Gustavo De Barros and Luca Izzo and Barbara Patricelli and Remo Ruffini},\n       title = {GRB 071227: an additional case of a disguised short burst},\n       journal = {Astron.Astrophys. 521 (2010) A80},\n       year = {2010},\n       doi = {10.1051/0004-6361/201014640},\n       eprint = {1006.4842},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010A&A....52....1C/abstract},\n}",
-      "source": "bot"
-    },
-    {
-      "name": "Guelbenzu+2014",
-      "title": "Another short-burst host galaxy with an optically obscured high star formation rate: The case of GRB 071227",
-      "url": "https://ui.adsabs.harvard.edu/abs/2014arXiv14055366G/abstract",
-      "bibtex": "@ARTICLE{2014arXiv14055366G,\n       author = {A. Nicuesa Guelbenzu and S. Klose and M. J. Michalowski and S. Savaglio and D. A. Kann and A. Rossi and L. K. Hunt and J. Gorosabel and J. Greiner and M. R. G. McKenzie and E. Palazzi and S. Schmidl},\n       title = {Another short-burst host galaxy with an optically obscured high star formation rate: The case of GRB 071227},\n       journal = {arXiv e-prints},\n       year = {2014},\n       doi = {10.1088/0004-637X/789/1/45},\n       eprint = {1405.5366},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2014arXiv14055366G/abstract},\n}",
-      "source": "bot"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
     }
-  ],
-  "host_galaxy": null
+  }
 }
