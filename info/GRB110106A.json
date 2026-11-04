@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB110106A",
-  "alias": [],
-  "ra": 79.295,
-  "dec": 64.199,
-  "T0": "2011-01-06T15:25:16Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 441664",
+    "Swift 441664"
+  ],
+  "ra": 79.30578,
+  "dec": 64.17349,
+  "T0": "2011-01-06T15:25:16.214380Z",
+  "T0_ref": "GCN 11520（Swift/BAT 于 2011-01-06T15:25:16 UT 触发，trigger=441664）；Swift/BAT GRB Catalog trigger_time=2011-01-06T15:25:16.214380Z（仓内 extra_data.catalog_data.swift_bat 快照，触发仪器目录亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +19,205 @@
   "pos_ref": "GCN 11526",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "审核（wa1kmoon@zcode 2026-11-04，audit/GRB110106A）。(1) 身份：Swift/BAT 触发 trigger=441664、15:25:16 UT（GCN 11520），XRT/BAT/UVOT 全部通告一致；同日他暴划界：GRB110106B 为 Fermi/GBM 触发 316041978、21:26:16 UT（GCN 11543，Swift/BAT 441676，GCN 11525），与本源 15:25:16 UT/RA 79.3 不相混；alias「BAT 441664」「Swift 441664」取自仓内 swift_bat/swift_grb 目录快照 name_alt。(2) 定位：原 ra/dec=79.295/64.199 系 GCN 11527 的 BAT 地面定位（2.0′，90%），却配 GCN 11526 的 1.8″ 误差，坐标与误差错配（bot 导入残留，姊妹源 GRB110106B 同型）；已改 GCN 11526 增强 XRT 位置 RA,Dec=79.30578,+64.17349（1.8″，radius，90% confidence → pos_error_confidence=90）；swiftgrbba 快照 xrt_ra=79.30621/xrt_dec=64.17358 一致。(3) T0：GCN 11520 触发 15:25:16 UT；Swift/BAT GRB Catalog（batgrbcat）trigger_time=2011-01-06T15:25:16.214380Z（仓内快照），按触发仪器目录亚秒值采纳；原 T0 截断至整秒，已改，并全表重算 mjd=T0+time（含 9 行 10keV X 射线行，仅动 mjd 列）。(4) 分类：t90=4.3±1.1 s（15-350 keV，GCN 11527）；3.97 s（15-150 keV，HEASARC SWIFTGRB）；3.0±1.4 s（Swift/BAT GRB Catalog）——按目录 t90 判 lgrb；GCN 11542 标题称 Short GRB、GCN 11530 称大偏移更像短暴但被时长排除，均与 t90>2 s 矛盾，取 lgrb。(5) 红移/宿主：TNG 对误差圈外 7.3±3.6″ 星系测得 z=0.093（GCN 11530），圈心距星系核 4.3″、关联未确立 → redshift 置空、host_galaxy 不建（候选宿主），z=0.093 与星系测光 R=18.2/K=14.9 记于对应 lc 行 comment（discard=y）。(6) 测光：逐行对 GCN 11520/11521/11524/11531/11535/11536/11539/11593 钟面时刻核对；UVOT（GCN 11531 九行）与 AZT-11、TNG 行改曝光中点口径并补 time_err，UVOT 系 Poole+2008 Vega 系统推定记 Vega，MITSuME/MASTER/TNT/TNG R/ISAS-Kanazawa 原文未声明系统留空；GCN 11524 两条 R 行（星系 18.2、圈外候选 24.5）与 GCN 11539 K=14.9 行确证非 OT，置 discard；新增 GCN 11542 MASTER-II 表 15 行（14 上限+1 marginal OT 16.0±0.5）、GCN 11580 CARMA 92 GHz 上限 4.1 mJy（原文 Jan. 16.827 UT 判读为 Jan 6 16.827 h=16:49:37 UT，与括注 84 min after the burst 相符）；X 射线 9 行（10keV）未审核，仅随 T0 机械重算 mjd。(7) 测光检索（2026-11-04）：仓内 gcn/archive 全文命中 15 篇（11520/11521/11523/11524/11526/11527/11529/11530/11531/11535/11536/11539/11542/11580/11593，逐篇判读；11893 文内 GRB 编号系 110406A 误写，不计入本源）；OpenAlex 命中 12 条（除 GCN 外仅 Gorbovskoy+2013 与 IceCube 样本文，无新研究文献）；arXiv API、Crossref 无 110106A 题录命中；external/rssgrbag、grbsn_webtool 无本源记录；ADS/SciX 无 token（HTTP 401），已登记 audit/unverified.tsv（search-limited，不得当「无文献」）；Gorbovskoy+2013（arXiv 1305.1620）全文多通道取不到（arxiv.org 502、export 404、Springer 连接失败），未能核对其是否含本源测光表，已登记 unverified.tsv；→ 共补 16 行（15 MASTER+1 CARMA）。；sub_tag 留空：batgrbcat t90=3.0±1.4 s（→lgrb）与 GCN 11542 标题 \"Short GRB 110106A\"（→sgrb）构成 §3.9 点名的「目录 t90 与通告分类矛盾」冲突，留空待维护者裁定（2026-11-04 核查修正）",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "extra_data": {
+    "catalog_data": {
+      "swift_bat": {
+        "other": {
+          "pcode": "0.3438",
+          "15_25kev": 3.459084e-08,
+          "25_50kev": 6.093141e-08,
+          "15_350kev": 4.053138e-07,
+          "50_100kev": 8.213745e-08,
+          "Image_SNR": "9.821674e+00",
+          "100_150kev": 6.072552e-08,
+          "100_350kev": 2.276571e-07,
+          "15_25kev_hi": 4.425999e-08,
+          "25_50kev_hi": 7.132656e-08,
+          "15_25kev_low": 2.548891e-08,
+          "15_350kev_hi": 5.323671e-07,
+          "25_50kev_low": 5.041518e-08,
+          "50_100kev_hi": 9.946521e-08,
+          "100_150kev_hi": 8.162652e-08,
+          "100_350kev_hi": 3.441606e-07,
+          "15_350kev_low": 3.006432e-07,
+          "50_100kev_low": 6.461319e-08,
+          "fluence_model": "PL",
+          "100_150kev_low": 4.217172e-08,
+          "100_350kev_low": 1.405954e-07,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "2.206241e+00"
+        },
+        "params": {
+          "t50": {
+            "v": 1.0,
+            "err": 1.0,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 3.0,
+            "err": 1.414214,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.56921,
+            "cl": 90,
+            "err": [
+              0.27415999999999996,
+              0.27712000000000003
+            ]
+          },
+          "fluence": {
+            "v": 2.383863e-07,
+            "cl": 90,
+            "err": [
+              4.286929999999999e-08,
+              4.24742e-08
+            ],
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 441664"
+        ],
+        "trigger_time": "2011-01-06T15:25:16.214380Z"
+      },
+      "swift_grb": {
+        "other": {
+          "bat_plsl": "1.668",
+          "det_flag": "S",
+          "target_id": "441664",
+          "bat_plsl_err": "0.287",
+          "bat_detection": "Y",
+          "bat_peak_model": "PL",
+          "supernova_flag": "N",
+          "bat_fluence_model": "PL"
+        },
+        "params": {
+          "t50": {
+            "v": 1.28,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "t90": {
+            "v": 3.97,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.93e-07,
+            "err": 5.15e-08,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 1.8,
+            "dt": "1s",
+            "err": 0.329,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 441664"
+        ],
+        "trigger_time": "2011-01-06T15:25:16.214380Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 4019150000000000000000,
+          "xrt_ra": 79.30621,
+          "comment": "UVOT: no detection",
+          "ref_bat": "GCN 11520; GCN 11527",
+          "ref_xrt": "GCN 11520; GCN 11526; GCN 11529; Evans et al., 2009; MNRAS, 397, 1177",
+          "xrt_dec": 64.17358,
+          "advocate": "Vanessa Mangano",
+          "ref_uvot": "GCN 11520; GCN 11531",
+          "uvot_mag": "B>21.1; U>20.4; UVW1>20.2; UVM2>20.1; UVW2>20.9; White>20.3",
+          "other_obs": "MASTER II",
+          "ref_other": "GCN Report 322.1",
+          "target_id": 441664,
+          "uvot_vmag": 20.3,
+          "xrt_gamma": 2.5373,
+          "trigger_obs": "Swift",
+          "error_radius": 2.0,
+          "xrt_lc_index": -1.067,
+          "xrt_11hr_flux": 9.688437e-14,
+          "xrt_24hr_flux": 4.2141e-14,
+          "xrt_first_obs": 106.18,
+          "uvot_first_obs": 92.0,
+          "uvot_vmag_flag": 1,
+          "xrt_error_radius": 1.6,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 4.3,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 3e-07,
+            "cl": 90,
+            "err": 5e-08,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 1.9,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.3,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.71,
+            "cl": 90,
+            "err": 0.28
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2011-01-06T15:25:16.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "XA": "y",
+          "Error": "3",
+          "obs_date": "2011-01-06",
+          "Instrument": "Swift",
+          "GRB X-ray position": "05h17m08s +64° 11'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
+  },
   "articles": [
     {
       "name": "Gorbovskoy+2013",
@@ -30,5 +227,6 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "pos_error_confidence": "90"
 }
