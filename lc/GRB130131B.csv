@@ -1,65 +1,67 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-98.093,,s,56323.799849537034,R,15.6,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m,GCN14161,,
-112.093,,s,56323.80001157407,uvot-white,19.6,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN14159,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
-118.093,,s,56323.80008101852,g,16.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-118.093,,s,56323.80008101852,Rc,16.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-118.093,,s,56323.80008101852,Ic,16.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
+100.2,30.0,s,56323.799873928,R,15.6,,magnitude,,n,y,,,,,,,1.0,n,Zadko 1m,,GCN14161,GCN 14161：窗口 t0+70.2–130.2 s（首帧 60 s 拖尾曝光）中点/半宽约定；NOMAD1 定标、未做银河消光改正；原文限值 R>15.6,wa1kmoon@zcode
+118.093,30.0,s,56323.800081023,g,16.4,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:12:07 锚定，T-EXP 60 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+118.093,30.0,s,56323.800081023,Rc,16.4,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:12:07 锚定，T-EXP 60 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+118.093,30.0,s,56323.800081023,Ic,16.2,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:12:07 锚定，T-EXP 60 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
 127.988,10.028,s,56323.80019554398,10keV,8.25199825685442e-06,1.68644796997386e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 141.027,9.528,s,56323.80034645833,10keV,8.52714795123141e-06,1.82752726429925e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 159.867,10.746,s,56323.80056451389,10keV,5.50894274469917e-06,1.2371606444764e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-162.093,,s,56323.80059027778,R,16.5,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m,GCN14161,,
+164.0,15.0,s,56323.800612354,R,16.5,,magnitude,,n,y,,,,,,,1.0,n,Zadko 1m,,GCN14161,GCN 14161：窗口 t0+149–179 s（30 s 跟踪曝光）中点/半宽；NOMAD1 定标、未消光改正；原文限值 R>16.5,wa1kmoon@zcode
 183.139,20.069,s,56323.80083386574,10keV,3.27026975443746e-06,7.33358567616384e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-187.093,,s,56323.80087962963,uvot-white,20.9,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN14169,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
-226.093,,s,56323.80133101852,Ic,17.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-226.093,,s,56323.80133101852,Rc,17.6,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-226.093,,s,56323.80133101852,g,17.4,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
+189.0,75.0,s,56323.800901706,uvot-white,20.9,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：white_FC 114–264 s 窗口中点/半宽（曝光 147 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正；初报 GCN 14159（同一 white_FC 曝光，typical 3σ ~19.6）被本正式表取代，两行去重保留本行,wa1kmoon@zcode
+226.093,120.0,s,56323.801331023,Ic,17.4,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:13:55 锚定，T-EXP 240 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+226.093,120.0,s,56323.801331023,Rc,17.6,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:13:55 锚定，T-EXP 240 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+226.093,120.0,s,56323.801331023,g,17.4,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:13:55 锚定，T-EXP 240 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
 237.907,60.579,s,56323.80146775463,10keV,1.01273463387404e-06,2.28420287248347e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 384.773,86.287,s,56323.80316759259,10keV,5.66633237702274e-07,1.27618364585643e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-450.093,,s,56323.80392361111,uvot-u,20.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
+452.0,125.0,s,56323.803945687,uvot-u,20.2,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：u_FC 327–577 s 窗口中点/半宽（曝光 246 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
 542.637,101.855,s,56323.804994722224,10keV,4.9721152565993e-07,1.0525099291982e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-1231.093,,s,56323.81296296296,Ic,18.9,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-1231.093,,s,56323.81296296296,Rc,19.0,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-1231.093,,s,56323.81296296296,g,18.6,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-2773.093,,s,56323.83081018519,R,16.5,,magnitude,,n,y,,,,,,,1.0,n,,Zadko 1m,GCN14161,,
-2817.093,,s,56323.83131944444,g,19.1,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-2817.093,,s,56323.83131944444,Ic,19.5,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-2817.093,,s,56323.83131944444,Rc,19.6,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm/Akeno,GCN14193,,
-3222.093,,s,56323.836006944446,uvot-u,21.0,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
-3263.093,,s,56323.83648148148,uvot-white,22.0,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN14169,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
-3314.093,,s,56323.837071759255,Ic,19.2,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN14167,,
-3314.093,,s,56323.837071759255,Rc,19.9,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN14167,,
-3314.093,,s,56323.837071759255,g,19.8,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME 50cm,GCN14167,,
-3452.093,,s,56323.83866898148,uvot-b,20.5,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
+1231.093,660.0,s,56323.812962967,Ic,18.9,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:30:40 锚定，T-EXP 1320 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+1231.093,660.0,s,56323.812962967,Rc,19.0,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:30:40 锚定，T-EXP 1320 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+1231.093,660.0,s,56323.812962967,g,18.6,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:30:40 锚定，T-EXP 1320 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+2774.5,2625.5,s,56323.830826474,R,16.5,,magnitude,,n,y,,,,,,,1.0,n,Zadko 1m,,GCN14161,"GCN 14161：原文仅述 follow-up 持续至 t0+1.5h、限深 16.5（R>16.5 自 t0+149 s 第二组曝光起适用），未给该段窗口起点；按窗口 [149,5400] s 取中点/半宽为约定口径，真实中点不可恢复；NOMAD1 定标、未消光改正",wa1kmoon@zcode
+2817.093,2100.0,s,56323.831319449,g,19.1,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:57:06 锚定，T-EXP 4200 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+2817.093,2100.0,s,56323.831319449,Ic,19.5,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:57:06 锚定，T-EXP 4200 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+2817.093,2100.0,s,56323.831319449,Rc,19.6,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Akeno,,GCN14193,GCN 14193（MITSuME/Akeno）：MID-UT 19:57:06 锚定，T-EXP 4200 s→time_err=半曝光；GSC2.3 定标，原文未声明星等系统；3σ 上限,wa1kmoon@zcode
+3223.5,2896.5,s,56323.836023233,uvot-u,21.0,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：u coadd 327–6120 s 窗口中点/半宽（曝光 639 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
+3265.0,3151.0,s,56323.836503557,uvot-white,22.0,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：white coadd 114–6416 s 窗口中点/半宽（曝光 449 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
+3314.093,2400.0,s,56323.837071763,Ic,19.2,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Okayama,,GCN14167,GCN 14167（MITSuME/Okayama）：MID-UT 20:05:23 锚定，T-EXP 4800 s→time_err=半曝光；SDSS 目录定标，原文未声明星等系统；3σ 上限（原 telescope 字段误作 MITSuME 50cm，与 Akeno 混淆，已改正）,wa1kmoon@zcode
+3314.093,2400.0,s,56323.837071763,Rc,19.9,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Okayama,,GCN14167,GCN 14167（MITSuME/Okayama）：MID-UT 20:05:23 锚定，T-EXP 4800 s→time_err=半曝光；SDSS 目录定标，原文未声明星等系统；3σ 上限（原 telescope 字段误作 MITSuME 50cm，与 Akeno 混淆，已改正）,wa1kmoon@zcode
+3314.093,2400.0,s,56323.837071763,g,19.8,,magnitude,,n,y,,,,,,,1.0,n,MITSuME 50cm/Okayama,,GCN14167,GCN 14167（MITSuME/Okayama）：MID-UT 20:05:23 锚定，T-EXP 4800 s→time_err=半曝光；SDSS 目录定标，原文未声明星等系统；3σ 上限（原 telescope 字段误作 MITSuME 50cm，与 Akeno 混淆，已改正）,wa1kmoon@zcode
+3454.0,2871.0,s,56323.838691057,uvot-b,20.5,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：b coadd 583–6325 s 窗口中点/半宽（曝光 413 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
 3988.274,117.311,s,56323.844874780094,10keV,5.19000521060406e-08,1.35946585215539e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-4283.093,,s,56323.848287037035,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,,AZT-33IK,GCN14187,,
+4296.7,1800.0,s,56323.848444530,R,22.5,,magnitude,,n,y,,,,,,,1.0,n,AZT-33IK,,GCN14187,GCN 14187：原文给 t−t0(mid)=0.04973 d（=4296.7 s）、60×60 s 合成像→time_err=1800 s；SDSS DR8 定标，原文未声明系统；3σ 上限（原行 4283.093 s 与原文中点不符，已按原文重锚）,wa1kmoon@zcode
 4367.456,285.878,s,56323.849263460645,10keV,2.36003880222109e-08,6.17842849160885e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-4687.093,,s,56323.85296296296,uvot-v,19.8,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
+4688.5,817.5,s,56323.852979252,uvot-v,19.8,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：v coadd 3871–5506 s 窗口中点/半宽（曝光 393 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
 4749.487,189.012,s,56323.85368511574,10keV,4.47592606486199e-08,1.1672183891808e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-4891.093,,s,56323.85532407407,uvot-uvm2,20.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
+4893.0,817.0,s,56323.855346150,uvot-uvm2,20.6,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：m2 coadd 4076–5710 s 窗口中点/半宽（曝光 393 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
 5072.645,173.683,s,56323.85742537037,10keV,6.85963858232184e-08,1.78191673889977e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-5096.093,,s,56323.85769675926,uvot-uvw1,20.4,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
-5199.093,,s,56323.85888888889,uvot-uvw2,21.1,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14169,,
+5098.0,817.0,s,56323.857718835,uvot-uvw1,20.4,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：w1 coadd 4281–5915 s 窗口中点/半宽（曝光 393 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
+5201.0,100.0,s,56323.858910965,uvot-uvw2,21.1,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,UVOT,GCN14169,GCN 14169：w2 coadd 5101–5301 s 窗口中点/半宽（曝光 197 s）；UVOT 光度系统 Breeveld+2011 → Vega；3σ 上限、未做银河消光改正,wa1kmoon@zcode
 5363.778,186.505,s,56323.86079496528,10keV,6.84727979602105e-08,1.77968946751236e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 5690.281,172.014,s,56323.864573935185,10keV,8.41702695955024e-08,2.19740426781922e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 6136.821,276.545,s,56323.869742222225,10keV,8.25261793529323e-08,1.95951019194497e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-6298.093,,s,56323.8716087963,R,17.1,,magnitude,,n,y,,,,,,,1.0,n,,TAROT 25cm,GCN14162,,
+6300.0,1620.0,s,56323.871630872,R,17.1,,magnitude,,n,y,,,,,,,1.0,n,TAROT 25cm,,GCN14162,GCN 14162：窗口 t0+1.3–2.2 h（coadd）中点/半宽；NOMAD1 定标、未消光改正；观测于 t0+1.2 h 开始（源出地平）,wa1kmoon@zcode
 10249.601,610.999,s,56323.91734384259,10keV,4.29563926681763e-08,1.20677023357593e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 11281.394,848.881,s,56323.9292858912,10keV,2.05881760822172e-08,4.99876231974123e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-21568.093,,s,56324.04834490741,I,21.2,,magnitude,Vega,n,y,,,,,,,1.0,n,,IAC80 82cm,GCN14170,,
-31791.093,,s,56324.166666666664,g,23.4,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-31791.093,,s,56324.166666666664,K,19.7,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-31791.093,,s,56324.166666666664,r,23.7,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-31791.093,,s,56324.166666666664,i,23.4,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-31791.093,,s,56324.166666666664,z,23.3,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-31791.093,,s,56324.166666666664,J,21.2,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-31791.093,,s,56324.166666666664,H,20.5,,magnitude,AB,n,y,,,,,,,1.0,n,,GROND,GCN14173,,
-38331.093,,s,56324.24236111111,r,23.2,,magnitude,AB,n,y,,,,,,,1.0,n,,VLT/X-shooter,GCN14174,,
-38331.093,,s,56324.24236111111,z,22.7,,magnitude,AB,n,y,,,,,,,1.0,n,,VLT/X-shooter,GCN14174,,
-53691.093,,s,56324.42013888889,r,23.8,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN14179,,
-53691.093,,s,56324.42013888889,i,23.1,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN14179,,
-64071.093,,s,56324.54027777778,H,21.4,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN14179,,
-64071.093,,s,56324.54027777778,Z,22.1,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN14179,,
-64071.093,,s,56324.54027777778,Y,21.7,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN14179,,
-64071.093,,s,56324.54027777778,J,21.8,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN14179,,
-794991.093,,s,56333.0,I,24.9,,magnitude,Vega,n,n,,,,,,,1.0,n,,LRIS/Keck-I,GCN14286,,
-794991.093,,s,56333.0,g,25.7,,magnitude,AB,n,n,,,,,,,1.0,n,,LRIS/Keck-I,GCN14286,,
+21568.533,3011.04,s,56324.048350004,I,21.2,,magnitude,Vega,n,y,,,,,,,1.0,n,IAC80 82cm,,GCN14170,GCN 14170：窗口 2013-02-01 1.0135–1.0832 UT（原文另注 5.2–6.8 h post burst）中点/半宽；13×250 s；USNO-B1 定标；原文声明 Vega；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,g,23.4,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,K,19.7,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,r,23.7,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,i,23.4,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,z,23.3,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,J,21.2,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+31791.093,,s,56324.166666671,H,20.5,,magnitude,AB,n,y,,,,,,,1.0,n,GROND,,GCN14173,GCN 14173：原文只给观测开始 2013-02-01 04:00 UT（约 9 h post trigger），未给曝光时长，time 以开始时刻计（中点不可恢复）；3σ AB 限（原文声明）；未消光改正,wa1kmoon@zcode
+38681.093,350.0,s,56324.246412041,r,23.2,,magnitude,AB,n,y,,,,,,,1.0,n,VLT/X-shooter,acquisition camera,GCN14174,GCN 14174：观测开始 2013-02-01 05:49 UT，r' 3×100 s、z' 4×100 s 曝光、顺序未给，按整段窗口 700 s 取中点/半宽约定；AB（原文声明）、未消光改正；原文为近似限（approximately）（原行 time=38331.093 为观测开始时刻，已按约定重锚）,wa1kmoon@zcode
+38681.093,350.0,s,56324.246412041,z,22.7,,magnitude,AB,n,y,,,,,,,1.0,n,VLT/X-shooter,acquisition camera,GCN14174,GCN 14174：观测开始 2013-02-01 05:49 UT，r' 3×100 s、z' 4×100 s 曝光、顺序未给，按整段窗口 700 s 取中点/半宽约定；AB（原文声明）、未消光改正；原文为近似限（approximately）（原行 time=38331.093 为观测开始时刻，已按约定重锚）,wa1kmoon@zcode
+45720.0,1575.0,s,56324.327880872,R,20.7,,magnitude,,n,y,,,,,,,1.0,n,CTIO 0.9m,SMARTS,GCN14202,GCN 14202：原文给 midtime 12.7 hr、7×450 s；time_err=半曝光 1575 s（midtime 0.1 hr 舍入 ±180 s 更小）；USNOB-1 定标，原文未声明系统；未消光改正（新增行，原库漏收）,wa1kmoon@zcode
+46080.0,1575.0,s,56324.332047539,V,20.3,,magnitude,,n,y,,,,,,,1.0,n,CTIO 0.9m,SMARTS,GCN14202,GCN 14202：原文给 midtime 12.8 hr、7×450 s；time_err=半曝光 1575 s；NOMAD 定标，原文未声明系统；未消光改正（新增行，原库漏收）,wa1kmoon@zcode
+58863.093,5184.0,s,56324.480000004,r,23.8,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR,1.5m Harold Johnson Telescope,GCN14179,GCN 14179：窗口 2013-02-01 1.42–1.54 UT（原文另注 14.86–17.70 h post BAT trigger）中点/半宽；RATIR 六波段同时观测，r/i 共 1.96 h、Z/Y/J/H 共 0.73 h 曝光（原库把两波段组拆成两个时刻，已统一为同一窗口）；SDSS DR8/2MASS 定标，AB（原文声明）；未消光改正,wa1kmoon@zcode
+58863.093,5184.0,s,56324.480000004,i,23.1,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR,1.5m Harold Johnson Telescope,GCN14179,GCN 14179：窗口 2013-02-01 1.42–1.54 UT（原文另注 14.86–17.70 h post BAT trigger）中点/半宽；RATIR 六波段同时观测，r/i 共 1.96 h、Z/Y/J/H 共 0.73 h 曝光（原库把两波段组拆成两个时刻，已统一为同一窗口）；SDSS DR8/2MASS 定标，AB（原文声明）；未消光改正,wa1kmoon@zcode
+58863.093,5184.0,s,56324.480000004,H,21.4,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR,1.5m Harold Johnson Telescope,GCN14179,GCN 14179：窗口 2013-02-01 1.42–1.54 UT（原文另注 14.86–17.70 h post BAT trigger）中点/半宽；RATIR 六波段同时观测，r/i 共 1.96 h、Z/Y/J/H 共 0.73 h 曝光（原库把两波段组拆成两个时刻，已统一为同一窗口）；SDSS DR8/2MASS 定标，AB（原文声明）；未消光改正,wa1kmoon@zcode
+58863.093,5184.0,s,56324.480000004,Z,22.1,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR,1.5m Harold Johnson Telescope,GCN14179,GCN 14179：窗口 2013-02-01 1.42–1.54 UT（原文另注 14.86–17.70 h post BAT trigger）中点/半宽；RATIR 六波段同时观测，r/i 共 1.96 h、Z/Y/J/H 共 0.73 h 曝光（原库把两波段组拆成两个时刻，已统一为同一窗口）；SDSS DR8/2MASS 定标，AB（原文声明）；未消光改正,wa1kmoon@zcode
+58863.093,5184.0,s,56324.480000004,Y,21.7,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR,1.5m Harold Johnson Telescope,GCN14179,GCN 14179：窗口 2013-02-01 1.42–1.54 UT（原文另注 14.86–17.70 h post BAT trigger）中点/半宽；RATIR 六波段同时观测，r/i 共 1.96 h、Z/Y/J/H 共 0.73 h 曝光（原库把两波段组拆成两个时刻，已统一为同一窗口）；SDSS DR8/2MASS 定标，AB（原文声明）；未消光改正,wa1kmoon@zcode
+58863.093,5184.0,s,56324.480000004,J,21.8,,magnitude,AB,n,y,,,,,,,1.0,n,RATIR,1.5m Harold Johnson Telescope,GCN14179,GCN 14179：窗口 2013-02-01 1.42–1.54 UT（原文另注 14.86–17.70 h post BAT trigger）中点/半宽；RATIR 六波段同时观测，r/i 共 1.96 h、Z/Y/J/H 共 0.73 h 曝光（原库把两波段组拆成两个时刻，已统一为同一窗口）；SDSS DR8/2MASS 定标，AB（原文声明）；未消光改正,wa1kmoon@zcode
+831168.0,432.0,s,56333.418714206,I,24.9,,magnitude,Vega,n,n,,,,,,,1.0,n,LRIS/Keck-I,,GCN14286,GCN 14286：宿主星系检测（likely host，XRT 增强误差圈内唯一源，非暂变体测光）；原文给 2013-02-10 观测（9.62 days after the burst）→time=9.62 d、time_err=半精度 432 s（原行 794991.093 s 系按 Feb 10.0 00:00 UT 日期零点误锚，已按原文 9.62 d 重锚）；I 为 Vega、g 为 AB（原文声明）,wa1kmoon@zcode
+831168.0,432.0,s,56333.418714206,g,25.7,,magnitude,AB,n,n,,,,,,,1.0,n,LRIS/Keck-I,,GCN14286,GCN 14286：宿主星系检测（likely host，非暂变体测光）；9.62 d 重锚同 I 行；g 为 AB（原文声明）,wa1kmoon@zcode
+3146400.0,1800.0,s,56360.215380872,R,24.0,,magnitude,,n,y,,,,,,,1.0,n,VLT/X-shooter,acquisition camera,Selsing+2019,Selsing+2019（A&A 623 A92）表 2 Magacq 列：获取相机近似限（原文注 typically in the R-band）、原文未声明系统；Δt=874 hr post trigger（整小时精度→time_err=1800 s）；VoR 因 aanda.org 整站不可达未通读，取自 arXiv:1802.07727 (ar5iv) 表 2 并与 arXiv/OpenAlex 题录交叉，已在 audit/unverified.tsv 登记,wa1kmoon@zcode
