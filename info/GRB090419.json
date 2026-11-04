@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB090419",
-  "alias": [],
+  "alias": [
+    "GRB 090419"
+  ],
   "ra": 196.92974853515625,
   "dec": -75.6062240600586,
-  "T0": "2009-04-19T13:43:31Z",
-  "T0_ref": null,
+  "T0": "2009-04-19T13:43:31.327920Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 349592（Swift/BAT GRB Catalog 与 HEASARC SWIFTGRB 快照 trigger_time=2009-04-19T13:43:31.327920Z，与 MET TRIGTIME 一致）；GCN 9161 整秒值 13:43:31 UT 一致，亚秒按触发仪器目录值取（§3.2/§3.8）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +18,268 @@
   "pos_ref": "GCN9169 (UVOTGRB)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。审核 (wa1kmoon@zcode, 2026-11-04)：身份=Swift/BAT trigger 349592（GCN 9161，2009-04-19T13:43:31 UT 触发），Swift slews 后 XRT/UVOT 联合定位。命名变体判读：仓内 gcn/archive 全文检索 '090419' 命中 6 篇（GCN 9161/9164/9167/9169/9172/9177），subject 与正文均用名 'GRB 090419'；archive 全文与 OpenAlex 检索 'GRB 090419A' 均 0 命中，无一手出处，alias 不收 A 变体（亦未发现同日第二个暴，无 A/B 双暴情形）。T0：13:43:31.327920 取 Swift/BAT 官方目录亚秒值（swift_bat/swift_grb 目录快照一致），GCN 9161 整秒一致；lc 全表 mjd 已按新 T0 重算；X 射线 10keV 行按契约保持原样，其 mjd 需由维护者随 T0 机械重算（现值与新 T0 差 0.328 s，在 1 s 容差内）。定位：ra/dec 为 uvot_grb 目录快照值（POS_REF=GCN 9169），对应 GCN 9169 GROND 光学候选源 (13:07:43.13, -75:36:22.4，±0.5\"/坐标 → 径向约 0.7\")，快照值与通告坐标差约 0.15\"（远小于 pos_error）；GCN 9164 增强 XRT 位 (196.92894, -75.60586, 1.8\" 90%) 及 UKSSDC xrt_live (196.9276, -75.60562, 1.4\") 一致互证；GCN 9169 未标置信水平，pos_error_confidence 留空（0.5\"/坐标为 GROND 自报）。t90=454.244±56.45959 s（Swift/BAT Catalog, 15-350 keV）；GCN 9167 亦给 t90=450±50 s（15-350 keV）；按目录 t90 判 lgrb。测光检索（2026-11-04）：仓内 gcn/archive 全文 6 篇——GCN 9169 GROND 表 7 行（时间锚定改正后沿用）+GCN 9177 UVOT 表 15 行新增入库、GCN 9161 白滤 fc 初报 UL≈19.6 为 GCN 9177 同曝光精化值 >20.69 所取代不另入行；external/rssgrbag、grbsn_webtool 无 090419 记录，external/konus_wind、heasarc_grbcat、swift_xrt_live 无 A 变体名；OpenAlex 命中 6 条（5 条为上述 GCN 通告、1 条 Lü & Zhang 2014 ApJ 785, 74 磁星统计文仅用 BAT/XRT 参数无光学测光）；arXiv 实取 Krühler+2011（A&A 526, A153, arXiv:1011.1205）与 Greiner+2011 暗暴样本（arXiv:1011.0618）源码核验，均不含 090419；Crossref 无新增文献级测光；MAST UVOTGRB HLSP noc-db.fits 实取逐值核对 3 行 uvot-white。ADS/SciX 无 API token（HTTP 401），已在 audit/unverified.tsv 登记 search-limited，不据此断言无文献。共改 10 行（3 行 uvot-white mjd/Gext_corr、7 行 GROND 锚定）、新增 15 行（GCN 9177）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "extra_data": {
+    "catalog_data": {
+      "uvot_grb": {
+        "other": {
+          "OBJECT": "GRB090419",
+          "BAT_PIT": "PL",
+          "DISC_BY": "Swift",
+          "POS_ERR": 0.699999988079071,
+          "POS_REF": "GCN9169",
+          "T90_REF": "SGA",
+          "TRIG_UT": "2009-109-13:43:31",
+          "TRIGTIME": 261841411.0
+        },
+        "params": {
+          "t90": {
+            "v": 450.0,
+            "err": null,
+            "band": "15-350 keV"
+          },
+          "fluence": {
+            "v": 2.499999936844688e-06,
+            "cl": 90,
+            "err": 2.0000000233721948e-07,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 0.4000000059604645,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.10000000149011612,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.3799999952316284,
+            "cl": 90,
+            "err": 0.1599999964237213
+          }
+        },
+        "source": {
+          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
+          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2009-04-19T13:43:31Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.9688",
+          "15_25kev": 3.041656e-07,
+          "25_50kev": 6.12111e-07,
+          "15_350kev": 5.196849e-06,
+          "50_100kev": 9.594672e-07,
+          "Image_SNR": "1.096425e+01",
+          "100_150kev": 7.969483e-07,
+          "100_350kev": 3.321162e-06,
+          "15_25kev_hi": 3.536064e-07,
+          "25_50kev_hi": 6.682517e-07,
+          "15_25kev_low": 2.568208e-07,
+          "15_350kev_hi": 6.146958e-06,
+          "25_50kev_low": 5.552647e-07,
+          "50_100kev_hi": 1.063311e-06,
+          "100_150kev_hi": 9.410229e-07,
+          "100_350kev_hi": 4.216772e-06,
+          "15_350kev_low": 4.371597e-06,
+          "50_100kev_low": 8.548305e-07,
+          "fluence_model": "PL",
+          "100_150kev_low": 6.630557e-07,
+          "100_350kev_low": 2.574246e-06,
+          "Trigger_method": "image trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "2.042667e+00"
+        },
+        "params": {
+          "t50": {
+            "v": 288.852,
+            "err": 66.20101,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 454.244,
+            "err": 56.45959,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -1.35159,
+            "cl": 90,
+            "err": [
+              0.15820999999999996,
+              0.15706999999999982
+            ]
+          },
+          "fluence": {
+            "v": 2.6727e-06,
+            "cl": 90,
+            "err": [
+              2.5610300000000027e-07,
+              2.533979999999999e-07
+            ],
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 349592"
+        ],
+        "trigger_time": "2009-04-19T13:43:31.327920Z"
+      },
+      "swift_grb": {
+        "other": {
+          "bat_plsl": "1.355",
+          "det_flag": "S",
+          "target_id": "349592",
+          "bat_plsl_err": "0.157",
+          "bat_detection": "Y",
+          "supernova_flag": "N",
+          "bat_fluence_model": "PL"
+        },
+        "params": {
+          "t50": {
+            "v": 309.33,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "t90": {
+            "v": 460.67,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.7e-06,
+            "err": 2.55e-07,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
+          "name": "HEASARC SWIFTGRB",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "Swift 349592"
+        ],
+        "trigger_time": "2009-04-19T13:43:31.327920Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "xrt_nh": 9279420000000000000000,
+          "xrt_ra": 196.92858,
+          "ref_bat": "GCN 9161; GCN 9167",
+          "ref_xrt": "GCN 9161; GCN 9164; GCN 9172; Evans et al., 2009; MNRAS, 397, 1177",
+          "uvot_ra": 196.92896,
+          "xrt_dec": -75.60558,
+          "advocate": "Giulia Stratta",
+          "ref_uvot": "GCN 9161; GCN 9177",
+          "uvot_dec": -75.60586,
+          "uvot_mag": "B>20.69; U>20.89; UVW1>20.63; UVM2>19.99; UVW2>20.13; White=21.07",
+          "other_obs": "ESO/MPI (2.2m)",
+          "ref_other": "GCN Report 212.1",
+          "target_id": 349592,
+          "uvot_vmag": 19.6,
+          "xrt_gamma": 1.03401,
+          "trigger_obs": "Swift",
+          "error_radius": 2.1,
+          "xrt_lc_index": -1.614,
+          "xrt_11hr_flux": 7.7984179e-14,
+          "xrt_24hr_flux": 2.2131928e-14,
+          "xrt_first_obs": 119.66,
+          "uvot_first_obs": 126.0,
+          "uvot_vmag_flag": 1,
+          "xrt_early_flux": 5.55e-10,
+          "xrt_error_radius": 1.5,
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 450.0,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.5e-06,
+            "cl": 90,
+            "err": 2e-07,
+            "band": "15-150 keV"
+          },
+          "peak_flux": {
+            "v": 0.4,
+            "cl": 90,
+            "dt": "1s",
+            "err": 0.1,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 1.38,
+            "cl": 90,
+            "err": 0.16
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB 090419"
+        ],
+        "trigger_time": "2009-04-19T13:43:31.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "XA": "y",
+          "Error": "3",
+          "obs_date": "2009-04-19",
+          "Instrument": "Swift",
+          "GRB X-ray position": "13h07m54s -75° 36'"
+        },
+        "params": {},
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      }
+    },
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
+  },
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "The Second Swift UVOT GRB Afterglow Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": null
 }
