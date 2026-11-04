@@ -68,7 +68,7 @@
 | GRB160425A | 表 20 | `audit/leads/GRB160425A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB160625B | 表 20 | `audit/leads/GRB160625B.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB160804A | 表 20 | `audit/leads/GRB160804A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
-| GRB160910A | 表 20 | `audit/leads/GRB160910A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
+| GRB160910A | 表 20 | ~~`audit/leads/GRB160910A.md`（#120）~~ 已删（#859） | 已核（#859） | 转引型已证实：表 20 行（ΔT_notice=15、ΔT_trigger=65、m_OT=11.6、坐标、GCN 19914、SAAO/IAC）逐字段与 GCN 19914 一致、未被撤回；仅 col.(10) 首帧上限 W 12 mag(65 s) 为 GCN 未载增量，已按 ΔT_trigger=65 s 入库（#859） |
 | GRB161017A | 表 20 | `audit/leads/GRB161017A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB161117A | 表 20 | `audit/leads/GRB161117A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 

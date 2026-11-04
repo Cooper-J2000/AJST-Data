@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB160910A",
   "alias": [
-    "GRB 160910722"
+    "GRB 160910A",
+    "GRB160910722",
+    "GRB 160910.722",
+    "bn160910722"
   ],
-  "ra": 221.30999755859375,
-  "dec": 38.810001373291016,
-  "T0": "2016-09-10T17:19:43.160000Z",
-  "T0_ref": null,
+  "ra": 221.4423,
+  "dec": 39.0668,
+  "T0": "2016-09-10T17:19:39.154000Z",
+  "T0_ref": "GCN 19901（Fermi/GBM 触发 17:19:39.15 UT）+ FERMIGBRST trigger_time 2016-09-10T17:19:39.154Z（触发仪器官方目录）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,17 +17,29 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 19902",
+  "pos_error": 4.3,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 19904",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核（Rusty-Harpoon@zcode，2026-11-04）：身份=GRB 160910A（Fermi GBM trigger 495220783/bn160910722，GCN 19901；Fermi-LAT 亦探测 GCN 19902；后随 Swift-XRT/UVOT、MASTER、NOT、CALET-CGBM/Konus-Wind/AstroSat-CZTI）。T0 改正：原值 17:19:43.16 系 2FLGC trigger_met=495220783.16 的 MET→UTC 直转（漏 4 个闰秒，Fermi MET=UTC+4 s），正确 UTC 为 17:19:39.16；触发仪器官方值 GCN 19901=17:19:39.15 UT、FERMIGBRST trigger_time=17:19:39.154Z，取 39.154；备查：Swift BA 目录 39.150、Konus-Wind T0=17:19:39.089（GCN 19913，与 GBM 差 65 ms）、CALET-CGBM 触发 17:19:41.25（GCN 19909，设备触发时刻非爆发起点）、AstroSat-CZTI 峰值 17:19:47.15（GCN 19949）。定位：原 ra/dec=221.31/38.81、0.59° 来自 FERMILGRB(2FLGC) 行「14 45 14.4 +38 48 36」，pos_ref 误标 GCN 19902（其 LAT 定位为 221.26/38.76、0.35° 90%）；改用 Swift-XRT 精化位置 221.4423/39.0668、4.3″ 90%（GCN 19904，其 0.3-10 keV 流量亦以勘误 GCN 19911 为准），与 NOT 光学位置 14:45:46.04 +39:04:00.2（GCN 19908）及 MASTER 14:45:46.03 +39:04:00.52（GCN 19914）一致。alias 原含管线伪形「GRB 160910722」（空格式、目录无此形态），替换为有出处形态：GCN subject 用名 GRB 160910A；FERMIGBRST 目录 name_alt 原文用名：GRB160910722 / GRB 160910.722 / bn160910722。sub_tag 增 lgrb：t90=24.32±0.36 s（FERMIGBRST，50-300 keV），按目录 t90 判 lgrb。Zeiss-1000 两行按原文 t−T0(mid)=1.92176/4.91356 d 采用后，时标较旧导入值（UT start+Exp/2 口径）后移约 1017 s（约 17 min），与 AZT-22/33IK 的 ~60 s 级内部差不同量级，特此披露；原文 mid 优先（§3.8）。测光检索（2026-11-04）：仓内 gcn/archive 18 篇含本暴（19901/19902/19904/19906/19907/19908/19909/19910/19911/19913/19914/19919/19923/19925/19935/19937/19949/19966）全文已核，含测光数值者 9 篇（19907/19908/19914/19919/19923/19925/19935/19937/19966）；external/rssgrbag、external/grbsn_webtool 无本暴记录；ADS 元数据检索命中 19 篇、全文检索命中 32 篇（除 GCN 外仅 prompt 统计样本文与 Ershova+2020，无额外测光表）→ 补 4 行（GCN 19914 三行 + Ershova+2020 Table 20 col.(10) 首帧上限一行），原 13 行按新 T0 重算时间历元。本源 lc 无 X 射线行。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Ershova+2020",
+      "url": "https://doi.org/10.1134/S1063772920020018"
+    }
+  ],
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
+    }
+  }
 }
