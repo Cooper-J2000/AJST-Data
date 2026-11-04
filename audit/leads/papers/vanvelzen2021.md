@@ -10,7 +10,7 @@
 ## 为什么是文献级卡
 
 van Velzen+2021 是 ZTF-I 前半程 17 个光学 TDE 的专篇样本文章（GOT 昵称体系：Ned/Jon/Sansa/…）。
-**arXiv:2001.01409 v1 源码随文携带逐源光度数据文件 `data/<昵称>.dat`（17 个 ZTF TDE 每源一个）**，
+**arXiv:2001.01409 v1 源码随文携带逐源光度数据文件 `data/<昵称>.dat`（实测 16 个 .dat；17 个 ZTF TDE 中 AT2018bsi 无 data 文件——其差分光变被参考像污染，作者声明交出版社网站，v1 仅 lc_JonSnow.pdf 等图）**，
 列为 Table 5（光变形状参数 t_peak 等）与多波段拟合的输入；另含 22 个文献 TDE（Table 4, tab:known）
 的已发表测光转引。库内 28 个源被本文涉及（17−1 库外 AT2019eve ＋ 12 个文献 TDE）。
 出版社数据页声明 "will be made available at the publisher website"（§4）；IOP 整站 Radware 反爬
@@ -21,22 +21,22 @@ AT2019bhf 的 `Varys.dat` 已在审核该源时逐值核对入库（36 探测行
 
 | 源 | 表号（官方数据位置） | 源级卡 | status | 增量判读 |
 |---|---|---|---|---|
-| AT2018zr | data/NedStark.dat（GOT 昵称 Ned）；表 5 | 无 | mention-only | 过门槛①：逐源光度 .dat（ZTF 差分成像 + UVOT host-subtracted，静止系时标），接手者须自行下载核对 |
-| AT2018bsi | data/JonSnow.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2018hco | data/SansaStark.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2018iih | data/JorahMormont.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2018hyz | data/GendryBaratheon.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2018lni | data/AryaStark.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2018lna | data/CerseiLannister.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019cho | data/PetyrBalish.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019bhf | data/Varys.dat；表 5 | 已审核（2026-11-05，见该源 info comment 与 lc） | 已核对入库 | 36 探测行已入库（LT/IO:O u/g、Swift/UVOT host-subtracted AB、ZTF 差分成像 Jy）；28 行 flux=0 未入库 |
-| AT2019azh | data/JaimeLannister.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019dsg | data/BranStark.dat + Bran_lx_Swift.dat/_ul.dat（Swift/XRT）；表 5 | 无 | mention-only | 过门槛①：同上（另含 X 射线文件，按规则不入库） |
-| AT2019ehz | data/Brienne.dat + Brienne_lx_Swift.dat/_ul.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019mha | data/Bronn.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019meg | data/MargaeryTyrell.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019lwu | data/RobbStark.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
-| AT2019qiz | data/Melisandre.dat；表 5 | 无 | mention-only | 过门槛①：同上 |
+| AT2018zr | data/NedStark.dat（GOT 昵称 Ned）；表 6 | 无 | mention-only | 过门槛①：逐源光度 .dat（ZTF 差分成像 + UVOT host-subtracted，静止系时标），接手者须自行下载核对 |
+| AT2018bsi | 无 data 文件（差分光变被参考像污染，作者声明交出版社网站；v1 仅 lc 图）；表 6 | 无 | mention-only | 门槛①不满足（v1 无机读表，VoR 出版社页可能存在）；过门槛③（分类/参数引用） |
+| AT2018hco | data/SansaStark.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2018iih | data/JorahMormont.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2018hyz | data/GendryBaratheon.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2018lni | data/AryaStark.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2018lna | data/CerseiLannister.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019cho | data/PetyrBalish.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019bhf | data/Varys.dat；表 6 | 已审核（2026-11-05，见该源 info comment 与 lc） | 已核对入库 | 36 探测行已入库（LT/IO:O u/g、Swift/UVOT host-subtracted AB、ZTF 差分成像 Jy）；28 行 flux=0 未入库 |
+| AT2019azh | data/JaimeLannister.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019dsg | data/BranStark.dat + Bran_lx_Swift.dat/_ul.dat（Swift/XRT）；表 6 | 无 | mention-only | 过门槛①：同上（另含 X 射线文件，按规则不入库） |
+| AT2019ehz | data/Brienne.dat + Brienne_lx_Swift.dat/_ul.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019mha | data/Bronn.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019meg | data/MargaeryTyrell.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019lwu | data/RobbStark.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019qiz | data/Melisandre.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
 | PS1-10jh | 表 4（tab:known，转引 Gezari+2012 已发表测光） | 无 | mention-only | 过门槛③（正式文献引用）；数据为转引，接手者仍须回原始文献 |
 | AT2017eqx | 表 4（PS17dhz；转引 Nicholl+2019） | 无 | mention-only | 过门槛③：同上 |
 | PTF09ge | 表 4（转引 Arcavi+2014） | 无 | mention-only | 过门槛③：同上 |
