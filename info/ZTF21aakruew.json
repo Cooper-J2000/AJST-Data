@@ -1,22 +1,25 @@
 {
   "transient_id": "ZTF21aakruew",
   "alias": [
-    "GRB210212B"
+    "GRB210212B",
+    "AT2021cwd"
   ],
   "ra": 156.17566,
   "dec": 11.61138,
-  "T0": "2021-02-13T22:49:00Z",
-  "T0_ref": null,
+  "T0": "2021-02-12T02:37:59Z",
+  "T0_ref": "GCN 29514（Konus-Wind检测通告：burst starts at about T0=9479 s UT (02:37:59)）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Konus-Wind",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
   "pos_ref": "GCN 29508",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：ZTF21aakruew=AT2021cwd（TNS，未分类AT），为长GRB 210212B（Konus-Wind等待模式+INTEGRAL/SPI-ACS+Swift/BAT编码视场外，IPN三角定位，GCN 29511/29514）的光学余辉：ZTF位置落入IPN误差框（GCN 29511），GROND SED呈幂律证实余辉性质（GCN 29528），Ho+2022判association fairly secure（3σ IPN面积1286 deg²内2天窗期望GRB数0.09）。宿主：Legacy Survey前置成像无可见宿主（GCN 29508、Ho+2022），无红移测量（Ho+2022：Unfortunately no redshift measurement was obtained）。T0：标准T0=2021-02-12T02:37:59Z取GCN 29514；备查：GCN 29511（IPN）给9477 s UT（02:37:57，GCN 29512沿用其历元），Ho+2022表6的Δt反推t0=MJD 59257.1097（≈02:37:58）；三值差≤2 s，取触发仪器Konus-Wind专用检测通告的显式T0。原bot T0=2021-02-13T22:49Z实为LT检测时刻（GCN 29508），非触发时刻，bot的t0_basis=meta_trigger亦失真（原值移入extra_data.t0_note）。t90=41.2±2.9 s（80–1000 keV，Ho+2022表4）→按来源表t90判lgrb；GCN 29511/29514亦称long-duration（Konus-Wind总时长~48 s）。pos：ra/dec为ZTF瞬变体位置（GCN 29508；TNS 156.1756623/+11.611382一致），来源未给误差半径与置信水平，pos_error留空。测光检索（2026-11-04）：仓内gcn/archive全文命中6篇（29508/29511/29512/29513/29514/29528；29508/29512/29528含光学数值，29513仅Swift/XRT ToO指引，target 00021423，X射线不入库）；external/各快照（rssgrbag、grbsn_webtool、uvot_grb、fermi_gbm、swift_bat、heasarc_grbcat、mpe_greiner等）无该源光变表（mpe_greiner仅目录行、无trigger_time）；ADS检索ZTF21aakruew/AT2021cwd/GRB 210212B共6条=5篇GCN+Ho+2022（ApJ 938,85，唯一研究论文，以arXiv v2取数、未通读VoR，见audit/unverified.tsv）；TNS AT2021cwd页与发现报告（TNSTR 463）坐标/发现时刻核对一致；SIMBAD两镜像连接失败。新增12行：ZTF g首探测与r>20.93上限（GCN 29508）、Ho+2022表6的9行（P48 g/r、LT griz、LT g/i）与正文g>20.88上限、AZT-20 r行（GCN 29512）；原LT r=22.42行保留GCN 29508为reference。",
   "sub_tag": [
     "lgrb"
   ],
@@ -24,9 +27,14 @@
   "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0为GRB 210212B触发时刻（GCN 29514 Konus-Wind，9479 s UT）。原bot值t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）'对应2021-02-13T22:49Z，实为LT检测时刻（GCN 29508），已失真，审核时改写为grb_trigger。",
+    "t0_basis": "grb_trigger",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
+    }
   },
   "articles": [
     {
