@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB120324A",
-  "alias": [],
-  "ra": 291.081,
-  "dec": 24.14,
-  "T0": "2012-03-24T05:59:11Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 120324A",
+    "Swift 518507",
+    "BAT 518507"
+  ],
+  "ra": 291.07873,
+  "dec": 24.12958,
+  "T0": "2012-03-24T05:59:11.334480Z",
+  "T0_ref": "GCN 13090(BAT 触发 05:59:11 UT,trigger 518507);亚秒 0.334480 s 取自 Swift/BAT GRB Catalog trigger_time(extra_data.catalog_data.swift_bat,2026-07-21 取),按 §3.2/§3.8 以触发仪器官方目录亚秒值为准;原 T0=05:59:11Z(秒级)已按亚秒改进",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +20,32 @@
   "pos_ref": "GCN 13093",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份:Swift/BAT trigger 518507(GCN 13090,05:59:11 UT 触发并定位),Swift 立即 slew;AGILE-MCAL 目录亦收录(MET 259653551);Konus-Wind 触发于 05:59:10.757 UT(GCN 13100,亚秒差仅备查,不写 T0_offset)。T0:GCN 13090 给 05:59:11 UT(秒级),亚秒 0.334480 s 取自 Swift/BAT GRB Catalog trigger_time(extra_data.catalog_data.swift_bat),按 §3.2/§3.8 以触发仪器目录亚秒值为准;lc 全表 258 行已按 mjd=T0+time 重算自洽。定位:XRT enhanced RA,Dec=291.07873,+24.12958,误差 1.7″(radius,90% containment,GCN 13093,UVOT 对齐+USNO-B1 天测改正);原 ra/dec=291.081,24.140 实为 BAT 地面精化定位(GCN 13096,1.1′ 90% containment),与 pos_error=1.7″ 错配(bot 残留),已改锚 XRT enhanced;BAT 精化位留此备查。分类:t90=118±10 s(15–350 keV,GCN 13096);Swift/BAT 目录 t90=118.424±10.010 s(15–350 keV,BATGRBCAT),按目录 t90 判 lgrb;Konus-Wind 亦称 long(GCN 13100,其 fluence=(4.5±1.2)e-5 erg/cm2、Ep=445(+117/-80) keV,20 keV–10 MeV)。光学对应体:未识别——LT 候选体 r'=20.3(GCN 13092)被 GCN 13097 证在 POSS2 可见、GCN 13098 证亮度恒定且在 XRT 误差圈外、GCN 13179 R=20.16±0.25 同亮、Greiner+2024(GROND 样本 I)17 个月后仍同亮;XRT 圈边 r'~22.6 延展源(GCN 13098)亦 17 个月不变,为候选宿主(未定论,不建 host_galaxy)。红移:无测量(各文献均未给出)。银消光:E(B-V)=1.12(GCN 13095)~1.2(GCN 13098),各行均未做消光改正。测光检索(2026-11-03):仓内 gcn/archive 检得 13 篇本源通告(13090/13091/13092/13093/13094/13095/13096/13097/13098/13100/13101/13174/13179,逐篇读测光段;另 27093 为 GW 事件 S200213t 星系表,无关);external/rssgrbag、external/grbsn_webtool、external/uvot_grb 无本源测光记录。OpenAlex 全文检索 18 命中:11 篇为上述 GCN;Staley+2012(AMI-LA 15 GHz,MNRAS 428,3114)取 arXiv v1 机读表 obs.csv/obs_table1.tex 补 5 行 3σ 上限;Greiner+2024 arXiv 源核实无逐值测光(仅述无对应体,已登记 unverified.tsv);Becerra+2023(TAROT/COATLI/RATIR 样本,MNRAS 525,3262)VoR(OUP 502)与 arXiv(502)均未取得,其 TAROT 历元与 GCN 13094 同源未采;Rueda+2020(ab80b9)、Zhang+2022(ac7c13)、Zhou+2026(ae7329)为参数类样本文,正文未取得、未见可入库测光线索。ADS/SciX 无 token(HTTP 401)已按 search-limited 登记 audit/unverified.tsv,未据此下「无文献」结论。行数账:改写光学行 13 行(UVOT 8、LT 1、TAROT 1、GROND 2、AZT-11 1),新增 11 行(UVOT u 叠加 1、AZT-11 R 探测 1、AMI 15GHz 上限 5、GCN 13174 底片暴前 V 上限 4),删除 0 行;X 射线 234 行(10keV)仅按 mjd=T0+time 机械重算 mjd 列(2026-10-31/2026-11-03 裁定口径),其余列一律未动。alias 出处:GRB 120324A——GCN 13090 原文用名(带空格形,各通告 subject 同);Swift 518507 / BAT 518507——HEASARC SWIFTGRB 与 Swift/BAT GRB Catalog name_alt(trigger 518507,官方目录名)。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Staley+2012",
+      "url": "https://doi.org/10.1093/mnras/sts259",
+      "title": "Automated rapid follow-up of Swift gamma-ray burst alerts at 15 GHz with the AMI Large Array",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-03"
+    }
+  }
 }
