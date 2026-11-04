@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB090823",
-  "alias": [],
-  "ra": 128.671,
-  "dec": 60.641,
-  "T0": "2009-08-23T16:11:12Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090823",
+    "GRB090823A",
+    "BAT 00036390005"
+  ],
+  "ra": 128.67897,
+  "dec": 60.65052,
+  "T0": "2009-08-23T16:11:11.777Z",
+  "T0_ref": "Swift/BAT GRB Catalog（swift.gsfc.nasa.gov/results/batgrbcat/）Trig_time_UTC=2009-08-23T16:11:11.777（trigger 363900；external/swift_bat 快照 summary_general.txt，retrieved 2026-07-21，本会话 2026-11-04 复核）；GCN 9835（Swift-BAT team）整秒 16:11:12 UT（该通告明示此秒为 Suzaku WAM 触发时刻，未给 BAT 亚秒）；HEASARC SWIFTGRB／uvot_grb／swiftgrbba 目录均记 16:11:12（整秒）互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,17 +16,36 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 270.59999999999997,
-  "pos_ref": "GCN 9839",
+  "pos_error": 4.0,
+  "pos_ref": "UKSSDC Swift-XRT GRB Catalogue（swift.ac.uk/xrt_live_cat/，Evans+2009）：RA=128.67897,Dec=+60.65052（J2000），Err90=4.0″（90% 置信；external/swift_xrt_live 快照 retrieved 2026-07-21，本会话复核；目录文档：最佳 XRT 位置，优先 enhanced 否则 PSF 拟合）；GCN 9840 XRT 定位 128.67676,+60.65169±5.5″ 互证；原 pos_ref=GCN 9839（BATSS BAT 定位 128.671,+60.641±4.51′，90% 置信）为旧值",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核 fsy@zcode（2026-11-04）。(1) 身份：Suzaku WAM 触发（GCN 9835「At 16:11:12 on 2009-08-23, GRB 090823 triggered the Suzaku WAM」）+Swift/BAT slew 期间地面检测（BAT 目录 Trigger_method=ground detected during slew）；BATSS 独立复核 BAT 定位（GCN 9839）；XRT 于 BAT 误差圈内检出 X 射线余辉（GCN 9840，128.67676,60.65169±5.5″）并经 8-27/9-5 两次重观测衰减确认为余辉（GCN 9902）；Konus-Wind（GCN 9836）、AGILE-MCAL、IPN 三角定位互证（GCN 9835）。同日近邻甄别：GCN 站检索 090822=0 篇；090820=3 篇（RT-2/GBM/MASTER，另一暴、与本源无交集）——无混淆。(2) T0：原值 16:11:12Z（整秒）=Swift 产品通用历元（uvot_grb/SWIFTGRB/swiftgrbba 目录）；改用触发仪器 Swift/BAT 官方目录亚秒值 2009-08-23T16:11:11.777Z（external/swift_bat 快照 Trig_time_UTC，Trig_ID=00036390005；符合「整数秒一致时以触发仪器亚秒值为准」）。T0_offset 不写（|偏移|≤1 s：BAT 目录 T100_start=0.000 s，爆发窗口自触发时刻起算；GCN 9835「slow rise beginning about T-3 s」为 WAM 历元近似表述，与后更新的 BAT 目录不一致时以官方目录为准）。(3) 定位：原 pos_error=270.6″=4.51′=GCN 9839 BATSS 定位不确定度（原文「uncertainty of 4.51 arcmin (90% confidence, including systematics)」）；因 XRT 已检出余辉（GCN 9840/9902），改判 XRT 定位：UKSSDC Swift-XRT GRB Catalogue RA=128.67897,Dec=+60.65052,Err90=4.0″（90% 置信，external/swift_xrt_live 快照；文档明示该目录误差均为 90% 置信）；与 GCN 9840 初定位差约 5.74″（相容）；Swift/BAT 目录 refined 定位 128.7019,60.6029±2.06′ 备查；uvot_grb 目录行 dec=60.7835 与 BAT/XRT 定位相距约 8.0′，疑该目录数据错误，未采纳。(4) sub_tag=lgrb：t90=25.6±1.6 s（Swift/BAT GRB Catalog，15-350 keV，external/swift_bat 快照）按目录 t90 判 lgrb；uvot_grb 目录 t90=10.0 s（T90_REF=GCN 9836，Konus「duration of ~10 s」）同为长暴量级，来源间不冲突。(5) UVOT 三行按 GCN 9840 逐行重修：原文只给观测窗口（T_start/T_stop/Exp，多次曝光拼接 coadd）→ time=窗口中点、time_err=半宽（§3.8 约定口径）；原文历元=GCN 9835 的 16:11:12，本表 T0=16:11:11.777，time 已 +0.223 s 平移（§3.2）；原三行 time 均为 T_start+348 s 的导入偏差且无 time_err，已改正；white 行 band 由「w」改判「uvot-white」；mag_system=Vega（GCN 9840 原文声明 UVOT photometric system（Poole et al. 2008, MNRAS, 383, 627）；UVOT 系统为 Vega——Swift UVOT Digest zeropts 页）；未做银消改正（原文声明 E(B-V)=0.06，Schlegel+1998）；mjd=T0+time 重算（7 位小数）。(6) X 射线 2 行（10keV，Swift Burst Analyser）按红线零改动：T0 平移 0.223 s 后 mjd 漂移 0.223 s<1 s 容差，mjd=T0+time 仍自洽；如需按 2026-10-31 裁定机械重算 X 射线 mjd，由维护者合入前执行。(7) 测光检索（2026-11-04）：GCN 官网站内检索「090823」共 6 篇（9835/9836/9838/9839/9840/9902，全部实开）——仅 GCN 9840 含光学数值（UVOT 三上限，即本表三行），9840/9902 的 X 射线流量按范围不入库；仓内 gcn/archive 快照本机不存在（SCHEMA §1：gcn/archive 不进仓库），以官网检索替代；external/rssgrbag（射电余辉）、external/grbsn_webtool（63 事件）均无本源记录；arXiv API 元数据检索「GRB 090823」「GRB090823」「363900」均 0 命中；INSPIRE API 0 命中；网检未发现含本源测光表的研究论文（仅 GCN Report 241.1 自动观察报告，非研究论文）；ADS/SciX API 无凭据（通道受限，按 §3.10 记 search-limited），不作「无文献」结论→新增 0 行，UVOT 三行为既有行按原文改正。(8) 目录数据问题（只读报告，未改快照）：uvot_grb 行 dec 疑误（见(3)）；swift_bat 目录 XRT_detection=No 已过时（XRT 实有检测）；swiftgrbba error_radius=4.51 与 GCN 9839 的 4.51′ 一致（原 pos_error 来源）。(9) alias：「GRB 090823」=GCN 9835/9836/9838/9839/9840/9902 原文用名；「GRB090823A」=2nd AGILE-MCAL GRB Catalog 用名（external/agile_mcal 快照 name_alt，该行 trigger_time=2009-08-23T16:11:13Z 同源）；「BAT 00036390005」=Swift/BAT GRB Catalog name_alt（external/swift_bat 快照，逐字）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "pos_error_confidence": "90",
+  "articles": [
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "fsy"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "fsy"
+    }
+  ],
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
+  }
 }
