@@ -1,9 +1,10 @@
 # 文献索引：Langis+2026（TDECat——光学 TDE 综合编目）
 
 - paper_key: langis2026
-- paper: Langis+2026, A&A 707, A171（DOI 10.1051/0004-6361/202554882；arXiv:2506.05476）
+- paper: Langis+2026, A&A 707, A171（DOI 10.1051/0004-6361/202554882；arXiv:2506.05476；Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat）
 - date: 2026-11-05
 - helper: Rusty-Harpoon@zcode
+- out_of_repo: 无（134 个 TDE 全部在库内；Swift J1644+57 对应库内 SwiftJ164449.3+573451）
 - sources: ASASSN-14ae, ASASSN-14li, ASASSN-15oi, AT2016fnl, AT2017eqx, AT2017gge, AT2018bsi, AT2018dyb, AT2018fyk, AT2018hco, AT2018hyz, AT2018iih, AT2018jbv, AT2018lna, AT2018lni, AT2018mli, AT2018zr, AT2019ahk, AT2019azh, AT2019bhf, AT2019cho, AT2019dsg, AT2019ehz, AT2019gte, AT2019lwu, AT2019meg, AT2019mha, AT2019qiz, AT2019teq, AT2019vcb, AT2020acka, AT2020afhd, AT2020ddv, AT2020ksf, AT2020mbq, AT2020mot, AT2020neh, AT2020nov, AT2020ocn, AT2020opy, AT2020pj, AT2020qhs, AT2020riz, AT2020ukj, AT2020vdq, AT2020vwl, AT2020wey, AT2020ysg, AT2020yue, AT2020zso, AT2021ack, AT2021axu, AT2021blz, AT2021crk, AT2021ehb, AT2021gje, AT2021jjm, AT2021jsg, AT2021lo, AT2021mhg, AT2021nwa, AT2021qth, AT2021qxv, AT2021sdu, AT2021uqv, AT2021utq, AT2021uvz, AT2021yte, AT2021yzv, AT2022adm, AT2022aee, AT2022agi, AT2022arb, AT2022bdw, AT2022csn, AT2022czy, AT2022dbl, AT2022dsb, AT2022dyt, AT2022emf, AT2022exr, AT2022fpx, AT2022gdw, AT2022gri, AT2022hvp, AT2022ibq, AT2022lri, AT2022pna, AT2022rz, AT2022upj, AT2022wtn, AT2023clx, AT2023cvb, AT2023kvy, AT2023lli, AT2023mfm, AT2023mhs, AT2023rvb, AT2023tmq, AT2023ugy, AT2023vto, AT2023wdb, AT2023xen, AT2024admt, AT2024aepd, AT2024agqx, AT2024as, AT2024bgz, AT2024doo, AT2024eqp, AT2024gre, AT2024gxr, AT2024kt, AT2024lhc, AT2024mvz, AT2024pvu, AT2024qab, AT2024rny, AT2024tvd, AT2024ule, AT2024vip, AT2024wsd, AT2024ymu, AT2024yqo, AT2024zau, LSQ12dyw, PS1-10jh, PTF09djl, PTF09ge, SwiftJ164449.3+573451, SwiftJ2058+08, ZTF22aaajecp, iPTF15af, iPTF16axa
 
 ## 为什么是文献级卡
@@ -16,7 +17,7 @@ CRTS/SDSS/PTF/PS1/ASAS-SN/ATLAS/ZTF/ALLWISE/NEOWISE 公开测光。本库 134 �
 Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+08→SwiftJ2058+08），
 故一卡覆盖全部。
 
-本卡在审核 AT2024pvu（PR #890）时建立；该源已按 24 列契约入库其光度 CSV。
+本卡在审核 AT2021qth（PR #888）与 AT2024pvu（PR #890）时合并建立（两 PR 各自建卡，2026-11-05 复查后按 audit/leads/README.md 冲突规则合并为一份）；两源均已按 24 列契约入库各自的光度 CSV。
 
 ## 涉及源一览
 
@@ -157,23 +158,40 @@ Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+0
 | iPTF15af | target_iPTF15af_photometry.csv（原文记名 iPTF15af） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | iPTF16axa | target_iPTF16axa_photometry.csv（原文记名 iPTF16axa） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 
+官方数据入口（论文 §3 与 Data availability 节声明）：
+
+- GitHub：https://github.com/dlangis/TDECat（主目录 CSV + 逐源测光/光谱文件 + 本地 App）
+- CDS：https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/707/A171（Table 1＝TDE 候选表；2026-11-05 实测 CDS 全站自本机网络不可达，已记 audit/unverified.tsv 通道级行）
+- VoR：A&A 官网 HTML/PDF 金 OA；aanda.org 有 DataDome 反爬，curl 403，浏览器路线可过（2026-11-05 实测）
+
 ## 增量门槛判读
 
 - 全部 134 源都**过门槛①**（逐源光度 CSV 是库内 GCN/目录检索拿不到的编译测光表），接手任一源时
   应下载对应 `target_<名>_photometry.csv` 自行逐行核对后入库。
+- **宿主档案与爆发段混排**：CSV 把宿主档案测光（CRTS 2006-2015、PS1、ALLWISE、NEOWISE、爆发前 ZTF/ATLAS）
+  与 TDE 爆发段混在同一文件，入库前必须区分并写明取舍（AT2021qth 取爆发段窗口、AT2024pvu 全档案入库并
+  逐段注明口径——两种做法都合法，须在 comment 写清依据）。
 - **口径提示（审 AT2024pvu 时确证，预计全样本通用）**：
   1. CSV 行为**总流量（含宿星系核）**，非差分——安静期水平即宿主（AT2024pvu ZTF zg≈17.25）；
      与 TNS 差分星等（纯瞬变）不可互删，§3.4 判非同值；
   2. CSV 保留**各巡天原生星等系统**（AT2024pvu 的 WISE W1≈13.3 为 Vega 可证）：CRTS、
-     ASAS-SN V、WISE/NEOWISE＝Vega；ZTF、ATLAS、ASAS-SN g、iPTF、Pan-STARRS、SDSS＝AB
-     （论文 §3.1 声明其分析中统一转 AB，但 CSV 值未转）；
+     ASAS-SN V、WISE/NEOWISE、Swift/UVOT＝Vega；ZTF、ATLAS、ASAS-SN g、iPTF、Pan-STARRS、SDSS＝AB
+     （论文 §3.1 声明其分析中统一转 AB，但 CSV 值未转）；**UVOT 行已做银消光改正且未扣宿主**
+     （论文 §3.3 原文 All magnitudes were corrected for Galactic extinction … not host subtracted）；
   3. CRTS(CL) 为无滤光片 → band=G；
   4. CSV 无非探测标志列；审 AT2024pvu 时发现 ASASSN 行有 Error=-1.0（缺测哨兵）与
      Magnitude=99.99（非探测占位）两类哨兵，ATLAS 有 H/t 两个无法唯一判读的波段标签——
      接手者请按同样规则处理（哨兵不入库或误差留空；无法判读波段在 PR 待决上报）；
   5. CSV 内存在**同历元同值双行**（误差实现不同，§3.4 同值去重保留一行）与**同历元近值双行**
-     （不同管线，值差 ~0.02–0.05 mag，均保留）。
+     （不同管线，值差 ~0.02–0.05 mag，均保留）；ZTF 同一曝光最多 4 行＝**双管道×双误差变体**
+     （长精度 MJD 行＝ALeRCE magpsf_corr 口径，短精度行＝BHTOM ZTF 编译，系统差 ~0.023 mag），需按曝光去重；
+  6. **逐源爆发窗口（Bayesian blocks 的 start/end）未在正文或 GitHub 发布**——若在 CDS 侧，CDS 不可达期间
+     无法取得，窗口边界只能由审核者按文献拟合峰值+观测间隙自行约定并在 comment 写明。
 
 ## 待决
 
-无（口径判读均为审核动作提示，不涉维护者裁决；ATLAS(H)/(t) 波段问题随各源审核时按 PR 待决上报）。
+- TDECat 测光文件中 ATLAS 行存在个别 16-17 mag 离群点（论文自述「some artifacts could be present」）：
+  按库规则原样入库、不做清洗，是否需要库级 artifacts 标记约定，请维护者裁定。
+- 论文正文仅 2 张表（重复爆发表、候选示例表），主目录与 103 个 flare 的 timescale 参数表只存在于
+  GitHub/CDS 机读侧；CDS 恢复可达后建议补查 flare 参数表是否逐源发布。
+- ATLAS(H)/(t) 波段标签无法唯一判读（AT2024pvu 8 行未入库），随各源审核时按 PR 待决上报。
