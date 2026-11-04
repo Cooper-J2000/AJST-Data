@@ -1,44 +1,330 @@
 {
   "transient_id": "GRB240205B",
-  "alias": [],
+  "alias": [
+    "GRB 240205.926",
+    "GRB240205.93",
+    "bn240205926",
+    "MASTER OT J232550.14-550704.6"
+  ],
   "ra": 351.466,
   "dec": -55.123,
-  "T0": "2024-02-05T22:13:08Z",
-  "T0_ref": null,
+  "T0": "2024-02-05T22:13:06.785960Z",
+  "T0_ref": "Swift/BAT 在轨触发（trigger 1213095）：整秒 22:13:06 UT 取 GCN 35683；亚秒取触发仪器官方目录 Swift/BAT GRB Catalog (batgrbcat) 触发时刻 2024-02-05T22:13:06.785960Z（extra_data.catalog_data.swift_bat 快照，retrieved 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.824,
   "tag": [
     "grb"
   ],
   "pos_error": 60.0,
   "pos_ref": "GCN 35702",
-  "redshift_type": null,
-  "redshift_ref": "catalog:guidorzi2025; GCN 35701",
-  "comment": "catalog-only: Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 35698; catalog:guidorzi2025",
+  "comment": "身份：Swift/BAT 于 2024-02-05T22:13:06.786Z 在轨触发（trigger 1213095，GCN 35683，Swift 名 GRB240205.93）；Fermi/GBM 22:13:08.169Z（trigger 728863993.169242/240205926，GCN 35682）、GECAM-B 22:13:08.400Z（GCN 35689）、Konus-Wind T0=79986.680 s UT=22:13:06.680（GCN 35701）、INTEGRAL SPI-ACS（trig# 10513）、CALET（trig# 1391206207，GCN 35697；GCN 35696 系 BOOTES-6 通告、正文转引 CALET trigger 号）、AstroSat CZTI（GCN 35704）均探测到。原 Trigger_Instrument=Konus-Wind 系把次级探测仪器误当触发仪器，现改 Swift/BAT（最早触发，官方精化分析 GCN 35702）。T0：原值 2024-02-05T22:13:08Z 为 Fermi/GBM 触发时刻（bot 导入残留，Issue #84 同型的「非触发仪器历元」问题），现按「多触发仪器矛盾时以 Swift 为准」（§3.2/§3.8）改锚 Swift/BAT 触发；其余仪器触发时刻并列备查：GBM 22:13:08.169（GCN 35682）、GECAM-B 22:13:08.400（GCN 35689）、Konus-Wind 22:13:06.680（GCN 35701）。同日他暴区分：GRB 240205A 为另一短暴（Fermi GBM GCN 35679、Glowbug GCN 35707、IPN GCN 35710、Konus GCN 35713），与 240205B 的 GCN 命中集逐篇判读无交叉。定位：ra/dec=351.466,-55.123（J2000 度）、pos_error=60″=1.0′（sys+stat，90% containment）为 Swift/BAT 地面精化定位（GCN 35702），pos_error_confidence=90；MASTER OT J232550.14-550704.6（23:25:50.14 -55:07:04.6，GCN 35684）与 Skynet（23:25:50.12 -55:07:05.5，GCN 35687）位置与 BAT 定位一致。红移：z=0.824（VLT/X-shooter 吸收线 Fe II/Mg II 共同红移，原文「likely redshift」；另有无 DLA ⇒ z<1.6 上限），GCN 35698，redshift_type=spec；Swift/BAT 目录与 Guidorzi+2024 样本同载 0.824。分类：t90=47.29±0.29 s（15-350 keV，Swift/BAT 精化分析 GCN 35702；Swift/BAT 目录 47.304±0.292、swiftgrbba 47.29 一致；FERMIGBRST t90=47.1048±0.362 s（50-300 keV）；AstroSat CZTI 43(+3/−2) s（GCN 35704））→ 按目录 t90 判 lgrb；Konus-Wind 亦判 long/very soft（GCN 35701）。光变：T0 改锚后全表逐行重算（time=曝光中点−新 T0，mjd=T0+time，7 位小数）；原 bot 行把观测窗口起点/表中 MJD 直接当点时刻且 time_err 空，现按 §3.2/§3.8 改为曝光中点+半曝光：BOOTES-7 60 s 图（00:33 UT 起拍→中点 00:33:30）、Skynet 11 行按表 MJD+半曝光（表 MJD 取曝光起点：若取中点则首行起点 00:41:20 早于通告观测开始 00:42:54，矛盾；同网络 GCN 36200 表头作 MJD(Center)，两说并存按起点处理并逐行注明）、BOOTES-6 300 s 图（18:30 UT→18:30:30）；VLT 行保留观测起始时刻 00:21:26 UT（2024-02-07，acquisition r' 图曝光时长原文未给，time_err 留空）。新增行：REM r=15.67±0.01（AB，SkyMapper）t−t0~2.63 h、H=13.92±0.04（Vega，2MASS）t−t0~2.65 h（GCN 35694；其观测起始「2024 Feb 05 00:46:23 UT」系日期笔误，按「~2.55 h after trigger」应为 Feb 6）；PRIME J=19.65±0.15（AB，2MASS 定标，未做银消）（原文仅给「~2 days after」，取名义 2 d、等效不确定度 ±0.5 d；总曝光 800 s；GCN 35708）。未入库上限：GCN 35681 MASTER-SAAO 上限表（Tmid−T0=53/71/93 s，滤光片为 P//、P\\ 偏振片，限值 13.1–15.9 mag）——P 波段键 filters.json 无，待维护者扩键后补入；GCN 35684 的 mOT~12.8（near maximum）无时刻锚点，仅记于此；GCN 35695 之外 GCN 35684 未给 MASTER 发现像的精确时刻。射电（ATCA/MeerKAT）：原 GCN 35695 行（9GHz 0.1±0.011 mJy，锚在 22:26 UT 窗口起点）系 Chastain+2026（arXiv:2603.19047，投稿 PASA、暂无 VoR）Table 1 同一观测的初步值（~100 μJy，rms 11 μJy），按 §4 以更高来源的最终值取代并删行；新增 46 行 = Table 1 的 31 个有流量值历元（ATCA 5.5/9/16.7/21.2/1.6/2.6 GHz、MeerKAT 1.3/3.1 GHz；0.82 GHz（23.494-23.538 d）与 161.543-161.988 d 的 1.6 GHz 两行原文无流量值仅 rms（非探测、未给限值），未入库） + Table 2 的 9 GHz uv-fit 15 行（首次观测内 ~20 min 子窗口，含 T+35 min 最早 GRB 射电探测 105±45 μJy）；原文窗口为「days post-burst」区间（相对 Swift/BAT 触发 22:13:06 UT，与本文 T0 亚秒差可忽略），time=区间中点、time_err=半宽；Table 1 第 9 行窗口「11.057-10.341」系笔误（按同历元 9 GHz 行取 11.341）；末历元 5.5/9 GHz 窗口「157.593-157.593」起止相同（取名义时刻，time_err 留空）；原文流量误差 statistical only（光变图误差另与 rms 正交合成）；Table 2 的 −7±71 μJy 为与零一致的拟合值，原样入库。X 射线：Swift 受太阳约束至 2024-02-25，无 XRT/UVOT 数据（GCN 35683/35698；swiftgrbba 快照同注）；本源 lc 无 X 射线行。其他量（不参与判定）：E_iso=(6.1±0.3)e52 erg、L_iso=(2.6±0.5)e52 erg/s（Konus-Wind，20 keV-10 MeV，z=0.824，GCN 35701）；fluence(GBM)=4.94638e-05 erg/cm²（10-1000 keV，FERMIGBRST）、fluence(BAT)=2.676559e-05 erg/cm²（15-150 keV，90%，Swift/BAT 目录）、fluence(KW)=(3.22±0.18)e-05 erg/cm²（20 keV-10 MeV，GCN 35701）；Ep（Konus 时积分 Band）=27(-16,+10) keV（GCN 35701）、FERMIGBRST flnc_comp_epeak=30.72 keV；variability=0.451±0.002（15-150 keV，Guidorzi+2024，extra_data.derived 已载）。测光检索（2026-11-04）：仓内 gcn/archive 45,889 篇全文命中本源相关 17 篇（GCN 35681/35682/35683/35684/35686/35687/35689/35693/35694/35695/35696/35697/35698/35701/35702/35704/35708，其中含光学/射电测光或上限 8 篇：35681/35684/35686/35687/35694/35695/35696/35708）；external/rssgrbag、grbsn_webtool 无此源记录；gcn.nasa.gov 在线逐篇核对 35687/35694/35695 与仓内一致；arXiv API（all:\"GRB 240205B\" 与 all:\"240205B\"）命中研究文献 1 篇（2603.19047 Chastain+2026，e-print TeX 已实取通读，46 行入库）；OpenAlex 命中 4 条（其余 3 条无本源测光表：A&A 10.1051/0004-6361/202556274 为 prompt 分类样本、AMI-LA 射电目录 arXiv:2608.13697、Boyden 会议文 10.22323/1.459.0015）；Crossref 检索无本源已发表 VoR；AMI-LA 射电目录（arXiv:2608.13697，HTML 版实读）仅两处提及本源、均系与 ATCA 结果对比，未观测本源（无 15.5 GHz 数据），无行可补。结论：新增 49 行（REM 2、PRIME 1、Chastain+2026 46）、删 1 行（GCN 35695 被 Chastain+2026 Table 1 取代）、保留改写 14 行。ADS/SciX 无 token（HTTP 401），检索通道受限已登记 audit/unverified.tsv（2026-11-04，不得据此当作「无文献」）。别名出处：GRB 240205.926、GRB240205926、bn240205926=FERMIGBRST 目录用名（<GCN 35682> 原文用名 240205926，trigger 240205926）；GRB240205.93=Swift 名（<GCN 35681> 原文用名 Swift GRB240205.93）；MASTER OT J232550.14-550704.6（<GCN 35684> 原文用名）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
-    "params": {
-      "lp_iso": {
-        "v": 47533522594280486000000000000000000000000000000000000,
-        "err": [
-          5922913345416626500000000000000000000000000000000000,
-          5266661167720229000000000000000000000000000000000000
-        ],
-        "src": "guidorzi2025"
+    "derived": {
+      "best": {
+        "lp_iso": {
+          "v": 47533522594280486000000000000000000000000000000000000,
+          "err": [
+            5922913345416626500000000000000000000000000000000000,
+            5266661167720229000000000000000000000000000000000000
+          ],
+          "src": "guidorzi2025"
+        },
+        "variability": {
+          "v": 0.451,
+          "err": 0.002,
+          "src": "guidorzi2025"
+        }
       },
-      "variability": {
-        "v": 0.451,
-        "err": 0.002,
-        "src": "guidorzi2025"
+      "sources": {
+        "guidorzi2025": {
+          "lp_iso": {
+            "v": 47533522594280486000000000000000000000000000000000000,
+            "err": [
+              5922913345416626500000000000000000000000000000000000,
+              5266661167720229000000000000000000000000000000000000
+            ]
+          },
+          "variability": {
+            "v": 0.451,
+            "err": 0.002
+          }
+        }
+      },
+      "computed": "2026-07-22"
+    },
+    "catalog_data": {
+      "fermi_gbm": {
+        "other": {
+          "bii": -58.08199762,
+          "lii": 325.84005036,
+          "flux_256": 101.993,
+          "flux_1024": 81.1928,
+          "t50_start": 16.8962,
+          "t90_start": 2.048,
+          "error_radius": 0.05,
+          "fluence_batse": 2.07512e-05,
+          "flux_batse_64": 40.7227,
+          "flux_256_error": 1.89622,
+          "flux_batse_256": 40.0959,
+          "flnc_band_epeak": 6.4633498,
+          "flnc_comp_epeak": 30.720463,
+          "flux_1024_error": 0.893158,
+          "flux_batse_1024": 26.1908,
+          "fluence_batse_error": 1.50792e-08,
+          "flux_batse_64_error": 1.78195,
+          "flux_batse_256_error": 0.876593,
+          "flux_batse_1024_error": 0.356917,
+          "flnc_band_epeak_neg_err": 0.22177938,
+          "flnc_band_epeak_pos_err": 0.22177938,
+          "flnc_best_fitting_model": "flnc_comp",
+          "flnc_comp_epeak_neg_err": 0.68496412,
+          "flnc_comp_epeak_pos_err": 0.68496412
+        },
+        "params": {
+          "t50": {
+            "v": 23.0404,
+            "err": 0.362039,
+            "band": "50-300 keV"
+          },
+          "t90": {
+            "v": 47.1048,
+            "err": 0.362039,
+            "band": "50-300 keV"
+          },
+          "epeak": {
+            "v": 30.720463,
+            "err": [
+              0.68496412,
+              0.68496412
+            ],
+            "frame": "obs",
+            "model": "CPL"
+          },
+          "fluence": {
+            "v": 4.94638e-05,
+            "err": 3.01971e-08,
+            "band": "10-1000 keV"
+          },
+          "peak_flux": {
+            "v": 107.026,
+            "dt": "64ms",
+            "err": 3.89331,
+            "band": "10-1000 keV"
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
+          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "GRB240205926",
+          "GRB 240205.926",
+          "bn240205926"
+        ],
+        "trigger_time": "2024-02-05T22:13:08.169Z"
+      },
+      "swift_bat": {
+        "other": {
+          "pcode": "0.9844",
+          "z_ref": "Fausey et al. GCN Circ. 35698 (VLT/X-shooter)",
+          "15_25kev": 7.199076e-06,
+          "25_50kev": 8.524068e-06,
+          "z_method": "ba",
+          "15_350kev": 3.358743e-05,
+          "50_100kev": 7.283779e-06,
+          "Image_SNR": "8.681578e+01",
+          "100_150kev": 3.758605e-06,
+          "100_350kev": 1.058076e-05,
+          "15_25kev_hi": 7.42022e-06,
+          "25_50kev_hi": 8.673944e-06,
+          "15_25kev_low": 6.980825e-06,
+          "15_350kev_hi": 3.405311e-05,
+          "25_50kev_low": 8.374263e-06,
+          "50_100kev_hi": 7.395317e-06,
+          "100_150kev_hi": 3.856886e-06,
+          "100_350kev_hi": 1.096218e-05,
+          "15_350kev_low": 3.312278e-05,
+          "50_100kev_low": 7.171942e-06,
+          "fluence_model": "PL",
+          "100_150kev_low": 3.661228e-06,
+          "100_350kev_low": 1.020862e-05,
+          "Trigger_method": "rate trigger",
+          "T100_best_model": "PL",
+          "Image_position_err": "4.799144e-01"
+        },
+        "params": {
+          "t50": {
+            "v": 23.716,
+            "err": 0.4311473,
+            "band": "15-350 keV"
+          },
+          "t90": {
+            "v": 47.304,
+            "err": 0.2916711,
+            "band": "15-350 keV"
+          },
+          "alpha": {
+            "v": -2.22695,
+            "cl": 90,
+            "err": [
+              0.026920000000000055,
+              0.02688999999999986
+            ]
+          },
+          "fluence": {
+            "v": 2.676559e-05,
+            "cl": 90,
+            "err": [
+              3.9296999999999905e-07,
+              3.927599999999979e-07
+            ],
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.824
+          }
+        },
+        "source": {
+          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
+          "name": "Swift/BAT GRB Catalog",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [
+          "BAT 1213095"
+        ],
+        "trigger_time": "2024-02-05T22:13:06.785960Z"
+      },
+      "swiftgrbba": {
+        "other": {
+          "comment": "This GRB is Sun constrained for Swift observations until February 25, 2024. There will therefore not be any XRT or UVOT data collected.",
+          "ref_bat": "GCN 35683; GCN 35702",
+          "advocate": "Mike Moss",
+          "other_obs": "Fermi (GBM), MASTER, BOOTES-7 (0.6m), Skynet (0.4m), GECAM-B, REM (60cm), ATCA @ 9 GHz, BOOTES-6 (0.6m), CALET, VLT, Konus-Wind, AstroSat CZTI, PRIME",
+          "ref_radio": "GCN 35695 (ATCA)",
+          "target_id": 1213095,
+          "trigger_obs": "Swift",
+          "error_radius": 1.0,
+          "ref_redshift": "GCN 35698 (VLT)",
+          "redshift_comment": "VLT: absorption",
+          "bat_spectral_model": "PL"
+        },
+        "params": {
+          "t90": {
+            "v": 47.29,
+            "err": null,
+            "band": "15-150 keV"
+          },
+          "fluence": {
+            "v": 2.6e-05,
+            "cl": 90,
+            "err": 0.0,
+            "band": "15-150 keV"
+          },
+          "redshift": {
+            "v": 0.824
+          },
+          "peak_flux": {
+            "v": 47.8,
+            "cl": 90,
+            "dt": "1s",
+            "err": 1.0,
+            "band": "15-150 keV"
+          },
+          "spectral_index": {
+            "v": 2.23,
+            "cl": 90,
+            "err": 0.03
+          }
+        },
+        "source": {
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
+          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": "2024-02-05T22:13:06.000Z"
+      },
+      "mpe_greiner": {
+        "other": {
+          "OT": "y",
+          "RA": "y?",
+          "XA": "y",
+          "IPN": "y",
+          "Error": "3",
+          "obs_date": "2024-02-05",
+          "Instrument": "Swift",
+          "GRB X-ray position": "23h25m54s -55° 08'"
+        },
+        "params": {
+          "redshift": {
+            "v": 0.824
+          }
+        },
+        "source": {
+          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
+          "name": "Greiner's GRB localization table (MPE)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
+      },
+      "guidorzi2025": {
+        "other": {
+          "Tf": 29.44,
+          "Det": "BAT",
+          "Vf05": -0.004,
+          "Vf95": 0.003,
+          "e_Tf": 0.18,
+          "Npeaks": 11,
+          "Tf_f0.45": 10.67,
+          "Vf_f0.45": 0.312,
+          "obs_date": "2024-02-05",
+          "r_logLiso": 28,
+          "s_Vf_f0.45": 0.003
+        },
+        "params": {
+          "lp_iso": {
+            "v": 47533522594280486000000000000000000000000000000000000,
+            "err": [
+              5922913345416626500000000000000000000000000000000000,
+              5266661167720229000000000000000000000000000000000000
+            ],
+            "frame": "rest"
+          },
+          "redshift": {
+            "v": 0.824
+          },
+          "variability": {
+            "f": 0.8,
+            "v": 0.451,
+            "err": 0.002,
+            "band": "15-150 keV"
+          }
+        },
+        "source": {
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/690/A261",
+          "name": "Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+          "retrieved": "2026-07-21"
+        },
+        "name_alt": [],
+        "trigger_time": null
       }
     },
-    "params_computed": "2026-11-04"
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
   },
   "articles": [
     {
@@ -47,6 +333,13 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract",
       "bibtex": "@ARTICLE{2024A&A...690A.261G,\n       author = {C. Guidorzi and R. Maccary and A. Tsvetkova and S. Kobayashi and L. Amati and L. Bazzanini and M. Bulla and A. E. Camisasca and L. Ferro and D. Frederiks and F. Frontera and A. Lysenko and M. Maistrello and A. Ridnaia and D. Svinkin and M. Ulanov},\n       title = {New results on the gamma-ray burst variability-luminosity relation},\n       journal = {A&A, 690, A261 (2024)},\n       year = {2024},\n       doi = {10.1051/0004-6361/202451401},\n       eprint = {2409.01644},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract},\n}",
       "source": "bot"
+    },
+    {
+      "name": "Chastain+2026",
+      "title": "GRB 240205B: A Reverse Shock Detected in Rapid Response Radio Observations",
+      "url": "https://arxiv.org/abs/2603.19047",
+      "bibtex": "@ARTICLE{2026arXiv260319047C,\n       author = {{S. I. Chastain} and {G. E. Anderson} and {A. J. van der Horst} and {L. Rhodes} and {C. Morley} and {A. Gulati} and {J. K. Leung} and {T. D. Russel} and {S. D. Ryder}},\n        title = \"{GRB 240205B: A Reverse Shock Detected in Rapid Response Radio Observations}\",\n      journal = {arXiv e-prints (submitted to PASA)},\n         year = 2026,\n       eprint = {2603.19047},\n archivePrefix = {arXiv},\n}",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
