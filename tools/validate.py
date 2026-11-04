@@ -233,6 +233,15 @@ def check_info(path):
     ed = d.get('extra_data')
     if ed is not None and not isinstance(ed, dict):
         err(f'{name}: extra_data 应为 object|null')
+    elif isinstance(ed, dict):
+        # v2.37（2026-11-04）起 extra_data 只留 audit / src / t0_note / t0_basis
+        # + params / params_computed（另有 bot_created / ingest_source / merged_from 等既有键）。
+        # catalog_data（外部目录原样 dump）与 derived（派生量）已全库删净，不得再写回：
+        # 它们是 40 万行级冗余，且会让 ETL 把旧结构带进库。派生量改写 params。
+        for legacy in ('catalog_data', 'derived'):
+            if legacy in ed:
+                err(f'{name}: extra_data.{legacy} 已在 v2.37 删除（见 SCHEMA.md §2.1 / '
+                    f'《数据审核提示词》§3.5）——派生量写 params，外部目录原件留在 external/，不要写回文件')
 
     arts = d.get('articles')
     if isinstance(arts, list):

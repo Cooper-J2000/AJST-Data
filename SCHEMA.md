@@ -54,7 +54,7 @@
 | `comment` | string\|null | `null` | 备注 |
 | `tag` | string[] | `[]` | 主标签（如 `grb`、`sn`；受控词表见 `tags.json`） |
 | `sub_tag` | string[] | `[]` | 副标签（如 `lgrb`、`snii`） |
-| `extra_data` | object\|null | `null` | 自由扩展字段（入库来源、抓取标记等），不做 schema 约束；其中 `params` 子键为规格统一物理量（`{"<key>": {"v","err","src"}}` 平铺结构，键注册表在代码仓库 `backend/params_registry.json`），其余子键自由扩展不变 |
+| `extra_data` | object\|null | `null` | 自由扩展字段（入库来源、抓取标记等），不做 schema 约束；其中 `params` 子键为规格统一物理量（`{"<key>": {"v","err","src"}}` 平铺结构，键注册表在代码仓库 `backend/params_registry.json`），其余子键自由扩展不变。**`catalog_data` 与 `derived` 两个键已于 v2.37（2026-11-04）全库删除，禁止再写回**（见 §2.1a） |
 | `articles` | object[] | `[]` | 研究文章，见 §2.1 |
 | `host_galaxy` | object\|null | `null` | 宿主星系，见 §2.2 |
 
@@ -80,6 +80,27 @@
 | `title` | string | 否 | 标题 |
 | `bibtex` | string | 否 | BibTeX 条目 |
 | `source` | string | 否 | 录入来源（`bot` / 账户名等） |
+
+### 2.1a `extra_data` 的骨架与禁用键（v2.37 起）
+
+审核后 `extra_data` 只应出现这些键：
+
+| 键 | 用途 |
+|---|---|
+| `audit` | 审核标记 `{status, auditor, date}`（必写，否则审核队列一直显示 free） |
+| `params` / `params_computed` | 规格统一的物理量（12 个迁移键，逐量带 `src` 溯源）与计算日期 |
+| `src` / `t0_note` / `t0_basis` | 入库来源、T0 判读依据与备注（历史形态，可保留） |
+| `bot_created` / `ingest_source` / `merged_from` | 建库/导入管线留下的既有标记 |
+
+**禁用键**（v2.37 全库删除，`tools/validate.py` 按 ERROR 拦，CI 会红）：
+
+- `catalog_data`：外部目录（FERMIGBRST / 2FLGC / BATSE …）的原样 dump，1403 个源、40 万行级。
+  原件留在 `external/<catalog>/` 作再推导原料，**不进 info**。
+- `derived`：派生量。要保留就按 `params` 规格写（`{"v","err","src"}`），键名须在
+  代码仓库 `backend/params_registry.json` 注册。
+
+理由：这两个键让 info JSON 单文件涨到几十 KB～MB 级，且旧结构经 ETL 会原样进库，把已完成的
+迁移退回去。既有历史里 `t0_note` 等**文字**里提到 "catalog_data" 不算违规——判据是**键**存不存在。
 
 ### 2.2 `host_galaxy` 对象
 

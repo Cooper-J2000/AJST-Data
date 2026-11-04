@@ -49,6 +49,7 @@
 
 ## 元数据两项硬检查（2026-10-26 新增，缺项视为未完成）
 
+- `extra_data` 骨架（v2.37，2026-11-04 新增）：本 PR 的 `info/*.json` 里 **`catalog_data` / `derived` 出现 0 次**（CI 按 ERROR 拦；派生量写 `params` + `params_computed`，外部目录原件留在 `external/`，见 SCHEMA.md §2.1a）
 - `articles[]`：**GCN 通告 0 条**。已登记 `____` 篇 `Author+YYYY` 研究文章（DOI/arXiv 链接）；通告出处写在 `comment` 与 `lc.reference`（§3.5）
 - `alias` 伪形：本 PR 新增 `____` 项，其中 `____` 项带「**<GCN nnn> … 原文用名**」证据串（逐项列出：`<别名>` ← `<GCN nnn>` 原文写法）；无证据串者已删除（§3.10）
 - `sub_tag`：依据写明 `____`（研究文章分类 / 目录 `t90=<值> s` / 留空待决）；用目录 t90 时 `comment` 里已有该值与目录名（§3.9）
