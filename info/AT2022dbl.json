@@ -4,12 +4,14 @@
     "ASASSN-22ci",
     "AT 2018mac",
     "Gaia22bdt",
-    "ZTF18aabdajx"
+    "ZTF18aabdajx",
+    "PS22cdn",
+    "ATLAS18bcnl"
   ],
   "ra": 185.187542,
   "dec": 49.5513,
   "T0": "2022-02-22T14:52:48Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TNS 发现报告 137565（ASAS-SN，bibcode 2022TNSTR1433....1S）发现时刻 2022-02-22 14:52:48.000；与 TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date（2022-02-22 14:52:48.000）一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -18,16 +20,21 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）坐标 12:20:45.010 +49:33:04.68（J2000）＝TNS 对象页 185.18754 +49.5513",
+  "redshift_type": "spec-host",
+  "redshift_ref": "TNS 分类报告 11946（StarDestroyers，bibcode 2022TNSCR.504....1A，分类光谱给 z=0.0284）；宿主 SDSS 光谱（强 Balmer 吸收线 E+A 星系）见 Lin+2024",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 7401 行。\n\n【身份核验（2026-11-05，TNS 两对象页 + TDECat 目录行 + ADS 互证）】坐标：TDECat 目录行 12:20:45.010 +49:33:04.68（185.18754/+49.5513）＝TNS AT2022dbl 对象页与 AT 报告 137565 坐标，一致。本源是同一个星系核的重复（疑似 partial）TDE，真实耀发两次：2022 年第一次（＝本源 AT2022dbl，发现口径 ASAS-SN）与 2024 年第二次（TNS AstroNote 2024-43 = 2024TNSAN..43....1Y 报道，挂同一 TNS 对象）；Makrygianni+2025 峰值 MJD 59639.67±1.16 / 60350.92±1.09（Δt=711.25±1.59 d）、Lin+2024 表 1 t_peak=59637.6/60346.6、Langis+2026 表 2 Δt≈695 d、N_flare=2（pTDE ✓ / double TDE ✓ / 无关事件 X p=6.1e-5）。\n\n【alias 逐名出处】①ASASSN-22ci＝TNS AT 报告 137565 internal name（ASAS-SN 发现，报告备注原文 Present in several epochs, on the rise…this galaxy was the host of a likely TDE, AT 2018mac; in TESS Sector 48）。②Gaia22bdt＝TNS AT 报告 142730（GaiaAlerts bot）internal name，备注原文 Gaia detection of known TDE (aka AT 2022dbl, ASASSN-22ci)；亦为 TDECat 目录行 Gaia alert name 列。③ZTF18aabdajx＝TNS AT 报告 136224（ZTF_CLU_PUBLIC，2022-02-12 提交，discovery date 回溯 2018-05-16 04:50:15.648，r=19.6237）internal name；TDECat 目录行 ZTF name 列；Lin+2024 开篇原文 also known as AT 2018mac, ZTF18aabdajx, ASASSN-22ci。④AT 2018mac＝TNS 对象名（2018 年 ZTF 报告所建，其后 2022 年 Gaia/PS1/ATLAS 三报告都挂在该对象下；TNS 系统注释原文 ASAS-SN AT report/s 137565 for 2018mac were associated with object 2022dbl——两 TNS 对象为同一位置同一核）；TDECat 目录行 Alternative name 列＝ASASSN-22ci/AT 2018mac。⑤PS22cdn＝TNS AT 报告 142051（Pan-STARRS PS2_Bot1，2022-03-15 07:42:27.360，i-P1 17.87）internal name（本次审核新增）。⑥ATLAS18bcnl＝TNS AT 报告 139182（ATLAS bot，2022-02-23 13:03:25.056，orange 17.408）internal name（本次审核新增）。【2018 年探测的判定】Lin+2024 原文 confirm a false alert（ZTF 早期测试期假警报）、Makrygianni+2025 原文 consider the two r-band detections…as due to image subtraction artifacts，且其 ZTF 强制测光在首耀发前约 1500 d 内无任何早前耀发（TDECat 编译总流量在 2018 窗口亦全为宿主水平）——故 2018-05-16 的 r=19.6237（差分口径）不入库；但 AT 2018mac/ZTF18aabdajx/ATLAS18bcnl 是 TNS 真实用名（同一位置对象/其 2018 内部名，2022 年 Gaia/PS1/ATLAS 报告即挂在其下），按 §3.10 保留并在此留证。tag=tde：TNS 分类报告 11946 分类 TDE（FTN/FLOYDS-N 2022-02-21 光谱，TDE-H 型似 AT 2019ahk，E+A 宿主）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ASAS-SN）。\n\n【T0 口径】TDECat 目录行 Discovery date 2022-02-22 14:52:48.000 与 TNS 发现报告 137565 完全一致（毫秒位为 .000，与秒级写法同一时刻，故 T0 保留秒级精度不补假精度）；T0 取本源 id 对应的 2022 耀发发现时刻。2018 首测（false alert）与 2024 第二次耀发无独立 TNS 名，均不设 T0_offset。\n\n【红移】z=0.0284（TDECat 目录行＝TNS 对象页＝分类报告 11946）；TNS 对象页 Host Redshift 0.028398（PGC2346329）备查。宿主为 SDSS 光谱证认的 E+A/quiet Balmer-strong 星系（Lin+2024：pre-outburst SDSS spectrum exhibits a series of strong Balmer absorption lines）→ redshift_type 由 value 改判 spec-host（§3.5）。\n\n【测光入库 7401 行】＝①TDECat 官方补充仓库 target_AT2022dbl_photometry.csv（github.com/dlangis/TDECat Section 2: Photometry/Optical and Infrared，2026-11-05 下载）8173 行：去重 1241 行（同历元同值不同误差实现，§3.4 保留 1 行）+ 同历元近值 1 行（|Δmag|≤1e-4 同测量）+ ATLAS(H) 5 行未收（波段标签无法唯一判读，PR 待决）→ 6926 行；②TDECat 官方 UVOT 机读表（Section 2: Photometry/UVOT/AT2022dbl_uvot_lightcurve.csv，MJD 59637.289–60595.518）436 行（W2/M2/W1/U/B/V 非空值）；③Makrygianni+2025 表 2 射电 22 行（VLA 3/6/10/15 GHz 三历元 + AMI-LA 15.5 GHz 上限，单位 mJy）；④Makrygianni+2025 表 1 guidance 部分 14 行（差分/扣宿主纯瞬变口径，VoR 机读全表 IOP 反爬不可得，见 audit/unverified.tsv）；⑤TNS 发现报告差分星等 3 行（137565/139182/142051）。口径：TDECat/BHTom 编译行为总流量（含宿星系核，非差分；ZTF 安静期 zg≈17.58/zr≈16.86 即宿主水平），TNS 报告行与 Makrygianni 行为差分成像纯瞬变，两类并存不互删（§3.4 口径不同非同值）；星等系统按 Langis+2026 §3.1（ZTF/ATLAS/ASAS-SN g/iPTF/PTF/Pan-STARRS/SDSS=AB，CRTS/ASAS-SN V/NEOWISE-ALLWISE/Swift-UVOT=Vega；Gaia G 为内部定标非 AB 非 Vega→mag_system 留空；LINEAR(CL) 原文未声明→留空）；CRTS/LINEAR(CL) 无滤光片→band=G；UVOT 行论文 §3.3 原文 All magnitudes were corrected for Galactic extinction（Schlafly & Finkbeiner 2011 + Fitzpatrick & Massa 2007）且 not host subtracted→Gext_corr=y；SDSS 同历元多 DR 重处理变体（值差 ≤0.015 mag）按 §3.4 默认都保留；ZTF 长短精度双管道行（ALeRCE magpsf_corr 长精度 vs BHTOM 编译短精度，值差约 0.01–0.19 mag）均保留；ASASSN Error=-1.0 哨兵 14 行星等入库误差留空；射电行 Makrygianni 表 2 印刷 MJD 59627/59790/60142 为系统性笔误（比正文早 9–10 d），按正文 MJD 59636/59800/60152（＝ATel 15258 观测日期 2022-02-26 与其图 3 轴标 discovery+4/167/519 d 三方互证）入库，表 2 另一行 MJD 69677 笔误无法唯一确定未入库（PR 待决）。未入库：TDECat X 射线机读文件（Section 2: Photometry/X-ray/AT2022dbl_xray_lightcurve.csv，85 行，X 射线暂不处理）；TDECat 光谱文件（spectra/ 范畴不动）；Makrygianni+2025 机读全表（IOP Radware 反爬）；TNS 对象页 phot 表值（需登录，仅计数可见）；ZTF 2018-05-16 差分发现值 19.6237（false alert，见上）；Makrygianni 正文「ZTF 发现前约 100 d 的 3σ 上限 r≈20.8/g≈20.7」无明确时间锚点不入库；Makrygianni TESS Sector 48/49/76 光变（未标定，原文声明不用于建模）；Lin+2024 表 A1 宿主测光为流量值（mJy）已原样转述进 host_galaxy.comment，不做星等换算。\n\n【测光检索留证（2026-11-05）】①仓内 gcn/archive 45947 篇全文检索 AT2022dbl/AT 2022dbl/ASASSN-22ci/Gaia22bdt/ZTF18aabdajx/2018mac＝0 命中；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 external/grbsn_webtool/SourceData（63 事件）无本源记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准＝0 命中；③ADS API：AT2022dbl/AT 2022dbl 命中 16 篇（2022TNSTR1433....1S、2022TNSTR.372....1D、2022TNSCR.504....1A、2022TNSCR.476....1A、2022TNSAN..47....1A、2022TNSAN..57....1S、2022ATel15258....1S、2022ATel15262....1S、2024TNSAN..43....1Y、2024ApJ...971L..26L、2024arXiv241215326H、2025ApJ...983..131Z、2025ApJ...987L..20M、2025nova.pres13937G、2026MNRAS.550g1285A、2026arXiv261018840G 等），ASASSN-22ci/Gaia22bdt/ZTF18aabdajx/2018mac 单名检索仅命中上述 TNS 报告与 AstroNote；其中含本源测光/口径并实际取用者为 Langis+2026、Makrygianni+2025、Lin+2024；④TNS 对象页 2022dbl 与 2018mac 已实际打开（含 AT/分类报告全表）；TDECat GitHub 光度/UVOT CSV 已下载逐行核对；⑤2025ApJ...983..131Z（UV/Optical 重亮 TDE 建模）与 2026MNRAS.550g1285A（TDE 拟合黑洞质量）按题录判断为再分析类、无新增逐点测光，未取值；结论：非零测光，补 7401 行。\n\n【附加量备查（非判定用）】X 射线：Langis+2026 记 AT2022dbl 属仅上限的重复耀发源；Makrygianni+2025 Swift/XRT 各历元 3σ 上限 1.1e-13–1.2e-12 erg/cm2/s（合并 31 ks 后 1.4e-14，L(0.2-10keV)<2.6e40 erg/s）；Lin+2024 同样无探测。MIR：Makrygianni+2025 NEOWISE 扣宿主后首峰后约 2 年内无显著 MIR 活动（3σ）。光谱：TNS 分类报告 11946（FLOYDS-N）+ Makrygianni 多历元光谱系列（FLOYDS/INT/GOTO-FAST/ALFOSC）+ Lin+2024 光谱，均不入库（spectra/ 不在本次范围）。宿主 SED/性质：Lin+2024 表 A1（见 host_galaxy）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "ingest_source": "scix_tdecat_20261104",
-    "discovery_mag": "17.1"
+    "discovery_mag": "17.1",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
@@ -35,7 +42,26 @@
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L",
       "source": "bot"
+    },
+    {
+      "name": "Makrygianni+2025",
+      "title": "The Double Tidal Disruption Event AT 2022dbl Implies that at Least Some \"Standard\" Optical Tidal Disruption Events are Partial Disruptions",
+      "url": "https://doi.org/10.3847/2041-8213/ade155",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Lin+2024",
+      "title": "The Unluckiest Star: A Spectroscopically Confirmed Repeated Partial Tidal Disruption Event AT 2022dbl",
+      "url": "https://doi.org/10.3847/2041-8213/ad638e",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 185.18771,
+    "dec": 49.55131,
+    "redshift": 0.028398,
+    "redshift_type": "spec",
+    "comment": "宿主＝核瞬变所在星系：TNS 对象页交叉证认 PGC2346329（Host Redshift 0.028398）；TDECat 目录行 Host name＝WISEA J122045.05+493304.7（坐标即此名换算 185.18771/+49.55131）；Lin+2024/Makrygianni+2025 证认为 E+A（quiet Balmer-strong）星系，SDSS 宿主光谱强 Balmer 吸收线。宿主测光＝Lin+2024 表 A1（prospector SED 拟合用，流量值 mJy 原样转述未换算星等；VoR 不可得取自 arXiv:2405.10895 v1）：GALEX FUV 0.004±0.001、NUV 0.023±0.001；SDSS u 0.346±0.006、g 1.311±0.004、r 2.388±0.007、i 3.207±0.009、z 3.994±0.023；2MASS J 3.947±0.386、H 4.554±0.566、Ks 4.432±0.624；WISE W1 1.394±0.033、W2 0.771±0.021（W1 与 TDECat 编译 ALLWISE W1≈13.35–13.42 Vega 星等经 WISE 零点换算约 1.3–1.4 mJy，自洽）",
+    "source": "TNS 对象页（PGC2346329）；Lin+2024（2024ApJ...971L..26L）表 A1"
+  }
 }
