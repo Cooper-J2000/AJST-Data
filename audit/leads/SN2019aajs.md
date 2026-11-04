@@ -13,7 +13,7 @@ IOP VoR 被 Radware Bot Manager 反爬（2026-11-05 实测），未通读 VoR；
 
 ## 原文口径（原样记录，**未做任何换算**）
 
-- 表 2（tab:literature）摘要行：SN 2019aajs，z=0.0358，Ibn，g 波段 M_max=−18.86±0.03，t_1/2 rise=2.11±0.03 d，t_1/2 fade=6.05±0.24 d，文献 [14]。
+- 表 3（tab:literature，arXiv v2 表号）摘要行：SN 2019aajs，z=0.0358，Ibn，g 波段 M_max=−18.86±0.03，t_1/2 rise=2.11±0.03 d，t_1/2 fade=6.05±0.24 d，文献 [14]。
 - 表 5（UVOT）：历元为 JD + Δt（Δt 自 first ZTF detection 起算，各源历元本卡未核）；AB 星等（表注与正文 §5.2：Breeveld+2011 转 AB）；host-subtraction（正文：受宿主污染的用衰减后模板扣除）。
 - 表 7（mm/射电）：Start Date 为 JD，f_ν 单位 μJy，上限=3× image RMS；ν 单位 GHz。
 - 表 6（XRT）：计数率 10⁻³ ct/s、未吸收流量 10⁻¹³ erg/cm²/s、光度 10⁴¹ erg/s（Γ=2 假定，nH 取 Willingale+2013）；**X 射线行不在本库审核范围，仅记录不接手入库**。
