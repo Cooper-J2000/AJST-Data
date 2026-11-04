@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB250314A",
-  "alias": [],
+  "alias": [
+    "sb25031405"
+  ],
   "ra": 201.3007,
   "dec": -5.282,
   "T0": "2025-03-14T12:56:42Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 39719",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "SVOM",
@@ -14,17 +16,24 @@
   ],
   "pos_error": null,
   "pos_ref": "GCN 39727",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 39746",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 39732",
+  "comment": "身份：SVOM/ECLAIRs 触发（GCN 39719，SVOM burst-id sb25031405，触发时刻 2025-03-14T12:56:42 UTC，仅给到整秒），T0 即该触发时刻；Cordier+2025 §2 同记 Tb=2025-03-14 12:56:42 UTC 并明言用作时间基准（arXiv v1，VoR 不可达见 unverified.tsv）。红移：X-shooter 光谱 VIS 臂 Lyman-α 森林起始断点 z~7.3（GCN 39732，低 S/N 未辨认金属线、初步）；光变拟合 z=7.21(+0.18/−0.38)（GCN 39732）、加 GTC z 上限后 photo-z 7.27(+0.14/−0.19)（GCN 39743），mpe_greiner 快照记 7.27，均备查。坐标为 NOT NIR 候选体位置（GCN 39727，来源未标注误差与置信水平）；Swift/XRT 3.5″(90%)（GCN 39734）、EP-FXT 10″(90%)（GCN 39739）备查。T90=11(+3/−2) s（4–100 keV，ECLAIRs）、7.50(+15.80/−5.00) s（15–5000 keV，GRM；GCN 39746 记 7.0(+3.6/−3.7) s）；Cordier+2025 判定 consistent with a classification as a long GRB (type II)，按来源分类与 t90 判 lgrb。alias sb25031405：GCN 39719 原文用名。宿主：Levan+2025 在 109 d NIRCam 蓝端探测到延展暗源、与暗宿主星系一致（候选，不建立 host_galaxy）。测光检索（2026-11-04）：仓内 gcn/archive 全文命中 18 篇（39719/39722/39727/39728/39729/39732/39734/39737/39739/39743/39746/39761/39779/39797/39954/40012/40134/40553），其中 39729/39734/39739 为 X 射线通告（X 射线数据暂不处理）；external/rssgrbag、grbsn_webtool、uvot_grb 无该源记录，mpe_greiner 仅目录参数；ADS 检索命中 23 条，研究论文仅 Cordier+2025（A&A 704 L7）与 Levan+2025（A&A 704 L8）两篇，2026RAA SVOM/VT 仪器文与 COSPAR 摘要无该源测光表。共补 23 行（VT 6、UVOT u 1、X-shooter z 1、NOT J 第二历元 1、ATCA 2、VLA 3、e-MERLIN 1、MeerKAT 6、ALMA 1、DECam i 1），并按 Cordier+2025 重定标/修订既有 10 行（NOT J 与 HAWK-I YJH 改论文定标值、GTC z 上限 24.4→23.9、Keck time 起点→中点、ATCA 窗口补 time_err、VLA/e-MERLIN 补核对注）。GCN 40553 的 NB1008（~23.5 AB 1σ，Apr 2–4）行因 filters.json 无 NB1008 键未入库（PR 待决事项）；Levan+2025 JWST/NIRCam 表 1 共 8 行（109.4 d，F090W>F29.34 至 F444W=27.64±0.11 AB）同因无 NIRCam 波段键未入库（PR 待决事项）。GCN 39722（VT_R~20，VHF 1bit 快析，13:01:28 UT 起）无曝光时长、中点不可定，仅记于此不入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
+    }
   },
   "articles": [
     {
