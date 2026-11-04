@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB220210A",
   "alias": [
-    "GRB 220210998"
+    "GRB 220210A",
+    "GRB220210998",
+    "GRB 220210.998",
+    "bn220210998"
   ],
-  "ra": 348.1400146484375,
-  "dec": 61.060001373291016,
-  "T0": "2022-02-10T23:56:43.370000Z",
-  "T0_ref": null,
+  "ra": 345.778,
+  "dec": 61.826,
+  "T0": "2022-02-10T23:56:38.371058Z",
+  "T0_ref": "GCN 31568（Fermi GBM trigger 220210998，MET 666230203.371058 s −5 闰秒→UTC）；GCN 31580（原文 23:56:38.37 UT）；HEASARC FERMIGBRST 目录 bn220210998 trigger_time=MJD 59620.997666332（在线核验 2026-11-04，逐位一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,18 +17,24 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 7200,
+  "pos_ref": "GCN 31572（Swift/BAT-GUANO 定位 RA,Dec=345.778,+61.826）；HEASARC FERMIGBRST 目录行同值（在线核验 2026-11-04）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核 fsy@zcode 2026-11-04。身份: GRB 220210A = Fermi/GBM trigger 220210998 (GCN 31568)，同暴另有 Swift/BAT-GUANO 定位 (GCN 31572)、Fermi-LAT 探测 (GCN 31576)、AGILE (GCN 31575)、Insight-HXMT/HE HEB220210997 (GCN 31583)、CALET trig 1328572556 (见 GCN 31572)；GCN 站检索 220210/220210A 命中 11 篇均属本源，无同日近邻混淆。T0: 原库 2022-02-10T23:56:43.370000Z 系 MET 666230203.37 (FERMILGRB trigger_met) 未扣 5 闰秒的换算 (漏扣 5 s，Issue #67 同型)；更正为 2022-02-10T23:56:38.371058Z (MET−5 s)，与 GCN 31580 原文 23:56:38.37 UT、FERMIGBRST 目录 trigger_time (MJD 59620.997666332) 一致；AGILE 自测 23:56:38.40±0.01 s (GCN 31575)、HXMT 自测 23:56:38.550 (GCN 31583) 为各仪器独立值，并列备查。全表 time/mjd 已按新 T0 重算；原 time 列为「观测起点−旧T0」且未取曝光中点，本次一律改为中点 (time_err=半曝光)。定位: 字段取 Swift/BAT-GUANO (GCN 31572) RA,Dec=345.778,+61.826，原文指向内 ~2 arcmin、姿态不确定 ~1–2° (取上界 2°=7200″；来源未标注置信水平)；FERMIGBRST 目录行同值 (error_radius=0.02°，疑为沿用外部精化定位的存疑字段，仅备查)；并列值: HEASARC FERMILGRB 目录 (348.14,61.06)±0.99° (原库字段来源，距 GUANO 定位 2.3°、超出其 0.99° 误差)、LAT 实时 (347.4,61.1)±1.5° (90% containment, stat，GCN 31576)、GBM 实时 (7.9,61.5)±5.0° stat (GCN 31568)；光学候选 23:03:17.1 +61:49:36.6±1″ (GCN 31573) 已被 GCN 31574 否证 (DDS-2 红外巡天检出、SDSS DR12 r=21.187 高红化星状天体，非余辉)。sub_tag: t90=43.52±4.47 s (50–300 keV，FERMIGBRST；GCN 31580 约 43 s 一致) 按目录 t90 判 lgrb；Fermi-LAT 探测有据 (GCN 31576: >50 MeV 光子流量 3.8±1.4e−5 ph/cm2/s、0–30 s 光子指数 −3.3±0.5、最高光子 190 MeV)。别名证据 (原文用名): GCN 31568 原文用名 GRB 220210A (trigger 220210998)；HEASARC FERMIGBRST 目录原文用名 GRB220210998 / bn220210998；HEASARC FERMILGRB 目录原文用名 GRB 220210.998。lc 行处置: GCN 31573 之 R=18.5 与 GCN 31586 之 R=20.17/20.05/20.14 均为被否证候选体的测量 (非 OT) → discard=y 保留备查；保留 4 行真上限 (AZT-33IK R 22.7、AS-32 R 21.9、Zeiss-2000 R 22.2 各 3σ、OSN 1.5m I 20.8)；GCN 31586 表 t-T0 列经核算为曝光中点，但 Zeiss-2000 行 t-T0=0.77438 d 与其 UT start 19:41:36 不自洽 (差 ~70 min，疑原文笔误) → 按 UT start+半曝光取中点；新增 MASTER-IAC 2 行上限 (GCN 31569，band=G: 原文滤光片列 P/P- 即无滤光片)；GCN 31574 San Pedro Mártir 极限 20.5 无时间锚点不入库。测光检索 (2026-11-04): 仓内 gcn/archive 快照本机未随库分发；external/rssgrbag (74 源光变)、external/grbsn_webtool (63 事件)、external/uvot_grb 等目录快照检索 220210/666230203 均 0 命中；GCN 官网站「GRB 220210A」命中 11 篇 + 触发号 220210998 命中 2 篇 (全部实开，无遗漏光学数值)；文献: arXiv 站内检索 0 篇、WebSearch 2 轮未发现本源研究论文 (仅 DeLaunay & Tohuvavohu arXiv:2111.01769v2 NITRATES 表 2 一行，RA/Dec/SNR 与 GCN 31572 相同，mention-only)；SciX/ADS 无凭据不可用 (audit/unverified.tsv search-limited 行，不据此下「无文献」结论) → 光学数据集即本 PR 终态，共补 2 行。无红移记录。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-04"
+    }
+  }
 }
