@@ -1,13 +1,17 @@
 {
   "transient_id": "GRB140818A",
-  "alias": [],
-  "ra": 199.554,
-  "dec": 6.888,
-  "T0": "2014-08-18T05:31:28Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB140818229",
+    "GRB 140818.229",
+    "bn140818229"
+  ],
+  "ra": 199.56275,
+  "dec": 6.92254,
+  "T0": "2014-08-18T05:30:09.120Z",
+  "T0_ref": "GCN 16708（Fermi/GBM 官方触发通告：At 05:30:09.12 UT on the 18th of August 2014, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 140818A, trigger 430032612 / 140818229；原文两位小数 .12 补零为 .120 以符合 ISO8601 格式，数值不变）；external/fermi_gbm 快照 FERMIGBRST trigger_time=2014-08-18T05:30:09.122Z 互证（整数秒一致，亚秒以触发仪器官方通告原文为准，.122 备查）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,11 +20,27 @@
   "pos_ref": "GCN 16706",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份核验：MAXI/GSC nova alert 触发（GCN 16702，原始通告触发时刻 08:31:56 UT 有误，GCN 16705 更正为 2014-08-18T05:31:28 UT，并声明比 Fermi/GBM 触发晚约 79 s、GBM trigger 430032612、与 MAXI 同源）；Fermi/GBM 触发（GCN 16708，trigger 430032612 / 140818229，T90≈109 s、Epeak 181±8 keV、两峰结构）；Konus-Wind 于 05:31:20.472 UT 触发（GCN 16719，见主发射 ~T0−15 s、弱脉冲 ~T0−83 s≈05:29:57 UT，略早于 GBM 触发但精度 ~ 级，不构成 |T0_offset|>1 s 的可靠依据，T0_offset 留空）；Swift 对该 MAXI 暴做 tiled 跟踪（GCN 16703），XRT/UVOT 探测余辉（GCN 16706）、GROND 确认变暗（GCN 16726）——多方互证同一源。注意：GRB 140818B（Swift/BAT 609885，RA 271.1、Dec −1.36，GCN 16709/16711/16712/16713/16714/16716/16717/16718/16721/16728/16748/16757/16780）为另一暴，未混入。\nT0 处置：bot 原值 2014-08-18T05:31:28Z 为 MAXI/GSC 更正触发时刻（GCN 16705）；因 MAXI 为扫描仪、其 nova-alert 触发滞后真实爆发（其官方通告自述晚 GBM 约 79 s），按已审同型先例 GRB170830A（2026-10-28）改锚最早触发仪器 Fermi/GBM 的官方亚秒触发时刻 05:30:09.12Z（GCN 16708），Trigger_Instrument 相应由 Swift/BAT（错误，Swift 从未触发、仅 tiled 跟踪，external/swift_bat 快照亦无本源）改为 Fermi/GBM，MAXI 保留为发现仪器记于此。UKSSDC Tiled/Burst Analyser 自动产品自列 T0=2014-08-18 05:31:15 UT（与通告差 13 s，备查；经实取 burst_analyser/00020408 光变验证其历元即此值：首点曝光起点 08:26:18.6 UT 与 obs 20408 窗口起点 08:26:19 一致）。\n定位：bot 原值 RA=199.554 Dec=6.888±2.1\" 系 GCN 16702 MAXI 扫描定位坐标（0.07° 统计 + 0.1° 系统，90%）误配 GCN 16706 的 XRT 误差，pos_ref 所指通告并未给出该坐标，已改正为 GCN 16706 的 Swift-XRT enhanced 位置 RA=199.56275 Dec=6.92254（90% 置信、半径 2.1\"，原文明示）。同通告 UVOT preliminary 位置 RA=199.56285 Dec=6.92295±0.5\"（90%）与 UKSSDC 现行页面 2.4\" 值备查；MAXI 原始扫描定位备查。\nt90=109.25±0.93 s（FERMIGBRST，50-300 keV，external/fermi_gbm 快照取数 2026-07-21；GCN 16708 约 109 s 一致；Greiner+2024 allgrbs 分类 L 一致），按目录 t90 判 lgrb。alias 三个形态均为 FERMIGBRST name_alt 原文用名（GRB140818229 / GRB 140818.229 / bn140818229；GCN 16708 原文 'trigger 430032612 / 140818229' 互证）。\n测光核对：UVOT u 行按 GCN 16706 原文 T_start/T_stop（MAXI 触发历元 10467/11094 s）改为窗口中点口径并补 time_err=313.5 s；bot 原行 time=10388 系历元混算（见 lc 行 comment）。GROND 7 行观测起始 23:15 UT 经 Greiner+2024（A&A 691, A158）allgrbs 精化为 23:15:06 UT，time 由 63812 s 改为 63896.88 s（该日志 Δt=52990 s 锚在 GCN 16702 未更正的 08:31:56 UT，原文笔误废弃）；z/J/H/K 四行为上限。XRT 6 行（band=10keV）为 X 射线行未审，仅按 2026-10-31 裁定随 T0 机械重算 mjd（只动 mjd 列）；注意其 time 为 UKSSDC 自动产品历元（T0=05:31:15 UT），重算后 mjd 与真实绝对时刻尚余 65.88 s 口径差，维护者如需物理精确可在改动 X 射线行时统一平移 time。\n测光检索（2026-11-04）：仓内 gcn/archive 45 889 篇全文检索，本源命中 7 篇（16702/16703/16705/16706/16708/16719/16726，测光仅 16706 与 16726），另有 13 篇命中串均属 GRB 140818B 已排除；官方归档 GCN 17842–17857 整体缺失（服务器实测 404），内含 GCN 17854 'GRB 140818A: Swift ToO observations' （Evans 2015，OpenAlex W3183721219 元数据）全文不可得，已登记 unverified.tsv；external/rssgrbag（140 行）、grbsn_webtool（63 事件）、uvot_grb、swift_bat、heasarc_grbcat 快照均无本源；OpenAlex 命中 9 条（8 条 GCN 通告 + Greiner+2024）、Crossref 无相关研究文献、arXiv API 元数据检索 0 命中；ADS/SciX 无 token 未覆盖（已登记 unverified.tsv）。结论：研究文献级增量仅 Greiner+2024 allgrbs 观测日志（GROND-Start 精化），无新增测光行，补行数 0（改写 UVOT 1 行 + GROND 7 行，XRT 6 行仅 mjd 随 T0 重算）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://arxiv.org/abs/2410.14441",
+      "title": "The GROND gamma-ray burst sample. I. Overview and statistics",
+      "bibtex": "",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
+  }
 }
