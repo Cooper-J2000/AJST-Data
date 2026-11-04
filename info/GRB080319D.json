@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB080319D",
-  "alias": [],
-  "ra": 99.47333526611328,
-  "dec": 23.942832946777344,
-  "T0": "2008-03-19T17:05:09Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 306793",
+    "Swift 306793"
+  ],
+  "ra": 99.47254,
+  "dec": 23.94275,
+  "T0": "2008-03-19T17:05:09.345180Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 306793 的触发时刻 2008-03-19T17:05:09.345180Z(仓内 extra_data.catalog_data.swift_bat=BATGRBCAT 与 swift_grb=HEASARC SWIFTGRB 快照一致;swiftgrbba 编纂表 17:05:09.000 为截秒);GCN 7453 的 17:05:09 UT 与其秒级一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +15,30 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 0.5,
-  "pos_ref": "SGA (UVOTGRB)",
+  "pos_error": 1.7,
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 7490 (Swift/XRT astrometrically corrected/enhanced position)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "身份:Swift/BAT 触发 306793,2008-03-19T17:05:09 UT(GCN 7453);全部后续通告(GCN 7455/7458/7490/7498/7500/7503/7514)与全部光变行均锚定该触发号。同日著名裸眼暴 GRB080319B(trigger 306748,T0 06:12:49 UT,GCN 7445)与本源无混挂——逐篇核对仓内存档原文,未发现 B 的数据挂到 D。alias「BAT 306793」「Swift 306793」取自 HEASARC BATGRBCAT/SWIFTGRB 的 name_alt(仓内 extra_data.catalog_data 快照)。定位:取 XRT 增强位置(GCN 7490,astrometrically corrected)RA,Dec=99.47254,+23.94275,半径 1.7″(90% 置信);后续 UKSSDC 增强位置页精化值 99.47277,+23.94268,1.4″,90%(www.swift.ac.uk/xrt_positions/00306793,2026-11-04 取数,备查);UVOT 候选体位置(GCN 7458/SGA,0.5″)99.47333,+23.94283,备查;BAT 地面定位(GCN 7498)99.479,+23.982,2.6′(90%),备查。t90=24±4 s(GCN 7498,15-350 keV;Swift/BAT 目录 26.94±4.48 s 一致),按目录 t90 判 lgrb。GROND 首历元源无 K 波段探测⇒z<3.5(GCN 7503),无红移实测。行级核对(2026-11-04):GCN 7458 表 4 行与 GCN 7453 寻图帧行原把曝光起点当 time,已改曝光中点并补 time_err(半曝光/半窗);GCN 7500 原行 time=92197 s 系把 20.779 UT 误作日小数(=18:41:46 UT),已按原文中点时刻 2008-03-20 20.779 UT(20:46:44.4,单次 600 s)改正;GCN 7514 4 行原 time 误用观测起点(23:43 UT),已改窗口中点(23:58 UT,总积分 0.5 h);Roming+2017 的 17 行(noc-db)经 MAST HLSP noc-db.fits(hlsp_uvotgrb_swift_uvot_all_multi_v1,2026-11-04 实取解析)逐值核对完全一致,仅 mjd 随 T0 重算;X 射线行(band=10keV,26 行)按 2026-10-31 裁定仅机械重算 mjd=T0+time,其余列未动。检索留证(2026-11-04):仓内 gcn/archive 全文检索命中本源通告 8 篇(7453/7455/7458/7490/7498/7500/7503/7514,均逐篇通读)+同日邻暴 2 篇(7454=080319C、7445=080319B);external/rssgrbag 与 external/grbsn_webtool 仅含同日 080319B、无本源记录;OpenAlex search+fulltext 共 23 命中,除 GCN 转录外仅 MASTER 会议综述(Lipunov+2010,10.1155/2010/763629,转引其 GCN 7455 值;Wiley 403 未读 VoR,未据此取值)与无关论文;Crossref 无专门文献;arXiv e-print 实取 Greiner+2024(2410.14441)核得 080319D 仅见表 B.1 观测日志行(0320-00:15:17 UT,25808 s),无测光表;CBAT IAUC 档案(cbat.eps.harvard.edu/iauc/)index 401 订阅限制、单号 404,未取得。结论:除已入库 GCN 外无更多文献级测光表;本次新增 5 行(GCN 7455 MASTER 11.5 m 限 1 行、GCN 7503 GROND 首历元粗估探测 4 行)。ADS/SciX 无 API token(HTTP 401),检索通道受限已登记 audit/unverified.tsv,不得据此当作「无文献」。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-04"
+    }
+  }
 }
