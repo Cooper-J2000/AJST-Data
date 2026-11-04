@@ -1,30 +1,35 @@
 {
   "transient_id": "AT2019lbr",
   "alias": [
-    "ZTF19abeyvoi"
+    "ZTF19abeyvoi",
+    "ATLAS19pdw"
   ],
   "ra": 357.565833,
   "dec": 8.118139,
-  "T0": "2019-07-11T10:48:00Z",
-  "T0_ref": "Ho+2023（2023ApJ...949..120H）表 1 Peak MJD（峰值时刻）",
+  "T0": "2019-07-12T13:36:28Z",
+  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2019lbr（2026-11-05 取）；＝ATLAS 发现帧 orange-ATLAS 18.927 AB（报告 2019TNSTR1194，Tonry+2019；TNS phot 78288 JD 2458677.0669907 与之吻合至 0.01 s）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "ZTF",
+  "Trigger_Instrument": null,
   "redshift": null,
   "tag": [
-    "fbot",
-    "sn"
+    "fbot"
   ],
   "pos_error": null,
-  "pos_ref": "Ho+2023（2023ApJ...949..120H）表 1 坐标（J2000）",
+  "pos_ref": "Ho+2023（2023ApJ...949..120H）表 2 坐标（J2000；与 TNS 23:50:15.805 +08:07:05.36 一致至 0.1″）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "2026-11-04 由 Ho+2023 ZTF FBOT 金样本（表 1）建源；仅基础元数据，光变待补",
+  "comment": "2026-11-04 由 Ho+2023 ZTF FBOT 金样本（表 1）建源；仅基础元数据，光变待补。2026-11-05 审核（Rusty-Harpoon@zcode）：（1）身份：Ho+2023 表 2 行 19abeyvoi（RA 23:50:15.80 Dec +08:07:05.3 → 本库坐标）＝AT 2019lbr，Peak MJD 58675.45、Peak g 19.09±0.04、t½,g=9.2±0.8 d、g−r=−0.4、z=--、Class=--、Ref=[14,15]；TNS 对象页坐标 23:50:15.805 +08:07:05.36 一致；新增别名 ATLAS19pdw（TNS Discovery Report 2019-1194 与 AstroNote 2019-56 原文用名 [ATLAS19pdw]）。（2）T0：bot 骨架原值 2019-07-11T10:48:00Z＝Ho+2023 表 2 Peak MJD 58675.45（峰值时刻，注意其 T0_ref 误写「表 1」实为表 2），峰值语义虽可，为与库内已审 FBOT 源（AT2018cow/SN2018gep/AT2018lug/AT2020xnd/AT2019esf）口径一致改取 TNS Discovery Date 2019-07-12 13:36:28Z（对象页 canonical＝ATLAS 发现记录 41511）。并列备查：ZTF 首探测 2019-07-08 10:14:01 UTC（g=20.5±0.2，TNS phot 78681＝ZTF 发现记录 41660/44766 discovery date，早于 ATLAS 报告 3.14 d）；末非探测 ZTF g 2019-07-05 11:03:55（lim 20.6372）、ATLAS orange 2019-07-06 11:13:55（lim 19.15）。Trigger_Instrument 置 null（巡天发现无触发仪器，与库内已审 FBOT 源一致；bot 骨架误填 ZTF）。（3）分类：无任何 SN 亚型证据——TNS Type=---；ePESSTO+（NTT/EFOSC2 Gr13，2019-07-29 夜）AstroNote 2019-56 记 Obj-Type=「Other」（其摘要 2 个 unclear 之一），无红移无宿主；Ho+2023 表 2 Class=--、z=--。故删去无出处的 sn 标签仅留 fbot（样本过 Ho+2023 FBOT 判据：1<t½,g<12 d 且峰色 g−r=−0.4 满足其 g−r≲−0.2 FBOT 颜色判据，38 候选中 28 个 FBOT）；sub_tag 留空。库内同情形先例 AT2018lug/AT2020xnd 均 tag=[fbot]。（4）红移 null：Ho+2023 表 2 z=--；TNS 无 z 无宿主名；ePESSTO+ 未报 z；无专文。（5）测光检索（2026-11-05）：仓内 gcn/archive 45947 篇全文 grep ZTF19abeyvoi/2019lbr/ATLAS19pdw 均 0 命中；external/rssgrbag（140 行 74 源）、external/grbsn_webtool（63 事件）无记录。外部：ADS 全文+全字段检索「AT2019lbr OR ZTF19abeyvoi OR ATLAS19pdw」仅命中 2 篇 TNS 通告（2019TNSTR1194 发现报告、2019TNSAN..56 分类通告，均非研究论文不入 articles），无专文、无 ATel；TNS 对象页 9 行测光（同值重复提交 3 行去重后 8 行唯一）全部入库（P48 g/r + ATLAS orange，ABMag）；Ho+2023 表 8 VLASS 3 GHz 非探测 1 行入库（RMS 217 μJy）。共补 9 行。Ho+2023 表 4（tab:ztf-lc）ZTF 力测光机读全表仅 VoR 侧有：IOP 整站 Radware 反爬（302→validate.perfdrive.com，suppdata 直链 404）、VizieR 四镜像连接失败、作者主页 404、arXiv v2 源内表 4 仅示例行——未取得已登记 audit/unverified.tsv（TNS 的 P48 行与表 4 同帧异口径，取得后须去重）。派生量备查（Ho+2023 表 9，AB 未银消改）：m_g,max=19.09±0.04、t_g,1/2 rise=2.25±0.15 d、fade=6.93±0.79 d；m_r,max=19.35±0.07、t_r,1/2 rise=4.46±0.20 d、fade=6.53±1.85 d。（6）X 射线：Ho+2023 表 6（XRT）不含本源，未发现 X 射线数据。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_ho2023_tab1_20261104"
+    "ingest_source": "scix_ho2023_tab1_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
