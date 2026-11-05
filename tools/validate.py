@@ -8,7 +8,7 @@
 
 校验范围（契约全文见 SCHEMA.md）：
   - info/*.json   必备键、字段类型、transient_id 与文件名一致、T0 为 ISO8601
-  - lc/*.csv      表头恰为 25 列规范、每行 25 字段、time 数值、y/n 列取值、
+  - lc/*.csv      表头恰为 24 列规范、每行 24 字段、time 数值、y/n 列取值、
                   band 落在两条车道内（filters.json 键，或频率/能量串，见 SCHEMA.md §3.1）
   - 互引完整性    lc 文件必须有同名 info（孤儿 CSV 报错）；info 可无 lc（纯信息源合法）
   - audit/leads/ 线索卡命名/status/目标源/已审核残留（**警告级**，不改变数据校验判定）
@@ -31,8 +31,6 @@ LC_HEADER = [
     'flux_density_Gextcor', 'flux_density_Gextcor_err',
     'flux_density_Gextcor_unit', 'weights', 'discard', 'telescope',
     'instrument', 'reference', 'comment', 'source',
-    # 行级扩展字段（JSON 对象字符串，2026-11-06 起随 dump 落盘；与 ETL import 端配对）
-    'extra_data',
 ]
 
 # lc 的 band 两条车道（契约见 SCHEMA.md §3.1）：车道一 = filters.json 的键；
@@ -309,7 +307,7 @@ def check_lc(path, band_keys, t0_by_id=None):
         err(f'{name}: 空文件')
         return
     if rows[0] != LC_HEADER:
-        err(f'{name}: 表头与 25 列规范不一致（见 SCHEMA.md）')
+        err(f'{name}: 表头与 24 列规范不一致（见 SCHEMA.md）')
         return
     n_bad_width = n_bad_time = n_empty_band = n_bad_band = 0
     n_mjd_drift = 0
@@ -317,6 +315,8 @@ def check_lc(path, band_keys, t0_by_id=None):
     n_bad_flux_val = 0
     n_bad_num = 0
     n_bad_unit = 0
+    n_gext_y_with_derived = 0
+    n_gext_y_no_evidence = 0
     bad_unit_ex = []
     mjd_drift_ex = []
     bad_band_ex = []
@@ -349,14 +349,21 @@ def check_lc(path, band_keys, t0_by_id=None):
             v = row[LC_HEADER.index(col)]
             if v not in ('y', 'n', ''):
                 warn(f'{name}:{i}: {col}={v!r} 应为 y/n')
-        # 行级扩展字段：非空必须是合法 JSON 对象（import 端 json.loads 直接消费）
-        v = row[LC_HEADER.index('extra_data')].strip()
-        if v:
-            try:
-                if not isinstance(json.loads(v), dict):
-                    err(f'{name}:{i}: extra_data 应为 JSON 对象')
-            except ValueError:
-                err(f'{name}:{i}: extra_data 不是合法 JSON')
+        # Gext_corr 语义（SCHEMA.md §3，2026-11-06 维护者裁定）：y = 录入权威值已改正，
+        # 本库永不计算该行改正 ⇒ 派生列必须全空，有值即 ERROR；y 且派生列全空 =
+        # 「原文已改正」，必须在 reference 或 comment 留证，否则 ERROR。
+        if row[LC_HEADER.index('Gext_corr')].strip() == 'y':
+            if (row[LC_HEADER.index('mag_Gextcor')].strip()
+                    or row[LC_HEADER.index('flux_density_Gextcor')].strip()):
+                n_gext_y_with_derived += 1
+                err(f'{name}:{i}: Gext_corr=y（权威值已改正）但改正派生列有值 —— '
+                    f'y 行本库不计算改正，派生列必须全空（引擎产物行应为 Gext_corr=n，'
+                    f'见 SCHEMA.md §3）')
+            elif (not row[LC_HEADER.index('reference')].strip()
+                    and not row[LC_HEADER.index('comment')].strip()):
+                n_gext_y_no_evidence += 1
+                err(f'{name}:{i}: Gext_corr=y 且改正派生列全空（原文已改正），'
+                    f'reference 与 comment 必须至少其一留证')
         # 每行都必须带量值：上限行的限度、探测行的测量值都写进列，只写在 comment 里不算
         # （《数据审核提示词》§3.3 / §8；2026-10-29 维护者裁定，main 基线 0 行为空）
         if not row[FLUX_COL].strip():

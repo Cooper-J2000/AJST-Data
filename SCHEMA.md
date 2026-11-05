@@ -118,7 +118,7 @@
 
 ## 3. `lc/<id>.csv` 列契约
 
-表头恰为下列 **25 列**（顺序固定）。空值一律为空字符串。`time`/`mjd` 语义见 §1 顶部说明。
+表头恰为下列 **24 列**（顺序固定）。空值一律为空字符串。`time`/`mjd` 语义见 §1 顶部说明。
 
 | 列 | 类型 | 必填 | 允许值 / 说明 |
 |---|---|---|---|
@@ -131,7 +131,7 @@
 | `flux_density_err` | float | 否 | 原始误差（1σ） |
 | `flux_density_unit` | str | 是 | `mJy`、`uJy`、`Jy`、`cgs`(erg/cm²/s/Hz)、`magnitude`（`Jy` 为 X 射线/射电行常用，见 §3.1） |
 | `mag_system` | str | 条件必填 | `AB`/`Vega`；`flux_density_unit=magnitude` 时必填；**原文未声明星等系统时留空**并在 `comment` 注明（惯例可推定时须写明推定依据）。2026-10-12 修订 |
-| `Gext_corr` | str | 否 | `y`/`n`，**本库消光引擎是否已改正**，缺省 `n`。`y` ⇒ `Gext_Alambda` 与改正后列成组有值（由后端写入）。**2026-11-06 修订**：原表本身已做银消改正的行**不写 `y`**——写 `Gext_corr=n` 并在 `extra_data` 列写 `{"ext_corrected_by_source":true}`、`comment` 说明（引擎跳过这些行，避免双重改正） |
+| `Gext_corr` | str | 否 | `y`/`n`：该行**录入的权威数值**是否已做银河系消光改正（2026-11-06 维护者裁定，只标记录入值状态、与后续是否处理无关）。`n`/空 = 未改正——用户点击改正/行编辑/坐标或滤光片变动时引擎计算改正量并写入右侧派生列（重复点击会重算覆盖），**本列保持 `n` 不变**，「算过没有」由派生列有无体现；`y` = 录入权威值已改正（原文/来源已改正）——本库**永不**对该行计算任何消光改正，派生列必须全空。审核录入「原文已改正」行时填 `y` 即生效，且必须在 `reference` 或 `comment` 留证（`tools/validate.py` 按 ERROR 强制）。v2.39 的 `extra_data` 行级守卫列已删除 |
 | `upperlimit` | str | 否 | `y`/`n`，是否上限（非探测），缺省 `n` |
 | `Gext_Alambda` | float | 否 | 银河系消光量，由后端消光程序给出 |
 | `mag_Gextcor` | float | 否 | 消光改正后 AB 星等（Vega 先转 AB 再减 Aλ） |
@@ -146,7 +146,6 @@
 | `reference` | str | 否 | 文献引用或数据源 |
 | `comment` | str | 否 | 备注 |
 | `source` | str | 否 | 录入来源（账户名 / 管线标识） |
-| `extra_data` | str | 否 | 行级扩展字段，**JSON 对象字符串**（2026-11-06 起随 dump 落盘、import 端解析，双向往返）。贡献者一般留空；当前唯一约定键：`ext_corrected_by_source=true`（原表已做银消改正的守卫标记，配 `Gext_corr=n`，见上） |
 
 **数值列解析（2026-10-31 起由 `validate.py` 逐行检查）**：`time`、`time_err`、`mjd`、
 `flux_density`、`flux_density_err`、`mag_Gextcor`、`mag_Gextcor_err`、
