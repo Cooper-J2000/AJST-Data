@@ -5,8 +5,8 @@
   ],
   "ra": 166.789833,
   "dec": 57.100889,
-  "T0": "2019-07-12T04:19:12Z",
-  "T0_ref": "Ho+2023（2023ApJ...949..120H）表 1 Peak MJD（峰值时刻）",
+  "T0": "2019-07-06T04:19:12Z",
+  "T0_ref": "Ho+2023（2023ApJ...949..120H）表 4（tab:ztf-lc，CDS J/ApJ/949/120/table4，2026-11-06 实取）首个探测 JD 2458670.68＝MJD 58670.18（r=20.36±0.24，4.6σ）＝2019-07-06T04:19:12Z；库内 SN/FBOT 惯例取发现/首测时刻（对照 SN2018gep、SN2020xlt、SN2018gjx、ZTF19abqanpy 等已审源），峰值时刻改记 comment；原表精度 0.01 d（≈14 min）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "ZTF",
@@ -16,15 +16,20 @@
     "sn"
   ],
   "pos_error": null,
-  "pos_ref": "Ho+2023（2023ApJ...949..120H）表 1 坐标（J2000）",
+  "pos_ref": "Ho+2023（2023ApJ...949..120H）表 2（tab:sources_all）坐标（J2000）：11:07:09.56 +57:06:03.2",
   "redshift_type": "spec",
-  "redshift_ref": "Ho+2023（2023ApJ...949..120H）表 1",
-  "comment": "2026-11-04 由 Ho+2023 ZTF FBOT 金样本（表 1）建源；仅基础元数据，光变待补",
+  "redshift_ref": "Ho+2023（2023ApJ...949..120H）表 2（tab:sources_all）z=0.074（spectroscopic）；附录 A.6：P200/DBSP 谱（2019-08-01、08-09，表 11）窄线得红移",
+  "comment": "2026-11-04 由 Ho+2023 ZTF FBOT 样本（表 2）建源；仅基础元数据，光变待补。\n2026-11-06 wa1kmoon@zcode 完整审核，补光变 14 行。身份：AT2019kyw=ZTF19abfarpa（Ho+2023 表 2 行 14：11:07:09.56 +57:06:03.2＝166.789833 +57.100889，与 info 一致；IAU 名 AT 2019kyw）；TNS 对象页 www.wis-tns.org/object/2019kyw 实测 HTTP 403、wis-tns.weizmann.ac.il 镜像连接失败（2026-11-06），TNS 侧对象类型/分类未能复核（留痕 audit/unverified.tsv）。T0 口径裁定：原值取 Ho+2023 表 2 Peak MJD 58676.18＝2019-07-12T04:19:12Z（峰值时刻，精度 0.01 d）；对照库内已审 SN/FBOT 源（均取 TNS Discovery Date/首测时刻），改为表 4 首个探测（见 T0_ref）；峰值参数备查：Peak MJD 58676.18、g=18.28±0.04、t1/2,g=11.9±0.5 d（表 10：t_g,rise=4.35±0.09、t_g,fade=7.54±0.47 d）、g−r=−0.2、M_g,max=−19.34±0.04、m_r,max=18.48±0.05（M_r=−19.14±0.05、t_r,fade>2.6 d）。红移 0.074：光谱红移，Ho+2023 表 2；附录 A.6——DBSP 谱窄线得红移、对暂现体本身无分类结论（表 2 Class 空）；SEDM 谱（2019-07-09，峰前 3 d）无特征。tag=fbot：Ho+2023 FBOT 巡天样本（表 2，38 候选之一，g−r=−0.2、t1/2=11.9 d）；tag=sn 依 TNS 对象类型（403 未能复核，Ho+2023 光谱无结论）——待 TNS 可达时复核，sub_tag 留空待决。pos_error：来源未给定位误差（表 2 仅坐标），留 null。测光检索（2026-11-06）：仓内 gcn/archive、external/rssgrbag、external/grbsn_webtool 全文检索 2019kyw/abfarpa 0 命中；arXiv API（all:）0 命中；Crossref 0 命中；OpenAlex 全文检索 0 命中（当日多次 429 限流后成功）；Web 检索（Google）命中仅 Ho+2021/2023（arXiv:2105.08811＝2023ApJ...949..120H）；VoR（IOP 文章页）HTTP 502 不可达（2026-11-06；2026-11-04 同站 Radware 302 拦截，见 audit/leads/papers/ho2023.md）→ 按 §3.3 第 2 级取 CDS VizieR J/ApJ/949/120（表 2/4/9/11 实取）：表 4 该源 13 行 ZTF 强制测光（2 上限+11 探测，P48，AB）＋表 8 VLASS 3GHz 未探测（RMS 124 μJy，MJD 59084）→ 补 14 行；表 11 光谱日志 3 条（SEDM×1、DBSP×2，无测光）。宿主：DBSP 窄线红移＋Ho+2023 表 9 宿主测光（GALEX/SDSS/PS1/2MASS/WISE，机读存流量 mJy）/表 12 SED（M_B=−17.56、log M*=8.76±0.18、log SFR=−0.64(+0.33/−0.18)、log Age=9.70(+0.25/−0.56)、E(B−V)=0.28(+0.11/−0.06)）支持确定宿主（宿主与暂现体位置一致、z 自洽；文献未给独立宿主坐标/星名），建 host_galaxy 记红移；宿主测光未转录进 lc（属宿主而非暂现体测光）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_ho2023_tab1_20261104"
+    "ingest_source": "scix_ho2023_tab1_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
@@ -34,5 +39,10 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.074,
+    "redshift_type": "spec",
+    "comment": "宿主与暂现体位置一致、红移自洽（Ho+2023 表 2/表 12）；z 来自 P200/DBSP 谱窄线（附录 A.6，2019-08-01/08-09）。文献未给独立宿主坐标与星名，故不填 ra/dec；宿主测光见 Ho+2023 表 9（机读表存流量密度 mJy，未转录）。",
+    "source": "Ho+2023（2023ApJ...949..120H）表 2/表 9/表 12"
+  }
 }
