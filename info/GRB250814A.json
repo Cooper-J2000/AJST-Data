@@ -1,28 +1,37 @@
 {
   "transient_id": "GRB250814A",
-  "alias": [],
+  "alias": [
+    "GRB250814316"
+  ],
   "ra": 306.30792,
-  "dec": 48.39886,
-  "T0": "2025-08-14T07:35:09Z",
-  "T0_ref": null,
+  "dec": 48.39903,
+  "T0": "2025-08-14T07:34:59.856620Z",
+  "T0_ref": "Swift/BAT 触发时刻:GCN 41358 (At 07:34:59 UT, trigger=1342439) + Swift BAT 事件文件 sw01342439000bevshsp_uf.evt 头 TRIGTIME=776849736 (MET) + HEASARC xTime(apply_clock_offset=yes，含 UTCF) 换算 UTC 2025-08-14T07:34:59.857 / MJD 60901.31597056（换算路径用 GRB250605A batgrbcat 锚点交叉验证；在线 batgrbcat TC1342439 页面暂 404 未收录，Swift 官方 GRB table 07:34:59 佐证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [],
   "pos_error": 2.2,
-  "pos_ref": "GCN 41358",
+  "pos_ref": "GCN 41379",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份:GRB 250814A=Swift/BAT trigger 1342439(GCN 41358/41396)=Fermi/GBM trigger 776849714.277078 / bn250814316(GCN 41357,FERMIGBRST),与亚阈值 GW 候选 S250814bg(GCN 41364,FAR~1/2h、Terrestrial>99%,仅作背景备注)同时同位。新增 alias「GRB250814316」(GCN 41357 原文用名,FERMIGBRST 目录 trigger_name GRB250814316)。同日暴排除:FERMIGBRST 2025-08-13~15 命中集为 bn250813074/bn250813952/bn250814316/bn250814432/bn250815492,互不相交;同族 GRB250813B(2025-08-13T22:51:12Z SVOM/ECLAIRs)与本源时刻差>8 h,无混淆。T0 裁定:Swift/BAT 与 Fermi/GBM 两触发仪器矛盾(BAT 07:34:59.856620 vs GBM 07:35:09.277078,差 9.42 s),按契约「有 Swift 则以 Swift 为准」取 BAT 触发;GBM 值(GCN 41357 MET 776849714.277078−5 闰秒=07:35:09.277078,FERMIGBRST 目录 07:35:09.277)备查。原 bot T0=2025-08-14T07:35:09Z(t0_basis=meta_trigger)已改判。定位:ra/dec 取 GCN 41379 XRT 精化位 306.30792,48.39903(2.2″,90%);原库 dec=48.39886 与任何通告不符已改正;GCN 41358 增强位 306.30802,48.39903 与 swift_xrt_live 快照 306.30734,48.39808(3.5″)备查。t90=21.5044±2.18731 s(FERMIGBRST,50-300 keV)与 t90=110.11±47.90 s(Swift/BAT GCN 41396,15-350 keV)冲突,sub_tag 留空待决。NIR/optical「候选对应体」(GCN 41377/41381/41382/41391/41392/41465)经多历元测光无显著变化,作者判定可能与 GRB 无关(GCN 41382/41408),余辉未确认,host_galaxy 不建立。X 射线测光(Swift/XRT)未入库(超出审核范围)。测光检索(2026-11-06):仓内 gcn/archive 全文命中 22 篇(41357-41465,15 篇含光学/NIR 数值,已逐篇核对入库 40 行);external/rssgrbag 0、external/grbsn_webtool 0;arXiv API 「GRB 250814A/GRB250814A」0 篇;OpenAlex「GRB 250814A/S250814bg」0 篇;ADS/SciX API 无 token 实测 HTTP 401(单次验证,未重试)→ 通道记 search-limited,不据此断言无文献。原 t0_basis=meta_trigger、原 t0_note「t0 为 meta trigger-time(真实触发时刻)」留档于此。",
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_trigger",
+    "t0_note": "T0=Swift/BAT 触发时刻(batgrbcat TC1342439 UTC 07:34:59.856620);GBM 触发 07:35:09.277078 备查,详见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [],
   "host_galaxy": null
