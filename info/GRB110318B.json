@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB110318B",
-  "alias": [],
-  "ra": 211.691,
-  "dec": -51.577,
-  "T0": "2011-03-18T15:27:09Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 449549",
+    "Swift 449549"
+  ],
+  "ra": 211.67808,
+  "dec": -51.57883,
+  "T0": "2011-03-18T15:27:09.712860Z",
+  "T0_ref": "GCN 11799（At 15:27:09 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 110318B, trigger=449549；整秒）；亚秒 .712860 取触发仪器官方 batgrbproduct 通告页 UTC 2011-03-18T15:27:09.712860 [includes UTCF correction]（https://gcn.gsfc.nasa.gov/notices_s/449549/BA/，2026-11-06 实取；MET 322154836.48）；仓内 external/swift_bat、external/swift_grb 目录快照同值互证，external/swiftgrbba 15:27:09.000（整秒一致）；GCN 11799 自洽旁证：XRT 起测 15:28:22.5 UT=T0+72.8 s",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +19,44 @@
   "pos_ref": "GCN 11803",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)\n[审核链（Rusty-Harpoon@zcode 2026-11-06）] [身份] Swift/BAT 触发 449549（GCN 11799 触发通告；GCN 11800 为同文重复发，gcn.nasa.gov 新站 404、gcn.gsfc 经典镜像仍可取）；gcn/archive 全文扫描命中 8 篇（11799/11801/11803/11804/11806/11809/11816/11822）全部属本暴；同日 110318A 为另一暴（Swift 触发 449542，13:14:19 UT，坐标 338.3/-15.3，Fermi/LAT 亮暴），无混淆。[T0] bot 原值 2011-03-18T15:27:09Z（整秒）与 GCN 11799 一致；亚秒 .712860 按 §3.2 取触发仪器官方 batgrbproduct 页（见 T0_ref）。[定位] bot 原 ra/dec=211.691/-51.577 实为 GCN 11804 的 BAT 地面位置（1.7′，sys+stat, 90% containment；external/swiftgrbba 快照同值），与 pos_error=1.8″（GCN 11803）口径错配（位置差约 30″）；已改 GCN 11803 增强型 XRT 位置 211.67808/-51.57883（1.8″，radius, 90% confidence → pos_error_confidence=90）；external/swift_grb 快照 211.678167/-51.578806（同口径略精化，差约 0.3″，取通告原值）；BAT on-board 211.695/-51.559（3′，GCN 11799）备查。[sub_tag] t90=4.788±0.565 s（Swift/BAT 目录 batgrbproduct 快照 external/swift_bat，15-350 keV；GCN 11804 给 4.8±0.6 s、swift_grb 快照 4.28 s（15-150 keV），一致），按目录 t90>2 s 判 lgrb（4–5 s 属临界值，如维护者另有口径可改）。[alias] BAT 449549、Swift 449549 取自仓内 swift_bat / swift_grb 目录快照 name_alt（官方目录用名）。[测光检索留证] 2026-11-06：①仓内 gcn/archive 全文扫描（45 947 篇）命中本暴 8 篇（上列），逐篇核对，UVOT/GROND/MOA 上限已全部在库；②external/rssgrbag 射电光变 0 命中、external/grbsn_webtool 无本事件、external/mpe_greiner 与 external/uvot_grb 仅目录级行（无测光）；③GCN 站：11800 经 gcn.gsfc 经典镜像补齐（与 11799 同文），gcn.nasa.gov 新站 404，其余相关通告即仓内 8 篇；④ADS/SciX（token 有效）检索 \"GRB 110318B\"/110318B 命中 9 条＝仓内 8 篇中被 ADS 收录的 7 篇（MOA 通告 11822 未收录）+ GCN 11800 + GCN Report 326（Swift 团队自动报告，gcn.gsfc 报告库 403 未取得，其内容与 11806/11816 同源、无独有测光），另 \"Swift 449549\" 0 命中——无任何已发表研究专文涉及本暴；⑤Greiner+2024（A&A 691, A158；arXiv:2410.14441 e-print 全文核对）中本暴仅见于 GROND 观测日志表（110318B | L | 0319-07:40:51 | 58349 | n | GCN 11809），未入 unpub 测光表 Tab.1，无可用数值；其日志 start 07:40:51 UT 与自身 T−T0 列（58349 s→07:39:39 UT）自差 73 s，GROND 各行仍取 GCN 11809 的「07:40 UT 起」锚点。结论：已发表测光即 GCN 11816（UVOT 9 条上限）、11809（GROND g'r'i'z' 4 条上限）、11822（MOA I 上限）与 UKSSDC XRT 光变（10keV 行）；本次修订 UVOT/GROND/MOA 共 14 行（窗口中点口径、mag_system、原导入 −9 s 时间偏差），未新增行、未删行。[X 射线行] band=10keV 的 14 行按契约原样保留（未改未删未重排、不参与去重）；T0 精化 +0.713 s 后其 mjd 需维护者按 mjd=T0_new+time 重算（现差 0.713 s，在 check_t0_timebase 容差内，PR 说明已点明）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of γ-ray bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Evans+2010",
+      "url": "https://doi.org/10.1051/0004-6361/201014819",
+      "title": "The Swift Burst Analyser",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Breeveld+2011",
+      "url": "https://doi.org/10.1063/1.3621807",
+      "title": "An Updated Ultraviolet Calibration for the Swift/UVOT",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
