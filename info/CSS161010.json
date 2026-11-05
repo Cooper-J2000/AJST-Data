@@ -1,27 +1,35 @@
 {
   "transient_id": "CSS161010",
-  "alias": [],
+  "alias": [
+    "CRTS-CSS161010 J045834-081803",
+    "CSS161010:045834-081803"
+  ],
   "ra": 74.643317,
   "dec": -8.301097,
-  "T0": "2016-10-10T00:00:00Z",
-  "T0_ref": "Coppejans+2020（2020ApJ...895L..23C）：CRTS 发现日期",
+  "T0": "2016-10-08T10:04:48Z",
+  "T0_ref": "Gutiérrez+2024（2024ApJ...977..162G）start-of-outburst epoch JD 2457669.92±2.00＝ATLAS 最后非探测 JD 2457668.14 与 ASAS-SN 首探测 JD 2457671.70 的中点（原文 §1 明示采纳口径）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
-  "redshift": 0.0336,
+  "redshift": 0.034,
   "tag": [
     "fbot"
   ],
-  "pos_error": null,
-  "pos_ref": "Coppejans+2020（2020ApJ...895L..23C）射电位置",
+  "pos_error": 0.06,
+  "pos_ref": "Coppejans+2020（2020ApJ...895L..23C）射电位置 RA=04:58:34.396±0.004s、dec=−08:18:03.95±0.03″",
   "redshift_type": "spec",
-  "redshift_ref": "Coppejans+2020（2020ApJ...895L..23C）",
-  "comment": "2026-11-04 由 Coppejans+2020 建源（Ho+2023 表 2 收录为文献 FBOT；中等相对论性外流）；仅基础元数据，光变待补",
+  "redshift_ref": "Gutiérrez+2024（2024ApJ...977..162G）§3：z=0.0340±0.0006，由暂现体光谱窄线（Hα、[O III] 5007）与暂现体消退后宿主光谱共同得出",
+  "comment": "身份核验（2026-11-05，Rusty-Harpoon@zcode）：CRTS 发现的 LFBOT，全名 CRTS-CSS161010 J045834-081803（Coppejans+2020 §1、Gutiérrez+2024 §1 原文用名，坐标内嵌 04h58m34s/−08d18m03s 与本条 ra/dec 一致）；NUTS ATel 9645 用名 CSS161010:045834-081803（ADS 摘要核实，光谱分类通告）。注意：AT2016bln 不是本源别名——ATel 8909/8937 明确 AT 2016bln=iPTF 16abc（2016-04 发现的 young Type Ia SN，ATel 8937 原文「the young type Ia supernova 2016bln (=iPTF16abc)」），与 CRTS 2016-10-10 发现的暂现体无关；TNS 站 2026-11-05 实测 403 不可达，文献/ADS 中未见本源的 AT 指定名，故 alias 不含 AT 名。Gutiérrez+2024 引用位置 RA=04:58:34.41、dec=−08°18′03.5″（较粗），与本条 C20 射电位置一致。建源批注修正：原 comment 称「Ho+2023 表 2 收录为文献 FBOT」——经核 arXiv:2105.08811v2 全文，CSS161010 仅出现在其图 11 注（arXiv v2 图号；VoR 图号未核，IOP 反爬）的对比转引（光变标明取自 Coppejans2020），未入其任何表，articles[] 相应移除 Ho+2023（未据其取数）。\nT0 口径（各来源并列）：Gutiérrez+2024 采纳爆发起点 epoch JD 2457669.92±2.00（=2016-10-08T10:04:48Z，本条 T0）；CRTS 发现 2016-10-10 JD 2457671.98（未滤光 16.29 mag，G24 正文）；ASAS-SN 首探测 JD 2457671.70（V=16.52±0.12 表A1 / 正文作 16.51±0.12）；ASAS-SN 最后非探测 2016-10-06 JD 2457667.78（mV≳17.54，3σ）；ATLAS 最后非探测 2016-10-06 JD 2457668.14（c≳19.59）；Coppejans+2020 正文「estimated explosion date MJD 57667（2016-10-06，Dong et al. in prep）」、其射电表 Time 列自 JD 2457668.0（表注 a）、IPN 搜索用 JD 2457669.7±2（§2）。采纳 G24 历元：其光学相位全部以此定义，且为最权威后续文献。T0_offset 不适用（巡天发现，无设备自动触发）。X 射线（不审核）：C20 Chandra 99/130 d 探测、291 d 上限；G24 Swift/XRT 0.5-10 keV 上限 4×10⁻¹³ @25.14 d、8×10⁻¹⁴ @29.5 d（堆叠 25.14/30.17/33.06 d）——均未入库。\n测光入库（148 行）：Coppejans+2020 表3 射电 19 行（VLA 16 行 + GMRT 3 行；3 行 3σ 上限；band=原文频率串 6.10GHz/1.50GHz/3.00GHz/9.87GHz/2.94GHz/9.74GHz/22.00GHz/1.39GHz/0.33GHz/0.61GHz/6.05GHz/10.00GHz，mJy 原样）+ Gutiérrez+2024 表A1–A5 光学/UV/NIR 129 行 + 正文 CRTS 发现测光 1 行（band=G，无滤光片）。各表机读核对：G24 五表经 Zenodo 10.5281/zenodo.13844162 机读数据逐值核对一致；星等系统按原文：B/V/R/I/H 为 Vega（附录 ap:photo、表A2/A4 注），g/r/i/z 与 UVOT、ATLAS 为 AB；ASAS-SN 与 CRTS 行原文未声明系统，mag_system 留空。银消口径：G24 图1注自称 corrected for Milky Way extinction，与表 A1 注（仅声明 host-subtracted）存在原文内部张力；按表注与经验证据取 Gext_corr=n（表A1 ASAS-SN V=16.52 与正文 raw 值 16.51±0.12 一致，若已减 A_V≈0.26 应为 ~16.26）。时间列口径：2026-11-05 独立核查后将 time 列自天统一换算为秒（time_unit=s，time=历元差×86400，mjd 不变），以与 CI 的 check_t0_timebase 守卫（按秒解读 time 列）兼容。\n测光检索（2026-11-05）：① 仓内快照：gcn/archive 45947 篇全文（GCN Circular 全文快照，等价 GCN 站检索）检索 CSS161010/AT2016bln/坐标 → 0 命中（唯一坐标命中为 LIGO GCN 时间戳巧合）；external/rssgrbag/lightcurve.jsonl（140 行/74 源）0 命中；external/grbsn_webtool 63 事件无本源。② ADS API（token 可用）：title 检索 6 篇 + abstract 检索 21 篇，命中研究文献中含本源测光的 2 篇已全量入库（Coppejans+2020 射电表 19 行；Gutiérrez+2024 表A1–A5 129 行）；另命中：VizieR 目录 J/ApJ/895/L23（C20 射电子带机读表，正文脚注 b「available online」——CDS 全镜像本会话 DNS 失败/超时不可达，未入库，见 unverified.tsv）、Gao+2025（2025ApJ...990...93G，FAST 对本源的 ms 级 FRB 脉冲搜索上限 ~10 mJy，非连续谱测光，不入 lc）、ATel 9645（NUTS 光谱分类通告，摘要无数值）、理论/汇编文（2024ApJ...977..134M 等）与 Chandra 提案摘要——均未据其取数。③ TNS 403 不可达；SIMBAD DNS 失败（000）。④ 结论：本源测光已按文献全量入库，共补 148 行。\nsub_tag 留空：tags.json 无 LFBOT 副标签词条（fbot 为主标签；是否新增 lfbot 词条待维护者裁决）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_coppejans2020_20261104"
+    "ingest_source": "scix_coppejans2020_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
@@ -31,11 +39,105 @@
       "source": "bot"
     },
     {
-      "name": "Ho+2023",
-      "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
-      "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H",
-      "source": "bot"
+      "name": "Gutiérrez+2024",
+      "title": "CSS 161010: A Luminous Fast Blue Optical Transient with Broad Blueshifted Hydrogen Lines",
+      "url": "https://doi.org/10.3847/1538-4357/ad89a5",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 74.643325,
+    "dec": -8.301205,
+    "redshift": 0.034,
+    "redshift_err": 0.0006,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "g",
+        "mag": 21.67,
+        "mag_err": 0.04,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-07-21（Magellan/LDSS-3，JD 2457955.91）"
+      },
+      {
+        "band": "r",
+        "mag": 21.26,
+        "mag_err": 0.03,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-07-21（Magellan/LDSS-3，JD 2457955.91）"
+      },
+      {
+        "band": "i",
+        "mag": 20.97,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-07-21（Magellan/LDSS-3，JD 2457955.91）"
+      },
+      {
+        "band": "z",
+        "mag": 20.74,
+        "mag_err": 0.08,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-07-21（Magellan/LDSS-3，JD 2457955.91）"
+      },
+      {
+        "band": "B",
+        "mag": 22.17,
+        "mag_err": 0.23,
+        "mag_sys": "Vega",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-19（Magellan/IMACS，JD 2457984.87）"
+      },
+      {
+        "band": "V",
+        "mag": 21.64,
+        "mag_err": 0.22,
+        "mag_sys": "Vega",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-19（Magellan/IMACS，JD 2457984.87）"
+      },
+      {
+        "band": "B",
+        "mag": 22.03,
+        "mag_err": 0.14,
+        "mag_sys": "Vega",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-22（NOT/ALFOSC，JD 2458018.65）"
+      },
+      {
+        "band": "V",
+        "mag": 21.44,
+        "mag_err": 0.12,
+        "mag_sys": "Vega",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-22（NOT/ALFOSC，JD 2458018.65）"
+      },
+      {
+        "band": "g",
+        "mag": 21.59,
+        "mag_err": 0.26,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-22（NOT/ALFOSC，JD 2458018.65）"
+      },
+      {
+        "band": "r",
+        "mag": 21.17,
+        "mag_err": 0.18,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-22（NOT/ALFOSC，JD 2458018.65）"
+      },
+      {
+        "band": "i",
+        "mag": 20.84,
+        "mag_err": 0.27,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-22（NOT/ALFOSC，JD 2458018.65）"
+      },
+      {
+        "band": "z",
+        "mag": 20.57,
+        "mag_err": 0.24,
+        "mag_sys": "AB",
+        "source": "Gutiérrez+2024 表A1 Host 段 UT 2017-09-22（NOT/ALFOSC，JD 2458018.65）"
+      }
+    ],
+    "comment": "宿主：矮星系 WISEA J045834.37-081804.4（Gutiérrez+2024 §3，M_V=−14.7 mag；暂现体距宿主中心 0.39″，Coppejans+2020 §3.3）。坐标取 C20 明示的宿主中心 RA=04:58:34.398、dec=−08:18:04.337。红移 0.0340±0.0006 由暂现体光谱窄线（Hα、[O III]）得出并经暂现体消退后宿主光谱确认（G24）；C20 宿主光谱另得 z=0.0336±0.0011（并列）。银河系方向消光 E(B−V)=0.084 mag（Schlafly+2011，经 G24 引用）；宿主内部消光按 G24 假设可忽略。G24 prospector 拟合 log(M*/M☉)=8.135(+0.087/−0.079)（较 C20 的 M*~1×10⁷ M☉、sSFR~0.3 Gyr⁻¹ 更高，G24 归因于新增 z 波段约束）。photometry 为 G24 表A1 Host 段 3 历元测光（暂现体消退后测得，与暂现体测光分开）；注意该段 20170919 行 JD 2457984.87 实为 2017-08-19（UT 列与 JD 内部矛盾，相位与 JD 自洽，疑 UT 列笔误），photometry 条目按 JD 原文引用。",
+    "source": "Coppejans+2020（宿主中心坐标）；Gutiérrez+2024（证认 WISEA J045834.37-081804.4、红移、宿主测光）"
+  }
 }
