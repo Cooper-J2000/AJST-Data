@@ -3,8 +3,8 @@
   "alias": [],
   "ra": 36.83044,
   "dec": -4.951,
-  "T0": null,
-  "T0_ref": null,
+  "T0": "2016-11-02T00:00:00Z",
+  "T0_ref": "Pursiainen+2018（2018MNRAS.481..894P，DOI 10.1093/mnras/sty2309）g 波段光变参数表 t_peak = MJD 57694（观测 g 波段最亮点日期，整数 MJD，即 2016-11-02 UT 日）；该表在 arXiv:1803.04869v2 编号为 Table 5，VoR 表号未核（OUP 反爬，见 audit/unverified.tsv）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,14 +16,25 @@
   "pos_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1 坐标（J2000）",
   "redshift_type": "spec",
   "redshift_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1（OzDES 光谱红移）",
-  "comment": "2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（Ho+2023 表 2 收录为文献 FBOT）；发现/峰值时刻未提取，待补；仅基础元数据",
+  "comment": "身份：DES16X3cxn 为 Pursiainen+2018（2018MNRAS.481..894P）DES 快演化暂现源（RET）gold sample 成员、Wiseman+2020（2020MNRAS.498.2575W）106 源宿主样本成员、Ho+2023（2023ApJ...949..120H）Table 3「Literature FBOTs」收录（class Unknown，脚注称 DES 光变由 M. Pursiainen 私人提供）。无 TNS 名：TNS /object/DES16X3cxn 2026-11-06 查询返回 404（DES 内部名未入 TNS）；SIMBAD 本会话超时不可达（已登记 unverified.tsv 通道级）。坐标口径：Pursiainen+2018 Table 4（arXiv v2 编号）瞬变体坐标 02:27:19.32 −04:57:04.27 = 36.83050 −4.95119，与 info 坐标 36.83044 −4.951 相差约 0.70″，与该文 Table 3（宿主基本信息表）给出的瞬变体宿主偏移 0.626″ 一致——即 ra/dec 为 Wiseman 表 1 的宿主星系坐标，瞬变体坐标另见 Pursiainen 表 4；Wiseman 表 1 未给定位误差，pos_error 留空、置信水平来源未标注。红移 z=0.58464（spec，OzDES）为建源时自 Wiseman 表 1 机读表提取，本次 VoR（OUP Cloudflare 反爬）未能逐行复核，但 Pursiainen+2018（0.58）与 Ho+2023 Table 3（0.58）一致。T0 判读：无 TNS/GCN/发现时刻（DES 内部发现未发表），唯一绝对时间锚点是 Pursiainen+2018 g 波段光变参数表 t_peak = MJD 57694（观测 g 波段最亮点日期），按 iPTF15ul 先例取当日零点 2016-11-02T00:00:00Z 占位；整数 MJD 仅日期精度（±0.5 d），DES-SN ~7 天 cadence 亚日时刻不可恢复。原文口径并列备查（Pursiainen+2018，rest frame 相对 g 峰）：t_rise 5.0 d（last non-detection 至峰，上限性质）、t_decline 16.41(+4.89/−2.99) d、t_1/2 7.82 d；M_peak(g) = −19.62±0.05；黑体峰 T = 18.01(+1.76/−1.34) kK、r = 6.63(+0.73/−0.72)×10^14 cm、L = 3.29(+0.53/−0.34)×10^43 erg/s（4 点拟合）；E(B−V) = 0.0234（Schlafly+2011）。宿主 log(M*/M☉)：Pursiainen 9.35(+0.03/−0.12) 与 log(sSFR) −9.32；Wiseman 表 2 9.55(+0.57/−0.08)、log SFR −0.32(+1.00/−0.19)、log sSFR −9.88(+0.43/−0.11)、12+log(O/H) KK04 R23 8.79(+0.16/−0.36)。Ho+2023 Table 3（i 波段）：Mmax(i) = −19.37±0.06、t_b1/2,rise 2.80–5.93 d、t_b1/2,fade 6.62±0.42 d（转引 Pursiainen 光变）。分类依据：Pursiainen gold sample（FWHM<30 d 且 t_1/2<12 d 等选择）+ Wiseman+2020 RET 选择（g−r 色 + r 波段上升时标 cut，§2）+ Ho+2023 文献 FBOT 样本（class Unknown，无光谱分类）→ tag=[fbot]，sub_tag 留空。测光检索（2026-11-06）：仓内 gcn/archive 45889 篇全文检索「X3cxn」「DES16」0 命中（非 GRB，预期）；external/ 全部目录 grep 0 命中，rssgrbag/grbsn_webtool 为 GRB 类快照不适用。外部入口：OpenAlex 检索 \"DES16X3cxn\" 命中 5 篇并逐篇核查——Pursiainen+2018（37 个 gold+silver 事件光变仅附录图 lc_all_*.pdf，无数值表，按契约不读图入库）、Wiseman+2020（宿主研究，无瞬变体测光表）、Wang+2021（arXiv:1904.09604v2，磁星/ECM 模型拟合，Table 1 转引 Pursiainen 参数，无新测光）、Hu+2023（arXiv:2301.06402v1，磁星形成模型表，无测光）、Pursiainen 2020「Peculiar optical transients in the DES」（学位论文类，无 DOI，OpenAlex 无全文入口）；TNS 404、SIMBAD 超时、CDS/VizieR 全镜像超时。结论：该源测光从未以数值表形式发表 → 无带时间锚点测光行可补，本审 0 行入库、不建 lc。未核实项：Wiseman+2020 与 Pursiainen+2018 的 VoR（OUP Cloudflare 403）均不可达，本条目数值全部取自 arXiv v2（1803.04869v2 / 2005.08653v1）实读，已登记 audit/unverified.tsv；表号均为 arXiv 版编号，VoR 表号待核。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_wiseman2020_20261104"
+    "ingest_source": "scix_wiseman2020_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
+    {
+      "name": "Pursiainen+2018",
+      "source": "wa1kmoon@zcode",
+      "title": "Rapidly evolving transients in the Dark Energy Survey",
+      "url": "https://doi.org/10.1093/mnras/sty2309"
+    },
     {
       "name": "Wiseman+2020",
       "source": "bot",
@@ -35,7 +46,18 @@
       "source": "bot",
       "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
+    },
+    {
+      "name": "Wang+2021",
+      "source": "wa1kmoon@zcode",
+      "title": "The Magnetar Model and the Ejecta-Circumstellar-Matter Interaction Model for 31 Luminous, Rapidly Evolving Optical Transients",
+      "url": "https://arxiv.org/abs/1904.09604"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.58464,
+    "redshift_type": "spec",
+    "comment": "确定宿主：Pursiainen+2018 Table 3（宿主基本信息表）OzDES 光谱红移 z=0.58（四舍五入）、瞬变体偏移 0.626″/4.12 kpc、DLR 1.00；Wiseman+2020 表 1 该宿主 OzDES 曝光 4.00 h。z=0.58464 为建源时自 Wiseman 表 1 机读表提取（VoR 未逐行复核，见 unverified.tsv）。宿主性质（Wiseman 表 2，arXiv v1 行已核）：log(M*/M☉)=9.55(+0.57/−0.08)、log SFR=−0.32(+1.00/−0.19)、log sSFR=−9.88(+0.43/−0.11)、12+log(O/H) KK04 R23=8.79(+0.16/−0.36)、Average O3N2=8.43(+0.18/−0.27)；Pursiainen+2018 SED 拟合 log M*=9.35(+0.03/−0.12)、log sSFR=−9.32（并列备查）。宿主星系坐标未单独取值（Wiseman 表 1 机读行不可达；info ra/dec 即该表宿主坐标），测光无。",
+    "source": "Pursiainen+2018 Table 3（DOI 10.1093/mnras/sty2309）+ Wiseman+2020 表 1/表 2（2020MNRAS.498.2575W）"
+  }
 }
