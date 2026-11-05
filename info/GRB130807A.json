@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB130807A",
-  "alias": [],
-  "ra": 269.801,
-  "dec": -27.616,
-  "T0": "2013-08-07T10:25:43Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "SWIFT J1759.2-2736"
+  ],
+  "ra": 269.8007,
+  "dec": -27.6159,
+  "T0": "2013-08-07T10:25:43.293700Z",
+  "T0_ref": "Swift/BAT GRB catalog（batgrbcat）trigger 565651：2013-08-07T10:25:43.293700Z（仓内 external/swift_bat 快照 summary_general.txt；2026-11-06 在线复核 gcn.gsfc.nasa.gov/notices_s/565651/BA/ 页 UTC=2013-08-07T10:25:43.293700 [includes UTCF correction] 一致）；GCN 15082 = 10:25:43 UT（整秒）；swiftgrbba = 10:25:43.000。亚秒以触发仪器为准（§3.2/§3.8）",
+  "T0_offset": -6.836,
+  "T0_offset_ref": "Swift/BAT 官方目录 external/swift_bat 快照 summary_burst_durations.txt T100_start=-6.836 s（相对 BAT trigger 565651，触发前已有辐射，按 §3.2 取负）；GCN 15083 'initial FRED-like peak starting at T-10 sec' 同量级（约值）备查；在线 batgrbproduct duration 表（2013 冻结版，2026-11-06 实取同一 BA 页）另有 T100 tstart=-12.176 s 备查，本库取目录精化值 -6.836 s；纯元数据，不改写光变时间轴",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
@@ -16,11 +18,38 @@
   "pos_ref": "GCN 15085",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。T0 亚秒精化：原导入 2013-08-07T10:25:43.000Z，按 §3.2「亚秒以触发仪器为准」改取 batgrbcat trigger 565651 的 10:25:43.293700Z（+0.2937 s；与 GCN 15082 整秒、swiftgrbba 10:25:43.000 一致）；本源 X 射线 195 行（10keV）mjd 系按旧 T0 算出，需维护者按 mjd=T0+time 机械重算（2026-10-31 裁定，只动 mjd 列）。T0_offset=-6.836 s：BAT 目录 T100_start=-6.836 s、触发前已有辐射（GCN 15083 'starting at T-10 sec' 同量级），纯元数据不改时间轴（batgrbproduct 2013 冻结版 duration 表另有 T100 tstart=-12.176 s 备查，见 T0_offset_ref）。定位：GCN 15085 XRT 精化位置 269.8007, -27.6159（3.6 arcsec, radius, 90% confidence，原文明示→pos_error_confidence=90）；原库 ra/dec=269.801, -27.616 为该值 3 位小数舍入（与 GCN 15083 BAT 精化位置 269.801, -27.616, 1.7 arcmin 90% 数值恰好相同），已按原文精度回写。sub_tag=lgrb 依 t90=293.04±26.61 s（15-350 keV，Swift/BAT 官方目录 batgrbcat，按目录 t90 判 lgrb/sgrb；GCN 15083 当时数据未全未定 T90，目录为其后续完整分析值；batgrbproduct 2013 冻结版 duration 表 T90=96 s 亦 >2 s，两版不冲突）。宿主：无确认宿主；Greiner+2024 逐暴小节提到 XRT 误差圈内有一颗 VVV 巡天（2011 年观测）已知源（17:59:12.0, -27:36:59），属候选/背景源、未定论，不建 host_galaxy，仅此备查（§3.10）。UVOT 9 行＝GCN 15086 的 3σ 上限，逐值核对一致（勘误链：GCN 15087 仅更正 15086 表述 'No optical source'→'No uncatalogued optical source'，数值表不变，reference 仍指 15086）；time 原导入为 T_start，已按 §3.8 窗口中点/半宽重算（w1 行原导入 4739 系 GCN 15086 T_start=4759 之误植）；mag_system=Vega（GCN 15086 明示 UVOT photometric system，Breeveld+2011）。GROND 7 行＝Greiner+2024（A&A 691, A158）表 2 130807A 行：mid=19.69 h（0808-06:07 UT，原文显式中点）有明确时间锚，g'r'i'z'JHK 全为上限（>22.1/21.2/20.8/19.9/17.8/17.1/16.6，表注全表 AB、未做银消改正；JHK 因 2MASS 定标两读留空 mag_system），取值经 CDS J/A+A/691/A158/tablea2 行 92＋arXiv:2410.14441v1 表 2 互核一致（详见各行 comment）。测光检索（2026-11-06）：仓内 gcn/archive 命中 5 篇（15082/15083/15085/15086/15087 全文已读，仅 15086 有测光表＝9 条 UVOT 上限）、external/swift_bat、swiftgrbba、mpe_greiner 仅目录级参数（无测光表）、rssgrbag 0 命中、grbsn_webtool 无该事件、uvot_grb 无；GCN 站在线复核 15082/15086/15087 与仓内快照一致；ADS/SciX 元数据检索 'GRB 130807A' 4 命中（3 GCN + ATel 5268）、'Swift J1759' 1 命中（同 ATel）、'GRB 130807' 0 命中，GCN 15082/15085/15086 与 ATel 5268 的引文检索均 0 命中——无本源专文；多目标样本文献经仓内文献级卡 audit/leads/papers/greiner2024.md（#391/#411 建，本源列于其表 2 ∩ 库内清单）发现 Greiner+2024——该文本源数据仅在附录表 2，ADS 元数据检索不命中，2026-11-06 实取 CDS 机读表行 92＋arXiv v1 互核、逐暴小节与 footnote 1 已读；aanda.org VoR 整站 403（2026-10-28 卡记录＋2026-11-06 复验），已登记 audit/unverified.tsv（substituted）；ATel 5268（Melandri+2013，SWIFT J1759.2-2736 即本源的暂现源名）全文不可达（ATel 站点对本出口 IP 封禁、web.archive.org 本网络不可达、ADS 无 body 全文），已登记 audit/unverified.tsv（missing），未据其取任何数值，别名 SWIFT J1759.2-2736 取自该 ATel 的 ADS 题录。结论：入库测光＝GCN 15086 的 9 条 UVOT 上限＋Greiner+2024 GROND 表 2 的 7 条上限；本 PR 修订 9 行、新增 7 行、删 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND gamma-ray burst sample: I. Overview and statistics",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
