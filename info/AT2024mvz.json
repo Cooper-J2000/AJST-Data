@@ -6,8 +6,8 @@
   ],
   "ra": 355.115833,
   "dec": -7.01435,
-  "T0": "2024-05-25T12:01:26Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2024-05-25T12:01:26.400Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2024-05-25 12:01:26.400（毫秒精度）；同值见 TNS Gaia 发现报告 #215917（2024TNSTR2111....1H，2024-06-26 收报）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,17 +16,22 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）坐标（J2000）＝Gaia 发现报告 #215917 坐标（TNS 对象页同值）",
+  "redshift_type": "spec",
+  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 0.08；TNS 分类报告 2024TNSCR3255....1S（ePESSTO+，TDE-H-He，z=0.08）；AstroNote 2024-237：红移由分类光谱 NGSF 模板匹配给出",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 4998 行。\n\n【身份核验（2026-11-05，TNS 对象页 + TDECat 目录行 + AstroNote 2024-237 三方一致）】ra/dec 取 TDECat 目录行 23:40:27.800 -07:00:51.66（＝Gaia 发现报告 #215917 坐标，TNS 对象页同值 355.115833/-7.01435）；ZTF 发现报告 #216823（Fritz/BTSbot，2024-07-03 收报）坐标 23:40:27.816 -07:00:51.68，与本库值差约 0.24″，同一对象。alias 两名均有出处：Gaia24bny＝Gaia Alerts 发现名（TNS AT 报告 #215917 internal name，Gaia_Bot1，发现 2024-05-25 12:01:26.4 UT，G-Gaia 18.18；TDECat 目录行 Gaia alert name 列；AstroNote 2024-237 记「2024mvz [Gaia24bny]」）；ZTF24aasteui＝ZTF 内部名（TNS AT 报告 #216823 internal name，发现 2024-06-20 10:34:55.997 UT，g-ZTF 18.3842；TDECat 目录行 ZTF name 列）。tag=tde：TNS 分类报告 #17872（2024TNSCR3255....1S，ePESSTO+，NTT/EFOSC2 光谱 2024-09-02 08:05:36 UT）分类 TDE-H-He（TDECat spectral_classes.csv 记 TDE-H+He，引 AstroNote 2024-237；分类由 NGSF 模板匹配给出）；TNS 前缀 2025-01-26 由 admin 改为 TDE。同一 Gaia 告警与 ZTF 对象为同一天体（坐标互证 + TDECat 目录行两名列齐载），alias 不合并不删除。Trigger_Instrument 留空（TDE 无高能触发；发现设备 Gaia，ZTF 独立上报）。宿主未建档：TDECat 目录行 Host name 为空，TNS 两份 AT 报告亦未给宿主名。\n\n【T0 口径】TDECat 目录行 Discovery date 与 TNS Gaia 发现报告 #215917 一致给 2024-05-25 12:01:26.400（毫秒精度），按 §3.2 采源精度写全（原 bot 值截断到秒）；该时刻为 Gaia 发现该爆发的单次扫描历元（同扫描测光即 lc 发现行 MJD 60455.501），非观测窗口起止，无 T0_offset。本源 lc 为新表，全表 time=(mjd-60455.501)*86400 已按此 T0 自洽。\n\n【红移】z=0.08（TDECat 目录行＝TNS 分类报告 2024TNSCR3255....1S）；AstroNote 2024-237 说明红移由分类光谱 NGSF 模板匹配给出→ redshift_type 由 value 改判 spec（§3.5；光谱红移，报告未区分宿主线/瞬变线故不用 spec-host）。\n\n【测光入库 4998 行】＝TDECat 官方补充仓库 target_AT2024mvz_photometry.csv（github.com/dlangis/TDECat Section 2: Photometry/Optical and Infrared，2026-11-05 下载，5684 行）去重后 4994 行 + TNS 对象页测光表 4 行（phot ID 414905/414906/416672/416673）。口径：TDECat/BHTom 编译行为总流量（含宿星系核，非差分），TNS 行为差分成像纯瞬变（ZTF 2 行）或告警历元测光（Gaia 2 行），两类并存不互删（§3.4 非同值）；星等系统按 Langis+2026 §3.1（ZTF/ATLAS/Pan-STARRS/SDSS=AB；CRTS/NEOWISE=Vega；Gaia G 内部定标既非 AB 也非 Vega → GSA 行 mag_system 留空）；CRTS(CL) 无滤光片→band=G（G 键 desc=Gaia 亦承载 Gaia G 行）；time=(mjd-60455.501)*86400，mjd 保留来源原值精度。未入库：TDECat ATLAS(H) 1 行（ATLAS 无 H 滤光片，波段名无法唯一判读，PR 待决）；TDECat 同历元同值重复行 688 行（ZTF 636 + CRTS 52，§3.4 去重保留首行）；TDECat GSA 发现历元行（MJD 60455.50207，18.18±0.0293）与 TNS 行 414906 为同一 Gaia 扫描（同值、时差 93 s），按 §3.4 去重保留 TNS 行（最初出处）；SDSS 5 波段与 ZTF 2 历元同历元异值双管道行并存（§3.4 异值双行）。TDECat 无本源 UVOT/X 射线机读文件。上限行仅 TNS 414905（G-Gaia 21.5，最后非探测）。\n\n【测光检索留证（2026-11-05）】仓内：gcn/archive 45947 篇全文按 Gaia24bny/AT2024mvz/ZTF24aasteui 三名检索均 0 命中；external/rssgrbag lightcurve.jsonl 与 normalized.jsonl 0 命中；external/grbsn_webtool SourceData 63 事件 0 命中；external/uvot_grb 及其余 external/*/normalized.jsonl 0 命中。外部：TNS 对象页 phot 表 4 行（全部入库）；TDECat 官方补充仓库逐源 CSV 5684 行（去重后入库 4994 行）；TDECat UVOT/X-ray 目录无本源文件；ADS 按三名检索命中 3 条（发现报告 2024TNSTR2111....1H、分类报告 2024TNSCR3255....1S、AstroNote 2024-237，均无独立测光表）；Gaia Alerts 网页 gsaweb.ast.cam.ac.uk/alerts/alert/Gaia24bny 3 次尝试超时未达（不影响身份三方确证）；未发现本源专文 → 补 4998 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "ingest_source": "scix_tdecat_20261104",
     "discovery_mag": "18.18",
-    "discovery_filter": "G-Gaia"
+    "discovery_filter": "G-Gaia",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
