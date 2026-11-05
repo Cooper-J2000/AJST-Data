@@ -13,7 +13,7 @@ DES 源（上表）都在其 106 样本中。**宿主研究文章：无瞬变体
   z、光谱巡天/曝光时间。**库内 DES 源的 ra/dec 即本表宿主坐标**（DES16X3cxn 审核时已做一致性推证，
   见该源 comment；z=0.58464 等精确值来自本表机读版）。
 - 表 2（宿主性质）：49 个有光谱宿主的 log M*/log SFR/log sSFR/12+log(O/H)（多标度），在线机读。
-- 表 3（tab:fluxes）：发射线流量（附录）。
+- 表 5（tab:fluxes，arXiv v1 表序第 5）：发射线流量（附录）。
 - §2 的 RET 选择口径（g−r 色 + r 波段上升时标 cut，Gaussian Process 光变拟合）是各源 tag=[fbot] 的分类依据。
 
 ## 涉及源一览（全部 mention-only，未开源级卡）
