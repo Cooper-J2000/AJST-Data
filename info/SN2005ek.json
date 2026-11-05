@@ -1,10 +1,12 @@
 {
   "transient_id": "SN2005ek",
-  "alias": [],
+  "alias": [
+    "SN 2005ek"
+  ],
   "ra": 46.454,
   "dec": 36.76961,
-  "T0": "2005-09-24T12:00:00Z",
-  "T0_ref": "Drout+2013（2013ApJ...774...58D）：发现日期 2005-09-24.5 UT",
+  "T0": "2005-09-24T12:43:12Z",
+  "T0_ref": "Drout+2013（2013ApJ...774...58D）§2.1：LOSS/KAIT 发现观测 2005 Sep. 24.53 UT（发现报告 CBET 232）；Drout+2013 表2 首探测行 MJD 53637.5（0.1 d 精度）相容；按库内 SN 先例（SN2003L、SN2018kzr）T0 取发现时刻，SN 无触发、原文未给爆炸时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -14,24 +16,35 @@
     "sn"
   ],
   "pos_error": null,
-  "pos_ref": "TNS 坐标（J2000，2026-11-04 取）",
+  "pos_ref": "TNS 坐标（J2000）03:05:48.96 +36:46:10.60 = 46.454 +36.76961：https://www.wis-tns.org/object/2005ek（2026-11-06 复核）；来源精度低（TNS 赤经仅 3 位小数），pos_error 原文未标注",
   "redshift_type": "spec",
-  "redshift_ref": "Drout+2013（2013ApJ...774...58D）",
-  "comment": "2026-11-04 由 Drout+2013 建源（Ho+2023 表 2 收录为文献 FBOT）；坐标精度低（TNS 仅 3 位小数），待高精度位置替换；仅基础元数据，光变待补",
+  "redshift_ref": "Ho+2023（2023ApJ...949..120H）表 tab:literature：z=0.01662（该表标注引自 Drout2013；Drout+2013 正文未给数值红移，此值疑录自 NED UGC 2526）；并列：Bianco+2014（2014ApJS..213...19B）表4 UGC 2526 cz_helio=4962 km/s≈z 0.01656",
+  "comment": "身份：SN 2005ek（TNS Type SN Ic、Host Name UGC02526；RA/Dec 03:05:48.96 +36:46:10.60 = 46.454 +36.76961，https://www.wis-tns.org/object/2005ek 2026-11-06 复核；发现报告 CBET 232，Discoverer LOSS，Discovery Mag 17.5）。分类依据：TNS=SN Ic（原始报告 Ic?，后定 Ic）；Drout+2013 标题「peculiar Type Ic」；Ho+2023 表 tab:literature 列 Type Ic 并按 FBOT 文献（Pursiainen+2018、Coppejans+2020、Wiseman+2020、Chen+2022）收录 → tag=[fbot,sn]、sub_tag=Ic。坐标精度低（TNS 赤经仅 3 位小数），pos_error 来源未标注置信水平、留 null。\nT0：2005-09-24T12:43:12Z（=2005 Sep 24.53 UT，Drout+2013 §2.1 的 LOSS/KAIT 发现观测时刻，发现报告 CBET 232）。SN 无触发，按库内 SN 先例（SN2003L、SN2018kzr）T0=发现时刻而非爆炸时刻；Drout+2013 亦未给爆炸时刻（仅 R 极大 MJD 53639.9±0.3）。原库 T0=2005-09-24T12:00:00Z 为 Drout+2013 表2 MJD 53637.5（0.1 d 舍入）的占位值，现细化到原文给出的 0.01 d 精度（.53），未自行补更细时刻。KAIT 前置非探测 2005 Sep 18.5（≲19 mag）早于 T0 6.03 d，lc 对应行 time 为负。\n红移：0.01662（Ho+2023 表 tab:literature，其标注引自 Drout2013；Drout+2013 正文未给数值 z，该值疑录自 NED UGC 2526）；并列 Bianco+2014 表4 cz_helio=4962 km/s≈0.01656（UGC 2526，heliocentric）。Drout+2013 采用 NED 距离 66.6±4.7 Mpc（H0=73，Virgo+Great Attractor+Shapley Infall 改正）。\n宿主：UGC 2526（确定宿主：TNS Host Name + Drout+2013 §HostProps：Sb 边旋星系，SN 位于核西 1.5′≈30 kpc 极端偏移处；核金属度 PP04N2 12+log(O/H)=8.79±0.06，宿主谱 MMT 2011-02-23）。host 坐标取 HyperLEDA J030543.36+364710.1（PGC 11625，约 1″ 精度，2026-11-06 取数），与 SN 位置偏离 ~90″ 与 Drout+2013 的 1.5′ 相符。\n光变构成（135 行，其中上限 25 行）：Drout+2013 表1 P60 BVRI 50 值 + 表2 KAIT clear 4 行（含 2005 Sep 24.5 发现探测 17.82±0.08 与 Sep 18.5 前置上限 ≲19；CBET 232 报道 m≈17.5 为发现快报值，17.82 为 Drout+2013 重分析值，并存备查）+ 表2 P200/LFC g'r'i' 6 行（含 2 行上限）+ 表3 Swift/UVOT 29 行（8 探测 21 上限）+ §2.5 正文 VLA 8.46GHz 射电上限 1 行（≲128 μJy，2σ，仅给日期故 time_err=0.5 d）+ Bianco+2014（2014ApJS..213...19B）CfA 官方数据发布 lc.standardsystem.sesn_allphot.dat 的 PAIRITEL JHKs 45 行（J16/H14/Ks15，2026-11-06 取数）。Drout+2013 图1 所示 JHK 测光出自 Modjaz 2007 博士论文，原文数值未从图读数；JHKs 改由 Bianco+2014 正式数据发布逐值入库（其文注明 SN2005ek PAIRITEL 数据「additional PAIRITEL data points, together with those already included in Drout et al., originally published in Modjaz07phd」）；Modjaz 2007 论文的 FLWO 1.2m 2005-11-05 r' 探测值（正文无数值、仅 Drout+2013 图1 开放圆点）不可得，未入库。Swift/XRT 0.3–10 keV 19 天合并 13 ks 非探测（Fx<1.3e-13 erg/s/cm2）属 X 射线积分流量上限，不在光学/射电入库范围，备查。\nmag_system：P60 BVRI=Vega（推定：论文称由 SDSS 场星按 Smith+2002 关系转入标准 BVRI 系统，Johnson-Cousins 惯例 Vega）；P200 g'r'i'=AB（推定：SDSS 场星定标，SDSS 系统 AB）；UVOT=Vega（论文采用 Poole+2008 UVOT 系统与 Breeveld+2011 改正，UVOT 惯例 Vega）；PAIRITEL=Vega（Bianco+2014 明言 photometry well anchored in the 2MASS system，2MASS 为 Vega 系）；KAIT clear 行原文未声明系统 → mag_system 留空。各行 Gext_corr=n（原文测光均为观测值，未做银消改正；Drout 表4 极大星等注「Not corrected for Milky Way extinction」）。\n测光检索（2026-11-06）：仓内 gcn/archive 45889 篇全文检索 2005ek/2005 ek/2005EK 0 命中（SN 类非 GCN 入口，符合预期）；external/grbsn_webtool/SourceData 63 事件（全 GRB-SN）0 命中、external/rssgrbag 0 命中。外部：arXiv API 检索 abs:\"2005ek\" 命中 7 篇，研究论文逐一核查——Drout+2013（本源专文，表1/2/3+正文 VLA 已入库）、Bianco+2014（SN2005ek PAIRITEL JHKs 经 CfA 数据发布入库）、Ho+2023（仅 Literature FBOT 表元数据行，无新测光）、其余 4 篇为 ultra-stripped SN/快速衰落 SN 样本与模拟文（无本源测光）；TNS photometry 页未登录不可得；SIMBAD/VizieR/CDS 本会话不可达（连接失败，通道级已登记 unverified.tsv）。→ 补 135 行（25 行上限）。\nVoR 状态：IOP 整站（ApJ 774,58 与 ApJS 213,19）Radware Bot Manager 反爬（https 证书链本机不全、200 状态实为验证页），Drout+2013 数值取自 arXiv:1306.2337v2 排版源（表1/表2/表3+正文），Bianco+2014 JHKs 取自论文正文指定的 CfA 官方数据发布；均已在 audit/unverified.tsv 登记。",
   "sub_tag": [
     "Ic"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_drout2013_20261104"
+    "ingest_source": "scix_drout2013_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
       "name": "Drout+2013",
       "source": "bot",
       "title": "The Fast and Furious Decay of the Peculiar Type Ic Supernova 2005ek",
-      "url": "https://ui.adsabs.harvard.edu/abs/2013ApJ...774...58D"
+      "url": "https://doi.org/10.1088/0004-637X/774/1/58"
+    },
+    {
+      "name": "Bianco+2014",
+      "source": "wa1kmoon@zcode",
+      "title": "Multi-color Optical and NIR Light Curves of 64 Stripped-Envelope Supernovae",
+      "url": "https://doi.org/10.1088/0067-0049/213/2/19"
     },
     {
       "name": "Ho+2023",
@@ -40,5 +53,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 46.430667,
+    "dec": 36.786139,
+    "redshift": 0.01662,
+    "redshift_type": "spec",
+    "comment": "UGC 2526（PGC 11625），Sb 边旋星系，D=66.6±4.7 Mpc（NED，H0=73，Drout+2013 采用）。坐标取 HyperLEDA J030543.36+364710.1（约 1″ 精度，2026-11-06 取数）。z=0.01662 同瞬变体（Ho+2023 表）；并列 Bianco+2014 表4 cz_helio=4962 km/s≈0.01656。SN 位于宿主核以西偏南约 1.5′≈30 kpc（66E 60S，Bianco+2014 表4；Drout+2013 §HostProps 同记 1.5′）。宿主核金属度 12+log(O/H)_PP04N2=8.79±0.06（Drout+2013，MMT 谱）；SFR~2–5 M☉/yr。",
+    "source": "TNS Host Name UGC02526；Drout+2013（2013ApJ...774...58D）§HostProps；HyperLEDA（2026-11-06 取数）"
+  }
 }
