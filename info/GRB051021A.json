@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB051021A",
-  "alias": [],
+  "alias": [
+    "H3947",
+    "GRB 051021",
+    "GRB 051021.6"
+  ],
   "ra": 29.15154266357422,
   "dec": 9.067575454711914,
   "T0": "2005-10-21T13:21:57Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 4116（触发仪器 HETE 官方 Circular：FREGATE/WXM/SXC detected GRB 051021 (=H3947) at 13:21:57 UT (48117 SOD) on 21 October 2005）；uvot_grb 目录 TRIG_UT=2005-294-13:21:57 与 swiftgrbba 目录（trigger_obs=HETE）同值互证，精度止于整秒",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
@@ -16,11 +20,44 @@
   "pos_ref": "GCN4159 (UVOTGRB)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。\n身份与触发链：HETE-2 触发 3947（GCN 4116：FREGATE/WXM/SXC 于 2005-10-21 13:21:57 UT（48117 SOD）探测 GRB 051021 (=H3947)；WXM 初定位 01h56m24s +09d07′05″，半径 7.5′ 90%）；uvot_grb 目录（Roming+2017 HLSP grb-cat）DISC_BY=HETE2、swift_grb 目录 other_id=H3947（Swift ToO target 20018，XRT/UVOT 自 16:28:28 UT 起 T0+3.1 h 后随，GCN 4125/4136/4151）互证。alias「GRB 051021」为 GCN 4116 eventId 原文用名（无后缀形）；alias「GRB 051021.6」：<GCN 4118> MASTER 原文用名 GRB051021.6（Lipunov+2007 VoR 表同用）。当日另一暴 GRB051021B=Swift/BAT trigger 160672（23:31:53 UT，GCN 4126/4135/4167）为独立事件、无关；MASTER GCN 4119 所述「Swift triger 53550」（Lipunov+2007 VoR 表作 160640）为技术性警报，非本暴，其上限不入本源。\nT0=13:21:57 UT 取自 GCN 4116（触发仪器官方通告，§3.8 优先级①），原值维持不变、仅补 T0_ref。\n位置：ra/dec 即 GCN 4159（CrAO 0.6m 叠加像）RA=01 56 36.37 Dec=+09 04 03.27 (J2000)，不确定度 0.5″（pos_error 单位角秒，与原文一致），来源未标注置信水平；pos_ref「GCN4159 (UVOTGRB)」指 uvot_grb 目录 POS_REF=GCN4159。互证：Fox OT 位 01:56:36.39 +09:04:03.7（<0.5″，GCN 4120）、Swift/XRT 精化位 4″ 半径（GCN 4151）、Goad+2007 UVOT 增强 XRT 位 2.2″ 半径（2007A&A...476.1401G）均一致。\nt90=38 s（7–40 keV）/27 s（30–400 keV）（GCN 4124 HETE 精化分析；uvot_grb 目录 t90=27.0 s、rssgrbag 目录 t90=27.0 s 同值；GCN 4124 正文 trigger 号印作 H3934 系原文笔误，其余 8 篇通告均为 H3947，§3.10 原文笔误条记录），按通告 t90 为长暴；GCN 4124 依 S(2–30)/S(30–400)=0.41 明确分类「X-Ray Rich GRB」→ sub_tag=XRR（同库 HETE X 射线 Rich 源先例 GRB010629/GRB031220 等）。Epeak=94.2 keV（90% CI [76.7, 111.7]）、alpha=−1.16（cutoff power law，GCN 4124）；2–30 keV fluence 3×10⁻⁶ erg/cm²、30–400 keV fluence 6×10⁻⁶ erg/cm²（GCN 4124 原文后一处单位写作「keV」系原文笔误，应为 erg/cm²）；HETE 伪红移 pz=1.4（GCN 4124，非实测红移，redshift 保持 null）。\n宿主候选：Ovaldsen+2007（ApJ 662, 294; DOI 10.1086/517962）丹麦 1.54m 在 OT 位置测得 R=24.9±0.4（19800 s 叠加、限深 25.4、Landolt 定标；观测时段 2005-10-24～11-21 与 2006-02-19 起，本源具体历元未单列），判为 likely host galaxy（低显著、此前无人发表）——按 §3.10 候选宿主不建 host_galaxy，仅记于此。\nUVOT 11 行与 MAST HLSP noc-db FITS（MD5 484c9d35b83165eccd8240c32592e065）逐值核对一致；SIGMA=2.0–2.4，按 Roming+2017 §3.1 的 2σ 判据系测量点而非上限，upperlimit 维持 n。\n测光检索（2026-11-06）：仓内 gcn/archive 全文检索「051021」「3947」命中相关 Circular 29 篇（本暴 22 篇 + GRB051021B 6 篇 + GCN 4119 Swift 技术警报 1 篇），其中 15 篇含本暴光学/IR 测光或上限，逐篇读毕：ROTSE 16.9@~180 s、Fox R~18.5、Lulin R≈19.8、Miyazaki <14.3、UVOT 6 滤片 3σ 上限（GCN 4136）、MDM R>23、P200 Ks>19、SMARTS I=22.0/J>19.9、SOAR J=20.3（GCN 4144 更正 GCN 4127 的 17.16）、PROMPT Rc<20.7/Ic<20.4、ARIES R>21、HCT R=21.51/I=20.93、MASTER <14.0（时间锚经 Lipunov+2007 VoR 表复核为 T0+1 h29 min）均已入库；GCN 4122（Mount John）仅证认无数值、GCN 4184（Henden）为场定标不入库；GCN 4125/4151 为 X 射线数据、按 §7 暂不处理。external/rssgrbag（Chandra & Frail 2012）有本源条目但 radio_ag_flag=N、lightcurve.jsonl 无行→无射电数据可补；external/grbsn_webtool 无该事件。ADS/SciX（API token 可用）摘要检索「GRB 051021A」/「GRB 051021」命中 16 篇全为 GCN Circular；全文检索另得 5 篇并逐篇核对（Panaitescu+2007 仅 X 射线 jet break、Guidorzi+2006 LT 表 4 无本暴行、Goad+2007 仅位置、Ovaldsen+2007 宿主候选、Lipunov+2007 MASTER 观测日志表）。Roming+2017 的 IOP VoR 页被 Radware 反爬拦截（详见 audit/unverified.tsv），列语义取自 arXiv v1、数值本体取自 MAST HLSP 官方机读产品。本 PR 共补 21 行、改 16 行（X 射线 21 行零改动）。",
+  "sub_tag": [
+    "XRR"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
+  },
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Lipunov+2007",
+      "url": "https://doi.org/10.1134/S1063772907120050",
+      "title": "Optical observations of gamma-ray bursts, the discovery of supernovae 2005bv, 2005ee, and 2006ak, and searches for transients using the MASTER robotic telescope",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ovaldsen+2007",
+      "url": "https://doi.org/10.1086/517962",
+      "title": "A Search for Host Galaxies of 24 Gamma-Ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Goad+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20078436",
+      "title": "Accurate early positions for Swift GRBs: enhancing X-ray positions with UVOT astrometry",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
