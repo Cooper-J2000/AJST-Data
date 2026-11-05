@@ -6,8 +6,8 @@
   ],
   "ra": 314.262392,
   "dec": 14.204406,
-  "T0": "2019-04-09T11:09:28Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2019-04-09T11:09:28.000Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2019-04-09 11:09:28.000；TNS 发现报告 2019TNSTR.615....1N（ZTF_AMPEL_COMPLETE 报告 33340）Discovery date 2019-04-09 11:09:28.000（JD 2458582.9649074）——两源一致给到毫秒，按 §3.2 采源精度写全（原 bot 值截断到秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,25 +16,47 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）目录行坐标 20:57:02.974 +14:12:15.86（J2000）＝TNS 发现报告坐标（RA=314.2623926/DEC=+14.2044063）；ATel 12960 e-MERLIN 中心 RA(J2000)=20:57:02.97、DEC=+14:12:15.86 同址；GCN 25929 表列 ZTF19aapreis 314.2623825/+14.2045431 同址",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告 2019TNSCR.772....1S（ePESSTO+，P. Short/M. Nicholl 等）：TDE z=0.0512（分类光谱 2019-05-13 ESO-NTT EFOSC2-NTT）；TDECat（Langis+2026）目录行同值 0.0512；ATel 12960 原文宿主「2MASX J20570298+1412165 (z=0.0512)」同值",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 8770 行。【身份核验（2026-11-05，TNS 对象页+TDECat 目录行+GCN 25929+ATel 12960 互证一致）】ra/dec＝TDECat 目录行 20:57:02.974 +14:12:15.86（J2000）＝TNS 发现报告 33340 坐标；alias ZTF19aapreis＝TNS internal name＝TDECat 目录行 Discovery internal name（ZTF 发现报告），ATLAS19klx＝ATLAS_Bot1 报告 34836 internal name；tag=tde：TNS 分类报告 2019TNSCR.772....1S（ePESSTO+，分类光谱 2019-05-13 ESO-NTT EFOSC2-NTT）判 TDE，TNS 前缀 2025-01-26 由 AT 更为 TDE；另与高能中微子 IceCube-191001A 空间位置成协（GCN 25929/Stein+2021，本库只记成协事实不做物理断言）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ZTF/P48）。【T0 口径】TDECat 目录行与 TNS 发现报告一致给 2019-04-09 11:09:28.000（毫秒），按 §3.2 采源精度写全（原 bot 值截断到秒）；本源为新建 lc（原零测光），无历史 X 射线行需随 T0 重算。【红移】z=0.0512＝TNS 分类报告＝TDECat 目录行＝ATel 12960 宿主值，redshift_type 由 value 改判 spec（分类光谱测得）。【测光入库 8770 行】＝TDECat 官方补充仓库 target_AT2019dsg_photometry.csv（Section 2: Photometry/Optical and Infrared，2026-11-05 下载，9875 行）去同历元同值双误差行 1408（§3.4 保留首行）、剔除 ASASSN 99.99 哨兵 2 行与 ATLAS(H) 2 行（波段名无法唯一判读，见待决）后 8463 行；+ TDECat UVOT 机读表 AT2019dsg_uvot_lightcurve.csv（39 行×6 波段，有效值 191 行）；+ TNS 对象页 phot 表 4 行（ZTF r 发现/探测 2 行、ATLAS o 上限 1 行+探测 1 行，差分成像纯瞬变）；+ GCN 25929 ZTF g=19.79±0.05 差分测光 1 行（IceCube-191001A 跟踪观测）；+ Stein+2021 表 S5 射电 46 行（VLA/AMI-LA/MeerKAT）+ ATel 12960 eMERLIN 5.07 GHz 2 行（含 3σ 上限 1 行）；+ Cendes+2021 表 1 VLA/ALMA 62 行（含 ALMA 97.5 GHz 3σ 上限 1 行）；+ Zenodo 数据包 at2019dsg_20171008.txt VLASS 3 GHz 3σ 上限 0.330 mJy（2017-10-08 quick-look 影像，爆发前档案）1 行。也就是说总行数含 8770 行。口径：TDECat/BHTom 编译行为总流量（含宿主星系核，非差分——2018 爆发前 ZTF r≈16.9/g≈17.7–18.0 与 ASASSN 长期基线即宿主水平可证，纯瞬变见 TNS phot/GCN 差分行，两类并存不互删 §3.4 非同值）；星等系统按 Langis+2026 §3.1（arXiv:2506.05476v2 实读）：ZTF/ATLAS/Pan-STARRS/ASAS-SN g/iPTF=AB，CRTS/ASAS-SN V/NEOWISE/Swift=Vega，Gaia 内部定标留空，LINEAR 未声明留空（无滤光片 CL→band=G）；UVOT 行已做银消光改正且未扣宿主（论文 §3.3 原文 All magnitudes were corrected for Galactic extinction、these data are not host subtracted）→ Gext_corr=y；ASASSN Error=-1.0 为缺测哨兵→误差留空（99.99 两行剔除）。TDECat 光变 CSV 分设施段落全档案入库（含 2010 ALLWISE、2011–2014 PTF、2014–2024 ASASSN/NEOWISE、2015–2024 ATLAS、2018–2024 ZTF 爆发前宿主+2019 爆发段；UVOT 2019 爆发段）。【检索留证（2026-11-05）】①仓内 gcn/archive 全文检索 AT2019dsg/ZTF19aapreis/2019dsg 命中 1 篇（GCN 25929，含该源 ZTF g=19.79±0.05 测光一行，已入库）；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准（另以 ADS 检索 GCN 类 Circular 无其他命中最热测光的通告）；③ADS API：AT2019dsg/AT 2019dsg/2019dsg 命中 45 篇——专文测光表取 Stein+2021（2021NatAs...5..510S，Zenodo 官方数据包+arXiv v2 表 S5）与 Cendes+2021（2021ApJ...919..127C，arXiv v2 表 1，nature.com/iopscience 出版商页整站不可达已登记 unverified.tsv）；④TNS 对象页已实际打开（发现/分类报告、测光表逐项核对）；TDECat GitHub 光度/UVOT CSV 已下载逐行核对；Langis+2026 星等系统与 UVOT 口径自 arXiv:2506.05476v2 §3.1/§3.3 实读（A&A DataDome 不可达，已登记 unverified.tsv）。结论：可用测光＝TDECat 机读表+TNS 对象页+GCN 25929+Stein+2021 表 S5/ATel 12960/Cendes+2021 表 1，补 8770 行。【未入库】TDECat X-ray 机读文件 AT2019dsg_xray_lightcurve.csv（发现 X 射线数据，按 §3.3/§7 暂不处理）；Zenodo 数据包中 2017-10-08 VLASS 3 GHz 3σ 上限 0.330 mJy（at2019dsg_20171008.txt，原文注明 VLASS quick look images）已单列入库（见上）；Stein+2021 Zenodo 包中 bran_marshal.csv（ZTF 差分流 147 行）与 UVOT/X 射线表与 TDECat 编译重叠，未重复入库。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "ingest_source": "scix_tdecat_20261104",
     "discovery_mag": "18.88",
-    "discovery_filter": "r-ZTF"
+    "discovery_filter": "r-ZTF",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L",
+      "url": "https://doi.org/10.1051/0004-6361/202554882",
       "source": "bot"
+    },
+    {
+      "name": "Stein+2021",
+      "title": "A tidal disruption event coincident with a high-energy neutrino",
+      "url": "https://doi.org/10.1038/s41550-020-01295-8",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Cendes+2021",
+      "title": "Radio Observations of an Ordinary Outflow from the Tidal Disruption Event AT2019dsg",
+      "url": "https://doi.org/10.3847/1538-4357/ac110a",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.0512,
+    "redshift_type": "spec",
+    "comment": "宿主星系 2MASX J20570298+1412165（TDECat 目录行 Host name；ATel 12960 原文「in the center of the galaxy 2MASX J20570298+1412165 (z=0.0512)」，瞬变位于该宿主核区，位置与视线一致）；红外 2MASS 星系，无独立测光列入",
+    "source": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行；ATel 12960"
+  }
 }
