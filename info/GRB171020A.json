@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB171020A",
-  "alias": [],
-  "ra": 39.2625,
-  "dec": 15.183333,
-  "T0": "2017-10-20T23:07:10Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 780845"
+  ],
+  "ra": 39.24837,
+  "dec": 15.20413,
+  "T0": "2017-10-20T23:07:10.751760Z",
+  "T0_ref": "GCN 22028（Swift/BAT 于 23:07:10 UT 触发，trigger=780845）；Swift/BAT 官方目录 trigger_time=2017-10-20T23:07:10.751760Z（仓内 external/swift_bat 快照，触发仪器精度优先）；external/konus_wind 快照独立给 2017-10-20T23:07:10.752Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +16,14 @@
   ],
   "pos_error": 1.6,
   "pos_ref": "GCN 22034",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 22039",
-  "comment": null,
+  "comment": "定位：原 ra/dec=39.2625,+15.183333 为 BAT 在轨定位（GCN 22028），pos_ref 原已指 GCN 22034，现按 GCN 22034 增强型 XRT 定位改 ra/dec=39.24837,+15.20413、pos_error=1.6″（radius, 90% containment，故 pos_error_confidence=90）；external/konus_wind 快照 39.24842,+15.20406 互证。 || T0：GCN 22028 整秒 23:07:10 UT，Swift/BAT 官方目录（trigger 780845）trigger_time=23:07:10.751760Z，按触发仪器目录精度取 T0=2017-10-20T23:07:10.751760Z（konus_wind 快照 .752Z 互证）；全表 mjd 已按 mjd=T0+time 重算（9 位小数），X 射线行仅机械重算 mjd、其余列未动。 || 红移：z=1.87 为 NOT/AlFOSC 余辉光谱吸收线红移（Mg II、Fe II、C IV 同一系统，GCN 22039），redshift_type=spec；非宿主星系光谱，宿主未证认、host_galaxy 不建。 || sub_tag：t90=41.856±9.191579 s（15–350 keV，Swift/BAT 官方目录快照 external/swift_bat；GCN 22038 精化分析 41.9±9.2 s 一致），按目录 t90 判 lgrb。 || alias「BAT 780845」为 Swift/BAT 与 Konus-Wind 官方目录 name_alt（仓内 external/swift_bat、external/konus_wind 快照原文用名）。 || 光变逐行核对（2026-11-06）：14 篇相关 GCN（22028–22042）全部打开核对。UVOT/TAROT 的 GCN 导入行 time 系统性偏 +467 s（与 GCN 22040 表 T_start/T_stop、GCN 22041 窗口不符），MMT 行取窗起点、RATIR 行取日期窗中点（+38 s/+16 s），均已按各通告原文窗口中点改正并补 time_err（半宽约定口径）；Dainotti 2024 转引行（grbLC color-evolution 分支 grblc/data/mag_files/171020A_mag.txt，2026-11-06 实取，28 行与本库 28 条 Dainotti 行一一对应、source 列均指 GCN）确证为同一次测量的转引——其 time 即各 GCN 窗口中点——按 §3.4 去重保留 GCN 原始行、删除 24 条转引行（22029/22030/22037/22040/22041/22042）；Zeiss-1000 与 Liverpool 仅存 Dainotti 转引行，保留并经 GCN 22031/22033 原文逐值核对；GCN 22028 初步 UVOT FC 上限 19.6 被 GCN 22040 精化 white_FC >20.6（同一曝光 147–297 s）取代，置 discard=y。新增 2 行：MMT V=10.5/V=12.0 上限（GCN 22030，区间 T0−422 s–T0+187 s，有时间锚点故入库）。 || 测光检索留证（2026-11-06）：仓内 gcn/archive 45 563 篇全文 grep「171020A」命中 14 篇（GCN 22028–22042，全部逐篇打开核对）；external/rssgrbag（射电光变 140 行/74 源）无该源、external/grbsn_webtool 无该事件、external/swift_grb（872 行，未含 2017-10 批次）/heasarc_grbcat/uvot_grb 快照无命中，external/swift_bat/konus_wind/mpe_greiner 仅目录参数无光变；外部：arXiv API all-field「171020A」0 命中，OpenAlex 题名检索 12 条全为 GCN 通告本身、全文检索命中 Becerra+2023（MNRAS 526, 3540, DOI 10.1093/mnras/stad2513, arXiv 2308.07882，PDF 实取）仅样本表 mention（trigger 780845）无该暴测光表，Crossref 题录检索 20 条无该暴专文；ADS/SciX API 无凭据 HTTP 401（单次验证不重试，通道受限已登记 audit/unverified.tsv，不据此作「无文献」结论）。结论：该源测光已由 GCN 22028–22042 全覆盖，无专文测光表；补 2 行。 || Dainotti+2024（arXiv 2405.02263，v3 投稿 MNRAS 未刊）与 Tsvetkova+2021（ApJ 908, 83）仅作目录参数/转引核对依据。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -79,7 +81,12 @@
         "v": 14.583972125435539
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
