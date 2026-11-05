@@ -1,22 +1,24 @@
 {
   "transient_id": "GRB000926A",
-  "alias": [],
-  "ra": 256.0625,
-  "dec": 51.766667,
-  "T0": "2000-09-26T23:49:33Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 000926"
+  ],
+  "ra": 256.040417,
+  "dec": 51.786111,
+  "T0": "2000-09-26T23:49:33.661Z",
+  "T0_ref": "GCN 801(IPN:Ulysses/Konus-Wind/NEAR 触发 85773 s UT=23:49:33);亚秒取 Konus-Wind 官方目录 Tsvetkova+2017 (ApJ 850,161):2000-09-26T23:49:33.661Z;GRBCAT 23:49:34(ECT,整秒舍入)互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Ulysses",
-  "redshift": 2.04,
+  "redshift": 2.0369,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 813(43 颗 USNO-A2.0 星天测:17h04m09s.71±0s.05,+51°47'10.0\"±0.5\")",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 851(Keck-II ESI 吸收线谱,Castro+2000);Harrison+2001 (ApJ 559,123)",
+  "comment": "pre-Swift IPN 暴(Ulysses/Konus-Wind/NEAR 同步探测,GCN 801;Trigger_Instrument 记 Ulysses)。位置:ra/dec 取 OT 精确位置(GCN 813,±0.5\",来源未标注置信水平);IPN 3σ 误差盒(GCN 801)中心 17h04m15.05s +51°46'34.9\"、面积约 35 平方角分;原库 dec=51.766667 系 Greiner 目录截断(+51°46')已改。红移并列值:Fynbo+2001 z=2.0375±0.0007、GRBCAT 2.0379±0.0008、GCN 807 初始 2.066(谱线误认,GCN 851 否定)、Dainotti+2024 舍入 2.04。t90=54.681±9.471 s(Konus-Wind 目录,Tsvetkova+2017),按目录 t90 判 lgrb。宿主已确证:HST WFPC2(GCN 1088)与 SAO 6-m SCORPIO(GCN 1091)在 OT 位置探测到致密节点/延展辐射;lc 尾部 137、140-148 行为宿主主导测光。lc 148 行逐行核对完成:GCN 801-851/871/1088/1091 全文 + Price+2001 (ApJ 549,L7) 表1 + Fynbo+2001 (A&A 373,796) 表1/表4 + Harrison+2001 (ApJ 559,123) 表1/表5 + Oksanen+2002 (JAAVSO 30,126) 表1 逐值核对;X 射线行 0 行。测光检索(2026-11-06):仓内 gcn/archive 命中 45 篇(39 篇与本源直接相关,逐篇判读,24 篇含测光/上限);OpenAlex 'GRB 000926 afterglow' 命中 282 条(研究文献:Price+2001、Fynbo+2001、Harrison+2001、Sagar+2001、Piro+2001[X 射线暂不处理] 等);arXiv e-print TeX 全文 4 篇逐表核对;CBAT IAUC 7505 页 HTTP 000 不可达;ADS/SciX 无 token(HTTP 401,单次验证,见 unverified.tsv)。新增 42 行(Harrison+2001 表5 射电 39 行 + Fynbo+2001 表4 UKIRT J/H/K 3 行);去重 discard:GCN806 preliminary 行、GCN819/816/818/Chandra&Frail 15GHz/22.5GHz 转引行共 5 行置 y,恢复 Price I/HST F606W/Fynbo INT i 三行误 discard(与原文核对一致)。修复:CONCAM/GCN804/816/819/821/844/1088 等窗口行改中点/半宽,time_err=0.0 占位清除,CFHT 同帧三口径(GCN 818/823/826/827/831)并存,FBAC 行日界修正。K' 波段(Fynbo+2001 表4 SUBARU K'=17.86±0.10 与 GCN 821 粗估 K'≈19)因 filters.json 无 K' 键未入库,见 PR 待决。",
   "sub_tag": [
     "lgrb"
   ],
@@ -65,7 +67,12 @@
         "v": 18.0
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
@@ -83,13 +90,6 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
-      "name": "Tsvetkova+2021",
-      "source": "bot",
-      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
-    },
-    {
       "bibtex": "@ARTICLE{2000astro0212S,\n       author = {R. Sagar and S. B. Pandey and V. Mohan and D. Bhattacharya and A. J. Castro-Tirado},\n       title = {GRB 000926 and its optical afterglow: Another evidence for non-isotropic emission},\n       journal = {Bull. Astr. Soc. India, vol. 29, pp. 1-13 (2001)},\n       year = {2001},\n       eprint = {astro-ph/0010212},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2000astro0212S/abstract},\n}",
       "name": "Sagar+2001",
       "source": "bot",
@@ -98,11 +98,42 @@
     },
     {
       "bibtex": "@ARTICLE{2000astro2303P,\n       author = {P. A. Price and F. A. Harrison and T. J. Galama and D. E. Reichart and T. S. Axelrod and E. J. Berger and J. S. Bloom and J. Busche and T. Cline and A. Diercks and S. G. Djorgovski and D. A. Frail and A. Gal-Yam and J. Halpern and J. A. Holtzman and M. Hunt and K. Hurley and B. Jacoby and R. Kimble and S. R. Kulkarni and N. Mirabal and G. Morrison and E. Ofek and O. Pevunova and R. Sari and B. P. Schmidt and D. Turnshek and S. Yost},\n       title = {Multi-Color Observations of the GRB000926 Afterglow},\n       journal = {arXiv e-prints},\n       year = {2000},\n       doi = {10.1086/319152},\n       eprint = {astro-ph/0012303},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2000astro2303P/abstract},\n}",
-      "name": "Price+2000",
-      "source": "bot",
-      "title": "Multi-Color Observations of the GRB000926 Afterglow",
-      "url": "https://ui.adsabs.harvard.edu/abs/2000astro2303P/abstract"
+      "name": "Price+2001",
+      "source": "wa1kmoon@zcode",
+      "title": "Multicolor Observations of the GRB 000926 Afterglow",
+      "url": "https://doi.org/10.1086/319152"
+    },
+    {
+      "name": "Fynbo+2001",
+      "url": "https://doi.org/10.1051/0004-6361:20010531",
+      "title": "The optical afterglow and host galaxy of GRB 000926 (A&A 373, 796)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Harrison+2001",
+      "url": "https://doi.org/10.1086/322368",
+      "title": "Broadband Observations of the Afterglow of GRB 000926: Observing the Effect of Inverse Compton Scattering and Evidence for the Underlying Host Galaxy (ApJ 559, 123)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Oksanen+2002",
+      "url": "https://articles.adsabs.harvard.edu/pdf/2002JAVSO..30..126O",
+      "title": "Gamma-Ray Burst Optical Afterglow Observations at Nyrola Observatory (JAAVSO 30, 126)",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Tsvetkova+2017",
+      "url": "https://doi.org/10.3847/1538-4357/aa96af",
+      "title": "The Konus-Wind Catalog of Gamma-Ray Bursts with Known Redshifts. I. Bursts Detected in the Triggered Mode (ApJ 850, 161)",
+      "source": "wa1kmoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 256.040417,
+    "dec": 51.786111,
+    "redshift": 2.0369,
+    "redshift_type": "spec",
+    "comment": "OT 位置致密节点,与 OT 位置一致;HST WFPC2(GCN 1088,R≈25)与 SAO 6-m SCORPIO B/V/Rc/Ic 测光(GCN 1091;对应 lc 行 141-148)确证;Fynbo+2001 (A&A 373,796) 定论;宿主测光见 lc 尾部各行",
+    "source": "GCN 1088; GCN 1091; Fynbo+2001 (A&A 373, 796)"
+  }
 }
