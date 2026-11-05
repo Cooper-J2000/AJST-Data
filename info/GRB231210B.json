@@ -1,32 +1,41 @@
 {
   "transient_id": "GRB231210B",
-  "alias": [],
-  "ra": 95.7958,
-  "dec": -48.3722,
-  "T0": "2023-12-10T13:15:50Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB231210.90",
+    "BAT 1201696",
+    "AT2023zlu"
+  ],
+  "ra": 95.7947,
+  "dec": -48.37226,
+  "T0": "2023-12-10T21:29:04.499760Z",
+  "T0_ref": "GCN 35314（Swift/BAT 触发通告：At 21:29:04 UT, the Swift BAT triggered and located GRB 231210B (trigger=1201696)，整秒精度）；亚秒取触发仪器官方目录 external/swift_bat（在线版 batgrbcat，Lien+2016 体系）Trig_time_UTC=2023-12-10T21:29:04.499760",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 3.13,
   "tag": [
     "grb"
   ],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 35314",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 35359",
-  "comment": null,
+  "pos_error": 2.2,
+  "pos_ref": "GCN 35318",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 35317",
+  "comment": "审核 Rusty-Harpoon@zcode 2026-11-06。身份：GRB 231210B = Swift/BAT trigger 1201696，2023-12-10T21:29:04 UT 触发（GCN 35314；external/swift_bat batgrbproduct 触发时刻 21:29:04.499760Z、BAT 地面位 95.80293/−48.33463 ±1.76′；external/swiftgrbba 21:29:04.000Z 同秒互证；MeerLICHT GCN 35323『202 seconds post-trigger』自 21:32:26 UT 反算 21:29:04 一致；MASTER 数据库页 GRB231210.90/Trignum 1201696，2026-11-06 取数；同页明示「also TNS: AT2023zlu」→ AT2023zlu 为 TNS 用名（2026-11-06 实抓））。与同日 GRB 231210A（Fermi/GBM trigger 723906955/bn231210553，触发 2023-12-10T13:15:50.511Z，RA,Dec=137.9,+10.3，GCN 35310；external/fermi_gbm trigger_time=13:15:50.511Z 同值互证；库内无该源条目）严格区分——原 info T0=2023-12-10T13:15:50Z 即 231210A 的 GBM 触发时刻（gcn_llm_extract 跨源误植，Issue #84 同类），bot 原值与 extra_data.t0_note『t0 为 meta trigger-time（真实触发时刻）』、t0_basis『meta_trigger』随之失效，改写如 extra_data、原值留本条备查。T0：改取触发仪器 Swift/BAT 之值 21:29:04.499760Z（GCN 35314 整秒 + external/swift_bat 亚秒，整秒互证：swiftgrbba 21:29:04.000、MASTER/MeerLICHT 反算 21:29:04）；Konus-Wind 自触发 T0=21:29:07.988（GCN 35359）系其自身触发、晚 3.99 s，备查；无 T0_offset。改 T0 后 lc 全表 time/mjd 按 mjd=T0+time 重算（本源无 band 为能量串的 X 射线行）。Trigger_Instrument 原 'Swift' 按 Swift/BAT 触发细化。定位：原 ra/dec=95.7958/−48.3722 与 pos_ref=GCN 35314 不自洽（GCN 35314 增强 XRT 位实为 95.79386/−48.37201±1.9″；95.7958/−48.3722 实为 GCN 35316 LCOGT OT 位 95.79582/−48.37219 一带），改用 GCN 35318 天测改正 XRT 位 RA,Dec=95.79470,−48.37226、2.2″、原文显式 90% confidence → pos_error_confidence=90；备查：GCN 35314 增强位 95.79386/−48.37201（1.9″，90%）、GCN 35322 BAT 地面位 95.803/−48.335（1.8′，90%）、UKSSDC SPER 页最终增强位 06h23m11.35s/−48d22′17.6″（1.9″，90% conf，页注 2023-12-11 09:46 更新，2026-11-06 取数）、external/swiftgrbba xrt 位 95.79588/−48.372±1.9″、LCOGT OT 位 95.79582/−48.37219（GCN 35316）。红移：z=3.13 为 VLT/X-shooter 吸收线光谱红移（GCN 35317：Lyα 宽吸收 + NV/SiII/SII/OI/CII/ZnII/FeII/AlII/CIV/SiIV 等共吸收系统）→ redshift_type=spec、redshift_ref=GCN 35317（原值 'gcn_llm:circulars_meta; GCN 35359' 中 GCN 35359 仅为引用该红移算 Eiso 的 Konus 通告）。分类：Swift/BAT 精化分析 T90=7.47±0.65 s（15-350 keV，GCN 35322；external/swift_bat t90=7.472±0.648 s 同值）→ 按目录 t90 判 lgrb；Konus-Wind 通告自称 'The long GRB 231210B'（GCN 35359）同判；ATCA 通告首句 'short GRB 231210B'（GCN 35358）与上述矛盾、系孤立用词（T90=7.47 s 明确 >2 s），不采纳、备查。alias：GRB231210.90＝GCN 35312/35313 原文用名 'Swift GRB231210.90'（MASTER 数据库页同名）；BAT 1201696＝external/swift_bat（Swift/BAT 目录）name_alt 字段、GCN 35314/35322 原文 trigger=1201696。伽马参数备查：BAT fluence 1.4±0.2e-6 erg/cm²（15-150 keV）、1-s peak 3.9±0.7 ph/cm²/s（GCN 35322）；Konus fluence (4.02±0.56)e-6 erg/cm²、Ep=174 keV（20 keV–10 MeV，GCN 35359）。测光备注：原 14 行逐行溯源核对（GCN 35316/35333/35317/35406/35358/35433），数值全部与原文一致，仅按新 T0 重锚 time/mjd 并按 §3.8 补中点/半跨口径；Harlingten 50cm 3 行（GCN 35406）被 GCN 35433 否证——该 Greenhill 源与 0.4″ 外亮星混合、属 DESI 星表恒星、远离增强 XRT 位置、与 GRB 231210B 无关 → 置 discard=y（数值保持原样，不删除）；Swift/UVOT 仅 White FC 150 s（T+462 s 起，像模糊，无星等数值，GCN 35314），无 UVOT 测光可入库；MAST HLSP uvotgrb（noc-db，Roming+2017）仅覆盖 2005-01-17–2010-12-25 的 GRB、不含本源（2026-11-06 核对）；Swift/XRT 测光（GCN 35319 精化分析、UKSSDC Burst Analyser）为 X 射线数据，按 §3.3 暂不入库。测光检索（2026-11-06）：仓内 gcn/archive 45947 篇全文检索，按源名命中本源 12 篇（35314/35316/35317/35318/35319/35322/35323/35333/35358/35359/35406/35433），另按触发号 1201696 复检索出 GCN 35312/35313（标题用名 'Swift GRB231210.90'，源名检索漏检），共 14 篇逐篇核对原文；35310/35315 为同日 GRB 231210A（Fermi），与本源无关；external/rssgrbag（Chandra & Frail 2012 射电光变 140 行/74 源）、external/grbsn_webtool（63 事件）、external/uvot_grb（626 源目录级参数）均无本源记录；GCN 站（gcn.nasa.gov/circulars）按源名/触发号未检出仓外通告；ADS/SciX 检索 'GRB 231210B'（12 命中，均为 GCN 通告）与全文检索 full:\"231210B\"（14 命中＝上述 GCN + Qu+2025 MNRAS 540 L6 'Pieces of evidence for multiple progenitors of Swift long GRBs' 样本论文 + Muccino+2026 arXiv Combo 相关性论文，均无本源测光表）、arXiv 元数据检索 '231210B' 0 命中（2026-11-06 取数）→ 已补 MASTER 检测 1 行（GCN 35313）+ MASTER 偏振片上限 6 行（GCN 35312）+ MeerLICHT 6 行（GCN 35323），共 13 行；TNS 不适用（全库无 AT/SN 命名记载）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "T0=Swift/BAT 触发 2023-12-10T21:29:04.499760Z（GCN 35314 整秒 + external/swift_bat 亚秒）；原 bot 值 2023-12-10T13:15:50Z 为同日 GRB231210A 之 Fermi/GBM 触发时刻（gcn_llm_extract 跨源误植），原文留 info comment 备查",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [],
   "host_galaxy": null
