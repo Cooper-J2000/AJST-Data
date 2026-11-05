@@ -37,12 +37,12 @@ Higgins+2017 是 INTEGRAL IBAS WEAK（亚阈值）触发的 Swift ToO 专篇研�
 
 VoR（OUP）不可达：academic.oup.com 直连 HTTP 000（连接失败，两次）、CDS VizieR
 J/MNRAS/470/314 HTTP 000、archive.org HTTP 000。本卡信息取自 arXiv v2（1705.06744，
-2026-06-09 更新的接受后版本；arXiv 元数据确认 DOI），表号为 arXiv v2 编号，VoR 表号未核。
+2017-06-09 更新的接受后版本；arXiv 元数据确认 DOI），表号为 arXiv v2 编号，VoR 表号未核。
 登记见 `audit/unverified.tsv`（GRB091111 行，PR #911）。
 
 ## 待决
 
-- 库外源 GRB150305A（本文确认的新 GRB，有 UVOT uvw1/uvm2 上限与 XRT 探测）与 IGRW151019
-  （AGN 候选）不在库内：本 PR 范围所限未开 new-source Issue，是否建源由维护者裁定。
+- 库外源 GRB150305A（本文确认的新 GRB，有 UVOT uvw1/uvm2 上限与 XRT 探测）：已按
+  §3.11 第 5 条开 new-source Issue #917，是否建源由维护者裁定。IGRW151019（AGN 候选）不建议建源。
 - 其余库外 IGRW 触发（160610/150903/150610/130904/110718/110608）仅 XRT 非探测、无增量数值，
   不建议建源。
