@@ -17,18 +17,18 @@
     "grb"
   ],
   "pos_error": 1.9,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 12034",
   "redshift_type": null,
   "redshift_ref": null,
   "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份核验:Swift/BAT trigger 453788(GCN 12031),trigger_time/坐标/仪器与仓内 BATGRBCAT、HEASARC SWIFTGRB、SWIFTGRBBA 快照互证一致;与同日他暴(GRB 110520A 等)通告逐条区分,无混淆。alias 出处:GRB 110521A 为 GCN 12031 等通告原文用名;BAT 453788 为 BATGRBCAT name_alt;Swift 453788 为 HEASARC SWIFTGRB name_alt。T0 口径:取触发仪器官方目录 Swift/BAT GRB Catalog 亚秒值 15:51:31.455260Z,与 GCN 12031(15:51:31.45 UT)整数秒一致;原 T0=15:51:31.400000Z 源自 HEASARC SWIFTGRBBA 编译表 trigger_time(优先级低,差 55 ms<1 s,不设 T0_offset,按亚秒差直接改锚 T0,§3.2/§3.8);全表 mjd 已按 mjd=T0+time 重算自洽(含 band=10keV 的 X 射线行,仅动 mjd 列,§3.3 例外条款)。定位:GCN 12034 为 XRT astrometric 精化位 RA,Dec=120.13290,+45.82658,误差 1.9 arcsec(radius,90% confidence,circular 明示,故 pos_error_confidence=90);原 ra/dec 120.132,+45.818 实为 GCN 12035 BAT 地面位(误差 1.8 arcmin,90% containment),与原 pos_ref=GCN 12034 不符,已改锚精化位;UKSSDC 最终位 RA,Dec=120.13296,+45.82692(1.8 arcsec,仓内 swiftgrbba 快照 xrt_ra/xrt_dec)列此备查。t90=13.8±3.3 s(15-350 keV,GCN 12035 人工精化分析),swiftgrbba 表 t90=13.8 s(15-150 keV)一致;但 BATGRBCAT t90=96.0±49.04 s(15-350 keV)与 HEASARC SWIFTGRB t90=96.0 s(15-150 keV)与之冲突——来源间冲突,sub_tag 按契约留空待决(§3.9)。测光检索(2026-11-04):仓内 gcn/archive 全文检索命中 8 篇(GCN 12031/12033/12034/12035/12036/12038/12039/12040,全部通读;含可用光学测光数值的 4 篇:12031/12033/12036/12039);external/rssgrbag 射电光变(Chandra & Frail 2012)与 external/grbsn_webtool 均无本源记录,external/uvot_grb 快照未收录该源;外部:OpenAlex 题录检索命中 7 条(6 条为 GCN 通告本身,1 篇研究文献 Eyles-Ferris & Starling 2023,DOI 10.1093/mnras/stad2023,LOFAR LoTSS 宿主搜寻,无本源时序测光);Crossref 检索无特异性命中;arXiv API 元数据检索 0 命中;ADS/SciX 无 API token(实测 HTTP 401),检索通道受限,已登记 audit/unverified.tsv(search-limited),不据此断言无文献。共补 UVOT 上限 9 行(GCN 12039 全表:white/u FC 两行+white/v/b/u/uvw1/uvm2/uvw2 coadd 七行)与 MASTER-II 上限 1 行(GCN 12033);GCN 12031 UVOT 初报典型 3σ 限 ~19.6 mag 被 GCN 12039 实测限 >20.4 取代(链条见该行 comment);GCN 12040 MASTER-VWFC coadd 限 12.7 mag 原文仅称 'images before, during and after GRB'(各 5 s),无明确单值时刻锚点,不入库备查;VWFC 单图限 12.0 mag 同理。X 射线 Swift/XRT 数据(10 行,band=10keV,UKSSDC Burst Analyser)按契约不审核,仅随 T0 改锚机械重算 mjd。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "audit": {
-      "status": "reviewed",
       "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-04"
+      "date": "2026-11-04",
+      "status": "reviewed"
     }
   },
   "articles": [],

@@ -6,7 +6,7 @@
   ],
   "ra": 268.42,
   "dec": 3.81,
-  "T0": "2021-05-10T04:50:10.730Z",
+  "T0": "2021-05-10T04:50:10.730000Z",
   "T0_ref": "GCN 29976（IceCube 官方通告：On 21/05/10 at 04:50:10.73 UT IceCube detected a track-like event，源精度 2 位小数、按校验器要求写 3 位 .730 不虚增）；AMON 原始通告 gcn.gsfc.nasa.gov/notices_amon_g_b/135270_69188496.amon（RUN 135270/EVENT 69188496，rev0）DISCOVERY_TIME 19344 TJD 17410 SOD {04:50:10.73} UT（2026-11-04 实读，与通告亚秒逐位一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -14,7 +14,6 @@
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_error_confidence": "90",
   "pos_ref": "GCN 29976（IceCube 离线精化方向）：RA=268.42 (+1.47, -1.60 deg 90% PSF containment) J2000、Dec=3.81 (+0.68, -0.64 deg 90% PSF containment) J2000——不对称区间不适配圆半径，pos_error 留空、四向不对称值照录（沿用仓内已审 IceCube 条目惯例）；AMON rev0 单值 SRC_ERROR 30.80′=1848.0″（stat-only，90% containment）、SRC_ERROR50 12.00′ 备查，初版 rev0 定位 267.9106/+4.0004；库内 ra/dec=268.42/3.81 与精化值逐位一致（保留）",
   "redshift_type": null,
   "redshift_ref": null,
@@ -23,22 +22,22 @@
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true,
     "audit": {
-      "status": "reviewed",
       "auditor": "fsy",
-      "date": "2026-11-04"
-    }
+      "date": "2026-11-04",
+      "status": "reviewed"
+    },
+    "bot_created": true,
+    "src": "gcn_llm_extract",
+    "t0_basis": "meta_trigger",
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
   },
   "articles": [
     {
       "name": "Stein+2023",
-      "url": "https://doi.org/10.1093/mnras/stad767",
+      "source": "fsy",
       "title": "Neutrino follow-up with the Zwicky Transient Facility: Results from the first 24 campaigns",
-      "source": "fsy"
+      "url": "https://doi.org/10.1093/mnras/stad767"
     }
   ],
   "host_galaxy": null

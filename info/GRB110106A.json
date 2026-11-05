@@ -22,22 +22,22 @@
   "comment": "审核（wa1kmoon@zcode 2026-11-04，audit/GRB110106A）。(1) 身份：Swift/BAT 触发 trigger=441664、15:25:16 UT（GCN 11520），XRT/BAT/UVOT 全部通告一致；同日他暴划界：GRB110106B 为 Fermi/GBM 触发 316041978、21:26:16 UT（GCN 11543，Swift/BAT 441676，GCN 11525），与本源 15:25:16 UT/RA 79.3 不相混；alias「BAT 441664」「Swift 441664」取自仓内 swift_bat/swift_grb 目录快照 name_alt。(2) 定位：原 ra/dec=79.295/64.199 系 GCN 11527 的 BAT 地面定位（2.0′，90%），却配 GCN 11526 的 1.8″ 误差，坐标与误差错配（bot 导入残留，姊妹源 GRB110106B 同型）；已改 GCN 11526 增强 XRT 位置 RA,Dec=79.30578,+64.17349（1.8″，radius，90% confidence → pos_error_confidence=90）；swiftgrbba 快照 xrt_ra=79.30621/xrt_dec=64.17358 一致。(3) T0：GCN 11520 触发 15:25:16 UT；Swift/BAT GRB Catalog（batgrbcat）trigger_time=2011-01-06T15:25:16.214380Z（仓内快照），按触发仪器目录亚秒值采纳；原 T0 截断至整秒，已改，并全表重算 mjd=T0+time（含 9 行 10keV X 射线行，仅动 mjd 列）。(4) 分类：t90=4.3±1.1 s（15-350 keV，GCN 11527）；3.97 s（15-150 keV，HEASARC SWIFTGRB）；3.0±1.4 s（Swift/BAT GRB Catalog）——按目录 t90 判 lgrb；GCN 11542 标题称 Short GRB、GCN 11530 称大偏移更像短暴但被时长排除，均与 t90>2 s 矛盾，取 lgrb。(5) 红移/宿主：TNG 对误差圈外 7.3±3.6″ 星系测得 z=0.093（GCN 11530），圈心距星系核 4.3″、关联未确立 → redshift 置空、host_galaxy 不建（候选宿主），z=0.093 与星系测光 R=18.2/K=14.9 记于对应 lc 行 comment（discard=y）。(6) 测光：逐行对 GCN 11520/11521/11524/11531/11535/11536/11539/11593 钟面时刻核对；UVOT（GCN 11531 九行）与 AZT-11、TNG 行改曝光中点口径并补 time_err，UVOT 系 Poole+2008 Vega 系统推定记 Vega，MITSuME/MASTER/TNT/TNG R/ISAS-Kanazawa 原文未声明系统留空；GCN 11524 两条 R 行（星系 18.2、圈外候选 24.5）与 GCN 11539 K=14.9 行确证非 OT，置 discard；新增 GCN 11542 MASTER-II 表 15 行（14 上限+1 marginal OT 16.0±0.5）、GCN 11580 CARMA 92 GHz 上限 4.1 mJy（原文 Jan. 16.827 UT 判读为 Jan 6 16.827 h=16:49:37 UT，与括注 84 min after the burst 相符）；X 射线 9 行（10keV）未审核，仅随 T0 机械重算 mjd。(7) 测光检索（2026-11-04）：仓内 gcn/archive 全文命中 15 篇（11520/11521/11523/11524/11526/11527/11529/11530/11531/11535/11536/11539/11542/11580/11593，逐篇判读；11893 文内 GRB 编号系 110406A 误写，不计入本源）；OpenAlex 命中 12 条（除 GCN 外仅 Gorbovskoy+2013 与 IceCube 样本文，无新研究文献）；arXiv API、Crossref 无 110106A 题录命中；external/rssgrbag、grbsn_webtool 无本源记录；ADS/SciX 无 token（HTTP 401），已登记 audit/unverified.tsv（search-limited，不得当「无文献」）；Gorbovskoy+2013（arXiv 1305.1620）全文多通道取不到（arxiv.org 502、export 404、Springer 连接失败），未能核对其是否含本源测光表，已登记 unverified.tsv；→ 共补 16 行（15 MASTER+1 CARMA）。；sub_tag 留空：batgrbcat t90=3.0±1.4 s（→lgrb）与 GCN 11542 标题 \"Short GRB 110106A\"（→sgrb）构成 §3.9 点名的「目录 t90 与通告分类矛盾」冲突，留空待维护者裁定（2026-11-04 核查修正）",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "audit": {
-      "status": "reviewed",
       "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-04"
+      "date": "2026-11-04",
+      "status": "reviewed"
     }
   },
   "articles": [
     {
-      "name": "Gorbovskoy+2013",
-      "title": "The MASTER-II network of robotic optical telescopes. First results",
-      "url": "https://ui.adsabs.harvard.edu/abs/2013ARep...57..233G",
       "bibtex": "@ARTICLE{2013ARep...57..233G,\n       author = {{Gorbovskoy}, E.~S. and {Lipunov}, V.~M. and {Kornilov}, V.~G. and {Belinski}, A.~A. and {Kuvshinov}, D.~A. and {Tyurina}, N.~V. and {Sankovich}, A.~V. and {Krylov}, A.~V. and {Shatskiy}, N.~I. and {Balanutsa}, P.~V. and {Chazov}, V.~V. and {Kuznetsov}, A.~S. and {Zimnukhov}, A.~S. and {Shumkov}, V.~P. and {Shurpakov}, S.~E. and {Senik}, V.~A. and {Gareeva}, D.~V. and {Pruzhinskaya}, M.~V. and {Tlatov}, A.~G. and {Parkhomenko}, A.~V. and {Dormidontov}, D.~V. and {Krushinsky}, V.~V. and {Punanova}, A.~F. and {Zalozhnyh}, I.~S. and {Popov}, A.~A. and {Burdanov}, A. Yu. and {Yazev}, S.~A. and {Budnev}, N.~M. and {Ivanov}, K.~I. and {Konstantinov}, E.~N. and {Gress}, O.~A. and {Chuvalaev}, O.~V. and {Yurkov}, V.~V. and {Sergienko}, Yu. P. and {Kudelina}, I.~V. and {Sinyakov}, E.~V. and {Karachentsev}, I.~D. and {Moiseev}, A.~V. and {Fatkhullin}, T.~A.},\n        title = \"{The MASTER-II network of robotic optical telescopes. First results}\",\n      journal = {Astronomy Reports},\n     keywords = {Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2013,\n        month = apr,\n       volume = {57},\n       number = {4},\n        pages = {233-286},\n          doi = {10.1134/S1063772913040033},\narchivePrefix = {arXiv},\n       eprint = {1305.1620},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2013ARep...57..233G},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "name": "Gorbovskoy+2013",
+      "source": "bot",
+      "title": "The MASTER-II network of robotic optical telescopes. First results",
+      "url": "https://ui.adsabs.harvard.edu/abs/2013ARep...57..233G"
     }
   ],
-  "host_galaxy": null,
-  "pos_error_confidence": "90"
+  "host_galaxy": null
 }

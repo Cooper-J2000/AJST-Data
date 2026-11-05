@@ -42,7 +42,7 @@ python3 tools/validate.py
 
 1. `info/<id>.json`：按 [SCHEMA.md](SCHEMA.md) §2 的字段契约。**全部规范键都要写**，
    无值的写 `null`（列表写 `[]`）；`<id>` 只允许字母数字，且与 `transient_id` 一致。
-2. `lc/<id>.csv`（可选）：按 SCHEMA.md §3 的 24 列契约，表头顺序固定。
+2. `lc/<id>.csv`（可选）：按 SCHEMA.md §3 的 25 列契约，表头顺序固定。
 3. 数据必须可溯源：`articles` 填文献（`name`/`url`），光变行 `reference` 列填出处。
    抓取/整理自其它目录时在 `extra_data` 注明来源（如 `{"src": "..."}`）。
 4. 提交前本地跑 `tools/validate.py`，必须 0 错误。

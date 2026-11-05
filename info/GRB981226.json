@@ -28,82 +28,82 @@
   "pos_error_confidence": null,
   "extra_data": {
     "audit": {
+      "auditor": "Rusty-Harpoon@zcode",
       "date": "2026-10-28",
-      "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode"
+      "status": "reviewed"
     }
   },
   "articles": [
     {
-      "name": "Frail+1999",
-      "title": "The Radio Afterglow and the Host Galaxy of the X-Ray Rich GRB 981226",
-      "url": "https://ui.adsabs.harvard.edu/abs/1999astro9407F/abstract",
       "bibtex": "@ARTICLE{1999astro9407F,\n       author = {D. A. Frail and S. R. Kulkarni and J. S. Bloom and S. G. Djorgovski and V. Gorjian and R. R. Gal and J. Meltzer and R. Sari and F. H. Chaffee and R. W. Goodrich and F. Frontera and E. Costa},\n       title = {The Radio Afterglow and the Host Galaxy of the X-Ray Rich GRB 981226},\n       journal = {arXiv e-prints},\n       year = {1999},\n       doi = {10.1086/312347},\n       eprint = {astro-ph/9909407},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/1999astro9407F/abstract},\n}",
-      "source": "bot"
+      "name": "Frail+1999",
+      "source": "bot",
+      "title": "The Radio Afterglow and the Host Galaxy of the X-Ray Rich GRB 981226",
+      "url": "https://ui.adsabs.harvard.edu/abs/1999astro9407F/abstract"
     },
     {
-      "name": "Christensen+2005",
-      "title": "Photometric redshift of the GRB 981226 host galaxy",
-      "url": "https://ui.adsabs.harvard.edu/abs/2005ApJ....63....1C/abstract",
       "bibtex": "@ARTICLE{2005ApJ....63....1C,\n       author = {L. Christensen and J. Hjorth and J. Gorosabel},\n       title = {Photometric redshift of the GRB 981226 host galaxy},\n       journal = {Astrophys.J. 631 (2005) L29-L32},\n       year = {2005},\n       doi = {10.1086/497005},\n       eprint = {astro-ph/0508227},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2005ApJ....63....1C/abstract},\n}",
-      "source": "bot"
+      "name": "Christensen+2005",
+      "source": "bot",
+      "title": "Photometric redshift of the GRB 981226 host galaxy",
+      "url": "https://ui.adsabs.harvard.edu/abs/2005ApJ....63....1C/abstract"
     },
     {
+      "bibtex": "@ARTICLE{2012ApJ...746..156C,\n       author = {{Chandra}, Poonam and {Frail}, Dale A.},\n        title = \"{A Radio-Selected Sample of Gamma Ray Burst Afterglows}\",\n      journal = {\\apj},\n         year = 2012,\n        month = feb,\n       volume = {746},\n         eid = {156},\n       pages = {156},\n         doi = {10.1088/0004-637X/746/2/156},\narchivePrefix = {arXiv},\n       eprint = {1110.4124},\n}",
       "name": "Chandra+2012",
       "title": "A Radio-Selected Sample of Gamma Ray Burst Afterglows",
-      "url": "https://arxiv.org/abs/1110.4124",
-      "bibtex": "@ARTICLE{2012ApJ...746..156C,\n       author = {{Chandra}, Poonam and {Frail}, Dale A.},\n        title = \"{A Radio-Selected Sample of Gamma Ray Burst Afterglows}\",\n      journal = {\\apj},\n         year = 2012,\n        month = feb,\n       volume = {746},\n         eid = {156},\n       pages = {156},\n         doi = {10.1088/0004-637X/746/2/156},\narchivePrefix = {arXiv},\n       eprint = {1110.4124},\n}"
+      "url": "https://arxiv.org/abs/1110.4124"
     }
   ],
   "host_galaxy": {
+    "comment": "射电余辉 VLA J232937.2-235553 位置处延展星系（Frail+1999：距射电余辉 0.55″ 西、0.41″ 南，文中判为宿主）；z_phot=1.11±0.06（Christensen+2005，HyperZ）。星系中心坐标未逐值发表（仅给相对射电源偏移），故 ra/dec 略去。GCN 190（NOT 组合像 R=22.9±0.1）当时把 Castro-Tirado 候选体位置的源疑为宿主，后被证伪，不采用。",
+    "photometry": [
+      {
+        "band": "R",
+        "mag": 24.85,
+        "mag_err": 0.06,
+        "mag_sys": "Vega",
+        "source": "Frail+1999, ApJ, 525, L81（Keck，1.1″ 孔径，Landolt Mark A 定标）"
+      },
+      {
+        "band": "CL",
+        "mag": 25.04,
+        "mag_err": 0.07,
+        "mag_sys": "AB",
+        "source": "GCN 749（HST/STIS 50CCD clear，7865 s，约暴后 555 d）"
+      },
+      {
+        "band": "LP",
+        "mag": 24.5,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "GCN 749（HST/STIS F28X50LP，7909.63 s，约暴后 558 d）"
+      },
+      {
+        "band": "V",
+        "mag": 24.8,
+        "mag_err": 0.08,
+        "mag_sys": "Vega",
+        "source": "GCN 749（Johnson 系统，Walker 1994 定标）"
+      },
+      {
+        "band": "R",
+        "mag": 24.3,
+        "mag_err": 0.11,
+        "mag_sys": "Vega",
+        "source": "GCN 749（Kron-Cousins 系统）"
+      },
+      {
+        "band": "R",
+        "mag": 24.8,
+        "mag_err": 0.1,
+        "mag_sys": "Vega",
+        "source": "GCN 1032（VLT/FORS1 Rc，2″ 孔径，2000-10-04/05，未做银河消光改正 A_R=0.06）"
+      }
+    ],
     "redshift": 1.11,
     "redshift_err": 0.06,
     "redshift_type": "phot",
-    "photometry": [
-      {
-        "mag": 24.85,
-        "band": "R",
-        "source": "Frail+1999, ApJ, 525, L81（Keck，1.1″ 孔径，Landolt Mark A 定标）",
-        "mag_err": 0.06,
-        "mag_sys": "Vega"
-      },
-      {
-        "mag": 25.04,
-        "band": "CL",
-        "source": "GCN 749（HST/STIS 50CCD clear，7865 s，约暴后 555 d）",
-        "mag_err": 0.07,
-        "mag_sys": "AB"
-      },
-      {
-        "mag": 24.5,
-        "band": "LP",
-        "source": "GCN 749（HST/STIS F28X50LP，7909.63 s，约暴后 558 d）",
-        "mag_err": 0.1,
-        "mag_sys": "AB"
-      },
-      {
-        "mag": 24.8,
-        "band": "V",
-        "source": "GCN 749（Johnson 系统，Walker 1994 定标）",
-        "mag_err": 0.08,
-        "mag_sys": "Vega"
-      },
-      {
-        "mag": 24.3,
-        "band": "R",
-        "source": "GCN 749（Kron-Cousins 系统）",
-        "mag_err": 0.11,
-        "mag_sys": "Vega"
-      },
-      {
-        "mag": 24.8,
-        "band": "R",
-        "source": "GCN 1032（VLT/FORS1 Rc，2″ 孔径，2000-10-04/05，未做银河消光改正 A_R=0.06）",
-        "mag_err": 0.1,
-        "mag_sys": "Vega"
-      }
-    ],
-    "comment": "射电余辉 VLA J232937.2-235553 位置处延展星系（Frail+1999：距射电余辉 0.55″ 西、0.41″ 南，文中判为宿主）；z_phot=1.11±0.06（Christensen+2005，HyperZ）。星系中心坐标未逐值发表（仅给相对射电源偏移），故 ra/dec 略去。GCN 190（NOT 组合像 R=22.9±0.1）当时把 Castro-Tirado 候选体位置的源疑为宿主，后被证伪，不采用。",
     "source": "Frail+1999, ApJ, 525, L81；Christensen+2005, ApJ, 631, L29；GCN 749；GCN 1032"
   }
 }

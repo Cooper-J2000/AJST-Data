@@ -28,31 +28,31 @@
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "src": "gcn_llm_extract",
     "audit": {
+      "auditor": "wa1kmoon@zcode",
       "date": "2026-10-29",
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode"
+      "status": "reviewed"
     },
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "bot_created": true,
+    "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
   },
   "articles": [
     {
-      "name": "Soderberg+2005",
-      "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
-      "url": "https://doi.org/10.1086/430405",
       "bibtex": "@ARTICLE{2005ApJ...627..877S,\n       author = {{Soderberg}, A.~M. and {Kulkarni}, S.~R. and {Fox}, D.~B. and {Berger}, E. and {Price}, P.~A. and {Cenko}, S.~B. and {Howell}, D.~A. and {Gal-Yam}, A. and {Leonard}, D.~C. and {Frail}, D.~A. and {Moon}, D. and {Chevalier}, R.~A. and {Hamuy}, M. and {Hurley}, K.~C. and {Kelson}, D. and {Koviak}, K. and {Krzeminski}, W. and {Kumar}, P. and {MacFadyen}, A. and {McCarthy}, P.~J. and {Park}, H.~S. and {Peterson}, B.~A. and {Phillips}, M.~M. and {Rauch}, M. and {Roth}, M. and {Schmidt}, B.~P. and {Shectman}, S.},\n        title = \"{An HST Search for Supernovae Accompanying X-Ray Flashes}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, Radiation Mechanisms: Nonthermal, X-Rays: Bursts, Astrophysics},\n         year = 2005,\n        month = jul,\n       volume = {627},\n       number = {2},\n        pages = {877-887},\n          doi = {10.1086/430405},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0502553},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2005ApJ...627..877S},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "bot"
+      "name": "Soderberg+2005",
+      "source": "bot",
+      "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
+      "url": "https://doi.org/10.1086/430405"
     }
   ],
   "host_galaxy": {
-    "ra": 312.067071,
+    "comment": "宿主为 X 射线余辉所在的分辨星系复合体（Soderberg+2005 §3.2.1：afterglow associated with a resolved galaxy complex, z=0.2146；GCN 2627 发射线光谱）；坐标为余辉定位 CXOU J204816.1-401108（= 复合体东北星系），宿主质心未单独给出。宿主亮度下限 R~17.9（GCN 2638，宿主亮于 R≈17.9，属宿主测光、非余辉；见 lc 中 discard=y 行）。",
     "dec": -40.185786,
+    "ra": 312.067071,
     "redshift": 0.2146,
     "redshift_type": "spec",
-    "comment": "宿主为 X 射线余辉所在的分辨星系复合体（Soderberg+2005 §3.2.1：afterglow associated with a resolved galaxy complex, z=0.2146；GCN 2627 发射线光谱）；坐标为余辉定位 CXOU J204816.1-401108（= 复合体东北星系），宿主质心未单独给出。宿主亮度下限 R~17.9（GCN 2638，宿主亮于 R≈17.9，属宿主测光、非余辉；见 lc 中 discard=y 行）。",
     "source": "GCN 2627（Magellan Baade 6.5m + IMACS，z=0.2146）；Soderberg+2005 §3.2.1（ApJ 627, 877, DOI 10.1086/430405）"
   }
 }

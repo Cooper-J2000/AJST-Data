@@ -28,19 +28,19 @@
   "pos_error_confidence": null,
   "extra_data": {
     "audit": {
+      "auditor": "fsy",
       "date": "2026-10-05",
-      "status": "reviewed",
-      "auditor": "fsy"
+      "status": "reviewed"
     },
-    "t0_note": "Fermi MET→UTC 需扣除 2001 纪元以来跳秒（2006-01-01、2009-01-01 各 1s，共 2s）；bot 漏扣致 T0 偏晚。脚本复核：GBM 目录 UTC 04:56:42.5577 − 库中 T0 04:56:44.56 = -2.002259s，取 T0_offset=-2.002（GCN 8902 四舍五入口径为 -2.000）。2FLGC 表内 time 列 04:56:42.003 与 GBM 触发时刻差 0.555s，为该目录自身口径，仅存于 catalog_data；T0_offset 不改写光变时间轴（本源无 lc）。Suzaku WAM 04:56:42.98、IPN ~04:56:42 独立佐证。",
-    "t0_basis": "库中 T0=2009-02-17T04:56:44.560000Z 源自 2FLGC(fermilgrb) trigger_met=256539404.56s 按 2001-01-01 纪元的 naive 换算（external/fermi_lat/fermilgrb_w3browse_full.txt 原始行）；真实触发时刻以 GBM 为准：GCN 8902 'At 04:56:42.56 UT on 17 February 2009'，fermigbrst 目录 trigger_time MJD 54879.206048122=2009-02-17T04:56:42.5577Z（external/fermi_gbm/heasarc_fermigbrst.tdat.gz 原始行）。"
+    "t0_basis": "库中 T0=2009-02-17T04:56:44.560000Z 源自 2FLGC(fermilgrb) trigger_met=256539404.56s 按 2001-01-01 纪元的 naive 换算（external/fermi_lat/fermilgrb_w3browse_full.txt 原始行）；真实触发时刻以 GBM 为准：GCN 8902 'At 04:56:42.56 UT on 17 February 2009'，fermigbrst 目录 trigger_time MJD 54879.206048122=2009-02-17T04:56:42.5577Z（external/fermi_gbm/heasarc_fermigbrst.tdat.gz 原始行）。",
+    "t0_note": "Fermi MET→UTC 需扣除 2001 纪元以来跳秒（2006-01-01、2009-01-01 各 1s，共 2s）；bot 漏扣致 T0 偏晚。脚本复核：GBM 目录 UTC 04:56:42.5577 − 库中 T0 04:56:44.56 = -2.002259s，取 T0_offset=-2.002（GCN 8902 四舍五入口径为 -2.000）。2FLGC 表内 time 列 04:56:42.003 与 GBM 触发时刻差 0.555s，为该目录自身口径，仅存于 catalog_data；T0_offset 不改写光变时间轴（本源无 lc）。Suzaku WAM 04:56:42.98、IPN ~04:56:42 独立佐证。"
   },
   "articles": [
     {
       "name": "Ajello+2019",
+      "source": "fsy",
       "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
-      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
-      "source": "fsy"
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e"
     }
   ],
   "host_galaxy": null

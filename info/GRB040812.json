@@ -25,21 +25,37 @@
     "XRF"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
+  "extra_data": {
+    "audit": {
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-03",
+      "status": "reviewed"
+    },
+    "bot_created": true,
+    "merged_from": [
+      "XRF040812"
+    ],
+    "src": "gcn_llm_extract",
+    "t0_basis": "GCN 2640 trigger time",
+    "t0_note": "T0 corrected to the INTEGRAL/IBAS trigger time in GCN 2640"
+  },
   "articles": [
     {
       "name": "D'Avanzo+2007",
-      "url": "https://doi.org/10.1393/ncb/i2007-10281-2",
+      "source": "LHe496@Codex",
       "title": "Discovery of the optical afterglow of XRF 040812: VLT and Chandra observations",
-      "source": "LHe496@Codex"
+      "url": "https://doi.org/10.1393/ncb/i2007-10281-2"
     },
     {
       "name": "Soderberg+2005b",
-      "url": "https://doi.org/10.1086/430405",
+      "source": "LHe496@Codex",
       "title": "An HST Search for Supernovae Accompanying X-Ray Flashes",
-      "source": "LHe496@Codex"
+      "url": "https://doi.org/10.1086/430405"
     }
   ],
   "host_galaxy": {
+    "comment": "Extended source 0.33 arcsec (<1sigma) from the nominal CXO position (16:26:02.25, -44:43:49.4 = GCN 2648 source #2), interpreted as the host galaxy of XRF 040812 (Soderberg+2005b sec 3.3.2, HST/ACS F625W); D'Avanzo+2006 (arXiv:astro-ph/0612644) confirms the afterglow faded to the host level by 220 d after the burst. F625W=24.50+-0.06 is the observed magnitude (AB per the paper's HST photometry convention, Sirianni et al. 2005 conversions, same as its Table 1 'HST mag (AB)' column); the corresponding R=20.68+-0.05 (foreground-extinction corrected, same source) is a derived value and was not entered. D'Avanzo+2006 gives host I=21.5 observed and I=19.97+-0.12 after Galactic-absorption correction (magnitude system not declared in that paper); z=0.3-0.7 is a rough estimate, not a measurement, so no host redshift is recorded. No independent host coordinates beyond the 0.33-arcsec offset from the CXO position (offset direction unpublished), so ra/dec omitted.",
     "photometry": [
       {
         "band": "F625W",
@@ -49,22 +65,6 @@
         "source": "Soderberg+2005b"
       }
     ],
-    "comment": "Extended source 0.33 arcsec (<1sigma) from the nominal CXO position (16:26:02.25, -44:43:49.4 = GCN 2648 source #2), interpreted as the host galaxy of XRF 040812 (Soderberg+2005b sec 3.3.2, HST/ACS F625W); D'Avanzo+2006 (arXiv:astro-ph/0612644) confirms the afterglow faded to the host level by 220 d after the burst. F625W=24.50+-0.06 is the observed magnitude (AB per the paper's HST photometry convention, Sirianni et al. 2005 conversions, same as its Table 1 'HST mag (AB)' column); the corresponding R=20.68+-0.05 (foreground-extinction corrected, same source) is a derived value and was not entered. D'Avanzo+2006 gives host I=21.5 observed and I=19.97+-0.12 after Galactic-absorption correction (magnitude system not declared in that paper); z=0.3-0.7 is a rough estimate, not a measurement, so no host redshift is recorded. No independent host coordinates beyond the 0.33-arcsec offset from the CXO position (offset direction unpublished), so ra/dec omitted.",
     "source": "Soderberg+2005b sec 3.3.2 (DOI 10.1086/430405); D'Avanzo+2006 (DOI 10.1393/ncb/i2007-10281-2)"
-  },
-  "pos_error_confidence": null,
-  "extra_data": {
-    "src": "gcn_llm_extract",
-    "t0_note": "T0 corrected to the INTEGRAL/IBAS trigger time in GCN 2640",
-    "t0_basis": "GCN 2640 trigger time",
-    "bot_created": true,
-    "merged_from": [
-      "XRF040812"
-    ],
-    "audit": {
-      "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-11-03"
-    }
   }
 }
