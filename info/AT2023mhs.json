@@ -6,8 +6,8 @@
   ],
   "ra": 205.815337,
   "dec": 19.25025,
-  "T0": "2023-06-30T07:12:02Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2023-06-30T07:12:02.998Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2023-06-30 07:12:02.998；TNS 发现报告 2023TNSTR1555....1S（ZTF/Fritz 报告 181602）Discovery date 2023-06-30 07:12:02.998（JD 2460125.8000347）——两源一致给到毫秒，按 §3.2 采源精度写全（原 bot 值截断到秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,17 +16,22 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）目录行坐标 13:43:15.681 +19:15:00.90（J2000）＝TNS 发现报告坐标（RA=205.815338/DEC=+19.2502509）；AstroNote 2023-197 原文「coincident with the nucleus of SDSS J134315.65+191500.9」同址（宿主核区，negligible host offset）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "TNS 分类报告 2023TNSCR1754....1N（Global SN Project，Newsome et al.）：原文「narrow H at redshift z = 0.048 in agreement with the host redshift (WISEA J134315.65+191500.9, …, value from NED)」，瞬变窄 H 与宿主红移同值印证；首次分类报告 2023TNSCR1730....1S（ZTF，Keck I LRIS 2023-07-18 光谱）与 TNS 对象页、TDECat（Langis+2026）目录行均同值 0.0482",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 7667 行。【身份核验（2026-11-05，TNS 对象页+TDECat 目录行+两份分类报告+AstroNote 2023-197 互证一致）】ra/dec＝TDECat 目录行 13:43:15.681 +19:15:00.90（J2000）＝TNS 发现报告 181602 坐标；alias ZTF23aaqdjhi＝TNS internal name＝TDECat 目录行 Discovery internal name（ZTF/Fritz 发现报告），ATLAS23njv＝ATLAS_Bot1 报告 181679 internal name。tag=tde（终判）：分类历史为 SN II→TDE——首次分类 2023TNSCR1730....1S（ZTF/Sollerman 等，Keck I LRIS 2023-07-18 光谱，判 SN II @z=0.0482）；随后 Global SN Project 2023TNSCR1754....1N（FTS FLOYDS-S 2023-07-22 光谱）改判 TDE：narrow H（与宿主红移一致）+宽 H、He II 4686、Superfit 匹配 TDE（AT 2019qiz +14 d / ASASSN-14ae +28 d），原文「indicate a likely TDE origin」；TNS 对象页终型 TDE、TDECat 收录为 TDE；TNS 前缀 2025-01-26 由 AT 更为 TDE。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ZTF/P48）。【T0 口径】TDECat 目录行与 TNS 发现报告一致给 2023-06-30 07:12:02.998（毫秒），按 §3.2 采源精度写全（原 bot 值截断到秒）；本源为新建 lc（原零测光），无历史 X 射线行需随 T0 重算。【红移】z=0.0482＝TDECat 目录行＝TNS 对象页＝两份分类报告；分类报告明确 z 取自宿主红移（NED）且瞬变窄 H 线同值印证，redshift_type 由 value 改判 spec-host。【测光入库 7667 行】＝TDECat 官方补充仓库 target_AT2023mhs_photometry.csv（Section 2: Photometry/Optical and Infrared，2026-11-05 下载，8593 行）去同历元同值双误差行 1092（§3.4 保留首行）、剔除 ATLAS(H) 5 行（波段名无法唯一判读，见待决）后 7496 行；+ TDECat UVOT 机读表 AT2023mhs_uvot_lightcurve.csv（32 行×6 波段，有效值 165 行）；+ TNS 对象页 phot 表 5 行（g-ZTF 发现/探测/上限 3 行、orange-ATLAS 发现+上限 2 行，差分成像纯瞬变）；+ AstroNote 2023-197 LT IO:O g=15.96±0.07（MJD 60132.91）1 行（四个 LT 历元中唯一发表数值者）。口径：TDECat/BHTom 编译行为总流量（含宿主星系核，非差分——2018–2023 爆发前 ZTF g≈17.8–18.0/r≈17.2 即宿主水平可证；发现同曝光 TDECat 总流量 17.5776 vs TNS 差分 18.7772，差 ~1.2 mag 系口径不同，§3.4 非同值并存）；星等系统按 Langis+2026 §3.1（arXiv:2506.05476v2 实读）：ZTF/ATLAS/Pan-STARRS/ASAS-SN g/iPTF=AB，CRTS/ASAS-SN V/NEOWISE/Swift=Vega，Gaia 内部定标留空，LINEAR 未声明留空（无滤光片 CL→band=G）；UVOT 行已做银消光改正且未扣宿主（论文 §3.3 原文）→ Gext_corr=y；ASASSN Error=-1.0 为缺测哨兵→误差留空（本源无 99.99 行）。TDECat 光变 CSV 分设施段落全档案入库（含 2010 ALLWISE、2011–2012 PS1、2013 SDSS、2014–2023 CRTS/LINEAR、2014–2024 ASASSN/NEOWISE、2015–2024 ATLAS、2018–2024 ZTF 爆发前宿主+2023 爆发段；UVOT 2023 爆发段）。【检索留证（2026-11-05）】①仓内 gcn/archive 全文检索 AT2023mhs/ZTF23aaqdjhi/2023mhs 命中 0 篇；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准＝0 命中；③ADS API：AT2023mhs/AT 2023mhs/2023mhs 命中 3 篇——均为 TNS 报告（发现 2023TNSTR1555....1S、首次分类 SN II 2023TNSCR1730....1S、终判分类 TDE 2023TNSCR1754....1N）+ TNS AstroNote 2023-197（TNSAN）；无专文/后续跟踪文献，无射电数据；④TNS 对象页与 AstroNote 2023-197 已实际打开（发现/分类报告、测光表逐项核对）；TDECat GitHub 光度/UVOT CSV 已下载逐行核对；Langis+2026 星等系统与 UVOT 口径自 arXiv:2506.05476v2 §3.1/§3.3 实读（A&A DataDome 不可达，已登记 unverified.tsv）。结论：可用测光＝TDECat 机读表+TNS 对象页+AstroNote 2023-197 LT，补 7667 行。【未入库】TDECat X-ray 机读文件 AT2023mhs_xray_lightcurve.csv（XRT，含爆发段探测与上限，按 §3.3/§7 暂不处理）；AstroNote 2023-197 另四个 LT IO:O ugriz 历元无数值发表（仅描述性「blue colour u-g≈−0.3、g-r≈−0.25」），未入库。【B 档记录】AstroNote 2023-197 原文「rising from an upper limit of g > 20.48 two days prior」与 TNS phot 350893 的 g>19.9239 上限不一致（同夜同滤光片两个口径），本库按 TNS 对象页机read 值 19.9239 入库，AstroNote 值记此备查（§3.10 默认动作）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "ingest_source": "scix_tdecat_20261104",
     "discovery_mag": "18.7772",
-    "discovery_filter": "g-ZTF"
+    "discovery_filter": "g-ZTF",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
@@ -36,5 +41,10 @@
       "source": "bot"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.0482,
+    "redshift_type": "spec",
+    "comment": "宿主星系 WISEA J134315.65+191500.9（＝SDSS J134315.65+191500.9，TDECat 目录行 Host name / 分类报告 NED 用名；AstroNote 2023-197 用 SDSS 名并描述为 star-forming galaxy、no evidence of AGN activity）；瞬变位于宿主核区（分类报告 negligible host offset），无独立宿主测光列入",
+    "source": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行；TNS 分类报告 2023TNSCR1754....1N（NED）；AstroNote 2023-197"
+  }
 }
