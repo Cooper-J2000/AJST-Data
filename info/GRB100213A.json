@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB100213A",
   "alias": [],
-  "ra": 349.379,
-  "dec": 43.37,
-  "T0": "2010-02-13T22:27:48Z",
-  "T0_ref": null,
+  "ra": 349.39183,
+  "dec": 43.37892,
+  "T0": "2010-02-13T22:27:48.212320Z",
+  "T0_ref": "GCN 10411（Swift/BAT trigger #412217，22:27:48 UT）；亚秒取触发仪器目录值 trigger_time=2010-02-13T22:27:48.212320Z（external/swift_bat 与 external/swift_grb 快照一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +16,19 @@
   "pos_ref": "GCN 10418",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT trigger #412217（GCN 10411，2010-02-13 22:27:48 UT 触发，BAT on-board 位 RA,Dec=349.428,+43.383）；与同日 GRB 100213B（Swift trigger #412220，RA≈124.3°，GCN 命中集 10412/10413/10416/10417/10419/10421/10422/10423/10426/10446/10454/10913）及 GRB 100213C（Fermi/LAT，RA,Dec=282.45,+15.15）互不相交。T0：GCN 10411 给整数秒 22:27:48 UT；亚秒取触发仪器（Swift/BAT）目录值 22:27:48.212320Z（external/swift_bat 与 external/swift_grb 一致；swiftgrbba 快照为 22:27:48.000Z 整秒，弱于目录）；原库 T0=22:27:48Z 系整数秒占位，已补亚秒，全表 mjd=T0+time 重算。定位：原 ra/dec=349.379,+43.37 系 GCN 10424 BAT 地面定位（1.4′），与原 pos_error=2.2″（GCN 10418）错配；已改 GCN 10418 XRT 增强位 RA,Dec=349.39183,+43.37892（2.2″ radius，原文标注 90% confidence，故 pos_error_confidence=90）。t90=2.4±0.4 s（15-350 keV，GCN 10424 Swift/BAT 精化分析；Swift/BAT 目录值 2.216±0.258 s 一致，external/swift_bat），GCN 10427 BAT 谱滞后分析判 likely a member of the short, hard class（lag≈5±15 ms），MPE 目录 short_grb=y，按目录 t90 判 sgrb。测光检索（2026-11-07）：仓内 gcn/archive 全文检索命中 8 篇 GRB 100213A 通告（10411/10414/10415/10418/10420/10424/10425/10427，与 100213B 命中集互不相交），其中含光学上限者 10411（white 典型 ~19.6，被 10420 更正）/10415（SARA R~20）/10420（UVOT white>v>u 三波段）/10425（GRT R~17.5），已全部入库；external/rssgrbag 光变 0 行、grbsn_webtool 无该事件；外部检索：ADS/SciX 无 API 凭据未检索（audit/unverified.tsv 已登记 search-limited，不据此断言无文献），OpenAlex 全文检索 \"GRB 100213A\" 命中 10 条（7 条为 GCN 通告；研究文 3 篇：Norris, Gehrels & Scargle 2010, ApJ 717, 411 为 Swift/BAT 短暴扩展辐射时域样本文章、无光学测光；PRD 101, 083002 (arXiv 2003.05673) 与 MNRAS 498 (2021) stab2658 为潮汐共振理论文，前者经 ar5iv 全文实核未提该暴）；arXiv API 元数据检索 0 命中。结论：无文献测光表可补，共入库 7 行（UVOT white/v/u + GRT R + SARA R 5 行光学上限；另有 XRT 10keV 2 行流量探测，仅 mjd 随 T0 机械重算）。;核查修正(2026-11-07):XRT 2 行 upperlimit 被静默置空恢复 n、uvot-v/u 行 weights 补 1.0、入库行描述更正",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
