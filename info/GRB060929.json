@@ -1,57 +1,57 @@
 {
- "transient_id": "GRB060929",
- "alias": [
-  "GRB 060929",
-  "Swift 231702",
-  "BAT 231702"
- ],
- "ra": 263.12071,
- "dec": 29.83511,
- "T0": "2006-09-29T19:55:01.052660Z",
- "T0_ref": "GCN 5654（Swift/BAT 触发通告：At 19:55:01UT, the Swift BAT triggered and located GRB 060929 (trigger=231702)，整秒精度）；亚秒取触发仪器官方目录（external/swift_bat 快照 = 在线 batgrbcat summary_general.txt，Lien+2016 体系）触发时刻 2006-09-29T19:55:01.052660Z（仓内 swift_grb 快照同值；§3.2 触发仪器亚秒优先）",
- "T0_offset": null,
- "T0_offset_ref": null,
- "Trigger_Instrument": "Swift/BAT",
- "redshift": null,
- "tag": [
-  "grb"
- ],
- "pos_error": 1.5,
- "pos_ref": "UKSSDC Swift-XRT refined position（trigger 231702；仓内 swiftgrbba 目录快照 xrt_ra/xrt_dec/xrt_error_radius，HEASARC，retrieved 2026-07-22，Evans+2009 管线，1.5″ 90% containment）；GCN 5663 首轨精化位置同源（±5.5″ 90%）",
- "redshift_type": null,
- "redshift_ref": null,
- "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（Rusty-Harpoon@zcode，2026-11-06）。①定位：原 ra/dec=263.148,+29.825 为 swiftgrbba 目录 BAT 位置（error_radius 2.8′，90%），且 pos_ref 误标 GCN 5660（其 BAT 精化位置实为 263.158,+29.846 ±1.9′ 90%，与原值不符）；改采 Swift-XRT 精化位置 263.12071,+29.83511、误差 1.5″（90% containment，swiftgrbba xrt_ra/xrt_dec/xrt_error_radius，Evans+2009 管线；GCN 5663 首轨精化同源 ±5.5″ 90%）。备查：BAT on-board 263.164,+29.815（GCN 5654）；BAT refined 目录 263.1484,+29.8221 ±2.79′（external/swift_bat）；uvot_grb 快照同 XRT 位（POS_ERR 1.5″，POS_REF=SGA）；MPE Greiner 表 263.1667,+29.8167（3′，粗位）。②T0：GCN 5654「At 19:55:01UT」整秒；亚秒取触发仪器官方目录 2006-09-29T19:55:01.052660Z（§3.2 触发仪器亚秒优先；swiftgrbba/uvot_grb 快照只给整秒）。无 T0_offset（无 >1 s 偏移证据）。X 射线行 mjd 需随 T0 重算（维护者合入前统一执行）。③t90=552.96±26.89 s（15–350 keV，Swift/BAT refined 目录，含 T+400–600 s 晚期 flare，GCN 5662）；GCN 5660 初步 T90=12.4±0.2 s（15–350 keV，数据集止于 T+321 s 未含 flare）；swiftgrbba/uvot_grb 快照 554.0 s 并列——按目录 t90 判 lgrb（§3.9）。目录参数并列：fluence 2.8±0.4e-7 erg/cm²（15–150 keV，GCN 5660；BAT 目录 8.66e-7 为 15–350 keV）；1 s 峰光子流量 0.4±0.1 ph/cm²/s（15–150 keV）。④lc 逐行核对：非 X 射线 6 行（R×3/Rc×2/K×1）逐一对 GCN 5655/5658/5659/5661 全文核对并改正时间口径（BART 首像中点改正、BART 组合像窗口中点改正、Loiano 起始+半曝光改正、TNG 补窗口半宽、LT 保起始口径并留证）；X 射线 204 行（band=10keV）原样未动、未参与去重。⑤测光检索留证（2026-11-06）：仓内 gcn/archive 45 563 篇全文，「060929」命中 12 篇、「231702」命中 5 篇（均含于 12 篇），8 篇关键通告与 GCN 官网（gcn.nasa.gov/circulars）逐字核对一致；external/rssgrbag 0 命中、grbsn_webtool/heasarc_grbcat 无记录、mpe_greiner/swift_bat/swiftgrbba/swift_grb/uvot_grb 仅作身份与 T0/位置互证；ADS/SciX 名称检索 13 命中（12 GCN + GCN Report 3.1）、引文闭包 2 篇（Butler & Kocevski 2007 为 X 射线样本、Mendez+2009 无关）、全文检索 13 命中（X 射线样本类与方法文，均无可入库光学值）；MASTER 汇编文 Gorbovskoy+2010（Adv. Astron. 2010:917584，出版社 VoR 403，取 arXiv:0907.1118 全文）正文仅引 GCN 5657、表 2 未收 060929，无独立新值。补行：GCN 5667 UVOT 7 波段 3σ 上限（有时间锚点）+ GCN 5657 MASTER 2 条无滤光片上限，共 9 行；GCN 5656（BOOTES-IR/OSN）限值仅「DSS2 limit」无数值，不入库。⑥红移：全部文献与目录均无红移测定，留 null。",
- "sub_tag": [
-  "lgrb"
- ],
- "pos_error_unit": "arcsec",
- "pos_error_confidence": "90",
- "extra_data": {
-  "audit": {
-   "status": "reviewed",
-   "auditor": "Rusty-Harpoon@zcode",
-   "date": "2026-11-06"
-  }
- },
- "articles": [
-  {
-   "name": "Evans+2007",
-   "url": "https://doi.org/10.1051/0004-6361:20077530",
-   "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
-   "source": "Rusty-Harpoon@zcode"
+  "transient_id": "GRB060929",
+  "alias": [
+    "GRB 060929",
+    "Swift 231702",
+    "BAT 231702"
+  ],
+  "ra": 263.12071,
+  "dec": 29.83511,
+  "T0": "2006-09-29T19:55:01.052660Z",
+  "T0_ref": "GCN 5654（Swift/BAT 触发通告：At 19:55:01UT, the Swift BAT triggered and located GRB 060929 (trigger=231702)，整秒精度）；亚秒取触发仪器官方目录（external/swift_bat 快照 = 在线 batgrbcat summary_general.txt，Lien+2016 体系）触发时刻 2006-09-29T19:55:01.052660Z（仓内 swift_grb 快照同值；§3.2 触发仪器亚秒优先）",
+  "T0_offset": null,
+  "T0_offset_ref": null,
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1.5,
+  "pos_ref": "UKSSDC Swift-XRT refined position（trigger 231702；仓内 swiftgrbba 目录快照 xrt_ra/xrt_dec/xrt_error_radius，HEASARC，retrieved 2026-07-22，Evans+2009 管线，1.5″ 90% containment）；GCN 5663 首轨精化位置同源（±5.5″ 90%）",
+  "redshift_type": null,
+  "redshift_ref": null,
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（Rusty-Harpoon@zcode，2026-11-06）。①定位：原 ra/dec=263.148,+29.825 为 swiftgrbba 目录 BAT 位置（error_radius 2.8′，90%），且 pos_ref 误标 GCN 5660（其 BAT 精化位置实为 263.158,+29.846 ±1.9′ 90%，与原值不符）；改采 Swift-XRT 精化位置 263.12071,+29.83511、误差 1.5″（90% containment，swiftgrbba xrt_ra/xrt_dec/xrt_error_radius，Evans+2009 管线；GCN 5663 首轨精化同源 ±5.5″ 90%）。备查：BAT on-board 263.164,+29.815（GCN 5654）；BAT refined 目录 263.1484,+29.8221 ±2.79′（external/swift_bat）；uvot_grb 快照同 XRT 位（POS_ERR 1.5″，POS_REF=SGA）；MPE Greiner 表 263.1667,+29.8167（3′，粗位）。②T0：GCN 5654「At 19:55:01UT」整秒；亚秒取触发仪器官方目录 2006-09-29T19:55:01.052660Z（§3.2 触发仪器亚秒优先；swiftgrbba/uvot_grb 快照只给整秒）。无 T0_offset（无 >1 s 偏移证据）。X 射线行 mjd 需随 T0 重算（维护者合入前统一执行）。③t90=552.96±26.89 s（15–350 keV，Swift/BAT refined 目录，含 T+400–600 s 晚期 flare，GCN 5662）；GCN 5660 初步 T90=12.4±0.2 s（15–350 keV，数据集止于 T+321 s 未含 flare）；swiftgrbba/uvot_grb 快照 554.0 s 并列——按目录 t90 判 lgrb（§3.9）。目录参数并列：fluence 2.8±0.4e-7 erg/cm²（15–150 keV，GCN 5660；BAT 目录 8.66e-7 为 15–150 keV（15–350 keV 值 1.23e-6 并列备查；子带 15–25/25–50/50–100/100–150 keV 之和=8.66e-7））；1 s 峰光子流量 0.4±0.1 ph/cm²/s（15–150 keV）。④lc 逐行核对：非 X 射线 6 行（R×3/Rc×2/K×1）逐一对 GCN 5655/5658/5659/5661 全文核对并改正时间口径（BART 首像中点改正、BART 组合像窗口中点改正、Loiano 起始+半曝光改正、TNG 补窗口半宽、LT 保起始口径并留证）；X 射线 204 行（band=10keV）原样未动、未参与去重。⑤测光检索留证（2026-11-06）：仓内 gcn/archive 45 947 篇全文，「060929」命中 12 篇、「231702」命中 5 篇（均含于 12 篇），8 篇关键通告与 GCN 官网（gcn.nasa.gov/circulars）逐字核对一致；external/rssgrbag 0 命中、grbsn_webtool/heasarc_grbcat 无记录、mpe_greiner/swift_bat/swiftgrbba/swift_grb/uvot_grb 仅作身份与 T0/位置互证；ADS/SciX 名称检索 13 命中（12 GCN + GCN Report 3.1）、引文闭包 2 篇（Butler & Kocevski 2007 为 X 射线样本、Mendez+2009 无关）、全文检索 13 命中（X 射线样本类与方法文，均无可入库光学值）；MASTER 汇编文 Gorbovskoy+2010（Adv. Astron. 2010:917584，出版社 VoR 403，取 arXiv:0907.1118 全文）正文仅引 GCN 5657、表 2 未收 060929，无独立新值。补行：GCN 5667 UVOT 7 波段 3σ 上限（有时间锚点）+ GCN 5657 MASTER 2 条无滤光片上限，共 9 行；GCN 5656（BOOTES-IR/OSN）限值仅「DSS2 limit」无数值，不入库。⑥红移：全部文献与目录均无红移测定，留 null。",
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
   },
-  {
-   "name": "Evans+2009",
-   "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
-   "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
-   "source": "Rusty-Harpoon@zcode"
-  },
-  {
-   "name": "Poole+2008",
-   "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
-   "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
-   "source": "Rusty-Harpoon@zcode"
-  }
- ],
- "host_galaxy": null
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Poole+2008",
+      "url": "https://doi.org/10.1111/j.1365-2966.2007.12563.x",
+      "title": "Photometric calibration of the Swift ultraviolet/optical telescope",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
+  "host_galaxy": null
 }
