@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB210424B",
-  "alias": [],
-  "ra": null,
-  "dec": null,
-  "T0": "2021-04-24T18:40:11Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 210424B",
+    "GRB 210424BS"
+  ],
+  "ra": 284.716,
+  "dec": 16.172,
+  "T0": "2021-04-24T08:01:56.081Z",
+  "T0_ref": "GCN 29911（触发仪器 Konus-Wind：triggered at T0=28916.081 s UT=08:01:56.081，2021-04-24）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IPN",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 29909",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 210424B＝IPN 三角定位短暴（short/hard），由 Konus-Wind、INTEGRAL SPI-ACS、CALET GBM、Mars-Odyssey HEND 探测（GCN 29909）。与同日两暴互不相交（GCN 命中集甄别＋双历元拟合）：GRB 210424A＝Fermi/GBM 长暴 2021-04-24T18:40:11Z（trigger 640982416，GCN 29896）；GRB 210424.694＝Fermi trigger 640975205（16:40 UT，GBM 定位 12h25m+37d47m，GCN 29898/29900）。T0：原导入值 2021-04-24T18:40:11Z 实为 GRB 210424A 的 GBM 触发时刻（bot 串扰，原 extra_data.t0_basis=meta_trigger 失真，原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」，原 T0=2021-04-24T18:40:11Z，t0_basis/t0_note 已按规则改写、原值留此备查）；改取触发仪器 Konus-Wind 的 T0=2021-04-24T08:01:56.081Z（GCN 29911）。备查：CALET CGBM 触发 08:01:55.115 UTC（GCN 29913，与 Konus 差 0.966 s）；IPN 通告约 28916 s UT=08:01:56（GCN 29909）。位置：IPN 3σ 误差框中心 RA=284.716, Dec=+16.172（J2000），框为四边形（非圆形，pos_error 不填单值半径）：角点 (284.892,+16.078)/(284.882,+16.153)/(284.540,+16.265)/(284.550,+16.191)，面积 84 平方角分，长轴 23′×短轴 4′，太阳距 102°（GCN 29909，preliminary 3σ）。时标：CALET SGM T90=1.04±0.16 s、T50=0.56±0.15 s（40–1000 keV，GCN 29913）；CZTI T90=1.24(+0.13,−0.40) s（GCN 29943）；Konus-Wind 光变多峰、总时长 ~1.6 s（GCN 29911）。按通告原文「short(-duration) GRB」（GCN 29909/29911/29913）判 sgrb。alias 出处：GRB 210424B（GCN 29909/29911/29913/29920/29943 原文用名）；GRB 210424BS（MPE Greiner 目录用名，external/mpe_greiner 快照，该快照另有 RA=284.7167, Dec=+16.1667、short_grb 标记，与 GCN 29909 一致）。测光检索留证（2026-11-07）：①仓内 gcn/archive 全文检索 45 889 篇（快照截止 GCN 46010），含「210424」者 8 篇，其中本源 5 篇（29909/29911/29913/29920/29943），另 3 篇分属 GRB 210424A（29896）与 GRB 210424.694（29898/29900）——后两者对 210424B 为他暴数据，不入库；本源唯一测光＝MITSuME GCN 29920（g'/Rc/Ic 5σ 上限 3 行，已在 lc）。②external/rssgrbag/lightcurve.jsonl（140 行/74 源）无本源；external/grbsn_webtool 无本源事件；external/konus_wind、external/heasarc_grbcat 快照无本源条目；external/mpe_greiner 仅有目录级定位（无测光）。③外部：ADS/SciX API 实测 401（token 空，已登记 audit/unverified.tsv 通道级 * 行 search-limited，pr=964，ADS 侧结论视为未覆盖）；arXiv API 检索 0 命中；OpenAlex 1 命中（即 GCN 29920 本身，W3208508690）；Crossref 无相关命中；CDS/SIMBAD/VizieR 本会话 DNS 不可达（HTTP 000）；通用 web 检索未见本源专门研究论文。结论：无新增可用测光，补 0 行；发现他暴（210424A/.694）测光数据未混入本源 lc。articles[] 留空：未发现可核验的本源研究论文。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "3sigma",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "konus_wind_trigger_gcn29911",
+    "t0_note": "T0=触发仪器 Konus-Wind 触发时刻 28916.081 s UT（GCN 29911）；原 bot 值 2021-04-24T18:40:11Z 为同日 GRB 210424A 的 Fermi/GBM 触发时刻，已改正（原值见 comment）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
