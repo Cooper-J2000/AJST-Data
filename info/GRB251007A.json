@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB251007A",
-  "alias": [],
-  "ra": 128.17664,
-  "dec": 21.81285,
-  "T0": "2025-10-07T19:37:48Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 251007A"
+  ],
+  "ra": 128.1765,
+  "dec": 21.81297,
+  "T0": "2025-10-07T19:36:58.064460Z",
+  "T0_ref": "GCN 42146（Swift/BAT triggered at 19:36:58 UT on 7 Oct 2025, trigger=1402466）；亚秒值 19:36:58.064460 取 Swift/BAT batgrbproduct 官方分析页 https://swift.gsfc.nasa.gov/results/batgrbcat/BAT_refined_circular/1402466（MET 781558654.528 s，UTC 2025-10-07T19:36:58.064460 [includes UTCF correction]）；external/swiftgrbba 快照 trigger_time=2025-10-07T19:36:58.000Z 整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
   "pos_error": 2.0,
-  "pos_ref": "GCN 42161",
+  "pos_ref": "GCN 42161 (Swift-XRT enhanced position): RA=128.17650, Dec=+21.81297, 2.0 arcsec radius (90% confidence)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 fsy@zcode（2026-11-07）：(1) 身份与触发：Swift/BAT trigger 1402466 于 2025-10-07T19:36:58 UT 触发（GCN 42146 原文 At 19:36:58 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 251007A (trigger=1402466)）；batgrbproduct 官方页 MET 781558654.528 s → UTC 19:36:58.064460（含 UTCF 改正）；external/swiftgrbba 快照 trigger_time=19:36:58.000Z、MASTER 通告（GCN 42149 原文 7679 sec after trigger time at 2025-10-07 21:44:57 UT，反算触发=19:36:58）互证。Trigger_Instrument 原「Swift/UVOT」系误植（UVOT 为寻星图/定位载荷、不触发），改「Swift/BAT」。alias 增「GRB 251007A」（GCN 42146 原文用名，16 篇通告主题行均用此形）。(2) T0 修正（关键）：原 T0=2025-10-07T19:37:48Z 为 bot 误锚——该时刻是 SVOM/C-GFT 观测起始（GCN 42154 原文 Observations started at 2025-10-07T19:37:48 UTC, ~50 seconds after the trigger），亦即 CALET/GBM 自身触发时刻（GCN 42156 原文 triggered the CALET Gamma-ray Burst Monitor (CGBM) at 19:37:48.18 UTC），非本暴 BAT 触发；属 Issue #84 同型（观测起始误当 T0）。原 extra_data t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」按提示词 §3.10 改写，原值记此。自洽链：BAT T90=64.19±5.17 s（GCN 42186）、Glowbug onset 在 BAT T0+11 s（GCN 42151 原文自注 Note the Glowbug onset time is ~11 s after the Swift/BAT trigger time (19:36:58)）、Konus LC 起 T0−44.6 s（GCN 42297）。T0_offset 不适用（无 >1 s 时刻调整）。(3) 定位混拼修正：原 ra/dec=128.17664/21.81285 实为 GCN 42191 的 UVOT 位置（0.45″、90%），而 pos_error=2.0″/pos_ref=GCN 42161 为 XRT 增强定位——出处不一致（UVOT 坐标配 XRT 误差）；本次统一为 GCN 42161 天体测量校正 XRT 位置 RA=128.17650、Dec=+21.81297（2.0″ radius、90% confidence 原文明确、补 pos_error_confidence=90）；UVOT 位置 128.17664/21.81285（0.45″、90%、GCN 42191）备查；BAT 地面精化 128.162/21.810（1.5′、sys+stat、90%、GCN 42186；batgrbproduct ground 128.16164/21.81016±1.472′）备查。(4) 分类：sub_tag=lgrb，按目录 t90 判（2026-10-26 维护者裁定路径）：Swift/BAT t90=64.19±5.17 s（15-350 keV、GCN 42186 BAT 精化分析；external/swiftgrbba 快照 t90 同值）；各来源 T90 并列：CALET 15.7±0.3 s（40-1000 keV、GCN 42156）、AstroSat CZTI 17.5(+4.1/−1.3) s（20-200 keV、GCN 42167）、Insight-HXMT 57.4(+1.8/−16.2) s（CsI ~60-900 keV、GCN 42183）、SVOM/GRM 58.0(+1.5/−5.5) s（15-5000 keV、GCN 42184）；CALET 通告原文分类 The long GRB 251007A（GCN 42156）、Konus The long-duration GRB 251007A（GCN 42297）。BAT 谱参数备查（GCN 42186、均 90% 置信）：fluence=1.04±0.02e-5 erg/cm²（15-150 keV）、1-s peak photon flux=9.5±0.3 ph/cm²/s（15-150 keV、T+56.14 s 起）、PL index=1.32±0.03。(5) 红移：全部 16 篇通告均无红移，保持 null。(6) 测光逐行核对与增补（逐行出处见 lc 各行 comment）：原 6 行全部溯源到 GCN 原文（42146/42154/42157/42158/42174）并按新 T0 重锚；UVOT white 行按初报（GCN 42146 18.38±0.15）→UVOT 组正式初测（GCN 42191 18.42±0.08、同一 white FC 曝光 T+80–229 s）取舍改判；GCN 42191 表新增 6 行（u 探测 + white/b/v/uvw2/uvm2 上限，Vega 系统原文声明 UVOT photometric system per Breeveld et al. 2011）；GCN 42149 MASTER 上限新增 1 行（Filter C=clear 无滤光片→band=G）；GCN 42174 所引 SVOM/VT (Li et al. GCNC 42163) 经实核为 GRB 251007B 的 VT 通告（RA=102.1329813、Dec=−10.3040289、sb25100703），属原通告错引、未入库。(7) 测光检索（2026-11-07）：仓内 gcn/archive 本机不存在（快照未同步），改用 GCN 官网事件页 https://gcn.nasa.gov/circulars/events/grb-251007a 全量 16 篇（42146/42149/42151/42154/42156/42157/42158/42161/42162/42167/42174/42183/42184/42186/42191/42297）逐篇下载全文核对，其中 7 篇含光学测光/上限（42146/42149/42154/42157/42158/42174/42191）；仓内 external/rssgrbag、external/grbsn_webtool 无该事件，external/swiftgrbba、mpe_greiner、swift_xrt_live 仅目录级参数无光变表（swiftgrbba uvot_mag=White 18.42 转引 GCN 42191 同值）；Crossref 0 命中（泛检 3761 条逐条扫描无 251007A）、arXiv API 0 命中（all:\"GRB 251007A\" 与 all:\"GRB251007A\" 两写法）、OpenAlex 0 命中、WebSearch 0 篇正式论文（两次独立检索+GRBBeta 任务页核查）、SIMBAD 连接失败（unavailable@2026-11-07）、ADS/SciX 无 API token 未查 → 无已发表文献（事件后 13 个月），可用测光全部来自上述 GCN；本 PR 改 6 行、增 7 行、共 13 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "GCN 42146 + batgrbproduct(1402466) + swiftgrbba",
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger 1402466）：GCN 42146 整秒 19:36:58 UT；亚秒 19:36:58.064460 取 batgrbproduct 官方分析页（含 UTCF 改正）；external/swiftgrbba 快照 19:36:58.000Z 一致",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
