@@ -1,28 +1,50 @@
 {
   "transient_id": "GRB220412B",
-  "alias": [],
-  "ra": 320.794,
-  "dec": -0.223,
-  "T0": "2022-04-12T17:06:49Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 220412B",
+    "BAT 1102329"
+  ],
+  "ra": 320.758,
+  "dec": -0.261,
+  "T0": "2022-04-12T17:06:49.033660Z",
+  "T0_ref": "GCN 31886（BAT trigger 1102329，原文整秒 17:06:49 UT）；亚秒 033660 取自 external/swift_bat 目录 Trig_time_UTC（触发仪器官方目录）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 96.0,
   "pos_ref": "GCN 31910",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT trigger 1102329 短暴（GCN 31886 标题 short burst）。定位取 BAT 地面精化 RA,Dec=320.758,−0.261（1.6′=96″ 半径，90% containment sys+stat，GCN 31910 原文）；原库 ra/dec=320.794/−0.223 为 GCN 31886 的 BAT 在轨定位（3′，90%），却配了 31910 的 96″ 误差，属坐标与误差混串，本次统一为精化地面定位。定位并列值：BAT 在轨 320.794/−0.223（3′ 90%，GCN 31886）；swift_bat 目录 320.759/−0.2603（90%）。XRT 无精化定位：GCN 31897 原文 BAT 位置 296″ 内无 X 射线源（0.3–10 keV 上限 4.2e-14 erg/cm2/s，T0+4.7–29.1 ks）；swift_xrt_live 快照无本源。T0：GCN 31886 整秒 17:06:49 UT，亚秒 .033660 取 swift_bat 官方目录；并列值：Fermi/GBM 17:06:49.04（GCN 31908）；Konus-Wind 官方页（ioffe.ru LEA GRB220412_T61606）T0=17:06:46.329，而 GCN 31909 正文写 07:28:05.231 与其自链官方页矛盾，判定为通告笔误（原文笔误记录）；GBM 13 年短暴目录（arXiv:2605.31554）17:06:49.032。各仪器互差均 <1 s，不写 T0_offset。分类：t90=0.14±0.04 s（15–350 keV，GCN 31910；swift_bat 目录同值）判 sgrb（§3.9 按目录/文献 t90，不自算）；Lu+2024（ApJ 961,45 表 1）SGRB 样本收录；GCN 31908 GBM T90≈0.16 s（50–300 keV）。红移无测定。测光检索（2026-11-07）：GCN 新站事件页命中 11 篇通告并逐篇实开（31886/31889/31892/31894/31897/31900/31904/31908/31909/31910/31917）；仓内 gcn/archive 快照已随库移除，external/rssgrbag、grbsn_webtool、uvot_grb 均无本源，mpe_greiner 仅有目录条目（name_alt「GRB 220412BS」）；arXiv API abs:\"GRB 220412B\"/\"GRB220412B\"、all:\"1102329\" 3 种写法 0 篇；Crossref bibliographic/title 0 篇；OpenAlex 命中 6 篇（去重）逐篇取原文核对——GRANDMA（A&A 682 A141，VoR 被 DataDome 403，取 arXiv:2310.17287v1）明言本源「triggered but led to no observations」（距月亮太近）；Lu+2024（ApJ 961,45 VoR）仅 SGRB 参数表；Curtin+2024（ApJ 972,125 VoR）CHIME/FRB 400–800 MHz 上限 1 行入库；MNRAS 13 年短暴目录（arXiv:2605.31554，OUP VoR 403）、A&A PBH 几何检索（arXiv:2603.16508，VoR 403）、ApJS 深度学习目录（arXiv:2303.00370，IOP VoR 403）均仅参数/图轴提及，其中 ApJS 的「220412B」为其管线当日 08:21 UT 候选，与本源同名不同事件；SIMBAD/VizieR 双主机 SSL 不可达（unavailable@2026-11-07）。新增 9 行有锚点上限：UVOT 5 行（GCN 31917）、BOOTES-1B 1 行（GCN 31900）、MASTER-OAGH 2 行（GCN 31894）、CHIME/FRB 1 行（Curtin+2024）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Curtin+2024",
+      "url": "https://doi.org/10.3847/1538-4357/ad5c65"
+    },
+    {
+      "name": "Lu+2024",
+      "url": "https://doi.org/10.3847/1538-4357/ad09dd"
+    }
+  ],
   "host_galaxy": null
 }
