@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB080320",
-  "alias": [],
-  "ra": 177.763,
-  "dec": 57.162,
-  "T0": "2008-03-20T04:37:38Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080320",
+    "BAT 306858"
+  ],
+  "ra": 177.7353,
+  "dec": 57.1574,
+  "T0": "2008-03-20T04:37:38.464040Z",
+  "T0_ref": "GCN 7473（Swift/BAT 触发通告：At 04:37:38 UT, the Swift BAT triggered and located GRB 080320, trigger=306858，整秒）；亚秒取触发仪器官方目录值 2008-03-20T04:37:38.464040Z（仓内 external/swift_bat、external/swift_grb 快照 trigger_time 同值，§3.2 整秒一致取触发仪器亚秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -15,12 +18,45 @@
   "pos_error": 1.4,
   "pos_ref": "GCN 7494",
   "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "redshift_ref": null,
+  "comment": "身份：Swift/BAT 触发 306858（GCN 7473/7505），GRB 080320。位置改用 GCN 7494 Swift-XRT 精化位置 RA,Dec=177.7353,+57.1574（1.4″，radius，90% confidence，原文明示→pos_error_confidence=90）；原库 ra/dec=177.763,57.162 实为 GCN 7505 BAT 地面定位（误差 1.8′）误配 XRT 误差半径，已改正。备查：GCN 7479 增强位置 177.73526,+57.15746（1.7″）；Swift SGA（external/swiftgrbba、uvot_grb 快照）177.73517,+57.15672（1.4″）。红移仅光度估计，均非实测：GCN 7488 由 r–i 颜色推 z~4.5–5（Lyα break 假设）；Perley+2009 由 i 波段探测推 z<7、A_V<0.31；mpe_greiner 目录 z_flag=ul 值 6.4。redshift 保持 null。宿主：GCN 7480 报 XRT 误差圈内 SDSS 源 r=22.38、photo-z 0.35±0.13，但 GCN 7488 确认其距余辉体约 3″、probably unrelated——候选宿主不成立 host_galaxy（§3.10）。t90=14±2 s（GCN 7505，15–350 keV）；Swift/BAT 目录 13.816±1.859 s（external/swift_bat 快照）——按目录 t90 判 lgrb。alias：GRB 080320 为 GCN 7473 等通告原文用名；BAT 306858 为 Swift/BAT 目录（external/swift_bat 快照 name_alt）。lc：121 行 XRT（band=10keV）系 UKSSDC Burst Analyser（Evans+2007,2009）导入，X 射线行不审、仅随 T0 改正机械重算 mjd=T0+time。光学行 12 行逐行对 GCN 原文核对：ROTSE/LOTIS/UVOT 原库 time=窗口起点（bot 残留），已改中点+半宽；IAC80/FTN/NOT 历元按原文 UT 重算。补充检索（2026-11-07）：仓内 gcn/archive 全文 13 篇（7472/7473/7474/7478/7479/7480/7488/7489/7491/7492/7494/7505/7637），其中 7488（Gemini i'=22.9 探测、r~24 上限）、7491（FLAMINGOS J~20 边缘探测）2 篇含未入库测光，已补 3 行；external/rssgrbag、grbsn_webtool 无记录（swift_bat/swift_grb/swiftgrbba/uvot_grb 目录快照仅作身份与 T0 互证）；OpenAlex 全文检索 17 篇、arXiv API 元数据 0 篇专文；命中 Cenko+2009（P60 表1，CDS J/ApJ/693/1484/table1 MRT 逐值核对）补 10 行、Perley+2009（Keck LRIS 深场限，v3 表2，取自 arXiv 0905.0001v3）补 2 行；Jelínek+2010（BOOTES-1B 综述）VoR 不可达未取值（见 audit/unverified.tsv）；ADS/SciX 无 token（401）走 OpenAlex/Crossref/arXiv 兜底，检索结论以已实际打开的来源为限。去重：Perley+2009 表2 的 z'=20.0 系 Cenko+2009 表1 z'=20.06±0.21 的舍入转引，保留最初来源 Cenko+2009，未重复入库；X 射线行不参与去重。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Cenko+2009",
+      "url": "https://doi.org/10.1088/0004-637X/693/2/1484",
+      "title": "Dark Bursts in the Swift Era: The Palomar 60 Inch-Swift Early Optical Afterglow Catalog",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Perley+2009",
+      "url": "https://doi.org/10.1088/0004-6256/138/6/1690",
+      "title": "The Host Galaxies of Swift Dark Gamma-Ray Bursts: Observational Constraints on Highly Obscured and Very High Redshift GRBs",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
