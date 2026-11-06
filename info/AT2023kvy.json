@@ -6,8 +6,8 @@
   ],
   "ra": 354.94985,
   "dec": 8.164894,
-  "T0": "2023-05-28T03:58:34Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2023-05-28T03:58:34.752Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2023-05-28 03:58:34.752；同值见 TNS 对象页 Discovery Date（ATLAS 发现报告 2023TNSTR1398....1T，ATLAS_Bot1，TNS AT 报告 #180153）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -17,23 +17,28 @@
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec",
+  "redshift_ref": "FLEET 分类报告（2023TNSCR2347....1G，TNS 分类 #15611）：SOAR/Goodman 2023-08-27 光谱宽 Hα 线心近似测得（受大气线影响）；TDECat（Langis+2026）目录行同值 0.16",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-06 Rusty-Harpoon@zcode 单源审核并补光变 1948 行。\n\n【身份核验（2026-11-06，TNS 对象页 2023kvy + TDECat 目录行 + TNS 两份报告互证一致）】ra/dec=354.94985/+8.164894＝TDECat 目录行 23:39:47.964 +08:09:53.62＝TNS 对象页同值（TNS 十进制 354.9498487/+8.1648956；坐标 2023-07-02 曾按 ZTF AT 报告 #181560 由 23:39:47.993 +08:09:53.53 更新）。alias 两名均有出处：ATLAS23mok＝ATLAS internal name（TNS AT 报告 #180153，ATLAS_Bot1，2023-06-16 提交，2023TNSTR1398....1T；TDECat Alternative/Discovery internal name 同值）；ZTF23aamsetv＝ZTF internal name（TNS AT 报告 #181560，ZTF_Bot1，2023-07-02 提交，发现 2023-06-02 10:40:48 UT、g-ZTF 19.31；TDECat ZTF name 同值）。TNS 前缀 2025-01-26 由 admin 更新为 TDE。分类：FLEET 分类报告（TNS 分类 #15611，2023TNSCR2347....1G，2023-09-21 收；Gomez/Hiramatsu/Berger/Blanchard/Gezari）——SOAR/Goodman 光谱（2023-08-27，TNS 光谱 ID 15695）宽 Hα、平坦温度演化、峰值绝对星等 r≈−20，按 P(TDE)=0.68 核选，据此分类 TDE。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ATLAS，ZTF 随后独立上报）。\n\n【T0 口径】TDECat 目录行 Discovery date=2023-05-28 03:58:34.752（cyan-ATLAS 19.352）＝TNS 对象页 Discovery Date 同毫秒一致，按 §3.2 采源精度写全（原 bot 值截断到秒）；TNS 发现点 phot 348054 JD 2460092.66568 即该时刻。TDE 无触发时刻，取发现时刻为历元（与同批 TDECat 源口径一致）；无 T0_offset。\n\n【红移溯源】z=0.16 出自 FLEET 分类光谱：TNS 分类备注原文 \"The redshift of z = 0.160 was determined from the approximate center of the H-alpha line, which is unfortunately affected by a telluric line\"——由 SOAR/Goodman 宽 Hα 线心近似测得，仅两位小数精度。redshift_type 由 value 改判 spec；TDECat 目录行 Redshift=0.16 同值。\n\n【测光入库 1948 行】＝TDECat 官方补充仓库 target_AT2023kvy_photometry.csv（github.com/dlangis/TDECat Section 2，2026-11-06 下载，blob sha c0d8daee）3271 行去重后 1915 行（同历元同值双行 1356 组、误差实现不同，§3.4 保留首行）+ UVOT 机读表 AT2023kvy_uvot_lightcurve.csv（blob sha daf73193；5 历元×6 波段共 29 个测光元，其中 9 元原文误差列=0 按无效占位留空）+ TNS 对象页测光表 4 行（348053 ATLAS 末次非探测、348054 发现点、350814/350815 ZTF 发现后两点）。口径：TDECat/BHTOM 编译行为总流量含宿核（非差分）——安静期（pre-flare）ZTF 档案段致密采样即宿核水平（zg 中位 20.63、zr 中位 19.86、zi 中位 19.56），爆发段最亮 zg 19.03 / zr 18.85 / zi 18.57；TNS ZTF 行为差分口径纯瞬变（350814 g=19.31 vs TDECat 同历元总流量 19.0376/19.0668；350815 r=19.58 vs 18.9840/18.9548），不同口径并存不互删（§3.4）。星等系统按 Langis+2026 §3.1：CRTS/NEOWISE/Swift 记 Vega（ALLWISE 同 WISE 零点惯例记 Vega）、ZTF/ATLAS/Pan-STARRS 记 AB、SDSS 原生 AB；CRTS(CL) 无滤光片→band=G。UVOT 行已银消光改正且未扣宿主（论文 §3.3 原文明言）→ Gext_corr=y。CRTS 300 行散布大（17.93–20.35，中位 19.46）疑含工艺伪迹，原样入库在此记档（论文自述编译光变或含 artifacts）。未入库：TDECat X 射线机读文件 AT2023kvy_xray_lightcurve.csv 5 行（Swift/XRT 2023-09-06~09-27、全部非探测上限 1.9–5.8e-13 erg/cm²/s）——发现 X 射线数据，暂不处理；ASASSN 99.99/误差 −1 类哨兵行本源无。\n\n【测光检索留证（2026-11-06）】① 仓内 gcn/archive 45947 篇全文检索 AT2023kvy/AT 2023kvy/ATLAS23mok/ZTF23aamsetv/坐标（23:39:47、354.94-95、+08:09:5）＝0 命中；external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）、external/uvot_grb（626 源）均无该源记录；② GCN 站为 JS 应用，以仓内 gcn/archive 全库为准＝0 命中；③ ADS API（与 SciX 同库）检索 \"AT2023kvy\" OR \"AT 2023kvy\" OR \"ATLAS23mok\" OR \"ZTF23aamsetv\" 及 \"2023kvy\" 各命中 2 篇——均为 TNS 通告（2023TNSTR1398....1T ATLAS 发现报告、2023TNSCR2347....1G FLEET 分类报告），无研究论文；④ TNS 对象页 2023kvy 实抓两次，photometry 表 4 行全部入库；Langis+2026 VoR aanda.org 403 DataDome（audit/unverified.tsv 登记），改用 arXiv v1 2506.05476（HTML 全文已读，取 §3.1 星等系统声明与 §3.3 UVOT 口径）+ 官方补充仓库 github.com/dlangis/TDECat（blob sha 逐一校验）；CDS/VizieR 通道本会话不可达（HTTP 000，与 PR #890/#901 留痕一致；官方仓库已覆盖全部机读表）。结论：非零测光，补 1948 行。\n\n【其他元数据】pos_error：TDECat 目录行只给坐标（赤经 0.001s / 赤纬 0.01″ 位），未给定位误差与置信水平，pos_error/pos_error_confidence 保持 null（来源未标注）。host_galaxy：TDECat Host name 列空、TNS 对象页无宿主名，未建档。sub_tag：TDECat 官方仓库无逐源光谱型文件、tags.json 亦无 TDE 光谱类受控词，留空。光谱：SOAR/Goodman（FLEET，2023-08-27）ASCII 已随 TNS/TDECat 公开（Section 3），spectra/ 不在数据 PR 范围，未动。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "cyan-ATLAS",
     "discovery_mag": "19.352",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
-      "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://doi.org/10.1051/0004-6361/202554882",
+      "source": "bot"
     }
   ],
   "host_galaxy": null
