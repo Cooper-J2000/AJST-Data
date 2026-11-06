@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB080714",
-  "alias": [],
+  "alias": [
+    "GRB 080714",
+    "GRB080714A",
+    "bn080714745"
+  ],
   "ra": 188.1060028076172,
   "dec": -60.27783203125,
-  "T0": "2008-07-14T17:52:56Z",
-  "T0_ref": null,
+  "T0": "2008-07-14T17:52:56.643300Z",
+  "T0_ref": "GCN 7978（Swift/BAT 触发 316910，17:52:56 UT，秒级）；亚秒取 HEASARC SWIFTGRB 目录 (Donato et al. 2012, ApJS 203, 2D；仓内 external/swift_grb 快照 2026-07-21 取）trigger_time=2008-07-14T17:52:56.643300Z；swiftgrbba（BAT 自动分析页）17:52:56.000Z 与 GCN 整秒一致，仅交叉验证。Konus-Wind 触发 64378.478 s UT=17:52:58.478（GCN 7983）为另一仪器自有零点，不用",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,17 +16,30 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 0.699999988079071,
+  "pos_error": 0.7,
   "pos_ref": "SGA (UVOTGRB)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。审核 wa1kmoon@zcode 2026-11-07：(1) 身份：Swift/BAT trigger 316910（GCN 7978，17:52:56 UT，RA,Dec=188.109,-60.279）；Konus-Wind T0=64378.478 s UT（GCN 7983）；AGILE-MCAL 第二版目录（Ursi et al. 2022, ApJ 925, 152, CDS J/ApJ/925/152 表 2）原文用名 GRB080714A，MCAL 触发 2008-07-14 17:52:49.24 UT、交叉证认 Swift XRT；Fermi/GBM bn080714745（FERMIGBRST，17:52:54.023Z，RA,Dec=188.1,-60.2，仓内 external/fermi_gbm 快照）——四仪器同源互证；GBM 目录亦用 GRB080714745 / GRB 080714.745 形（伪形规则无 GCN 证据串，未入 alias）；当日无 GRB080714B：gcn/archive 命中集（GCN 7978-7984）仅此一暴，GBM 另两触发 bn080714086（RA41.9,Dec8.5）、bn080714425（RA187.5,Dec-74.0）非本源。(2) T0 改亚秒（SWIFTGRB 目录）后全表 mjd=T0+time 重算（7 位小数）；44 行 X 射线（10keV）仅机械重算 mjd，其余列未动。(3) sub_tag=lgrb：t90=33±9 s（15-350 keV，GCN 7979），SWIFTGRB 目录 t90=25.81 s（15-150 keV），GCN 7983 原文称 long GRB。(4) lc 修订：GCN 7982 两行 band w→uvot-white（filters.json 的 w 为 Pan-STARRS w 波段，bot 错配）；GCN 7982 各行 time=窗口中点（bot 截去 .5）修正、补 time_err=半窗宽、telescope=Swift、mag_system=Vega；noc-db 10 行 Gext_corr 由 y 改 n（noc-db MAG 为未银消改正的 UVOT 观测星等：Roming+2017 表 5 NOC 列描述无消改，且本源 v=19.40±0.48@396 s 与 GCN 7982 未消改 v FC 19.1±0.2@396.5 s 一致）、time_err 改 EXPOSURE/2（同 GRB090510A 先例）；GROND 12 行补 time_err=Exp/2、telescope/instrument 拆分为 MPG-ESO(2.2m)/GROND，原文未声明星等系统（相对 USNO-B1/2MASS 场星定标）留空。(5) 测光检索留证（2026-11-07）：仓内 gcn/archive 全文命中 7 篇（GCN 7978-7984；36302 为星系编号撞串无关），GCN 7982/7984 的测光已全数在库（本次修正口径）；external/rssgrbag、grbsn_webtool、konus_wind、liang2023、wang2022、guidorzi2025、minaev2020 均无本源记录；OpenAlex 全文检索命中 6 篇（5 篇为 GCN/通告文本、1 篇 Evans et al. 2009, MNRAS 397, 1177 样本文章，仅 XRT 参数无新测光）；Crossref 题名检索无命中；ADS token 实测 401 → audit/unverified.tsv 登记 search-limited。(6) pos_error=0.7″（清 float32 残渣 0.699999988079071），SGA/UVOTGRB 来源未标注置信水平，pos_error_confidence 留空；GCN 7982 UVOT 定位 0.8″（90% confidence）备查，GCN 7980 XRT 增强定位 2.3″（90%）备查。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
