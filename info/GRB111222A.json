@@ -1,13 +1,16 @@
 {
   "transient_id": "GRB111222A",
-  "alias": [],
-  "ra": 179.193,
-  "dec": 69.036,
+  "alias": [
+    "bn111222619",
+    "GRB111222619"
+  ],
+  "ra": 179.21977,
+  "dec": 69.07116,
   "T0": "2011-12-22T14:51:55Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 12714（IPN：约 53515 s UT=14:51:55）与 Swift 官方表（HEASARC swiftgrbba / swift_grb 目录，trigger_obs=IPN，仅整数秒精度）一致取 14:51:55 UT；触发仪器亚秒值互不一致：Konus-Wind 14:51:55.918（GCN 12715）、Fermi/GBM 14:51:55.02（GCN 12806）/14:51:55.023（FERMIGBRST 目录），Swift/BAT 未触发（FoV 外），按「多触发仪器矛盾、有 Swift 以 Swift 为准」取 Swift 官方口径 14:51:55Z",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,13 +19,19 @@
   "pos_ref": "GCN 12716",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "源由 UKSSDC Burst Analyser XRT 光变导入新建（Evans+2007,2009）。IPN 三角定位短暴（GCN 12714：短/硬/强，IPN 误差盒中心 179.193/+69.036、317 sq.arcmin）。Swift/BAT 未触发（视场外；swift_grb 目录 bat_detection=U、swiftgrbba trigger_obs=IPN）；Fermi/GBM 触发（trigger 346258317/111222619，GCN 12806），Konus-Wind 亦触发（GCN 12715）；原 Trigger_Instrument=Swift/BAT 系误填，已改。位置：原 ra/dec=179.193/69.036 系 IPN 盒中心，与 pos_ref=GCN 12716/pos_error=3.1″ 错配，已改为 GCN 12716 Swift-XRT enhanced 位置 179.21977/+69.07116 ±3.1″（半径，90% 置信→pos_error_confidence=90），距 IPN 盒中心 322″、在 IPN 误差盒内；UVOT 精化位置 179.22008/+69.07096 ±0.51″（90%，GCN 12717）备查。分类 sgrb：t90=0.288±0.036 s（50–300 keV，FERMIGBRST 目录 external/fermi_gbm；GCN 12806 约 0.32 s；Konus 单脉冲约 300 ms，GCN 12715），按目录 t90 判 sgrb。光学对应体：UVOT 位置处为 SDSS 恒星（SDSS g=19.47/r=18.08/i=16.66/z=15.85，GCN 12719），GMG 复测 r=18.08±0.01、z=15.83±0.02 与 SDSS 存档一致；UVOT white 19.34±0.03→19.89±0.03（变暗 0.48 mag，GCN 12805 解读为宿主+余辉混合）→ 恒定 19.88、甚红 B−V=1.26、UV 仅上限，与暴的关系未定（GCN 13001）——宿主未确定，host_galaxy 不建立。新增别名 bn111222619/GRB111222619（GCN 12806 原文用名 trigger 111222619，原文用名证据串；FERMIGBRST trigger_name）。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 11 篇（12714/12715/12716/12717/12718/12719/12732/12805/12806/12807/13001），其中 12807 给出 3 条有明确时刻的暴前 V 板限（已补 3 行）；external/rssgrbag、grbsn_webtool 无此源记录；ADS/SciX API 无凭据（实测 401，audit/unverified.tsv 登记 search-limited），OpenAlex 全文检索命中 10 条（7 条即上述 GCN + 3 篇研究文献：Tunnicliffe+2014 MNRAS 437,1495 已打开 arXiv 1402.0766 全文、111222A 仅表 A1 样本行转引 GCN；Connaughton+2015 ApJS 216,32 GBM 定位统计样本；Tunnicliffe 2026 Warwick 博士论文——均无新增光学测光表）；arXiv API 元数据检索 0 命中。结论：除 GCN 12807 三条板限外无其他可用测光，共补 3 行。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
