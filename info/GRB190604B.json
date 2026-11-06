@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB190604B",
-  "alias": [],
+  "alias": [
+    "BAT 906654"
+  ],
   "ra": 297.53804,
   "dec": -32.97663,
-  "T0": "2019-06-04T20:03:18Z",
-  "T0_ref": null,
+  "T0": "2019-06-04T14:57:15.797160Z",
+  "T0_ref": "GCN 24742（BAT 触发 14:57:15 UT）；Swift/BAT batgrbcat summary_general.txt trigger 906654（亚秒值，external/swift_bat 快照 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 24746",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift trigger 906654（GCN 24742）；同日另有 Fermi/GBM GRB190604A（10:42:37 UT，trigger 581337762，GCN 24739/24740/24753/24758），两者 GCN 命中集互不相交，非同一事件。T0：bot 旧值 2019-06-04T20:03:18Z 系 GROWTH-India 观测时刻（GCN 24748 正文 20:03:18.675 UT；原 extra_data t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"），已改判 BAT 触发时刻 14:57:15.797160Z（Swift/BAT batgrbcat 目录 trigger 906654，external/swift_bat 快照 2026-07-21；GCN 24742 整秒一致；XRT 于 14:59:12.5 UT 开始观测=触发后 116.8 s，反算 14:57:15.7 自洽），全表 mjd=T0+time 重算（本源无 X 射线行）。定位：GCN 24746 XRT astrometric 位 1.9 arcsec（radius，90% confidence）→ pos_error_confidence=90。t90=220.2±4.7 s（15–350 keV，GCN 24752 Swift/BAT 精化分析）→ 按目录 t90 判 lgrb。红移：VLT/X-shooter 因源过暗未尝试光谱（GCN 24762），redshift 置 null。alias「BAT 906654」据 Swift/BAT 目录（GCN 24752 trigger #906654）。测光检索（2026-11-07）：仓内 gcn/archive 全文 grep「190604B」10 篇（24742/24743/24746/24747/24748/24749/24750/24752/24754/24762，已读全；其中 5 篇含光学数值并全部入库：GCN 24747 UVOT 7 行、24748 GROWTH-India 2 行、24750 BOOTES-3 2 行、24754 Kitab 1 行、24762 VLT 1 行）；grep「906654」命中为上述子集，「190604」15 篇（差集为 A 源通告）；external/rssgrbag、grbsn_webtool 无本源记录；ADS token 实测 401（search-limited，已登记 audit/unverified.tsv），兜底 OpenAlex 命中 9 条（6 条为 GCN 转载，3 篇研究文逐一打开核验：Abbott+2021 ApJ 915,86 DOI 10.3847/1538-4357/abee15 仅样本列表、Nature Comms 2021 DOI 10.1038/s41467-021-24246-x 仅 X 射线陡衰减样本表、ApJ 2026 DOI 10.3847/1538-4357/ae2743 仅 prompt/X 射线谱分析——均无光学测光），补 11 行、修正 2 行，无新增文献待录。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog_subsec",
+    "t0_note": "T0=BAT 触发时刻（batgrbcat trigger 906654 亚秒值）；旧值 20:03:18Z 系 GROWTH-India 观测时刻误锚，原值见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
