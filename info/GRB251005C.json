@@ -1,30 +1,39 @@
 {
   "transient_id": "GRB251005C",
-  "alias": [],
-  "ra": 75.68331,
-  "dec": 16.88007,
-  "T0": "2025-10-05T16:06:54Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 251005C",
+    "GRB251005671",
+    "sb25100502"
+  ],
+  "ra": 75.68325,
+  "dec": 16.88054,
+  "T0": "2025-10-05T16:06:53.9Z",
+  "T0_ref": "GCN 42113（Swift/BAT 触发 16:06:53 UT；同通告 XRT 起始观测 16:08:52.2 UT=BAT+118.3 s 反算触发时刻=16:06:53.9，swift_bat 快照未收录该触发、batgrbcat 在线页 404）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM/VT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 2.1,
-  "pos_ref": "GCN 42113",
+  "pos_error": 2.3,
+  "pos_ref": "GCN 42116",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：GRB 251005C=Swift/BAT trigger 1401726（GCN 42113，RA 75.673 Dec +16.882）。同日另有 251005A=Fermi/GBM 251005227（05:27:08.25 UT，RA 227.84 Dec 5.07，GCN 42111）与 251005B=Fermi/GBM 251005602（14:27:19 UT，RA 298.6 Dec -8.9，GCN 42112），GCN 命中集互不相交；GCN 42113 初版误标 251005A、v3 更正为 C（GCN 42121 注明），MASTER GCN 42117 标题仍误标 A 但指向 42113 误差框、其正文 22:04:43 UT=16:06:54+21469 s 与 C 的触发精确吻合——全部测光行按双历元（vs 本暴 T0 / vs 251005A/B T0）拟合唯 C 相容，无连锁污染。　T0：Swift/BAT 触发 16:06:53 UT（GCN 42113 整秒），同通告 XRT 起始观测 16:08:52.2 UT=BAT+118.3 s 反算触发时刻=16:06:53.9，取为标准 T0；GBM 触发 16:06:54.005（FERMIGBRST 快照 bn251005671，GCN 42118 报 54.00）、SVOM/GRM T0=16:06:54.000（GCN 42135）——触发仪器整数秒矛盾取 Swift（提示词 §3.2），亚秒差如实记录。原 bot T0=2025-10-05T16:06:54Z（t0_basis=meta_trigger，t0_note「t0 为 meta trigger-time（真实触发时刻）」）已由本次判定取代，lc 全表 mjd=T0+time 重算（7 位小数）。　定位：改 GCN 42116 XRT 增强位 75.68325,+16.88054（2.3″，90%）；GCN 42113 初位 75.68331,+16.88007（2.1″，90%）备查；SVOM/VT OT 位 75.68455,+16.88019±0.5″（GCN 42123，距 XRT 位 4.6″、在 90% 区外）；VLT 亦见延展 i′~24 源 05:02:44.03,+16:52:51.6（GCN 42127）——对应体/候选宿主未定论，不建 host_galaxy。　Trigger_Instrument：原 SVOM/VT 系后随光学望远镜而非触发仪器，改 Swift/BAT（另被 Fermi/GBM、AstroSat/CZTI、SVOM/GRM 触发/探测）。　t90 冲突：SVOM/GRM 1.6(+0.6/-0.3) s（15-5000 keV，GCN 42135，自称 likely short）vs FERMIGBRST 目录 t90=5.568±1.797 s（50-300 keV 快照；GCN 42118 报 ~6 s）vs BAT ~2 s（GCN 42113）→ sub_tag 留空待决。　alias 证据：GRB 251005C 系 GCN 42113 等通告 eventId 原文用名；GRB251005671 系 GCN 42118 原文用名（trigger 781373219/251005671，FERMIGBRST trigger_name）；sb25100502 系 GCN 42135 原文用名（SVOM trigger reference）。　测光检索（2026-11-07）：仓内 gcn/archive 全文（截止 GCN 46010，2026-10-22）命中本暴相关 14 篇（42113/42115/42116/42117/42118/42119/42121/42122/42123/42127/42129/42135/42136/42153，42111/42112/42143 为 A/B 不相交）；external/rssgrbag、grbsn_webtool、uvot_grb 无记录；arXiv API（\"251005C\"/\"GRB 251005\" 0 篇）、OpenAlex（0 篇）、Crossref（无相关命中）；ADS/SciX API token 401（audit/unverified.tsv 已登记 search-limited，不据此下「无文献」结论）→ 按 GCN 补 GOTO/MASTER/VLT/UVOT/PRIME 10 行，UVOT white_FC 行按 42121 更正，SVOM/VT 5 行按原文 mid_time 重算（bot 早 21/53 s），COLIBRI 2 行补 time_err。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_42113_bat_refined",
+    "t0_note": "T0=Swift/BAT 触发时刻：GCN 42113 整秒 16:06:53，XRT 起始 16:08:52.2 UT=BAT+118.3 s 反算=16:06:53.9；GBM 16:06:54.005/GRM 16:06:54.000 见 comment（原 bot 值 t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time 已留档 comment）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
