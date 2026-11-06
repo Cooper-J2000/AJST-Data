@@ -1,119 +1,52 @@
 {
   "transient_id": "GRB120919A",
-  "alias": [],
-  "ra": 213.4,
-  "dec": -46.3,
-  "T0": "2012-09-19T07:24:41Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 120919A",
+    "GRB120919309",
+    "GRB 120919.309",
+    "bn120919309"
+  ],
+  "ra": 214.768,
+  "dec": -45.564,
+  "T0": "2012-09-19T07:24:41.980Z",
+  "T0_ref": "GCN 13785（Fermi/GBM trigger 369732284 / 120919309：'At 07:24:41.98 UT on 19 September 2012, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 120919A'）；Fermi GBM 官方目录 FERMIGBRST bn120919309 trigger_time=MJD 56189.308819204=07:24:41.979Z（external/fermi_gbm 快照，与 GCN 差 1 ms 水准，按 §3.8 优先级取触发仪器 GCN 值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 520.1,
+  "pos_ref": "GCN 13786（IPN 3σ 误差框中心 214.768/-45.564，面积 236 平方角分）；von Kienlin+2020（Fourth Fermi-GBM catalog, ApJ 893, 46, DOI 10.3847/1538-4357/ab7a18）Table 4（VizieR J/ApJ/893/46/table4）本暴行 RA 214.8/Dec -45.6/Error 0.4°，Loc 列明记 'IPN'",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。2026-11-07 fsy@zcode 审核：(1) 身份确证与触发仪器改判：Fermi/GBM 触发（GCN 13785 原文用名 'trigger 369732284 / 120919309'，即目录名 GRB120919309 = GRB 120919.309 = bn120919309，FERMIGBRST 同名行交叉一致），GCN 13786/13787/13790/13791/13821 主题行均用官方名 GRB 120919A；Swift 仅以 TOO 观测 IPN/GBM 误差框（UKSSDC Burst Analyser 同名页面存在，ObsID 00020232001，target 20232，HEASARC SWIFTGRB name_alt 'Swift 20232'）。原 Trigger_Instrument='Swift/BAT' 有误：当日 6 篇 GCN 无任何 BAT 触发通告；Swift/BAT 目录快照（external/swift_bat，覆盖 2012-09，GRB120918A/22A/23A/27A 均在表）独缺本源；SWIFTGRB 行 bat_detection='U'——改 'Fermi/GBM'。当日另有两个独立 GBM 触发与本源无关：bn120919052（01:14:23.066 UT，MPE/fermi_lat 记 GRB 120919B，RA 302.7/-37.7，IPN）与 bn120919816（19:35:41.796 UT，RA 303.5/-66.2）。（2）T0：原值 2012-09-19T07:24:41Z 为触发时刻截断整秒；触发仪器官方亚秒 0.98 s（GCN 13785），按 §3.2 以触发仪器亚秒为准改为 2012-09-19T07:24:41.980Z（.980 与 .98 同值）。IPN 通告记 'about 26682 s UT (07:24:42)'（GCN 13786，与本 T0 差 0.02 s）；Konus 自有触发零点 T0=26678.597 s UT=07:24:38.597（GCN 13787）系 Konus 仪器触发定义、非爆发时刻，不采用。T90 起点 t90_start=+0.512 s（FERMIGBRST），亚秒级，T0_offset 不适用（无 >1 s 时刻调整证据）。(3) 定位改判：原 ra/dec=213.4/-46.3 为 GCN 13785 的 GBM 地面定位（±1.1°，radius、1-sigma containment、statistical only，另有 2-3° 系统误差——原值全文保留于此备查），本次改判为 IPN 3σ 误差框中心 214.768/-45.564（GCN 13786：面积 236 平方角分，最大维 31′、最小维 12′，角点 215.108/-45.474、214.693/-45.722、214.428/-45.653、214.843/-45.407；原文 'The center of the GBM ground position given in GCN Circ. 13785 is 1.2 deg from the center of this box'）；正式发表的 Fourth Fermi-GBM 目录（von Kienlin+2020）Table 4 本暴行即采用该 IPN 定位（Loc 列='IPN'，RA 214.8/Dec -45.6/Error 0.4°）；external/fermi_gbm 快照（FERMIGBRST）ra/dec=214.768/-45.564±0.4° 与之一致（实证：FERMIGBRST 的 ra/dec 列对本类暴记最优可用定位而非纯 GBM 统计位——以 MPE-IPN 248 例交叉检验，多例与 IPN 位置一致到 <0.01°）。pos_error=520.1″=3σ 框等面积圆半径 sqrt(236 平方角分/π)=8.67′（约定口径，框角点全列如上），置信水平 3sigma 取自原文 'preliminary, 3 sigma error box'。XRT 在框内找到两个未编目源（GCN 13790：S1 214.83981/-45.56220±3.1″(90%)、S2 214.79040/-45.56518±5.5″(90%)），后续观测（GCN 13821，134-573 ks）两源均不衰减，原文结论 'we have not detected any X-ray counterpart to this GRB'——不存在可改判的 XRT 增强定位，两源均非本暴对应体。(4) sub_tag=lgrb：T90=21.25±1.81 s（50-300 keV，FERMIGBRST bn120919309 目录行）>2 s（GCN 13785 初报 'duration (T90) of about 22.5 s (50-300 keV)'；GCN 13786 主题行 'long GRB 120919A'），按目录 t90 判 lgrb/sgrb。红移无任何测量（无余辉、无宿主），保持 null。(5) X 射线行：lc 5 行 10keV（UKSSDC Burst Analyser xrt_flux_pc_DENSITY.qdp 逐值核对一致，time_err 为 BA 正/负半宽较大者）原样保留。注意：BA 光变提取于其自动定位区，而本暴未探测到任何 X 射线对应体（GCN 13821），该 5 行是否代表本暴辐射存疑——X 射线行不在审核范围，报请维护者裁决；T0 改为 …41.980 后该 5 行 mjd 需按 mjd=T0+time 机械重算（§3.3 唯一例外，由维护者合入前执行），当前 mjd 与新 T0 差恒为 0.98 s（<1 s 容差）。(6) 测光检索（2026-11-07，fsy@zcode）：GCN 站内检索 6 篇（13785/13786/13787/13790/13791/13821；旧式 gcn.gsfc.nasa.gov/gcn3/<n>.html 与 /grb_120919A/ 页已 404，改用 gcn.nasa.gov/circulars?query=120919A），唯一测光量为 GCN 13791 UVOT m2>21.4 上限→入库 1 行；SIMBAD 对象书目（CFA 镜像，2026-11-07）19 条 bibcode：13 篇期刊文均即发辐射谱/时滞/光球统计样本或 GBM/AGILE 目录文（von Kienlin+2020、Bhat+2016、Ursi+2022、Yu+2019、Ryde+2019、Lu+2018、Shao+2017、Buchner+2017、Greiner+2024、Wang+2024 RAA、You+2026 A&A、2020ApJ...893...77W、2020ApJ...893..128A），无一含本源余辉测光；OpenAlex 全文检索 'GRB 120919A'/'120919A'/'120919309' 命中即上述 GCN 与 2 篇样本文；arXiv API 元数据检索 0 命中；仓内 rssgrbag（射电余辉 74 源）/grbsn_webtool（63 事件）无本源记录、swift_bat 目录快照无本源条目、GRBCAT 快照截止约 2009 年中不含本源；GROND 样本（Greiner+2024, A&A 691 A158）Table B1 记 2012-09-22（T-To=231032 s）观测本暴场、Det=n 无探测，Table A2（73 行）无本暴行→无上限值可入库（A&A VoR 正文 DataDome 整站反爬未达，机读表经 CDS/VizieR 取得；arXiv v1 2410.14441 无附录表）。结论：除 GCN 13791 的 1 条 UVOT 上限外无任何已发表测光，补 1 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "3sigma",
   "extra_data": {
-    "catalog_data": {
-      "swift_grb": {
-        "other": {
-          "det_flag": "O",
-          "other_id": "369732284",
-          "target_id": "20232",
-          "bat_detection": "U",
-          "supernova_flag": "N"
-        },
-        "params": {},
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
-          "name": "HEASARC SWIFTGRB",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "Swift 20232",
-          "369732284"
-        ],
-        "trigger_time": "2012-09-19T07:24:41.98Z"
-      },
-      "agile_mcal": {
-        "other": {
-          "BKG": 216.0,
-          "LOC": "BAT",
-          "MET": 275124283.821,
-          "PHI": 312.13,
-          "MCAL": "Y",
-          "Orbit": 27907.0,
-          "RM_AC": "N",
-          "RM_SA": "n",
-          "THETA": 132.13,
-          "PL_DOF": 48.0,
-          "PL_FLUX": 1.066e-06,
-          "RM_MCAL": "Y",
-          "PL_RED_CHI_SQ": 0.94,
-          "BKGSUB_CTS_T50": 199.0,
-          "BKGSUB_CTS_T90": 351.0
-        },
-        "params": {
-          "t50": {
-            "v": 1.408,
-            "err": 0.032,
-            "band": "0.4-100 MeV"
-          },
-          "t90": {
-            "v": 5.312,
-            "err": 0.032,
-            "band": "0.4-100 MeV"
-          },
-          "fluence": {
-            "v": 5.66e-06,
-            "err": null,
-            "band": "0.4-10 MeV",
-            "model": "PL"
-          },
-          "spectral_index": {
-            "v": -2.89,
-            "err": [
-              1.14,
-              0.64
-            ],
-            "model": "PL"
-          }
-        },
-        "source": {
-          "url": "https://www.ssdc.asi.it/mcal2grbcat/",
-          "name": "2nd AGILE-MCAL GRB Catalog (Ursi+2022)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB120919A"
-        ],
-        "trigger_time": "2012-09-19T07:24:43Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "IPN": "y",
-          "Error": "31*8",
-          "obs_date": "2012-09-19",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "14h19m04s -45° 34'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-07"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "von Kienlin+2020",
+      "source": "fsy",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18"
+    },
+    {
+      "name": "Greiner+2024",
+      "source": "fsy",
+      "title": "The GROND gamma-ray burst sample",
+      "url": "https://doi.org/10.1051/0004-6361/202449659"
+    }
+  ],
   "host_galaxy": null
 }
