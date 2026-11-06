@@ -1,33 +1,99 @@
 {
   "transient_id": "GRB191031D",
-  "alias": [],
-  "ra": 283.289,
-  "dec": 47.6438,
+  "alias": [
+    "GRB 191031D",
+    "GRB191031.89"
+  ],
+  "ra": 283.28951,
+  "dec": 47.64407,
   "T0": "2019-10-31T21:23:31.132400Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 26112（Swift/BAT trigger 932608，At 21:23:31 UT）；亚秒取 batgrbcat 官方报告 BAT Trigger Time MET 594249834.976 = UTC 2019-10-31T21:23:31.132400（incl. UTCF correction）；GCN 26118（Fermi/GBM 21:23:31.13）、GCN 26126（Konus-Wind 21:23:31.324）、GCN 26240（CALET/CGBM 21:23:31.261）整秒互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": null,
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 1.93,
   "tag": [
     "grb"
   ],
   "pos_error": 1.9,
   "pos_ref": "GCN 26117",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "phot",
+  "redshift_ref": "Fong et al. 2022, ApJ 940, 56（DOI 10.3847/1538-4357/ac91d0）表 2",
+  "comment": "身份核验：Swift/BAT trigger 932608（GCN 26112「GRB 191031D: Swift detection of a short hard burst」，21:23:31 UT，单峰 ~0.4 s）；BAT T90=0.29±0.05 s（GCN 26133，15–350 keV，原文「squarely within the distribution of short, hard bursts」）——t90=0.29±0.05 s（GCN 26133 Swift/BAT refined）按通告 t90 判 sgrb。同日 A/B/C/D GCN 命中集互不相交：A=Swift trigger 932435（RA 233.490 +6.109，GCN 26131）、B=Fermi GBM 15:14:54 UT（GCN 26104）、C=Swift trigger 932595（RA 115.880 −62.322，GCN 26132）；Fermi 自动通告曾把本暴误名 191031C（GCN 26111），GCN 26114 更正为 D。T0 多仪器互证：Fermi/GBM 21:23:31.13（GCN 26118）、Konus-Wind 21:23:31.324（GCN 26126）、CALET/CGBM 21:23:31.261（GCN 26240）整秒一致；AGILE/MCAL 报 T0=21:23:28.17±0.01（GCN 26123，其自身触发时刻、早于 BAT 2.96 s，非触发仪器不采用）；Swift 为触发仪器、亚秒取 batgrbcat。定位：GCN 26112 初步 enhanced 位 283.2890+47.6438（2.3″）→ GCN 26117 精化 283.28951+47.64407（1.9″ radius 90% confidence，原文标注，本条采用并填 pos_error_confidence=90）。红移/宿主：Fong et al. 2022（ApJ 940, 56，arXiv:2206.01763）表 2：宿主 18h53m09.522s +47°38′40.13″，z=1.93(+0.22/−1.44) phot（SED 拟合）、r=24.462±0.263、Pcc=0.043（Silver 类）；O'Connor et al. 2022 曾报 XRT 位外 z≈0.5 星系为宿主、被 Fong+2022 深场 Keck 成像修订（§4.3）——external/mpe_greiner 快照的 z=0.5（z_flag phh）为过时值、目录快照未改。alias「GRB191031.89」证据串：GCN 26113（MASTER-Net）原文用名「Swift GRB191031.89」（trigger No 932608）。测光检索（2026-11-07）：仓内 gcn/archive 全文（191031D/932608/191031891/191031.89）命中 22 篇全部逐篇打开（26112–26134 系、26147、26150、26175、26240、26841 及 26113）；external/rssgrbag、grbsn_webtool 无本源记录；ADS API 401（token 失效，已登记 unverified.tsv search-limited）改用 OpenAlex（33 命中）+ arXiv API/全文兜底，Fong et al. 2022 VoR（IOP）不可达已登记 unverified.tsv substituted、以 arXiv v1 表 2/表 4/表 A1 核对；新增入库：GCN 26128 UVOT 9 行、GCN 26113 MASTER 35 行、GCN 26120 VLA 9.8 GHz 1 行，共 45 行；既有 14 行逐行核对（GCN 26112/26121/26122/26125/26134/26147/26150），中点口径改正 5 行、time_err 补 9 行、ZTF 行 mjd 误抄 COATLI 值已重算、COATLI 行 band G→w。X 射线数据发现但不入库：Chandra 3σ 上限 <6.0e-15 erg/cm²/s 0.3–10 keV（GCN 26175）、XMM-Newton 3σ 上限 ~4.8e-15 erg/cm²/s 0.3–10 keV（GCN 26841）。GCN 26122 COATLI 通告归属裁决：标题为 D、正文首句误写 191031A（与 GCN 26103 模板同句），依相对时刻 5.4–7.4 h 匹配 D 的 BAT 触发及引 GCN 26117（D 的 enhanced XRT 位）判为 D 的观测、其 w=23.2 上限入本源 lc。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Fong+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d0",
+      "title": "Short GRB Host Galaxies. I. Photometric and Spectroscopic Catalogs, Host Associations, and Galactocentric Offsets",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": {
+    "ra": 283.289675,
+    "dec": 47.6444806,
+    "redshift": 1.93,
+    "redshift_type": "phot",
+    "photometry": [
+      {
+        "band": "r",
+        "mag": 24.462,
+        "mag_err": 0.263,
+        "mag_sys": "AB",
+        "source": "Fong+2022"
+      },
+      {
+        "band": "i",
+        "mag": 24.83,
+        "mag_err": 0.3,
+        "mag_sys": "AB",
+        "source": "Fong+2022"
+      },
+      {
+        "band": "z",
+        "mag": 24.36,
+        "mag_err": 0.38,
+        "mag_sys": "AB",
+        "source": "Fong+2022"
+      },
+      {
+        "band": "Y",
+        "mag": 23.78,
+        "mag_err": 0.27,
+        "mag_sys": "AB",
+        "source": "Fong+2022"
+      },
+      {
+        "band": "J",
+        "mag": 22.87,
+        "mag_err": 0.01,
+        "mag_sys": "AB",
+        "source": "Fong+2022"
+      },
+      {
+        "band": "K",
+        "mag": 21.85,
+        "mag_err": 0.08,
+        "mag_sys": "AB",
+        "source": "Fong+2022"
+      }
+    ],
+    "comment": "Fong et al. 2022（ApJ 940, 56）表 2/表 A1：宿主位 18h53m09.522s +47°38′40.13″；z=1.93(+0.22/−1.44) 测光红移（SED 拟合，误差不对称故只记中心值）；Pcc=0.043、Silver 类（0.02<Pcc≤0.10 moderately robust）；g>24.90（AB，表 A1 上限未入 photometry）；表 A1 光度均为 AB mag；距 XRT 位角向偏移 1.53″±1.25″（表 4）；O'Connor et al. 2022 的 z≈0.5 候选（XRT 位外）被该文修订否弃",
+    "source": "Fong et al. 2022, ApJ 940, 56（DOI 10.3847/1538-4357/ac91d0）"
+  }
 }
