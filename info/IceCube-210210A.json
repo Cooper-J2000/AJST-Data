@@ -1,29 +1,43 @@
 {
   "transient_id": "IceCube-210210A",
-  "alias": [],
+  "alias": [
+    "IC210210A"
+  ],
   "ra": 206.06,
   "dec": 4.78,
-  "T0": "2021-02-10T11:53:55Z",
-  "T0_ref": null,
+  "T0": "2021-02-10T11:53:55.650000Z",
+  "T0_ref": "GCN 29454（IceCube 官方通告）：On 21/02/10 at 11:53:55.65 UT IceCube detected a track-like event——触发仪器原始亚秒精度按 §3.2 照写；互证 GCN 29473（Fermi-LAT）detected on 2021-02-10 at 11:53:55.65 UT (T0)、GCN 29463（INTEGRAL）11:53:55 UTC、GCN 29466（MASTER）反算自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
-  "redshift": 0.13663,
+  "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 29454（IceCube 离线精化方向）：RA=206.06 (+1.40/−0.95 deg 90% PSF containment) J2000、Dec=4.78 (+0.62/−0.56 deg 90% PSF containment)——不对称误差不适配圆半径，pos_error/pos_error_confidence 留空、四向不对称值照录（同 IceCube-190503A/190922B 口径）；MASTER GCN 29466 引 AMON 通告 R=0.88 deg（90%）备查",
   "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "redshift_ref": null,
+  "comment": "审核链（Rusty-Harpoon@zcode 2026-11-06）。【身份】IceCube GOLD 流 track-like 高能中微子候选事件（GCN 29454：On 21/02/10 at 11:53:55.65 UT IceCube detected a track-like event with a high probability of being of astrophysical origin；ICECUBE_Astrotrack_GOLD 流、纯度 50%、FAR 0.464/yr；AMON 自动通告 gcn.gsfc.nasa.gov/notices_amon_g_b/134979_17138286.amon，run 134979/event 17138286——GCN 29466 MASTER 引 trigger No 17138286 互证）。同日 GRB 210210A（Swift/BAT 触发 1031728，RA 262.8 Dec +14.6，GCN 29444）系另一事件，ADS 检索「210210A」29 篇中该 GRB 文献已全部排除。【T0】bot 值 2021-02-10T11:53:55Z 系官方值整秒截断（原 t0_basis=meta_trigger、原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」，Issue #68 家族；原值记于此）→ 触发仪器官方通告 GCN 29454 亚秒值 11:53:55.65 UT；互证：GCN 29473（Fermi-LAT）detected on 2021-02-10 at 11:53:55.65 UT (T0)、GCN 29463（INTEGRAL）11:53:55 UTC、GCN 29464（GBM）event time 同位置同日、GCN 29466（MASTER）21:26:38 UT=「34362 sec after trigger」反算自洽。【定位】ra/dec=206.06/4.78 为 GCN 29454 离线精化值：RA 206.06 (+1.40/−0.95 deg 90% PSF containment)、Dec 4.78 (+0.62/−0.56 deg 90% PSF containment)——不对称误差不适配圆半径，pos_error/pos_error_confidence 留空、不对称值照录 pos_ref（同 IceCube-190503A/190922B 口径）；MASTER GCN 29466 引 AMON 通告 R=0.88 deg（90%）备查。【红移】原库 redshift=0.13663（redshift_ref=gcn_llm:circulars_meta）经 ADS 全文检索「0.13663」定位：实为 GCN 29473 所引 90% 区域内唯一 4FGL 源 4FGL J1342.7+0505（=4C +05.57=PKS 1340+05，RA 205.69 Dec 5.09，距 best-fit 0.49 deg；BL Lac 星系主导（de Menezes+2019）与宽线射电星系（Grandi 1983）两说）的红移 z=0.13663（Hewett & Wild 2010，均转引自 GCN 29473）——系区域内 blazar 红移而非本中微子事件红移，成协未确证 → redshift/redshift_type/redshift_ref 置 null，值移录本 comment（§3.7 不成立字段置 null）。【候选对应体】lc 20 行全部为定位区内候选对应体测光：ZTF 2 候选（GCN 29461：ZTF21aajxjrv=AT2021clu 21.03、ZTF21aajxjry=AT2021clv 21.47，r 波段）+DECam 6 候选（GCN 29501/29519：DESNU-a~f=AT2021ctp/ctq/ctr/cts/dcz/ddb，宿主 PSO J206.3618+04.6020 等）+DECam 对 AT2021clu 复测 2 行；8 个候选 TNS 页（2021clu/clv/ctp/ctq/ctr/cts/dcz/ddb，2026-11-06 逐一打开）均未分类、无红移；GCN 29519 记 AT2021ctp 无时间演化不再视为候选、AT2021dcz「strong case for temporal coincidence」；无候选被确证为对应体 → host_galaxy 不建（§3.10 候选不建）。【tag】tags.json 无中微子事件类受控词（main 词表：cv/fbot/fxt/grb/kilonova/nova/orphan-afterglow/sgr/sn/stellar-flare/tde/xrb）→ tag 维持 []，扩表申请列 PR 待决。alias「IC210210A」=<GCN 29473> 原文用名（原文「the high-energy IC210210A neutrino event」，§3.10 证据串）。【检索留证（2026-11-06）】仓内 gcn/archive 45947 篇（grep 210210A/IC210210A/17138286/「GCN 29454」）：本事件通告共 11 篇——29454（IceCube 告警）、29461（ZTF）、29463（INTEGRAL）、29464（GBM）、29466（MASTER）、29473（Fermi-LAT）、29475（ANTARES）、29480（Swift-XRT）、29493（IceCube 附加中微子搜索）、29501/29519（DECam）；光学数值仅 29461/29501/29519 三篇（逐行核对入库）；TNS AT2021clu/clv 页补 ZTF g 探测 2 行+clu w-P1 探测 1 行+ZTF i 非探测 2 行、GCN 29466 补 MASTER 上限 1 行，共补 6 行；29463/29464/29473 系伽马能段上限、29480 系 Swift-XRT X 射线测光（X 射线类不入库，PR 说明注明）、29475/29493 系中微子与伽马搜索无光学测光；external/rssgrbag、external/grbsn_webtool 系 GRB 快照，无该事件记录；ADS/SciX（2026-11-06）：「IceCube-210210A」11 篇（全部 GCN/ATel，无正式论文）、「AT2021clu」4 篇/「AT2021clv」2 篇（同前）、正式文献仅 Stein+2023（MNRAS 521,5046，ZTF 中微子后随 24 campaign）覆盖本事件——其表 B17 列 17 个 ZTF 候选（含 AT2021clu/clv，均 Unclassified，peak mag 20.9/21.5 (r) 无时间锚不入库），VoR（OUP）403 反爬、经 arXiv v2（2203.17135）PDF 核对，已登记 audit/unverified.tsv；TNS 8 候选页与 Stein+2023 arXiv PDF 均已实际打开。SIMBAD TAP（2026-11-06）本会话 DNS 解析失败，未作为证据通道（同 SN2018kzr audit 先例）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "GCN 29454",
+    "t0_note": "T0 为 IceCube 官方触发时刻 2021-02-10 11:53:55.65 UT（GCN 29454；GCN 29473 同值互证）；原 bot meta_trigger 值 2021-02-10T11:53:55Z 系整秒截断，已按官方值修正（原值记于 comment）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Stein+2023",
+      "url": "https://doi.org/10.1093/mnras/stad767",
+      "title": "Neutrino follow-up with the Zwicky transient facility: results from the first 24 campaigns",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
