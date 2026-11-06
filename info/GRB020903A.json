@@ -1,26 +1,30 @@
 {
   "transient_id": "GRB020903A",
   "alias": [
-    "XRF020903"
+    "XRF020903",
+    "XRF 020903",
+    "GRB 020903",
+    "H2314"
   ],
-  "ra": 342.254167,
-  "dec": -20.933333,
+  "ra": 342.176413,
+  "dec": -20.769151,
   "T0": "2002-09-03T10:05:37.960000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 1530（HETE-2 触发通告，10:05:37.96 UTC；Soderberg+2004 ApJ 606,994 亦记 Sep 3.421 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "HETE-2",
-  "redshift": 0.25,
+  "Trigger_Instrument": "HETE-2/WXM+SXC",
+  "redshift": 0.251,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.1,
+  "pos_ref": "Soderberg+2004, ApJ, 606, 994 (VLBA position, §2.4.2, DOI 10.1086/383082)",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Soderberg+2004, ApJ, 606, 994 (DOI 10.1086/383082)",
+  "comment": "身份：XRF020903=GRB020903，HETE-2 WXM+SXC 于 2002-09-03 10:05:37.96 UTC 触发（事件名 H2314，GCN 1530 原文用名）。T0=触发时刻（GCN 1530），全表 mjd=T0+time；无 X 射线行。坐标：原库 (342.254167,-20.933333) 接近 GCN 1530 WXM+SXC 细化误差框中心（原文 22h49m01s,-20°55′47″；原库 Dec 与其相差约 13″，系 bot 转写偏差），非 OT，已改为 OT 的 VLBA 最准位置 22:48:42.33912s±0.00003s, -20°46'08.945\"±0.0005\"（Soderberg+2004 §2.4.2，自称其最准位置测量）；VLA 探测位置 22:48:42.34,-20:46:08.9\"（0.1\"/坐标，§2.4.1）；光学 OT 22:48:42.34,-20:46:09.3（GCN 1554）；pos_error 取 0.1\"（VLA 口径，保守）；pos_error_confidence 来源未标注置信水平，留空。红移：z=0.251（宿主 G1 发射线光谱，Soderberg+2004；GCN 1554 初报 0.25±0.01；G2 为 z=0.235 前景椭圆星系）。分类：XRF（Sakamoto+2004/Soderberg+2004：Epeak~5 keV，HETE-2 最软事件）；GCN 1530：WXM 2-25 keV 时标 ~3.3 s；Minaev+2020 归 type II（见 params），故 sub_tag 保留 lgrb 并加 XRF。别名出处：XRF 020903（GCN 1531/1533 标题原文用名）、GRB 020903（GCN 1558 标题原文用名；GCN 1557 标题用 XRF 020903）、H2314（GCN 1530 原文用名 event H2314）。勘误链：GCN 1560 R=18.55 → GCN 1561 更正 R=18.63（参考星 2 饱和剔除）→ GCN 1563 最终取代（R=20.42±0.10），旧行置 discard 保留链条。bot 时间残留：GCN 1533/1535/1537/1560/1563/1631/1761 各行原 time 把『日期小数/日号差』误作相对天数，已按原文 UT 重算（逐行 comment 注明）。Bersier+2006 表 2 的 Δt 列（95.426/232.824/300.625 d）与其 UT 日期自相矛盾（Dec 差 4.05 d），HST 行一律按 UT 日期换算。VoR 说明：ApJ 606,994 / 627,877 / 643,284 / 806,222 / 915,46 的 IOP/出版社页面本会话不可达（连接失败，ADS token 401），取 arXiv 终版核对（Soderberg+2004 v3 标注 as it appears in ApJ；其余为 LaTeX 源/PDF），已登记 audit/unverified.tsv。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 22 篇（1530/1531/1533/1535/1537/1554/1555/1556/1557/1558/1560/1561/1562/1563/1571/1609/1631/1761/2761/2762/4822/15025），其中 10 篇含测光/上限（1533/1535/1537/1555/1563/1631/1761/2761 含数值；1560/1561 已被 1563 取代；1562 仅 Blend 幅度、1571 为定标、1609 为光谱、2762 为作者名单、4822/15025 仅顺带提及）；external/rssgrbag 3 行、external/grbsn_webtool/SourceData/GRB020903 全部 7 文件逐值核对；外部：ADS API 401（search-limited，已登记），arXiv 可达（5 篇全文核对），GCN 站按编号直访与 archive 快照一致，TNS 不适用（GRB 类）。新增 16 行：S04 表 2 的 22.5GHz 0±270 µJy 上限 1、Urata+2015 表 1 Subaru 9、Chen+2021 ALMA 宿主 3σ 上限 2（113/224 GHz）、GCN 2761 宿主 g′/r′/R/I 4。删 8 行（确证转引重复）：Dainotti+2024 转引 GCN 1533/1535/1537/1563 各 1；rssgrbag 8.46GHz 1058 µJy（=S04 表 2 同测）；GCN 1555 两行（Sep 27.22/29.11 VLA 同测，1.1/0.7 mJy 为 S04 1.058/0.746 的舍入）；S05 F606W 24.53 无 ref 重复行。lc 行数 89→97。审核人 wa1kmoon@zcode，2026-11-07。;核查修正(2026-11-07):S04 Sep28.25 行 telescope 改 MDM(1.3m)、S05 R 行 instrument 补 ACS、Bersier06 F606W 行 mag_system 留空（原误填 Vega 且 comment 称 AB 推定系误引）、alias 证据串引用更正、原库坐标描述更正",
   "sub_tag": [
-    "lgrb"
+    "lgrb",
+    "XRF"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
@@ -39,7 +43,12 @@
         "v": 8.0
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
@@ -113,5 +122,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 342.176542,
+    "dec": -20.769089,
+    "redshift": 0.251,
+    "redshift_type": "spec",
+    "comment": "宿主 G1：恒星形成星系，Magellan/LDSS2 与 Keck/LRIS 光谱窄发射线定 z=0.251（Soderberg+2004 §2.2；GCN 1554）；OT 与 G1 西南结重合（Soderberg+2005；GCN 1761）；ALMA 宿主观测确认（Chen+2021）。坐标为 Chen+2021 宿主区中心（含四个光学成分，半径 0.8″）：22:48:42.37, -20:46:08.72。G2（z=0.235 椭圆星系）非宿主",
+    "source": "Soderberg+2004, ApJ, 606, 994; Soderberg+2005, ApJ, 627, 877; Chen+2021, ApJ, 915, 46"
+  }
 }
