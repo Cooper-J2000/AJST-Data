@@ -9,7 +9,7 @@
 
 ## 为什么是文献级卡
 
-该文 Table II 是一张约 155 个 GRB 的汇总表（四列×双栏：GRB 名 / 观测距触发 Delay / 首探测或 3σ 上限 Rmag（括号内为观测站代码，站名见其 Table I）/ GCN 通告号），作者自述「Most of observations are unfiltered. Brightness is estimated against USNO-B1.0 reference stars, R magnitude」。命中库内源 144 个 + 提出者所审源 GRB140211A （Volnova+2021 在库）。逐行判读均为「纯汇总表转引 GCN」：每个数值行末都给出 GCN 号，数值与该通告同源，无作者自算增量，故一律不开源级卡。
+该文 Table II 是一张约 155 个 GRB 的汇总表（四列×双栏：GRB 名 / 观测距触发 Delay / 首探测或 3σ 上限 Rmag（括号内为观测站代码，站名见其 Table I）/ GCN 通告号），作者自述「Most of observations are unfiltered. Brightness is estimated against USNO-B1.0 reference stars, R magnitude」。命中库内源 144 个（含提出者所审源 GRB140211A，Volnova+2021 在库）。逐行判读均为「纯汇总表转引 GCN」：每个数值行末都给出 GCN 号，数值与该通告同源，无作者自算增量，故一律不开源级卡。
 
 ## 涉及源一览
 
@@ -164,7 +164,7 @@
 
 ## 增量门槛判读
 
-- 全部 144 个库内源 + GRB140211A：Table II 数值行均带 GCN 号、与通告同源 → 不满足增量门槛任一条（无库内拿不到的数值、无不同口径——口径即各 GCN 通告口径、无新正式文献数据），不开源级卡。
+- 全部 144 个库内源（含 GRB140211A）：Table II 数值行均带 GCN 号、与通告同源 → 不满足增量门槛任一条（无库内拿不到的数值、无不同口径——口径即各 GCN 通告口径、无新正式文献数据），不开源级卡。
 
 - 文中 Figure 3–5 给出 GRB 130427A / 130702A / 130831A 的多色光变图，但只有图无数表，不得从图读数，仅在此备注。
 
