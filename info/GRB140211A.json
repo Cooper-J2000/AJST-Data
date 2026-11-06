@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB140211A",
   "alias": [],
-  "ra": 124.233,
-  "dec": 20.237,
-  "T0": "2014-02-11T12:23:03Z",
-  "T0_ref": null,
+  "ra": 124.22331,
+  "dec": 20.2432,
+  "T0": "2014-02-11T12:23:03.824220Z",
+  "T0_ref": "Swift/BAT 目录 trigger 586289（batgrbcat：2014-02-11T12:23:03.824220Z，仓内 external/swift_bat 快照 summary_general.txt，2026-11-07 取用；batgrbcat 在线页 404 未复核）；GCN 15816 整秒 12:23:03 UT 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +12,31 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 4.4,
-  "pos_ref": "GCN 15851",
+  "sub_tag": [
+    "lgrb"
+  ],
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "pos_error": 4.4,
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "pos_ref": "GCN 15851",
+  "comment": "身份：Swift/BAT 触发 GRB 140211A（trigger 586289，GCN 15816）。定位：原 ra/dec=124.233,20.237 为 BAT 地面定位（GCN 15820，1.4′，90%）却配了 XRT 的 4.4″ 误差（导入错配），已改用 XRT 精化定位 RA,Dec=124.22331,+20.2432（4.4″，radius，90% 置信，GCN 15851，与 pos_ref/pos_error 匹配）；BAT 地面定位与 batgrbcat 值（124.2329,20.23545）备查。T0=触发时刻：Swift/BAT 目录 Trig_time_UTC=2014-02-11T12:23:03.824220（仓内 external/swift_bat 快照 summary_general.txt，trigger 586289；batgrbcat 在线页 swift.gsfc.nasa.gov/archive/batgrbcat/586289/ 与 /GRB140211A/ 均 404 未在线复核，2026-11-07）；GCN 15816 整秒 12:23:03 UT 一致。t90=95.256±1.048 s（Swift/BAT 目录 15-350 keV，external/swift_bat 快照；GCN 15820 给 89.4±18.7 s），按目录 t90 判 lgrb。测光检索（2026-11-07）：仓内 gcn/archive 全文检索（源名+触发号 586289）命中 6 篇（15816/15817/15820/15824/15851/15856；另有 42677 为 ZTF 事件文字撞号）——3 篇光学上限通告（15817/15824/15856）逐行核对入库并修正，15851 补 2 行 UVOT 上限，无其他新探测；external/rssgrbag、grbsn_webtool、uvot_grb 无本源记录；OpenAlex 命中 8 条（5 条 GCN、研究文 2 条：Volnova+2021 IKI GRB-FuN Table II 仅转引 GCN 15856 「6.5m >17.0(H)」无新数值，Patricelli+2024 FRB/GRB 样本 mention-only，另 1 条无关）；arXiv API 检索 0 命中；Crossref 模糊检索无专篇；VizieR 关键词检索超时；ADS/SciX API token 401（audit/unverified.tsv `*` 行 search-limited，不据此断言无文献）。本次新增 2 行 UVOT 上限、修正 7 行光学行；X 射线行（10keV）未动，其 mjd 需随 T0 重算（现差 0.824 s，<1 s 容差）。",
+  "extra_data": {
+    "src": "UKSSDC Swift Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Volnova+2021",
+      "url": "https://doi.org/10.1590/0001-3765202120200883",
+      "title": "IKI GRB-FuN: observations of GRBs with small-aperture telescopes",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
