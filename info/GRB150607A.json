@@ -1,10 +1,16 @@
 {
   "transient_id": "GRB150607A",
-  "alias": [],
-  "ra": 140.015,
-  "dec": 68.436,
-  "T0": "2015-06-07T07:55:09Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 150607A",
+    "BAT 642620",
+    "GRB150607330",
+    "GRB 150607.330",
+    "bn150607330"
+  ],
+  "ra": 139.98854,
+  "dec": 68.43599,
+  "T0": "2015-06-07T07:55:09.579340Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 642620：Trig_time_UTC=2015-06-07T07:55:09.579340（MET 455356523.264；仓内 external/swift_bat 快照 summary_general.txt，retrieved 2026-07-21）；GCN 17904 整秒 07:55:09 UT 一致；Konus-Wind 07:55:09.211（GCN 17911）与 Fermi/GBM 07:55:09.845（GCN 17906/GBM 目录）亚秒差异备查，按触发仪器 Swift 为准",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +22,19 @@
   "pos_ref": "GCN 17905",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "位置：采用 GCN 17905 增强 XRT 位置 RA,Dec=139.98854,+68.43599（1.7 arcsec，radius，90% confidence——原文明示置信水平，故 pos_error_confidence=90）。原导入 ra/dec=140.015,68.436 实为 GCN 17907 BAT ground-calculated position（1.2 arcmin，90%；与仓内 external/swift_bat RA_ground=140.0156/DEC_ground=68.43632 一致），与 pos_ref=GCN 17905、pos_error=1.7″ 不自洽，本 PR 改正为 XRT 增强位置；BAT 精化位置备查。UVOT 初步位置 139.98833,68.43619（0.44″，90%，GCN 17909）备查。分类：t90=25.988±0.889 s（Swift/BAT 官方目录，15-350 keV）→ 按目录 t90 判 lgrb；GCN 17907 给 T90=26.3±0.7 s，GCN 17906 给 T90=31.8 s（Fermi/GBM 初步值），Fermi/GBM 目录 t90=26.173±0.680 s（50-300 keV），Konus-Wind 亦称 long-duration（GCN 17911）。别名出处：GRB 150607A（GCN 17904 等通告用名，含空格形）；BAT 642620（Swift/BAT 目录 name_alt，trigger 642620）；GRB150607330 / GRB 150607.330 / bn150607330（Fermi/GBM 目录 trigger_name，GCN 17906 原文用名 trigger 455356512 / 150607330）。T0：亚秒取触发仪器 Swift/BAT 官方目录（07:55:09.579340），GCN 17904 整秒一致；Konus 07:55:09.211、GBM 07:55:09.85 亚秒差异备查；BAT 目录 T100_start=-0.232 s（|偏移|<1 s，不写 T0_offset；GCN 17907 光曲线「starting at ~T-2 sec」为近似描述）。测光检索（2026-11-06）：仓内 gcn/archive 全文（45947 篇）命中 10 篇（17904/17905/17906/17907/17908/17909/17910/17911/17914/17915），全部读取，光学/UV 数值逐行核对入库；ADS/SciX 检索（title/abstract/full-text 共 5 式）命中同一批 GCN 与 3 篇研究论文（2019ApJ...883...97Z、2025MNRAS.540L...6Q、2026ApJ..1008..181X，均为样本/统计类，未给本源光学测光表）；external/rssgrbag 与 external/grbsn_webtool 无本源记录；UKSSDC Burst Analyser（swift.ac.uk/burst_analyser/00642620，2026-11-06 实测）仅 BAT+XRT 产品、无 UVOT 光度文件 → 除 GCN 外无已发表测光。新增 2 行：AS-32 无滤光片探测 21.20±0.1（GCN 17915）、GCN 17909 white 精化值 18.10±0.07（与 GCN 17904 寻找图值同曝光，两行均保留）；UVOT 行按窗口中点口径改写 time/time_err，mag_system=Vega（GCN 17909 明示 Breeveld+2011）。红移：各通告与文献均未报道，维持 null。本源由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
