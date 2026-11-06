@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB171004A",
-  "alias": [],
-  "ra": 139.169462,
-  "dec": 52.69308,
-  "T0": "2017-10-04T07:55:32Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 171004A"
+  ],
+  "ra": 139.16941,
+  "dec": 52.69319,
+  "T0": "2017-10-04T07:55:32.213440Z",
+  "T0_ref": "GCN 21966（BAT 触发 07:55:32 UT、trigger=776347）；亚秒取 Swift/BAT 目录 batgrbcat Trig_time_UTC=2017-10-04T07:55:32.213440（external/swift_bat 快照）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.4,
   "pos_ref": "GCN 21970",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT trigger 776347（GCN 21966）；BAT 在轨定位 139.162+52.680（3′ 90%）与 GCN 21970 增强 XRT 位置 139.16941+52.69319（1.4″ 90%）互证；RATIR 更正光学位置 139.169462+52.693080（GCN 21972；其原通告 21968 位置有误）距 XRT 位置 0.4″ 备查。定位统一取 GCN 21970（ra/dec/误差/置信同源）；原导入 ra/dec 取 RATIR 更正值而 pos_ref/误差取 GCN 21970 的混配已改齐。t90=105.54±14.31 s（Swift/BAT 目录 batgrbcat external/swift_bat 快照；GCN 21973 给 107.1±14.5 s）按目录 t90 判 lgrb。T0：原导入 T0=2017-10-04T07:55:32Z（t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」）改为 Swift/BAT 目录亚秒 2017-10-04T07:55:32.213440Z、全表 mjd 已重算。alias 新增「GRB 171004A」（GCN 21966/21968/21972/21973/21974 通告原文用名）。测光检索（2026-11-07）：仓内 gcn/archive 全文检索命中 7 篇（源名与触发号 776347 双查、均 2017-10 Swift/RATIR 通告）、rssgrbag/grbsn_webtool/heasarc_grbcat 无记录；外部 ADS token 401 → OpenAlex 命中 8（6 篇 GCN + 1 篇命名巧合无关文 + 1 篇样本文 Shen+2024 PASJ 仅 X 射线样本）、Crossref 与 arXiv API 无专文、Web 复核无专文 → 补 GCN 21974 三行 UVOT 上限、无其他可用光学测光（search-limited 已登记 audit/unverified.tsv）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "T0=Swift/BAT 触发时刻：整数秒 07:55:32 据 GCN 21966、亚秒 .213440 据 batgrbcat 目录（external/swift_bat 快照）；原导入 t0_basis=meta_trigger 的整数秒值已留底 info comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
