@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB081210A",
-  "alias": [],
-  "ra": 70.458333,
-  "dec": -11.266667,
-  "T0": "2008-12-10T20:19:34Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 081210",
+    "Swift 337073",
+    "BAT 337073"
+  ],
+  "ra": 70.48417,
+  "dec": -11.25741,
+  "T0": "2008-12-10T20:19:34.212340Z",
+  "T0_ref": "Swift/BAT trigger #337073（GCN 8648：20:19:34 UT）；亚秒 0.212340 s 取触发仪器官方目录（仓内 external/swift_bat、external/swift_grb 快照一致；BAT 位置通告 GRB_TIME=73174.21 SOD=20:19:34.21 UT 同值，经 Greiner 目录页 mpe.mpg.de/~jcg/grb081210.html 核对），2026-11-07 复核",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,16 +16,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1.7,
-  "pos_ref": "GCN 8650",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.64,
+  "pos_ref": "GCN 8648（Swift/UVOT finding chart 位置，0.64″，90% 置信）；Perley+2016（ApJ 817, 7）表 2 同值采用（04:41:56.20 −11:15:26.8）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Perley+2016, ApJ 817, 7（arXiv:1504.02482：X-shooter 宿主光谱 [O III] λ5007 z=2.0631，Hβ/[O III] λ4959 同红移证实）",
+  "comment": "审核记录（wa1kmoon@zcode，2026-11-07）。① 定位修正：原 ra/dec=70.458333/-11.266667 为 BAT 星上定位（3′，GCN 8648），与原 pos_ref=GCN 8650（XRT 增强定位）错配；改取 Swift/UVOT finding chart 位置 70.48417/-11.25741（0.64″，90%，GCN 8648；Perley+2016 表 2 同值）；XRT 增强定位 70.4841/-11.2577（1.7″，90%，GCN 8650）备查；来源未另行标注置信水平的旧 pos_error=1.7 已随 0.64″ 一并更正。② T0 统一为 2008-12-10T20:19:34.212340Z（触发仪器 Swift/BAT，亚秒取官方目录，见 T0_ref），全表 mjd=T0+time 重算至 7 位小数（190 行 10keV X 射线行仅机械重算 mjd，其余列未动，需在 PR 说明点明）；SMARTS 两行 time 原为旧历元整秒差（02:33 UT−旧 T0=22406 s），按 §3.8 随 T0 平移 −0.21234 s、mjd 不动。③ sub_tag=lgrb 依据 t90=145.908±7.028 s（Swift-BAT 目录，external/swift_bat 快照；GCN 8649 给 146±8 s），按目录 t90 判 lgrb。④ 光学行 35 行逐行核对：4 行 Dainotti2024 转引行（8659 I/J、8660 R、8667 R）确证与 GCN 8659/8660/8667 同一次测量（同仪器同值）后删除，保留 GCN 原始行并补全 telescope/instrument/mag_system/time_err；19+1 行 uvot-white 与 Roming+2017 MAST HLSP uvotgrb noc-db FITS 逐值一致，time_err=窗口半跨补齐（原导入 0.0 占位）；GCN 8654 五行 UVOT 3σ 上限/探测行 err=0.0 占位清空、time_err 补窗口半跨、Gext_corr y→n（GCN 8654 明示未做银消改正，Dainotti 目录文件亦记 extcorr=n）；GCN 8648 finding chart 行 time 146→155 s（150 s 曝光 T+80 s 起，中点；原值无出处）；新增 GCN 8654 white 12.6σ 探测行（19.91±0.08，窗口 80–1009 s 中点 544.5）。⑤ 红移 z=2.0631 为宿主星系 X-shooter 光谱（Perley+2016），redshift_type=spec-host。⑥ 测光检索留证（2026-11-07）：仓内 gcn/archive 全文检索命中 8 篇（8648/8649/8650/8652/8654/8659/8660/8667；光学数值 4 篇 8654/8659/8660/8667 全部核对入库/核毕，另有 8648 FC 探测行）；external/rssgrbag、grbsn_webtool 无该源记录；external/mpe_greiner 快照 z=2.0631 一致；外部：OpenAlex 检索命中 20 条（除 GCN 与样本文外无该源专属测光论文）；arXiv API \"GRB 081210\" 0 命中；Roming+2017 noc-db 20 点（MAST HLSP FITS）与 Dainotti+2024 目录文件（github.com/SLAC-Gamma-Rays/grbLC 081210A_mag.txt）全量核对；ADS token 401（见 audit/unverified.tsv * search-limited 行），不据此下「无文献」结论。⑦ 别名出处：GRB 081210=GCN 8648 用名；Swift 337073/BAT 337073=官方目录 name_alt（external/swift_grb、external/swift_bat 快照）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,15 +51,32 @@
         "v": 47.63409617707551
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift – I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Perley+2016",
+      "url": "https://doi.org/10.3847/0004-637X/817/1/7",
+      "title": "The Swift Gamma-Ray Burst Host Galaxy Legacy Survey - I. Sample Selection and Redshift Distribution",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
