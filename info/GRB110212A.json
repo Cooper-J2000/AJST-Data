@@ -1,13 +1,17 @@
 {
   "transient_id": "GRB110212A",
-  "alias": [],
+  "alias": [
+    "GRB 110212A",
+    "BAT 445321",
+    "Swift 445321"
+  ],
   "ra": 69.025,
   "dec": 43.716,
-  "T0": "2011-02-12T11:11:56Z",
-  "T0_ref": null,
+  "T0": "2011-02-12T01:09:08.736900Z",
+  "T0_ref": "GCN 11699（At 01:09:08 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 110212A, trigger=445321）；亚秒取触发仪器官方目录：仓内 external/swift_bat 快照 trigger_time=2011-02-12T01:09:08.736900Z（external/swift_grb 快照同值互证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,15 +20,22 @@
   "pos_ref": "GCN 11703",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT trigger 445321（GCN 11699）；BAT 精化定位 RA,Dec=69.025,43.716（1.4 arcmin，radius，sys+stat，90% containment，GCN 11703——pos_error_confidence=90 依此）。T90(15-350 keV)=3.3±0.5 s（GCN 11703）；仓内 external/swift_bat 快照 t90=3.7±0.50 s（15-350 keV）、external/swift_grb 快照 t90=3.68 s（15-150 keV），按目录 t90>2 s 判 lgrb。同日 Fermi GBM 触发 bn110212550（2011-02-12T13:12:33.523Z，RA,Dec=311.33,−74.5，仓内 external/fermi_gbm 快照）为另一独立事件，非本源别名，不收录。GCN 11711 正文误写 GRB 110201A 为原文笔误（应为本源，其引用 GCN 11699 即本源）。T0 勘误：原 T0=2011-02-12T11:11:56Z 实为 MITSuME 观测窗口起点（GCN 11711），bot 残留；原 extra_data t0_basis='meta_trigger'、t0_note='t0 为 meta trigger-time（真实触发时刻）'一并失真已改写（原值留此备查）。UVOT 行原 time=130144 s 锚定 Swift 观测窗口起点（2011-02-13 23:21 UT），已按窗口中点约定改算。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 8 篇（GCN 11699–11704、11711、11729，均属本源；另 40856 为时间戳假阳性）；external/rssgrbag、external/grbsn_webtool 无记录；OpenAlex 命中 9 条（7 条为 GCN 通告/Report 本身，余为 IceCube 2015 中微子样本检索与 2014 学位论文，均无测光表）；Crossref 题录检索无相关研究文章；ADS/SciX API 实测 HTTP 401，通道受限（audit/unverified.tsv 已登记，不据此断言无文献）。补充入库：ROTSE-IIIb coadd 上限 4 行（GCN 11700）、BOOTES-2/TELMA 1 行（GCN 11701）、SARA-N 2 行（GCN 11702）、GRT 1 行（GCN 11704），共 8 行，均为上限。XRT 3σ 计数率上限 1.4e-3 ct/s（GCN 11729）为 X 射线量，不入库。无红移信息，无宿主记录。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "trigger",
+    "t0_note": "2026-11-07 审核改写：原 t0_basis='meta_trigger'、T0=2011-02-12T11:11:56Z 系 GCN 11711 MITSuME 观测窗口起点残留（失真）；标准 T0=Swift/BAT 触发时刻 2011-02-12T01:09:08.736900Z（trigger 445321，GCN 11699 + external/swift_bat 亚秒），全表 time/mjd 已按新 T0 重算。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
