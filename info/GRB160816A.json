@@ -1,12 +1,15 @@
 {
   "transient_id": "GRB160816A",
   "alias": [
-    "GRB 160816730"
+    "GRB 160816730",
+    "GRB160816730",
+    "GRB 160816730A",
+    "bn160816730"
   ],
-  "ra": 322.32000732421875,
-  "dec": 37.13999938964844,
-  "T0": "2016-08-16T17:31:01.980000Z",
-  "T0_ref": null,
+  "ra": 322.4108,
+  "dec": 37.1324,
+  "T0": "2016-08-16T17:30:57.974978Z",
+  "T0_ref": "Fermi/GBM trigger 160816730（GCN 19804 记 17:30:57.97 UT；HEASARC FERMIGBRST trigger_time MJD 57616.729837673；GBM trigdat TRIGTIME=493061461.974978 s（MET,TT，纪元 2001-01-01T00:00:00 UTC，扣 4 次闰秒）=17:30:57.974978 UTC，三者一致；retrieved 2026-11-07）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -18,13 +21,27 @@
   "pos_ref": "GCN 19806",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核 Rusty-Harpoon@zcode 2026-11-07：(1) 身份=Fermi/GBM 触发 160816730（trigger MET 493061461；FERMIGBRST name/trigger_name=GRB160816730/bn160816730；2FLGC name=GRB160816730、gcn_name=GRB160816A、name_alt=GRB 160816.730），GBM 触发通告 GCN 19804 原文用名「GRB 160816730A」；LAT 探测（GCN 19802）、Konus-Wind 触发（GCN 19810，其 T0=17:31:01.653 UT）、IPN 环（GCN 19814，环心线距 XRT 源 0.0086°）、Swift-XRT 余辉（GCN 19806）多路互证，同日无混淆源。官方通告页 gcn.gsfc.nasa.gov/other/160816730.fermi 已 404，改用 HEASARC 官方 FTP 触发目录 bn160816730/current/ 的 trigdat（§4 第 6 类，retrieved 2026-11-07）。(2) T0 原值 17:31:01.980000Z 为 2FLGC trigger_met 493061461.98 s 未扣闰秒的 MET→UTC 直接换算（2001-01-01 纪元至 2016-08 共 4 次闰秒），真值提前 4.005 s；按 §3.8「换算口径差不写 T0_offset」直接改正 T0=2016-08-16T17:30:57.974978Z：GCN 19804 记 17:30:57.97 UT、FERMIGBRST trigger_time MJD 57616.729837673、trigdat TRIGTIME 493061461.974978 s 扣 4 闰秒，三者一致；2FLGC 自带 UTC 列 17:30:57.001（差 0.97 s，仅旁证）；全表 34 行 time 已按新 T0 重锚、mjd=T0+time 自洽（本源无 keV 行）。(3) 定位：ra/dec 原 322.32000732/37.13999939 为 2FLGC LAT 定位 322.32/37.14 的 float32 截断，且与 pos_error=3.8″/pos_ref=GCN 19806 不符（坐标是 LAT 位、误差是 XRT 的，相差约 4.4′（cos 加权角距实测））；已归位 GCN 19806 Swift-XRT 余辉位 RA,Dec=322.4108,+37.1324（3.8″ radius，原文标注 90% confidence），pos_error_confidence=90；UKSSDC 精化位 322.41129,+37.13286 并列备查（GCN 19881 原文转写 21h29m38.71s/+37d07'58.3″；swift.ac.uk/xrt_positions/00020685 在线页 retrieved 2026-11-07，现行值 90% 2.3″）；FERMIGBRST 表位 322.411/37.1324（error_radius 0.001°≈3.6″）即 HEASARC 回填的 XRT 精化位。(4) sub_tag=Fermi-LAT：LAT 确有探测（GCN 19802 LAT 团队通告，最高 9.5 GeV 光子 ~T0+1100 s；2FLGC 收入，like_best_ts=261、ARR=1）；sub_tag=lgrb 依 t90=11.072±0.091 s（50-300 keV，FERMIGBRST；GCN 19804 约 11.0 s）按目录 t90 判 lgrb。(5) 无红移测量；MASTER 曾报候选宿主（GCN 19805，disc galaxy 21h29m23.16s +37d05m54.9s，未确证，不建 host_galaxy）。(6) 光变 34 行：原 27 行数值经逐值核对与 GCN 19808/19809/19815/19818/19819/19820/19824/19829/19892 原文一致，改正三类系统性问题——①T0 重锚（见(2)）；②iTelescope/UVOT/RATIR/LT 等窗口行原导入取窗口起点，按 §3.8 改窗口中点、补 time_err=半宽（FTN 原文只给起始时刻，保留原锚并在行 comment 注明）；③Zeiss-1000/ISON 表自带 t−T0(mid) 列与自身 UT start+Exp 不自洽（差 14–31 min），改按 UT start+Exp/2；补 7 行：MASTER-IAC coadd 检出（GCN 19821）、ISON SANTEL-650 检出（GCN 19825）、GAO NASU 底片暴前 B 上限 5 行（GCN 19881）；GCN 19805 首报 180s 曝光 UL 19.7 的起始时刻被 GCN 19821 更正（22:57:12 UT→指向 22:43:04 UT），单帧历元不可恢复，不入库；2FLGC LAT 光变（LC_FLUX/LC_ENE_FLUX=分箱积分光子/能量流量，非 Fν）SCHEMA flux_density 无对应表达，不入库。(7) 测光检索（2026-11-07）：仓内 gcn/archive 全文检索命中 24 篇（19802–19892 间 19 篇涉本源，其中 13 篇含光学/射电测光或上限已逐篇核对、19806 为 X 射线、19802/19803/19804/19810/19814 为触发/γ 射线量；另 5 篇 29061–29065 系 createdOn 毫秒时间戳数字撞车，与他暴无关）；external/rssgrbag、grbsn_webtool、uvot_grb 均 0 命中；SciX/ADS API 检索闭环（token + /v1/search/query 正确路径；初次误用缺 /v1 的路径返回 HTTP 202 WAF 属路径错误非凭据问题，2026-11-08 复核实测「GRB 160816A」18 命中全为 GCN 通告、无研究论文测光表；unverified.tsv 的 search-limited 行随本更正删除），期刊检索改经 WebSearch+arXiv 实查：命中 Ajello+2019 2FLGC（=本源 LAT 数据源）与 Dainotti+2025（ApJ DOI 10.3847/1538-4357/ad93b5，闭合关系样本用 LAT 光子流量光变，无可入库测光表）；GCN 站与 archive 一致；TNS 不适用（GRB）。共补 7 行。(8) 2FLGC 论文首作者为 Ajello（arXiv:1906.11403 LaTeX 作者序 M. Ajello 第一、AAS 姓氏字母序；Crossref VoR author[0]=Ajello，ApJ 878,52），external/fermi_lat/README.md 署 \"Ajello et al. 2019\" 正确，articles[] 登记 Ajello+2019（VoR DOI）。【2026-11-08 独立核查更正：初审曾误判首作者为 Axelsson，已按证据改判】",
   "sub_tag": [
+    "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
