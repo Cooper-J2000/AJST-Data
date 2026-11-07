@@ -1,28 +1,45 @@
 {
   "transient_id": "GRB230123A",
-  "alias": [],
+  "alias": [
+    "BAT 1150429"
+  ],
   "ra": 40.85977,
   "dec": -65.68672,
-  "T0": "2023-01-23T10:19:44Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0": "2023-01-23T10:19:44.925060Z",
+  "T0_ref": "GCN 33206（Swift/BAT 触发 2023-01-23 10:19:44 UT，trigger 1150429）；亚秒 .925060 取自 Swift/BAT 官方目录快照 Trig_time_UTC 列（external/swift_bat，trigger 1150429）",
+  "T0_offset": -1.248,
+  "T0_offset_ref": "Swift/BAT 官方目录快照 external/swift_bat summary_burst_durations.txt：T100_start=-1.248 s（T100 区间 -1.248～4.748 s，相对 BAT 触发；触发前已有辐射取负）；GCN 33214 mask-weighted 光变原文 'starts at ~T-2 s' 同向印证；库内先例 GRB231129A（T100_start=-1.748 → T0_offset=-1.748）同口径",
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 33206",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核记录（fsy@zcode，2026-11-07）。身份：Swift/BAT 触发 1150429（GCN 33206 原文 'At 10:19:44 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 230123A (trigger=1150429)'）；BAT 精化分析 GCN 33214（ground 位置 RA,Dec=40.905,−65.661，1.8′ 90%；T90=5.37±1.03 s，15–350 keV）；XRT 探测/精化 GCN 33209/33210；swift_bat/swiftgrbba/mpe_greiner 快照互证，确证。T0：秒级 10:19:44 见 GCN 33206；亚秒 .925060 取自 Swift/BAT 官方目录快照 Trig_time_UTC 列（external/swift_bat，trigger 1150429；同表 MET 列 696162015.552 与 UTC 列分数部分不一致，按规则一律以 UTC 列为准）；与原库 meta_trigger 值秒级一致，仅补亚秒，改 t0_basis=swift_bat_catalog_trigger_1150429（原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'）。T0_offset=-1.248 s：Swift/BAT 目录快照 summary_burst_durations.txt T100_start=-1.248 s（T100 区间 -1.248～4.748 s，相对触发，触发前已有辐射取负）；GCN 33214 光变原文 'starts at ~T-2 s' 同向印证；库内先例 GRB231129A 同口径（T100_start=-1.748 → T0_offset=-1.748）。改 T0 后全表 mjd=T0+time 重算（9 位小数），本源无 X 射线行。定位：ra/dec=40.85977,−65.68672 为 GCN 33206 XRT 增强位置（原文 'RA, Dec 40.85977, -65.68672'、'with an uncertainty of 1.9 arcseconds (radius, 90% containment)'，pos_error_confidence=90）；字段维持 GCN 初报增强位、精化位入 comment（参照同型源 GRB230216A 已合入审核的处理）；精化位并列备查：GCN 33209 天测改正位 40.85842,−65.68648（4.1″ 90%）；Xu+2025（ApJ 982,32）Table 1 给 40.85766,−65.68617（1.9″，脚注 'The localization uncertainty represents the radius of the 90% error region'，其定位口径原文 'obtained from the Swift X-ray Telescope (XRT), enhanced using the Swift Ultra-violet Optical Telescope'）；UKSSDC xrt_positions 实时页（2026-11-07 取数）02h43m25.84s −65°41′10.3″（2.3″，Enhanced）=40.857667,−65.686194；swiftgrbba 快照 xrt_ra/dec=40.85767,−65.68617（xrt_error_radius 2.2″，HDR 注明 XRT 90% Error Radius）。各家中心一致（相互差 <4.1″，均在误差内），差异属增强定位不同时期版本。t90=5.368±1.029 s（Swift/BAT 目录 external/swift_bat，15–350 keV）→ 按目录 t90 判 lgrb；GCN 33214 与 Xu+2025 Table 1 均给 T90=5.37±1.03 s，三值一致。alias：BAT 1150429（Swift/BAT 官方目录 name_alt；GCN 33206 原文 'trigger=1150429'）。红移：未测；Xu+2025 Table 4 由候选脉冲 DM 推 z_pred≈1.36（脚注 'The predicted redshift derived from the pulse DM'，模型预测非测量），不写入 redshift；无宿主证认，不建立 host_galaxy。测光检索留证（2026-11-07）：GCN 站事件页（gcn.nasa.gov/circulars/events/grb-230123a）命中 7 篇（33206/33208/33209/33210/33211/33214/33217），逐篇读全文：含光学测光/上限 4 篇（UVOT 33206 与 33211、Zadko 33208、LCOGT 33217），33209/33210 仅 X 射线、33214 仅 BAT 能谱参数；仓内无 gcn/archive（git 树无 gcn/ 路径）、external/rssgrbag 0 行、grbsn_webtool 无此事件、uvot_grb 无记录、swift_bat/swiftgrbba/mpe_greiner 仅目录参数；文献检索（2026-11-07）：Crossref bibliographic 检索 40 条中 0 篇事件相关、OpenAlex 检索命中 1 篇、Web 检索确认无专门余辉论文；arXiv API（对 sanity-check 事件也返回 0 条，通道不可信）与 SIMBAD（SSL 错误）本机不可用记 unavailable@2026-11-07，不据其得『无文献』结论：唯一期刊文献 Xu+2025（ApJ 982,32，DOI 10.3847/1538-4357/adb71e），VoR PDF（IOP/AAS 排版，%PDF 已核）已读。其 MWA 170–200 MHz 脉冲搜索对 230123A 给 1 个候选脉冲（Table 4：SNR 6.71、Tpulse=656.5 s 自 MWA 观测起始、峰值流量密度 3.6±0.6 Jy、DM 1404.12 pc cm-3、流量 431±74 Jy ms），但原文摘要自述 'radio frequency interference from digital TV (DTV) is most likely the origin of these pulses'、总体置信仅 97%（2.2σ），非确证探测且非余辉测光，不入 lc，此处留证。lc 处置：共补 2 行（GCN 33211 white_FC、u_FC）；原 11 行逐行重核——GCN 33206 white 19.6 行为原文自述 typical 3-sigma upper limit（2.7′×2.7′ sub-image 典型灵敏度），同曝光官方精化上限 GCN 33211 white_FC >20.6 另存一行，两值并存保留、待维护者裁决；GCN 33211 七行改窗口中点/半宽并按原文 'using the UVOT photometric system (Breeveld et al. 2011)' 补 mag_system=Vega；Zadko 行改窗口中点（9213.4–12813.4 s，R>19.0 为 6 张叠加）；LCOGT 两行按新 T0 历元改窗口中点（02:06–02:38 UT，中点 02:22:00 UT，time_err=半窗 960 s）。本源无 X 射线行，无行删除。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "swift_bat_catalog_trigger_1150429",
+    "t0_note": "T0=2023-01-23T10:19:44.925060Z：秒级 10:19:44 见 GCN 33206，亚秒取自 Swift/BAT 官方目录（trigger 1150429）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Xu+2025",
+      "url": "https://doi.org/10.3847/1538-4357/adb71e"
+    }
+  ],
   "host_galaxy": null
 }
