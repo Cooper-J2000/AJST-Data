@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB150423A",
-  "alias": [],
-  "ra": 221.6,
-  "dec": 12.283333,
-  "T0": "2015-04-23T06:28:04Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 638808"
+  ],
+  "ra": 221.57899,
+  "dec": 12.28349,
+  "T0": "2015-04-23T06:28:04.692100Z",
+  "T0_ref": "GCN 17728（Swift/BAT 触发通告）原文 'At 06:28:04 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒精度）；亚秒取触发仪器官方目录（external/swift_bat 快照=在线 batgrbcat summary_general.txt，trigger 638808）触发时刻 2015-04-23T06:28:04.692100Z（§3.2 触发仪器亚秒优先）；互证：GCN 17728 XRT 起测 06:29:14.8 UT=T0+70.1 s，反算 T0≈06:28:04.7 与亚秒值差 8 ms",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +16,14 @@
   ],
   "pos_error": 1.8,
   "pos_ref": "GCN 17735",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 17755",
-  "comment": null,
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-07）。①身份：Swift/BAT 触发 638808（GCN 17728 原文 'At 06:28:04 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 150423A (trigger=638808)'）；同日无其他 Swift 触发混淆；alias 新增 'BAT 638808'（external/swift_bat 官方目录 name_alt）。②T0：GCN 17728 整秒；亚秒取触发仪器官方目录（external/swift_bat 快照=在线 batgrbcat，trigger 638808，快照获取 2026-07-21）触发时刻 2015-04-23T06:28:04.692100Z（§3.2 触发仪器亚秒优先）；互证：GCN 17728 XRT 起测 06:29:14.8 UT=T0+70.1 s → 反算 T0≈06:28:04.7，与目录亚秒值差 8 ms；原 T0=2015-04-23T06:28:04Z 为 GCN 整秒截断且 T0_ref 缺失，现补全。无 T0_offset（BAT 光变单峰起于 T+0.0、无触发前辐射证据，GCN 17740）。X 射线行（band=10keV）共 8 行，其 mjd 需随 T0 重算（维护者合入前统一执行，§3.3 2026-10-31 裁定）；非 X 射线行 mjd 已按新 T0 重算（time 保持原文口径值）。③定位：原 ra/dec=221.6/12.283333 为混值（221.6≈GCN 17728 BAT on-board 221.600 圆整、12.283333=GCN 17728 快报增强位 12.2833），与 pos_error=1.8″、pos_ref=GCN 17735 不配套；改取 GCN 17735 XRT 增强位置 221.57899/+12.28349（1.8″，radius, 90% confidence，原文标注置信水平 → pos_error_confidence=90；通告系 Swift-XRT team 官方自动产品，XRT-UVOT 对齐+USNO-B1 星表匹配，Goad+2007/Evans+2009 管线）；备查：GCN 17728 快报增强位 221.5787,12.2833（2.4″，90%）、BAT on-board 221.600,+12.288（3′，90%）、BAT 地面精化位 221.601,12.264（1.9′，90%，GCN 17740）、external/swift_bat BAT Image 位 221.6026,12.26593。④红移：z=1.394 来自 GCN 17755 VLT/X-shooter RRM 光谱（2015-04-23 06:50 UT 起约 5000 s）：6900 Å 处 Mg II 双线**吸收**tentative 探测（原文 'we do not detect obvious absorption or emission features...a tentative detection of a doublet in absorption'；连续谱探至 3200 Å → z<2.5 稳健上限）→ redshift_type=spec（光谱吸收线；Swift/BAT 目录红移表记 1.394(?)，Minaev+2020 采 z=1.394 判 type I）；同场 4.0″ NE 源 S2 为 z=0.456 发射线星系（GCN 17744 Keck/LRIS，OII/OIII/Hα/Hβ），非本暴红移。⑤sub_tag：t90=0.216±0.028 s（Swift/BAT 官方目录 external/swift_bat trigger 638808，15-350 keV；t50=0.120±0.030 s 并列）；GCN 17740 精化分析 T90=0.22±0.03 s（15-350 keV）；GCN 17728 BAT 光变单峰约 0.5 s——按目录 t90 判 sgrb（§3.9）；Minaev+2020 归 type I 一致（params.grb_type=I）。⑥lc 逐行核对：非 X 射线原 54 行逐一对 GCN 17728/17729/17730/17732/17736/17738/17739/17742/17750/17754/17763/17798/17803 原文核对；X 射线 8 行（band=10keV，UKSSDC Burst Analyser）零改动、未参与去重。改动：(a) Dainotti2024;NNNNN 转引行逐值核对一致后 reference 回改最初出处（GCN 号）；(b) 9 行确证同一次测量转引后按 §3.4 删除（GCN 17728 white 19.6 模板值 Dainotti 转引 1 行、GCN 17738 VLT '94 minutes' 圆整 1 行、GCN 17736 RATIR bot 行 time=15116 s 无法从原文导出 3 行、GCN 17763 Akeno MRT 行 time=25214 s 与原文 MID-UT 冲突 3 行、GCN 17803 GMG 'about 9 days' 圆整 1 行）；(c) GCN 17728 模板敏感度句行（white 19.6，'The typical 3-sigma upper limit has been about 19.6 mag' 经 gcn/archive 全文检索同句逐字见于 501 篇 Swift 检测通告、同期如 GCN 17712/17743/17799）discard=y 留痕，FC 实测上限 >20.8 见 GCN 17739 white_FC 行（148.5 s）；(d) GROND 17732 Source #2 三行（z/g/i）经 GCN 17744 Keck 光谱证认为 z=0.456 星系 → discard=y；GCN 17750 bot 行时间误用曝光起点 → discard=y（中点行保留）；(e) 补 time_err：UVOT 窗口半宽、GROND 总曝光/2、RATIR 窗口半宽、MITSuME 半曝光、SCUBA-2 半曝光、Zeiss 总曝光/2（各约定口径见行 comment）；(f) KAIT clear 行 band R→G（无滤光片）、USNO B1.0 定标 mag_system 留空；VLT/MITSuME/Zeiss/GMG 等行 mag_system 由管线映射值改留空（原文未声明系统，§3.3）；(g) SCUBA-2 行 time 3176→6776 s（起点→中点口径）、telescope/instrument 拆分。补行 2：GCN 17747 WHT/ACAM 5σ 上限 g~25.3（58466 s）、GCN 17798 SCUBA-2 450 μm RMS 17.4 mJy（665GHz，6776 s）；GCN 17733 Keck、17741 UKIRT 无星等值不入库；GCN 17801 Chandra X 射线上限 1.7e-15 erg/cm²/s（0.3-10 keV）按契约不入库。⑦测光检索留证（2026-11-07）：仓内 gcn/archive 45 563 篇全文检索「150423」「638808」→ 属本暴共 22 篇（17728/17729/17730/17732/17733/17735/17736/17737/17738/17739/17740/17741/17742/17744/17747/17750/17754/17755/17763/17798/17801/17803，逐篇读过；GCN 17733 原文笔误引 'GCN 17726' 实为 17728，17726 系 GRB 150418A 通告）；external/rssgrbag 射电光变 0 命中、grbsn_webtool 0 命中、uvot_grb/swift_grb 无本暴条目、swift_bat/minaev2020 仅为参数级快照；SciX 检索（token）「GRB 150423A」元数据命中 23 条（22 GCN + Chandra 提案 2014cxo..prop.4575B 'Search for a Jet Break in the Short GRB 150423A'，非论文）、全文「150423A」同 23 条、trigger 号「638808」0 条、arXiv API all:\"150423A\" 0 条（MNRAS 全文不入 SciX 索引：Minaev+2020 MNRAS 492,1919 已核 external/minaev2020 快照=参数表无测光；Dainotti+2024 MNRAS 533,4023 机读表 grblc 150423A_mag.txt 40 行逐行核对全部为 GCN 17728–17803 转引、无独立新值）→ 无 GCN/目录之外的独立测光表，补 2 行。⑧星等系统：UVOT=Vega（GCN 17739 原文引 UVOT photometric system, Breeveld+2011）；GROND/RATIR=AB（两处原文声明）；KAIT（USNO B1.0 定标）、VLT FORS2 Rc（SDSS 标准星转换定标）、MITSuME Okayama/Akeno（SDSS-DR8/GSC2.3 定标）、Zeiss-1000（SDSS DR9 R(Lupton) 定标）、WHT g（SDSS 场星定标）、GMG z（未声明定标）原文均未声明 AB/Vega → mag_system 留空。⑨host_galaxy：无确定宿主——余辉（S1）可能混有共同宿主成分（GCN 17744 原文 'whether it is entirely afterglow or if it also contains flux from a (coincident) host galaxy'）、WHT 17747 见候选暗星系但无数值 → 不建档；GROND 17729 曾疑 S1 为宿主（'might be the host galaxy'）后被衰减证据否定。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -57,22 +59,25 @@
         "v": 0.09022552213868003
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
-      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
       "name": "Minaev+2020",
       "source": "bot",
       "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+      "url": "https://doi.org/10.1093/mnras/stz3611"
     }
   ],
   "host_galaxy": null
