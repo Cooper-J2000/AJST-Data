@@ -1,27 +1,29 @@
 {
   "transient_id": "GRB081222A",
-  "alias": [],
-  "ra": 22.75,
-  "dec": -34.133333,
-  "T0": "2008-12-22T04:54:00.250000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 081222"
+  ],
+  "ra": 22.739958,
+  "dec": -34.094858,
+  "T0": "2008-12-22T04:53:59.974180Z",
+  "T0_ref": "GCN 8691（Swift/BAT trigger 337914，04:53:59 UT）；Swift/BAT 官方目录 trigger_time=2008-12-22T04:53:59.974180Z（external/swift_bat 与 external/swift_grb 快照一致；GCN 8705：XRT 04:54:51.7 UT=触发后 51.8 s，互证）。Fermi/GBM 触发 04:54:00.25 UT（GCN 8715）/04:54:00.256 Z（FERMIGBRST）为另一触发仪器值，按「有 Swift 则以 Swift 为准」不采纳",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 2.77,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 8696",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 8713",
-  "comment": null,
+  "comment": "触发链：Swift/BAT 触发 337914（GCN 8691，04:53:59 UT；Swift/BAT 目录 trigger_time=2008-12-22T04:53:59.974180Z，external/swift_bat 与 external/swift_grb 快照一致；GCN 8705 载 XRT 于 04:54:51.7 UT 开始＝触发后 51.8 s，互证）；Fermi/GBM 触发 251614441/081222204（GCN 8715，04:54:00.25 UT；FERMIGBRST trigger_time=04:54:00.256Z）。原库 T0=04:54:00.250000 即 GCN 8715 原文值；与 GBM 目录差 6 ms（<60 ms），非 2FLGC 式闰秒换算缺陷——MET 251614441 含 2006-01 闰秒改正后恰为 04:54:00.256Z，未扣应为 04:54:01.256。双触发仪器整数秒不一致（59 vs 00），按 §3.2「有 Swift 则以 Swift 为准」取 BAT 目录亚秒值，Trigger_Instrument 由 Fermi/GBM 改 Swift/BAT。定位：UVOT 精化位 01:30:57.59 −34:05:41.49（0.5″、90% c.l.，GCN 8696 原文）；备查：XRT 精化位 22.74038 −34.09528 1.4″（UKSSDC swiftgrbba 快照）、XRT 初始位 22.74067 −34.09556 3.6″/90%（GCN 8691）、BAT 地面位 22.748 −34.095 1.0′/90%（GCN 8709）、REM 位 ±1.0″（GCN 8692）、GROND 位 ±0.5″（GCN 8693）；原库 22.75 −34.133333 系 mpe_greiner 快照的X 射线粗位（01h31m00s −34°08′、Error 3′）。z=2.77：Gemini-South/GMOS-S 吸收 DLA＋SiIV/SiII/CIV/FeII/NiII 金属线（GCN 8713），Gemini-N/GMOS 确认（GCN 8718）；Vielfaure+2021（A&A 653, A83）宿主 X-shooter Lyα 发射 z=2.7700、F(Lyα)=(1.6±0.4)e-17 erg/s/cm2（宿主确认，redshift_type=spec）。t90=33.0±4.0 s（Swift/BAT 目录 15-350 keV）、GBM t90=18.88±2.32 s（50-300 keV，FERMIGBRST）、GCN 8721 称 \"The long GRB 081222\" → 按目录 t90 判 lgrb。alias「GRB 081222」＝Swift/GCN/官方目录用名（GCN 8691 原文用名；uvot_grb/mpe_greiner/swift_bat 快照同名）。测光检索（2026-11-08）：仓内 gcn/archive 全文检索 \"081222\" 命中 17 篇（8691/8692/8693/8696/8697/8699/8705/8707/8709/8712/8713/8715/8716/8717/8718/8721/8724，逐篇读全文）；SciX 全文 \"GRB 081222\" 命中 13 条、\"081222\" 15 条（=上述 GCN 群＋GCN Report 190.1＋Vielfaure+2021 样本篇＋1 条无关 EP 通告，无未收测光表）；Dainotti2024 机读表（SLAC-Gamma-Rays/grbLC grblc/data/mag_files/081222A_mag.txt，124 行，2026-11-08 实取）逐行核对：Roming2017 83＋Oates 16＋GCN 转引 25 行全部溯源落位（8693/8697/8699/8724 转引行的时刻失真亦见其表内），无漏行；external/rssgrbag、external/grbsn_webtool 无记录；external/uvot_grb（Roming+2017 HLSP）noc-db 85 行已逐值核对（实测下载 MAST noc-db.fits，MD5 484c9d35b83165eccd8240c32592e065 与 external/uvot_grb/README.md 一致）。本 PR 补行 2：GCN 8707 爆发前 G 12.5 上限（02:10:44–02:11:21 UT）、GCN 8692 REM H≈11.1 探测（触发后约 1 min）。X 射线 414 行（10keV，UKSSDC Burst Analyser）零改动，其 mjd 需由维护者按 mjd=T0+time 随新 T0 重算（当前差 0.276 s）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -87,7 +89,12 @@
         "v": 0.095
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
   },
   "articles": [
     {
@@ -124,6 +131,13 @@
       "source": "bot",
       "title": "Revisiting the Spectral-Energy Correlations of GRBs with {\\it Fermi} Data I: Model-wise Properties",
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract"
+    },
+    {
+      "bibtex": "@ARTICLE{2021A%26A...653A..83V,\n       author = {{Vielfaure, J.-B.} and {Vergani, S. D.} and {Gronke, M.} and {Japelj, J.} and {Palmerio, J. T.} and {Fynbo, J. P. U.} and {Malesani, D. B.} and {Milvang-Jensen, B.} and {Salvaterra, R.} and {Tanvir, N. R.}},\n       title = {Gamma-ray bursts as probes of high-redshift Lyman-$\\alpha$ emitters and radiative transfer models},\n       journal = {A\\&A},\n       year = {2021},\n       volume = {653},\n       pages = {A83},\n       doi = {10.1051/0004-6361/202140355},\n       eprint = {2105.09314},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021A%26A...653A..83V/abstract},\n}",
+      "name": "Vielfaure+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Gamma-ray bursts as probes of high-redshift Lyman-alpha emitters and radiative transfer models",
+      "url": "https://doi.org/10.1051/0004-6361/202140355"
     }
   ],
   "host_galaxy": null
