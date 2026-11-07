@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB070520A",
-  "alias": [],
-  "ra": 193.255,
-  "dec": 75.005,
-  "T0": "2007-05-20T13:05:10Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 070520"
+  ],
+  "ra": 193.36131,
+  "dec": 74.99038,
+  "T0": "2007-05-20T13:05:10.032620Z",
+  "T0_ref": "Swift/BAT 官方目录（batgrbcat summary_general_info，Lien+2016 在线版）trigger 279817 亚秒值 13:05:10.032620Z；GCN 6423 整秒 13:05:10 UT 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +14,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 5.4,
-  "pos_ref": "GCN 6423",
+  "pos_error": 4.1,
+  "pos_ref": "GCN 6427",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份：GRB 070520A=Swift trigger 279817（GCN 6423）；同日 GRB 070520B（trigger 279898，T0=17:44:53.264200Z，BAT 位 RA 121.886/+57.588）与本源通告集/坐标/T0 互不相交，无连锁污染。定位：原库 193.255/+75.005 系 GCN 6428 BAT 地面位（2.2′，90%），而原 pos_error=5.4″ 系 GCN 6423 XRT 初位误差——错配；改 GCN 6427 XRT 精化位 193.36131/+74.99038（4.1″，90%）。HEASARC SWIFTGRB（Donato+2012）XRT 位 193.359333/+74.990361、Swift/BAT 目录 BAT 位 193.2467/+74.98236 备查；Subaru 候选余辉（GCN 6441，12:53:26.52/+74:59:26.6，1.5σ）距 XRT 位 0.6″。T90：GCN 6428 给 18±3 s（15–350 keV），HEASARC SWIFTGRB 目录给 71 s（15–150 keV），两值均 >2 s，按目录 t90 判 lgrb。别名「GRB 070520」为 GCN 6423 原文用名（trigger 279817，即本源）。由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)；X 射线 47 行仅按新 T0 机械重算 mjd=T0+time。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 16 篇（涉 A 9 篇：6423/6424/6427/6428/6430/6439/6441/6446/6484，其中 6424/6439/6446/6484 共 11 行上限入库）；external/rssgrbag、grbsn_webtool 无本源记录；ADS token 401 通道受限（audit/unverified.tsv 登记），arXiv API/Crossref/OpenAlex 检索：OpenAlex 命中 10 条（多为 GCN 转录，研究文仅 Evans+2009 XRT 样本方法文），Crossref/arXiv 无本源专文——除上述 GCN 上限外无已发表测光表，本源从未有确认余辉。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
