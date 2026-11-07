@@ -1,19 +1,21 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-600.0,,s,60751.098703703705,VT-R,21.0,,magnitude,AB,n,y,,,,,,,1.0,n,,SVOM/VT,GCN39753,,
-600.0,,s,60751.098703703705,R,21.0,,magnitude,AB,n,y,,,,,,,1.0,n,,SVOM/VT,GCN39752,,
-5585.0,,s,60751.15640046296,VT-B,18.89,0.01,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,,
-5585.0,,s,60751.15640046296,VT-R,17.48,0.02,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,,
-5812.0,,s,60751.15902777778,H,15.5,0.3,magnitude,Vega,n,n,,,,,,,1.0,n,,REM,GCN39764,,
-8485.0,,s,60751.18996527778,VT-R,17.82,0.01,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,,
-8485.0,,s,60751.18996527778,VT-B,18.97,0.02,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,,
-8752.0,,s,60751.19305555556,r,18.18,0.03,magnitude,AB,n,n,,,,,,,1.0,n,,COLIBRI OGSE test camera,GCN39754,,
-10972.0,,s,60751.21875,r,18.0,,magnitude,AB,n,y,,,,,,,1.0,n,,REM,GCN39764,,
-18983.0,,s,60751.31146990741,r,19.27,0.05,magnitude,AB,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN39757,,
-48581.0,,s,60751.65403935185,R,20.88,0.13,magnitude,,n,n,,,,,,,1.0,n,,AZT-33IK 1.5m,GCN39772,,
-71073.0,,s,60751.91436342592,r,21.87,0.08,magnitude,AB,n,n,,,,,,,1.0,n,,T193cm/MISTRAL (OHP),GCN39767,,
-73876.0,,s,60751.946805555555,r,21.7,0.1,magnitude,AB,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN39770,,
-76782.0,,s,60751.98043981481,r,21.72,0.05,magnitude,AB,n,n,,,,,,,1.0,n,,GTC,GCN39769,,
-146019.0,,s,60752.781793981485,R,22.9,,magnitude,,n,y,,,,,,,1.0,n,,AZT-33IK 1.5m,GCN39790,,
-156052.0,,s,60752.89791666667,r,23.5,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,T193cm/MISTRAL,GCN39777,,
-196432.0,,s,60753.365277777775,r,23.95,0.25,magnitude,AB,n,n,,,,,,,1.0,n,,DDRAGO/COLIBRI (SVOM/F-GFT),GCN39784,,
-229806.0,,s,60753.751550925925,R,23.3,,magnitude,,n,y,,,,,,,1.0,n,,AZT-33IK 1.5m,GCN39790,,
+600.0,,s,60751.098703703705,VT-R,21.0,,magnitude,AB,n,y,,,,,,,1.0,n,,SVOM/VT,GCN39753,GCN39752 原发→GCN39753 暴名更正重发，同值（VT_R~21 mag (AB)，~T0+10 min，3σ 上限）；原库 GCN39752 行（band=R 系误标，原文为 VT_R）确证为同一次测量的重复行已删；time 按原文 about 10 minutes after the trigger,wa1kmoon@zcode
+5735.0,150,s,60751.15813657407,VT-B,18.89,0.01,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,date-obs 03:45:13 UT 作序列起点（原文正文另称序列起点 5574 s，与 date-obs 差 11 s 内部不一致，取 UT 锚），6x50 s 曝光中点=起点+150 s,wa1kmoon@zcode
+5735.0,150,s,60751.15813657407,VT-R,17.48,0.02,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,date-obs 03:45:13 UT 作序列起点（原文正文另称序列起点 5574 s，与 date-obs 差 11 s 内部不一致，取 UT 锚），6x50 s 曝光中点=起点+150 s,wa1kmoon@zcode
+5832.0,,s,60751.15925925926,H,15.5,0.3,magnitude,Vega,n,n,,,,,,,1.0,n,,REM,GCN39764,原文给 mid-time 1.62 h，程序化换算 5832 s（bot 原值 5812 s 弃用）,wa1kmoon@zcode
+8610.0,125,s,60751.191412037035,VT-R,17.82,0.01,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,date-obs 04:33:33 UT 作序列起点（原文正文另称序列起点 8474 s，与 date-obs 差 11 s 内部不一致，取 UT 锚），5x50 s 曝光中点=起点+125 s,wa1kmoon@zcode
+8610.0,125,s,60751.191412037035,VT-B,18.97,0.02,magnitude,AB,n,n,,,,,,,1.0,n,,SVOM/VT,GCN39755,date-obs 04:33:33 UT 作序列起点（原文正文另称序列起点 8474 s，与 date-obs 差 11 s 内部不一致，取 UT 锚），5x50 s 曝光中点=起点+125 s,wa1kmoon@zcode
+8782.0,1050,s,60751.193402777775,r,18.18,0.03,magnitude,AB,n,n,,,,,,,1.0,n,,COLIBRI OGSE test camera,GCN39754,原文只给观测窗口 04:21–04:56 UTC（共 23 min 曝光），中点/半宽为约定口径，真实曝光中点不可恢复,wa1kmoon@zcode
+10980.0,,s,60751.21884259259,r,18.0,,magnitude,AB,n,y,,,,,,,1.0,n,,REM,GCN39764,原文给 mid-time 3.05 h，程序化换算 10980 s（bot 原值 10972 s 弃用）；3σ 上限,wa1kmoon@zcode
+18983.0,150,s,60751.31146990741,r,19.27,0.05,magnitude,AB,n,n,,,,,,,1.0,n,,LCOGT 1-m Sinistro,GCN39757,原文给 mid-term 07:28:31 UT，300 s 曝光半宽 150 s,wa1kmoon@zcode
+50261.472,1680,s,60751.67348925926,R,20.88,0.13,magnitude,,n,n,,,,,,,1.0,n,,AZT-33IK 1.5m,GCN39772,原文表给 t-T0(mid)=0.58173 d，程序化换算 50261.472 s（bot 原值 48581 s 系 UT 起点，弃用）；28x120 s 曝光半宽 1680 s；mag_system 原文未声明系统（SDSS-DR12 经 Lupton 2005 转 R）,wa1kmoon@zcode
+72663.0,1590,s,60751.9327662037,r,21.87,0.08,magnitude,AB,n,n,,,,,,,1.0,n,,T193cm/MISTRAL (OHP),GCN39767,原文给起点 21:56:41 UT 与总曝光 8x360+1x300=3180 s，中点=起点+1590 s（连续曝光假设）,wa1kmoon@zcode
+74176.0,300,s,60751.950277777774,r,21.7,0.1,magnitude,AB,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN39770,原文给起点 22:43:24 UT，2x300 s 曝光中点=起点+300 s,wa1kmoon@zcode
+76780.8,,s,60751.980425925925,r,21.72,0.05,magnitude,AB,n,n,,,,,,,1.0,n,,GTC,GCN39769,原文给 21.328 hr after the burst，程序化换算 76780.8 s（bot 原值 76782 s 弃用）,wa1kmoon@zcode
+148720.32,2700,s,60752.81305925926,R,22.9,,magnitude,,n,y,,,,,,,1.0,n,,AZT-33IK 1.5m,GCN39790,原文表给 t-T0(mid)=1.72130 d，程序化换算 148720.32 s（bot 原值 146019 s 系 UT 起点，弃用）；45x120 s 曝光半宽 2700 s；3σ 上限；mag_system 原文未声明系统（SDSS-DR12 经 Lupton 2005 转 R）,wa1kmoon@zcode
+158152.0,2100,s,60752.92222222222,r,23.5,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,T193cm/MISTRAL,GCN39777,原文给起点 2025-03-18 21:33 UT 与总曝光 1x600+5x720=4200 s，中点=起点+2100 s（连续曝光假设）,wa1kmoon@zcode
+196432.0,8040,s,60753.365277777775,r,23.95,0.25,magnitude,AB,n,n,,,,,,,1.0,n,,DDRAGO/COLIBRI (SVOM/F-GFT),GCN39784,观测窗 2025-03-19 06:32–11:00 UTC 中点 08:46（约定口径）；原文另称 mean observing time To+54.5h；窗口半宽 8040 s,wa1kmoon@zcode
+233346.528,3540,s,60753.792529259255,R,23.3,,magnitude,,n,y,,,,,,,1.0,n,,AZT-33IK 1.5m,GCN39790,原文表给 t-T0(mid)=2.70077 d，程序化换算 233346.528 s（bot 原值 229806 s 系 UT 起点，弃用）；59x120 s 曝光半宽 3540 s；3σ 上限；mag_system 原文未声明系统（SDSS-DR12 经 Lupton 2005 转 R）,wa1kmoon@zcode
+1324.8,,s,60751.107092592596,VT-R,20.99,0.15,magnitude,AB,n,n,,,,,,,1.0,n,SVOM/VT,,Li+2026,"Li+2026 (RAA 26, 104025; arXiv:2604.24266) Table 1：mid-time 0.368 h=1324.8 s，VT_R=20.99±0.15（原文声明 AB）；VoR（IOP）被 Radware 反爬拦截，取自 arXiv v1 表 1 并登记 unverified.tsv；该值与 GCN39755 早期序列（362/512 s 未探测、5574 s 起检测 17.48）关系待深究（0.37 h 处反而暗约 3.5 mag），原文值照录",wa1kmoon@zcode
+23539.93,300,s,60751.36421215278,r,19.48,0.11,magnitude,,n,n,,,,,,,1.0,n,LCOGT 0.4m,SCICAM QHY600,GCN39759,原文表 UTstart 08:39:27.93 UT、2x300 s，中点=起点+300 s（t-T0 列 6.46 h 为起点四舍五入值）；mag_system 原文未声明系统（APASS 定标经 Lupton 2005 转换）；未做银消改正（原文声明）,wa1kmoon@zcode
+68755.0,,s,60751.88753472222,G,20.0,0.1,magnitude,,n,y,,,,,,,1.0,n,Leavitt Observatory,0.25-m RC,GCN39774,无滤光片（unfiltered FITS 叠加），原文未给波段口径故记 G；mag_system 原文未声明系统（Gaia DR3 BP 定标）；原文给 Mid-Time 2025-03-17T21:18:03 UT；上限 >20.0±0.1,wa1kmoon@zcode
