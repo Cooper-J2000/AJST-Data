@@ -1,29 +1,79 @@
 {
   "transient_id": "ZTF26aaglqak",
-  "alias": [],
-  "ra": 135.32235,
-  "dec": 18.60213,
-  "T0": "2026-02-21T06:00:34Z",
-  "T0_ref": null,
+  "alias": [
+    "AT2026dbl",
+    "PS26ctm",
+    "ATLAS26bvv",
+    "GOTO26ayi",
+    "BGEM J090117.38+183607.2"
+  ],
+  "ra": 135.322346202,
+  "dec": 18.602131551,
+  "T0": "2026-02-14T08:23:00Z",
+  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2026dbl（2026-11-07 取）＝ZTF 首次探测 2026-02-14 08:23:00 UT（TNS 光度表 g-ZTF 行 JD 2461085.8493056；AstroNote 2026-36 记 MJD 61085.35）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Einstein Probe",
+  "Trigger_Instrument": "ZTF",
   "redshift": 0.19,
-  "tag": [],
+  "tag": [
+    "fbot"
+  ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_ref": "TNS 坐标（J2000，Pan-STARRS 报告 310597 更新）：https://www.wis-tns.org/object/2026dbl（2026-11-07 取）",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS Redshift 字段：https://www.wis-tns.org/object/2026dbl（2026-11-07 取）；z=0.190±0.001 系 Keck I/LRIS 谱 Mg II λλ2796,2803 吸收（Wise et al., TNSAN 2026-36 / TNSCR 22993），宿主 [OII]/[OIII]/Hα 发射线红移一致",
+  "comment": "身份：ZTF26aaglqak = AT2026dbl（TNS 对象页 https://www.wis-tns.org/object/2026dbl，2026-11-07 取；TNSTR 291251/SGLF 发现报告 2026TNSTR.631....1P）。TNS 登记别名一并收录：PS26ctm（Pan-STARRS）、ATLAS26bvv、GOTO26ayi、BGEM J090117.38+183607.2（BlackGEM）。性质：ZTF 发现的蓝色快衰减暂现，三路独立判为 LFBOT（候选）：①Wise et al. TNSAN 2026-36（Keck I/LRIS 谱无特征蓝连续谱+Mg II 吸收 z=0.190±0.001，LT IO:O 快衰减，Mu=-21.62±0.10（MW E(B-V)=0.03 改正+K 改正），「consistent with previously observed LFBOTs such as AT2024wpp and AT2018cow」）；②EP/FXT 5 ks 跟随观测（2026-02-18T17:57:32 UT 开始）X 射线探测，0.5-10 keV 未吸收流量 5.9(+1.6/-1.2)e-14 erg/s/cm2、z=0.19 处光度 6.4(+1.7/-1.3)e42 erg/s，同 AT2018cow 早期（Jayaraman et al., TNSAN 2026-38 = ATel 17691）；③GCN 43796 称「identified as a LFBOT candidate by Einstein Probe」且 COLIBRI 测光「brighter than expected for the prototypical LFBOT AT2018cow at this redshift」；另 GBT/MUSTANG-2 90 GHz 探测 0.5±0.1 mJy 与 AT2018cow +7 d 按距离缩放一致（Orlowski-Scherer et al., TNSAN 2026-41）。TNSCR 22993 记分类 Other、对象页 Type 字段未置（---）（「A definitive classification cannot be confirmed at this time」），tag=fbot 按多数来源分类判定、候选状态保留于此（见 PR 待决①）。无高能触发：EP 系 ToO 跟随而非触发、无 EP 命名，故 Trigger_Instrument=ZTF（发现仪器；按库内已审核先例 ZTF22acaruqr 口径）。T0 污染（已改正）：原 T0=2026-02-21T06:00:34Z 实为 GCN 43796 所述 COLIBRI 观测窗口起点（原文「We observed from 2026-02-21 06:00:34 to 07:13:21 UTC」），既非触发亦非发现时刻；原 extra_data.t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger' 已失效，原值记此。新 T0=2026-02-14T08:23:00Z = ZTF 首次探测（TNS Discovery Date；TNS 光度表 g-ZTF 行 JD 2461085.8493056；AstroNote 2026-36 记 MJD 61085.35）。全表 18 行按新 T0 统一换算（mjd=T0+time 全表自洽）。定位：ra/dec 取 TNS 对象页（135.322346202/+18.602131551，Pan-STARRS 报告 310597 更新；原库 135.32235/18.60213 为其舍入）；原文未给定位误差与置信水平，pos_error/pos_error_confidence 留空；EP/FXT 定位 135.3221/+18.6029、误差 10″（90% C.L. 统计+系统，TNSAN 2026-38）劣于光学位，不采用。红移：z=0.19（TNS Redshift 字段）=0.190±0.001，系暂现谱 Mg II λλ2796,2803 吸收（Keck I/LRIS，MJD 61088.25，PI Jacobson-Galan；Wise et al., TNSAN 2026-36 / TNSCR 22993），同谱单独提取的宿主 [OII]/[OIII]/Hα 发射线红移一致→redshift_type=spec。宿主测光红移（SDSS 0.518±0.121、Legacy Survey 0.411±0.164，TNSAN 2026-36）与光谱矛盾，不采用。宿主：SDSS J090117.42+183606.5（TNS Host 字段），暂现距其约 2″、z=0.19 处投影约 6 kpc（GCN 43796），发射线光谱证认（TNSAN 2026-36）→建 host_galaxy；Legacy Survey DR10 宿主测光 g=21.11±0.03/r=20.52±0.04/i=20.37±0.04/z=20.31±0.05 转引自 GCN 43796。测光：lc 由 4 行（COLIBRI g/r/i/z，GCN 43796）扩充为 18 行，逐行时刻/口径见各行 comment；COLIBRI 4 行原文只给观测窗口与总曝光，按 §3.8 取窗口中点（曝光总和 119 min 与所述窗口 72.8 min 不一致，z 波段历元存疑，见 PR 待决②）。AstroNote 2026-36 的 r>20.26（MJD 61080.32）与 TNS 光度表 ZTF r 上限（MJD 61080.3186）为同一图像、极限值不一致（20.26 vs 20.623），取更早的发现报告值入库（§3.4），AstroNote 值记于该行 comment。BlackGEM BG-i 探测 17.27±0.04（JD 2461040.8460069，早于发现 45 天、显著亮于宿主与暂现本身，且其前两天同仪器 i>19.19 非探测）疑为误配或伪点，连同 BlackGEM i>19.19 上限一并未入库（filters.json 无 BlackGEM i 键，见 PR 待决③）。EP/FXT X 射线探测（0.5-10 keV，TNSAN 2026-38）按 §3.3 X 射线不入库，仅记此。星等系统：TNS 光度表各行记 ABMag→AB；COLIBRI 行 GCN 43796 原文「is in the AB system」；LT IO:O 行原文未声明，按 SDSS ugriz+PS1/SDSS 定标推定 AB（两参考系统均为 AB）。Gext_corr 全表 n（COLIBRI 行原文「not corrected for Galactic extinction」；其余行来源未声明改正）。测光检索（2026-11-07）：主 clone gcn/archive 45 947 篇全文（subject/eventId/body）检索 aaglqak、2026dbl、ZTF26aag 均仅命中 GCN 43796；external/rssgrbag/lightcurve.jsonl（140 行/74 源）、external/grbsn_webtool（63 事件）0 命中；GCN 站（gcn.nasa.gov/circulars）按 AT2026dbl、ZTF26aaglqak 检索各命中 43796 一篇；TNS 对象页光度表共 14 行（含 ZTF r 上限的 1 行站内重复）：11 行入库（4 非探测 + 7 探测）、BlackGEM 2 行（1 探测 + 1 上限）未入库+ TNSTR 291251/TNSCR 22993/TNSAN 2026-36/2026-38/2026-41 与 ATel 17691；SciX API（api.scixplorer.org）检索 AT2026dbl 命中 8 篇、ZTF26aaglqak 命中 4 篇，均为上述通告/报告，另 TNSAN 2026-152 为他源 AT2026nik、仅提本源作比较无本源测光。结论：除上述来源外未见研究论文给出本源测光；本 PR 新增 14 行（TNS 光度表 11 + LT IO:O 2 + GBT/MUSTANG-2 90GHz 1）并改写原 4 行，共 18 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "TNS 2026dbl Discovery Date / TNSAN 2026-36（ZTF 首次探测）",
+    "t0_note": "T0 为 ZTF 首次探测时刻（2026-02-14 08:23:00 UT，TNS Discovery Date / TNS 光度表 g-ZTF 行）；原 bot 注记「meta trigger-time」已失效（实为 GCN 43796 观测窗口起点），原值见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 135.322583,
+    "dec": 18.601806,
+    "redshift": 0.19,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "g",
+        "mag": 21.11,
+        "mag_err": 0.03,
+        "mag_sys": "AB",
+        "source": "GCN 43796（转引 Legacy Survey DR10）"
+      },
+      {
+        "band": "r",
+        "mag": 20.52,
+        "mag_err": 0.04,
+        "mag_sys": "AB",
+        "source": "GCN 43796（转引 Legacy Survey DR10）"
+      },
+      {
+        "band": "i",
+        "mag": 20.37,
+        "mag_err": 0.04,
+        "mag_sys": "AB",
+        "source": "GCN 43796（转引 Legacy Survey DR10）"
+      },
+      {
+        "band": "z",
+        "mag": 20.31,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "GCN 43796（转引 Legacy Survey DR10）"
+      }
+    ],
+    "comment": "SDSS J090117.42+183606.5（TNS Host 字段）；ra/dec 由宿主名解析（SDSC 命名即坐标：09h01m17.42s=135.322583°，+18d36m06.5s=+18.601806°）。确定宿主依据：暂现距其约 2″（GCN 43796）、宿主 [OII]/[OIII]/Hα 发射线红移与暂现 Mg II 吸收一致 z≈0.190（TNSAN 2026-36）、z=0.19 处投影距离约 6 kpc（GCN 43796，LFBOT 常见偏核位置）。Legacy Survey DR10 测光（AB）转引自 GCN 43796。",
+    "source": "TNS 对象页 Host 字段；TNSAN 2026-36；GCN 43796"
+  }
 }
