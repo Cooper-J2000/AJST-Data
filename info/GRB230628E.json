@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB230628E",
-  "alias": [],
-  "ra": 171.8499,
-  "dec": -11.4641,
-  "T0": "2023-06-29T01:05:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB230628.93"
+  ],
+  "ra": 171.84876,
+  "dec": -11.4637,
+  "T0": "2023-06-28T22:26:10.691020Z",
+  "T0_ref": "GCN 34110（Swift/BAT 触发通告）：At 22:26:10 UT, the Swift BAT triggered and located GRB 230628E（trigger=1177054）；亚秒取 swift_bat 目录（batgrbcat summary_general.txt）Trig_time_UTC=2023-06-28T22:26:10.691020（MET 709684002.240，触发仪器官方目录，§3.8①）；GCN 34134（Swift-BAT refined analysis）同 trigger 号互证；XRT 起测 22:29:48.3 UT=触发+217.7 s（GCN 34110）反算触发≈22:26:10.6 自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 34110",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.1,
+  "pos_ref": "GCN 34116（Swift-XRT 增强定位，并更正 GCN 34115 的误标名）：RA,Dec=171.84876,-11.46370，2.1 arcsec（radius，90% confidence）；swiftgrbba 目录后续更新值 xrt_ra=171.84875/xrt_dec=-11.46372/2.0″ 同点备查（快照晚于通告）；BAT 定位备查：on-board 171.841/-11.447（3′，GCN 34110）、地面精化 171.851/-11.430（2.4′，GCN 34134）；VLT OT 位 RA 11:27:23.60 Dec -11:27:49.21（171.848333/-11.463669，0.5″，Gaia 定标，GCN 34118）距增强位约 1.5″、UVOT 检测与 XRT 位及 OT 位一致（GCN 34135）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（Rusty-Harpoon@zcode 2026-11-08）：[身份] Swift/BAT trigger 1177054（GCN 34110：At 22:26:10 UT triggered and located GRB 230628E），GCN 34111（MASTER 用触发号名 Swift GRB230628.93）/34112/34116/34117/34118/34122/34132/34134/34135 同指此源。同日 230628 系列共 5 暴、逐个区分：230628A=Fermi/GBM trigger 709623341（05:35:36.16 UT，GCN 34101）、230628B=INTEGRAL trig 10298 / Fermi trig 709608965（T0 2023-06-28T01:35:56.03 UTC，Swift/BAT-GUANO 偏轴探测，GCN 34105）、230628C=Fermi/GBM trigger 709666599（17:36:34 UT，GCN 34106）、230628D=Fermi/GBM trigger 709676556（GCN 34109 BALROG 名 GRB 230628849）均为独立事件；注意 GCN 34115 曾将本源 XRT 增强定位误标为 230628A（34116 已更正）——A 的 GBM 位 RA 139.19/Dec -11.54 与本源无关。[T0] 原库 T0=2023-06-29T01:05:00Z（bot 标 t0_basis=meta_trigger）在触发通告中无出处、且恰等于 GCN 34122 VLT/X-shooter 光谱观测中点 2023-06-29 01:05 UT——观测时刻误挂为 T0（Issue #84 同型），更正为 BAT 触发 2023-06-28T22:26:10.691020Z（亚秒取 swift_bat 目录 Trig_time_UTC，触发仪器官方目录优先）。互证：XRT 起测 22:29:48.3 UT=触发+217.7 s（GCN 34110；swiftgrbba xrt_first_obs=217.68 s）；UVOT FC 起始=触发+221 s（GCN 34110/34135）；LCOGT 23:08–23:40 UT=触发+0.70–1.23 h（GCN 34112 自洽）；ATCA 起测 02:11 UT=+3.75 h（GCN 34132 自洽）；VLT OT mid 00:36:17 UT（June 29.0252）=+2.17 h（GCN 34118 自洽）。[定位] 原 ra/dec=171.8499/-11.4641（1.9″）系 GCN 34110 XRT 快下传位，更正为 GCN 34116 增强位 171.84876/-11.46370（2.1″/90%，来源明示 90% confidence 故填 pos_error_confidence=90）；详见 pos_ref。[t90/分类] t90=4.72±1.08 s（Swift/BAT 目录 summary_general.txt T90/T90_err=4.720000/1.075695；GCN 34134 同值 4.72±1.08 s，15-350 keV）、t50=2.032±1.258 s（同目录），按目录 t90 判 lgrb；GCN 34132 原文亦称 the long GRB 230628E。[红移] 无测定：VLT/X-shooter 光谱仅见弱连续谱至 ~3700 Å，z≲2 光谱上限（GCN 34122；MPE Greiner 目录记 z=2.0、z_flag=ul 同值备查），~15550 Å 弱发射特征未证认，redshift 保持 null。[检索留证] 测光检索（2026-11-08）：仓内 gcn/archive 全文检索 230628E/1177054 共 10 篇（34110/34111/34112/34116/34117/34118/34122/34132/34134/34135；其中 34111/34112/34118/34132/34135 含测光或上限，34116/34117/34134 为定位/谱/时标，34110 为触发通告）；external/rssgrbag 0 行、grbsn_webtool 0 事件、uvot_grb 无此源、mpe_greiner 1 条（仅目录参数）；SciX（api.scixplorer.org，2026-11-08）按 \"GRB 230628E\"/GRB230628E/1177054/\"Swift GRB230628.93\" 四路查询命中 9+1+3+1 条（查询式/索引差异致 7 与 1 之别，独立核查复测 1）——全部为上述 GCN 通告、无期刊论文；GCN 站（gcn.nasa.gov）按源名 9 篇、按 trigger 号 2 篇，与仓内 archive 一致。结论：可入库测光=ATCA 4 行（5.5/9.0/16.7/21.2 GHz 3σ 上限）+LCOGT 2 行（r/i 上限）+UVOT 8 行（2 探测 6 上限）+VLT 1 行（r=21.2 探测）+MASTER 4 行（无滤光片上限）共 19 行；本 PR 由原 2 行补至 19 行（改 2 行、新增 17 行）。新增 alias「GRB230628.93」（GCN 34111 MASTER 原文用名 Swift GRB230628.93，同段 trigger No 1177054）",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "GCN 34110 触发 22:26:10 UT + swift_bat 目录亚秒 .691020（触发时刻）",
+    "t0_note": "T0 已更正为 Swift/BAT 触发时刻（trigger 1177054）2023-06-28T22:26:10.691020Z；原 bot 值 2023-06-29T01:05:00Z（t0_basis=meta_trigger）与触发通告不符、恰为 GCN 34122 VLT 光谱观测中点 01:05 UT，原值保留于 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
   },
   "articles": [],
   "host_galaxy": null
