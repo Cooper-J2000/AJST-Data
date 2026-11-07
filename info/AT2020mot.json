@@ -6,8 +6,8 @@
   ],
   "ra": 7.8065,
   "dec": 85.008861,
-  "T0": "2020-06-14T09:27:05Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2020-06-14T09:27:05.003Z",
+  "T0_ref": "TNS 对象页 Discovery Date 2020-06-14 09:27:05.003（＝TNS phot 142821 发现点 JD 2459014.8938079，ZTF g=19.6739；＝ALeRCE 发现报告 2020TNSTR1791....1F）＝TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date 同值（截断到秒）；按 §3.2 采源精度写全毫秒（phot JD 严格换算 09:27:05.000，与 Discovery Date 09:27:05.003 差 3 ms，系 TNS 两处内部表示精度不同）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,25 +16,142 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）目录行坐标 00:31:13.560 +85:00:31.900（J2000）＝TNS 对象页 7.8065 +85.008861 同值",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Global SN Project 分类报告（TNS 分类 #7306，2020TNSCR2478....1H）：narrow H/Na/Mg absorption at z~0.07（E+A 宿主窄线）；Newsome+2024（ApJ 961, 239）另获 +726 d 宿主光谱并取 spectroscopically determined z=0.07；TNS 对象页/TDECat 目录行同值 0.07",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-07 Rusty-Harpoon@zcode 单源审核并补光变 6735 行。\n\n【身份核验（2026-11-07，TNS 对象页 2020mot + TDECat 目录行 + Newsome+2024/Liodakis+2023 互证一致）】ra/dec=7.8065/+85.008861＝TDECat 目录行 00:31:13.560 +85:00:31.900＝TNS 对象页 00:31:13.560 +85:00:31.90（十进制 7.8065 +85.008861）同值；TNS 类型 TDE（前缀 2025-01-26 由 admin 更新）；宿主 WISEA J003113.52+850031.8（TNS Host Name＝TDECat Host name 列＝Newsome+2024 表3 SED 拟合对象；分类报告注 negligible host offset）。alias 两名均有出处：ZTF20abfcszi＝ZTF internal name（TNS AT 报告 #73970 ALeRCE 2020TNSTR1791....1F 与 #75069 ZTF_AMPEL_COMPLETE；TDECat ZTF name 同值）；Gaia20ead＝Gaia Science Alerts 警报名（TNS AT 报告 #80856 Gaia_Bot1 2020-08-28：Gaia 探测 2020-08-27 10:58:04.800、G-Gaia 17.71，与 AT2020mot 合并为同一 TNS 对象页、坐标同值；TDECat Gaia-alert name 同值）。Trigger_Instrument 留空（TDE 无高能触发；发现数据源 ZTF、报告组 ALeRCE）。\n\n【T0 口径】TNS 对象页 Discovery Date=2020-06-14 09:27:05.003（＝TNS phot 142821 发现点 JD 2459014.8938079，g-ZTF 19.6739±0.1561；＝ALeRCE AT 报告 #73970 发现时刻同值）＝TDECat 目录行 Discovery date 2020-06-14T09:27:05（同值截断到秒）；按 §3.2 采源精度写全毫秒（原 bot 值截断到秒）。TDE 无触发时刻，取发现时刻为历元（与同批 TDECat 源口径一致）；无 T0_offset。ZTF_AMPEL 独立上报（#75069）给 09:27:05.184（差 0.181 s），列此备查。\n\n【红移溯源】z=0.07 出自 Global SN Project 分类报告（TNS 分类 #7306，2020TNSCR2478....1H，2020-08-13 FTN/FLOYDS-N 光谱，Hosseinzadeh/Hiramatsu/DeMarchi/Berger 等）：原文 \"The spectrum shows narrow H, Na, and Mg absorption at redshift z ~ 0.07, suggesting an E+A host galaxy, as well as a broad He II line at this redshift. These, along with the negligible host offset and the >50 day rising light curve, indicate a tidal disruption event.\"——红移由宿主窄吸收线测得；Newsome+2024 另获 +726 d 宿主光谱（Na I D λλ5890,5896/Mg Ib λ5175/Ca H&K 吸收线）并 \"fix the redshift to the spectroscopically determined value z=0.07\"。redshift_type 由 value 改判 spec-host；TNS 对象页 Redshift=0.07、TDECat 目录行 Redshift=0.07000000 同值。\n\n【测光入库 6735 行】＝(a) TDECat 官方补充仓库 target_AT2020mot_photometry.csv（github.com/dlangis/TDECat Section 2，2026-11-07 下载，blob sha 9cffcbfa6fd8fa082f598553eded215eea23fc8b）7615 行去重后 6456 行（同历元同值双行 1159 组、误差实现不同，§3.4 保留首行；双管道异值行〔长精度 MJD 行值略异〕并存）；(b) TDECat UVOT 机读表 AT2020mot_uvot_lightcurve.csv（blob sha f69390a063c7ba59344b848cf920f645944b5f7a）17 历元共 86 个测光元，其中 3 元原文误差列=0 按无效占位留空；(c) TNS 对象页测光表 7 行去重后 5 行（142820 g 末次非探测、142821 g 发现点、145092 g、155546 G 末次非探测、155547 G 探测；145090/145091 为 142820/142821 的同历元同值舍入重复行，§3.4 删）；(d) Newsome+2024（ApJ 961, 239）表5 LCO BgVri 73 行＋表6 Swift/UVOT 34 行（宿主减除＋银消光改正口径；原文 0.00±0.00 占位元未入库）；(e) Liodakis+2023（Science 380, 656）表S3 Swift/UVOT 73 行（AB 系统直接测量、观测窗口中点口径）＋表S2 VLA 射电 8 行（15 GHz 上限 1 行＋1-7 GHz 探测 7 行）。口径：TDECat/BHTOM 编译行为总流量含宿核（非差分）——安静期档案段（ALLWISE 2010、PS1 2011-2012、ZTF/ATLAS 爆发前）即宿主水平；TNS ZTF 行为差分口径纯瞬变（发现点 19.6739 vs TDECat 同历元总流量 zg 18.11/18.09）；Newsome+2024 为宿主减除＋银消光改正（原文 We have also corrected all photometry for Galactic extinction with A_V=0.238 mag using the Calzetti dust law）；Liodakis+2023 表S3 为 uvotsource 直接测量（原文声明 AB mag，表未声明银消光改正）；同一历元多口径并存不互删（§3.4）。星等系统按 Langis+2026 §3.1：NEOWISE/ALLWISE 记 Vega、ZTF/ATLAS/Pan-STARRS 记 AB、Gaia G 记 mag_system 留空（原文 The Gaia survey uses an internal calibration different from both the AB and Vega systems）；UVOT 三源各按其原文（TDECat Vega、Newsome Vega、Liodakis AB）；TNS 行按其 Units 列 ABMag 照录。TDECat UVOT 行已银消光改正且未扣宿主（Langis+2026 §3.3 原文明言）→ Gext_corr=y；Newsome 两表行已银消光改正且已扣宿主 → Gext_corr=y；Liodakis 表S3 行 Gext_corr=n。\n\n跨源差异记档：同一批 Swift/UVOT 曝光三家发表值在 UV 波段系统差达 ~1.5-2 mag（如 MJD 59075.14 W1：TDECat 15.91（Vega，未扣宿）vs Liodakis 18.08（AB，直接测量）vs Newsome 16.80（Vega，已扣宿）；V/B 两家仅差 0.23-0.27 mag（Newsome 表6 无 B/V 列；U 波段才是三家 16.07/17.19/17.75）；TDECat 与 Liodakis 的 2019-04-28 档案 U 点 17.98 vs 19.64 同差）——孰是孰非未裁定，三家全部原样入库并在各行 comment 注明出处与口径，待维护者后续裁定（如需标 discard）。\n\n未入库：TDECat X 射线机读文件 AT2020mot_xray_lightcurve.csv 21 行（Swift/XRT 2019-07~2024-10，上限与低显著度点）——发现 X 射线数据，暂不处理；Liodakis+2023 表S3 中 MJD 59270.5/59306.4/59308.4 三历元 × U/B 共 6 行为 XMM-OM（omichain、OM AB 系统）测光——band 车道一缺 XMM-OM U/B 键（filters.json 无 om-u/om-b），按车道规则落地前不入库（待决事项）；Liodakis+2023 表S1 偏振测量（RoboPol/NOT，R/V/I Π/PA/q/u 共 6 历元，峰值 Π=25±4%）与表S4 NOT 宿主测光 1 历元 5 波段（U 19.40/B 18.38/V 17.46/R 16.83/I 16.43 AB，原文自证 consistent with Pan-STARRS pre-TDE magnitudes 即宿主水平）——非测光/宿主测量，不入 lc，在此记档；Newsome+2024 表3 宿主 SED 测光 14 波段入 host_galaxy.photometry。\n\n【测光检索留证（2026-11-07）】① 仓内 gcn/archive 45947 篇全文检索 AT2020mot/AT 2020mot/Gaia20ead/ZTF20abfcszi/2020mot＝0 命中；external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）、external/uvot_grb（626 源）均无该源记录；② GCN 站为 JS 应用，以仓内 gcn/archive 全库为准＝0 命中；③ SciX（与 ADS 同库，API token 实测可用）检索 \"AT2020mot\" 命中 4 条、\"AT 2020mot\" 命中 7 条、\"ZTF20abfcszi\" 命中 1 条、\"Gaia20ead\" 命中 0 条：研究论文 4 篇＝Newsome+2024（ApJ 961,239 专篇，表5/表6 测光已全量入库）＋Liodakis+2023（Science 380,656 专篇，表S2/S3 已入库、表S1 偏振与表S4 宿主测光记档）＋Floris+2025（A&A 703,A81 偏振样本 13 TDE，arXiv:2509.08895 已读确认无 AT2020mot 测光表，仅偏振 Π/Θ 与样本级参数）＋其余为 AAS 会议摘要 2 条（2022AAS...24024305N、2024AAS...24342601N，无数表）与 TNS 通告 2 条（不计）；④ TNS 对象页 2020mot 实抓，photometry 表 7 行（5 行入库）；Langis+2026 VoR aanda.org 403 DataDome（与前批一致），改用 arXiv v2 2506.05476（HTML 全文已读，取 §3.1 星等系统声明与 §3.3 UVOT 口径）＋官方补充仓库 github.com/dlangis/TDECat（blob sha 逐一校验）；CDS/VizieR 主站本会话不可达（HTTP 000），经 vizier.cfa.harvard.edu 镜像确认 J/A+A/707/A171 仅 tdecat/table1 两表（无光变表，官方光变在 GitHub 补充仓库）；Newsome+2024 IOP VoR Radware 反爬、Liodakis+2023 Science VoR 403（均 arXiv 替代并登记 audit/unverified.tsv）。结论：非零测光，补 6735 行。\n\n【其他元数据】pos_error：TDECat 目录行只给坐标（赤经 0.001 s/赤纬 0.01″ 位），未给定位误差与置信水平，pos_error/pos_error_confidence 保持 null（来源未标注）。host_galaxy：TNS Host Name＝TDECat Host name＝Newsome+2024 宿主分析对象 WISEA J003113.52+850031.8，确定宿主，建档（坐标取自宿主名 J003113.52+850031.8＝7.806333/+85.008833；z=0.07 spec-host；测光＝Newsome+2024 表3 14 波段）。sub_tag：tags.json 无 TDE 光谱类受控词，留空。光谱：FTN/FLOYDS-N（Global SN Project，2020-08-13）已随 TNS 公开，spectra/ 不在数据 PR 范围，未动。派生量记档：M_BH=17.37(+1.66/−1.90)×10^6 M_sun（MOSFiT）、3.40(+2.7/−1.4)×10^6 M_sun（TDEMass）（Newsome+2024 表2，黑体/吸积模型拟合派生）；g 波段峰 MJD 59078.38（Newsome+2024）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "g-ZTF",
     "discovery_mag": "19.6739",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
-      "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://doi.org/10.1051/0004-6361/202554882",
+      "source": "bot"
+    },
+    {
+      "name": "Newsome+2024",
+      "title": "Probing the Subparsec Dust of a Supermassive Black Hole with the Tidal Disruption Event AT 2020mot",
+      "url": "https://doi.org/10.3847/1538-4357/ad036e",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Liodakis+2023",
+      "title": "Optical polarization from colliding stellar stream shocks in a tidal disruption event",
+      "url": "https://doi.org/10.1126/science.abj9570",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 7.806333,
+    "dec": 85.008833,
+    "redshift": 0.07,
+    "redshift_type": "spec-host",
+    "photometry": [
+      {
+        "band": "uvot-uvw2",
+        "mag": 20.19,
+        "mag_err": null,
+        "mag_sys": "Vega",
+        "source": "Newsome+2024 表3（Swift）"
+      },
+      {
+        "band": "uvot-uvm2",
+        "mag": 19.83,
+        "mag_err": null,
+        "mag_sys": "Vega",
+        "source": "Newsome+2024 表3（Swift）"
+      },
+      {
+        "band": "uvot-uvw1",
+        "mag": 19.55,
+        "mag_err": null,
+        "mag_sys": "Vega",
+        "source": "Newsome+2024 表3（Swift）"
+      },
+      {
+        "band": "B",
+        "mag": 18.84,
+        "mag_err": null,
+        "mag_sys": "Vega",
+        "source": "Newsome+2024 表3（Las Cumbres）"
+      },
+      {
+        "band": "g",
+        "mag": 18.46,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Newsome+2024 表3（Pan-STARRS）"
+      },
+      {
+        "band": "V",
+        "mag": 17.9,
+        "mag_err": null,
+        "mag_sys": "Vega",
+        "source": "Newsome+2024 表3（Las Cumbres）"
+      },
+      {
+        "band": "r",
+        "mag": 17.73,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Newsome+2024 表3（Pan-STARRS）"
+      },
+      {
+        "band": "i",
+        "mag": 17.34,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Newsome+2024 表3（Pan-STARRS）"
+      },
+      {
+        "band": "J",
+        "mag": 15.54,
+        "mag_err": null,
+        "mag_sys": null,
+        "source": "Newsome+2024 表3（2MASS）"
+      },
+      {
+        "band": "H",
+        "mag": 14.37,
+        "mag_err": null,
+        "mag_sys": null,
+        "source": "Newsome+2024 表3（2MASS）"
+      },
+      {
+        "band": "K",
+        "mag": 14.47,
+        "mag_err": null,
+        "mag_sys": null,
+        "source": "Newsome+2024 表3（2MASS）"
+      },
+      {
+        "band": "wise-w1",
+        "mag": 13.93,
+        "mag_err": null,
+        "mag_sys": null,
+        "source": "Newsome+2024 表3（WISE）"
+      },
+      {
+        "band": "wise-w2",
+        "mag": 13.89,
+        "mag_err": null,
+        "mag_sys": null,
+        "source": "Newsome+2024 表3（WISE）"
+      }
+    ],
+    "comment": "宿主＝WISEA J003113.52+850031.8：TNS 对象页 Host Name（ALeRCE 报告 #73970）＝TDECat（Langis+2026）Host name 列＝Newsome+2024 全文宿主分析对象，三方一致；分类报告注 negligible host offset。坐标取自宿主名（00:31:13.52 +85:00:31.8）。红移 0.07 spec-host（见 info comment 红移溯源）。测光＝Newsome+2024 表3（BAGPIPES 拟合用宿主 SED）：All magnitudes are given in the Vega system except for gri magnitudes, given in the AB system；2MASS J/H/K 与 WISE W1/W2 系统原文未声明、留空。表3 另含 Flux (μJy) 列未录入。原文未给各波段误差。",
+    "source": "Newsome+2024；TNS；Langis+2026"
+  }
 }
