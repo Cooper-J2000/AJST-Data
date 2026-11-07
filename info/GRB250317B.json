@@ -1,29 +1,47 @@
 {
   "transient_id": "GRB250317B",
-  "alias": [],
-  "ra": 211.648,
-  "dec": 40.057,
+  "alias": [
+    "sb25031701"
+  ],
+  "ra": 211.6427,
+  "dec": 40.0796,
   "T0": "2025-03-17T02:12:08Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 39753",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": 3.44,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 39752",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "tag": [
+    "grb"
+  ],
+  "sub_tag": [
+    "lgrb"
+  ],
+  "pos_error": 3.0,
+  "pos_ref": "GCN 39763",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 39769",
+  "comment": "SVOM/ECLAIRs 触发（GCN 39753，Tb=2025-03-17T02:12:08 UTC，SVOM burst-id sb25031701）；alias sb25031701 为 SVOM 官方 burst-id（GCN 39752/39753/39763 原文用名）。同日 GRB 250317A 为 Fermi/GBM 触发（GCN 39748，RA 148.2 Dec -25.4，T0 00:05:29 UT），与本源无涉；本源 17 篇通告（GCN 39752/39753/39754/39755/39756/39757/39759/39763/39764/39767/39769/39770/39772/39774/39777/39784/39790）与 A 命中集无交集，各通告 t-T0 与 ECLAIRs Tb 自洽，无跨暴污染。定位改判 Swift-XRT 增强位（GCN 39763：211.6427 +40.0796，3.0 arcsec 90% conf；external/swiftgrbba xrt 位 211.64292 +40.07964 一致），原 MXT 星上位（GCN 39752/39753，25 arcsec）已被 GCN 39756 以卫星 slew 后不稳定为由更正、且偏离光学余辉（COLIBRI/VT 位）81 arcsec。红移 z=3.44（GTC/OSIRIS+ 光谱，GCN 39769；吸收系统 z=3.442/3.447）。t90=145.67±0.16 s（GCN 39752），按通告 T90 判 lgrb。测光检索（2026-11-07）：仓内 gcn/archive 17 篇全部逐篇打开核对；external/swiftgrbba、external/mpe_greiner 有条目（trigger_time/坐标互证，无测光表）；rssgrbag、grbsn_webtool 无记录；ADS API 无凭据实测 401，改用 OpenAlex/Crossref/arXiv 兜底：命中 Li+2026（RAA 26, 104025）SVOM/VT 综述表 1 一行 VT_R=20.99±0.15 @0.368 h（已入库，VoR 被 IOP Radware 反爬拦截、取自 arXiv v1 并登记 unverified.tsv）；MXT pipeline 文（RAA 26, 104017）仅为提及无数据。补 3 行（GCN39759/GCN39774/Li+2026）。Swift-XRT 0.3-10 keV 测光见 GCN 39763，X 射线行暂不处理。",
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd",
+      "title": "SVOM/VT: Overview of Data Processing and GRB Identifications with X-band Data",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
