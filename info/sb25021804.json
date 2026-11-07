@@ -3,8 +3,8 @@
   "alias": [],
   "ra": 195.0442,
   "dec": 28.1305,
-  "T0": "2025-02-18T09:44:00Z",
-  "T0_ref": null,
+  "T0": "2025-02-18T07:20:27Z",
+  "T0_ref": "GCN 39363（SVOM/ECLAIRs 官方触发通告）：starting at 2025-02-18T07:20:27 UTC (Tb)；arXiv:2607.01091（Coleiro+2026）表 2 记 2025-02-18 07:20:27.858000 互证。bot 原 T0=2025-02-18T09:44:00Z 实为 GCN 39364 COLIBRÍ 观测窗起点（误当触发时刻）、已废弃，全表 time 已按新 T0 重算",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "SVOM/ECLAIRs",
@@ -14,16 +14,29 @@
   "pos_ref": "GCN 39372",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：SVOM/ECLAIRs 触发 sb25021804（2025-02-18T07:20:27Z，GCN 39363：5–8 keV、22 min 窗口、SNR 7.56、RA,Dec=195.020,28.078、90% C.L. 半径 10.4 arcmin 含系统差 2 arcmin、未达 slew 阈值）。同日邻日无他 SVOM 暴混入：archive 全文命中集 {39363,39364,39372,39374} 与邻日 250217C/250219A 的通告集互不相交；Coleiro+2026 表 2 证认其为 5 个与 Coma 团（Abell 1656）成协的未证认 ECLAIRs 触发之一（另四个为 sb25030301/25032302/25042207/25050907，各自独立建条、疑同源但系不同触发事件，不合并不去重）。对应体：LT 图像减法在 RA,Dec=195.044,28.130 发现残差，即 X 射线亮 QSO WISEA J130010.60+280749.7（GCN 39372）；COLIBRÍ 复测确认变光（GCN 39374）；info ra/dec 即该 QSO 位置（与 WISEA 名录坐标 13h00m10.60s+28d07m49.7s 一致），pos_ref=GCN 39372，原文未标位置误差与置信水平→pos_error/pos_error_confidence 留空；ECLAIRs 大误差圆定位（195.020,28.078，10.4 arcmin 90%）备查。性质未定：QSO 变光假设（GCN 39372/39374）与 Coma 团内未证认源假设（Coleiro+2026：五触发谱形/流量一致、最可能为 2E 1257.1+2813 或团内未证认 X 射线源）并存，且 GCN 39374 测得星等仅比 SDSS/Pan-STARRS 目录值高约 0.3 mag——tag/sub_tag 留空待定（词表无 QSO/AGN/未证认类目）。Coleiro+2026 正文称五触发「on February 8th …」系原文笔误，其表 2 实记 2025-02-18 07:20:27.858000。T0 口径：唯一标准 T0=触发时刻 2025-02-18T07:20:27Z（触发仪器官方通告 GCN 39363，亚秒以通告整秒精度为准）；bot 原 T0=09:44:00Z 留底（见 T0_ref）。lc 全表 time 已按新 T0 重算（mjd=T0+time 自洽）；本源 lc 无 X 射线行（无能量串 band）。测光检索留证（2026-11-07）：① 仓内 gcn/archive（45 583 篇、截至 GCN 46010）全文检索 sb25021804/25021804/250218，命中 4 篇（39363 触发通告、39364 COLIBRÍ i>21.7、39372 LT g'=20.09±0.11 与 g>21.5、39374 COLIBRÍ r=19.95±0.01 与 i=19.98±0.04），均已逐篇打开核对；② external/ 快照（rssgrbag/grbsn_webtool/uvot_grb 等）无该源记录；③ ADS token 为空（401），经 arXiv API（sb25021804 0 命中；WISEA J130010.60+280749.7 0 命中）+OpenAlex（命中 1 篇=Coleiro+2026 RAA 26 104036，已读全文 PDF，无本源光学测光表）+Crossref（摘要已核）兜底，已登记 audit/unverified.tsv（search-limited）；④ 结论：通告之外无已发表光学测光，补 1 行（GCN 39374 的 i=19.98±0.04）。mag_system：39364/39374 原文声明 AB；39372 原文未声明系统→留空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=2025-02-18T07:20:27Z 取自触发仪器官方通告 GCN 39363（Tb）；bot 原 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」对应 T0=09:44:00Z，经核系 GCN 39364 COLIBRÍ 观测窗起点、非触发时刻，已改正（原值留底于本 note 与 T0_ref）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Coleiro+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75d7",
+      "title": "Early Results from the SVOM Observatory Science Program",
+      "bibtex": "",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
