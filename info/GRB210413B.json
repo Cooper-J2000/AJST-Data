@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB210413B",
-  "alias": [],
+  "alias": [
+    "GRB 210413B",
+    "GRB210413991",
+    "GRB 210413.991",
+    "bn210413991"
+  ],
   "ra": 182.558,
   "dec": 55.965,
-  "T0": "2021-04-13T01:07:25Z",
-  "T0_ref": null,
+  "T0": "2021-04-13T23:46:52.450000Z",
+  "T0_ref": "GCN 29819（T0 引 Fermi/GBM TRIGGER 640050417 通告时刻 2021-04-13T23:46:52.45Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 180,
+  "pos_ref": "GCN 29819（BAT TTE 地面分析位，估计不确定度 3 arcmin = 180 arcsec）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
+  "comment": "短暴 GRB 210413B = Fermi/GBM TRIGGER 640050417（T0 2021-04-13T23:46:52.45Z）+ Swift/BAT 机载 rates 触发 #1043009（onboard 成像无源、failed trigger，10 s TTE 数据存地，地面成像分析定位并测 T90——GCN 29819）。与同日 GRB 210413A（GECAM-B 2021-04-13T01:07:25.600Z，Ra 68.6 Dec 11.3，GCN 29813；库内无 210413A 条目）为不同事件：修订前本库 T0=2021-04-13T01:07:25Z 即 210413A 的 GECAM 时刻，跨事件误挂，已改正。T0 三路互证：GCN 29819（.45）、external/fermi_gbm 目录 trigger 640050417=2021-04-13T23:46:52.451Z、external/swiftgrbba（BA 表 target_id=1043009）=2021-04-13T23:46:52.450Z，亚秒互差不超过 10 ms（低于 60 ms 报告阈值），取 GCN 29819 精度。反算互证：XRT/UVOT 起测 T0+185.0 ks 即 2021-04-16T03:10:12Z（GCN 29827：PC 数据 T0+185.0-206.7 ks；external/swiftgrbba uvot_first_obs=185000 s），LOAO 起测 2021-04-16T03:17:51.667Z 落该窗口内；MITSuME 起测 2021-04-17T13:31:10Z=T0+85.74 h（GCN 29860 自记 85.8 h）。定位：BAT TTE 地面分析位 RA=182.558 Dec=+55.965（J2000），估计不确定度 3 arcmin=180 arcsec（GCN 29819），来源未标注置信水平，pos_error_confidence 留空；与 Fermi/GBM Final Position 一致（GCN 29819）。XRT 候选源（GCN 29827：182.5333/+56.0497，5.7 arcsec 90%）与 UVOT 检测（GCN 29912：182.53230/+56.04970，0.4 arcsec 90%，wh=19.68±0.03 Vega=20.48±0.03 AB）同位；DECaLS 该位存在 g=21.09 AB 恒源（疑似宿主），GCN 30066 复测计数率不衰减、裁定排除与暴成协——故定位不改用 XRT 候选位、UVOT 检测不入 lc；宿主候选未定论，host_galaxy 不建立（提示词 §3.10）。t90=1.088±0.09 s（Swift/BAT TTE 地面分析，GCN 29819；external/swiftgrbba 目录同值，15-150 keV）；t90=2.048±0.951 s（50-300 keV，external/fermi_gbm 目录）；GCN 29819 标题明示 short burst，按目录 t90 判 sgrb。红移检索（2026-11-07）：本暴全部 7 篇 GCN 通告与 MPE 汇总页（mpe.mpg.de/~jcg/grb210413B.html）均无红移或宿主光谱报道，SciX 命中的 6 篇亦全为 GCN 通告，无研究论文，redshift 保持 null。测光检索（2026-11-07）：仓内 gcn/archive 全文检索 210413B / GRB 210413 / trigger 号（1043009、640050417、00021428）命中 8 篇（本暴 29819/29821/29825/29827/29860/29912/30066 共 7 篇 + 同日 210413A 的 29813），其中含光学数值 2 篇（29825 LOAO、29860 MITSuME，均已入库）；external/rssgrbag（射电 140 行/74 源）、external/grbsn_webtool、external/uvot_grb 均无 210413 记录；external/swift_bat 目录快照无 1043009 条目（failed trigger 不入 BAT 正式目录）；external/mpe_greiner 有条目（位置/仪器，无测光）；GCN 站经 MPE 汇总页核对所列通告与仓内一致、无遗漏；SciX（api.scixplorer.org）检索 GRB 210413B 命中 6 篇，全部为 GCN Circular（bibcode 2021GCN.29819/29821/29825/29827/29860/29912），检索 1043009 仅命中 GCN 29819，无研究论文、无新测光，故补行 0 行（仅改正既有 7 行时间口径）。时间轴（提示词 §3.8）：7 行全部按新 T0 与中点口径重算——LOAO 4 行原 time 以曝光起点（Date-obs）为锚，改为起点+270 s（曝光中点，Exp 180*3=540 s），time_err=270 s；MITSuME 3 行取 MID-UT 2021-04-17T15:06Z（原文表 T0+86.8 h 与 MID-UT 15:06 互差 0.52 h，取钟面 MID-UT 为准），time_err=半曝光 1170 s；mjd=T0+time 重算 7 位。全表无 keV/X 射线行。星等系统 LOAO/MITSuME 原文均声明 AB（PS1 定标）；两通告均未做银消改正，Gext_corr=n。别名出处：GRB 210413B 为 GCN 29819/29821/29825/29827/29860/29912/30066 的 subject 与 eventId 原文用名；GRB210413991 / bn210413991 为 external/fermi_gbm 目录（FERMIGBRST 快照）name_alt 原文用名（原始 tdat 行逐字 `bn210413991|GRB210413991`）；GRB 210413.991 系仓内 parse.py 由 GRB210413991 构造的十进制派生形，对应 Fermi/GBM TRIGGER 640050417（见 GCN 29819）。原 extra_data t0_basis=meta_trigger、t0_note「t0 为 meta trigger-time（真实触发时刻）」已按提示词 §3.10 改写，原值存本 comment。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "trigger_notice",
+    "t0_note": "T0=2021-04-13T23:46:52.45Z 为 Fermi/GBM TRIGGER 640050417 触发时刻（GCN 29819）；原 bot 值 2021-04-13T01:07:25Z（t0_basis=meta_trigger）系同日 GRB 210413A 的 GECAM 时刻误挂，原值存 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
