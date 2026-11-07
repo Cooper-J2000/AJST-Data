@@ -1,6 +1,10 @@
 {
   "transient_id": "GRB050713B",
-  "alias": ["GRB 050713B", "Swift 145754", "BAT 145754"],
+  "alias": [
+    "GRB 050713B",
+    "Swift 145754",
+    "BAT 145754"
+  ],
   "ra": 307.81488,
   "dec": 60.945305,
   "T0": "2005-07-13T12:07:17.628280Z",
@@ -16,10 +20,12 @@
   "pos_ref": "UKSSDC Swift-XRT enhanced position (external/swiftgrbba & uvot_grb snapshots, r=1.4 arcsec); cf. GCN 3590/3602",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "身份核验（2026-11-07，wa1kmoon@zcode）：Swift/BAT 触发 145754（GCN 3590：2005-07-13 12:07:17.62 UT，BAT 精化位置 307.820/+60.938 r=3′；GCN 3599 触发表复核一致）。T0：取触发仪器 Swift/BAT 官方目录值 12:07:17.628280Z（external/swift_bat 与 swift_grb 快照一致）；GCN 3590 给 12:07:17.62 UT；旧 bot 值 12:07:17.628000 系目录毫秒截断值，已废弃。全表 mjd=T0+time 重算（含 171 行 Swift/XRT 10keV 行的 mjd 机械重算，其余列未动）。定位：GCN 3590 XRT 初值 20h31m15.5s +60d56′38.4″（6″，明示 90% containment）→ GCN 3602 精化 +60d56′40.4″（6″）→ 采用 UKSSDC 增强位置 307.81488/+60.945305，r=1.4″（swiftgrbba/uvot_grb 快照，POS_REF=SGA；置信水平来源未标注，按同管道 XRT 90% 惯例与 GRB050502B 先例填 90）。alias：GRB 050713B（GCN 3590/3600 原文用名，GCN 3593/3602 亦写作 GRB 050713b）、Swift 145754 / BAT 145754（目录 name_alt）。与同日 GRB050713A（trigger 145675，04:29:02.39 UT，XRT 21h22m +77°04′）的 GCN 命中集互不相交（本源：3590/3592/3593/3600/3602/3603/3617/3701），lc 各行 UT 与本源历元逐行自洽，无 A/B 混淆。t90=121.696±54.023 s（15-350 keV，Swift/BAT 目录），按目录 t90 判 lgrb；备查：rssgrbag t90=125 s、SGA 54.2 s、GCN 3600 FRED 轮廓总时长 ~75 s、GCN 3590 ~30 s。宿主：GCN 3701 的 S1（20 31 15.96 +60 56 36.4，USNO A2.0 定标）无变暗行为、原文判断不像 OT，不建立 host_galaxy；无红移。测光检索（2026-11-07）：仓内 gcn/archive 全文命中本源通告 8 篇（3590/3592/3593/3600/3602/3603/3617/3701，另 3599 触发表 A/B 双源共用）——GCN 3603 的 UVOT 6 行 3σ 上限为本轮新增，其余数值均已逐行核对入库；external/rssgrbag 2 行射电峰值（已核 CDS J/ApJ/746/156 table4.dat：424±34 μJy @21.0±2.2 d、343±24 μJy @14.1±0.9 d）；external/grbsn_webtool 无本源；OpenAlex（search+fulltext.search）命中 30/6 条，除 GCN 自身外仅 Evans+2009（XRT，X 射线不入库）、Chandra & Frail 2012（射电，已入库）与 Swift 时代光学分类样本文（转引型，未采纳）；ADS API HTTP 401（token 文件为空），已登记 audit/unverified.tsv（pr=973，search-limited），检索结论按通道受限口径保留。本轮 lc 处置（184→190 行）：新增 GCN 3603 UVOT 上限 6 行；GCN 3592 行 time 267.372→228 s（原文 mean epoch 3.8 min，bot 原值无出处）；GCN 3593 五行 time 由曝光起点改中点（+150 s）、补 time_err=150 s；GCN 3701 上限行 time 由叠图起点 18:06 改 mean time 18:56（同一叠图）、四行补 time_err=总曝光一半（约定口径）；GCN 3617 行 time 校正为 123522.37172 s（22:26 UT Jul 14 中点；原文自称 ~22 h 与所给 UT 不符，取 UT 锚点）；射电 2 行加峰值拟合口径 comment。星等系统：各 GCN 行原文均未声明，mag_system 留空。检索证据：命中/新增行数如上，四要素齐备于本段与各行 comment。",
-  "sub_tag": ["lgrb"],
+  "comment": "身份核验（2026-11-07，wa1kmoon@zcode）：Swift/BAT 触发 145754（GCN 3590：2005-07-13 12:07:17.62 UT，BAT 精化位置 307.820/+60.938 r=3′；GCN 3599 触发表复核一致）。T0：取触发仪器 Swift/BAT 官方目录值 12:07:17.628280Z（external/swift_bat 与 swift_grb 快照一致）；GCN 3590 给 12:07:17.62 UT；旧 bot 值 12:07:17.628000 系目录毫秒截断值，已废弃。全表 mjd=T0+time 重算（含 171 行 Swift/XRT 10keV 行的 mjd 机械重算，其余列未动）。定位：GCN 3590 XRT 初值 20h31m15.5s +60d56′38.4″（6″，明示 90% containment）→ GCN 3602 精化 +60d56′40.4″（6″）→ 采用 UKSSDC 增强位置 307.81488/+60.945305，r=1.4″（swiftgrbba/uvot_grb 快照，POS_REF=SGA；置信水平来源未标注，按同管道 XRT 90% 惯例与 GRB050502B 先例填 90）。alias：GRB 050713B（GCN 3590/3600 原文用名，GCN 3593/3602 亦写作 GRB 050713b）、Swift 145754 / BAT 145754（目录 name_alt）。与同日 GRB050713A（trigger 145675，04:29:02.39 UT，XRT 21h22m +77°04′）的 GCN 命中集互不相交（本源：3590/3592/3593/3600/3602/3603/3617/3701），lc 各行 UT 与本源历元逐行自洽，无 A/B 混淆。t90=121.696±54.023 s（15-350 keV，Swift/BAT 目录），按目录 t90 判 lgrb；备查：rssgrbag t90=125 s、SGA 54.2 s、GCN 3600 FRED 轮廓总时长 ~75 s、GCN 3590 ~30 s。宿主：GCN 3701 的 S1（20 31 15.96 +60 56 36.4，USNO A2.0 定标）无变暗行为、原文判断不像 OT，不建立 host_galaxy；无红移。测光检索（2026-11-07）：仓内 gcn/archive 全文命中本源通告 8 篇（3590/3592/3593/3600/3602/3603/3617/3701，另 3599 触发表 A/B 双源共用）——GCN 3603 的 UVOT 6 行 3σ 上限为本轮新增，其余数值均已逐行核对入库；external/rssgrbag 2 行射电峰值（已核 CDS J/ApJ/746/156 table4.dat：424±34 μJy @21.0±2.2 d、343±24 μJy @14.1±0.9 d）；external/grbsn_webtool 无本源；OpenAlex（search+fulltext.search）命中 30/6 条，除 GCN 自身外仅 Evans+2009（XRT，X 射线不入库）、Chandra & Frail 2012（射电，已入库）与 Swift 时代光学分类样本文（转引型，未采纳）；ADS API HTTP 401（token 文件为空），已登记 audit/unverified.tsv（pr=973，search-limited），检索结论按通道受限口径保留。本轮 lc 处置（184→190 行）：新增 GCN 3603 UVOT 上限 6 行；GCN 3592 行 time 267.372→228 s（原文 mean epoch 3.8 min，bot 原值无出处）；GCN 3593 五行 time 由曝光起点改中点（+150 s）、补 time_err=150 s；GCN 3701 上限行 time 由叠图起点 18:06 改 mean time 18:56（同一叠图）、四行补 time_err=总曝光一半（约定口径）；GCN 3617 行 time 校正为 123522.37172 s（22:26 UT Jul 14 中点；原文自称 ~22 h 与所给 UT 不符，取 UT 锚点）；射电 2 行加峰值拟合口径 comment。星等系统：各 GCN 行原文均未声明，mag_system 留空。检索证据：命中/新增行数如上，四要素齐备于本段与各行 comment。;核查修正(2026-11-07):pos_error_confidence 由 90 改留空——SGA 增强位置来源未标注置信水平，§3.9 禁止自行声称（SCHEMA 惯例语句「高能卫星探测器通常 90%」与提示词禁止条款冲突，事实层面 90 大概率正确但程序上须留维护者裁定；GRB050502B 先例同此问题待统一）",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": "90",
+  "pos_error_confidence": null,
   "extra_data": {
     "audit": {
       "status": "reviewed",
