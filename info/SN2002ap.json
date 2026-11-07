@@ -1,10 +1,12 @@
 {
   "transient_id": "SN2002ap",
-  "alias": [],
+  "alias": [
+    "SN 2002ap"
+  ],
   "ra": 24.09967,
   "dec": 15.75357,
   "T0": "2002-01-29T00:00:00Z",
-  "T0_ref": null,
+  "T0_ref": "TNS Discovery Date 2002-01-29 00:00:00.000（https://www.wis-tns.org/object/2002ap，取数 2026-11-07；Discoverer=Hirose，DiscoveryRef=IAUC 7810）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -12,36 +14,48 @@
   "tag": [
     "sn"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_error": 0.1,
+  "pos_ref": "Berger+2002 (ApJ 577, L5, DOI 10.1086/344045) §2；同 GCN 1237 射电位",
+  "redshift_type": "spec-host",
+  "redshift_ref": "GCN 1248（M74 NaI D1 v_hel=660±2 km/s，z=v/c=0.0022）",
+  "comment": "SN 2002ap：M74/NGC 628 中的 Type Ic 超新星（TNS Type=SN Ic；Berger+2002 标题 'ordinary Type Ic'）。位置取 Berger+2002 §2 射电位（α=01:36:23.92 δ=+15:45:12.87 J2000，1σ 0.1''/坐标；GCN 1237 初报曾称坐标不确定度约 10 mas，未标注置信水平，VoR 值优先）。alias 'SN 2002ap' 为 GCN 1244/TNS（IAU name sn2002ap）/SIMBAD 原文用名。T0=TNS Discovery Date（仅日期精度），旁证：Hirose 发现历元 2002 Jan 29.40 UT（Berger+2002 §1 引 Nakano 2002）；Mazzali+2002 由谱推爆发 2002 Jan 28±0.5（Tomita+2006 §1 引作 MJD 52300.0±0.5）；Wise 台 B 峰 Feb 7.1(+7.6/−1.3) d、U 峰 Feb 4.7(+1.1/−1.9) d（GCN 1312）。原 t0_note='t0 为 meta trigger-time（真实触发时刻）'（t0_basis=meta_trigger）系导入占位，已按 TNS Discovery Date 改判。红移：GCN 1248 宿主 NaI D1 v_hel=660±2 km/s → z=0.0022（按宿主 ISM 吸收线判 spec-host）；GCN 1247 CaII ≈650 km/s 相符。原有 6 行逐行核对：GCN1237 VLA 8.46GHz 375±30 μJy ✓（Feb 1.03 UT=MJD 52306.03，原表 mjd 差 12 s 已按历元改正，单位还原 μJy；同测量 Berger+2002 表1 给 374±29 μJy，保留 GCN 初报行）；GCN1248 'about V=12' 为光谱夜亮度近似值 ✓；GCN1244 U/B/V/I 极限属 pre-discovery 存档图像（INT/WFC 2001 年 7 月巡天，GCN1240 前身星搜索），非 Feb 2.9 UT 当晚，原表把 Feb 2.9 记为观测时刻系错置——存档图像无精确历元，无时间锚点，置 discard（§3.3）。测光检索（2026-11-07）：仓内 gcn/archive 全文检索（grep -il \"02ap\"）命中 34 篇（另并入宿主 M74/NGC 628 写法可扩至 44 篇；含测光数值的仅 1237/1240/1244/1248，1242 为序列星表、1312 为峰值历元）；external/rssgrbag 0；external/grbsn_webtool 无 SN2002ap（GRB-SN 工具，2002ap 非 GRB 成协）。SciX 命中 138 篇（检索式差异致 137/138 之别，实测 138），取 3 篇实际打开测光表补行：Berger+2002（射电 25 行）、Yoshii+2003（光学/IR 104 行）、Tomita+2006（后期光学/IR 107 探测 + 4 上限；其中 2002 年 6 月 5 历元与 Yoshii 表重复，按最初来源保留 Yoshii 行，§3.4）。其余命中（Foley+2003、Pandey+2003、Gal-Yam+2002、Doroshenko+2003、Vinkó+2004 等）未逐篇取值。IOP VoR 被 Radware 拦（PDF 与摘要页均返回挑战页），数值取自 arXiv v1/v2 PDF，已三方交叉并登记 audit/unverified.tsv。",
   "sub_tag": [
-    "SN-spec"
+    "Ic"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "tns_discovery_date",
+    "t0_note": "T0=TNS Discovery Date 2002-01-29 00:00:00.000（仅日期精度）。原值：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'——已改判，见 info.comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2003A&A...404..465M,\n       author = {{Masetti}, N. and {Palazzi}, E. and {Pian}, E. and {Simoncelli}, A. and {Hunt}, L.~K. and {Maiorano}, E. and {Levan}, A. and {Christensen}, L. and {Rol}, E. and {Savaglio}, S. and {Falomo}, R. and {Castro-Tirado}, A.~J. and {Hjorth}, J. and {Delsanti}, A. and {Pannella}, M. and {Mohan}, V. and {Pandey}, S.~B. and {Sagar}, R. and {Amati}, L. and {Burud}, I. and {Castro Cer{\\'o}n}, J.~M. and {Frontera}, F. and {Fruchter}, A.~S. and {Fynbo}, J.~P.~U. and {Gorosabel}, J. and {Kaper}, L. and {Klose}, S. and {Kouveliotou}, C. and {Nicastro}, L. and {Pedersen}, H. and {Rhoads}, J. and {Salamanca}, I. and {Tanvir}, N. and {Vreeswijk}, P.~M. and {Wijers}, R.~A.~M.~J. and {van den Heuvel}, E.~P.~J.},\n        title = \"{Optical and near-infrared observations  of the GRB020405 afterglow}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, radiation mechanisms: non-thermal, line: identification, cosmology: observations, Astrophysics},\n         year = 2003,\n        month = jun,\n       volume = {404},\n        pages = {465-481},\n          doi = {10.1051/0004-6361:20030491},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0302350},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003A&A...404..465M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Masetti+2003",
-      "source": "bot",
-      "title": "Optical and near-infrared observations of the GRB020405 afterglow",
-      "url": "https://ui.adsabs.harvard.edu/abs/2003A&A...404..465M"
+      "name": "Berger+2002",
+      "url": "https://doi.org/10.1086/344045",
+      "title": "The Radio Evolution of the Ordinary Type Ic Supernova SN 2002ap",
+      "source": "Rusty-Harpoon@zcode",
+      "bibtex": "@ARTICLE{2002ApJ...577L...5B,\n  author = {{Berger}, E. and {Kulkarni}, S.~R. and {Chevalier}, R.~A.},\n  title = \"{The Radio Evolution of the Ordinary Type Ic Supernova SN 2002ap}\",\n  journal = {\\apjl}, year = 2002, month = dec, volume = {577}, pages = {L5},\n  doi = {10.1086/344045}, eprint = {astro-ph/0206183}}"
     },
     {
-      "bibtex": "@ARTICLE{2010MNRAS.408..947M,\n       author = {{Maurer}, I. and {Mazzali}, P.~A.},\n        title = \"{Oxygen recombination in the nebular phase of supernovae 1998bw and 2002ap}\",\n      journal = {\\mnras},\n     keywords = {line: formation, radiation mechanisms: non-thermal, radiative transfer, supernovae: general, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2010,\n        month = oct,\n       volume = {408},\n       number = {2},\n        pages = {947-960},\n          doi = {10.1111/j.1365-2966.2010.17096.x},\narchivePrefix = {arXiv},\n       eprint = {1006.1566},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010MNRAS.408..947M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Maurer+2010",
-      "source": "bot",
-      "title": "Oxygen recombination in the nebular phase of supernovae 1998bw and 2002ap",
-      "url": "https://ui.adsabs.harvard.edu/abs/2010MNRAS.408..947M"
+      "name": "Yoshii+2003",
+      "url": "https://doi.org/10.1086/375572",
+      "title": "The Optical/Near-Infrared Light Curves of SN 2002ap for the First 140 Days after Discovery",
+      "source": "Rusty-Harpoon@zcode",
+      "bibtex": "@ARTICLE{2003ApJ...592..467Y,\n  author = {{Yoshii}, Y. and others},\n  title = \"{The Optical/Near-Infrared Light Curves of SN 2002ap for the First 140 Days after Discovery}\",\n  journal = {\\apj}, year = 2003, month = aug, volume = {592}, pages = {467},\n  doi = {10.1086/375572}, eprint = {astro-ph/0304010}}"
+    },
+    {
+      "name": "Tomita+2006",
+      "url": "https://doi.org/10.1086/503554",
+      "title": "The Optical/Near-Infrared Light Curves of SN 2002ap for the First 1.5 Years after Discovery",
+      "source": "Rusty-Harpoon@zcode",
+      "bibtex": "@ARTICLE{2006ApJ...644..400T,\n  author = {{Tomita}, H. and others},\n  title = \"{The Optical/Near-Infrared Light Curves of SN 2002ap for the First 1.5 Years after Discovery}\",\n  journal = {\\apj}, year = 2006, month = jul, volume = {644}, pages = {400},\n  doi = {10.1086/503554}, eprint = {astro-ph/0601465}}"
     }
   ],
   "host_galaxy": null
