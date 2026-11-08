@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB120816A",
-  "alias": [],
-  "ra": 282.133,
-  "dec": -6.981,
-  "T0": "2012-08-16T19:18:34Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 120816A",
+    "Swift 531223"
+  ],
+  "ra": 282.14298,
+  "dec": -6.93791,
+  "T0": "2012-08-16T19:18:34.743480Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 531223：Trig_time_UTC=2012-08-16T19:18:34.743480（仓内 external/swift_bat 快照 summary_general.txt，retrieved 2026-07-21）；GCN 13654 整秒 19:18:34 UT 一致；GCN 13654 内 XRT 起测 19:20:47.3 UT＝T0+132.6 s，反算 19:18:34.7 互证（swiftgrbba 快照 xrt_first_obs=132.63 s 同）；HEASARC swift_grb/swiftgrbba 快照整秒同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +19,19 @@
   "pos_ref": "GCN 13660",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（Rusty-Harpoon@zcode，2026-11-09）。身份：Swift/BAT trigger 531223 于 2012-08-16T19:18:34 UT 触发（GCN 13654）；同日 GRB 120816B 为 Konus-Wind/IPN 另一独立短暴（GCN 13675/13676，IPN 位置 RA≈337°，与本源无关），未混淆。T0：整秒与 GCN 13654/13659 及 HEASARC swift_grb、swiftgrbba 快照一致；亚秒取触发仪器 Swift/BAT 官方目录 Trig_time_UTC=2012-08-16T19:18:34.743480（external/swift_bat 快照 summary_general.txt，trigger 531223）；GCN 13654 内 XRT 起测 19:20:47.3 UT＝触发后 132.6 s，反算 19:18:34.7 互证。坐标：原库 ra/dec=282.133/−6.981 为 BAT 地面定位（GCN 13659，2.5′ radius，90%；与仓内 swift_bat RA_ground=282.1306/DEC_ground=−6.979001 同族），与 pos_ref=GCN 13660、pos_error=1.7″ 不自洽（导入错配），本 PR 改为 GCN 13660 XRT 增强定位 282.14298/−6.93791（1.7″ radius，90% confidence 原文明示，故 pos_error_confidence=90）；BAT 地面位、UVOT 精化位 282.14359/−6.93788（0.6″，90%，GCN 13678）与 OPTIMA 光学位（GCN 13657）备查。分类：t90=4.432±0.977 s（Swift/BAT 官方目录，15-350 keV）→ 按目录 t90 判 lgrb/sgrb；GCN 13659 同源通告值 T90=7.6±3.1 s、HEASARC swiftgrb 表 t90=7.63 s（15-150 keV）并列备查，均>2 s 同判 lgrb。别名出处：GRB 120816A（GCN 13654 等 12 篇通告 eventId 用名，含空格形）；Swift 531223（HEASARC swiftgrb 目录 name_alt）。测光检索（2026-11-09）：仓内 gcn/archive 全文（45947 篇）扫描「120816/531223」命中 13 篇（本源 11 篇 + 同日 GRB 120816B 2 篇；另 SciX 命中的 GCN Report 1 篇计入本源时合计 12 篇来源）（13654/13655/13656/13657/13658/13659/13660/13663/13665/13668/13678，另 2 篇属 120816B、1 篇为 GCN Report 381.1 索引），全部读毕；ADS/SciX 检索 3 式命中 12 条，均为上述 GCN 通告与 GCN Report（2012GCNR..381....1P，Swift 团队报告），无研究论文给出本源测光；external/rssgrbag、grbsn_webtool、uvot_grb、mpe_greiner、heasarc_grbcat 快照均无本源新增测光（uvot_grb 目录无本源条目）；UKSSDC Burst Analyser（swift.ac.uk/burst_analyser/00531223，2026-11-09 实测）仅 BAT+XRT 产品，uvot/*.qdp 数据文件全部 404；GCN Report 381.1 新旧站点均 404（其内容为 Swift 团队通告汇编，无独立数值）。新增 9 行：GCN 13678 Swift/UVOT white 探测 2 行（18.5±0.2、19.9±0.2）与 v/b/u/uvw1/uvm2/uvw2 3σ 上限 6 行、GCN 13665 Bassano Bresciano V>17.7 上限 1 行（窗口中点口径、mjd 按 T0 重算）；既有 12 行非 X 射线逐行对原文核对：time 由窗口/曝光起点改为中点、补 time_err、mjd 按新 T0 重算（§3.8），逐行 comment 注明；OPTIMA 2 行 band=w（filters.json 中 w=Pan-STARRS 5980.7 Å，撞名）按原文「unfiltered」改记 G（§3.3；Issue #384 地面白光同判）。红移：各通告与检索均未报道，维持 null。X 射线行（band=10keV）20 行未审不动；T0 补亚秒使其 mjd 与新 T0 残差 +0.743 s（<1 s 容差），合入前仍需维护者按 mjd=T0+time 机械重算（2026-10-31 裁定）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
