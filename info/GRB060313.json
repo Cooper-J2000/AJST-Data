@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB060313",
-  "alias": [],
+  "alias": [
+    "GRB 060313"
+  ],
   "ra": 66.61849975585938,
   "dec": -10.844388961791992,
-  "T0": "2006-03-13T00:12:06Z",
-  "T0_ref": null,
+  "T0": "2006-03-13T00:12:06.484480Z",
+  "T0_ref": "Swift/BAT batgrbcat trigger 201487 精化值（含 UTCF 改正，https://swift.gsfc.nasa.gov/results/batgrbcat/GRB060313/）；GCN 4867 整秒一致（00:12:06 UT）；Roming et al. 2006, ApJ, 651, 985 给 00:12:06.484 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,15 +16,21 @@
   ],
   "pos_error": 0.8999999761581421,
   "pos_ref": "SGA (UVOTGRB)",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
+  "redshift_type": "upperlimit",
+  "redshift_ref": "Roming et al. 2006, ApJ, 651, 985（UVOT SED 谱分析 z<1.1，90% 置信；arXiv:astro-ph/0605005 v2）；mpe_greiner 目录原表单元格 '<1.1ul' 即上限（转引）",
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。审核（Rusty-Harpoon@zcode, 2026-11-08）：① T0=00:12:06.484480Z 取 batgrbcat trigger 201487（含 UTCF）；GCN 4867 整秒一致；Roming+2006 正文 00:12:06.484 UT；Konus-Wind（GCN 4881）00:12:06.354 UT，Swift→Wind 传播延迟 0.045 s 改正后对应 T0−0.085 s（自洽）；SGA/UVOTGRB 快照整秒 00:12:06。② T90=0.744±0.034 s（batgrbcat，15-350 keV；GCN 4873 给 0.7±0.1 s，90% 置信含系统差；GCN 4879：无延展发射），按目录 t90 判 lgrb/sgrb → sgrb。③ 红移：原记 z=1.1 系对 mpe_greiner 目录的误读——该目录原表单元格为 '<1.1ul'（上限，脚注 c：ul=upper limit）；原始出处 Roming+2006：UVOT SED 谱分析 z<1.1（90% 置信），UVW2 探测另给 z≲1.7（GCN 4877）；Kann+2011 引作 'z≤1.1 at 90% confidence' 并按无红移处理；故 redshift_type=upperlimit，数值 1.1 保留为上限值。④ pos_error=0.9″（SGA/UVOTGRB）来源未标注置信水平，pos_error_confidence 留空（§3.9）。⑤ 光变时间轴：非 X 射线行 mjd 已按 mjd=T0+time 重算（9 位小数）；X 射线行（62 行，band=10keV）未改动，其 mjd 需随 T0 由维护者按 mjd=T0_new+time 重算（2026-10-31 裁定，§3.3 例外条款）。⑥ 测光检索留证（2026-11-08）：仓内 gcn/archive 全文检索 060313/201487 命中 17 篇（4867–4884）逐篇核读，新增 GCN 4874 丹麦 1.5m R=20.4（~1 h）1 行、GCN 4878 PROMPT r′/I/i′（1.3/1.4/1.5 h）3 行、GCN 4883 REM J/H/Ks 5σ 上限 3 行；Kann+2011 (ApJ 734, 96) 表 1 SMARTS/ANDICAM 4 行（线索卡 audit/leads/GRB060313.md #360 核实采纳，arXiv v2 实取逐值核对）；Roming+2006 表 1 UVOT 16 行（2006 年标定；与 noc-db 同曝光行并存，数值差异为标定版本所致，逐行在 comment 注明）。GCN 4872 SMARTS 初值 R~19.9±0.3（1σ 检出）与 Kann+2011 定标值 R_C=20.42±0.09 同为首批成像，后者已入库、前者单次曝光历元不可考，仅此备注不入库；GCN 4883 R>17.5（月照污染）无独立时间锚，不入库。SciX/ADS（api.scixplorer.org）：'GRB 060313' 15 条、'GRB060313' 5 条、abs:'060313' 17 条，除上述文献外无新增测光表（Nysewander+2009 ApJ 701, 824 表 3 仅 prompt 参数；Yu+2007 仅 X 射线无光学行；Roming+2017 即 noc-db 数据源；Wang+2024 2024ApJ...969..146W 摘要实读确认 060313 仅作 180418A 建模的比较样本、无本源测光表）；仓内 external/rssgrbag 无射电光变（radio_ag_flag=N），grbsn_webtool 无本事件；TNS 不适用（GRB，无 AT/SN 注册）。⑦ Roming+2006 与 Kann+2011 的 VoR（IOP）被 Radware Bot Manager 整站拦截，数值取自 arXiv v2（astro-ph/0605005 / 0804.1959）逐表核对，三方交叉（arXiv 全文 + SciX 题录 + 出版社页反爬样张），未通读 VoR；已登记 audit/unverified.tsv。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
+  },
   "articles": [
     {
       "bibtex": "@ARTICLE{2006ApJ...651..985R,\n       author = {{Roming}, Peter W.~A. and {Vanden Berk}, Daniel and {Pal'shin}, Valentin and {Pagani}, Claudio and {Norris}, Jay and {Kumar}, Pawan and {Krimm}, Hans and {Holland}, Stephen T. and {Gronwall}, Caryl and {Blustin}, Alex J. and {Zhang}, Bing and {Schady}, Patricia and {Sakamoto}, Takanori and {Osborne}, Julian P. and {Nousek}, John A. and {Marshall}, Frank E. and {M{\\'e}sz{\\'a}ros}, Peter and {Golenetskii}, Sergey V. and {Gehrels}, Neil and {Frederiks}, Dmitry D. and {Campana}, Sergio and {Burrows}, David N. and {Boyd}, Patricia T. and {Barthelmy}, Scott and {Aptekar}, R.~L.},\n        title = \"{GRB 060313: A New Paradigm for Short-Hard Bursts?}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, Astrophysics},\n         year = 2006,\n        month = nov,\n       volume = {651},\n       number = {2},\n        pages = {985-993},\n          doi = {10.1086/508054},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0605005},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006ApJ...651..985R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
@@ -37,6 +45,12 @@
       "source": "bot",
       "title": "Shallow Decay of X-ray Afterglows in Short GRBs: Energy Injection from a Millisecond Magnetar?",
       "url": "https://ui.adsabs.harvard.edu/abs/2007ChJAA...7..669Y"
+    },
+    {
+      "name": "Kann+2011",
+      "url": "https://doi.org/10.1088/0004-637X/734/2/96",
+      "title": "The Afterglows of Swift-era Gamma-Ray Bursts. II. Type I GRB versus Type II GRB Optical Afterglows",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
