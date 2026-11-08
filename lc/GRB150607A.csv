@@ -1,6 +1,7 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-118.0,,s,57180.33133101852,uvot-v,16.71,0.35,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
-137.0,,s,57180.33155092593,uvot-white,18.06,0.15,magnitude,,n,n,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17904,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
+123.0,5.0,s,57180.331395594214,uvot-v,16.71,0.35,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT v：T_start 118–T_stop 128 s，Exp 9 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
+211.0,75.0,s,57180.33241411274,uvot-white,18.06,0.15,magnitude,Vega,n,n,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17904,GCN 17904 UVOT White finding chart：150 s 曝光始于触发后 136 s；time=起点+75 s=窗口中点、time_err=半宽为约定口径；UVOT 惯例 Vega（Breeveld+2011）；同曝光 GCN 17909 精化值 18.10±0.07 另存一行；银消光未改正（原文 E(B-V)=0.06）；band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,Rusty-Harpoon@zcode
+211.5,74.5,s,57180.33241989977,uvot-white,18.10,0.07,magnitude,Vega,n,n,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17909,GCN 17909 UVOT white：T_start 137–T_stop 286 s，Exp 146 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；与 GCN 17904 白光寻找图（18.06±0.15）同曝光的精化值，两行均保留；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 140.001,2.858,s,57180.331585659726,10keV,5.68680692137553e-06,1.03826582822138e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 144.626,2.303,s,57180.33163918982,10keV,6.9421651889306e-06,1.26746241342007e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 148.164,2.364,s,57180.33168013889,10keV,6.50121461756355e-06,1.18695600534945e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -19,7 +20,7 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 270.563,11.817,s,57180.333096793984,10keV,8.81446773266656e-06,1.93164975816873e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 288.841,10.037,s,57180.33330834491,10keV,7.20066319759739e-06,1.57799210766994e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 309.119,12.31,s,57180.333543043984,10keV,5.4747175105278e-06,1.19975920454567e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-348.0,,s,57180.33399305556,uvot-u,18.88,0.27,magnitude,,n,n,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
+473.0,125.0,s,57180.33544652014,uvot-u,18.88,0.27,magnitude,Vega,n,n,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT u：T_start 348–T_stop 598 s，Exp 245 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 351.207,29.778,s,57180.33403017361,10keV,6.72298594553405e-06,1.47749680267165e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 374.998,9.254,s,57180.33430553241,10keV,7.07827696144339e-06,1.58745337377583e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 389.853,13.501,s,57180.33447746528,10keV,4.39769803590366e-06,9.5429543736344e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -27,17 +28,17 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 482.716,35.334,s,57180.335552268516,10keV,3.11962985976718e-06,6.86570217637938e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 524.307,6.28,s,57180.336033645835,10keV,1.05889320346426e-05,2.16949060096875e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 556.997,30.518,s,57180.33641200232,10keV,3.85155701792058e-06,8.68957037941493e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-604.0,,s,57180.33695601852,uvot-b,19.65,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
+4033.5,3429.5,s,57180.376656010885,uvot-b,19.65,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT b：T_start 604–T_stop 7463 s，Exp 367 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 605.543,18.028,s,57180.33697387732,10keV,4.42569946035125e-06,9.97000413348558e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-628.0,,s,57180.337233796294,uvot-white,20.04,0.31,magnitude,,n,n,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17909,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
+916.0,288.0,s,57180.340573834954,uvot-white,20.04,0.31,magnitude,Vega,n,n,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17909,GCN 17909 UVOT white：T_start 628–T_stop 1204 s，Exp 205 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）；band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,Rusty-Harpoon@zcode
 651.841,36.746,s,57180.3375097338,10keV,4.40638710812638e-06,9.71142098500612e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-654.0,,s,57180.337534722225,uvot-uvw2,20.3,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
-678.0,,s,57180.3378125,uvot-v,19.02,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
+4264.0,3610.0,s,57180.37932383495,uvot-uvw2,20.3,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT uvw2：T_start 654–T_stop 7874 s，Exp 568 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
+4316.5,3638.5,s,57180.37993147384,uvot-v,19.02,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT v：T_start 678–T_stop 7955 s，Exp 446 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 679.644,10.124,s,57180.33783152778,10keV,6.24228939923565e-06,1.33265536822623e-06,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 703.938,14.36,s,57180.338112708334,10keV,4.0476252600476e-06,9.10471121684488e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-728.0,,s,57180.3383912037,uvot-uvw1,19.6,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
+3890.5,3162.5,s,57180.37500091829,uvot-uvw1,19.6,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT uvw1：T_start 728–T_stop 7053 s，Exp 352 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 734.767,17.609,s,57180.338469525464,10keV,3.42716652283363e-06,7.68614866524998e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-753.0,,s,57180.33868055556,uvot-u,19.37,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
+4005.5,3252.5,s,57180.37633193681,uvot-u,19.37,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT u：T_start 753–T_stop 7258 s，Exp 352 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 762.114,20.234,s,57180.33878604167,10keV,3.261502794191e-06,7.30376348396894e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 797.347,17.596,s,57180.339193831016,10keV,2.50537201388247e-06,5.61882781765757e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 841.041,26.098,s,57180.33969954861,10keV,1.33430815761717e-06,2.93238269226301e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -46,13 +47,13 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 959.164,28.783,s,57180.341066712965,10keV,1.7355301484868e-06,3.9214227850762e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1014.378,26.431,s,57180.34170576389,10keV,3.69317916551119e-06,8.11642873987764e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1066.026,34.75,s,57180.34230354167,10keV,2.80455140456585e-06,6.28047228362494e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-1084.0,,s,57180.342511574076,uvot-uvm2,19.74,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN17909,,
+3966.0,2882.0,s,57180.37587476088,uvot-uvm2,19.74,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift/UVOT,,GCN17909,GCN 17909 UVOT uvm2：T_start 1084–T_stop 6848 s，Exp 313 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）,Rusty-Harpoon@zcode
 1119.163,18.387,s,57180.342918553244,10keV,2.89083828295664e-06,6.49296493520785e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1159.831,31.208,s,57180.34338924769,10keV,1.24503627828869e-06,2.80475772959393e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1221.578,30.539,s,57180.34410391204,10keV,1.10988090182405e-06,2.43225322460629e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1261.202,20.1,s,57180.34456252315,10keV,1.16772303279422e-06,2.62276367592869e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1348.467,67.165,s,57180.34557253472,10keV,7.76654830622401e-07,1.76807527037537e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-1358.0,,s,57180.34568287037,uvot-white,20.55,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17909,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
+4513.0,3155.0,s,57180.3822057794,uvot-white,20.55,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN17909,GCN 17909 UVOT white：T_start 1358–T_stop 7668 s，Exp 412 s；time=窗口中点、time_err=半宽为约定口径（原导入用 T_start）；UVOT 惯例 Vega（GCN 17909 明示用 Breeveld+2011 UVOT photometric system）；3σ 上限；银消光未改正（原文 E(B-V)=0.07，Schlegel+1998）；band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,Rusty-Harpoon@zcode
 1399.866,21.401,s,57180.34616743056,10keV,1.7718758102588e-06,3.99756328433947e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1439.735,23.659,s,57180.34662887731,10keV,1.89779338690069e-06,4.15892594668514e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 1485.826,29.634,s,57180.34716233797,10keV,1.45501446632948e-06,3.13588061349972e-07,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
@@ -86,10 +87,11 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 35567.582,332.071,s,57180.74162710648,10keV,4.45208275956583e-08,9.54752131099766e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 41128.612,152.806,s,57180.80599087963,10keV,4.22263406921246e-08,1.11580979081212e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 41536.706,315.413,s,57180.810714189814,10keV,4.11074583995135e-08,9.33881708549158e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-42492.0,,s,57180.82177083333,R,19.4,,magnitude,,n,y,,,,,,,1.0,n,,AZT-8,GCN17915,,
+43082.496,,s,57180.8286119831,R,19.4,,magnitude,,n,y,,,,,,,1.0,n,AZT-8,,GCN17915,GCN 17915：AZT-8（CrAO）R 波段，6×180 s，UT 起始 2015-06-07 19:43:21；原文给 t-T0(mid)=0.49864 d → time=43082.496 s（原导入误用 UT 起始 42492 s，已按原文 mid 改正）；GCN 17915 表内 t-T0(mid) 列与「UT start + Exp/2」自差 +50.5 s，本库按印刷列 t-T0(mid) 取值；USNO-B1.0 定标，原文未声明星等系统；3σ 上限,Rusty-Harpoon@zcode
+39458.016,,s,57180.786661983104,G,21.20,0.1,magnitude,,n,n,,,,,,,1.0,n,AS-32,,GCN17915,GCN 17915：AAO Abastumani AS-32（0.7 m），无滤光片（原文 Filter=None → band=G），44×120 s，UT 起始 2015-06-07 17:54:22；原文给 t-T0(mid)=0.45669 d → time=39458.016 s；GCN 17915 表内 t-T0(mid) 列与「UT start + Exp/2」自差 +865.0 s，本库按印刷列 t-T0(mid) 取值；USNO-B1.0 定标，原文未声明星等系统,Rusty-Harpoon@zcode
 46408.251,167.181,s,57180.8670978125,10keV,3.85165903232824e-08,1.01042811218896e-08,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 46982.47,407.038,s,57180.87374386574,10keV,1.576127157577e-08,4.20206444291739e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
 47573.492,317.641,s,57180.880584398146,10keV,3.22351463538381e-08,7.56339200528865e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
-49671.0,,s,57180.904861111114,R,21.6,0.2,magnitude,,n,n,,,,,,,1.0,n,,NOT/ALFOSC,GCN17908,,
-71211.0,,s,57181.15416666667,r,22.03,0.03,magnitude,AB,n,n,,,,,,,1.0,n,,DCT/LMI,GCN17914,,
+49536.0,18.0,s,57180.90330531644,R,21.6,0.2,magnitude,,n,n,,,,,,,1.0,n,NOT/ALFOSC,,GCN17908,GCN 17908：NOT/ALFOSC R，原文给「R = 21.6±0.2 mag at 13.76 hours after the trigger」→ time=13.76 h=49536 s；BVRI 序列 UT 起始 2015-06-07 21:43 UT（=T0+49671 s，原导入所用值）；time_err=13.76 h 末位半宽（0.005 h=18 s）；USNO-B1.0 定标，原文未声明星等系统,Rusty-Harpoon@zcode
+72800.42066,1590.0,s,57181.17256944445,r,22.03,0.03,magnitude,AB,n,n,,,,,,,1.0,n,DCT/LMI,,GCN17914,GCN 17914：DCT/LMI r'（SDSS r'），观测窗口 2015-06-08 03:42–04:35 UT（起于触发后 19.8 h）；原文只给观测窗口，time=窗口中点、time_err=半宽为约定口径，真实曝光中点不可恢复；AB 系统原文明示，USNO-B1.0 定标；未做银消光改正（原文明示）,Rusty-Harpoon@zcode
 88268.245,16104.797,s,57181.3515884838,10keV,3.9279757959795e-09,1.4636834542233e-09,Jy,,n,n,,,,,,,1.0,n,Swift,XRT,"UKSSDC Swift Burst Analyser (Evans+2007,2009)",,
