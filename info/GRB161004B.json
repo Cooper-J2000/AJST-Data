@@ -1,13 +1,15 @@
 {
   "transient_id": "GRB161004B",
-  "alias": [],
-  "ra": 112.1529,
-  "dec": -39.89858,
-  "T0": "2016-10-04T23:07:54Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "BAT 715246"
+  ],
+  "ra": 112.15126,
+  "dec": -39.89791,
+  "T0": "2016-10-04T23:07:59.296560Z",
+  "T0_ref": "GCN 19987（D'Ai et al., Swift team）原文 'At 23:07:59 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒）；亚秒 .296560 取自 Swift/BAT 官方目录快照（external/swift_bat，trigger 715246，MET 497315296.256，快照获取 2026-07-21），整秒一致；互证：GCN 19987 XRT 起测 23:09:12.7 UT = T0+73.4 s，反算 T0≈23:07:59.3",
+  "T0_offset": -10.0,
+  "T0_offset_ref": "GCN 19995（Swift-BAT refined analysis）：'The mask-weighted light curve shows two overlapping peaks starting at T-10 sec'（触发前已有辐射，取负值）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,15 +18,22 @@
   "pos_ref": "GCN 19991",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-07）。身份：Swift/BAT 触发 715246（GCN 19987 原文 'At 23:07:59 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 161004B (trigger=715246)'）；同日 GRB 161004A 为另一独立事件（触发 715084，2016-10-04T12:58:28.67 UT，RA 263.13 Dec −0.93），触发号与坐标均可区分。T0：原值 2016-10-04T23:07:54Z 为导入管线误取他仪触发时刻的整秒截断（Fermi/GBM 触发 23:07:54.787 UT，GCN 19998 与 external/fermi_gbm 快照；Konus-Wind 触发 23:07:54.317 UT，GCN 20005；CALET CGBM 触发 23:07:52.64 UT，GCN 20003——各仪触发差备查，不写 T0_offset），现取触发仪器 Swift/BAT 官方时刻 2016-10-04T23:07:59.296560Z（§3.8）。原 bot 注记改写前原值：t0_basis=meta_trigger；t0_note='t0 为 meta trigger-time（真实触发时刻）'。T0_offset=−10 s：GCN 19995 BAT 精化分析原文 'two overlapping peaks starting at T-10 sec'（触发前已有辐射，负值；Swift/BAT 目录 T100 模型起点 −5.16 s 备查）。位置：原库 ra/dec=112.1529/−39.89858 实为 GCN 19987 的 XRT 快报位置（3.6″，90%），与 pos_ref=GCN 19991 及 pos_error=1.4″ 不配套；现改取 GCN 19991 XRT 增强位置 112.15126/−39.89791（1.4″，radius, 90% confidence，原文标注置信水平）；GCN 19988 快报增强位 112.1514/−39.8976（2.0″，90%）、BAT 地面精化位 112.156/−39.896（1.0′，90%，GCN 19995）备查。sub_tag：t90=15.72±0.75 s（Swift/BAT 官方目录 external/swift_bat，15-350 keV）；另 GCN 19995 精化分析 T90=15.9±0.7 s（15-350 keV）、swiftgrbba 亦记 t90=15.9 s（15-150 keV）、Fermi/GBM t90=12.80±0.57 s（50-300 keV，external/fermi_gbm 快照；GCN 19998 初步值 ~14 s）、AstroSat CZTI 13.1 s（GCN 19996）、CALET 11.1±0.9 s（40-450 keV，GCN 20003）、Konus-Wind 单脉冲总时长 ~18 s（GCN 20005），各仪口径不一但均远超 2 s；按目录 t90 判 lgrb。红移：全部通告与检索文献均无红移报道，z=null。测光检索（2026-11-07）：仓内 gcn/archive 45 947 篇全文检索「161004B」「715246」「161004」，属于本暴的共 10 篇（GCN 19987/19988/19991/19994/19995/19996/19997/19998/20003/20005，逐篇读过；其余命中为 GRB 161004A、MASTER 站点 id=1610042、createdOn 时间戳假阳性）；光学/UV 数值仅 GCN 19997（UVOT 3σ 上限表 9 行）；GCN 19987 的 'typical 3-sigma upper limit has been about 19.6 mag' 经比对同句逐字见于 GCN 19967（161001A）/20008（161007A）/20023（161011A）等多篇 Swift 检测通告 → 模板敏感度句、非本暴实测，原库由此句导入的 1 行置 discard=y 留痕（GRB130102A 同型先例（GCN 14127 模板句 19.6 行 discard=y、GCN 14136 white_FC 实测补入，与本案逐字同构））；external/rssgrbag、grbsn_webtool、uvot_grb、heasarc_grbcat、konus_wind、swift_xrt_live 有本暴 X 射线参数行（swift_xrt_live_cat_full.txt L680）、无光学/UV 测光；swiftgrbba/fermi_gbm 有本暴条目（UVOT 上限串与 GCN 19997 一致、高能参数），无增量测光；SciX 检索「GRB 161004B」元数据命中 9 篇（全为上述 GCN）、full-text「161004B」命中 12 篇，非 GCN 的 3 篇（2020ApJ...897..178A Fermi/GBM 透镜搜索、2026A&A...707A.392Z BAT FRED 样本、2026ApJ..1008..181X XRT jet break 样本）经摘要核对均为高能/X 射线样本论文、无本暴光学测光 → 光学/UV 上限共补 2 行（GCN 19997 表 white_FC >20.8、u_FC >19.6，本库原缺）、原库 GCN 19987 模板句 1 行置 discard。UVOT 全部行：3σ 上限、未做银河系消光改正（E(B-V)=0.54，Schlegel+1998，GCN 19997 原文声明）→ Gext_corr=n；星等系统为 UVOT photometric system=Vega（GCN 19997 原文引 Breeveld et al. 2011, AIP Conf. Proc. 1358, 373）。本暴 X 射线数据（GCN 19994 XRT 精化分析等）按契约暂不审核、未入库。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "GCN 19987（D'Ai et al., Swift team）'At 23:07:59 UT, the Swift Burst Alert Telescope (BAT) triggered'（整秒）+ Swift/BAT 官方目录快照 trigger_time=2016-10-04T23:07:59.296560Z（external/swift_bat，trigger 715246，亚秒值）",
+    "t0_note": "T0=2016-10-04T23:07:59.296560Z 为 Swift/BAT 触发时刻（trigger 715246）：swift_bat 官方目录快照亚秒值；GCN 19987 整秒一致；XRT 起测 23:09:12.7 UT = T0+73.4 s 反算互证；原 bot 注记（t0_basis=meta_trigger，t0_note='t0 为 meta trigger-time（真实触发时刻）'）已改写，原值见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
