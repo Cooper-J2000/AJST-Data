@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB260614B",
-  "alias": [],
-  "ra": 353.908,
-  "dec": -54.1164,
-  "T0": "2026-06-14T13:49:53Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 260614B",
+    "GRB260614576",
+    "bn260614576",
+    "sb26061401"
+  ],
+  "ra": 353.90883,
+  "dec": -54.11628,
+  "T0": "2026-06-14T13:49:55Z",
+  "T0_ref": "GCN 44938（SVOM/ECLAIRs 官方触发通告）：At 2026-06-14T13:49:55 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 260614B（SVOM burst-id sb26061401）；GCN 44947（ECLAIRs 精化分析）同值互证。bot 原 T0=2026-06-14T13:49:53Z 实为 Fermi/GBM 触发时刻（GCN 44937 13:49:53 UT、GCN 44942 13:49:53.52 UT、FERMIGBRST 快照 13:49:53.515Z），跨仪器误植已改、全表 time/mjd 重算；GECAM-B 自触发 13:49:54.950 UTC（GCN 44945）备查",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "SVOM/ECLAIRs",
@@ -12,19 +17,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 44939（SVOM/VT 光学对应体 VT_ID 52）：R.A., Dec. 353.90883, -54.11628 degrees, uncertainty 0.50 arcsec（原文未标注置信水平）；备查：ECLAIRs 353.940,-54.154（2.75′ 90% C.L.，含 2′ 系统差，GCN 44938）、MXT 353.907,-54.1192（69″ 90% C.L.，GCN 44938）、EP-FXT 353.9080,-54.1164（约 10″ 90% C.L.，GCN 45019）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份核验（2026-11-08）】SVOM/ECLAIRs 触发并定位 GRB 260614B（SVOM burst-id sb26061401，GCN 44938 原文 At 2026-06-14T13:49:55 UTC (T0)）；SVOM/VT 自动指向后在 ECLAIRs/MXT 误差圈内发现未编目光学对应体 VT_ID 52（GCN 44939），随测确认衰减（斜率约 −1.2，GCN 44943）；Fermi/GBM（trigger 803137798.515116 / 260614576，GCN 44937/44942）、GECAM-B（GCN 44945）、NuSTAR/SINGS（GCN 44986）独立触发互证；EP-FXT 后随观测在 ECLAIRs/MXT 误差圈内找到未编目 X 射线源、位置与光学对应体一致（GCN 45019）。SVOM 官网主页（www.svom.eu，2026-11-08 实查）无逐事件信息，身份以 SVOM 团队通告为锚，无疑义。【T0】bot 原 T0=2026-06-14T13:49:53Z（t0_basis=meta_trigger）实为 Fermi/GBM 触发时刻（GCN 44937 13:49:53 UT；GCN 44942 13:49:53.52 UT；external/fermi_gbm FERMIGBRST 快照 trigger_time=2026-06-14T13:49:53.515Z），系跨仪器误植（Issue #68/#84 同型）。按触发仪器官方通告 GCN 44938 重锚 T0=2026-06-14T13:49:55Z（GCN 44947 复核同值；§3.8①）。自洽性：GCN 44943 首测行 mid=186 s、曝光 50 s、正文起测 13:52:36 UTC → 13:52:36+25 s=13:53:01=T0+186 s，完全自洽。GECAM-B 自触发 13:49:54.950 UTC（GCN 44945）备查不采。全表 time/mjd 已按新 T0 重算；本源无 X 射线行。【定位】主位取 SVOM/VT 光学对应体（GCN 44939：353.90883,-54.11628，0.50″，原文未标注置信水平→pos_error_confidence 留空）；bot 原 ra/dec=353.908,-54.1164 系 EP-FXT 位（GCN 45019，约 10″ 90% C.L.）3 位截断，已更替。备查并列：ECLAIRs 353.940,-54.154（2.75′，90% C.L.，含 2′ 系统差，GCN 44938）；MXT 353.907,-54.1192（69″，90% C.L.，GCN 44938）。【分类 lgrb】GCN 44937 原文 \"likely LONG GRB\"（Fermi GBM team）、GCN 44986 \"long-duration GRB 260614B\"、GCN 45063 \"the long GRB 260614B\"；T90 互证（均 ≫2 s）：ECLAIRs 精化 88 +18/−9 s（4-120 keV，GCN 44947）、ECLAIRs 初报 19.62 −2.19/+5.93 s（5-120 keV，GCN 44938）、GRM 35.48 −2.25/+3.70 s（8-1100 keV，GCN 44938）、GBM ~30 s（50-300 keV，GCN 44942；FERMIGBRST 目录 29.70±4.47 s）、GECAM-B 43±7 s（70-6000 keV，GCN 44945）。按通告明示分类判 lgrb。【物理量备查】（不参与判定）ECLAIRs fluence（5.4±0.1）e-6 erg/cm²（4-120 keV，T0−4 至 T0+37 s，GCN 44947）；GBM fluence（2.20±0.04）e-5 erg/cm²（10-1000 keV）、1-s 峰光子流量 5.7±0.2 ph/cm²/s（T0+13 s 起）、Epeak=510±10 keV、谱指数 −0.78±0.03（GCN 44942）；GECAM-B fluence（2.43 +0.17/−0.16）e-5 erg/cm²（10-1000 keV，T0−19.5 至 T0+22.5 s，GCN 44945）；VT 衰减斜率约 −1.2（GCN 44943）；EP-FXT 未吸收流量 （1.64±0.25）e-13 erg/s/cm²（0.5-10 keV，触发后约 25.3 h、4 ks，GCN 45019）——X 射线数据暂不入库。【逐行核对（2026-11-08）】原 7 行 SVOM/VT 光学与 GCN 44939（3 行）/44943（4 行）逐值核对：星等/误差/波段全部一致，mag_system=AB 两通告均明示（44939 \"VT_B mag(AB)\"、44943 \"in the AB magnitude\"），两通告均明示未做银消改正（Gext_corr=n）。原 time/mjd 系 bot 按误植 T0（13:49:53）与起测时刻（13:52:36 误当 mid）换算：44943 首测 2 行 time 163→186 s、mjd 13:52:36→13:53:01 UTC；44939 3 行 time 偏 +2 s（413→411、688→686）、mjd 本正确；44943 晚期 2 行 time 11137/11353→11160/11376 s（原文 mid 3.10/3.16 h）、mjd 16:55:30/16:59:06→16:55:55/16:59:31 UTC（bot 值无法由原文复现）；time_err 补半曝光 25/150/125/800/1000 s。无 X 射线行；无重复行（44943 首测 mid=13:53:01 与 44939 首历元 mid=13:56:46 为不同历元的独立测量）。新增 ATCA 射电上限 2 行（GCN 45063）。【检索留证（2026-11-08）】仓内 gcn/archive 全文检索 \"260614B\" 命中 10 篇（44937/44938/44939/44942/44943/44945/44947/44986/45019/45063），其中含测光数值 3 篇（44939、44943 光学；45063 射电上限），其余为触发/谱分析/探测通告；external/rssgrbag（74 源射电光变）与 external/grbsn_webtool（63 事件）均无该源记录。GCN 站（gcn.nasa.gov/circulars/44938、/45063 网页实取）与 archive 一致、无更多通告。SciX（api.scixplorer.org）三种查询（\"GRB 260614B\" / 260614B OR sb26061401 / abs:\"GRB 260614B\"）均只命中同 10 篇 GCN 通告，无研究论文或预印本。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光=SVOM/VT 7 点+ATCA 8 GHz 上限 2 条；本次新增 2 行（ATCA）、修正 7 行时间轴。【alias 证据（§3.10）】sb26061401——GCN 44938 原文用名 \"SVOM burst-id sb26061401\"；GRB 260614B——全部 10 篇通告 subject 原文用名；GRB260614576——FERMIGBRST trigger_name（仓内 external/fermi_gbm 快照 name_alt），GCN 44937 原文用名 \"trigger 803137798.515116 / 260614576\"；bn260614576——同快照 name_alt，GCN 44937 skymap URL 原文用名 \"bn260614576\"。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=2026-06-14T13:49:55Z 取自触发仪器官方通告 GCN 44938；bot 原 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」对应 T0=2026-06-14T13:49:53Z，经核系 Fermi/GBM 触发时刻（跨仪器误植，Issue #68/#84 同型），已重锚并全表重算 time/mjd（原值留底于本 note 与 T0_ref）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
   },
   "articles": [],
   "host_galaxy": null
