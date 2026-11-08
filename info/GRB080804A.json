@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB080804A",
-  "alias": [],
-  "ra": 328.7,
-  "dec": -53.2,
-  "T0": "2008-08-04T23:20:14Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080804"
+  ],
+  "ra": 328.66755,
+  "dec": -53.18483,
+  "T0": "2008-08-04T23:20:14.67Z",
+  "T0_ref": "Swift/BAT 触发 319016 亚秒取触发仪器官方目录：HEASARC SWIFTGRB（Donato+2012）trigger_time=2008-08-04T23:20:14.670000Z、batgrbcat 快照（external/swift_bat）同值；GCN 8057 给整秒 23:20:14 UT；GCN 8056 ROTSE 首图 23:20:34.3 UT=爆发后 19.6 s 反推 23:20:14.7 交叉印证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +16,14 @@
   ],
   "pos_error": 1.5,
   "pos_ref": "GCN 8066",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 8058",
-  "comment": null,
+  "comment": "身份：GRB 080804 = Swift/BAT 触发 319016（GCN 8057，23:20:14 UT，BAT onboard 328.701,−53.195）；ra/dec 已由舍入值 328.7/−53.2 改为 GCN 8066 XRT 增强位 328.66755,−53.18483（半径 1.5″、90% 包含，与 pos_error/pos_ref 一致）。T0：Swift 触发仪器官方目录亚秒 23:20:14.67Z（依据见 T0_ref）；改定后全表 mjd=T0+time 重算（X 射线行 103 条仅机械重算 mjd，其余列未动）。t90=34±16 s（15-350 keV，GCN 8067 BAT refined；Swift 目录 37.19 s、batgrbcat 37.87±42.36 s 备查）——按 GCN/目录 t90 判 lgrb。红移 z=2.2045 为 VLT/UVES 吸收光谱红移（GCN 8058），Gemini-South GMOS z=2.20 确认（GCN 8065）。alias「GRB 080804」为 GCN 通告与 SWIFTGRB 官方目录用名（GCN 8057 等全文用名）。宿主：仅 DLA/吸收系统线索，无确定宿主星系，host_galaxy 保持 null。测光检索留证（2026-11-07）：仓内 gcn/archive 全文命中 11 篇（8056/8057/8058/8064/8065/8066/8067/8069/8070/8073/8075，全部测光已核对入库或本次补行）；external/rssgrbag、grbsn_webtool 无本源记录；OpenAlex 全文检索「GRB 080804」命中 26 条（8 条即上述 GCN 通告，其余为样本/统计文献，无新增可引用光学表）；Roming+2017（ApJS 228,13，UVOT 第二代目录，130 行）与 Oates+2009（MNRAS 395,490，14 行）原文表整站不可达（IOP/arXiv 被本环境网络策略拦截、VizieR 未收录、web.archive.org 不可达），已按 Dainotti+2024（MNRAS 533,4023）VoR 数据发布 grbLC 的 080804A_mag.txt（158 行）逐行核对；其中 14 行确证为 GCN 8056/8064/8069/8075 转引重复已删（以 GCN 原始出处行保留），130+14 行 UVOT 值逐行相符保留；本次补 2 行（ATCA 4.8 GHz 上限、UVOT b 探测）。Dainotti2024;Roming2017/Oates 行的 time_err=0.0 占位已清空（原文未给曝光）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -84,7 +86,12 @@
         "v": 0.057
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
