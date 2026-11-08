@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB140710A",
-  "alias": [],
-  "ra": 41.0875,
-  "dec": 35.5,
-  "T0": "2014-07-10T10:16:40Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 603954"
+  ],
+  "ra": 41.06775,
+  "dec": 35.49908,
+  "T0": "2014-07-10T10:16:40.041420Z",
+  "T0_ref": "Swift/BAT 官方目录快照 trigger_time=2014-07-10T10:16:40.041420 UTC（external/swift_bat summary_general_info/summary_general.txt Trig_time_UTC 列亚秒直读, normalized.jsonl 同值; Lien et al. 2016 线上目录）; GCN 16563 原文 \"At 10:16:40 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 140710A (trigger=603954)\"（整秒一致）; Konus 表1 Time=10:16:40.041、swiftgrbba 快照 10:16:40.000 为同值低精度互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,355 +16,104 @@
   ],
   "pos_error": 1.8,
   "pos_ref": "GCN 16569",
-  "redshift_type": null,
+  "redshift_type": "spec-host",
   "redshift_ref": "GCN 16570",
-  "comment": null,
+  "comment": "审核（fsy 2026-11-08）。原 comment：null（无）。(1) T0：原值 2014-07-10T10:16:40Z（整秒）改为触发仪器官方目录亚秒值 2014-07-10T10:16:40.041420Z（external/swift_bat 快照 Trig_time_UTC 列直读, normalized.jsonl trigger_time 同值; GCN 16563 原文整秒一致; Konus 表1 Time=10:16:40.041、swiftgrbba 快照 10:16:40.000 同值低精度互证）; lc 非 X 射线行 mjd 已按新 T0 重算。(2) T0_offset 不设: BAT 官方目录 summary_burst_durations T100_start=-0.288 s、Konus t0=-0.176 s, 首辐射早于触发 <1 s, 亚秒差异按《数据审核提示词》§3.2 直接并入 T0, 不写 T0_offset。(3) 定位改判: 原 ra/dec=41.0875/35.5 系 BAT 精化位（GCN 16573 原文 RA,Dec = 41.088, 35.499 deg, uncertainty of 1.8 arcmin, radius, sys+stat, 90% containment; mpe_greiner 快照 BAT 位 02h44m21s +35°30'=41.0875/35.5 即原导入错位来源）配 XRT 1.8\" 误差与 pos_ref=GCN 16569 的混串, 改为 GCN 16569 原文 RA, Dec = 41.06775, +35.49908（uncertainty of 1.8 arcsec (radius, 90% confidence)）; pos_error_confidence=90（原文明确给出）; swift_xrt_live 快照 41.06799/35.49898（2.0\"）、Konus 表1 41.06775/35.49908 同源一致; XRT 位与 BAT 精化位相距约 59\", 在 BAT 1.8' 90% 圈内（备查）。(4) 红移: z=0.558 保持, redshift_type=spec-host——GCN 16570 原文 Gemini-N GMOS-N 光谱 \"emission lines of OII (3727), Hbeta (4863) and OIII (4959/5007) at a common redshift of z=0.558\", 并见 4000Å 断点, \"very likely that this is the redshift of the GRB host galaxy\"; Konus 表1 z=0.558 f_z=s（spectroscopic）互证; redshift_ref 保持 GCN 16570。(5) sub_tag=lgrb 保持: Tsvetkova+2021（ApJ 908, 83, arXiv:2012.14849v2）原文 \"Four bursts from this sample are short ones (GRB 050724, GRB 060801, GRB 090426, and GRB 131004A)\"——140710A 不在其中（即长暴）; Rouco Escorial+2021（ApJ 912, 95）原文 \"five of these long GRBs (GRBs 050416A, 051016B, 090927, 100816A and 140710A)\"; t90/T100 并列: Swift/BAT 官方目录 t90=3.0±2.24 s（15-350 keV）、GCN 16573 原文 T90 (15-350 keV) = 3.52 ± 0.91 s、GCN 16563 单峰约 5 s、Konus T100=1.728 s（t0=-0.176 s）——均 >2 s。(6) 身份: Swift/BAT trigger 603954（GCN 16563 原文 + BAT 目录快照 Trig_ID=603954）; alias 新增 BAT 603954（Swift/BAT 官方目录快照 name_alt, Konus 目录 name_alt 同名）; 同日 GRB 140710B（INTEGRAL, GCN 16576, ra 204.7/dec -58.6）为另一暴, 坐标差 30° 以上, 无混淆。(7) 测光检索（2026-11-08）: GCN 站内检索命中 11 篇（16563/16565/16566/16567/16568/16569/16570/16572/16573/16574/16582）全部实开核对; OpenAlex fulltext \"GRB 140710A\" 14 命中 = 8 篇 GCN + 6 篇研究文献（Tsvetkova+2021、Littlejohns+2015、Anderson+2018 AMI、Becerra+2023、Rouco Escorial+2021、Dainotti+2024）, Crossref 题名 0 命中、arXiv 元数据 0 命中、SIMBAD unavailable@2026-11-08（双 host SSL 失败）; 引文闭包: GCN 16563 cited_by=1 → Rouco Escorial+2021（已在列）, 收敛; 仓内 rssgrbag/grbsn_webtool/uvot_grb 快照 0 命中; → 补入 Littlejohns+2015 首夜 RATIR 堆叠 6 行 + Anderson+2018 AMI 15.7GHz 非探测 4 行, RATIR J 行 1 行自 Dainotti 转引改回 GCN 16568 原值（共 11 行）。(8) 非 X 射线 34 行逐行核对（原 51 行中 17 行为 10keV X 射线行）: GCN 16572 九行按其表窗口重算中点/半宽并补 time_err, mag_system=Vega（原文引 Breeveld et al. 2011 光度系统）; GCN 16563 white FC 行 time 102→177（起点+150/2）, typical 上限 19.6 与 GCN 16572 white_FC >20.1 两行并存（非同值转引）; SEDM 两行 upperlimit y→n（GCN 16567 原文 r'=19.90/i'=19.80 为探测）, reference 改指 GCN 16567, AB 原文明确; iTelescope 行补 time_err=705 s（窗口 10:35:00-10:58:30 UT 中点 1805 s 与原值一致）, mag_system 留空（原文未声明系统, USNO-B1 定标）; RATIR 五行 time 1880→2124（原导入错把 GROND 起始 10:48 UT=1880 s 贴给 RATIR; GCN 16568 原文窗口 3.6 min-1.12 hr, 中点 2124 s）并补 time_err=1908 s; GROND 行 time 1880→2000（起点 10:48 UT + 4min/2）; Dainotti+2024 转引行 14 行删除（与 GCN 16565/16567/16568/16572 同测量同值, 其中 @3327.5 行 band 误标 uvot-uvm2 实为 w2, 混串已在保留行 comment 记录）。(9) 新增行 10 行: Littlejohns+2015 首夜 RATIR 堆叠 6 行（与 GCN 16568 同数据不同归约, 并存, 先例 GRB130327A; VoR 403 取 arXiv:1412.6530v2）; Anderson+2018 AMI 15.7GHz 非探测 4 行（Concat 行无时间锚不入库; VoR 403 取 arXiv:1709.06232）。(10) X 射线 17 行（10keV, UKSSDC Burst Analyser）零改动; T0 平移 0.04142 s 使其 mjd 与 T0+time 差 0.041 s, 在 1 s 容差内, 按 2026-10-31 维护者裁定由维护者合入前统一重算。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "derived": {
-      "best": {
-        "eiso": {
-          "v": 490000000000000000000000000000000000000000000000000,
-          "err": [
-            260000000000000000000000000000000000000000000000000,
-            150000000000000000000000000000000000000000000000000
-          ],
-          "src": "konus_wind"
-        },
-        "alpha": {
-          "v": -2.03718,
-          "err": [
-            0.22114000000000011,
-            0.23763999999999985
-          ],
-          "src": "swift_bat"
-        },
-        "lp_iso": {
-          "v": 850000000000000000000000000000000000000000000000000,
-          "err": [
-            430000000000000000000000000000000000000000000000000,
-            330000000000000000000000000000000000000000000000000
-          ],
-          "src": "konus_wind"
-        },
-        "ep_rest": {
-          "v": 70.11,
-          "err": [
-            24.928,
-            29.602
-          ],
-          "src": "konus_wind"
-        },
-        "t90_obs": {
-          "v": 3.0,
-          "err": 2.236068,
-          "src": "swift_bat"
-        },
-        "t90_rest": {
-          "v": 1.9255455712451863,
-          "err": 1.435216944801027,
-          "src": "swift_bat"
-        },
-        "epeak_obs": {
-          "v": 45.0,
-          "err": [
-            16.0,
-            19.0
-          ],
-          "src": "konus_wind"
-        }
+    "params": {
+      "alpha": {
+        "err": [
+          0.22114000000000011,
+          0.23763999999999985
+        ],
+        "src": "swift_bat",
+        "v": -2.03718
       },
-      "sources": {
-        "swift_bat": {
-          "alpha": {
-            "v": -2.03718,
-            "err": [
-              0.22114000000000011,
-              0.23763999999999985
-            ]
-          },
-          "t90_obs": {
-            "v": 3.0,
-            "err": 2.236068
-          },
-          "t90_rest": {
-            "v": 1.9255455712451863,
-            "err": 1.435216944801027
-          }
-        },
-        "konus_wind": {
-          "eiso": {
-            "v": 490000000000000000000000000000000000000000000000000,
-            "err": [
-              260000000000000000000000000000000000000000000000000,
-              150000000000000000000000000000000000000000000000000
-            ]
-          },
-          "lp_iso": {
-            "v": 850000000000000000000000000000000000000000000000000,
-            "err": [
-              430000000000000000000000000000000000000000000000000,
-              330000000000000000000000000000000000000000000000000
-            ]
-          },
-          "ep_rest": {
-            "v": 70.11,
-            "err": [
-              24.928,
-              29.602
-            ]
-          },
-          "epeak_obs": {
-            "v": 45.0,
-            "err": [
-              16.0,
-              19.0
-            ]
-          }
-        }
+      "eiso": {
+        "err": [
+          260000000000000000000000000000000000000000000000000,
+          150000000000000000000000000000000000000000000000000
+        ],
+        "src": "konus_wind",
+        "v": 490000000000000000000000000000000000000000000000000
       },
-      "computed": "2026-07-22",
+      "ep_rest": {
+        "err": [
+          24.928,
+          29.602
+        ],
+        "src": "konus_wind",
+        "v": 70.11
+      },
+      "epeak_obs": {
+        "err": [
+          16.0,
+          19.0
+        ],
+        "src": "konus_wind",
+        "v": 45.0
+      },
       "grb_type": {
-        "v": "II",
-        "src": "sub_tag"
+        "src": "sub_tag",
+        "v": "II"
+      },
+      "lp_iso": {
+        "err": [
+          430000000000000000000000000000000000000000000000000,
+          330000000000000000000000000000000000000000000000000
+        ],
+        "src": "konus_wind",
+        "v": 850000000000000000000000000000000000000000000000000
+      },
+      "t90_obs": {
+        "err": 2.236068,
+        "src": "swift_bat",
+        "v": 3.0
+      },
+      "t90_rest": {
+        "err": 1.435216944801027,
+        "src": "swift_bat",
+        "v": 1.9255455712451863
       }
     },
-    "catalog_data": {
-      "swift_bat": {
-        "other": {
-          "pcode": "0.5859",
-          "z_ref": "\"Tanvir N.R. et al. GCN Circ. 16570\"",
-          "15_25kev": 5.249888e-08,
-          "25_50kev": 6.965464e-08,
-          "z_method": "he",
-          "15_350kev": 3.083756e-07,
-          "50_100kev": 6.788596e-08,
-          "Image_SNR": "1.282357e+01",
-          "100_150kev": 3.89063e-08,
-          "100_350kev": 1.183505e-07,
-          "15_25kev_hi": 6.143276e-08,
-          "25_50kev_hi": 7.840432e-08,
-          "15_25kev_low": 4.378044e-08,
-          "15_350kev_hi": 3.809254e-07,
-          "25_50kev_low": 6.087232e-08,
-          "50_100kev_hi": 8.28686e-08,
-          "100_150kev_hi": 5.267688e-08,
-          "100_350kev_hi": 1.751056e-07,
-          "15_350kev_low": 2.460878e-07,
-          "50_100kev_low": 5.328684e-08,
-          "fluence_model": "PL",
-          "100_150kev_low": 2.70938e-08,
-          "100_350kev_low": 7.51692e-08,
-          "Trigger_method": "rate trigger",
-          "T100_best_model": "PL",
-          "Image_position_err": "1.830529e+00"
-        },
-        "params": {
-          "t50": {
-            "v": 1.0,
-            "err": 1.0,
-            "band": "15-350 keV"
-          },
-          "t90": {
-            "v": 3.0,
-            "err": 2.236068,
-            "band": "15-350 keV"
-          },
-          "alpha": {
-            "v": -2.03718,
-            "cl": 90,
-            "err": [
-              0.22114000000000011,
-              0.23763999999999985
-            ]
-          },
-          "fluence": {
-            "v": 2.289444e-07,
-            "cl": 90,
-            "err": [
-              3.488299999999998e-08,
-              3.40722e-08
-            ],
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 0.558
-          }
-        },
-        "source": {
-          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
-          "name": "Swift/BAT GRB Catalog",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "BAT 603954"
-        ],
-        "trigger_time": "2014-07-10T10:16:40.041420Z"
-      },
-      "konus_wind": {
-        "other": {
-          "S": 4.27,
-          "E_S": 2.26,
-          "e_S": 1.3,
-          "Fp64": 5.61,
-          "T100": 1.728,
-          "E_Fp64": 2.91,
-          "Fp1024": 2.5,
-          "e_Fp64": 2.3,
-          "z_type": "spectroscopic",
-          "spec_dT": 5.888,
-          "E_Fp1024": 1.16,
-          "e_Fp1024": 0.84,
-          "t0_T100_start": -0.176
-        },
-        "params": {
-          "eiso": {
-            "v": 490000000000000000000000000000000000000000000000000,
-            "err": [
-              260000000000000000000000000000000000000000000000000,
-              150000000000000000000000000000000000000000000000000
-            ],
-            "band": "1-10000 keV",
-            "frame": "rest"
-          },
-          "epeak": {
-            "v": 45.0,
-            "err": [
-              16.0,
-              19.0
-            ],
-            "frame": "obs",
-            "model": "BAND"
-          },
-          "lp_iso": {
-            "v": 850000000000000000000000000000000000000000000000000,
-            "err": [
-              430000000000000000000000000000000000000000000000000,
-              330000000000000000000000000000000000000000000000000
-            ],
-            "band": "1-10000 keV",
-            "frame": "rest"
-          },
-          "redshift": {
-            "v": 0.558
-          }
-        },
-        "source": {
-          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJ/908/83",
-          "name": "Konus-Wind GRB Catalog with redshifts (Tsvetkova+2017/2021)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "BAT 603954"
-        ],
-        "trigger_time": "2014-07-10T10:16:40.041Z"
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 3304507000000000000000,
-          "xrt_ra": 41.06783,
-          "comment": "UVOT: no detection",
-          "ref_bat": "GCN 16563; GCN 16573",
-          "ref_xrt": "GCN 16563; GCN 16569; GCN 16574; Evans et al., 2009; MNRAS, 397, 1177",
-          "xrt_dec": 35.49917,
-          "advocate": "Mike Siegel",
-          "ref_uvot": "GCN 16563; GCN 16572",
-          "uvot_mag": "B>20.3; U>20.5; UVW1>20.7; UVM2>20.8; UVW2>19.7; White>20.7",
-          "other_obs": "MPG (2.2m), Palomar (60\"), HJT (1.5m)",
-          "target_id": 603954,
-          "uvot_vmag": 19.8,
-          "xrt_gamma": 1.99391,
-          "trigger_obs": "Swift",
-          "error_radius": 1.8,
-          "ref_redshift": "GCN 16570 (Gemini-North)",
-          "xrt_lc_index": -0.8588,
-          "xrt_11hr_flux": 2.227047e-13,
-          "xrt_24hr_flux": 1.1395668e-13,
-          "xrt_first_obs": 98.42,
-          "uvot_first_obs": 103.0,
-          "uvot_vmag_flag": 1,
-          "redshift_comment": "Gemini-North: emission, host",
-          "xrt_error_radius": 1.5,
-          "bat_spectral_model": "PL"
-        },
-        "params": {
-          "t90": {
-            "v": 3.52,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 2.3e-07,
-            "cl": 90,
-            "err": 3e-08,
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 0.558
-          },
-          "peak_flux": {
-            "v": 1.9,
-            "cl": 90,
-            "dt": "1s",
-            "err": 0.3,
-            "band": "15-150 keV"
-          },
-          "spectral_index": {
-            "v": 2.0,
-            "cl": 90,
-            "err": 0.23
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2014-07-10T10:16:40.000Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "OT": "y",
-          "XA": "y",
-          "IPN": "y",
-          "Error": "3",
-          "obs_date": "2014-07-10",
-          "Instrument": "Swift",
-          "GRB X-ray position": "02h44m21s +35° 30'"
-        },
-        "params": {
-          "redshift": {
-            "v": 0.558
-          }
-        },
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-08"
     }
   },
   "articles": [
     {
-      "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
-      "source": "bot"
+      "name": "Dainotti+2024",
+      "source": "bot",
+      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
+      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
     },
     {
-      "name": "Tsvetkova+2021",
-      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract",
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
-      "source": "bot"
+      "name": "Tsvetkova+2021",
+      "source": "bot",
+      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
+      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+    },
+    {
+      "name": "Littlejohns+2015",
+      "source": "fsy",
+      "title": "A detailed study of the optical attenuation of gamma-ray bursts in the Swift era",
+      "url": "https://doi.org/10.1093/mnras/stv479"
+    },
+    {
+      "name": "Anderson+2018",
+      "source": "fsy",
+      "title": "The Arcminute Microkelvin Imager catalogue of gamma-ray burst afterglows at 15.7 GHz",
+      "url": "https://doi.org/10.1093/mnras/stx2407"
     }
   ],
   "host_galaxy": null
