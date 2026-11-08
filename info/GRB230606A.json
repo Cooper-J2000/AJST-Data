@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB230606A",
-  "alias": [],
+  "alias": [
+    "GRB 230606A",
+    "BAT 1173731",
+    "bn230606010"
+  ],
   "ra": 166.80951,
   "dec": 36.48425,
-  "T0": "2023-06-06T00:14:38Z",
-  "T0_ref": null,
+  "T0": "2023-06-06T00:14:37.322360Z",
+  "T0_ref": "GCN 33921（Swift/BAT trigger 1173731，触发时刻 00:14:37 UT）；亚秒取触发仪器官方目录 batgrbcat（仓内 external/swift_bat，Trig_time_UTC=2023-06-06T00:14:37.322360Z）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.2,
   "pos_ref": "GCN 33924",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode（2026-11-08）。(1) 身份：GRB230606A = Swift/BAT trigger 1173731（GCN 33921 原文 'the Swift Burst Alert Telescope (BAT) triggered and located GRB 230606A (trigger=1173731)'，触发时刻 00:14:37 UT；batgrbcat 同），Fermi/GBM 于 00:14:38.13 UT 独立触发（trigger 707703283/230606010，GCN 33931；fermi_gbm 目录 trigger_time=00:14:38.134Z），GBM 地面定位与 BAT 一致；同日无其他 GRB 建档。别名出处：GRB 230606A（GCN 33921 主题行/正文用名）、BAT 1173731（batgrbcat name_alt）、bn230606010（fermi_gbm 目录 name_alt；GCN 33931 原文 '230606010'）。(2) T0：原 bot T0=2023-06-06T00:14:38Z（原 extra_data t0_basis=meta_trigger、原 t0_note「t0 为 meta trigger-time（真实触发时刻）」）系 Fermi/GBM 触发时刻 00:14:38.134Z 的整秒截断（GRB190123A 同型 bot 残留），废弃。标准 T0=2023-06-06T00:14:37.322360Z——触发仪器 Swift/BAT 官方目录 batgrbcat 亚秒值（GCN 33921 整秒 00:14:37 与之一致），全表 12 行 mjd 已按 mjd=T0+time 重算自洽（原 bot 时间多锚 0.677640 s）。T0_offset 不适用（GBM 晚 0.81 s 系另一触发仪器的触发时刻差，非爆发时刻偏移）。(3) 定位：保留 GCN 33924 enhanced Swift-XRT 位 RA,Dec=166.80951,+36.48425（astrometrically corrected，XRT-UVOT alignment + USNO-B1 匹配，2.2 arcsec radius、90% confidence，原文明确置信水平），bot 坐标/pos_error/pos_ref 原本一致，补 pos_error_confidence=90；batgrbcat BAT 图像位 166.7769,36.5038（2.47′、90% containment）、GCN 33933 BAT 精化位 166.777,36.504（2.5′/90%）备查。(4) 测光：lc 4→12 行，原 4 行逐值回原文核对。LCOGT r/i 2 行（GCN 33956）：原 time=9802 s 系观测窗口起点 02:58 UT，按 §3.8 改窗口中点（02:58–03:30 UT、跨度 1920 s）→ time=10762.67764 s、time_err=960 s；PanSTARRS 目录定标推定 AB（PS1 为 AB 系统；SCHEMA 允许惯例推定+写明依据）；原文数值「r > 20.95 +/- 0.06 / i > 19.66 +/- 0.04」照录「>」记上限，但原文正文自称 'We detect an uncataloged source'（该团队其余 LCO GT 通告探测行用「=」、上限行用「>」不带 ±，本篇为唯一「> ±」组合，存疑留证见 PR 待决）。GOT-0.5m r/z 2 行（GCN 33932）：原文表给 T_mid−T0=16.74/18.05 hr，time 直录（×3600=60264/64980 s、与原 bot 值一致）；20×180 s（r）/15×180 s（z）堆栈，原文未给各波段观测窗口跨度，time_err 留空；PanSTARRS 近场定标推定 AB；3σ 上限。新增 UVOT 7 行（GCN 33926 表）：T_start/T_stop 窗口取中点、time_err=半宽，white_FC 为首段 finding chart（2784–2934 s）、white 为含 FC 累计窗口（2784–3554 s），窗口与限深不同非同次测量均保留；Vega（通告自述按 Breeveld+2011 UVOT 星等系统）；未做银消改正（E(B-V)=0.015、通告原文）。新增 BOOTES-5/JGT 1 行（GCN 33930）：clear filter 无滤光片记 G；原文只给观测起点 Jun 06 04:27:09 UT（~4.2 hr post-trigger）未给结束/总曝光，time=起点锚定留痕（先例 GRB190123A BOOTES-4/GMG 同型）；星等系统原文未声明 mag_system 留空。全部行 Gext_corr=n（GCN 33926/33932/33956 原文声明未做银消改正、GCN 33930 未提及）；无 X 射线行（GCN 33928 XRT 精化分析仅作 T0/身份备查，X 射线不入库）。(5) 分类：t90=16.256±1.307 s（Swift/BAT 目录 batgrbcat，15–350 keV；GCN 33933 精化分析 16.26±1.29 s 15–350 keV 一致；Fermi/GBM 目录 t90=15.616±0.923 s（50–300 keV）一致），按目录 t90 判 lgrb；GCN 33921 触发通告「BAT trigger duration was on the 2 second timescale」系 Guam 台风通信受限下的实时初报字样，以目录/精化值为准。红移：9 篇通告与检索文献均无红移/光谱报道，redshift=null。(6) 测光检索留证（2026-11-08）：仓内 gcn/archive 全文检索 '230606A' 命中 9 篇（33921/33924/33926/33928/33930/33931/33932/33933/33956，全为涉本源通告，逐篇通读）、触发号 '1173731' 另无命中；其中含光学数值 4 篇（33926/33930/33932/33956）已全部入库；external/rssgrbag（射电余辉 140 行/74 源）、external/grbsn_webtool、external/uvot_grb 均无本源记录；external/swift_bat、swiftgrbba、fermi_gbm、heasarc_grbcat、mpe_greiner 快照仅目录级参数（T90/定位/触发时刻），作身份与 T0 互证不当测光源；SciX 检索（api.scixplorer.org/v1，2026-11-08）：q='GRB 230606A' 与 '230606A' 各命中 9 篇（全为上述 GCN）、q='1173731 GRB' 2 篇（同上）、full-text '230606A' 10 篇（上述 GCN + Qu+2025 MNRAS 540, L6《Pieces of evidence for multiple progenitors of Swift long gamma-ray bursts》——280 个 Swift LGRB 统计样本，仅用目录参数、无本源测光，未采用不入 articles）；TNS 不适用（GRB 类源）；仓内 archive 已覆盖至 GCN 46068（2023-06 区段完整）。结论：可用测光已全部入库（12 行，本 PR 补 8 行），无遗漏测光表。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "Swift/BAT trigger 1173731（GCN 33921；batgrbcat/external/swift_bat Trig_time_UTC=2023-06-06T00:14:37.322360Z）",
+    "t0_note": "标准 T0 经 Rusty-Harpoon@zcode 2026-11-08 审核修正为 Swift/BAT trigger 1173731 触发时刻 2023-06-06T00:14:37.322360Z（GCN 33921 整秒一致；batgrbcat 亚秒）；原 bot 值 2023-06-06T00:14:38Z 为 meta trigger-time（原 t0_basis=meta_trigger、原 t0_note「t0 为 meta trigger-time（真实触发时刻）」），系 Fermi/GBM 触发 00:14:38.134Z 的整秒截断，废弃",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
   },
   "articles": [],
   "host_galaxy": null
