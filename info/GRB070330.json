@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB070330",
-  "alias": [],
-  "ra": 269.533,
-  "dec": -63.799,
-  "T0": "2007-03-30T22:51:31Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 070330"
+  ],
+  "ra": 269.5416,
+  "dec": -63.793,
+  "T0": "2007-03-30T22:51:31.197520Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 273180：trigger_time=2007-03-30T22:51:31.197520Z（仓内 external/swift_bat 与 external/swift_grb 两快照一致）；GCN 6232 整秒 22:51:31 UT 相符",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +14,42 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 3.8,
-  "pos_ref": "GCN 6232",
+  "pos_error": 0.5,
+  "pos_ref": "GCN 6307（UVOT 精化位勘误：GCN 6238 RA 度数笔误 269.5426→269.5416，Dec -63.7930 不变，0.5″）",
   "redshift_type": null,
   "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。T0：Swift/BAT 官方目录（trigger 273180）亚秒 22:51:31.197520Z，GCN 6232 整秒相符；TAROT GCN 6235 引 t0=22:51:30.816（差 0.382 s，未采用，以触发仪器目录为准）。全表 time 相对 BAT 触发；改 T0 后全表 mjd=T0+time 重算（X 射线 31 行仅机械重算 mjd）。定位链：BAT 板载 3′（GCN 6232）→ BAT 地面 1.9′（GCN 6237）→ XRT TDRSS 3.8″ 90%（GCN 6232）→ XRT 精化 3.6″ 90%（GCN 6234）→ UVOT 精化 0.5″（GCN 6238，RA 度数笔误）→ GCN 6307 勘正 RA=269.5416（本库取值）；GCN 6307 只称 certainty 0.5″、未标注置信水平，pos_error_confidence 留空。t90=6.64±0.67 s（15-350 keV，Swift/BAT 目录）与 GCN 6237 t90=9.0±1 s 并列（均 >2 s，按 t90 判 lgrb）。MPE Greiner catalog 列 z<5.5（上限，z_flag=ul），非实测红移，redshift 保持 null。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 8 篇（6232/6233/6234/6235/6236/6237/6238/6307，光学数值已全数入库）、rssgrbag 0 命中、grbsn_webtool 无此事件；外部：OpenAlex 命中 2007 年 GCN 8 篇 + Klotz+2009（AJ 137,4100，Table 2 转引 GCN6235 同值同窗口，无新增）+ Evans+2007/2009（Burst Analyser 方法文，X 射线行来源）+ MNRAS 2023 TAROT/COATLI/RATIR 统计文（仅 T90 表，无 070330 测光）→ 无新可入库测光，补 0 行。ADS/SciX API token 实测 HTTP 401，检索通道受限已登记 audit/unverified.tsv，检索以 OpenAlex/arXiv API/VizieR(CFA)/Crossref 兜底。alias「GRB 070330」为 GCN 6232 等通告原文用名。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Klotz+2009",
+      "url": "https://doi.org/10.1088/0004-6256/137/5/4100",
+      "title": "Early optical observations of gamma-ray bursts by the TAROT telescopes: period 2001-2008",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
