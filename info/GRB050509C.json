@@ -1,24 +1,26 @@
 {
   "transient_id": "GRB050509C",
   "alias": [
-    "XRF050509C"
+    "XRF050509C",
+    "H3751",
+    "GRB 050509CX"
   ],
   "ra": 193.22475,
   "dec": -44.83447222,
-  "T0": "2005-05-09T22:45:54Z",
-  "T0_ref": null,
+  "T0": "2005-05-09T22:45:53.950000Z",
+  "T0_ref": "GCN 3402（HETE Science Team 触发通告：FREGATE/WXM/SXC 于 9 May 2005 22:45:54 UT（81953.95 SOD）触发；取触发仪器亚秒值 81953.95 SOD=22:45:53.95 UT）；互证：HETE 官方暴页 space.mit.edu/HETE/Bursts/GRB050509C/（H3751）UTC=20050509_224553（截断整秒）一致、仓内 external/uvot_grb 目录 TRIG_UT=2005-129-22:45:54（舍入整秒）一致、external/mpe_greiner 目录 obs_date=2005-05-09 + Instrument=HETE 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 1,
+  "pos_ref": "GCN 3425",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 rssgrbag 射电余辉目录导入新建 (Chandra & Frail 2012)",
+  "comment": "由 rssgrbag 射电余辉目录导入新建 (Chandra & Frail 2012)。身份与触发链：HETE-2（HETE trigger 3751）FREGATE/WXM/SXC 于 2005-05-09 22:45:54 UT（81953.95 SOD）触发、单脉冲 ~25 s、Epk<19 keV，GCN 3402 原文判「Therefore GRB 050509c is an X-ray flash」（XRF 分类证据；仓内 external/rssgrbag 主表 source_flag='p'=XRF 同判；t90=25.0 s 系 rssgrbag 主表值、其参考码 26=GCN 存档）。T0 取触发仪器亚秒值：81953.95 SOD=22:45:53.95 UT（GCN 3402 正文整秒 22:45:54 为舍入；HETE 官方暴页 space.mit.edu/HETE/Bursts/GRB050509C/ 记 UTC=20050509_224553 为截断、触发仪器 WXM、评价 GRB050509C XRF；仓内 external/uvot_grb 目录 TRIG_UT=2005-129-22:45:54 整秒——三路均与 22:45:53.95 一致）。T0 由 22:45:54 更正为 22:45:53.95 后，lc 全部 13 行（本源无 X 射线行）mjd 已按 mjd=T0+time 重算。位置=GCN 3425 光学暂源（12:52:53.94 -44:50:04.1、原文 internal astrometric error of 1\"、未标置信水平），该位置经 GCN 3442（Chandra X 射线探测）与 GCN 3543（VLA 射电探测）独立印证。红移：本暴无已发表宿主星系红移；GCN 3546 将后期叠加图像中余辉位置的 R~24 暗源 tentatively 定为宿主（无红移测量、按候选宿主不建 host_galaxy），其 z>0.4 仅是「若伴 SN1998bw 型超新星」的条件下限；注意勿与同日 Swift 暴 GRB 050509B（宿主 z=0.225：Gehrels+2005、Prochaska GCN 3399）混淆。alias 取证：H3751 ← GCN 3402 主题行原文「GRB050509c (=H3751)」（swift_grb 目录 other_id 亦记）；GRB 050509CX ← 仓内 external/mpe_greiner 目录原用名。X 射线数据（GCN 3441 Swift/XRT 3σ 上限 8.4e-4 cts/s ≈ 3e-14 erg/cm2/s；GCN 3442 Chandra 20ks 探测 0.7(2) cts/ks ≈ 9e-15 erg/cm2/s）按契约不入库。Nysewander+2009（ApJ 701,824）表 1 的 11 h R=18.8 μJy 系其对 GCN 3425 R~20.1@5.1 h 按样本平均斜率（α_S,opt=-0.68）外推并做 SFD98 银消改正的估算值（原文方法节自述 extrapolated in time），非实测、不入库。测光检索（2026-11-06）：仓内 gcn/archive 45947 篇全文检索「050509c/XRF050509/H3751/trigger 3751」命中 12 篇（GCN 3400/3402/3404/3406/3425/3427/3440/3441/3442/3543/3546/3861），其中 10 篇含观测内容——3406/3425/3427/3440/3543/3861 对应 lc 全部 13 行（本 PR 逐行核对、更正 6 处时间轴换算误算与 3 处射电单位还原）、3441 与 3442 为 X 射线不入库、3400 仅给 2MASS/DSS 限无数值、3546 的 R~22.5 无再变亮为 May 15-Jun 8 期间性表述（无单历元锚点）且 R~24 叠加源为暂定宿主；宽检索「050509」另命中 57 篇均属同日 Swift 暴 GRB 050509A/B 及其他暴、与本暴无关；GCN 站（gcn.nasa.gov/circulars/3402）抽验与仓内存档一致；external/rssgrbag 峰值表 1 行=lc 第 11 行（已溯源 C&F12 表 4 与 arXiv:1110.4124）、external/grbsn_webtool 无该事件、external/mpe_greiner/swift_grb/uvot_grb 仅目录级元数据（用于身份/T0/位置互证）；ADS 检索（abs/title 变体「XRF 050509C/GRB 050509C/050509c/H3751/trigger 3751」+fulltext+GCN 3402/3425 引用检索）命中 11 篇 GCN 与 2 篇 OA 论文全文提及（Goad+2007 A&A 476,1401 仅在 Swift 位置表中列名；Ward+2006 IAU S230 p248 复述 GCN 3427 同值同历元）→ 无可新增测光、本 PR 新增 0 行。",
   "sub_tag": [
     "XRF"
   ],
@@ -27,8 +29,32 @@
   "extra_data": {
     "merged_from": [
       "XRF050509C"
-    ]
+    ],
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Chandra+2012",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "title": "A Radio-selected Sample of Gamma-Ray Burst Afterglows",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Nysewander+2009",
+      "url": "https://doi.org/10.1088/0004-637X/701/1/824",
+      "title": "A Comparison of the Afterglows of Short- and Long-duration Gamma-ray Bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Ward+2006",
+      "url": "https://doi.org/10.1017/S1743921306008374",
+      "title": "Observing High-Energy Sources with REM: A Facility for Fast GRB Follow-up",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }

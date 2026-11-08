@@ -1,14 +1,14 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-28.0,,s,53499.94886574074,R,15.9,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,,
-94.0,,s,53499.94962962963,R,17.0,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,,
-338.0,,s,53499.9524537037,R,17.5,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,,
-814.0,,s,53499.95796296296,R,17.7,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,,
-90389.0,,s,53500.99471064815,H,15.5,,magnitude,,n,y,,,,,,,1.0,n,,REM/ROSS,GCN3427,,
-90389.0,,s,53500.99471064815,R,19.0,,magnitude,,n,y,,,,,,,1.0,n,,REM/ROSS,GCN3427,,
-99749.0,,s,53501.10304398148,R,20.1,,magnitude,,n,n,,,,,,,1.0,n,,Danish 1.54m + DFOSC,GCN3425,,
-436234.0,,s,53504.9975462963,R,24.0,,magnitude,,n,n,,,,,,,1.0,n,,Danish 1.54m + DFOSC,GCN3425,,
-965088.0,,s,53511.11854166666,8.5GHz,0.10400000000000001,,mJy,,n,y,,,,,,,1.0,n,,VLA,GCN3440,band 原导入 85GHz 系小数点丢失，依 GCN 3440 原文「8.5 GHz」更正（Issue #383）；数值列未动,
-2603232.0,,s,53530.07854166666,8.5GHz,0.31,0.049,mJy,,n,n,,,,,,,1.0,n,,VLA,GCN3543,band 原导入 85GHz 系小数点丢失，依 GCN 3543 原文「8.5 GHz」更正（Issue #383）；数值列未动,
-3810240.0,492480.0,s,53544.04854166666,8.46GHz,0.344,0.045,mJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",,
-5059560.0,,s,53558.508263888885,1.28GHz,0.22,,mJy,,n,y,,,,,,,1.0,n,,GMRT,GCN3861,,
-7558260.0,,s,53587.428402777776,1.28GHz,0.12,,mJy,,n,y,,,,,,,1.0,n,,GMRT,GCN3861,,
+28.2,2.5,s,53499.9488675,R,15.9,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,GCN 3406：单次 5 s 曝光、起点 burst+25.7 s → 中点 28.2 s（原导入 28.0）；限星等 15.9；ROTSE-III 无滤光片、按 USNO-A2.0 (R) 定标（GCN 3406 原文）；原文未声明星等系统；误差框内无新源之上限,Rusty-Harpoon@zcode
+93.7,68,s,53499.9496256,R,17.0,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,GCN 3406：10 帧 coadd、窗口起点 burst+25.7 s、跨 136 s（t_end−t_start）→ 中点 93.7 s、半宽 68 s（原导入 94.0）；限星等 17.0；定标与系统同前；上限,Rusty-Harpoon@zcode
+318.4,147.7,s,53499.9522263,R,17.5,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,GCN 3406：10 帧 coadd、窗口起点 burst+170.7 s、跨 295.4 s → 中点 318.4 s、半宽 147.7 s（原导入 338.0 与原文窗口不符、更正）；限星等 17.5；定标与系统同前；上限,Rusty-Harpoon@zcode
+813.6,347.5,s,53499.9579578,R,17.7,,magnitude,,n,y,,,,,,,1.0,n,,ROTSE-IIIc,GCN3406,GCN 3406：10 帧 coadd、窗口起点 burst+466.1 s、跨 695 s → 中点 813.6 s、半宽 347.5 s（原导入 814.0）；限星等 17.7；定标与系统同前；上限,Rusty-Harpoon@zcode
+9000,180,s,53500.0527078,H,15.5,,magnitude,,n,y,,,,,,,1.0,n,,REM/REMIR,GCN3427,GCN 3427：burst 后 2.5 h 在 GCN 3425 候选位置无源、H 限 15.5（3σ）；原导入 time=90389 s（25.1 h）与原文「At 2.5 hours after the burst」不符（疑 2.5 h→s 换算误成 25.1 h）、更正为 9000 s、time_err 为历元表述精度 ±0.05 h 且原文未给曝光时长；Ward+2006（IAU S230 p248）复述同值同历元；原文未声明星等系统；上限,Rusty-Harpoon@zcode
+9000,180,s,53500.0527078,R,19.0,,magnitude,,n,y,,,,,,,1.0,n,,REM/ROSS,GCN3427,GCN 3427：burst 后 2.5 h 在候选位置无源、R 限 19（3σ）；time 更正 90389→9000 s（同 H 行）；原文未声明星等系统；上限,Rusty-Harpoon@zcode
+18477.41,682.6,s,53500.1624,R,20.1,,magnitude,,n,n,,,,,,,1.0,n,,Danish 1.54m + DFOSC,GCN3425,GCN 3425：R~20.1（以 USNO 参考星 R=17.9 假设定标的衰减估计两点之一）；观测窗口 May 10.1545-10.1703 UT（表列 t-to=5.1 hr 为起点）→ 中点口径 time=18477.41 s、time_err=半跨 682.6 s（原导入 99749 s 系自 May 9.0 起算窗口起点、未计 T0 当日时刻、更正）；原文未声明星等系统,Rusty-Harpoon@zcode
+355744.13,1464.5,s,53504.06595,R,24.0,,magnitude,,n,n,,,,,,,1.0,n,,Danish 1.54m + DFOSC,GCN3425,GCN 3425：R~24.0（同前定标口径）；窗口 May 14.0490-14.0829 UT（t-to=98.8 hr 为起点）→ 中点 355744.13 s、半宽 1464.5 s（原导入 436234 s 同前误、更正）；GCN 3546 后期叠加图像中该位置 R~24 暗源被暂定为其宿主星系；原文未声明星等系统,Rusty-Harpoon@zcode
+883134.05,432,s,53510.17,8.5GHz,104,,uJy,,n,y,,,,,,,1.0,n,,VLA,GCN3440,GCN 3440：May 20.17 UT 观测、2σ 上限 104 μJy（原导入 0.104 mJy 系 μJy→mJy 换算、依原文改回 uJy）；原导入 time=965088 s 系自 May 9.0 起算（May 20.17−May 9.0）、未计 T0 当日时刻、更正为自 T0 起算；time_err=432 s 为日期表述精度 ±0.005 d；band 原导入 85GHz 系小数点丢失、依 GCN 3440 原文「8.5 GHz」更正（Issue #383）,Rusty-Harpoon@zcode
+2521278.05,432,s,53529.13,8.5GHz,310,49,uJy,,n,n,,,,,,,1.0,n,,VLA,GCN3543,GCN 3543：Jun 8.13 UT 观测、在 GCN 3425 余辉位置探测 310±49 μJy（原导入 0.31±0.049 mJy 系换算、依原文改回 uJy）；time 更正 2603232→2521278.05 s（自 May 9.0 起算之误同前）；time_err=432 s（日期表述精度）；band 85GHz 更正同前（Issue #383）,Rusty-Harpoon@zcode
+3810240,492480,s,53544.0485411,8.46GHz,344,45,uJy,,n,n,,,,,,,1.0,n,VLA,,"Chandra & Frail 2012, ApJ, 746, 156 (rssgrbag)",Chandra & Frail 2012 表 4 射电峰值：344±45 μJy @ 8.46 GHz、峰值时刻 44.1±5.7 d（原导入 0.344±0.045 mJy 系 μJy→mJy 换算、依原表改回 uJy）；time_err=±5.7 d 为原表峰值时刻不确定度；行值已与仓内 external/rssgrbag CDS 原版 table4.dat 及 arXiv:1110.4124 表 4 核对一致；mjd 随 T0 更正（22:45:54→22:45:53.95）重算,Rusty-Harpoon@zcode
+4977630.05,432,s,53557.56,1.28GHz,0.22,,mJy,,n,y,,,,,,,1.0,n,,GMRT,GCN3861,GCN 3861：Jul 6.56 UT 观测、2σ 上限 0.22 mJy；原文频段 1280 MHz（band 按本源射电行风格记 1.28GHz）；原导入 time=5059560 s 系自 May 9.0 起算（Jul 6.56−May 9.0）、未计 T0 当日时刻、更正为自 T0 起算；time_err=432 s（日期表述精度 ±0.005 d）,Rusty-Harpoon@zcode
+7476318.05,432,s,53586.48,1.28GHz,0.12,,mJy,,n,y,,,,,,,1.0,n,,GMRT,GCN3861,GCN 3861：Aug 4.48 UT 观测、2σ 上限 0.12 mJy；1280 MHz→1.28GHz 同前；time 更正 7558260→7476318.05 s（同前误）；time_err=432 s（日期表述精度）,Rusty-Harpoon@zcode
