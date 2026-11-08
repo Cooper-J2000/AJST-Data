@@ -1,10 +1,12 @@
 {
   "transient_id": "iPTF16axa",
-  "alias": [],
+  "alias": [
+    "iPTF 16axa"
+  ],
   "ra": 255.893167,
   "dec": 30.593567,
   "T0": "2016-05-29T00:00:00Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "Hung+2017（ApJ 842, 29, DOI 10.3847/1538-4357/aa7337）首测 UT 2016 May 29（未给时刻）；TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date 2016-05-29 一致；Cendes+2024 表5 δt 亦以发现日起算",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -13,17 +15,22 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）坐标（J2000）；Hung+2017 原文 17h03m34.36s +30°35′36.8″ 一致",
+  "redshift_type": "spec",
+  "redshift_ref": "Hung+2017（ApJ 842, 29）：DEIMOS 分类谱 HeII/Hα 发射线 z=0.108；Keck/ESI 宿主谱（2017-02）证认（宿主无 SDSS 谱）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）建源（仅基础元数据）；2026-11-09 Rusty-Harpoon@zcode 完整审核：新建 lc/iPTF16axa.csv 共 167 行——Hung+2017 表A1 全部 163 行（Swift/UVOT 46、P60 96、LCO 17、P48 4）＋Hung+2017 §3.1 VLA 2016-06-12 上限 2 行＋Cendes+2024 表5 晚期 VLA 上限 2 行。【命名】SIMBAD 唯一识别符 iPTF 16axa（alias 收录依据）；TNS 站内检索无 iPTF16axa 条目、TDECat ATName 列为空；TNS AT2016axa 经核为另一目标（Pan-STARRS 2016-03-06 发现，10:47:40.47 +09:46:47.22，坐标/日期均不合），不得作本源别名。【T0】维持发现日期 2016-05-29：专文只给首测日期未给时刻（「The flare was first detected on UT 2016 May 29」），峰值时刻原文未约束（「Constraints on the peak time are not available」），无更优爆发/峰值锚点，A 档不触发。【红移】0.108 为光谱红移（redshift_type 由 value 改判 spec）。【位置】Hung+2017 与 TDECat/SIMBAD 坐标一致（SIMBAD 17 03 34.36 +30 35 36.8）；暂现体与宿主核偏移 0.17″（原文未给正式 pos_error、未标置信水平，故留空）。【消光】原文声明全篇银消改正（E(B−V)=0.0390, Schlafly+2011），lc 各行 Gext_corr=y 并照录原句留证；UVOT 46 行未做宿主扣除（原文声明，无事件前 UV 限），P48/P60/LCO 为宿主扣除后星等；UVOT B/V 两波段有观测但原文以宿主贡献未知为由排除于分析且表A1 未载数值 → 不入库。【测光检索留证（2026-11-09）】① 仓内：gcn/archive 45 563 篇按「16axa/2016axa」及坐标检索 0 命中；external/rssgrbag、grbsn_webtool 无记录；② SciX：iPTF16axa/AT2016axa 检索命中 5 篇（Hung+2017 专文、Mageshwaran+2023 建模文无新测光、PS1 发现报告 TNSTR.197 即无关目标 AT2016axa、AAS 会议摘要、van Velzen 2018 目录 yCat）；SIMBAD 关联 55 篇 bibcode 过筛，TDE 汇编类（van Velzen 2018 仅宿主/峰值汇总、Wevers+2017 无 CDS 机读表、Mummery+2023 转录、Charalampopoulos+2022 无 CDS 表、TDECat）均不含超出专文的可入库新数值；③ TDECat 仓库（dlangis/TDECat）target_iPTF16axa_photometry.csv 11 114 行与 OTTER 库逐值对账：瞬变段与表A1 完全一致（并据此补回 LaTeX 末行缺 \\\\ 的 P60 i 57656.163 行），其余 1 万余行为宿主/巡天段（SDSS/PTF/PS1/CRTS/LINEAR/ALLWISE/NEOWISE/ATLAS 巡天段与 2018-2024 ZTF/ATLAS/NEOWISE 段），非瞬变测光不入 lc；④ GCN 站无本源通告（iPTF TDE 无 Circular）。结论：可入库测光已全部补入（167 行），无遗漏机读表。【X 射线】Swift/XRT 上限（0.3-10 keV，单历元 2.9-12.0e-3 counts/s、堆叠 29 ks <2.7e-4 counts/s 即 <1.1e-14 erg/cm²/s，Hung+2017 §II）与 TDECat 仓库 X-ray 光变为 X 射线行，按 §3.3 暂不处理。【VoR】Hung+2017 与 Cendes+2024 的 IOP VoR 均被整站级 Radware 反爬拦截（curl 与真实浏览器双路证实），按 §3.3 以 arXiv 全文＋出版社元数据（SciX/INSPIRE/Crossref 题录一致）三方交叉取值，登记 audit/unverified.tsv。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "iPTF-g",
     "discovery_mag": "19.49",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [
     {
@@ -31,7 +38,40 @@
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+    },
+    {
+      "name": "Hung+2017",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Revisiting Optical Tidal Disruption Events with iPTF16axa",
+      "url": "https://doi.org/10.3847/1538-4357/aa7337"
+    },
+    {
+      "name": "Cendes+2024",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Ubiquitous Late Radio Emission from Tidal Disruption Events",
+      "url": "https://doi.org/10.3847/1538-4357/ad5541"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 255.893083,
+    "dec": 30.5935,
+    "redshift": 0.108,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "wise-w1",
+        "mag": 15.8,
+        "mag_sys": "Vega",
+        "source": "Hung+2017（引 AllWISE 2013yCat.2328....0C；文中未给误差）"
+      },
+      {
+        "band": "wise-w2",
+        "mag": 15.5,
+        "mag_sys": "Vega",
+        "source": "Hung+2017（引 AllWISE 2013yCat.2328....0C；文中未给误差）"
+      }
+    ],
+    "comment": "宿主 SDSS J170334.34+303536.6（Hung+2017 §2.2：SDSS 覆盖、有 ugriz 测光、无 SDSS 谱；TDECat HostName、OTTER、OpenTDECatalog 一致）；坐标即宿主名坐标，暂现体位于核区（偏移 0.17″，在 P48 参考样本不确定度 ~0.3″ 内）。z=0.108 由 TDE 谱线（DEIMOS HeII/Hα）与 Keck/ESI 宿主吸收谱（2017-02）共同证认。宿主 FAST 拟合（Hung+2017）：SFR=10^-6.6 M☉/yr、A_V=0.12（Schlafly+2011 图）；σ*=101.3±1.9 km/s → M_BH=5.0(+7.0/−2.9)×10^6 M☉。WISE 12/22 μm 上限 <11.7/<9.4（Vega）与 SDSS ugriz cmodel 星等原文未列逐值，不入 photometry。",
+    "source": "Hung+2017（ApJ 842, 29）；TDECat（Langis+2026）HostName；OTTER"
+  }
 }
