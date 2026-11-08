@@ -1,27 +1,32 @@
 {
   "transient_id": "GRB090516A",
-  "alias": [],
-  "ra": 138.270833,
-  "dec": -11.85,
-  "T0": "2009-05-16T08:27:58.350000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090516",
+    "GRB 090516A",
+    "Swift 352190",
+    "bn090516353"
+  ],
+  "ra": 138.2605,
+  "dec": -11.85442,
+  "T0": "2009-05-16T08:27:50.774420Z",
+  "T0_ref": "Swift/BAT 官方目录亚秒：external/swift_grb 快照（HEASARC swiftgrb，trigger 352190，trigger_time=2009-05-16T08:27:50.774420Z）；external/swift_bat 快照同值。GCN 9374 整秒 08:27:50 UT、GCN 9422 T0(BAT)=08:27:50.8 UTC、external/konus_wind 快照 08:27:50.774Z 互证。Fermi/GBM 同暴触发于 08:27:58.35 UT（GCN 9415，trigger 264155280/090516353），多触发仪器亚秒不一致按规则以 Swift 为准——原库 T0=08:27:58.35 系误用 GBM 触发时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 4.109,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.5,
+  "pos_ref": "GCN 9376（XRT 增强位，RA 138.26050 Dec −11.85442，1.5″/90% containment；原 ra/dec 系 BAT on-board 位取整值且无 pos_error/pos_ref）",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 9383（VLT/FORS2 光谱，z=4.109±0.002，de Ugarte Postigo+2009）；GCN 9381 初报 z=3.9 系波长定标偏移、9383 更正（取更正值）；GROND phot-z 4.1±0.3（GCN 9382）一致",
+  "comment": "身份：GRB090516A=Swift/BAT trigger 352190（GCN 9374/9384；Konus-Wind 联合分析 GCN 9422 亦称 GRB 090516A）。同日 GRB090516B（Fermi/GBM 03:17:20.17 UT，GCN 9413）与 GRB090516C（20:28:40.05 UT，GCN 9418）为独立暴，GCN 命中集互不相交。同暴另被 Fermi/GBM 触发于 08:27:58.35 UT（GCN 9415，trigger 264155280/090516353）：原库 T0=08:27:58.35、Trigger_Instrument=Fermi/GBM 系误用 GBM 触发值，本次改判（详见 T0_ref）。sub_tag=lgrb 按 t90 判：t90=210±65 s（15–350 keV，Swift-BAT 精化分析 GCN 9384）；目录 swift_bat 181.0±41.3 s、swift_grb 208 s、GBM bn090516353 123.1 s（50–300 keV）均远超短暴界。T0 改判后全表 mjd=T0+time 重算；X 射线 398 行（band=10keV，UKSSDC Burst Analyser）按 §3.3 例外条款仅机械重算 mjd 列、其余列不动（其 time 原即相对 BAT 触发），请维护者复核。原导入光学行 time 曾被管线平移 −8.35 s 锚 GBM 触发，本次按各原文历元重锚。光学行逐行核对：UVOT 10 行改 GCN 9377 窗口表中点/半宽口径、mag_system=Vega（Poole+2008，GCN 9377 声明 UVOT photometric system）；GCN 9374 white typical 限值行（~19.6）被 GCN 9377 正式限值（>20.85）取代，discard=y；FTS（GCN 9375）、NOT（GCN 9379）、VLT（GCN 9381）、Stardome（GCN 9396）、RIMOTS（GCN 9391）、Zadko（GCN 9380）逐值核对、改注望远镜/仪器（Zadko tel=1m→Zadko；Stardome Dainotti 行 instrument 误记 Apogee-AP8p-CCD 已删）、星等系统原文未声明处 mag_system 留空+comment；RIMOTS/Zadko 行原引 Dainotti2024 转引改回初引 GCN。GROND：GCN 9382 初步值 7 行与 Dainotti2024 转引 7 行删除，改入库已发表精化值 Bolmer+2018（A&A 609, A62）表 D.1 9 历元×7 波段共 63 行（AB、未银消改正、3σ 上限、T_GROND=曝光中点；VoR DataDome 403 不可得，取 arXiv:1709.06867v2 TeX 源、未通读 VoR，已登记 audit/unverified.tsv）。Dainotti2024 转引重复 12 行（UVOT 10、NOT 1、Stardome 1）删除。lc 444→481 行（X 射线 398 不变；光学 20+63）。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 17 篇并全部实读（9374–9396、9413/9415/9418/9422，后三篇属 090516B/C）；external/rssgrbag 与 grbsn_webtool 无 090516 记录；external 各目录快照仅参数级无测光；ADS/SciX API 无凭据（401，search-limited，已登记 unverified.tsv）；OpenAlex/Crossref 兜底检索：Krühler+2010（A&A 526, A153）样本不含本暴；Coward+2010（PASA 27, 331）表 2 仅转引 GCN 9380 同值（不满足增量门槛）；Bolmer+2018 表 D.1 为唯一新增已发表测光表（63 行入库）→ 新增 63 行。alias 出处：GRB 090516（GCN 9374 等通告用名）、GRB 090516A（GCN 9422 用名）、Swift 352190（HEASARC swiftgrb name_alt）、bn090516353（Fermi/GBM trigger name，external/fermi_gbm 快照 name_alt）。pos_error_confidence=90 系 GCN 9376 原文标注（90% containment）。;核查修正(2026-11-07):转引计数 11→12、RIMOTS/Zadko 5 行 bot 派生列残留清空、NOT 行换算算式表述改正",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -84,7 +89,12 @@
         "v": 0.387
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
@@ -114,6 +124,12 @@
       "source": "bot",
       "title": "New results on the gamma-ray burst variability-luminosity relation",
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract"
+    },
+    {
+      "name": "Bolmer+2018",
+      "url": "https://doi.org/10.1051/0004-6361/201731255",
+      "title": "Dust reddening and extinction curves toward gamma-ray bursts at z > 4",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
