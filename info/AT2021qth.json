@@ -8,33 +8,56 @@
   "ra": 302.912192,
   "dec": -21.160178,
   "T0": "2021-06-17T09:58:28Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）＝TNS discoverydate",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "ZTF",
   "redshift": 0.0805,
   "tag": [
     "tde"
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec",
+  "redshift_ref": "TDECat（Langis+2026）；Yao+2023 分类光谱（ApJL 955, L6, 表1 同值 0.0805）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-05 Rusty-Harpoon@zcode 完成单源审核（PR #888）。【身份核验】TDECat 主目录（官方 GitHub dlangis/TDECat, TDE_catalogue_all.csv）本源行：20:11:38.926 -21:09:36.64（=302.912192/-21.160178，与库值一致）、Discovery date (UT) 2021-06-17 09:58:28.998、Discovery mag/flux 20.1027 g-ZTF、Alternative name PS21gzs/ATLAS21zpc。交叉验证：ALeRCE API（api.alerce.online）ZTF21abhrchb firstmjd=59382.41561340（2021-06-17T09:58:28.998Z，与 TDECat Discovery date 同一瞬）、meanra/meandec=302.91217/-21.16021、首探测 magpsf=20.1027（与 TNS 发现星等同值，即差分图原始 PSF 星等）、ra=302.91218/dec=-21.16030；Yao+2023（2023ApJ...955L...6Y）表1 ID28：ZTF21abhrchb/AT2021qth, 302.9121723, -21.1602187, z=0.0805, 分类 TDE-coronal（该文自分类）；Franz+2026（arXiv 2607.09871）表：20:11:38.914 -21:09:36.83, 发现日期 2021-06-17。各源坐标互差 ≤0.2\"，身份成立。【T0 口径】TDE 按现行口径取发现时刻；TDECat 给 09:58:28.998（毫秒来自 TNS discoverydate 的 JD 换算），按整秒写库；ALeRCE firstmjd 同一 ZTF 首告警探测（candid 1628415615315015019）。T0_offset 不用（发现时刻为约定锚点，非设备自动触发）。【别名】ZTF21abhrchb＝TNS/ALeRCE/ZTF 主用名；ATLAS21zpc、PS21gzs 出处＝TDECat 主目录 Alternative name 列（2026A&A...707A.171L；ADS 全文检索此二名 0 命中，无独立文献佐证，按「目录用过的形态」保留）。【分类】Yao+2023 表1：TDE-coronal（源自其分类光谱）；TDECat spectral_classes.csv：TDE-H+He，备注 Extreme Coronal Line Emitter；Zhang+2026（arXiv 2512.12480，A&A 708, A374）：本源＝eROSITA X 射线对应体 SRGe J201138.9-210935（ID 63），CrL-TDE。tags.json 无 TDE 子类受控词，sub_tag 留空。【红移】redshift_type 改 value→spec：TDECat 主目录只收有爆发期分类光谱的 TDE，z 来自分类光谱；Yao+2023 表1 同值 0.0805（其分类光谱）。【测光检索留证（2026-11-05）】仓内：gcn/archive 全文 45947 篇按 AT2021qth/ZTF21abhrchb/ATLAS21zpc/PS21gzs 及坐标检索 0 命中；external/rssgrbag（140 行）无；grbsn_webtool（63 事件）无。外部：ADS 全文检索 AT2021qth 11 篇、ZTF21abhrchb 6 篇、ATLAS21zpc/PS21gzs 0 篇（命中均为 TDE 样本文献，见下）；TNS 站 403（bot 防护，尝试已记 unverified.tsv）；CDS/VizieR 全站 443/80 连接超时（J/A+A/707/A171 未能直查，unverified.tsv 已记）；TDECat 官方 GitHub（论文 §3/Data availability 声明的机读补充）取得主目录与 target_AT2021qth_photometry.csv（3323 行，BHTOM 编译）。【入库结论】该文件混合宿主档案与爆发段：CRTS（MJD 54007-57332, Vega 系）、PS1（2012-2013）、ALLWISE W1/W2（2010）、NEOWISE W1/W2（MJD 58960, 爆发前）与 2021 前的 ZTF/ATLAS 行均为宿主/爆发前档案，未入库；按库约定取 2021 爆发段 MJD 59350-59550（Yao+2023 拟合峰 59401.88±1.26 前后完整上升-衰减段；起点前 ATLAS/ZTF 为连续宿主基线无自然间隙，此窗口边界为本库约定）内 ZTF+ATLAS 行共 358 行入库（ZTF 59 曝光=32 行 ALeRCE magpsf_corr 口径+27 行 BHTOM 管道、ATLAS 299 行）；MJD 59550 之后为季节性观测间隙（ATLAS 59547→59656、ZTF 59523→59734）及其后的平台/宿主变光主导段（ZTF 59734+、ATLAS 59656+，r≈18.7-19.0 高于爆发前基线 19.1-19.45，瞬变/宿主归属无法用已得材料确证），未入库；UVOT 4 行（MJD 59651-60565，TDECat 自述未扣宿主且部分 err=0 语义不明）未入库；Swift/XRT 3 历元 X 射线行按规则不入库。【行口径】TDECat 论文 §3.1 声明全部星等已转 AB 系（ZTF/ATLAS 明确列名 AB；CRTS/Swift/NEOWISE 为 Vega）；lc 的 mjd=TDECat 文件原值，time=mjd−T0_mjd(59382.4156019，即 T0=2021-06-17T09:58:28Z 的 MJD；2026-11-05 独立核查改正：原写 59382.4155903 系笔误，time 已按正确锚点重算，mjd 保持 TDECat 文件原值)；time_err=0.0001736 d=30s 标准曝光半宽（ZTF 30s：Masci+2019 惯例；ATLAS 30s：Smith+2020），推定；ZTF 同一曝光在文件中有双管道×双误差变体共 4 行（长精度行＝ALeRCE magpsf_corr，已与 ALeRCE API 核对：mag 32/32 曝光逐值一致（≤2e-5 mag），err 与现版 API sigmapsf_corr 有 ≤0.018 mag 差（ALeRCE 管道版本演进所致），入库以 TDECat CSV 为准；短精度行＝BHTOM ZTF 编译、标定管道未注明，与 ALeRCE 改正值平均差 0.023 mag），按去重规则每曝光保留 1 行、优先 ALeRCE 口径行；ATLAS 299 行无重复、原样入库（文件无上限标志，均按探测行；TDECat 论文自述编译光变或含 artifacts，个别 16-17 mag 离群点为源表原值未删改）。【备查】IceCube+2026（arXiv 2609.00657）表列本源 Peak Date MJD 59383 引 Hammerstein+2023（2023ApJ...942....9H），经 arXiv 源检索该文不含本源（引文有误，59383≈发现日期的取整）；Yao+2023 拟合（r2+d4 模型）t_peak=MJD 59401.88(+1.26/-1.26)、t_rise≈15.8 d、t_decay≈39.1 d；Dykaar+2024（2024ApJ...973..104D）以本源为 VAST 射电搜索注入模板（M_g,peak≈-19.2 引自其文），对本源无新测光。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "g-ZTF",
     "discovery_mag": "20.1027",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
-      "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L",
+      "source": "bot"
+    },
+    {
+      "name": "Yao+2023",
+      "title": "Tidal Disruption Event Demographics with the Zwicky Transient Facility: Volumetric Rates, Luminosity Function, and Implications for the Local Black Hole Mass Function",
+      "url": "https://doi.org/10.3847/2041-8213/acf216",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Zhang+2026",
+      "title": "eROSITA-RU tidal disruption events with Keck-I/LRIS: Sample selection, optical properties, and host galaxy demographics",
+      "url": "https://arxiv.org/abs/2512.12480",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Abbasi+2026",
+      "title": "Search for Neutrinos from Tidal Disruption Events with IceCube",
+      "url": "https://arxiv.org/abs/2609.00657",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
