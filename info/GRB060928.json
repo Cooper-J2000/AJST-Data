@@ -1,28 +1,58 @@
 {
   "transient_id": "GRB060928",
-  "alias": [],
-  "ra": 127.613,
-  "dec": -42.739,
+  "alias": [
+    "GRB 060928",
+    "Swift 20042"
+  ],
+  "ra": 127.62564,
+  "dec": -42.74931,
   "T0": "2006-09-28T01:17:05Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 5685（RHESSI：first episode starting at about T0 = 01:17:05 UT）；与 lc 原有 4 行 UKSSDC Burst Analyser XRT 行（X 射线冻结）mjd−time 反算锚 54006.05353009259=01:17:05.000Z 逐行自洽（4/4）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "IPN",
   "redshift": 1.3,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 5684",
-  "redshift_type": null,
-  "redshift_ref": "catalog:swift_grb",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "pos_error": 4.9,
+  "pos_ref": "UKSSDC Swift-XRT GRB Catalogue（swift.ac.uk/xrt_live_cat/，Evans+2009 在线版；external/swift_xrt_live 快照 Err90=4.9″）",
+  "redshift_type": "est",
+  "redshift_ref": "GCN 5692",
+  "comment": "身份：IPN 三角定位 GRB（Hurley 等，GCN 5684：Ulysses/Konus-Wind/RHESSI/INTEGRAL SPI-ACS/Suzaku WAM/Swift BAT 观测到硬谱爆发，duration of about 215 s in two distinct episodes，fluence ~3e-4 erg/cm2，三角定位 ~855 平方角分误差框（3σ），中心 127.639, -42.210）。Trigger_Instrument 由 Swift/BAT 改为 IPN：爆发时 BAT 在视场外未触发（GCN 5684 原文 It was outside the Swift BAT field of view for both episodes；GCN 5686：T+11 min 起的 28 分钟预规划观测中经地面分析发现弱源），HEASARC swift_grb 快照 bat_detection=U、det_flag=B（其他任务+Swift 双探测），swiftgrbba 汇编无本暴（该表仅收 BAT 触发暴），MPE Greiner 表 Instrument=IPN。各触发仪器记录：Konus-Wind 于 T0=4622.782 s UT (01:17:02.782) 触发（GCN 5689）、Suzaku WAM 于 01:17:01.74 触发（GCN 5688）、RHESSI 约 01:17:05（GCN 5685）。T0：维持 2006-09-28T01:17:05Z（原值无出处，本次补 T0_ref）。依据：GCN 5685（RHESSI，触发仪器之一）原文 The first had a duration of ~14s starting at about T0 = 01:17:05 UT；与 lc 原有 4 行 UKSSDC Burst Analyser XRT 行（X 射线冻结不改）的 mjd−time 反算锚 54006.05353009259 = 01:17:05.000Z 逐行自洽（4/4 行验证）。并列备查：Konus-Wind 01:17:02.782（GCN 5689；HEASARC swift_grb 快照 trigger_time 同值、trigger_ref=GCN 5689；Swift 官方 GRB summary 页 BAT Trigger Time (UTC): 2006-09-28T01:17:02.782，2026-11-07 实取）、Suzaku WAM 01:17:01.74（GCN 5688）。Konus 值与本库锚差 2.218 s（≥60 ms，PR 说明报告）：一旦改锚，冻结 X 射线行仅能按 mjd=T0+time 机械重算，会使 4 行绝对历元整体偏移 2.218 s（time 平移路线被 X 射线冻结禁用），故维持原锚、分歧按 GRB051012 先例提交 PR 待决由维护者裁决。T0_offset=null：无「真实爆发早于/晚于自动触发」证据（GCN 5689 原文 first started at ~T0）。定位：原 ra/dec=127.613/-42.739、pos_ref=GCN 5684 系错配——GCN 5684 是 IPN 误差框（中心 127.639/-42.210），127.613/-42.739 实为 GCN 5686 的 BAT 地面分析弱源位（90% 置信 2.5′ 半径），且 pos_error 原为空。改取 UKSSDC Swift-XRT GRB Catalogue（external/swift_xrt_live 快照，retrieved 2026-07-21，2026-11-07 在线 getTable_txt.php 复核同值）RA=127.6256438641 Dec=-42.7493071085（Err90=4.9″，目录文档声明全部误差为 90% 置信；本库按 5 位小数舍入）。该位为 XRT 余辉精化位：GCN 5686 XRT 位 08:30:29.90 -42:44:58.5 = 127.624583/-42.749583（6″，原文 estimated radial uncertainty of 6 arcsec (90% containment, including boresight uncertainties)，距本位约 3.0″）、GCN 5721（2006-10-07 复测 10 ks 无探测，we confirm that this source has faded from view）确认其为余辉；互证：Butler+2007（AJ 133, 1027）表 1 天测改正位 08:30:30.53 -42:45:01.8（Err90=10.2″，DSS-red2；距本位约 6.0″）、HEASARC swift_grb 快照 xrt_ra/xrt_dec=127.62625/-42.749389（3.8″，pos_ref 记 2008A&A...492..873G——该 bibcode 经 Crossref 核实系 Goad+2007 A&A 476,1401 的重复登记条目，距本位约 1.6″）；并列备查：BAT 地面分析位 127.613/-42.739（2.5′ 90%，GCN 5686，原文距其 XRT 位 49 arcsec）、IPN 误差框中心 127.639/-42.210（GCN 5684；XRT 位在其框内，GCN 5686 原文 within the IPN error box）、MPE Greiner 表 127.6375/-42.2167（IPN 98′×4′）。红移：z=1.3±0.2 为谱推算伪红移（spectral pseudo-redshift）——GCN 5690 初报 pz=2.30±0.70（Suzaku/WAM 参数）与 2.20±0.45（Konus 参数）误用第一峰谱参数，GCN 5692 更正为 pz=1.3±0.2（取 burst 极大附近 15 s 区间），本库取更正值；非实测（无光谱/测光红移），redshift_type=est（同型先例 GRB060805B）。Sharma+2026（ApJS 283, 30，LLM 抽取 GCN）沿用未更正的 2.30±0.70，不可引。tag/sub_tag：tag=grb（IPN 定位 GRB）；sub_tag=lgrb——GCN 5684 subject 原文 long, exceptionally bright、正文 about 215 s in two distinct episodes；GCN 5689 原文 The long bright GRB 060928、两主集 ~15 s 与 ~75 s（T0 至 T0+221.184 s）；Suzaku WAM 14 s 与 70 s（GCN 5688）；Bianchin+2011（A&A 536, A46）表 2 注(c)：two main episodes...duration ~14 s and ~25 s。属来源明示分类，非自算 T90；本暴无 Swift/BAT 目录 t90（不在 BAT 目录，见上）。alias：GRB 060928（GCN 5686/5688/5689/5721 原文用名，空格形）、Swift 20042（HEASARC SWIFTGRB name_alt；先例 GRB060805B/GRB051012 同款收录）。光变：lc 仅 4 行，全部为 band=10keV 的 Swift/XRT 行（UKSSDC Swift Burst Analyser，Evans+2007,2009 方法），按 X 射线冻结规则不改、不删、不增、不重排、不参与去重，time/mjd/flux 全部保持原样（mjd 与原锚 01:17:05 自洽，与维持的 T0 一致）。UVOT 因视场内亮星未能观测（GCN 5686 原文 UVOT could not observe the position because of a bright star in the field），external/uvot_grb 快照 0 命中，无光学测光；GCN 5686 XRT 流量 (4.9±1.5)e-3 ct/s → 3.5e-13（8.0e-13）erg/cm2/s 与 GCN 5721 二次观测 3σ 上限 3e-3 ct/s → 2.1e-13（4.9e-13）erg/cm2/s 均为 X 射线量，按 §3.3 不入库。host_galaxy=null：无任何光学/近红外观测，无宿主候选记录。测光检索（2026-11-07）：仓内 gcn/archive 本 clone 未获取（如实注明，改用 GCN 站在线原文）；external 快照 grep「060928」命中 3 个（swift_grb、swift_xrt_live、mpe_greiner——均目录级参数、无光变表，已用于身份/T0/定位互证），rssgrbag（140 行/74 源）、grbsn_webtool（63 事件）、uvot_grb、swiftgrbba、konus_wind（Tsvetkova 2017/2021）等其余快照 0 命中；GCN 站（gcn.gsfc.nasa.gov gcn3 原文）逐篇扫描 5660–5860 号（201 篇 subject）：本暴共 8 篇（5684 IPN 三角、5685 RHESSI 谱、5686 Swift 观测、5688 Suzaku WAM、5689 Konus-Wind、5690 pz 初报、5692 pz 更正、5721 XRT 余辉确认；5687/5691 为邻暴 IGR J08408-4503/GRB 061004），全部实际打开，仅 5686/5721 含 X 射线流量（不入库），无任何光学/红外/射电测光或上限；文献引擎：ADS/SciX 无 API token，走回退链——OpenAlex 引号短语 \"GRB 060928\"（10 条）与 \"GRB060928\"（1 条）、title 检索 060928（仅 GCN 记录与无关条目）、Crossref query.bibliographic（无标题命中）、arXiv API abs 短语（0 命中）、SIMBAD TAP 本机不可达（SSL_ERROR_SYSCALL，双主机 3 次，unavailable@2026-11-07）、Web 检索补获 Butler+2007；实取并打开 6 篇候选论文全文（arXiv PDF）：Evans+2009（MNRAS 397, 1177——本暴在 lcfit 表 Tstart=4.770e5 s/Tstop=8.670e5 s/α1=0.72 与 avespec 表 NH=9.4e21，均 XRT 目录级参数非测光；enhpos 268 暴增强位表不含本暴）、Goad+2007（A&A 476, 1401 = arXiv:0708.0986，154 暴 UVOT 增强位表不含本暴——UVOT 未观测）、Butler+2007（AJ 133, 1027——表 1 天测改正位 10.2″，已用于定位互证）、Bianchin+2011（A&A 536, A46——PICsIT 瞬发样本行 T90=31±4 s、fluence 38936±462 ct（260-2600 keV），X/γ 瞬发量不入库）、Chelovekov+2019（AstL 45, 635——仅提及）、Yüksel & Kistler 2007（PRD 75, 083004——仅引 Konus fluence）→ 均无可引用光学测光表 → 结论：除 X 射线（暂不处理）外无任何可用测光，本次补 0 行。articles[]：登记实际打开并用于判定的 4 篇研究文章（Evans+2009、Goad+2007、Butler+2007、Bianchin+2011）；GCN 通告不入 articles[]，出处见本 comment 与 lc 行 reference。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of gamma-ray bursts"
+    },
+    {
+      "name": "Goad+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20078436",
+      "title": "Accurate early positions for Swift GRBs: enhancing X-ray positions with UVOT astrometry"
+    },
+    {
+      "name": "Butler+2007",
+      "url": "https://doi.org/10.1086/510836",
+      "title": "Refined Astrometry and Positions for 179 Swift X-ray Afterglows"
+    },
+    {
+      "name": "Bianchin+2011",
+      "url": "https://doi.org/10.1051/0004-6361/201117290",
+      "title": "The first GRB survey of the IBIS/PICsIT archive"
+    }
+  ],
   "host_galaxy": null
 }
