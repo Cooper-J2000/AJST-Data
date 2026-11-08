@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB111016A",
-  "alias": [],
+  "alias": [
+    "GRB 111016A",
+    "Swift 505646",
+    "BAT 505646"
+  ],
   "ra": 153.826,
   "dec": 27.474,
   "T0": "2011-10-16T18:37:04Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 12439（Swift/BAT trigger=505646，At 18:37:04 UT）；Swift/BAT GRB Catalog 与 HEASARC SWIFTGRB trigger_time=2011-10-16T18:37:04.526260Z（整数秒一致，亚秒差 0.526260 s，见 comment 与 PR 说明）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +16,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 132,
+  "pos_ref": "GCN 12445",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT 触发号 505646（GCN 12439，At 18:37:04 UT，trigger=505646）；ra/dec=153.826,+27.474 为 BAT 地面精化位置（GCN 12445）；XRT 增强位置 153.83400,+27.46235、误差 1.5\"（90% confidence，GCN 12441）备查，与 P60/UVOT/Gemini 余辉源位置一致。T0=18:37:04 UT 取自触发仪器官方通告 GCN 12439（§3.8 优先级①）；Swift/BAT GRB Catalog 与 HEASARC SWIFTGRB 给 trigger_time=18:37:04.526260Z，整数秒一致、仅亚秒不同（差 0.526260 s ≥60 ms，已在 PR 说明报告）。位置：pos_error=2.2'（132\"，radius，sys+stat，90% containment，GCN 12445 原文标注）。alias：GRB 111016A（GCN 12439 原文用名）、Swift 505646（HEASARC SWIFTGRB name_alt）、BAT 505646（Swift/BAT GRB Catalog name_alt）。sub_tag：t90=548.996±107.374 s（Swift/BAT GRB Catalog，15-350 keV）；另 GCN 12445 给 T90=550±105 s（HEASARC SWIFTGRB 另列 547.48 s，15-150 keV，一并备查）、swiftgrbba t90=550 s（15-150 keV）；按目录 t90 判 lgrb。测光检索（2026-11-04）：仓内 gcn/archive 45 947 篇全文检索「111016」，命中 14 篇、其中属于本暴 12 篇（GCN 12439/12440/12441/12442/12443/12444/12445/12446/12447/12448/12451/12486，逐篇读过；另 2 篇为 GRB 111016B）；external/ 快照（uvot_grb、rssgrbag、grbsn_webtool）无本暴记录；ADS 检索：短语「GRB 111016A」命中 10 篇（全为上述 GCN）、全文 body:\"111016A\" 命中 9 篇，其中 GRB 文献 5 篇逐篇检查（Levan+2014 仅定性讨论 t90 与 XRT 耀发、Zhao+2013 仅样本脚注、Hu+2016 BOOTES 仅目标表、Feng+2012 仅图注、另两篇 X 射线耀发样本属范围外）→ 无已发表测光表可补、补 0 行。lc 逐行核对（2026-11-04）：757 行 band=10keV X 射线行整块跳过、未触碰（multiset 比对改动前后完全一致）；22 行光学/UV 行逐行对照 8 篇含测光的 GCN（12439/12443/12444/12446/12447/12448/12451/12486）核对，改动：UVOT 10 行 time 改取曝光/窗口中点（原导入值有 +31.5 s 系统偏移，GCN 12446 给 T_start/T_stop 窗口）、UVOT 行 mag_system=Vega（UVOT 光度系统 Poole+2008，GCN 12446 原文引）、MITSuME 3 行补 time_err=半曝光 690 s（原文给 MID-UT 与总曝光 1380 s）、ISON ORI-40 行 time 12622→13741.92 s（原文给 mid=0.15905 d、曝光 2160 s，原值为观测开始）、P60 2 行 mag_system=AB（SDSS 点源定标）、Gemini NIRI K 行 mag_system=Vega（原文标注）；MITSuME/P60/WIYN/D50 各行原文只给观测开始时刻或日期、无曝光时长，time 保持原值并在 comment 注明；4 行 UVOT white 的 band w→uvot-white 已由 Issue #384 在 main 批改（本分支 rebase 后保留），各行 comment 详见 lc。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-04"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
