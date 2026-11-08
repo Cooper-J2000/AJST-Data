@@ -195,3 +195,8 @@ Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+0
 - 论文正文仅 2 张表（重复爆发表、候选示例表），主目录与 103 个 flare 的 timescale 参数表只存在于
   GitHub/CDS 机读侧；CDS 恢复可达后建议补查 flare 参数表是否逐源发布。
 - ATLAS(H)/(t) 波段标签无法唯一判读（AT2024pvu 8 行未入库），随各源审核时按 PR 待决上报。
+
+## 合并并入的行（同批其它审核 PR）
+
+| 源集合 | 表号 | 源级卡 | status | 增量判读 |
+| 上方 `sources` 全部 132 源 | VizieR J/A+A/707/A171 主表 | 无 | mention-only | 不过增量门槛（见下） |

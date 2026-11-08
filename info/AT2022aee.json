@@ -5,27 +5,32 @@
   ],
   "ra": 132.1802,
   "dec": 80.8833,
-  "T0": "2022-01-21T07:14:32Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2022-01-21T07:14:32.997Z",
+  "T0_ref": "发现/首测时刻：TNS/ALeRCE 发现报告 2022-01-21 07:14:32.997 UT（2022TNSTR.156....1M，即首个 ZTF 探测 MJD 59600.3017708，亚秒以发现管线值为准）；TDECat（Langis+2026, 2026A&A...707A.171L）DiscDate=2022-01-21T07:14:33（秒级取整一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "ZTF",
   "redshift": 0.124,
   "tag": [
     "tde"
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告 2022TNSCR1073....1Y（Yao+2022：P200/DBSP 光谱 Hα/Hβ/Hγ 定 z=0.124）；TDECat（Langis+2026, 2026A&A...707A.171L）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-06 审核（wa1kmoon@zcode）。身份核验：TNS 2022aee=TDE，发现数据源 ZTF、报告组 ALeRCE，发现时刻 2022-01-21 07:14:32.997 UT、发现星等 18.5361 r-ZTF AB；TNS 分类报告 2022TNSCR1073....1Y（Yao+2022）以 P200/DBSP 光谱（2022-02-22）Hα（宽+窄成分，7374 A）定 z=0.124，并见弱 Hβ/Hγ；TDECat 表 1（VizieR J/A+A/707/A171，2026-11-06 实取）坐标/红移/发现时刻/发现星等/宿主各列与 TNS 全部一致。T0 口径：取发现=首测时刻（SN/FBOT/AT 先例），分类报告提及 ZTF+ATLAS 强制测光示约 50 天（观测框架）长上升、未给峰值参数，故无峰值项可记。宿主：TNS Host Name 与 TDECat HostName 均证认 WISEA J084843.28+805300.1（broker/目录交叉匹配级证据，未建 host_galaxy，待专篇文献确认）。定位：来源未给定位误差（pos_error 留空、置信水平未标注）。测光检索（2026-11-06）：仓内 external/rssgrbag、external/grbsn_webtool 及 info 全库 grep 无命中（gcn/archive 不随 worktree 分发，该目录本不入库）；TNS phot. 表 1 行（发现点，ID 262154）；ALeRCE 对象光变 API（api.alerce.online/ztf/v1/objects/ZTF22aaabovl）检出 ZTF 公共流探测 29 条+非探测上限 8 条（MJD 59600.30–59701.27），37 行全部入库（lc/AT2022aee.csv）；arXiv API 元数据检索 AT2022aee/ZTF22aaabovl/AT 2022aee 各 0 篇；OpenAlex 检索命中 4 篇 TDE 总体/分类/中微子样本文（2609.00657、2512.24782、2601.20934、2607.28510），均非本源专篇、摘要层无对象级测光，全文核对受限于本环境 arXiv 全文通道不可达且无 ADS/SciX token（见 audit/unverified.tsv search-limited 行）→ 已补 37 行",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "r-ZTF",
     "discovery_mag": "18.5361",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
