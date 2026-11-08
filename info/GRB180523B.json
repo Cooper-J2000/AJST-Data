@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB180523B",
-  "alias": [],
+  "alias": [
+    "GRB180523782",
+    "GRB 180523.782",
+    "bn180523782"
+  ],
   "ra": 168.38,
   "dec": 49.45,
-  "T0": "2018-05-24T03:51:00Z",
-  "T0_ref": null,
+  "T0": "2018-05-23T18:46:28.107Z",
+  "T0_ref": "HEASARC fermigbrst trigger_name=bn180523782（Fermi GBM trigger 548793993，trigger_time=MJD 58261.782269756）；官方通告页 gcn.gsfc.nasa.gov/other/548793993.fermi 'GRB_TIME: 67588.11 SOD {18:46:28.11} UT' 与 Coughlin+2019 (PASP 131, 048001) VoR 'GRB 180523B triggered the Fermi GRB Monitor at 18:46:28.11 (UTC) on 2018 May 23' 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -12,22 +16,46 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 46584.0,
+  "pos_ref": "Fermi GBM Final Position：官方通告页 'GRB_RA: 168.380d' 'GRB_DEC: +49.450d' 'GRB_ERROR: 12.94 [deg radius, statistical only]'；HEASARC fermigbrst error_radius=12.94 deg（pos_error=12.94 deg×3600=46584.0 arcsec）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy 2026-11-07：(1) 身份=Fermi/GBM trigger 548793993（bn180523782）。GCN 22739 标题 'GRB180523B: Zwicky Transient Facility Follow-Up of a Fermi Short GRB (Trigger 548793993)'、正文 'detected by the Gamma-Ray Burst Monitor (GBM) on the Fermi satellite'。alias 三形「GRB180523782」「GRB 180523.782」「bn180523782」为 HEASARC fermigbrst 目录 name/trigger_name 及其 name_alt 形态（external/fermi_gbm 快照 2026-07-19 版，官方目录名非管线拼接）；GCN 22739 原文用名 'GRB 180523B'。(2) T0 修正：原 2018-05-24T03:51:00Z 系导入把 ZTF 观测起点误锚为 T0——GCN 22739 原文 'beginning at 3:51 UT on 2018 May 24 (9.1 hours after the burst trigger time)'，Issue #84 同型；改为触发仪器官方目录值 2018-05-23T18:46:28.107Z（fermigbrst trigger_time=MJD 58261.782269756），与通告页 18:46:28.11 UT 及 Coughlin+2019 VoR 原文亚秒内一致。原 extra_data.t0_note 't0 为 meta trigger-time（真实触发时刻）'/t0_basis 'meta_trigger' 与事实不符，已改写、原值留此备查。(3) 定位=GBM Final Position：通告页 'GRB_ERROR: 12.94 [deg radius, statistical only]'，fermigbrst error_radius=12.94 deg（tdat 列 UCD=stat.error）；pos_error=46584.0 arcsec（12.94 deg 换算）；置信水平 1σ，据 Coughlin+2019 VoR 'Its localization region had a 1σ circular-equivalent statistical error of 13°'（含系统误差后 90% 概率区 6600 平方度）。(4) sub_tag=sgrb：fermigbrst t90=1.984±1.35008 s（50-300 keV，按目录 t90 判 lgrb/sgrb；误差为快照原值）；GCN 22739 标题 'Fermi Short GRB'；Coughlin+2019 'It was automatically flagged as a likely SGRB' 且 T90 分布双对数正态建模 90% 概率属短类。(5) 测光检索（2026-11-07）：仓内 external 快照 fermi_gbm 命中 1 行（目录本身），swift_bat/swift_xrt_live/uvot_grb/rssgrbag/grbsn_webtool/mpe_greiner 均 0 命中（origin/main 无 gcn/archive 快照，GCN 全文检索走官网）；GCN 官网=通告页 1 篇（548793993.fermi）+Circular 标题穷举 22700–22760 命中 1 篇（22739；同段其余 '180523' 命中均为另一暴 GRB 180523A）+WebSearch 交叉一致；文献检索（无 ADS token，走 Crossref/arXiv/OpenAlex 回退链；SIMBAD/VizieR 当日 SSL 不可达记 unavailable@2026-11-07）：Crossref 题名、arXiv all:'180523B'、OpenAlex search 三引擎收敛唯一相关文献 Coughlin+2019（PASP 131, 048001, doi:10.1088/1538-3873/aaff99），其 VoR PDF（IOP，%PDF 探测通过）已通读——Table 1 为成功率、Table 2 为 14 个无关暂态，无逐帧测光表，GRB 数值仅战役级中位深度（与 GCN 同值）；Ahumada+2022 (ApJ 932, 40; doi:10.3847/1538-4357/ac6c29; arXiv:2203.11787) 全文实读：§IV.1 专节 GRB 180523B（'The first set of [ToO] observations of this program was taken 9.1 hours after GRB 180523B (trigger 548793993)'，中位 5σ 限 r≥20.3/g≥20.6 与库内 2 行同值同源）、Table 1 收录本暴（T90=2.0±1.4 s、P_SGRB=0.99），但仅战役级汇总、无逐帧测光表——无新测光可补（0 行）。首轮核查曾误记该文为 'Paterson+2022 零命中'，已更正（§6 复核）。结论：无新测光可补，补 0 行；lc 保留原 2 行 ZTF 中位 5σ 上限，time/mjd 随 T0 修正重算。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "1sigma",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "trigger",
+    "t0_note": "t0 = Fermi/GBM 触发时刻（HEASARC fermigbrst trigger_time=MJD 58261.782269756 → 2018-05-23T18:46:28.107Z）；2026-11-07 审核：原值 2018-05-24T03:51:00Z 为 ZTF 观测起点误锚（Issue #84 同型），已修正",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Coughlin+2019",
+      "url": "https://doi.org/10.1088/1538-3873/aaff99",
+      "title": "2900 Square Degree Search for the Optical Counterpart of Short Gamma-Ray Burst GRB 180523B with the Zwicky Transient Facility",
+      "source": "fsy"
+    },
+    {
+      "name": "vonKienlin+2020",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "source": "fsy"
+    },
+    {
+      "name": "Ahumada+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac6c29",
+      "title": "In Search of Short Gamma-Ray Burst Optical Counterpart with the Zwicky Transient Facility",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
