@@ -8,8 +8,8 @@
   ],
   "ra": 4.92875,
   "dec": 29.316861,
-  "T0": "2021-05-11T11:36:49Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2021-05-11T11:36:49.003Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2021-05-11 11:36:49.003；TNS 发现报告 2021TNSTR1620....1M（ALeRCE broker 报告 109578）Discovery date 2021-05-11 11:36:49.003（JD 2459345.9839005）——两源一致给到毫秒，按 §3.2 采源精度写全（原 bot 值截断到秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -18,17 +18,22 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）目录行坐标 00:19:42.900 +29:19:00.70（J2000）＝TNS 发现报告 109578 坐标（RA=4.9286435/DEC=+29.3168969，对象页 00:19:42.900 +29:19:00.70）；ATLAS/Gaia 各机器人报告坐标相差 <2″，同一天区",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告 2021TNSCR2672....1C（ZTF，M. Chu/A. Dahiwale/C. Fremling 2021-08-03，分类光谱 2021-08-01 P200/DBSP）：TDE z=0.073；TDECat（Langis+2026）目录行同值 0.073；宿主 SDSS J001942.89+291900.6 的 SDSS DR16 测光红移 0.116±0.038（AstroNote 2023-138 转引 Ahumada+2020）与光谱值不一致——本字段取分类报告光谱值，测光红移记此备查",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 5310 行。【身份核验（2026-11-05，TNS 对象页+TDECat 目录行+分类报告+两篇 AstroNote 互证一致）】ra/dec＝TDECat 目录行 00:19:42.900 +29:19:00.70（J2000）＝TNS 发现报告/对象页坐标；alias ZTF21abaxaqq＝TNS internal name＝TDECat 目录行 Discovery internal name（ALeRCE/ZTF 发现报告），ATLAS21qbq＝ATLAS_Bot1 报告 111724 internal name、ATLAS21wwe＝ATLAS_Bot1 报告 113978 internal name、Gaia21cwh＝GaiaAlerts 报告 113887 用名（alias 四名出处均已逐条核对 TNS 报告）；tag=tde：TNS 分类报告 2021TNSCR2672....1C（ZTF，P200/DBSP 光谱）判 TDE @z=0.073，TNS 前缀 2025-01-26 由 AT 更为 TDE；2023-05 再亮（二次事件，AstroNote 2023-138，727 d 后 r=18.83 差分）记为观测事实，TDECat 未将本源列为 repeating（其新增 repeating 名单为 AT2024pvu/AT2022exr/AT2021uvz）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ZTF/P48，broker ALeRCE）。【T0 口径】TDECat 目录行与 TNS 发现报告一致给 2021-05-11 11:36:49.003（毫秒），按 §3.2 采源精度写全（原 bot 值截断到秒）；本源为新建 lc（原零测光），无历史 X 射线行需随 T0 重算。【红移】z=0.073＝分类报告＝TDECat 目录行＝TNS 对象页，redshift_type 由 value 改判 spec（分类光谱测得）；宿主测光红移 0.116±0.038 张力见 redshift_ref 备查。【测光入库 5310 行】＝TDECat 官方补充仓库 target_AT2021mhg_photometry.csv（Section 2: Photometry/Optical and Infrared，2026-11-05 下载，5134 行，本源 CSV 无同历元同值重复行、无 99.99/-1.0 哨兵）5134 行；+ TDECat UVOT 机读表 AT2021mhg_uvot_lightcurve.csv（28 行×6 波段，有效值 159 行）；+ TNS 对象页 phot 表 13 行（r-ZTF 发现/探测/上限 6 行、g-ZTF 探测 1 行、G-Gaia 探测/上限 2 行、ATLAS orange/cyan 探测/上限 4 行，差分成像纯瞬变）；+ AstroNote 2023-138 二次事件差分测光 3 行（2023-05-08 r=18.83±0.15、2023-05-23 r=19.35±0.14、首事件末次探测 2021-09-02 g=20.36±0.22）；+ AstroNote 2021-309 VLA 15 GHz 3σ 上限 14 μJy（2021-08-20.31）1 行。口径：TDECat/BHTom 编译行为总流量（含宿主星系核，非差分——2018–2021 爆发前 ZTF r≈17.5–18.5/g≈18.5–19 即宿主水平可证，纯瞬变见 TNS phot/AstroNote 差分行，两类并存不互删 §3.4 非同值；如发现同曝光差分 19.7464 vs 总流量 ≈18.5，差 ~1.2 mag 系口径不同）；星等系统按 Langis+2026 §3.1（arXiv:2506.05476v2 实读）：ZTF/iPTF/Pan-STARRS=AB，CRTS/NEOWISE/Swift=Vega，Gaia 内部定标留空；TNS 行按 TNS Units 列 ABMag=AB；UVOT 行已做银消光改正且未扣宿主（论文 §3.3 原文）→ Gext_corr=y。TDECat 光变 CSV 分设施段落全档案入库（2010 ALLWISE、2011–2012 PS1、2010 年代 SDSS、2013–2019 PTF、2014–2019+2021–2024 CRTS/NEOWISE、2018–2024 ZTF 爆发前宿主+2021 爆发段+2023 二次事件段，UVOT 2021 爆发段）。【检索留证（2026-11-05）】①仓内 gcn/archive 全文检索 AT2021mhg/ZTF21abaxaqq/2021mhg 命中 0 篇；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准＝0 命中；③ADS API：AT2021mhg/AT 2021mhg/2021mhg 命中 5 篇——均为 TNS 报告/AstroNote（发现 2021TNSTR1620....1M、分类 2021TNSCR2672....1C、二次事件 2023TNSAN.138....1M、射电非探测 2021TNSAN.309....1A/同文 ATel 15090）；无专文测光表；④TNS 对象页与两篇 AstroNote 已实际打开（发现/分类报告、测光表逐项核对）；TDECat GitHub 光度/UVOT CSV 已下载逐行核对；Langis+2026 星等系统与 UVOT 口径自 arXiv:2506.05476v2 §3.1/§3.3 实读（A&A DataDome 不可达，已登记 unverified.tsv）。结论：可用测光＝TDECat 机读表+TNS 对象页+AstroNote 2023-138/2021-309，补 5310 行。【未入库】TDECat X-ray 机读文件 AT2021mhg_xray_lightcurve.csv（XRT，含 2021 爆发段探测与上限，按 §3.3/§7 暂不处理）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "r-ZTF",
     "discovery_mag": "19.7464",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
@@ -38,5 +43,10 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.073,
+    "redshift_type": "spec",
+    "comment": "宿主星系 SDSS J001942.89+291900.6（TDECat 目录行 Host name；TNS 发现报告 109578 「Potential host galaxy」；Gaia DR3 以 P≈0.98 分类为星系，见 AstroNote 2023-138 转引 Hughes+2022）；瞬变位于宿主核区；宿主测光红移 0.116±0.038（SDSS DR16）与光谱红移 0.073 张力记此备查",
+    "source": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行；TNS 发现报告 2021TNSTR1620....1M；TNS AstroNote 2023-138"
+  }
 }
