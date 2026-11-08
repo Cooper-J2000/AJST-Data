@@ -7,34 +7,45 @@
   ],
   "ra": 35.033371,
   "dec": -22.72095,
-  "T0": "2022-06-01T03:45:42Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2022-06-01T03:45:42.336Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2022-06-01 03:45:42.336；同值见 TNS 发现报告 #149057（2022TNSTR1521....1T，ATLAS22pnz）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
-  "redshift": 0.032,
+  "redshift": 0.03275,
   "tag": [
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行坐标 02:20:08.009 −22:43:15.42（＝TNS 系统坐标＝YSE 报告坐标；ATLAS #149057/PS1 #156191 报告坐标差 <1″）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Yao+2024（2024ApJ...976...34Y, DOI 10.3847/1538-4357/ad7d93）§2.1 宿主谱线导出 z=0.03275±0.00001（VoR 不可得取自 arXiv v1 正文，audit/unverified.tsv 已登记）；TNS 对象页 Redshift=0.03275 同值",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-05 Rusty-Harpoon@zcode 单源审核并补光变 8365 行。\n\n【身份核验（2026-11-05，TNS 对象页 2022lri + TDECat 目录行 + ADS 互证一致）】ra/dec=35.033371/−22.72095＝TNS 系统坐标 02:20:08.009 −22:43:15.42（35.0333706249/−22.7209499013）＝TDECat 目录行坐标＝YSE 报告坐标（02:20:08.009 −22:43:15.42）；ATLAS 发现报告 #149057（02:20:08.017 −22:43:15.40）与 PS1 报告 #156191（02:20:08.005 −22:43:15.21）坐标差 <1″，同一对象；本库保留 TDECat 值（已发表目录，权威级高于 TNS 页面）。pos_error：TDECat/TNS 均未给定位误差→null；来源未标注置信水平。alias 三名均有出处：ATLAS22pnz＝TNS 发现报告 #149057 internal name（ATLAS_Bot1，2022TNSTR1521....1T，发现 2022-06-01 03:45:42.336 UT，orange-ATLAS 17.199）＝TDECat「Discovery internal name」；PS22hiq＝TNS PS1 报告 #156191（PS1_Bot1，发现 2022-08-25 13:09:32.256 UT，w-P1 18.55）与 YSE 报告（2022-08-31 14:07:02.208，r-P1 18.53）用名＝TDECat「Alternative name PS22hiq/ATLAS22pnz」；ZTF22abajudi＝TNS ZTF 报告 #156882（ZTF_Bot1，发现 2022-09-01 10:32:09.600 UT，g-ZTF 18.46）用名＝TDECat「ZTF name」。分类 TDE（TNS 前缀 2025-01-26 由 admin 更新）＝TDE-H+He 亚型：AstroNote 2022-223（P200/DBSP 2022-10-11 光谱，宿主吸收线 z=0.032 + Halpha/He II 4686 同红移宽线，依 van Velzen+2021/Hammerstein+2022 分类法）；ZTF 分类报告 #18132/#18135/#18142（2024TNSCR3591....1Y，Yuhan Yao，光谱见 arXiv:2405.11343）；专文 Yao+2024（2024ApJ...976...34Y）。tags.json 无 TDE 亚型词条，TDE-H+He 仅记于此、sub_tag 留空（建议词条见 PR 待决事项）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ATLAS）。宿主：低质量大质量黑洞（10^4–10^6 M☉）宁静星系，σ*=32.8±1.7 km/s、logM*≈9.5、DL=143.8 Mpc（Yao+2024 §2.1/表 1，arXiv v1）。\n\n【T0 口径】TDECat 目录行与 TNS 发现报告 #149057 一致给 2022-06-01 03:45:42.336（毫秒精度），按 §3.2 采源精度写全（原 bot 值截断到秒）。Yao+2024 §3.1 以 Gaussian rise+power-law 拟合得光学峰 MJD 59682（其 δt 定义，仅供换算参考）——爆发早于 TNS 发现日属发现口径差异，不写 T0_offset。本 PR 改 T0（42→42.336 s），lc 全表 time=(mjd−T0_mjd)×86400（6 位小数）、mjd 保持来源原值，已按新 T0 自洽（无 X 射线行，无需 mjd 重算）。\n\n【红移】redshift 0.032→0.03275，redshift_type 由 value 改判 spec-host：Yao+2024 §2.1 由宿主谱（5030–5600 Å 吸收线）导出 z=0.03275±0.00001（σ*=32.8±1.7 km/s 同表）；TNS 对象页 Redshift=0.03275 同值；AstroNote 2022-223 记宿主谱线 z=0.032；TDECat 目录行 0.032（未采用，精度较低，并列备查）。\n\n【测光入库 8365 行】＝TDECat 官方补充仓库 target_AT2022lri_photometry.csv（github.com/dlangis/TDECat Section 2: Photometry/Optical and Infrared，2026-11-05 下载）8122 行 + 官方 UVOT 机读表（Section 2: Photometry/UVOT/AT2022lri_uvot_lightcurve.csv，HEASARC 下载、uvotimsum 合并、uvotsource 5″ 孔径，论文 §3.3）226 行 + Yao+2024 表 5（arXiv v1 印刷 8 行；VoR 机读全表不可得）8 行 + Yao+2024 正文 §3.1 首个光学探测（MJD 59662.006，o=17.91±0.15，7σ）1 行 + TNS 对象页测光表 6 行（phot ID 285940/285941/300929/302361/302362/302829）+ AstroNote 2022-223 测光 2 行（ZTF g 2022-08-14 18.77±0.04、Swift/UVOT uvw2 2022-10-23 18.52±0.04 宿主扣减）。\n口径：TDECat/BHTom 编译行为总流量（含宿星系核，非差分）——以 Yao+2024 基线改正纯瞬变与 TNS 差分行为锚，在两个独立历元解出宿主 ATLAS o≈16.95–17.01（MJD 59731.157 与 59875）与 ZTF g≈18.24–18.41（MJD 59823.44 与 59880.36），TDECat ATLAS(o)/ZTF(zg) 值与该宿主+纯瞬变合成吻合；TNS/Yao 行为差分成像或基线改正纯瞬变/宿主扣减，两类并存不互删（§3.4 非同值）。星等系统按 Langis+2026 §3.1 原文（ATLAS/iPTF/Pan-STARRS/ASAS-SN g/ZTF=AB；CRTS/ASAS-SN V/Swift/NEOWISE=Vega；VoR HTML 已过 DataDome 逐句核对）；TDECat UVOT 行已做银消光改正且未扣宿主（论文 §3.3 原文 All magnitudes were corrected for Galactic extinction … not host subtracted）→ Gext_corr=y；Yao+2024 全表 fν 已做银消光改正（表注）→ Gext_corr=y。CRTS(CL) 无滤光片→band=G。历史档案测光（CRTS 2005-2015、ALLWISE 2010、ASAS-SN 2013-2021、ATLAS 2015-2021、PS1 2013-2015、NEOWISE 2014-2024）与爆发段混排，全部入库并在行 comment 注明总流量含宿。未入库：TDECat ATLAS(g) 2 行 + ATLAS(H) 2 行（波段名无法唯一判读——ATLAS 公开滤光片仅 c/o/r 系列，PR 待决事项）；ASASSN 99.99 哨兵 3 行（非探测占位、无可用限值）；ASASSN Error=-1.0 哨兵 720 行（其中 3 行即 99.99 占位行已剔，其余 717 行星等入库、误差留空）；TDECat 同历元同值重复行 440 行（§3.4 去重保留 1 行）；同历元异值双行（不同实现/机位）并存保留。TDECat 另有 Swift/XRT X 射线机读文件（AT2022lri_xray_lightcurve.csv）与 NICER/XMM 监测（Yao+2024、ATel 15751），按规则不入库（发现 X 射线数据，暂不处理）。\n\n【测光检索留证（2026-11-05）】①仓内 gcn/archive 45947 篇全文检索 AT2022lri/ATLAS22pnz/PS22hiq/ZTF22abajudi＝0 命中；external/rssgrbag/lightcurve.jsonl（140 行/74 源）与 external/grbsn_webtool/SourceData（63 事件）无记录（TDE 不属 GRB/GRB-SN 样本）；②GCN 站在线检索以仓内 gcn/archive 全文为准＝0 命中；③ADS API：AT2022lri 全文命中 7 篇（2024ApJ...976...34Y 专文、2022TNSAN.223....1Y、2022TNSTR1521....1T、2022ATel15751....1Y、2024HEAD...2110802Y、2022TNSCR3103....1Y、2024TNSCR3591....1Y），专文/通告/分类报告均实际打开或核对其机读表；④TNS 对象页（含测光表 6 行）与 AstroNote 2022-223 已实际打开；TDECat GitHub 光度/UVOT CSV 已下载逐行核对；Yao+2024 表 5 机读全表 追取失败（IOP 整站 Radware 反爬、CDS 无此目录，audit/unverified.tsv 已登记）。结论：非零测光，补 8365 行。\n\n【跨巡天系统差备注（源表自身性质，数值未改动）】TDECat 编译的 CRTS/ASAS-SN(g,V)/ATLAS(c) 安静期水平（16.4–17.3）比按 Yao+2024 宿主 SED（U=19.03 AB、logM*=8.97+9.46、AV≈0.3）与总流量合成预期的宿主亮度（g≈18.3、V≈18.0）系统性偏亮 ~1 mag，且 ASAS-SN(g) 在 2022-09 后相对 ZTF zg 总流量偏亮 ~1–1.8 mag；ATLAS(o)/ZTF(zg/zr) 与纯瞬变锚点自洽。Langis+2026 自述 some artifacts could be present（§3.1）。数值按 §3.3 保持原样入库，是否需要库级 artifacts 清洗约定请维护者裁定（PR 待决事项）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "orange-ATLAS",
     "discovery_mag": "17.199",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-05"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
-      "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L",
+      "source": "bot"
+    },
+    {
+      "name": "Yao+2024",
+      "title": "Subrelativistic Outflow and Hours-timescale Large-amplitude X-Ray Dips during Super-Eddington Accretion onto a Low-mass Massive Black Hole in the Tidal Disruption Event AT2022lri",
+      "url": "https://doi.org/10.3847/1538-4357/ad7d93",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
