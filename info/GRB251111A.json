@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB251111A",
-  "alias": [],
-  "ra": 32.3618,
-  "dec": 5.2284,
-  "T0": "2025-11-11T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 251111A",
+    "sb25111101",
+    "GRB251111.22"
+  ],
+  "ra": 32.36166,
+  "dec": 5.22815,
+  "T0": "2025-11-11T05:10:18.260000Z",
+  "T0_ref": "GCN 42670（SVOM/ECLAIRs 精细分析原文 T0=2025-11-11T05:10:18.26，触发仪器亚秒值）+ GCN 42637（触发通告 T0=2025-11-11T05:10:18 UTC，整数秒一致）；external/swiftgrbba 快照同值 T0=2025-11-11T05:10:18.000Z 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 5.1,
-  "pos_ref": "GCN 42648",
+  "pos_ref": "GCN 42648（Swift-XRT 增强位置 RA,Dec=32.36166,+5.22815 (J2000)，5.1 arcsec radius，90% confidence）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode（2026-11-06）。(1) 身份：SVOM/ECLAIRs 触发 GRB 251111A（GCN 42637：T0=2025-11-11T05:10:18 UTC，CRT+IMT 双触发，ECLAIRs 最佳定位 RA,Dec=32.3783,5.2567，90% C.L. 7.55′ 含 2′ 系统误差）；SVOM burst-id sb25111101（GCN 42637/42641/42643/42647/42670 用名）；MASTER 用名「GRB251111.22」（GCN 42644 原文用名 SVOM GRB251111.22：trigger No 1762837816=2025-11-11T05:10:16 UTC，误差框坐标 02h09m30.79s +05d15m24.1s 与 GCN 42637 最佳定位一致，判为同一事件）；external/swiftgrbba 快照记 GRB 251111A T0=2025-11-11T05:10:18.000Z、RA,Dec=32.3783,5.2567 互证，external/mpe_greiner 有同名条目（RA,Dec=32.379,5.25，无触发时刻）。(2) T0：原 bot T0=2025-11-11T00:00:00Z（extra_data.t0_basis=meta_trigger、t0_note『t0 为 meta trigger-time（真实触发时刻）』）系日期零点占位值而非触发时刻（Issue #84 同型），废弃；改取 GCN 42670（SVOM/ECLAIRs 精细分析）T0=2025-11-11T05:10:18.26（与 GCN 42637 整数秒一致，按触发仪器亚秒值取用，§3.2/§3.8）；全表 time/mjd 已按新历元重算（口径见 lc 各行 comment）。(3) 定位：ra/dec 改为 pos_ref 所指 GCN 42648 的 Swift-XRT 增强位置 32.36166,+5.22815（5.1″ radius，原文 90% confidence → pos_error_confidence=90）；原 bot 值 32.3618,5.2284 为 GCN 42645 XRT 自动定位（5.7″，90%）；XRT 位置距 ECLAIRs 定位 2.0′（GCN 42645）。(4) 分类：GCN 42670（ECLAIRs 精细分析）：T90=5.31(+2.36/−0.68) s（4-20 keV），5-30 keV 幂律光子指数 2.4±0.2，4-120 keV 积分注量 (1.5±0.2)e-07 erg/cm²（68% C.L.），峰能 <4 keV，原文判为 X-ray flash → sub_tag=XRF 按来源分类（非自算 T90）。(5) 测光：原 8 行对应 GCN 42638（COLIBRÍ/DDRAGO r,z）、42639（LCO r）、42641（VT VT_R）、42647（VT VT_R 两行）、42651（DFOT R 上限）、42710（AZT-33IK R 上限），数值逐行核对一致；各行 time 原为占位 T0 下的绝对时刻（UTC 秒数），已按新 T0 换算并补 time_err（曝光之半/窗口半宽，口径见各行 comment）；GCN 42647 两行原文表头 mag (AB)，补 mag_system=AB；bot 将望远镜名写在 instrument 列（telescope 列空），已按列义原样归位 telescope。新增上限 13 行：GCN 42640 KAIT clear 滤光片（原文 clear (roughly R)）11 行（band=G，原文表直给 mid t−t0 与单张曝光）；GCN 42644 MASTER-Net C 滤光片（原文 Filter C is a clear (unfiltred) band）2 行（Tmid−T0=28650 s 系 MASTER 通告自有零点 trigger No 1762837816=2025-11-11T05:10:16 UTC 的相对时，折算本源 T0 历元 −2.26 s ≪ time_err=30 s；其中一行原文表站名截断为「MASTER-」，MASTER 页 observ.php?id=3038098 亦截断，完整站名不可考，telescope 记 MASTER）。X 射线数据（EP-FXT GCN 42643、Swift-XRT GCN 42645/42648）按审核范围约定不入库。(6) 测光检索（2026-11-06）：仓内 gcn/archive 45947 篇全文检索（检索词「251111」前缀及「251111A」「sb25111101」，按 251111 前缀共命中 14 篇——42644/42646 不含「251111A」字样，仅前缀词可覆盖）（42637/42638/42639/42640/42641/42643/42644/42645/42647/42648/42651/42670/42710 共 13 篇与本源相关；42646 属另一事件 GRB251111.42，排除）；GCN 站（gcn.nasa.gov）检索 11 篇，与 ADS 命中一致（42644/42651 因用名写法未被站内检索命中，全文取自仓内存档，另在站内核对 42637/42651 原文一致）；ADS 检索「GRB 251111A」命中 11 篇，全为上述 GCN 通告、无研究论文；external/rssgrbag、external/grbsn_webtool 无该事件记录（快照未覆盖 2025 年暴）；TNS 不适用（GRB 非 AT/SN 类）。结论：可用测光已集齐，补 13 行上限（KAIT 11 + MASTER 2），无遗漏的探测或上限；红移无任何测量记录，redshift 留空。",
+  "sub_tag": [
+    "XRF"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_circular",
+    "t0_note": "T0=SVOM/ECLAIRs 触发 2025-11-11T05:10:18.26（GCN 42670 精细分析原文直给，整数秒与触发通告 GCN 42637 一致）；原 bot 值 2025-11-11T00:00:00Z 系日期零点占位（t0_basis=meta_trigger、t0_note『t0 为 meta trigger-time（真实触发时刻）』已废弃），原值留档于 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [],
   "host_galaxy": null
