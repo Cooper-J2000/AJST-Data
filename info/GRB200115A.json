@@ -1,29 +1,46 @@
 {
   "transient_id": "GRB200115A",
-  "alias": [],
-  "ra": 56.444,
-  "dec": 5.61,
-  "T0": "2020-01-15T11:55:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 200115A",
+    "Swift 949361"
+  ],
+  "ra": 56.453,
+  "dec": 5.607,
+  "T0": "2020-01-15T11:50:23.734140Z",
+  "T0_ref": "GCN 26771（Swift/BAT trigger 949361：At 11:50:23 UT triggered and located GRB 200115A）；亚秒取触发仪器官方目录 external/swift_bat 快照 Trig_time_UTC=2020-01-15T11:50:23.734140",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 66.0,
   "pos_ref": "GCN 26780",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份/时间：Swift/BAT 触发 949361（GCN 26771 原文 \"At 11:50:23 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200115A (trigger=949361)\"）；external/swift_bat 快照 Trig_ID=949361、Trig_time_UTC=2020-01-15T11:50:23.734140；external/swiftgrbba 快照 trigger_time=2020-01-15T11:50:23.000Z 互证。旧 T0=2020-01-15T11:55:00Z 系 GCN 26790 的 AZT-33IK 观测起点（原文 \"starting on Jan. 15 (UT) 11:55:00, i.e. 4.6 minutes after GRB trigger\"）被误锚为触发时刻（Issue #84 同型），已改正；extra_data.t0_basis/t0_note 原值：\"meta_trigger\"/\"t0 为 meta trigger-time（真实触发时刻）\"。定位：BAT 地面定位 RA,Dec=56.453,5.607 deg，误差 1.1 arcmin=66.0″（sys+stat，90% containment，GCN 26780），external/swift_bat 快照 RA_ground=56.45183、DEC_ground=5.607765、Image_position_err=1.130359 arcmin 互证；旧 ra/dec 56.444/5.61 实为 GCN 26790 光学候选体坐标（03:45:46.58 +05:36:36，±0.5″）与 pos_ref=GCN 26780（BAT）混串，已改判为 BAT 地面定位；Swift 因优先跟进 GW 事件 S200115j 未 slew、无 XRT/UVOT 数据（GCN 26771 原文 \"There will thus be no XRT or UVOT data for this trigger\"），无 XRT 增强定位，候选体坐标仅留本条备查、其变异性未确认（GCN 26818 第二历元未复探测）。分类：t90=158.4±32.6 s（15-350 keV，GCN 26780），按通告 t90 判 lgrb；CALET CGBM t90=347±46 s（40-1000 keV，GCN 26809）互证；GBM 侧无正式通告（CALET 26809 注明该事件 GCN notice 因脚本问题未自动分发）。alias：\"GRB 200115A\"（GCN 26771 等全部通告原文用名）、\"Swift 949361\"（GCN 26771 原文 trigger=949361；external/swiftgrbba 快照 target_id=949361）。测光检索（2026-11-07，fsy@zcode）：仓内 external 快照（swift_bat/swiftgrbba/swift_xrt_live/mpe_greiner/uvot_grb/rssgrbag/grbsn_webtool）无测量型数据可补（仓内当前无 gcn/archive 全文库）；GCN 站内检索命中 11 篇（10 篇 subject 含 200115A + GCN 27162 正文笔误提及，全部实开，其中 9 篇含观测数据）；OpenAlex 命中 8 条（7 篇 GCN + 1 篇论文）、OpenAlex 引文闭包（6 个 GCN 记录被引 0 篇）；Crossref 20 条模糊命中无一相关；arXiv abs:\"200115A\" OR \"S200115j\" OR \"949361\" 命中 2 篇；已实开 4 篇论文全文——Anand+2020（Nat. Astron. 5,46，10.1038/s41550-020-1183-3）与 Coughlin+2020（MNRAS 497,1181，10.1093/mnras/staa1925）全文无 200115A；Sinha+2026（MNRAS 549，10.1093/mnras/stag834）Table 3 与 Abbott+2022（ApJ 928,186，10.3847/1538-4357/ac532b）Table 2 仅 GW 搜索样本表收录、无测光；SIMBAD 两 host SSL 失败（unavailable@2026-11-07）。结论：无更多可入库文献，补 1 行（DDOTI w 上限，GCN 26792）、勘误合并 1 行（GCN 26790→26818）",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "trigger_catalog",
+    "t0_note": "T0=Swift/BAT trigger 949361 触发时刻 2020-01-15T11:50:23.734140（external/swift_bat 快照 Trig_time_UTC；GCN 26771 整秒一致）；原 t0_note「t0 为 meta trigger-time（真实触发时刻）」已失真：11:55:00 实为 GCN 26790 AZT-33IK 首历元观测起点",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Becerra+2021",
+      "url": "https://doi.org/10.1093/mnras/stab2086"
+    }
+  ],
   "host_galaxy": null
 }
