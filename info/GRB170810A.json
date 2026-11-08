@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB170810A",
-  "alias": [],
-  "ra": 187.93881,
-  "dec": 3.6608,
-  "T0": "2017-08-10T22:01:41Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "BAT 767284"
+  ],
+  "ra": 187.93852,
+  "dec": 3.66084,
+  "T0": "2017-08-10T22:01:41.068460Z",
+  "T0_ref": "Swift/BAT 官方目录 Trig_time_UTC=2017-08-10T22:01:41.068460Z（external/swift_bat 快照 Trig_ID=767284）；GCN 21450 'At 22:01:41 UT' 整秒一致；XRT/MASTER/GBM 时刻互证见 comment",
+  "T0_offset": -24.332,
+  "T0_offset_ref": "Swift/BAT 目录 summary_burst_durations（external/swift_bat 快照）T100_start=-24.332 s，辐射早于自动触发；GCN 21458 精化分析 'starts at ~T-20 s' 一致",
   "Trigger_Instrument": "Swift",
   "redshift": null,
   "tag": [
@@ -16,15 +18,23 @@
   "pos_ref": "GCN 21451",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "由 GCN LLM 抽取导入（bot_created）。审核 fsy@zcode（2026-11-07）：(1) T0：原值 2017-08-10T22:01:41Z 系 bot 整秒截断，改 Swift/BAT 官方目录 Trig_time_UTC=2017-08-10T22:01:41.068460Z（external/swift_bat 快照 Trig_ID=767284，§3.2 整秒一致时以触发仪器亚秒值为准；原 t0_note『t0 为 meta trigger-time（真实触发时刻）』、t0_basis=meta_trigger 留此备查）。GCN 21450 整秒一致：'At 22:01:41 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 170810A (trigger=767284)'；互证：XRT 于 22:02:57.5 UT 开始观测（GCN 21450 '76.5 seconds after the BAT trigger'，反算 22:01:41.0）、MASTER GCN 21449 '45 sec after trigger time at 2017-08-10 22:02:26 UT'→22:01:41、GCN 21453 Fermi/GBM 触发 524095306 于 22:01:41.58 UT（GBM 分箱粒度，不采用）。BAT 目录 Trig_time_met=524095320.576 与 UTC 列差约 19.5 s（机器时换算残差，同 GRB111201A 型漂移，不采用）。(2) T0_offset=-24.332 s：Swift/BAT 目录 summary_burst_durations（external/swift_bat 快照）T100_start=-24.332 s，辐射早于自动触发；GCN 21458 BAT 精化分析 'a complex multi-peaked structure that starts at ~T-20 s and ends at ~T+180 s' 一致（约值）。(3) 定位：原 ra/dec=187.93881/3.6608 实为 GCN 21450 的 UVOT on-board 候选余辉位置（'candidate afterglow ... at RA(J2000) = 12:31:45.31 = 187.93881 DEC(J2000) = +03:39:38.9 = 3.66080 with a 90%-confidence error radius of about 1.10 arc sec'），却配 pos_error=1.7″/pos_ref=GCN 21451（XRT 增强位误差），属混串；改 GCN 21451 XRT 增强位原文 'RA, Dec = 187.93852, +3.66084'（'an uncertainty of 1.7 arcsec (radius, 90% confidence)'），pos_error_confidence=90（原文标注）。备查：GCN 21454 UVOT 初步位 187.93889/+3.66081（0.42″，90%）、GCN 21492 VLA 射电余辉位 12:31:45.346 +03:39:38.61（0.4″/坐标）、GCN 21450 初步 XRT 位 187.9389/3.6603（2.1″，90%，被增强位取代）、BAT 地面位 187.928/3.664（1.0′，GCN 21458）。(4) sub_tag=lgrb：t90=152.42±21.50 s（15-350 keV，Swift/BAT 目录快照；GCN 21458 同 152.4±21.5 s），按目录 t90 判 lgrb；GBM GCN 21453 给 T90≈137 s（50-300 keV）备查。sub_tag 增 Fermi-LAT：GCN 21452 'Fermi-LAT detection'（最高能光子 2.3 GeV，T+34 s；LAT 定位 187.5/3.33，0.53°，90%）；仓内 external/fermi_lat 快照未收录本源（快照为 2FLGC 子集）。(5) alias『BAT 767284』：external/swift_bat 快照 name_alt，GCN 21458 原文 'trigger #767284'。(6) 定位/测光检索（2026-11-07）：GCN 站内检索 10 篇通告全部逐字核对（21449-21458、21471、21492）；OpenAlex 全文检索（170810A / GRB 170810A / title.search）去重后非 GCN 天文文献 4 篇 + 1 预印本，全部实取原文核对，均为样本级提及、无可入库测光（Volnova+2021 An Acad Bras Cienc 93 e20200883 仅转引 GCN 21471；Dado&Dar 2019 PRD 99 123031、Gao+2025 ApJ 985 33、Ror+2025 MNRAS 543 2404、arXiv 2609.00684 仅名列表）；Crossref 题名检索 0、arXiv API 题录 0、SIMBAD 超时两次（unavailable）；仓内 rssgrbag/grbsn_webtool/uvot_grb/heasarc_grbcat 均无本源记录。结论：无期刊论文提供 170810A 测光，测量值均出自 GCN，新增 lc 3 行（MASTER、AbAO、VLA），articles[] 留空。(7) 本源 lc 无 X 射线行（7 行全为 UVOT），mjd 已按新 T0 全表重算（9 位小数）。红移：各来源均未给出，留空。",
+  "sub_tag": [
+    "lgrb",
+    "Fermi-LAT"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "T0=Swift/BAT 目录 Trig_time_UTC 亚秒值（fsy 2026-11-07 审核改定；原 bot 值 2017-08-10T22:01:41Z 为整秒截断）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [],
   "host_galaxy": null
