@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB140302A",
   "alias": [],
-  "ra": 253.862,
-  "dec": -12.875,
-  "T0": "2014-03-02T08:12:58Z",
-  "T0_ref": null,
+  "ra": 253.85872,
+  "dec": -12.87823,
+  "T0": "2014-03-02T08:12:58.819460Z",
+  "T0_ref": "Swift/BAT 官方目录 batgrbcat trigger 589685：Trig_time_UTC=2014-03-02T08:12:58.819460Z（仓内 external/swift_bat 快照 summary_general.txt 第 840 行，MET 415440790.528；2026-11-08 在线复核 gcn.gsfc.nasa.gov/notices_s/589685/BA/ 页 UTC=08:12:58.819460 一致）；GCN 15901（触发通告）原文 At 08:12:58 UT（整秒）；swiftgrbba 快照 08:12:58.000。亚秒以触发仪器目录为准（§3.2/§3.8）。互证：GCN 15901 XRT 起测 08:14:10.9 UT=T0+72.2 s 反算 08:12:58.7（swiftgrbba xrt_first_obs=72.15 s 反算 08:12:58.75）；GCN 15910 Fermi/GBM 触发 08:12:58.89 UT（他仪自触发、快 0.07 s，备查不采）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,13 +16,32 @@
   "pos_ref": "GCN 15907",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。T0 亚秒精化：原导入 2014-03-02T08:12:58Z（整秒、无 T0_ref），按 §3.2「亚秒以触发仪器为准」改取 Swift/BAT 官方目录 batgrbcat trigger 589685 的 2014-03-02T08:12:58.819460Z（+0.81946 s；与 GCN 15901 整秒 08:12:58、swiftgrbba 08:12:58.000 一致；2026-11-08 在线复核 BA 页 UTC=08:12:58.819460 一致）；互证：GCN 15901 XRT 起测 08:14:10.9 UT=T0+72.2 s 反算 08:12:58.7（swiftgrbba xrt_first_obs=72.15 s 反算 08:12:58.75）、GCN 15910 Fermi/GBM 触发 08:12:58.89 UT（他仪、不采）；BAT 目录 T100_start=−0.088 s （|<1 s|，不设 T0_offset）。本源 X 射线 31 行（10keV）mjd 系按旧 T0 算出，需维护者按 mjd=T0+time 机械重算（2026-10-31 裁定，只动 mjd 列）。身份：Swift/BAT trigger=589685（GCN 15901 原文）；Fermi/GBM 同暴触发 415440781/140302342（GCN 15910，GBM 定位与 Swift/XRT 位置一致）；库内无 GRB140302B 等同日源，无混淆。定位：原库 ra/dec=253.862/−12.875 实为 GCN 15908 BAT 地面精化位置（1.1 arcmin, 90% containment，catalog 快照 RA_ground=253.8582 DEC_ground=−12.8744、1.040636 arcmin 备查），与 pos_ref=GCN 15907 及 pos_error=2.3″ 不配套；现改取 GCN 15907 XRT 增强位置 253.85872, −12.87823（2.3 arcsec, radius, 90% confidence，原文明示→pos_error_confidence=90）；GCN 15902 快报增强位 253.8593, −12.8788（2.6″, 90%）、swift_xrt_live 快照 253.86008, −12.87828（2.9″）备查；GROND OT 位（GCN 15903，16:55:26.30, −12:52:42.2, 0.5″）在 GCN 15902 快报增强位误差圈内（1.8″<2.6″；对 15907 精化位 3.1″ 略超）、GCN 15965 GROND 确认变暗 → 余辉实证。sub_tag=lgrb 依 t90=98.724±11.404 s（15-350 keV，Swift/BAT 官方目录 batgrbcat，按目录 t90 判 lgrb/sgrb）；GCN 15908 精化分析 T90=87.5±11.4 s（15-350 keV）、2026-11-08 在线 BA 页 T90=87.908±10.875 s（15-350 keV）/94.08 s（50-300 keV）、Fermi/GBM 目录 t90=67.584±5.655 s（50-300 keV，external/fermi_gbm 快照 bn140302342；GCN 15910 初步 ~64 s），各口径均远超 2 s、不冲突。红移：11 篇 GCN 与 BAT 目录红移表（external/swift_bat GRBlist_redshift_BAT.txt）均无红移报道，z=null。UVOT 11 行＝GCN 15912 3σ 上限表逐值核对一致（表中数值未做银消改正 E(B-V)=0.52 Schlegel+1998 原文声明 → Gext_corr=n；UVOT photometric system=Breeveld+2011 → mag_system=Vega）；time 原导入为窗口中点的整数截断，已按 §3.8 中点/半宽重算并补 time_err；GCN 15901 的 \"typical 3-sigma upper limit has been about 19.6 mag\" 经比对同句（含同值 19.6）逐字见于 gcn/archive ≥500 篇 Swift 检测通告（全字段子串口径 574/严格单行 501，独立核查复测）→ 模板敏感度句、非本暴 FC 实测，原库由此句导入的 1 行置 discard=y 留痕（GRB130102A/GRB161004B/GRB150423A 同型先例），本 FC 曝光实测上限 white(fc) >20.5（GCN 15912）与 u(fc) >19.7（GCN 15912）已补入。GROND 2 行＝GCN 15903 r'=23.7±0.2 AB（原文显式中点 0.65 h，总曝光 1936 s → time_err=968 s）与 GCN 15965 r'>25.2 AB（起测 3 月 4 日 07:18 UT、总曝光 1.2 h → 中点 07:54 UT，time_err=2160 s），均未做银消改正（原文声明）。MITSuME 3 行＝GCN 15911 3σ 上限（MID-UT 19:55:41 UT 绝对时刻、T-EXP 2400 s → time_err=1200 s；GSC 2.3 定标、原文未声明星等系统 → mag_system 留空）。TAROT 2 行＝GCN 16060 上限（窗口 t0+36.5–96.5 s Rlim=15.9、t0+140–200 s Rlim=19.0；USNO-B1 定标、原文未声明系统）。测光检索（2026-11-08）：仓内 gcn/archive 全文检索「140302A」「589685」共 14 篇命中、属本暴 11 篇（15901/15902/15903/15907/15908/15909/15910/15911/15912/15965/16060，逐篇读过；16414/36220/38878 为他暴假阳性），光学/UV 数值仅 15901（模板句）15903（GROND 探测）15911（MITSuME 上限）15912（UVOT 上限表）15965（GROND 上限）16060（TAROT 上限）；external/rssgrbag 0 命中、grbsn_webtool 无该事件、uvot_grb 无、swiftgrbba/swift_xrt_live/heasarc_grbcat/mpe_greiner 仅目录级参数无测光表；SciX 元数据检索 \"GRB 140302A\" 11 命中（全为上述 GCN＋GCN Report 461.1）、full-text 检索另见 2024PASJ...76..841S Shen+2024 FRB 搜索样本（仅用 Swift/XRT X 射线光变、无本暴光学测光；full-text 计数口径未复核，删）、full-text \"589685\" 25 命中全为无关假阳性；GCN Report 461.1 官网 404 未取得（其内容为通告汇编）；发现的新 X 射线数据按契约不入库。结论：光学/UV 测光＝GCN 15912 的 11 条 UVOT 上限＋GCN 15903 GROND 探测 1 行＋GCN 15911 MITSuME 上限 3 行＋GCN 15965 GROND 上限 1 行＋GCN 16060 TAROT 上限 2 行；本 PR 修订 15 行、新增 4 行、删 0 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
