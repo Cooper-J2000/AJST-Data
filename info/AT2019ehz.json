@@ -7,26 +7,31 @@
   "ra": 212.4245,
   "dec": 55.491139,
   "T0": "2019-04-29T06:50:23Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TNS Discovery Date（GaiaAlerts 发现，2019TNSTR.673....1D；GCN 24354 同一瞬现的 TCB 记法 2019-04-29T06:51:22＝UTC+58.9 s）＝TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date；精度 1 s",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "Gaia",
   "redshift": 0.074,
   "tag": [
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TNS 坐标（J2000，2026-11-06 实取：14:09:41.880 +55:29:28.10）；TDECat（Langis+2026）同",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告 #4952（van Velzen，2019TNSCR1737....1V，Ca II H,K 吸收线）；TDECat（Langis+2026, 2026A&A...707A.171L）z=0.074",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补。\n2026-11-06 wa1kmoon@zcode 完整审核，补光变 360 行。身份：AT2019ehz=ZTF19aarioci=Gaia19bpt；TNS 对象页 www.wis-tns.org/object/2019ehz 2026-11-06 实取 HTTP 200：TDE 2019ehz，RA/DEC(2000) 14:09:41.880 +55:29:28.10＝212.4245 +55.491139（与 info 一致），Type=TDE（备注栏：前缀 2025-01-26 由 AT 改判 TDE），z=0.074，Discovery Date 2019-04-29 06:50:23（GaiaAlerts，G-Gaia 18.49 ABMag）；GCN 24354（Kostrzewa-Rutkowska+2019，S190425z 的 Gaia 候选表）：Gaia19bpt/AT2019ehz 2019-04-29T06:51:22[TCB]、212.42448 +55.49114、18.49，注「galaxy SDSS J140941.88+552928.1 brightens by 2 mag」；GCN 24356（Andreoni & Bellm 2019）：ZTF 存档在该位置检出 ZTF19aarioci，2019-04-21 首检 g≈19.8、公众巡天 2019-04-23 起，因早于 S190425z 触发而排除成协；ATel 12789（Gezari+2019 分类通告）：SEDM 谱（2019-05-02）与 LT/SPRAT（2019-05-19）蓝而基本无特征，Swift 2019-05-17 uvw2=17.62±0.06 mag，判为 TDE——该 uvw2 单点与 van Velzen+2021 UVW2 机读行同历元且 ATel 未声明星等系统，未单独入库；TNS 分类报告 #4952（van Velzen，2019TNSCR1737....1V）：TDE、z=0.074（Ca II H,K）；TDECat VizieR J/A+A/707/A171（tdecat 表，2026-11-06 实取）：AT 2019ehz|ZTF19aarioci|Gaia19bpt|14 09 41.880 +55 29 28.100|z=0.074|宿主 SDSS J140941.88+552928.1|Gaia19bpt|18.49 G-Gaia|2019-04-29T06:50:23，与 info 全部一致。\nT0 口径裁定：保留 2019-04-29T06:50:23Z＝TNS Discovery Date（GaiaAlerts 发现，UTC，精度 1 s）；对照库内 SN/FBOT/AT 已审源惯例（发现/首测时刻）。更早的 ZTF 检出（TNS AT 报告 2019-04-23 05:54:08 g=19.81、GCN 24356 存档首检 2019-04-21）仅备查，T0 未改——若维护者裁定改用首测历元，全表 time/mjd 需随 T0 平移。峰值参数备查：van Velzen+2021 机读文件头 t_peak=58612.36 MJD，其表 tab:lcfit 拟合 L_g=10^43.32 erg/s、T=10^4.34 K、t_peak(g)=58612.7(+0.6/−0.7) MJD；Hammerstein+2023 拟合 t_peak=58614.21(+0.54/−0.62) MJD；Gaia G 最亮 18.18（2019-05-21）；X 射线：Swift/XRT 三次快速耀发、LX 峰值≈5×10^44 erg/s（van Velzen+2021，X 射线行不入库）。\n红移 0.074：光谱红移（TNS 分类报告 van Velzen 2019TNSCR1737....1V，Ca II H,K 吸收线；TDECat 同值）；早期 ATel 12789 曾估 z≈0.12（SDSS photo-z=0.12±0.06），后被谱线红移取代，备查。\ntag=tde：TNS 对象类型＋TDECat＋Hammerstein+2023（ZTF-I 30 TDE 完整样本，谱分类 TDE-H）；sub_tag：TDE-H 在 tags.json 无对应词条，留空待决。\npos_error：来源未给定位误差（TNS/GCN 只给坐标），留 null；来源未标注置信水平。\n宿主：SDSS J140941.88+552928.1（TNS 备注栏、GCN 24354、TDECat HostName 三处一致；暂现体位于核、位置一致、z 自洽），建 host_galaxy；van Velzen+2021 表 tab:host：log M*=9.74(+0.08/−0.09) M☉、E(B−V)=0.09(+0.21/−0.07)、age=6.83(+2.23/−2.07) Gyr。\n测光检索（2026-11-06）：仓内 gcn/archive 全文检索 2019ehz/Gaia19bpt/aarioci → 命中 2 篇（GCN 24354/24356，见上）；external/rssgrbag、external/grbsn_webtool 0 命中；arXiv API（all:）命中 1 篇（Kantzas+2026 arXiv:2610.28182，理论文，无可入库测光表）；OpenAlex 全文命中 11 篇（核心 van Velzen+2021 ApJ 908,4、Hammerstein+2023 ApJ 942,9，另有 Andreoni+2019 GROWTH ApJL 885,L19、Hinkle+2020 ApJL 894,L10、Hinkle+2021 ApJ 910,83 与综述转引；ADS/SciX 无 token 未走，检索由 OpenAlex+arXiv 覆盖）；Crossref 0 命中。TNS 光度表实取 8 个独立测值（2 Gaia＋3 g＋3 r；同曝光多报告行 2 对已按 §3.4 去重）；Gaia Alerts lightcurve.csv 实取 165 行→53 个数值行入库（103 行 null 无值、9 行 untrusted 剔除）；van Velzen+2021 机读表 Brienne.dat（arXiv v1 源码包 data/，IOP VoR 出版商机读表不可达，见 audit/unverified.tsv）实取 299 个探测行入库（ZTF 强制测光 g 94/r 83、Swift/UVOT UVW2 30/UVW1 26/U 26/UVM2 23/B 9/V 2、LT/IO:O g 3/r 3），文件另含 day −29.8..−17.7 的 143 个基线历元（flux=0±err、共 1098 行、每历元重复 13–14 行为主，系基线改正占位行）未入库；文件另含 Swift/XRT 0.3–10 keV 光变（Brienne_lx_Swift*.dat）属 X 射线，不入库。共补 360 行（新建 lc/AT2019ehz.csv）。；核查修正（2026-11-07，独立核查发现）：van Velzen+2021 机读表文件头明示 time 系 TDE rest frame，原入库 299 行历元漏乘 (1+z=1.074)（最大偏 8.09 d）——已全部按 mjd=58612.36+day×1.074 重算，TNS 四曝光交叉验证 rest 系成立；Gaia 行 TCB−UTC 锚定与 IAU 官方 89.9 s 差 ~31 s 已旁注留裁",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "G-Gaia",
     "discovery_mag": "18.49",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-06"
+    }
   },
   "articles": [
     {
@@ -34,7 +39,26 @@
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+    },
+    {
+      "name": "van Velzen+2021",
+      "source": "wa1kmoon@zcode",
+      "title": "Seventeen Tidal Disruption Events from the First Half of ZTF Survey Observations: Entering a New Era of Population Studies",
+      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908....4V"
+    },
+    {
+      "name": "Hammerstein+2023",
+      "source": "wa1kmoon@zcode",
+      "title": "The Final Season Reimagined: 30 Tidal Disruption Events from the ZTF-I Survey",
+      "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...942....9H"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 212.4245,
+    "dec": 55.491139,
+    "redshift": 0.074,
+    "redshift_type": "spec",
+    "comment": "宿主 SDSS J140941.88+552928.1（TNS 备注栏、GCN 24354、TDECat HostName 一致）；坐标即宿主名坐标（与暂现体位置一致，暂现体位于星系核）。z=0.074 来自暂现体谱 Ca II H,K 吸收线（TNS 分类报告 van Velzen 2019TNSCR1737....1V）。van Velzen+2021 表 tab:host：log M*=9.74(+0.08/−0.09) M☉、u−r=2.06、E(B−V)=0.09(+0.21/−0.07)、age=6.83(+2.23/−2.07) Gyr、log(Z/Z☉)=−0.79。",
+    "source": "TNS/GCN 24354/TDECat（Langis+2026）；van Velzen+2021（2021ApJ...908....4V）"
+  }
 }
