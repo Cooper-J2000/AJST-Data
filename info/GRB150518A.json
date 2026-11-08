@@ -1,35 +1,48 @@
 {
   "transient_id": "GRB150518A",
   "alias": [],
-  "ra": 234.208333,
-  "dec": 16.266667,
+  "ra": 234.2006,
+  "dec": 16.3291,
   "T0": "2015-05-18T21:42:14Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 17825",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "MAXI",
+  "Trigger_Instrument": "MAXI/GSC",
   "redshift": 0.256,
   "tag": [
     "grb"
   ],
   "pos_error": 3.8,
   "pos_ref": "GCN 17827",
-  "redshift_type": null,
+  "redshift_type": "spec-host",
   "redshift_ref": "GCN 17832",
-  "comment": null,
+  "comment": "T0=MAXI/GSC 触发时刻 2015-05-18 21:42:14 UT（GCN 17825 原文；external/swiftgrbba 快照 trigger_time 同值互证，2026-11-06 取数；GCN 17833 仅更正 GCN 17825 中前次扫过时刻 21:39 的笔误为 20:09 UT，不涉触发时刻）。Konus-Wind 于 MAXI 触发前约 15 min 在等待模式记录到 ~250 s 软伽马暴并认为属本暴主阶段（GCN 17837）；GCN 17860 指出若该 KW 探测为主暴则 duration>1000 s、可归 ultra-long——KW 起点仅有约 15 分钟精度且关联为建议，T0 维持触发时刻、不写 T0_offset。sub_tag=lgrb 依据：KW 等待模式暴持续 ~250 s（GCN 17837）+ GCN 17859 称 soft-long GRB，按通告时长判 lgrb；无目录 t90 值；来源中 ultra-long 均为条件表述，保守取 lgrb。定位：ra/dec 取 GCN 17827 Swift-XRT 余辉定位 234.2006,+16.3291、3.8 arcsec（radius, 90% confidence，原文明示→pos_error_confidence=90）；原库坐标 234.208333,+16.266667 来自 external/mpe_greiner 快照（15h36m50s +16d16m，err 60 arcsec，仪器 MAXI），与原 pos_ref=GCN 17827 不符，已改。备查：UKSSDC XRT-UVOT enhanced 定位 15:36:48.25 +16:19:47.3（err 2.2 arcsec，GCN 17829 转述）；VLA 6.0 GHz 定位 15:36:48.25 +16:19:46.82±0.01 arcsec（GCN 17859），一致。宿主候选：SDSS J153648.25+161946.9，X-shooter 光谱 z=0.256（[O II]3727、[O III]4957,5007、[N II]、[S II]、Balmer 发射线，GCN 17832；GCN 标题称 likely host galaxy，未定论故不建 host_galaxy，redshift_type=spec-host）；GCN 17903 报 6 月初 host+SN 再增亮。测光检索（2026-11-06）：仓内 gcn/archive 全文命中 22 篇（17825-17841、17859、17860、17861、17903，另 GCN 22194 系 GRB 171205A 宿主论文、正文仅提及 150518A 无数值；其中 13 篇含光学/射电数值，已逐行核对入库/否证）；external/rssgrbag 无记录（Chandra & Frail 2012 早于本暴）；external/grbsn_webtool/SourceData/GRB150518A 仅 readme 无数据；external/mpe_greiner、external/swiftgrbba 用于身份/T0/坐标互证；ADS（abs:\"150518A\" 与 \"GRB 150518A\"，命中 24 条）= 同一批 GCN + Ershova+2020 + 2 篇 AAS 会议摘要（无数据表）；Ershova+2020（ARep 64,126，VoR PDF 已核）Table 20 本暴行 m_OT=17.5 @15:36:53.67 +16:19:36.5 经与 GCN 17838 核对为 MASTER-Kislovodsk 视场内移动天体（MPC 2010 KL61，视差效应，在 XRT 误差框外），否证不入库；其首帧上限 W 18.5(180) 与库内 Kislovodsk 行重复，无新增行。本暴无 GCN 撤回记录（21 篇通告中仅 GCN 17833 为 MAXI 勘误、不涉数据值）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
+  },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {{Dainotti}, M.~G. and {De Simone}, B. and {Mohideen Malik}, R.~F. and {Pasumarti}, V. and {Levine}, D. and {Saha}, N. and {Gendre}, B. and {Kido}, D. and {Watson}, A.~M. and {Becerra}, R.~L. and {Belkin}, S. and {Desai}, S. and {Pedreira do E.~S.}, A.~C.~C. and {Das}, U. and {Li}, L. and {Oates}, S.~R. and {Cenko}, S.~B. and {Pozanenko}, A. and {Volnova}, A. and {Hu}, Y.-D. and {Castro-Tirado}, A.~J. and {Orange}, N.~B. and {Moriya}, T.~J. and {Fraija}, N. and {Niino}, Y. and {Rinaldi}, E. and {Butler}, N.~R. and {Gonz{\\'a}lez}, J. d. J.~G. and {Kutyrev}, A.~S. and {Lee}, W.~H. and {Prochaska}, X. and {Ramirez-Ruiz}, E. and {Richer}, M. and {Siegel}, M.~H. and {Misra}, K. and {Rossi}, A. and {Lopresti}, C. and {Quadri}, U. and {Strabla}, L. and {Ruocco}, N. and {Leonini}, S. and {Conti}, M. and {Rosi}, P. and {Ramirez}, L.~M.~T. and {Zola}, S. and {Jindal}, I. and {Kumar}, R. and {Chan}, L. and {Fuentes}, M. and {Lambiase}, G. and {Kalinowski}, K.~K. and {Jamal}, W.},\n        title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n      journal = {\\mnras},\n         year = 2024,\n        month = oct,\n       volume = {533},\n       number = {4},\n        pages = {4023-4043},\n          doi = {10.1093/mnras/stae1484},\narchivePrefix = {arXiv},\n       eprint = {2405.02263},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
+      "source": "Rusty-Harpoon@zcode",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "url": "https://doi.org/10.1093/mnras/stae1484"
+    },
+    {
+      "bibtex": "@ARTICLE{2020ARep...64..126E,\n       author = {{Ershova}, O.~A. and {Lipunov}, V.~M. and {Gorbovskoy}, E.~S. and {Tyurina}, N.~V. and {Kornilov}, V.~G. and {Zimnukhov}, D.~S. and {Gabovich}, A. and {Gress}, O.~A. and {Budnev}, N.~M. and {Yurkov}, V.~V. and {Vladimirov}, V.~V. and {Kuznetsov}, A.~S. and {Balanutsa}, P.~V. and {Rebolo}, R. and {Serra-Ricart}, M. and {Buckley}, D. and {Podesta}, R. and {Levato}, H. and {Lopez}, C. and {Podesta}, F. and {Francile}, C. and {Mallamaci}, C. and {Yazev}, S.~A. and {Vlasenko}, D.~M. and {Tlatov}, A. and {Senik}, V. and {Grinshpun}, V. and {Chasovnikov}, A. and {Topolev}, V. and {Pozdnyakov}, A. and {Zhirkov}, K. and {Kuvshinov}, D. and {Balakin}, F.},\n        title = \"{Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University}\",\n      journal = {Astronomy Reports},\n         year = 2020,\n        month = feb,\n       volume = {64},\n       number = {2},\n        pages = {126-158},\n          doi = {10.1134/S1063772920020018},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2020ARep...64..126E},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "name": "Ershova+2020",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "url": "https://doi.org/10.1134/S1063772920020018"
     }
   ],
   "host_galaxy": null
