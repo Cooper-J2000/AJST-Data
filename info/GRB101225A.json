@@ -1,29 +1,30 @@
 {
   "transient_id": "GRB101225A",
-  "alias": [],
-  "ra": 0.233333,
-  "dec": 44.6,
-  "T0": "2010-12-25T18:37:45Z",
-  "T0_ref": null,
+  "alias": [
+    "Christmas burst"
+  ],
+  "ra": 0.19778,
+  "dec": 44.60027,
+  "T0": "2010-12-25T18:37:45.500280Z",
+  "T0_ref": "Swift/BAT 官方目录 Trig_time_UTC（external/swift_bat summary_general、external/swift_grb HEASARC swiftgrb 同值，MET 314995072.000）；GCN 11493 整秒 18:37:45 UT 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 0.33,
+  "redshift": 0.847,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.4,
+  "pos_ref": "GCN 11497",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Levan+2014 (2014ApJ...781...13L)",
+  "comment": "T0=2010-12-25T18:37:45.500280Z（Swift/BAT 目录，trigger=441015；bot 原值 18:37:45Z 缺亚秒，全表 mjd 已按 T0+time 重算、UT 锚行 time=UT−T0 重推，XRT 1272 行按 2026-10-31 裁定仅机械重算 mjd）。身份：GRB101225A = Swift trigger 441015（GCN 11493），同日无 101225B/C 干扰（gcn/archive 全文 33 篇命中均为本源/441015）。红移链：GCN 11501 X-ray 谱试探 z=0.07(+0.13/−0.04,90%)、UVOT UVW2 探测限 z<1.4 → GCN 11522 Keck z=0.40 → GCN 11563 撤回（宇宙线+天光线）→ GCN 11642 Hα z~0 说 → GCN 11819 复析弱化 → Thöne+2011(Nature 480,72) SED/X-ray 限 z≈0.33(99%<0.5) → Levan+2014 宿主发射线 z=0.847（spec-host，采纳；Minaev+2020 目录同值）。定位链：GCN 11493 BAT 机载位 (0.234,+44.602) 3′/90%（bot 原值）→ GCN 11497 XRT 增强位 RA=0.19778 Dec=+44.60027 1.4″/90%（采纳）；swift_xrt_live 快照 0.197917/+44.600667 0.7″ 备查。T90=1088±20 s（15-350 keV，GCN 11500；swift_grb 目录同值）→ sub_tag UL（swift_bat 超长暴表收录）；Levan+2014 晚期变平/增亮「may be indicative of underlying SNe」→ SN-candidate；原 sub_tag XRR 无来源支持已删。alias「Christmas burst」：GCN 11501/11568/11770 标题及 Thöne+2011/Campana+2011 原文用名。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 33 篇（101225A/441015），其中 15 篇含测光/限值，已逐篇核对；rssgrbag 无记录；grbsn_webtool 5 文件（Levan+2014 表×2 及其 Master 汇总、Thöne SI Table 2 转载、XRT lc）全部回核。外部：Thöne+2011 Nature VoR 补充材料（static-content.springer.com 下载，SI Table 2 全 73 行逐值核）、Campana+2011 Nature VoR 补充材料（SI Table 4 TNG 7 行逐值核）、Levan+2014 ApJ VoR（Table 5/7 逐值核）、Roming+2017 noc-db FITS（MAST 下载 58 行逐值核）；新增 GCN 11751 底片暴前限值 10 行、GCN 11550 7.9GHz 限值 1 行；GCN 11642/11819 无可入库数值。Dainotti+2024 转引链 77 行确证重复已删、2 行 discard=y（CAHA/CQUEAN/WHT 初值被 VoR 取代，逐条回核 GCN/VoR 原文）；grbsn_webtool 空 ref 残留 21 行（曝光起点口径、mjd 与 time 自相矛盾）确证重复已删；GCN11503 初值 3 行 discard=y；GCN11508 bot 伪锚行 2 行（19735 s 无出处锚、55.2h 值实为转引 GCN 11506 P60）已删；Campana+2011 SI Table 5 系 GCN 值汇编且部分 ref 编号有误（ref 13/14 行不可溯源）未入库。ADS/SciX API 实测 HTTP 401（无 token），以 arXiv/Nature VoR/MAST 直接下载完成回退检索，通道级行已登记 audit/unverified.tsv（pr=974）。pos_error_confidence=90 取自 GCN 11497 原文（radius, 90% confidence）。;核查修正(2026-11-07):GCN11508 自差 200s→0.2s、Levan 行不可溯「03:24 UT」改 GCN 11502 通报值、GCN11751 行 comment 口径措辞更正；全表按 mjd 稳定重排（核查指 22 处局部乱序）",
   "sub_tag": [
     "UL",
-    "XRR",
     "SN-candidate"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -59,7 +60,12 @@
         "v": 3790.0
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
@@ -131,7 +137,18 @@
       "source": "bot",
       "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
       "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://ui.adsabs.harvard.edu/abs/2017ApJS..228...13R",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "wa1kmoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.847,
+    "redshift_type": "spec-host",
+    "source": "Levan+2014 (2014ApJ...781...13L)",
+    "comment": "宿主为暗弱蓝矮星系 MB≈−16.3、地面与 HST 均未分辨（半径<600 pc，z=0.847）；GRB 位置距宿主核 (0.016±0.020)″（Levan+2014 §5.1）；原文未发表独立宿主坐标，故不填 ra/dec"
+  }
 }
