@@ -3,27 +3,27 @@
   "alias": [
     "GRB080413"
   ],
-  "ra": 287.291667,
-  "dec": -27.683333,
-  "T0": "2008-04-13T02:54:18.648000Z",
-  "T0_ref": null,
+  "ra": 287.29829,
+  "dec": -27.67807,
+  "T0": "2008-04-13T02:54:19.302440Z",
+  "T0_ref": "Swift/BAT trigger 309096 触发时刻：batgrbproduct 官方页（gcn.gsfc.nasa.gov/notices_s/309096/BA/，GCN 7604 自引）「BAT Trigger Time 229748062.016 s MET → UTC 2008-04-13T02:54:19.302440（TDRSS position message）」；batgrbcat summary_general.txt 与 HEASARC SWIFTGRB 同值。互证：GCN 7594（XRT began 02:55:20.0 UT = 触发后 60.7 s）；Yuan+2008, AIP 1065, 103（02:54:19.3 UT）。原值 02:54:18.648 唯一出处为 Suzaku/WAM GCN 7624 转引（与官方值差 0.654 s，系缺 UTCF 改正），已废弃",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 2.43,
+  "redshift": 2.433,
   "tag": [
     "grb"
   ],
   "pos_error": 2.3,
   "pos_ref": "GCN 7596",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 7602（VLT/UVES 吸收谱 z=2.433）；Kann et al. 2010, ApJ, 720, 1513（z=2.4330）；GCN 7616（Gemini/GMOS z=2.43 证实）",
+  "comment": "审核（wa1kmoon@zcode，2026-11-07）。①身份：GRB080413A=Swift/BAT trigger 309096（GCN 7594/7604）；同日 GRB080413B=trigger 309111（T0=08:51:12.5 UT，RA 326.14, Dec −19.98），两源 GCN 命中集互不相交（A：7593/7594/7595/7596/7597/7602/7603/7604/7605/7607/7609/7614/7616/7622/7624/7625/7630；B：7598/7599/7600/7601/7606/7608/7610/7611/7612/7615/7617/7623/7626/7629），lc 全部引用通告均属 309096 且坐标/T0 与 A 一致，无跨源污染。②T0：采纳触发仪器官方目录亚秒 02:54:19.302440（详见 T0_ref）；原值 02:54:18.648 与官方差 0.654 s（≥60 ms，PR 报告）。全表 time/mjd 已按新 T0 重算：UT 锚行 time=UT−T0（TAROT 窗口中点按其 t0=通告触发 02:54:19 UT、MOA/ANDICAM/VLA 按原文绝对 UT、ROTSE 按 5 s 曝光中点）；XRT Burst Analyser 行 time 原即相对 BAT 触发、仅 mjd 机械重算；uvotgrb HLSP noc-db 行 TIME 原以 管线 naive MET 历元（等效 UTC 02:54:16.286；SGA 档案实存 02:54:19.302440 与官方一致，机制系管线把 GCN 整秒触发记为 229748059.000=229748062.016−3.016，经支持文件 sw00309096000sao.fits TRIGTIME/UTCFINIT 佐证）（早于官方 T0 3.016 s）为历元，已平移 −3.016 s（经 GCN 7607 T_Mid 与 noc-db 窗口中点、GCN 7594 FC 起点 76 s 三方互证）。③定位：原 ra/dec=287.291667,−27.683333 为 MPE Greiner 表粗位（19h09m10s −27°41′，误差 3′），与 pos_ref 不符；改为 GCN 7596 XRT enhanced 287.29829,−27.67807 ±2.3″（radius, 90% containment，故 pos_error_confidence=90）。④红移：2.43→2.433，光谱型：VLT/UVES 余辉吸收谱（Lyα+SII/SiII/CII/FeII/CIV/SiIV，GCN 7602「very likely the redshift」）；Gemini/GMOS 吸收谱证实 z=2.43（GCN 7616）；Kann+2010 记 z=2.4330。未检索到宿主星系发射线光谱或确定宿主的文献（Kann+2010 光变拟合亦注明 no host galaxy），host_galaxy 不建。⑤t90=46.36±0.48 s（Swift/BAT 目录 batgrbcat refined，15–350 keV；GCN 7604 T90=46±1 s 互证），按目录 t90 判 lgrb；原 sub_tag=XRR 在全部 17 篇相关 GCN 与 Konus（Type II）/Minaev（Type II）目录中均无出处，已移除（PR 待决报告）。⑥lc 分组处置（143→137 行）：X 射线 44 行（band=10keV）未审未动，仅 mjd 随 T0 机械重算；uvotgrb HLSP noc-db 32 行逐值核对（MAST FITS 实下载 hlsp_uvotgrb_…_noc-db.fits），time_err=EXPOSURE/2 补齐、reference 升级为 HLSP 形式、历元平移 −3.016 s；GCN 7607 UVOT 表补 v@268s、v@5888s 两行；删除 Dainotti 转引重复 8 行（TAROT×4、UVOT FC 快估×1、Liverpool×1、Faulkes×2，数值与 GCN 原发一致）；ROTSE 12.8 mag 为探测非上限（原 upperlimit=y 系 bot 错标），曝光中点按 5 s 曝光改算；REM H=15.2 为探测非上限；Kann+2010 Table 1 SMARTS/ANDICAM 30 行逐值核对全部相符（含上限旗标）；TAROT/MOA/ANDICAM/Liverpool/Faulkes/VLA 时间按原文窗口或绝对 UT 重推。noc-db 与 GCN 7607 为同曝光不同再处理，值并存不去重（white@5478：18.59 vs 19.74；u@5068：18.47 vs 19.05；GRB090510A 先例）。⑦测光检索留证（2026-11-07）：仓内 gcn/archive 45 889 篇全文检索「080413」命中 33 篇，A 源 17 篇全文逐篇核对（测光通告 10 篇已入库/核对，BOOTES 7603 无数值，7630 为联合谱无光学）；external/rssgrbag 无该源（Chandra & Frail 2012 未收录）、grbsn_webtool 无该源；外部：ADS/SciX 无 token（HTTP 401，audit/unverified.tsv 通道级登记 search-limited，不作「无文献」结论）；OpenAlex 命中 81 条、arXiv API 核对：Kann+2010（ApJ 720,1513，VoR 整站反爬不可得，以 arXiv 0712.2186 Table 1 逐值核对并登记 unverified.tsv）、Roming+2017（ApJS 228,13，HLSP noc-db 已核对）、Yuan+2008（AIP 1065,103：仅图无表，未取数，用于 ROTSE 曝光时长与触发时刻互证）、BOOTES 2016 综述（无 080413A 数据），其余命中为样本/统计类未含新测光表；CDS-VizieR 未检（网络受限）；未发现 GROND 对 080413A 的发表测光（GROND GCN 7599 属 080413B）。结论：新增 2 行、删除转引 8 行、修改 60 余行，未发现可新增的其他文献测光表。;核查修正(2026-11-07):archive 篇数 45563→45889、noc-db 历元偏移成因标注勘误（改正量 −3.016 s 本身经三方复现正确）",
   "sub_tag": [
-    "XRR"
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -80,7 +80,12 @@
         "v": 0.47
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
   "articles": [
     {
@@ -110,6 +115,24 @@
       "source": "bot",
       "title": "New results on the gamma-ray burst variability-luminosity relation",
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract"
+    },
+    {
+      "name": "Roming+2017",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Kann+2010",
+      "title": "The Afterglows of Swift-Era Gamma-Ray Bursts. I. Comparing Pre-Swift and Swift-Era Long/Soft (Type II) GRB Optical Afterglows",
+      "url": "https://doi.org/10.1088/0004-637X/720/2/1513",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Yuan+2008",
+      "title": "Prompt optical observations of GRB 080330 and GRB 080413A (AIP Conf. Proc. 1065, 103)",
+      "url": "https://doi.org/10.1063/1.3027891",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
