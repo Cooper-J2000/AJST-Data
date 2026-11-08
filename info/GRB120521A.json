@@ -1,10 +1,10 @@
 {
   "transient_id": "GRB120521A",
   "alias": [],
-  "ra": 148.692,
-  "dec": -49.422,
+  "ra": 148.72462,
+  "dec": -49.41733,
   "T0": "2012-05-21T05:59:42Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 13302",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +16,26 @@
   "pos_ref": "GCN 13304",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份核验：Swift/BAT trigger 522578，T0=2012-05-21 05:59:42 UT（GCN 13302；HEASARC swift_grb / swiftgrbba 目录同值）；同日 GRB120521B（Faulkes 误标勘误见 GCN 13308）、GRB120521C（BAT 522656，z≈5.93）与本源无关。坐标原存 BAT 地面定位（GCN 13310：148.692, -49.422，1.7′，90%）但 pos_ref 却指 GCN 13304 的 XRT 增强定位，属导入错配；已改为 XRT 增强定位 148.72462, -49.41733（1.9″，90% 置信，GCN 13304；HEASARC swift_grb 目录同值 148.72464, -49.41734）。T0 取整秒（GCN 13302「At 05:59:42 UT」、swift_grb/swiftgrbba 目录整秒一致；swift_bat 快照 Trig_time_UTC=05:59:42.9377 与整秒差 ~0.94 s 存在冲突——保守取各源一致的整秒值，不自行采用单一来源亚秒；核查修正 2026-11-07 如实留证）。sub_tag=sgrb：t90=0.45±0.08 s（15-350 keV，GCN 13310 Swift/BAT 精化分析），按通告 t90 判 lgrb/sgrb；GCN 13302 标题亦称 short burst；Becerra+2023 表 3 转引 T90=0.51±0.14 s（口径不同，同为短暴）。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 10 篇（13302/13303/13304/13308/13310/13312/13326/13327/13335/13338，全部读毕，其中 13308 系 GRB120521B 勘误）；external/rssgrbag 0 命中、grbsn_webtool 无此事件；swift_bat/swiftgrbba/swift_grb/uvot_grb/mpe_greiner/heasarc_grbcat 目录互证无新增测光。外部：OpenAlex 检索 12 命中（9 篇本源 GCN + GCN Report 414.1 + Becerra+2023 MNRAS 525, 3262 等 3 篇研究文献）；Becerra+2023 经 arXiv 2308.07882 全文核对：本源仅表 3 汇总行（E(B-V)、T90 转引），无测光；文献级卡 audit/leads/papers/becerra2023.md 已存在，无新增。新增 3 行：ATCA 34 GHz 3σ 上限（GCN 13338）与 UVOT white_FC、u_FC 上限（GCN 13312 表中 bot 导入漏掉的 2 行）。TAROT/UVOT/GROND 各行 time 已由窗口起点改为窗口中点、补 time_err=半宽、mjd 重算（§3.8），逐行 comment 注明。X 射线行（10keV）5 行未审不动；T0 未变，其 mjd 无需重算。ADS token 实测 401（无凭据），检索通道受限已登记 audit/unverified.tsv * 行 search-limited。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
+  },
+  "articles": [
+    {
+      "name": "Becerra+2023",
+      "url": "https://doi.org/10.1093/mnras/stad2513",
+      "title": "Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, COATLI, and RATIR observations",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
