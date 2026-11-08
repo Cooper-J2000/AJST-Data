@@ -1,26 +1,34 @@
 {
   "transient_id": "GRB070311",
   "alias": [],
-  "ra": 87.5411,
-  "dec": 3.3748,
+  "ra": 87.53446,
+  "dec": 3.37497,
   "T0": "2007-03-11T01:52:50Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "T0_ref": "GCN 6189",
+  "T0_offset": -45,
+  "T0_offset_ref": "Guidorzi+2007（A&A 474 793, doi:10.1051/0004-6361:20078254）",
+  "Trigger_Instrument": "INTEGRAL/IBAS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 6192",
+  "pos_error": 1.5,
+  "pos_ref": "UKSSDC Swift Burst Analyser (Evans+2007,2009)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-06）。①触发仪器修正：原库写 Swift/BAT，实为 INTEGRAL/IBAS（IBIS/ISGRI）触发——GCN 6189（01:52:50 UT 触发，定位 87.5411/+3.3748、误差 2.5'、90% c.l.）；Guidorzi+2007 §2（'Swift/BAT was pointing in almost the opposite direction'）；GCN Report 41.1（'no BAT observations were made'）；仓内 external/swift_bat 快照亦无本源。②T0=2007-03-11T01:52:50Z=IBAS 触发时刻（GCN 6189，与仓内 swiftgrbba 快照 trigger_time 一致）；备查：uvot_grb/SGA 快照 TRIG_UT=01:52:54、GCN Report 41.1 误写 01:52:35。T0_offset=−45 s：γ 轮廓起始约在触发前 45 s（Guidorzi+2007 §3.1 对 Sazonov+2007 INTEGRAL 18–200 keV 轮廓的判读；该文模型另推爆炸时刻较 onset 再早 19.0±2.4 s，属模型量仅备查）。③位置：ra/dec 改为 UKSSDC XRT 精化位 87.53446/+3.37497、误差 1.5 arcsec（external/swiftgrbba 快照 xrt_ra/xrt_dec/xrt_error_radius，其 README 注明 90% 置信；uvot_grb/SGA 快照同位同误差）；原库 87.5411/3.3748 实为 GCN 6189 的 IBAS 位置而 pos_ref 却指 GCN 6192，系错配，已改；GCN 6192 早期精化位 87.5351/+3.3750（3.8 arcsec，90% confidence）备查。④sub_tag=lgrb：t90=50.0 s（uvot_grb/SGA 快照 t90 字段，T90_REF=GCN 6189 'lasting about 50 s'；GCN Report 41.1 同 '∼50 s'；Sazonov+2007 单峰 ∼40 s），按目录 t90 判 lgrb。⑤红移无测量（Guidorzi+2007 明言 unknown redshift），维持 null；宿主仅候选（GCN 6245 报 OT 西 1.8'' 处疑似暗宿主 R2=25.5±0.2；GCN 6219 深图未见明显宿主），不建 host_galaxy。⑥测光检索（2026-11-06）：仓内 gcn/archive 命中 22 篇含 070311（GCN 6189–6245 等，全文逐篇读），光学/UV/射电 23 行逐行对原文核对并修正（UVOT 6 行 time 由窗口中点重算；RAPTOR/FRAM/REM-GCN/PAIRITEL/SARA 行时间修正；MDM×5/MITSuME×3/Loiano/TLS/VLA 行核实并补 time_err/说明）；external/rssgrbag 无光变记录（lightcurve.jsonl 0 命中；normalized.jsonl 有本源目录条目：t90=50.0、instrument_code=I，与触发仪器 INTEGRAL 互证）；external/swift_bat 无本源；external/mpe_greiner 仅粗位置。ADS/SciX 检索 'GRB 070311' 命中 29 条：研究文章 Guidorzi+2007（REM/CAFOS 33 行经 CDS J/A+A/474/793 table1 机读表全量入库；T1 时间历元经 REM 于 01:53:45 UT=触发后 55 s 起始观测与首行 59 s 相洽考据为触发历元，文内/图轴的 onset=触发−45 s 历元只用于正文与图）；Sazonov+2007（Springer VoR 摘要页，INTEGRAL 暴特征）；Kong+2010 与会议文 AIPC 1000/417、IJMPD 17/1359、JKPS 56/1583 无独立新测光（Kong+2010 经 arXiv:0910.3444 全文核对，取数自 Guidorzi+2007 与 GCN）；GCN Report 41.1（gcn.gsfc.nasa.gov/reports/report_41_1.pdf，Swift 官方最终报告）补 UVOT 累计 3σ 上限 7 行；另补 RAPTOR 探测 1 行（GCN 6198）、LBT Sloan-r 探测 2 行（GCN 6219/6245）。共补 43 行、改 23 行；X 射线 39 行（10keV，UKSSDC Burst Analyser）未触碰、不参与去重。⑦A&A VoR 正文页 aanda.org 被 DataDome 反爬拦截（HTTP 403，curl 与 WebFetch 双通道，2026-11-06），正文叙述经 arXiv:0708.1383v1（唯一预印本版）交叉、机读表取自 CDS（VoR 附属材料），已登记 audit/unverified.tsv。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-06"
+    }
+  },
   "articles": [
     {
       "bibtex": "@ARTICLE{2007AstL...33..656S,\n       author = {{Sazonov}, S. Yu. and {Molkov}, S.~V. and {Sunyaev}, R.~A.},\n        title = \"{INTEGRAL observations of the gamma-ray burst on March 11, 2007}\",\n      journal = {Astronomy Letters},\n         year = 2007,\n        month = oct,\n       volume = {33},\n       number = {10},\n        pages = {656-659},\n          doi = {10.1134/S1063773707100039},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2007AstL...33..656S},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
