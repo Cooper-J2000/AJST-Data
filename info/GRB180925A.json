@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB180925A",
-  "alias": [],
-  "ra": 315.20546,
-  "dec": -64.45727,
-  "T0": "2018-09-25T14:37:31Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 863421",
+    "HEB180925609"
+  ],
+  "ra": 315.2038,
+  "dec": -64.4569,
+  "T0": "2018-09-25T14:37:31.949140Z",
+  "T0_ref": "GCN 23268（Swift/BAT 触发通告：At 14:37:31 UT, the Swift BAT triggered and located GRB 180925A (trigger=863421)，整秒精度）；亚秒取触发仪器官方目录 external/swift_bat（在线版 batgrbcat，Lien+2016 体系）Trig_time_UTC=2018-09-25T14:37:31.949140（官方 BAT 通告页 gcn.gsfc.nasa.gov/other/863421.swift GRB_TIME=52651.94 SOD {14:37:31.94} UT 同值互证，2026-11-09 取数）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.1,
   "pos_ref": "GCN 23270",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 Rusty-Harpoon@zcode 2026-11-09。身份：GRB 180925A = Swift/BAT trigger 863421，2018-09-25T14:37:31 UT 触发（GCN 23268；external/swift_bat 目录快照 Trig_time_UTC=2018-09-25T14:37:31.949140Z；external/swiftgrbba 14:37:31.000Z 同秒互证；target_id=863421 两快照一致）。同日无其他 180925 命名事件：gcn/archive 45947 篇按源名/触发号/坐标全文检索，本源命名唯一、无 A/B 混淆，库内亦无同日（2018-09-25）其他源，最近邻 GRB180924A/GRB180930A 坐标不同易区分。T0：原 bot 值 2018-09-25T14:37:31Z 为 GCN 23268 整秒截断，改取触发仪器官方目录亚秒值 14:37:31.949140Z（GCN 23268 整秒 + external/swift_bat 亚秒，整秒互证 external/swiftgrbba 14:37:31.000、官方 BAT 通告页 gcn.gsfc.nasa.gov/other/863421.swift GRB_TIME=52651.94 SOD {14:37:31.94} UT 两位小数同值，2026-11-09 取数）；Konus-Wind 自触发 T0=52650.967 s UT（14:37:30.967，GCN 23291）系其自身触发、早 0.982 s，Insight-HXMT/HE T0=14:37:27.900（GCN 23275）系其自身参考时刻，均备查、不写 T0_offset；改 T0 后 lc 全表 mjd 按 mjd=T0+time 重算（本源无 band 为能量串的 X 射线行）。Trigger_Instrument 原 'Swift' 按 Swift/BAT 触发细化。定位：原 ra/dec=315.20546/−64.45727 实为 GCN 23268 快速 XRT 位（4.5″，90%），与 pos_ref=GCN 23270、pos_error=2.1″ 不自洽（GCN 23270 增强 XRT 位实为 315.2038, −64.4569），改用 GCN 23270 增强位；原文显式 '2.1 arcseconds (radius, 90% confidence)' → pos_error_confidence=90；备查：GCN 23268 快速位 315.20546/−64.45727（4.5″，90%）、GCN 23271 天测改正位 315.20075/−64.45690（3.8″，90%）、GCN 23274 UVOT 初步位 315.20292/−64.456894（0.22″，90%）、external/swiftgrbba xrt 位 315.20296/−64.45661（1.4″）。分类：Swift/BAT 官方目录 t90=82.632±23.641 s（15–350 keV，external/swift_bat summary_general；GCN 23273 精化分析 81.70±23.25 s 同判）→ 按目录 t90 判 lgrb/sgrb；Konus-Wind 通告自称 'The long-duration GRB 180925A'（GCN 23291）、AstroSat CZTI 自称 'long GRB 180925A'（GCN 23304）同判。alias：BAT 863421＝external/swift_bat（Swift/BAT 目录）name_alt 字段、GCN 23268/23273 原文 trigger=863421；HEB180925609＝GCN 23275 原文用名（Insight-HXMT/HE trigger ID）。伽马参数备查：BAT fluence 4.1±0.3e-6 erg/cm²（15–150 keV）、1-s peak 3.1±0.6 ph/cm²/s（GCN 23273）；Konus-Wind fluence 1.44(+0.32/−0.23)e-5 erg/cm²、64-ms peak 4.99(+1.66/−1.51)e-6 erg/cm²/s（20 keV–10 MeV，GCN 23291）；HXMT/HE T90=23.23 s（80–800 keV 记录能段，GCN 23275）、CZTI T90≈34.7 s（40–200 keV，GCN 23304）——不同仪器/能段各自口径，不参与判定。红移：无任何测定（VLT/X-shooter 于 +0.56 d 仅 acquisition camera 测光、未做光谱，GCN 23276；全部 GCN 与文献均无 z 报道）→ 维持 null。测光备注：原 10 行逐行溯源核对（GCN 23268/23274/23276），星等值全部与原文一致；UVOT 8 行（GCN 23274）原导入 time 与原文窗口中点偏差 +8.5～+9 s（u/b/uvw1/uvm2）或 −1～−1.5 s（uvw2/v），无法从原文复现，按 §3.8 统一改取窗口中点、补 time_err=半跨度；GCN 23268 White FC 上限行（19.6 mag，118 s 起 150 s）与 GCN 23274 同一曝光（119–269 s）精细测光探测 19.73±0.17 为同一次测量的快速查看/精细两版，后者取代前者 → 前行 discard=y 留痕（数值保持原样）；VLT 行 time 按原文绝对时刻 26.17 UT 对新 T0 重导（48437→48436.05086 s）、补 time_err=432 s；UVOT 各行星等系统按 GCN 23274 原文声明记 Vega（UVOT photometric system＝Breeveld et al. 2011）；Swift/XRT 测光（GCN 23272 精化分析、UKSSDC Burst Analyser）为 X 射线数据，按 §3.3 暂不入库。测光检索（2026-11-09）：仓内 gcn/archive 45947 篇全文检索，源名 '180925' 命中 13 篇（其中 10 篇为本源：23268/23270/23271/23272/23273/23274/23275/23276/23291/23304；24268/28456/30044 系假命中——24268 为候选坐标数字串、28456 为 MASTER 表列 Tmid-T0=180925 秒、30044 为 IceCube 触发号 210514180925 子串），触发号 '863421' 命中 4 篇、坐标串命中 1 篇（均含于源名集），逐篇通读；external/rssgrbag（射电光变 140 行/74 源）、external/grbsn_webtool（63 事件）、external/uvot_grb（626 源，覆盖 2005–2010）均无本源记录；external/swift_bat、external/swiftgrbba 快照仅目录级参数（UVOT 星等摘要与 GCN 23274 一致）；GCN 站触发通告页 gcn.gsfc.nasa.gov/other/863421.swift 实取（TRIGGER_NUM=863421、GRB_TIME=52651.94 SOD，2026-11-09）；SciX 检索 'GRB 180925A' 与 '180925A' 各命中 10 条＝上述 10 篇 GCN（bibcode 2018GCN.*），无任何研究论文提及本源、无样本汇编类文献含本源测光；TNS 不适用（无 AT/SN 命名记载）→ 无新增可入库测光，补 0 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "T0=Swift/BAT 触发 2018-09-25T14:37:31.949140Z（GCN 23268 整秒 + external/swift_bat 亚秒）；原 bot 值 2018-09-25T14:37:31Z 为同一触发时刻的整秒截断，原值留 info comment 备查",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [],
   "host_galaxy": null
