@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB081104",
-  "alias": [],
-  "ra": 100.5,
-  "dec": -54.722,
-  "T0": "2008-11-04T09:34:42Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 081104",
+    "Swift 333666",
+    "BAT 333666"
+  ],
+  "ra": 100.488042,
+  "dec": -54.719889,
+  "T0": "2008-11-04T09:34:42.467620Z",
+  "T0_ref": "GCN 8473（Swift/BAT 触发通告：At 09:34:42 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 081104 (trigger=333666)，整秒精度）；亚秒取触发仪器 Swift/BAT 官方目录 trigger_time=2008-11-04T09:34:42.467620Z（external/swift_bat batgrbcat 与 external/swift_grb HEASARC SWIFTGRB 快照一致；uvot_grb/swiftgrbba 快照 09:34:42 为舍入）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,14 +17,22 @@
     "grb"
   ],
   "pos_error": 1.6,
-  "pos_ref": "GCN 8480",
+  "pos_ref": "Swift-XRT 精化定位：GCN 8480（enhanced Swift-XRT，1.6″，radius，90% confidence）；Evans et al. 2009, MNRAS, 397, 1177 XRT 目录位 100.488042,-54.719889（仓内 external/swift_grb、swiftgrbba、uvot_grb 快照同值，r=1.6″）——取后者（晚于 GCN 8480 的精化值）；BAT 星上位（GCN 8473，3′）与地面位（GCN 8479，1.3′）备查",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建（Evans+2007,2009）。【身份】Swift/BAT 触发 GRB 081104，trigger=333666（GCN 8473 触发通告；8474/8475/8478/8479/8480/8481/8482/8493/8635 十篇通告全部引用同触发号或同名）。定位链条（并列备查）：BAT 星上位 100.485,-54.732（3′，90%，GCN 8473）→ BAT 地面位 100.500,-54.722（1.3′，sys+stat，90%，GCN 8479）→ XRT 初位 100.4835,-54.7211（4.04″，90%，GCN 8474）→ enhanced XRT 100.4886,-54.7199（1.6″，90% confidence，GCN 8480）→ Swift-XRT 目录精化位 100.488042,-54.719889（Evans et al. 2009, MNRAS, 397, 1177；仓内 external/swift_grb（HEASARC SWIFTGRB）/swiftgrbba/uvot_grb 快照同值，r=1.6″）——字段取精化位，原 ra/dec=100.5,-54.722 系 BAT 地面位（GCN 8479）误配 XRT 1.6″ 误差。同日划界：各目录快照中 2008-11-04 仅此一暴（heasarc_grbcat 快照无当日条目；fermi_gbm GRB081105614、AGILE 081105a 均为次日事件），无 A/B 命名，任务简报猜测的触发号 332988 检索无果、实为 333666。【T0】GCN 8473 整秒 09:34:42 UT；亚秒取触发仪器官方目录值 09:34:42.467620Z（external/swift_bat 「Swift/BAT GRB Catalog（batgrbcat）」与 external/swift_grb（HEASARC SWIFTGRB）快照一致；uvot_grb/swiftgrbba 快照 09:34:42 为舍入）。原 T0=09:34:42Z 系 UKSSDC Burst Analyser 导入整秒值。非 X 射线 16 行 time/mjd 已按新 T0 重算（绝对 UT 锚行已扣亚秒差）；X 射线 11 行 mjd 需随 T0 重算（+5.4123e-06 d，维护者执行，validate 容差内不红）。【分类】t90=64.0±15.3 s（Swift/BAT 目录 batgrbcat，15-350 keV；GCN 8479 给 59.1±13.9 s（15-350 keV）；HEASARC SWIFTGRB 64.0 s 并列）——按目录 t90 判 lgrb。【红移】文献检索未见测量值或上限，保持 null（见检索留证）。【物理量备查】fluence=2.0±0.2e-06 erg/cm²（15-150 keV，GCN 8479；batgrbcat 2.102059e-06）；1 s 峰值光子流量 1.0±0.3 ph/cm²/s（15-150 keV，GCN 8479）；XRT 吸收柱 NH=(1.5±0.4)e22 cm⁻²、0.3-10 keV 观测流量 8.0e-13 / 未吸收 1.9e-10 erg/cm²/s（GCN 8481——X 射线量仅备查，不入库）。【逐行核对】UVOT 7 行（GCN 8478）：bot 取窗口起点为 time，已按 §3.8 取窗口中点/半宽；原文声明 UVOT photometric system（Poole+2008）→ mag_system=Vega；3σ、5″ 孔径上限；未做银消改正（E(B-V)=0.11）。Faulkes R 行（GCN 8475）：按 Dt_mid=2.89 hr 改正（bot 用起点 12:13 UT），T_exp=30 min → time_err=900 s；USNO-B1 R2 定标、原文未声明系统 → mag_system 留空。GROND 7 行（GCN 8482）：起点 07:43 UT+半曝光（g'r'i'z' 25 min / JHK 20 min），AB 系统原文明示；GCN 8493 第二历元（11-06T04:29 UT）复测与第一历元误差内一致、原作者判定 most likely not the afterglow——数值照录 8482，是否弃点（discard）待维护者裁决。ATCA 行（GCN 8635）：4.800+4.928 GHz 合并未探测，取观测窗口中点/半宽。去重：10 篇通告各测光仅此一处转引，无重复行；X 射线 11 行（10keV）未动、不参与去重。【检索留证】测光检索（2026-11-09）：仓内 gcn/archive 全文检索「081104/333666」命中 11 篇，10 篇为本源通告（8473/8474/8475/8478/8479/8480/8481/8482/8493/8635；含测光数值 4 篇：8475/8478/8482/8635，全部已在 lc），GCN 27160 系 Glade 星系 ID G0811040 撞串排除；external/rssgrbag（74 源射电光变）与 external/grbsn_webtool（63 事件）无该源；swift_bat/swift_grb/swiftgrbba/uvot_grb/mpe_greiner 目录快照互证身份与 T0。SciX（api.scixplorer.org）5 种查询（「GRB 081104」/GRB081104/081104 AND gamma-ray burst/「GRB 081104」AND afterglow/333666）均只命中同 10 篇 GCN 通告，无研究论文或预印本（GCN 8478 题名为无空格形 GRB081104，仅在 GRB081104 查询命中）。GCN 站（gcn.nasa.gov/circulars/8473、/8635 网页实取）与 archive 一致。TNS 不适用（GRB 非 AT/SN/CV 类；直接查询返回 403）。结论：可用测光=UVOT 7 上限+Faulkes R 上限+GROND 7 行+ATCA 4.8GHz 上限；本次新增 0 行，改正 16 行时间轴/星等系统。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
