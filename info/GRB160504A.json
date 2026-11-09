@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB160504A",
-  "alias": [],
-  "ra": 170.07309,
-  "dec": 56.00016,
+  "alias": [
+    "GRB 160504A"
+  ],
+  "ra": 170.07224,
+  "dec": 56.00158,
   "T0": "2016-05-04T19:30:37.347200Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "T0_ref": "GCN 19382（Swift/BAT 触发通告：At 19:30:37 UT the Swift Burst Alert Telescope (BAT) triggered and located GRB 160504A (trigger=685124)，整数秒）+ Swift/BAT 官方目录 external/swift_bat summary_general_info（trigger 685124：UTC trigger_time=2016-05-04T19:30:37.347200、MET 484083053.568）——整秒两源一致，亚秒值取触发仪器官方目录",
+  "T0_offset": -40,
+  "T0_offset_ref": "GCN 19393（Swift-BAT refined analysis：The mask-weighted light curve shows that the main emission starts at T-40 sec，真实爆发早于自动触发）；备查：external/swift_bat summary_burst_durations（trigger 685124：T100_start=-42.392 s、T90_start=-40.096 s）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 19386",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1.9,
+  "pos_ref": "GCN 19386",
+  "comment": "【身份】Swift/BAT 触发 685124（GCN 19382：At 19:30:37 UT the Swift Burst Alert Telescope (BAT) triggered and located GRB 160504A (trigger=685124)）；仓内 gcn/archive 全文检索 2016-05-04 前后无第二 Swift 触发、无 GRB 160504B，无同日混淆。定位链：BAT on-board 170.043、+55.997（3′、90%，GCN 19382）→ XRT 初定位 170.07309、+56.00016（3.7″、90%，GCN 19382）→ 增强位置 170.07224、+56.00158（1.9″、90% confidence，GCN 19386，本条目采用，与既有 pos_error=1.9/pos_ref=GCN 19386 相符）→ UKSSDC live 快照（external/swift_xrt_live）170.07229、+56.00146、Err90=2.0″（备查）；BAT ground 170.073、56.002（1.7′，GCN 19393，备查）。NOT/Gemini/RATIR/AMI 各后随通告均以此 XRT 误差圈为目标，身份互证一致。【T0】触发时刻，见 T0_ref；T0_offset=-40 s：GCN 19393「the main emission starts at T-40 sec」（真实爆发早于自动触发；备查 external/swift_bat summary_burst_durations：T100_start=-42.392 s、T90_start=-40.096 s）。【分类】lgrb：t90=53.9±6.0 s（GCN 19393，15-350 keV）；Swift/BAT 官方目录 t90=53.96±5.68 s（external/swift_bat summary_general_info）——按目录/通告 t90 判 lgrb。【物理量备查】fluence(15-150 keV)=7.3±0.9×10⁻⁷ erg/cm²、1s 峰值光子流量 0.7±0.1 ph/cm²/s（GCN 19393）；XRT NH=1.1±0.4×10²¹ cm⁻²、Γ=1.97±0.15（GCN 19387）——X 射线量按 §3.3/§7 不入库。红移：无测定（全部 GCN 无 z、SciX 无研究论文、external/swift_bat GRBlist_redshift_BAT 无此源、swift_xrt_live Redshift=N/A）→ null。【逐行核对】29 行旧值星等/流量/波段/上限标记全部与原通告一致；时间轴 bot 取曝光或窗口起点为 time 且 mjd 带浮点尾差，按 §3.3/§3.8 全表改为窗口中点、time_err=半宽、mjd=T0+time（7 位小数）重算；GCN 19391 括号注记「19.64 to 23.11 hours」与 UTC 日期 2016/05 5.21–5.36 矛盾（后者=触发后 9.53–13.13 h，前者对应观测地 San Pedro Mártir 当地白天）→ 原文笔误，按 UTC 日期取窗口中点；AMI 15 GHz 各行由 bot 的 mJy 归一化还原原文 µJy；UVOT 各行 mag_system 按 GCN 19390 明示的 UVOT photometric system（Breeveld et al. 2011）推定 Vega；NOT 各行按 SDSS 场星定标推定 AB；GCN 19388 Bassano Bresciano V>20 上限（T0+22.45–111.33 min，有明确时间锚点）本次补入（第 30 行）；本源无 X 射线行。【检索留证】（2026-11-09）：仓内 gcn/archive 全文检索「160504」/「685124」命中 11 篇（19382、19383、19385、19386、19387、19388、19389、19390、19391、19393、19510，全部实读；含测光/上限 7 篇：TAROT 19383、NOT 19385、Bassano 19388、Gemini 19389、UVOT 19390、RATIR 19391、AMI 19510）；external/rssgrbag（74 源）、external/grbsn_webtool（63 事件）、external/uvot_grb（626 源）均无该源记录；GCN 站 gcn.nasa.gov/circulars/19382 与 /19390 网页实取、与 archive 逐句一致；SciX（api.scixplorer.org）三种查询（“GRB 160504A”/160504A/abs:“GRB 160504A”）各命中 10 条、全部为 GCN 通告，无研究论文或预印本；TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光=TAROT 3 上限+UVOT 9 上限+NOT 3 上限+RATIR 1 探测 5 上限+Gemini 3 探测+AMI 5 上限+Bassano 1 上限；本次新增 1 行（Bassano）、修订 29 行时间轴/单位/星等系统标注。【alias 证据】新增「GRB 160504A」（GCN 19382 原文用名）。【bot 原值留底】extra_data.t0_note 原文「t0 为 meta trigger-time（真实触发时刻）」、t0_basis 原值「meta_trigger」；T0 数值未改（bot 亚秒与 BAT 目录一致）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "T0=触发时刻：GCN 19382 整秒 19:30:37 UT，亚秒 .347200 取自 Swift/BAT 官方目录（external/swift_bat，trigger 685124）；bot 原判读「t0 为 meta trigger-time（真实触发时刻）」留底于 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [],
   "host_galaxy": null

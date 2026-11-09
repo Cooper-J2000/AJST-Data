@@ -1,30 +1,31 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-56.6528,,s,57512.81358796296,R,15.3,,magnitude,,n,y,,,,,,,1.0,n,,TAROT,GCN19383,,
-98.6528,,s,57512.81407407407,uvot-white,21.7,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN19390,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
-98.6528,,s,57512.81407407407,uvot-white,20.8,,magnitude,,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN19390,band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动,
-152.653,,s,57512.814699076385,R,17.2,,magnitude,,n,y,,,,,,,1.0,n,,TAROT,GCN19383,,
-152.653,,s,57512.814699076385,R,15.7,,magnitude,,n,y,,,,,,,1.0,n,,TAROT,GCN19383,,
-256.653,,s,57512.815902780094,uvot-u,20.4,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-256.653,,s,57512.815902780094,uvot-u,21.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-512.653,,s,57512.81886574305,uvot-b,21.5,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-586.653,,s,57512.819722224536,uvot-v,20.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-635.653,,s,57512.82028935417,uvot-uvw1,20.4,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-734.653,,s,57512.8214351875,uvot-uvw2,21.7,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-3202.65,,s,57512.84999996759,15GHz,0.093,,mJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,,
-4570.65,,s,57512.86583330092,uvot-uvm2,21.0,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,,
-5012.65,,s,57512.870949041666,i,22.8,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN19385,,
-5012.65,,s,57512.870949041666,z,22.0,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN19385,,
-5012.65,,s,57512.870949041666,r,23.3,,magnitude,,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN19385,,
-34306.7,,s,57513.21000054629,r,23.7,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,,
-34306.7,,s,57513.21000054629,Y,22.08,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,,
-34306.7,,s,57513.21000054629,H,21.35,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,,
-34306.7,,s,57513.21000054629,J,21.73,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,,
-34306.7,,s,57513.21000054629,Z,22.38,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,,
-34306.7,,s,57513.21000054629,i,23.62,0.36,magnitude,AB,n,n,,,,,,,1.0,n,,RATIR,GCN19391,,
-35602.7,,s,57513.22500054629,H,23.8,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,Gemini North/NIRI,GCN19389,,
-35602.7,,s,57513.22500054629,K,23.3,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,Gemini North/NIRI,GCN19389,,
-35602.7,,s,57513.22500054629,J,23.6,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,Gemini North/NIRI,GCN19389,,
-92194.7,,s,57513.8800005463,15GHz,0.072,,mJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,,
-259811.0,,s,57515.82000401852,15GHz,0.129,,mJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,,
-612323.0,,s,57519.90000401852,15GHz,0.123,,mJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,,
-871523.0,,s,57522.90000401852,15GHz,0.12,,mJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,,
+87.1,30.0,s,57512.8139404,R,15.3,,magnitude,,n,y,,,,,,,1.0,n,,TAROT,GCN19383,GCN 19383 实核：t0+57.1s 至 t0+117.1s 窗口（首图 trailed、60.0s 曝光）R>15.3；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；bot 原值 time=56.6528/mjd=57512.81358796 为曝光起点且与通告锚点不合（t0+57.1s 应为 19:31:34.4）、弃用；以 USNO-B1 场星定标、原文未声明星等系统；原文明示未做银消改正,Rusty-Harpoon@zcode
+5960.5,5861.5,s,57512.8819195,uvot-white,21.7,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN19390,GCN 19390 实核：white T_start=99s、T_stop=11822s、Exp=1316s、3σ 上限 >21.7；time=窗口中点、time_err=半宽（§3.8 coadd 口径、真实曝光中点不可恢复）；band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动；星等系统：原文采用 UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+174.0,75.0,s,57512.8149461,uvot-white,20.8,,magnitude,Vega,n,y,,,,,,,1.0,n,Swift,Swift/UVOT,GCN19390,GCN 19390 实核：white (fc) T_start=99s、T_stop=249s、Exp=147s、3σ 上限 >20.8；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；band 原导入 w 系 UVOT White 抽取撞名（filters.json 中 w=Pan-STARRS 5980.7 Å），按 Issue #384 统一批改为 uvot-white（3325.21 Å）；数值列未动；星等系统：UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+279.25,146.75,s,57512.8161643,R,17.2,,magnitude,,n,y,,,,,,,1.0,n,,TAROT,GCN19383,GCN 19383 实核：t0+132.5s 至 t0+426.0s coadd 窗口 R>17.2；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；bot 原值 time=152.653 无法由通告锚点复现、弃用；以 USNO-B1 场星定标、原文未声明星等系统；原文明示未做银消改正,Rusty-Harpoon@zcode
+147.5,15.0,s,57512.8146394,R,15.7,,magnitude,,n,y,,,,,,,1.0,n,,TAROT,GCN19383,GCN 19383 实核：t0+132.5s 至 t0+162.5s 窗口（tracking 模式 30.0s 曝光）R>15.7；time=窗口中点、time_err=半宽（§3.8）；bot 原值 time=152.653 无法由通告锚点复现、弃用；以 USNO-B1 场星定标、原文未声明星等系统；原文明示未做银消改正,Rusty-Harpoon@zcode
+382.0,125.0,s,57512.8173536,uvot-u,20.4,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：u (fc) T_start=257s、T_stop=507s、Exp=246s、3σ 上限 >20.4；time=窗口中点、time_err=半宽（§3.8）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+3436.5,3179.5,s,57512.8527066,uvot-u,21.2,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：u T_start=257s、T_stop=6616s、Exp=678s、3σ 上限 >21.2；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+5711.5,5198.5,s,57512.8790376,uvot-b,21.5,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：b T_start=513s、T_stop=10910s、Exp=1145s、3σ 上限 >21.5；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+8564.5,7977.5,s,57512.9120584,uvot-v,20.2,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：v T_start=587s、T_stop=16542s、Exp=1317s、3σ 上限 >20.2；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+3523.5,2887.5,s,57512.8537135,uvot-uvw1,20.4,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：w1（uvw1）T_start=636s、T_stop=6411s、Exp=432s、3σ 上限 >20.4；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+6561.0,5826.0,s,57512.8888698,uvot-uvw2,21.7,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：w2（uvw2）T_start=735s、T_stop=12387s、Exp=963s、3σ 上限 >21.7；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+3202.6528,432.0,s,57512.85,15GHz,93,,uJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,GCN 19510 实核：15 GHz、2016 May 04.85 UT、3σ 上限 93 µJy；flux_density=上限值本身；bot 原值 0.093 mJy 系单位归一化、已还原原单位 µJy；日期精度 0.01 d → time_err=±432 s（§3.3 历史上限条款）,Rusty-Harpoon@zcode
+11007.0,6436.0,s,57512.9403281,uvot-uvm2,21.0,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN19390,GCN 19390 实核：m2（uvm2）T_start=4571s、T_stop=17443s、Exp=1275s、3σ 上限 >21.0；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；UVOT photometric system（Breeveld et al. 2011）→ Vega（推定依据 Breeveld+2011）；原文明示未做银消改正,Rusty-Harpoon@zcode
+5012.6528,,s,57512.8709491,i,22.8,,magnitude,AB,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN19385,GCN 19385 实核：i>22.8；观测起点 20:54:10 UT（触发后 1.4 h）、原文未给曝光时长→中点不可恢复、time 即起点；对 SDSS 场星定标、按 SDSS 惯例推定 AB（原文未明写系统）；原文明示未做银消改正（E(B-V)=0.01、Schlafly & Finkbeiner 2011）,Rusty-Harpoon@zcode
+5012.6528,,s,57512.8709491,z,22.0,,magnitude,AB,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN19385,GCN 19385 实核：z>22.0；观测起点 20:54:10 UT（触发后 1.4 h）、原文未给曝光时长→中点不可恢复、time 即起点；对 SDSS 场星定标、按 SDSS 惯例推定 AB（原文未明写系统）；原文明示未做银消改正（E(B-V)=0.01、Schlafly & Finkbeiner 2011）,Rusty-Harpoon@zcode
+5012.6528,,s,57512.8709491,r,23.3,,magnitude,AB,n,y,,,,,,,1.0,n,,NOT/ALFOSC,GCN19385,GCN 19385 实核：r>23.3；观测起点 20:54:10 UT（触发后 1.4 h）、原文未给曝光时长→中点不可恢复、time 即起点；对 SDSS 场星定标、按 SDSS 惯例推定 AB（原文未明写系统）；原文明示未做银消改正（E(B-V)=0.01、Schlafly & Finkbeiner 2011）,Rusty-Harpoon@zcode
+40786.6528,6480.0,s,57513.285,r,23.7,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,GCN 19391 实核：r>23.70（3σ）；观测窗口 2016/05 5.21–5.36 UTC（=触发后 9.53–13.13 h）；括号注记 19.64–23.11 h 与 UTC 日期矛盾（对应观测地圣佩德罗·马尔蒂尔当地白天、光学观测不可能）→ 原文笔误、按 UTC 日期取值；r/i 总曝光 2.49 h、原文只给窗口与总曝光→time=窗口中点 5.285 UTC、time_err=半宽 6480 s（§3.8 coadd 口径）；AB 系统、未做银消改正（均原文明示）,Rusty-Harpoon@zcode
+40786.6528,6480.0,s,57513.285,Y,22.08,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,GCN 19391 实核：Y>22.08（3σ）；窗口/中点口径与原文笔误注记同本源 RATIR r 行（Z、Y、J、H 总曝光 1.04 h）；AB 系统、未做银消改正（原文明示）,Rusty-Harpoon@zcode
+40786.6528,6480.0,s,57513.285,H,21.35,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,GCN 19391 实核：H>21.35（3σ）；窗口/中点口径与原文笔误注记同本源 RATIR r 行；AB 系统、未做银消改正（原文明示）,Rusty-Harpoon@zcode
+40786.6528,6480.0,s,57513.285,J,21.73,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,GCN 19391 实核：J>21.73（3σ）；窗口/中点口径与原文笔误注记同本源 RATIR r 行；AB 系统、未做银消改正（原文明示）,Rusty-Harpoon@zcode
+40786.6528,6480.0,s,57513.285,Z,22.38,,magnitude,AB,n,y,,,,,,,1.0,n,,RATIR,GCN19391,GCN 19391 实核：Z>22.38（3σ）；窗口/中点口径与原文笔误注记同本源 RATIR r 行；AB 系统、未做银消改正（原文明示）,Rusty-Harpoon@zcode
+40786.6528,6480.0,s,57513.285,i,23.62,0.36,magnitude,AB,n,n,,,,,,,1.0,n,,RATIR,GCN19391,GCN 19391 实核：i=23.62±0.36（3σ 检测）；窗口/中点口径与原文笔误注记同本源 RATIR r 行；AB 系统、未做银消改正（原文明示）,Rusty-Harpoon@zcode
+36502.6528,900.0,s,57513.2354167,H,23.8,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,Gemini North/NIRI,GCN19389,GCN 19389 实核：H=23.8±0.4（AB、原文明示；2MASS 单星定标）；观测起点 2016-05-05 05:24 UT（~9.9 h）、J/H/K 各 10 min 积分×3 波段→按连续拼接推定窗口 05:24–05:54 UT、time=中点、time_err=半宽 900 s（§3.8 约定口径、各波段真实曝光中点不可恢复）；银消改正原文未提及→n；源与 GRB 的成协性原文自述尚不能确定,Rusty-Harpoon@zcode
+36502.6528,900.0,s,57513.2354167,K,23.3,0.2,magnitude,AB,n,n,,,,,,,1.0,n,,Gemini North/NIRI,GCN19389,GCN 19389 实核：K=23.3±0.2（AB、原文明示；2MASS 单星定标）；窗口/中点口径同本源 Gemini H 行；银消改正原文未提及→n；源与 GRB 的成协性原文自述尚不能确定,Rusty-Harpoon@zcode
+36502.6528,900.0,s,57513.2354167,J,23.6,0.4,magnitude,AB,n,n,,,,,,,1.0,n,,Gemini North/NIRI,GCN19389,GCN 19389 实核：J=23.6±0.4（AB、原文明示；2MASS 单星定标）；窗口/中点口径同本源 Gemini H 行；银消改正原文未提及→n；源与 GRB 的成协性原文自述尚不能确定,Rusty-Harpoon@zcode
+92194.6528,432.0,s,57513.88,15GHz,72,,uJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,GCN 19510 实核：15 GHz、2016 May 05.88 UT、3σ 上限 72 µJy；flux_density=上限值本身；bot 原值 0.072 mJy 系单位归一化、已还原原单位 µJy；日期精度 0.01 d → time_err=±432 s（§3.3 历史上限条款）,Rusty-Harpoon@zcode
+259810.6528,432.0,s,57515.82,15GHz,129,,uJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,GCN 19510 实核：15 GHz、2016 May 07.82 UT、3σ 上限 129 µJy；flux_density=上限值本身；bot 原值 0.129 mJy 系单位归一化、已还原原单位 µJy；日期精度 0.01 d → time_err=±432 s（§3.3 历史上限条款）,Rusty-Harpoon@zcode
+612322.6528,432.0,s,57519.9,15GHz,123,,uJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,GCN 19510 实核：15 GHz、2016 May 11.90 UT、3σ 上限 123 µJy；flux_density=上限值本身；bot 原值 0.123 mJy 系单位归一化、已还原原单位 µJy；日期精度 0.01 d → time_err=±432 s（§3.3 历史上限条款）,Rusty-Harpoon@zcode
+871522.6528,432.0,s,57522.9,15GHz,120,,uJy,,n,y,,,,,,,1.0,n,,AMI-LA,GCN19510,GCN 19510 实核：15 GHz、2016 May 14.90 UT、3σ 上限 120 µJy；flux_density=上限值本身；bot 原值 0.12 mJy 系单位归一化、已还原原单位 µJy；日期精度 0.01 d → time_err=±432 s（§3.3 历史上限条款）,Rusty-Harpoon@zcode
+4013.4,2666.4,s,57512.8593836,V,20,,magnitude,,n,y,,,,,,,1.0,n,,Bassano Bresciano Observatory,GCN19388,GCN 19388 实核（本次审核新增）：Schmidt 320/400 mm（IAU 站 565）、窗口 T0+22.45 min 至 T0+111.33 min（2×20×120 s coadd）、Vlim=20；time=窗口中点、time_err=半宽（§3.8 coadd 口径）；以 UCAC4 场星定标、原文未声明星等系统；原文明示未做银消改正；上限显著性原文未注明,Rusty-Harpoon@zcode
