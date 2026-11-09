@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB170906A",
   "alias": [
-    "GRB 170906030"
+    "GRB 170906A",
+    "GRB 170906.030",
+    "bn170906030"
   ],
-  "ra": 203.94000244140625,
-  "dec": -47.119998931884766,
-  "T0": "2017-09-06T00:43:13.150000Z",
-  "T0_ref": null,
+  "ra": 203.95501,
+  "dec": -47.10057,
+  "T0": "2017-09-06T00:43:08.152Z",
+  "T0_ref": "GCN 21839（Fermi GBM Team 官方通告：At 00:43:08.15 UT ... trigger 526351393 / 170906030）；FERMIGBRST 官方目录 bn170906030 trigger_time=2017-09-06T00:43:08.152Z（external/fermi_gbm 快照 MJD 58002.02995546）；原 T0=00:43:13.150000Z 系 2FLGC trigger_met=526351393.15 naive MET→UTC 换算漏扣 5 闰秒（Issue #67 族，先例 GRB160905A），Δ=-4.998 s",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -14,17 +16,31 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1.8,
-  "pos_ref": "GCN 21824",
+  "pos_error": 0.42,
+  "pos_ref": "GCN 21847",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建（2FLGC 正式发表版 Ajello+2019, ApJ 878, 52）。审核 2026-11-09（Rusty-Harpoon@zcode）。①【身份】同一暴三方独立触发：Fermi/GBM trigger 526351393 / bn170906030（GCN 21839，GBM 团队官方通告 00:43:08.15 UT）；Swift/BAT trigger 770957（GCN 21821，00:43:11 UT；external/swift_bat batgrbcat trigger_time=00:43:11.622660Z，与 GCN 内部自洽：XRT 开测 00:44:18.9 UT=BAT+67.3 s）；Fermi-LAT 00:43:11.66 UT 检测到高能辐射（GCN 21827，最高光子 3.6 GeV）。GRB 170906A 为 Swift 命名（14 篇相关 GCN 用名），与 Fermi bn170906030 为同一事件（GCN 21827/21839 互指）；同日 GRB 170906B（Swift trigger 770958，晚 755 s，GCN 21822/21841）为另一独立暴，未混淆；mpe_greiner 快照 GRB 170906A 行（Instrument=Swift、OT=y）同源备查。②【T0 判定】T0=2017-09-06T00:43:08.152Z=触发仪器 Fermi/GBM 触发时刻：GCN 21839 \"At 00:43:08.15 UT on 06 September 2017, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 170906A (trigger 526351393 / 170906030)\"（§3.8①）；FERMIGBRST 官方目录 bn170906030 trigger_time=MJD 58002.02995546=00:43:08.152Z（external/fermi_gbm 快照，§3.8②，整数秒一致取触发仪器目录亚秒）。原 T0=2017-09-06T00:43:13.150000Z 系 bot 对 2FLGC trigger_met=526351393.15 s 以 2001-01-01T00:00:00 UTC 纪元天真换算、漏扣 5 个闰秒（python 复算 naive UTC=00:43:13.150000 与原值逐位一致，bug 复现；Issue #67 同族，先例 GRB160905A/GRB160709A/GRB190727B），Δ=-4.998 s（≥60 ms，PR 备案）；按 2026-10-12 裁定目录换算残差不作 T0_offset、直接改写 T0。备查并列（同一暴他仪触发历元，均不采用）：Swift/BAT 00:43:11.622660Z（batgrbcat，晚 GBM 3.471 s，T0 取最早触发历元——2FLGC 系同型先例 GRB160905A/GRB190727B）；Fermi-LAT 检测 00:43:11.66 UT（GCN 21827）；Konus-Wind T0=00:43:27.999（GCN 21859 自身口径）；CALET/CGBM 00:43:05.59（GCN 21884）；Insight-HXMT 00:43:06.00（GCN 21921，HEB170906029）。全表 time 已按新 T0 重算（UVOT 行原为 BAT 触发帧，按 T0_BAT-T0=+3.4707 s 历元换算；REM/MASTER 行按原文绝对时刻锚定；无 X 射线行）。③【定位】ra/dec=203.95501/-47.10057、pos_error=0.42″（radius, 90% confidence）取 GCN 21847 UVOT preliminary position 原文（pos_error_confidence=90 原文明示）。其余口径备查：UVOT 初位 203.95497/-47.10054 ±0.61″ 90%（GCN 21821）；XRT 增强位 203.95523/-47.10089 ±1.8″ 90%（GCN 21824——原 pos_error=1.8/pos_ref 即此，但原 ra/dec 为 LAT 位，互不匹配已修正）；BAT 地面位 203.949/-47.088 ±1.3′ 90%（GCN 21838）、BAT 在座位 203.992/-47.125 ±3′（GCN 21821）；LAT 在地位 203.94/-47.12 ±0.10 deg（90% containment, statistical error only，GCN 21827）=原 ra/dec（float32 残渣 203.94000244140625/-47.119998931884766，Issue #69）；FERMIGBRST 行 203.955/-47.1007（error_radius=0.0014 deg≈5″，系该目录吸收 Swift XRT 定位的已知现象，先例 GRB190727B）；2FLGC/fermilgrb 203.94/-47.12（error_radius=0.1 deg）。④【分类】sub_tag=Fermi-LAT：GCN 21827 Fermi-LAT 团队官方检测通告（Fermi-LAT detected high-energy emission from GRB 170906A）；2FLGC/fermilgrb 目录收录（name=GRB 170906A、gcn_name 同、P8_TRANSIENT010E、tl100=1821.19±2.83 s）。tag=grb。长暴判据：GBM T90=78.85±0.72 s（50-300 keV，FERMIGBRST；GCN 21839 about 79 s）、BAT T90=88.1±1.5 s（15-350 keV，GCN 21838），按目录 t90 判 lgrb/sgrb 判为 lgrb（GBM T90=78.85±0.72 s，FERMIGBRST；Swift/BAT T90=88.1±1.5 s，GCN 21838），sub_tag 记 Fermi-LAT+lgrb（先例 GRB160905A/GRB190727B 同口径）。redshift：无任何测量（SciX 检索无光谱/红移报道），保持 null。⑤【别名】GRB 170906A（GCN 21821/21825/21827/21839/21847 等 Swift 通告原文用名，2FLGC gcn_name 同）；GRB 170906.030 系 FERMIGBRST 官方目录 name_alt 原文用名（external/fermi_gbm 快照逐字；GCN 21839 记触发号 trigger 526351393 / 170906030）；bn170906030（FERMIGBRST trigger_name）。原 alias \"GRB 170906030\"（空格拼接伪形，导入管线产物）按 §3.10/Issue #69 移除记此（先例 GRB160709A/GRB160905A）。⑥【逐行核对】旧 3 行全部溯源核对：uvot-white 16.59±0.14（GCN 21821 fc 快估，150 s 曝光起于 BAT+77 s → 中点 BAT+152 s；同曝光 GCN 21847 正式测光 16.41±0.03 → 旧行 discard=y 留底、新行入库，先例 GRB251017A）；REM r=13.10±0.10(AB)/H=12.00±0.05(Vega)（GCN 21825，2-3 min 窗口中点 00:45:41 UT、time_err=30 s 补齐；r/H 系统原文明示）。新增 17 行：GCN 21847 UVOT 表 15 行（T_start/T_stop 为 BAT 触发帧整秒：time=窗口中点+3.4707 s 历元换算、time_err=半窗宽、Vega（原文明示 UVOT photometric system, Breeveld+2011）、7 行 3σ 上限）+GCN 21830 MASTER-OAFA 2 行（unfiltered→band=G：15.6 序列首测（首指向 00:43:56 UT+10 s 曝光，中点 00:44:01 UT 约定锚）、14.4（原文明给 00:50:54 UT midle time））。星等数值与原文逐位一致；Gext_corr 全表 n（各原文均未做银消改正，UVOT/21821 明示 E(B-V)=0.14 未改正）；派生列全空；flux_density 每行有值。⑦【检索留证】测光检索（2026-11-09）：仓内 gcn/archive 全文检索 170906A/170906030/526351393/770957 命中 14 篇（21821/21824/21825/21827/21830/21836/21838/21839/21841[=170906B]/21847/21856/21859/21884/21921），含光学数值 4 篇（21821 fc、21825 REM、21847 UVOT 表、21830 MASTER），已全部入库；external/rssgrbag（射电光变 74 源）、external/grbsn_webtool（63 事件）、external/uvot_grb、external/heasarc_grbcat 均无该源记录。GCN 站（gcn.nasa.gov/circulars/21821、/21825、/21830、/21847 网页实取）与 archive 逐句一致、无更多通告。SciX（api.scixplorer.org）三查询（\"GRB 170906A\"/\"170906A\"/citations(2017GCN.21821....1S)）命中 13 篇 GCN 通告、无研究论文或预印本（引用 GCN 21821 的论文 0 篇；SciX 元数据检索口径）。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用光学测光=UVOT 16 点（含 1 快估留底）+REM 2 点+MASTER 2 点；本次新增 17 行、修正 3 行，无删除。⑧【物理量备查】BAT：T90=88.1±1.5 s（15-350 keV）、fluence(15-150 keV)=3.2±0.0e-5 erg/cm²、1-s 峰流量 10.9±0.4 ph/cm²/s @T+29.82 s、多峰起于约 T-40 s（GCN 21838）；GBM：T90=78.85±0.72 s（50-300 keV）、fluence(10-1000 keV)=9.4607e-5±7.8e-8 erg/cm²、Epeak=274.19±11.28 keV（Band，FERMIGBRST）；GCN 21839 初值 fluence=(1.17±0.01)e-4 erg/cm²、Epeak=288±12 keV；LAT：00:43:11.66 UT 检测、最高光子 3.6 GeV @GBM+200 s、定位 203.94/-47.12 0.10 deg 90% stat（GCN 21827）；2FLGC tl100=1821.19±2.83 s、like_best_ts=205.606、ext_emission_max_ene=3600 MeV @+203.25 s（fermilgrb 快照）；Konus-Wind：T0=00:43:27.999、fluence=1.19(+0.22/-0.21)e-4 erg/cm²（20 keV-10 MeV）、Ep=274(+43/-37) keV（GCN 21859）；CALET/CGBM：T0=00:43:05.59、T90=78.4±1.9 s（40-1000 keV，GCN 21884）；Insight-HXMT：T0=00:43:06.00、T90=64.6 s、能注量(5.94±0.20)e-4 erg/cm²（200-5000 keV，GCN 21921）；AstroSat CZTI(Veto)：T90=70.5 s（125-250 keV，GCN 21856）；XRT：WT 谱 Γ=1.64±0.03、NH=2.60(+0.16/-0.15)e21 cm⁻²（超银河值 1.4e21）、后期衰减 α=2.08(+0.27/-0.25)、T+24 h 预计 0.3-10 keV 流量 1.0e-13 erg/cm²/s（GCN 21836）——X 射线/高能测光按 §3.3/§7 不入库。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
+  },
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
