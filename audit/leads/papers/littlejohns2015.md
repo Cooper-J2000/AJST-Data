@@ -4,7 +4,7 @@
 - paper: Littlejohns+2015, MNRAS 449, 2919（DOI 10.1093/mnras/stv479；arXiv:1412.6530。VoR 未通读：OUP 全站反爬 403，按 §3.3 第 3 级以 arXiv TeX 全文 + ADS 元数据三方交叉，已逐值读取 arXiv 源 ms.tex）
 - date: 2026-11-01
 - helper: Rusty-Harpoon@zcode
-- sources: GRB130122A, GRB130215A, GRB130327A, GRB130418A, GRB130420A, GRB130427A, GRB130502A, GRB130504A, GRB130514A, GRB130606A, GRB130609A, GRB130610A, GRB130612A, GRB130626A, GRB130701A, GRB130907A, GRB130925A, GRB131004A, GRB131030A, GRB140114A, GRB140118A, GRB140129A, GRB140215A, GRB140311A, GRB140318A, GRB140331A, GRB140419A, GRB140518A, GRB140614B, GRB140622A, GRB140703A, GRB140709A, GRB140710A
+- sources: GRB130122A, GRB130215A, GRB130327A, GRB130418A, GRB130420A, GRB130427A, GRB130502A, GRB130504A, GRB130514A, GRB130606A, GRB130609A, GRB130610A, GRB130612A, GRB130626A, GRB130701A, GRB130907A, GRB130925A, GRB131004A, GRB131030A, GRB140114A, GRB140118A, GRB140129A, GRB140215A, GRB140311A, GRB140318A, GRB140331A, GRB140518A, GRB140614B, GRB140622A, GRB140703A, GRB140709A, GRB140710A
 
 ## 为什么是文献级卡
 
@@ -21,6 +21,7 @@ RATIR（1.5m Harold L. Johnson Telescope, OAN-SPM）对 Swift GRB 的光学消�
 | 源 | 表号 | 源级卡 | status | 增量判读 |
 |---|---|---|---|---|
 | GRB130701A | Table 4 r/i/Z/Y | 无（本 PR 已审核） | extracted | 4 行已入库（PR #715）；历元按 Table 1 delay=300.3 min + duration=21 min 中点±半宽 |
+| GRB140419A | Table 4 r/i/Z/Y/J/H | 无（本卡即索引） | extracted（2026-11-10 Rusty-Harpoon@zcode，PR #1031） | 6 行已入库：r 17.65±0.17、i 17.30±0.12、Z 16.91±0.09、Y 16.76±0.08、J 17.19±0.11、H 16.57±0.07（arXiv ms.tex 实读，VoR 反爬已登记 unverified.tsv）；历元同 130701A 口径（Table 1 delay=8.8 min + duration=97 min → mid=3438±2910 s，窗口与 GCN 16121 的 9–40 min coadd 不同窗、非重复）；本源 RATIR 逐次值另见 Dainotti2024;Nissim 私享数据 177 行（同一数据的不同分箱，两者并存） |
 | 其余 32 源（29 源在 Table 4；GRB130122A/GRB130626A/GRB140118A 仅 Table 1） | Table 4 / Table 1 | 无 | mention-only（未提取） | 首夜堆叠 r/i/Z/Y/J/H 测光或上限；历元锚点只有 delay+首历元 duration，接手者按 §3.8 coadd 约定处理 |
 
 ## 增量门槛判读
