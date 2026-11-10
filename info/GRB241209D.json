@@ -1,32 +1,42 @@
 {
   "transient_id": "GRB241209D",
-  "alias": [],
-  "ra": 190.1119,
-  "dec": -2.89162,
-  "T0": "2024-12-09T10:59:44Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 241209D",
+    "BAT 1273106",
+    "GRB241209458",
+    "bn241209458"
+  ],
+  "ra": 190.11177,
+  "dec": -2.89163,
+  "T0": "2024-12-09T10:59:46.438980Z",
+  "T0_ref": "GCN 38489（Swift/BAT 触发通告 10:59:46 UT）；亚秒值取 batgrbcat（external/swift_bat 快照，trigger 1273106）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 2.8,
-  "pos_ref": "GCN 38491",
+  "pos_error": 2.5,
+  "pos_ref": "swift_xrt_live 快照（UKSSDC Evans+2009 在线目录）+ GCN 38491（并列备查见 comment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "导入留底：bot 建源（gcn_llm_extract，t0_basis=meta_trigger）；原 T0=2024-12-09T10:59:44Z（实为 Fermi/GBM 触发时刻，跨仪器误植）、Trigger_Instrument=Swift/XRT、ra/dec=190.1119/-2.89162、pos_error=2.8″、T0_ref/alias/comment 全空（原值留底于 extra_data.t0_note）。\n【身份链】GRB241209D = Swift/BAT trigger 1273106 = Fermi/GBM trigger 755434789/241209458（bn241209458），同一事件双触发。GCN 38488（Fermi GBM Final Real-time：10:59:44 UT 触发，\"likely LONG GRB\"，RA 191.7/Dec -2.2 ± 1.9°）；GCN 38489（Swift 团队官方触发通告：\"At 10:59:46 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 241209D (trigger=1273106)\"；BAT 星上位 190.111/-2.879（3′、90% 含系统差）；XRT 起测 11:01:20.0 UT=触发后 93.6 s，找到未编目 X 射线源 190.1129/-2.8901（5″、90%），距 BAT 位 41″）；GCN 38491（enhanced XRT 位 190.11190/-2.89162，2.8″ 90%）；GCN 38505/38507/38518/38526/38527/38569/38589 均以 Swift/BAT+Fermi/GBM 双检测引述同一事件。同日划界：GRB241209A（Swift/BAT 05:35:44、RA 155.4，GCN 38486）、GRB241209B（SVOM 03:56:20、Dec +76，GCN 38478；初稿 03:56:19 系 1 s 转录笔误，复查更正）、GRB241209C（Fermi GBM 07:22:54、RA 116.0，GCN 38482）均为独立事件，与本源（10:59、RA≈190/Dec≈-2.9）时刻、坐标无关，不合并。「XRT 发现型」假设不成立：本源系 BAT 正式触发（1273106），XRT 只是后随发现余辉，Trigger_Instrument 改 Swift/BAT。\n【T0】T0=2024-12-09T10:59:46.438980Z（Swift/BAT 触发）。双触发仪器时刻冲突（Fermi/GBM 10:59:44.09 vs Swift 10:59:46），按提示词 §3.2/§3.8「有 Swift 从 Swift」取 BAT；亚秒 46.438980 取 batgrbcat（仓内 external/swift_bat 快照，trigger 1273106，MET 755434821.120→UTC），与 GCN 38489 整秒 10:59:46 同源互证（差 0.439 s ≥60 ms，PR 说明报告）。备查并列（均不采）：Fermi/GBM 10:59:44.09（GCN 38507；FERMIGBRST 快照 10:59:44.093）、Konus-Wind 引 T0(BAT)=10:59:45.649（GCN 38526，与 batgrbcat 差 0.79 s）、CALET/CGBM 触发 10:59:46.760（GCN 38569）、CZTI 峰 10:59:47.1（GCN 38518）、GRBAlpha 峰 10:59:45.2（GCN 38589）。\n【定位】ra/dec=190.11177/-2.89163、pos_error=2.5″（90%）：swift_xrt_live 快照（UKSSDC Evans+2009 在线目录，2026-07-21 快照 Err90 列；docs.html 明示 all errors 90% confidence）。旧值 190.1119/-2.89162=GCN 38491 enhanced 位（2.8″、90%），该通告自述 \"may be improved as more data are received\"，目录晚于通告且更精→从目录（§4 第 6 类冲突判定），GCN 38491 值并列备查；两值差 0.5″ ≪ 误差，REM 上限（GCN 38527）按 GCN 38491 位核对不受影响。pos_error_confidence=90 依 swift_xrt_live docs 与 GCN 38491（90% confidence）。\n【分类】sub_tag=lgrb 判据：t90=64.0±16.0 s（external/swift_bat 快照 batgrbcat，15-350 keV）——按目录 t90 判 lgrb（§3.9）；并列：GCN 38507 GBM t90≈45 s（50-300 keV；FERMIGBRST 快照 44.5448±1.14489）、GCN 38518 CZTI t90=26(+5,-6) s（Veto 100-500 keV）、GCN 38589 GRBAlpha t90=52 s、GCN 38569 CALET SGM t90=9.2±0.7 s（40-1000 keV）、GCN 38489 BAT 光变复杂结构持续约 150 s；Fermi/CZTI/Konus/CALET/GRBAlpha 通告均明示 long (duration) GRB。\n【物理量备查】（不参与判定）GBM：fluence (9.5±0.2)e-6 erg/cm²（10-1000 keV，GCN 38507；FERMIGBRST 快照 1.096e-5，口径不同并列）、Epeak=110±3 keV（CPL）、1-s 峰光子流量 4.4±0.3 ph/cm²/s（T0+5.9 s 起）；BAT：峰值计数率约 3200 ct/s（15-350 keV，GCN 38489）；Konus：fluence 8.79(+1.74,-0.87)e-6 erg/cm²（20 keV-10 MeV，GCN 38526）；XRT：T+24 h 预报 0.014 ct/s≈5.1e-13 erg/cm²/s（GCN 38508，模型外推，X 射线不入库）。红移：13 篇 GCN 与 swift_xrt_live 快照（z=N/A）均未报 z → null。\n【宿主】GCN 38505 提及 OT 紧邻一 PS1 编目星系（rmag≈21.44），因星等差与微小位置偏移判为余辉——候选宿主未确立，不建 host_galaxy（§3.10）。\n【逐行核对】原 3 行数值/波段/星等系统全对上原文：COLIBRI r=20.04±0.05（GCN 38505）、REM r>20.3（AB）与 J>18.1（Vega）（GCN 38527，3σ 上限，Swift-XRT 增强位处未探测）。修正集中在时间轴（bot 按 Fermi 历元/自创中点换算）：COLIBRI 行按通告曝光窗口 11:20:50-12:59:15 UT 中点重算（time_err=窗口半跨 2952.5 s；4260 s 曝光于 5905 s 窗口内，中点/半宽为约定口径）；REM 两行按通告明示 mid t-t0=20.4/20.5 hr（Swift 触发历元）重算（time_err=±0.05 h=180 s）。Gext_corr：三行原文均无银消改正证据，显式 n；COLIBRI 行 mag_system=AB 为推定（依据见行 comment），REM r=AB/J=Vega 原文明示。新增 5 行 MASTER-Tunka 无滤光片（C→G）上限（GCN 38503 表，检索捞回）；GCN 38498（Swift 历元）与 GCN 38503（Fermi 历元）系同夜同测两张表、限值 15.0/18.8 两点重复，按 38503 完整表录入一次（§3.4）。X 射线行：无（本源 lc 无 keV 行；XRT 数据按 §3.3/§7 不入库）。\n【检索留证】（2026-11-10）：仓内 gcn/archive 全文检索「241209D」命中 13 篇（38488/38489/38491/38498/38503/38505/38507/38508/38518/38526/38527/38569/38589；补查触发号「1273106」「241209458」「755434789」无更多），含光学/红外数值 3 篇（38503 MASTER 5 上限、38505 COLIBRI 1 探测、38527 REM 2 上限），38508 为 XRT X 射线精化（不入库）；external/rssgrbag（74 源射电光变）、grbsn_webtool（63 事件）、uvot_grb（626 源）、swift_grb、heasarc_grbcat、konus_wind 快照均无该源；swift_bat/swiftgrbba/swift_xrt_live/fermi_gbm/mpe_greiner 快照用于身份/T0/定位互证。GCN 站（gcn.nasa.gov/circulars?query=241209D，2026-11-10 实取）同为 13 篇、无更多通告。SciX（api.scixplorer.org）三种查询（\"GRB 241209D\"/241209D/abs:\"GRB 241209D\"）均只命中同 13 篇 GCN 通告，无研究论文或预印本。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光=COLIBRI 1 探测+REM 2 上限+MASTER-Tunka 5 上限；本次修正 3 行、新增 5 行。\n【alias 证据】新增「GRB241209458」原文用名见仓内 external/fermi_gbm 快照 FERMIGBRST name_alt（GBM 触发 241209458，GCN 38488/38507）；「bn241209458」形见 GCN 38488 数据路径（heasarc FTP bn241209458）；「BAT 1273106」为 batgrbcat 目录名（external/swift_bat 快照 name_alt；GCN 38489 触发号）；「GRB 241209D」为 13 篇 GCN 题名通名。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=Swift/BAT 触发时刻：GCN 38489 整秒 10:59:46，亚秒 46.438980 取 batgrbcat（external/swift_bat 快照 trigger 1273106）。bot 原值 2024-12-09T10:59:44Z（t0_basis=meta_trigger）实为 Fermi/GBM 触发时刻（GCN 38488/38507，10:59:44.09），双仪器冲突按「有 Swift 从 Swift」弃用留底。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [],
   "host_galaxy": null
