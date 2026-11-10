@@ -1,27 +1,33 @@
 {
   "transient_id": "GRB141220A",
-  "alias": [],
-  "ra": 195.05,
-  "dec": 32.15,
-  "T0": "2014-12-20T06:02:52.490000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 141220A",
+    "GRB141220252",
+    "GRB 141220.252",
+    "bn141220252",
+    "BAT 621915"
+  ],
+  "ra": 195.06565,
+  "dec": 32.14639,
+  "T0": "2014-12-20T06:02:52.659420Z",
+  "T0_ref": "GCN 17196（Swift/BAT trigger 621915：'At 06:02:52 UT, the Swift BAT triggered and located GRB 141220A'）＋Swift/BAT 官方目录（仓内 external/swift_bat 快照 BAT 621915 行：trigger_time=2014-12-20T06:02:52.659420Z，亚秒采触发仪器目录值）。多触发仪器亚秒矛盾按《数据审核提示词》§3.2/§3.8 有 Swift 从 Swift：Fermi/GBM trigger 141220252 触发于 06:02:52.49 UT（GCN 17205；GBM 目录 06:02:52.486Z）、Konus-Wind 触发于 06:02:51.666 UT（GCN 17207），均备查不采",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.3195,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
+  "pos_error": 0.45,
+  "pos_ref": "GCN 17201（Swift/UVOT 初步定位：RA 13:00:15.76=195.06565, Dec +32:08:47.0=32.14639, uncertainty 0.45 arcsec radius 90% confidence）",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 17198",
-  "comment": null,
+  "comment": "【身份核验（2026-11-10，仓内 gcn/archive 全文 13 篇 + external/swift_bat、external/fermi_gbm 快照互证）】GRB141220A＝Swift/BAT trigger 621915（GCN 17196 'Swift detection of a burst with an optical afterglow'，06:02:52 UT 触发，BAT 在轨位 195.050,+32.144）＝Fermi/GBM trigger 141220252（GCN 17205 'Fermi GBM observation'，06:02:52.49 UT 触发）＝Konus-Wind T0=06:02:51.666（GCN 17207）。双触发仪器（Swift/BAT 与 Fermi/GBM）亚秒矛盾按 §3.2 有 Swift 从 Swift，Trigger_Instrument 由 bot 的 Fermi/GBM 改为 Swift/BAT；Swift 系全部后续（XRT/UVOT、LT/GTC/MITSuME/GMG 各通告）与论文表、Burst Analyser 均以 BAT 触发为零点。\n\n【T0 判定】T0=2014-12-20T06:02:52.659420Z（Swift/BAT 官方目录值，GCN 17196 整秒一致）。bot 原值留底：T0_bot=2014-12-20T06:02:52.490000Z，系 GBM GCN 17205 触发时刻（跨仪器误植为基准，Issue #68/#84 同型）。全表 921 行非 X 射线行 mjd=T0+time 已重算（time 保持各原文献口径：论文表/GCN 相对时刻本就是 BAT 历元，绝对钟时刻行按新 T0 重减）；26 行 10keV X 射线行按 §3.3/§7 未动，其 mjd 现为 bot 旧 T0+time，与新 T0 偏差 0.169 s（1 s 容差内，CI 守卫通过），合并前需维护者按 mjd=T0_new+time 机械重算（2026-10-31 裁定）。\n\n【定位】ra/dec=195.06565/+32.14639＝GCN 17201 Swift/UVOT 初步定位（uncertainty 0.45 arcsec radius, 90% confidence，原文给置信水平故 pos_error_confidence=90）。备查并列：XRT 精化 195.0653,+32.1466 ±3.6″ 90%（GCN 17203）；BAT 地面 195.058,+32.146 ±1.2′ 90% sys+stat（GCN 17202）；CAHA 1.23m 195.0657,+32.1462 ±0.8″（GCN 17197）；GBM 目录 195.067,32.1336（external/fermi_gbm 快照；其 error_radius=0.001028 字段单位存疑——按弧度解释≈3.4°方符合 GBM 定位量级，按度则仅 3.7″，已报备不改快照）。bot 原 195.05/+32.15 为 BAT 在轨位舍入（GCN 17196）。\n\n【红移】z=1.3195，redshift_type=spec：GCN 17198 GTC/OSIRIS R1000B 光谱（600s，3750-7800Å）吸收线 AlII/FeII/MgII/MgI＋多条 FeII*，'very likely the redshift of the GRB'；另报两个 MgII 成分系统 z=1.280/0.527。Swift/BAT 目录 z_ref 亦指 GCN 17198（'de Ugarte Postigo et al. GCN Circ. 17198 (GTC)'），bot 已填 redshift_ref=GCN 17198、本次核对原文无误。\n\n【分类 sub_tag=lgrb】Swift/BAT 目录 t90=7.232±0.479 s（15-350 keV，external/swift_bat 快照；GCN 17202 7.21±0.48 s 一致）＋GBM 目录 t90=7.61613±0.923034 s（50-300 keV，external/fermi_gbm 快照；GCN 17205 ~7.6 s 一致）——按目录 t90 判 lgrb/sgrb（2026-10-26 裁定口径）；Jordana-Mitjans+2021 §1 亦明示 'GRB 141220A is classified as a long-soft GRB type'。\n\n【alias】'GRB 141220A'＝GCN 17196 通告主题用名；'GRB141220252'/'GRB 141220.252'/'bn141220252'＝FERMIGBRST 目录 name_alt（external/fermi_gbm 快照 GRB141220A 行），GCN 17205 原文用名 'trigger 141220252' 即其来源；'BAT 621915'＝Swift/BAT 目录 name_alt（external/swift_bat 快照）。\n\n【逐行核对（lc 947 行，2026-11-10）】(1) 908 行 Liverpool 块（reference=Dainotti2024;arXiv2106.10295）＝Jordana-Mitjans+2021（MNRAS 505,2662）表1：CDS VizieR J/MNRAS/505/2662 官方机读表与 arXiv 2106.10295 源码 tab1.txt 908 行零差异，本表 908/908 逐值核对一致；time_err 由表1 texp/2 列回填（原全 0.0）；5 行 SkyCam-Z 的 telescope/instrument 由 Dainotti 目录误标 Liverpool(2m)/RINGO3 改为 SkyCam-Z(0.2m)/SkyCam-Z；band B＝原文 RINGO3 BV 波段（Dainotti 目录映射 BV→B，filters.json 无 BV 键，备查）；Gext_corr 全部保持 n——但表1注1 明示 'corrected for atmospheric and Galactic extinction'（grbLC extcorr=y 同证），引擎派生列（本源 920 行）已有值，按校验器 'y 行派生列必须全空' 口径不可置 y，待维护者裁决（选项：清派生列置 y，或开 Issue 处理双重改正）。(2) UVOT 3 行（GCN17201）：time 原为曝光起点−0.49s 的 bot 残留，改为 GCN 17201 表曝光中点 583/607/743s，time_err=10/9.5/19.5s（半曝光），mag_system=Vega（GCN 明示 UVOT 光度系统 Breeveld+2011，惯例推定）；与 Dainotti2024;17201 转引行（同值）确证重复，按 §3.4 删除转引行保留 GCN 原出行。(3) GTC 2 行：GCN17200 行 time 2321.51→2322.0（'38.7 min after the burst'，bot 亚秒残留已清）；Dainotti2024;17200 行（r'=18.11±0.05@20.6min 首图）reference 改 GCN17200，telescope 由 grbLC 误标 CTIO/SOAR(4.1m) 改 GTC(10.4m)（OSIRIS 仪器名混淆）。(4) LT r 行 reference 改 GCN17199（'34 minutes'→2040s，SDSS-R 定标 AB 推定）。(5) MITSuME Okayama 3 行 reference 改 GCN17204，time_err=2970s（T-EXP 5940s 之半），SDSS-DR7 定标 AB 明示。(6) MITSuME Akeno 3 行（GCN17215）：取 MID-UT 18:07:29 UT→time=43476.3406s、time_err=4230s；GCN 表 T0+[sec]=36707s 与 MID-UT、与起点 15:16:22+T-EXP/2 三值互矛盾，且 36707s 作中点物理不可能（窗口跨度 6996s<T-EXP 8460s，姊妹通告 17204 三值自洽为对照），Dainotti2024;17215 转引行（time=36707s）已删，详见 PR 报告待决。(7) GMG 上限行 reference 改 GCN17653，time=59145.4406s（观测起点 22:28:38.1 UT），原文 'about 18.4 hours' 与定钟时刻矛盾（18.4h→00:26:52 UT Dec21 已日出，丽江冬至日出≈00:13 UT；22:28:38.1→T0+16.43h 处天文晨昏蒙影边缘可测），疑为 16.4h 笔误，Dainotti 66240s 已改。(8) CAHA GCN 17197 检出光对应体但未给星等，无数值不入库。(9) 26 行 10keV（Burst Analyser）未动。\n\n【测光检索留证（2026-11-10）】仓内 gcn/archive 全文检索 '141220A'/'bn141220252'/'621915'：命中 13 篇（17196-17205、17207、17215、17653），其中含测光数值 6 篇（17199 LT r 一点；17200 GTC r' 两点；17201 UVOT 三点；17204 Okayama 3σ 上限×3；17215 Akeno 上限×3；17653 GMG r'~21.0 上限），17197 CAHA 检出无数值，其余为触发/谱/位置通告——全部已入库；external/rssgrbag（74 源射电光变）无记录、external/grbsn_webtool（63 事件）无该事件、external/fermi_lat 无 LAT 探测记录（GCN 17205 仅注 LAT 偏角 ~47°）。SciX（api.scixplorer.org）'141220A' 命中 17 条：研究论文 2 篇——Jordana-Mitjans+2021（MNRAS 505,2662，表1 已核 908/908）与 Shrestha+2022（MNRAS 516,1584 RINGO3 目录文，同一批 RINGO3 数据统一再处理＋偏振上限，无独立新测光点，不入库）；VizieR J/MNRAS/505/2662 与 arXiv 表一致；GCN 通告与 archive 一致；其余为综述/会议录。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光已全部入库，本次新增 0 行、修正 21 行＋908 块 time_err/instrument/mjd、删除转引重复 6 行。\n\n【渠道与版本】Jordana-Mitjans+2021：VoR（MNRAS 505,2662）正文因 OUP/Radware 反爬 403 未通读——数据表取 CDS VizieR J/MNRAS/505/2662（随 VoR 发布的官方机读表，908 行与 arXiv v1 tab1.txt 零差异），论文口径（T0=BAT 06:02:52.7、A0 星定标 Vega、SDSS 定标 AB、表1值已做大气+银消改正）按 arXiv v1 全文＋CDS 表＋SciX 元数据三方交叉，未通读 VoR 正文，已登记 audit/unverified.tsv。Dainotti+2024：VoR（MNRAS 533,4023）同样 403，数据取 VoR 指定数据发布渠道 grbLC（github.com/SLAC-Gamma-Rays/grbLC，其 source 列自证 arXiv2106.10295），同一 unverified.tsv 行登记。extra_data.params/params_computed 为维护者管线产物，只读未动（variability 的 src=guidorzi2025 与 articles 内 Guidorzi+2024（A&A 690,A261）年份名不一致，报备待议）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -87,15 +93,27 @@
         "v": 0.228
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2024},\n       volume = {533},\n       pages = {4023},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract}\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
+    },
+    {
+      "name": "Jordana-Mitjans+2021",
+      "title": "Coherence scale of magnetic fields generated in early-time forward shocks of GRBs",
+      "url": "https://doi.org/10.1093/mnras/stab1003",
+      "bibtex": "@ARTICLE{2021MNRAS.505.2662J,\n       author = {N. Jordana-Mitjans and C. G. Mundell and R. J. Smith and C. Guidorzi and M. Marongiu and S. Kobayashi and A. Gomboc and M. Shrestha and I. A. Steele},\n       title = {Coherence scale of magnetic fields generated in early-time forward shocks of GRBs},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2021},\n       volume = {505},\n       pages = {2662},\n       doi = {10.1093/mnras/stab1003},\n       eprint = {2106.10295},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021MNRAS.505.2662J/abstract}\n}",
+      "source": "Rusty-Harpoon@zcode"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
