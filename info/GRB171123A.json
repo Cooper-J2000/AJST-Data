@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB171123A",
-  "alias": [],
-  "ra": 186.2425,
-  "dec": 32.5032,
-  "T0": "2017-11-23T16:24:30Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 171123A",
+    "BAT 791922"
+  ],
+  "ra": 186.24641,
+  "dec": 32.50104,
+  "T0": "2017-11-23T14:14:47.601920Z",
+  "T0_ref": "GCN 22148（Swift/BAT 触发通告：At 14:14:47 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 171123A (trigger=791922)；XRT 起测 14:16:17.8 UT＝触发后 90.2 s，反推 14:14:47.6 互证）＋触发仪器官方目录 external/swift_bat（batgrbcat）trigger_time=2017-11-23T14:14:47.601920Z（external/swiftgrbba 快照 14:14:47.000Z 整秒一致）。原 bot T0=2017-11-23T16:24:30Z 系 GCN 22154 MITSuME 观测起点 16:24:30.61 UT 误植为触发时刻（Issue #84 同族管线残留），原值留底于 t0_note 与 comment",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 22150",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "2017-11 由 GCN 通告管线建源（bot_created=true、src=gcn_llm_extract）；2026-11-10 Rusty-Harpoon@zcode 单源审核：T0 重锚触发时刻、定位归位 enhanced XRT 位、lc 17 行时间轴/元数据修订并补 UVOT 5 行上限。\n\n【身份链】GRB171123A＝Swift/BAT trigger 791922（GCN 22148 触发通告：At 14:14:47 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 171123A (trigger=791922)；BAT 星上定位 186.190,+32.531，3′，90% 含系统差）；XRT 增强位确认余辉（GCN 22150/22151/22152）；目录互证：external/swift_bat（batgrbcat，name_alt=BAT 791922）、external/swiftgrbba（target_id=791922）、external/swift_xrt_live、external/mpe_greiner（BAT 星上位）均命中同一事件。同日划界：gcn/archive 全文检索「171123」仅命中本源 13 篇通告（22148/22150/22151/22152/22153/22154/22157/22158/22160/22161/22162/22166/22169），无 GRB 171123B 命名、无同日其他卫星触发（fermi_gbm/heasarc_grbcat 快照当日 0 命中），无混淆对象。\n\n【T0】T0=2017-11-23T14:14:47.601920Z：GCN 22148 整秒 14:14:47 UT（XRT 起测 14:16:17.8 UT＝触发后 90.2 s，反推 14:14:47.6 互证）＋触发仪器官方目录 external/swift_bat trigger_time=2017-11-23T14:14:47.601920Z（swiftgrbba 快照 14:14:47.000Z 整秒一致）。原 bot T0=2017-11-23T16:24:30Z 系 GCN 22154 MITSuME「The observation started on 2017-11-23 16:24:30.61 UT」被误植为触发时刻（Issue #84 同族；bot t0_basis=meta_trigger 自称真实触发时刻，实为地面望远镜起测时刻），原值留底于 t0_note。T0_offset 不写（无证据表明真实爆发时刻相对自动触发偏移 >1 s；GCN 22153 弱脉冲起于 ~T−1 s、前兆 T−25 s 起为亚秒级口径差，不构成 >1 s 时刻调整依据）。全表 22 行 time/mjd 已按新 T0 重算（bot 时间轴失真：UVOT 3 行系曝光起点、GMG/Nanshan/Zeiss/OSN 4 行系起测时刻、MITSuME/Tautenburg/RATIR 历元口径正确但按误植 T0 换算）；本源无 X 射线行。\n\n【定位】ra/dec=186.24641,+32.50104 取 GCN 22150 enhanced XRT 位（astrometrically corrected；uncertainty of 1.9 arcsec, radius, 90% confidence——原文明示 → pos_error_confidence=90）；原 bot ra/dec=186.2425,32.5032 系 GCN 22148 初版增强位（3.5″，90% containment）与 pos_ref=GCN 22150（1.9″）错配，已统一。备查并列：BAT 星上位 186.190,+32.531（3′，90%，GCN 22148）；BAT 地面位 186.1956,+32.50406（2.4′，sys+stat 90%，GCN 22153＝swift_bat 快照）；swift_xrt_live 目录位 186.24649,+32.50103（2.1″，目录文档明示 90% conf；2026-07-21 快照）；swiftgrbba xrt 位 186.24646,+32.50103（1.5″，与 GCN 22162 所引 swift.ac.uk 官网最新 1.5″ 一致）；Tautenburg OT 候选体位 186.24708,+32.50094（±0.6″，3σ preliminary，GCN 22162，居 XRT 误差圆 SE 缘）。各值互差 ≤2.1″，均在误差圆内、互洽。\n\n【分类】tag=grb；sub_tag=lgrb 按目录 t90 判：t90=58.464±27.053 s（Swift/BAT 官方目录 batgrbcat＝external/swift_bat 快照，15-350 keV；GCN 22153 refined analysis 同值 58.5±27.1 s）——按目录 t90 判 lgrb/sgrb。\n\n【物理量备查】T90=58.5±27.1 s（15-350 keV，GCN 22153；含系统差）；fluence=4.8±1.0e-7 erg/cm2（15-150 keV，GCN 22153；batgrbcat 4.758e-7）；1-s 峰值光子流量 0.8±0.2 ph/cm2/s（15-150 keV，GCN 22153）；BAT 时谱幂律指数 1.35±0.34（90% conf，GCN 22153）；partial coding 86%；E(B-V)=0.02（Schlegel+1998 方向值，GCN 22148/22158——各测光行均未做银消改正 → 全表 Gext_corr=n）；X 射线量（不入库）：Galactic NH=1.9e20 cm-2、XRT 过剩柱密度 8.8(+5.1,−4.4)e20 cm-2、光子指数 2.21(+0.22,−0.21)、T+24 h 预测 0.3-10 keV 观测流量 3.0e-13 erg/cm2/s（GCN 22152）。\n\n【逐行核对】原 17 行数值（星等/误差/波段/上限标记）全部与原文一致、未动；问题集中在时间轴与元数据：① T0 误植（见【T0】）；② UVOT 3 行（uvm2/uvw1/uvw2）time 系 GCN22158 表 T_start 曝光起点非中点，已按窗口中点/半窗宽重锚；③ GMG/Nanshan/Zeiss/OSN 4 行 time 系起测时刻非中点——GMG 原文未给曝光时长（中点不可恢复，保留起测口径并注明）；Nanshan 按堆叠 540 s 中点（其自述 median 6.92 hr 与绝对时刻不自洽，不采）；Zeiss 按表列 t-T0(mid)=0.41294 d（与起测+半曝光差 30 s，取表列口径）；OSN 按可用堆叠（18×300 s 后 4 帧不可用 → 前 14×300 s=4200 s）中点；④ RATIR 6 行 bot 系 UTC 小数日中点（24.505 d），改按精度更高的「BAT 触发后 21.06–22.77 h」表述（中点 21.915 h、半窗宽 0.855 h），差 149 s；⑤ time_err 全部补齐（半曝光/半窗宽）；⑥ mag_system：UVOT 8 行=Vega（GCN 22158 原文引 Breeveld et al. 2011 UVOT photometric system）、RATIR 6 行=AB（原文明示）、OSN/Tautenburg=Vega（原文 Ic(Vega)/Rc(Vega) 明示）、Nanshan=AB（SDSS 场星定标推定，依据见行 comment）、MITSuME 3 行/GMG/Zeiss 留空（原文未声明系统）；⑦ 新增 5 行 UVOT 上限（white_FC>20.9、u_FC>20.5、white>21.0、b>19.7、v>18.8——原库仅录 uvm2/uvw1/uvw2 三行、漏其余 5 行）；⑧ 0 行 discard、0 行删除、无 X 射线行、无重复转引。Nanshan r 帧（1×120 s）原文未给独立限值不入库；GCN 22151/22152/22153 为 XRT/BAT 分析、无光学测光。\n\n【检索留证】测光检索（2026-11-10）：仓内 gcn/archive 全文检索「171123」命中 13 篇、均为本源通告（22148/22150/22151/22152/22153/22154/22157/22158/22160/22161/22162/22166/22169），其中含光学/UV 测光数值 8 篇（22154 MITSuME、22157 GMG、22158 UVOT、22160 RATIR、22161 Nanshan、22162 Tautenburg、22166 OSN、22169 Zeiss），全部已入库；external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）、external/uvot_grb（626 源）均无该源记录；external/swift_bat/swiftgrbba/swift_xrt_live/mpe_greiner 用于身份与 T0 互证（目录级参数，未作测光源）。GCN 站（gcn.nasa.gov/circulars?query=171123A 网页实查）13 篇与 archive 一致、无更多通告。SciX（api.scixplorer.org，3 种查询：「GRB 171123A」/「171123A」/abs:「GRB 171123A」）均只命中同 13 篇 GCN 通告（doctype=newsletter），无研究论文或预印本。TNS 不适用（GRB 非 AT/SN/CV 类）。红移：13 篇通告均未报红移、无研究文献 → redshift=null。结论：可用测光＝UVOT 8 上限＋MITSuME 3 上限＋GMG 1 上限＋Nanshan 1 上限＋Zeiss 1 上限＋OSN 1 上限＋Tautenburg 1 探测＋RATIR 6 上限；本次新增 5 行（UVOT 补全）、修正 17 行时间轴/元数据。\n\n【alias 证据】GRB 171123A：GCN 22148-22169 十三篇题名原文用名（如 GCN 22148 subject「GRB 171123A: Swift detection of a burst」）；BAT 791922：external/swift_bat（batgrbcat）name_alt 原文用名。\n\n【导入留底】bot 原值：T0=2017-11-23T16:24:30Z、t0_basis=meta_trigger、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"、ra/dec=186.2425/32.5032、Trigger_Instrument=Swift、tag=[]/sub_tag=[]/alias=[]——2026-11-10 审核改判（理由见各节）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=2017-11-23T14:14:47.601920Z 锚定：触发仪器官方目录 batgrbcat（external/swift_bat）亚秒值＋GCN 22148 整秒互证。bot 原值：T0=2017-11-23T16:24:30Z、t0_basis=meta_trigger、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"——实为 GCN 22154 MITSuME 观测起点 16:24:30.61 UT 误植（Issue #84 同族），2026-11-10 Rusty-Harpoon@zcode 改判，原值留底",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [],
   "host_galaxy": null
