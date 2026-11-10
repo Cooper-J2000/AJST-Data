@@ -1,28 +1,37 @@
 {
   "transient_id": "GRB240911A",
-  "alias": [],
+  "alias": [
+    "GRB 240911A"
+  ],
   "ra": 351.3,
   "dec": 21.33,
-  "T0": "2024-09-11T22:30:00Z",
-  "T0_ref": null,
+  "T0": "2024-09-11T20:38:48Z",
+  "T0_ref": "GCN 37462（SVOM/ECLAIRs 触发定位通告 原文 triggered and located a weak GRB at 2024-09-11T20:38:48；bot 原值 2024-09-11T22:30:00Z 系 GCN 37490 LCO 观测起始时刻误植 偏 6672 s）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 984.1,
   "pos_ref": "GCN 37462",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "【身份】GCN 37462（SVOM/ECLAIRs 调试期触发定位通告）：During the commissioning phase, the SVOM/ECLAIRs telescope triggered and located a weak GRB at 2024-09-11T20:38:48，命名 GRB 240911A；ECLAIRs 定位 RA, Dec = 351.30, 21.33 (J2000)（=库内 ra/dec）；CRT 在载触发 重建图像 SNR 6.8（20-120 keV 10.24 s 单窗）距光轴约 41°；SVOM 未 slew（automated slewing not yet enabled）。后随互证：GCN 37475/37483（Swift tiled XRT 观察 T0+73.0-79.5 ks 发现两未编目 X 射线源 351.4579, +21.3760（13.5″ 90% conf）与 351.5268, +21.2944（8.2″ 90% conf）距 ECLAIRs 位 554″/771″ 均在误差圆内 但原文 we cannot identify which, if any, is the afterglow）；GCN 37486（GOTO）/37489（JinShan）/37490（LCO）均锚定 SVOM/ECLAIRs GRB 240911A（GCN 37462）；Swift-XRT 在线产品号 TILED_GRB00128（产品页编号 非别名）。同日排查：仓内 gcn/archive 全文「240911」仅命中本源 6 篇；GRB 240912A/240912B（GCN 37465-37478）与 EP240913a（GCN 37500/37510）均为不同事件 无混并。SVOM burst-id：GCN 37462（含官网网页版）与全部通告均无 sb240911xx 形编号；SciX「sb240911」0 命中；GCN 事件页 grb-240911a（2026-11-11 实查）无其他名称 → 不收 sb 伪形。【T0】标准 T0=2024-09-11T20:38:48Z（触发仪器官方通告 GCN 37462 原文精度即整秒）。bot 原值 2024-09-11T22:30:00Z（t0_basis=meta_trigger）系 GCN 37490 LCO「Observations started on 2024 September 11 at 22:30 UT」观测起始时刻误植（Issue #84 已知失真同型：观测窗口起点进 T0）偏 +6672 s；原值留档于本段。三路后随自洽互证：GCN 37490 自称 1.87 hr（22:30−20:38:48=1.853 hr 取整同型）；GCN 37489 起测 16:27:18 UT 自称 19.8 hr（复算 19.808 hr）✓；GCN 37486 观测 04:40:43 UT 自称 8.03 hr（复算 8.032 hr）✓。T0_offset=null（无 >1 s 偏移证据）。【定位】ra/dec=351.30/21.33（GCN 37462 ECLAIRs 在载定位 原文两位小数 保持）；pos_error=984.1″=√(13²+10²) arcmin=16.40′——原文统计误差 13′ 并 recommend to add 10 arcminutes of systematic uncertainty（本通告未明写 in quadrature；同调试期 GCN 37495/GRB 240914A 同款措辞明写 in quadrature 且仓内先例按象限合成 pos_error=861.4″；external/mpe_greiner 快照本源条目 Error=16′（角分）相符）；置信水平原文未标注 → pos_error_confidence 留空。Swift-XRT 两未编目源非确认余辉（GCN 37483）不作定位替换。【分类】sub_tag=[]：6 篇通告无一给 long/short 分类或 T90（GCN 37462 的 10.24 s 系 CRT 重建图像搜索窗 非 T90；原文仅称 weak GRB）按 §3.9 不自行现算 留空。【红移】null：6 篇通告均无红移通报（见检索留证）。【物理量备查】ECLAIRs CRT SNR 6.8（20-120 keV 10.24 s 窗 GCN 37462）；Swift-XRT 两未编目源计数率 (3.7 [+2.3, −1.6])e-3 与 (5.5 [+3.6, −2.6])e-3 ct s^-1（PC 模式 GCN 37483）——X 射线量 按 §3.3/§7 不入库。【逐行核对】原 6 行：GCN 37489 JinShan 50cm-A/B 4 行（g/r/i/z 各 5σ 上限 AB）数值/波段/T_mid 与原文表列逐一一致 mjd(=T_mid) 未动；bot time 系按误植 T0 换算（整体 −6672 s）已重算；原文未给曝光时长 → time_err 留空。GCN 37490 LCO 2 行（r>21.0/z>19.5）数值一致；bot time=0/mjd=60564.9375 系观测起点当 T0 已按两系列总窗口中点重算（time=7242 s、time_err=570 s、mjd=60564.9440972）；mag_system 原文未声明留空。Gext_corr 全部 n（37489/37486 原文明示未做银消改正；37490 未提及）。【新增行】GCN 37486 GOTO 1 行：L>19.3（5σ）于两 XRT 源位 观测起 2024-09-12T04:40:43 UT（原文 8.03 hours after trigger）；time=单次 4×45 s 中点 29005 s、time_err=90 s、band=GOTO-L（filters.json 既有键 原文 GOTO L-band 400-700 nm）。合计 lc 7 行。【检索留证】（2026-11-11）：仓内 gcn/archive 45 947 篇全文「240911」命中 6 篇（37462/37475/37483/37486/37489/37490 均为本源）；external/rssgrbag（74 源射电光变）/grbsn_webtool（63 事件）/swiftgrbba/fermi_gbm 快照 0 命中；external/mpe_greiner 1 行（定位条目 Error 16′ 无测光 仅身份互证）。GCN 站 circulars?query=240911A（2026-11-11 实查）恰 6 篇与 archive 一致、37462 网页实取与快照一致；GCN 事件页 grb-240911a 同。SciX（api.scixplorer.org）三查询（「GRB 240911A」/「240911A」/「sb240911」）共命中同 6 篇 GCN 通告 0 研究论文/预印本。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光/上限 = LCO r/z 2 条（库内原有 已修正）+ JinShan g/r/i/z 4 条（库内原有 已修正时间轴）+ GOTO L 1 条（本次新增）；本次新增 1 行、修正 6 行、删除 0 行。【alias 证据】「GRB 240911A」= GCN 37462 subject/eventId 及全部 6 篇通告官方用名（无空格形 GRB240911A 为库内 id）；无 SVOM burst-id（见【身份】）故无 sb 别名。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=2024-09-11T20:38:48Z 按 GCN 37462（触发仪器官方通告）重锚；bot 原值 2024-09-11T22:30:00Z（t0_basis=meta_trigger、原 t0_note「t0 为 meta trigger-time（真实触发时刻）」）系 GCN 37490 LCO 观测起始时刻误植（Issue #84 同型），原值留档于 info comment【T0】段",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [],
   "host_galaxy": null
