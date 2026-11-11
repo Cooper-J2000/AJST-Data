@@ -1,32 +1,40 @@
 {
   "transient_id": "GRB260410A",
-  "alias": [],
+  "alias": [
+    "GRB 260410A",
+    "bn260410294"
+  ],
   "ra": 110.67,
   "dec": -20.94,
-  "T0": "2026-04-10T07:03:56Z",
-  "T0_ref": null,
+  "T0": "2026-04-10T07:03:56.997288Z",
+  "T0_ref": "GCN 44252 触发 MET 797497441.997288 −5 s（闰秒：Fermi MET 纪元 2001-01-01 起 TAI−UTC 32→37 s）→ 2026-04-10T07:03:56.997288 UTC；external/fermi_gbm（FERMIGBRST）trigger_time MJD 61140.294409691（=07:03:56.9973）与 IceCube GRBweb GBM 表 t_trigger 7:03:56.997 UTC 互证；官方通告页 gcn.gsfc.nasa.gov/other/797497441.fermi GRB_TIME SOD 25437.00 {07:03:57.00} UT 与 GCN 44258「07:03:57.00 UT」为同一时刻四舍五入（差 2.7 ms）；GCN 44252「07:03:56 UT」为取整；朴素 MET 换算 07:04:01.997 已弃（Issue #67 族三路核查）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 0.17,
   "pos_ref": "GCN 44253",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "【身份】GRB 260410A = Fermi/GBM trigger 797497441.997288（bn260410294）：GCN 44252（Fermi GBM Team，Final Real-time Localization）「At 07:03:56 UT on 10 Apr 2026, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 260410A (trigger 797497441.997288 / 260410294)」；GCN 44253（Holzmann Airasca et al.，Fermi-LAT Team）LAT 检测并定位；GCN 44258（Hamburg et al.，GBM 团队精测）；CALET（GCN 44283）、Konus-Wind（44286）、Insight-HXMT/HE（44287）、Glowbug（44290）多仪器伽马探测互相印证；通告恰 8 篇，GCN 事件页 gcn.nasa.gov/circulars/events/grb-260410a、仓内 gcn/archive、SciX 三方一致（GCN 44258 有 Edited On 2026-04-10T21:12:09Z、44290 有 Edited On 2026-04-14；仓内 archive 正文与事件页现行版本逐值一致，无勘误影响）。【同日他暴甄别】2026-04-10 同日 GBM 另有 trigger 260410516 = GRB 260410B（GCN 44255：12:22:26 UT、RA 4.2/Dec 37.7、5.6°，库内未建条目）与 trigger 260410961（23:03:56.634、RA 135.38/Dec -33.92，external/fermi_gbm；无本暴通告链），均与本暴（触发 07:03:56.997、LAT 位 110.67/-20.94）无关。【T0】GCN 44252 触发 MET 797497441.997288 −5 闰秒 → 07:03:56.997288 UTC（详见 T0_ref；FERMIGBRST MJD 61140.294409691、GRBweb GBM 表 t_trigger 7:03:56.997、通告页/GCN 44258 SOD 25437.00 {07:03:57.00} UT 四舍五入、GCN 44252 取整 07:03:56 四方自洽）；bot 旧值 2026-04-10T07:03:56Z（取整）按触发仪器亚秒改锚。无 >1 s 触发偏移证据：Glowbug onset 07:03:55.848、Konus trigger 07:03:56.090（T0=25436.09 s UT）、CALET 07:03:56.88、HXMT 07:03:56.950、LAT detection 07:03:57.00 系各仪器自有触发/探测时刻，仪器间亚秒差不作 T0_offset。【定位】ra/dec = 110.67/-20.94、pos_error = 0.17 deg（90% containment、statistical error only）为 GCN 44253 Fermi-LAT on-ground 最佳定位（原文明示 90%），LAT 视场角 49°；与 FERMIGBRST 目录 ra/dec/error_radius（110.67/-20.94/0.17 deg，external/fermi_gbm，目录采最佳已知位）一致。备查并列：GBM flight 位 101.067/-20.933（8.42°，stat+sys）；GBM ground 初位 107.000/-26.010（3.30°，stat only）；GBM final 位 108.330/-28.850（8.15°，stat only；GCN 44252 记 108.3/-28.9、8.2°）——均见官方通告页 gcn.gsfc.nasa.gov/other/797497441.fermi；IPN 位 110.6708/-20.9333（±0.167° = 10′，IceCube GRBweb IPN 表与 external/mpe_greiner「GRB X-ray position 07h22m41s -20°56'」、mpe_greiner IPN=y；IPN 位置通告未见于 GCN Circular，备查）。无 Swift/地面更精定位。【分类】t90 = 0.96±0.143 s（external/fermi_gbm FERMIGBRST，50-300 keV，t90_start=-0.064 s）——按目录 t90 判 sgrb；GCN 44258 T90 约 1 s（50-300 keV）；CALET T90=0.21±0.04 s（SGM 40-1000 keV，GCN 44283）；HXMT T90=0.6+0.5/−0.3 s（GCN 44287）；GCN 44252/44253「likely SHORT GRB」、GCN 44286「short-duration GRB」均一致。【高能量值备查】fluence = (1.33±0.01)E-6 erg/cm²（10-1000 keV，GCN 44258；FERMIGBRST 1.3339e-6±1.43473e-8）；64 ms 峰值光子流量 12.0±1.0 ph/cm²/s（10-1000 keV，GCN 44258；FERMIGBRST flux_64 11.964±1.002）；谱（GBM）：PLC 指数 −0.17±0.01、Epeak 960±30 keV（T0−0.07 至 T0+0.30 s，GCN 44258）；Konus-Wind：Band α=-0.06(+0.62/−0.34)、β=-2.06(+0.28/−0.51)、Ep=784(+341/−283) keV、fluence 3.36(+0.53/−0.54)E-6 erg/cm²、16 ms 峰值 2.53(+0.68/−0.69)E-5 erg/cm²/s（20 keV–10 MeV，GCN 44286）；LAT：>100 MeV 光子流量 (1.23±0.38)E-3 ph/cm²/s（GBM 触发后 0–2 s）、光子指数 −1.84±0.24、最高能光子 6.1 GeV（触发后 0.37 s）（GCN 44253）。【alias】「GRB 260410A」为 GCN 通告用名（subject）；「bn260410294」为 GBM 官方触发名（GCN 44252 原文用名 trigger 797497441.997288 / 260410294、skymap URL bn260410294；external/fermi_gbm trigger_name；IceCube GRBweb trigger_name bn260410294）。【红移/宿主】无红移（8 篇通告与 SciX 检索均未给 z；短暴且无光学余辉探测）；无宿主文献支持，host_galaxy 不建立。【X 射线】本源 lc 无 band 为能量串（eV–GeV）的行，无 X 射线行处置事项。【逐行核对与去重】lc 2 行（GCN 44260 COLIBRÍ/DDRAGO r/z 上限）逐值核对与原文一致：r > 23.26、z > 21.83（5σ）、AB 系统、PanSTARRS DR1 定标、原文明示未做银消改正（Gext_corr=n）、upperlimit=y；修正：T0 加亚秒后按 §3.8 修法二 time 平移（bot 旧值 76502.0 系窗口中点相对旧取整 T0 07:03:56 之值 → 新值 76501.002712 s）、mjd 不动（窗口中点绝对时刻 2026-04-11 04:18:58 UTC = MJD 61141.179837963）、补 time_err=1692 s（窗口跨度 3384 s 之半）、telescope/instrument 拆分（COLIBRI 望远镜 / DDRAGO 成像仪）、reference 规范「GCN 44260」；两行不同滤光片非重复，净增 0 行。【测光检索留证】测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇）检索「GRB 260410A/GRB260410A」命中本暴通告 8 篇（44252/44253/44258/44260/44283/44286/44287/44290），含光学/紫外数值者仅 GCN 44260（r/z 上限 2 行，已在库），其余 7 篇均为伽马射线探测、无测光；仓内 external/ 快照 rssgrbag、grbsn_webtool、uvot_grb、konus_wind、heasarc_grbcat、swift_bat（「260410」命中系数值残渣误配 GRB 141022A 行，Swift 未触发本暴）、swift_grb、swiftgrbba、swift_xrt_live、batse、saxgrbmgrb、agile_mcal、fermi_lat（2FLGC DR1 不含 2026）、liang2023、wang2022、guidorzi2025、minaev2020 均无本暴测光记录（external/fermi_gbm 有 FERMIGBRST 目录行、external/mpe_greiner 有定位行，均目录级非测光）；GCN 站事件页确认本暴通告恰 8 篇（仓内 archive 覆盖至 GCN 46068 = 2026-10-28，其后无新增）；SciX（api.scixplorer.org，题录+全文检索，token 实测可用；「GRB 260410A」「260410A」「GRB260410A」「260410294」、full:\"GRB 260410A\"）命中均仅同 8 篇 GCN、研究论文 0 篇。结论：本暴全部已知测光为 COLIBRÍ/DDRAGO r/z 两行上限（触发后 20.78–21.74 h），无其他有明确时间锚点的光学/红外/射电探测或上限可入库，净增 0 行；TNS 不适用（GRB 类）。",
   "sub_tag": [
     "sgrb"
   ],
-  "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_unit": "deg",
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [],
   "host_galaxy": null
