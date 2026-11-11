@@ -1,33 +1,50 @@
 {
   "transient_id": "GRB240910A",
-  "alias": [],
-  "ra": 24.0977,
-  "dec": -0.2048,
-  "T0": "2024-09-10T04:00:44Z",
-  "T0_ref": null,
+  "alias": [
+    "AT2024vfp",
+    "GOTO24fvl",
+    "bn240910167",
+    "sb24091005"
+  ],
+  "ra": 24.0972,
+  "dec": -0.2047,
+  "T0": "2024-09-10T04:00:44.214Z",
+  "T0_ref": "external/fermi_gbm（FERMIGBRST 官方目录）trigger_time=2024-09-10T04:00:44.214Z（采值原文）＋GCN 37464（Fermi GBM final circular）At 04:00:44.21 UT（同一时刻之 2 位舍入）＋GCN 37441 触发 MET 747633649.214168（按 2001-01-01 UTC 纪元并计入其后 5 次闰秒换算＝04:00:44.214168 自洽）——三源同值不同舍入、整数秒一致；SVOM/GRM sb24091005 T0=2024-09-10T04:00:46.000Z（GCN 37445）为第二触发仪器、并列备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
-  "redshift": 1.46,
+  "Trigger_Instrument": "Fermi/GBM",
+  "redshift": 1.4605,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 37459",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_error": 4.0,
+  "pos_ref": "GCN 37461",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 37467（OSIRIS+/GTC 吸收线共同红移 z=1.460）；Kumar+2025（2025MNRAS.544.1541K）表 A6/图 A5 精化 z=1.4605±0.0007",
+  "comment": "【身份与触发链】GRB 240910A＝Fermi/GBM trigger 747633649.214168／240910167（bn240910167）——GCN 37441（GBM 实时定位：At 04:00:44 UT…likely LONG GRB，GBM ground 位 RA=15.1 Dec=4.5、统计误差 4.5°）、GCN 37464（GBM final：T90≈272 s 50-300 keV、fluence (1.911±0.073)e-5 erg/cm2 10-1000 keV、1s 峰值光子流量 6.1±0.3 ph/s/cm2 起于 T0+86.1 s、Epeak=125±9 keV）；第二触发仪器 SVOM/GRM（sb24091005、T0=04:00:46.000、多脉冲 300 s，GCN 37445）；GRBAlpha CubeSat 探测（T90=107 s、7.4σ、峰值 2024-09-10 04:02:51.9 UTC，GCN 37450）。Swift/XRT 非触发仪器——GCN 37456 原文 Swift has initiated a ToO observation of the Fermi/GBM GRB 240910A（UKSSDC ToO 00021712 页头亦标 Mission: Fermi/GBM GRB、T0 2024-09-10 04:00:44 UT）；原 bot Trigger_Instrument=Swift/XRT 系导入误植（GCN 37461 系 XRT 检测 GOTO 候选体的后续通告），已改判 Fermi/GBM；GCN 37464 原文误提 also detected by the Swift/BAT（其引用 GCN 37461 实为 XRT 团队通告；external/swift_bat 全目录无本暴条目、无 BAT 触发）——按原文笔误口径记档。余辉链：GOTO-South 发现 GOTO24fvl/AT2024vfp（GCN 37459）→ Swift-XRT Source 2 位内 X 射线源（GCN 37461）→ JinShan 100C 确认衰减（GCN 37460）→ NOT r=21.4（GCN 37463）→ SVOM/VT（GCN 37503）→ GCN 37553 XRT 明确衰减 alpha=1.1(+0.4/-0.3) 并宣布确认 GOTO24fvl/AT2024vfp 为 GRB 240910A 余辉 → VLA 射电（GCN 37569）→ LBT（GCN 37734）。【同日甄别】同日另一 Fermi 暴 GRB240910488（bn240910488、2024-09-10T11:42:30.553Z、t90=1.408 s、GBM 位 171.34/29.24，external/fermi_gbm）与本暴（04:00:44、余辉位 24.097/-0.205）无涉，已排除；gcn/archive 全文检索 240910A/AT2024vfp/GOTO24fvl/747633649/240910167 命中同一组 15 篇通告（37441/37442/37445/37450/37456/37459/37460/37461/37463/37464/37467/37503/37553/37569/37734），无缺篇。【T0】＝2024-09-10T04:00:44.214Z（external/fermi_gbm FERMIGBRST 官方目录 trigger_time 原文；GCN 37464 同一时刻舍位记 04:00:44.21、GCN 37441 MET 747633649.214168 按 2001-01-01 UTC 纪元计入其后 5 次闰秒换算＝04:00:44.214168——三源同值不同舍入、整数秒一致）；SVOM T0（04:00:46.000）晚 1.79 s、全链后续通告（GOTO +9.43 h／NOT 1.81 d／SVOM +57.8 h／VLA T_mid=3.10 d／LBT 16.1 d／Kumar+2025 全表 T−T0）均以 Fermi 触发为历元——故取 Fermi/GBM 值。无 T0_offset（GBM t90_start=1.792 s 系目录 T90 窗口起点、非爆发偏移；无前驱报告）。原 bot T0=04:00:44Z（整秒 meta_trigger）→ 补亚秒改锚。lc 全表 mjd=T0+time 7 位小数重算；各行 time 保持来源口径精度（对旧整秒 T0 换算的 bot 值与 .21 亚秒 T0 差 0.21 s、远小于各行来源精度、未重推）。【定位】ra/dec=24.0972/-0.2047、pos_error=4.0″（90%）＝GCN 37461 Swift-XRT enhanced 位（原文明示 Error: 4.0 arcsec radius 90% conf. [Enhanced position]）；原 bot 坐标 24.0977/-0.2048 与 pos_ref=GCN 37459（GOTO 位 01:36:23.45/-00:12:17.86＝24.09771/-0.20496）不配套（dec 不合、且 GOTO 未给误差→pos_error=null），已归位。备查并列：GOTO 24.09771/-0.20496（无误差，GCN 37459）；JinShan 01:36:23.47/-00:12:17.24＝24.09779/-0.20479（~0.4″，GCN 37460）；VLA 01:36:23.458±0.003/-00:12:17.42±0.05＝24.09774/-0.20484（GCN 37569）；swift_xrt_live/swiftgrbba 24.09713/-0.20453（3.7″、未标注置信水平）；UKSSDC ToO 页头 24.098/-0.205（0.48″）；GBM ground 15.1/4.5（4.5° 统计误差，GCN 37441）。【分类】sub_tag=lgrb：t90=272.388±2.611 s（external/fermi_gbm、FERMIGBRST 官方目录、50-300 keV）按目录 t90 判 lgrb；Kumar+2025 表 4 同值 272.39±2.61 s；GCN 37441 原文 likely LONG GRB、GCN 37464 T90 about 272 s、GRBAlpha T90=107 s——多来源一致＞2 s。【高能/X 射线量值备查（不入 lc）】GBM：fluence=1.911±0.073e-5 erg/cm2（10-1000 keV、GCN 37464）／FERMIGBRST 目录 fluence=1.58006e-5±6.88e-8（10-1000 keV）／Kumar+2025 表 4 Band 模型 fluence=2.16(+0.18/-0.24)e-5、alpha=1.25(+0.08/-0.05)、beta=2.81(+2.83/-0.44)、Ep=113.3(+27.5/-22.7) keV、HR=1.81(+0.06/-0.07)；目录 t50=17.15±0.92 s、t90_start=1.792 s、Epeak(CPL)=174.5±7.4 keV；GRBAlpha T90=107 s、7.4σ（GCN 37450）。XRT（0.3-10 keV）：GCN 37461 flux=(7.3±1.7)e-13 erg/cm2/s（observed、Source 2、T0+128.3-135.2 ks 1.9 ks PC）；GCN 37553 两追加历元 T0+282-329 ks（2.8 ks）与 T0+679-708 ks（4.2 ks）明暗衰减 alpha=1.1(+0.4/-0.3)；Kumar+2025 表 5（T−T0=128.3 ks、Exp 1983 s）：alpha=1.10(+0.40/-0.30)、Gamma=1.75(+2.22/-0.61)、NH_gal=0.027e22、NH_intr=0.006(+0.005/-0.006)e22、flux=0.69(+0.49/-0.27)e-12 erg/cm2/s。本源 lc 无 X 射线行（band 无能量串）；发现上述 X 射线数据按 §3.3/§7 不入库。【红移】z=1.4605±0.0007（spec）：GCN 37467 OSIRIS+/GTC 3×1200 s R1000B 光谱（3650-7800 Å、R~600、mean epoch 2024-09-12T03:39:07 UT＝1.985 d after Fermi trigger）CIV/FeII/AlII/AlIII/ZnII/MnII/MgII/MgI 吸收线共同红移 z=1.460；Kumar+2025 §6.3.2/表 A6 精化为 1.4605±0.0007（SiII/CIV/FeII/AlII/AlIII/CrII/MnI/MnII/NiII*/MgII/MgI＋fine-structure，1.964 d post-trigger 起 03:08:33 UT、47.13 h）——吸收线系余辉光谱（非宿主发射线）故 redshift_type=spec 而非 spec-host；宿主未证认（VLA 注：FIRST/NVSS/VLASS/RACS 巡天 1σ rms>100 μJy、不能排除宿主贡献——无逐点时间锚不入库）。mpe_greiner redshift=1.46 互证。【alias】AT2024vfp（TNS 名；GCN 37459/37461/37553）、GOTO24fvl（GOTO 内部名；同上）、bn240910167（external/fermi_gbm name_alt；GCN 37441 trigger 240910167）、sb24091005（SVOM 触发参考号；GCN 37445 原文）。【逐行核对与去重】原 8 行逐行对 GCN 实核：全部数值/波段/上限标记与原文一致；修正——SVOM/VT 2 行 time 起点→窗口中点（+1350 s、time_err=1350 s）；VLA 3 行 time 改采 Kumar+2025 表 A2 各频段扫描时刻（GCN 自标 T_mid 与 05:42:45 UT 自差 0.029 d、以 VoR 扫描时刻为准）、err 改采总误差 ±10/9/10 μJy、数值/单位还原原文 μJy；LBT 2 行补 time_err=450 s；NOT 行补 time_err=150 s、instrument=ALFOSC；reference 规范为 GCN nnnn 带空格。新增 34 行：GCN 37459 GOTO 检测 3 行＋触发前 5σ 上限 1 行（L=19.41、−3.09 d）、GCN 37460 JinShan 1 行（r~20.9 约值）、Kumar+2025 表 A1 计 20 行（GOTO 5、UVOT 7、ALT/100C 1、ALFOSC/NOT 1、LT/IO:O 3、OSIRIS/GTC 采集 1、LBC/LBT 2）、表 A2 VLA 第 2/3/4 历元 9 行。初报/精表两版并列（GCN 37459 vs Kumar+2025 GOTO 值差 0.10-0.23 mag、GCN 37463 vs 表 A1 NOT 值差 0.4 mag、GCN 37460 vs 表 A1 100C、GCN 37734 vs 表 A1 LBT——均不同曝光组合或重归算、非转引、按 §3.4 并列保评论注）；SVOM/VT 之 Kumar+2025 行系 GCN 37503 同值转引不另立。MASTER-SAAO（GCN 37442）T0+137 s C=12.5 上限不入库：其指向 01h00m48.59s/+08d27m33.5s 距余辉位约 12°、不覆盖余辉位置（GCN 37442 本身系 GBM 误差盒巡视）。【band/星等系统】GOTO-L（filters.json 键、原文 L-band 400-700nm）、uvot-u/uvot-v、VT-B/VT-R、r/i/z、GOTO 频率串 6/10/15GHz 车道二；全部星等行 mag_system=AB——GCN 37463（AB 明示）、GCN 37503（AB 明示）、GCN 37460（AB 明示）、GCN 37734（AB 明示）、GCN 37459（未声明——ATLAS-REFCAT2 定标＋Kumar+2025 表 A1 caption 全表 AB 推定）、Kumar+2025 行（表 A1 caption 声明全表 AB；UVOT 行系 UVOT 原生 Vega 按 Breeveld+2011 零点转 AB、§4.2.1）；射电行 uJy 原样无星等系统。Gext_corr 全表=n：GCN 37459/37734 原文明示未改正、其余未声明改正；Kumar+2025 表值未改正（图 6 绘图侧改正、caption 明示；E(B−V)=0.0247 表 1）。【测光检索留证（2026-11-12）】仓内：gcn/archive 全文库（45947 篇）按 240910A/AT2024vfp/GOTO24fvl/747633649/240910167 检索命中本暴通告 15 篇（37441-37734 见上）、逐篇实核——含光学/紫外/射电数值者 8 篇（37442/37459/37460/37461/37463/37503/37553/37569/37734），测光已全部入库或按上文口径处置；external/rssgrbag（Chandra & Frail 2012 射电光变）、grbsn_webtool/SourceData、uvot_grb、swift_bat、konus_wind、heasarc_grbcat、swift_grb、agile_mcal、batse、fermi_lat、saxgrbmgrb、liang2023、wang2022、guidorzi2025、minaev2020 均无本源记录（目录级快照；fermi_gbm/swift_xrt_live/swiftgrbba/mpe_greiner 有本暴参数行用于身份互证）。外部：SciX（api.scixplorer.org、token 实测可用）题录+全文检索 GRB 240910A 命中 16 条＝同 15 篇 GCN＋研究论文 1 篇（Kumar+2025 MNRAS 544 1541）；GCN 站与 TNS 未另得新通告/新测光。VoR 追踪：OUP（DOI 10.1093/mnras/staf1689）curl 与 webReader 均 403（Radware Bot Manager 整站反爬）、CDS-VizieR（cdsarc ReadMe/TAP）三次网络超时——按 §3.3 第 2 级补充入口经作者机构库取得 VoR 排版副本（LJMU researchonline id/eprint/28158、页脚 Downloaded from academic.oup.com/mnras/article/544/2/1541/8272723、MNRAS 544 1541–1587 (2025)）并逐行核对：表 A1 本暴 22 行、表 A2 本暴 12 行、表 1/表 3/表 A6/图 A5 的 z=1.4605±0.0007 均与 arXiv:2509.09827v1 完全一致——VoR 已核、无不可得材料（未登记 unverified.tsv）。结论：本源测光＝GOTO（触发后 9.4-12.0 h 5 历元＋触发前上限）＋Swift/UVOT（36.6-196.6 h）＋JinShan/100C＋NOT＋LT/IO:O＋GTC 采集＋SVOM/VT＋LBT＋VLA 6/10/15 GHz（3.1-46.2 d 4 历元）——净增 34 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）——审核后补亚秒：04:00:44Z → 04:00:44.21Z（GCN 37464），原 bot 判读保留于此",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Kumar+2025",
+      "url": "https://doi.org/10.1093/mnras/staf1689",
+      "title": "Discovery and analysis of afterglows from poorly localized GRBs with the Gravitational-wave Optical Transient Observer (GOTO) All-sky Survey",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
