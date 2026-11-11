@@ -35,7 +35,7 @@ AT2019bhf 行的表值（分类、t_peak、宿主质量）已在审核该源时�
 | AT2019azh | 表 1；LCfittab；host_tab；MBH_MStar | 无 | mention-only | 过门槛③：同上 |
 | AT2019dsg | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2019ehz | 同上 | 无 | mention-only | 过门槛③：同上 |
-| AT2019mha | 同上 | 无 | mention-only | 过门槛③：同上 |
+| AT2019mha | 表 1（TDE-H+He，z=0.148）；LCfittab（t_peak=58705.23(+0.98/−1.01) MJD）；host_tab；MBH_MStar；附录光谱段 | 已审核（2026-11-12，见该源 info comment 与 lc） | 已核对 | 表 1/3/7/8 值已写入该源 info comment；其 ZTF 强制测光机读表 IOP 反爬未取（unverified.tsv missing）；本源测光已自 TDECat 官方仓库（4078 行）与 vanVelzen+2021 Bronn.dat（73 行）入库 |
 | AT2019meg | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2019lwu | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2019qiz | 同上 | 无 | mention-only | 过门槛③：同上 |

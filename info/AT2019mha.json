@@ -1,13 +1,14 @@
 {
   "transient_id": "AT2019mha",
   "alias": [
+    "AT 2019mha",
     "ATLAS19qqu",
     "ZTF19abhejal"
   ],
-  "ra": 244.116017,
-  "dec": 56.432367,
+  "ra": 244.11582745,
+  "dec": 56.432304066667,
   "T0": "2019-07-30T07:46:33Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TNS Discovery Date（AT-report 42912，ATLAS_Bot1，2019-07-30 07:46:33.000；2026-11-12 复核＝发现测光点 TNS phot 81460，JD 2458694.8239931 同刻）；TDECat（Langis+2026）DiscDate 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,25 +17,59 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TNS 对象页坐标（2019-09-03 按 ZTF AT-report 45965 更新，J2000；SIMBAD 同值）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Hammerstein+2023（2023ApJ...942....9H）DBSP 2019-08-27 谱宿主窄线；vanVelzen+2021（2021ApJ...908....4V）光谱表同值",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补。\n2026-11-12 审核（Rusty-Harpoon@zcode）——身份：AT2019mha＝TNS IAU 名（SIMBAD 主名 AT 2019mha）＝ZTF19abhejal（ZTF 内部名）＝ATLAS19qqu（ATLAS 发现名）＝Hammerstein+2023（2023ApJ...942....9H）表 1 行＝vanVelzen+2021（2021ApJ...908....4V）17-TDE 样本成员（内部昵称 Bronn 系 ZTF TDE 工作组 GoT 名，非巡天名，不入 alias）。TNS 坐标 2019-09-03 按 ZTF AT-report 45965 更新：旧 16:16:27.844 +56:25:56.52（244.1160172 +56.4323678，即 TDECat 录入值）→ 新 244.11582745 +56.43230407（本库采值，SIMBAD 一致）。\nT0＝发现时刻 2019-07-30T07:46:33Z（TNS Discovery Date，AT-report 42912 ATLAS_Bot1；与发现测光点 TNS phot 81460 同刻；TDECat DiscDate 同值）；TDE 无触发设备（Trigger_Instrument=null），T0_offset 不适用。\nz=0.148 为宿主谱红移（spec-host）：vanVelzen+2021 光谱表（Palomar/DBSP 2019-08-27，相位 +17 d）与 Hammerstein+2023（同谱「shows host galaxy lines at z=0.148」；表注：红移由宿主恒星吸收线或星形成窄发射线测定）；SIMBAD z=0.148（2023ApJ...942....9H）互证。\n光谱分类史：vanVelzen+2021＝TDE-H（谱含宿主星形成窄线）；Hammerstein+2021a（2021ApJ...908L..20H）样本表同 TDE-H；Hammerstein+2023 按「任一历元 H+He 即归 H+He」改判 TDE-H+He（He II/N III 蓝移 ~5000 km/s）。本库 tag=tde；tags.json 无 TDE 光谱亚型受控词，分类史备查于此（§3.9 sub_tag 留空）。\n测光入库 4156 行（先例＝已合并 AT2019bhf 同数据生态口径）：①TDECat(Langis+2026) 官方补充仓库（GitHub dlangis/TDECat，论文 Data availability 节声明该处含全部公开测光；2026-11-12 实取）编译测光 4062 行＝ZTF(zg/zr/zi) 2965（同历元同值重复行 2707 已去重 §3.4；BHTOM 编译与 ALeRCE magpsf_corr 双管道并存，系统差 ~0.02–0.09 mag）＋NEOWISE 742＋ALLWISE 134＋CRTS(CL) 122＋PTF(R) 58＋LINEAR(CL) 41，均 AB/Vega 按设施（§3.1）、总流量含宿（非差分）；＋UVOT 光变 16 值（4 历元×W2/M2/W1/U/B/V，Vega，论文 §3.3 明示 All magnitudes were corrected for Galactic extinction 且 not host subtracted→Gext_corr=y 留证于行 comment；末历元 MJD 60589 多波段误差列=0 照录）。②vanVelzen+2021 机读数据文件 data/Bronn.dat（arXiv:2001.01409v1 e-print 附带，2026-11-12 实取；正文 §2.3 声明测光于 publisher website 提供，IOP 整站 Radware 反爬未取得，CDS 无 J/ApJ/908/4）正值行 73 行＝g.ZTF 44＋r.ZTF 17＋Swift/UVOT 10（UVW2/UVM2/UVW1 各 3＋U 1）＋LT/IO:O 2；文件头声明 day_since_peak 为 TDE 静止系时标，mjd=58703.80（t_peak 锚，2 位小数≈14 min）＋day×1.148（z=0.148；UVOT 历元与 TDECat UVOT 同历元比对系统差 ≤0.13 d）；flux_Jy 未做银消改正（Gext_corr=n）；另 364 行（g/r 各 182）负值截断为 0.0 的非探测行无数值亦无逐行限量，不可入库（§3.3）；day<0 的 26 行为发现前本底期正涨落（原文件不区分探测/非探测，照录）。③TNS 警报流测光 5 行（orange 发现点、cyan 限量、r 限量、r/g 探测），time_err=曝光 30 s 之半。三套数据口径互异（TDECat 总流量 / Bronn.dat 差分成像＋宿主扣除 / TNS 警报流），按 §3.4 并存不互删。\n不入库文献值备查（§3.9）：Hammerstein+2023 表 3 宿主 log M*=10.01(+0.14/−0.18)、u−r=1.99、E(B−V)=0.5、age=3.24(+1.87/−1.61) log Gyr；表 7 LC 拟合 t_peak=58705.23(+0.98/−1.01) MJD（模型值）；表 8 TDEmass log(MBH/M☉)=6.68±0.08、MOSFiT 6.64±0.12、log(M*/M☉)=1.10/5.09；其 ZTF 强制测光机读表仅存于 IOP 在线版（Radware 拦截，audit/unverified.tsv 登记），arXiv v2 TeX 无该表。vanVelzen+2020（SSRv 216 124）综述表：峰值 M_g=−19.9（k 改正）、宿主 log M*=10.05(+0.11/−0.15)、模型峰日 2019-08-09、L_bb=44.05 log、p=−4.0。Wang+2024（2024ApJ...966..136W）报本源上升段早期鼓包（仅图无数表，不读图入库 §3.3）。manyTDE 作者仓（GitHub sjoertvv，v0.6 2025-02）含 3158 行再处理光变与 peak_mjd=58703.803，未出版不采（§4）。X 射线：vanVelzen+2021 §3.2 载本源为 4 个 Swift/XRT 探测 TDE 之一（N_H=6.46e20 cm⁻²、kT=0.071±0.003 keV，e-print 另附 Bran_lx_Swift.dat）；TDECat 官方仓库另含本源 X-ray 文件（4 历元 XRT，2 探测 2 上限，0.3–10 keV）——X 射线行不入库（§7，PR 说明已注明）。\n测光检索留证（2026-11-12）：仓内 gcn/archive 45947 篇全文检索「2019mha / ATLAS19qqu / ZTF19abhejal」0 命中（坐标窄检索命中 1 篇 GCN 39259＝LIGO S250206dm MASTER 观测报告，时间串巧合已排除），external/ 全部快照（rssgrbag/grbsn_webtool 等 GRB 类）0 命中；GCN 站 SPA 无服务端结果，以仓内全文检索为准。外部：TNS 对象页 HTTP 200 实取（测光 5 行全部入库）；SciX（token 实查）q=\"AT2019mha\" 1 篇（＝ATLAS 发现通告 2019TNSTR1392....1T）、full:\"AT2019mha\" 9 篇、full:\"AT 2019mha\" 5 篇、full:\"ZTF19abhejal\" 3 篇，另 SIMBAD 题录 20 篇逐篇溯源：合计 17 篇论文 arXiv TeX 实读含本源名（SciX 全文索引漏检 4 篇，含 vanVelzen+2021 本体——其机读数据经 vanVelzen+2020 SSRv 综述表「discovery ref=vanvelzen2020ZTF」溯源定位），6 篇 TeX 无本源名（A&A 两篇 VoR aanda.org 403 未通读，属样本/相关性分析）；17 篇中除 vanVelzen+2021（data/Bronn.dat）与 Hammerstein+2023（ZTF 强制测光 MRT 仅存 IOP 在线版，Radware 拦截，unverified.tsv 登记）外均为样本表/拟合参数/相关性表，无逐点测光；Langis+2026 TDECat 测光经其 Data availability 节定位官方 GitHub 仓库（dlangis/TDECat，BHTOM 编译）全量入库。→ 补 4156 行。\nhost_galaxy：宿主＝TDE 所在星系核（ZTF TDE 筛选要求瞬变体与宿主核偏移 <0.4″，vanVelzen+2021 §2.1/Hammerstein+2023 同口径），红移由两文 DBSP 谱宿主窄线测得（spec），宿主质量两文 SED 拟合一致（10.01/10.05 log M☉，绿谷星系）；无独立宿主名字/坐标发表，瞬变体坐标即核位置。\nalias 出处：「AT 2019mha」＝TNS IAU 名（SIMBAD 主名）；「ATLAS19qqu」「ZTF19abhejal」＝TNS internal name（SIMBAD identifiers 同）；无伪形。pos_error/置信水平：TNS 与各文均未给定位误差与置信水平，留空（§3.9）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "orange-ATLAS",
     "discovery_mag": "19.257",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://doi.org/10.1051/0004-6361/202554882"
+    },
+    {
+      "name": "vanVelzen+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Seventeen Tidal Disruption Events from the First Half of ZTF Survey Observations: Entering a New Era of Population Studies",
+      "url": "https://doi.org/10.3847/1538-4357/abc258"
+    },
+    {
+      "name": "Hammerstein+2021a",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Tidal Disruption Event Hosts Are Green and Centrally Concentrated: Signatures of a Post-merger System",
+      "url": "https://doi.org/10.3847/2041-8213/abdcb4"
+    },
+    {
+      "name": "vanVelzen+2020",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Optical-Ultraviolet Tidal Disruption Events",
+      "url": "https://doi.org/10.1007/s11214-020-00753-z"
+    },
+    {
+      "name": "Hammerstein+2023",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The Final Season Reimagined: 30 Tidal Disruption Events from the ZTF-I Survey",
+      "url": "https://doi.org/10.3847/1538-4357/aca283"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.148,
+    "redshift_type": "spec",
+    "comment": "宿主为 TDE 所在星系核（ZTF TDE 筛选要求瞬变体与宿主核偏移 <0.4″），无独立宿主名字/坐标发表，瞬变体坐标即核位置；红移由 vanVelzen+2021 与 Hammerstein+2023 的 Palomar/DBSP 谱（2019-08-27）宿主窄线测得。宿主恒星质量备查：log(M*/M☉)=10.01(+0.14/−0.18)（Hammerstein+2023 表 3，Prospector SED 拟合）、10.05(+0.11/−0.15)（vanVelzen+2021，经 vanVelzen+2020 SSRv 综述表 info_ISSI 行）；绿谷星系。",
+    "source": "vanVelzen+2021（2021ApJ...908....4V）＋Hammerstein+2023（2023ApJ...942....9H）DBSP 谱宿主窄线 z=0.148"
+  }
 }
