@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB080130",
-  "alias": [],
-  "ra": 261.632,
-  "dec": -53.19,
+  "alias": [
+    "GRB 080130",
+    "BAT 00074372007"
+  ],
+  "ra": 261.61484,
+  "dec": -53.18742,
   "T0": "2008-01-30T11:13:59Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 7248（BAT 团队正式通告：T_zero chosen as 11:13:59 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +15,36 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 8.7,
-  "pos_ref": "GCN 7243",
+  "pos_error": 5,
+  "pos_ref": "GCN 7247",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "1) 身份与 T0：GRB080130 = Swift/BATSS（BAT Slew Survey）2008-01-30 滑动扫描中地面发现的暴（GCN 7242，slew 始于 11:13:02 UT；非在轨触发，无常规触发号）。T0=2008-01-30T11:13:59Z 取触发仪器正式通告 GCN 7248「T_zero chosen as 11:13:59 UT」，uvot_grb/swiftgrbba 目录 trigger_time=11:13:59Z 同证。备查（不采，§3.8 ①>②）：batgrbcat（external/swift_bat）Trig_time_UTC=11:13:55.861Z（与通告差 3.139 s，目录 T0 口径不同，按 §3.8 差值≥60 ms 报告）；swift_grb 目录 trigger_time=11:13:02Z 实为滑动起始时刻（GCN 7242 口径）。GCN 7247 确证「GRB 080130 was a real GRB」且该源为其 X 射线余辉。swift_grb target_id「Swift 20062」为表内序号非源名，不收录。\n2) 定位：ra/dec=261.61484/-53.18742 取 GCN 7247（两次 XRT 数据合并 ~7 ks 精化的余辉位，5″ 半径 90% 置信，原文明示）；原 ra/dec=261.632/-53.19 系 GCN 7248 BAT 地面位（误差 2.8′，sys+stat，90%），与原 pos_error=8.7″（GCN 7243 旧 XRT 位）互不匹配，已归位；pos_error 8.7″→5″，pos_error_confidence=90。备查：GCN 7243 XRT 位 261.61657/-53.18878（8.7″ 90%）；BATSS 位 17h26m42s -53°11′20″（2.6′ 90%）；uvot_grb/swiftgrbba XRT 位 261.61975/-53.18669；mpe_greiner 261.675/-53.183（3′）。\n3) 分类：t90=65±5 s（GCN 7248，15–350 keV），batgrbcat t90=60.8±1.6 s（15–350 keV），按 t90 判 lgrb/sgrb → lgrb。\n4) alias：「GRB 080130」为 GCN 7242/7243/7244/7247/7248/8472 通告原文用名（GCN 7245 正文用无空格形 GRB080130）；「BAT 00074372007」为 batgrbcat（external/swift_bat）name_alt 目录名。\n5) 逐行核对（lc 10 行）：X 射线 2 行（10keV，UKSSDC Burst Analyser，Evans+2007,2009）按 §3.3/§7 不改不删不参与去重，其 time/mjd 与 T0 自洽（残差<0.001 s，T0 未变更，无需重算）。UVOT 5 行（GCN 7245）：原导入 time 全部比通告表 Tmid 大 +361 s（如 uvw2 40685 vs 40324）且缺 time_err——已逐行按原文表修正 time=Tmid、time_err=Exp/2（424 s→212 s、u 248 s→124 s）、mjd=T0+time 重算（7 位小数）；5 个上限值（v>19.31、u>19.47、uvw1>19.68、uvm2>19.79、uvw2>19.07，3σ）与滤光片对照原文一致；修正后 5 个 Tmid 全部落在 GCN 7243 的 XRT 观测窗 22:21–22:54 UT 内（u 行中点 22:53:38 与窗结束时刻吻合），佐证 GCN 表以 T_zero=11:13:59 为零点；原文未声明星等系统，按 UVOT 惯例推定 Vega（据 Breeveld+2011）；原文明确未做银消改正（E(B-V)=0.19，Schlegel+1998）→ Gext_corr=n。REM H 行（GCN 7244）：time=72235 s（Jan 31.3041−T0）与原文一致，H>16.1（3σ，2MASS 定标）一致；原文未声明星等系统，mag_system 留空（2MASS 定标）；原文只给小数日无曝光时长，time_err 留空。ATCA 2 行（GCN 8472）：观测窗 2008-05-31 09:15:05–13:07:05 UT，time=窗口中点 10540626 s、time_err=半宽 6960 s（§3.8 约定口径）；4.8GHz 行 -0.153±0.246 mJy 与原文一致（负流量为未探测位置实测值，原文如此）；另一行原导入 band=86GHz 系错频——原文观测中心频率 8.456 GHz（流量句写「at 8.6 GHz」，同一测量），已改为 8.456GHz；两行原文均为未探测（did not detect），所记为位置处实测流量密度与 1σ 误差而非上限值，upperlimit=y 语义=非探测，行 comment 已注明。\n6) 去重：8 行非 X 射线行覆盖 5 个独立来源（GCN 7244/7245/8472）、仪器/波段各异，无重复；X 射线行不参与去重。\n7) 测光检索留证（2026-11-11）：仓内 gcn/archive（45947 篇）全文按 GRB080130/GRB 080130/080130/坐标锚点检索命中 7 篇（7242/7243/7244/7245/7247/7248/8472），含光学/IR/射电数值 3 篇（7244、7245、8472），其全部测光与上限均已入库（本次逐行修正 8 行、新增 0 行）；external/rssgrbag（射电 74 源）0 命中、external/grbsn_webtool（63 事件）无本源（上游 GabrielF98/GRBSNWebtool master 树检索亦无）、external/uvot_grb 与 swift_bat/swiftgrbba/swift_grb/mpe_greiner/swift_xrt_live 仅目录级参数（无光变，已作身份/T0 互证）、heasarc_grbcat/konus_wind/liang2023/wang2022/guidorzi2025/minaev2020/agile_mcal/batse/saxgrbmgrb 均无记录；本机 uvotgrb FITS 快照（uvotgrb_noc-db）无本源行（UVOT 系 ToO 非在轨触发、未探测）。GCN 站事件检索（https://gcn.nasa.gov/circulars?query=080130）6 篇 + 直接取 7245，与仓内 archive 逐篇一致（7243/7244/7245/7247/7248/8472 网页实取核对数值一致）。SciX 检索（「GRB 080130」6 命中、「GRB080130」1 命中、full: 全文 6 命中，另「GRB 080130 afterglow」0 命中）共 7 条，全部为 GCN 通告（newsletter），无本源研究论文。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：本源已发表测光/上限 = UVOT 5 上限 + REM H 1 上限 + ATCA 2 未探测射电测量，均已入库；无探测行、无新增行。\n8) 物理量备查（不入库，§3.9）：T90=65±5 s（GCN 7248，15–350 keV）；batgrbcat T90=60.8±1.6 s、T50=35.2±1.6 s（15–350 keV）；fluence=(7.7±2.8)e-7 erg/cm²（15–150 keV，GCN 7248）；谱指数 1.21±0.12（PL，T-1–T+68 s，GCN 7248）；1 s 峰值光子流量 0.2±0.1 ph/cm²/s（15–150 keV，T+36 s，GCN 7248）；XRT 计数率 0.010±0.002→0.004±0.001 counts/s（GCN 7243→7247，衰减确证）；GCN 7245 E(B-V)=0.19（Schlegel+1998）。无红移测量；GCN 7244/7245 指出的误差框内 3 个 2MASS 恒星状天体非宿主候选（原文判为恒星状轮廓）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves of gamma-ray bursts",
+      "source": "bot"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of Swift XRT observations of GRBs",
+      "source": "bot"
+    }
+  ],
   "host_galaxy": null
 }
