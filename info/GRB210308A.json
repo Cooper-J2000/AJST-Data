@@ -1,29 +1,49 @@
 {
   "transient_id": "GRB210308A",
-  "alias": [],
-  "ra": 67.07388,
-  "dec": 37.43388,
-  "T0": "2021-03-08T06:37:56Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1036227",
+    "GRB 210308276",
+    "bn210308276"
+  ],
+  "ra": 67.07389,
+  "dec": 37.43391,
+  "T0": "2021-03-08T06:37:56.857840Z",
+  "T0_ref": "GCN 29619（D'Elia et al.，Swift 团队触发通告）：\"At 06:37:56 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 210308A (trigger=1036227)\"（整秒）；亚秒 .857840 取自仓内 Swift-BAT 目录快照 external/swift_bat 的 Trig_time_UTC=2021-03-08T06:37:56.857840Z（快照为 swift.gsfc.nasa.gov/results/batgrbcat 官方镜像）。多来源仅亚秒分歧、整秒一致时以触发仪器目录为准（§3.8①②）；Fermi/GBM 06:37:56.911、Konus-Wind 06:37:59.936 为各设备自身触发时刻，不用作锚",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 4.3,
-  "pos_ref": "GCN 29619",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 0.46,
+  "pos_ref": "GCN 29630",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "通告集甄别（2026-11-11，仓内 gcn/archive 全文库〔45947 篇〕逐篇检索+实核）：本暴相关 GCN 通报共 9 篇——GCN 29619（D'Elia et al.，Swift 团队：BAT 06:37:56 UT 触发、trigger=1036227，机载位 3′/90%，XRT 初报位 67.076417/+37.435310〔4.3″, 90%〕，UVOT White 找星图 150 s 起于 +94 s、候选余辉 18.57±0.15，E(B-V)=1.295 未改正）、GCN 29621（MITSuME Okayama 三色 5σ 上限）、GCN 29623（Nanshan/NEXT r/i 上限）、GCN 29626（Lesage et al.，Fermi GBM 亦触发 06:37:56.91 UT、trigger 636878281/210308276、T90≈5.4 s，原文明确 \"also detected by the Swift/BAT and Swift/XRT\" 同暴互证）、GCN 29627（MASTER-Net 5 条 C（clear）波段上限）、GCN 29630（Gropp & D'Elia，UVOT 精表：位置 0.46″/90% + 8 波段测光）、GCN 29633（Palmer et al.，BAT ground 位 1.0′/90%，T90=5.3±0.6 s〔15-350 keV〕）、GCN 29634（Belkin et al.，IKI-GRB-FuN：Mondy AZT-33IK 探测 R=22.77±0.27 + AbAO AS-32 上限）、GCN 29643（Svinkin et al.，Konus-Wind：\"The long-duration GRB 210308A\"，自身触发 T0=06:37:59.936 UT）。另：GCN 29631（MASTER 对 Fermi trigger 636926765 / GRB 210308.84，20:06 UT、-53.3° 方向）系另一事件，已排除。\nT0 口径：双触发同暴（Swift/BAT 06:37:56 vs Fermi/GBM 06:37:56.91）以触发仪器 Swift 为准（§3.8）；GCN 29619 只给整秒 06:37:56 UT，亚秒 .857840 取自仓内 Swift-BAT 目录快照（external/swift_bat，Trig_time_UTC=2021-03-08T06:37:56.857840Z；该快照 README 注明为 swift.gsfc.nasa.gov/results/batgrbcat 官方镜像，即触发仪器官方目录②级）。Fermi/GBM 自身触发 06:37:56.911（仓内 external/fermi_gbm bn210308276 行）与 Konus-Wind 06:37:59.936 均为各设备自动触发时刻（整数秒均与 Swift 一致或差 <4 s），不用作锚、不记 T0_offset（无 >1 s 真实爆发时刻相对自动触发的偏移证据，§3.8）。全表 21 行 mjd=T0+time 统一按 7 位小数重算。\n定位：采 UVOT 精表位 ra=67.07389/dec=37.43391、pos_error=0.46″（radius, 90% confidence，GCN 29630）——为最精确的余辉位置且置信水平原文明示。旧 info 系 UVOT 找星图位（67.07388/+37.43388，GCN 29619）配 XRT 误差 4.3″（pos_ref=GCN 29619），位/误差口径不配套，已改。备查（全部并列留档）：UVOT 找星图位 67.07388/+37.43388 0.63″/90%（GCN 29619）；XRT 初报位 67.076417/+37.435310 4.3″/90%（GCN 29619；仓内 swiftgrbba xrt 位 67.07517/+37.43444，误差 3.52″）；BAT ground 67.083/+37.429 1.0′/90%（GCN 29633）；BAT 机载 67.088/+37.411 3′/90%（GCN 29619）；仓内 mpe_greiner 67.0875/+37.4167 ±3′。\n分类：tag=grb（Swift/BAT 触发的 GRB，GCN 29619）。sub_tag=lgrb：t90=6.188±0.813 s（仓内 Swift-BAT 目录快照 external/swift_bat，15-350 keV），GCN 29633 报 T90=5.3±0.6 s（15-350 keV）、仓内 fermi_gbm bn210308276 行 5.437±0.602 s（50-300 keV）、Konus-Wind 通告称 \"long-duration\"（GCN 29643）——按目录 t90 判 lgrb/sgrb（2026-10-26 维护者裁定），各来源一致（T90>2 s）。高能备查量（§3.9，不入库）：fluence=3.2±0.1e-6 erg/cm²〔15-150 keV〕（GCN 29633；batgrbcat 3.299(+0.139,-0.139)e-6）、Epeak=113.6±31.0 keV（GCN 29633；fermi_gbm 138.8±4.0 keV）、1s 峰流量 13.6±0.7 ph/cm²/s（GCN 29633，T+2.12 s 起）。\n红移：无（仓内 Swift-BAT 红移表 GRBlist_redshift_BAT.txt 无本暴；9 篇通告与 SciX 检索文献均未给 z）；host_galaxy 不建立（§3.10）。alias 出处：BAT 1036227＝仓内 external/swift_bat name_alt（GCN 29619 原文用名 trigger=1036227）；GRB 210308276 与 bn210308276＝仓内 external/fermi_gbm name_alt（GCN 29626 原文用名 \"trigger 636878281 / 210308276\"）。\nX 射线：本源 lc 无 band 为能量串（keV）的行；XRT 余辉确证存在（GCN 29619 XRT 初报、swiftgrbba XRT_detection=Yes、xrt_first_obs=84.96 s）。SciX 全文检索命中本暴研究论文 2 篇：Xin+2026（ApJ 1008, 181；DOI 10.3847/1538-4357/ae9877，纯 X 射线分析无数值入库）与 arXiv:2609.25672（联合探测方法论文，本暴仅一行时间戳、无测光，记此备查）表 1 由 X 射线 BPL 拟合得 jet break tb=(2.18+0.34-0.28)×10³ s、α1=0.86±0.03、α2=1.59(+0.09,-0.08)、k=0.30(+1.23,-1.23)、CBM=ISM、χ²r=0.95，并证 T90=5.3 s；其数值核自 arXiv:2608.07060 全文表 1（IOP 站实测为 Radware Bot Manager 验证页，VoR 正文未取得，见 audit/unverified.tsv）。该文为纯 X 射线分析、无本暴测光表，其数值按 §3.3/§7 不入库。\n逐行核对与去重（§3.4）：原 16 行全部保留并逐值修正——UVOT 9 行（GCN 29619/29630）与地面光学 7 行（GCN 29621/29623/29634）普遍存在导入失真：观测起点/窗口起点被当作曝光中点（GCN 29619 white 94→169 s、GCN 29623 NEXT 27513→29013 s）、GCN 29630 精表行与 GCN 29634 行另有 ~+4 s 常量偏移（GCN 29630 white 204→200.5 s 等），已一律按 §3.2/§3.8 改为曝光中点（起点+半曝光 或 窗口中点）并补 time_err=半曝光/半宽；band 已统一为 uvot-*（原导入 w 系 UVOT White 与 Pan-STARRS w 撞名，历史批改见 Issue #384）、MASTER C 波段 → band=G；星等系统按原文明示/惯例（UVOT Vega〔Breeveld+2011，GCN 29630 明示〕、MITSuME AB〔GCN 29621 明示〕；NEXT/Mondy-AbAO/MASTER 原文未声明 → 留空+comment 注明）。去重：GCN 29619 white 18.57±0.15 与 GCN 29630 white 18.54±0.07 系同一找星图曝光的初报/精表两版（窗口 94-244 vs 126-275 s、数值不同），按仓库既有惯例（同数据两版并列）两行均保留、comment 互证；其余行均为不同仪器/台站的独立测量，无转引重复。\n测光检索（2026-11-11，§3.3 四要素留证）：仓内 gcn/archive 全文检索「210308A/1036227」命中 10 篇（9 篇本暴 + GCN 29631 为另一 Fermi 事件已排除），其中含光学/紫外数值 6 篇（29619/29621/29623/29627/29630/29634），逐篇核对并全部入库——净增 5 行（GCN 29627 MASTER-Net C 波段上限，bot 全漏）；external/swift_bat、swiftgrbba、fermi_gbm、mpe_greiner、heasarc_grbcat 仅用于身份/T0/定位互证（mpe_greiner 另证 IPN=y、OT=y），external/rssgrbag、grbsn_webtool、uvot_grb 无本源记录（uvot_grb 第二版目录未收录本暴）；SciX（题录+全文，token 实测可用）命中本暴研究论文 1 篇（Xin+2026，仅 X 射线、无测光表；另无空格形全文检索命中 arXiv:2609.25672 多任务探测框架样本表，其仅列本暴时间戳、无任何测光内容，无数值入库义务），GCN 9 篇。结论：光学/紫外测光覆盖触发后 94 s（UVOT white 探测）至 15.6 h（MASTER-IAC C>18.5），无射电/mm、无晚期测光报告；本暴无红移。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Xin+2026",
+      "url": "https://doi.org/10.3847/1538-4357/ae9877",
+      "title": "Constraining Circumburst Environments of GRBs with Jet Break Features in X-Ray Afterglows",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
