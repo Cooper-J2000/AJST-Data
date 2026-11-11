@@ -1,26 +1,38 @@
 {
   "transient_id": "GRB060211A",
-  "alias": [],
-  "ra": 58.381,
-  "dec": 21.489,
+  "alias": [
+    "GRB 060211A",
+    "Swift 181126",
+    "BAT 181126"
+  ],
+  "ra": 58.386667,
+  "dec": 21.489167,
   "T0": "2006-02-11T09:39:11Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0_ref": "GCN 4736（Swift/BAT 触发通告：At 09:39:11 UT, the Swift BAT triggered and located GRB 060211, trigger=181126）",
+  "T0_offset": -180.0,
+  "T0_offset_ref": "GCN 4757（Swift-BAT 精化分析：weak, soft precursor starting at T-180 secs——触发前已有辐射取负；纯元数据不改光变时间轴；同型先例 GRB070129A（GCN 6058）、同日 GRB060211B（GCN 4747））",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 4751",
+  "pos_error": 3.7,
+  "pos_ref": "GCN 4740",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。身份：Swift/BAT 触发号 181126（GCN 4736：At 09:39:11 UT the Swift BAT triggered and located GRB 060211；BAT 机载位 58.402,+21.486±3′，128 s image trigger）；同日 15:55 UT 另有 GRB 060211B（触发 181156，位置 75.07,+14.95，GCN 4739/4747），MASTER GCN 4741 的「GRB060211.7」（GRB_TIME 15:55:14.76）经核即该 B 暴而非本暴；仓内 23xxx 号通告的「181126」均为 2018 年 GRB 181126A 名称子串误匹配、按坐标锚点补搜的 22 篇均他暴数字巧合，均已排除——本暴通告共 9 篇（GCN 4736/4737/4738/4740/4751/4757/4760/4927/5204，逐篇读过）。T0=09:39:11 UT 取自触发仪器官方通告 GCN 4736（§3.8①）；Swift/BAT 官方目录（external/swift_bat batgrbcat 与 external/swift_grb）给出 09:39:10.990840（MET 161343552.000），与通告整秒差 0.009160 s（<60 ms）；两目录截断整数秒为 10、与通告的 11 不一致，不满足「整数秒一致」条件，按 §3.8①>② 从通告整秒（同日姊妹暴 GRB060211B 同口径）；swiftgrbba 记 09:39:11.000 与通告一致；uvot_grb TRIG_UT=2006-042-09:39:10、TRIGTIME MET 161343550.0（与 batgrbcat MET 差 2 s，目录级差异备查）。T0_offset=-180 s：GCN 4757 BAT 精化分析称 weak, soft precursor starting at T-180 secs（最低能段持续至 T-90 s）——触发前已有辐射，取负。位置：ra/dec 取 GCN 4740 XRT 精化位置 03h53m32.8s +21d29′21.0″（=58.386667,+21.489167），误差 3.7″（radius，90% containment，原文标注）；原库 58.381/21.489 与 GCN 4757 BAT ground 位（58.380,21.489±1.5′，sys+stat）一致而 pos_ref 写 GCN 4751（58.361,+21.485±1.5′），坐标与引用混配、判为导入残留并归位；备查：GCN 4736 XRT 初报 03h53m32.5s +21d29′19.3″（5.0″）、UKSSDC 增强位 58.38604,+21.48861（1.4″，external/swiftgrbba/swift_grb/uvot_grb 三快照一致；Rossi+2012 明示 90% c.l. XRT error circle r0=1.4″）、Goad+2007 UVOT 增强位 03:53:32.70 +21:29:19.2（4.1″）。alias：GRB 060211A（GCN 4740/4751/4757/4760/4927/5204 与各目录用名）、Swift 181126（external/swift_grb name_alt）、BAT 181126（external/swift_bat name_alt）；GCN 4736/4737 发 A 后缀前用「GRB 060211」、mpe_greiner 目录同名，因与同日 B 暴无法区分不列入 alias。sub_tag：t90=126.46±9.555 s（external/swift_bat batgrbcat，15-350 keV）；GCN 4757 T90=126±5 s、swiftgrbba/uvot_grb 126.3 s、swift_grb 118.2 s（15-150 keV）、Urata+2011 126.3 s——按目录 t90 判 lgrb。红移：无任何测定（通告与检索文献均无 z）；Rossi+2012（A&A 545,A77）爆后 1.5/3 年 GROND/NEWFIRM 深场在 1.4″ 圆内及圆缘见候选宿主（A：r′=24.51±0.20 AB 仅 r′ 探测；C：J=23.10±0.30 AB；D：J=23.40±0.40 AB 圆缘外 0.7″；B 在圆外 4.0″，phot-z 情景估计 z~0.3-2.4）——未定论不建 host_galaxy；E(B-V)=0.19（Rossi+2012；GCN 4736 称预期消光约 0.6 mag 即 A_V≈0.6，一致）。逐行核对：原 2 行非 X 射线行均溯源到原文——GCN 4927（Maidanak 1.5m R 限 22.0：表列 Mid Feb.11.640 UT=15:21:36=T0+20545s、Exp 1860s，补 time_err=930s；正文窗口 15:02-15:22 与 Exp 1860s 不完全调和、按表列显式 Mid/Exp 取值；USNO B1.0 定标、原文未声明系统；视场内 R~21.5 展源为 asteroid 16306）、GCN 4760（WIRO 2.3m J 限 19.1：36×50 s 合并，原文窗口 02:44-03:24 UT，原导入 61489s 系观测起点当曝光中点、已修为窗口中点 62689s）；X 射线 140 行（band=10keV）按 §3.3/§7 不改不删不参与去重，T0 未变更故 mjd 无脱钩。测光检索（2026-11-11）：仓内 gcn/archive（45947 篇）全文检索「060211A」「060211」「181126」加坐标锚点，本暴通告 9 篇全部命中、逐篇核对——含光学/紫外上限 5 篇（GCN 4736 UVOT V 找星图 ~18、GCN 4737 ROTSE-IIIa 无滤光片 14.3/15.7/16.1、GCN 4738 Faulkes R~18.5、GCN 4927 Maidanak R 22.0、GCN 5204 WIDGET 1σ ~V=10.8），本次净增 6 行（4736/4737×3/4738/5204，均有明确时间锚点）；external/rssgrbag、grbsn_webtool、konus_wind、fermi_gbm、heasarc_grbcat、batse、liang2023 等快照 0 命中，swift_bat/swift_grb/swiftgrbba/uvot_grb/mpe_greiner 仅目录级参数（作身份/T0/定位互证）；SciX（api.scixplorer.org，token 实测可用）元数据+全文检索命中非 GCN 文献 13 篇并逐篇取得原文核查：Rossi+2012（A&A 545,A77，arXiv:1202.1434）爆后宿主搜索无瞬变测光、Urata+2011（PASJ 63,137，arXiv:1010.5035）obslog 行与 GCN 5204 同窗口且 OT 列转引 ROTSE 限值、Goad+2007（A&A 476,1401）仅 UVOT 增强位表、Sokolowski 2008 博士论文（arXiv:0810.1179）转引 WIDGET 10.8 同值、其余 9 篇（2007ApJ...656.1001B XRT 谱仪器伪影、2007ApJ...669.1115S 陡衰减谱演化、2008ApJ...681.1408D/2010MNRAS.403.1296W 暴发脉冲、2008ApJ...683..900Q 曲率效应、2009ApJ...696..994D CB 模型 X 射线、2009ApJ...704.1405K Ep-Eiso、2009A&A...504...67H BATSE-Swift 目录比较、2009RAA.....9.1103Z 暗暴样本名单）均无本暴测光表；swiftgrbba 所引 arXiv:0707.4626 经查为 Sakamoto+2008（ApJS 175,179 First Swift BAT Catalog、其 BAT 谱参数出处）→ 无研究论文级测光增量，articles[] 不登记（同日 GRB060211B 同批口径）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
