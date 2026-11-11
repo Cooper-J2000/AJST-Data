@@ -1,39 +1,49 @@
 {
-  "transient_id": "AT2019esf",
-  "alias": [
-    "AT 2019esf",
-    "PS19afa",
-    "ZTF19aatoboa"
-  ],
-  "ra": 186.419008,
-  "dec": 44.74688,
-  "T0": "2019-05-03T09:45:48Z",
-  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2019esf（2026-10-31 取）",
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": null,
-  "redshift": null,
-  "tag": [
-    "fbot"
-  ],
-  "pos_error": null,
-  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2019esf（2026-10-31 取）",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）\n2026-11-04 SciX 补充：Ho+2023（2023ApJ...949..120H）FBOT 样本在列，补 fbot 标签与文献（仅元数据）。",
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": {
-    "ingest_source": "hermes_list_20261031"
-  },
-  "articles": [
-    {
-      "name": "Ho+2023",
-      "source": "bot",
-      "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
-      "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
-    }
-  ],
-  "host_galaxy": null
+ "transient_id": "AT2019esf",
+ "alias": [
+  "AT 2019esf",
+  "PS19afa",
+  "ZTF19aatoboa"
+ ],
+ "ra": 186.419008,
+ "dec": 44.74688,
+ "T0": "2019-05-03T09:45:48Z",
+ "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2019esf（2026-10-31 取；2026-11-11 复核＝TNS phot 64779，g-ZTF 19.97±0.16，2019-05-03 09:45:48）",
+ "T0_offset": null,
+ "T0_offset_ref": null,
+ "Trigger_Instrument": null,
+ "redshift": 0.0758,
+ "tag": [
+  "fbot"
+ ],
+ "pos_error": null,
+ "pos_ref": "TNS 坐标（J2000，12:25:40.562 +44:44:48.77，TNS 2019-06-23 按 PS1 AT-report 35001 更新）：https://www.wis-tns.org/object/2019esf（2026-10-31 取，2026-11-11 复核）；与 Ho+2023 表 2（12:25:40.57 +44:44:48.8）一致至 ~0.3″",
+ "redshift_type": "spec-host",
+ "redshift_ref": "Ho+2023（2023ApJ...949..120H）表 2 z=0.07580（VoR 机读表逐字）；Keck I+LRIS 宿主光谱（2020-02-18，表 11 TType=Host、S/N 287）；SIMBAD z=0.0758 交叉一致",
+ "comment": "2026-10-31 按名单建源（仅元数据，光变待补）\n2026-11-04 SciX 补充：Ho+2023（2023ApJ...949..120H）FBOT 样本在列，补 fbot 标签与文献（仅元数据）。\n2026-11-11 审核（Rusty-Harpoon@zcode）：\n（1）身份：TNS AT 2019esf，TNS 坐标 12:25:40.562 +44:44:48.77（2019-06-23 按 PS1 AT-report 35001 更新；本库 ra/dec 逐字一致）；别名 ZTF19aatoboa（TNS Internal name；发现报告 2019TNSTR.720....1N，Nordin et al. 2019）、PS19afa（Pan-STARRS/PSST 名，TNS AT-report 35001，PS1_GPC1 2019-05-12 i-P1=19.59±0.06）；Ho+2023 表 2 行 19aatoboa＝AT 2019esf（RA 12:25:40.57 Dec +44:44:48.8，Peak MJD 58609.22，Pmag 18.84±0.03，t½,g=7.2±0.6 d，g−r=−0.4，z=0.07580，Np=72，Host=1）坐标一致至 ~0.3″；SIMBAD 三 identifiers（AT 2019esf / PSST 19afa / ZTF19aatoboa）与 z=0.0758 交叉一致。TNS Type=---、Ho+2023 Class 空白：瞬变体无光谱分类（2019-05-04 P60/SEDM 峰值光谱无显著特征，表 11）。\n（2）T0：维持 TNS Discovery Date 2019-05-03 09:45:48＝ZTF 公众巡天首探测 g=19.97±0.16（TNS phot 64779）。备选锚并列备查：Ho+2023 表 2 Peak MJD 58609.22＝2019-05-06 05:16:48（g 峰 18.84±0.03）。两口径在本批 FBOT 源中并存（已审 AT2018cow/AT2018lug/AT2019lbr/AT2020kfw/AT2020xnd/AT2020yqt 等取 TNS Discovery Date；AT2020aexw/AT2019aajt/AT2019kyw/AT2020bdh 等取 Peak MJD），统一待维护者裁决（A 档，见 PR 待决①）。\n（3）tag=fbot：依 Ho+2023 §3 判据（1 d<t½<12 d 且峰色 g−r≤−0.2 mag）t½,g=7.2±0.6 d、g−r=−0.4 → 满足；瞬变体光谱无特征、TNS Type=---、Class 空白，无任何 SN 亚型证据 → sub_tag 留空。\n（4）红移：z=0.0758（Ho+2023 表 2 z=0.07580，VoR 机读表逐字）。唯一相关光谱为 2020-02-18 Keck I+LRIS 宿主谱（表 11 TType=Host、S/N 287；论文正文另处作 2020 Feb 17，以机读表为准）→ redshift_type=spec-host。\n（5）Trigger_Instrument 置 null：ZTF 巡天发现（AMPEL 警报流），无触发设备，与库内已审 FBOT 源一致。\n（6）pos_error/pos_error_confidence：TNS 与 Ho+2023 表 2 均未给定位误差与置信水平 → 均留空（来源未标注置信水平）。\n（7）宿主：Ho+2023 表 2 Host=1；宿主经 Keck LRIS 宿主光谱（z=0.0758）＋CIGALE SED 拟合确证 → host_galaxy 建档（见表 12 派生量，见 host_galaxy.comment）。\n（8）测光检索（2026-11-11）：仓内 gcn/archive 45947 篇全文检索「2019esf/PS19afa/ZTF19aatoboa」0 命中（非 GRB，预期；坐标窄检索命中 3 篇均为无关旧 GRB 通告），external/ 全部快照（rssgrbag/grbsn_webtool 等 GRB 类）0 命中；GCN 站为 SPA 无服务端结果，以仓内 Circular 全文检索为准。外部：TNS 对象页（wis-tns.org/object/2019esf，HTTP 200 实取）测光 4 行全部入库；SciX（api.scixplorer.org，token 实查）q=\"AT2019esf\"/\"ZTF19aatoboa\" 各 1 篇＝2019TNSTR.720....1N（发现通告，非研究论文，不入 articles[]），full:\"2019esf\" 全文命中 2 篇（Ho+2023＋该通告）→ 无其他研究文献；SIMBAD 引用文献仅 2023ApJ...949..120H 与 2020ApJ...895...49H（Koala 论文，题录关联、全文不含本源，SciX 全文检索确认）；Ho+2023 表 5/6/7/8（UVOT/XRT/射电/VLASS-RACS-VAST）均不含本源（arXiv v2 TeX 实查）。结论：本源测光仅 Ho+2023 表 4 机读 ZTF 力测光（72 行，VizieR J/ApJ/949/120/table4 CfA 镜像 2026-11-11 取）＋TNS 警报流 4 行 → 本审共入库 76 行（其中上限 12 行）。\n（9）派生量备查（不入库）：表 10（tab:lc-properties，arXiv v2 TeX 逐字）g：m_max=18.84±0.03、M_g=−18.82±0.03、t½,rise=2.31±0.24 d、t½,fade=4.92±0.59 d；r：m_max=19.20±0.05、M_r=−18.47±0.05、t½,rise=1.38±0.09 d、t½,fade=21.97±7.30 d。宿主 SED（表 12/tab:host_sed，arXiv v2 TeX 逐字）：χ²/n.o.f.=23.53/17、M_B=−19.65、log M*/M☉=9.91(+0.18/−0.15)、log SFR=0.42(+0.20/−0.16)、log Age/yr=9.78(+0.21/−0.50)、E(B−V)=0.29(+0.11/−0.06)。表 9 机读宿主测光为 mJy 流量（正文表为 AB 星等，未改红化），按先例不自行换算、不入 host_galaxy.photometry，数值见 host_galaxy.comment。",
+ "sub_tag": [],
+ "pos_error_unit": "arcsec",
+ "pos_error_confidence": null,
+ "extra_data": {
+  "ingest_source": "hermes_list_20261031",
+  "audit": {
+   "status": "reviewed",
+   "auditor": "Rusty-Harpoon@zcode",
+   "date": "2026-11-11"
+  }
+ },
+ "articles": [
+  {
+   "name": "Ho+2023",
+   "source": "bot",
+   "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
+   "url": "https://doi.org/10.3847/1538-4357/acc533"
+  }
+ ],
+ "host_galaxy": {
+  "redshift": 0.0758,
+  "redshift_type": "spec",
+  "source": "Ho+2023（2023ApJ...949..120H）表 2 z=0.0758＋表 11 Keck I+LRIS 宿主光谱（2020-02-18，TType=Host、S/N 287）＋表 12 CIGALE SED 拟合",
+  "comment": "宿主经 Keck LRIS 宿主光谱（强发射线测 z=0.0758）与 CIGALE SED 拟合确证（非仅坐标接近）。表 12 派生量备查：χ²/n.o.f.=23.53/17、M_B=−19.65、log M*/M☉=9.91(+0.18/−0.15)、log SFR=0.42(+0.20/−0.16)、log Age/yr=9.78(+0.21/−0.50)、E(B−V)=0.29(+0.11/−0.06)。表 9 宿主多波段测光（GALEX/SDSS/PS1/2MASS/WISE，AB、未改红化）在 CDS 机读表 J/ApJ/949/120/table9 中为 mJy 流量（正文表为 AB 星等；SN2018bcc 行对照核实），按先例（AT2020aexw）不自行换算星等、暂不入 photometry：FUV 0.03545±0.00176、NUV 0.04422±0.00114；SDSS u 0.1312±0.0148、g 0.3519±0.0811、r 0.4844±0.1034、i 0.6183±0.0984、z 0.5702±0.0827；PS1 g 0.2379±0.0394、r 0.3601±0.0416、i 0.4800±0.0616、z 0.4635±0.0500、y 0.5728±0.1136；2MASS J 0.6054±0.0969、H 1.0180±0.1676、Ks 0.8003±0.1505；WISE W1 0.4575±0.0350、W2 0.2130±0.0234、W3 1.0650±0.0716、W4 0.3894±0.2684（均 mJy）。宿主坐标原文未单独给出，暂缺。"
+ }
 }
