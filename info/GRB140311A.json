@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB140311A",
-  "alias": [],
-  "ra": 209.3,
-  "dec": 0.616667,
-  "T0": "2014-03-11T21:05:16Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 591390"
+  ],
+  "ra": 209.30521,
+  "dec": 0.64191,
+  "T0": "2014-03-11T21:05:16.252360Z",
+  "T0_ref": "GCN 15944 整秒 21:05:16 UT + batgrbcat 官方目录亚秒 Trig_time_UTC=2014-03-11T21:05:16.252360（swift.gsfc.nasa.gov/results/batgrbcat，仓内 external/swift_bat 快照）；Konus-Wind 目录（Tsvetkova+2021，external/konus_wind）21:05:16.252、swiftgrbba 21:05:16（整秒）互证；XRT 首测 T0+9.5 ks（GCN 15968）、UVOT settled 9540 s（GCN 15973）自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +16,14 @@
   ],
   "pos_error": 1.5,
   "pos_ref": "GCN 15968",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 15966（Gemini-North GMOS 金属线共同红移 4.954 采纳）；GCN 15961/15964 吸收谱互证；Laskar+2018 线加权平均 z=4.9540（表 4，细结构线确证为 GRB 红移）",
+  "comment": "身份确证：GRB 140311A = Swift/BAT trigger 591390（image trigger；GCN 15944：\"At 21:05:16 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 140311A (trigger=591390)\"，BAT 机载位 209.301/+0.612、3′/90%）。Swift 因地球 limb 约束延迟 slew 至 T0+50.6 min（GCN 15944），XRT 首测 T0+9.5 ks、持续至 57.1 ks（GCN 15968）。同日 GRB 140311B（trigger 591392、T0=21:14:29.724340、BAT 位 252.33/+52.73；仓内 swift_bat/swiftgrbba、Fermi/GBM bn140311885=21:14:35.646）为另一事件，本源全部通告与测光按 XRT 位（13:57:13/+00:38:31）甄别，无一混入。光学前导 Nanshan（GCN 15947，13:57:13.27/+00:38:31.07，~1″）与 XRT enhanced 位差 0.5″（GCN 15959）；VLA 位 13:57:13.2763±0.0002/00:38:31.423±0.003（GCN 15985）亦一致。仓内 gcn/archive 全文检索「140311A」命中 24 篇：22 篇属本暴（15944/15946/15947/15952/15953/15954/15956/15957/15959/15961/15962/15964/15966/15968/15969/15973/15974/15976/15978/15980/15985/15994，逐篇实读；其中 15945/15979 系 GRB140311B 通告内提及本暴，已甄别不计）；SciX 题录 25 条 = 22 篇本暴通告 + GCN 17843（仓外，见检索段）+ 研究论文 Laskar+2018 + CDS 数据集 2019yCat..18580065L。\nT0：2014-03-11T21:05:16Z（整秒）→ 2014-03-11T21:05:16.252360Z（batgrbcat 亚秒）。§3.8①②：触发通告 GCN 15944 整秒与触发仪器官方目录（external/swift_bat Trig_time_UTC 原值 .252360）仅亚秒分歧，采触发仪器亚秒；konus_wind （Tsvetkova+2021）21:05:16.252、swiftgrbba 21:05:16 互证；XRT 起测 9.5 ks（GCN 15968）与 UVOT settled 9540 s （GCN 15973）自洽。GCN 15962 称 BAT 光变两弱峰（约 T−5–T+5 s、T+40–T+60 s）——系 image trigger 的光变形态描述，按 GRB120819A 先例不构成 T0_offset，T0_offset 保持 null。\n定位：ra/dec 209.3/0.616667 → 209.30521/+0.64191，pos_error=1.5″、pos_error_confidence 由 null 改 90。旧坐标系 mpe_greiner 目录取整位（\"13h57m12s +00°37′\"，与 XRT 位差 ~1.5′）误配 XRT 1.5″ 误差（pos_ref 原指 GCN 15968）；现归位 GCN 15968 XRT enhanced 位（\"RA, Dec = 209.30521, +0.64191 ... an uncertainty of 1.5 arcsec (radius, 90% confidence)\"，置信水平原文明示）。备查并列：GCN 15959 初版 enhanced 位 209.30516/0.64193（1.8″/90%）；BAT ground 209.293/0.607（3.8′/90%，GCN 15962）；swiftgrbba xrt 位 209.30521/0.64189（1.5″）；konus_wind 表 209.30537/0.64214；Nanshan 光学位 13:57:13.27/+00:38:31.07（~1″，GCN 15947）；NOT USNO-B1 位 13:57:13.29/+00:38:31.7（0.3″，GCN 15980）；VLA 位 13:57:13.2763/00:38:31.423（GCN 15985）。\n分类与高能量：t90=71.4±9.5 s（GCN 15962 refined，15–350 keV）；batgrbcat t90=70.48±7.5877 s（15–50 keV）、swiftgrbba t90=71.4 s（15–150 keV）、konus_wind T100=85.184 s——均 >2 s，按目录/通告 t90 判 lgrb（§3.9，不自算）。fluence=2.3±0.3×10^-6 erg/cm²（15–150 keV）、1 s 峰光子流量 1.3±0.5 ph/cm²/s（GCN 15962）；Epeak=97.0(+58/−24) keV、Eiso=2.594×10^53 erg、Lp,iso=9.7×10^52 erg/s（1–10000 keV rest，Tsvetkova+2021 Konus-Wind 表——已按 params 规格录于 extra_data.params，本次未动）。\n红移：z=4.954（不变）、redshift_type null → spec、redshift_ref null → GCN 15966。GCN 15966（Chornock+，Gemini-North GMOS R831、2×900 s、起 2014-03-12 12:56 UT）：宽 DLA 中心 ~7250 Å（z~4.95），C II/C II*/O I/O I*/Si II/Si II*/Si IV 等金属线共同红移 4.954 采纳为 GRB 红移；GCN 15961（Tanvir+，Gemini-South GMOS-S，起 08:24 UT≈11.3 h）：Lyβ/γ/δ+Lyman 极限吸收 z≈4.95；GCN 15964（D'Avanzo+，NOT ALFOSC 2×1800 s，mean t−t0=3.37 h）：Lyα/Lyβ z~5 确证；Laskar+2018 细结构线（C II*/O I*/Si II*）确证系 GRB 红移、线加权平均 z=4.9540（表 4）。三处均为余辉吸收谱（视线方向 ISM/DLA），非宿主发射谱 → 受控值取 spec 而非 spec-host。\n别名：新增「BAT 591390」（GCN 15962 \"BAT GRB 140311A (trigger #591390)\"；仓内 konus_wind name_alt、swiftgrbba target_id 591390）。无伪形。\nX 射线行：18 行 band=10keV（UKSSDC Swift Burst Analyser，Evans+2007,2009）逐字未动、不参与去重（§3.4/§7）；T0 改亚秒后与 time 脱钩恒 0.252360 s（<1 s 容差），需维护者合入前按 mjd=T0_new+time 机械重算（2026-10-31 裁定）。\n逐行核对与去重：原非 X 射线 46 行逐行对照 GCN 全文 + Laskar+2018 VoR 表 3 + Dainotti+2024 目录机读表（GitHub SLAC-Gamma-Rays/grbLC 仓库 140311A_mag.txt，29 行与本源 Dainotti 行 1:1 对应）；删除 14 行同测量转引/错锚行（逐对证据见各行 comment 与 PR 说明）：GCN 15946 双锚（\"27 sec after trigger time\" 系 notice 锚，21:07:23 UT=T0+127 s 证 127 锚）、GCN 15969/15973（5 行）/15976/15980/15994 的 bot 直采行（时间无原文出处或取观测起点而非中点）、GCN 15954 初报值（被 15957 重定标取代，弃置留档 discard=y）。修正常见问题：time_err=0.0 → 窗口/曝光半宽（或曝光时长未给处留空）；mag_system 无出处 Vega → 留空并注明定标来源（NOMAD/USNO-B1/SDSS-Lupton/AB 声明）；UVOT 五行保留 Vega（原文引 Breeveld+2011 光度系统）。删 14、改 32、X 射线 18 原样、新增 77 → 共 127 数据行。\n新增 77 行（逐值取自 CDS-VizieR J/ApJ/858/65 官方机读表，VoR=2018ApJ...858...65L）：Laskar+2018 表 2 UVOT 每访次 3σ 上限 18 行（uvot-white/b/u/v/uvw1/uvw2/uvm2，dt=0.116–5.98 d）；表 3 \"This work\" Gemini-South r′/Gemini-North i′ acquisition image 探测 2 行（dt=0.462/0.654 d，2.5″ 孔径 SDSS 定标，任何 GCN 均未报道）；表 5 VLA+CARMA 射电 57 行（1.45–85.5 GHz、7 历元 1.66–82.3 d，VLA program 14A-344）。渠道留痕：IOP VoR 页 Radware Bot Manager 拦截（302→captcha，整站级反爬）→ §3.3 第 2 级 CDS-VizieR 官方机读表（2019yCat..18580065L，经 CFA 镜像取得）；表 5 与 arXiv v1 tex 样例行逐值一致、表 2 一致（3 位有效数字舍入级）；表 3 的 MASTER/Zadko 样例行 arXiv v1 与 CDS/VoR 存在恒定 ~1.075 倍（≈0.077 mag）系统差——按 §3.3 以 VoR/CDS 为准（仅涉转引行核对，未影响新增行）；CDS 表 5 S 列数值为 mJy（列名 \"uJy\" 系存档标注笔误，经样例 699/40.1/33.6/243/259 μJy 逐值换算核对）；GCN 15985 VLA 初报 ~0.25 mJy@21.8 GHz（2.48 d 起）与 VoR 表 5 同历元值（19.2/24.5 GHz 0.243/0.259 mJy）一致，按初报/精表惯例不另建行。\n测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇）检索「140311A」命中 24 篇（22 篇属本暴逐篇实读：含数值测光 14 篇、仅位置探测 1 篇 15947、分析/定位/红移无测光 7 篇；15945/15979 为 GRB140311B 通告内提及本暴）；external/rssgrbag（Chandra & Frail 2012，早于 2014）、grbsn_webtool（63 事件）、uvot_grb（第二版目录覆盖 2005-01-17–2010-12-25，不含 2014 暴）无本源记录；external/fermi_gbm/konus_wind/heasarc_grbcat/swiftgrbba/mpe_greiner/swift_bat 仅用于身份、T0/亚秒、定位与参数互证（konus_wind z_type=spectroscopic）；SciX（api.scixplorer.org，token 实测可用）三组检索（\"GRB 140311A\"/\"140311A\"/\"GRB140311A\"）共 25 条命中：唯一研究论文=Laskar+2018（表 2/3/5 已全量入库）、唯一数据集=2019yCat..18580065L（已用）、其余为本暴通告 22 条 + 仓外 GCN 17843 + 无关命中；GCN 站（gcn.nasa.gov）为 JS 渲染页，正文以仓内 archive 为准；TNS 不适用（GRB 非 AT/SN/CV 类）。仓外 GCN 17843（Evans+ 2015，\"GRB 140311A: Swift ToO observations\"，SciX 题录在、esources PUB_HTML 但目标死链）：gcn.nasa.gov/circulars/17843、gcn.gsfc.nasa.gov/gcn3/17843.gcn3/.text 均 404，仓内无存档，正文未取得（可能含晚期 Swift ToO 观测）→ 已登记 audit/unverified.tsv（status=missing）；结论：可用测光=GCN 14 篇数值通告+Laskar+2018 表 2/3/5+Dainotti+2024 grbLC 目录（Nissim 私享 RATIR 4 行），除 GCN 17843 外无未入库存量。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -79,7 +81,12 @@
         "v": 11.837420221699698
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [
     {
@@ -90,11 +97,11 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2018ApJ...858...65L"
     },
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {{Dainotti}, M. G. and {De Simone}, B. and {Mohideen Malik}, R. F. and {Pasumarti}, V. and {Levine}, D. and {Saha}, N. and {Gendre}, B. and {Kido}, D. and {Watson}, A. M. and {Becerra}, R. L. and others},\n        title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n      journal = {\\mnras},\n         year = 2024,\n        month = oct,\n       volume = {533},\n        pages = {4023},\n          doi = {10.1093/mnras/stae1484},\narchivePrefix = {arXiv},\n       eprint = {2405.02263},\n primaryClass = {astro-ph.HE},\n      adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
