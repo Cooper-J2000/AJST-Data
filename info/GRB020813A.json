@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB020813A",
-  "alias": [],
-  "ra": 296.658333,
-  "dec": -19.583333,
+  "alias": [
+    "GRB 020813",
+    "GRB020813",
+    "H2262"
+  ],
+  "ra": 296.674475,
+  "dec": -19.601336,
   "T0": "2002-08-13T02:44:19.170000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 1471（Villasenor et al. 2002，HETE 官方通告，触发仪器）：\"At 02:44:19.17 UTC (9859.17 s UT) on 13 Aug 2002, the HETE FREGATE, WXM, and SXC instruments detected event H2262\"；bot 原值一致，仅补依据。备查并列：heasarc_grbcat 快照 trigger_time=2002-08-13T02:44:19.100Z（与官方值差 70 ms，目录级低优先）；Konus-Wind 自触发 02:44:40.651Z（external/konus_wind，他仪自触发不参与裁定）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
-  "redshift": 1.25,
+  "redshift": 1.255,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 1473",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.05,
+  "pos_ref": "GCN 1478（Henden & Guetter，USNO 1.55m Strand + UCAC2 天测定位 19:46:41.874 -19:36:04.81 J2000，\"estimated uncertainty of under 50mas in each coordinate\"）",
+  "redshift_type": "spec",
+  "redshift_ref": "Barth et al. 2003, ApJ 584, L47（astro-ph/0212554）：吸收系 z=1.255 + 宿主 [O II] 8404.0 Å 发射线 z=1.255；佐证 GCN 1475（z≥1.254±0.005）、GCN 1524 / Fiore+2005（UVES 平均 z=1.2545，线心 1.255）",
+  "comment": "【身份链】GRB020813A = HETE-2 事件 H2262（HETE Trigger #2262）无疑：GCN 1471（HETE 官方，事件 H2262、02:44:19.17 UTC、FREGATE/WXM/SXC）；GCN 1470/1473/1474/1488/1492 等 41 篇通告均记 \"HETE Trigger #2262\"；同日库内无相邻源混淆（GRB020812 为 8-12 HETE 暴、GRB020819B 为 8-19 暴）；GCN 1668 中 \"GRB020813\" 系 GRB021104 通告笔误（GCN 1670 corrigendum 已更正），与本源无关。仓内 external 快照互证：heasarc_grbcat（HETE2+IPN，id 5534）、mpe_greiner、konus_wind、rssgrbag（Chandra & Frail 2012）均列 GRB 020813。\n\n【T0】GCN 1471（触发仪器官方通告）02:44:19.17 UTC（=9859.17 s UT，内部自洽）；bot 原值 2002-08-13T02:44:19.170000Z 与之一致，本次补 T0_ref。备查：heasarc_grbcat 02:44:19.100Z（差 70 ms，目录级）；Konus-Wind 自触发 02:44:40.651Z（他仪自触发）。无 >1 s 的 T0_offset 证据，不写。\n\n【定位】ra/dec 取最精权威值 GCN 1478（USNO 1.55m，UCAC2 天测，19:46:41.874 -19:36:04.81 J2000，每坐标 <50 mas）；pos_error=0.05″ 即原文 \"under 50mas in each coordinate\" 的上限值口径，原文未标注置信水平 → pos_error_confidence 留空。备查并列：GCN 1470（Fox/NEAT 19:46:41.88 -19:36:05.1，每轴 1σ 0.5″）、GCN 1473（KAIT 19:46:41.89 -19:36:04.5）、GCN 1474（CTIO 19:46:41.865 -19:36:04.76，每轴 0.3″）、GCN 1494（HETE SXC 修正位 19:46:41.8 -19:35:39，90% 50″）、GCN 1471（WXM 19:46:41 -19:38:42，90% 4′）；bot 原值 296.658333/-19.583333 来自 external/mpe_greiner 快照粗位（\"19h46m38s -19°35'\"，误差 1′），与其 pos_ref=GCN 1473 自相矛盾，已弃。\n\n【红移】z=1.255（spec）：Barth+2003（ApJ 584 L47，Keck/LRIS 吸收系 z=1.255，宿主 [O II]λ3727 8404.0 Å 发射线 z=1.255，判为 likely host）；佐证链 GCN 1475（Price+，z≥1.254±0.005）→ GCN 1524（Fiore+，VLT/UVES 平均 z=1.2545）→ Fiore+2005（ApJ 624 853，线心 z=1.255）；目录值 heasarc_grbcat 1.255、konus_wind/rssgrbag 1.254。bot 原值 1.25（mpe_greiner）为舍入，已更新。\n\n【分类】lgrb：t90=90.0 s（7-400 keV，HEASARC GRBCAT 仓内快照，按目录 t90 判 lgrb/sgrb）；HETE 官方 GCN 1471 duration >125 s（FREGATE 8-40 keV、WXM 2-25 keV）；rssgrbag t90=113 s（Chandra & Frail 2012）——三者一致为长暴。\n\n【物理量备查】Ulysses：duration ~125 s、25-100 keV fluence ~3.8e-5 erg/cm²、0.5 s 峰值流量 ~1.2e-6 erg/cm²/s（GCN 1483）；IPN 3σ 误差框 ~33 sq arcmin（GCN 1482/1483）。X 射线（不入库）：Chandra HETGS 21.02-42.67 h 平均 0.19 counts/s、衰减 -1.42±0.05（GCN 1504）。\n\n【宿主候选】均未定论，不建 host_galaxy：GCN 1491 OT 北 3.7″ 天体 host?=20.70±0.25（未滤光，lc 中该 bot 行已按弃点处理）；GCN 1495 北 3.86″ 星更红，presumably 即 GCN 1491 之天体；GCN 1518 PSF 减除示 ~25 mag 底下宿主迹象；GCN 1651 ~57-58 d OT 位置蓝暗源（B-R=0.56±0.24，\"likely host galaxy\"，亦可能为余辉变陡）——GCN 1651 两行按瞬变体位置测光保留入库。\n\n【逐行核对】原 130 行（无 X 射线行）逐块溯源：Laursen&Stanek 2003 (ApJ 597 L107) 35 行、Gorosabel+2004 (A&A 422 113) 37 行、Urata+2003 (ApJ 595 L21) 12 行、GCN 1472/1473/1474/1480/1485/1488/1491/1492/1497/1501/1513/1518/1528/1651 逐值核对一致；GCN 1524 两行 R=20.4/V=20.8 系转引 GCN 1513 值且时刻误锚（UVES 起点 23:32 UT ≠ 测光时刻）→ discard=y。改时/补 time_err 要点：ROTSE 行改曝光中点（起点 03:02:36.28+30 s）；Super-LOTIS 行 \"4.51 UT\" 按小时口径改回 04:30:36（bot 原为日分数误读 12:14:24）；KAIT GCN 1491 三行 \"8.3542/4.5972/6.9333 UT\" 均为小时口径（文内 04:36/06:56 UT 锚定；bot 两行误按日分数），600 s 帧取中点；Magellan GCN 1513 18 行、Laursen 35 行补 time_err=30 s（60 s 曝光）；Urata Kiso 11 行补 450 s（3×300 s）；Gorosabel 37 行 time_err=观测窗口半宽；MAMBO/BAO/SAO/Danish/UVES 引行按 §3.8 窗口中点口径修正。去重（§3.4）：删 Dainotti2024;1528 行（=GCN 1528 同测量转引）、删 Dainotti2024;astro-ph0308113 块 R=19.35±0.13 行（Urata 表1 该点实为 Bisei/BAO，telescope 误标 KISO，=GCN 1501 同测量转引）。GCN 1484 行经 Dainotti 目录转引核对：upperlimit y→n（原文明确探测）、telescope 改 Campo Catino 0.8m。\n\n【新增行 11 行】（复查更正：初稿计数 12 系笔误）GCN 1487（IRAM PdBI 89.188/232.032 GHz 上限 ×2）、GCN 1497 合并值 1.30±0.89 mJy（两窗口包络中点）、GCN 1505（Campo Imperatore V/R/I ×6，原文声明 lower limits → upperlimit=y；J/K ×2 窗口约值）。GCN 1490 射电探测 0.3 mJy（Aug 14.36 UT）原文未给频段/望远镜 → 按附录 A 不得臆造频率，未入库，见 PR 待决事项。\n\n【检索留证】测光检索（2026-11-11）：仓内 gcn/archive 全文检索 \"020813\" 命中 39 篇（1470-1528、1651 等；另 28572 为时间戳误命中、1668/1670 为 GRB021104 笔误通告），含测光/毫米波数值的 17 篇全部逐值核对并入库（1472/1473/1474/1480/1484/1485/1487/1488/1491/1492/1497/1501/1505/1513/1518/1528/1651），其余为触发/定位/偏振/衰减斜率/数据发布类通告；external/rssgrbag（74 源射电光变）含本源参数行但 lightcurve 无该源测光行；external/grbsn_webtool 无该源事件目录。GCN 站与 archive 一致；SciX（api.scixplorer.org）检索 GRB 020813 命中研究文献：Gorosabel+2004 (A&A 422 113)、Laursen & Stanek 2003 (ApJ 597 L107)、Urata+2003 (ApJ 595 L21)、Covino+2003 (A&A 404 L5)、Lazzati+2004 (A&A 422 121)、Barth+2003 (ApJ 584 L47)、Fiore+2005 (ApJ 624 853) 等——前三篇全文核对入库（84 行 Dainotti 块全部对上），Covino+2003 在线测光表（merate.mi.astro.it，TNG UBVRIJHK/AZT24 JK）站点失效、archive.org 本网络不可达，未取值并登记 audit/unverified.tsv；TNG/AZT24 测光与 GCN 1490 射电探测列 PR 待决。TNS 不适用（GRB 非 AT/SN 类）。本次净增 11 行（PdBI ×2 + MAMBO 合并 ×1 + GCN 1505 ×8），删 2 行（均 §3.4 确证转引重复），弃点 3 行置 discard=y（GCN 1524 ×2、GCN 1491 host? ×1），全部存量行补核对 comment 与审核人标记（时间/曝光误差口径修正明细见审核报告）。\n\n【alias 证据】\"GRB 020813\"（GCN 1474/1475/1476 等标题及 external 目录名）、\"GRB020813\"（GCN 1471 标题 \"GRB020813(=H2262): A Long, Bright Burst Localized by HETE in Near-Real Time\" 等）、\"H2262\"（GCN 1471 原文 \"the HETE FREGATE, WXM, and SXC instruments detected event H2262\"）；HETE Trigger #2262（GCN 1470/1473/1474 原文写法）与 HETE 2262（GCN 1482）为同一编号的描述形，不入 alias。",
   "sub_tag": [
     "lgrb"
   ],
@@ -70,7 +74,12 @@
         "v": 39.7
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [
     {
@@ -107,6 +116,27 @@
       "source": "bot",
       "title": "The Katzman Automatic Imaging Telescope Gamma-Ray Burst Alert System, and Observations of GRB 020813",
       "url": "https://ui.adsabs.harvard.edu/abs/2003astro5027L/abstract"
+    },
+    {
+      "name": "Laursen+2003",
+      "url": "https://doi.org/10.1086/380297",
+      "title": "High-Precision Photometry of the Gamma-Ray Burst 020813: The Smoothest Afterglow Yet",
+      "bibtex": "@ARTICLE{2003ApJ...597L.107L,\n       author = {{Laursen}, L. T. and {Stanek}, K. Z.},\n       title = {High-Precision Photometry of the Gamma-Ray Burst 020813: The Smoothest Afterglow Yet},\n       journal = {ApJ 597 107 (2003)},\n       year = {2003},\n       doi = {10.1086/380297},\n       eprint = {astro-ph/0308191},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003ApJ...597L.107L/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Urata+2003",
+      "url": "https://doi.org/10.1086/378789",
+      "title": "Multiband Optical Follow-up Observations of GRB 020813 at the Kiso and Bisei Observatories",
+      "bibtex": "@ARTICLE{2003ApJ...595L..21U,\n       author = {{Urata}, Y. and {Nishiura}, S. and {Miyata}, T. and {Mito}, H. and {Nakata}, Y. and {Aoki}, T. and {Soyano}, T. and {Tarusawa}, K. and {Yoshida}, A.},\n       title = {Multiband Optical Follow-up Observations of GRB 020813 at the Kiso and Bisei Observatories},\n       journal = {ApJ 595 L21 (2003)},\n       year = {2003},\n       doi = {10.1086/378789},\n       eprint = {astro-ph/0308113},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2003ApJ...595L..21U/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Gorosabel+2004",
+      "url": "https://doi.org/10.1051/0004-6361:20034409",
+      "title": "GRB 020813: polarization in the case of a smooth optical decay",
+      "bibtex": "@ARTICLE{2004A&A...422..113G,\n       author = {{Gorosabel}, J. and {Rol}, E. and {Covino}, S. and {Castro-Tirado}, A. J. and others},\n       title = {GRB 020813: polarization in the case of a smooth optical decay},\n       journal = {A&A 422 113 (2004)},\n       year = {2004},\n       doi = {10.1051/0004-6361:20034409},\n       eprint = {astro-ph/0309748},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2004A%26A...422..113G/abstract},\n}",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
