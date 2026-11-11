@@ -1,28 +1,35 @@
 {
   "transient_id": "IceCube-191001A",
-  "alias": [],
-  "ra": 314.2623825,
-  "dec": 14.2045431,
-  "T0": "2019-10-01T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "IC191001A"
+  ],
+  "ra": 314.08,
+  "dec": 12.94,
+  "T0": "2019-10-01T20:09:18.170000Z",
+  "T0_ref": "GCN 25913（IceCube Collaboration 官方通告原文「On 19/10/01 at 20:09:18.17 UT IceCube detected a track-like event」）；AMON 通告 133119_22683750 rev0/rev1 DISCOVERY_TIME=72558 SOD {20:09:18.17} UT 同值；GCN 25932（Fermi-LAT）原文「detected on 2019-10-01 20:09:18.17 UTC (T0)」三源一致",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "INTEGRAL",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 25913（IceCube 离线重建最佳拟合 RA=314.08 Dec=+12.94 deg，J2000）；原库 ra/dec=314.2623825/+14.2045431 实为 GCN 25929 ZTF 候选体表首行 ZTF19aapreis（=AT2019dsg）之坐标，非中微子事件位置，已归位",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "重分类：bot 建条误判（Trigger_Instrument=INTEGRAL、T0=2019-10-01T00:00:00Z 整零点占位）→ 本源实为 IceCube 高能中微子预警事件 IceCube-191001A（非 GRB、非光学暂现源），依据 GCN 25913（IceCube Collaboration 官方触发通告）＋AMON 通告 133119_22683750（rev0/rev1 实读）；id 不改（§3.7），tag 待维护者扩表（见下）。【身份核验（2026-11-11，三路互证）】① GCN 25913（IceCube Collaboration，R. Stein 提交）：2019-10-01 20:09:18.17 UT 探测 track-like 高能中微子候选（ICECUBE_Astrotrack_GOLD 流，Gold 流平均天体物理纯度 50%、本事件 FAR=0.86 events/yr）；② AMON 自动通告 notices_amon_g_b/133119_22683750.amon（GCN 25913 给链、2026-11-11 实读）：RUN_NUM=133119/EVENT_NUM=22683750、NOTICE_TYPE ICECUBE Astrotrack Gold、ENERGY=2.1742e+02 TeV、SIGNALNESS=5.8898e-01、FAR=0.8578 yr^-1、rev0 SRC_ERROR=47.20′/rev1 SRC_ERROR=177.00′（stat-only 90% containment）；与 GCN 25946（FACT）原文「run number 133119, event number 22683750」逐位吻合；③ GCN 25932（Fermi-LAT）/25914（INTEGRAL）/25927（Fermi-GBM）/25936（HAWC）均以「IceCube-191001A（GCN 25913）」指称同一事件。事件名 IceCube-191001A 即 GCN/AMON 用名；alias「IC191001A」＝GCN 25932 原文用名（「the high-energy IC191001A neutrino event」「within the IC191001A 90% confidence localization」）。【同日划界】GRB 191001A＝Fermi/GBM trigger 591604915（GCN 25893/25894，T0 06:41:50 UT（GCN 25893 原文；fermi_gbm 目录 06:41:50.579Z）、位置 RA≈313.4 Dec≈15.1），与本事件位置/时刻/仪器均不同，库内另有条目 GRB191001A——GCN 25918/25919/25924/25926/25938/25942（RATIR/KAIT/Swift/IPN/GBM/XRT）均属该 GRB，非本事件。原 Trigger_Instrument=INTEGRAL 系 bot 从 GCN 25914（INTEGRAL/SPI-ACS prompt 无对应体之后随上限通告）误抽触发仪器，已改 IceCube（同类 bot 误配先例：IceCube-230122A 原值 Fermi/LAT、IceCube-230217A 原值 Fermi/LAT 均已审改）。【T0】GCN 25913 原文给 20:09:18.17 UT（10 ms 精度），AMON rev0/rev1 与 GCN 25932 三源同值，按 §3.2 采源精度原样保留 → T0=2019-10-01T20:09:18.170000Z；原 bot 值 2019-10-01T00:00:00Z 为整零点占位（Issue #68 bot 值不可信家族；extra_data 原 t0_basis=meta_trigger/t0_note=「t0 为 meta trigger-time（真实触发时刻）」失真，已改写 t0_basis=gcn_event_time、t0_note 备注占位事实，原值留存本段）。【定位】ra/dec=314.08/+12.94（GCN 25913 离线精化最佳拟合，J2000）；90% PSF containment 非对称度级：RA +6.56/−2.26 deg、Dec +1.50/−1.47 deg（原文注明径迹部分被冰内粉尘层遮挡、误差大于平均），单一 pos_error 弧秒半径无法承载 → pos_error 留空、pos_error_confidence=90（原文明示 90% containment），误差全值备查本段；AMON rev0/rev1 位（314.3550/+12.5755 → 314.0799/+12.9399）与 GCN 25913 一致。原库 ra/dec=314.2623825/+14.2045431 实为 GCN 25929 候选体表首行 ZTF19aapreis（=AT2019dsg，距精化位 1.28°、在 90% 区域内）坐标，系导入误配，已归位为事件位。【tag】tags.json 无「高能中微子事件」类目 → tag/sub_tag 留空待维护者扩表（全库 88 个 IceCube 条目、其中 44 个已审者一律 tag 留空；先例 IceCube-221224A/230112A/190730A/220907A 等；建议类目见 PR 待决事项）。redshift/host_galaxy 留空：中微子事件本身无红移与宿主（候选对应体 AT2019dsg 的 z=0.0512 与宿主 2MASX J20570298+1412165 属另一库内条目 AT2019dsg，不并入本源）。【lc 处置】原 4 行全部出自 GCN 25929（Stein et al.，ZTF/GROWTH 对本事件定位区的 TOO 巡检：2019-10-02T03:32:47.200 起、约事件后 7.4 h、g/r 带、单曝光 300 s、典型深度 21.0 mag）表列 4 个「high-significance transient candidates」——系区域内 4 个不同光学暂现源，均非中微子事件本身测光：① ZTF19aapreis=AT2019dsg（TDE，g=19.79±0.05，与中微子的成协系 Stein+2021 NatAs 5,510 提出的候选对应体主张、未定论；该次测量已按同一曝光收录于 lc/AT2019dsg.csv，该行 mjd=58758.1495046 与本源重算值一致，属 §3.7 跨源重复）；② ZTF19abzkexb=AT2019qhl；③ ZTF19acbpqfn=AT2019rsj；④ ZTF19acbxbjq=AT2019rsk（GCN 25929 原文判「three unclassified transients」，距精化位分别 6.47/1.95/4.59°，库内均无条目）。4 行全部置 discard=y（行保留不删，§3.3/§3.4；先例 IceCube-190922B ZTF 候选体行 discard 处置），time/mjd 按新 T0 重算。另按 §3.3「有明确时间锚点的上限入库」新增 2 行：ZTF g/r 典型深度 21.0 mag 上限（upperlimit=y，锚定首曝光中点；典型深度系区域统计口径、非 best-fit 位置单点正式上限，见行 comment；先例 IceCube-240721A ZTF 21.0 mag 上限行）。【测光检索留证（2026-11-11）】① 仓内 gcn/archive（45,947 篇，覆盖至 GCN 46068）全文检索「191001A」命中 16 篇：本事件 7 篇（GCN 25913 触发通告／25914 INTEGRAL SPI-ACS 75–2000 keV 积分通量上限／25927 Fermi-GBM 位置被地球遮挡／25929 ZTF 候选体表／25932 Fermi-LAT 无显著新源／25936 HAWC 无探测／25946 FACT TeV 上限），另 9 篇属同日另事件 GRB 191001A（已排除混淆）；external/rssgrbag（140 行/74 源）与 external/grbsn_webtool（63 事件）无记录；② GCN 站（gcn.nasa.gov）检索页为客户端渲染 JS 应用、curl 仅回壳页，以仓内 archive 全文（同一 Circular 全库）为准——本事件全部通告均发于 2019 年 10 月，远在 archive 覆盖范围内，无漏检风险；AMON 通告页 gcn.gsfc.nasa.gov 已实读（见上）；③ SciX API（2026-11-11）：以「IceCube-191001A」检索命中 11 条——7 篇 GCN Circulars + ATel 13160（同团队 ZTF 候选体电报，正文 JS 渲染不可达、题录确认与 GCN 25929 同内容）+ 研究论文 3 篇（Liao+2022 ApJL 932, L25：blazar GB6 J2113+1121 与本事件时空成协之候选对应体主张；Murase+2020 ApJ 902, 108 与 Wang+2022 MNRAS 514, 4406：TDE 中微子辐射理论文章，无本源测光表）；另以 AT2019dsg 主题检出 Stein+2021 NatAs 5, 510（AT2019dsg–本中微子成协原始论文，其测光表已入库 AT2019dsg 条目，本源不重复入库）。结论：中微子事件本身无光学测光（无确证光学对应体），可用光学信息＝GCN 25929 之候选体表（4 行 discard 留档）＋g/r 21.0 mag 典型深度上限（2 行入库）；其余 6 篇通告均为伽马/TeV 能段积分通量或 fluence 上限（非光学 Fν，不入库）；本次共补 2 行。【articles】保留 Liao+2022（SciX 核验 2022ApJ...932L..25L/DOI 10.3847/2041-8213/ac756f；本事件候选对应体之 blazar 主张，comment 旁证引用）；新增 Stein+2021（SciX 核验 2021NatAs...5..510S/DOI 10.1038/s41550-020-01295-8；AT2019dsg–中微子成协原始论文，旁证引用）。两文均未从其取数值入库，故无 VoR/补充材料追索问题；GCN/ATel 通告不进 articles[]（§3.5）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_event_time",
+    "t0_note": "T0=中微子探测时刻（GCN 25913 原文 19/10/01 20:09:18.17 UT；原 bot 值 2019-10-01T00:00:00Z 为整零点占位，已更正）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
   },
   "articles": [
     {
@@ -31,6 +38,12 @@
       "source": "bot",
       "title": "GB6 J2113+1121: A Multiwavelength Flaring ensuremathgamma-Ray Blazar Temporally and Spatially Coincident with the Neutrino Event IceCube-191001A",
       "url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...932L..25L"
+    },
+    {
+      "name": "Stein+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "A tidal disruption event coincident with a high-energy neutrino",
+      "url": "https://doi.org/10.1038/s41550-020-01295-8"
     }
   ],
   "host_galaxy": null
