@@ -1,33 +1,45 @@
 {
   "transient_id": "GRB050410",
-  "alias": [],
-  "ra": 89.757,
-  "dec": 79.605,
-  "T0": "2005-04-10T12:14:34Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 050410",
+    "BAT 114298",
+    "BAT 114299"
+  ],
+  "ra": 89.80375,
+  "dec": 79.6025556,
+  "T0": "2005-04-10T12:14:25.360000Z",
+  "T0_ref": "GCN 3219（Swift-BAT 团队触发通告：At 12:14:25.36 UT Swift-BAT triggered on burst GRB 050410, trigger=114298；Mineo+2007 A&A 469,663 同载 12:14:25.36 UT）",
+  "T0_offset": -10.0,
+  "T0_offset_ref": "GCN 3219（BAT 团队：The burst starts about 10 sec before the 114298 trigger time；慢上升导致延迟触发，T0 仍取触发时刻，本偏移为纯元数据不改时间轴）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 3219",
+  "pos_error": 5.0,
+  "pos_ref": "GCN 3218（Swift-XRT 地面处理位 RA(J2000)=05:59:12.9 Dec(J2000)=+79:36:09.2，uncertainty of about 5 arcseconds radius, 90% containment）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "Swift/BAT 双触发 114298/114299（同一暴，间隔 9 s，GCN 3219 所述 on-board 软件超时后 back-to-back 再触发）。T0=12:14:25.36 UT 取 GCN 3219（触发仪器官方通告，§3.8 优先级①），Mineo+2007（A&A 469,663）同载该值；T0_offset=−10 s 记录 BAT 团队所述爆发约始于触发前 10 s（纯元数据）。目录口径备查（不采）：batgrbcat（external/swift_bat）Trig_time 2005-04-10T12:14:33.553380Z（name_alt BAT 114299）、UKSSDC BA（external/swiftgrbba）12:14:34.000Z、SGA（external/uvot_grb）12:14:33Z——均为第二触发 114299 历元，与所采 T0 差 8.19–8.64 s（≥60 ms，已出具 PR 说明）。位置取 GCN 3218 XRT 地面处理位 5″（90%）；备查：BAT 地面位 89.745/+79.601（GCN 3219）、swift_bat 目录 BAT 位 89.75695/+79.60573（Image_position_err≈1.2′）、UKSSDC 增强 XRT 位 89.80879/+79.60344（1.7″，目录级）；原库 ra/dec=89.757/+79.605 实为 swift_bat 目录 BAT 位而 pos_ref 误配 GCN 3219，已归位。分类 lgrb（按目录 t90 判：GCN 3219 T90=43 s 15–350 keV；batgrbcat 64.0±16.0 s；swiftgrbba 42.5 s）。红移无实测（Mineo+2007 由 Amati 关系理论推断 z~0.4，属估计不采）；E(B−V)~0.11（Mineo+2007）；无宿主证认。别名出处：GRB 050410（GCN 通告用名）；BAT 114298/114299（batgrbcat 目录名与双触发号，GCN 3218/3219/3226/3229 均以两号指同一暴）。Mineo+2007 VoR 三路尝试（aanda.org DataDome 反爬、ADS 扫描版 403、CDS VizieR 站点不可达）不可得，以 arXiv:0704.3191 v1 LaTeX 源全文核对（仅作 T0/历元互证与上限出处核对，无数值仅存于 VoR），已登记 audit/unverified.tsv。测光检索（2026-11-11）：仓内 gcn/archive（45947 篇）全文按 GRB050410/GRB 050410/114298/114299 检索，命中 11 篇（GCN 3218/3219/3220/3221/3223/3224/3225/3226/3229/3230/3231；另 9 篇字面串误命中已排除），其中含光学/射电数值 9 篇；external/rssgrbag（射电光变 140 行/74 源）0 命中、external/grbsn_webtool（63 事件）无本源、external/uvot_grb 与 swift_bat/swiftgrbba/swift_xrt_live/mpe_greiner 仅目录级参数（身份/T0 互证，无光变表）；GCN 站搜索为客户端渲染、REST 未返回过滤结果（本地 archive 覆盖至 GCN 46068，2005 年通告无漏检风险）；SciX 全文检索「GRB 050410」「GRB050410」共 16 条命中（11 篇 GCN + Mineo+2007、Lipunov+2007 ARep 51,1004（MASTER 汇编，本源为 GCN 3221 转引同值）、van der Horst+2009 ApJ 699,1087（分类方法文，仅引用 Mineo+2007 上限）、Campana+2006 A&A 449,61/AIPC 836,408（X 射线样本，本源不在其样本中））→ 研究论文无 GCN 之外的测光，已发表上限 = UVOT 7 值（GCN 3220/3230）+ 地面光学 7 值（MASTER 2、Wise 1、ARIES 1、AT-64 1、P60 2）+ 射电 1（VLA 8.5 GHz 114 μJy）；本次新增 MASTER 2 行 + P60 2 行（有明确时间锚点），并按新 T0 重算 11 行既有非 X 射线行 time/mjd（含 §3.8 coadd 约定中点与 time_err）；GCN 3224（Tautenburg R 带）仅给「至 DSS2 红限」无数值，不入库。X 射线 9 行（10keV）不改不删不参与去重；经证据核实其 time 零点为 UKSSDC 记录的第二触发 12:14:34.000Z（旧历元），本 PR 已按 §3.8 修法二将 9 行 time 平移 +8.64 s（mjd 与其余 22 列逐字节未动），全表 mjd=T0+time 自洽。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
   "articles": [
     {
       "bibtex": "@ARTICLE{2007A&A...469..663M,\n       author = {{Mineo}, T. and {Mangano}, V. and {Covino}, S. and {Cusumano}, G. and {La Parola}, V. and {Troja}, E. and {Roming}, P. and {Burrows}, D.~N. and {Campana}, S. and {Capalbi}, M. and {Chincarini}, G. and {Gehrels}, N. and {Giommi}, P. and {Hill}, J.~E. and {Marshall}, F. and {Moretti}, A. and {O'Brien}, P. and {Page}, M. and {Perri}, M. and {Romano}, P. and {Sbarufatti}, B. and {Sato}, G. and {Tagliaferri}, G.},\n        title = \"{GRB 050410 and GRB 050412: are they really dark gamma-ray bursts?}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, X-rays: bursts, X-rays: individuals: GRB 050410, X-rays: individuals: GRB 050412, Astrophysics},\n         year = 2007,\n        month = jul,\n       volume = {469},\n       number = {2},\n        pages = {663-669},\n          doi = {10.1051/0004-6361:20066594},\narchivePrefix = {arXiv},\n       eprint = {0704.3191},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2007A&A...469..663M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Mineo+2007",
       "source": "bot",
       "title": "GRB 050410 and GRB 050412: are they really dark gamma-ray bursts?",
-      "url": "https://ui.adsabs.harvard.edu/abs/2007A&A...469..663M"
+      "url": "https://arxiv.org/abs/0704.3191"
     }
   ],
   "host_galaxy": null
