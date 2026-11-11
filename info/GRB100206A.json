@@ -1,27 +1,32 @@
 {
   "transient_id": "GRB100206A",
-  "alias": [],
+  "alias": [
+    "GRB 100206A",
+    "GRB100206563",
+    "GRB 100206.563",
+    "bn100206563"
+  ],
   "ra": 47.16225,
   "dec": 13.15708,
   "T0": "2010-02-06T13:30:05.390000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10381 (GBM 团队 13:30:05.39 UT) + FERMIGBRST bn100206563 trigger_time 2010-02-06T13:30:05.390Z",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 0.408,
+  "redshift": 0.4068,
   "tag": [
     "grb"
   ],
   "pos_error": 3.2,
   "pos_ref": "GCN 10378",
-  "redshift_type": null,
-  "redshift_ref": "catalog:minaev2020; GCN 10389",
-  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Perley+2012 (宿主 G1 Keck/LRIS 发射线 z=0.4068); GCN 10389 z=0.41 初步; minaev2020 目录值 0.408 未采纳",
+  "comment": "①身份：Fermi/GBM bn100206563（GCN 10381 trigger 287155807/100206563），与 Swift/BAT trigger 411412（GCN 10376）为同一事件（双触发）；GRB100206A 系 Swift 命名。GBM 地面定位与 Swift 位置一致（GCN 10381）。②定位：ra/dec 取 GCN 10378 UVOT 增强 XRT 位 47.16225/+13.15708 ±3.2″（90%，原文明示）；备查 BAT 地面位 47.168/13.175 ±1.5′（GCN 10379）、XRT 首报位 47.1617/13.1579 ±3.8″（GCN 10376）、uvot_grb 快照 2.1″。③T0=2010-02-06T13:30:05.39Z（未改动）：触发仪器 GBM 官方通告 GCN 10381 给 13:30:05.39 UT，与 FERMIGBRST 官方目录 trigger_time 逐位一致；MET 复算 datetime(2001,1,1)+287155805.39 s = 13:30:05.390000（uvot_grb TRIGTIME=287155805.0 同证）——无 Issue #67 族闰秒失真（若误扣 2 闰秒将得 13:30:03.39，无任何来源支持）；Swift/BAT 13:30:05.374220Z（swift_bat 快照）仅差 0.016 s（亚秒级，不写 T0_offset）。④分类 sub_tag=sgrb：t90=0.176±0.072 s（FERMIGBRST，50-300 keV，按目录 t90 判 lgrb/sgrb）；同证 BAT T90=0.12±0.03 s（15-350 keV，GCN 10379）、GBM 0.13±0.05 s（GCN 10381）、Konus-Wind 0.1±0.014 s（external/konus_wind）、minaev2020 type I、liang2023 Classified Short。⑤红移 z=0.4068：宿主星系 G1 Keck/LRIS 发射线（Hα/[NII] 等）光谱红移（Perley+2012 §2.9，redshift_type=spec-host）；GCN 10389 初步值 z=0.41；minaev2020 目录值 0.408、Konus 0.41 均为同源舍入；liang2023 0.4068、Nugent+2022 0.407 佐证。⑥宿主：LIRG G1（RA 03:08:39.10 Dec +13:09:29.3 J2000±1″，GCN 10377），host_galaxy 已建立（Perley+2012 Table 1 测光；Klose+2019 VLA 5.5 GHz 65±11 µJy、Schroeder+2020 6.0 GHz 60.4±5.0 µJy 系宿主恒星形成，与暴发无关）。GCN 10386 WHT「候选余辉」+GCN 10395 Gemini 未变化 → 实为背景星系 G2（z=0.803，Perley+2012 光谱验证）：本事件无任何光学/近红外/射电余辉探测，全部探测行均为宿主 G1（lc 行 comment 已标记）。⑦别名：「GRB 100206A」为 GCN/Swift 原文用名（GCN 10376 起 22 篇通告统一此名）；GRB100206563、GRB 100206.563 系 FERMIGBRST 目录原样 trigger_name/name_alt（GCN 10381 原文用名「trigger 287155807 / 100206563」，目录 name_alt=GRB100206563/GRB 100206.563/bn100206563）；bn100206563 同为目录原样名。⑧检索留证（2026-11-11）：仓内 gcn/archive 全文检索 100206 命中 22 篇（GCN 10376-10456，其中 11 篇含光学/近红外/UVOT 数值，均已入库或按宿主/背景星系判别）；external 快照 uvot_grb/swift_bat/swift_grb/swiftgrbba/mpe_greiner/fermi_gbm/konus_wind/minaev2020/liang2023 仅目录级参数（身份/T0/分类互证），rssgrbag、grbsn_webtool 无记录。GCN 站（gcn.nasa.gov/circulars/10394 等）与仓内 archive 逐句一致。SciX 全文检索 \"GRB 100206A\" 命中 48 条（含 GCN 10 篇），筛得含本源数据研究论文 5 篇：Perley+2012（宿主测光入 host_galaxy）、Nicuesa Guelbenzu+2012（GROND Table 4 发表限值取代 GCN 10396 预告值，7 行入库）、Klose+2019（宿主射电，未入 lc）、Schroeder+2020（6 GHz 3σ 射电限 1 行入库）、Nugent+2022（红移/宿主交叉核对，无数值入库）。TNS 不适用。结论：暂现源测光=0 探测（全部上限），宿主测光另列于 host_galaxy。⑨IOP/A&A 出版社页整站反爬（IOP Radware、A&A DataDome，实测 403/302 挑战页），Perley+2012/Klose+2019/Schroeder+2020/Nicuesa Guelbenzu+2012 四篇以 arXiv 全文实取通读 + SciX 元数据交叉（arXiv v1 与 VoR 存在排版差异风险已记录），登记 audit/unverified.tsv（status=substituted）。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -77,7 +82,12 @@
         "v": 0.125
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
   },
   "articles": [
     {
@@ -85,14 +95,14 @@
       "name": "Perley+2012",
       "source": "bot",
       "title": "The Luminous Infrared Host Galaxy of Short-duration GRB 100206A",
-      "url": "https://ui.adsabs.harvard.edu/abs/2012ApJ...758..122P"
+      "url": "https://arxiv.org/abs/1112.3963"
     },
     {
       "bibtex": "@ARTICLE{2019ApJ...887..206K,\n       author = {{Klose}, S. and {Nicuesa Guelbenzu}, A.~M. and {Micha{\\l}owski}, M.~J. and {Hunt}, L.~K. and {Hartmann}, D.~H. and {Greiner}, J. and {Rossi}, A. and {Palazzi}, E. and {Bernuzzi}, S.},\n        title = \"{Deep ATCA and VLA Radio Observations of Short-GRB Host Galaxies. Constraints on Star Formation Rates, Afterglow Flux, and Kilonova Radio Flares}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, Transient sources, High energy astrophysics, 629, 1851, 739, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2019,\n        month = dec,\n       volume = {887},\n       number = {2},\n          eid = {206},\n        pages = {206},\n          doi = {10.3847/1538-4357/ab528a},\narchivePrefix = {arXiv},\n       eprint = {1910.14505},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019ApJ...887..206K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Klose+2019",
       "source": "bot",
       "title": "Deep ATCA and VLA Radio Observations of Short-GRB Host Galaxies. Constraints on Star Formation Rates, Afterglow Flux, and Kilonova Radio Flares",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...887..206K"
+      "url": "https://arxiv.org/abs/1910.14505"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
@@ -114,7 +124,104 @@
       "source": "bot",
       "title": "Revisiting the Spectral-Energy Correlations of GRBs with {\\it Fermi} Data I: Model-wise Properties",
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract"
+    },
+    {
+      "name": "Nicuesa Guelbenzu+2012",
+      "title": "Multi-color observations of short GRB afterglows: 20 events observed by GROND",
+      "url": "https://arxiv.org/abs/1206.1806",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Schroeder+2020",
+      "title": "A Late-time Radio Survey of Short Gamma-ray Bursts at z < 0.5: New Constraints on Neutron Star Mergers and Kilonovae",
+      "url": "https://arxiv.org/abs/2006.07434",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Nugent+2022",
+      "title": "Short GRB Host Galaxies. II. A Legacy Sample of Redshifts, Stellar Populations, and Ejecta Properties",
+      "url": "https://arxiv.org/abs/2206.01764",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 47.162917,
+    "dec": 13.158139,
+    "redshift": 0.4068,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "g",
+        "mag": 23.83,
+        "mag_err": 0.17,
+        "mag_sys": "AB",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "R",
+        "mag": 21.31,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "i",
+        "mag": 20.82,
+        "mag_err": 0.08,
+        "mag_sys": "AB",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "z",
+        "mag": 20.2,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "J",
+        "mag": 18.51,
+        "mag_err": 0.12,
+        "mag_sys": "Vega",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "H",
+        "mag": 17.25,
+        "mag_err": 0.09,
+        "mag_sys": "Vega",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "Ks",
+        "mag": 16.33,
+        "mag_err": 0.11,
+        "mag_sys": "Vega",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "wise-w1",
+        "mag": 15.74,
+        "mag_err": 0.06,
+        "mag_sys": "Vega",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "wise-w2",
+        "mag": 15.14,
+        "mag_err": 0.11,
+        "mag_sys": "Vega",
+        "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "wise-w3",
+        "mag": 11.23,
+        "mag_err": 0.16,
+        "mag_sys": "Vega",
+        "source": "Perley+2012 Table 1"
+      }
+    ],
+    "comment": "LIRG 宿主 G1（z=0.4068，Keck/LRIS 光谱，Perley+2012）：L_IR≈4e11 L_sun、A_V≈2 mag、SFR≈30 M_sun/yr。测光为 Perley+2012 Table 1 观测值（未做银河系消光改正，原文脚注 a；银消改正后 AB 值见原文第二列）；WISE W4>8.58（Vega）未探测；PAIRITEL 为 4.34 h 合并历元（J/H/Ks 有效曝光 16333/16333/8143 s）。射电（流量密度不进 mag 口径，记此备查）：VLA 5.5 GHz 65±11 µJy（Klose+2019，2014-10-10）、VLA 6.0 GHz 60.4±5.0 µJy（Schroeder+2020，2019-01-04），中心与 G1 核球重合、距 XRT 误差圈中心 5″（z=0.4068 处 ~30 kpc），系宿主恒星形成，与 GRB 无关。近邻 G2（WHT「候选余辉」，GCN 10386/10395）为 z=0.803 背景星系，非宿主。位置取 GCN 10377（±1″），Klose+2019 射电中心 03:08:39.148 +13:09:29.28 佐证。",
+    "source": "Perley+2012 (ApJ 758, 122); GCN 10377; Klose+2019; Schroeder+2020"
+  }
 }
