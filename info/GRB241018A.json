@@ -1,30 +1,39 @@
 {
   "transient_id": "GRB241018A",
-  "alias": [],
-  "ra": 67.9958,
-  "dec": 43.02,
-  "T0": "2024-10-18T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "sb24101802"
+  ],
+  "ra": 67.99725,
+  "dec": 43.020083,
+  "T0": "2024-10-18T11:54:34Z",
+  "T0_ref": "GCN 37812（SVOM/ECLAIRs 官方触发通告：triggered and located at 2024-10-18T11:54:34 UT (T0)，CRT 最佳探测 8-120 keV S/N=107.8、10.24 s 窗起于 T0）；其余触发仪器时刻并列备查：SVOM/GRM 11:54:37.500（GCN 37831）、MSU Avion 11:54:37（GCN 38161）、Konus-Wind T0=42881.464 s UT=11:54:41.464（GCN 37832）；C-GFT「80 seconds after the trigger」→11:55:54 UT（GCN 37841）与 XingLong 明示 T0=2024-10-18T11:54:34 UT（GCN 37824）同锚互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 37812",
+  "pos_error": 0.1,
+  "pos_ref": "GCN 37826",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份与触发链】GRB 241018A = SVOM/ECLAIRs 触发并定位的长暴（sb24101802）：GCN 37812 记 ECLAIRs 于 2024-10-18T11:54:34 UT (T0) 触发定位（CRT+IMT 双触发、21 条告警；最佳探测 CRT S/N=107.8、8-120 keV、10.24 s 窗起于 T0），SVOM 自动 slewing；MXT 11:58:18 UT 起观测发现 X 射线候选（GCN 37814）；SVOM/VT 发现光学对应体（GCN 37819）并确认（GCN 37826）；Swift-XRT ToO Source 1 与 VT 位一致（GCN 37817/37823）；EP-FXT（GCN 37836）、NOT（GCN 37821）、C-GFT（GCN 37841）、LCO（GCN 37818）、BOOTES-4（GCN 37828）、XingLong（GCN 37824）、Mondy（GCN 37827）、GIT（GCN 37825）、Mephisto（GCN 37830）、REM（GCN 37822）、DFOT（GCN 37837）、Maidanak（GCN 40820）、MSU Avion 立方星（GCN 38161）跟进。原 Trigger_Instrument=Konus-Wind 系按 Konus 检测通告（GCN 37832）建条的跨仪器误植：Konus-Wind 确于 T0(KW)=42881.464 s UT（11:54:41.464）触发，但其通告首句自注「SVOM detection: Atteia et al., GCN 37812」，且仓内 external/konus_wind（Tsvetkova+2021 样本）无本源条目、external/fermi_gbm 亦无本源触发——触发仪器按 §3.8① 改判 SVOM/ECLAIRs（库内 SVOM 触发源先例 GRB241002C/GRB240911A/GRB240828B/GRB241009A 同式）。【T0 口径】原 T0=2024-10-18T00:00:00Z 为整零点占位（Issue #68 族；原 extra_data.t0_note「t0 为 meta trigger-time（真实触发时刻）」不成立——lc 旧行 time 系按零点历元锚定的 UT 秒数）。按 §3.8① 取触发仪器官方通告 GCN 37812 的触发时刻 2024-10-18T11:54:34Z（整秒精度、不自行补亚秒；GRM/Avion/Konus 的各自触发时刻为不同仪器阈值效应、并列备查于 T0_ref）。T0_offset 无：无 >1 s 的真实起点偏移证据。原 extra_data 值留底：t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"（bot 原值、已失真，就地改写）。lc 全表 time 按旧零点历元平移 -42874 s 归锚新 T0、mjd 绝对时刻不变（逐行核验 mjd=T0+time，最大偏差 4.2 ms=7 位小数量化）。\n【定位】ra/dec=67.99725/43.020083、pos_error=0.1″、pos_ref=GCN 37826（SVOM/VT X-band 精析位 R.A.=04:31:59.34 DEC.=+43:01:12.3 Error=0.1 arcsec J2000——原文注明与 Swift-XRT Source 1 完全一致；由 sexagesimal 换算十进制）；pos_error_confidence 留空（来源未标注置信水平）。旧值 67.9958/43.02 系 GCN 37819 VT 初位（RA=04:31:59 DEC=+43:01:12、error=1.0 arcsec）而 pos_ref 误指 GCN 37812（坐标-参照不同源）。并列备查：ECLAIRs 载位 67.990/43.030（统计 2′+建议叠加系统 2′，GCN 37812）、MXT 67.9693/42.997（41.7″ 90% c.l. VT 改偏前+1.5′系统，GCN 37814）、Swift-XRT enhanced 67.9965/+43.0196（4.4″ radius 90% conf.，GCN 37823）、EP-FXT 67.9992/43.0200（10″ 90% C.L.，GCN 37836）。\n【分类与高能量】sub_tag=lgrb：GCN 37812 原文分类「a bright long burst」（触发仪器官方通告）；GRM T90≈16 s（GCN 37831）、Konus-Wind 光变总时长 ~12 s（GCN 37832）、Avion T90=7 s（40-500 keV，GCN 38161）均 >2 s 佐证、按通告分类判 lgrb。高能参数备查：GRM Epeak=117±5 keV、fluence=(1.11±0.02)e-5 erg/cm²（10-1000 keV、T0–T0+14 s、截止幂律谱指数 -1.28±0.04，GCN 37831）；Konus-Wind fluence=(1.22±0.18)e-5 erg/cm²、64-ms 峰值能量流量 (5.34±0.64)e-6 erg/cm²/s（20 keV-10 MeV）、Band 谱 α=-1.12(-0.21,+0.27) β=-2.49(-0.29,+0.18) Ep=110(-14,+16) keV（90% 置信、GCN 37832）。\n【红移】无：21 篇通告与 SciX 检索均无红移报道，redshift 保持 null。\n【别名】sb24101802＝SVOM 触发参考号（GCN 37812/37831 原文、GCN 37830 标题「GRB 241018A/sb24101802」）。\n【X 射线】本源 lc 无 X 射线行（band 无能量串行）；MXT/XRT/EP-FXT 的 X 射线结果（GCN 37814/37823/37836）为定位、积分流量与谱参数（如 XRT Source 1 flux=(3.27+1.00/-0.84)e-13 erg/cm²/s 0.3-10 keV），非单色 Fν 测光，按审核范围暂不入库。\n【逐行核对与去重】原 24 行逐行对照 13 篇含测光通告全文，全部溯源成立、无删除、无 discard；因 T0 改锚，全表 time 由旧零点历元平移 -42874 s（mjd 绝对时刻不变）。中点口径五类：① C-GFT 按 GCN 37841 表列 (T-T0)_mid=118/193 s；② LCO 按 GCN 37818 表列 Tmid-T0=1.07 h（旧值 3790 s 系 bot 无据值、与原文 1.07 h 差 62 s，已按原文改）；③ Mephisto 按 GCN 37830 表列 Mid-Time UT 逐 band；④ GIT 三行按 GCN 37825 表列 MJD(mid)（mjd 按来源 5 位小数、time=mjd-T0）；⑤ BOOTES/DFOT/REM 按「起点+总曝光之半」（15×60 s/300s×12/~40 min）；Mondy 按表列 t-T0(mid)=0.177032 d（与 UT start+1800 s 自洽）；XingLong 按表列 Tmid-T0=2.97 h；Maidanak 两行按表列 t-T0(mid)=0.37616/1.33287 d。原文内部张力（B 档、按默认动作处理并入行内 comment）：GCN 40820 两行中点列比 UT start+半曝光大 854/925 s（两读法均在 1 h 窗内、行间隐含 T0 不一致）——按显式 mid 列取值（先例 GRB110726A GCN 12210）；GCN 37821 NOT 括注「10.28 hr after trigger」与其 mean epoch Oct 18.988（=T+11.80 h）矛盾——按绝对历元取值；GCN 37822 原文笔误「19.2 hours after the Fermi trigger」（时间算术 07:08:55−19.2 h=11:56:55≈SVOM 触发 11:54:34；仓内 external/fermi_gbm 无本源触发记录）——应为 SVOM 触发。新增 2 行：GCN 37819 叙述的第二历元 VT_B=22.2/VT_R=20.5（「in 10 min」→12:10:28 UT，锚点约数、time_err=300 s 为约定口径）。去重：各行为不同设备独立测量、无同次测量转引、无重复行。\n【星等系统】LCO/GIT/Mephisto/NOT/REM-r 原文明示 AB、REM-H 明示 Vega（2MASS 定标）、照录；C-GFT/XingLong 按 PS1 定标推定 AB（Pan-STARRS1 目录为 AB 系统、推定依据入行内 comment）；BOOTES-4（未给定标源）与 Mondy/DFOT/Maidanak（USNO-B1.0 定标）原文未声明系统→mag_system 留空。Gext_corr 全表 n（LCO/DFOT 原文注明未做银消改正、其余未声明；E(B-V)=0.75 见 GCN 37818）。\n【测光检索留证】测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇、覆盖至 GCN 46068）检索「241018A」命中 21 篇本暴通告（37812/37814/37817/37818/37819/37821/37822/37823/37824/37825/37826/37827/37828/37830/37831/37832/37836/37837/37841/38161/40820），全部逐篇实读，光学测光已全部入库（「sb24101802」另命中 37812/37830/37831 同集）；external/ 快照 19 个目录（rssgrbag/grbsn_webtool/uvot_grb/konus_wind/fermi_gbm/swift_bat/swift_grb/swiftgrbba/fermi_lat/batse/heasarc_grbcat/agile_mcal/saxgrbmgrb/guidorzi2025/liang2023/minaev2020/wang2022 等）检索 241018 均无记录（mpe_greiner 仅 1 条身份条目 Instrument=SVOM/XA=y/OT=y）；SciX（api.scixplorer.org、token 实测可用）检索「GRB 241018A」「241018A」「sb24101802」共命中 20 篇——全部为上述 GCN 通告（SciX 缺 37824 篇目索引）、「241018」+「gamma-ray burst」全文检索 0 命中，无任何研究论文；GCN 站以 archive+SciX 双通道覆盖；TNS 不适用（GRB 无 AT 名）。结论：光学测光覆盖 T0+118 s（C-GFT g=17.59±0.19）至 T0+1.33 d（Maidanak I=22.4±0.3）；早期 vt 双波段快衰减双历元已补入；射电/mm 无任何检索命中；无红移。净增 2 行（GCN 37819 第二历元 VT_B/VT_R）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "eclairs_trigger_gcn37812",
+    "t0_note": "T0=2024-10-18T11:54:34Z 为 SVOM/ECLAIRs 触发时刻（GCN 37812 整秒精度）。原 bot 值留底：t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"——对应整零点占位 T0=2024-10-18T00:00:00Z，经 2026-11-12 审核改判（Issue #68 族）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [],
   "host_galaxy": null
