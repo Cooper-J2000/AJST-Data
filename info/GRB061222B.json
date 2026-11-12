@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB061222B",
-  "alias": [],
-  "ra": 105.358333,
-  "dec": -25.85,
-  "T0": "2006-12-22T04:11:02Z",
-  "T0_ref": null,
+  "alias": [
+    "Swift 252593"
+  ],
+  "ra": 105.35321,
+  "dec": -25.8594,
+  "T0": "2006-12-22T04:11:02.350780Z",
+  "T0_ref": "Swift/BAT catalog (trigger 252593, external/swift_bat & swift_grb snapshots); GCN 5957",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,483 +14,79 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 4.1,
-  "pos_ref": "GCN 5957",
-  "redshift_type": null,
+  "pos_error": 3.7,
+  "pos_ref": "GCN 5970",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 5962",
-  "comment": null,
+  "comment": "身份：GRB061222B＝Swift/BAT 触发 252593（GCN 5957 原文「At 04:11:02 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 061222B (trigger=252593)」；GCN 5974 同引 trigger #252593）。alias「Swift 252593」＝external/swift_grb 快照 name_alt，且 GCN 5957 原文用名。与同日 GRB061222A（触发 252588，03:28:52 UT，GCN 5954）两源通告集互不相交（本源：5956–5963/5967/5968/5970–5972/5974/5977/5981/5998），无 A/B 混淆。‖T0：取触发仪器官方目录值 2006-12-22T04:11:02.350780Z（external/swift_bat summary_general.txt Trig_time_UTC 列；external/swift_grb 快照 trigger_time 同值）；GCN 5957 整秒 04:11:02 UT 一致。旧库值 2006-12-22T04:11:02Z 为 bot 导入整秒值，按 §3.2/§3.10 以触发仪器亚秒值改进。MET 列（188453464.000）与 uvot_grb 快照 TRIGTIME（188453462.0）互有秒级缓漂，均不采用，一律以 UTC 列为准。T0_offset 不填：T100_start=−239 s 系 BAT 数据下载窗口起点（GCN 5974「data set from T-239.0 to T+903.1 sec」），非前兆辐射证据。全表现有行（含 X 射线行）经程序化逐行诊断均精确满足 mjd=MJD(04:11:02.000)+time/86400（旧历元锚定），故按 §3.8 route 2 处理：非 X 射线行 time 统一平移 −0.350780 s、mjd 保持不动（SMARTS 04:42:11、REM 4:14:48、BOOTES-IR 04:18:46、MITSuME 13:11:09 等原文绝对时刻逐毫秒保持）；11 行 Swift/XRT 10keV 行按契约原样未动，其 mjd 需由维护者按 mjd=T0+time 于合入前机械重算（2026-10-31 裁定）。‖定位：原库 (105.358333, −25.85, 4.1″, GCN 5957) 与 GCN 5957 所载 XRT 位置 (105.35372, −25.8592, 4.1″ 90%) 不符（差约 37″），属混串（RA 疑自 GCN 5957 BAT 在轨 RA 07h01m26s 换算、误差半径误接 XRT 4.1″）。改判 GCN 5970 精化 XRT 位置：原文「provides a refined XRT position at RA, Dec = 105.35321, -25.8594 … with an estimated error radius of 3.7 arcseconds (90% confidence)」；GCN Report 23.1 同值（「Our best position is the XRT location RA(J2000) = 105.35321deg, Dec(J2000) = -25.8594deg with an error of 3.7 arcsec (90% confidence)」），故 pos_error_confidence=90 取自原文。备查（未采用）：GCN 5957 初值 XRT 105.35372/−25.8592（4.1″ 90%）；Berger 光学位 GCN 5956＝105.3525/−25.86（约 1″，Magellan LDSS3）；BAT 精化地面位 GCN 5974＝105.352/−25.865（1.2′，90% containment）。‖红移：z=3.355（GCN 5962，Magellan/LDSS3 光谱金属吸收线「we determine a refined redshift for GRB 061222b of z=3.355」），redshift_type=spec；Klotz+2009 (AJ 137, 4100) VoR 表同列 3.355。‖分类：sub_tag=lgrb——Swift/BAT 目录 t90=37.248±6.058 s（15-350 keV，external/swift_bat 快照），按目录 t90 判 lgrb；并列备查：GCN 5974 T90=40±5 s（15-350 keV，90% CL）；Klotz+2009 表 T90 列 40s；Minaev+2020（MNRAS 492, 1919）Table A1 分类 type II（external/minaev2020 快照行 101）。‖其余物理量（写入备查，不参与判定）：fluence(15-150 keV)=2.2±0.2×10⁻⁶ erg/cm²、1 s 峰光子流量 1.5±0.4 ph/cm²/s（T+59.16 s）、时平均谱光子指数 1.98±0.13（均 90% CL，GCN 5974）；XRT WT 谱 NH=(4.0±0.6)×10²¹ cm⁻²（银贡献 2.7×10²⁰），T+145–264 s 未吸收 0.3-10 keV 流量 8.7×10⁻¹⁰ erg/cm²/s；XRT 光变初始衰减 3.26±0.10、T+443±28 s 处转折、转折后 1.33±0.08（GCN Report 23.1；GCN 5970 给转折 450 s、转折后 1.24±0.15，两值并列）。‖测光检索留证（2026-11-13，fsy@zcode）：①仓内 gcn/ 目录在本版 main 已不存在（提示词所述 gcn/archive 已迁出库），改走 GCN 官网：gcn.gsfc.nasa.gov/gcn3 编号链 5940–6130 全量扫描，subject/正文命中本源通告 17 篇（5956/5957/5958/5959/5960/5961/5962/5963/5967/5968/5970/5971/5972/5974/5977/5981/5998）＋GCN Report 23.1，全部逐篇打开通读（A 系邻暴 5954/5955/5966/5969/5973/5975/5976/5979/5984/5986/5997 无本源数据）；②external/rssgrbag（74 源射电光变）与 external/grbsn_webtool 均无本源记录；③文献检索：OpenAlex \"GRB 061222B\"/\"GRB061222B\" 两查合计命中 50+5 条（其中 15 条为 GCN 通告/GCN Report，逐条分诊）＋Crossref 题名检索（query.bibliographic）返回 3763 条模糊匹配、题名含 061222B 者为 0——Klotz+2009 (AJ 137, 4100，TAROT 团队 VoR) Table 2 收录本源 5 行（其 VoR 不可达：IOP Radware 拦截、CDS/VizieR 整站 3 次不可达，按 arXiv:0902.0898 三方交叉核对，见 audit/unverified.tsv），Dainotti+2024 (arXiv 2405.02263，无正式发表版) 为 lc 多行转录来源、已逐行对 GCN 原文核验，Minaev+2020 供分类，de Ugarte Postigo+2010 (Adv. Ast. 2010:432172) Table 4 m300=18.0 系综述自算总结值（其引 GCN 5968 原文无此值）不入库仅备查，Dichiara+2023 (MNRAS 525, 3262) 样本表仅列 trigger 252593 无测光，其余命中为统计/目录/宇宙学类不含本源测光表。结论：本源测光已由 GCN 通告集＋Klotz+2009/Dainotti+2024 转录覆盖，无遗漏的独立文献测光；本轮新增 0 行。‖本轮 lc 处置（fsy@zcode，2026-11-13）：44 行→34 行（11 行 X 射线行原样保留）。删 10 行：①TAROT GCN 5959 首图上限 R>17.9 两行（time=149.9 取窗口起点为错锚；中点版 164.8 行一并删——同曝光 GCN 5960 在 Berger 位探测 R=18.2±0.5，VoR Klotz+2009 表未收 5959 初报值）；②GCN 5959 coadd R>19.9 错锚行（149.9，保留中点版 342.15）；③GCN 5960 探测 R=18.2 错锚行（150.0 窗口起点，保留中点版 165.0）；④GCN 5959 第二图上限 R>17.9 两行（185.5 错锚＋200.4 中点版——同图 GCN 5981 复核 R>18.2、VoR 表采 18.2，初报值保留在 200.0 行 comment）；⑤GCN 5957 UVOT FC 3σ UL 19.0 行（146.0，同曝光被 GCN 5972 精化 UL 19.77 取代）；⑥MITSuME GCN 5977 窗口起点锚 3 行（31286，保留 Dainotti 中点行并改指 GCN5977、按窗口中点 13:11:09 UT 重锚）。改 23 行（全部非 X 射线行）：time 按 route 2 统一平移 −0.350780 s；TAROT 5 行 band R→G（Klotz+2009 VoR 表注：TAROT 为无滤光片 Clear 观测按 USNO-B1 R 定标，原文记 R；GRB190821A 先例同）；REM H 行 upperlimit y→n（原文 marginally detect）、instrument TORTORA→REMIR；SARA 行 upperlimit n→y（原文非探测）并按窗口中点重锚（time 2700→4500−0.350780、mjd 05:26:02 UT）；MITSuME 3 行按窗口中点重锚（time 32441→32407−0.350780、mjd 13:11:09 UT；原行 32441/13:11:43 与窗口中点差 34 s）；SMARTS I 行 discard y→n（原文明确探测）；BOOTES-IR 行 instrument=nIR 清空（原文未给型号）、mag_system 置空（原文未声明定标）；UVOT 9 行 reference 由 GCN Report 23.1 转引改指 GCN5972（Report 23.1 Table 1 与 GCN 5972 表逐值一致，二者皆 Swift 团队同日产物）、time_err 补半曝光；各行 time_err 补原文曝光半宽；Dainotti2024 转引行 reference 改指 GCN 原始通告（转录值已逐值核对一致，出处见各行 comment）。‖星等系统说明：UVOT 行 Vega（Swift/UVOT 出厂系统惯例）；SMARTS J 行 Vega（2MASS 定标惯例）；TAROT/SMARTS I/KANATA/SARA/Rc/Ic 行沿用导入 Vega 标注、原文均未声明系统（USNO-B1/A2.0/NOMAD 照相定标），已在各行 comment 备查；MITSuME g′ 行 Vega 与 Sloan 惯例 AB 相悖，置空待决。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "derived": {
-      "best": {
-        "eiso": {
-          "v": 102999999999999990000000000000000000000000000000000000,
-          "err": 16000000000000000000000000000000000000000000000000000,
-          "src": "minaev2020"
-        },
-        "alpha": {
-          "v": -1.95614,
-          "err": [
-            0.12711000000000006,
-            0.13102999999999998
-          ],
-          "src": "swift_bat"
-        },
-        "ep_rest": {
-          "v": 200.0,
-          "err": 28.0,
-          "src": "minaev2020"
-        },
-        "t90_obs": {
-          "v": 37.248,
-          "err": 6.057907,
-          "src": "swift_bat"
-        },
-        "t90_rest": {
-          "v": 8.552927669345578,
-          "err": 1.3910234213547645,
-          "src": "swift_bat"
-        }
+    "params": {
+      "alpha": {
+        "err": [
+          0.12711000000000006,
+          0.13102999999999998
+        ],
+        "src": "swift_bat",
+        "v": -1.95614
       },
-      "sources": {
-        "uvot_grb": {
-          "t90_obs": {
-            "v": 40.0,
-            "err": null
-          },
-          "t90_rest": {
-            "v": 9.184845005740527,
-            "err": null
-          }
-        },
-        "swift_bat": {
-          "alpha": {
-            "v": -1.95614,
-            "err": [
-              0.12711000000000006,
-              0.13102999999999998
-            ]
-          },
-          "t90_obs": {
-            "v": 37.248,
-            "err": 6.057907
-          },
-          "t90_rest": {
-            "v": 8.552927669345578,
-            "err": 1.3910234213547645
-          }
-        },
-        "swift_grb": {
-          "eiso": {
-            "v": 55000000000000000000000000000000000000000000000000000,
-            "err": null
-          },
-          "t90_obs": {
-            "v": 37.25,
-            "err": null
-          },
-          "t90_rest": {
-            "v": 8.553386911595865,
-            "err": null
-          }
-        },
-        "minaev2020": {
-          "eiso": {
-            "v": 102999999999999990000000000000000000000000000000000000,
-            "err": 16000000000000000000000000000000000000000000000000000
-          },
-          "ep_rest": {
-            "v": 200.0,
-            "err": 28.0
-          },
-          "grb_type": "II",
-          "t90_rest": {
-            "v": 9.2,
-            "err": null
-          }
-        }
+      "eiso": {
+        "err": 16000000000000000000000000000000000000000000000000000,
+        "src": "minaev2020",
+        "v": 102999999999999990000000000000000000000000000000000000
       },
-      "computed": "2026-07-22",
+      "ep_rest": {
+        "err": 28.0,
+        "src": "minaev2020",
+        "v": 200.0
+      },
       "grb_type": {
-        "v": "II",
-        "src": "minaev2020"
+        "src": "minaev2020",
+        "v": "II"
+      },
+      "t90_obs": {
+        "err": 6.057907,
+        "src": "swift_bat",
+        "v": 37.248
+      },
+      "t90_rest": {
+        "err": 1.3910234213547645,
+        "src": "swift_bat",
+        "v": 8.552927669345578
       }
     },
-    "catalog_data": {
-      "rssgrbag": {
-        "other": {
-          "ref_codes": "45,37,45,8,37,37,[],[]",
-          "opt_ag_flag": "Y",
-          "opt_flux_11h": {
-            "v": 1.2,
-            "band": "R (0.7 micron)",
-            "unit": "microJy"
-          },
-          "xray_ag_flag": "Y",
-          "radio_ag_flag": "N",
-          "xray_flux_11h": {
-            "v": 3.1e-13,
-            "band": "0.3-10 keV",
-            "unit": "erg/s/cm^2"
-          },
-          "instrument_code": "S",
-          "radio_telescope": "VLA"
-        },
-        "params": {
-          "t90": {
-            "v": 40.0,
-            "err": null,
-            "band": null
-          },
-          "eiso": {
-            "v": 80000000000000000000000000000000000000000000000000000,
-            "err": null,
-            "band": "1-10000 keV",
-            "frame": "rest"
-          },
-          "fluence": {
-            "v": 2.24e-06,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 3.355
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/gamma-ray-bursts/rssgrbag.html",
-          "name": "Radio-Selected GRB Afterglow Catalog (Chandra & Frail 2012)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      },
-      "uvot_grb": {
-        "other": {
-          "OBJECT": "GRB061222B",
-          "BAT_PIT": "PL",
-          "DISC_BY": "Swift",
-          "POS_ERR": 1.0,
-          "POS_REF": "GCN5956",
-          "T90_REF": "SGA",
-          "TRIG_UT": "2006-356-04:11:02",
-          "TRIGTIME": 188453462.0
-        },
-        "params": {
-          "t90": {
-            "v": 40.0,
-            "err": null,
-            "band": "15-350 keV"
-          },
-          "fluence": {
-            "v": 2.2399999579647556e-06,
-            "cl": 90,
-            "err": 1.829999973779195e-07,
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 3.3550000190734863
-          },
-          "peak_flux": {
-            "v": 1.590000033378601,
-            "cl": 90,
-            "dt": "1s",
-            "err": 0.36000001430511475,
-            "band": "15-150 keV"
-          },
-          "spectral_index": {
-            "v": 1.9700000286102295,
-            "cl": 90,
-            "err": 0.12999999523162842
-          }
-        },
-        "source": {
-          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
-          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2006-12-22T04:11:02Z"
-      },
-      "swift_bat": {
-        "other": {
-          "pcode": "0.1562",
-          "z_ref": "\"Berger E. GCN Circ. 5962\"",
-          "15_25kev": 4.848137e-07,
-          "25_50kev": 6.754061e-07,
-          "z_method": "ba",
-          "15_350kev": 3.169968e-06,
-          "50_100kev": 6.962813e-07,
-          "Image_SNR": "2.100149e+01",
-          "100_150kev": 4.172102e-07,
-          "100_350kev": 1.313484e-06,
-          "15_25kev_hi": 5.365064e-07,
-          "25_50kev_hi": 7.230112e-07,
-          "15_25kev_low": 4.343351e-07,
-          "15_350kev_hi": 3.563485e-06,
-          "25_50kev_low": 6.278343e-07,
-          "50_100kev_hi": 7.751841e-07,
-          "100_150kev_hi": 4.925212e-07,
-          "100_350kev_hi": 1.632281e-06,
-          "15_350kev_low": 2.80805e-06,
-          "50_100kev_low": 6.17952e-07,
-          "fluence_model": "PL",
-          "100_150kev_low": 3.475641e-07,
-          "100_350kev_low": 1.038759e-06,
-          "Trigger_method": "image trigger",
-          "T100_best_model": "PL",
-          "Image_position_err": "1.296008e+00"
-        },
-        "params": {
-          "t50": {
-            "v": 19.312,
-            "err": 2.587502,
-            "band": "15-350 keV"
-          },
-          "t90": {
-            "v": 37.248,
-            "err": 6.057907,
-            "band": "15-350 keV"
-          },
-          "alpha": {
-            "v": -1.95614,
-            "cl": 90,
-            "err": [
-              0.12711000000000006,
-              0.13102999999999998
-            ]
-          },
-          "fluence": {
-            "v": 2.273709e-06,
-            "cl": 90,
-            "err": [
-              1.8419499999999994e-07,
-              1.8227099999999977e-07
-            ],
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 3.355
-          }
-        },
-        "source": {
-          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
-          "name": "Swift/BAT GRB Catalog",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "BAT 252593"
-        ],
-        "trigger_time": "2006-12-22T04:11:02.350780Z"
-      },
-      "swift_grb": {
-        "other": {
-          "bat_plsl": "1.956",
-          "det_flag": "S",
-          "target_id": "252593",
-          "bat_plsl_err": "0.131",
-          "bat_redshift": "3.355",
-          "redshift_ref": "2006GCN..5962....1B",
-          "bat_detection": "Y",
-          "redshift_type": "S",
-          "bat_peak_model": "PL",
-          "supernova_flag": "N",
-          "bat_fluence_model": "PL"
-        },
-        "params": {
-          "t50": {
-            "v": 19.31,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "t90": {
-            "v": 37.25,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "eiso": {
-            "v": 55000000000000000000000000000000000000000000000000000,
-            "err": null,
-            "band": "15-150 keV",
-            "frame": "rest"
-          },
-          "fluence": {
-            "v": 2.27e-06,
-            "err": 1.83e-07,
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 3.355,
-            "err": null
-          },
-          "peak_flux": {
-            "v": 1.51,
-            "dt": "1s",
-            "err": 0.339,
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
-          "name": "HEASARC SWIFTGRB",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "Swift 252593"
-        ],
-        "trigger_time": "2006-12-22T04:11:02.350780Z"
-      },
-      "minaev2020": {
-        "other": {
-          "EH": 0.31,
-          "EHD": 0.1,
-          "Exp": "Swift",
-          "Ref": "3",
-          "Type": "II",
-          "recno": 101,
-          "EHtype": "II",
-          "EHDtype": "II"
-        },
-        "params": {
-          "t90": {
-            "v": 9.2,
-            "err": null,
-            "band": null,
-            "frame": "rest"
-          },
-          "eiso": {
-            "v": 102999999999999990000000000000000000000000000000000000,
-            "err": 16000000000000000000000000000000000000000000000000000,
-            "band": null,
-            "frame": "rest"
-          },
-          "ep_rest": {
-            "v": 200.0,
-            "err": 28.0,
-            "frame": "rest"
-          },
-          "grb_type": {
-            "v": "II"
-          },
-          "redshift": {
-            "v": 3.355
-          }
-        },
-        "source": {
-          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/492/1919",
-          "name": "Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 42865900000000000000000,
-          "xrt_ra": 105.35279,
-          "ref_bat": "GCN 5957; GCN 5974; arXiv:0707.4626",
-          "ref_xrt": "GCN 5957; GCN 5970; Evans et al., 2009; MNRAS, 397, 1177",
-          "xrt_dec": -25.85978,
-          "advocate": "Judy Racusin",
-          "ref_uvot": "GCN 5957; GCN 5972",
-          "uvot_mag": "B>20.29; U>19.98; UVW1>19.76; UVM2>19.96; UVW2>18.64",
-          "other_obs": "Magellan, TAROT (25cm), CTIO (1.3m), REM (60cm), BOOTES-IR (60cm)",
-          "ref_other": "GCN Report 23.1",
-          "target_id": 252593,
-          "uvot_vmag": 19.77,
-          "xrt_gamma": 1.91478,
-          "trigger_obs": "Swift",
-          "error_radius": 1.2,
-          "ref_redshift": "GCN 5958; GCN 5962 (Magellan)",
-          "xrt_lc_index": -3.371,
-          "xrt_11hr_flux": 6.826752e-16,
-          "xrt_24hr_flux": 1.0216704e-16,
-          "xrt_first_obs": 145.08,
-          "uvot_first_obs": 146.0,
-          "uvot_vmag_flag": 1,
-          "xrt_early_flux": 1.3e-09,
-          "redshift_comment": "Magellan: absorption",
-          "xrt_error_radius": 1.7,
-          "bat_spectral_model": "PL"
-        },
-        "params": {
-          "t90": {
-            "v": 40.0,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 2.24e-06,
-            "cl": 90,
-            "err": 1.83e-07,
-            "band": "15-150 keV"
-          },
-          "redshift": {
-            "v": 3.355
-          },
-          "peak_flux": {
-            "v": 1.59,
-            "cl": 90,
-            "dt": "1s",
-            "err": 0.36,
-            "band": "15-150 keV"
-          },
-          "spectral_index": {
-            "v": 1.97,
-            "cl": 90,
-            "err": 0.13
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2006-12-22T04:11:02.000Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "OT": "y",
-          "RA": "n",
-          "XA": "y",
-          "Error": "3'",
-          "obs_date": "2006-12-22",
-          "Instrument": "Swift",
-          "GRB X-ray position": "07h01m26s -25° 51'"
-        },
-        "params": {
-          "redshift": {
-            "v": 3.355
-          }
-        },
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-13"
     }
   },
   "articles": [
     {
-      "name": "Dainotti+2024",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
-      "source": "bot"
+      "name": "Dainotti+2024",
+      "source": "bot",
+      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
+      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
     },
     {
-      "name": "Minaev+2020",
-      "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract",
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
-      "source": "bot"
+      "name": "Minaev+2020",
+      "source": "bot",
+      "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+    },
+    {
+      "bibtex": "@ARTICLE{2009AJ....137.4100K,\n       author = {A. Klotz and M. Boer and J. L. Atteia and B. Gendre},\n       title = {Early Optical Observations of Gamma-Ray Bursts by the TAROT Telescopes: Period 2001-2008},\n       journal = {The Astronomical Journal},\n       year = {2009},\n       volume = {137},\n       page = {4100},\n       doi = {10.1088/0004-6256/137/5/4100},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2009AJ....137.4100K/abstract},\n}",
+      "name": "Klotz+2009",
+      "source": "fsy",
+      "title": "Early Optical Observations of Gamma-Ray Bursts by the TAROT Telescopes: Period 2001-2008",
+      "url": "https://doi.org/10.1088/0004-6256/137/5/4100"
     }
   ],
   "host_galaxy": null
