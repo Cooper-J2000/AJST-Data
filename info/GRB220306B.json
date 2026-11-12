@@ -1,28 +1,42 @@
 {
   "transient_id": "GRB220306B",
-  "alias": [],
-  "ra": 5.38628,
-  "dec": 71.36313,
-  "T0": "2022-03-06T07:20:00Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1095288",
+    "GRB220306761",
+    "GRB 220306.761",
+    "bn220306761"
+  ],
+  "ra": 5.38792,
+  "dec": 71.36361,
+  "T0": "2022-03-06T18:15:37.473400Z",
+  "T0_ref": "GCN 31697 整秒 18:15:37 UT（Swift/BAT trigger=1095288）+ external/swift_bat（batgrbcat）Trig_time_UTC 亚秒 .473400",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.3,
   "pos_ref": "GCN 31700",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "①【身份】GRB220306B=Swift/BAT trigger 1095288（GCN 31697：「At 18:15:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 220306B (trigger=1095288)」）+ Fermi/GBM 同暴触发（GCN 31702：「At 18:15:36.24 UT on 06 March 2022, the Fermi Gamma-Ray Burst Monitor (GBM) triggered and located GRB 220306B (trigger 668283341 / 220306761)」，GBM on-ground location 与 Swift 位一致）。同日甄别：GRB 220306A 系另一独立事件（Fermi/GBM trigger 668244005.521712/220306306、07:20:00 UT、RA=184.9 Dec=-30.0、6.5° 误差，GCN 31693）；IceCube-220306A 系中微子事件（03:46:37.06 UT、RA=314.82 Dec=+8.61，GCN 31692）——均与本暴无关。别名 'GRB220306761'、'GRB 220306.761'、'bn220306761' 系仓内 external/fermi_gbm 快照 name_alt 原文用名（GCN 31702 原文 trigger 668283341 / 220306761）；'BAT 1095288' 系仓内 external/swift_bat name_alt。GCN 31711 正文引「Wood et al., GCN 31782」系原文笔误（GCN 31782 为 GRB 220323A 通告，应为 GCN 31702）；GCN 33373（GRB 230216A Mondy）正文首句误写「observed the field of Swift GRB 220306B (Klingler et al. GCN 33328)」而其实际观测/探测对象为 GRB 230216A 余辉（2023-02-16/18/20），与本暴无关、不采。\n②【T0】原 T0=2022-03-06T07:20:00Z（bot t0_basis=meta_trigger、t0_note 称「真实触发时刻」）系占位误植：恰为同日 GRB 220306A 的 Fermi/GBM 触发时刻（GCN 31693）；旧 lc 各行 time 实为「真实观测时刻−07:20:00」的当日秒差（例：AbAO 行 40331 s=18:32:11 UT 起点−07:20:00；Mondy 行 121351 s=2022-03-07 17:02:31 UT 中点−07:20:00（旧行本就取中点；「起点当中点」实为其余 3 行）；Tautenburg 行 147510 s=2022-03-08 00:18:30 UT 中点−07:20:00），与 GRB241018A 同族。标准 T0 改锚 Swift/BAT 触发时刻 2022-03-06T18:15:37.473400Z（GCN 31697 整秒 18:15:37 UT + external/swift_bat（batgrbcat）Trig_time_UTC 亚秒 .473400；§3.8 多触发仪器以 Swift 为准——Fermi/GBM 2022-03-06T18:15:36.243Z 系另一仪器触发、差 1.23 s）。全表 time/mjd 已按标准 T0 归算（mjd=T0+time、7 位小数）：Swift 自报相对秒（UVOT T_start/T_stop）直接锚定真触发时刻；地面站绝对 UT 行按「观测时刻−标准 T0」归算（保留算术尾差 .5266）；MASTER Tmid-T0（整秒历元）减 0.4734 s 归算。无 T0_offset（BAT 光变 ~T-2 s 起系光变结构、非触发时刻调整，GCN 31707）。\n③【定位】旧 ra/dec=5.38628/71.36313 系 GCN 31697 XRT 初报位（4.0″/90%）却配 GCN 31700 的 2.3″ 误差——坐标与误差取自两个通告、口径不配套（与 GRB180311A 同类问题）。已归位 GCN 31700 增强 XRT 位：RA,Dec=5.38792,+71.36361（2.3 arcsec、radius、90% confidence，原文明示）。备查并列：XRT 初报 5.38628/71.36313（4.0″/90%，GCN 31697）；BAT ground 5.380/71.384（1.6′、sys+stat、90%，GCN 31707）；BAT 机载 5.378/+71.354（3′、90%、含系统误差，GCN 31697）；仓内 swiftgrbba xrt 位 5.38792/71.36361（2.1″、目录值未标置信水平）；仓内 swift_xrt_live 5.38788/71.36366（2.2″）；仓内 mpe_greiner 5.37917/71.35（±3′）。\n④【分类】t90=12.34±3.24 s（external/swift_bat、15-350 keV、原值 12.336±3.2358；GCN 31707 一致 12.34±3.24 s；仓内 external/fermi_gbm 目录值 13.31±3.08 s（50-300 keV）亦一致），按目录 t90 判 lgrb/sgrb → lgrb。\n⑤【红移/宿主】无红移报告（12 篇本暴通告与 SciX 检索均未给 z，redshift 保持 null）。观测对象 Pan-STARRS objID 193630053894966412（r=21.42/i=20.70/z=20.54、位于 XRT 误差圆东南缘 2.6″）被 GCN 31705/31711/31714 建议为宿主候选（余辉叠加其上、r 波段确认 fading）——候选宿主不建立 host_galaxy，留此备查。\n⑥【高能量值备查】BAT：T90=12.34±3.24 s（15-350 keV，GCN 31707）；fluence(15-150 keV)=6.0±0.7e-7 erg/cm²；1-s 峰光子流量 2.3±0.3 ph/cm²/s（T-0.05 s 起）；峰计数率 ~2600 c/s（15-350 keV，GCN 31697）。GBM：T90≈10.2 s（50-300 keV、初步，GCN 31702；目录值 13.31±3.08 s）；fluence(10-1000 keV)=1.7±0.2e-6 erg/cm²；1-s 峰光子流量 2.8±0.2 ph/s/cm²（T0+1.2 s 起）；Band 谱 Epeak=160±122 keV、α=-1.1±0.3、β=-1.8±0.2。XRT（GCN 31703）：衰破指数 α=0.88(+0.17/-0.12)；NH=7.1(+2.9/-2.3)e21 cm⁻²（银河前景 4.1e21）；T+24 h 外推 0.3-10 keV 通量 1.1e-13（观测）/1.7e-13（去吸收）erg/cm²/s。——均备查不入库；本源 lc 无 X 射线行（band 能量串），无 X 射线 mjd 随 T0 重算事项。\n⑦【逐行核对与去重】原 10 行数值/波段/上限标记均与出处一致、无一行删除或新增 discard 于核对错误（仅 Source 2 三行按原文明示置 discard=y，见下）；修正项：全部 10 行 time 系占位 T0 历元（真实时刻−07:20:00），已按标准 T0 归算并补 time_err（GCN 31697/31759 窗口中点口径、GCN 31737/31705/31714 起点+总曝光/2 口径、GCN 31711 窗口中点口径）；telescope/instrument 归一（NEXT-0.6m、AS-32、Tautenburg 1.34m Schmidt/TAUKAM）；reference 规范为「GCN NNNNN」格式；UVOT 行 mag_system 依据补全（Vega）。Tautenburg Source 2 三行（r>22.2 上限、i=21.27±0.17、z=20.83±0.25）原文明示「obviously it is unrelated to the GRB」——非本暴测光、置 discard=y 留档（B 档默认动作）。新增 24 行：GCN 31759 UVOT 九滤光片上限 9 行（white_FC 与 GCN 31697 典型上限行系同一找星图曝光——19.6 为触发通告先验典型值、>19.9 为 UVOT 团队实测初步值，按仓库「初报/精表两版并列」惯例并存互证）；GCN 31699 MASTER 上限 14 行（Amur R×5+Kislovodsk C×9；C 系无滤光片记 band=G；原文同 Tmid 同曝光并存两限值、照录）；GCN 31704 BOOTES-1B clear 上限 1 行。除 white_FC 两版并列外无同次测量转引重复，无删除行。\n⑧【星等系统】UVOT 行=Vega：GCN 31759 原文明示「using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)」（GCN 31697 行按同一定标推定、依据已注明）；Tautenburg 行=AB（原文明示）；NEXT/AbAO/Mondy/MASTER/BOOTES 行原文未声明系统、mag_system 留空并在行 comment 注明。\n⑨【测光检索留证】测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇）检索「220306B/1095288/220306761」命中本暴通告 12 篇（31697/31699/31700/31702/31703/31704/31705/31707/31711/31714/31737/31759；另 GCN 33373 系 GRB 230216A 通告正文笔误提及本暴、排除），其中含光学测光 8 篇（31697/31699/31704/31705/31711/31714/31737/31759），数值全部入库——原 10 行修正后保留、净增 24 行；仓内 external/rssgrbag（射电）、grbsn_webtool、uvot_grb、swift_grb、konus_wind、heasarc_grbcat、batse、fermi_lat、agile_mcal、saxgrbmgrb、liang2023、wang2022、guidorzi2025、minaev2020 均无本源记录（swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live/fermi_gbm 仅身份/参数行、作互证）；SciX（api.scixplorer.org、题录+full 全文检索、token 实测可用、2026-11-12）：「GRB 220306B」/「220306B」/「GRB220306B」/「1095288」/「220306761」命中 13/13/0/2/1 条、全部为 GCN 通告、研究论文 0 篇；GCN 站 gcn.nasa.gov/circulars/31697 实测可访问（HTTP 200）、gcn.gsfc.nasa.gov/other/220306B.swift 404（无聚合页），SciX 侧编号集合与仓内 archive 完全一致（互证无缺篇）。结论：本源全部已知测光为触发后 164 s–30.1 h 的光学/紫外数据（UVOT 九滤光片上限、MASTER 14 条浅限、BOOTES/NEXT 无探测、AbAO/Mondy/Tautenburg 对宿主候选+余辉混合目标 6 点），无射电/mm、无晚期深场报告、无红移、无研究论文。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_trig_time",
+    "t0_note": "T0=Swift/BAT 触发时刻（GCN 31697 整秒+batgrbcat 亚秒 .473400）；bot 原值 2022-03-06T07:20:00Z（t0_basis=meta_trigger、原 t0_note 称「真实触发时刻」）系同日 GRB 220306A 的 Fermi/GBM 触发时刻误植（GCN 31693），原值留 info comment ②。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [],
   "host_galaxy": null
