@@ -3,25 +3,35 @@
   "alias": [],
   "ra": 352.2526,
   "dec": 51.2935,
-  "T0": "2017-07-10T00:45:44Z",
-  "T0_ref": null,
+  "T0": "2017-07-10T05:05:15Z",
+  "T0_ref": "GCN 21326（IBAS/IBIS-ISGRI 触发 2017-07-10 05:05:15 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 150,
+  "pos_ref": "GCN 21326",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy@zcode，2026-11-13）。T0 口径：采 INTEGRAL/IBAS 触发时刻 2017-07-10T05:05:15Z（GCN 21326 原文：\"a gamma ray burst lasting about 30 s has been detected by IBAS in the IBIS/ISGRI data at 05:05:15 UT of July 10, 2017\"）；原值 2017-07-10T00:45:44Z 为邻暴 Swift/BAT GRB 170710A（BAT 761119）的触发时刻（仓内 external/swift_bat 快照 trigger_time 2017-07-10T00:45:44.623200Z，其位置 ra 231.85/dec -38.52 与本暴无关），系导入管线邻暴误锚（Issue #84 同型），已纠正；lc 全表 4 行 time 已按新 T0 重算（mjd 保持 GCN 21462 原值），本源无 X 射线行。定位：ra/dec 352.2526,+51.2935 即 GCN 21326 IBAS 精化位置（J2000），误差 2.5 arcmin=150 arcsec，原文标注 90% c.l.。tag=grb、sub_tag=lgrb：GCN 21326 标题 \"a long GRB detected by INTEGRAL\"、持续约 30 s。峰流量 0.3 counts/cm2/s（20-200 keV，1-s 积分）、注量约 4x10e-7 erg/cmq（同能段）记档（GCN 21326）。测光检索（2026-11-13）：GCN 站内检索命中 4 篇（21326 INTEGRAL 检测、21462 AMI 15GHz 上限；21337/21338 CALET 经 GCN 21338 勘误属邻暴 170710D，排除）；arXiv API 三种写法 0 命中；Crossref 题录检索无直接命中；OpenAlex title_and_abstract 命中 3 条（均 GCN 通告）、fulltext 命中仅词元噪声、三条通告 cited_by_count=0；Anderson+2018（MNRAS 473,1512，AMI 15.7GHz 目录）经 arXiv 摘要核实仅覆盖 Swift 通告响应、不含本暴；Chelovekov+2019（Astronomy Letters 45,635）arXiv PDF 全文 \"170710\" 命中 0 次；SIMBAD/VizieR-TAP 整站不可达（unavailable@2026-11-13）→ 无已发表论文含本暴测光，articles 留空，补 0 行（既有 4 行 AMI 15GHz 上限保留，time/mjd 见各行 comment）。alias 留空：无其他有出处用名（CALET 用名属 170710D；仓内 mpe_greiner 快照用名 GRB 170710C 与库 id 同形）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "gcn_trigger",
+    "t0_note": "t0=INTEGRAL/IBAS 触发时刻（GCN 21326，2017-07-10 05:05:15 UT）；原 bot 值 t0_basis=meta_trigger/t0_note=「t0 为 meta trigger-time（真实触发时刻）」系 Swift 170710A 触发误锚（原值见 info comment），2026-11-13 审核改写",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-13"
+    }
   },
   "articles": [],
   "host_galaxy": null
