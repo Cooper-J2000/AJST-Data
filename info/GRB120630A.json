@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB120630A",
-  "alias": [],
-  "ra": 352.3,
-  "dec": 42.495,
-  "T0": "2012-06-30T03:06:20Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 525451",
+    "Swift 525451"
+  ],
+  "ra": 352.29481,
+  "dec": 42.55483,
+  "T0": "2012-06-30T23:17:33.768120Z",
+  "T0_ref": "Swift/BAT 官方目录快照 external/swift_bat summary_general（trigger 525451，UTC 列 2012-06-30T23:17:33.768120；同表 MET 列 362791062.144 与 UTC 列分数部分不一致，按规则一律以 UTC 列为准）；heasarc swiftgrbcat 快照同值 2012-06-30T23:17:33.768Z 互证；GCN 13405 未给触发绝对时刻；O'Connor+2022 §A2.3 整秒 23:17:33 UT 一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,202 +17,27 @@
   ],
   "pos_error": 3.9,
   "pos_ref": "GCN 13405",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "redshift_type": "phot",
+  "redshift_ref": "O'Connor+2022（MNRAS 515, 4890，DOI 10.1093/mnras/stac1982）：putative host G1 的 prospector SED 测光红移 z_phot=0.6±0.1（Table 1/Table 3/§A2.3 三处一致）；mpe_greiner 快照 z=0.6（z_flag=phh，宿主测光红移）互证",
+  "comment": "审核记录（fsy@zcode，2026-11-13）。原库 comment：'由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)'。身份：Swift/BAT 触发 525451（GCN 13405 原文 'GRB 120630A (trigger #525451)'；'There was no initial set of GCN Notices nor a rapid-response circular because of the power outage at GSFC when this burst occurred'）；swift_bat/swift_grb/swiftgrbba/mpe_greiner 快照互证，确证。T0：原库 2012-06-30T03:06:20Z 系 GCN 13403 NOT 观测起点（'Observations started at 03:06:20 UT on 2012-07-02'）被误挂为触发时刻（Issue #84 同型：观测开始时刻≠触发时刻）；改判 2012-06-30T23:17:33.768120Z（依据见 T0_ref）；GCN 13403 '27.8 hr since the BAT trigger' 反算 03:06:20 UT(7-2) − 27.8 h ≈ 23:18:20，与目录值在 0.1 h 精度内相容。改 T0 后全表 mjd=T0+time 重算（9 位小数）；X 射线 2 行（band=10keV，UKSSDC Burst Analyser）仅按 mjd=T0+time 机械重算（2026-10-31 维护者裁定例外），time/其余列未动。T0_offset 不设：BAT 目录 T90 区间 −0.032~0.608 s、GCN 13405 mask-weighted 光变 'starting at ~T-0.05 sec and ending at ~T+0.65 sec'，触发前辐射仅亚秒量级（|offset|<1 s 不写 T0_offset）。定位：原库 ra/dec=352.3/42.495 系 GCN 13405 BAT 地面位（'RA, Dec = 352.300, 42.495'，2.7′ 90% containment）与其 pos_error=3.9″（XRT 精化）错配，已改判 XRT 精化位 352.29481/42.55483（原文 'RA, Dec = 352.29481, 42.55483'、'with an uncertainty of 3.9 arcsec (radius, 90% confidence)'，pos_error_confidence=90）；备查——O'Connor+2022 §A2.3 XRT 位 23h29m11s.07 +42°33′20.3″（4.0″，UKSSDC 后期增强版本）、GCN 13403 NOT 候选源 23h29m10.23s +42°33′13.0″（0.5″，与精化位差约 7″）。tag/sub_tag：grb/sgrb——t90=0.596±0.210 s（15-350 keV，Swift/BAT 目录 external/swift_bat summary_general）= GCN 13405 'T90 (15-350 keV) is 0.6 +- 0.2 sec'（原文 'Given the short duration and the hard spectrum of this burst, it is very likely a short GRB'）；swift_grb 快照 t90=0.58 s（15-150 keV）、O'Connor+2022 §A2.3 0.58±0.18 s；按目录 t90 判 sgrb。alias：BAT 525451（external/swift_bat 快照 name_alt；GCN 13405 原文 'trigger #525451'）、Swift 525451（heasarc swift_grb 快照 name_alt 'Swift 525451'）。红移：z=0.6 为测光红移——O'Connor+2022 §A2.3 原文 'We derive a photometric redshift zphot = 0.6 ± 0.1'（putative host G1：offset ~5.8″、r=21.42±0.04、Pcc=0.07，'we consider the bright galaxy G1 to be the putative host'）；论文仅称 putative host（无光谱证认、Pcc 非零），按规则不建立 host_galaxy，宿主候选记此备查：G1 与 2014 深像 3σ 限值 g≳25.7/r≳25.6/i≳24.9/z≳24.9（LDT/LMI 2014-09-05 riz + Keck/LRIS 2014-10-25 gR，原文注明已银消改正；逐限值归属 LDT 或 Keck 原文未分解，故不入 lc）；G1 各历元测光（VoR Table 1：GMOS-N 07-01-2012 r/i/z=21.60±0.06/21.25±0.07/21.08±0.05 等）为宿主星系测量、非瞬变体测光，不入 lc。lc 处置：9 行重核——X 射线 2 行仅 mjd 机械重算；UVOT 6 行按 GCN 13405 窗口中点/半宽重写并补 mag_system=Vega（原 time 72870–73206 s 对应 UTC 23:20:50–23:26:26，为旧错误 T0 历元导入残留，与原文 T_start/T_stop 窗口不符）；NOT 行改窗口中点（5×360 s 起点 03:06:20 UT 7-2，中点=起点+900 s、time_err=900 s）；新增 2 行：GCN 13405 u 全曝光上限（150–1032 s，>20.3）、O'Connor+2022 Gemini/GMOS-N r≳25.0 上限（2012-07-01 '0.5 d after the GRB'，AB 系统、已银消改正，Gext_corr=y）；无删除、无去重（各行为不同仪器/不同口径的独立测量）。O'Connor+2022 取文过程：OUP 整站 Cloudflare（落地页与 article-pdf 均实测 403，curl/WebFetch 同），经浏览器会话取得 VoR PDF（6377281 B，印刷 DOI/卷页已核，无 arXiv 水印），并以 arXiv:2204.09059v2 交叉比对，数值以 VoR 为准（VoR §A2.3 明示 r 波段；VoR nmin=9.0e-5 与 arXiv v2 2.0e-5 有异，不涉本库字段；原文 'On June 39, 2012' 系 'June 30' 笔误）。测光检索留证（2026-11-13）：仓内 git 树无 gcn/ 路径（gcn/archive 不存在）、external/rssgrbag/grbsn_webtool/uvot_grb 无此源、swift_bat/swift_grb/swiftgrbba/mpe_greiner 仅目录参数；GCN 站事件页（gcn.nasa.gov/circulars/events/grb-120630a）命中 2 篇（13403/13405，均逐字通读）；文献检索：ADS 无 token 未运行（不据此得无文献结论），OpenAlex 'GRB 120630A' 命中 4 条、'120630A' 命中 10 条（去重后期刊论文 7 篇：O'Connor+2022 逐值核对并入库 1 行；其余 6 篇为短暴样本统计类 mention-only——von Kienlin+2016 ApJ 818,110、2020 circumburst 环境（staa1433）、2021 GBM 前兆时序（abd3fd）、2024 X 射线视角限制（stae1941，X 射线不入库）、2024 宿主性质（ad6b2a）、Lu+2024（ad09dd））；arXiv API 3 种写法均 0 条、Crossref bibliographic 0 篇事件相关；SIMBAD 不可用（DNS 解析失败/CDS Anubis）记 unavailable@2026-11-13。新增 2 行。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "swift_bat": {
-        "other": {
-          "pcode": "0.6562",
-          "15_25kev": 4.631588e-09,
-          "25_50kev": 1.136501e-08,
-          "15_350kev": 1.460865e-07,
-          "50_100kev": 2.22623e-08,
-          "Image_SNR": "7.261989e+00",
-          "100_150kev": 2.191442e-08,
-          "100_350kev": 1.078252e-07,
-          "15_25kev_hi": 7.055373e-09,
-          "25_50kev_hi": 1.455693e-08,
-          "15_25kev_low": 2.588868e-09,
-          "15_350kev_hi": 2.180921e-07,
-          "25_50kev_low": 8.013088e-09,
-          "50_100kev_hi": 2.736781e-08,
-          "100_150kev_hi": 3.014949e-08,
-          "100_350kev_hi": 1.799824e-07,
-          "15_350kev_low": 9.328243e-08,
-          "50_100kev_low": 1.700004e-08,
-          "fluence_model": "PL",
-          "100_150kev_low": 1.429355e-08,
-          "100_350kev_low": 5.845612e-08,
-          "Trigger_method": "rate trigger",
-          "T100_best_model": "PL",
-          "Image_position_err": "2.725486e+00"
-        },
-        "params": {
-          "t50": {
-            "v": 0.248,
-            "err": 0.1882233,
-            "band": "15-350 keV"
-          },
-          "t90": {
-            "v": 0.5959999,
-            "err": 0.2099142,
-            "band": "15-350 keV"
-          },
-          "alpha": {
-            "v": -1.03003,
-            "cl": 90,
-            "err": [
-              0.42133299999999996,
-              0.395
-            ]
-          },
-          "fluence": {
-            "v": 6.017277e-08,
-            "cl": 90,
-            "err": [
-              1.3614239999999989e-08,
-              1.3629170000000004e-08
-            ],
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://swift.gsfc.nasa.gov/results/batgrbcat/",
-          "name": "Swift/BAT GRB Catalog",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "BAT 525451"
-        ],
-        "trigger_time": "2012-06-30T23:17:33.768120Z"
-      },
-      "swift_grb": {
-        "other": {
-          "bat_plsl": "1.057",
-          "det_flag": "S",
-          "target_id": "525451",
-          "bat_plsl_err": "0.394",
-          "bat_detection": "Y",
-          "bat_peak_model": "PL",
-          "supernova_flag": "N",
-          "bat_fluence_model": "PL"
-        },
-        "params": {
-          "t50": {
-            "v": 0.13,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "t90": {
-            "v": 0.58,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 6.14e-08,
-            "err": 1.37e-08,
-            "band": "15-150 keV"
-          },
-          "peak_flux": {
-            "v": 0.631,
-            "dt": "1s",
-            "err": 0.181,
-            "band": "15-150 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
-          "name": "HEASARC SWIFTGRB",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "Swift 525451"
-        ],
-        "trigger_time": "2012-06-30T23:17:33.768Z"
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 880006900210000000000,
-          "comment": "There was no initial set of GCN Notices nor a rapid-response circular because of the power outage at GSFC when this burst occurred.; UVOT: no detection",
-          "uvot_mag": "B>20.0; U>20.3; UVW1>19.3; UVM2>19.0; UVW2>19.5",
-          "other_obs": "NOT (2.5m)",
-          "target_id": 525451,
-          "uvot_vmag": 19.0,
-          "xrt_gamma": 1.75873,
-          "trigger_obs": "Swift",
-          "error_radius": 2.7,
-          "xrt_lc_index": -1.566,
-          "xrt_11hr_flux": 9.441439e-16,
-          "xrt_24hr_flux": 2.781686e-16,
-          "uvot_first_obs": 150.0,
-          "uvot_vmag_flag": 1,
-          "bat_spectral_model": "PL"
-        },
-        "params": {
-          "t90": {
-            "v": 0.6,
-            "err": null,
-            "band": "15-150 keV"
-          },
-          "fluence": {
-            "v": 6.1e-08,
-            "cl": 90,
-            "err": 1.4e-08,
-            "band": "15-150 keV"
-          },
-          "peak_flux": {
-            "v": 0.7,
-            "cl": 90,
-            "dt": "1s",
-            "err": 0.2,
-            "band": "15-150 keV"
-          },
-          "spectral_index": {
-            "v": 1.04,
-            "cl": 90,
-            "err": 0.43
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      },
-      "mpe_greiner": {
-        "other": {
-          "OT": "y",
-          "XA": "y",
-          "Error": "3",
-          "z_flag": "phh",
-          "obs_date": "2012-06-30",
-          "short_grb": true,
-          "Instrument": "Swift",
-          "GRB X-ray position": "23h29m11s +42° 33'"
-        },
-        "params": {
-          "redshift": {
-            "v": 0.6
-          }
-        },
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 120630AS"
-        ],
-        "trigger_time": null
-      }
+    "t0_basis": "swift_bat_catalog_trigger_525451",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-13"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "O'Connor+2022",
+      "url": "https://doi.org/10.1093/mnras/stac1982"
+    }
+  ],
   "host_galaxy": null
 }
