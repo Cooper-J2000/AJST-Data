@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB140706A",
-  "alias": [],
-  "ra": 49.269,
-  "dec": -38.058,
-  "T0": "2014-07-06T19:33:33Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 603587",
+    "GRB140706815"
+  ],
+  "ra": 49.29426,
+  "dec": -38.05194,
+  "T0": "2014-07-06T19:33:33.176540Z",
+  "T0_ref": "GCN 16531 整秒（At 19:33:33 UT the Swift BAT triggered, trigger=603587）+ batgrbcat（external/swift_bat 快照）Trig_time_UTC=2014-07-06T19:33:33.176540 亚秒（§3.8①②：整数秒一致、仅亚秒分歧以触发仪器为准）；GCN 16531「XRT began observing 19:34:46.0 UT, 72.8 s after the BAT trigger」与该亚秒自洽；GBM GCN 16537 触发 19:33:33.86 UT 同整秒，多触发仪器亚秒矛盾以 Swift 为准（§3.8）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +19,19 @@
   "pos_ref": "GCN 16532",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "【身份】GRB 140706A = Swift/BAT trigger 603587（rate trigger，GCN 16531「At 19:33:33 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 140706A (trigger=603587)」）+ Fermi/GBM trigger 426368016 / 140706815（GCN 16537 双触发互证）。同日甄别：external/swift_bat 快照 2014-07-06 仅此 1 个触发、external/fermi_gbm 快照该日仅此 1 个 GBM 触发，无同日他暴；邻日 GRB 140705A（Jul 5）/GRB 140703A（Jul 3）通告链（GCN 16520–16530、16536、16540、16542、16543）逐一核过、均非本暴。【GCN 完整性】仓内 gcn/archive 全文库（45947 篇）检索「140706」命中 8 篇：本暴 7 篇（16531/16532/16534/16537/16538/16539/16541）+ 34004（LIGO/Virgo S230616aa MASTER 报告中的场编号，无关）。SciX 题录另列 GCN 16524「GRB 140706A: MITSuME Okayama upper limits」——该通告 subject 经 GCN OPS NOTE（06jul14）更正为 GRB 140705A，仓内 16524 全文即 140705A（观测起于 2014-07-05 14:57:48 UT、约 burst 后 5.4 h，早于本暴触发 28.6 h，物理上不可能属本暴），SciX 系保留更正前旧题，不计入本暴通告集。【T0】2014-07-06T19:33:33Z（GCN 16531 整秒）→ 2014-07-06T19:33:33.176540Z（§3.8①②，依据见 T0_ref）。BAT 光变多峰起于 ~T−20 s（GCN 16539）系光变形态描述，不构成 T0_offset（无 >1 s 的爆发时刻修正证据）。【定位】旧 ra/dec=49.269/−38.058 系 GCN 16539 BAT ground 位（1.1′, 90%, sys+stat），却配 pos_error=1.8″（GCN 16532 XRT enhanced 误差）、pos_ref=GCN 16532——坐标与误差分属两通告、口径不配套（GRB120819A 同族先例），已归位 XRT enhanced 位 49.29426/−38.05194（1.8″, radius, 90% confidence 原文明示），pos_ref 不变。备查并列：BAT 机载 49.306/−38.059（3′, 90%, GCN 16531）；BAT ground 49.26969/−38.05767（1.060994′, batgrbcat）；XRT 初报 49.29517/−38.05083（4.1″, 90%, GCN 16531）；UVOT 精化位 49.29328/−38.05218（0.45″, 90%, GCN 16541）；GROND 单点源落在 2.2″ XRT enhanced 误差圆内、与 UVOT 位一致（GCN 16534）；external/swiftgrbba xrt 位 49.29429/−38.05158（1.5″）、uvot 位 49.29329/−38.05217（0.45″）；external/mpe_greiner 49.304167/−38.066667（03h17m13s −38°04′，系 BAT 机载位圆整，XA=y、OT=y）。【分类】sub_tag=[lgrb]，按目录 t90 判：t90=47.844±3.942 s（15-350 keV，batgrbcat=external/swift_bat）；GCN 16539 t90=48.3±4.3 s（15-350 keV）；FERMIGBRST t90=43.776±2.721 s（50-300 keV；GCN 16537 称约 47.5 s），均远大于 2 s。【高能量备查】BAT fluence=2.0±0.1e-6 erg/cm2（15-150 keV）、1 s 峰光子流量 1.8±0.2 ph/cm2/s（GCN 16539）；GBM fluence=(2.95±0.28)e-6 erg/cm2（10-1000 keV）、Epeak=96±19 keV（GCN 16537）；XRT 光变初始衰减 α=3.55、T+219 s 变缓为 α=0.62（GCN 16538；X 射线数据不入 lc）。【红移】无红移报告：7 篇通告均无 z；SciX 检索无研究论文（见检索留证）；batgrbcat GRBlist_redshift_BAT.txt（531 行）无本暴条目 → redshift/redshift_type/redshift_ref 保持 null。【别名】BAT 603587（GCN 16531 原文 trigger=603587；external/swift_bat name_alt）；GRB140706815——GCN 16537 报导 GBM 触发「trigger 426368016 / 140706815」，FERMIGBRST 目录（external/fermi_gbm 快照）name 字段原文用名即 GRB140706815。【X 射线】29 行 band=10keV（UKSSDC Swift Burst Analyser，Evans+2007,2009）逐字节保持原样（§3.3/§7 不改不删不新增、不参与去重）。T0 改亚秒后其 mjd 与 T0_new+time 相差恒 0.176540 s（<1 s 容差），需维护者合入前按 2026-10-31 裁定机械重算 mjd 列（只动 mjd，其余列不动）。【逐行核对】7 行 GROND（GCN 16534）：数值/误差/AB 系统（原文 all in AB system）/JHK 上限标记均与原文一致；Gext_corr=n（原文未做银消改正，E(B-V)=0.02）。time 原导入 48447.0 系观测起点（2014-07-07T09:01:00Z−旧整秒 T0），而星等基于首曝 8 min（480 s）→ 修正为首曝中点：time=48686.82346（=09:05:00Z−T0_new）、补 time_err=240、mjd 重算为 56845.3784722（=2014-07-07T09:05:00Z）；instrument 细化 GROND/MPG-ESO 2.2m（原文 2.2 m MPG telescope at ESO La Silla）。新增 9 行 UVOT（此前整表未入库）：GCN 16541 精表 8 行（white(fc) 19.04±0.06、white 19.76±0.16、u(fc) 19.02±0.11 三处探测；v/b/u/w1/w2 五处 3σ 上限；mag_system=Vega 系原文明示 UVOT photometric system（Breeveld et al. 2011）；T_start/T_stop 取窗口中点、time_err=半宽）+ GCN 16531 找星图初报 1 行（white FC 估算 19.05，与精表同一张 150 s 曝光，初报/精表两版并列互证）；external/swiftgrbba 的 uvot_mag 字段（White=19.76; U_fc=19.02; B>19.2; U>19.6; UVW1>19.1; UVW2>20.1）系转引 GCN 16541，逐值核对一致，仅作交叉验证不另入库。【去重】GCN 16531 white FC（估算 19.05）与 GCN 16541 white(fc)（实测 19.04±0.06）为同一张 150 s 找星图曝光的初报/精表两版，按仓库惯例两行并列、行内 comment 互证（GRB120819A 的 GCN 13681/13702 同例）；其余各行分属不同仪器/台站独立测量，无同次测量转引重复；X 射线行不参与去重。【检索留证】测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇）检索「140706」命中 8 篇——本暴 7 篇（16531/16532/16534/16537/16538/16539/16541，含光学/紫外数值 3 篇：16531/16534/16541）+ 34004（MASTER 场编号，无关）；external 快照：swift_bat/swiftgrbba/mpe_greiner/fermi_gbm 有本暴记录（目录级参数，仅用于身份/T0/定位互证），swift_grb（目录止于 2012-12）、heasarc_grbcat（GRBCAT 止于 2008）、konus_wind、uvot_grb（第二版目录未收录）、rssgrbag、grbsn_webtool、guidorzi2025、wang2022、liang2023、minaev2020、guidorzi2025、wang2022、liang2023、minaev2020 均无本暴记录；swift_xrt_live 有本暴 X 射线目录行（第 879 行，位与 XRT enhanced 一致，仅目录级参数、无光学测光可补，其 z=N/A 反佐证本暴 z=null）；SciX（api.scixplorer.org，题录检索，token 实测可用）三组查询（\"GRB 140706A\"/\"140706A\"/\"GRB140706A\"）共命中 9 条，去重后=7 篇本暴通告+GCN Report 471.1（Swift Observations of GRB 140706A 观测汇编，数据同通告）+GCN 16524（OPS 更正前旧题、实属 GRB 140705A）——本暴无任何研究论文，articles[] 保持空、无 VoR 追溯事项。结论：光学/紫外测光覆盖触发后 82 s（UVOT white FC 探测）至 13.5 h（GROND g'r'i'z' 探测+JHK 上限），UVOT 早期 8 次曝光（3 探测 5 上限）此前整表未入库、已补 8 行，GROND 7 行原有；无射电/mm 测光报告、无 >13.5 h 晚期光学测光、无红移报告。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
