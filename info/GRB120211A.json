@@ -1,26 +1,50 @@
 {
   "transient_id": "GRB120211A",
-  "alias": [],
-  "ra": 87.781,
-  "dec": -24.795,
-  "T0": "2012-02-11T11:58:28Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 120211A",
+    "BAT 514586"
+  ],
+  "ra": 87.75371,
+  "dec": -24.77521,
+  "T0": "2012-02-11T11:58:28.088540Z",
+  "T0_ref": "GCN 12920（Swift/BAT 触发通告：At 11:58:28 UT ... trigger=514586）；亚秒 0.088540 s 取自 catalog:swift_bat（BAT 514586，batgrbcat 在线版快照 2026-07-21），与通告整数秒一致（§3.8②）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 2.4,
+  "redshift": 2.346,
   "tag": [
     "grb"
   ],
   "pos_error": 1.9,
   "pos_ref": "GCN 12922",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "redshift_type": "spec-host",
+  "redshift_ref": "Selsing+2019, A&A 623, A92（XS-GRB；arXiv:1802.07727）",
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-11）：身份=Swift/BAT 触发 514586（GCN 12920），XRT 增强定位（GCN 12922）互证无疑。定位修正：原库 ra/dec=87.781/-24.795 实为 GCN 12924 的 BAT 地面位（误差 2.1 arcmin，sys+stat，90%），与 pos_error=1.9″/pos_ref=GCN 12922 分属两份通告（相差约 1.5′），系导入混配；已归位为 GCN 12922 增强位 87.75371/-24.77521（1.9″，radius, 90% confidence，原文明示）。备查位置：BAT 在轨位 87.751/-24.759（3′，90%，GCN 12920）、BAT 地面位 87.781/-24.795（2.1′，GCN 12924）、catalog:swift_bat 87.77975/-24.79116、catalog:swift_grb 87.75379/-24.7754。T0 判定：GCN 12920「At 11:58:28 UT, the Swift BAT triggered and located GRB 120211A (trigger=514586)」；亚秒 0.088540 s 取自 catalog:swift_bat（BAT 514586，batgrbcat/Lien+2016 在线版快照 2026-07-21，Trig_time_UTC=11:58:28.088540），与通告整数秒一致，按 §3.8② 采亚秒。T0 一经修正，本源 21 行 X 射线行（10keV）的 mjd 需按 mjd = T0_new + time 机械重算（2026-10-31 裁定，审核方不擅改）。红移：宿主星系光谱 z=2.346（Selsing+2019，A&A 623, A92，XS-GRB 表 sample_list 与正文「GRB 120211A (z = 2.346)」，复证 Krühler+2015 的 2σ [OIII]λ5007 线）→ redshift_type=spec-host；备查并列值 z=2.4±0.1（Krühler+2015，A&A 581, A125，宿主 X-shooter 光谱 Lyα break，为 catalog:swift_bat 与 catalog:mpe_greiner 采录值；两值同源同宿主，按 §3.10 并列取精度更高者）。分类：按目录 t90 判 lgrb（§3.9）——t90=64.32±8.83 s（15-350 keV，catalog:swift_bat）/ 58.29 s（15-150 keV，catalog:swift_grb）/ 61.7±6.4 s（15-350 keV，GCN 12924）；fluence(15-150 keV)=8.1±1.2e-7 erg/cm2、peak flux(1s,15-150)=0.5±0.2 ph/cm2/s（GCN 12924，90% CL）。宿主候选（不建立 host_galaxy，§3.10）：Keck 2013-02-10 深场在 XRT 误差圆内检出 I_AB=25.0±0.2 mag 候选宿主（Krühler+2015，原文措辞 candidate/putative，[OIII] 证实仅 2σ）——候选依据与测光留此备查，不入 host_galaxy 亦不入 lc。alias 出处：「GRB 120211A」=GCN 通告 eventId/标准用名（GCN 12920 等 13 篇）；「BAT 514586」=catalog:swift_bat name_alt（官方 BAT 触发目录名）。GCN 12936 处置：原库 1 行 Ks=15.13±0.19 探测行（reference GCN12936）实为 GRB120212A 数据——该 GCN 标题为「GRB 120211A」但正文引 GCNC 12930/12934（GRB120212A 触发通告）且探测源坐标 02:52:24.08 -18:01:14.8 属 GRB120212A，标题系原作者笔误（gcn.nasa.gov 原通告页核对确认）；该行已自本源迁出至 lc/GRB120212A.csv（time 按 GRB120212A 的 T0+71.2 min 重算为 4272 s，跨源迁行见 PR 说明待决事项）。测光检索（2026-11-11）：仓内 gcn/archive（45947 篇）全文按 GRB120211A/120211/514586 检索命中 13 篇（GCN 12920/12921/12922/12923/12924/12925/12926/12927/12928/12929/12931/12936/12953），其中含光学/NIR 数值 7 篇（GCN 12921 FTS 2 值、12923 Ks 1 值、12925 MASTER 1 值、12926 UVOT 9 值、12928 ARIES 1 值、12929 MITSuME 9 值、12931 GROND 7 值；GCN 12936 属 GRB120212A 已迁出；GCN 12953 LOAO 无星等上限数值，不入库仅留证）；GCN 12920/12922/12924/12927 为触发/定位/高能分析通告无光学测光。external/rssgrbag（射电 304 行/304 源）0 命中、external/grbsn_webtool 无本事件、external/uvot_grb 无本源条目，swift_bat/swift_grb/mpe_greiner 仅目录级参数（作身份/T0 互证，无光变表）。GCN 站（gcn.nasa.gov）事件搜索为客户端渲染、REST API /circulars 查询返回 500 未能取到过滤清单；本源通告均发于 2012 年 2–4 月（最晚 GCN 12953），仓内 archive 覆盖至 GCN 46068，无漏检风险；GCN 12929/12936 标题已逐篇与 gcn.nasa.gov 原通告页核对。SciX 全文检索「GRB 120211A」「120211A」共 21 条命中（13 篇 GCN 通告 + GCN Report 370 + 7 篇研究/仪器文），研究文中仅 Krühler+2015 与 Selsing+2019 含本源数值（红移与宿主测光，已用于红移裁定），Gorbovskoy+2013（Astron. Rep. 57, 233）全文含本源但 arXiv 已撤稿、Springer 付费墙 → 原文不可达，登记 audit/unverified.tsv（status=missing）；Palaniswamy+2014 / Li+2022 / Yanagisawa+2014 / Garg+2026 等为统计或仪器类样本文，无本源测光表。结论：已发表光学/NIR 上限 = UVOT 9 值 + GROND 7 值 + MITSuME 9 值 + FTS 2 值 + ARIES 1 值 + MASTER 1 值（另 Ks 上限 1 值，GCN 12923），本次补入 UVOT 9 行 + MASTER 1 行，并修正既有 20 行的 time/time_err/mjd/口径留证（详见 PR 报告）。X 射线 21 行（10keV，UKSSDC Burst Analyser，Evans+2007,2009）不改、不删、不新增、不参与去重（§7）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
+  "articles": [
+    {
+      "name": "Krühler+2015",
+      "title": "GRB hosts through cosmic time. VLT/X-Shooter emission-line spectroscopy of 96 GRB-selected galaxies",
+      "url": "https://doi.org/10.1051/0004-6361/201425561",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Selsing+2019",
+      "title": "The X-shooter GRB afterglow legacy sample (XS-GRB)",
+      "url": "https://doi.org/10.1051/0004-6361/201832835",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
