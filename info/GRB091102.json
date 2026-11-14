@@ -1,12 +1,16 @@
 {
   "transient_id": "GRB091102",
   "alias": [
-    "GRB 091102A"
+    "GRB 091102",
+    "GRB 091102A",
+    "BAT 374598",
+    "Swift 374598",
+    "bn091102607"
   ],
   "ra": 72.6161,
   "dec": -72.5197,
-  "T0": "2009-11-02T14:34:38Z",
-  "T0_ref": "GCN 10117 (Swift/BAT trigger 374598; 2009-11-02 14:34:38 UT)",
+  "T0": "2009-11-02T14:34:38.358760Z",
+  "T0_ref": "external/swift_bat 与 external/swift_grb 快照 Trig_time_UTC=2009-11-02T14:34:38.358760Z（Swift/BAT 官方目录 batgrbcat，trigger 374598）；GCN 10117 仅给整秒 14:34:38 UT（整数秒一致，按 §3.2/§3.8 取触发仪器目录亚秒值）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -18,7 +22,7 @@
   "pos_ref": "GCN 10120",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "T0 采用 Swift/BAT GCN 10117 明确报告的 2009-11-02 14:34:38 UT（只保留原文秒精度）；Fermi GCN 10126 将同一事件称为 GRB 091102A，T0=14:34:38.36，故添加该别名，但不以目录亚秒数改写 GCN T0。位置采用 Swift/XRT GCN 10120 UVOT-enhanced RA=72.61610°, Dec=−72.51970°，90% 半径 2.2″；原有 72.622°, −72.527° 是 GCN 10121 BAT refined position，不能与 2.2″ XRT 误差混用。Swift BAT catalog t90=6.648±0.467 s（15–350 keV）；按目录 t90 判 lgrb。GCN 10118 finding-chart White 图像因拥挤星场未给可用上限；GCN 10124 有正式 UVOT 上限。GCN 10119/10122/10123/10124/10127/10129/10132 已逐项核；GCN 10129 的 APEX 限值采用 de Ugarte Postigo+2012 VoR 3σ=20 mJy。2026-11-03 检索记录：本地 gcn/archive 不存在；external/rssgrbag 对 GRB091102 无行，external/grbsn_webtool/SourceData 无命中；官方 GCN 事件页共查 17 条（10117–10132 与 10169），Swift/BAT/XRT/UVOT 目录均已查；精确源名公开网页检索命中 1 篇可访问 VoR（de Ugarte Postigo+2012）。补录 10 条非X测光行（含 APEX 论文行）。ADS/SciX API 凭据按用户裁定留待补跑，故本轮文献覆盖不完整，不据此声称无其他论文。",
+  "comment": "身份：Swift/BAT 于 2009-11-02 14:34:38 UT 触发（trigger=374598；GCN 10117 原文 At 14:34:38 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 091102，原文用名 GRB 091102）。BAT 在机位 72.674,−72.510（±3′，radius，90% containment，GCN 10117）→ BAT 地面精化 72.622,−72.527（±1.2′，sys+stat，90%，GCN 10121，与 external/swift_bat RA_ground/DEC_ground=72.62171/−72.5273 互证）→ XRT 精化（GCN 10120）。定位：ra/dec=72.61610/−72.51970 为 GCN 10120 Swift/XRT astrometrically corrected position（原文经 XRT-UVOT alignment 与 USNO-B1 匹配；2.2″ radius，90% confidence，pos_error_confidence=90 按原文；GCN 10125 明言 enhanced XRT position 已由 Kennea et al. GCN Circ. 10120 给出）；swiftgrbba/uvot_grb 快照 XRT 位 72.61554/−72.51969（2.0″）互证；原 72.622/−72.527 为 GCN 10121 BAT refined 位，不能与 2.2″ XRT 误差混用。Swift 因观测约束 T0+13.6 min 才 slew（GCN 10117/10118）。T0：采用触发仪器官方目录 UTC 2009-11-02T14:34:38.358760Z（external/swift_bat 与 external/swift_grb 快照 Trig_time_UTC 同值）；GCN 10117 仅给整秒 14:34:38 UT，Fermi GBM 14:34:38.363（fermi_gbm 快照；GCN 10126 原文 14:34:38.36）、Suzaku WAM 14:34:37.863（GCN 10169）亚秒互证、整数秒一致，按 §3.2/§3.8 取触发仪器目录亚秒值；原 T0=2009-11-02T14:34:38Z 系整秒截断值，已废弃。T0_offset：GCN/目录均无 |offset|>1 s 的真实爆发时刻调整证据（Swift Evt_start_sincetrig=−240 s 系标准数据保留窗，非爆发提前），置 null。sub_tag：t90=6.648±0.467 s（Swift/BAT 目录 batgrbcat，15–350 keV；GCN 10121 T90=6.6±0.5 s；GBM 7.3±0.4 s（8–1000 keV，GCN 10126）；WAM 6.6 s（GCN 10169）；swiftgrbba 6.6 s），按目录 t90 判 lgrb。别名：GRB 091102 为 GCN 10117 原文用名（亦 swift_bat/swiftgrbba/mpe_greiner/uvot_grb 目录名）；GRB 091102A 为 GCN 10126 原文用名（Fermi GBM）；BAT 374598/Swift 374598 为 swift_bat/swift_grb 目录 name_alt；bn091102607 为 fermi_gbm 目录 name_alt（GBM trigger 091102607；GCN 10126 原文 trigger 278865280 / 091102607，swift_grb name_alt 另有 278865280；fermi_gbm name_alt 另有 GRB 091102.607 / GRB091102607 形态未收录，避免伪形普查噪音）。lc：2026-11-08 全表 29 行逐行复核——ROTSE-IIIa 3 行（GCN 10119 原表 start/end UT、t_exp、mlim 逐值核：14.6/15.5/16.6，USNO A2.0 R 校准、无滤光片，coadd 行按窗口中点/半宽）；BOOTES-3 5 行（GCN 10122 表 t−t0/Exp×次数/Mag 核：72/39×2/19.07±0.35、406/107×2/19.36±0.35、530/60×5/>19.96、83/19×30/>19.25、2708/47×60/>20.30，clear 滤光片；19.07/19.36 两行系原文 preliminary low-signal detection、cannot be secure，置 discard=y，其坐标 04:50:27.22 −72:31:10.3 距 XRT 位约 3.5″）；UVOT 7 行（GCN 10124 表 T_start/T_stop/Exp/3σ 限值核：White>20.05、v>17.18、b>18.09、u>17.70、uvw1>17.70、uvm2>16.61、uvw2>17.79，UVOT photometric system（Poole et al. 2008）=Vega，E(B−V)=0.07 未改正；GCN 10118 finding-chart White 150 s（T0+985 s 起）因拥挤星场未给可用上限，无行）；Faulkes 5 行（GCN 10127 表 T−T0(mid exposure)/T_exp/限值核：R2>19.7@186 s、B2>18.7@2.07 h、I2>20.7@2.18 h、R2>20.2@2.12 h，USNO 0174-0110239 校准）；GROND 6 行（GCN 10123：J>20.6、H>20.5、K>19.0、r′>23.1、i′>22.9、z′>23.1 全 AB，E(B−V)=0.14 未改正，2009-11-03 00:02 UT 起、JHK 40 min/g′r′i′z′ 49.2 min）；MOA-II 1 行（GCN 10132：I>20.8（5σ），UT 14:57:07.8 起 60 s，宽带 Red（中心约 750 nm、FWHM 约 250 nm），USNO-B1.0，未作银消改正）；Swift/XRT 2 行（band=10keV）为 X 射线行，按契约未动。APEX/LABOCA 345 GHz 行：GCN 10129（3 h on target、总积分 2.2 h、mean epoch T0+14.0 h、r.m.s=6.3 mJy、覆盖完整 BAT 误差盒、XRT 位置处未检出）；限值 <18.90 mJy (0.00±6.30)、t−t0=0.583 d、345.0 GHz 取自 de Ugarte Postigo et al. 2012（A&A 538 A44）表 1——2026-11-08 复核链：VoR 正文经 aanda.org full_html 实读（A&A 538, A44 (2012)；§2 原文 We obtained a 3σ point source sensitivity of 20 mJy 系圆整表述、总积分 ~2 h；其参考文献表逐字确认 de Ugarte Postigo et al. 2009a=GRB Coordinates Network, 10129），表 1 行经 arXiv:1108.1797 v1 与 v2 逐字同值互证（091102 -- APEX 0.583 345.0 < 18.90 (0.00±6.30) de Ugarte Postigo et al. 2009a），3×6.30=18.90 与 GCN 10129 rms 自洽；VoR 表 1 页面本身仍 DataDome 拦截（curl/WebFetch 403、web_reader 对 T1 页超时），未单开。Greiner et al. 2024（A&A 691 A158，GROND 样本，arXiv:2410.14441 实读）表 B1 记本源 GROND 观测（1103-00:02:28 起、T−To=34070 s、Det=n、GCN 10123），无测光值，mention-only，不另入行。mjd 说明：全表 mjd 系按导入时整秒 T0=14:34:38 推出，T0 亚秒精化（+0.358760 s）后与 mjd=T0+time 相差 0.359 s，<1 s 守卫容差，行值未动；如需绝对严格可由维护者按 mjd=T0+time 重算（含 X 射线行，见 PR 说明）。测光检索（2026-11-08）：GCN 站内 4 组检索词收敛 14 篇（GRB 091102 11 篇 / 091102A 2 篇 / GRB091102 无空格 2 篇 / 374598 5 篇，并集=10117–10127、10129、10132、10169，均实开核对）；SIMBAD（CFA 镜像）42 bibcode=28 期刊+13 GCN+1 GCN Report；OpenAlex 3 组短语检索共 14 条（9/3/2）：10 条为 GCN 平台通告、3 篇期刊（de Ugarte Postigo 2012、Connaughton 2015 GBM 定位目录、GRBSN webtool 2025）+1 重复条目；arXiv API 摘要检索 0 命中（API sanity 正常）；Crossref 题名检索 0 命中；VizieR：J/A+A/538/A44 无表（Table or Catalog not found，CFA 镜像实测）、J/A+A/691/A158 存在（tablea2 123 行不含本源、tableb1 517 行仅观测日志）；本源唯一已发表测光仍为 de Ugarte Postigo+2012 表 1 之 APEX 行（本 PR 补记复核链，未新增行），其余期刊文献均为 prompt 参数级样本/目录（仓内 external/swift_bat、swift_grb、swiftgrbba、uvot_grb、fermi_gbm、swift_xrt_live、mpe_greiner 快照已覆盖；external/rssgrbag 与 grbsn_webtool 对本源无行、gcn/archive 本地不存在），无新可入库测光。无 ADS/SciX token，检索走回退链（Crossref→arXiv→OpenAlex→SIMBAD），不据此声称穷尽。2026-11-08 复核（fsy@zcode）：身份/T0/定位/别名/t90 逐项复核，29 行逐行核验，行值零改动。",
   "sub_tag": [
     "lgrb"
   ],
@@ -27,8 +31,8 @@
   "extra_data": {
     "audit": {
       "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-11-04"
+      "auditor": "fsy@zcode",
+      "date": "2026-11-08"
     }
   },
   "articles": [
@@ -37,6 +41,12 @@
       "source": "LHe496@Codex",
       "title": "Pre-ALMA observations of GRBs in the mm/submm range",
       "url": "https://doi.org/10.1051/0004-6361/201117848"
+    },
+    {
+      "name": "Greiner+2024",
+      "source": "fsy@zcode",
+      "title": "The GROND gamma-ray burst sample",
+      "url": "https://doi.org/10.1051/0004-6361/202449659"
     }
   ],
   "host_galaxy": null
