@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB030528A",
-  "alias": [],
-  "ra": 256.008333,
-  "dec": -22.65,
+  "alias": [
+    "H2724",
+    "GRB 030528X"
+  ],
+  "ra": 256.00125,
+  "dec": -22.619444,
   "T0": "2003-05-28T13:03:02.830000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 2256（HETE 官方通告）原文：At 13:03:02.83 UTC (46982.83 UT) on 28 May 2003, the HETE FREGATE, SXC, and WXM instruments detected event H2724——与库内原值一致，本次未改 T0；GRBCAT 快照 trigger_time=2003-05-28T13:03:02.800Z 系圆整值（差 30 ms，仅交叉验证）；GCN 2252 观测起点 13:07:15 UT=原文 252 seconds after burst 反算 T0≈13:03:03，自洽",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
@@ -13,12 +16,13 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_ref": "Rau+2004（A&A 427, 815, DOI 10.1051/0004-6361:20041545）：近红外对应体/宿主位置 RA(2000)=17h04m00.3s Dec(2000)=-22°37′10″（Chandra 源 C1 衰减证认为余辉后测其宿主），原文未给误差半径、未标注置信水平（留空）；GCN 2269 Chandra C1 逐坐标误差 dR=0.053s、dD=0.91″ 并列备查；GCN 2256 初版 SXC 90% 2′（17h04m02s -22°38′59″）与 GCN 2261 修订 SXC 2.5′（17h03m58s -22°38′00″，原文未标置信水平）为定位链备查；原 ra/dec=256.008333/-22.65 系 GCN 2256 初版 SXC 位（已被 GCN 2261 修订取代）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Rau+2005（A&A 444, 425, DOI 10.1051/0004-6361:20053773）：VLT/FORS2 宿主星系发射线光谱 z=0.782±0.001",
+  "comment": "身份：HETE-2 触发 2724（Seq_Num 6），2003-05-28 13:03 UTC 触发。GCN 2252 标题「GRB 030528 (=H2724)」、GCN 2253「HETE trigger 2724, Sequence number 6」、GCN 2256「...detected event H2724, a long GRB」三处互证。T90：GCN 2256 给 30-400 keV 21.6 s、7-30 keV >60 s；Rau+2004（VoR）给 T90=49.1 s（30-400 keV）——同量多源并列备查；GRBCAT 快照 t90=60.0（mod \">\"，7-30 keV）。sub_tag=lgrb：GCN 2256 原文「a long GRB」+ GRBCAT t90>60 s（按目录 t90 判 lgrb/sgrb）；sub_tag 追加 XRF：Rau+2004（VoR）「The burst is classified as an X-ray flash according to the fluence ratio S(2-30keV)/S(30-400keV)=1.13±0.15」（先例 GRB021104 sub_tag=[lgrb,XRF]）；Rau+2005（VoR）指出该源静止系应为 X-ray rich（XRR），观测系 XRF 与静止系 XRR 并列备查；Butler+2004 称 X-ray-rich。alias：H2724（GCN 2252/2256/2261/2264/2279 原文用名「GRB030528(=H2724)」「event H2724」）；GRB 030528X（external/mpe_greiner 快照目录用名，该目录记 HETE X-ray position 17h04m02s -22°39′/2′）。定位链：GCN 2256 初版 SXC（90% 2′）→ GCN 2261 修订 SXC（2.5′，原文未标置信水平，位移 1.3′）→ GCN 2269 Chandra ACIS-S3 C1=CXOU J170400.3-223710（Henden GCN 2267 场定标）→ GCN 2279 第二历元证实 C1 衰减约 4 倍（衰减指数 2.0±0.8）为 X 射线余辉 → Rau+2004（VoR）近红外对应体/宿主位置（取作 info 位置）。红移 z=0.782：Rau+2005（VoR）VLT/FORS2 宿主发射线光谱 z=0.782±0.001 → spec-host。params（只读未动）：t90_rest=27.6 s 与 grb_type=II（minaev2020 表 A1 行 030528：T90=27.6、Ep,rest=57±9 keV、Type II，经核与原文一致）、t90_obs=60.0（heasarc_grbcat，mod \">\"）。测光（lc 23 行，全部回指重锚）：T0 未改（=GCN 2256 触发时刻），非 X 射线 23 行 time 统一重锚——GCN 行（2253/2252/2257/2258/2270/2273/2275）time=起点+窗口半宽（§3.8 约定口径），Rau+2004 VoR Table 2 行 time=原文 dt（mid-observation）×86400；mjd=T0+time 重算 7 位小数；Dainotti+2024 转引行 3 行（2258/2275/2273 同测）按 §3.4 去重删除；Rau 行值由会议文初报（AIP Conf. Proc. 727, 439, astro-ph/0312102，原引用）改判为 A&A VoR 精化值（如 J 20.9±0.9→20.6±0.3、K 19.3±0.2→19.6±0.1），差异系正式发表版重定标；Rau 行均为原文银消改正值（Schlegel+1998，AJ=0.54/AH=0.35/AKs=0.22/AI=1.17）→ Gext_corr=y、派生列清空；GCN 上限行均为原始未改正值 → Gext_corr=n。新增 2 行：Rau+2004 VoR Table 2 DFOSC V/R 宿主测光（382.5/384.5 d）；ISAAC Js 合并行（Sep 17–Oct 01，264 min，20.8±0.1）未入库（原文未给该行 dt，日期跨 14 d 无有效锚点，且与已入 4 个单历元重复）；USNO-A2.0 red / GSC-2.2 F / TNT vs DSS-II 等目录系统非标准 Vega/AB，相应行 mag_system 留空注明。VLA 8.46GHz 行改 350 uJy（原 0.35 mJy 同值，改按原文单位）。X 射线：Chandra 两历元数据（GCN 2269/2279、Butler+2004 AIPC 727,435）为 X 射线测光，按范围规定暂不入库；lc 现无 band 为能量串的行，无 X 射线行需随 T0 重算。测光检索留证（2026-11-08）：GCN 站内全文逐篇扫描 2240–2350 共 111 篇，命中 030528 相关 14 篇（2252/2253/2256/2257/2258/2261/2264/2267/2269/2270/2271/2273/2275/2279；2286–2350 共 65 篇零命中）——含光学/IR/射电数值的 7 篇（2252/2253/2257/2258/2270/2273/2275）全部逐值核对入库，2271（NTT 历元+0.9 mag 衰减）、2269/2279（Chandra 源表）、2264/2267（计划/定标场）无数值行可入；arXiv API 检索（\"GRB 030528\"/\"GRB030528\"/\"XRF 030528\"）去重后 5 篇（0312102/0408210/0508394/0401019/1002.3849）；OpenAlex 全文检索 58 命中 + Rau+2004/2005 引文闭包 19+31 篇——样本文献逐篇开文核查：Kann+2006（astro-ph/0512575，GRB 030528 仅一处提及且明言 not able to perform any fits）、Pelangeon+2008（A&A 491,157，仅 prompt 参数表）、Stratta+2006（A&A 461,485，仅分类语境）、Bolmont+2008（0709.1132，0 命中）、Gehrels+2006（astro-ph/0610635，仅分类语境）——均无该源瞬变测光表；ADS/SciX API 无 token（search-limited，以 OpenAlex 引文闭包替代，不据此断言穷尽）；Sakamoto+2005（ApJ 629,311，HETE-2 prompt 特性汇编）IOP 被墙且 arXiv 无预印本、未取全文、未取值（unverified.tsv 行见 PR 说明）。结论：该源可用瞬变测光全部来自 GCN 通告与 Rau+2004/2005；本次改判 20 行、去重 3 行、新增 2 行。",
   "sub_tag": [
-    "lgrb"
+    "lgrb",
+    "XRF"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
@@ -39,7 +43,12 @@
         "v": 27.6
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-08"
+    }
   },
   "articles": [
     {
@@ -64,11 +73,11 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2010PASJ...62..487A"
     },
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n        title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n      journal = {\\mnras},\n         year = 2024,\n        month = jun,\n       volume = {533},\n        pages = {4023-4043},\n          doi = {10.1093/mnras/stae1484},\narchivePrefix = {arXiv},\n       eprint = {2405.02263},\n primaryClass = {astro-ph.HE},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
