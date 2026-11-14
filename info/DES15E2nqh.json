@@ -3,8 +3,8 @@
   "alias": [],
   "ra": 9.73174,
   "dec": -43.08707,
-  "T0": null,
-  "T0_ref": null,
+  "T0": "2015-12-10T00:00:00Z",
+  "T0_ref": "Pursiainen+2018（2018MNRAS.481..894P，DOI 10.1093/mnras/sty2309）g 波段光变参数表 t_peak = MJD 57366（观测 g 波段最亮点日期，整数 MJD，即 2015-12-10 UT 日）；该表在 arXiv:1803.04869v2 编号为 Table 5，VoR 表号经 CDS/VizieR J/MNRAS/481/894 table5 表题确认为同号、DES15E2nqh 行逐值一致（2026-11-13 实取）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,12 +16,17 @@
   "pos_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1 坐标（J2000）",
   "redshift_type": "spec",
   "redshift_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1（OzDES 光谱红移）",
-  "comment": "2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（Ho+2023 表 2 收录为文献 FBOT）；发现/峰值时刻未提取，待补；仅基础元数据",
+  "comment": "2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（建源说明原写「Ho+2023 表 2 收录为文献 FBOT」，经实读该表为 Ho+2023 Table 3 tab:literature「Literature FBOTs」，此处更正）；「发现/峰值时刻未提取，待补」已由本审核补（见 T0 判读段）。身份：DES15E2nqh 为 Pursiainen+2018（2018MNRAS.481..894P）DES 快演化暂现源（RET）gold sample 成员、Wiseman+2020（2020MNRAS.498.2575W）106 源宿主样本成员、Ho+2023（2023ApJ...949..120H）Table 3 收录（class Unknown，i 波段行，ref[7]=Pursiainen+2018）、Wang+2021（arXiv:1904.09604，无正式发表版）19 个 DES REOT 磁星/ECM 拟合样本成员、Liu+2022（2022ApJ...935L..34L）40 FBOT 磁星拟合样本成员（其 Table 4 行带 * 号 = 峰前无探测历元）。无 TNS 名：TNS /object/DES15E2nqh 2026-11-13 查询 404（DES 内部名未入 TNS）；SIMBAD 唯一 identifier「DES15E2nqh」（坐标 00 38 55.590 −43 05 13.14 源 2018MNRAS.481..894P，z=0.52）；GCN 全库 0 命中。坐标口径：Pursiainen+2018 Table 4（arXiv v2 编号，VoR 机读 table4 已核）瞬变体坐标 00:38:55.59 −43:05:13.14 = 9.731625 −43.086983，与 info 坐标 9.73174 −43.08707（Wiseman 表 1 宿主星系坐标，本次 VoR 机读表逐值复核一致）相距 0.434″，与该文 Table 3 声明的瞬变体宿主偏移 0.517″ 相差 0.083″，属两文质心/历元差异级；SIMBAD 坐标即 Pursiainen 瞬变体位。Wiseman 表 1 无定位误差列，pos_error 留空、置信水平来源未标注。红移：z=0.51525（OzDES 宿主光谱）自 Wiseman 表 1 提取，本次 VoR 机读表（J/MNRAS/498/2575 table1）逐值复核一致；Pursiainen 表 4 z_spec=0.52（2 位舍入）与 Ho+2023 Table 3（0.52）均相容。注：z 由宿主星系光谱测得，按受控词表语义更精确的取值是 spec-host，本族 DES 源（DES16X3cxn #921 已合并、DES14S2pli #1030）均沿用建源时的 spec，本审保持一致，族级是否统一改判见 PR 待决。T0 判读：无 TNS/GCN/发现时刻（DES 内部发现未发表），唯一绝对时间锚点是 Pursiainen+2018 g 波段光变参数表 t_peak = MJD 57366（观测 g 波段最亮点日期），按同文同批先例 DES16X3cxn（PR #921 已合并）取当日零点 2015-12-10T00:00:00Z 占位；整数 MJD 仅日期精度（±0.5 d），DES-SN ~7 天 cadence 亚日时刻不可恢复；T0 为峰值日零点，非触发/发现时刻。原文口径并列备查（Pursiainen+2018，rest frame 相对 g 峰；表 3/4/5/6 行均经 VoR 机读表 J/MNRAS/481/894 逐值复核一致）：t_rise 6.5 d（last non-detection 至峰的间隔，上限性质）、t_decline 16.30(+3.34/−2.44) d、t_1/2 11.57 d；M_peak(g) = −19.74±0.06；黑体峰 T = 22.00(+4.12/−2.81) kK、r = 5.53(+1.03/−0.90)×10^14 cm、L = 5.10(+1.91/−1.07)×10^43 erg/s（4 点拟合）；E(B−V) = 0.0076（Schlafly+2011）。宿主 SED：Pursiainen 表 7 log(M*/M☉) = 8.96(+0.33/−0.29)、log(sSFR/yr⁻¹) = −9.32（arXiv v2 实读，VizieR 未收该表，unverified.tsv 已登记）；Wiseman 表 2 log(M*/M☉) = 9.28(+0.28/−0.27)、log SFR = 0.11(+0.94/−0.72)、log sSFR = −9.17(+0.66/−0.45)、12+log(O/H) Best = 8.83(+0.15/−0.52)、KK04 R23 = 8.83(+0.15/−0.52)、Average O3N2 = 8.48(+0.17/−0.34)（VoR 机读行复核一致）——两文 SED 管线不同，并列备查。模型拟合并列备查（均为派生量、无新测光、不入 lc）：Wang+2021 Table 1 转引 Pursiainen 参数（E(B−V) 记 0.0077 与 Pursiainen 0.0076 末位差）；Hu+2023（arXiv:2301.06402，无正式发表版）log(Mej/M☉) = −0.72(+0.18/−0.23)、log(Erot,i/erg) = 50.30(+0.14/−0.12)、log(Bp/G) = 14.95(+0.04/−0.04)；Liu+2022 Table 4 M_peak = −20.29(+0.28/−0.30)（多带拟合值，与 Pursiainen g 波段 M_peak −19.74±0.06 口径不同）、t_rise = 2.70(+0.60/−0.75) d、t_decl = 4.66(+0.90/−0.90) d、log(Mej/M☉) = −0.88(+0.23/−0.26)、log(Pi/ms) = 1.00(+0.06/−0.07)、log(Bp/10^14 G) = 0.95(+0.04/−0.05)。分类依据：Pursiainen gold sample（FWHM<30 d 且 t_1/2<12 d 等选择）+ Wiseman+2020 RET 选择（§2 g−r 色与 r 波段上升时标 cut）+ Ho+2023 文献 FBOT 样本（class Unknown，无光谱分类）→ tag=[fbot]（tags.json 受控词），sub_tag 留空。测光检索（2026-11-13）：仓内 gcn/archive 45947 篇全文 grep「E2nqh」「DES15」均 0 命中（非 GRB，预期）；external/ 全部快照 grep 0 命中（rssgrbag/grbsn_webtool 为 GRB 类快照不适用）；GCN 站（gcn.nasa.gov/circulars?query=DES15E2nqh）0 results found；SciX API（api.scixplorer.org，token 实查）q=DES15E2nqh 元数据 0 命中；TNS 404；SIMBAD 引用文献 5 bibcode（Pursiainen+2018、Wiseman+2020 I 2020MNRAS.495.4040W / II 2020MNRAS.498.2575W、Liu+2022 2022ApJ...935L..34L、Ho+2023）逐篇实查——Pursiainen+2018 光变仅附录图 lc_all_gs*.pdf 无数值表（按契约不读图入库）、Wiseman 两篇为宿主研究无瞬变体测光表（Wiseman I TeX grep 本名 0 命中）、Ho+2023 Table 3 为汇编无逐点测光、Liu+2022 为磁星拟合参数；另有 Wang+2021/Hu+2023（均无正式发表版）模型拟合无逐点测光；Pursiainen 2020 博士论文（Peculiar optical transients in the dark energy survey，eprints.soton.ac.uk/446970）OA 全文被 Anubis 反爬 401 未打开（unverified.tsv status=missing）。结论：该源测光从未以数值表形式发表 → 无带时间锚点测光行可补，本审 0 行入库、不建 lc。未核实项：Pursiainen+2018 表 7、Ho+2023 Table 3、Liu+2022 Table 4 的 VoR（OUP/IOP 反爬 403/302→Radware）不可达，该三处行值取 arXiv TeX 实读（1803.04869v2 / 2105.08811v2 / 2206.03303），已登记 audit/unverified.tsv；Pursiainen 表 3/4/5/6 与 Wiseman 表 1/2 已升级为 VoR 机读表逐值复核（J/MNRAS/481/894、J/MNRAS/498/2575，2026-11-13 实取）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_wiseman2020_20261104"
+    "ingest_source": "scix_wiseman2020_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-13"
+    }
   },
   "articles": [
     {
@@ -35,7 +40,45 @@
       "source": "bot",
       "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
+    },
+    {
+      "name": "Pursiainen+2018",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Rapidly evolving transients in the Dark Energy Survey",
+      "url": "https://doi.org/10.1093/mnras/sty2309"
+    },
+    {
+      "name": "Wang+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The Magnetar Model and the Ejecta-Circumstellar-Matter Interaction Model for 31 Luminous, Rapidly Evolving Optical Transients",
+      "url": "https://arxiv.org/abs/1904.09604"
+    },
+    {
+      "name": "Hu+2023",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Formation of Fast-spinning Neutron Stars in Close Binaries and Magnetar-driven Stripped-envelope Supernovae",
+      "url": "https://arxiv.org/abs/2301.06402"
+    },
+    {
+      "name": "Liu+2022",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Magnetar Engines in Fast Blue Optical Transients and Their Connections with SLSNe, SNe Ic-BL, and lGRBs",
+      "url": "https://doi.org/10.3847/2041-8213/ac86d2"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.51525,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "r",
+        "mag": 23.3,
+        "mag_err": 0.04,
+        "mag_sys": "AB",
+        "source": "Wiseman+2020 Table 1（J/MNRAS/498/2575 VoR 机读表）"
+      }
+    ],
+    "comment": "确定宿主：Pursiainen+2018 Table 3（宿主基本信息表，VoR 机读 J/MNRAS/481/894 table3 已核）OzDES 光谱红移 z=0.52（舍入）、瞬变体偏移 0.517″/3.22 kpc、DLR 1.41、z_phot 0.46；z_spec 由 OzDES 对宿主的光谱测得（Pursiainen 表 4 注：仅 DES15C3opk/DES16E1bir 取自瞬变体光谱），z=0.51525 自 Wiseman 表 1 提取、本次 VoR 机读复核一致——DLR 匹配 + 宿主光谱红移双证 → 确定宿主。Wiseman 表 1 该宿主 OzDES 曝光 6.83 h（脚注 b：给出曝光时间者其光谱已用于谱线测量）。宿主星系坐标未单独取值（info ra/dec 即该表宿主坐标 9.73174 −43.08707）。宿主测光：m_r = 23.30±0.04 AB（DES-SN deep coadd 的 r 波段 Kron 星等，未做银消改正——Wiseman 表 1 脚注 a；AB 系统为该文正文声明；arXiv v1 TeX 同行写 23.29±0.03，与 VoR 机读差 0.01，备查）。宿主性质（Wiseman 表 2，VoR 机读行已核）：log(M*/M☉)=9.28(+0.28/−0.27)、log SFR=0.11(+0.94/−0.72)、log sSFR=−9.17(+0.66/−0.45)、12+log(O/H) Best=8.83(+0.15/−0.52)、KK04 R23=8.83(+0.15/−0.52)、Average O3N2=8.48(+0.17/−0.34)；Pursiainen+2018 SED 拟合 log M*=8.96(+0.33/−0.29)、log sSFR=−9.32（并列备查，arXiv v2 实读，VizieR 未收该表）。",
+    "source": "Pursiainen+2018 Table 3（DOI 10.1093/mnras/sty2309）+ Wiseman+2020 表 1/表 2（2020MNRAS.498.2575W，VoR 机读表已核）"
+  }
 }
