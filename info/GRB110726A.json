@@ -1,27 +1,30 @@
 {
   "transient_id": "GRB110726A",
   "alias": [
-    "BAT 458059"
+    "BAT 458059",
+    "Swift 458059"
   ],
-  "ra": 286.71754,
-  "dec": 56.07122,
-  "T0": "2011-07-26T01:30:40.550000Z",
-  "T0_ref": null,
+  "ra": 286.71752,
+  "dec": 56.07123,
+  "T0": "2011-07-26T01:30:40.549800Z",
+  "T0_ref": "GCN 12196 整秒 01:30:40 UT（Swift 官方触发通告）+ 触发仪器官方目录 batgrbcat（external/swift_bat）Trig_time_UTC 亚秒 01:30:40.549800（external/swift_grb 同值）；Konus 目录 Tsvetkova+2021 Table 1 Time=\"01:30:40.550\"（ReadMe 明示该列即 Swift/BAT trigger time、毫秒舍入）同值互证；XRT 起测 01:31:38.7 UT=T0+58.2 s 亚秒自洽（GCN 12196）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.036,
   "tag": [
     "grb"
   ],
   "pos_error": 1.5,
   "pos_ref": "GCN 12200",
-  "redshift_type": null,
-  "redshift_ref": "catalog:konus_wind",
-  "comment": "catalog-only: Konus-Wind GRB Catalog with redshifts (Tsvetkova+2017/2021)",
-  "sub_tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 12202",
+  "comment": "身份：GRB 110726A = Swift/BAT trigger 458059（GCN 12196 官方触发通告：At 01:30:40 UT the Swift BAT triggered and located GRB 110726A、BAT 机载位 286.751/+56.053、3′/90%）；Konus-Wind 为 waiting-mode 同时探测（Tsvetkova+2021 Konus 目录 II 专收 Swift/BAT waiting-mode 暴、其 Table 1 NumID=458059）而非触发仪器——原 Trigger_Instrument=Konus-Wind 系按 Konus 目录建条时的跨仪器误植、已改 Swift/BAT。仓内 gcn/archive 全文检索「110726A」命中 15 篇（12196/12197/12198/12199/12200/12201/12202/12203/12204/12205/12206/12207/12210/12243/12251）、其中无 Konus-Wind 通告；fermi_gbm/batse/saxgrbmgrb/agile_mcal/fermi_lat 快照无本源探测（fermi_gbm 的 GRB110726.211=bn110726211 系 05:03:59 UT 触发的同名异暴、位 317.71/+2.47、非本源）。T0：2011-07-26T01:30:40.549800Z——触发仪器官方目录 batgrbcat（external/swift_bat）Trig_time_UTC 亚秒值、external/swift_grb 同值；GCN 12196 整秒 01:30:40 UT；Konus 目录 Table 1 Time=01:30:40.550（ReadMe 明示该列即 Swift/BAT trigger time、系毫秒舍入）同值互证；XRT 起测 01:31:38.7 UT=T0+58.2 s 亚秒自洽。旧值 .550000 系 Konus 目录毫秒舍入值的六位补零显示、非 bot 造值。BAT 光变单峰起于 ~T-1 s（GCN 12201）、Konus T100 起点 t0=-0.064 s（Tsvetkova+2021 Table 1）、均 ≤1 s 不构成 T0_offset。定位：ra/dec=286.71752/+56.07123、pos_error=1.5″（GCN 12200 原文明示 1.5 arcsec radius 90% confidence、XRT enhanced astrometric 位）——坐标/误差/置信水平/参照四值已与 pos_ref 同源配套（旧 ra/dec=286.71754/56.07122 系 Konus 目录 _RA/_DE 所采后期 XRT 位、与 GCN 12200 差 ~0.07″）。备查并列：UVOT GCN 12199 位 286.71693/56.0713（0.6″/90%）、GCN 12203 位 286.71700/56.07126（0.51″/90%）；swiftgrbba xrt 位 286.71733/56.07111（1.5″）；BAT ground 286.713/56.070（1.7′、GCN 12201）；ROTSE 光学 19:06:51.98+56:04:15.03（≤1′、GCN 12197）。分类：t90=5.156±1.107 s（batgrbcat 15-350 keV）、GCN 12201 精析 t90=5.2±1.1 s（15-350 keV）——按目录 t90 判 lgrb（>2 s）；Konus T100=3.776 s（t0=-0.064、Tsvetkova+2021 Table 1）>2 s 佐证、无冲突。高能量备查：BAT fluence(15-150 keV)=2.2±0.3e-7 erg/cm2、1-s 峰值光子流量 1.0±0.2 ph/cm2/s、CPL Epeak=46.5±11.8 keV（均 90%、GCN 12201）；Konus S=2.88e-7 erg/cm2（1σ 下/上限 0.38/0.39、单位 10-10 J/m2 据目录 ReadMe）、64ms 峰值能量流量 Fp64=2.05e-7 erg/cm2/s（±0.56）、CPL Epeak(obs)=48±4 keV、谱窗 Tstart=-0.225 s/dT=2.944 s、Eiso=0.96e51 erg（下/上限 0.12/0.13）、Liso=0.97e51 erg/s（±0.26）（Tsvetkova+2021 Tables 2/4）；XRT 50 ks 衰减 α=1.26(+0.16/-0.15)（T0+4.1 ks 起、GCN 12243）、吸收柱超出 1.8(+1.73/-1.55)e21 cm-2（GCN 12196）；E(B-V)=0.08（Schlegel+1998、GCN 12196/12199/12203）。红移：z=1.036（spec）——GCN 12202（Cucchiara、Gemini-N GMOS、~0.19 d 后）将弱双线解释为 MgII 2796/2803 得 z=1.036、并建议 1.036<z<2.7（tentative、Lyα 未入 4000-8100 Å 波长窗、不排除 intervening）；Tsvetkova+2021 Table 1 采 z=1.036（f_z=s 即 spectroscopic）；external/swift_bat z_ref=GCN 12202 同值——redshift_ref 由 catalog:konus_wind 改指首出处 GCN 12202。别名：BAT 458059（GCN 12196 trigger=458059、external/swift_bat 与 konus_wind name_alt）；新增 Swift 458059（external/swift_grb name_alt）。X 射线：33 行 band=10keV（UKSSDC Burst Analyser）不改不删不新增、不参与去重；其 mjd 按 T0 旧值+time 换算、本 PR T0 变化 0.0002 s 后 mjd 与 T0+time 恒差 0.0002 s（<1 s 容差）、如需严格自洽由维护者按 2026-10-31 裁定机械重算。逐行核对与去重：28 行非 X 射线逐行对照 15 篇通告原文——修正五类：① UVOT/LT 共 12 行窗口中点被按整数秒锚定产生 -0.55 s 失真（Issue #68/#84 族）、改按原文中点并补 time_err；② GCN 12203 white fc 行 time=194.45 与原文 T_start 60-T_stop 210（中点 135 s）差 +59.45 s、改 135.0；③ ROTSE 12205 四行 time 与表列 coadd 中点差 2-2.5 s、改 44.0/112.0/217.5/361.0 并补 time_err；④ IAC80 行 mjd 系相邻 UVOT 行错拷（UT 04:44:54）、AZT-11 行 mjd 与 time 自差 24 s、均按 T0+time 重算；⑤ 20 行补 time_err（半曝光/半窗口）。初报/精表并列保留：GCN 12199 white 17.8±0.06 与 GCN 12203 white fc 17.84±0.04 同张 FC 两版；GCN 12197 首图 16.1 与 GCN 12205 coadd1 16.1±0.3（含首图的 5 图叠加）两版；LT GCN 12198 R/I 与 Steele+2017 RATCam r'/i'（同批帧 VoR 重定标+消光改正）数值差 0.2-0.8 mag 系两版定标、并列保留。GCN 12196 UVOT white FC「typical 3σ ~19.6」未入库：同张 FC 已有探测 17.80（GCN 12199）、typical 值系 sub-image 敏感性描述而非 OT 位置限量。文献补充：新增 39 行——Steele+2017（ApJ 843 143、RINGO2 完整测光长表 arXiv:1706.03974v1）：RINGO r' 8 行（191-783 s）+RATCam r' 12/g' 9/i' 10 行（~900 s-23.5 h）；表题明示 Magnitudes are corrected for the Galactic extinction → Gext_corr=y、派生列全空；USNO-B1 定标未声明系统。VoR 追溯：IOP 整站 Radware 反爬（captcha 页实证）+CDS 主站拦截+CfA 镜像库不可达+NAO/china-vo 无响应 → 按 §3.3 三方交叉（arXiv v1 TeX 源逐值+SciX 元数据）、audit/unverified.tsv 登记 substituted。测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇）检索「110726A」命中 15 篇本暴通告、光学/紫外/射电数值均已逐行入库；external/rssgrbag（射电光变 140 行）、grbsn_webtool、uvot_grb、heasarc_grbcat、batse、saxgrbmgrb、agile_mcal、fermi_lat、swift_xrt_live、guidorzi2025、wang2022、liang2023、minaev2020 检索均无本源记录；konus_wind/swift_bat/swift_grb/swiftgrbba/mpe_greiner 仅用于身份/T0/定位互证；SciX（api.scixplorer.org、token 实测可用）检索「GRB 110726A」与「110726A」各命中 14 条——12 篇 GCN 通告+GCN Report 375.1（Swift 观测汇编、数据同通告不另入库）+唯一研究论文 Steele+2017（2017ApJ...843..143S、其 39 行已入库）。结论：光学测光覆盖 T0+21.05 s（ROTSE 首图 16.1）至 T0+23.5 h（RATCam i' 23.03±0.29）；射电仅 EVLA 5.8 GHz 3σ<60 μJy（T0+3.05 h 起测、GCN 12207）；无 mm/IR 测光。另：SAO RAS 在 UVOT 位 NE 3.5″ 处报 R=25.21±0.30 暗源（GCN 12251、按 Gemini z 范围对应 110-370±20 kpc）——宿主候选未定论、不建 host_galaxy。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "eiso": {
@@ -57,7 +60,12 @@
         "v": 969999999999999900000000000000000000000000000000000
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [
     {
