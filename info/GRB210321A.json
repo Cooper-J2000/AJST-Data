@@ -1,12 +1,14 @@
 {
   "transient_id": "GRB210321A",
-  "alias": [],
-  "ra": 87.875,
-  "dec": 70.116667,
-  "T0": "2021-03-21T07:13:51.023000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "BAT 1037828"
+  ],
+  "ra": 87.89579,
+  "dec": 70.13057,
+  "T0": "2021-03-21T07:13:51.023260Z",
+  "T0_ref": "GCN 29677（Swift/BAT 触发 2021-03-21 07:13:51 UT、trigger=1037828）；亚秒 .023260 取自 Swift/BAT 官方目录 external/swift_bat summary_general.txt（Trig_time_UTC=2021-03-21T07:13:51.023260）；Konus-Wind GCN 29696 亦引 T0(BAT)=07:13:51.023 UT",
+  "T0_offset": -7.0,
+  "T0_offset_ref": "Swift/BAT 官方目录 external/swift_bat summary_burst_durations.txt：T100_start=-7.000 s（T100 区间 -7.000～1.836 s）；GCN 29691 精化分析称单峰约 T-8～T+4 s；Konus-Wind GCN 29696 waiting mode 自 ~T0-6.430 s 起有辐射（旁证）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.487,
   "tag": [
@@ -14,14 +16,14 @@
   ],
   "pos_error": 1.7,
   "pos_ref": "GCN 29681",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 29685",
-  "comment": null,
+  "comment": "身份：Swift/BAT trigger=1037828（GCN 29677/29691）、同日无 GRB 210321B 等混淆事件（gcn/archive 全文检索 0 命中）；光学对应体 DDOTI 更正位（GCN 29694：05:51:34.82 +70:07:50.4、29680 原文笔误）与 XRT/UVOT 位置一致。定位：原 ra/dec(87.875, 70.116667) 系 MPE Greiner 目录的 BAT 粗定位（05h51m30s +70°07′、误差 3′）与 pos_ref=GCN 29681 脱钩，审核改按 GCN 29681 增强 XRT 定位 87.89579 +70.13057（1.7″ radius、原文标注 90% confidence→pos_error_confidence=90）；同批互证：BAT 在轨 87.874 +70.119（3′、GCN 29677）、BAT 地面 87.887 +70.109（1.6′、GCN 29691）、XRT 87.89627 +70.13042（3.7″、GCN 29678）、UVOT 87.89479 +70.13051（0.49″、GCN 29697）。红移：GTC/OSIRIS 余辉光谱吸收线（FeII/MgII/MgI）z=1.487、作者视为可能红移且严格为下限（z≲2、NOT/ALFOSC 光谱、GCN 29684）；Swift/BAT 官方目录红移表 method=ba（吸收线光谱）→redshift_type=spec（非宿主发射线）。分类：t90=8.212±0.504 s（Swift/BAT 官方目录 external/swift_bat summary_general.txt；GCN 29691 精化分析 8.21±0.50 s）按目录 t90 判 lgrb。T0_offset=-7.0 s：BAT 光变自 T-7 s 起有辐射（summary_burst_durations T100_start=-7.000 s；GCN 29691 单峰约 T-8～T+4 s）、自动触发晚于真实爆发起点。测光检索（2026-11-09）：仓内 gcn/archive 全文含 210321A 共 17 篇（GCN 29677-29725、已全部精读、其中 10 篇含光学数值或上限）、external/rssgrbag 与 grbsn_webtool 0 记录、uvot_grb/swiftgrbba/swift_xrt_live 仅目录参数；SciX 检索 'GRB 210321A' 与 '210321A' 命中 17 篇（即上述通告、无独立研究论文）；Dainotti+2024（MNRAS 533 4023）grbLC 机读数据含本源 15 行、已逐行与 GCN 核对→新增 0 行、26 行去重为 16 行（删除 GCN 测量被目录转引的重复行 10 行）、时标统一按曝光中点/观测窗口中点口径重算",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,15 +49,20 @@
         "v": 3.301970245275432
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = 2024,\n       volume = {533},\n       pages = {4023-4043},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract}\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     }
   ],
   "host_galaxy": null
