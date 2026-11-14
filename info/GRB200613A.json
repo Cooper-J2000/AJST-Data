@@ -1,28 +1,31 @@
 {
   "transient_id": "GRB200613A",
-  "alias": [],
-  "ra": 153.029167,
-  "dec": 45.85,
-  "T0": "2020-06-13T05:30:08Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB200613229",
+    "200613229"
+  ],
+  "ra": 153.04199,
+  "dec": 45.75408,
+  "T0": "2020-06-13T05:30:08.213684Z",
+  "T0_ref": "GCN 27926（05:30:08 UT）／GCN 27930（05:30:08.21 UT，触发仪器官方通告）；亚秒取 FERMIGBRST（仓内 external/fermi_gbm）trigger MJD 59013.229261732＝MET 613719013.213684−5 闰秒（2005/2008/2012/2015/2016），独立复算 datetime(2001,1,1)+timedelta(MET−5)=05:30:08.213684、朴素换算 05:30:13.214 已排除（§3.8①②）；LAT offline 官方通告页 gcn.gsfc.nasa.gov/other/200613229.fermi 05:30:08.00 UT（SOD 19808.00）互证；2FLGC（external/fermi_lat）trigger_time 05:30:08.004Z 系衍生目录自差 −0.21 s，仅作交叉验证（§3.8③）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 1.2255,
+  "redshift": 1.2277,
   "tag": [
     "grb"
   ],
   "pos_error": 1.4,
   "pos_ref": "GCN 27936",
-  "redshift_type": null,
-  "redshift_ref": "GCN 29320",
-  "comment": null,
+  "redshift_type": "spec-host",
+  "redshift_ref": "Fu+2024 (doi:10.3847/1538-4357/ad6306)",
+  "comment": "身份：Fermi/GBM trigger 613719013.213684/200613229（GCN 27926/27930 原文；FERMIGBRST name=GRB200613229、trigger_name=bn200613229，别名出处即此，GCN 27926 同段含触发号原文写法）。仓内 gcn/archive 全文检索「200613A」命中 25 篇＋按触发号「613719013/200613229」另命中 GCN 27927（BALROG 定位）＝26 篇本暴通告（27926/27927/27930/27931/27932/27933/27935/27936/27937/27938/27939/27943/27944/27949/27958/27962/27964/27971/27978/27982/27983/27998/27999/28000/28003/29320），同日无他暴（200613B/C 零命中）；身份由 GBM 触发号＋LAT→Swift/XRT→UVOT→地面光学随动链（GCN 27931→27932→27936→27944→27935/27937/27939/27943…）综合确证。T0：见 T0_ref；GBM 触发源专项（Issue #67 族）核查结论——原库整秒 T0 无「2FLGC trigger_met 朴素换算漏扣闰秒」错误（朴素换算应为 05:30:13.214、与原值差 +5 s，可排除 bot 误锚）；本轮按触发仪器亚秒精化为 05:30:08.213684Z（与 GCN 27930 的 .21 一致；Fu+2024 亦用 05:30:08.214 UT）；CALET/CGBM 自触发 05:30:08.657 UTC（GCN 27964）系设备链路延迟、不构成 T0_offset。全表 102 行 mjd 已按 mjd=T0+time 重算（9 位小数）自洽。定位：Swift/XRT enhanced（GCN 27936）153.04199 +45.75408、1.4″（90%，原文明示）——原 info ra/dec=153.029167/45.85 系 Fermi/LAT 位（GCN 27931 153.03 +45.85、0.14°=8.4′ 90%；LAT offline 通告页 153.028 +45.850、8.10′；mpe_greiner 同源）误配 XRT 1.4″，已归位。备查并列：GBM final real-time 149.1 +51.1（1.0° stat，GCN 27926）；BALROG 151.1±0.7 44.5±0.4（另 +2° sys，GCN 27927）；FERMIGBRST 153.042 45.7541；Swift/UVOT 153.04178 +45.75391（0.46″ 90%，GCN 27944）；OAJ-T80 10:12:10.08 +45:45:14.26（0.5″ 估，GCN 27935 初报 dec 笔误 45:54:14.26→GCN 27938 更正）；Kitab-ISON 10:12:10.02 +45:45:13.7（GCN 27937）；Fu+2024 光学位 153.04179 +45.75387（1.0″，来源未标注置信水平）；swiftgrbba xrt 153.042/45.75408（1.4″）；swift_xrt_live 153.04197/45.75403（2.0″）。分类与高能量备查：lgrb 按 t90=478.026±3.168 s（FERMIGBRST，50-300 keV）判（按目录 t90；GCN 27926 亦称 likely LONG、GCN 27930 ~470 s、CALET SGM T90=381±34 s（40-1000 keV）备查）；Fermi-LAT 探测（GCN 27931）。fluence 4.10±0.05e-5 erg/cm2（10-1000 keV）、1-s 峰光子流量 27.2±0.4 ph/s/cm2（T0+12.2 s 起，GCN 27930）；GCN 27930 Band Epeak=111±3 keV、α=−1.08±0.02、β=−2.58±0.08（T0–T0+50 s）与 liang2023（params 之源）epeak_obs=106±3、α=−1.06 并列；Fu+2024 主脉冲 Band Ep=116.0(+4.6/−4.4) keV、Eγ,iso=1.68(+0.07/−0.06)e53 erg、tmv=267 ms、谱滞后 607.6±57.8 ms；fermi_lat 目录 eiso=4.43e51 erg（100 MeV-10 GeV rest）、lle_t90=3.426 s；XRT 衰减指数 1.6±0.5、NH=2.3±0.5e21 cm-2（银河 8.4e19，GCN 27936）；Xinglong 报 jet break ~2.3 d、α~2.5（GCN 27971）。红移：z=1.2277±0.0011，spec-host（GTC/OSIRIS 宿主光谱 [OII] 3727/3729 发射线；Fu+2024 明示吸收线系 z=1.2262±0.0009 属视线方向 intervening 系统、宿主 z=1.2277）；GCN 29320（同谱初报）曾以吸收线 1.2255 为 GRB 红移、[OII] 1.2280——按 §4 以 VoR（Fu+2024）为准改判，旧值 1.2255 备查；目录值 liang2023/fermi_lat/mpe_greiner 1.22/1.227/1.22 一致。宿主：SDSS J101210.075+454512.8（GCN 27935/27937 候选；其 SDSS photo-z=0.4745 为测光红移失败值，不采用），Fu+2024 §3.3 光谱证认与暴位重叠的 survey 星系为宿主→host_galaxy 已建立（survey 测光 SDSS u/g/r/i/z＋LS g/r/z，AB，Fu+2024 表 4；WISE W1=20.60±0.10、W2=21.16±0.31、W3>16.5、W4>14.6 见 host_galaxy.comment，filters.json 无 W1–W4 键）。X 射线与银消光：本源 lc 无 X 射线行；Swift/XRT 有 ToO 跟随（GCN 27932/27936、swift_xrt_live、swiftgrbba），X 射线测光按 §3.3/§7 不入库。银消光：GCN 27944 E(B−V)=0.01（Schlegel+1998）、Fu+2024 E(B−V)=0.008（Schlafly & Finkbeiner 2011，A_V,MW=0.024）；全部行权威值均未做银消改正（Gext_corr=n），既有行派生列（Gext_Alambda 等）系导入管线按旧坐标（LAT 位）所算，坐标归位后由引擎按需重算。逐行核对与去重（§3.3/§3.4）：原 76 行逐行对照 GCN 原文与 Dainotti+2024 MRT（grblc/data/mag_files/200613A_mag.txt，60 行，取数 2026-11-12）核对——修正时间 11 行（「起点当中点」8 行〔27937/27939/27949/27958/27978/27982/28000/28003〕、GCN 27943 表列 Tmid 早于自报起点 50 min 系原文笔误 1 行、MRT 27983 三行管线错时间（=mid+半曝）2 行）；补 time_err（半曝光/半窗跨）32 行；mag_system 改判 37 行（MRT system 列记 Lupton 被导入管线误映射为 Vega 的 34 行→按通告原文留空；改/推定 AB 3 行〔Xinglong GCN 27943/27949/27971 系 Pan-STARRS1 定标，PS1 目录为 AB 系统〕；UVOT 行保留 Vega 系 GCN 27944 原文声明 UVOT photometric system）；删重 19 行（GCN 初报与 Dainotti 转引/Alexei 精化同行，保留 GCN 原发行，§3.4、GRB210822A 同例；Alexei 精化值差异已记入保留行 comment 备查）；discard 2 行（GCN 28000/28003 表 UL 列 23.6/22.7 被 bot 误当 OT 上限，原文该两帧 OT 实为探测 21.06±0.09/21.13±0.10）；补 MASTER 漏记第二指向 2 行（Tmid 44977 限 17.5、45278 限 18.2，GCN 27933 表 14 行 bot 只录 12）；新增 Fu+2024 表 1 this work 43 行（Xinglong 六夜——其中 1.31/2.31/3.32 d 三行与 GCN 27943/27949/27971 同栈、VoR 精化值差 +0.24/+0.22/−0.36 mag 并存待决；NOT/ALFOSC 4、LT 3、CAHA/CAFOS 10、OAJ-T80 6、UVOT 重提取 14）。净 76→102 行（活跃 100＋discard 2）。测光检索（2026-11-12）：仓内 gcn/archive 全文库（45947 篇）「200613A」命中 25 篇＋触发号另命中 GCN 27927，共 26 篇通告逐篇核对（17 篇含光学测光/上限数值，全部核入）；external 快照：fermi_gbm/fermi_lat（2FLGC）/swiftgrbba/swift_xrt_live/mpe_greiner/liang2023 有本暴条目（仅目录参数/位置/UVOT 摘要，无新测光）、uvot_grb/rssgrbag/grbsn_webtool/heasarc_grbcat/konus_wind/batse/saxgrbmgrb/agile_mcal/swift_bat 无本暴（Swift/BAT 未触发）；Dainotti MRT 60 行逐行核对；SciX（token 实测可用）「GRB 200613A」命中 27 条，非 GCN 研究论文 2 篇：Fu+2024（ApJ 974,221，表 1 已入库 43 行）、Ghosh+2024（BSRSL 93,719＝arXiv:2401.12341，纯 GBM/LAT 暴发分析、无测光）；GCN 官方通告页 200613229.fermi 实测访问互证；TNS 不适用（GRB 非 AT/SN/CV 类）。射电/mm：rssgrbag 无记录、26 篇通告与上述两篇论文均无射电测光→本源无射电报告、未新增射电行。结论：光学/UV 测光覆盖 0.505 d（UVOT u 起测）–19.68 d（CAHA r 上限），无射电、无更晚测光报告。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -84,7 +87,12 @@
         "v": 214.79487755560547
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [
     {
@@ -95,19 +103,85 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024ApJ...974..221F"
     },
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {{Dainotti}, M. G. and {De Simone}, B. and {Mohideen Malik}, R. F. and {Pasumarti}, V. and {Levine}, D. and {Saha}, N. and {Gendre}, B. and {Kido}, D. and {Watson}, A. M. and {Becerra}, R. L. and {Belkin}, S. and {Desai}, S. and {do E. S. Pedreira}, A. C. C. and {Das}, U. and {Li}, L. and {Oates}, S. R. and {Cenko}, S. B. and {Pozanenko}, A. and {Volnova}, A. and {Hu}, Y. -D. and {Castro-Tirado}, A. J. and {Orange}, N. B. and {Moriya}, T. J. and {Fraija}, N. and {Niino}, Y. and {Rinaldi}, E. and {Butler}, N. R. and {Gonzalez}, J. d. J. G. and {Kutyrev}, A. S. and {Lee}, W. H. and {Prochaska}, X. and {Ramirez-Ruiz}, E. and {Richer}, M. and {Siegel}, M. H. and {Misra}, K. and {Rossi}, A. and {Lopresti}, C. and {Quadri}, U. and {Strabla}, L. and {Ruocco}, N. and {Leonini}, S. and {Conti}, M. and {Ramirez}, L. M. T. and {Zola}, S. and {Jindal}, I. and {Kumar}, R. and {Chan}, L. and {Fuentes}, M. and {Lambiase}, G. and {Kalinowski}, K. K. and {Jamal}, W.},\n        title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n      journal = {\\mnras},\n         year = 2024,\n        month = oct,\n       volume = {533},\n       pages = {4023},\n         doi = {10.1093/mnras/stae1484},\narchivePrefix = {arXiv},\n       eprint = {2405.02263},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "Rusty-Harpoon@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
-      "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
+      "bibtex": "@ARTICLE{2023ApJS..266...31L,\n       author = {{Li}, Liang},\n        title = \"{Revisiting the Spectral Energy Correlations of GRBs with Fermi Data. I. Model-wise Properties}\",\n      journal = {\\apjs},\n         year = 2023,\n        month = jun,\n       volume = {266},\n         eid = {31},\n       pages = {31},\n         doi = {10.3847/1538-4365/acc867},\narchivePrefix = {arXiv},\n       eprint = {2211.12187},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2023ApJS..266...31L/abstract},\n}",
       "name": "Li+2023",
-      "source": "bot",
-      "title": "Revisiting the Spectral-Energy Correlations of GRBs with {\\it Fermi} Data I: Model-wise Properties",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract"
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Revisiting the Spectral Energy Correlations of GRBs with Fermi Data. I. Model-wise Properties",
+      "url": "https://doi.org/10.3847/1538-4365/acc867"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 153.0419792,
+    "dec": 45.7535778,
+    "redshift": 1.2277,
+    "redshift_err": 0.0011,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "u",
+        "mag": 21.57,
+        "mag_err": 0.23,
+        "mag_sys": "AB",
+        "source": "SDSS（Fu+2024 表 4）"
+      },
+      {
+        "band": "g",
+        "mag": 21.7,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "SDSS（Fu+2024 表 4）"
+      },
+      {
+        "band": "r",
+        "mag": 22.37,
+        "mag_err": 0.33,
+        "mag_sys": "AB",
+        "source": "SDSS（Fu+2024 表 4）"
+      },
+      {
+        "band": "i",
+        "mag": 22.2,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "SDSS（Fu+2024 表 4，近似值 ∼22.2）"
+      },
+      {
+        "band": "z",
+        "mag": 21.1,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "SDSS（Fu+2024 表 4，近似值 ∼21.1）"
+      },
+      {
+        "band": "g",
+        "mag": 22.26,
+        "mag_err": 0.06,
+        "mag_sys": "AB",
+        "source": "Legacy Survey（Fu+2024 表 4）"
+      },
+      {
+        "band": "r",
+        "mag": 22.08,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Legacy Survey（Fu+2024 表 4）"
+      },
+      {
+        "band": "z",
+        "mag": 21.43,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Legacy Survey（Fu+2024 表 4）"
+      }
+    ],
+    "comment": "宿主=GTC/OSIRIS 光谱（[OII] 3727/3729，z=1.2277±0.0011）证认的与暴位重叠 survey 星系（Fu+2024 §3.3 \"confirmed to be the host galaxy\"）；即 GCN 27935/27937 报告的候选 SDSS12 J101210.07+454512.8（其 SDSS photo-z=0.4745 系测光红移失败值，不采用）。Fu+2024 表 4 另有 WISE W1=20.60±0.10、W2=21.16±0.31、W3>16.5、W4>14.6（AB）——filters.json 无 W1–W4 键，未入 photometry。坐标取 GCN 27935 报告的 SDSS 源位 10:12:10.075 +45:45:12.88。",
+    "source": "Fu+2024 (doi:10.3847/1538-4357/ad6306) Table 4 与 §3.3；GCN 27935/27937/29320"
+  }
 }
