@@ -1,26 +1,46 @@
 {
   "transient_id": "GRB130903A",
-  "alias": [],
-  "ra": 82.1334,
-  "dec": -0.1252,
+  "alias": [
+    "GRB 130903A",
+    "GRB130903033",
+    "GRB 130903.033",
+    "bn130903033"
+  ],
+  "ra": 82.1305417,
+  "dec": -0.1273333,
   "T0": "2013-09-03T00:47:20Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 15169（触发仪器 INTEGRAL/IBAS 官方通告）原文 \"detected by IBAS in the IBIS/ISGRI data at 00:47:20 UT of September 3\"；swiftgrbba 快照 trigger_time=2013-09-03T00:47:20.000Z（trigger_obs=INTEGRAL）与 MAGIC+2025（A&A 700, A96）观测日志表同值互证；触发仪器未给亚秒，不自行补",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 4.3,
-  "pos_ref": "GCN 15173",
+  "pos_error": 0.3,
+  "pos_ref": "GCN 15177",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份：GRB130903A=INTEGRAL/IBAS 触发 6930（GCN 15169 官方触发通告：IBIS/ISGRI 于 2013-09-03 00:47:20 UT 探测，FRED 型持续约 70 s，20-200 keV fluence 约 1e-6 erg/cm²，精化位 82.1334,−0.1252，1.5′ 90% c.l.）=Fermi/GBM trigger 399862055 / 130903033（GCN 15175，GBM 触发 00:47:32.37 UT）=Swift TOO 后随观测 obsid 00020294（GCN 15173/15231：XRT 探测余辉、Sep 6 衰减 5 倍、Sep 16 消失）。Trigger_Instrument=Swift/BAT 系 bot 依 UKSSDC Burst Analyser XRT 数据导入误植：Swift/BAT 未触发（external/swift_bat 快照 2013-09-03 当日无 BAT 触发；swiftgrbba 快照 trigger_obs=INTEGRAL），改 INTEGRAL/IBIS。同日无 A/B/C 系列混淆（gcn/archive 与 info/ 均无 130903B，Swift 当日无其他 GRB 触发（另有非 GRB 触发 569022 系银河源，GCN 15172））。alias：GRB 130903A 为 10 篇 GCN 题名用名；GRB130903033 / GRB 130903.033 / bn130903033 为 Fermi/GBM 触发名（GCN 15175 原文用名 \"trigger 399862055 / 130903033\"；external/fermi_gbm 快照 name_alt 三形并列）。T0=2013-09-03T00:47:20Z（触发仪器 GCN 15169 整秒；swiftgrbba trigger_time=00:47:20.000Z 与 MAGIC+2025 观测日志同值互证；触发仪器未给亚秒不自行补）。GBM 触发 00:47:32.37 系他仪触发点差 12.4 s，非爆发时刻偏移，不写 T0_offset。定位：ra/dec=82.1305417,−0.1273333 换算自 GROND 余辉位 05:28:31.33,−00:07:38.4（GCN 15177，误差 0.3″，来源未标注置信水平→pos_error_confidence 留空）；备查并列：INTEGRAL 精化位 82.1334,−0.1252（1.5′，90% c.l.，GCN 15169）、Swift/XRT 增强位 82.13013,−0.12667（4.3″ radius 90% conf.，GCN 15173，距 INTEGRAL 位 12″）；GCN 15181 的 UVOT 上限即在该 GROND 位测光。分类=lgrb：GCN 15169 题名明示 \"A long GRB detected by INTEGRAL\"；t90=68.608±7.24077 s（Fermi/GBM 目录 50-300 keV，external/fermi_gbm；GCN 15175 初报 69±7 s 同值；INTEGRAL 约 70 s 同向），按目录 t90 判 lgrb/sgrb。物理量备查：fluence=(2.0±0.1)e-6 erg/cm²（10-1000 keV，GCN 15175 初报；GBM 目录精化 2.51871e-6±5.77942e-8）；peak_flux=1.3±0.2 ph/s/cm²（1 s，10-1000 keV，T0+0.22 s 起，GCN 15175）；Epeak=41±3 keV（GCN 15175，cutoff powerlaw；GBM 目录 BAND 拟合 31.755±7.900 keV）；XRT 计数率 4.9(+4.9/−3.0)e-3 ct/s（0.3-10 keV，GCN 15173）→1.1(+0.5/−0.4)e-3 ct/s（Sep 6，GCN 15231）→3σ 上限 1.25e-3 ct/s（Sep 16 已消失，GCN 15231）——X 射线数据暂不入库。逐行核对：SANTEL-400AN/AZT-8/UVOT/GROND 11 行数值逐值核对一致，时间轴修正见各行 comment（bot 系按曝光起点/second-epoch 钟时误植）；补 MASTER-II Kislovodsk 6 行（GCN 15176 表 6 行全收）与 SANTEL 精化分析检出 R=20.40±0.3 1 行（GCN 15241）。去重：GCN 15173 UVOT 初报（V>20.6/U>20.4，2462/780 s）与 GCN 15181 精化版（v>21.2/u>21.3，2461/1442 s）为同组观测（V 曝光同、U 曝光增补），取后者、不另立行；GCN 15170 GROND 首历元仅记 \"do not detect\" 无数值，其定量结果即 GCN 15177 星等，不另立行；2 行 10keV X 射线不参与去重、逐字节未动，其 mjd 与现行 T0 自洽（偏差 <0.001 s，无需维护者随 T0 重算）。宿主候选：GCN 15171 记误差圈内可能宿主 SDSS J052830.20−000723.9（r=19.706，SDSS-DR9 记为点源；距 GROND 余辉位约 15″），无文献确证关联，不建立 host_galaxy。MAGIC+2025（A&A 700, A96，arXiv:2507.05215）观测日志表含本源（INTEGRAL 触发 00:47:20、MAGIC 自 03:57:32 起观测 11412 s、天顶角 51.9°-62.8°）与 EBL 吸收灵敏度表——VHE γ 灵敏度限非 OIR 测光，不入库。测光检索留证（2026-11-11）：仓内 gcn/archive 全文检索 \"130903A\" 命中 10 篇（15169/15170/15171/15173/15175/15176/15177/15181/15231/15241，其中含测光数值 5 篇）；GCN 站（gcn.nasa.gov/circulars 检索 130903A）同 10 篇、无遗漏；external/rssgrbag、grbsn_webtool、uvot_grb、heasarc_grbcat、swift_xrt_live 均无该源记录（swiftgrbba/fermi_gbm/mpe_greiner/swift_bat 仅用于身份与 T0 互证）；SciX（api.scixplorer.org）四种查询（\"GRB 130903A\"、abs:\"GRB 130903A\"、full:\"130903A\"、变体 \"GRB 130903\"）均只命中同 10 篇 GCN 通告，无研究论文光变表；Ershova+2020（ARep 64, 126，MASTER 汇编）VoR 需订阅未打开、未据其取值（MASTER 测量以原始 GCN 15176 为准，该文逐暴日志属 GCN 转引型，仓内文献卡 audit/leads/papers/ershhova2020.md 未列本源）；TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光=MASTER 6 上限+SANTEL 2（1 上限+1 检出）+AZT-8 1 上限+UVOT 2 上限+GROND 7（4 探测+3 上限）；本次新增 7 行、修正 11 行时间轴/系统标注。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
+  },
+  "articles": [
+    {
+      "name": "Abe+2025",
+      "url": "https://doi.org/10.1051/0004-6361/202555468",
+      "title": "Testing the ubiquitous presence of very high energy emission in gamma-ray bursts with the MAGIC telescopes",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
