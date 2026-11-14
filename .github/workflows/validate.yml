@@ -21,15 +21,20 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin "${{ github.base_ref }}" || true
           python3 tools/audit_queue.py --check-reserved --base "origin/${{ github.base_ref }}" || true
-      # 警告级守卫：本分支落后 base 多少提交，永不失败。
-      # 目的：把「这个 PR 有没有 pull 过上游」变成 PR 页面上可见的事实（《数据审核提示词》§2 第 9 条 / §5 第 7 条）。
-      - name: Branch freshness vs base (warning only, never fails)
+      # 阻断级守卫（2026-11-14 起）：分支必须基于当前契约定版 + 落后不得超过阈值。
+      # 背景：2026-11-14 批次的 #911–#922 用 v2.39 的 25 列表头（v2.40 已撤销）、#913/#918/#919
+      # 沿用 `Gext_corr=y` 旧语义，全是「分支基线早于契约定版」的机械缺陷（科学内容本身没问题），
+      # 只能靠维护者二次打回；另一个维度是「基于三周前 main」（当时 18 个 PR 基于 10-24）。
+      # 判据：① head 不含 base 上最近一次改 SCHEMA.md / 数据审核提示词.md / tools/validate.py 的提交
+      #       → 契约漂移，红；② 落后 > 400 提交 → 红。400 对应「两三周前」，批次合并后的几百落后不拦。
+      # 修法唯一：`git pull --rebase origin main` 后重推。
+      - name: Branch freshness vs base (contract baseline + behind count)
         if: github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           GITHUB_BASE_REF: ${{ github.base_ref }}
-        run: python3 tools/check_branch_freshness.py
+        run: python3 tools/check_branch_freshness.py --strict --max-behind 400
       # 警告级守卫：本 PR 新增线索卡的规模/形态（§3.11 增量门槛 + 文献级卡），永不失败。
       # 只在 PR 里跑：判据是本 PR **新增**的卡，历史欠账（如 Ershova+2020 的 45 张）不刷警告。
       - name: Lead-card guard (warning only, never fails)

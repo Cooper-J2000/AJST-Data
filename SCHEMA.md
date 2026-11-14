@@ -171,10 +171,13 @@
 - X 射线行语义：能量串（如 `10keV`）表示 **10 keV 处的单色流量密度 Fν**，**不是**能段
   积分流量；单位由该行 `flux_density_unit` 给出（库内 Swift/XRT 的 `10keV` 行多为 `Jy`，
   来源 UKSSDC Swift Burst Analyser）。**X 射线行同样必须满足 `mjd = T0 + time`**：导入时的
-  `mjd` 由 `T0_old + time` 算出，因此 `T0` 一经改正，该源的 X 射线 `mjd` 须按
-  `mjd = T0_new + time` 机械重算（2026-10-31 维护者裁定；只动 `mjd` 一列，`time`、
-  `flux_density`、`band`、`upperlimit`、`comment` 等一律不动）。`validate.py` 的
-  「mjd 与 T0+time 不自洽」警告对 X 射线行同样生效。
+  `mjd` 由 `T0_old + time` 算出，因此 `T0` 一经改正，该源 X 射线行的时间轴必须对齐，口径按
+  《数据审核提示词》§3.8 二选一，**优先「保 `mjd`、平移 `time`」**（`time_new = time_old −
+  (T0_new − T0_old)`，`mjd` 与其余列不动——`mjd` 是来源发布的绝对时刻，不该被 T0 裁定改写）；
+  只有该行 `time` 本就是新 T0 口径时才 `mjd := T0_new + time`。两种都只动其中一列，
+  `flux_density`、`band`、`upperlimit`、`comment` 等一律不动（2026-10-31 裁定、2026-11-14 修订）。
+  `validate.py` 的「mjd 与 T0+time 不自洽」警告与 `tools/check_t0_timebase.py` 的阻断级检查
+  对 X 射线行同样生效。
 - `tools/validate.py` 逐行检查 `band`：为空、或不在上述两条车道内 → **错误**（见 §5）。
 
 ## 4. `filters.json` / `tags.json`

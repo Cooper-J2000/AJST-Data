@@ -14,12 +14,19 @@
 3. `python3 tools/audit_queue.py --id <源ID>` 查状态：`reserved` = 维护者自留，**不得认领、不得开 claim PR**；
 4. 开工第一件事开 `claim: <源ID>` **draft** PR；审核与子代理核查通过后转正式，标题改 `data: 审核 <源ID>（一句话摘要）`；
 5. PR 正文按 `.github/PULL_REQUEST_TEMPLATE.md` 填（对应提示词 §5 七要素）；
-6. **每交付一个源后**：`git fetch origin main && git log --oneline HEAD..origin/main`。有变动先
+6. **[硬要求] 开 PR 之前必须 `git fetch origin main && git pull --rebase origin main`**：本 PR 的 head
+   必须包含当前 base，且**必须包含 base 上最近一次改动契约文件（`SCHEMA.md` / `数据审核提示词.md` /
+   `tools/validate.py`）的提交**。CI 的 `check_branch_freshness.py --strict` 会拦：契约基线过期
+   （分支不含那次提交）或落后 base > 400 个提交 → **红**，红着不能合。修法只有一条：rebase 后重推
+   （2026-11-14 维护者裁定；背景：11-14 批次 10 个 PR 用 v2.39 的 25 列表头、135 行 `Gext_corr=y`
+   旧语义，全是「基线早于契约定版」的机械缺陷，只能二次打回）。
+7. **每交付一个源后**：`git fetch origin main && git log --oneline HEAD..origin/main`。有变动先
    `git pull --rebase origin main` 再挑下一个源；新提交若碰到你刚提交的源、或你下一个要审的源，
    先读改动再动手。维护者会直接改 `info/`、`lc/`、`tools/` 与文档，这条保证**我方改动在你的下一次任务里一定可见**
-   （提示词 §2 第 10 条 / §5 第 7 条，2026-10-24 新增）。PR 页面上也会有一条「分支落后」的 CI 警告，落后多少提交、落后哪几个，都在那里。
+   （提示词 §2 第 10 条 / §5 第 7 条，2026-10-24 新增）。PR 页面上那条「分支落后」的 CI 注解会列出
+   落后多少提交、落后哪几个。
 
-## 最常被违反的 6 条（细节见提示词）
+## 最常被违反的 7 条（细节见提示词）
 
 1. **PR 有评论就要回**（§2 第 2 条 / §5 第 8 项，2026-10-29 新增）：维护者评论＝审核意见。采纳就改数据并在回复里给
    `commit sha`，不采纳就写理由 + 证据；**不得静默重推同一 diff**。有未处理反馈时不领新源。
@@ -37,8 +44,23 @@
    库外新源用 `new-source` Issue，不擅自新建 `info/<id>.json`。
 6. **提交前 `python3 tools/validate.py` 必须 0 错误**（含新增的「每行 `flux_density` 非空」ERROR）；`--strict` 的告警看「相对基线是否新增」，
    不要用退出码当唯一判据（main 上本来就有历史告警）。
+7. **分支基线必须跟得上契约**（2026-11-14 起 CI 阻断，`tools/check_branch_freshness.py --strict`）：
+   开 PR 前、每次推之前 `git pull --rebase origin main`。判据是「head 是否包含 base 上最近一次改
+   `SCHEMA.md` / `数据审核提示词.md` / `tools/validate.py` 的提交」＋「落后 > 400 提交」。
+   拿旧契约写数据（25 列表头、`Gext_corr=y` 旧语义、`catalog_data` 键）一律红，不要指望维护者替你 rebase。
 
 ## 最近更新（外部 agent 请注意版本）
+
+- **2026-11-14**：两条硬变更：
+  1. **分支基线从「软要求」升为 CI 硬闸**（见上面「开工顺序」第 6 条与「最常被违反」第 7 条）：
+     `tools/check_branch_freshness.py --strict` 现在会在「分支不含 base 上最近一次契约提交」或
+     「落后 > 400 提交」时失败。11-14 批次里 10 个 PR 用 v2.39 的 25 列表头、3 个 PR 共 135 行
+     `Gext_corr=y` 旧语义，都是基线过期造成的机械缺陷。
+  2. **X 射线行随 `T0` 改动的口径修订**：《数据审核提示词》§3.3 / §7 与 `SCHEMA.md` §3 原来写
+     「只动 `mjd` 一列」，现统一为 §3.8 的两条路径，**优先「保 `mjd`、平移 `time`」**
+     （`time_new = time_old − (T0_new − T0_old)`，`mjd` 不动）——`mjd` 是来源发布的绝对时刻，
+     不该被 T0 裁定改写；只有该行 `time` 本来已按新 T0 重写过时才 `mjd := T0 + time`。
+     两条都必须让 `|mjd − (T0+time)| ≤ 1 s`（`check_t0_timebase.py` 阻断级）。
 
 - **2026-11-06**：`Gext_corr` 语义**维护者裁定重定义**（v2.40），以 `SCHEMA.md` §3 与本仓
   《数据审核提示词》对应条目为准：
