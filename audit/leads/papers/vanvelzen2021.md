@@ -33,7 +33,7 @@ AT2019bhf 的 `Varys.dat` 已在审核该源时逐值核对入库（36 探测行
 | AT2019azh | data/JaimeLannister.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
 | AT2019dsg | data/BranStark.dat + Bran_lx_Swift.dat/_ul.dat（Swift/XRT）；表 6 | 无 | mention-only | 过门槛①：同上（另含 X 射线文件，按规则不入库） |
 | AT2019ehz | data/Brienne.dat + Brienne_lx_Swift.dat/_ul.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
-| AT2019mha | data/Bronn.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
+| AT2019mha | data/Bronn.dat；表 6 | 已审核（2026-11-12，见该源 info comment 与 lc） | 已核对入库 | 73 探测行已入库（g.ZTF 44/r.ZTF 17/Swift-UVOT 10/LT-IOO 2；文件头静止系时标 mjd=58703.80+day×1.148，z=0.148）；364 行 flux=0 非探测未入库；与 TDECat 总流量行口径并存（§3.4 非同值） |
 | AT2019meg | data/MargaeryTyrell.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
 | AT2019lwu | data/RobbStark.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
 | AT2019qiz | data/Melisandre.dat；表 6 | 无 | mention-only | 过门槛①：同上 |
