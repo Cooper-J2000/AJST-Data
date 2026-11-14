@@ -3,12 +3,13 @@
   "alias": [
     "ATLAS20bdgk",
     "Gaia20etp",
-    "ZTF20achpcvt"
+    "ZTF20achpcvt",
+    "AT 2020vwl"
   ],
   "ra": 232.6575,
   "dec": 26.982469,
-  "T0": "2020-10-10T17:28:19Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2020-10-10T17:28:19.200Z",
+  "T0_ref": "TNS 对象页 Discovery Date（GaiaAlerts 报告 85032，S.T. Hodgkin+，bibcode 2020TNSTR3089....1H）＝TDECat 目录行 Discovery date（Langis+2026）＝2020-10-10 17:28:19.200；bot 原值截断到秒，采源精度补全毫秒（§3.2，先例 AT2020mot/AT2021axu）；TNS phot 163664 发现点 obs-date 同瞬间秒级显示，time=0 自洽。TDE 无触发时刻，取发现时刻为历元；ZTF 首检 2020-10-08（分类报告 2021TNSCR.159....1H remark）早于 Gaia 发现 2 天但系未报告的内部首检，不作历元",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -17,25 +18,83 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026）坐标（J2000）＝TNS 对象页同值（15:30:37.800 +26:58:56.89）",
+  "redshift_type": "spec",
+  "redshift_ref": "分类光谱值：Hammerstein 分类报告 2021TNSCR.159....1H（SEDM 2020-12-21+LDT 2021-01-11，remark z=0.0325）＝Yao 分类报告 2023TNSCR2004....1Y（arXiv:2303.06523 谱上传）＝TNS 对象页 Redshift 0.0325＝TDECat 目录行 0.0325＝Yao+2023 表1 0.0325（ref=Hammerstein CR）；判 spec 不作 spec-host（同 AT2021axu 口径：录入权威值出处为分类光谱；Yao+2023 表8 载 ESI 宿主谱 2022-03-07.6 但全文未单独发表宿主红移）。并列备查：SIMBAD/Lin+2022 表/Gomez+2023 表/Ramsden+2025/Alexander+2026 用 0.035（取整）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, 2026A&A...707A.171L）建源；2026-11-14 本库审核（Rusty-Harpoon@zcode）补全：纯信息源→lc 9 255 行。【身份核验】TNS 对象页（wis-tns.org/object/2020vwl，2026-11-14 实抓与缓存逐节 diff 一致）：Type=TDE（前缀 2025-01-26 由 admin 改 TDE）；alias 四名齐备——Gaia20etp（GaiaAlerts 发现名，报告 85032）、ATLAS20bdgk（ATLAS 报告 85061）、ZTF20achpcvt（ZTF 报告 93496，2020-12-20 才报 TNS）、AT 2020vwl（TNS IAU 名/SIMBAD 主名）；坐标 15:30:37.800 +26:58:56.89＝232.6575 +26.982469（TDECat=TNS 同值；Yao+2023 表1 232.6575481 26.9824432 与之差 0.003″ 级）。分类：SEDM（2020-12-21）+LDT/DeVeny（2021-01-11）陡蓝连续谱+强宽 He II 4686+Balmer→TDE-H+He（2021TNSCR.159....1H）。SIMBAD：AT 2020vwl（ev），identifiers 恰 4 个与 alias 一致。宿主：LEDA 1794348＝PGC 1794348＝SDSS J153037.80+265856.8（TNS cross-match 注记＋Gaia 发现报告 remark「source at centre of galaxy LEDA 1794348」＋Goodwin+2023 §2.6 宿主分析），核位置（ZTF TDE 筛选要求核偏移小），无混淆；仓内无同事件重复条目；gcn/archive 与 external/ 快照均与本源无关（非 GRB）。【T0】bot 原值截断到秒，TNS Discovery Date/TDECat 目录行均给 17:28:19.200 → 补全毫秒（§3.2，先例 AT2020mot/AT2021axu）；发现测光点 time=0 自洽；T0_offset 不适用，Trigger_Instrument null（巡天发现）。【z 判定】0.0325 为分类光谱值，四路同值（TNS 对象页/两分类报告/TDECat/Yao+2023 表1），判 spec 不作 spec-host（先例 AT2021axu：Yao+2023 表8 有本源 ESI 宿主谱 2022-03-07.6、5030–5600 Å、σ*=48.5±2.0 km/s，但全文未单独发表宿主 z）；2021 分类报告表行 redshift 列 0.035 与其自身 remark z=0.0325 矛盾，取 remark/对象页值；SIMBAD（z=0.035 D 2022ApJ...939L..33L）与 Lin+2022/Gomez+2023/Ramsden+2025/Alexander+2026 样本表用 0.035＝取整，并列备查。【宿主】建立 host_galaxy：LEDA 1794348（PGC 1794348/SDSS J153037.80+265856.8），证据= TNS cross-match＋Gaia 报告「centre of galaxy」＋Goodwin+2023 §2.6（SDSS 预爆发谱 MJD 54180 quiescent 早型透镜状星系无 AGN 线；WISE W1=13.989±0.025 W2=14.001±0.037 W1−W2=−0.012±0.03 无 AGN/恒星形成迹象）；宿主派生量并列记档：Yao+2023 表3 log M_gal=9.89(+0.08/−0.08)、log M_BH=5.79±0.35、σ*=48.49±2.00 km/s、r1/2=2.4 kpc；Ramsden+2025 log M_BH=6.09(+0.55/−0.43) σ*=9.31(+0.17/−0.19)（口径不同不判定，后者系 σ*–M_BH 标度换算）；Goodwin+2023 外流建模取 M_BH=6.17×10^5 M⊙（引 Yao+2023）；Shepherd+2026 表 SED 参数、Alexander+2026 表1/宿主表/外流表同值转引。【测光入库构成】lc 9 255 行（mjd 升序，全部逐行溯源）：① TDECat 编译测光 8 885 行（官方仓库 dlangis/TDECat target_AT2020vwl_photometry.csv 共 10 473 行，本会话 raw 重新下载 md5=1b613e6039936e6181944a26602f0742 复核一致；同历元同值重复行 1 586 行去重保留首行 §3.4）——ZTF g/r/i 1 706、ATLAS c/o 4 132、ASAS-SN g/V 1 234、CRTS(CL)→G 424、NEOWISE W1/W2 777、Gaia GSA(G)→G 201、LINEAR(CL)→G 182、PTF R/g 133、ALLWISE W1/W2 82、SDSS u/g/r/i/z 10（文件同历元 3 行系不同再处理变体，mag 差≤0.0031 mag，§3.4 无法确证同一处理保留 2 行/波段）、PS1 g/r/i/z 4；mag_system 按 Langis+2026 §3.1（ZTF/PS1/ATLAS/ASAS-SN g＝AB 原文声明；CRTS/ASAS-SN V/Swift/NEOWISE＝Vega 原文声明；SDSS/PTF 未逐项声明→惯例推定 AB 并写依据；LINEAR 未声明→留空；Gaia G 内部定标不同于 AB/Vega→留空）；TDECat 总流量含宿（非差分）；② TDECat UVOT 165 值（36 历元×6 波段非空值；已银消光改正未扣宿主，Langis+2026 §3.3 原文 All magnitudes were corrected for Galactic extinction（Schlafly+2011+Fitzpatrick & Massa 2007）→Gext_corr=y；Vega）；③ TNS phot 6 行（G-Gaia 发现点 17.94±0.2＝time 0 自洽、G-Gaia 上限 21.5、orange-ATLAS 探测 18.52±0.143、cyan-ATLAS 上限 19.28、r-ZTF 17.66、g-ZTF 17.61，全部 ABMag）；④ Goodwin+2023（MNRAS 522,5084）表1/表2 射电 68 行＋§2.5 巡天 3σ 上限 3 行（RACS 0.88GHz 837 µJy@2020-10-16、VLASS 3GHz 342/327 µJy@2017-10-02/2020-09-06）；⑤ Goodwin+2025（ApJ 981,122）附录表射电 63 行；⑥ Mummery+2026（arXiv:2607.15438，尚未见正式发表版→cat-4）附录表射电 65 行（含第三耀发 2024-07→2025-12/2026-04）。射电行误差=统计±ISS 分列（flux_density_err=统计，ISS 值在 comment）；日期仅到日→mjd 取当日 UTC 中点、time_err=半宽 0.5 d（§3.8），唯 Goodwin+2023 §2.3 明示 MeerKAT 三历元日期为观测中点（2021 Aug 14.7/Dec 27.4、2022 Apr 25.0 UT）→取该中点、time_err=±0.05 d；Goodwin+2023 表1 日期列 2021-02-03/02-07 判笔误→取 2021-02-23/02-27（该文正文 On 2021 February 23 we first observed + follow-up on February 27 + 附录谱拟合历元表 2021-02-27 + ATel 14439 观测时刻 2021-02-23 13:03:02.0 UT + Alexander+2026 表1 首射电观测 2021 Feb 23，五处互证；ATel 14439 原报 552±5/493±6 µJy 系同一观测初报未另入库）。【测光检索留证（2026-11-14）】仓内：gcn/archive 45 947 篇全文检索 2020vwl/ZTF20achpcvt/Gaia20etp/ATLAS20bdgk 四变体 0 命中（坐标窄检索「15:30:37」命中 GCN 24900＝GRB 190627A NUTTelA-TAO 观测日志时间串、「153037」命中 GCN 22873/22874/22875＝GRB 180630A/180626C 触发号与 createdOn 时间戳 1530375511000，均巧合排除）；external/ 全部快照（rssgrbag/grbsn_webtool/uvot_grb 等）四变体＋宿主名 0 命中。外部：TNS 对象页 HTTP 200 实取（phot 6 行全部入库）；SciX API（token 实查）：「AT2020vwl」10 条、「AT 2020vwl」3 条、「ZTF20achpcvt」1 条、「Gaia20etp」1 条、「ATLAS20bdgk」0 条；SIMBAD 题录 47 篇逐篇溯源，44 篇 arXiv e-print 下载全文 grep（43 篇含本源名，Sfaradi+2024 AT2019azh 论文 0 命中）：射电两专文经 Unpaywall 定位 Leiden 机构库 Publisher's Version（VoR）下载逐值核对（Goodwin+2023 表1/2 68 行、Goodwin+2025 附录表 63 行与各自 arXiv TeX 逐值全等）；第三耀发 Mummery+2026 预印本表 65 行入库；其余 40 篇（Yao+2023、Lin+2022、Mummery+2024、Guolo+2024、Cendes+2024、Matsumoto+2021/2024、Sarin+2024、Stein+2024、Huang+2024、Dykaar+2024、Anumarlapudi+2024、Yao+2024、Ramsden+2025、Goodwin+2025b、Kramer+2025、Alexander+2026、Christy+2026、Shepherd+2026、Wu+2026、Zhuang+2025 等）均为样本表/拟合派生量/理论对比/致谢引用，无本源逐点测光不入 lc（各表本源行数值已记档于本 comment 与报告）；Yao+2023 表6「UV and Optical Photometry of 33 TDEs」机读版仅 IOP 在线可得——IOP VoR 页 Radware Bot Manager 拦截（2026-11-14 实测）、Leiden VoR PDF 仅含 15 行示例（AT2021mhg/uqv/yzv，无本源行）、VizieR 无 J/ApJ/955L/L6、Zenodo 无存档→本源行未取，audit/unverified.tsv 已登记（missing；本源光学/UV 已由 TDECat 编译+UVOT 覆盖）。结论：非零测光→补 9 255 行。【不入库清单】X 射线：TDECat AT2020vwl_xray_lightcurve.csv 36 历元（Swift/XRT 35＋XMM 1，src_flux 多为 0/上限/低显著）按 §3.3/§7 X 射线不入库；Hammerstein 分类报告自述 XRT 未探测（2021-01-07）；Guolo+2024（2024ApJ...966..160G）系统 X 射线分析含本源上限（X 射线不入库仅记档）。Anumarlapudi+2024（2024ApJ...974..241A）表 RACS/VAST 3σ 上限 2 行（δt=−361 d 0.7 mJy、+540 d 0.5 mJy @887.5 MHz）——δt 参考历元该文正文未明示（仅文件名 post_disc 暗示相对发现日），时间锚不确立→不入库（§3.3）。TDECat 编译表 ATLAS(H) 2 行（MJD 58594.49 17.263±0.372、58622.57 16.885±0.273）——H 滤光片 Langis+2026 论文与 TDECat README 均未定义（论文只述 ATLAS 两光学波段 c/o），band 两车道无落点→未入库待决（先例 PR #550 infra-Kp）。Goodwin+2025 表1 光变拟合参数、Goodwin+2023/2025 谱拟合/外流参数为派生量不入 lc（记档备查）。【口径与待决】TDECat 总流量含宿 vs TNS 报告差分口径并存不互删（§3.4，TNS 行 comment 附口径）；UVOT 已银消光（Gext_corr=y）与其余未改正行并存（Gext_corr 语义 2026-11-06 v2.40）；LINEAR/Gaia G mag_system 留空（原文未声明/内部定标）；SDSS/PTF 推定 AB 已写依据。无 A 档待决：身份/T0/z/各行出处均已确证。【pos_error】TNS/TDECat 只给坐标不给误差半径，来源未标注置信水平，pos_error/pos_error_confidence 保持 null；Goodwin+2023 射电位 15:30:37.80 +26:58:56.90（±0.02″，与光学位置一致）为对准证据非光学定位误差。【alias】+AT 2020vwl（TNS IAU 名/SIMBAD 主名，先例 AT2019esf（#1041）/AT2019mha（#1055））；无伪形。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "G-Gaia",
     "discovery_mag": "17.94",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-14"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://doi.org/10.1051/0004-6361/202554882"
+    },
+    {
+      "name": "Goodwin+2023",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "A radio-emitting outflow produced by the tidal disruption event AT2020vwl",
+      "url": "https://doi.org/10.1093/mnras/stad1258"
+    },
+    {
+      "name": "Goodwin+2025",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "A Second Radio Flare from the Tidal Disruption Event AT2020vwl: A Delayed Outflow Ejection?",
+      "url": "https://doi.org/10.3847/1538-4357/adb0b1"
+    },
+    {
+      "name": "Mummery+2026",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Triple radio flares from tidal disruption events: jet-wind collisions and the discovery of a third radio flare from AT2020vwl",
+      "url": "https://arxiv.org/abs/2607.15438"
+    },
+    {
+      "name": "Yao+2023",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Tidal Disruption Event Demographics with the Zwicky Transient Facility: Volumetric Rates, Luminosity Function, and Implications for the Local Black Hole Mass Function",
+      "url": "https://doi.org/10.3847/2041-8213/acf216"
+    },
+    {
+      "name": "Lin+2022",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The Luminosity Function of Tidal Disruption Flares for the ZTF-I Survey",
+      "url": "https://arxiv.org/abs/2210.14950"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 232.6575,
+    "dec": 26.982444,
+    "redshift": 0.0325,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "wise-w1",
+        "mag": 13.989,
+        "mag_err": 0.025,
+        "mag_sys": "Vega",
+        "source": "Goodwin+2023 §2.6（WISE W1）"
+      },
+      {
+        "band": "wise-w2",
+        "mag": 14.001,
+        "mag_err": 0.037,
+        "mag_sys": "Vega",
+        "source": "Goodwin+2023 §2.6（WISE W2）"
+      }
+    ],
+    "comment": "LEDA 1794348＝PGC 1794348＝SDSS J153037.80+265856.8（TNS 对象页 cross-match 注记；Gaia 发现报告 85032 remark「source at centre of galaxy LEDA 1794348」；Goodwin+2023 §2.6 宿主分析）；坐标取 SDSS 宿主名位（与瞬变体核位一致，TDE 核位置）；z=0.0325 spec（与瞬变体分类光谱同值，Goodwin+2023 §2.6 SDSS 预爆发谱 MJD 54180 quiescent 早型透镜状星系无 AGN 发射线；WISE W1−W2=−0.012±0.03 无 AGN/恒星形成迹象）；宿主派生量记 info comment（Yao+2023 表3/Ramsden+2025/Shepherd+2026）",
+    "source": "Goodwin+2023 §2.6（DOI 10.1093/mnras/stad1258）＋TNS 对象页 cross-match（2026-11-14 实抓）"
+  }
 }
