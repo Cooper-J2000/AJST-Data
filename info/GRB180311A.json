@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB180311A",
-  "alias": [],
-  "ra": 3.39027,
-  "dec": -54.49162,
-  "T0": "2018-03-11T18:03:49Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 813721"
+  ],
+  "ra": 3.38761,
+  "dec": -54.49145,
+  "T0": "2018-03-11T18:03:49.248040Z",
+  "T0_ref": "GCN 22468 整秒 18:03:49 UT + external/swift_bat（batgrbcat）Trig_time_UTC 亚秒 .248040",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
   "pos_ref": "GCN 22470",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份】GRB 180311A = Swift/BAT trigger 813721（GCN 22468）。本暴 GCN 通告共 6 篇（仓内 gcn/archive 全文逐篇核对）：GCN 22468（触发+XRT 初报+UVOT 初报，Page et al.）、22469（XRT prompt enhanced，Evans）、22470（XRT enhanced+UVOT 天体校准，Goad et al.）、22473（XRT 精细分析，Tohuvavohu et al.）、22474（BAT 精细分析，Stamatikos et al.）、22475（UVOT 上限，Marshall & Page）。GCN 24416 表中「GRB180311.07」（Fermi，2018-03-11 01:45:53 UT，(4h28m24s,-43°18′)）与本暴（18:03:49 UT，(00h13m33s,-54°29′)）为同一日期的不同事件，已排除；external/fermi_gbm 亦仅有 GRB180311074（01:45 UT）行，无本暴记录（本暴仅 Swift 单仪器触发）。\n【T0】T0=2018-03-11T18:03:49.248040Z：GCN 22468 整秒「At 18:03:49 UT ... triggered」+ external/swift_bat（batgrbcat 官方镜像）Trig_time_UTC 亚秒 .248040（整数秒一致，按 §3.8 多来源仅亚秒分歧以触发仪器目录为准）；bot 原 t0_basis=meta_trigger 只给整秒。全表 mjd 一律按 mjd = T0 + time 重算（7 位小数）。\n【定位】ra/dec=3.38761/-54.49145（GCN 22470，XRT-UVOT 天体校准位，1.7″，radius，90% containment，原文明示）。备查（全部并列留档）：XRT 初报 3.39027/-54.49162（3.7″，90%，GCN 22468）；XRT prompt enhanced 3.3872/-54.4914（2.1″，90%，GCN 22469）；仓内 swiftgrbba xrt 位 3.38771/-54.49144（1.5″）；仓内 swift_xrt_live 3.38772/-54.49139（2.1″）；BAT ground 3.379/-54.491（2.3′，sys+stat，90%，GCN 22474）；BAT 机载 3.433/-54.479（3′，90%，含系统误差，GCN 22468）；仓内 mpe_greiner 3.4333/-54.4833（±3′）。旧 info 系「XRT 初报坐标（GCN 22468）配 GCN 22470 的 1.7″ 误差」，坐标与误差取自不同通告、口径不配套，已归位 GCN 22470。\n【分类】tag=grb（Swift/BAT 触发确证）。sub_tag=lgrb：t90=23.04±8.71 s（15-350 keV，external/swift_bat 原值 err=8.712467）；GCN 22474 T90=23.0±8.7 s（15-350 keV，含系统误差，90% CL）——两来源一致且 >2 s，按目录 t90 判 lgrb/sgrb（§3.9）。\n【高能量量值（不入库，仅备查）】GCN 22474（BAT）：时间平均谱（T-0.2—T+26.6 s）幂律指数 1.78±0.29、fluence (15-150 keV) 3.3±0.7×10⁻⁷ erg/cm²、1 s 峰光子流 (15-150 keV) 0.6±0.2 ph/cm²/s（自 T+2.88 s，均 90% CL）；掩码加权光变「single-peaked，T0 起 ~T+3 s 峰值、~T+26 s 结束」、partial coding 94%。GCN 22468（BAT 机载）：光变复杂峰结构持续约 30 s、峰值计数率 ~1000 cts/s（15-350 keV）于触发后 ~4 s；NH_Gal=1.59×10²⁰ cm⁻²（Willingale+2013）。GCN 22473（XRT）：8.3 ks PC 数据（T+284 s—T+20.1 ks），光变 α1=3.1(+0.9,-0.6) 至 T+636 s 破折后 α=0.57(+0.10,-0.09)；谱（PC）光子指数 2.07(+0.20,-0.19)、NH_excess=5.5(+4.3,-3.7)×10²⁰ cm⁻²、NH_Gal=1.6×10²⁰；0.3-10 keV 计数-流量换算 3.1×10⁻¹¹（未吸收 3.6×10⁻¹¹）erg cm⁻² count⁻¹；外推 T+24 h 计数率 0.012 cts/s ⇒ 观测流量 3.6×10⁻¹³（未吸收 4.2×10⁻¹³）erg cm⁻² s⁻¹。仓内 swiftgrbba：xrt_11hr_flux=5.23×10⁻¹³、xrt_24hr_flux=3.27×10⁻¹³ erg cm⁻² s⁻¹（XRT 光变指数 -3.117）。\n【alias】「BAT 813721」＝external/swift_bat name_alt（GCN 22468 原文 trigger=813721）。\n【红移/宿主】无。6 篇 GCN 与 SciX 检索均未给红移；无宿主候选文献，host_galaxy 不建立（§3.10）。\n【X 射线】本源 lc 无 band 为能量串（eV–GeV）的行，无 §3.3/§3.8 的 X 射线 mjd 重算与去重事项。\n【逐行核对与去重】lc 9 行全部为 Swift/UVOT 上限（GCN 22468 white 典型上限 1 行 + GCN 22475 上限表 8 行）。逐行对照原文核对：全部 9 行的星等数值/上限标记/波段与原文一致；time 原系「观测窗口起点」（bot 通病，同 Issue #68/#84 族），已按 §3.8 统一改为窗口中点并补 time_err=半宽；GCN 22468 行无 T_stop，按「起点 279 s+半曝光 75 s」取 354 s。mag_system 原入库即 Vega：GCN 22475 行原文明示 UVOT photometric system（Breeveld et al. 2011）；GCN 22468 行原文未声明，按 UVOT 仪器惯例推定 Vega 并在该行 comment 写明依据（§3.3）。全部 9 行原文明示未做银消改正（E(B-V)=0.01）→ Gext_corr=n（录入值未改正）。telescope 补齐 Swift。去重（§3.4）：GCN 22468 white（典型上限 19.6）与 GCN 22475 white_fc（实测 >20.3，280–430 s）指向同一找星图曝光，但前者为触发通告的「typical/about」先验估计、后者为 UVOT 团队实测的初步 3σ 上限，非「同一次测量被多来源转引」的严格重复，按仓库「初报/精表两版并列」惯例（先例 GRB210308A 的 GCN 29619/29630）两行均保留、comment 互证；white_fc 与 white（280–6742 s 共加）为单次曝光与共加两版，非重复；其余 7 行为不同滤光片独立测量，无重复行。仓内 swiftgrbba 的 uvot_mag 字段（B>20.9; U>20.5; UVW1>20.2; UVM2>20.3; UVW2>20.5; White>21.2）系目录转引 GCN 22475，仅作交叉核验，不另入库。\n【band 口径】lc 9 行 band 已统一为 uvot-*（原导入 w 系 UVOT White 与 filters.json 中 Pan-STARRS w（5980.7 Å）撞名，按 Issue #384 统一批改为 uvot-white（3325.21 Å）；本 PR 保持该口径）。\n测光检索（2026-11-11）：仓内 gcn/archive 全文库（45947 篇）检索「180311A/813721」命中本暴通告 6 篇（22468/22469/22470/22473/22474/22475；另 GCN 39773 为 createdOn 时间戳误命中、GCN 24416 为 IceCube 事件，均排除），其中含光学/紫外数值 2 篇（22468 white 典型上限、22475 八滤光片上限），逐篇核对并全部入库——原 9 行数值/波段/上限标记均与原文一致，仅修正 time 口径（起点→中点）并补 time_err，净增 0 行；仓内 external/rssgrbag、grbsn_webtool、uvot_grb、swift_grb、konus_wind、heasarc_grbcat、saxgrbmgrb、agile_mcal、batse、fermi_lat、liang2023、wang2022、guidorzi2025、minaev2020（目录级快照）均无本源记录（uvot_grb 第二版目录未收录本暴；swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live 仅用于身份/T0/定位互证）；SciX（api.scixplorer.org，题录+全文，token 实测可用）检索「GRB 180311A / 180311A / GRB180311A / 813721」命中本暴研究论文 0 篇（仅上述同 6 篇 GCN；FRB180311 与 GRB180311.074 为无关事件已排除）；GCN 站 gcn.nasa.gov/circulars/22468 实测可访问但为 JS 渲染页（HTML 无正文文本），正文以仓内 gcn/archive 全文为准（该编号区间 22468–22475 内 22471/22472 系其他事件）。结论：本源全部已知测光为 Swift/UVOT 上限（触发后 354 s–7260 s），无地面光学/红外探测或上限、无射电/mm、无晚期测光报告，无红移。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
   },
   "articles": [],
   "host_galaxy": null
