@@ -38,3 +38,7 @@ time_sec / mag / mag_err / band / system / telescope / extcorr / source(GCN 号�
 ## 待决
 
 - 库内以 `Dainotti2024;NNNNN` 形式转引的存量行是否统一回改为最初出处（GCN/文献）并由各源审核时逐源处理——本卡建议维持「逐源审核时顺手处理」，不批改。
+
+## 合并并入的行（同批其它审核 PR）
+
+| GRB160623A | mag_files/160623A_mag.txt | 无（本卡即索引） | extracted（本暴 41 行转引行逐行回 GCN 原文核对：18 行确证同测重复删除（MITSuME 6/AZT-33IK 3/RATIR 6/TSHAO 1/SAO RAS 1/NOT 1）、2 行 UVOT 转引回改出处 GCN19568；2026-11-10 Rusty-Harpoon@zcode） | 转引型；**该暴目录 time 列=各 GCN 自报 T0+[day]×86400、历元多为 GBM trigger 05:00:34.23**（MITSuME GCN 19572 的 day 列亦然），与库旧 T0（Konus 04:59:37.594）混用即差 56.6 s——本 PR 已按 §3.8① 改锚 GBM trigger、删重留 GCN 原发行；UVOT GCN 19568 的 T_start/T_stop 亦为 GBM/LAT trigger 相对时长 |
