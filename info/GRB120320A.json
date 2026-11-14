@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB120320A",
-  "alias": [],
-  "ra": 212.517,
-  "dec": 8.682,
-  "T0": "2012-03-20T11:56:15Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 518200"
+  ],
+  "ra": 212.51794,
+  "dec": 8.69646,
+  "T0": "2012-03-20T11:56:15.603640Z",
+  "T0_ref": "GCN 13071 整秒（11:56:15 UT，trigger=518200）+ external/swift_bat（batgrbcat 官方目录）亚秒 .603640；仓内 external/swift_grb 目录同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +18,26 @@
   "pos_ref": "GCN 13075",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份与通告：GRB 120320A = Swift/BAT trigger 518200（GCN 13071 原文）。仓内 gcn/archive 全文检索「120320A」命中 14 篇本暴通告（13071/13072/13075/13077/13078/13079/13080/13081/13082/13083/13086/13087/13198/13199），另以触发号 518200 复查（命中均为 createdOn 时间戳/他暴文本子串误命中，逐篇核实 9 篇均为无关暂现源，无额外通告）；无 Fermi/Konus 探测通告。Fermi/GBM、Konus-Wind 均未报告探测。\nT0：GCN 13071「At 11:56:15 UT」为整秒；亚秒按 §3.8①②取触发仪器官方目录 external/swift_bat（batgrbcat 镜像）Trig_time_UTC=2012-03-20T11:56:15.603640Z。互证：GCN 13071「XRT began observing at 11:59:07.3 UT, 171.7 seconds after the BAT trigger」=11:56:15.6+171.7 s，含亚秒自洽。维护者注意：本源 13 行 X 射线行（band=10keV）的 mjd 需随 T0 亚秒化按 mjd=T0_new+time 机械重算（2026-10-31 裁定；time 与其余列不动，行数行序不变）。\n定位：采 XRT enhanced 位 ra/dec=212.51794/+8.69646（pos_error=2.2″，原文明示 90% confidence，GCN 13075）。旧值问题：原 ra/dec=212.517/+8.682 实为 BAT ground 定位（GCN 13078，误差 1.6′）却配 2.2″ 的 XRT 误差、pos_ref=GCN 13075——坐标与误差取自两个不同通告、口径不配套，已归位。备查（全部列入以免再混）：BAT 机载 212.538/+8.685（3′, 90%, GCN 13071）；BAT ground 212.517/+8.682（1.6′, 90%, sys+stat, GCN 13078）；XRT 初报 212.5177/+8.6969（2.8″, 90%, GCN 13071）；Gemini 光学候选源 212.51783/+8.69661（约 0.5″, GCN 13077）；仓内 external/swiftgrbba xrt 位 212.51758/+8.69644（1.7″）、external/swift_grb 同位、external/mpe_greiner 212.5375/+8.6833（3′, Instrument=Swift, XA=y, OT=?）。\n分类与高能量（§3.9，不参与判定仅备查）：sub_tag=lgrb——按来源表 t90 判 lgrb/sgrb：T90=25.74±3.55 s（15-350 keV, GCN 13078）；仓内 external/swiftgrbba t90=25.74（15-150 keV）、external/swift_bat(batgrbcat) t90=24.976±3.545 s、external/swift_grb t90=26.18 s，均 >2 s 且一致。另：Epeak=62.8±23.4 keV、fluence(15-150 keV)=5.9±1.6×10⁻⁷ erg/cm²、1 s 峰流 0.5±0.2 ph/cm²/s（GCN 13078；batgrbcat fluence=6.159×10⁻⁷ erg/cm², 15-150 keV）；XRT 衰减指数 α=0.36(+0.13,−0.15)、光子谱指数 2.0(+0.5,−0.4)、NH=1.7(+1.4,−1.1)×10²¹ cm⁻²（GCN 13079）；BAT 光变约 40 s、峰值 ~500 counts/s（GCN 13071）。\n红移与宿主：无光谱红移（14 篇通告与 SciX 检索文献均未给 z；仓内 Swift-BAT 红移表无本暴）。GCN 13087 报 XRT 位以东约 14″ 有 SDSS 星系 J141005.65+084149.2（测光 z=0.34±0.167）——仅为候选宿主（未定论、与 Gemini 探测源 i~25.7 为不同天体），按 §3.10 不建立 host_galaxy、不设 redshift，记此备查。\n别名：BAT 518200（GCN 13071 原文 trigger=518200；仓内 external/swift_bat name_alt「BAT 518200」、external/swift_grb name_alt「Swift 518200」）。无伪形。\nX 射线：13 行 band=10keV 行不改、不删、不新增、不参与去重（§3.3/§7）；唯一事项为 T0 改正后其 mjd 需机械重算（见 T0 段）。Swift/XRT 数据另见 GCN 13071/13075/13079 与仓内 UKSSDC Burst Analyser 导入。\n逐行核对与去重（§3.3/§3.4）：22 行非 X 射线行（uvot-white×3、UVOT 六色×6、地面光学×13）全部逐值对照通告原文核对，数值/单位/波段/上限标记均与原文一致；普遍问题为 bot 把观测起点当曝光中点（Issue #68/#84 族），已按 §3.2/§3.8 统一改为曝光/窗口中点并补 time_err（GCN 13083 按表 T_start/T_stop 中点、GCN 13077 按窗口、GCN 13082 按 MID-UT、GCN 13199 按窗口、GCN 13198 按表列 t-t0(mid)）；UVOT 9 行星等系统按 GCN 13083 原文明示「UVOT photometric system (Breeveld+2011)」记 Vega；GCN 13071 white「典型 3σ 上限约 19.6」与 GCN 13083 White_FC「>20.9」为同一张找星图的触发通告初报与 UVOT 精表两版（起点 174/175 s、曝光 150/147 s），按仓库两版并列惯例均保留、行内 comment 互证；其余各行均为不同仪器/台站的独立测量，无同次测量多来源转引，无删行、无 discard。仓内 external/swiftgrbba 的 uvot_mag 字段（B>20.4; U>20.6; UVW1>20.4; UVM2>20.4; UVW2>20.9; White>22.1）系目录转引 GCN 13083，仅作交叉核验、不另入库。\n测光检索（2026-11-11，§3.3 四要素）：仓内 gcn/archive 全文库（45947 篇）检索「120320A」命中 14 篇本暴通告（含光学/紫外数值 10 篇：13071/13072/13077/13080/13081/13082/13083/13087/13198/13199；射电数据来自研究论文，见下），逐篇核对并全部入库——净增 4 行（GCN 13072 MASTER-II 无滤光片 5σ 上限 15.4、GCN 13087 Zadko r 上限 20.7、Anderson+2018 AMI 15.7 GHz 两行：疑似 4σ 源 0.38±0.09 mJy/beam 与 4σ 上限 0.36）；GCN 13086 为历史底片巡天（1982–1991 年 plates，仅给历史极限星等、无触发后时间锚点）不入库；external/rssgrbag、external/grbsn_webtool、external/uvot_grb、guidorzi2025、wang2022、liang2023、minaev2020 无本源记录（uvot_grb 第二版目录未收录本暴；swift_bat/swift_grb/swiftgrbba/mpe_greiner/heasarc_grbcat 仅用于身份/T0/定位互证）；SciX（api.scixplorer.org，题录+全文，token 实测可用）命中本暴研究论文 4 篇：Anderson+2018（2018MNRAS.473.1512A，AMI 15.7 GHz 目录，已入库 2 行，VoR 未取得见 audit/unverified.tsv）、2024PASJ...76..841S（纯 X 射线 FRB 特征检索，无测光）、2015ApJ...806...15Z（本暴在其样本排除条目中「possible late time flares or late time shallow decay phases」，无数值）、2014arXiv1401.1601Y（X 射线 plateau 样本，仅提及）；另 Volnova+2021（An. Acad. Bras. Cienc. 93, e20200883，DOI 10.1590/0001-3765202120200883，复查经 Crossref→SciELO 实取全文）表 II 本暴行「>16.7(B) 12.6 min」经其表 I 核实为 GCN 13198 ORI-25 首历元的二次转述，非独立新测、不新增行——后三篇无测光可入库；GCN 站通道实测可访问但为 JS 渲染页（正文以仓内 archive 为准，13071–13200 编号区间无缺篇）。结论：光学/紫外测光覆盖触发后 171 s（MASTER-II 上限）至 6.8 h（Zadko r>20.7），地面与 UVOT 上限均为非探测（仅 Gemini i/z 有一可能为余辉或宿主的 25.7/25.3 探测）；射电 15.7 GHz 覆盖 0.6–15.6 d（AMI）；无晚期光学测光报告、无射电/mm 其他频段、无红移。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
+  "articles": [
+    {
+      "name": "Anderson+2018",
+      "url": "https://doi.org/10.1093/mnras/stx2407",
+      "title": "The Arcminute Microkelvin Imager catalogue of gamma-ray burst afterglows at 15.7 GHz",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
