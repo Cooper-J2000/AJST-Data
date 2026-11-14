@@ -109,4 +109,3 @@ GRB050416 行（SWIFT、z=0.6535）对应库内 GRB050416A。
 
 1. 表 2 'Site' 列（c=La Silla/智利、s=另一站？原文未在表内明说，正文有说明）未逐行转录，接手者读原文自核。
 2. 各行 mag 均为 TAROT unfiltered 定标（USNO-B1/A2.0 R 系），接手者按 §3.3 自行判断 band 与 mag_system。
-
