@@ -1,27 +1,29 @@
 {
   "transient_id": "GRB240218A",
-  "alias": [],
-  "ra": 161.79683,
-  "dec": 1.27633,
-  "T0": "2024-02-18T02:00:21.720000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Konus-Wind",
+  "alias": [
+    "BAT 1215912"
+  ],
+  "ra": 161.79682,
+  "dec": 1.27634,
+  "T0": "2024-02-18T02:00:00.666060Z",
+  "T0_ref": "GCN 35742 原文 'At 02:00:00 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240218A (trigger=1215912)'；Swift/BAT 官方目录 Trig_time_UTC=2024-02-18T02:00:00.666060（external/swift_bat 快照 2026-07-21，summary_general.txt 行 GRB240218A）；VoR Brivio+2025 (A&A 695, A239) 全文以 t0=02:00:00 UT 为历元；Konus GCN 35758 自身写 'T0 = T0(BAT) = 02:00:00 UT'",
+  "T0_offset": -19.224,
+  "T0_offset_ref": "Swift/BAT 官方目录 summary_burst_durations.txt T100_start=-19.224 s（external/swift_bat 快照 2026-07-21；爆发辐射早于 BAT 自动触发 ≥19.2 s，先例 GRB230123A/GRB231129A 等同款取法）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 6.782,
   "tag": [
     "grb"
   ],
   "pos_error": 4.2,
   "pos_ref": "GCN 35748",
-  "redshift_type": null,
-  "redshift_ref": "catalog:guidorzi2025; GCN 35758",
-  "comment": "catalog-only: Guidorzi+2024 variability-luminosity sample (A&A 690, A261)",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 35756 (VLT/X-shooter 吸收谱 z=6.782)；Saccardi+2026 (A&A 710, A363, VoR)",
+  "comment": "T0 改判（旧值 2024-02-18T02:00:21.720000Z 实为 Fermi/GBM 触发时刻：GCN 35755 原文 'At 02:00:21.72 UT on 18 February 2024'，trigger 729914426/240218084，且 Trigger_Instrument 原记 Konus-Wind 与该值不符）：按提示词 §3.2 '多触发仪器矛盾有 Swift 则以 Swift 为准' 改为 BAT 触发时刻，新旧 T0 差 21.053940 s。定位改判：原 ra/dec=161.79683/1.27633 来自 swiftgrbba 快照 xrt_ra/xrt_dec，现取 GCN 35748 Enhanced Swift-XRT position 原文 161.79682, +1.27634（4.2 arcsec, radius, 90% confidence），pos_error_confidence=90。alias 新增 'BAT 1215912'（Swift/BAT 官方目录 name_alt/Trig_ID，external/swift_bat 快照）。sub_tag=lgrb 判据：BAT 目录 t90=258.032±26.735 s（15-350 keV，external/swift_bat 快照）与 GCN 35761 t90=66.93±11.28 s（15-350 keV）并列，均 ≫2 s，VoR Brivio+2025 亦定性 LGRB，按目录 t90 判 lgrb。红移 z=6.782 为 VLT/X-shooter 吸收谱红移（GCN 35756 原文 'we infer a redshift of z = 6.782'），redshift_type=spec；VoR Saccardi+2026 详述谱分析。测光检索（2026-11-08）：仓内 gcn/archive 不存在（SCHEMA 规定不入库）、external/rssgrbag lightcurve.jsonl 0 命中、external/grbsn_webtool/SourceData 无此事件、external/konus_wind 与 external/uvot_grb 快照 0 命中；external/swift_bat 22 个表文件、swiftgrbba、fermi_gbm、guidorzi2025（table1/table3/normalized）、mpe_greiner、swift_xrt_live 各有参数级记录（无测光表）；GCN 站内检索 \"240218A\" 命中 18 篇（35742-35878），其中未入库测光通告 4 篇（GCN 35744 OHP r>23、GCN 35765 MeerLICHT u/g/q/r/i/z 上限、GCN 35794 VLA 9.8GHz ~280μJy、GCN 35843 NOEMA 74/90GHz <65μJy）已核原文补入 lc；文献侧 OpenAlex 摘要级检索 'GRB 240218A' 命中 3 篇 + 引用闭包 6 篇（无 ADS token，走 Crossref/arXiv/OpenAlex 回退链；SIMBAD 两主机 SSL 失败记 unavailable@2026-11-08）；核查反馈后补查 OpenAlex 全文短语检索 \"GRB 240218A\" 命中 9 条，新增第 5 篇已发表文献 Schmitt+2024（A&A 687, A198）并实核 VoR（其余 3 条为不同事件比较性提及：SVOM 250314A、GRB 250114A、EP240315a），已发表文章 5 篇全部取得原文：Brivio+2025 VoR PDF（A&A 695 A239，表 A.1 光学/NIR 45 行 + 表 2 射电 14 行全量抄录，并按 VoR 取舍取代 GCN 35747/35743/35749/35762/35866 初报行）、Guidorzi+2024 CDS 机读表 J/A+A/690/A261/table1（核 params variability=0.222±0.021 与 logLiso=53.468，Det=BAT）、Saccardi+2026 VoR（A&A 710, A363，经 UvA-DARE 存档取 Final published version；光谱文，无新测光）、Ren+2026 arXiv 2510.22891（拟合文，用 Swift/Brivio 数据，无新测光；IOP VoR 被 Radware 挡，probe 302 留痕）、Schmitt+2024 VoR（A&A 687, A198，MISTRAL 仪器文；§4 prose 'The only (Swift) night-time trigger so far was GRB 240218A, which we were able to observe 30 min after the alert'，表 6 行 '240218A | imaging | blue | 3600 | No | r≥23.0 | 0.5 | Adami et al. (in press)=GCN 35744'，同测量佐证、未提供新数值或口径，裁定不入 articles[] 留痕）。新增 70 行（VoR 表 A.1 光学/NIR 45 行 + 表 2 射电 14 行 + GCN 独有补录 11 行：MeerLICHT 单帧 6 + q 合并 1、OHP/T193 MISTRAL r>23（GCN 35744）1、VLA 9.8GHz（GCN 35794）1、NOEMA 74/90GHz（GCN 35843）2），保留并修正 3 行（UVOT/CMO/ALMA），按 VoR 取舍删除 7 行初报行（净增 63 行，现共 73 行），X 射线 Chandra 探测（GCN 35877）不入库暂不处理。原导入记录：catalog-only: Guidorzi+2024 variability-luminosity sample (A&A 690, A261)。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "lp_iso": {
@@ -38,7 +40,12 @@
         "v": 0.222
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-08"
+    }
   },
   "articles": [
     {
