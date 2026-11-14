@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB201229A",
-  "alias": [],
-  "ra": 210.68921,
-  "dec": 48.19828,
+  "alias": [
+    "GRB 201229A"
+  ],
+  "ra": 210.68844,
+  "dec": 48.19775,
   "T0": "2020-12-29T10:59:30.947160Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 29192（Swift/BAT 触发 2020-12-29 10:59:30 UT，整秒）；亚秒 .947160 取自 Swift/BAT 官方目录快照（external/swift_bat/summary_general_info/summary_general.txt，trigger 1015088，UTC 2020-12-29T10:59:30.947160），按 §3.2 触发仪器亚秒优先",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
-  "pos_ref": "GCN 29193",
+  "pos_ref": "GCN 29193（XRT 星表平差位置，1.7 arcsec，90%）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-09）。身份：Swift/BAT 触发 1015088（GCN 29192 原文 trigger=1015088，GCN 29199/29200 互证）；GCN 29194/29195/29197 的 GRB 201229B 为 Fermi/GBM 同日另一独立事件（RA 340.4, Dec −52.0）、GCN 29281 属 GRB 201227A，均与本源无关未合并。T0：亚秒 .947160 与 Swift/BAT 官方目录逐位一致（见 T0_ref）；GCN 29192 整秒 10:59:30 UT 互证。位置：本库取 GCN 29193 XRT 星表平差位置 210.68844/+48.19775（1.7″，radius，90% confidence，原文标注）；原导入坐标 210.68921/+48.19828 为 GCN 29192 UVOT FC 位（0.62″，90%）而 pos_error/pos_ref 记 GCN 29193，坐标与误差来源不一致，本次统一为 GCN 29193；位置备查：BAT 在轨 210.708/+48.197（3′，90%，GCN 29192）、BAT 地面 210.692/48.209（2.6′，90%，GCN 29199）、UVOT FC 210.68921/48.19828（0.62″，90%，GCN 29192）、UVOT 精化 210.68916/48.19814（0.44″，90%，GCN 29213）。sub_tag=lgrb：t90=53.248±4.613 s（Swift/BAT 官方目录 batgrbproduct，15-350 keV；GCN 29199 给 53.3±4.6 s 一致），按目录 t90 判 lgrb。测光检索（2026-11-09）：仓内 gcn/archive 全文命中 12 篇（本源 8 篇：29192/29193/29199/29200/29203/29204/29205/29213；GRB 201229B 3 篇、GRB 201227A 1 篇为同名邻源），触发号 1015088 与 UVOT 坐标兜底检索无新增；external/rssgrbag、grbsn_webtool、uvot_grb 快照均无本源记录；GCN 站 29213 原文与仓内存档逐字一致；SciX 三查询（「GRB 201229A」「GRB201229A」「201229A」）共命中 8 篇且全部为上述 GCN、无研究论文；arXiv 全文 0 命中；TNS 不适用（无 AT/SN 命名）。结论：本源测光全部来自 GCN 29192/29203/29204/29205/29213 五份通告，已全量入库（29192 fc 初测 18.19±0.14 按 GCN 29213 精化值 18.22±0.05 改写，初值与链条留 lc 行 comment）；本次新增 14 行（GCN 29213：检出 9 + 3σ 上限 5）、修订 5 行（起点改中点/精化值改写/time_err/mjd）；redshift 无文献值留空；GCN 29200 有 X 射线精化分析，本源 lc 无 X 射线行、暂不处理。bot 原 t0_note（「t0 为 meta trigger-time（真实触发时刻）」）留底于 extra_data.t0_note 末句（§3.10）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "T0 已核验（2026-11-09）：Swift/BAT 官方目录快照 external/swift_bat/summary_general_info/summary_general.txt（trigger 1015088）UTC 触发时刻 2020-12-29T10:59:30.947160，与原值逐位一致；GCN 29192 整秒 10:59:30 UT 互证。原 bot 注记：t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [],
   "host_galaxy": null
