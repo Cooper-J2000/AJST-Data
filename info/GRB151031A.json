@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB151031A",
-  "alias": [],
-  "ra": 83.2,
-  "dec": -39.083333,
-  "T0": "2015-10-31T05:50:30Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 151031A",
+    "BAT 662330"
+  ],
+  "ra": 83.19596,
+  "dec": -39.12134,
+  "T0": "2015-10-31T05:50:30.348300Z",
+  "T0_ref": "external/swift_bat 快照 summary_general.txt Trig_time_UTC=2015-10-31T05:50:30.348300（BAT 触发 662330）；GCN 18538 原文『At 05:50:30 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 151031A (trigger=662330)』整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +17,14 @@
   ],
   "pos_error": 2.2,
   "pos_ref": "GCN 18541",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 18540",
-  "comment": null,
+  "comment": "身份与 T0 核验（2026-11-13，fsy@zcode）：GRB151031A=Swift/BAT 触发 662330（GCN 18538 原文『At 05:50:30 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 151031A (trigger=662330)』）；external/swift_bat 快照 summary_general.txt Trig_time_UTC=2015-10-31T05:50:30.348300、swiftgrbba 快照 05:50:30.000Z，与 GCN 整秒一致，按 §3.2/§3.8 取触发仪器亚秒值 T0=2015-10-31T05:50:30.348300Z（原库 05:50:30Z 整秒一致，仅按目录补亚秒精度，非锚点改错，无 T0_offset）。快照 MET 列 467963445.696 与 UTC 列有缓漂（MET 直换算得 05:50:41.70，UKSSDC 产品头同），按 lane 规则以 UTC 列为准；GCN 18538 内部自洽（XRT 05:57:43.9 UT 起测=触发后 433.6 s，与 05:50:30 口径吻合）。T0 改动后全表非 X 射线行 mjd 按 mjd=T0+time 重算（9 位小数）；X 射线行（band=10keV，23 行）原样保留，其 mjd 由维护者按 §3.3 例外机械重算（mjd=T0_new+time，当前差 0.348 s<1 s 容差）。定位：原库 ra=83.2/dec=-39.083333（=external/mpe_greiner 快照 BAT 星载位 05h32m48s -39°05'，3′ 误差级）与 pos_ref=GCN 18541（XRT 增强位）混串，改判 XRT 增强位 ra=83.19596/dec=-39.12134（GCN 18541 原文『RA, Dec = 83.19596, -39.12134』『uncertainty of 2.2 arcsec (radius, 90% confidence)』），pos_error=2.2″ 不变、pos_error_confidence=90（从原文）；swift_xrt_live 快照 83.19593/-39.12185（2.1″）、GCN 18538 XRT 初位 83.19532/-39.12049（4.1″）、BAT 地面位 83.189/-39.125（1.3′，GCN 18542）备查；旧坐标下后端算得的 Gext_* 派生列保持原样（引擎按新坐标重算覆盖）。红移：z=1.167（GCN 18540 原文『at a common redshift of z = 1.167』+『[O ii] at a consistent redshift』，VLT/X-shooter 光谱，Ca II/Mg I/Mg II/Fe II 吸收+[O II] 发射），补 redshift_type=spec；redshift_ref=GCN 18540 不变（swift_bat 快照 z_ref 同指 Malesani GCN 18540）。分类：sub_tag=lgrb 依据目录 t90=5.00±2.24 s（GCN 18542 原文『T90 (15-350 keV) is 5.00 +- 2.24 sec』；external/swift_bat t90=5.0±2.236068、swiftgrbba 5.0，15-350/15-150 keV），按目录 t90 判 lgrb（>2 s）；Dereli+2017（ApJ 850,117）表 1 同载 T90=5.0 s；静止系 t90≈2.31 s 备查；stag1592（Fermi/GBM 13 年目录）仅列其为『BAT-only 不在 GBM 目录』21 暴之一，无短暴分类主张，不构成来源冲突。alias：新增『GRB 151031A』（GCN 18538/18540/18541/18542/18544/18546/18547/18550/18551 九篇通告标题原文用名）与『BAT 662330』（external/swift_bat name_alt；GCN 18538 原文 trigger=662330）。测光修正（逐行证据见 lc 行 comment）：① MITSuME 两行集 6 行（GCN 18547 Okayama >18.6/>18.9/>18.5、GCN 18551 Akeno >18.8/>18.9/>18.3，均 3σ 上限）upperlimit=y 原库已对，补 time_err=T-EXP/2（3000/2220 s），mag_system 原写 Vega 无原文依据（原文仅言 GSC2.3 定标、未声明系统，Dainotti 编目 system 列记 GSC）→ 留空注明；② GROND：GCN 18550 直引行 7 行（原 time=89490=起点 06:42 UT、time_err 空）按原文『total exposures of 33 minutes in g'r'i'z' and 72 minutes in JHK』改中点=起点+总曝光/2（g/r/i/z→T0+90480 s±990 s、J/H/K→T0+91650 s±2160 s），补 telescope=MPG-ESO(2.2m)；Dainotti2024;18550 行 7 行（time=93006 s）与 GCN 18550 数值逐字一致（含 K>19.8 上限与 AB 系统），确证为同一测量转引，按 §3.4 删除、保留最初来源行，其时间锚 93006 s 无法从 GCN 复算（Dainotti 自算值），留档备查；③ GCN 18546 UVOT 四行 time 原导入 733.0/4057.0/4172.0/4430.0 与通告窗口中点 729.5/4053.5/4168.5/4426.0 差 +3.5~+4 s（导入偏差），按通告 T_start/T_stop 改中点并补 time_err=窗口半宽，mag_system 补 Vega（通告原文『using the UVOT photometric system (Breeveld et al. 2011)』）；④ UVOT 地面分析行 24 行（swift_gnd_ana）time/mag/err 逐值核对 UKSSDC 产品 uproduct_lc.txt 一致（upperlimit 标记原库已对：white 全探测、v/b/u 按 产品 UL(2σ) 列），time_err 0→bin 半宽；⑤ 补入漏导的 UVOT uvw1/uvw2/uvm2 三组 16 行（原导入仅 white/v/u/b 四组），含 3 个探测（uvw1 19.56±0.53@882.8 s、uvw2 21.69±0.54@24571.1 s、uvm2 20.79±0.34@36159.2 s）与 13 个 2σ 上限，出处 https://gcn.gsfc.nasa.gov/notices_s/662330/UVOT/uproduct_lc.txt；X-SHOOTER R=20.4±0.1@1128 s（GCN 18540 逐字）mag_system 原写 Vega 无依据（原文 USNO 恒星定标、未声明系统）→ 留空注明。检索留证（2026-11-13）：GCN 事件页共 9 篇全文逐字核对（18538/18540/18541/18542/18544/18546/18547/18550/18551），全部含光学数值/上限的通告已入库（18538/18541/18542/18544 无光学测光值）；编号空洞 18543/18545/18548/18549 属邻暴（151027B/151030A/LIGO G194575），无 GRB151031B；仓内快照 rssgrbag/grbsn_webtool/konus_wind/heasarc_grbcat/uvot_grb 均 0 命中；文献侧（冻结清单 15 条，_conv/lit-GRB151031A/manifest.jsonl）：Dainotti+2024（MNRAS 533,4023 VoR，数据经其 grbLC 仓库数据文件+UKSSDC 原始产品双路核对）、Dereli+2017（ApJ 850,117 VoR 全文经 web reader 核对：仅余辉拟合参数无测光）、Selsing+2019 XS-GRB（A&A 623,A92：仅光谱，附录 B.104）、Wang+2020（ApJ 893,77：引 GCN 18540/18542 的样本汇编）及其余 9 篇命中文献经 arXiv/PDF 程序化 grep 留痕（pdftotext+151031 计数与上下文存档 _conv/lit-GRB151031A/txt/）均为 mention-only（无测光表）→ 无新增可入库文献；本次净变化：+16 行（UVOT uvw1/uvw2/uvm2）、-7 行（GROND 转引）、45 行修正（time_err/time/mag_system/mjd）。articles[] 将 Dainotti+2024 更新为 MNRAS VoR（Crossref 10.1093/mnras/stae1484）。宿主：X-shooter 谱中 z=1.167 处探测到宿主星系发射线（Selsing+2019 附录 B.104 原文『nebular emission lines from [O ii], H, and [O iii]』，光谱确认宿主），但无独立宿主坐标/测光 → host_galaxy 不建立。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,15 +50,20 @@
         "v": 2.3073373327180438
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-13"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2024},\n       volume = {533},\n       pages = {4023-4043},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     }
   ],
   "host_galaxy": null
