@@ -1,26 +1,37 @@
 {
   "transient_id": "GRB050128",
-  "alias": [],
-  "ra": 219.587,
-  "dec": -34.765,
-  "T0": "2005-01-28T04:19:55Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 050128",
+    "BAT 103906"
+  ],
+  "ra": 219.57385,
+  "dec": -34.76537,
+  "T0": "2005-01-28T04:19:55.191240Z",
+  "T0_ref": "Swift/BAT 触发仪器官方目录 batgrbcat（trigger 103906，trigger_time=2005-01-28T04:19:55.191240Z，external/swift_bat 快照；external/swift_grb 快照同值；swiftgrbba 04:19:55.000、uvot_grb 04:19:55 为舍入）；GCN 2992 快报值 04:19:54 UT 与目录整数秒差 1.19 s，弃用（见 comment）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": null,
+  "redshift": 5.5,
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 2992",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "pos_error": 2.1,
+  "pos_ref": "swift_xrt_live（Swift-XRT GRB Catalogue 在线版，Evans+2009 MNRAS 397, 1177；external/swift_xrt_live 快照 2026-07-21）",
+  "redshift_type": "upperlimit",
+  "redshift_ref": "Perley+2016 (ApJ 817, 7; arXiv:1504.02482) SHOALS Table 4, z<5.5 (origin=host)",
+  "comment": "【导入记录留底】由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)；原 bot T0=2005-01-28T04:19:55Z（整秒，114 个 X 射线行 mjd 即按此换算，实测残差 0 s），仅精度不足，非锚定错误。\n【身份】GRB050128 = Swift/BAT trigger 103906（batgrbcat name_alt「BAT 103906」；swiftgrbba/swift_grb target_id 同号）。swift_bat 快照 2005-01-28 当日仅此一次触发、mpe_greiner 当日唯一条目、info/ 无孪生条目、audit/denied.tsv 无记录。GCN 2992（BAT 团队官方触发通告）「At 04:19:54 UT, the Swift Burst Alert Telescope (BAT) triggered and located on-board GRB050128」；GCN 2991（XRT 团队）04:23:51 UT 起测到快速衰减点源（余辉证认，8″ 位）；GCN 2998/2999/3001/3004/3011 后随观测均锚定同一位（Campana+2005 ApJ 625, L23 为 XRT 早期余辉专文，X 射线量不入库）。撞名排除：GCN 3077（GRB 050306 UVOT）正文「observations of GRB050128 (GCN 3071)」系原文笔误——GCN 3071/3072 均为 050306 通告，UVOT Feb 7 14:58:53 UT 起测与「35–41 h after the trigger」只与 050306 触发（GCN 3071，Feb 6 03:33:12 UT）相容，其 V>21.2 属 GRB 050306，不入本源。\n【T0】2005-01-28T04:19:55.191240Z = 触发仪器官方目录 batgrbcat trigger_time（swift_grb 同值；swiftgrbba/uvot_grb 整秒一致）；GCN 2992 快报值 04:19:54 UT 整数秒差 1.19 s；GCN 2991 正文另有第三时间值 04:20:04 UT（XRT 团队转述 BAT 星上触发时刻），一并备查（≥60 ms，PR 报告）：与 batgrbcat MET=128578794.560 的朴素换算 04:19:54.56 相合，系未做时钟改正的实时快报值，目录值精化且晚于 Circular，从目录（§3.8②、§4 目录晚于 Circular 条）。heasarc_grbcat 快照 00:19:54.000 为 4 小时级错误（快报秒值 54 的衍生，同 GRB041223 先例），弃用。T0_offset：无 >1 s 偏移证据，不写。改 T0 后 9 个非 X 射线行 mjd 已按 mjd=T0+time 重算；114 个 X 射线行 mjd 系按旧整秒 T0 换算，需维护者按 mjd=T0_new+time 机械重算（每行 +0.191240 s，见 PR 说明）。\n【定位】ra=219.57385, dec=-34.76537, pos_error=2.1″（swift_xrt_live，docs.html 明示全表 90% 置信水平；Evans+2009）。备查并列：GCN 2991 XRT 地面位 14:38:17.87 -34:45:56.6（8″，boresight 系统差主导，未标置信水平）；swiftgrbba/uvot_grb SGA 位 219.57358 -34.76519（1.7″）；Perley+2016 表 4 最佳余辉位 14:38:17.68 -34:45:55.4（1.70″，2MASS 天测系统，ref=Evans+2009）；BAT 精化图像位 219.5844 -34.76232（1.107′，batgrbcat）；BAT 星上位 219.587 -34.762（3′，3σ 含系统差，GCN 2992）。原库 ra=219.587/dec=-34.765/pos_error=180″ 系 BAT 星上位 RA 与 XRT 位 Dec（截断）的混合错误，已整体更正。\n【分类】sub_tag=lgrb：t90=28.0±9.055 s（Swift/BAT 目录 batgrbcat，15-350 keV），按目录 t90 判 lgrb；并列：GCN 2992 13.8 s、swiftgrbba 19.2 s（15-150 keV）、uvot_grb 19.2 s、heasarc_grbcat 13.8 s——均远大于 2 s，分类无冲突。t50=8.0±1.0 s（batgrbcat，15-350 keV）；fluence：batgrbcat 5.210±0.228e-6 erg/cm²（15-150 keV，90%）、swift_grb 5.11±0.24e-6（Sakamoto+2011 口径，Perley+2016 表 4 S_BAT=51 同源）、swiftgrbba 5.02±0.23e-6、GCN 2992 快报 4.5e-6（15-350 keV）；peak_flux=7.42±0.73 ph/cm²/s（1 s，15-150 keV，swiftgrbba，90%）。\n【红移】redshift=5.5、type=upperlimit：Perley+2016（SHOALS，ApJ 817, 7）表 4 给 z<5.5（origin=host；正文 「The detection in this band indicates z≲5.5」）——VLT/FORS-1 R 波段深合成像（2005-05-11 UT，3080 s，prog 075.A-0718(A)）在 XRT 误差圆内 securely detect a host galaxy candidate，R=24.84±0.10（Vega，表 5，未做前景消光改正）。该天体文献自称 candidate/putative、无红移证认 → 按 §3.10 候选宿主条款 host_galaxy 不建立，量值记本段备查；mpe_greiner 表 z<5.5 即源于此文（详情页链接 arXiv:1504.02482）。无光谱红移；GCN 7 篇均未报 z。取值版本：VoR（IOP）整站反爬（Radware Captcha）、CDS/VizieR 连接失败 → 取 arXiv:1504.02482（ar5iv HTML 全文），已登记 audit/unverified.tsv（substituted）。三方交叉，未通读 VoR（arXiv 全文逐值 × SciX/Crossref 题录交叉；出版社摘要页同被 Radware 拦）。\n【逐行核对】9 个非 X 射线行全部溯源核对（星等/误差/上限标记数值原样）：GCN 2999 REM H 两行（H>17 误差圈上限、H=16.8±0.3 候选源）与 GCN 3004 REM V/R/I 三行共用 7:10–9:45 UT 观测窗口 → time 由窗口起点 10205 s 改为窗口中点 14854.8 s、time_err=半跨 4650 s（§3.8 窗口条款）；GCN 3001 FTS R>20.5 → time 由无从复现的 41225 s 改为 41238.0 s（=正文 11.455 h，表锚 0.477 d 为同一起点的舍入）、time_err=半曝光 120 s（限值出自五张 240 s R 曝光之一）；GCN 2998 Miyazaki G>17.5 → 3×30 s coadd 起点 19:23:52 UT → time 由起点 54237 s 改为中点 54281.8 s、time_err=45 s；GCN 3011 VLA 两行 → time=980596.8 s（原文绝对日期锚 Feb 8.53 UT）、time_err=0.01 d 半量化 432 s，mjd=53409.53 按来源精度保留。9 行 mag_system 原文均未声明系统 → 留空+行 comment 注明；Gext_corr=n（各原文均未提银消改正）；flux_density 全部有值。VLA 两行为同次观测不同搜索区域限值（8″ 误差圆 >100 µJy / 1′ 内 >150 µJy），非转引重复。X 射线 114 行（band=10keV，Burst Analyser 单色 Fν）逐字节未动、未参与去重。\n【检索留证】测光检索（2026-11-10）：仓内 gcn/archive 全文检索「050128」命中 7 篇（2991/2992/2998/2999/3001/3004/3011，含光学/IR/射电数值 5 篇且全部已在库；另 GCN 3077 撞名系 050306 笔误，见【身份】）；触发号 103906 无当代通告引用。external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）均无该源记录；external/swift_bat/swiftgrbba/swift_grb/uvot_grb/mpe_greiner/heasarc_grbcat 用于身份/T0/定位互证。SciX（api.scixplorer.org）4 种查询（\"GRB 050128\"／GRB050128／abs:\"050128\"／full:\"GRB 050128\"）命中研究论文 Campana+2005（X 射线专文，无非 X 测光）与 Perley+2016（红移上限+宿主候选，见【红移】）；其余为 X 射线/瞬发样本类（Zhang+2006、Sakamoto+2008、Perri+2006 MNRAS 366,1357、Butler+2007 等，均 X 射线数据不入库）。GCN 站（gcn.nasa.gov/circulars/2999 网页实取）与 archive 逐句一致。TNS 不适用（GRB 非 AT/SN/CV 类）。结论：非 X 射线可用测光 = REM 5 行 + Faulkes South 1 行 + Miyazaki 1 行 + VLA 2 行共 9 行；本次 0 行新增、9 行时间轴/说明修正。\n【alias 证据】「GRB 050128」：GCN 2991/2998/2999/3001/3011 题名与正文用名（GCN 2992 题名形 GRB050128 即本源 id）；「BAT 103906」：batgrbcat name_alt（swiftgrbba/swift_grb target_id=103906 同号互证）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
+  },
   "articles": [
     {
       "bibtex": "@ARTICLE{2005ApJ...625L..23C,\n       author = {{Campana}, S. and {Antonelli}, L.~A. and {Chincarini}, G. and {Covino}, S. and {Cusumano}, G. and {Malesani}, D. and {Mangano}, V. and {Moretti}, A. and {Pagani}, C. and {Romano}, P. and {Tagliaferri}, G. and {Capalbi}, M. and {Perri}, M. and {Giommi}, P. and {Angelini}, L. and {Boyd}, P. and {Burrows}, D.~N. and {Hill}, J.~E. and {Gronwall}, C. and {Kennea}, J.~A. and {Kobayashi}, S. and {Kumar}, P. and {M{\\'e}sz{\\'a}ros}, P. and {Nousek}, J.~A. and {Roming}, P.~W.~A. and {Zhang}, B. and {Abbey}, A.~F. and {Beardmore}, A.~P. and {Breeveld}, A. and {Goad}, M.~R. and {Godet}, O. and {Mason}, K.~O. and {Osborne}, J.~P. and {Page}, K.~L. and {Poole}, T. and {Gehrels}, N.},\n        title = \"{Swift Observations of GRB 050128: The Early X-Ray Afterglow}\",\n      journal = {\\apjl},\n     keywords = {Gamma Rays: Bursts, X-Rays: Individual: Alphanumeric: GRB 050128, Astrophysics},\n         year = 2005,\n        month = may,\n       volume = {625},\n       number = {1},\n        pages = {L23-L26},\n          doi = {10.1086/430883},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0504331},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2005ApJ...625L..23C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
@@ -28,6 +39,12 @@
       "source": "bot",
       "title": "Swift Observations of GRB 050128: The Early X-Ray Afterglow",
       "url": "https://ui.adsabs.harvard.edu/abs/2005ApJ...625L..23C"
+    },
+    {
+      "name": "Perley+2016",
+      "url": "https://doi.org/10.3847/0004-637X/817/1/7",
+      "title": "The Swift Gamma-Ray Burst Host Galaxy Legacy Survey. I. Sample Selection and Redshift Distribution",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": null
