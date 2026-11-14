@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB150430A",
-  "alias": [],
-  "ra": 326.481,
-  "dec": -27.919,
+  "alias": [
+    "GRB 150430A",
+    "GRB150430015",
+    "BAT 639433"
+  ],
+  "ra": 326.47988,
+  "dec": -27.90181,
   "T0": "2015-04-30T00:21:28Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 17789（Swift/BAT 触发通告：At 00:21:28 UT, the Swift BAT triggered and located GRB 150430A, trigger=639433）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +20,19 @@
   "pos_ref": "GCN 17792",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)\n【审核 2026-11-11，Rusty-Harpoon@zcode】\n身份：Swift/BAT 触发 639433（GCN 17789），同一事件经 MAXI/GSC（GCN 17791）、Fermi/GBM（GCN 17793）、Konus-Wind（GCN 17794）多平台独立互证，身份无疑。\nT0：GCN 17789 原文「At 00:21:28 UT, the Swift Burst Alert Telescope (BAT) triggered」，整数秒精度；备查并列（不采）：Swift/BAT 官方目录（external/swift_bat，batgrbcat/Lien+2016 在线版快照）Trig_time_UTC=2015-04-30T00:21:15.254160Z，与通告差 12.746 s——全库比对 swift_bat 与 Burst Advocate 汇编 swiftgrbba 的 trigger_time 共 1322 对，其中 43 对 ≥2 s，系两目录间已知系统差；按 §3.8 优先级①（触发仪器官方 GCN Circular）胜出，T0 维持 2015-04-30T00:21:28Z。T0 未变更，130 行 10keV X 射线行 mjd 与 time 无脱钩。Fermi/GBM 触发 00:21:05.65 UT（GCN 17793）、Konus-Wind 触发 00:21:11.466 UT（GCN 17794）、MAXI 00:21:12 UT（GCN 17791）为各仪器自有触发零点，不用于本源 T0。\n定位：ra/dec=326.47988/-27.90181，pos_error=1.4″（90%），pos_ref=GCN 17792，原文「RA, Dec = 326.47988, -27.90181 … with an uncertainty of 1.4 arcsec (radius, 90% confidence)」（XRT-UVOT/USNO-B1 增强位）。原库 ra/dec=326.481/-27.919 实为 GCN 17795 的 BAT 地面位（误差 1.6′，sys+stat，90%），与 1.4″ 误差配对属坐标-误差混配，已归位。备查：GCN 17789 BAT 在轨位 326.491/-27.928（3′，90%）、XRT 在轨位 326.47958/-27.90212（5″，90%）；GBM 地面位 326.48/-27.9021（external/fermi_gbm，error_radius≈0.00139°）；GROND 覆盖 1.4″ 增强误差圆及邻近无源（GCN 17796）。\n分类：t90=107.1±6.7 s（15-350 keV，GCN 17795；batgrbcat 目录同口径 t90=106.88±7.03 s），按目录 t90 判 lgrb（§3.9）。\n红移：无（GCN 全部 8 篇与 SciX 检索均无本源红移报告）；银河系消光 E(B-V)=0.03（Schlegel+1998，GCN 17790/17796）。\n别名：「GRB 150430A」GCN 通告用名；「GRB150430015」Fermi/GBM 触发名（GCN 17793 原文用名 trigger 452046068/150430015，FERMIGBRST 目录 trigger_name）；「BAT 639433」Swift/BAT 目录名（external/swift_bat name_alt）。\n测光检索（2026-11-11）：仓内 gcn/archive（45947 篇）全文按 GRB150430A/150430/639433/坐标锚点检索命中 8 篇（GCN 17789–17796；另 2 篇含字面串的无关通告已排除：GCN 21783 属 LIGO G298048、GCN 27160 的 GladeID 恰含 639433），其中含光学数值 2 篇（GCN 17790 UVOT 上限 9 值、GCN 17796 GROND 上限 7 值）；external/rssgrbag（射电 74 源）0 命中、external/grbsn_webtool（63 事件）无本源、external/uvot_grb 与 swift_bat/swiftgrbba/swift_grb/fermi_gbm/mpe_greiner 仅目录级参数（作身份/T0 互证，无光变表）；GCN 站（gcn.nasa.gov）按源名检索未返回 archive 之外的通告（站内搜索为客户端渲染、REST API 需 bearer 鉴权，本地 archive 已覆盖至 GCN 46068，2015 年本源通告不可能漏检）；SciX API 全文检索「GRB 150430A」「150430A」共 9 条命中（8 篇即上述 GCN 通告 + 1 篇统计样本文 2025MNRAS.540L...6Q，仅将本源列入 280 个 Swift 长暴流量完备样本、无本源测光表）→ 本源无任何研究论文级测光/上限；已发表光学上限 = UVOT 9 值 + GROND 7 值，本次补入 UVOT 9 行（含明确时间锚点，按 §3.3 入库）、修正 GROND 7 行 time/time_err/mjd，无新增探测行。无 audit/unverified.tsv 登记（本源无数值取自任何研究论文，不存在追不到 VoR 的情形）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
