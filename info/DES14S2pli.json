@@ -3,8 +3,8 @@
   "alias": [],
   "ra": 41.22837,
   "dec": -1.0983,
-  "T0": null,
-  "T0_ref": null,
+  "T0": "2014-11-26T00:00:00Z",
+  "T0_ref": "Pursiainen+2018（2018MNRAS.481..894P，DOI 10.1093/mnras/sty2309）g 波段光变参数表 t_peak = MJD 56987（观测 g 波段最亮点日期，整数 MJD，即 2014-11-26 UT 日）；本源为巡天发现、无触发/发现时刻，按库内同批先例（DES16X3cxn #921、iPTF15ul）取峰值日零点占位；该表在 arXiv:1803.04869v2 与 VoR 同为 Table 5（CDS/VizieR J/MNRAS/481/894 VoR 机读表 t_peak=56987 已核一致）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -16,14 +16,25 @@
   "pos_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1 坐标（J2000）",
   "redshift_type": "spec",
   "redshift_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1（OzDES 光谱红移）",
-  "comment": "2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（Ho+2023 表 2 收录为文献 FBOT）；发现/峰值时刻未提取，待补；仅基础元数据",
+  "comment": "建源说明（留底）：2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（Ho+2023 表 2 收录为文献 FBOT）；发现/峰值时刻未提取，待补；仅基础元数据。——以下为 2026-11-10 全文审核记录（Rusty-Harpoon@zcode；线索卡 audit/leads/DES14S2pli.md #921 数值已逐值核对并采纳，卡在本 PR 删除）。身份：DES14S2pli 为 Pursiainen+2018（2018MNRAS.481..894P，DOI 10.1093/mnras/sty2309）DES 快演化暂现源（RET）gold sample 成员、Wiseman+2020（2020MNRAS.498.2575W）106 源宿主样本成员、Ho+2023（2023ApJ...949..120H）Table 3「Literature FBOTs」收录（class Unknown，ref [7]=Pursiainen+2018；建源说明里的「表 2」应为该表 Table 3，arXiv:2105.08811v2 TeX 实读核对）。无 TNS 名：TNS /object/DES14S2pli 2026-11-10 查询返回 404（DES 内部名未入 TNS）；SIMBAD（simbad.cfa.harvard.edu 实查）仅 1 个 identifier 即 DES14S2pli，无别名可采，alias 保持空。T0 判读：本源为 DES-SN 巡天发现，无触发/发现时刻发表（GCN 0 命中、TNS 无记录）；唯一绝对时间锚点是 Pursiainen+2018 g 波段光变参数表 t_peak = MJD 56987（原文定义「观测 g 波段最亮点日期」，整数 MJD，即 2014-11-26 UT 日），按库内同批先例 DES16X3cxn（PR #921）/iPTF15ul 取峰值日零点 2014-11-26T00:00:00Z 占位；整数 MJD 仅日期精度（±0.5 d），DES-SN ~7 天 cadence 亚日时刻不可恢复；该表在 arXiv:1803.04869v2 与 VoR 同为 Table 5（CDS/VizieR J/MNRAS/481/894 VoR 机读表行已核，t_peak=56987 一致）。坐标口径：info ra/dec = Wiseman+2020 Table 1（宿主星系表）宿主坐标 41.22837 −1.09830（J2000；VoR 机读表 J/MNRAS/498/2575 table1 行已核一致），该表未给定位误差 → pos_error 留空、置信水平来源未标注；Pursiainen+2018 Table 4 瞬变体坐标 02:44:54.76 −01:05:52.74（J2000）= 41.228167 −1.097983（SIMBAD 同此位），与宿主坐标相距 1.36″（按两文坐标计算），与 Pursiainen Table 3 声明的偏移 1.623″ 相差 0.27″（两文坐标各自精度 ~0.15″，属质心/历元差异级，备查）。红移：z=0.35478（spec，OzDES）自 Wiseman+2020 Table 1 提取，本次 VoR 机读表逐值复核一致；Pursiainen+2018 表 3/表 4 给 z_spec=0.35（两位小数舍入），两值相容；宿主光谱 z_spec（Pursiainen 表 4 注：除 DES15C3opk/DES16E1bir 外均取自宿主光谱）→ 本源红移即宿主 OzDES 光谱红移。原文口径并列备查（Pursiainen+2018，rest frame 相对 g 峰；表 3/4/5/6 行已对照 CDS/VizieR VoR 机读表 J/MNRAS/481/894 逐值一致，表 7 行取 arXiv:1803.04869v2 TeX 实读，VizieR 未收该表）：t_rise 5.2 d（last non-detection 至峰，上限性质）、t_decline 29.83(+7.02/−5.30) d、t_1/2 11.84 d；M_peak(g) = −18.98±0.04（观测历元最接近峰的 g 波段绝对星等；原文未声明银消改正，E(B−V)=0.0256（Schlafly+2011）仅列于表 4，粗 k 改正值只见图未列表）；黑体峰 T = 20.43(+3.96/−2.34) kK、r = 4.66(+0.68/−0.80)×10^14 cm、L = 2.69(+1.12/−0.52)×10^43 erg/s（3 点拟合）。宿主 SED：Pursiainen+2018 表 7 log(M*/M☉)=9.82(+0.07/−0.28)、log(sSFR/yr⁻¹)=−9.44；Wiseman+2020 表 2（VoR 机读行已核）log M*=10.27(+0.34/−0.11)、log SFR=0.50(+0.61/−0.38)、log sSFR=−9.77(±0.27)、12+log(O/H) Best=8.95(+0.06/−0.08)、KK04 R23=8.95(+0.06/−0.08)、Average O3N2=8.61(+0.07/−0.09)。Ho+2023 Table 3（r 波段；脚注 a 已做银消改正、假设宿主消光为零，脚注 b rest frame；其 DES 行光变由 M. Pursiainen 提供，见脚注 d）：Mmax = −18.64±0.06、t_1/2,rise < 3.83 d、t_1/2,fade = 7.16±1.63 d（转引 Pursiainen DES 光变，r 波段口径与 Pursiainen g 波段不同，仅并列备查）。分类依据：Pursiainen gold sample（FWHM<30 d、t_1/2<12 d 等选择）+ Wiseman+2020 RET 选择（g−r 色 + r 波段上升时标 cut）+ Ho+2023 文献 FBOT 样本（class Unknown，无光谱分类）→ tag=[fbot]，sub_tag 留空。测光检索（2026-11-10）：仓内 gcn/archive 45947 篇全文 grep「S2pli」「DES14」均 0 命中（非 GRB，预期）；external/ 全部快照 grep 0 命中。外部入口：GCN 站（gcn.nasa.gov 检索 DES14S2pli）0 结果；SciX（api.scixplorer.org token 实查）q=\"DES14S2pli\" 元数据 0 命中（full:/body: 字段检索亦 0）；TNS /object/DES14S2pli 404；OpenAlex 全文检索命中 3 篇——Pursiainen+2018（37 个 gold+silver 事件光变仅附录图 lc_all_gs*.pdf，无数值表，按契约不读图入库）、Wiseman+2020（宿主研究，无瞬变体测光表）、Pursiainen 2020 博士论文（OA 全文 eprints.soton.ac.uk 被 Anubis 反爬 challenge 拦截、WebFetch 401，未能打开，已登记 unverified.tsv status=missing）；SIMBAD 该星引用文献另含 Wiseman+2020 I（MNRAS 495, 4040，宿主 coadd 方法学/星系测光，arXiv:2001.02640 TeX grep 无 DES14S2pli 名，无瞬变体光变）；Wang+2021（arXiv:1904.09604）与 Hu+2023（arXiv:2301.06402）样本不含本源（TeX 实查 0 命中）。结论：该源测光从未以数值表形式发表 → 无带时间锚点测光行可补，本审 0 行入库、不建 lc（纯信息源）。未核实项：Pursiainen+2018 与 Ho+2023 的 VoR 正文（OUP Cloudflare 403 / IoP Radware 302，curl 与 WebFetch 两通道）不可达；Pursiainen 表 3/4/5/6 已改由 CDS/VizieR VoR 机读表逐值复核（J/MNRAS/481/894，vizier.cfa.harvard.edu 镜像，2026-11-10 实取），表 7 与 Ho+2023 表 3 行取 arXiv TeX 实读，均已登记 audit/unverified.tsv；VoR 表号经 VizieR 表题确认为与 arXiv v2 同号（table3–6）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_wiseman2020_20261104"
+    "ingest_source": "scix_wiseman2020_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [
+    {
+      "name": "Pursiainen+2018",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Rapidly evolving transients in the Dark Energy Survey",
+      "url": "https://doi.org/10.1093/mnras/sty2309"
+    },
     {
       "name": "Wiseman+2020",
       "source": "bot",
@@ -37,5 +48,19 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.35478,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "r",
+        "mag": 20.87,
+        "mag_err": 0.03,
+        "mag_sys": "AB",
+        "source": "Wiseman+2020 Table 1（J/MNRAS/498/2575 VoR 机读表）"
+      }
+    ],
+    "comment": "确定宿主：Pursiainen+2018 Table 3（宿主基本信息表，VoR 机读 J/MNRAS/481/894 已核）OzDES 光谱红移 z=0.35（舍入）、瞬变体偏移 1.623″/8.01 kpc、DLR 2.24、z_phot 0.39；z_spec 由 OzDES 对宿主的光谱测得（Pursiainen 表 4 注：仅 DES15C3opk/DES16E1bir 取自瞬变体光谱），z=0.35478 为建源时自 Wiseman 表 1 提取、本次 VoR 机读复核一致——DLR 匹配 + 宿主光谱红移双证 → 确定宿主。Wiseman 表 1 该宿主 OzDES 曝光 3.42 h（脚注 b：给出曝光时间者已用于谱线测量）。宿主星系坐标未单独取值（info ra/dec 即该表宿主坐标 41.22837 −1.09830）。宿主测光：m_r=20.87±0.03 AB（DES-SN deep coadd 的 r 波段 Kron 星等，未做银消改正——Wiseman 表 1 脚注 a；arXiv v1 TeX 同行写 20.86±0.03，与 VoR 机读差 0.01，备查）。宿主性质（Wiseman 表 2，VoR 机读行已核）：log(M*/M☉)=10.27(+0.34/−0.11)、log SFR=0.50(+0.61/−0.38)、log sSFR=−9.77(±0.27)、12+log(O/H) Best=8.95(+0.06/−0.08)、KK04 R23=8.95(+0.06/−0.08)、Average O3N2=8.61(+0.07/−0.09)；Pursiainen+2018 SED 拟合 log M*=9.82(+0.07/−0.28)、log sSFR=−9.44（并列备查）。",
+    "source": "Pursiainen+2018 Table 3（DOI 10.1093/mnras/sty2309）+ Wiseman+2020 表 1/表 2（2020MNRAS.498.2575W，VoR 机读表已核）"
+  }
 }

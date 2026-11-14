@@ -25,7 +25,7 @@ DES-SN 4 年（Y3A2）快演化暂现源（RET）主文：72 个事件（37 个 
 | DES16X3cxn | 表 4/5/6/7 | 无（本源已审，数值入 info comment，PR #921） | extracted | T0 已按 t_peak MJD 57694 入 info |
 | DES13X1hav | 表 4/5/6/7 | 有（leads/DES13X1hav.md） | extracted | t_peak MJD 56551 等，T0 待定锚 |
 | DES13X3gms | 表 4/5/6/7 | 有（leads/DES13X3gms.md） | extracted | t_peak MJD 56567 |
-| DES14S2pli | 表 4/5/6/7 | 有（leads/DES14S2pli.md） | extracted | t_peak MJD 56987 |
+| DES14S2pli | 表 4/5/6/7 | 无（本源已审，数值入 info comment，PR #1030） | extracted | t_peak MJD 56987 |
 | DES15C3mgq | 表 4/5/6/7 | 有（leads/DES15C3mgq.md） | extracted | t_peak MJD 57331 |
 | DES15E2nqh | 表 4/5/6/7 | 有（leads/DES15E2nqh.md） | extracted | t_peak MJD 57366 |
 | DES15S1fli | 表 4/5/6/7 | 有（leads/DES15S1fli.md） | extracted | t_peak MJD 57276 |
@@ -48,4 +48,8 @@ DES-SN 4 年（Y3A2）快演化暂现源（RET）主文：72 个事件（37 个 
 - VoR（OUP MNRAS 481, 894）Cloudflare 反爬 403 不可达；CDS/VizieR 三镜像超时——已登记
   `audit/unverified.tsv`（DES16X3cxn 行，status=substituted）。全部数值取自 **arXiv:1803.04869v2** 实读 TeX，
   表号均为 arXiv v2 编号，VoR 表号待接手者核对。
+- **2026-11-10 更新（DES14S2pli 审核，PR #1030）**：CDS 主站仍「Page unavailable」，但 **vizier.cfa.harvard.edu
+  镜像可达**——`J/MNRAS/481/894` table3/4/5/6（VoR 机读表）可实取，表 5 的 t_peak/M_peak 等行经该镜像对
+  arXiv v2 TeX 逐值核对一致，**VoR 表号与 arXiv v2 同号**（VizieR 表题确认）；表 7 未收进 VizieR，仍取 arXiv TeX。
+  接手其余 9 源者可直接用该镜像复核表 3/4/5/6（表 7 除外）；OUP 正文本身仍 403（curl/WebFetch 两通道）。
 - 契约提醒：接手者仍须自行打开原文逐值核对（防转录错误传染），不得直接抄卡。
