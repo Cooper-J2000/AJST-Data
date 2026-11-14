@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB200519A",
-  "alias": [],
-  "ra": 255.33335,
-  "dec": -30.37803,
-  "T0": "2020-05-19T11:20:46Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 200519A"
+  ],
+  "ra": 255.33337,
+  "dec": -30.37808,
+  "T0": "2020-05-19T11:20:23.737180Z",
+  "T0_ref": "GCN 27756（Swift/BAT 官方触发通告：At 11:20:23 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 200519A (trigger=973140)——触发仪器值优先，§3.8①）；external/swiftgrbba 目录 trigger_time=2020-05-19T11:20:23.000Z 同值互证；备查：Insight-HXMT 自报 T0=11:20:23.73（他仪，GCN 27770）、XRT 起测 11:21:13.3 UT−49.6 s→11:20:23.7（GCN 27756，截断秒）、MASTER-SAAO 17:48:38 UT−23295 s 反算=11:20:23（GCN 27765）、GROWTH-India 17:11:06 UT−5.85 h 同值、BOOTES-3 首图 11:20:57−34 s 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
@@ -12,19 +14,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1.8,
-  "pos_ref": "GCN 27761",
+  "pos_error": 0.42,
+  "pos_ref": "GCN 27769（Swift/UVOT preliminary position：RA(J2000)=17:01:20.01=255.33337, Dec(J2000)=-30:22:41.1=-30.37808，estimated uncertainty of 0.42 arcsec, radius, 90% confidence）；备查并列：GCN 27756 UVOT finding-chart 255.33335,-30.37803（0.61″, 90%）、GCN 27761 XRT enhanced 255.33318,-30.37824（1.8″, 90%）、GCN 27771 BAT ground 255.319,-30.393（1.0′, 90%）、external/swiftgrbba uvot_ra/uvot_dec 与本值一致（uvot_error_radius=0.42）、external/swift_xrt_live XRT 位 255.33306,-30.37867（1.9″）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份链】Swift/BAT trigger 973140，GCN 27756 官方触发通告：At 11:20:23 UT BAT triggered and located GRB 200519A，BAT onboard 位 255.334,-30.380（3′, 90%），XRT 找到亮未编目 X 源 255.3327,-30.3782（4.7″, 90%）；全部 15 篇 GRB 200519A 主题 GCN（27756/27757/27759/27760/27761/27763/27764/27765/27766/27767/27769/27770/27771/27772/27773）与 external/swift_bat（trigger 973140 唯一）互证同一事件。同日多触发排查：2020-05-19 Swift 仅此一触发（external/swift_bat 全目录 MET 换算核验）；GCN 27762（Fermi 611605955 / 'Fermi GRB200519.77'，位 19h35m+29d）与 GCN 27768（Fermi 611676654，位 18h53m+26d）均系他仪同日他事件，与 200519A 无关；无 GRB 200519B。【T0】见 T0_ref。bot 原值 2020-05-19T11:20:46Z 无出处：系把 AstroSat/CZTI 最亮段峰值 2020-05-19 11:20:46.500 UT（GCN 27766）误当触发时刻——峰值≠触发，该峰即 BAT refined 'peaks at ~T+24 s'（GCN 27771，T0+23.53 起 1-s 峰），晚于触发 23 s；原 extra_data.t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）' 的原值留底于此。batgrbcat（external/swift_bat）Trig_time_MET=611580048.704 为原始钟面值：Swift 钟相对 UTC 有逐年漂移（对 2015-2025 年 30 个源抽验，naive 换算差 +16 s→+36 s 递增），2020-05 按邻年插值差约 26 s，未经 FTS 改正不可用于补亚秒；触发仪器官方值（GCN 27756、swiftgrbba 目录）只给整秒 → T0=2020-05-19T11:20:23.737180Z（batgrbcat Trig_time_UTC 权威列——复查指出该列系已做钟改正的 UTC 值：全目录 naive(MET)−UTC 逐年 0→35 s 平滑增长排除 naive 解释，与 swiftgrbba 亚秒行 86% ≤0.1 s 一致、HXMT 23.73/XRT 反算 23.7 三方吻合；初稿按 MET 钟面值考证取整秒，系漏查同目录 UTC 列，已更正），不补亚秒（§3.2）。T0_offset：GCN 27771 BAT 光变 starts at ~T0，无证据表明爆发早于/晚于自动触发 >1 s，不写。【定位】取最精权威值 GCN 27769 UVOT preliminary position（0.42″, 90% confidence，原文明示置信水平→pos_error_confidence=90）；旧值 255.33335,-30.37803（GCN 27756 FC 位 0.61″）为备查并列；旧 pos_ref=GCN 27761（XRT enhanced 1.8″, 90%）系把较粗定位配在更精坐标上，本次一并理顺。【分类】t90=71.88±1.28 s（Swift/BAT refined analysis GCN 27771，15-350 keV，estimated error including systematics）＋batgrbcat T90_start/stop=3.248/74.944 s→71.696 s（external/swift_bat summary_burst_durations）互证；备查：t90=8.97 s（Insight-HXMT/HE，80-800 keV，自 T0+19.85 s 起，GCN 27770）、t90=8.46±0.05 s（AstroSat/CZTI 40-200 keV，仅最亮段，GCN 27766）、t90=6.9±1.5 s（CALET/CGBM SGM 40-1000 keV，GCN 27773）——后三者能段窄/只测部分时段故偏短，但均 >2 s，与 BAT 全带值不冲突。按目录 t90 判 lgrb（§3.9，2026-10-26 裁定）。【物理量备查】BAT：15-150 keV fluence 1.2±0.02×10⁻⁵ erg/cm²，1-s peak photon flux 20.6±0.5 ph/cm²/s（自 T+23.53 s），谱指数 1.42±0.03，partial coding 99%（GCN 27771，90% CL）；CZTI 40-200 keV 峰值计数率 983±39 cts/s；XRT refined（GCN 27763）：WT 谱 Γ=1.902±0.029、NH=4.35(+0.17,-0.16)×10²¹ cm⁻²（超过银河值 3.3×10²¹），PC Γ=1.75±0.08，光变衰减 α=1.16±0.05，T+24 h 预报 0.3-10 keV 流量 5.1×10⁻¹² erg/cm²/s——X 射线数据暂不入库（§3.3/§7），本源 lc 无 X 射线行。【逐行核对】bot 原 23 行的 time 系「观测起点/窗口起点 − 误植 T0(11:20:46)」，mjd 系「真触发 11:20:23 + 起点」（管线内部用真触发时刻，两列互不相洽）；本次全表统一改锚 T0=11:20:23 并按 mid=曝光/窗口中点重算 time、mjd=T0+time（7 位小数）、time_err=半曝光/半窗口。GCN 27756 white（FC）与 GCN 27769 white 系同一曝光两版发表值（15.38±0.14 vs 15.43±0.02，差 0.05 超出舍入）非 §3.4 重复，都保留并互注；GCN 27769 表 u 行 bot 原值 267.0 与其 T_start−23=247 口径差 20 s，导入管线个别偏差，备查。DFOT 11×300 s / 7×300 s、GIT 600 s 单曝、HCT 首帧 120 s、LCO 5×120 s 堆叠窗口中点等约定口径逐行见各 comment。mag_system：UVOT 行=Vega（GCN 27769 原文引用 UVOT photometric system（Breeveld et al. 2011）＝Vega；GCN 27756 行按 UVOT 惯例推定）；GIT 行=AB（SDSS g/r/i + PS1 定标均为 AB 惯例，推定依据已注）；LCO/DFOT/HCT/iTelescope/BOOTES（USNO-B1/UCAC5 定标）与 MASTER 原文未声明系统→留空。【检索留证】测光检索（2026-11-11）：仓内 gcn/archive 全文检索 200519A 命中 16 篇（15 篇 GRB 200519A 主题＋GCN 27762 系 Fermi GRB200519.77 他仪事件日期误命中），其中含光学测光 9 篇（27756/27757/27759/27760/27764/27765/27767/27769/27772）；external/rssgrbag（140 行/74 源射电光变）、external/grbsn_webtool（63 事件）均无该源；external/uvot_grb、external/swiftgrbba、external/swift_bat、external/swift_xrt_live 为目录级参数（已用于身份/T0/t90 互证，uvot_grb 无该源）；GCN 站 27750–27800 段逐篇核对 subject 无遗漏（27758=GRB 200517A、27768=Fermi 他仪事件）；SciX（api.scixplorer.org）四种查询（'GRB 200519A' 15 命中含分页 / 'GRB200519A' 1 / abs:'GRB 200519A' 15 / '973140' 5 中仅 2 篇相关）命中全部为 GCN 通告，无研究论文或预印本；TNS 不适用（GRB 非 AT/SN/CV 类）。红移：全部 GCN 与 SciX 检索无 z 报道（XRT 谱仅给出过剩柱密度），redshift 保持 null。结论：可用测光=UVOT 7 行（含 27756/27769 white 两版）＋GIT 11 行＋LCO 2＋DFOT 2＋HCT 1＋iTelescope 1＋BOOTES-3 1＋MASTER 上限 6；本次新增 8 行（GCN 27769 white 1、BOOTES-3 1、MASTER 上限 6）、修正既有 23 行时间轴（星等数值原样未动），无删除行。【alias】'GRB 200519A' 为 GCN 题名形（15 篇通告 subject 用名，如 <GCN 27756> GRB 200519A: Swift detection of a burst with an optical afterglow）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=2020-05-19T11:20:23Z 锚 Swift/BAT 官方触发通告 GCN 27756（trigger=973140，11:20:23 UT）；swiftgrbba 目录 11:20:23.000Z 互证。bot 原值 2020-05-19T11:20:46Z 系 CZTI 最亮段峰值 11:20:46.5 UT 误植（GCN 27766），原 t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）' 留底于 info comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-10"
+    }
   },
   "articles": [],
   "host_galaxy": null
