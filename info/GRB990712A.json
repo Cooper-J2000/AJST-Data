@@ -1,22 +1,25 @@
 {
   "transient_id": "GRB990712A",
-  "alias": [],
-  "ra": 337.958333,
-  "dec": -73.4,
+  "alias": [
+    "GRB 990712",
+    "GRB 990712B"
+  ],
+  "ra": 337.971089,
+  "dec": -73.407938,
   "T0": "1999-07-12T16:43:02Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 385（BeppoSAX GRBM+WFC 于 1999-07-12 16:43:02 UT 同时触发；正文日期笔误 July 5）；Frontera+2001 (DOI 10.1086/319480) §2 starting on 16:43:02 UT；Vreeswijk+2001 (DOI 10.1086/318308) July 12.69655 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "BeppoSAX/GRBM",
-  "redshift": 0.434,
+  "redshift": 0.4331,
   "tag": [
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_ref": "Sahu+2000 (ApJ 540, 74, DOI 10.1086/309340) Table 2 OT 天测位 22:31:53.0614 −73:24:28.576（USNO-A2.0）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Vreeswijk+2001 (ApJ 546, 672, DOI 10.1086/318308)：VLT/FORS 宿主发射线加权平均 z=0.4331±0.0004；首报 GCN 388 为 0.430±0.005",
+  "comment": "2026-11-09 Rusty-Harpoon@zcode 单源审核：46 行全部溯源核对，补 2 行（Hjorth+2000 HST/STIS OT V/R），改正 GCN 行历元与若干 telescope/instrument，详见 PR #1010。\n\n【身份核验（2026-11-09，仓内 gcn/archive 全文 9 篇 + SciX 25 命中互证）】GRB 990712：BeppoSAX GRBM 与 WFC 2 号机组于 1999-07-12 16:43:02 UT 同时触发（GCN 385；Frontera+2001 §2、Vreeswijk+2001 §3.2 同）。同日另有 BATSE 07:45:19.4 与 18:55:16 两个事件，在 saxgrbmgrb/heasarc_grbcat 快照中编号 GRB 990712A/C——本源（16:43:02 事件）在这两个目录记 GRB 990712B，与库内 id GRB990712A 的后缀 A 无关，alias 已按此登记、注意区分。GCN 385 精化 WFC 位 R.A.=337.9568°、Dec.=−73.4066°（r=2′；Frontera+2001 注明 99% 置信水平）；OT 位逐级精化：GCN 387 22:31:53.1 −73:24:29（±1″）→GCN 389 22:31:53.03 −73:24:28.3（±0.6″）→GCN 402 22:31:53.00 −73:24:28.7（±0.4″）；入库坐标取 Sahu+2000 Table 2 天测位 22:31:53.0614 −73:24:28.576（USNO-A2.0 参考架、10 星解；原文给 RA ±0.11s(=1.65″)、Dec ±0.5″，未标注置信水平，故 pos_error/pos_error_confidence 留空、分轴误差记于此）。原库 ra/dec（337.958333, −73.4）为 mpe_greiner 快照所记 SAX/WFC X 射线位 22h31m50s −73°24′ 的取整形，本审核改用精度更高的 OT 天测位。\n\n【T0】T0=1999-07-12T16:43:02Z 不变。依据：GCN 385（官方通告 16:43:02 UT；其正文日期笔误作 July 5，实为 July 12）；Frontera+2001 §2 was detected ... starting on 16:43:02 UT（其图 1 零点 16:43:01.6 为绘图约定）；Vreeswijk+2001：1999 July 12.69655 UT（=16:43:01.9，亚秒级一致）；saxgrbmgrb 快照 trigger_time 16:43:02.000Z。取通告整数秒精度、不自行补亚秒；图 1 零点差 0.4 s 属亚秒级，不写 T0_offset。\n\n【红移】z=0.4331±0.0004（spec-host）：Vreeswijk+2001 由 VLT-UT1/FORS 光谱宿主发射线（[O II]λ3727、[Ne III]λ3869、Hγ、Hβ、[O III]λ4959/5007）加权平均；首报 GCN 388 为 0.430±0.005（初步）；Sahu+2000/Hjorth+2000 引 0.434（舍入）；heasarc_grbcat 快照同记 0.4331±0.0004。库内 0.434→0.4331。\n\n【分类 sub_tag=lgrb】t90=19.0±4.5 s（40–700 keV，BeppoSAX GRBM 目录 Frontera+2009，快照 saxgrbmgrb，目录名 GRB 990712B），按目录 t90 判 lgrb；另 Konus-Wind T90=16.629±1.777 s（Tsvetkova+2017，快照 konus_wind）；Frontera+2001：>100 keV 总时长约 20 s、2–26 keV 约 40 s；Vreeswijk+2001 记 burst lasted for about 30 s。远超 2 s 界限，lgrb 成立。\n\n【params 勘误报告（只读未改）】extra_data.params.t90_obs（v=0.64，src=heasarc_grbcat）为同名误配：heasarc_grbcat 快照中 t90=0.64 s 属同日 07:45:19.4 的 BATSE/Konus 事件（GRB 990712A，grbcat_id 4467），非本源（GRB 990712B，id 4468）；其余 konus_wind/minaev2020 来源的 params 与本源相符。请维护者按 params 管线修正 t90_obs（本源真值见【分类】段）。\n\n【测光逐行核对（2026-11-09）】46 行全部溯源：34 行 Sahu+2000（ApJ 540, 74, Table 1，IOP VoR HTML/ASCII 逐值核对 34/34 一致；含 CTIO 0.9m 行＝GCN 402 Kemp & Halpern 观测、Sahu a 注转录）；8 行 Björnsson+2001（ApJ 552, L121, Table 1，arXiv v1 TeX 逐值核对；VoR 反爬未获，见 audit/unverified.tsv）；4 行 GCN（389/391/752×2）按通告原文核对。改动要点：GCN 389/391 两行历元原被导入管线舍入到整数 MJD，按通告原文历元（7月16.403、7月14.421 UT）改正并补 time_err=半曝光；HST 8-29 两行历元统一为 Hjorth+2000/Björnsson+2001 的 47.7d（Aug 29.403 UT）；HST 2000-04-24 宿主行按 §3.8 当日中点口径；望远镜/仪器纠正：SMARTS→CTIO(0.9m)、RSV-2048B 回 CASLEO(2.15m) 仪器列、AAT 行 IRIS2 与 NTT V 行 SOFI（皆近红外相机）置空/改 EMMI、VLT 行 FORS2→FORS1（Vreeswijk+2001：FORS 在 VLT-UT1 Antu 卡焦；Rol+2000 表1 同夜极谱即 FORS1；Sahu+2000：光谱 acquisition images）、SAAO 行 1m→SAAO(1m)。\n\n【新增 2 行】Hjorth+2000 §4.2（arXiv v1 已核；VoR 反爬未获）：47.7d（1999-08-29.40 UT）HST/STIS OT 点源 PSF 拟合 V=25.69±0.02、R=25.23±0.09（未消光改正；原文改正后 V0=25.58/R0=25.15、过减上限 V0≤25.81/R0≤25.55）；勘误 2000ApJ...539L..75H 仅涉光谱定标与 SFR，不涉成像测光。同期 GCN 752 相减值 R=24.35±0.15 与之方法差异并存。\n\n【星等系统】Sahu+2000 经 ESO 标准星 F203/F209（Menzies et al. 1989，Johnson-Cousins）定标→Vega；GCN 389/391 接 PLANET 零点/二级标准星→Vega 推定；Björnsson+2001 采 Sahu 数据独立再归约→同系统；Hjorth+2000 明言转换至 Johnson V/Kron-Cousins R（Vega）。GCN 752 两行（STIS 宽滤光片）未声明系统，mag_system 留空。\n\n【银消改正】Sahu+2000 原文：SFD98 E(B−V)=0.033、This extinction is small … neglected in our analysis→全部 Sahu 行 Gext_corr=n；GCN 389/391 同 PLANET 系统（未改正）→n；Björnsson+2001 再归约、Hjorth+2000 入库值为未改正值→n。grbsn_webtool 快照把 Sahu 的较差大气消光系数（V/R/I = −0.075/−0.06/−0.02）误标为 extinction_corrected，实为大气质量改正、与银消无关。派生列保持后端原值未动。\n\n【检索留证（2026-11-09）】① 仓内 gcn/archive 全文检索 990712：命中 9 篇（385/387/388/389/391/402/403/565/752），8 篇含光学数值/信息，全部读毕；GCN 387 快报 R=17.85±0.2 为 DSS/USNO 粗估（同一 SAAO 曝光终值 19.349±0.019 已在 row 1，未单列）；GCN 387 的 DSS 深度限无时间锚点不入库。② 仓内 external：rssgrbag（radio_ag_flag=N，无射电光变）、grbsn_webtool/SourceData/GRB990712（Sahu+2000、Björnsson+2001 两表转录，作线索非数值源）、saxgrbmgrb/konus_wind/heasarc_grbcat/minaev2020/mpe_greiner（身份/T0/T90/位置互证）。③ SciX 检索 GRB 990712：25 命中（研究论文 11＋勘误 1＋会议 4＋GCN/IAUC 9），实际读毕 TeX/PDF：Sahu+2000（VoR）、Björnsson+2001、Hjorth+2000＋勘误、Vreeswijk+2001、Frontera+2001、Rol+2000（极谱表，无测光）、Björnsson+2000（极谱短文，无测光）；Gorosabel+2000（AIPC 526 会议）未逐篇取值，列 PR 待决。④ VizieR（CDS 主站超时，经 CFA 镜像实测 2026-11-09）：J/MNRAS/533/4023、J/A+A/380/L21、J/A+A/413/121 均 Not found，J/A+A/457/115 连接失败——无该暴机读表。共补 2 行。\n\n【articles 增删】实际使用保留：Hjorth+2000（新增 2 行、47.7d 历元、勘误核对）、Sahu+2000（34 行 VoR）、Rol+2000（FORS1/Antu 仪器证据）、Vreeswijk+2001（z、FORS、T0）、Frontera+2001（T0/时长/WFC 99% CL）、Björnsson+2001（8 行 arXiv）、Dainotti+2024（导入链，条目更新为 MNRAS 533, 4023 见刊版）、Minaev+2020（params.grb_type/t90_rest 出处）。移除：Bjornsson+2000（极谱短文未用）、Vreeswijk+2001b（宿主射电 SFR 未用）、MosqueraCuesta+2002（GRB980425 量能学、与本源无关）、Christensen+2004（宿主星系未直接取值）、KupcuYoldas+2006（发射线流量未直接取值）。替换：Tsvetkova+2021（2005–2018 Swift 时代等待模式样本，不含本暴）→Tsvetkova+2017（触发模式带红移目录 ApJ 850, 161，即 external/konus_wind 快照来源、params.* 的 konus_wind 出处）。\n\n【待决】① params.t90_obs 同名误配（见【params 勘误报告】）；② row 8 望远镜名 Sahu 记 ESO 1.5 m 与 Dainotti 转录 Danish 1.54 m 未获 VoR 级裁定；③ Dainotti+2024 机读表不在 VizieR，其 telescope/instrument 转录无法逐值复核（本审核已按 VoR/arXiv 证据纠正明显错误项）；④ Gorosabel+2000（AIPC 526）未逐篇取值。",
   "sub_tag": [
     "lgrb"
   ],
@@ -70,7 +73,12 @@
         "v": 11.6
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [
     {
@@ -86,13 +94,6 @@
       "source": "bot",
       "title": "Discovery of the Optical Counterpart and Early Optical Observations of GRB 990712",
       "url": "https://ui.adsabs.harvard.edu/abs/2000ApJ...540...74S"
-    },
-    {
-      "bibtex": "@ARTICLE{2000ApJ...541L..55B,\n       author = {{Bj{\\\"o}rnsson}, Gunnlaugur and {Lindfors}, Elina J.},\n        title = \"{The Polarization Variability in the Optical Afterglow of GRB 990712}\",\n      journal = {\\apjl},\n     keywords = {Gamma Rays: Bursts, Polarization, Radiation Mechanisms: Nonthermal, Astrophysics},\n         year = 2000,\n        month = oct,\n       volume = {541},\n       number = {2},\n        pages = {L55-L57},\n          doi = {10.1086/312907},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0009243},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2000ApJ...541L..55B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Bjornsson+2000",
-      "source": "bot",
-      "title": "The Polarization Variability in the Optical Afterglow of GRB 990712",
-      "url": "https://ui.adsabs.harvard.edu/abs/2000ApJ...541L..55B"
     },
     {
       "bibtex": "@ARTICLE{2000ApJ...544..707R,\n       author = {{Rol}, E. and {Wijers}, R.~A.~M.~J. and {Vreeswijk}, P.~M. and {Kaper}, L. and {Galama}, T.~J. and {van Paradijs}, J. and {Kouveliotou}, C. and {Masetti}, N. and {Pian}, E. and {Palazzi}, E. and {Frontera}, F. and {van den Heuvel}, E.~P.~J.},\n        title = \"{GRB 990712: First Indication of Polarization Variability in a Gamma-Ray Burst Afterglow}\",\n      journal = {\\apj},\n     keywords = {Gamma Rays: Bursts, Polarization, Radiation Mechanisms: Nonthermal, Turbulence, Astrophysics},\n         year = 2000,\n        month = dec,\n       volume = {544},\n       number = {2},\n        pages = {707-711},\n          doi = {10.1086/317256},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0007015},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2000ApJ...544..707R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
@@ -123,39 +124,11 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2001ApJ...552L.121B"
     },
     {
-      "bibtex": "@ARTICLE{2001A&A...380L..21V,\n       author = {{Vreeswijk}, P.~M. and {Fender}, R.~P. and {Garrett}, M.~A. and {Tingay}, S.~J. and {Fruchter}, A.~S. and {Kaper}, L.},\n        title = \"{The star-formation rate in the host of GRB 990712}\",\n      journal = {\\aap},\n     keywords = {GAMMA RAYS: BURSTS, RADIO CONTINUUM: GALAXIES, STARS: FORMATION, Astrophysics},\n         year = 2001,\n        month = dec,\n       volume = {380},\n        pages = {L21-L25},\n          doi = {10.1051/0004-6361:20011484},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0110547},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2001A&A...380L..21V},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Vreeswijk+2001b",
-      "source": "bot",
-      "title": "The star-formation rate in the host of GRB 990712",
-      "url": "https://ui.adsabs.harvard.edu/abs/2001A&A...380L..21V"
-    },
-    {
-      "bibtex": "@ARTICLE{2002PhRvD..65f4009M,\n       author = {{Mosquera Cuesta}, Herman J.},\n        title = \"{Gravitational-to-electromagnetic wave conversion and gamma-ray bursts calorimetry: The GRB980425/SN 1998bw \\raisebox{-0.5ex}\\textasciitilde{}10$^{49}$ erg radio emission}\",\n      journal = {\\prd},\n     keywords = {04.30.Db, 97.60.Lf, 98.70.Rz, Wave generation and sources, Black holes, gamma-ray sources, gamma-ray bursts},\n         year = 2002,\n        month = mar,\n       volume = {65},\n       number = {6},\n          eid = {064009},\n        pages = {064009},\n          doi = {10.1103/PhysRevD.65.064009},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2002PhRvD..65f4009M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "MosqueraCuesta+2002",
-      "source": "bot",
-      "title": "Gravitational-to-electromagnetic wave conversion and gamma-ray bursts calorimetry: The GRB980425/SN 1998bw raisebox-0.5extextasciitilde10$^49$ erg radio emission",
-      "url": "https://ui.adsabs.harvard.edu/abs/2002PhRvD..65f4009M"
-    },
-    {
-      "bibtex": "@ARTICLE{2004A&A...413..121C,\n       author = {{Christensen}, L. and {Hjorth}, J. and {Gorosabel}, J. and {Vreeswijk}, P. and {Fruchter}, A. and {Sahu}, K. and {Petro}, L.},\n        title = \"{The host galaxy of <ASTROBJ>GRB 990712</ASTROBJ>}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, galaxies: hosts, galaxies: star formation, Astrophysics},\n         year = 2004,\n        month = jan,\n       volume = {413},\n        pages = {121-130},\n          doi = {10.1051/0004-6361:20031517},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0309753},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2004A&A...413..121C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Christensen+2004",
-      "source": "bot",
-      "title": "The host galaxy of <ASTROBJ>GRB 990712</ASTROBJ>",
-      "url": "https://ui.adsabs.harvard.edu/abs/2004A&A...413..121C"
-    },
-    {
-      "bibtex": "@ARTICLE{2006A&A...457..115K,\n       author = {{K{\\\"u}pc{\\\"u} Yolda{\\textcommabelow s}}, A. and {Greiner}, J. and {Perna}, R.},\n        title = \"{Constraining the environment of GRB 990712 through emission line fluxes}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts, stars: circumstellar matter, Astrophysics},\n         year = 2006,\n        month = oct,\n       volume = {457},\n       number = {1},\n        pages = {115-119},\n          doi = {10.1051/0004-6361:20065672},\narchivePrefix = {arXiv},\n       eprint = {astro-ph/0607195},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2006A&A...457..115K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "KupcuYoldatextcommabelows+2006",
-      "source": "bot",
-      "title": "Constraining the environment of GRB 990712 through emission line fluxes",
-      "url": "https://ui.adsabs.harvard.edu/abs/2006A&A...457..115K"
-    },
-    {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {{Dainotti}, M. G. and {De Simone}, B. and {Mohideen Malik}, R. F. and others},\n        title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n      journal = {\\mnras},\n         year = 2024,\n        month = oct,\n       volume = {533},\n        pages = {4023-4046},\n          doi = {10.1093/mnras/stae1484},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "Rusty-Harpoon@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
@@ -165,11 +138,11 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
-      "name": "Tsvetkova+2021",
-      "source": "bot",
-      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+      "bibtex": "@ARTICLE{2017ApJ...850..161T,\n       author = {{Tsvetkova}, A. and {Frederiks}, D. and {Golenetskii}, S. and {Lysenko}, A. and {Oleynik}, P. and {Pal'shin}, V. and {Svinkin}, D. and {Ulanov}, M. and {Cline}, T. and {Hurley}, K. and {Aptekar}, R.},\n        title = \"{The Konus-Wind Catalog of Gamma-Ray Bursts with Known Redshifts. I. Bursts Detected in the Triggered Mode}\",\n      journal = {\\apj},\n         year = 2017,\n        month = nov,\n       volume = {850},\n        pages = {161},\n          doi = {10.3847/1538-4357/aa96af},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2017ApJ...850..161T},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "name": "Tsvetkova+2017",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The Konus-Wind Catalog of Gamma-Ray Bursts with Known Redshifts. I. Bursts Detected in the Triggered Mode",
+      "url": "https://doi.org/10.3847/1538-4357/aa96af"
     }
   ],
   "host_galaxy": null
