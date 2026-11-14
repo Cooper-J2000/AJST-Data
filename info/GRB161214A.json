@@ -1,28 +1,39 @@
 {
   "transient_id": "GRB161214A",
-  "alias": [],
-  "ra": 190.72461,
-  "dec": 6.874184,
-  "T0": "2016-12-14T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 161214A"
+  ],
+  "ra": 190.7515,
+  "dec": 6.863917,
+  "T0": "2016-12-14T04:46:07Z",
+  "T0_ref": "GCN 20251（INTEGRAL/IBAS 官方触发通告）：a long gamma ray burst has been detected by IBAS in the IBIS/ISGRI data at 4:46:07 UT of 2016 December 14；IBAS 触发号 7644（GCN 20254/20255 引用）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1.0,
+  "pos_ref": "GCN 20252（LT 光学对应体）：RA(J2000)= 12:43:00.36, Dec(J2000)= +06:51:50.1, with a 1 arcsec error radius",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份】确证：GRB161214A=INTEGRAL/IBAS 触发事件（IBAS 触发号 7644，见 GCN 20254「INTEGRAL (trigger 7644)」与 GCN 20255「INTEGRAL trigger 7644」）。触发团队官方通告 GCN 20251（Mereghetti et al., IBAS Localization Team）：a long gamma ray burst detected by IBAS in the IBIS/ISGRI data at 4:46:07 UT of 2016 December 14，精化定位 R.A.=190.757, DEC.=6.853（2.5′，90% c.l.）。LT 在 INTEGRAL 误差圈内发现未编目渐暗光学对应体（GCN 20252），TAROT/GROND/NOT/MASTER-IAC 均按 INTEGRAL 定位后随（GCN 20254/20255/20258/20343），相互印证；外部快照 mpe_greiner 的 GRB 161214A 行（INTEGRAL，X-ray position 12h42m55s +06°50′ ±3.2′，OT=y）一致。同日 Swift/BAT 触发的 GRB 161214B（trigger 726885，17:20:10 UT，RA 3.85 Dec +7.34，GCN 20257；Fermi/GBM bn161214722 同指该事件）为另一独立事件，与本源（04:46:07 UT，190.757,+6.853）相距约 164.2°，无命名混淆（复查球面复算更正：初稿误写 128°）。【T0】2016-12-14T04:46:07Z（秒级=原文精度），依据 GCN 20251 原文；该通告带 GCN OPS 勘误注（日期 Dec 12→Dec 14 系作者更正，不影响时刻）。bot 原值 2016-12-14T00:00:00Z 为日期占位（t0_basis=meta_trigger），已废弃；全表 time/mjd 已按新 T0 重算（bot 旧表 time 系按 04:45:00 历元换算，系统性偏早 67 s）。【定位】ra/dec 取 LT 光学对应体 RA(J2000)=12:43:00.36, Dec(J2000)=+06:51:50.1（=190.7515,+6.863917），误差半径 1″（GCN 20252）；pos_error_confidence 原文未标注置信水平，留空。备查并列：INTEGRAL/IBAS 精化定位 190.757,+6.853（2.5′，90% c.l.，GCN 20251；距 LT 位约 44″，相容）；MASTER 通告转引误差框 12 43 47 +06 44 03 r=3.18′（GCN 20343，与其所引 GCN 20251 精化定位相差约 13′，疑为初始 IBAS 通告值，见新增行 comment）；bot 旧 ra/dec=190.72461,+6.874184 系 GCN 20254 定标星 NOMAD-1 0968-0244492（ra=190.7246097, dec=+06.8741839）坐标误植为源坐标，已废弃。【分类/物理量】tag=grb、sub_tag=lgrb：按触发团队明示分类「a long gamma ray burst」（GCN 20251），且 initial peak 约 7 s 后有持续约 1 min 的较弱辐射（fainter emission lasting about one minute），未用 T90 现算。备查：peak flux ≈0.3 counts/cm²/s（20-200 keV，1-s integration）、fluence ≈1.5e-7 erg/cm²（GCN 20251）；TAROT 测得光变峰值 t0+240 s±15 s（GCN 20254）；银道坐标 lon=296.86 lat=+69.60，R 波段银消约 0.1 mag（Schlegel+1998，GCN 20254）；GROND 方向 E(B−V)=0.02 mag（Schlafly & Finkbeiner 2011，GCN 20255）。【红移】null：全部 6 篇 GCN（20251/20252/20254/20255/20258/20343）无红移记载；SciX 检索无研究论文（见检索留证），无红移证据，保持 null。【逐行核对】TAROT 5 行（GCN 20254）：数值/限值与原文一致，time 按窗口中点重算（bot 旧值按 04:45 历元，偏 67 s），time_err=半窗宽（原文只给观测窗口，中点/半宽为约定口径）；Rlim 两行 upperlimit=y；NOMAD/USNO-B1 定标，原文未声明系统→mag_system 留空；not corrected for galactic dust extinction→Gext_corr=n。LT 2 行（GCN 20252）：r 值一致；time=2100/3660 s（原文 35/61 minutes post GRB trigger，分钟精度→time_err=30 s 为时刻精度、原文未给曝光时长）；SDSS r 波段、SDSS 星定标→推定 mag_system=AB（SDSS 星等系统为 AB），原文未明示系统。NOT 1 行（GCN 20258）：r=20.9±0.3 (AB) 一致；time=9012.2 s=原文 mean epoch 2016 Dec 14.303（=mjd 57736.303）−T0，原文另给 2.50 hr after GRB（=9000 s，差 12.2 s 在两者精度内）；time_err=半曝光 100 s（单帧 200 s）。GROND 6 行（GCN 20255）：g'/r'/i'/z'/J/H 值一致；time=14333 s（原文 mid-time 08:45 UT）、time_err=半曝光 291 s（g'r'i'z' 总 9.7 min）/300 s（JHK 总 10.0 min）；AB 原文明示；not corrected for Galactic foreground extinction→Gext_corr=n。【新增行】MASTER-IAC 1 行（GCN 20343）：04:46:43 UT 起 10 s 曝光组未探测，5σ 上限约 16.2 mag（polaroid、无滤光片）→band=G、upperlimit=y；time=41 s（曝光中点 04:46:48）、time_err=5 s；通告另给 Maximal coadded limit ~18.9 m 无合成时间窗，不入库仅备查。【检索留证】测光检索（2026-11-09）：仓内 gcn/archive 全文检索「161214」命中 23 篇，其中 GRB 161214A 相关 6 篇（20251/20252/20254/20255/20258/20343，含测光数值 5 篇），其余 17 篇为同日 GRB 161214B 与 LIGO/Virgo G268556 事件，与本源无关；external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）、guidorzi2025/liang2023/minaev2020/wang2022/uvot_grb/konus_wind/agile_mcal/saxgrbmgrb/batse/fermi_gbm/fermi_lat/swift_bat/swiftgrbba/swift_xrt_live/heasarc_grbcat 均无 161214A 记录（mpe_greiner 仅身份行无测光表）；GCN 站（gcn.nasa.gov/circulars?query=161214A，2026-11-09 实取）同样仅 6 篇；SciX（api.scixplorer.org）四种查询（\"GRB 161214A\"/161214A/GRB161214A/abs:\"GRB 161214A\"）均只命中同 6 篇 GCN 通告，无研究论文或预印本；TNS 不适用（GRB 非 AT/SN/CV 类）。结论：可用测光=TAROT 5 行+LT 2 行+NOT 1 行+GROND 6 行+MASTER-IAC 上限 1 行；本次新增 1 行（MASTER-IAC），修正 14 行时间轴与元数据。【alias】新增「GRB 161214A」：GCN 20251/20252/20254/20255/20258/20343 六篇通告标题原文用名（mpe_greiner 快照 name 同），证据串「GCN 20251 … GRB 161214A: A long GRB detected by INTEGRAL」；IBAS 触发号 7644 记于本 comment 备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=2016-12-14T04:46:07Z 为 INTEGRAL/IBAS 官方触发时刻（GCN 20251 原文 4:46:07 UT of 2016 December 14）。bot 原判读「t0 为 meta trigger-time（真实触发时刻）」原值 2016-12-14T00:00:00Z 系日期占位（非触发时刻），bot 旧表 time/mjd 按其换算偏早 67 s，已全表重算",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [],
   "host_galaxy": null
