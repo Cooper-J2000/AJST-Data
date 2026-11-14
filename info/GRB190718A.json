@@ -1,28 +1,41 @@
 {
   "transient_id": "GRB190718A",
-  "alias": [],
-  "ra": 336.57614,
-  "dec": -41.20264,
-  "T0": "2019-07-18T04:41:59Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 190718A",
+    "BAT 915091",
+    "GRB190718.2"
+  ],
+  "ra": 336.57616,
+  "dec": -41.20446,
+  "T0": "2019-07-18T04:41:15.172960Z",
+  "T0_ref": "GCN 25082（整秒 04:41:15 UT）+ Swift/BAT 官方目录 batgrbcat（external/swift_bat 快照 trigger_time=2019-07-18T04:41:15.172960Z）；swiftgrbba 04:41:15.000、MASTER 三镜与 FRAM-Auger 反算 04:41:15 互证。bot 原值 2019-07-18T04:41:59Z 系 GCN 25083 MASTER-SAAO 指向时刻（44 s post trigger）误植为触发时刻，已改正",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.7,
-  "pos_ref": "GCN 25084",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 1.9,
+  "pos_ref": "swift_xrt_live（Evans+2009 在线 Swift-XRT 目录，2026-07-21 快照，Err90=1.9″）+ GCN 25084（enhanced 位 1.7″，并列备查）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【导入留底】bot 自 gcn_llm_extract 建库；T0 原 2019-07-18T04:41:59Z（t0_basis=meta_trigger，note「t0 为 meta trigger-time（真实触发时刻）」）。【身份】GRB190718A = Swift/BAT trigger 915091：GCN 25082「At 04:41:15 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 190718A (trigger=915091)」；swift_bat（batgrbcat）/swiftgrbba 快照同触发号互证；MASTER 三镜反算触发一致（SAAO 04:41:59−44 s、OAFA 04:42:12−57 s、IAC 04:42:35−80 s 均得 04:41:15，GCN 25083）、FRAM-Auger 04:45:11−236 s=04:41:15（GCN 25085）、XRT 起测 04:42:21.5−66.4 s=04:41:15.1（GCN 25082）；2019-07-18 同日 Swift 唯一触发。同日 LIGO/Virgo S190718y（GW 事件，2019-07-18T14:35:12.068 UTC，GCN 25087）为另一事件，archive 检索撞「190718」的 22 篇 LIGO/Virgo 通告（25086/25088/25091/25092/25095/25096/25099/25100/25102/25103/25105/25107/25108/25109/25117/25145/25151/25152/25153/25229/25236 等）均与本源无关。【T0】现值 2019-07-18T04:41:15.172960Z：GCN 25082 整秒 04:41:15 UT + 触发仪器官方目录 swift_bat（batgrbcat）亚秒 .172960（§3.8①②；swiftgrbba 04:41:15.000 整秒一致）。bot 原值 04:41:59Z 系 GCN 25083 MASTER-SAAO 指向时刻（「44 sec after trigger time at 2019-07-18 04:41:59 UT」）误植为触发时刻、晚 44 s（Issue #84 同族管线残留）。T0_offset 不写（无 >1 s 偏移证据）；全表 time/mjd 已按新 T0 重算（原 6 行 time 系按误植 T0 换算、偏 −44~−44.5 s，部分行中点被取整）；本源无 X 射线行。【定位】swift_xrt_live（Evans+2009 在线 Swift-XRT 目录，2026-07-21 快照）RA=336.57616、Dec=−41.20446、Err90=1.9″（docs 明示「All errors in this table are given at the 90% confidence level」→pos_error_confidence=90）；GCN 25084（2019，enhanced 位 336.57610/−41.20446/1.7″ 90% conf，自述「may be improved as more data are received」）并列备查——目录晚于通告、从目录（§4 第 6 类冲突判定）。bot 原值 336.57614/−41.20264 系 GCN 25082 prompt XRT 位（3.6″）误配 enhanced 误差 1.7″ 的混合错误。【分类】sub_tag=lgrb：t90=720.0±35.8 s（GCN 25097 Swift/BAT 精化分析，15-350 keV）——按目录 t90 判 lgrb；并列：batgrbcat 快照 t90=704.0 s（15-350 keV）、swiftgrbba 720.0 s（15-150 keV）。【物理量备查】BAT（GCN 25097，误差 90% c.l.）：fluence(15-150 keV)=3.6±0.6e-7 erg/cm²（T+0.1–17.1 s）；1-s peak photon flux=1.0±0.2 ph/cm²/s（15-150 keV，T+0.08 s 起）；谱 PL Γ=1.38±0.26；主结构 T0–T+17 s、弱脉冲 ~T+700 s（与 XRT 大耀发同刻）。XRT（GCN 25093，X 射线不入库）：晚期衰减 α=1.03(+0.18,−0.17)（T0+4.6 ks 起）；PC 谱 Γ=1.64(+0.15,−0.14)、NH=7.0(+4.2,−3.8)e20 cm⁻²（银河前景 1.2e20）；T+24 h 预计流量 4.5e-13（未吸收 5.0e-13）erg/cm²/s（0.3-10 keV）。UVOT FC（GCN 25082）：150 s White 曝光 T+69 s 起，无候选体。【逐行核对】原 6 行星等/波段/上限标记与 GCN 25089（white 21.0/v 18.3/b 19.1/u 20.0/uvw1 19.6）与 GCN 25085（FRAM r' 18.0 AB）一致，均 3σ 上限（upperlimit=y 正确）；问题集中在时间轴（bot 6 行 time 按误植 T0 换算）与 mag_system 缺失：UVOT 5 行→Vega（GCN 25089 明示 UVOT photometric system）、FRAM 行 AB 原文明示不动、MASTER 行原文未声明→留空。新增 32 行：GCN 25089 white_FC（>20.9）/u_FC（>20.0）2 行（与 coadd 行系不同曝光组合并留）+ GCN 25083 MASTER 表 30 行上限（三站 49–1691 s；band=G：C 行原文明示 clear、P\\/P| 行循 GRB190606A 先例等效无滤光片宽带；Tmid−T0 原样入 time、time_err=Expt/2；表历元整秒触发与本库亚秒 T0 差 0.172960 s 不换算）。无 X 射线行、无 discard、无删除。【检索留证】测光检索（2026-11-10）：仓内 gcn/archive 全文检索「190718/915091」命中 29 篇，本源 7 篇（25082/25083/25084/25085/25089/25093/25097，含测光数值 3 篇：25083 MASTER 30 上限、25085 FRAM 1 上限、25089 UVOT 7 上限），其余 22 篇系同日 LIGO/Virgo GW 事件（S190718y/S190718q/S190728q 更正）通告、与本源无关；external/rssgrbag（74 源射电光变）、grbsn_webtool（63 事件）、uvot_grb（626 源）、swift_grb（872 行）均无该源；swift_bat/swiftgrbba/swift_xrt_live/mpe_greiner 快照用于身份/T0/定位互证。GCN 站（gcn.nasa.gov/circulars/25082、/25083、/25089 网页实取）与 archive 逐句一致。SciX（api.scixplorer.org）5 种查询（「GRB 190718A」/GRB190718A/915091/「GRB 190718A」 AND afterglow/abs:「GRB 190718A」）共命中 7 篇 GCN 通告（同上、无研究论文或预印本）、citations(GCN 25082) 0 篇。TNS 不适用（GRB 非 AT/SN/CV 类）。红移：7 篇 GCN 均未报 z、swift_xrt_live Redshift=N/A、SciX 无研究论文→redshift 保持 null。结论：可用测光=UVOT 7 上限+FRAM 1 上限+MASTER 30 上限；本次新增 32 行、改正 6 行（时间轴/星等系统）。【alias】「GRB 190718A」GCN 题名形；「BAT 915091」swift_bat（batgrbcat）目录 name_alt（先例 GRB050713B/GRB081104）；「GRB190718.2」GCN 25083 MASTER 原文用名（题名「Swift GRB190718.2 Global MASTER-Net observations report」、正文「the Swift GRB190718.2 (trigger No 915091…)」，日期+小数伪形豁免证据串）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0=GCN 25082 触发通告 04:41:15 UT + batgrbcat 亚秒 .172960（swiftgrbba/MASTER/FRAM/XRT 多路互证）；原 note「t0 为 meta trigger-time（真实触发时刻）」、原值 2019-07-18T04:41:59Z 系 GCN 25083 MASTER-SAAO 指向时刻误植，已改正（原值留底于本 note 与 comment）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
   },
   "articles": [],
   "host_galaxy": null
