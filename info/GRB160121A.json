@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB160121A",
-  "alias": [],
-  "ra": 109.079167,
-  "dec": -23.583333,
-  "T0": "2016-01-21T13:50:37Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 160121A",
+    "BAT 671231"
+  ],
+  "ra": 109.08819,
+  "dec": -23.59221,
+  "T0": "2016-01-21T13:50:37.710700Z",
+  "T0_ref": "GCN 18912（Swift 团队，原文「At 13:50:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160121A (trigger=671231)」）；sub-second 取触发仪器官方 Swift/BAT 目录 Trig_time_UTC=2016-01-21T13:50:37.710700（仓内 external/swift_bat 快照 summary_general，trigger 671231；MET 列与 UTC 列有缓漂，按 UTC 列）；Swift 飞行通告 GRB_TIME 49837.71 SOD {13:50:37.71} UT 同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +17,14 @@
   ],
   "pos_error": 1.6,
   "pos_ref": "GCN 18918",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 18925",
+  "comment": "审核（fsy@zcode，2026-11-12）。[身份] Swift/BAT trigger 671231：GCN 18912 原文「At 13:50:37 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160121A (trigger=671231)」；仓内 swift_bat/swiftgrbba/mpe_greiner 快照同名条目坐标互证；GCN 站 18910–18941 邻近编号逐篇排查，本暴共 12 篇（18912/18913/18917/18918/18919/18921/18922/18923/18924/18925/18933/18935），无同日混淆源。[T0] 触发仪器官方值 2016-01-21T13:50:37.710700Z：Swift/BAT 官方目录 Trig_time_UTC（仓内 external/swift_bat 快照 summary_general，trigger 671231；MET 列 475077053.440 与 UTC 列有缓漂，按 UTC 列）；Swift 飞行通告 GRB_TIME 49837.71 SOD {13:50:37.71} UT 亚秒一致；GCN 18912 整秒 13:50:37 相容。原库 T0=13:50:37Z 为整秒截断，按 §3.2 以触发仪器亚秒值改进（Swift 飞行通告与目录亚秒一致）；T0_offset 不适用（BAT T100 起点 −0.028 s，|Δ|<1 s）。全表 mjd 已按 mjd=T0+time 重算（含 26 行 X 射线行，只动 mjd 列，行数行序不变）。[定位] 原库 ra/dec=109.079167/−23.583333（=mpe_greiner 快照 BAT 地面定位「07h16m19s −23°35′」±3′）配 pos_ref=GCN 18918 属 BAT/XRT 混串，废弃（原值留此备查）；改用 GCN 18918 增强定位原文「RA, Dec = 109.08819, -23.59221 which is equivalent to RA(J2000) 07h 16m 21.17s, Dec(J2000) -23d 35' 32.0\" … with an uncertainty of 1.6 arcsec (radius, 90% confidence)」→ ra/dec/pos_error 按 GCN 18918、pos_error_confidence=90。备查：swiftgrbba 快照 xrt_ra/dec=109.08808/−23.59214（1.5″）、swift_xrt_live 快照 109.08812/−23.59217（2.2″）为 UKSSDC 后续流水线更新值，与 GCN 18918 差 0.1–0.4″，不采。[红移] GCN 18925（GTC/OSIRIS，6×900 s 光谱起始 22:30 UT=T+8.7 h）原文「We identify Mg II and several Fe-II absorption lines at z = 1.960 which we propose to be the host galaxy redshift. An intervening system at z = 1.645 is also detected.」→ redshift_type=spec、redshift_ref=GCN 18925。[分类] t90=10.5±2.40 s（Swift/BAT 官方目录快照 15–350 keV；GCN 18919 refined 12.0±2.4 s、swiftgrbba 快照 12.0 s 同暴备查）→ 按 Swift/BAT 目录 t90 判 lgrb。[别名] Swift/BAT 目录 name_alt「BAT 671231」（GCN 18912 原文 trigger=671231）；swift_bat/swiftgrbba/mpe_greiner 目录名「GRB 160121A」。[测光检索留证（2026-11-12，§3.3 四要素）] 检索日期 2026-11-12。入口与命中：① GCN 站逐篇排查 18910–18941（本暴 12 篇全部打开原文核对；邻近编号 18910/18911/18914–18916/18926–18932/18934/18936–18941 均属他暴或其他事件）+ OpenAlex title.search「160121A」8 条 GCN 题录互证；② 仓内 external 快照：swift_bat/swiftgrbba/konus_wind/mpe_greiner/swift_xrt_live 命中（目录级参数与定位，无新增测光），rssgrbag、grbsn_webtool、uvot_grb、wang2022、liang2023、guidorzi2025、minaev2020、heasarc_grbcat、swift_grb 均 0 命中（gcn/archive 本地无存档，CONTRIBUTING 载明不入库）；③ Crossref query.title「GRB 160121A」0 命中；arXiv API all:\"160121A\" 0 命中；OpenAlex fulltext.search 另命中 Becerra+2023（MNRAS stad2513，pdftotext+grep 全文仅 Table 3 样本参数表 1 处提及「GRB 160121A 671231 0.53」，无本暴测光）与 Tsvetkova+2021（Konus-Wind 目录 II，waiting-mode 表 1 行、仅提参量）；④ Greiner+2024（A&A 691 A158 GROND 样本 I）arXiv e-print grep 全文仅 allgrbs 观测日志 1 行（无数值），Tab.1 unpub 测光表不含本暴。结论：已发表文献中除 GCN 通告与 Dainotti+2024 机读表外无其他本暴测光。补充与去重：+6 行（Swift/UVOT 官方地面分析产品 uproduct_lc.txt 的 uvw1×2/uvw2×2/uvm2×2 2σ 上限，GCN 18922 未覆盖时段）；删除 21 行 Dainotti MRT 对 GCN 测量的转引重复；GCN 18912 完备度样板句行置 discard=y；Dainotti MRT「Nissim」3 行（私人通信、extcorr=y）保留待查。X 射线行（band=10keV，26 行）不改、不删、不参与去重（仅按新 T0 机械重算 mjd 列）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -79,7 +82,12 @@
         "v": 3.5472972972972974
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [
     {
