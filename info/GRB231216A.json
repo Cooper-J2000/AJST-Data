@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB231216A",
-  "alias": [],
-  "ra": 39.77287,
-  "dec": 33.57671,
-  "T0": "2023-12-16T18:42:32Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 1202749",
+    "GRB231216.77"
+  ],
+  "ra": 39.7727,
+  "dec": 33.5764,
+  "T0": "2023-12-16T18:35:42.032980Z",
+  "T0_ref": "GCN 35378 整秒 18:35:42 UT（Swift/BAT trigger=1202749）+ external/swift_bat（batgrbcat）Trig_time_UTC=2023-12-16T18:35:42.032980（触发仪器亚秒优先，§3.8①②）；GCN 35379（MASTER 指向 18:42:04 UT=触发后 382 s）、GCN 35390（AST3 起测 18:44:08 UT=触发后 506 s）、GCN 35396（HMT 起测 18:42:32 UT=触发后 6.83 min）、GCN 35395（LCOGT 19:08-19:41 UT=0.55-1.10 h）、GCN 35398（GTC 20:18 UT~1.7 h）、GCN 35399（Copernico 20:24:48 UT~1.8 h）、GCN 35384（OHP 21:37:24 UT~3 h）、GCN 35389（REM 00:40:48 UT~6.09 h）多通告反算互证 18:35:42",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.9,
-  "pos_ref": "GCN 35378",
+  "pos_ref": "GCN 35391",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份】GRB 231216A = Swift/BAT trigger 1202749（GCN 35378：「At 18:35:42 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 231216A (trigger=1202749)」）。2023-12-16 全天唯一 Swift 触发（external/swift_bat、swiftgrbba、mpe_greiner 当天均仅此一行）；仓内 gcn/archive（45947 篇）eventId/subject 检索 2023-12-16 仅 GRB231216A（及 MASTER 同暴小数形 GRB231216.77）一个事件，无 GRB231216B 等同日他暴；fermi_gbm 目录无 2023-12-16 触发。原 info tag/alias 为空、Trigger_Instrument 泛称 Swift，本次补全。【T0】原 T0=2023-12-16T18:42:32Z（bot t0_basis=meta_trigger）有误：18:42:32 实为 HMT-0.5m 起测时刻（GCN 35396 原文「Observations started at 18:42:32 UT ... 6.83 mins after the Swift/BAT trigger」），bot 误当触发时刻（Issue #68 族失真）；已改锚触发时刻 2023-12-16T18:35:42.032980Z（依据见 T0_ref）。BAT 峰值在 T0 附近（GCN 35387「peaks at T0」）属光变结构，无 T0_offset。原 t0_note/t0_basis 原值备查：「t0_basis: meta_trigger」「t0_note: t0 为 meta trigger-time（真实触发时刻）」（已失真，本次改写）。【定位】ra/dec=39.7727/+33.5764、pos_error=3.9 arcsec（90% confidence 原文明示）、pos_ref=GCN 35391（Swift-XRT 团队精化位，6.1 ks 数据，data 115 s-68.0 ks）。旧值 39.77287/33.57671 系 GCN 35378 XRT 初报位（3.9 arcsec/90%），已随精化位更新（误差同为 3.9 arcsec）。备查并列：GCN 35378 XRT 初报 39.77287/33.57671（3.9 arcsec，90%）；swiftgrbba xrt 位 39.77271/33.57639（3.9 arcsec，同精化位目录转写）；swift_xrt_live 39.7728842/33.5764686（3.5 arcsec）；BAT 地面位 39.778/33.614（2.0 arcmin，sys+stat，90%，GCN 35387）；BAT 机载位 39.759/33.596（3 arcmin，90%，GCN 35378）；mpe_greiner 39.7583/33.6（±3 arcmin）。【分类/高能量值备查】tag=grb：t90=51.2±3.1 s（GCN 35387 BAT 精细分析，15-350 keV，90% CL；目录值 51.14±3.05 s，external/swift_bat）→按目录 t90 判 lgrb/sgrb（>2 s）。BAT：T50=43.148±2.643694 s、fluence=(1.0±0.1)×10^-6 erg/cm2（15-150 keV）、1 s 峰值光子流量 1.8±0.3 ph/cm2/s（T-0.51 s 起）、时平均谱 PL 指数 1.63±0.20、辐射 T-5 s 至 T+60 s、partial coding 59%（GCN 35387/swift_bat）。XRT：衰变指数 α=0.72(+0.11,-0.09)（GCN 35393 更正 GCN 35391 的 nan 值）；N_H=3.2(+1.7,-1.4)×10^21 cm^-2（银河系前景 8.4×10^20，超量 2.8σ，GCN 35391）；T+24 h 计数率 4.8×10^-3 ct/s、对应 0.3-10 keV 观测（去吸收）流量 1.8×10^-13（2.8×10^-13）erg/cm2/s（GCN 35393，外推预测值非实测）。【红移/宿主】无：全部光学/红外均非探测（最深 NOT r>23.5 AB、GTC i>24.5），无光谱、无宿主文献支持，redshift=null、host_galaxy=null。【alias】「BAT 1202749」=external/swift_bat name_alt（GCN 35378 原文 trigger=1202749）；新增「GRB231216.77」（GCN 35379 MASTER 原文用名，subject「Swift GRB231216.77」，两位小数形）。【E(B-V) 备查】GCN 35378 给 0.081、GCN 35388（Schlegel+1998）给 0.082，两通告微差并列；全部行均未做银消改正（Gext_corr=n）。【逐行核对与全表重建】原 12 行逐行对照 12 篇测光通告（GCN 35383/35384/35389/35390/35394/35395/35396/35398/35399 等）核对：星等数值、上限标记、波段、望远镜均与原文一致，未删行、未置 discard；但时间口径全部有误，已按统一 T0 重建全表（42 行）：(1) 旧 T0 误取 HMT 起测时刻 → 全部 time/mjd 随新 T0 重算；(2) bot 多把「起测时刻当曝光中点」（GCN 35390 AST3 96→806 s；GCN 35383 GIT 4176/7369→4586.03/7779.37 s，原文 JD(mid) 与 t_mid-t0=1.27/2.16 h 均指向 18:35:42 历元）或「观测窗口起点/近似中点当 time」（GCN 35395 LCOGT→合并窗口中点 2928±990 s；GCN 35384 OHP→窗口中点 12715.5±1813.5 s；GCN 35394 Nastro Verde→窗口中点 6619.5±636.5 s；GCN 35396 HMT time=0→按原文 26.03 min post-burst=1561.8 s；GCN 35389 REM mjd 与原文 ~6.52/6.61 h 不自洽→按相对时长 23472/23796 s±180 s）；(3) band 改正：GCN 35394 Nastro Verde 原文明示「All images are unfiltered」、旧 band=R 系惯例误填 → band=G（2026-10-12 裁定）；(4) mag_system 补证：HMT/NOT/Copernico 的 AB 与 REM/UVOT 的 Vega 均原文明示，GIT/LCOGT/OHP 按 PanSTARRS 定标推定 AB（依据写入行 comment），其余原文未声明、留空注明；(5) reference 规范为「GCN NNNNN」带空格格式。【新增行】30 行（全部为上限、原文均有明确时间锚点）：GCN 35378 UVOT U 找星图先验典型值 19.2（1 行，与 GCN 35388 实测 u_FC >20.2 同曝光两版并列）；GCN 35379 MASTER-SAAO 偏振片（P\\/P/）上限表 18 行（band=G，lc/GRB190821A GCN 25429 同款先例）；GCN 35381 BOOTES-2 clear 20.0（band=G）；GCN 35382 NOT r>23.5/z>21.5 AB（2 行）；GCN 35388 Swift/UVOT 七滤光片上限表 7 行（u_FC/v/b/u/w1/m2/w2，Vega）；GCN 35401 GAD Observatory 18（band=G，原文未说明滤光片、同协作网模板 Nastro Verde 明示 unfiltered）。GCN 35393 系 35391 的更正通告（仅 α 值），无测光；X 射线量值不入库（本源 lc 无能量串行）。【测光检索留证】测光检索（2026-11-13）：仓内 gcn/archive 全文库（45947 篇）全文检索「231216A」命中 17 篇、事件名变体「231216」补收 GCN 35379（MASTER 用名 GRB231216.77）共 18 篇（35378/35379/35381-35384/35387-35391/35393-35396/35398/35399/35401），其中含测光数值 15 篇、纯谱学 3 篇（35387/35391/35393），15 篇逐篇核对并全部入库（原 12 行修正+新增 30 行，净增 30 行）；external/rssgrbag（射电光变 140 行/74 源）、grbsn_webtool、uvot_grb（626 源）、swift_grb、heasarc_grbcat、konus_wind、fermi_gbm/fermi_lat、batse、saxgrbmgrb、agile_mcal、liang2023、wang2022、guidorzi2025、minaev2020 均无本源测光记录（swift_bat/swiftgrbba/swift_xrt_live/mpe_greiner 仅身份/T0/定位互证）；SciX（api.scixplorer.org，token 实测可用，2026-11-13）：q=「GRB 231216A」/「231216A」/「\"231216A\"」/「1202749 GRB」分别命中 19/19/19/4 条，全部为本暴 GCN Circular 题录（2023GCN.35378-35401 共 17 篇编号、另 2 条同通告作者变体重复条目），研究论文 0 篇 → articles=[]；GCN 站 gcn.nasa.gov/circulars/35378 实测 HTTP 200（JS 渲染页无正文文本，正文以仓内 archive 为准）、gcn.nasa.gov/api/circulars 服务端错误（b12 审核同况），SciX 题录与仓内 archive 18 篇互证无缺篇。结论：本源全部已知测光为触发后 0.11-6.61 h 的光学/近红外上限（无任何探测、无射电/mm、无晚期测光报告），无红移。【X 射线】本源 lc 无 band 为能量串（eV-GeV）的行；GCN 35391/35393 的 XRT 谱学/流量外推按 §3.3/§7 不入库（量值见上「分类/高能量值备查」）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_trig_time",
+    "t0_note": "T0=BAT 触发时刻 18:35:42.032980（GCN 35378 整秒+external/swift_bat Trig_time_UTC 亚秒）；原 bot t0_note「t0 为 meta trigger-time（真实触发时刻）」误把 HMT-0.5m 起测时刻 18:42:32（GCN 35396）当触发时刻，2026-11-13 审核改写（原值见 info comment）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-13"
+    }
   },
   "articles": [],
   "host_galaxy": null
