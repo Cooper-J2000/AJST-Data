@@ -1,26 +1,38 @@
 {
   "transient_id": "GRB141215A",
-  "alias": [],
-  "ra": 179.056,
-  "dec": -52.745,
-  "T0": "2014-12-15T13:26:16Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 141215A",
+    "GRB141215560",
+    "bn141215560"
+  ],
+  "ra": 178.95915,
+  "dec": -52.82586,
+  "T0": "2014-12-15T13:26:15.754Z",
+  "T0_ref": "GCN 17189（Fermi/GBM 官方触发通告：At 13:26:15.75 UT triggered and located；trigger 440342778/141215560）＋external/fermi_gbm（FERMIGBRST）trigger_time＝MJD 57006.559904562＝13:26:15.754（同一触发仪器毫秒精度、差 4 ms，取目录值）；备查：GCN 17187 Konus-Wind 触发 13:26:13.645；GCN 17186 IPN「about 48376 s UT（13:26:16）」；external/swiftgrbba 13:26:16.000（＝IPN 值）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3.3,
+  "pos_ref": "UKSSDC Swift-XRT enhanced position（swift.ac.uk/xrt_positions/00020451；90% radius 3.3″ 原文明示；与仓内 external/swift_xrt_live 行一致）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "【身份】GRB 141215A＝IPN 三角定位长暴（GCN 17186）：Fermi/GBM in-flight 触发（trigger 440342778/141215560；GCN 17189）＋Konus-Wind（触发 T0=48373.645 s UT；GCN 17187）＋INTEGRAL SPI-ACS＋Mars-Odyssey HEND＋RHESSI 观测；Swift/BAT 在编码视场外、未触发（GCN 17186 原文「outside the coded field of view of the BAT」），Swift 仅以 XRT/UVOT 对 IPN 误差框铺格观测（GCN 17188/17190/17217；TILED_GRB00035、obs 00020451–00020453）。原 Trigger_Instrument=Swift/BAT 系 bot 按 UKSSDC 记录导入所致、有误，已改 Fermi/GBM。仓内互证：external/mpe_greiner（Instrument=IPN）、external/swiftgrbba（trigger_obs=IPN；comment「IPN: GCN 17186」）、external/swift_xrt_live、external/fermi_gbm（FERMIGBRST trigger 141215560 行）。同日他暴甄别：gcn/archive 全文含「141215」共 8 篇，另 GCN 16864（MAXI 对 GRB 140928A）、GCN 16865（GRB 140930B enhanced position）系无关 9 月暴的日期串误命中、已排除；仓内 2014-12-15 无第二事件（mpe_greiner 当日仅本暴、swift_bat 当日无触发）。【T0】取触发仪器 Fermi/GBM 官方值 2014-12-15T13:26:15.754Z：GCN 17189「At 13:26:15.75 UT the Fermi Gamma-Ray Burst Monitor triggered and located GRB 141215A」＋external/fermi_gbm（FERMIGBRST）trigger_time＝MJD 57006.559904562＝13:26:15.754（同一触发仪器毫秒精度、与通告差 4 ms，取目录值）。备查并列：Konus-Wind 触发 13:26:13.645（GCN 17187，触发判据不同、早 2.1 s）；IPN 通告「at about 48376 s UT（13:26:16）」（GCN 17186，整数秒近似、与 GBM 值一致）；external/swiftgrbba trigger_time 2014-12-15T13:26:16.000Z（＝IPN 值的目录渲染）。无 T0_offset（无 |offset|>1 s 的真实爆发时刻偏移记录）。【测光历元与 X 射线行 residual（重要）】lc 的 8 行 10keV XRT 光变出自 UKSSDC Burst Analyser（Evans+2007,2009），其 time 列零点＝UKSSDC 库存触发 MET 440342776。该 MET 恰为 IPN 通告 SOD 48376 s 的整秒朴素编码，而 Swift 星载钟相对 UTC 漂移约 +12.9 s（external/swift_bat 同月 5 例 Trig_time_met↔Trig_time_UTC 偏移 12.876–12.981 s、2014-12-12 为 12.907 s），故该 MET 的真实 UTC 零点＝13:26:16.000−12.907 s≈13:26:03.09——与 UKSSDC tiling 页（swift.ac.uk/xrt_products/TILED_GRB00035）对同一 T0 的 UTC 渲染「T0: 2014-12-15 13:26:03 UT」一致（external/swiftgrbba 则按朴素渲染记 13:26:16.000，两处 UKSSDC 产品的分歧即此伪差）。推论：X 射线行真实绝对时刻≈13:26:03.09+time；bot 的 mjd（＝13:26:16.000+time）系统性偏晚 12.907 s。按 §3.3/§3.8 X 射线行唯一例外，维护者合入前须按 mjd=T0_new+time 机械重算 8 行 mjd（重算后仍残留 +12.661 s 绝对时刻偏差——源出 UKSSDC 入库伪差，本库按红线不可修，特此留证）；该残差亦在 CI mjd 1 s 容差之外，属已知注释级事项、非校验错误。新增 UVOT 行已按真实零点换算（time＝原文−12.661 s）、行 comment 注明。【定位】ra/dec＝178.95915/−52.82586＝UKSSDC Swift-XRT enhanced position（「90% Error radius: 3.3″」原文明示；swift.ac.uk/xrt_positions/00020451，2026-11-12 实测），与仓内 external/swift_xrt_live 行（同值 3.3″）一致；该位对应 GCN 17217 确认的 X 射线余辉（Source #2，衰减指数 α~1）。备查并列：GCN 17190 Source #2 初报位 178.95882/−52.82640（4.3″、radius、90% confidence）；external/swiftgrbba enhanced 位 178.95996/−52.82617（2.8″）；IPN 3σ 误差框（GCN 17186）：中心 179.056/−52.745（原 info 旧值即框心）、四角 179.620/−52.523、178.533/−53.178、178.486/−52.965、179.570/−52.309、面积 575 平方角分、最长径 1.1 deg、最短径 10 角分。【分类】sub_tag=lgrb：t90=11.264±0.362 s（FERMIGBRST，50–300 keV）按目录 t90 判 lgrb；互证：GCN 17189 T90≈11 s（50–300 keV）、GCN 17187 多峰总时长约 15 s、GCN 17186 标题「long/intense」。【高能量值备查】fluence：GBM (2.94±0.04)E-05 erg/cm2（10–1000 keV；GCN 17189）；FERMIGBRST 2.58223E-05±6.50537E-08 erg/cm2（10–1000 keV、目录终版）；Konus 2.8±0.3E-05 erg/cm2（20 keV–10 MeV；GCN 17187）。Epeak：GBM 392±11 keV（CPL；GCN 17189）；FERMIGBRST 349.936±11.526 keV（CPL）；Konus Band Ep=241(+28/−17) keV（GCN 17187）。1 s 峰值光子流量 GBM 20.6±0.7 ph/cm2/s（10–1000 keV、起于 T0+10.8 s；GCN 17189）；FERMIGBRST 64 ms 峰 30.3631±2.48955 ph/cm2/s（10–1000 keV）；64 ms 峰（能量流量）Konus 7.7±0.8E-06 erg/cm2/s（20 keV–10 MeV、起于 T0+10.560 s；GCN 17187）。【alias】GRB 141215A＝GCN 通告原文用名（6 篇均此形）。伪形豁免留证：GRB141215560 系 FERMIGBRST trigger_name，external/fermi_gbm 快照原始行原文用名（bn141215560|GRB141215560），GCN 17189 原文亦记「trigger 440342778/141215560」；bn141215560＝同目录 bn 列原文用名。【红移/宿主】无红移记录（6 篇通告与全部检索均无 z）；余辉仅 X 射线确认（GCN 17217），无光学对应体、不建 host_galaxy。【X 射线】lc 8 行均为 band=10keV 的 Swift/XRT 单色 Fν（UKSSDC Burst Analyser、Jy、未吸收改正）——按 §3.3/§7 不审核不改不删不参与去重；GCN 17190 的 3 个 XRT 源位/计数率、swiftgrbba 与 swift_xrt_live 的 Γ/NH/11h/24h 流量等 X 射线量值均不入库。【逐行核对与去重】原 8 行逐一核对（无 discard、无删除、无重复行）：数值、time_err（半曝光宽）、band=10keV、Jy、Gext_corr=n、upperlimit=n、weights=1.0 与 bot 导入一致、reference 保持。现表 mjd=T0_old(13:26:16.000)+time 精确自洽（逐行验算偏差 <1 ms）；T0 改 15.754 后差 0.246 s（<CI 1 s 容差），mjd 重算由维护者按 X 射线行例外执行（见测光历元段）。【新增行】3 行 UVOT 上限（GCN 17217 表：white >21.35、v >19.39、u >20.85；3σ、Vega、未做银消改正），8→11 行、无删除。【测光检索（2026-11-11）】第一步仓内：gcn/archive 全文库（45947 篇）按「141215A/141215/440342778/141215560/TILED_GRB00035」检索，命中本暴通告 6 篇（17186/17187/17188/17189/17190/17217、逐篇实读），另 GCN 16864/16865 为无关日期串误命中已排除；external/rssgrbag、grbsn_webtool、uvot_grb、swift_grb、heasarc_grbcat（主表/flux/AG 三表 zgrep）、konus_wind、fermi_lat、agile_mcal、batse、saxgrbmgrb、liang2023、wang2022、guidorzi2025、minaev2020 均无本源测光记录（mpe_greiner/swiftgrbba/swift_xrt_live/fermi_gbm 仅目录级行；batgrbcat 无本暴——BAT 未触发）；UKSSDC 在线 Burst Analyser/XRT 产品页实测（2026-11-12）：当前 v6 重处理数据仅 2 个 PC bin、与库内 8 行（导入时旧版）不同，不另入库。第二步外部：SciX（api.scixplorer.org、token 实测可用，题录＋full 全文检索「GRB 141215A/141215A/GRB141215A/141215560/440342778」）→仅命中同 6 篇 GCN、研究论文 1 篇提及触发号（Bordoloi+2026、ApJ 1003、58：prompt 谱学 IC 拟合样本、无测光、不取值不入库）；GCN 站 gcn.nasa.gov/circulars/17186 实测 HTTP 200（JS 渲染页、正文以仓内 archive 为准）；GRBSN webtool 无此事件（无 GRB-SN 关联）；TNS 无条目（无光学对应体、无 AT 名）。结论：本源全部已知测光＝Swift/UVOT 3 条上限（GCN 17217，本次入库）＋Swift/XRT X 射线光变（不在审核范围）；无地面光学/红外、无射电/mm、无红移。补 3 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
