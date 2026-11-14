@@ -1,29 +1,30 @@
 {
   "transient_id": "GRB181201A",
   "alias": [
-    "AT2018jgp"
+    "AT2018jgp",
+    "MASTER OT J211711.20-123751.4"
   ],
-  "ra": 319.2965875,
-  "dec": -12.630919444444444,
-  "T0": "2018-12-01T02:39:53Z",
-  "T0_ref": null,
+  "ra": 319.29666,
+  "dec": -12.63082,
+  "T0": "2018-12-01T02:38:00Z",
+  "T0_ref": "GCN 23469（INTEGRAL/IBIS-IBAS 触发通告：IBIS/ISGRI data at 02:38 UT of 1 December 2018，分钟精度）；GCN 23480（Fermi-LAT 团队：the INTEGRAL trigger: T0 = 02:38:00 UT）；UKSSDC Swift Burst Analyser trigger_time=2018-12-01T02:38:00.000Z、trigger_obs=INTEGRAL（仓内 external/swiftgrbba 快照）；Laskar+2019（ApJ 884,121）正文「We take the Fermi and INTEGRAL time as T0」采同一历元",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Insight-HXMT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": 0.45,
   "tag": [
     "grb"
   ],
-  "pos_error": 0.5,
-  "pos_ref": "https://www.wis-tns.org/object/2018jgp",
-  "redshift_type": null,
-  "redshift_ref": "catalog:minaev2020",
-  "comment": "catalog-only: Minaev & Pozanenko 2020 (MNRAS 492, 1919) Type I/II sample",
+  "pos_error": 2.0,
+  "pos_ref": "GCN 23474（Swift-XRT enhanced）",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 23488（VLT/FORS2 tentative：Mg II/Mg I 辨认 z=0.450，同通告 z<1.88 上限）；Laskar+2019（ApJ 884,121）采用同一值",
+  "comment": "审核（2026-11-13，Rusty-Harpoon@zcode）。【身份】GRB 181201A = INTEGRAL/IBAS 触发暴：GCN 23469「a gamma ray burst lasting about 180 s has been detected by IBAS in the IBIS/ISGRI data at 02:38 UT of 1 December 2018」，IBAS 精化位 319.3009,−12.6242 ±2′（90% c.l.），遥测饱和、峰值流量/通量仅下限。仓内 gcn/archive 全文检索「181201A」命中 33 篇（23469–23488、23491–23522、23601，另 30982 为 GRB 211023A 通告仅顺带提及本暴），逐篇核对；GCN 23471 ops note：本暴通告名曾由笔误「GRB 180112A」改「GRB 181201A」——仓内 GCN 22353/22358/22421 系 2018-01-12 另一暴（HXMT/CALET/AstroSat 探测），与本暴无关，已排除；「2018jgp」archive 0 命中。多仪器定位互证（Swift/XRT enhanced、UVOT、MASTER、VLA、GROND 全部一致于 21:17:11.2 −12:37:51）。无 Swift/GBM 触发（Swift 仅 ToO 跟随观测；Fermi 仅 LAT 探测）。【触发与 T0】Trigger_Instrument 原标 Insight-HXMT 系误标：HXMT/HE 于 02:39:53.000 以盲搜（BLIND）检出本暴（GCN 23491，trigger ID HEB181201111；官方目录 Song+2022「The First Insight-HXMT GRB Catalog」主表 search method=BLIND、location source=IBIS——非板载触发，系 INTEGRAL 触发后的数据检索检出），按 §3.8 与 GRB161010A 先例改 INTEGRAL/IBIS。T0=2018-12-01T02:38:00Z（INTEGRAL/IBAS 触发），四路独立一致：GCN 23469（02:38 UT）、GCN 23480（Fermi-LAT：T0 = 02:38:00 UT）、UKSSDC Burst Analyser trigger_time=02:38:00.000Z（trigger_obs=INTEGRAL）、Laskar+2019（We take the Fermi and INTEGRAL time as T0）。备查：Konus-Wind 触发 02:39:52.355（GCN 23495）、HXMT 盲搜检出 02:39:53.000（GCN 23491；Song+2022 目录同值 02:39:53.00）、AstroSat CZTI 最强峰 02:39:58.020（GCN 23501）。Konus 光变双脉冲、第一脉冲起始于其 T0−115 s≈02:37:57 UT（GCN 23495 原文「first pulse staring at ~T0-115 s」，近似值），即 INTEGRAL 触发前 ~2.6 s 已有辐射——量级与该近似的不确定度相当，不写 T0_offset（§3.2）。2017-01-01 后无闰秒，本暴亦无 GBM 触发，闰秒核查不适用。【定位】ra/dec=319.29666/−12.63082、pos_error=2.0″、pos_error_confidence=90（GCN 23474 原文明示「2.0 arcsec (radius, 90% confidence)」）、pos_ref=GCN 23474（Swift-XRT enhanced，XRT-UVOT 对齐）。原 info ra/dec=319.2965875/−12.6309194、pos_error=0.5″、pos_ref=TNS AT2018jgp——TNS 站实测 403 不可达（2026-11-13），0.5″ 误差与该坐标均无从核验，已按 GRB161010A/GRB050326 先例改锚可核实的 XRT enhanced 位。备查并列：UVOT 319.29656,−12.63084 ±0.2″（90%，GCN 23499）；Laskar+2019 XRT 位 21:17:11.20,−12:37:50.9 ±1.4″（90%）；VLA 319.296604,−12.6309361（RA ±0.001 s/Dec ±0.03″，GCN 23519）；MASTER 21:17:11.20,−12:37:51.4（GCN 23470）；INTEGRAL IBAS 319.3009,−12.6242 ±2′（GCN 23469）。【红移】z=0.45 保持，redshift_type 填 spec：VLT/FORS2 600 s 光谱（GCN 23488）连续谱大体无特征、给出 z<1.88 上限；「possible presence of three weak lines, which, if real, can be identified as the Mg II doublet and Mg I, implying a redshift of z = 0.450」——tentative 光谱辨认，后续文献均采纳：Laskar+2019（z=0.450）、Konus-Wind 按 z=0.450 推静止系参数（GCN 23495）、Minaev+2020 表 A1（仓内 external/minaev2020 快照 recno 318）z=0.45、Type II+SNph；Belkin+2020（Springer VoR 摘要页实读）证认伴随超新星佐证。mpe_greiner 快照 redshift=1.88 系将 z<1.88 上限误置为值（其 z_flag=ul），勿引。宿主：Pan-STARRS 档案 i′~23.4 候选宿主（GCN 23488，仅坐标接近、未定论）→ 按 §3.10 不建 host_galaxy。【分类】sub_tag=lgrb：INTEGRAL 持续约 180 s（GCN 23469）、Konus-Wind 称 long-duration 且总时长 ~172 s（GCN 23495）；Minaev+2020 目录 grb_type=II（EH=0.35/EHD=0.03 均判 II）。T90 备查（多来源并列）：HXMT 目录 T90=20.605±1.118 s（T90 start −1.324 s；T50=5.401±0.141 s；Song+2022，CsI 80–800 keV）、GCN 23491 初报 15.18 s（from T0+1.56 s）、AstroSat T90=19.2 s（40–200 keV，GCN 23501）。高能量备查（§3.9，不入 lc）：INTEGRAL peak flux >2 ct/cm²/s（20–200 keV，1 s 积分）、fluence >1e-4 erg/cm²（遥测饱和，下限；GCN 23469）；Konus fluence=1.99(−0.06,+0.06)e-4 erg/cm²、64-ms peak flux 2.88e-5 erg/cm²/s、Ep=152±6 keV、Band α=−1.25±0.05/β=−2.73(+0.11,−0.12)（GCN 23495）；按 z=0.450 得 E_iso~1.0e53 erg、L_iso~2.2e52 erg/s、Ep,i~220 keV（GCN 23495；=info params（minaev2020）所载）；Fermi-LAT >100 MeV 积分光子流量 (4.5±3.3)e-7 ph/cm²/s（2000–10000 s）、最高光子 25.5 GeV（~7600 s，GCN 23480）；XRT 谱 N_H=6.1(+2.0,−0.9)e20 cm⁻²、Γ=1.74(+0.08,−0.07)、光变衰减 α=1.44±0.18（GCN 23474）；INTEGRAL/IBIS 偏振 81.5% 高偏振（Bal+2026 arXiv:2610.20580，题录级，未逐页核对，无测光）。【别名】AT2018jgp=TNS 名（MASTER Transient Discovery Report for 2018-12-01，SciX 题录 2018TNSTR1852....1G 命中；TNS 站本会话 403 未逐字段核）；MASTER OT J211711.20-123751.4（GCN 23484 原文用名）。无伪形。【X 射线行】316 行 band=10keV（UKSSDC Swift Burst Analyser，Evans+2007,2009）不改、不删、不新增、不参与去重（§3.3/§3.4/§7），与 HEAD 逐字节比对一致、行序未动。其 time 零点=UKSSDC trigger_time=02:38:00.000Z（INTEGRAL）＝本源新 T0——旧 mjd 系导入期按旧 T0（HXMT 历元）推出（恒差 0.0 s 证据），经复查裁定（UKSSDC BA 原始 qdp 产品页面轴标签明文 \"Time since INTEGRAL trigger (s)\"、316 行 time+flux 逐点吻合）按 §3.8 修法一执行守卫修复：316 行 mjd := T0 + time 重算（每行 −113.0 s，只动 mjd 列），全表自洽恢复、validate 的 mjd 警告消失（先例：GRB050326/GRB170113A）；validate.py 的「mjd 与 T0+time 不自洽」警告即该重算的预期表现、重算后消失。【逐行核对与去重】原 357 行中 41 行非 X 射线行全部逐行对照仓内 GCN 全文核对，并按新 T0 重算 time/mjd（复算脚本 build_rows.py 留存 work 目录：每行带 GCN 原始值→复算断言）。bot 原行时间历元混用三类（UVOT 行取 T_start−1 且未换算历元；IKI 部分行做 −113 s 换算、部分行取曝光起点；Gemini 4 行仅按日期粗值），已全部按 §3.2/§3.8 修正：共加/窗口行取窗口中点+半宽并注明「真实曝光中点不可恢复」（UVOT 7 行按 GCN 23499 表 T_start/T_stop；COATLI 2 行按观测窗口），UT 起点+半曝光（SAAO 1m、CrAO、SAAO40in、RC1000、AZT-33IK、TienShan、Zeiss-TSHAO、GROND 两历元、Chilescope），原文显式中点直取（NOT 20:27:09 UT、GOTO 两 midpoint、GROWTH-India t_mid、Gemini t-T0(mid) 列）。原文内部不自洽处（B 档，逐行 comment 注明）：GCN 23514 的 t-T0(mid) 列实为其 UT 起点−02:38:00 值（差半曝光 600 s）；GCN 23507 t-T0 对应其内部 T0≈02:34:21（与 UT 锚点差 ~219 s）；GCN 23479 t-T0 差 ~12 s；GCN 23486「21.85 hrs after trigger」与显式 UT 00:16 差 ~13 min——均取 UT/显式时刻为准。mag_system 补填：UVOT 7 行→Vega（GCN 23499 原文「using the UVOT photometric system (Breeveld et al. 2011…)」）；NOT/GROND 8 行→AB（原文明示）；GOTO/GROWTH-India→AB（PS1 定标推定）；SAAO/CrAO/Chilescope/SAAO40in/AZT-33IK/TienShan/Gemini→AB（SDSS DR12 定标推定，逐行 comment 注明）；COATLI→AB（原文「adjusted to an approximate AB system」）；iTelescope（USNO-B1 定标）与 MASTER-Kislovodsk 行原文未声明系统→留空+comment；MASTER-OAFA 发现行→Vega（Laskar+2019 正文称该发现星等 ≈13.2 mag (Vega)，推定依据入行 comment）。band 复核：COATLI w 宽滤镜→G（库内既有惯例，GRB180626A/GRB190204A 先例）；GOTO L 合成图像（400–700 nm）以 PS1 g 定标、表列 g→band=g；MASTER 无滤光片→G；NOT Bessel R 滤片以 Pan-STARRS r 定标并 Lupton 变换→band=r（原文记 r=17.5 AB）。telescope/instrument 规范化（Swift+UVOT、MPG/ESO 2.2m+GROND、Chilescope RC-1000、COATLI 50-cm、Zeiss-1000 1m (TSHAO)）；reference 统一「GCN NNNNN」格式。去重：无同次测量转引重复——Laskar+2019 表 2 的 iTelescope R 行（0.652±0.018 mJy @3.46e-1 d）系 GCN 23475 同次测量换算，按 §3.4 保留初报 GCN 行、不另加 mJy 行；MASTER-OAFA 发现行的 GCN 初报（13.17 Vega）与 Laskar+2019 重测光（12.5±0.13 mJy，不同定标）按「初报/精表两版并列」惯例共存并互证；X 射线行不参与去重。【新增 9 行】（均有明确时间锚点、逐值取自原文）：GCN 23470 MASTER-OAFA 发现 13.17（触发后 155 s、10 s 曝光，本暴首个光学探测）+同曝光 5σ 极限约 16.2；GCN 23476 MASTER-Kislovodsk 17.6（15:57:35 UT 起 180 s）+5σ 极限约 18.3（原文未给滤波片→G）；Laskar+2019 表 2/表 3 样例行（arXiv v2 TeX 实开；VoR 机读表不可达，见 audit/unverified.tsv）：MASTER-OAFA Clear 重测光 12.5±0.13 与 28.5±0.158 mJy（Fν@4.67e14 Hz）、ALMA 97.5 GHz 3.41±0.023 mJy @0.885 d、ALMA 96.4 GHz 1.99±0.025 mJy @1.92 d、VLA 2.73 GHz 0.478±0.07 mJy @2.93 d（本暴首批射电/mm 入库值；Laskar 历元=本库 T0，无需换算）。【检索留证】测光检索（2026-11-13）：第一步仓内——gcn/archive 全文库（45947 篇）检索「181201A」命中 33 篇（本暴 32 篇+30982 他暴提及），逐篇核对、净增 9 行；「180112A」（GCN 23471 ops 笔误名）命中 3 篇均系 2018-01-12 另一暴，排除；external/rssgrbag（140 行/74 源）、external/grbsn_webtool（63 事件）、uvot_grb、konus_wind、heasarc_grbcat、fermi_gbm 均无本源记录；swiftgrbba、mpe_greiner、minaev2020 仅目录级参数（作身份/T0/红移互证）。第二步外部——SciX（token 实测可用）：「GRB 181201A」34 命中=GCN 32 篇+ATel 12383（HCT 光学观测；astronomerstelegram.org 实测「We're Sorry」反爬不可达，无数值入库）+Laskar+2019+Belkin+2020+Song+2022（HXMT 官方目录，T0/BLIND 备查）+Bal+2026 偏振新文（题录）；「2018jgp」1 命中（TNS 发现报告 2018TNSTR1852....1G，alias 互证）；「HEB181201111」1 命中（2024ApJ...972..190Z HXMT 数据分析样本）。Laskar+2019 渠道分级（§3.3）：第 1 级 IOP VoR 整站 Radware Bot Manager 反爬（curl 实测跳 perfdrive 验证页）→第 2 级 CDS-VizieR J/ApJ/884/121（2021yCat..18840121L 确认存在）主站 asu-tsv/FTP/TAP 均超时或「Page unavailable」、CfA 镜像数据库无连接（stdb_pg no connection）、JP/CN/UA/RU 镜像不可达→第 3 级三方交叉（arXiv:1907.13128 v2 TeX 全文实开＋SciX 元数据＋出版社页反爬即记），仅取样例行入库（表 2 三行示例中 2 行 MASTER + 表 3 三行示例中 2 ALMA 1 VLA；iTelescope 行同测量不重复入库）、未通读 VoR，已登记 unverified.tsv（substituted）。Belkin+2020 渠道分级：第 1 级 Springer VoR 页实开但仅摘要+图列表（订阅墙）→第 2 级无 arXiv 版（SciX esources 仅 PUB_HTML）、作者页 grb.rssi.ru 不可达、Wayback 无响应→第 4 级 arXiv 无文→其表格数值不入库，登记 unverified.tsv（missing）。TNS 站 403（AT2018jgp 记录未逐字段核，pos 改锚 XRT 位）。结论：光学/UV 测光覆盖触发后 155 s（MASTER-OAFA 13.17）至 23.1 d（Gemini SN 抬升段），射电/mm 2.73/96.4/97.5 GHz 覆盖 0.9–2.9 d（Laskar+2019 样例行；全表机读版不可得）；无 >30 d 晚期光学入库值、无其他射电频段入库值（Belkin+2020 有 radio 观测描述而全文不可达）。【其他】articles 3 条 url 改为实测可达页（Laskar→arXiv abs；Belkin→Springer DOI 页；Minaev→arXiv abs）；extra_data 仅新增 audit 标记；params（minaev2020 迁移键）未动。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "eiso": {
@@ -46,7 +47,12 @@
         "v": 120.0
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-13"
+    }
   },
   "articles": [
     {
@@ -54,21 +60,21 @@
       "name": "Laskar+2019",
       "source": "bot",
       "title": "A Reverse Shock in GRB 181201A",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...884..121L"
+      "url": "https://arxiv.org/abs/1907.13128"
     },
     {
       "bibtex": "@ARTICLE{2020AstL...46..783B,\n       author = {{Belkin}, S.~O. and {Pozanenko}, A.~S. and {Mazaeva}, E.~D. and {Volnova}, A.~A. and {Minaev}, P. Yu. and {Tominaga}, N. and {Grebenev}, S.~A. and {Chelovekov}, I.~V. and {Buckley}, D. and {Blinnikov}, S.~I. and {Volvach}, A.~E. and {Volvach}, L.~N. and {Inasaridze}, R. Ya. and {Klunko}, E.~V. and {Molotov}, I.~E. and {Reva}, I.~V. and {Rumyantsev}, V.~V. and {Chestnov}, D.~N.},\n        title = \"{Multiwavelength Observations of GRB 181201A and Detection of Its Associated Supernova}\",\n      journal = {Astronomy Letters},\n     keywords = {gamma-ray bursts, precursor, afterglow, supernova, photometry, multicolor observations},\n         year = 2020,\n        month = dec,\n       volume = {46},\n       number = {12},\n        pages = {783-811},\n          doi = {10.1134/S1063773720120014},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2020AstL...46..783B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Belkin+2020",
       "source": "bot",
       "title": "Multiwavelength Observations of GRB 181201A and Detection of Its Associated Supernova",
-      "url": "https://ui.adsabs.harvard.edu/abs/2020AstL...46..783B"
+      "url": "https://link.springer.com/article/10.1134/S1063773720120014"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
       "name": "Minaev+2020",
       "source": "bot",
       "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+      "url": "https://arxiv.org/abs/1912.09810"
     }
   ],
   "host_galaxy": null
