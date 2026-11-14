@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB070429A",
-  "alias": [],
+  "alias": [
+    "GRB 070429"
+  ],
   "ra": 297.7037353515625,
   "dec": -32.40472412109375,
-  "T0": "2007-04-29T01:35:10Z",
-  "T0_ref": null,
+  "T0": "2007-04-29T01:35:10.078940Z",
+  "T0_ref": "Swift/BAT 官方目录 trigger 277571 亚秒值 01:35:10.078940Z（external/swift_bat 与 external/swift_grb 两快照一致，后者 trigger_ref=Sakamoto+2011/SGA）；GCN 6355 整秒 01:35:10 UT 相符",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +18,44 @@
   "pos_ref": "GCN6361 (UVOTGRB)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)",
-  "sub_tag": [],
+  "comment": "由 UVOTGRB noc-db 光变数据导入新建 (Roming et al. 2017, ApJS, 228, 13)。身份：GRB 070429A=Swift/BAT trigger 277571（GCN 6355，01:35:10 UT）；同日 GRB 070429B（trigger 277582，T0=03:09:04.446800Z，RA 328.02/Dec −38.85，z=0.904）与本源通告集/坐标/T0 互不相交，无连锁污染。T0 亚秒 01:35:10.078940Z 取自 Swift/BAT 官方目录（external/swift_bat 与 external/swift_grb 两快照一致，后者 trigger_ref=Sakamoto+2011/SGA；GCN 6355 整秒相符）；改 T0 后 UVOT 17 行 mjd=T0+time 重算（time 未动），X 射线 69 行 mjd 待维护者按 mjd=T0+time 机械重算。定位：GCN 6361 WHT/LIRIS K 波段疑似源 297.70375/−32.40472（±1″；Roming+2017 目录 POS_REF，SWIFTGRB 光学位同值并备注 OT unconfirmed）；XRT 精化位 297.70333/−32.40497（2.4″ 90%，GCN 6363）距其 1.6″；UKSSDC XRT live 目录 297.70421/−32.40501（2.3″）备查；±1″ 未标注置信水平，pos_error_confidence 留空。t90=163±5 s（GCN 6362，15-350 keV）；Swift/BAT 目录 t90=168.0±26.97 s（15-350 keV）；GCN Report 52.1 亦称 long burst，按目录 t90 判 lgrb。红移：无文献/目录 z 主张（SWIFTGRB 空、GRBCAT 空；同日 070429B z=0.904 不适用本源），保持 null。noc-db 10 行已与 MAST HLSP uvotgrb noc-db FITS（MD5 484c9d35b83165eccd8240c32592e065）逐值核对：TIME 为相对触发的曝光加权时刻（Roming+2017 Table 5，Morgan+2008 方法）、MAG/MAG_ERR 全同、mjd=T0+time 自洽；noc-db 与 GCN 6364 上限均未做银消改正（原文 E(B-V)=0.17 mag），mag_system=Vega 为 UVOT 出厂惯例推定（Breeveld+2011），noc-db 行既有派生列（A_λ 等）系后端引擎产物、保持原样。测光检索（2026-11-08）：仓内 gcn/archive 全文命中 22 篇（A 系 9 篇 6355/6356/6357/6361/6362/6363/6364/6371/6373、B 系 12 篇、7889 系 GRB 070809）；A 系中仅 ROTSE-III（GCN 6356）给出有时标上限，3 行已入库；Gemini/GMOS（GCN 6371）检出候选但未给星等、BOOTES-IR（GCN 6361）R/z 与 UVOT FC（GCN 6355）无限量值，均不可入库；external/rssgrbag（仅 070429B）、grbsn_webtool（无此事件）、mpe_greiner（有目录条目无测光）无本源记录；GCN 站在线核对 GCN 6356 一致；SciX 检索 \"GRB 070429A\" 命中 6 篇、abs:\"070429\" 命中 10 篇（均系 GCN/Report 与地学假阳性，无研究文测光表）；TNS 不适用（GRB 无 TNS 名）→ 本 PR 共补 3 行（ROTSE）。alias「GRB 070429」为 GCN 6355/6356 原文用名（即本源）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-08"
+    }
+  },
+  "articles": [
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Sakamoto+2011",
+      "url": "https://doi.org/10.1088/0067-0049/195/1/2",
+      "title": "The Second Swift Burst Alert Telescope Gamma-Ray Burst Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Lien+2016",
+      "url": "https://doi.org/10.3847/0004-637X/829/1/7",
+      "title": "The Third Swift Burst Alert Telescope Gamma-Ray Burst Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Donato+2012",
+      "url": "https://doi.org/10.1088/0067-0049/203/1/2",
+      "title": "The HEASARC Swift Gamma-Ray Burst Archive: The Pipeline and the Catalog",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
