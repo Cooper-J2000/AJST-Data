@@ -1,28 +1,40 @@
 {
   "transient_id": "GRB240727A",
-  "alias": [],
-  "ra": 236.4375,
-  "dec": 8.6202807,
-  "T0": "2024-07-27T03:52:11Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "alias": [
+    "GRB 240727A",
+    "BAT 1245074"
+  ],
+  "ra": 236.43735,
+  "dec": 8.61996,
+  "T0": "2024-07-27T03:46:14.118700Z",
+  "T0_ref": "Swift/BAT 官方目录 Trig_time_UTC（external/swift_bat 快照 summary_general，2024-07-27T03:46:14.118700）；GCN 36938 互证（trigger 1245074）",
+  "T0_offset": -6.792,
+  "T0_offset_ref": "Swift/BAT 目录 T100_start=-6.792 s（external/swift_bat summary_pow_parameters，best model PL）；GCN 36974 互证（time-averaged spectrum from T-6.79 to T+201.06 sec）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.8,
   "pos_ref": "GCN 36950",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 240727A = Swift/BAT 触发 1245074（GCN 36938 原文用名 GRB 240727A：「BAT triggered and located GRB 240727A (Trigger 1245074)」）；alias BAT 1245074 据 external/swift_bat 快照 name_alt。注意 GCN 36958/36969 的「GRB 240727A」是 Fermi GBM 触发 bn240727994（2024-07-27T23:51:46 UT，RA 115.5 Dec -33.0，GBM 自动命名与 Swift 暴撞名；IceCube GRBweb 记 GRB240727D（2026-11-13 实取 https://user-web.icecube.wisc.edu/~grbweb_public/Individual_GRB_webpages/GRB240727D.html 存档：GRB_name_Fermi=GRB240727994、T0=23:51:46 UTC、ra=115.48° decl=-33.01°，页内嵌 GCN 36959 更正通告原文 This trigger should be named GRB 240727D），与本源（Swift，03:46 UT，Dec +8.6）非同一事件，其 MASTER 测光（GCN 36969）不入本源。T0：原 bot 值 2024-07-27T03:52:11Z 为 GCN 36941 Skynet/PROMPT 观测起始时刻误锚（原文 We began observing the field at 03:52:11 UTC，Issue #84 同型），改取 Swift/BAT 官方目录 Trig_time_UTC=2024-07-27T03:46:14.118700Z（快照 MET 列为系统性缺陷列：本行 MET 743744808.000 按 Swift 官方 epoch 2004-01-01 换算=2027-07-27T03:46:48，相对 UTC 列日期错位 1095 天、日内残差 +33.9 s；2026-11-13 全目录复算 1654/1665 行同型，整列弃用）；GCN 36938 仅给 Prior to 03:48 UTC 互证；swiftgrbba 快照 trigger_time=2024-07-27T03:46:23Z 备查（差 8.9 s，取目录 UTC 列）。t0_basis/t0_note 原值 meta_trigger/「t0 为 meta trigger-time（真实触发时刻）」失真已改写。T0_offset=-6.792 s：BAT 目录 T100_start=-6.792 s（best model PL，光谱区间 T-6.79~T+201.06 s），触发前已有辐射。定位：XRT 增强位 RA,Dec=236.43735,+8.61996、2.8 角秒（GCN 36950 原文 an astrometrically corrected X-ray position … with an uncertainty of 2.8 arcseconds (radius, 90% confidence)），pos_error_confidence=90 据原文；原 bot ra/dec=236.4375/8.6202807 实为 UVOT 位（GCN 36968：RA=236.4375000 Dec=8.6202807、±0.5 角秒 90%），与原 pos_ref=GCN 36950 混串，统一取 XRT 增强位，UVOT 位并列备查。分类：t90=177.88±35.46 s（GCN 36974，15-350 keV；swift_bat 快照同值），按通告/目录 t90 判 lgrb。红移：无任何来源给出。测光检索留证（2026-11-12）：仓内 external 快照 rssgrbag（140 行）/grbsn_webtool（63 事件）无本源记录，swift_bat/swiftgrbba/mpe_greiner 仅参数无测光表；GCN 站事件页 14 篇 + 36974/37815/勘误 36965 共 17 篇 Circular 全文逐篇核对；Crossref（3 式）/arXiv API（3 式）+ arXiv 搜索页/OpenAlex（4 式）共 0 篇期刊文献命中，WebSearch（4 式）仅命中 GCN；SIMBAD 双主机 unavailable@2026-11-12 → 无已发表文献，articles 留空，数据全部来自 GCN：新增 KAIT 1 行（GCN36939）、UVOT 10 行（GCN36968）、PROMPT 第 2 行 R（GCN36941）、JinShan 2 行（GCN36961）、Bassano 1 行（用勘误 GCN36965 值）、MarSEC 1 行（GCN36971），并按新 T0 重算全部 7 个原行 time/mjd（TRT 第 1 帧原用帧尾时刻已改帧中点；Nastro Verde/VIRT 原用窗口起点已改窗口中点）。本源 lc 无 X 射线行，不需 X 射线 mjd 重算。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog_trig_time_utc",
+    "t0_note": "T0 取 Swift/BAT 官方目录 Trig_time_UTC=2024-07-27T03:46:14.118700Z；原 bot 值 2024-07-27T03:52:11Z 为 GCN 36941 Skynet/PROMPT 观测起始时刻误锚（Issue #84 同型）已改，详见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-12"
+    }
   },
   "articles": [],
   "host_galaxy": null
