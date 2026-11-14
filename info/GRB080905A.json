@@ -3,29 +3,34 @@
   "alias": [
     "GRB080905",
     "GRB 080905.499",
-    "bn080905499"
+    "bn080905499",
+    "GRB 080905",
+    "GRB 080905A",
+    "GRB080905499",
+    "BAT 323870",
+    "GRB 080905S"
   ],
-  "ra": 287.6625,
-  "dec": -18.883333,
-  "T0": "2008-09-05T11:58:55Z",
-  "T0_ref": null,
+  "ra": 287.6739,
+  "dec": -18.88022,
+  "T0": "2008-09-05T11:58:54.973940Z",
+  "T0_ref": "GCN 8180（Swift/BAT trigger=323870，原文 At 11:58:54 UT）；Swift/BAT 官方目录（Lien+2016，batgrbcat summary_general.txt，本库 external/swift_bat 快照）Trig_time_UTC=2008-09-05T11:58:54.973940；GCN 8204（Fermi/GBM trigger 242308736 / 080905499，At 11:58:55 UT），GBM 目录 trigger_time=2008-09-05T11:58:55.038（external/fermi_gbm 快照）；两触发仪器亚秒差 64 ms（≥60 ms，PR 说明报告），按「多个触发仪器亚秒矛盾时以 Swift 为准」取 BAT 值",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.1218,
   "tag": [
     "grb"
   ],
   "pos_error": 1.6,
   "pos_ref": "GCN 8203",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec-host",
+  "redshift_ref": "Rowlinson+2010",
+  "comment": "审核（fsy@zcode，2026-11-12）。（1）T0：原值 2008-09-05T11:58:55Z（整秒、无 T0_ref）更正为 Swift/BAT 官方目录 Trig_time_UTC 2008-09-05T11:58:54.973940；触发链：Swift/BAT trigger=323870（GCN 8180 原文 At 11:58:54 UT）、Fermi/GBM trigger 242308736 / 080905499（GCN 8204 原文 At 11:58:55 UT on 5 September 2008），两触发仪器亚秒矛盾取 Swift（详见 T0_ref）。（2）定位改判：原 ra/dec=287.6625/−18.883333 是 mpe_greiner 目录粗位（其快照原文 GRB X-ray position 19h10m39s −18°53'，Error 3'），与 pos_ref=GCN 8203 的 1.6″ 不匹配；改判 GCN 8203 UVOT 增强 XRT 位 RA,Dec=287.67390,−18.88022，原文 with an uncertainty of 1.6 arcsec (90% confidence) → pos_error_confidence=90。（3）alias 增补出处：「GRB 080905」（GCN 8180 原文用名 GRB 080905）、「GRB 080905A」（GCN 8187 原文用名 GRB 080905A；swift_bat 快照 name 字段 GRB 080905A）、「GRB080905499」（fermi_gbm 快照 name_alt；GCN 8204 原文 trigger 242308736 / 080905499）、「BAT 323870」（swift_bat 快照 name_alt；GCN 8180 原文 trigger=323870）、「GRB 080905S」（mpe_greiner 快照 name_alt）。（4）sub_tag=sgrb 依据：t90=1.016±0.082 s（15–350 keV，Swift/BAT 目录 Lien+2016，swift_bat 快照），按目录 t90 判 lgrb/sgrb；并列 GCN 8187 原文 T90 (15-350 keV) is 1.0 ± 0.1 sec、GBM 目录 t90=0.96±0.345 s（50–300 keV）；Minaev+2020 分类 Type I（其表 Type 列 I）；Rowlinson+2010 定性 short GRB。（5）redshift：宿主光谱 z=0.1218±0.0003（Rowlinson+2010 原文 From the detected emission lines we measure the redshift of the GRB host galaxy to be z = 0.1218 ± 0.0003）→ redshift_type=spec-host。（6）测光检索（2026-11-12）：GCN 站检索 080905A 8 篇+080905 补 2 篇＝本暴 GCN 全集 10 篇（8180/8181/8185/8187/8190/8195/8202/8203/8204/8208，全部实开核对）；Crossref 40 命中（专属 2 篇）、arXiv API 6 篇、OpenAlex 引用闭包（Rowlinson+2010 全部施引 97 篇全量翻页）→ 专属文献仅 Rowlinson+2010、NicuesaGuelbenzu+2012（GROND 上限）、NicuesaGuelbenzu+2021（宿主 MUSE/ATCA，无余辉测光）；仓内 rssgrbag 0 行、grbsn_webtool 无此源、gcn/archive 在 main 不存在；ADS 无 token（401 实测）记 search-limited，未据此下「无文献」结论；结论：无更多可入库文献；补 GROND 3σ 上限 7 行（g/r/i/z/J/H/Ks）。（7）X 射线行 13 行（band=10keV）未改未删未重排；T0 平移仅 26.060 ms，在守卫 1 s 容差内，X 射线行 mjd 请维护者按 mjd=T0+time 统一重算（2026-10-31 裁定）。（8）lc 去重：MITSuME 3549.5 s 三行（Dainotti2024;8202）与 GCN8202 三行为同一次共加（值 17.6/17.1/17.6 全同）→ 删；NOT R=24.0@31536 s、VLT R=24.0@52680 s（Dainotti2024;8190）与 Rowlinson+2010 Table 1 的 NOT 24.04±0.47、VLT 24.26±0.31 为同夜同仪器的初报与正式值 → 删（保留已发表 VoR 值）。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -72,7 +77,12 @@
         "v": 0.8557675164913532
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-12"
+    }
   },
   "articles": [
     {
@@ -83,13 +93,6 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2010MNRAS.408..383R"
     },
     {
-      "bibtex": "@ARTICLE{2011ApJ...726...22A,\n       author = {{Akerlof}, C.~W. and {Zheng}, W. and {Pandey}, S.~B. and {McKay}, T.~A.},\n        title = \"{Searching for Needles in Haystacks{\\textemdash}Looking for Gamma-ray Burst {\\ensuremath{\\gamma}}-rays with the Fermi/LAT Detector}\",\n      journal = {\\apj},\n     keywords = {gamma-ray burst: general, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2011,\n        month = jan,\n       volume = {726},\n       number = {1},\n          eid = {22},\n        pages = {22},\n          doi = {10.1088/0004-637X/726/1/22},\narchivePrefix = {arXiv},\n       eprint = {1010.1436},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011ApJ...726...22A},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Akerlof+2011",
-      "source": "bot",
-      "title": "Searching for Needles in HaystackstextemdashLooking for Gamma-ray Burst ensuremathgamma-rays with the Fermi/LAT Detector",
-      "url": "https://ui.adsabs.harvard.edu/abs/2011ApJ...726...22A"
-    },
-    {
       "bibtex": "@ARTICLE{2021ApJ...923...38N,\n       author = {{Nicuesa Guelbenzu}, A.~M. and {Klose}, S. and {Schady}, P. and {Belczynski}, K. and {Hartmann}, D.~H. and {Hunt}, L.~K. and {Micha{\\l}owski}, M.~J.},\n        title = \"{VLT/MUSE and ATCA Observations of the Host Galaxy of the Short GRB 080905A at z = 0.122}\",\n      journal = {\\apj},\n     keywords = {629, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Astrophysics of Galaxies},\n         year = 2021,\n        month = dec,\n       volume = {923},\n       number = {1},\n          eid = {38},\n        pages = {38},\n          doi = {10.3847/1538-4357/ac2faa},\narchivePrefix = {arXiv},\n       eprint = {2112.04924},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...923...38N},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "NicuesaGuelbenzu+2021",
       "source": "bot",
@@ -97,18 +100,25 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...923...38N"
     },
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n  author = {{Dainotti}, M.~G. and {De Simone}, B. and {Mohideen Malik}, R.~F. and {Pasumarti}, V. and {Levine}, D. and {Saha}, N. and {Gendre}, B. and {Kido}, D. and {Watson}, A.~M. and {Becerra}, R.~L. and others},\n  title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n  journal = {\\mnras},\n  year = 2024,\n  volume = {533},\n  pages = {4023-4043},\n  doi = {10.1093/mnras/stae1484},\n  eprint = {2405.02263},\n  archivePrefix = {arXiv}}\n",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "fsy@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
-      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
+      "bibtex": "@ARTICLE{2020MNRAS.492.1919M,\n  author = {{Minaev}, P.~Y. and {Pozanenko}, A.~S.},\n  title = \"{The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method}\",\n  journal = {\\mnras},\n  year = 2020,\n  volume = {492},\n  pages = {1919-1936},\n  doi = {10.1093/mnras/stz3611},\n  eprint = {1912.09810},\n  archivePrefix = {arXiv}}\n",
       "name": "Minaev+2020",
-      "source": "bot",
+      "source": "fsy@zcode",
       "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+      "url": "https://doi.org/10.1093/mnras/stz3611"
+    },
+    {
+      "bibtex": "@ARTICLE{2012A&A...548A.101N,\n  author = {{Nicuesa Guelbenzu}, A. and {Klose}, S. and {Greiner}, J. and {Kann}, D.~A. and {Kr\\\"uhler}, T. and {Rossi}, A. and {Schulze}, S. and others},\n  title = \"{Multi-color observations of short GRB afterglows: 20 events observed between 2007 and 2010}\",\n  journal = {\\aanda},\n  year = 2012,\n  volume = {548},\n  pages = {A101},\n  doi = {10.1051/0004-6361/201219551},\n  eprint = {1206.1806},\n  archivePrefix = {arXiv}}\n",
+      "name": "NicuesaGuelbenzu+2012",
+      "source": "fsy@zcode",
+      "title": "Multi-color observations of short GRB afterglows: 20 events observed between 2007 and 2010",
+      "url": "https://doi.org/10.1051/0004-6361/201219551"
     }
   ],
   "host_galaxy": null
