@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB160119A",
-  "alias": [],
-  "ra": 211.916,
-  "dec": 20.453,
-  "T0": "2016-01-19T03:06:08Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 160119A",
+    "BAT 671014"
+  ],
+  "ra": 211.92195,
+  "dec": 20.46101,
+  "T0": "2016-01-19T03:06:08.282120Z",
+  "T0_ref": "GCN 18893（整秒 03:06:08 UT，trigger=671014）+ Swift/BAT 官方目录 batgrbcat (external/swift_bat 快照 trigger_time=2016-01-19T03:06:08.282120Z)；详见 comment【T0】",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,17 +15,23 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 1.7,
-  "pos_ref": "GCN 18896",
+  "pos_error": 1.9,
+  "pos_ref": "Swift-XRT GRB Catalogue (Evans+2009; external/swift_xrt_live 快照 2026-07-21, Err90=1.9″) + GCN 18896（并列备查见 comment【定位】）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "【导入记录留底】由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。\n【身份】GRB 160119A = Swift/BAT trigger 671014：GCN 18893「At 03:06:08 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 160119A (trigger=671014)」；同触发号互证 GCN 18895/18896/18897/18899/18901/18902/18904/18905/18906/18909/18911；目录互证 swift_bat（BAT 671014）、swiftgrbba（target_id 671014）、mpe_greiner、swift_xrt_live（Evans+2009）；同日唯一：swift_bat 快照 2016-01-19 仅此一触发，gcn/archive 无 160119B；GCN 29900 系 MASTER 对 Fermi GRB210424.69 的报告（URL id=1601196 撞串）已排除。\n【T0】2016-01-19T03:06:08.282120Z = GCN 18893 整秒 03:06:08 UT + 触发仪器官方目录 external/swift_bat（batgrbcat）亚秒 .282120（§3.8；swiftgrbba 整秒、Konus-Wind 以 T0(BAT) 引用，均一致）；自洽：GCN 18893 XRT 起测 03:08:48.0 UT = T0+159.8 s（swiftgrbba xrt_first_obs=159.76 s）。原导入值 2016-01-19T03:06:08Z（Burst Analyser 整秒）留底；非 X 射线 24 行（15 行修正 + 9 行新增）均已按新 T0 锚定；298 个 X 射线行 mjd 未动（当前与 T0+time 偏差恒 -0.282 s，在 1 s 容差内；合入前需维护者按 mjd=T0+time 机械重算 +3.264e-06 d）。\n【定位】ra/dec=211.92195/20.46101、pos_error=1.9″(90%)：Swift-XRT GRB Catalogue（Evans+2009 在线版，external/swift_xrt_live 快照 2026-07-21，Err90 列；docs.html 明示「All errors in this table are given at the 90% confidence level」）。并列备查：GCN 18896 enhanced XRT 位 211.92183/+20.46094（1.7″，90% conf）；swiftgrbba xrt 位 211.92213/20.46125（1.4″）；BAT 地面位 211.916/20.453（GCN 18899，2.0′——原导入 ra/dec 系此值误配 1.7″ XRT 误差，已更正）；VLA 位 14:07:41.295±0.36″/+20:27:40.04±0.11″（GCN 18909）；NOT/GTC 光学位 14:07:41.35/+20:27:40.1（<0.5″，GCN 18895）。\n【分类】sub_tag=lgrb：t90=120.14±14.98 s（Swift/BAT 官方目录 batgrbcat，15-350 keV；按目录 t90 判 lgrb）；并列：GCN 18899 T90=116±14 s（15-350 keV）、swiftgrbba t90=116.0 s（15-150 keV）、Konus-Wind 「long-duration GRB」总时长 ~215 s（GCN 18911）。\n【物理量备查】（瞬发辐射与 X 射线量不入库，§7）BAT 精化（GCN 18899，90% c.l.）：fluence(15-150 keV)=7.1±0.2e-6 erg/cm²、1-s peak photon flux=2.9±0.2 ph/cm²/s（T+146.06 s）、谱指数 1.68±0.05、partial coding 77%；swift_bat 目录：t50=21.228±1.258 s（15-350 keV）、fluence(15-350 keV)=1.135e-5 erg/cm²；Konus-Wind 等待模式（GCN 18911，1σ）：fluence(20-1200 keV)=1.68(+0.19/-0.18)e-5 erg/cm²、2.944-s peak flux=6.39(+0.89/-0.85)e-7 erg/cm²/s、Ep=189(-53/+231) keV；XRT 精化（GCN 18897）：T0+4.9 ks 后衰减 α=0.59±0.11、T+24 h 预计 0.3-10 keV 流量 1.8e-12（观测）/2.6e-12（去吸收）erg/cm²/s。\n【逐行核对】非 X 射线 24 行（原 15 + 新 9）全部对上原文：BOOTES-2/TELMA 2 上限（GCN 18905，40x3s 无滤光片→G、6x60s i；窗口中点/半宽重算）；UVOT white FC（GCN 18893，time=曝光中点 243s、time_err=75s、mag_system=Vega 依 GCN 18904 明示 UVOT photometric system=Breeveld+2011）；NOT r=22.75±0.15（GCN 18895，AB 原文明示；起点 Jan 19.151 UT，原文年份笔误 2015→2016）；GROND 7 行（GCN 18902，midtime 08:38 UT 原文给定，g'r'i'z' 19min/JHK 16min，AB 明示）；RATIR 3 行（GCN 18901，窗口 T0+5.61~9.76h，AB 明示）；NOT r>23.8 AB（GCN 18906，3x600s 起点 Jan 20.14 UT）。新增 9 行：GCN 18904 UVOT 8 波段 3σ 上限（white_FC 21.04/white 21.06/v 20.99/b 20.19/u 20.26/uvw1 21.07/uvm2 21.45/uvw2 19.89，Vega）+ GCN 18909 VLA 21.8GHz 探测 ~0.13 mJy（Jan 20.44 UT）。GCN 18895 的 GTC 图像仅「faintly seen」无数值，不入库。全部非 X 射线行 Gext_corr=n 与原文一致（18893 E(B-V)=0.03、18902 E(B-V)=0.03、18904 E(B-V)=0.04、18901/18906 未做银消改正）。\n【去重】无转引重复（6 篇测光 GCN 各为独立测量）；GCN 18893 FC「typical ~19.6」与 GCN 18904 white_FC >21.04 系同一曝光先后两版（数值不一致按 §3.4 不算重复），两行并留、互注 comment。\n【检索留证】（2026-11-10）仓内 gcn/archive 全文检索「160119/671014」命中 13 篇：12 篇为本源（18893/18895/18896/18897/18899/18901/18902/18904/18905/18906/18909/18911，其中含测光数值 6 篇：18893/18895/18901/18902/18905/18906 原已在库、18904/18909 本次补入），GCN 29900 撞串排除；external/rssgrbag（74 源射电光变）、grbsn_webtool（63 事件）、uvot_grb（626 源）、swift_grb（872 行）、konus_wind、heasarc_grbcat（1967-2005）均无该源；swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live 用于身份/T0/定位互证。GCN 站（gcn.nasa.gov/circulars/18904、/18909 网页实取）与 archive 逐句一致。SciX（api.scixplorer.org）4 种查询（「GRB 160119A」/「GRB160119A」/671014/abs:「gamma-ray burst」）共命中 12 篇 GCN 通告，citations 检索 0 篇——无研究论文或预印本。TNS 不适用（GRB 非 AT/SN/CV 类）。红移：12 篇 GCN 均未报 z、swift_xrt_live Redshift=N/A、SciX 无研究论文 → redshift 保持 null。结论：可用测光=UVOT 9 上限+BOOTES 2 上限+NOT 2 行+GROND 7 行+RATIR 3 行+VLA 1 探测；本次新增 9 行、修正 15 行（时间轴/time_err/星等系统）。\n【alias】「GRB 160119A」为 GCN 通告题名与各目录用名；「BAT 671014」为 Swift/BAT 官方目录 name_alt（external/swift_bat）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-09"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
