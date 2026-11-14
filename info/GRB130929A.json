@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB130929A",
-  "alias": [],
-  "ra": 135.028,
-  "dec": -47.554,
-  "T0": "2013-09-29T09:36:33Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 572308"
+  ],
+  "ra": 135.02362,
+  "dec": -47.56076,
+  "T0": "2013-09-29T09:36:33.134240Z",
+  "T0_ref": "GCN 15269 整秒 09:36:33 UT + external/swift_bat（batgrbcat）Trig_time_UTC 亚秒 .134240（整秒一致、仅亚秒分歧，按触发仪器取亚秒，§3.8①②）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +18,19 @@
   "pos_ref": "GCN 15271",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "「身份」Swift/BAT trigger 572308（GCN 15269：At 09:36:33 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 130929A (trigger=572308)）。仓内 gcn/archive 全文库（45947 篇）检索 130929A/572308，本暴通告恰 6 篇（15269/15270/15271/15272/15273/15275）；external/swift_bat（batgrbcat 官方镜像）name=GRB 130929A、name_alt=BAT 572308、XRT_detection=Yes；external/swiftgrbba、mpe_greiner、swift_xrt_live 同名条目互证。同日他暴甄别：external/fermi_gbm 命中的 GRB130929375（=GRB 130929.375）触发于 2013-09-29T09:00:13.006Z、RA 200.93 Dec 2.8，与本暴（09:36:33 UT、RA 135.02）时刻/位置均不符，系同日另一事件；GCN 15276 为次日 GRB 130930A，均非本暴。\n「T0」GCN 15269 整秒 09:36:33 UT；external/swift_bat（batgrbcat）Trig_time_UTC=2013-09-29T09:36:33.134240Z——整秒一致、仅亚秒分歧，按触发仪器取亚秒（§3.8①②）；external/swiftgrbba trigger_time=09:36:33.000Z（整秒，仅交叉验证）。无 T0_offset：仅 Swift 单仪器触发，BAT 峰值在 ~0 s 属光变结构（GCN 15269）。\n「定位」采用 GCN 15271 增强位 RA,Dec=135.02362,-47.56076（uncertainty of 1.9 arcsec, radius, 90% confidence，原文明示）；原 ra/dec=135.028,-47.554 系 GCN 15272 BAT ground 位（1.6′）误配 GCN 15271 的 1.9″ 误差，坐标与误差不同源，已归位。备查并列：BAT 机载 135.069,-47.565（3′ 90% 含系统误差，GCN 15269）；BAT ground 135.028,-47.554（1.6′ sys+stat 90%，GCN 15272）；batgrbcat 135.0244,-47.55634（Image_position_err 1.642′）；XRT 初报 enhanced 135.0241,-47.5605（2.1″ 90%，GCN 15269）；swift_xrt_live 135.02406,-47.56103（2.4″）；mpe_greiner 135.07083,-47.56667（±3′）。\n「分类」t90=12.24±4.06 s（external/swift_bat，15-350 keV；原值 err=4.059281）——按目录 t90 判 lgrb/sgrb；GCN 15272 T90=11.10±2.98 s（15-350 keV，90% CL）一致 >2 s。t50=4.048±1.12 s（external/swift_bat，15-350 keV；原值 err=1.116709）。\n「高能量值备查」fluence=6.9±0.8e-07 erg/cm2（15-150 keV，GCN 15272；batgrbcat 7.076185e-07 +8.62e-08/-8.44e-08）；1-s 峰值光子流量=1.7±0.3 ph/cm2/s（15-150 keV，自 T+1.32 s 起，GCN 15272）；时间平均谱幂律指数=2.00±0.18（GCN 15272）；N_H,total=3.3(+1.3,-1.0)e22 cm-2、银河前景 7.1e21 cm-2（GCN 15273）；XRT 光变衰降指数=1.23(+0.13,-0.10)（GCN 15273）；partial coding=44%（GCN 15272）。\n「红移/宿主」6 篇通告与 SciX 检索均无红移报道（银纬 b=-0.94、N_H 过量、UVOT/光学均无探测，无从测 z），redshift=null 维持；无宿主文献支持，host_galaxy 不建立。\n「alias」BAT 572308：GCN 15269/15272 原文 trigger=572308，external/swift_bat name_alt。\n「逐行核对」TAROT 3 行（GCN 15270）与 UVOT 8 行（GCN 15275：white_FC/white/v/b/u/w1/m2/w2 八滤光片，FC 找星图与共加两版 white 并列）数值/上限标记与原文一致、upperlimit=y 维持；三处 bot 时间失真修正——UVOT b/uvw2/u 三行把窗口中点 x.5 取整（609.0→608.5、2493.0→2492.5、5540.0→5539.5），TAROT coadd 行 168.0→207.5（原文窗口 t0+112s–t0+303s 的中点，原值与原文两窗口中点均不符）；11 行全部补 time_err=窗口半宽（§3.8 观测窗口约定口径，真实曝光中点不可恢复）并按 mjd=T0+time 重算 7 位小数；mag_system：UVOT 8 行补 Vega（GCN 15275 原文明示 using the UVOT photometric system (Breeveld et al. 2011, AIP Conf. Proc. 1358, 373)），TAROT 3 行原文未声明系统、留空；UVOT 行 6 处 telescope 空补 Swift；reference 规范为 GCN 15270/GCN 15275。GCN 15270 N.B. 原文写 galactic extinction in R band is about 8 magnitudes（疑为笔误、按原样记录；TAROT 行未做银消改正，不受影响）。\n「X 射线」9 行 10keV（UKSSDC Swift Burst Analyser 导入，Evans+2007,2009）按 §3.3/§7 原样保留、未参与去重；T0 平移 +0.134240 s 后其 mjd 需按 mjd=T0+time 机械重算（差 0.134 s 在 validate/check_t0_timebase 1 s 容差内，CI 不红；维护者合入前统一执行）。\n「测光检索（2026-11-13）」仓内 gcn/archive 全文库（45947 篇）检索「130929A/572308」命中本暴通告 6 篇（15269/15270/15271/15272/15273/15275），含光学/紫外数值 2 篇（15270 TAROT R 上限 3 组、15275 UVOT 上限 8 滤光片），已全部在库、逐行核对，净增 0 行；external/rssgrbag（射电光变 74 源）、grbsn_webtool、uvot_grb、heasarc_grbcat、konus_wind、swift_grb 均无本源记录，swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live 仅目录级参数（身份互证），fermi_gbm 命中为同日他暴 130929375；SciX（api.scixplorer.org，token 实测可用）题录「GRB 130929A」「130929A」与全文 full:\"GRB 130929A\" 各命中 7 条=6 篇 GCN Circular+GCN Report 455（GCN 自动汇编系列、非研究论文，题录页无摘要、gcn.gsfc.nasa.gov/reports/455 实测 404，无新增测光可取），研究论文 0 篇；full:\"572308\" 命中 12 条全为无关领域数值误命中；GCN 站 gcn.nasa.gov/circulars/15269 实测 HTTP 200。结论：本源全部已知测光为 TAROT R 上限 3 行（触发后 38–303 s）与 Swift/UVOT 八滤光片上限 8 行（280–10592 s），无其他地面光学/红外、无射电/mm、无晚期测光报道，无红移。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-13"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
