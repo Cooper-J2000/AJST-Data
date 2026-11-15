@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB090515",
-  "alias": [],
-  "ra": 164.166,
-  "dec": 14.469,
-  "T0": "2009-05-15T04:45:09Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090515",
+    "Swift 352108"
+  ],
+  "ra": 164.15047,
+  "dec": 14.44174,
+  "T0": "2009-05-15T04:45:09.525600Z",
+  "T0_ref": "触发仪器 Swift/BAT 官方目录 batgrbcat（external/swift_bat 快照）trigger 352108：Trig_time_UTC=2009-05-15T04:45:09.525600；HEASARC SWIFTGRB 目录（external/swift_grb 快照）trigger_time=2009-05-15T04:45:09.525600Z 互证；GCN 9356（\"At 04:45:09 UT ... trigger=352108\"）与 GCN 9364 整秒一致；bot 原值 2009-05-15T04:45:09Z 为整秒形，按 §3.2 补触发仪器亚秒值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +19,19 @@
   "pos_ref": "GCN 9367",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份：GRB090515 = Swift/BAT trigger 352108（GCN 9356 原文 \"At 04:45:09 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 090515 (trigger=352108)\"；GCN 9364 BAT refined analysis 同触发号；external/swift_grb 快照 name_alt=[Swift 352108]）→ alias 新增「Swift 352108」（swift_grb 快照 name_alt 原名）与「GRB 090515」（GCN subject 原文用名）。T0 判定：触发仪器 Swift/BAT 官方目录 batgrbcat（external/swift_bat 快照，2026-07-21 镜像）trigger 352108 Trig_time_UTC=2009-05-15T04:45:09.525600；HEASARC SWIFTGRB 目录（external/swift_grb 快照）trigger_time=2009-05-15T04:45:09.525600Z 互证；GCN 9356 整秒 04:45:09 一致。原 T0=2009-05-15T04:45:09Z 为整秒形，按 §3.2 「亚秒以触发仪器为准」补触发仪器亚秒值 04:45:09.5256；全表非 X 射线行已按新 T0 重锚（逐行 comment 记所用历元与换算量），X 射线 31 行（band=10keV，UKSSDC Swift Burst Analyser）原样未动（其 mjd=旧整秒 T0+time，与新 T0 偏差恒为 0.5256 s，在 check_t0_timebase.py 容差 1 s 内），合入前需随 T0 对齐时间轴（§3.3 例外条款，优先保 mjd 平移 time 由维护者执行）。定位改判：原 ra/dec=164.166/14.469 为 BAT 地面定位（GCN 9364 原文 \"The BAT ground-calculated position is RA, Dec = 164.166, 14.469 deg ... with an uncertainty of 2.1 arcmin, (radius, sys+stat, 90% containment)\"），而原 pos_error=2.7″/pos_ref=GCN 9367 取自 XRT 增强位——坐标与误差混串；已改判为 XRT 增强位：GCN 9367 原文 \"RA, Dec = 164.15047, +14.44174 with an uncertainty of 2.7 arcsec (radius, 90% confidence)\"（Rowlinson+2010 §2.1 同值互证），pos_error_confidence=90；BAT 地面位（164.166, 14.469，2.1′ 90%）并列备查，XRT 初报位（164.15224, 14.44099，4.8″ 90%，GCN 9356）并列备查。sub_tag=sgrb：Rowlinson+2010 标题 \"the short Swift GRB 090515\"，T90=0.036±0.016 s（GCN 9364；batgrbcat 快照同值）。物理量备查（§3.9）：T90=0.036±0.016 s、T50=0.016 s（GCN 9364/batgrbcat）；fluence(15-150keV)=2.1±0.4e-8 erg/cm2 （GCN 9364 PL）与 2.0±0.3e-8（GCN 9365 CPL：Γ=-0.05±1.36、Epeak=64±23 keV）与 2.0±0.8e-8（Rowlinson+2010 表 4）并列；1-s 峰值光子流量=5.7±0.9 ph/cm2/s（GCN 9364）；XRT 谱 ΓX=1.88±0.14、NH=6.1(+3.2,-2.8)e20 cm-2（Rowlinson+2010 §2.1，Galactic NH=1.9e20）；红移无测定，上限 z≲5（Rowlinson+2010 §5，由 R 波段余辉检测推得），redshift 字段保持 null。宿主：无确定宿主（Rowlinson+2010 §3 \"GRB 090515 does not have an identified host galaxy\"），host_galaxy 不建立；候选列表：GCN 9362 XRT 误差圈北缘星系（RA 10:56:36.46 Dec +14:26:31.91，R=22.90±0.18，对 XRT 增强位偏移约 5.3″，lc 有对应行）；Rowlinson+2010 表 3 五个最亮星系（r=20.2/21.3/22.5/22.6/23.4±0.1，偏移 14/16/15/13/6″）；Berger+2010（ApJ 722,1946）§2.2 光谱：S1 z=0.626（5.8″）、S5 z=0.403 星系团早型星系（14.0″，最低杂凑概率，§4 物理偏移 75 kpc）、S6 z=0.657（14.9″）——S5 为统计关联而非确定宿主，红移不写入字段。测光检索（2026-11-16）：仓内 gcn/archive 目录在本 main 不存在（提示词所述快照未随库分发，已如实记录）；external/rssgrbag lightcurve 0 命中、grbsn_webtool 0 命中、swift_bat/swift_grb/uvot_grb 快照仅目录级参数；fermi_gbm/konus_wind/liang2023/wang2022/guidorzi2025/minaev2020 normalized.jsonl 均 0 命中（fermi_gbm 的 grep 命中为 GRB250917269 数字误匹配）；GCN 站 gcn.nasa.gov/circulars/<n> 直接抓 9356-9373 编号链 15 篇全部到手（其中 14 篇属本暴：9356/9357/9358/9359/9360/9361/9362/9364/9365/9367/9369/9370/9371/9372/9373，OpenAlex GCN 记录枚举同集合）；Crossref 题录检索直接命中 2 篇、arXiv API 命中 3 篇、OpenAlex 全文检索 101 条（第 1 页 50 条逐条判读）、SIMBAD TAP unavailable@2026-11-16；专文 Rowlinson+2010 取 arXiv:1007.2185v2 全文（OUP VoR 被 Cloudflare 403 拦，见 PR 待决区 unverified.tsv 行），样本文章 Kann+2011（090515 纯转引 GCN/Rowlinson，库内既有文献级卡 kann2011.md 判读一致）、Berger+2010（环境成像+光谱，无新余辉测光）、Zevin+2020（建模，无测光）逐一 mention-check → 补 4 行（Gemini 余辉 3 行 + Nickel R 上限 1 行），光变 64→68 行；Rowlinson+2010 表 1 与 GCN 行重复的 8 行上限未作重复入库（保留 GCN 原始来源行，其表时间列与所引 GCN 的矛盾逐行记录于 comment）。audit 由 fsy@zcode 执行，2026-11-16。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-16"
+    }
+  },
   "articles": [
     {
       "bibtex": "@ARTICLE{2010MNRAS.409..531R,\n       author = {{Rowlinson}, A. and {O'Brien}, P.~T. and {Tanvir}, N.~R. and {Zhang}, B. and {Evans}, P.~A. and {Lyons}, N. and {Levan}, A.~J. and {Willingale}, R. and {Page}, K.~L. and {Onal}, O. and {Burrows}, D.~N. and {Beardmore}, A.~P. and {Ukwatta}, T.~N. and {Berger}, E. and {Hjorth}, J. and {Fruchter}, A.~S. and {Tunnicliffe}, R.~L. and {Fox}, D.~B. and {Cucchiara}, A.},\n        title = \"{The unusual X-ray emission of the short Swift GRB 090515: evidence for the formation of a magnetar?}\",\n      journal = {\\mnras},\n     keywords = {gamma-ray burst: individual: 090515, stars: neutron, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Cosmology and Nongalactic Astrophysics},\n         year = 2010,\n        month = dec,\n       volume = {409},\n       number = {2},\n        pages = {531-540},\n          doi = {10.1111/j.1365-2966.2010.17354.x},\narchivePrefix = {arXiv},\n       eprint = {1007.2185},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010MNRAS.409..531R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
@@ -35,6 +46,20 @@
       "source": "bot",
       "title": "Forward Modeling of Double Neutron Stars: Insights from Highly Offset Short Gamma-Ray Bursts",
       "url": "https://ui.adsabs.harvard.edu/abs/2020ApJ...904..190Z"
+    },
+    {
+      "bibtex": "@ARTICLE{2010ApJ...722.1946B,\n       author = {{Berger}, E.},\n        title = \"{A Short Gamma-Ray Burst ``No-Host'' Problem? Investigating Large Progenitor Offsets for Short Gamma-Ray Bursts with Optical Afterglows}\",\n      journal = {\\apj},\n         year = 2010,\n        month = oct,\n       volume = {722},\n       number = {2},\n        pages = {1946-1961},\n          doi = {10.1088/0004-637X/722/2/1946},\narchivePrefix = {arXiv},\n       eprint = {1007.0003},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010ApJ...722.1946B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "name": "Berger+2010",
+      "source": "fsy",
+      "title": "A Short Gamma-Ray Burst \"No-Host\" Problem? Investigating Large Progenitor Offsets for Short Gamma-Ray Bursts with Optical Afterglows",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010ApJ...722.1946B"
+    },
+    {
+      "bibtex": "@ARTICLE{2011ApJ...734...96K,\n       author = {{Kann}, D.~A. and {Klose}, S. and {Zhang}, B. and {Covino}, S. and {Butler}, N.~R. and {Malesani}, D. and {Nakar}, E. and {Wilson}, A.~C. and {Antonelli}, L.~A. and {Chincarini}, G. and {Cobb}, B.~E. and {D'Avanzo}, P. and {D'Elia}, V. and {Della Valle}, M. and {Ferrero}, P. and {Fugazza}, D. and {Gorosabel}, J. and {Israel}, G.~L. and {Mannucci}, F. and {Piranomonte}, S. and {Schulze}, S. and {Stella}, L. and {Tagliaferri}, G. and {Wiersema}, K.},\n        title = \"{The Afterglows of Swift-era Gamma-Ray Bursts. II. Type I GRB versus Type II GRB Optical Afterglows}\",\n      journal = {\\apj},\n         year = 2011,\n        month = jun,\n       volume = {734},\n       number = {2},\n          eid = {96},\n        pages = {96},\n          doi = {10.1088/0004-637X/734/2/96},\narchivePrefix = {arXiv},\n       eprint = {0804.1959},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011ApJ...734...96K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "name": "Kann+2011",
+      "source": "fsy",
+      "title": "The Afterglows of Swift-era Gamma-Ray Bursts. II. Type I GRB versus Type II GRB Optical Afterglows",
+      "url": "https://ui.adsabs.harvard.edu/abs/2011ApJ...734...96K"
     }
   ],
   "host_galaxy": null
