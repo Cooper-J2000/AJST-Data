@@ -1,12 +1,17 @@
 {
   "transient_id": "GRB151205A",
-  "alias": [],
-  "ra": 229.291,
-  "dec": 35.767,
-  "T0": "2015-12-05T15:46:00Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "BAT 666352",
+    "GRB151205657",
+    "GRB 151205.657",
+    "bn151205657"
+  ],
+  "ra": 229.28861,
+  "dec": 35.74392,
+  "T0": "2015-12-05T15:46:00.936900Z",
+  "T0_ref": "GCN 18657（Swift/BAT 触发通告）原文 'At 15:46:00 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 151205A (trigger=666352)'（整秒精度）；亚秒取触发仪器官方目录（external/swift_bat 快照=在线 batgrbcat summary_general.txt，trigger 666352）Trig_time_UTC=2015-12-05T15:46:00.936900（§3.2 触发仪器亚秒优先，整秒与通告一致）；互证：GCN 18657 XRT 起测 15:47:32.7 UT=T0+91.8 s 反算 T0≈15:46:00.9；已发表文献佐证：Alfaro+2017（HAWC）Table 8 'Time UTC 15:46:00'、Abbasi+2022（IceCube）样本表 MJD 57361.656944",
+  "T0_offset": -11.448,
+  "T0_offset_ref": "Swift/BAT batgrbproduct T100 发射窗起点 -11.448 s（external/swift_bat summary_T100/summary_pow_parameters.txt Spectrum_start=-11.448、Spectrum_stop=68.552、Exposure_time=80 s，trigger 666352）→ 自动触发前已有辐射 ≥1 s，按 §3.2 记负偏移；GCN 18668 原文 'The mask-weighted light curve shows several overlapping peaks starting at ~T-10 sec' 同向佐证；T0_offset 为纯元数据，不改写光变时间轴",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
   "tag": [
@@ -16,11 +21,32 @@
   "pos_ref": "GCN 18658",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)\n【审核 fsy@zcode，2026-11-16】\n①身份：Swift/BAT trigger 666352（GCN 18657 原文 'trigger=666352'），同日 151205B（trigger 666378）、151205C（MAXI，GCN 18666）为独立事件无混淆；Fermi/GBM 亦触发（GCN 18664，15:46:01.90 UT，trigger 471023165/151205657，比 BAT 晚 0.96 s）。alias 出处：「BAT 666352」（external/swift_bat 官方目录 name_alt 原文用名；GCN 18657 原文 trigger=666352）、「GRB151205657」（FERMIGBRST name_alt 原文用名；GCN 18664 原文 'trigger 471023165 / 151205657'）、「GRB 151205.657」（FERMIGBRST name_alt 原文用名，同事件 GCN 18664）、「bn151205657」（FERMIGBRST burst name）。\n②T0：原库 2015-12-05T15:46:00Z 为 GCN 整秒截断（external/swiftgrbba 快照同源）且 T0_ref 缺失；现补触发仪器官方目录亚秒值 2015-12-05T15:46:00.936900Z（详见 T0_ref）。另：batgrbproduct T100 窗起点 -11.448 s→触发前已有辐射，T0_offset=-11.448（详见 T0_offset_ref）；T0_offset 为纯元数据，光变 time 轴仍锚 T0 触发时刻。\n③定位：原库 ra/dec=229.291/35.767 系 GCN 18668 BAT 精化位（1.3 arcmin, 90%），却挂 pos_ref=GCN 18658、pos_error=1.8″（XRT 增强位口径），属混串；现改正为 GCN 18658 原文 'RA, Dec = 229.28861, +35.74392 ... with an uncertainty of 1.8 arcsec (radius, 90% confidence)'（XRT-UVOT 对齐 + USNO-B1 场源匹配的 astrometrically corrected 位）；原 BAT 精化位 229.291/35.767（1.3′, 90%）、BAT onboard 位 229.282/+35.769（3′, GCN 18657）备查。\n④sub_tag：t90=64.0±35.77709 s（15-350 keV，external/swift_bat 官方目录）；GCN 18668 精化 T90=62.8±12.3 s（15-350 keV）；GBM T90=56.32±13.59 s（50-300 keV，FERMIGBRST）；Alfaro+2017 Table 8 同列 62.8 s——均 >2 s，按目录 t90 判 lgrb（§3.9）。\n⑤红移：无（Alfaro+2017 Table 8 Redshift=n/a；UVOT/Garching/Khureltogot 均未检出光学余辉，全为上限）。\n⑥物理量备查：BAT 精化 fluence(15-150 keV)=1.4±0.1×10^-6 erg/cm2、1-s 峰光子流量 0.6±0.1 ph/cm2/s（GCN 18668，90% CL）；GBM Epeak=153±12 keV、fluence(10-1000 keV)=2.56±0.21×10^-6 erg/cm2（GCN 18664）；XRT 光变初始衰减 α=0.3±0.4、T+131 s 破裂后 α=1.73（GCN 18669）；BAT 图像位 Image_position_err=1.365492 arcmin、Image_SNR=19.49、partial coding 0.9375（external/swift_bat）。\n⑦测光检索留证（2026-11-16）：仓内快照 rssgrbag 0 行、grbsn_webtool 无事件、uvot_grb/heasarc_grbcat/swift_grb/saxgrbmgrb/agile_mcal/konus_wind/batse/fermi_lat/wang2022/liang2023/minaev2020/guidorzi2025 均无 151205A、mpe_greiner 仅目录行（IPN=y/XA=y）、swift_xrt_live 仅 XRT 目录行；注：gcn/archive 全文快照在本检出不存在，GCN 全文改用 gcn.nasa.gov 在线逐篇核对（8 篇：18657/18658/18660/18663/18664/18668/18669/18676，除 XRT/BA 外全为上限或非测光）；文献检索（无 ADS token，走 Crossref→arXiv→OpenAlex→SIMBAD 回退链+网页检索）：OpenAlex 引号短语 7 条全为 GCN、arXiv 短语 0 条、Crossref 无直接命中、SIMBAD unavailable@2026-11-16；候选 4 篇中 Lien+2016（Third BAT Catalog，arXiv:1606.01956）全文 0 提及本暴，Alfaro+2017（HAWC，arXiv:1705.01551）与 Abbasi+2022（IceCube，arXiv:2205.11410）仅提及、无光学/射电测光（pdftotext 检索留痕存 D:/AIGen/AJDATA/_conv/lit-GRB151205A/mention_check.md），Ershova+2020（ARep 64,126，DOI 10.1134/S1063772920020018）VoR 付费墙未获取、未作结论；结论：无可新增入库测光，本次补 0 行（时间轴口径修正与模板句 discard 见 lc 各行 comment）。\n⑧lc：62 行中 52 行 Swift/XRT 10keV（Burst Analyser）逐字节未动；原导入 mjd 系按旧整秒 T0（15:46:00.000Z）推出，X 射线行需随新 T0 对齐时间轴（§3.3/§3.8，差 0.9369 s，在 check_t0_timebase 1 s 容差内，留维护者合入前统一执行）；10 行光学/UV 上限按新 T0 重算，其中 GCN 18657 white 模板句行置 discard=y（详见各行 comment）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-16"
+    }
+  },
+  "articles": [
+    {
+      "name": "Alfaro+2017",
+      "url": "https://doi.org/10.3847/1538-4357/aa756f",
+      "title": "Search for very-high-energy emission from Gamma-ray Bursts using the first 18 months of data from the HAWC Gamma-ray Observatory",
+      "source": "fsy"
+    },
+    {
+      "name": "Abbasi+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac9785",
+      "title": "Searches for Neutrinos from Gamma-Ray Bursts using the IceCube Neutrino Observatory",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
