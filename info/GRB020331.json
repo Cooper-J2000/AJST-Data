@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB020331",
-  "alias": [],
-  "ra": 199.0946,
-  "dec": -17.9231,
-  "T0": "2002-03-31T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 020331",
+    "GRB 020331C",
+    "H1963"
+  ],
+  "ra": 199.03975,
+  "dec": -17.9210833,
+  "T0": "2002-03-31T16:32:28.760000Z",
+  "T0_ref": "GCN 1315（Ricker et al. 2002，HETE 官方触发通告，触发仪器）：\"At 16:32:28.76 UTC (59548.76 s UT) on 31 March 2002, the HETE FREGATE and WXM instruments detected event H1963, a long (~50 sec) GRB.\"；bot 原值 2002-03-31T00:00:00Z 为日期占位符（Issue #84 同型），已改。备查并列：heasarc_grbcat 快照（grbcat_id 5431）trigger_time=2002-03-31T16:32:28.700Z（差 60 ms，目录级低优先）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": null,
+  "Trigger_Instrument": "HETE-2",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 1334（Fox, Price & Yost 2002，Palomar Hale 200-inch+LFC 差分成像 OT 位）：\"one afterglow candidate at coordinates RA: 13:16:09.54 Dec: -17:55:15.9 J2000 with an estimated uncertainty of 0.5 arcsec in each coordinate\"（=199.03975, -17.9210833）；该候选经 GCN 1339/1346（Magellan 两历元衰减 1.8±0.2 mag）与 GCN 1459/1460（HST 配准）确证为 OT；rssgrbag 目录（Chandra & Frail 2012 快照）同位 199.03975/-17.92108333",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "【身份链】GRB020331 = HETE-2 事件 H1963（\"Easter\" burst，GCN 1315 原文用名 \"GRB020331(=H1963)\"，alias 证据）＝ GRBCAT 条目 GRB 020331C（heasarc_grbcat 快照 grbcat_id 5431，HETE2+IPN，name_alt \"020331\"，t90=56.5 s 7-400 keV）；同日 GRBCAT 另列 020331A（09:58:52.000Z）/020331B（10:23:22.000Z）两个 IPN 独立弱事件，与本源（HETE-2 触发）区分，未混入。仓内快照互证：mpe_greiner（Instrument=HETE，OT=y）、rssgrbag（ra/dec=199.03975/-17.92108333 与 OT 位一致）。OT 光学位（GCN 1334，13:16:09.54 -17:55:15.9）与 SQIID 两个 NIR 天体（GCN 1320：13:16:29.5 -17:55:08、13:16:23.2 -17:56:11）及 Klose 候选（GCN 1317：13:16:15.0 -17:55:04）均不同——lc 中相应 5 行已置 discard（依据 GCN 1322 恒定流量 + GCN 1323 明示非余辉 + GCN 1339/1346 确证 Fox 候选衰减）。\n\n【T0】GCN 1315（触发仪器官方通告）16:32:28.76 UTC（=59548.76 s UT，原文内部自洽）；bot 原值 2002-03-31T00:00:00Z 为日期占位符（Issue #84 同型）已改；原 extra_data t0_basis='meta_trigger'、t0_note='t0 为 meta trigger-time（真实触发时刻）' 已按失真说明改写（原值留存于此）。备查并列：heasarc_grbcat 16:32:28.700Z（差 60 ms，目录级，达 ≥60 ms 报告线，见 PR 说明）。lc 全表 time/mjd 已按新 T0 重锚（原 time 锚在 Mar 31 00:00 日期占位符：time_new = 绝对历元 − 59548.76 s，mjd 不动；历元本身有误的行按原文历元重算 mjd+time，逐行 comment 留痕）。\n\n【定位】ra/dec 取 OT 光学位 GCN 1334（199.03975, -17.9210833，每坐标估计不确定度 0.5″；原文未标注置信水平 → pos_error_confidence 留空；pos_error=0.5″ 为每坐标口径）。备查并列：GCN 1315 HETE 精化 WXM 定位 RA=13h16m22s.7 Dec=-17°55'23\"（J2000）=199.094583/-17.923056，90% 置信半径 8′=480″（bot 原 ra/dec 199.0946/-17.9231 即此圆心舍入，mpe_greiner 快照粗位 199.1417/-17.8667 与 10′ 误差亦并列于此备查）。GCN 1320/1317 的 NIR \"候选\" 位置均非 OT（见身份链）。\n\n【分类】lgrb：GCN 1315 原文 \"a long (~50 sec) GRB\"；GRBCAT t90=56.5 s（7-400 keV，heasarc_grbcat 快照，按目录 t90 判 lgrb/sgrb）；rssgrbag t90=75 s 并列备查；Sakamoto+2005（ApJ 629,311）谱表分类 \"GRB\"（非 XRF/XRR，PLE 模型）。GCN 1315 内 \"FREGATE 8-40 keV 波段 duration ~20 s\" 为子波段口径，与 ~50 s 总时长并列记录。\n\n【物理量备查】fluence ~4e-7 erg/cm²（GCN 1315，FREGATE 8-40 keV，2320 net counts）；Sakamoto+2005 Table 3：谱窗 Duration=10.00 s、2-400 keV 能流通量 ~27.2e-7 erg/cm²（arXiv 版核读，IOP VoR 被墙）；衰减指数并列：α=0.62±0.1（GCN 1346）→ 0.67±0.1（GCN 1382）→ 0.75（GCN 1460，HST 23.9-49.3 d）；Zeh+2006（ApJ 637,889）Table 1：Rc 拟合 χ²=1.98（6 点）、α1=0.69±0.04、α2=2.12±0.40、tb=7.17±1.52 d、宿主 R=24.89±0.16（arXiv v2 核读，IOP VoR 被墙）。\n\n【宿主候选】不建 host_galaxy（未定论）：GCN 1382 第三历元图 OT 位置见 E-W 延伸源（质心较 OT 偏东 0.8±0.1″，\"We interpret the extended source to be the host galaxy\"）；GCN 1459/1460 HST：\"a complex of at least three galaxies, including the presumed host galaxy which lies under the afterglow itself\"；Zeh+2006 宿主估值 R=24.89±0.16。第三历元口径测光（R=23.2±0.3）含宿主贡献、PSF 减后残差 R~25，已在对应 lc 行 comment 区分。\n\n【逐行核对】原 24 行（无 X 射线行）逐行溯源重锚：GCN 1344 三行按 §3.8 窗口中点口径改锚（bot 用窗口起点）并补 time_err；GCN 1316/1318/1339 两行/1322/1321 三行/1317 逐值核对一致；GCN1334 检测行 band i→R（原文数值为等效 R 口径，i' 成像入 comment）；HST 四行按勘误通告 GCN 1460 更正（1459 表错印：36.6d/42.7d 值互换错置、第四历元无直接星等；1460 正确值 24.54/24.86/25.01/24.76 @ T=23.9/36.6/42.7/49.3 d），reference 改 GCN1460，bot 曾把 T 取整（23/36/42/50 d）已改回；bot 的 GCN1382 21.1±0.2 行（=GCN 1339 首历元同测量复述）按 §3.4 删除、GCN1346 22.9±0.14 行（被 GCN1382 修订值取代）删除；GCN1382 修订行历元 781920→782784 s（Apr 9.06）、仪器 MagIC→LDSS-2。新增 1 行：GCN1363（Kyoto VSNET 无滤光 ST-7E，17.9 接近 Rc @ Mar 31.734，2.0σ）。discard=y 5 行：GCN1322 Ks16.52 与 GCN1321 J/K（Ohta 1 号天体，距 OT 约 21″）、GCN1321 H（2 号天体）、GCN1317 K17.0±1（Klose 候选，GCN 1323 明示非余辉）——均系非余辉天体测量，非转引重复，故不删除只弃用。\n\n【检索留证】测光检索（2026-11-16）：仓内无 gcn/archive 快照（SCHEMA 载明其不进仓库）；external 快照中 mpe_greiner/heasarc_grbcat/rssgrbag/grbsn_webtool 均只含参数行，rssgrbag lightcurve.jsonl 无本源射电点（0 行）、grbsn_webtool 无本源事件 → 仓内测量型快照无可入库测光。GCN 检索：HEASARC ag_references 参考页全条目提取 + 新站逐篇抓取 + 1310-1363 邻域全扫描（1324-1355 共 26 篇均属他源）→ 命中 17 篇（1315/1316/1317/1318/1319/1320/1321/1322/1323/1334/1339/1344/1346/1363/1382/1459/1460），其中含测光数值的 13 篇全部逐值核对入库（1319 为 Henden 场测光表，仅作定标源）。文献检索（Crossref/arXiv/OpenAlex/网页搜索，manifest 冻结 sha256=667067ec2f8172a82dfb0068228bf284df7af27f5b31fb64611050e1955317e0）：命中研究文献 6 篇——Kann+2005 目录（astro-ph/0509466，arXiv-only：Table 33 十六行全部为 GCN 转引，佐证\"截至 2005 年无期刊专属测光\"）、Zeh+2006（ApJ 637,889）、Sakamoto+2005（ApJ 629,311）、Kann+2006（ApJ 641,993，全文 0 命中→排除）、Bloom 2003（astro-ph/0303478，arXiv-only，mention-only：bump 系 GCN 1459/1460 数据的复述）、Chandra & Frail 2012（ApJ 746,156，IOP Radware 全站被墙且无 arXiv → 数值不入库，见 PR 待决）→ 结论：无更多可入库期刊测光，补 1 行（GCN1363）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,9 +29,36 @@
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "T0 为 HETE-2 触发时刻（GCN 1315：16:32:28.76 UTC，FREGATE+WXM 检测 H1963）；bot 原值 2002-03-31T00:00:00Z 为日期占位符，原 t0_basis='meta_trigger'、原 t0_note='t0 为 meta trigger-time（真实触发时刻）'——均已改写，原值留存于 info.comment【T0】段",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-16"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Kann+2005",
+      "url": "https://arxiv.org/abs/astro-ph/0509466",
+      "title": "A catalog of optical/near-infrared data on GRB afterglows in the pre-Swift era. I. Light curve information",
+      "bibtex": "@MISC{2005astro.ph..9466K,\n       author = {{Kann}, D. A. and {Zeh}, A. and {Klose}, S.},\n       title = {A catalog of optical/near-infrared data on GRB afterglows in the pre-Swift era. I. Light curve information},\n       journal = {arXiv e-prints astro-ph/0509466},\n       year = {2005},\n       eprint = {astro-ph/0509466},\n       archivePrefix = {arXiv},\n}",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Zeh+2006",
+      "url": "https://doi.org/10.1086/498442",
+      "title": "GRB afterglow light curves in the pre-Swift era - a statistical study",
+      "bibtex": "@ARTICLE{2006ApJ...637..889Z,\n       author = {{Zeh}, A. and {Klose}, S. and {Kann}, D. A.},\n       title = {GRB afterglow light curves in the pre-Swift era - a statistical study},\n       journal = {ApJ 637 889 (2006)},\n       year = {2006},\n       doi = {10.1086/498442},\n       eprint = {astro-ph/0509299},\n       archivePrefix = {arXiv},\n}",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Sakamoto+2005",
+      "url": "https://doi.org/10.1086/431235",
+      "title": "Global Characteristics of X-Ray Flashes and X-Ray-Rich Gamma-Ray Bursts Observed by HETE-2",
+      "bibtex": "@ARTICLE{2005ApJ...629..311S,\n       author = {{Sakamoto}, T. and others},\n       title = {Global Characteristics of X-Ray Flashes and X-Ray-Rich Gamma-Ray Bursts Observed by HETE-2},\n       journal = {ApJ 629 311 (2005)},\n       year = {2005},\n       doi = {10.1086/431235},\n       eprint = {astro-ph/0409128},\n       archivePrefix = {arXiv},\n}",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
