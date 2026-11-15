@@ -1,29 +1,39 @@
 {
   "transient_id": "GRB231111A",
-  "alias": [],
-  "ra": 290.188,
-  "dec": 52.4362,
+  "alias": [
+    "MASTER OT J192045.23+522610.1"
+  ],
+  "ra": 290.18884,
+  "dec": 52.43571,
   "T0": "2023-11-11T14:17:19.712860Z",
-  "T0_ref": null,
+  "T0_ref": "Swift/BAT 在线目录 Trig_time_UTC（trigger 1195887，external/swift_bat 2026-07-21 快照）；GCN 34981 给触发时刻 14:17:19 UT",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.179,
   "tag": [
     "grb"
   ],
   "pos_error": 2.3,
   "pos_ref": "GCN 34991",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 35009",
+  "comment": "T0：触发仪器 Swift/BAT（trigger 1195887），取目录 Trig_time_UTC=2023-11-11T14:17:19.712860（external/swift_bat 快照）；GCN 34981 原文「At 14:17:19 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 231111A (trigger=1195887)」；GECAM-C 触发 2023-11-11T14:17:19.850 UTC（GCN 34990/34993），与 Swift 仅差 0.137 s（亚秒，按规则不记 T0_offset）。定位：Swift-XRT 增强位 RA,Dec = 290.18884, +52.43571（「an uncertainty of 2.3 arcsec (radius, 90% confidence)」，GCN 34991）；原库坐标 (290.188, 52.4362) 实为 UVOT 快定位（GCN 34981：290.18848, 52.43626，0.62″/90%；GCN 35069 精化 290.18856, 52.43624，0.43″/90%），而误差半径 2.3″ 与 pos_ref 均取自 34991，属定位混串，已改判为 XRT 增强位；BAT ground 位 290.197, 52.440（1.0′，90%，GCN 35033）备查。红移：GTC/OSIRIS+ 谱检出 MgII 2796,2803 + FeII 2585,2600 → z=1.179，原文「No fine-structure lines are detected, making the redshift of 1.179 strictly seen as a lower limit. However … we expect this to be the actual redshift of the GRB」（GCN 35009）；TNG/DOLORES 初步 z~1.39（GCN 35007）与 GTC 谱不符（35009 原文指出其谱中无线系），弃用。t90=34.08±4.88 s（15-350 keV，GCN 35033；BAT 目录 34.076±4.85 s），按目录 t90 判 lgrb；GECAM-C 实时数据总持续 ~30 s（GCN 34990）佐证。alias「MASTER OT J192045.23+522610.1」：GCN 34983 原文用名（「We detected optical counterpart (Melandri et al., GCN 34981) of GRB 231111A MASTER OT J192045.23+522610.1 from first image at rise stage」）。测光检索（2026-11-16）：GCN 事件页 23 篇全部实际打开通读（34981–35189 含 35033/35069，另经编号链探测 34986–35015 确认其中 6 篇属邻暴 231110A/231106B 等非本源），仓内 gcn/archive 目录在本库不存在（离线全文检索不可用）；external/rssgrbag、external/grbsn_webtool、external/swift_bat/uvot_grb/swift_grb/heasarc_grbcat 快照无本源光变记录（仅 external/mpe_greiner 有目录行，z_range 1.179-2）；外部：arXiv API 元数据检索 0 命中、OpenAlex 检索词 231111A 命中 5 篇（剔除 2 条无关误命中后 4 篇候选 + WebSearch 补充 1 篇，共 5 篇已发表论文，逐篇下载原文 pdftotext+grep 程序化 mention-check：Qu+2025 两篇 MNRASL/ApJ 与 Qu+2025c、Schüssler+2026 PASP 均仅样本表/方法学各 1 处提及，Sharma+2026 ApJS v2 实测 0 提及）、Crossref 词组 0 直接命中、SIMBAD 双主机不可达（unavailable@2026-11-16）→ 结论：无专门研究本暴的已发表论文，文献补 0 行；新增测光行全部来自 GCN（MASTER-Tunka 8 条上限 GCN 34980、Nastro Verde 1 条 GCN 34997、UVOT 5 条上限 GCN 35069、MDM 2 条 GCN 35014）。X 射线：本源 lc 无能量串波段行，无 X 射线行需处理。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-16"
+    }
   },
   "articles": [],
   "host_galaxy": null
