@@ -968,7 +968,7 @@
     "extinction": "e0dfec49f9c6414be811ee3f2d29663e84b8ebd5f0bbe3747ffb31d1cac07431",
     "code": "d2659ab2c4d164e01a6e28d8c699f4981891e6082024bb653e34556ef3d9a522"
    },
-   "rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "rows_sha256": "efd760f49e8c5ddec59364c76f7a38059557143daa0aa1675c5cb5a77f741467",
    "row_ledger": {
     "total": 6,
     "kept": 0,
@@ -1040,16 +1040,16 @@
     "catalog_source": "transients.gext_distmod",
     "catalog_redshift": 0.0022,
     "delta": 0.292,
-    "cause": "距离来源不同",
-    "detail": "引擎 distance.kind=measured-secondary（d_L=11.17 Mpc）vs 库 gext_distmod=Planck18.distmod(z)（反解 9.76 Mpc）",
+    "cause": "Distance sources differ",
+    "detail": "Engine distance.kind=measured-secondary (d_L=11.17 Mpc) vs database gext_distmod=Planck18.distmod(z) (inverted to 9.76 Mpc)",
     "secondary": [
      {
-      "cause": "z 值不同",
-      "detail": "模板 z=0.0022016 vs 库 z=0.0022（Planck18.distmod 差 0.0016 mag）"
+      "cause": "z values differ",
+      "detail": "Template z=0.0022016 vs database z=0.0022 (Planck18.distmod differs by 0.0016 mag)"
      },
      {
-      "cause": "参考系项",
-      "detail": "CMB 参考系改正：z_cmb − z_helio = -0.000993"
+      "cause": "Reference-frame term",
+      "detail": "CMB reference-frame correction: z_cmb − z_helio = -0.000993"
      }
     ],
     "alert": "CA-13"
