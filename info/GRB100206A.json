@@ -28,6 +28,11 @@
   "pos_error_unit": "arcsec",
   "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-11",
+      "status": "reviewed"
+    },
     "params": {
       "alpha": {
         "err": [
@@ -82,12 +87,7 @@
         "v": 0.125
       }
     },
-    "params_computed": "2026-11-04",
-    "audit": {
-      "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-11-11"
-    }
+    "params_computed": "2026-11-04"
   },
   "articles": [
     {
@@ -127,28 +127,26 @@
     },
     {
       "name": "Nicuesa Guelbenzu+2012",
+      "source": "Rusty-Harpoon@zcode",
       "title": "Multi-color observations of short GRB afterglows: 20 events observed by GROND",
-      "url": "https://arxiv.org/abs/1206.1806",
-      "source": "Rusty-Harpoon@zcode"
+      "url": "https://arxiv.org/abs/1206.1806"
     },
     {
       "name": "Schroeder+2020",
+      "source": "Rusty-Harpoon@zcode",
       "title": "A Late-time Radio Survey of Short Gamma-ray Bursts at z < 0.5: New Constraints on Neutron Star Mergers and Kilonovae",
-      "url": "https://arxiv.org/abs/2006.07434",
-      "source": "Rusty-Harpoon@zcode"
+      "url": "https://arxiv.org/abs/2006.07434"
     },
     {
       "name": "Nugent+2022",
+      "source": "Rusty-Harpoon@zcode",
       "title": "Short GRB Host Galaxies. II. A Legacy Sample of Redshifts, Stellar Populations, and Ejecta Properties",
-      "url": "https://arxiv.org/abs/2206.01764",
-      "source": "Rusty-Harpoon@zcode"
+      "url": "https://arxiv.org/abs/2206.01764"
     }
   ],
   "host_galaxy": {
-    "ra": 47.162917,
+    "comment": "LIRG 宿主 G1（z=0.4068，Keck/LRIS 光谱，Perley+2012）：L_IR≈4e11 L_sun、A_V≈2 mag、SFR≈30 M_sun/yr。测光为 Perley+2012 Table 1 观测值（未做银河系消光改正，原文脚注 a；银消改正后 AB 值见原文第二列）；WISE W4>8.58（Vega）未探测；PAIRITEL 为 4.34 h 合并历元（J/H/Ks 有效曝光 16333/16333/8143 s）。射电（流量密度不进 mag 口径，记此备查）：VLA 5.5 GHz 65±11 µJy（Klose+2019，2014-10-10）、VLA 6.0 GHz 60.4±5.0 µJy（Schroeder+2020，2019-01-04），中心与 G1 核球重合、距 XRT 误差圈中心 5″（z=0.4068 处 ~30 kpc），系宿主恒星形成，与 GRB 无关。近邻 G2（WHT「候选余辉」，GCN 10386/10395）为 z=0.803 背景星系，非宿主。位置取 GCN 10377（±1″），Klose+2019 射电中心 03:08:39.148 +13:09:29.28 佐证。\nFong+2022: Fong+2022 Table 2 Gold host association; Silver, Bronze, and Inconclusive associations were not imported. Host J2000 coordinates are from Table 2; Table A1 supplies the photometry. All magnitudes are AB and explicitly uncorrected for Galactic extinction in the burst direction. The table does not unambiguously identify the redshift method; redshift_type is null unless explicitly marked D. Host upper limits have no single uniformly stated confidence level; no 3-sigma label was invented.\nMerged-field decision: host coordinates taken from Fong+2022 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Fong+2022 according to the recency/method priority rule.",
     "dec": 13.158139,
-    "redshift": 0.4068,
-    "redshift_type": "spec",
     "photometry": [
       {
         "band": "g",
@@ -219,9 +217,102 @@
         "mag_err": 0.16,
         "mag_sys": "Vega",
         "source": "Perley+2012 Table 1"
+      },
+      {
+        "band": "g",
+        "gext_corr": false,
+        "mag": 23.9,
+        "mag_err": 0.17,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 175 (2012ApJ...758..122P)",
+        "upperlimit": false
+      },
+      {
+        "band": "R",
+        "gext_corr": false,
+        "mag": 21.53,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 176 (2012ApJ...758..122P)",
+        "upperlimit": false
+      },
+      {
+        "band": "i",
+        "gext_corr": false,
+        "mag": 20.86,
+        "mag_err": 0.08,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 177 (2012ApJ...758..122P)",
+        "upperlimit": false
+      },
+      {
+        "band": "J",
+        "gext_corr": false,
+        "mag": 19.41,
+        "mag_err": 0.12,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 179 (2012ApJ...758..122P)",
+        "upperlimit": false
+      },
+      {
+        "band": "H",
+        "gext_corr": false,
+        "mag": 18.63,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 180 (2012ApJ...758..122P)",
+        "upperlimit": false
+      },
+      {
+        "band": "K",
+        "gext_corr": false,
+        "mag": 18.17,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 181 (2012ApJ...758..122P)",
+        "upperlimit": false
+      },
+      {
+        "band": "wise-w1",
+        "gext_corr": false,
+        "mag": 18.51,
+        "mag_err": 0.06,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 182 (2016AJ....151...36L)",
+        "upperlimit": false
+      },
+      {
+        "band": "wise-w2",
+        "gext_corr": false,
+        "mag": 18.54,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 183 (2016AJ....151...36L)",
+        "upperlimit": false
+      },
+      {
+        "band": "wise-w3",
+        "gext_corr": false,
+        "mag": 16.38,
+        "mag_err": 0.16,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 184 (2016AJ....151...36L)",
+        "upperlimit": false
+      },
+      {
+        "band": "wise-w4",
+        "gext_corr": false,
+        "mag": 15.18,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 185 (2016AJ....151...36L)",
+        "upperlimit": true
       }
     ],
-    "comment": "LIRG 宿主 G1（z=0.4068，Keck/LRIS 光谱，Perley+2012）：L_IR≈4e11 L_sun、A_V≈2 mag、SFR≈30 M_sun/yr。测光为 Perley+2012 Table 1 观测值（未做银河系消光改正，原文脚注 a；银消改正后 AB 值见原文第二列）；WISE W4>8.58（Vega）未探测；PAIRITEL 为 4.34 h 合并历元（J/H/Ks 有效曝光 16333/16333/8143 s）。射电（流量密度不进 mag 口径，记此备查）：VLA 5.5 GHz 65±11 µJy（Klose+2019，2014-10-10）、VLA 6.0 GHz 60.4±5.0 µJy（Schroeder+2020，2019-01-04），中心与 G1 核球重合、距 XRT 误差圈中心 5″（z=0.4068 处 ~30 kpc），系宿主恒星形成，与 GRB 无关。近邻 G2（WHT「候选余辉」，GCN 10386/10395）为 z=0.803 背景星系，非宿主。位置取 GCN 10377（±1″），Klose+2019 射电中心 03:08:39.148 +13:09:29.28 佐证。",
-    "source": "Perley+2012 (ApJ 758, 122); GCN 10377; Klose+2019; Schroeder+2020"
+    "ra": 47.162917,
+    "redshift": 0.4068,
+    "redshift_err": 0.002,
+    "redshift_type": "spec",
+    "source": "Perley+2012 (ApJ 758, 122); GCN 10377; Klose+2019; Schroeder+2020; Fong+2022"
   }
 }

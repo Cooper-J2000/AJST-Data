@@ -129,12 +129,122 @@
     }
   ],
   "host_galaxy": {
-    "comment": "宿主确定：光学余辉与延展源位置重合（余辉偏移宿主中心 0.3″±0.3″，D'Avanzo+2009），GMOS/FORS 两谱均测得宿主红移。宿主坐标取 Berger+2007（GMOS 相对邻近 2MASS 恒星定位 07:24:07.75 -79:11:55.3，约 0.16″）。宿主自身测光（文献值，记录于此、不入 lc）：Berger+2007 GMOS r_AB=24.18±0.09（系统差 0.26 mag）、i_AB=23.11±0.09（系统差 0.30 mag），观测起于触发后 3.6 d（i 共 900 s、r 共 1440 s）；Magellan/Baade PANIC Y=22.0±0.2（2006-10-08.39 UT，960 s，零点不确定约 30%）；D'Avanzo+2009 宿主 I=23.03+0.22/-0.15，其 VLT 晚期 B/V/R/I/J 测光与深 K 限以宿主为主（对应本源 lc 行已在 comment 注明）。",
+    "comment": "宿主确定：光学余辉与延展源位置重合（余辉偏移宿主中心 0.3″±0.3″，D'Avanzo+2009），GMOS/FORS 两谱均测得宿主红移。宿主坐标取 Berger+2007（GMOS 相对邻近 2MASS 恒星定位 07:24:07.75 -79:11:55.3，约 0.16″）。宿主自身测光（文献值，记录于此、不入 lc）：Berger+2007 GMOS r_AB=24.18±0.09（系统差 0.26 mag）、i_AB=23.11±0.09（系统差 0.30 mag），观测起于触发后 3.6 d（i 共 900 s、r 共 1440 s）；Magellan/Baade PANIC Y=22.0±0.2（2006-10-08.39 UT，960 s，零点不确定约 30%）；D'Avanzo+2009 宿主 I=23.03+0.22/-0.15，其 VLT 晚期 B/V/R/I/J 测光与深 K 限以宿主为主（对应本源 lc 行已在 comment 注明）。\nSavaglio+2009: GRB type in Table 1: short. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nFong+2022: Fong+2022 Table 2 Gold host association; Silver, Bronze, and Inconclusive associations were not imported. Host J2000 coordinates are from Table 2; Table A1 supplies the photometry. All magnitudes are AB and explicitly uncorrected for Galactic extinction in the burst direction. The table does not unambiguously identify the redshift method; redshift_type is null unless explicitly marked D. Host upper limits have no single uniformly stated confidence level; no 3-sigma label was invented.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nMerged-field decision: host coordinates taken from Fong+2022 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Fong+2022 according to the recency/method priority rule.",
     "dec": -79.198694,
+    "photometry": [
+      {
+        "band": "R",
+        "gext_corr": true,
+        "mag": 24.18,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "F814W",
+        "gext_corr": true,
+        "mag": 23.1,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "r",
+        "gext_corr": false,
+        "mag": 24.15,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 73 (2010ApJ...725.1202L)",
+        "upperlimit": false
+      },
+      {
+        "band": "z",
+        "gext_corr": false,
+        "mag": 23.28,
+        "mag_err": 0.25,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 74 (2010ApJ...725.1202L)",
+        "upperlimit": false
+      },
+      {
+        "band": "B",
+        "gext_corr": false,
+        "mag": 25.75,
+        "mag_err": 0.12,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 75 (2009A&A...498..711D)",
+        "upperlimit": false
+      },
+      {
+        "band": "V",
+        "gext_corr": false,
+        "mag": 24.56,
+        "mag_err": 0.07,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 76 (2009A&A...498..711D)",
+        "upperlimit": false
+      },
+      {
+        "band": "R",
+        "gext_corr": false,
+        "mag": 24.14,
+        "mag_err": 0.12,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 77 (2009A&A...498..711D)",
+        "upperlimit": false
+      },
+      {
+        "band": "I",
+        "gext_corr": false,
+        "mag": 23.44,
+        "mag_err": 0.12,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 78 (2009A&A...498..711D)",
+        "upperlimit": false
+      },
+      {
+        "band": "J",
+        "gext_corr": false,
+        "mag": 22.91,
+        "mag_err": 0.2,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 79 (2009A&A...498..711D)",
+        "upperlimit": false
+      },
+      {
+        "band": "K",
+        "gext_corr": false,
+        "mag": 22.6,
+        "mag_err": 0.25,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 80 (2010ApJ...725.1202L)",
+        "upperlimit": false
+      },
+      {
+        "band": "F814W",
+        "gext_corr": false,
+        "mag": 22.29,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 81 (2010ApJ...708....9F)",
+        "upperlimit": false
+      },
+      {
+        "band": "F555W",
+        "gext_corr": false,
+        "mag": 24.95,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 82 (2010ApJ...708....9F)",
+        "upperlimit": false
+      }
+    ],
     "ra": 111.032292,
     "redshift": 0.4377,
     "redshift_err": 0.0002,
     "redshift_type": "spec",
-    "source": "Berger+2007（DOI 10.1086/518762）；D'Avanzo+2009（DOI 10.1051/0004-6361/200811294）"
+    "source": "Berger+2007（DOI 10.1086/518762）；D'Avanzo+2009（DOI 10.1051/0004-6361/200811294）; Savaglio+2009; Fong+2022"
   }
 }

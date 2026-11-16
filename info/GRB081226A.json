@@ -55,7 +55,8 @@
     }
   ],
   "host_galaxy": {
-    "comment": "Nicuesa Guelbenzu et al. 2012 identifies the very faint underlying host as object C; afterglow offset from its center is <0.5 arcsec. Host appears only in second-epoch g′/r′ images; no redshift is known. Host-center coordinates are not separately reported.",
+    "comment": "Nicuesa Guelbenzu et al. 2012 identifies the very faint underlying host as object C; afterglow offset from its center is <0.5 arcsec. Host appears only in second-epoch g′/r′ images; no redshift is known. Host-center coordinates are not separately reported.\nFong+2022: Fong+2022 Table 2 Gold host association; Silver, Bronze, and Inconclusive associations were not imported. Host J2000 coordinates are from Table 2; Table A1 supplies the photometry. All magnitudes are AB and explicitly uncorrected for Galactic extinction in the burst direction. The table does not unambiguously identify the redshift method; redshift_type is null unless explicitly marked D. Host upper limits have no single uniformly stated confidence level; no 3-sigma label was invented. Published Table 2/A1 RA 08h22m00.450s is a typographical error. It is corrected to 08h02m00.450s (120.501875 deg), exactly matching the AJST/Swift position and the paper's sub-arcsecond host offset; the original table value remains in evidence.\nMerged-field decision: host coordinates taken from Fong+2022 according to the direct-measurement priority rule.",
+    "dec": -69.03041666666667,
     "photometry": [
       {
         "band": "g",
@@ -70,8 +71,72 @@
         "mag_err": 0.34,
         "mag_sys": "AB",
         "source": "NicuesaGuelbenzu+2012"
+      },
+      {
+        "band": "g",
+        "gext_corr": false,
+        "mag": 26.25,
+        "mag_err": 0.24,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 145 (2012A&A...548A.101N)",
+        "upperlimit": false
+      },
+      {
+        "band": "r",
+        "gext_corr": false,
+        "mag": 26.03,
+        "mag_err": 0.34,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 146 (2012A&A...548A.101N)",
+        "upperlimit": false
+      },
+      {
+        "band": "i",
+        "gext_corr": false,
+        "mag": 25.0,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 147 (2012A&A...548A.101N)",
+        "upperlimit": true
+      },
+      {
+        "band": "z",
+        "gext_corr": false,
+        "mag": 24.5,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 148 (2012A&A...548A.101N)",
+        "upperlimit": true
+      },
+      {
+        "band": "J",
+        "gext_corr": false,
+        "mag": 22.2,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 149 (2012A&A...548A.101N)",
+        "upperlimit": true
+      },
+      {
+        "band": "H",
+        "gext_corr": false,
+        "mag": 21.6,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 150 (2012A&A...548A.101N)",
+        "upperlimit": true
+      },
+      {
+        "band": "Ks",
+        "gext_corr": false,
+        "mag": 20.6,
+        "mag_err": null,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 151 (2012A&A...548A.101N)",
+        "upperlimit": true
       }
     ],
-    "source": "NicuesaGuelbenzu+2012"
+    "ra": 120.501875,
+    "source": "NicuesaGuelbenzu+2012; Fong+2022"
   }
 }

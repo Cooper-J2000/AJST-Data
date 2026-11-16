@@ -65,7 +65,7 @@
     }
   ],
   "host_galaxy": {
-    "comment": "宿主成协：光学（GCN 14114/14139）与 5.8 GHz 射电源（GCN 14126，1.75 d）均与 XRT 位置重合；GCN 14139 称 0.5 d 与 15.4 d 两历元 r 无衰减、余辉贡献可忽略；Nugent+2022 将该宿主收入 Gold Sample。红移为宿主测光红移（Prospector）z=1.37(+0.05/−0.06)（Nugent+2022；误差不对称）；并列：Dichiara+2021 宿主 SED z≈1.8(+0.2/−0.1)。坐标取 GCN 14139（±0.3″）。0.5 d 历元各测光（GCN 14114 r'~25、Pandey+2019 r/i/z、GROND g'r'i'z'）的 OT/宿主属性未定论，行留在 lc；GTC 53.25/53.27 d 深限 z>23.79、i>24.47（Pandey+2019 表5）亦见 lc 行。Dichiara+2021 逐值取自 arXiv v1（IOP VoR 仅得摘要级，三方交叉，见 audit/unverified.tsv）。",
+    "comment": "宿主成协：光学（GCN 14114/14139）与 5.8 GHz 射电源（GCN 14126，1.75 d）均与 XRT 位置重合；GCN 14139 称 0.5 d 与 15.4 d 两历元 r 无衰减、余辉贡献可忽略；Nugent+2022 将该宿主收入 Gold Sample。红移为宿主测光红移（Prospector）z=1.37(+0.05/−0.06)（Nugent+2022；误差不对称）；并列：Dichiara+2021 宿主 SED z≈1.8(+0.2/−0.1)。坐标取 GCN 14139（±0.3″）。0.5 d 历元各测光（GCN 14114 r'~25、Pandey+2019 r/i/z、GROND g'r'i'z'）的 OT/宿主属性未定论，行留在 lc；GTC 53.25/53.27 d 深限 z>23.79、i>24.47（Pandey+2019 表5）亦见 lc 行。Dichiara+2021 逐值取自 arXiv v1（IOP VoR 仅得摘要级，三方交叉，见 audit/unverified.tsv）。\nFong+2022: Fong+2022 Table 2 Gold host association; Silver, Bronze, and Inconclusive associations were not imported. Host J2000 coordinates are from Table 2; Table A1 supplies the photometry. All magnitudes are AB and explicitly uncorrected for Galactic extinction in the burst direction. Table 2 asymmetric redshift uncertainty: -0.06/+0.05; AJST redshift_err is null because it cannot represent asymmetric errors. The table does not unambiguously identify the redshift method; redshift_type is null unless explicitly marked D. Host upper limits have no single uniformly stated confidence level; no 3-sigma label was invented.\nMerged-field decision: host coordinates taken from Fong+2022 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Fong+2022 according to the recency/method priority rule.",
     "dec": -30.40636,
     "photometry": [
       {
@@ -109,11 +109,74 @@
         "mag_err": 0.09,
         "mag_sys": "AB",
         "source": "Dichiara+2021, ApJL, 911, L28, Table 2（VLT/HAWK-I；同上消改正）"
+      },
+      {
+        "band": "g",
+        "gext_corr": false,
+        "mag": 24.82,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 227 (This work)",
+        "upperlimit": false
+      },
+      {
+        "band": "r",
+        "gext_corr": false,
+        "mag": 24.31,
+        "mag_err": 0.06,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 228 (This work)",
+        "upperlimit": false
+      },
+      {
+        "band": "i",
+        "gext_corr": false,
+        "mag": 24.0,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 229 (This work)",
+        "upperlimit": false
+      },
+      {
+        "band": "z",
+        "gext_corr": false,
+        "mag": 23.82,
+        "mag_err": 0.15,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 230 (This work)",
+        "upperlimit": false
+      },
+      {
+        "band": "J",
+        "gext_corr": false,
+        "mag": 22.82,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 231 (This work)",
+        "upperlimit": false
+      },
+      {
+        "band": "H",
+        "gext_corr": false,
+        "mag": 22.45,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 232 (This work)",
+        "upperlimit": false
+      },
+      {
+        "band": "K",
+        "gext_corr": false,
+        "mag": 21.37,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Fong+2022 Table A1 recno 233 (This work)",
+        "upperlimit": false
       }
     ],
     "ra": 168.64219,
     "redshift": 1.37,
     "redshift_type": "phot",
-    "source": "GCN 14139; Nugent+2022, ApJ, 940, 57; Dichiara+2021, ApJL, 911, L28"
+    "source": "GCN 14139; Nugent+2022, ApJ, 940, 57; Dichiara+2021, ApJL, 911, L28; Fong+2022"
   }
 }

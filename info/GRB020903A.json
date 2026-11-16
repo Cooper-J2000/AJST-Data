@@ -29,6 +29,11 @@
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
+    "audit": {
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07",
+      "status": "reviewed"
+    },
     "merged_from": [
       "XRF020903"
     ],
@@ -43,12 +48,7 @@
         "v": 8.0
       }
     },
-    "params_computed": "2026-11-04",
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-07"
-    }
+    "params_computed": "2026-11-04"
   },
   "articles": [
     {
@@ -123,11 +123,49 @@
     }
   ],
   "host_galaxy": {
-    "ra": 342.176542,
+    "comment": "宿主 G1：恒星形成星系，Magellan/LDSS2 与 Keck/LRIS 光谱窄发射线定 z=0.251（Soderberg+2004 §2.2；GCN 1554）；OT 与 G1 西南结重合（Soderberg+2005；GCN 1761）；ALMA 宿主观测确认（Chen+2021）。坐标为 Chen+2021 宿主区中心（含四个光学成分，半径 0.8″）：22:48:42.37, -20:46:08.72。G2（z=0.235 椭圆星系）非宿主\nSavaglio+2009: GRB type in Table 1: long. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nMerged-field decision: redshift, error, and type taken as one tuple from Savaglio+2009 according to the recency/method priority rule.",
     "dec": -20.769089,
+    "photometry": [
+      {
+        "band": "B",
+        "gext_corr": true,
+        "mag": 21.61,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "V",
+        "gext_corr": true,
+        "mag": 20.79,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "R",
+        "gext_corr": true,
+        "mag": 21.0,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "F814W",
+        "gext_corr": true,
+        "mag": 20.93,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      }
+    ],
+    "ra": 342.176542,
     "redshift": 0.251,
     "redshift_type": "spec",
-    "comment": "宿主 G1：恒星形成星系，Magellan/LDSS2 与 Keck/LRIS 光谱窄发射线定 z=0.251（Soderberg+2004 §2.2；GCN 1554）；OT 与 G1 西南结重合（Soderberg+2005；GCN 1761）；ALMA 宿主观测确认（Chen+2021）。坐标为 Chen+2021 宿主区中心（含四个光学成分，半径 0.8″）：22:48:42.37, -20:46:08.72。G2（z=0.235 椭圆星系）非宿主",
-    "source": "Soderberg+2004, ApJ, 606, 994; Soderberg+2005, ApJ, 627, 877; Chen+2021, ApJ, 915, 46"
+    "source": "Soderberg+2004, ApJ, 606, 994; Soderberg+2005, ApJ, 627, 877; Chen+2021, ApJ, 915, 46; Savaglio+2009"
   }
 }

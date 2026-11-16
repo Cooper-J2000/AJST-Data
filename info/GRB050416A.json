@@ -79,5 +79,50 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "comment": "Savaglio+2009: GRB type in Table 1: short. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nHjorth+2012: TOUGH Table 3 identified host. Redshift note='E', reference(s)='1,5'; E/AE/AE* denote host emission-line redshifts, A/A* afterglow absorption spectroscopy, and P afterglow photometric redshift. Host R/Ks magnitudes are observed Vega magnitudes, uncorrected for foreground extinction; upper-limit confidence levels were not stated.\nKrühler+2015: Host emission-line spectroscopy from the X-shooter sample; no per-source redshift uncertainty is stated in the CDS table. Coordinates are J2000 eq_FK5 positions from Simbad via the CDS/VizieR table, not new astrometry measured by this paper. The paper states that fluxes, spectra, and photometry are corrected for Galactic foreground reddening; incidental AB magnitudes therefore have gext_corr=true.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nHjorth+2012: Source access: arXiv v2 Table 3 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nKrühler+2015: Source access: CDS/VizieR J/A+A/581/A125 plus arXiv HTML for paper-only values and appendices; the A&A full-text route returned 403.\nMerged-field decision: host coordinates taken from Hjorth+2012 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Krühler+2015 according to the recency/method priority rule.",
+    "dec": 21.057383333333334,
+    "photometry": [
+      {
+        "band": "R",
+        "gext_corr": true,
+        "mag": 23.47,
+        "mag_err": 0.6,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "F814W",
+        "gext_corr": true,
+        "mag": 23.09,
+        "mag_err": 0.1,
+        "mag_sys": "AB",
+        "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "R",
+        "gext_corr": false,
+        "mag": 23.13,
+        "mag_err": 0.03,
+        "mag_sys": "Vega",
+        "source": "Hjorth+2012 Table 3",
+        "upperlimit": false
+      },
+      {
+        "band": "Ks",
+        "gext_corr": false,
+        "mag": 20.36,
+        "mag_err": 0.2,
+        "mag_sys": "Vega",
+        "source": "Hjorth+2012 Table 3",
+        "upperlimit": false
+      }
+    ],
+    "ra": 188.47750833333333,
+    "redshift": 0.6542,
+    "redshift_type": "spec",
+    "source": "Savaglio+2009; Hjorth+2012; Krühler+2015"
+  }
 }

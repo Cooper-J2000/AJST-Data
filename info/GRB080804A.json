@@ -5,7 +5,7 @@
   ],
   "ra": 328.66755,
   "dec": -53.18483,
-  "T0": "2008-08-04T23:20:14.67Z",
+  "T0": "2008-08-04T23:20:14.670000Z",
   "T0_ref": "Swift/BAT 触发 319016 亚秒取触发仪器官方目录：HEASARC SWIFTGRB（Donato+2012）trigger_time=2008-08-04T23:20:14.670000Z、batgrbcat 快照（external/swift_bat）同值；GCN 8057 给整秒 23:20:14 UT；GCN 8056 ROTSE 首图 23:20:34.3 UT=爆发后 19.6 s 反推 23:20:14.7 交叉印证",
   "T0_offset": null,
   "T0_offset_ref": null,
@@ -25,6 +25,11 @@
   "pos_error_unit": "arcsec",
   "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07",
+      "status": "reviewed"
+    },
     "params": {
       "alpha": {
         "err": [
@@ -86,12 +91,7 @@
         "v": 0.057
       }
     },
-    "params_computed": "2026-11-04",
-    "audit": {
-      "status": "reviewed",
-      "auditor": "wa1kmoon@zcode",
-      "date": "2026-11-07"
-    }
+    "params_computed": "2026-11-04"
   },
   "articles": [
     {
@@ -123,5 +123,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "comment": "Krühler+2015: Host emission-line spectroscopy from the X-shooter sample; no per-source redshift uncertainty is stated in the CDS table. Coordinates are J2000 eq_FK5 positions from Simbad via the CDS/VizieR table, not new astrometry measured by this paper. The paper states that fluxes, spectra, and photometry are corrected for Galactic foreground reddening; incidental AB magnitudes therefore have gext_corr=true.\nKrühler+2015: Source access: CDS/VizieR J/A+A/581/A125 plus arXiv HTML for paper-only values and appendices; the A&A full-text route returned 403.\nMerged-field decision: host coordinates taken from Krühler+2015 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Krühler+2015 according to the recency/method priority rule.",
+    "dec": -53.18894,
+    "ra": 328.67458,
+    "redshift": 2.2059,
+    "redshift_type": "spec",
+    "source": "Krühler+2015"
+  }
 }

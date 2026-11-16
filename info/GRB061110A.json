@@ -26,6 +26,11 @@
   "pos_error_unit": "arcsec",
   "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-07",
+      "status": "reviewed"
+    },
     "params": {
       "alpha": {
         "err": [
@@ -50,12 +55,7 @@
         "v": 25.317406143344712
       }
     },
-    "params_computed": "2026-11-04",
-    "audit": {
-      "status": "reviewed",
-      "auditor": "Rusty-Harpoon@zcode",
-      "date": "2026-11-07"
-    }
+    "params_computed": "2026-11-04"
   },
   "articles": [
     {
@@ -80,19 +80,46 @@
       "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
-      "name": "Fynbo+2009",
-      "url": "https://doi.org/10.1088/0067-0049/185/2/526",
-      "title": "Low-resolution Spectroscopy of Gamma-ray Burst Optical Afterglows: Biases in the Swift Sample and Characterization of the Absorbers",
       "bibtex": "@ARTICLE{2009ApJS..185..526F,\n       author = {{Fynbo}, J.~P.~U. and {Jakobsson}, P. and {Prochaska}, J.~X. and {Malesani}, D. and {Ledoux}, C. and {de Ugarte Postigo}, A. and others},\n        title = \"{Low-resolution Spectroscopy of Gamma-ray Burst Optical Afterglows: Biases in the Swift Sample and Characterization of the Absorbers}\",\n      journal = {\\apjs},\n         year = 2009,\n        month = dec,\n       volume = {185},\n        pages = {526},\n          doi = {10.1088/0067-0049/185/2/526},\narchivePrefix = {arXiv},\n       eprint = {0907.3449},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2009ApJS..185..526F},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "Rusty-Harpoon@zcode"
+      "name": "Fynbo+2009",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Low-resolution Spectroscopy of Gamma-ray Burst Optical Afterglows: Biases in the Swift Sample and Characterization of the Absorbers",
+      "url": "https://doi.org/10.1088/0067-0049/185/2/526"
     },
     {
-      "name": "Roming+2017",
-      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
-      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
       "bibtex": "@ARTICLE{2017ApJS..228...13R,\n       author = {{Roming}, Peter~W.~A. and {Koch}, T.~Scott and {Oates}, Samantha~R. and {Porterfield}, Blair~L. and {Bayless}, Amanda~J. and {Breeveld}, Alice~A. and others},\n        title = \"{A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution}\",\n      journal = {\\apjs},\n         year = 2017,\n        month = jan,\n       volume = {228},\n        pages = {13},\n          doi = {10.3847/1538-4365/228/2/13},\narchivePrefix = {arXiv},\n       eprint = {1701.03713},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2017ApJS..228...13R},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "source": "Rusty-Harpoon@zcode"
+      "name": "Roming+2017",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "comment": "Hjorth+2012: TOUGH Table 3 identified host. Redshift note='E', reference(s)='3'; E/AE/AE* denote host emission-line redshifts, A/A* afterglow absorption spectroscopy, and P afterglow photometric redshift. Host R/Ks magnitudes are observed Vega magnitudes, uncorrected for foreground extinction; upper-limit confidence levels were not stated.\nKrühler+2015: Host emission-line spectroscopy from the X-shooter sample; no per-source redshift uncertainty is stated in the CDS table. Coordinates are J2000 eq_FK5 positions from Simbad via the CDS/VizieR table, not new astrometry measured by this paper. The paper states that fluxes, spectra, and photometry are corrected for Galactic foreground reddening; incidental AB magnitudes therefore have gext_corr=true.\nHjorth+2012: Source access: arXiv v2 Table 3 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nKrühler+2015: Source access: CDS/VizieR J/A+A/581/A125 plus arXiv HTML for paper-only values and appendices; the A&A full-text route returned 403.\nMerged-field decision: host coordinates taken from Hjorth+2012 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Krühler+2015 according to the recency/method priority rule.",
+    "dec": -2.2586444444444442,
+    "photometry": [
+      {
+        "band": "R",
+        "gext_corr": false,
+        "mag": 25.65,
+        "mag_err": 0.26,
+        "mag_sys": "Vega",
+        "source": "Hjorth+2012 Table 3",
+        "upperlimit": false
+      },
+      {
+        "band": "Ks",
+        "gext_corr": false,
+        "mag": 21.41,
+        "mag_err": null,
+        "mag_sys": "Vega",
+        "source": "Hjorth+2012 Table 3",
+        "upperlimit": true
+      }
+    ],
+    "ra": 336.29101249999997,
+    "redshift": 0.7578,
+    "redshift_type": "spec",
+    "source": "Hjorth+2012; Krühler+2015"
+  }
 }
