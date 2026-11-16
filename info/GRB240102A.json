@@ -1,27 +1,39 @@
 {
   "transient_id": "GRB240102A",
-  "alias": [],
+  "alias": [
+    "BAT 1205899"
+  ],
   "ra": 96.83931,
   "dec": -20.04096,
-  "T0": "2024-01-02T18:23:56Z",
-  "T0_ref": null,
+  "T0": "2024-01-02T17:34:55.340440Z",
+  "T0_ref": "GCN 35461（Swift/BAT 触发通告：At 17:34:55 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240102A (trigger=1205899)，整数秒）+ Swift/BAT 官方目录 external/swift_bat summary_general_info/summary_general.txt（trigger 1205899：Trig_time_UTC=2024-01-02T17:34:55.340440，按快照约定以 UTC 列为准，MET 列弃用）——整秒两源一致，亚秒值取触发仪器官方目录",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 35461",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.2,
+  "pos_ref": "GCN 35471",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【身份】Swift/BAT 触发 1205899（GCN 35461 原文 \"At 17:34:55 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 240102A (trigger=1205899)\"）；BAT 精化分析（GCN 35476）与仓内 external/swiftgrbba、external/swift_xrt_live 快照互证一致，无同日混淆源。定位链：BAT on-board 96.846/-20.024（3 arcmin、90% containment，GCN 35461）→ XRT 初步增强位 96.83800/-20.04076（1.9 arcsec、90% containment，GCN 35461）→ 增强定位 96.83931/-20.04096（2.2 arcsec、radius、90% confidence，GCN 35471，XRT-UVOT 对准 + USNO-B1 星表匹配；Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177），本条目采用——库内 ra/dec 本就是该值，pos_ref 由误记的 GCN 35461 改为 GCN 35471、pos_error 1.9→2.2、pos_error_confidence 填 90 → BAT 地面精化 96.848/-20.011（2.4 arcmin、90%，GCN 35476，备查）；UKSSDC live 快照（external/swift_xrt_live）96.83999762/-20.0395371165、Err=3.7 arcsec（备查）。Trigger_Instrument 原作 Swift/UVOT 系导入错误（UVOT 非触发仪器，GCN 35461 明言 BAT triggered），改为 Swift/BAT。【T0】触发时刻：GCN 35461 整秒 17:34:55 UT，亚秒 .340440 取自 Swift/BAT 官方目录（external/swift_bat summary_general_info/summary_general.txt，trigger 1205899，Trig_time_UTC=2024-01-02T17:34:55.340440，按快照约定一律以 UTC 列为准，MET 列弃用）；bot 原值 2024-01-02T18:23:56Z 系 GCN 35484 的 DFOT 观测起点（原文 \"The observations were started on 2024-01-02 at 18:23:56 UT, i.e., ~ 49 minutes after the BAT trigger\"）被误锚为触发时刻（Issue #84 同型：观测开始时间 ≠ 触发时刻），原 extra_data.t0_note「t0 为 meta trigger-time（真实触发时刻）」（t0_basis=meta_trigger）随本次改写留底于此；lc 全部行已按新 T0 重算 mjd（本源 lc 无 X 射线行）。【分类】lgrb：t90=114.304±35.97454 s（15-350 keV，external/swift_bat summary_general_info/summary_general.txt）；GCN 35476 精化分析 t90=119.00±30.59 s（15-350 keV）——按目录/通告 t90 判 lgrb。备查：fluence=8.5±1.3 e-7 erg/cm2（15-150 keV，GCN 35476）；Swift/BAT 官方目录（T100、PL 模型，external/swift_bat summary_T100/summary_pow_energy_fluence）同量并列：15-150 keV 8.13(+1.25/-1.22) e-7 erg/cm2、15-350 keV 1.12(+0.27/-0.23) e-6 erg/cm2；1s 峰值光子流量 0.4±0.1 ph/cm2/s（T+65.00 s，15-150 keV，GCN 35476）；BAT 光变 ~T+8 s 至 ~T+140 s（GCN 35476）。【别名】新增「BAT 1205899」（external/swift_bat 快照 name_alt；GCN 35461 原文用名 trigger=1205899）。【测光检索（2026-11-17 首轮，2026-11-19 全通道复验）】仓内：gcn/archive 目录不存在（origin/main 无 gcn/ 树）；external/rssgrbag/lightcurve.jsonl、external/uvot_grb \"240102\" 0 命中；external/grbsn_webtool 仅 GRB190829A 谱文件中流量值 3.240102e-18 的数值巧合、非本源记载；GCN 站内：事件页 gcn.nasa.gov/circulars/events/grb-240102a 命中 8 篇（35461/35465/35467/35469/35471/35475/35476/35484，2026-11-19 复验仍恰 8 篇、无分页），全部实开（.json 原文，与站内逐字一致），其中 4 篇含光学上限（35465/35467/35475/35484）已入库共 13 行，35469/35476 为 X 射线精化分析（发现 X 射线数据，暂不处理）；文献检索：Crossref（bibliographic）0 直接命中 → arXiv API（all:\"240102A\" / \"GRB 240102A\" / \"GRB240102A\"）0 命中 → OpenAlex 全文索引命中 1 篇（Zhou+2026 ApJL 1004:L11，DOI 10.3847/2041-8213/ae7329，arXiv:2605.13440，磁星平台期 X 射线样本：VoR 与 arXiv 全文均已核，本源仅 Table 1 \"GRB Data Summary\"（z/T90/X 射线流量等，数据取自 UKSSDC XRT 曲线）一行 \"240102A* 1.63 119.00 1.82 0.24±0.09\" 与 XRT 光变图一图，无光学测光，无数值入库）→ 网页全文检索（site:arxiv.org \"240102A\"）另提示 arXiv:2511.22534（Hao+2025，Swift GRB 磁星起源样本），全文 \"240102\" 0 命中，排除；SIMBAD/CDS unavailable@2026-11-17、2026-11-19 重试仍不可达；ADS/SciX 无 token 未检索（search-limited 通道级受限，登记行文本见 PR 正文待决区）。结论：现有可达渠道（GCN 站内 8 篇 / Crossref / arXiv API / OpenAlex / 网页全文）未发现本源光学测光的已发表文献；因 ADS/SciX 与 SIMBAD 通道受限，不作「已发表文献无本源测光」的绝对结论。本次补 10 行（GCN 35475 UVOT 9 行 + GCN 35465 BOOTES-6 1 行）、按新 T0 重算 3 行（GCN 35484 DFOT 1 行 + GCN 35467 LCOGT 2 行）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "T0=触发时刻：GCN 35461 整秒 17:34:55 UT，亚秒 .340440 取自 Swift/BAT 官方目录（external/swift_bat，trigger 1205899，Trig_time_UTC 列）；bot 原判读「t0 为 meta trigger-time（真实触发时刻）」（t0_basis=meta_trigger）留底于 comment——bot 原值 18:23:56 实为 GCN 35484 DFOT 观测起点",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-19"
+    }
   },
   "articles": [],
   "host_galaxy": null
