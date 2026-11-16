@@ -1,28 +1,45 @@
 {
   "transient_id": "GRB241017A",
-  "alias": [],
+  "alias": [
+    "sb24101702"
+  ],
   "ra": 356.175,
   "dec": 15.6574,
-  "T0": "2024-10-17T07:40:52Z",
-  "T0_ref": null,
+  "T0": "2024-10-17T03:57:04Z",
+  "T0_ref": "GCN 37799",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 37799",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.3,
+  "pos_ref": "GCN 37811",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 更正：旧库 T0=2024-10-17T07:40:52Z 实为 WINTER 观测起点（GCN 37805 原文 \"Our observations began at 2024-10-17T07:40:52 UTC (~3.7 hours after the GRB trigger)\"，Issue #84 同型误锚），本次改判为触发仪器 SVOM/ECLAIRs 官方触发时刻，GCN 37799 原文 \"labelled GRB 241017A (sb24101702) at 2024-10-17T03:57:04 UT (Tb)\"；六处后续通告的 after-trigger 自述与新 T0 全部自洽（WINTER ~3.7h→3.730、Mephisto ~11.6h→11.641、VT ~14.0h→14.054、GIT ~15.1h→15.083、LT ~18h→17.930、DFOT ~1.5d→1.500）。定位：ECLAIRs 触发定位 RA,Dec=356.28,15.72（统计误差 12.4′，另建议加 10′ 系统误差，GCN 37799）；Swift-XRT ToO 检出 3 个未编目 X 射线源且原文 \"cannot identify which, if any, is the afterglow\"（GCN 37811，2.9 ks PC，T0+35.9~48.7 ks）；SVOM/MXT ToO 未发现对应体（GCN 37807）；现库坐标 356.1750,+15.6574 为其中 Source 1 增强定位，GCN 37811 原文 \"Error: 6.3 arcsec (radius, 90% conf. [Enhanced position])\"，原文自述 \"Distance: 420 arcsec from SVOM/ECLAIRs position\"；Source 2 与 AGN 候选 [CBS2017] ALH2L293 相距 0.6″；无余辉确证，暂沿用 Source 1 作位置记录（待维护者裁）。别名 sb24101702（GCN 37799 原文用名，SVOM 触发编号）。分类：GCN 37799 标题 \"Detection of a weak and soft long duration GRB by SVOM/ECLAIRs\"（触发团队自述长暴，未给 T90 数值）→ sub_tag=lgrb。测光检索（2026-11-17）：仓内 external 快照 mpe_greiner 仅 1 条元数据行（无测光）、uvot_grb/grbsn_webtool/rssgrbag 无记录、gcn/archive 快照不在当前 main；GCN 站内检索 \"241017A\" 命中 8 篇、\"sb24101702\" 命中 2 篇，另直接核验 37807/37810 两篇，共 10 篇相关通告全部逐篇打开核对；Crossref/arXiv/OpenAlex 短语检索 0 命中，web 检索得唯一同行评审文献 Li et al. 2026（RAA 26 104025，DOI 10.1088/1674-4527/ae75cd，VoR PDF 已核），其 Table 2 行 3 转引 GCN 37820 同测量同值（VT_R>23.6，mid-time 14.000 hr），无增量 → 补 0 行。lc 全部 23 行均为上限（无探测、无红移、无宿主）：时间轴已随新 T0 平移并统一为中点口径，详见各行 comment。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_note": "t0 = SVOM/ECLAIRs 触发时刻，取触发仪器官方通告 GCN 37799（2024-10-17T03:57:04 UT (Tb)）；旧库 t0=2024-10-17T07:40:52Z（bot 值，t0_basis=meta_trigger，t0_note=\"t0 为 meta trigger-time（真实触发时刻）\"）实为 WINTER 观测起点，已更正，见 comment",
+    "t0_basis": "gcn_circular",
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-17"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd"
+    }
+  ],
   "host_galaxy": null
 }
