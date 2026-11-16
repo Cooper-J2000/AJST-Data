@@ -1,13 +1,15 @@
 {
   "transient_id": "GRB091230",
-  "alias": [],
-  "ra": 132.9146,
-  "dec": -53.8825,
+  "alias": [
+    "GRB 091230"
+  ],
+  "ra": 132.9115,
+  "dec": -53.8978,
   "T0": "2009-12-30T06:27:30Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10298",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "Trigger_Instrument": "INTEGRAL/IBIS",
   "redshift": null,
   "tag": [
     "grb"
@@ -16,11 +18,55 @@
   "pos_ref": "GCN 10300",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份与触发改判：本暴实为 INTEGRAL/IBIS 触发（IBAS trigger 5967；GCN 10298 原文 \"A GRB with duration of about 120 s has been detected by IBAS in IBIS/ISGRI data at 06:27:30 UT on December 30\"），原库 Trigger_Instrument='Swift/BAT' 系导入错误——Swift/BAT 未触发，Swift 仅于 2009-12-30 15:25 UT 做 TOO 后随观测（XRT/UVOT，GCN 10300/10302；HEASARC swiftgrb 快照 target_id=20124、bat_detection=U；GCN 10301 的 BAT 触发 381591 是另一事件 RA235.079/-8.738）。alias 'GRB 091230' 为 SIMBAD 主名与官方目录用名形态（uvot_grb/swift_grb/mpe_greiner 快照同名）；INTEGRAL trigger 5967 与 Swift 观测号 00020124 记于此备查（不作 alias）。T0=2009-12-30T06:27:30Z（GCN 10298，触发仪器官方通告）；互证：Akerlof&Zheng 2013 表 1 行 \"091230 06:27:30 283847252 132.915 -53.882\"（UTC+MET）、uvot_grb 快照 TRIG_UT='2009-364-06:27:30'、swift_grb 快照 trigger_time 同值、Greiner+2024 Table 5 行 \"091230 L 1230-06:30:27 177 y 10299\"（观测起点 06:30:27 与延时 177 s 自洽）、GCN 10299 \"Observations started ... at 06:30:27 UT, 2.9 min after the burst\"。IBAS GCN notice 的 GRB_TIME（06:27:42.25/06:28:05.25）为积分窗末端非触发时刻；Bošnjak+2014 Table 1 tstart=06:26:53.00 UTC 为暴起始时刻（早于触发 37 s，非 T0 冲突）。T0_offset 不适用：无任何 >1 s 的触发时刻调整证据（|offset|<1 s 的差异不写）。定位改判：原库 ra/dec=132.9146/-53.8825 是 INTEGRAL IBAS 精化位（GCN 10298，2.5'，90% c.l.），但 pos_error/pos_ref 却取自 XRT 增强位口径（混串）；现改判 Swift-XRT 增强位 RA,Dec=132.91150/-53.89780（2.7\" 半径，90% 置信，GCN 10300 原文 \"RA, Dec = 132.91150, -53.89780 ... uncertainty of 2.7 arcsec radius (90% confidence)\"，距 GROND 光学候选位 3.8\"）；GROND 候选位 132.913250/-53.897972（0.5\"/坐标，GCN 10299）与 UKSSDC XRT 目录快照位 132.91228/-53.89828（2.7\"）备查。分类与物理量：sub_tag=lgrb——GCN 10298 标题原文 \"a long GRB detected by INTEGRAL\"（来源分类），且 t90 多源均远大于 2 s：t90=120 s（GCN 10298 正文 about 120 s；uvot_grb 快照 t90=120.0、T90_REF=GCN10298）、t90=235(+36/-36) s（20-200 keV IBIS/ISGRI，Bošnjak+2014 Table 1）、t90=70 s（Higgins+2017 Table A1，取自 IBAS）；fluence=17.9(+20.5/-9.57)e-7 erg/cm2（20-200 keV，Higgins+2017 Table A1）；峰值流量=0.76(+0.02/-0.03) ph/cm2/s（20-200 keV，Bošnjak+2014 Table 1）；红移无任何测量记录。测光检索留证（2026-11-16/17）：GCN 站内检索 'GRB 091230' 命中 4 篇（10298/10299/10300/10302；query '5967' 无新增）；SIMBAD 对象文献表 12 条 bibcode（8 篇期刊+4 GCN，逐篇取原文程序化 mention-check）；arXiv 元数据检索 0 命中（控制查询正常）；OpenAlex 全文检索 4 命中（1 条博士论文排除、1 条 INTEGRAL 综述未获取）；仓内 rssgrbag/grbsn_webtool 无记录，swift_xrt_live/swift_grb/uvot_grb/mpe_greiner 仅目录参数。结论：无新增可入库光学/NIR 测光——Greiner+2024 Table A2（未发表/更新测量表，全表 126 行）grep '091230' 0 命中，其 Table 5 仅转引 GCN 10299；MAXI 扫描检测为 X 射线（Serino+2014 原文 \"The only exception is GRB 091230\" 将其纳入样本），按审核范围暂不处理。补了几行：0 行新增；9 行修正（7 GROND 行 T_mid/系统/mjd、1 GROND r' 晚段行、1 UVOT 行中点口径）。lc 非-X 射线行原导入时间存在系统性 +3 s 假锚（疑锚于 06:27:27 的错误触发时刻），已全部对齐 GCN 原值并重算 mjd；X 射线行（10keV）按范围未动（T0 未变，无需时间轴对齐）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-17"
+    }
+  },
+  "articles": [
+    {
+      "bibtex": "@ARTICLE{2024A&A...691A.158G,\n       author = {{{Greiner}, J. and {Kr{\\\"u}hler}, T. and {Bolmer}, J. and {Klose}, S. and {Afonso}, P. M. J. and {Elliott}, J. and {Filgas}, R. and {Graham}, J. F. and {Kann}, D. A. and {Knust}, F. and {K{\\\"u}pc{\\\"u} Yolda{\\\"s}}, A. and {Nardini}, M. and {Nicuesa Guelbenzu}, A. M. and {Olivares Estay}, F. and {Rossi}, A. and {Schady}, P. and {Schweyer}, T. and {Sudilovsky}, V. and {Varela}, K. and {Wiseman}, P.}},\n        title = \"{The GROND gamma-ray burst sample: I. Overview and statistics}\",\n      journal = {\\aanda},\n         year = 2024,\n        volume = {691},\n           eid = {A158},\n          doi = {10.1051/0004-6361/202449659},\narchivePrefix = {arXiv},\n       eprint = {2410.14441},\n primaryClass = {astro-ph.HE},\n}",
+      "name": "Greiner+2024",
+      "source": "fsy",
+      "title": "The GROND gamma-ray burst sample: I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659"
+    },
+    {
+      "bibtex": "@ARTICLE{2014A&A...561A..25B,\n       author = {{{Bo{\\v s}njak}, {\\v{Z}}. and {G{\\\"o}tz}, D. and {Bouchet}, L. and {Schanne}, S. and {Cordier}, B.}},\n        title = \"{The spectral catalogue of INTEGRAL gamma-ray bursts. Results of the joint IBIS/SPI spectral analysis}\",\n      journal = {\\aanda},\n         year = 2014,\n        volume = {561},\n           eid = {A25},\n          doi = {10.1051/0004-6361/201322256},\narchivePrefix = {arXiv},\n       eprint = {1309.3174},\n primaryClass = {astro-ph.HE},\n}",
+      "name": "Bosnjak+2014",
+      "source": "fsy",
+      "title": "The spectral catalogue of INTEGRAL gamma-ray bursts. Results of the joint IBIS/SPI spectral analysis",
+      "url": "https://doi.org/10.1051/0004-6361/201322256"
+    },
+    {
+      "bibtex": "@ARTICLE{2017MNRAS.470..314H,\n       author = {{{Higgins}, A. B. and {Starling}, R. L. C. and {G{\\\"o}tz}, D. and {Mereghetti}, S. and {Wiersema}, K. and {Maccarone}, T. and {Osborne}, J. P. and {Tanvir}, N. R. and {O'Brien}, P. T. and {Bird}, A. J. and {Rowlinson}, A. and {Gehrels}, N.}},\n        title = \"{Investigating the nature of the INTEGRAL gamma-ray bursts and sub-threshold triggers with Swift follow-up}\",\n      journal = {\\mnras},\n         year = 2017,\n        volume = {470},\n         pages = {314-323},\n          doi = {10.1093/mnras/stx1163},\narchivePrefix = {arXiv},\n       eprint = {1705.06744},\n primaryClass = {astro-ph.HE},\n}",
+      "name": "Higgins+2017",
+      "source": "fsy",
+      "title": "Investigating the nature of the INTEGRAL gamma-ray bursts and sub-threshold triggers with Swift follow-up",
+      "url": "https://doi.org/10.1093/mnras/stx1163"
+    },
+    {
+      "bibtex": "@ARTICLE{2014PASJ...66...87S,\n       author = {{{Serino}, M. and {Sakamoto}, T. and {Kawai}, N. and {Yoshida}, A. and {Ohno}, M. and {Ogawa}, Y. and {Nishimura}, Y. and {Fukushima}, K. and {Higa}, M. and {Ishikawa}, K. and {Ishikawa}, M. and {Kawamuro}, T. and {Kimura}, M. and {Matsuoka}, M. and {Mihara}, T. and {Morii}, M. and {Nakagawa}, Y. E. and {Nakahira}, S. and {Nakajima}, M. and {Nakano}, Y. and {Negoro}, H. and {Onodera}, T. and {Sasaki}, M. and {Shidatsu}, M. and {Sugimoto}, J. and {Sugizaki}, M. and {Suwa}, F. and {Suzuki}, K. and {Tachibana}, Y. and {Takagi}, T. and {Toizumi}, T. and {Tomida}, H. and {Tsuboi}, Y. and {Tsunemi}, H. and {Ueda}, Y. and {Ueno}, S. and {Usui}, R. and {Yamada}, H. and {Yamamoto}, T. and {Yamaoka}, K. and {Yamauchi}, M. and {Yoshidome}, K. and {Yoshii}, T.}},\n        title = \"{MAXI observations of gamma-ray bursts}\",\n      journal = {\\pasj},\n         year = 2014,\n        volume = {66},\n         pages = {87},\n          doi = {10.1093/pasj/psu063},\narchivePrefix = {arXiv},\n       eprint = {1406.3912},\n primaryClass = {astro-ph.HE},\n}",
+      "name": "Serino+2014",
+      "source": "fsy",
+      "title": "MAXI observations of gamma-ray bursts",
+      "url": "https://doi.org/10.1093/pasj/psu063"
+    },
+    {
+      "bibtex": "@ARTICLE{2013ApJ...764..190A,\n       author = {{{Akerlof}, C. W. and {Zheng}, W.}},\n        title = \"{Limits to the fraction of high-energy photon emitting gamma-ray bursts}\",\n      journal = {\\apj},\n         year = 2013,\n        volume = {764},\n         pages = {190},\n          doi = {10.1088/0004-637X/764/2/190},\narchivePrefix = {arXiv},\n       eprint = {1205.3066},\n primaryClass = {astro-ph.HE},\n}",
+      "name": "Akerlof+2013",
+      "source": "fsy",
+      "title": "Limits to the fraction of high-energy photon emitting gamma-ray bursts",
+      "url": "https://doi.org/10.1088/0004-637X/764/2/190"
+    }
+  ],
   "host_galaxy": null
 }
