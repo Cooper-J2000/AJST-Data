@@ -1,7 +1,7 @@
 # 文献级索引卡：Zhong+2019（短暴前兆性质与 progenitor 探针）
 
 - paper_key: zhong2019
-- paper: Zhong, S.-Q., Dai, Z.-G., Cheng, J.-G., Lan, L., & Zhang, H.-M. 2019, ApJ 884, 25「Precursors in Short Gamma-Ray Bursts as a Possible Probe of Progenitors」（DOI 10.3847/1538-4357/ab3e48；arXiv:1909.00577；VoR IOP HTML 已实取：https://doi.org/10.3847/1538-4357/ab3e48 ）
+- paper: Zhong, S.-Q., Dai, Z.-G., Cheng, J.-G., Lan, L., & Zhang, H.-M. 2019, ApJ 884, 25「Precursors in Short Gamma-Ray Bursts as a Possible Probe of Progenitors」（DOI 10.3847/1538-4357/ab3e48；arXiv:1909.00577；VoR IOP HTML 已实取，见 doi.org 文章页）
 - date: 2026-11-17
 - helper: fsy@zcode
 - sources: GRB060502B, GRB081024A, GRB100213A, GRB100702A, GRB140209A, GRB160408A, GRB170817A, GRB180402A

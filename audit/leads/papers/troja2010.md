@@ -1,7 +1,7 @@
 # 文献级索引卡：Troja+2010（短暴前兆系统搜索）
 
 - paper_key: troja2010
-- paper: Troja, E., Rosswog, S., & Gehrels, N. 2010, ApJ 723, 1711「Precursors of Short Gamma-Ray Bursts」（DOI 10.1088/0004-637X/723/2/1711；arXiv:1009.1385；VoR IOP HTML 已实取：https://doi.org/10.1088/0004-637X/723/2/1711 ）
+- paper: Troja, E., Rosswog, S., & Gehrels, N. 2010, ApJ 723, 1711「Precursors of Short Gamma-Ray Bursts」（DOI 10.1088/0004-637X/723/2/1711；arXiv:1009.1385；VoR IOP HTML 已实取，见 doi.org 文章页）
 - date: 2026-11-17
 - helper: fsy@zcode
 - sources: GRB070406, GRB080121, GRB081024A
