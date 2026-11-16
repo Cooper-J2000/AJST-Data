@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB220412A",
-  "alias": [],
-  "ra": 123.9647,
-  "dec": 30.34319,
-  "T0": "2022-04-12T06:38:27Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "GRB 220412A",
+    "BAT 1102281",
+    "GRB220412.28"
+  ],
+  "ra": 123.96809,
+  "dec": 30.34259,
+  "T0": "2022-04-12T06:36:50.220220Z",
+  "T0_ref": "Swift/BAT 官方目录（external/swift_bat 快照，trigger 1102281）Trig_time_UTC=2022-04-12T06:36:50.220220；GCN 31881 \"At 06:36:50 UT\"（Klingler et al.）整秒一致，亚秒取触发仪器目录值",
+  "T0_offset": -11.94,
+  "T0_offset_ref": "Swift/BAT 官方目录 T100 区间 Spectrum_start=-11.940000 s（external/swift_bat summary_T100/summary_pow_parameters.txt，PL 模型，15-350 keV）——T100 区间始自触发前 11.94 s；GCN 31899 谱拟合区间 T-11.07 至 T+38.00 s 同示",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.7,
-  "pos_ref": "GCN 31887",
+  "pos_ref": "GCN 31887（Enhanced Swift-XRT position）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核记录（fsy@zcode，2026-11-16，PR #1093）。\n【T0】新 T0=2022-04-12T06:36:50.220220Z：Swift/BAT 官方目录（external/swift_bat 快照，触发号 1102281）Trig_time_UTC 列；GCN 31881 原文 \"At 06:36:50 UT, the Swift Burst Alert Telescope (BAT) triggered\"（Klingler et al.）整秒一致，亚秒取触发仪器目录值（§3.2）。MASTER 官方数据库页（master.sai.msu.ru observ.php?id=1940522）Trigger time=2022-04-12 06:36:50.22 互证。原库 T0=2022-04-12T06:38:27Z 比触发晚 96.779780 s：该值即 GCN 31880 原文 \"was pointed to the Swift GRB220412.28 … 97 sec after trigger time at 2022-04-12 06:38:27 UT\"——MASTER-OAGH 指向时刻（观测开始）被导入管线误作触发时刻（Issue #84 同型：观测开始误锚 T0）；原 extra_data.t0_basis=meta_trigger、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\" 已失真，按 §3.10 改写并留底于此。\n【T0_offset=-11.94 s】Swift/BAT 官方目录 T100 区间 Spectrum_start=-11.940000 s（external/swift_bat summary_T100/summary_pow_parameters.txt，PL 模型、15-350 keV、Exposure 52.18 s）——T100 区间始自触发前 11.94 s；GCN 31899 精化分析谱拟合区间 \"T-11.07 to T+38.00 s\" 同示触发前覆盖。纯元数据，不改时间轴。\n【定位】ra/dec=123.96809/+30.34259（GCN 31887 Enhanced Swift-XRT position，原文 \"RA, Dec = 123.96809, +30.34259 degrees\"、\"3.7 arcsec (radius, 90% confidence)\"，pos_error_confidence=90 按原文）。原库 ra/dec=123.9647/+30.34319 实为 GCN 31881 首报 XRT 未编目源位（08h 15m 51.53s +30d 20' 35.5\"=123.96471/+30.34319、4.5 arcsec），与 pos_ref=GCN 31887（3.7″）混串，已归位到增强位。备查并列：GCN 31881 首报 XRT 位 123.96471/+30.34319（4.5″）；RATIR 余辉位 123.967275/+30.342693（GCN 31882，未给误差）；swiftgrbba 快照精化位 123.96812/+30.34292（2.1″）；BAT 精化位 123.975/+30.336（1.9′ 90%，GCN 31899）。\n【分类】sub_tag=lgrb 按目录 t90 判（§3.9）：Swift/BAT 官方目录 t90=44.26±7.83 s（15-350 keV，external/swift_bat 快照）；GCN 31899 \"T90: 41.66 ± 7.00 sec\"（15-350 keV）同判长暴。Trigger_Instrument 改为 Swift/BAT（与已审核 Swift 源一致）。\n【alias】GRB 220412A（GCN 31881/31885/31899 等原文用名）；BAT 1102281（external/swift_bat name_alt 原值）；GRB220412.28（GCN 31880 MASTER 原文用名 \"Swift GRB220412.28\"）。\n【红移】无实测值（GCN 31888/31890 谱拟合 Galactic 吸收即可、无显著过剩吸收；无光谱红移报告），保持 null。\n【测光检索（2026-11-16）】第一步仓内：无 gcn/archive 目录；external/rssgrbag（射电 140 行/74 源）、external/grbsn_webtool（63 事件）无本源；external/swift_bat/swiftgrbba/swift_xrt_live/uvot_grb/mpe_greiner/fermi_gbm/heasarc_grbcat 仅目录级参数（作身份/T0/定位互证）；liang2023/wang2022/guidorzi2025/minaev2020 样本快照均无本源。第二步 GCN 站内检索：gcn.gsfc.nasa.gov/gcn3_archive.html 主题级命中 14 篇（31880/31881/31882/31885/31887/31888/31890/31891/31898/31899/31901/31902/31903/32326），全部逐张实开；其中含光学数值/上限 8 篇（31880 MASTER、31882 RATIR、31885 UVOT、31891 MITSuME、31898/31902 RATIR、31901 BOOTES、31903 GRANDMA）+32326 VIRT；31887/31888/31890 仅定位与 X 射线；无射电/毫米数值通告。第三步文献（ADS/SciX 无 token→回退链 Crossref+arXiv+OpenAlex+WebSearch，SIMBAD/CDS 整站 unavailable@2026-11-16，哈佛镜像确认 J/A+A/682/A141 无 VizieR 表）：命中 Tosta e Melo+2024（A&A 682,A141，GRANDMA 样本论文，VoR 经 HAL hal-04274105 排版版取得、A&A 正文被 DataDome 403 拦）与 Rhodes+2026（第二 AMI-LA 射电目录，arXiv 2608.13697 preprint-only，无 journal_ref/DOI）；GRANDMA 被引 4 篇（引文闭包）无本源专文；Zhang+2024（ApJS 272,4，arXiv 2303.00370）样本表仅 \"GRB220412A 31881(Swift/BAT) - - - n8\" 无数值；Rhodes+2026 全文仅一句提及本暴 \"contain a radio counterpart\"（其引 [106]=GCN 35397 系 231215A、[107]=GCN 36489 系 240511A，本暴无引文、无任何数值、目录观测表亦无本暴）——两篇均无可入库测光。结论：补入 8 行（GCN 31880 MASTER 3 行、GCN 31901 BOOTES 2 行、Tosta e Melo+2024 Table B.2 3 行），其余行重锚与口径修正；KNC-HAO L>17.3 一值因 filters.json 无键缓议（见 PR 待决①）。\n【去重】GCN 31882 i=19.26±0.10（初报）与 GCN 31898 i=19.27±0.10（终值）为同一测量的更正：31898 原文 \"This photometry for the first night supersedes the preliminary photometry reported by Watson et al.\"——删 31882 i 行、保留 31898 行（链条记于该行 comment）；31882 的 r=19.41/Y=19.11 两行 31898 未更新，保留原值。其余行无重复（同值不同仪器/不同口径均独立保留）。\n【T0 重锚与口径修正】原表 25 行 mjd=T0_old+time 严格成立（残差 0.000000 s），即 time 全被锚在误值 06:38:27 上；逐行核对其绝对时刻（mjd）与各来源相符（UVOT=GCN 31885 的 T_start、RATIR=窗口中点、MITSuME=MID-UT、GRANDMA=GCN 自带 MJD 列），故按来源绝对时刻为准重算：time:=绝对时刻−T0_new（全表 +96.779780 s）；同时按 §3.2/§3.8 修正口径：UVOT 8 行由 T_start 改取曝光中点 (T_start+T_stop)/2 并补 time_err=半跨；RATIR 窗口行补 time_err=半跨（432/510/2460/7260 s）；MITSuME 补 time_err=T-EXP/2=1980 s；GRANDMA 行补 time_err=总曝光/2（原值未给）；VIRT 行由 T0_old+66452 s 改按其 UT 起始 00:11:58.73+4000/2 s（原值与原文任一口径均不符）。本源无 X 射线行，无需对齐。mag_system 补齐：UVOT=Vega（GCN 31885 明引 Breeveld et al. 2011 UVOT photometric system）、RATIR=AB（31882 原文声明；31898/31902 按 SDSS DR9 定标推定并注明）、MASTER/BOOTES/VIRT 原文未声明→留空。\n【X 射线】无 band 为能量串的行；GCN 31888/31890 的 XRT 计数率/光变（初始衰减 α=2.10、T+1330 s 处变陡）属暂缓范围，不入库。\n【VoR 记录】Tosta e Melo+2024 VoR：A&A 官网正文/PDF 被 DataDome 拦（403，整站级）；经机构库 HAL（hal-04274105）取得排版版（页首印 A&A 682, A141 (2024)、DOI 10.1051/0004-6361/202347938、\"Open Access article, published by EDP Sciences\"），正文与附录 B 全文通读并 pdftotext 留痕。Rhodes+2026/Zhang+2024 为 mention-check（arXiv v2 PDF/2303.00370），无数值采用。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "swift_bat_catalog_trigger_1102281",
+    "t0_note": "T0=Swift/BAT 官方目录 Trig_time_UTC（触发 1102281，亚秒 .220220）；GCN 31881 整秒 06:36:50 互证；原 bot 值 2022-04-12T06:38:27Z 系 GCN 31880 MASTER 观测指向时刻（trigger+97 s）被误作 T0（Issue #84 同型），原 t0_basis=meta_trigger、原 t0_note 见 info.comment 留底",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-16"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Tosta e Melo+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202347938",
+      "title": "Ready for O4 II: GRANDMA observations of Swift GRBs over eight weeks in spring 2022",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
