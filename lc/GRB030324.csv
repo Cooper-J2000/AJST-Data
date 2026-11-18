@@ -10,7 +10,7 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 11340.0,2160,s,52722.2650787,V,22.4,,magnitude,,n,y,,,,,,,1.0,n,USNO 1.0m,,GCN2037,GCN 2037 表：start 2.55h、mean 3.15h（time 取 Mean 列），1200sx1 3σ 限 22.4；原文未声明系统,fsy
 11880.0,1080,s,52722.2713287,H,19.0,,magnitude,Vega,n,y,,,,,,,1.0,n,USNO 1.55m,,GCN2037,GCN 2037 表：start 3.00h、mean 3.30h（time 取 Mean 列），600sx4 3σ 限 19.0，1.55-m USNO；定标含 2MASS（原文）→ mag_system=Vega 推定,fsy
 11117.2,,s,52722.2625000,G,19.5,,magnitude,,n,y,,,,,,,1.0,n,KAIT,,GCN1947,KAIT 未滤光 12'×12' 区域，06:18 UT（原文，约 3 hours after the burst），限 19.5（与 DSS II (red) 比较）；原文未给曝光时长，time_err 留空；未滤光、无定标声明 → band=G，原文未声明系统,fsy
-11537.2,,s,52722.2673611,R,22.4,,magnitude,,n,y,,,,,,,1.0,n,FLWO 1.2m,,GCN2032,FLWO 1.2m R 三个历元之第一（原文 Mar. 24 06:25，t=0.134 d），3σ 限 22.4；原文未给曝光时长与系统。原库该行 mjd=52722.25900463 与原文历元 06:25 UT（52722.26736）不符（差 ~12 min，bot 拷贝错位），已按原文历元改,fsy
+11537.2,,s,52722.2673611,R,22.4,,magnitude,,n,y,,,,,,,1.0,n,FLWO 1.2m,,GCN2032,FLWO 1.2m R 三个历元之第一（原文 Mar. 24 06:25 UT，t=0.134 d），3σ 限 22.4；mjd=原文历元 06:25:00 UT 的 7 位小数表示，time=历元−标准 T0（原库 mjd 52722.26736111112 与该历元一致，本次仅为表示精度调整与 T0 平移）；原文未给曝光时长与系统,fsy
 21240.0,4104,s,52722.3796620,Rc,19.2,,magnitude,,n,y,,,,,,,1.0,n,Morehead Observatory 0.6m,,GCN2037,GCN 2037 表：start 4.76h、mean 5.90h（time 取 Mean 列），1478sx4 3σ 限 19.2，0.6-m Morehead；原文未声明系统,fsy
 18077.2,,s,52722.3430556,R,23.1,,magnitude,,n,y,,,,,,,1.0,n,Magellan 6.5m Clay,LDSS2,GCN2032,Magellan 6.5m Clay+LDSS2 深 R（原文只覆盖内 7.4' 直径），Mar. 24 08:14 UT（t=0.210 d），3σ 限 23.1；原文未给曝光时长与系统,fsy
 18516.0,300,s,52722.3481343,B,22.0,,magnitude,,n,y,,,,,,,1.0,n,USNO 1.0m,,GCN2037,GCN 2037 表：start 5.06h、mean 5.06h（两列相同，取 start+半积分=中点），600sx1 3σ 限 22.0；原文未声明系统,fsy
@@ -28,7 +28,7 @@ time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit
 62717.2,1080,s,52722.8597222,R,20.0,,magnitude,,n,y,,,,,,,1.0,n,AT-64 (CrAO),,GCN1964,AT-64 10×180s 无滤光片，20:20–20:56 UT（原文），合并像 S/N=3 限 20.0——原文称以 Henden (GCN 1950) R 波段测光估计限量 → band=R；time=窗口中点、time_err=半宽（§3.8 口径）；原文未声明系统,fsy
 73428.88,900,s,52722.9837,R,21.9,,magnitude,,n,y,,,,,,,1.0,n,Loiano 152cm,,GCN1963,Loiano 152cm R 1800s 第一夜（原文 mid exp. Mar 24.9837，源精度 0.0001 d≈8.6 s），限 21.9；time_err=半曝光（900s）；原文未声明系统,fsy
 94937.2,,s,52723.2326389,R,23.3,,magnitude,,n,y,,,,,,,1.0,n,Magellan 6.5m Clay,LDSS2,GCN2032,Magellan Clay+LDSS2 R 第二历元（原文 Mar. 25 05:35，t=1.100 d），3σ 限 23.3；原文未给曝光时长与系统,fsy
-133070.8,900,s,52723.674,R,21.4,,magnitude,,n,y,,,,,,,1.0,n,SSO 40-inch,,GCN1959,SSO 40-inch 6×300s R 之第三历元（原文 Mar 25.674），限 21.4；time_err=900s。原库该行 mjd=52723.98520 与原文历元 Mar 25.674（52723.674）不符（差 ~7.4 h，bot 拷贝错位），已按原文改,fsy
+133070.8,900,s,52723.674,R,21.4,,magnitude,,n,y,,,,,,,1.0,n,SSO 40-inch,,GCN1959,SSO 40-inch 6×300s R 之第三历元（原文 Mar 25.674，源精度 0.001 d≈86 s），限 21.4；time_err=半曝光（900 s）；mjd=源日小数 52723.674（原库 52723.673993055556 为该历元截断到整秒的等值表示，差 0.6 s，本次恢复源精度），time=历元−标准 T0,fsy
 159958.48,900,s,52723.9852,R,21.4,,magnitude,,n,y,,,,,,,1.0,n,Loiano 152cm,,GCN1963,Loiano 152cm R 1800s 第二夜（原文 mid exp. Mar 25.9852），限 21.4；time_err=900s；原文未声明系统,fsy
 189557.2,,s,52724.3277778,R,22.7,,magnitude,,n,y,,,,,,,1.0,n,FLWO 1.2m,,GCN2032,FLWO 1.2m R 第三历元（原文 Mar. 26 07:52，t=2.194 d），3σ 限 22.7；原文未给曝光时长与系统,fsy
 204264.0,1872,s,52724.4979954,Ic,21.9,,magnitude,,n,y,,,,,,,1.0,n,USNO 1.0m,,GCN2037,GCN 2037 表 Mar 26.477：start 56.22h、mean 56.74h（time 取 Mean 列），3600sx1 3σ 限 21.9（原文注 (5) 仅中心 11.3'×11.3'）；原文未声明系统,fsy
