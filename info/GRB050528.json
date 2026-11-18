@@ -1,28 +1,46 @@
 {
   "transient_id": "GRB050528",
-  "alias": [],
-  "ra": 353.529,
-  "dec": 45.944,
-  "T0": "2005-05-28T04:06:45Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "GRB 050528",
+    "BAT 130679"
+  ],
+  "ra": 353.5289,
+  "dec": 45.95839,
+  "T0": "2005-05-28T04:06:45.128040Z",
+  "T0_ref": "GCN 3496（Swift-BAT 于 2005-05-28 04:06:45 UT 触发，trigger=130679）；亚秒取触发仪器官方目录 Trig_time_UTC=2005-05-28T04:06:45.128040（external/swift_bat 快照）",
+  "T0_offset": -8.116,
+  "T0_offset_ref": "GCN 3502（BAT 精化分析：光变 starts ~T-8 and ends at T+4 sec，触发前已有辐射取负）；Swift/BAT 目录 summary_burst_durations T100_start=-8.116 s（external/swift_bat 快照）。纯元数据，不改写光变时间轴",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 3502",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 131.118,
+  "pos_ref": "Swift/BAT 目录 ground 精化位（external/swift_bat 快照 RA_ground/DEC_ground，±2.185303'）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT 触发（GCN 3496：At 04:06:45 UT on May 28, 2005 the BAT instrument on the Swift spacecraft triggered on (trigger = 130679)，当时 'We can not say if this is a real GRB or not'）。T0 修正：原 bot T0=2005-05-28T04:06:45Z（meta_trigger）系触发时刻的整秒截断，已废弃；GCN 3496/3502 只给整秒 04:06:45 UT，亚秒取 Swift/BAT 目录 Trig_time_UTC=04:06:45.128040（external/swift_bat 快照，同精度先例 GRB050128）；目录 Trig_time_met=138946004.672 s 与 UTC 列不自洽（换算差 0.456 s），MET 列有缺陷弃用、以 UTC 列为准。T0_offset：GCN 3502 精化光变 'starts ~T-8 and ends at T+4 sec'（触发前已有辐射），目录 T100 窗口 -8.116→+4.984 s，取目录精化值 -8.116 s（|offset|>1 s，负=提前）。定位改判（原值混串）：原 ra/dec 353.529/45.944 系 GCN 3496 on-board 位（±4' radius 3-sigma 含系统差），原 pos_error=180\" 系 GCN 3502 的 ±3'，两者混串已废弃；改取 Swift/BAT 目录 ground 精化位 353.5289/45.95839、Image_position_err=2.185303'=131.118\"（目录在线版持续更新、晚于 GCN 3502，冲突时以目录为准；该列未标注置信水平，pos_error_confidence 留空）；GCN 3502 ground-analysis 位 353.515/45.938 ±3'（radius, 90%, statistical plus systematic）并列备查（90% 置信水平仅属该 GCN 值）；GCN 3496 on-board 位与 mpe_greiner 快照位（23h34m07s +45°57'，±4'）备查。XRT：GCN 3505 分析触发后 14.15 h 起的 15965 s（9 orbits）PC 数据，BAT 3' 误差圆内 3 个暗源（估计不确定度 7\" 半径，距 BAT 位 122.1/146.1/14.1\"，按 Crab 谱假设未吸收流量 4.9e-14/4.2e-14/3.2e-14 erg/cm2/s 0.5-10.0 keV），原文 'we cannot determine at this time whether any of the sources are fading'，且 XRT 触发时处工程模式未即时观测——三源均非确认余辉，无 XRT 增强位可改判，定位维持 BAT 目录值。确认状态与勘误链：GCN 3502（数据下传后）确定 trigger 为 real GRB，原文 'Trigger 130649' 系笔误（应为 130679，GCN 3496 与标题一致）；GCN 3502 光变单峰 ~12 s、T90=10.8 s、PL 光子指数 2.44±0.25、fluence (5.1±0.1)e-7 ergs/cm2（15-350 keV, 90% c.l.），其 peak flux '11.8±0.1 ph/cm2/sec' 被 GCN 3504 勘误为 1.5±0.3 ph/cm2/sec（原通告 3502 的 11.8 错 → 更正通告 3504 取 1.5）；GCN 3501（中间更新）仍存疑、3502 定案。tag=grb；sub_tag=lgrb：T90=10.8 s（GCN 3502）/11.248±1.728 s（Swift/BAT 目录 T90 列，external/swift_bat 快照，15-350 keV）/11.3 s（SGA，external/uvot_grb 与 swiftgrbba 快照），按目录 t90 判 lgrb（均远超 2 s；GCN 3502 'This is a very soft event with essentially no emission above 100 keV'）。无红移测量（Swift/BAT 目录 GRBlist_redshift_BAT.txt 无此暴；各快照 redshift 均空）。GCN 3498 的 BOOTES-1B 光学候选（23:34:42.93 +45:56:14.4）已被 GCN 3500 撤回（实为 GSC2 未收录恒星），不得作为余辉。测光检索（2026-11-19）：仓内 main 树无 gcn/archive（未获取，如实注明）；external/rssgrbag、grbsn_webtool、konus_wind、swift_xrt_live 0 命中，uvot_grb/swiftgrbba/swift_bat/mpe_greiner 均为目录级参数无光变表（仅用于上述互证）；ADS/SciX 无 token（search-limited，不据此得出无文献/无测光结论）；arXiv API 元数据检索 'GRB 050528'/'GRB050528' 0 命中；OpenAlex 摘要级与全文级各命中 6 条（4 篇本暴 GCN + Jelinek+2010 综述 + Granada 学位论文）；Crossref 题名级 0 命中；GCN 站逐号枚举 3490-3560 命中 9 篇（3496/3497/3498/3500/3501/3502/3503/3504/3505，3506-3560 零命中，全部实际打开核对）；Jelinek+2010（Advances in Astronomy 2010, 432172, doi:10.1155/2010/432172）VoR 已取并核对（050528 段落与 GCN 3500 一致，并增补观测绝对时刻 04:07:56 UT 与 28 s 响应）；Butler+2007（ApJ 671,656）arXiv v3 表 1 含 050528 行（T0=04:06:45.00、T90=11.5±0.9 s、burst region -8.56→+5.12 s）与上述值交叉一致（catalog 交叉验证，未取入库值）→ 补 2 行 BOOTES-1B 上限（GCN 3500），lc 共 5 行（全部上限，无探测）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-19"
+    },
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "GCN 3496 + Swift/BAT 目录 Trig_time_UTC",
+    "t0_note": "T0 经 fsy 2026-11-19 审核修正为 2005-05-28T04:06:45.128040Z（Swift/BAT 目录 Trig_time_UTC，external/swift_bat 快照；GCN 3496/3502 整秒 04:06:45 UT 一致）；原 bot 值 2005-05-28T04:06:45Z（meta_trigger）为该触发时刻的整秒截断，已废弃；目录 MET 列（138946004.672）与 UTC 列不自洽（差 0.456 s），MET 列弃用"
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Jelinek+2010",
+      "url": "https://doi.org/10.1155/2010/432172"
+    }
+  ],
   "host_galaxy": null
 }
