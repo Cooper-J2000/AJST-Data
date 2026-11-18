@@ -1,28 +1,55 @@
 {
   "transient_id": "GRB220427A",
-  "alias": [],
-  "ra": 275.88882,
-  "dec": -56.25507,
-  "T0": "2022-04-27T23:41:48Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 220427A"
+  ],
+  "ra": 275.88811,
+  "dec": -56.25541,
+  "T0": "2022-04-27T21:00:34.960900Z",
+  "T0_ref": "GCN 31960（Swift/BAT 官方触发通告，trigger 1104343：原文 'At 21:00:34 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 220427A'）；Swift BAT 官方目录互证：external/swift_bat summary_general Trig_time_UTC=2022-04-27T21:00:34.960900（取 UTC 列；同表 Trig_time_met=672786064.000 有缺陷弃用——按 Swift MET 纪元换算为 21:01:04，与 UTC 列差约 29 s）；GRANDMA 论文 Table 1 与 swiftgrbba 目录 trigger_time=2022-04-27T21:00:34.000Z 亦整秒一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
-  "redshift": null,
-  "tag": [],
+  "redshift": 0.82,
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.5,
   "pos_ref": "GCN 31962",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "phot",
+  "redshift_ref": "TostaMelo2024（A&A 682, A141, DOI 10.1051/0004-6361/202347938，VoR 已核）：GROND/MPG 2.2m （La Silla）2022-05-27 宿主 grizJHKS SED 的 LePhare 测光红移 z=0.82±0.09",
+  "comment": "【身份】Swift/BAT trigger 1104343（GCN 31960），XRT 增强位与 UVOT 找图余辉互证；GCN 31960 明确排除与 IGR J18244-5622/IC 4709（z=0.017）的巧合。【T0 修正】原 bot 值 2022-04-27T23:41:48Z 系 MeerLICHT 观测起点（GCN 32032 'Observations began at 2022-04-27, 23:41:48 UT, 2 hours 41 minutes after the Swift detection'）被误锚为触发时刻（Issue #84 型）；原 extra_data t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）'（原值逐字留档）。改 T0 后全表 time/mjd 已重算并自洽（tools/check_t0_timebase.py PASS）。【位置】修正混串：原库 ra/dec=275.88882/-56.25507 实为 GCN 31960 的 UVOT 找图位（0.61″, 90%），但 pos_error=2.5″ 与 pos_ref=GCN 31962 来自 XRT 增强位；现按 GCN 31962 原文统一取 XRT 增强位 RA,Dec=275.88811,-56.25541（2.5″ 半径, 90% conf）。并列备查：BAT on-board 275.869/-56.253（3′, 90%，GCN 31960）、BAT 地面精化 275.922/-56.257（2.0′, 90%，GCN 31968；external/swift_bat RA_ground/DEC_ground 同）、UVOT 找图 275.88882/-56.25507（0.61″, 90%，GCN 31960；Xu2025 亦采用该位并称 'Swift-UVOT positions'）、external/swift_xrt_live 快照 275.8881/-56.25517（2.0″）。【分类】tag=grb；sub_tag=lgrb：T90=57.2±12.2 s（15-350 keV，GCN 31968 BAT 精化分析；external/swift_bat 目录 t90=57.216 s 同），Konus-Wind GCN 31964 原文 'The long GRB 220427A'。【T90 等物理量】T50=17.70±3.96 s（15-350 keV，GCN 31968）；fluence=2.1±0.2e-6 erg/cm2（15-150 keV，GCN 31968）/1.0±0.3e-5 erg/cm2（20 keV-10 MeV，Konus-Wind GCN 31964）；1 s 峰值光子流=3.0±0.3 ph/cm2/s（15-150 keV，自 T+7.83 s 起，GCN 31968）；时间平均谱 PL 指数 1.23±0.13（GCN 31968）；Konus CPL alpha=-1.04(-0.30,+0.43)、Ep=503(-204,+757) keV（GCN 31964）；XRT 谱 Gamma=2.01±0.15、NH=1.6(+0.5,-0.4)e21 cm-2（GCN 31963）；XRT 光变衰减指数 α=1.05(+0.05,-0.04)（GCN 31963）；GRANDMA 光学衰减 α_O=1.38±0.04、XRT α_X=1.08±0.03（TostaMelo2024）。宿主：GROND（MPG 2.2m，La Silla）2022-05-27 grizJHKS 各约 3600 s，LePhare 测光红移 z=0.82±0.09（TostaMelo2024；宿主测光点仅见于其 Fig 3 未成表，故未转录、host_galaxy 暂不建立）。【alias】「GRB 220427A」为全部 9 篇命中 GCN 通告主题行原文用名（GCN 31960/31962/31963/31964/31967/31968/31991/31995/32032），mpe_greiner 与 swiftgrbba 目录 name 字段同名（external/ 快照）。【测光检索（2026-11-19）】GCN 老站（gcn.gsfc.nasa.gov/gcn3）全量抓取 31900-32100 区 201 文并 grep，命中 9 篇（上列编号），光学数值相关 5 篇：GCN 31960（UVOT white 17.23，补 1 行）、GCN 31967（VLT/X-shooter，库中原有）、GCN 31991（GRANDMA，库中原有 KNC 行；其 TAROT/Makes 行与 VoR 表 B.1 同源，按 VoR 口径补 12 行）、GCN 31995（LCO R/I，补 2 行）、GCN 32032（MeerLICHT，库中原有）；GCN 31963/31964/31968 仅 X 射线/伽马参数。仓内external/ 快照：gcn/archive 在当前树不存在；rssgrbag、grbsn_webtool、uvot_grb、konus_wind、fermi_gbm grep 0 命中；swift_bat/swiftgrbba/mpe_greiner/swift_xrt_live 用于身份与 T0 互证。文献：OpenAlex fulltext.search 'GRB 220427A' 命中 2 篇——TostaMelo2024（VoR 已核，补 12 行）与 Xu2025（MWA 185 MHz 单脉冲搜索 6σ 上限 3.6 Jy，VoR 已核，补 1 行）；Crossref bibliographic 模糊命中 2 篇经全文 mention-check 不涉本源（Kawakubo+2025 PoS(ICRC2025)937、Pradhan+2026 APh 178 103226，arXiv/PoS 全文 '220427' 0 命中）；ADS/SciX 无 token（search-limited，不据此下'无文献'结论）；SIMBAD TAP 与 VizieR CDS unavailable@2026-11-19（整站维护）；arXiv 元数据与定向检索（MeerLICHT/GRANDMA/Stargate/Konus/LCO）无本源专门论文。→ 共补 16 行（UVOT 1 + GRANDMA TAROT/Makes 12 + LCO 2 + MWA 1），保留原有 10 行（其 time/mjd 已按新 T0 重算）。【备注】MeerLICHT 行为多帧 coadd 强制测光、窗口未给，time_err 留空；LCO 行 USNO-B1 定标未声明系统，mag_system 留空；MWA 行为射电脉冲搜索上限（相干辐射搜索）而非连续谱测光，是否保留请维护者复核。本源无 X 射线行（库中无 keV band 行），无 XRT Burst Analyser 数据需对齐。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-19"
+    },
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "GCN 31960 + external/swift_bat 目录 UTC 列",
+    "t0_note": "t0=Swift/BAT 触发时刻（GCN 31960 'At 21:00:34 UT'；swift_bat 目录 Trig_time_UTC=2022-04-27T21:00:34.960900，MET 列有缺陷弃用）。原库值 2022-04-27T23:41:48Z 系 MeerLICHT 观测起点被误锚（Issue #84 型）；原 t0_basis=meta_trigger、原 t0_note='t0 为 meta trigger-time（真实触发时刻）'（原值逐字留档）"
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Tosta e Melo+2024",
+      "url": "https://ui.adsabs.harvard.edu/abs/2024A%26A...682A.141T",
+      "title": "Ready for O4 II: GRANDMA observations of Swift GRBs over eight weeks in spring 2022",
+      "source": "fsy@zcode",
+      "bibtex": "@ARTICLE{2024A&A...682A141T,\n       author = {{Tosta e Melo}, I. and {Ducoin}, J.-G. and {Vidadi}, Z. and {Andrade}, C. and {Rupchandani}, V. and {Agayeva}, S. and others},\n        title = \"{Ready for O4 II: GRANDMA observations of Swift GRBs over eight weeks in spring 2022}\",\n      journal = {\\aanda},\n         year = 2024,\n        month = feb,\n       volume = {682},\n          eid = {A141},\n        pages = {A141},\n          doi = {10.1051/0004-6361/202347938},\narchivePrefix = {arXiv},\n       eprint = {2310.17287},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A%26A...682A.141T},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}"
+    },
+    {
+      "name": "Xu+2025",
+      "url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982...32X",
+      "title": "A Search for Low-frequency Radio Pulses from Long Gamma-Ray Bursts with the Murchison Widefield Array",
+      "source": "fsy@zcode",
+      "bibtex": "@ARTICLE{2025ApJ...982...32X,\n       author = {{Xu}, Fan and {Anderson}, G. E. and {Tian}, Jun and {Meyers}, B. W. and {Tingay}, S. J. and {Huang}, Yong-Feng and {Wang}, Zi-Teng and {Venville}, B. and {Lee}, C. P. and {Rowlinson}, A. and {Hancock}, P. and {Williams}, A. and {Sokolowski}, M.},\n        title = \"{A Search for Low-frequency Radio Pulses from Long Gamma-Ray Bursts with the Murchison Widefield Array}\",\n      journal = {\\apj},\n         year = 2025,\n        month = apr,\n       volume = {982},\n          eid = {32},\n        pages = {32},\n          doi = {10.3847/1538-4357/adb71e},\narchivePrefix = {arXiv},\n       eprint = {2502.11545},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2025ApJ...982...32X},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}"
+    }
+  ],
   "host_galaxy": null
 }
