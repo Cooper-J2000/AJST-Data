@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB251116C",
-  "alias": [],
+  "alias": [
+    "GRB 251116C",
+    "sb25111605",
+    "GRB251116.66"
+  ],
   "ra": 335.3441,
   "dec": -10.3459,
   "T0": "2025-11-16T15:57:41Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 42703（SVOM/ECLAIRs 官方触发通告）：At 2025-11-16T15:57:41 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 251116C（整秒照录）；GCN 42742（refined analysis）同值复核；Swift/BAT GCN 42726 亦锚 T0: 2025-11-16T15:57:41 UTC",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/XRT",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": null,
-  "tag": [],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 42726",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 6.9,
+  "pos_ref": "GCN 42721",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核链（fsy@zcode 2026-11-19）：[身份] SVOM/ECLAIRs 触发的长暴＝SVOM burst-id sb25111605（GCN 42703 原文 At 2025-11-16T15:57:41 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 251116C (SVOM burst-id sb25111605)；CRT+IMT 三次警报、最佳 IMT SNR=12.47（5-20 keV、40.96 s 窗口、始于 15:57:36））；Swift/BAT 未星上定位、事后在巡天数据 14-80 keV 单幅 300 s 图像（始于 ~T0−192 s）中以 S/N 7.2 检出并给 3′ 定位（GCN 42726）；Swift-XRT ToO 跟随（GCN 42721/42815，SVOM_FIELD00051）；同日异暴甄别：仓内 fermi_gbm 快照的 GRB251116083（trigger_time 2025-11-16T02:00:04Z、RA/Dec=27.28/−24.81）与本暴无关（零交集）。[Trigger_Instrument] 原库 Swift/XRT 系误标——XRT 仅为 ToO 跟随，触发仪器为 SVOM/ECLAIRs（GCN 42703）；BAT 亦非星上触发（GCN 42726 原文 Swift/BAT did not localize GRB 251116C onboard）。[T0] 原库 2025-11-16T15:57:41Z 与触发仪器官方通告逐字一致，保留并补 T0_ref；交叉值备查：SVOM VHF 通告历元（MASTER GCN 42704 记 trigger No 1763308636＝15:57:16 UT、UKSSDC SVOM_FIELD00051 页记 T0=15:57:15/15:57:15.919 UT）与 Circular 差约 25 s——按 §3.8 优先级①取触发仪器官方 Circular（42703/42742 双次同值；Swift/BAT GCN 42726 与 NASA Swift GRB 表页均锚 15:57:41；仓内 swiftgrbba 快照 trigger_time=2025-11-16T15:57:41.000Z），差值 ≥60 ms 已在 PR 说明报告；ECLAIRs IMT 窗口始于 T0−5 s 属图像积分窗、非 T0_offset 证据，T0_offset 留空。[定位] 原库 ra/dec=335.3441/−10.3459 为 GCN 42721 XRT source 1（SWIFT J222122.5-102045）坐标，但 pos_error=180″ 误串自 GCN 42726 的 BAT 3′ 半径（bot 混串、坐标与误差不同源）——改判：pos_error=6.9″、pos_error_confidence=90（GCN 42721 原文 Error: 6.9 (arcsec, radius, 90% confidence)）、pos_ref=GCN 42721；归属依据：XRT 复测确认 source 1 以 ~3σ 显著变暗、likely the GRB afterglow（GCN 42815），且 X1 位于 BAT 3′ 误差圈内（GCN 42726/42772）。备查：ECLAIRs 本体定位 335.3182/−10.4239（90% C.L. 6.49′、含 2′ 系统差，GCN 42703）；BAT 定位 335.3327/−10.3401（estimated uncertainty of 3 arcmin radius、未标置信水平，GCN 42726）；XRT source 2（SWIFT J222052.1-102849，335.2172/−10.4803，5.8″ 90%）无变暗证据、非余辉（GCN 42721）。[tag] GCN 42742（ECLAIRs event-by-event 精化分析）：single peak lightcurve, lasting about 60 s in the 4-120 keV energy band→按来源时长描述判 lgrb（非自算 T90）；作者注 time-averaged spectrum（T0−15 至 T0+39，5-120 keV）光子指数 1.95±0.10、总 fluence (1.2±0.1)e-06 erg/cm²（4-120 keV）、peak energy may be below 5keV which would classify this GRB as an X-Ray Flash——存疑推测未采纳入 sub_tag。[测光检索留证（2026-11-19）] 仓内 GCN 全文快照（_scratch/archive/archive.json，45 908 篇）全文检索 251116C/sb25111605/GRB251116.66 命中 10 篇＝本暴 9 篇 Circular（42703/42704/42705/42712/42721/42726/42742/42772/42815，全部逐字核对原文）+1 篇笔误命中（GCN 42776 为 EP251118a/GRB 251118C 通告、正文首句 GRB 251116C 系笔误，非本暴、未取数）；GCN 站内检索 4 组关键词（251116C→9、sb25111605→3、GRB251116C→1、SVOM_FIELD00051→3）与快照一致；仓内 external 快照：mpe_greiner 1 条（obs_date 2025-11-16、Instrument=SVOM、trigger_time 空）、swiftgrbba 1 条（T0/XRT 位互证）、swift_bat（68 文件）/swift_xrt_live/uvot_grb/heasarc_grbcat/rssgrbag/grbsn_webtool/konus_wind/fermi_lat/batse 均 0 命中、fermi_gbm 命中为异暴 GRB251116083；含光学数值的 Circular 4 篇：LCO r/z 上限（42705）、SVOM/VT B/R 上限（42712）、MASTER P-/C 上限表（42704，C 通道 11 行入库）、NOT r 上限（42772）；X 射线数据（GCN 42721/42815）暂不处理。文献（阶段一冻结清单 12 篇、阶段二逐篇 pdftotext 全文 grep 251116）：Li et al. 2026（RAA 26, 104025，VoR 已核）Table 1 row41＝GRB 251116C｜Mid-time 1.400 hr｜VT_R >23.4（3σ）——与 GCN 42712 同值之转引、无增量测光；SVOM Science User Support at FSC（RAA 2026）仅 API 示例 URL 含 sb25111605、无数据；其余 10 篇零命中。结论：可用光学/IR 上限共 4 处来源（LCO 2 行、SVOM/VT 2 行、NOT 1 行、MASTER C 通道 11 行、合计 16 行），本轮补 11 行（MASTER），其余 5 行按原文改定。[alias] GRB 251116C（GCN 42703 等 Circular subject 用名）；sb25111605（GCN 42703/42712/42742 SVOM burst-id）；GRB251116.66（GCN 42704 MASTER 原文用名 SVOM GRB251116.66、日期+日分数形，豁免证据串即此句）。[bot 残留] 原 extra_data：t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time（真实触发时刻）；原 Trigger_Instrument=Swift/XRT；原 pos_error=180.0 arcsec、pos_ref=GCN 42726（BAT 半径误串 XRT source 1 坐标）；原 lc 5 行 time/mjd 由 bot 无出处偏移生成（VT 5111 s、LCO 10446/11166 s）——本次全部按原文改定，原值见本次 PR diff。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "GCN 42703（SVOM/ECLAIRs 触发通告，整秒）",
+    "t0_note": "T0=2025-11-16T15:57:41Z 经逐字核对为 SVOM/ECLAIRs 触发时刻（GCN 42703/42742）；bot 原注（t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time（真实触发时刻））保留于 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-19"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd",
+      "title": "SVOM/VT: Overview of Data Processing and GRB Identifications with X-band Data",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
