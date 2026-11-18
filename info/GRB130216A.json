@@ -1,28 +1,59 @@
 {
   "transient_id": "GRB130216A",
-  "alias": [],
-  "ra": 67.89167,
-  "dec": 14.66,
-  "T0": "2013-02-16T22:15:21Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB130216927"
+  ],
+  "ra": 67.901,
+  "dec": 14.67,
+  "T0": "2013-02-16T22:15:24.622820Z",
+  "T0_ref": "GCN 14223（Swift 检测通告：At 22:15:24 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 130216A, trigger=548927）；BAT 触发通告页 GRB_TIME 80124.62 SOD {22:15:24.62} UT；external/swift_bat 快照 summary_general.txt Trig_time_UTC=2013-02-16T22:15:24.622820（触发仪器官方目录 UTC 列）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 60.0,
   "pos_ref": "GCN 14229",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "T0 裁定：官方 Swift/BAT 触发通告页 GRB_TIME 80124.62 SOD {22:15:24.62} UT（trigger 548927，2026-11-19 逐字核对 gcn.gsfc.nasa.gov/other/548927.swift）；GCN 14223 原句 At 22:15:24 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 130216A (trigger=548927)；GCN 14229 精化分析同锚。取触发仪器官方目录 UTC 列 Trig_time_UTC=2013-02-16T22:15:24.622820（external/swift_bat 快照；同表 Trig_time_met=382745734.848 与 UTC 列自差 约 +10.2 s，MET 列缺陷弃用）。GCN 14228（TAROT）t0=2013-02-16T22:15:24.620 互证。Fermi GBM 触发 22:15:21.42 UT（GCN 14236；FERMIGBRST 快照 22:15:21.419）为非触发仪器值，仅作身份互证；原 bot T0=2013-02-16T22:15:21Z 即误锚 GBM 触发时刻，已弃用（原 extra_data t0_basis=meta_trigger、t0_note「t0 为 meta trigger-time（真实触发时刻）」原值留档于此）。T0_offset 无（无真实爆发时刻相对设备自动触发 >1 s 调整的证据）。定位改判：原 ra/dec=67.89167/+14.66 实为 GCN 14234/14248 射电源位置 04:31:34 +14:39:36（±2″）——混串；改回 BAT 精化位置 RA,Dec = 67.901, +14.670 deg（04h31m36.2s +14d40'10.4\"，1.0 arcmin = 60″ radius，sys+stat，90% containment；GCN 14229 2026-11-19 逐字核对），BAT 目录 RA_ground=67.90083/DEC_ground=14.66931（external/swift_bat 快照）一致；BAT onboard 67.898/+14.665（3′，90%，GCN 14223 通告页）备查；Swift 因 Moon 约束 2013-02-20 13:16 UT 前无法指向（GCN 14223），XRT 观测（GCN 14247，317.7~347.4 ks）为非探测、无增强定位。t90 并列：6.5±1.1 s（15-350 keV，GCN 14229）/ 6.52±1.09 s（external/swift_bat 快照 T90 列）/ 约 7 s（50-300 keV，GCN 14236）/ 6.59±0.34 s（50-300 keV，FERMIGBRST 快照）/ 19.88±5.76 s（Becerra+2023 Table 3，口径不明，备查，另给 E(B-V)=1.41 与 GCN 14254 的 Schlegel 0.49 不同）；sub_tag=lgrb 按目录 t90 判（各来源均 >2 s）。谱学备查：GCN 14240 更正 14229 谱段——CPL 光子指数 0.80±0.20、Epeak=123.7±27.1 keV、fluence(15-150 keV)=3.0±0.1e-6 erg/cm2（PL 1.35±0.04 仍列）；1-s 峰光子流量 6.5±0.3 ph/cm2/s（T+1.11 s 起，GCN 14229）。别名「GRB130216927」：GCN 14236 原文用名 trigger 382745724 / 130216927（Fermi GBM 触发号；仓内 FERMIGBRST 快照 trigger_name/bn130216927 同形；Connaughton+2015 Table 9 VoR 同列 130216927 ↔ GRB 130216A）。无红移：无光学对应体确认（各站上限见 lc；Anderson+2017 Appendix D1 亦称光学随访未探测到对应体）。射电源 6 行（AMI 15GHz×2、WSRT 4.8GHz×4，GCN 14248）数值逐字核对属实并保留，但原作者明言非对应体（From these observations we conclude that this source is not the counterpart of GRB 130216A, but possibly a radio galaxy or AGN；9C/10C 巧合概率约 2%），Anderson+2017 VoR 亦归 coincident steady source（Table 2 Radio=S、Appendix D1：04:31:34.23 ±0.50″ +14:39:36.94 ±0.88″、Concat 0.87±0.05 mJy/beam）——是否置 discard 交维护者裁定（PR 待决①）。测光检索（2026-11-19）：GCN 站内检索（gcn.nasa.gov）命中 13 篇（14223/14224/14228/14229/14230/14233/14234/14236/14238/14240/14247/14248/14254，全部逐字核对；14247=XRT 非探测，属 X 射线不入库）；仓内 external 快照（rssgrbag、grbsn_webtool、uvot_grb、swift_grb、heasarc_grbcat 及各样本文章快照）无该源测光记录（swift_bat/mpe_greiner/fermi_gbm 仅有目录级参数）；OpenAlex 命中 16 条 = 10 条 GCN 题录转载 + 6 篇研究文章（Anderson+2017、Becerra+2023、Connaughton+2015、Augustine+2025、Tsutsui+2014、HAWC 2013），逐篇取原文程序化 mention-check 留痕（_conv/lit-GRB130216A/）：除 Anderson+2017 的 AMI 稳源表外均无该源测光；arXiv API all 检索 0 命中；Crossref bibliographic 检索无该源专文。补 3 行：OSN I 上限（GCN 14224）、MASTER-VWF 与 MASTER II 上限（GCN 14238）。既有 14 行按新 T0 重锚并改用曝光中点/窗口中点口径（原 bot 行均为曝光起点或相对误锚 T0 的值，无原文依据）：TAROT 3 行用原文 t0+区间中点与半宽、WIRC 行用原文 4.77~7.74 h 窗口中点、MITSuME 3 行用原文 MID-UT 与 T-EXP/2、AMI/WSRT 6 行用 GCN 14248 表 Epoch 十进制日中点、UVOT 行用原文 T_start~T_stop 中点。无 X 射线行（band 无能量串），无需 X 射线时间轴对齐。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "auditor": "fsy@zcode",
+      "date": "2026-11-19",
+      "status": "reviewed"
+    },
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "swift_bat_gcn14223_bat_catalog",
+    "t0_note": "T0=Swift/BAT 触发时刻（GCN 14223 原句 At 22:15:24 UT；官方通告页 GRB_TIME 80124.62 SOD=22:15:24.62 UT；external/swift_bat 快照 Trig_time_UTC=2013-02-16T22:15:24.622820）；原 bot 值 2013-02-16T22:15:21Z（t0_basis=meta_trigger，t0_note「t0 为 meta trigger-time（真实触发时刻）」）误锚 Fermi GBM 触发 22:15:21.42（GCN 14236），已弃用，见 comment"
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Anderson+2017",
+      "source": "fsy@zcode",
+      "title": "The Arcminute Microkelvin Imager catalogue of gamma-ray burst afterglows at 15.7 GHz",
+      "url": "https://doi.org/10.1093/mnras/stx2407"
+    },
+    {
+      "name": "Connaughton+2015",
+      "source": "fsy@zcode",
+      "title": "Localization of Gamma-Ray Bursts using the Fermi Gamma-Ray Burst Monitor",
+      "url": "https://doi.org/10.1088/0067-0049/216/2/32"
+    },
+    {
+      "name": "Becerra+2023",
+      "source": "fsy@zcode",
+      "title": "Understanding the nature of the optical emission in gamma-ray bursts: analysis from TAROT, GROND and other facilities",
+      "url": "https://doi.org/10.1093/mnras/stad2513"
+    }
+  ],
   "host_galaxy": null
 }
