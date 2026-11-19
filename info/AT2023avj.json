@@ -5,29 +5,46 @@
   ],
   "ra": 144.83673,
   "dec": 58.13681,
-  "T0": "2023-01-22T09:21:36Z",
-  "T0_ref": null,
+  "T0": "2023-01-22T06:58:10.560Z",
+  "T0_ref": "GCN 33226（ZTF 首探测 i=19.27±0.27，MJD 59966.29）；TNS 发现报告 2023TNSTR.206....1W（发现时刻 2023-01-22 06:58:10.560 UT，JD 2459966.7904）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "ZTF",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb",
+    "orphan-afterglow"
+  ],
   "pos_error": null,
   "pos_ref": "GCN 33226",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "身份：TNS AT 报告 170004（2023TNSTR.206....1W，ZTF 组 Kailai Wang/Anna Ho 等，2023-01-26 提交），无分类报告（仍为 AT）；ZTF 内部名 ZTF23aaarlti（bot 建库自该名合并）。快演化红色暂现源、无成协 GRB 的光学余辉候选：GCN 33226『strong candidate afterglow… did not identify any GRBs coincident with this position』；GCN 33233 VLA 射电探测『supports the conclusion that the source is the afterglow of a relativistic explosion at cosmological distance』；GCN 33238 Swift/XRT 探测（见下）；Li et al. 2025 (ApJ 985,124) Table 1 将其列入无 GRB 光学余辉样本（10 例之一，仅引 GCN 33226/33238）。tag 按 tags.json 词表记 grb+orphan-afterglow（同族已审源 AT2023sva 同款）；文献未测红移，redshift 保持 null；Legacy Survey DR9 无对应体，无宿主候选，host_galaxy=null。‖T0：2023-01-22T06:58:10.560Z（MJD 59966.2904）=ZTF 首探测时刻（i=19.27±0.27，TNS 发现时刻/JD 2459966.7904；GCN 33226 记 MJD 59966.29 为同点舍入）。本源无任何成协 GRB 触发，按 AT 源口径取首探测时刻。bot 原值 T0=2023-01-22T09:21:36Z（t0_basis=meta_trigger，注称『真实触发时刻』）实为 r 波段强制测光点 MJD 59966.39，既非触发时刻亦非首探测，已废弃；全表 time=mjd−T0 重算（X 射线行本源无）。‖定位：ra/dec 取发现位（GCN 33226=TNS，144.83673,+58.13681）；来源未给定位误差与置信水平，pos_error/pos_error_confidence 留空。更精射电位（GCN 33233）：RA 09:39:20.7894 Dec +58:08:12.619（J2000，RMS ±0.01 角秒），与光学位一致，备查，未改主位。‖X 射线（不入库，仅记录）：GCN 33238 报 Swift/XRT 探测——2023-01-27 14:46 UT 起观测（首探测后 5.3 d），4.6 ks，计数率 0.003±0.001 ct/s，WebPIMMS（NH=1.6E20/cm2，Γ=2）估未吸收 0.3–10 keV 流量 1.1E-13 erg/cm2/s；『No GRB counterpart has been reported』。‖测光检索留证（2026-11-20）：① 仓内——本克隆无 gcn/archive 快照目录（无法全文检索）；external/rssgrbag/lightcurve.jsonl 0 命中；external/grbsn_webtool/SourceData 0 命中；external/uvot_grb 0 命中（本源无 GRB 触发，属预期）。② GCN 站——事件页 AT2023avj（4 篇）+ZTF23aaarlti（3 篇）并集共 6 篇（33226/33227/33233/33238/33240/33252），全文逐篇核对；光学/射电测光共 12 个时锚点全部入库（新增 7 行+修正 5 行，无删除）；网页搜索摘要声称的 GCN 35349 经实取证伪（属 GRB 231215A，与本源无关）。③ 文献——唯一相关研究论文 Li et al. 2025（ApJ 985,124，DOI 10.3847/1538-4357/adc800，VoR 全文已读）：对 AT2023avj 仅 Table 1 一行候选清单（mention-only，无测光表）；arXiv API/OpenAlex/Crossref 元数据检索 0 命中；Perley et al. 2025（MNRAS 537,1）与 Srinivasaragavan et al. 2025（MNRAS 538,351）arXiv 全文程序化检索 0 命中；ADS/SciX 无 token 未做全文检索（记 search-limited，不据此下『无文献』结论——收敛由 Li+2025 Table 1 全样本清单与两篇同族论文 0 命中支持）；SIMBAD/CDS/VizieR 整站不可用@2026-11-20。④ TNS 对象页 2 个光度点：i=19.27（已入库）与 g>19.8 ABMag@MJD 59965.3684（ZTF 告警流口径，与 GCN 强制测光上限 g>20.18@59965.37 同历元不同深度，未入库仅备查）。‖银消光：GCN 33226 记 E(B-V)=0.01（Schlafly & Finkbeiner 2011）、银纬 45°；本表各行为观测值，未做消光改正（Gext_corr=n）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": null,
   "extra_data": {
-    "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
     "bot_created": true,
     "merged_from": [
       "ZTF23aaarlti"
-    ]
+    ],
+    "src": "gcn_llm_extract",
+    "t0_basis": "first_detection",
+    "t0_note": "T0=ZTF 首探测时刻（i 波段，MJD 59966.2904=2023-01-22 06:58:10.560 UT；TNS 发现时刻=GCN 33226 i 波段首探测）。本源无任何成协 GRB 触发（GCN 33226/33238 明确未检出），按 AT 源口径取首探测。bot 原值 t0_basis=meta_trigger、T0=2023-01-22T09:21:36Z（r 波段强制测光点 MJD 59966.39，非触发时刻）已废弃，原值留 info comment。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-20"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2025",
+      "url": "https://doi.org/10.3847/1538-4357/adc800",
+      "title": "The Nature of Optical Afterglows without Gamma-Ray Bursts: Identification of AT2023lcr and Multiwavelength Modeling",
+      "bibtex": "@ARTICLE{2025ApJ...985..124L,\n       author = {{Li}, Maggie L. and {Ho}, Anna Y. Q. and {Ryan}, Geoffrey and {Perley}, Daniel A. and {Lamb}, Gavin P. and {Nayana}, A. J. and others},\n        title = \"{The Nature of Optical Afterglows without Gamma-Ray Bursts: Identification of AT2023lcr and Multiwavelength Modeling}\",\n      journal = {\\apj},\n         year = 2025,\n       volume = {985},\n          eid = {124},\n        pages = {124},\n          doi = {10.3847/1538-4357/adc800},\narchivePrefix = {arXiv},\n       eprint = {2411.07973},\n primaryClass = {astro-ph.HE}\n}",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
