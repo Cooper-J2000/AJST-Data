@@ -39,7 +39,7 @@ DES 源（上表）都在其 106 样本中。**宿主研究文章：无瞬变体
 ## 2026-11-20 更新（DES17S2fee 审核，Rusty-Harpoon@zcode，PR #1117）
 
 - **表 1 机读全表已上 VizieR**：`J/MNRAS/498/2575`（CDS 收录日期 2026-08-03），经 CfA 镜像
-  （vizier.cfa.harvard.edu）实取，含 `table1`（106 行宿主信息＝VoR 在线机读版 tab:obs，列
+  （vizier.cfa.harvard.edu）实取，含 `table1`（96 行宿主信息＝VoR 在线机读版 tab:obs；106 样本中 96 源有宿主检出、10 源无宿主不入表〔正文 L386 自证〕，列
   More/Name/RAJ2000/DEJ2000/rmag/e_rmag/z/f_z/Survey/ExpTime）、`table2`（49 行宿主性质）、
   `tablea1`（发射线流量）。**上表「表 1 机读行未逐行核（OUP 反爬）」的阻塞对本表已解除**；
   DES17S2fee 行（RA 41.40953 / Dec −1.33278 / rmag 18.17±0.05 / z=0.23737 / OzDES / 2.00 h）
