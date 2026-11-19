@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB141017A",
-  "alias": [],
-  "ra": 93.601,
-  "dec": -58.596,
-  "T0": "2014-10-17T18:25:28Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 141017A",
+    "BAT 615672"
+  ],
+  "ra": 93.62994,
+  "dec": -58.58229,
+  "T0": "2014-10-17T18:25:28.004480Z",
+  "T0_ref": "GCN 16919（Swift/BAT trigger 615672：At 18:25:28 UT，整秒）；亚秒取触发仪器官方值 2014-10-17T18:25:28.004480：仓内 external/swift_bat 快照（batgrbcat，Lien+2016 在线版）summary_general.txt 第 776 行 Trig_time_UTC=2014-10-17T18:25:28.004480（MET 435263140.672），2026-11-19 在线复核 batgrbproduct 官方通告页 gcn.gsfc.nasa.gov/notices_s/615672/BA/ 同值 18:25:28.004480（§3.2/§3.8 亚秒以触发仪器为准）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +19,26 @@
   "pos_ref": "GCN 16921",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT 触发 GRB（trigger 615672，GCN 16919），别名 GRB 141017A（全部 9 篇相关 GCN 及 batgrbcat 目录用名）、BAT 615672（batgrbcat name_alt）。坐标修正：原库 93.601/-58.596 实为 GCN 16927 的 BAT 地面精化位置（2.1 arcmin，90% containment），与其 pos_ref=GCN 16921（XRT 增强位置 1.5″）错配；2026-11-19 审核改为 GCN 16921 增强位置 93.62994/-58.58229（1.5″ radius，原文明示 90% confidence）。互证：UKSSDC Swift-XRT live 目录终值 93.62994/-58.58235（2.0″，external/swift_xrt_live 快照 2026-07-21）；GROND 探测位置 06:14:31.28/-58:34:56.5（0.5″，GCN 16926）；Greiner+2024 tableb1 坐标 93.62992/-58.58236，均一致。sub_tag=lgrb 判据：t90=55.808±2.864 s（15-350 keV，external/swift_bat batgrbcat 快照）；t90=55.7±2.8 s（GCN 16927，15-350 keV）；按目录 t90 判 lgrb；GCN 16929（Konus-Wind）明称 long-duration、Greiner+2024 tableb1 L/S=L 佐证。其他瞬时量备查（不参与判定）：fluence 3.1±0.1e-6 erg/cm2（15-150 keV，90%，GCN 16927）；Epeak=80.4±17.2 keV（CPL，90%，GCN 16927）；Konus-Wind fluence 4.0(-0.5,+0.5)e-6 erg/cm2（20 keV-10 MeV，95%，GCN 16929）；XRT 衰减指数 α=0.82±0.12（GCN 16922）。红移无实测值：GCN 16926 提及 GROND 谱 β≈1 且 g′ 可能 drop-out（提示 z>2.2，未定论，不入字段）。测光检索（2026-11-19）：仓内 gcn/archive 快照未就绪（0 文件），改经 GCN 站（gcn.nasa.gov）与 gcn.gsfc GRB 归档索引按 141017A 全量检索共 9 篇（16919/16920/16921/16922/16924/16926/16927/16929/17028，全部实际打开核对全文），其中 5 篇含光学/UV 数值；SciX（api.scixplorer.org）按「GRB 141017A OR GRB141017A」命中 10 条 = 上述 8 篇 GCN+GCN 16929+GCN Report 474「Swift Observations of GRB 141017A」（自动报告，report_474_1.pdf 在 swift.gsfc 404 未取得），无同行评审专文、变体名+触发号检索 0 条；VizieR J/A+A/691/A158：tablea2 无本源行（Greiner+2024 未给新 GROND 测光/更新）、tableb1 日志行 Det=y、L/S=L、Ref=16926（其 T-To=66656 s 与 GCN 16926 的 8.5 h 矛盾，仅日志、不用）；external/rssgrbag、external/grbsn_webtool、external/konus_wind 无本源记录；external/uvot_grb（Roming+2017）覆盖 2005-2010 不含本源；TNS 站 403（本源为纯 GRB、无 AT/SN 名，TNS 非适用入口）；UKSSDC Burst Analyser 页（trigger 615672）无 UVOT 数据文件（UVOT 仅 FC 探测）。结论：除 GCN 17028 漏记的 1 行上限（P-CTIO8 I>20.5 @2.3d）外无新增同行评审/通告测光可补。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-19"
+    }
+  },
+  "articles": [
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "GROND takes a comprehensive near-infrared/exhaustive view of GRBs. I. Survey description, main results and prompt-to-afterglow correlations",
+      "source": "Rusty-Harpoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
