@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB171124A",
   "alias": [
-    "GRB 171124235"
+    "GRB171124235",
+    "bn171124235"
   ],
-  "ra": 335.5199890136719,
-  "dec": 35.2400016784668,
-  "T0": "2017-11-24T05:38:01.510000Z",
-  "T0_ref": null,
+  "ra": 335.47598,
+  "dec": 35.33213,
+  "T0": "2017-11-24T05:37:56.505Z",
+  "T0_ref": "GCN 22164（Fermi GBM 官方通告 trigger 05:37:56.50 UT）+ FERMIGBRST 目录 trigger_time MJD 58081.234681767",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -18,163 +19,28 @@
   "pos_ref": "GCN 22174",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)。审核更正（2026-11-20，fsy）：(1) T0 更正：旧值 2017-11-24T05:38:01.510000Z 的秒内时标 05:38:01.510 是导入管线把 Fermi MET 533194681.51 按 Unix-2001 历元直接换算的产物（MET+978307200 = 2017-11-24T05:38:01.510 UTC，程序化复算证实；MET 列缺陷弃用）。新 T0=2017-11-24T05:37:56.505Z 取 Fermi-GBM 官方目录 FERMIGBRST trigger_time（MJD 58081.234681767），与 GCN 22164（GBM 官方通告 trigger 05:37:56.50 UT）、GCN 22156、LAT Offline 通告（SOD 20276.50=05:37:56.50）、Swift Burst Analyser（05:37:56.500）一致；fermilgrb 目录 UTC 字段 05:37:55.998 与其自身 trigger_met 533194681.51 矛盾（换算应为 05:37:56.51），弃用备查；CALET CGBM 05:37:55.34、Insight-HXMT 05:38:03.000、AstroSat CZTI 峰值 05:38:00.500 均为各仪器自有 T0，仅备查。T0_offset 不写：GBM t90_start=-0.704 s 为亚秒（§3.2），无 >1 s 触发前辐射证据。(2) 定位改判：旧 ra/dec=335.5199890136719,35.2400016784668 是 Fermi LAT 触发目录坐标（22 22 04.8 +35 14 24，0.2° 误差）误配 GCN 22174 的 XRT 误差 2.3″（混串）；改为 GCN 22174 Swift-XRT 增强位 RA,Dec=335.47598,+35.33213（误差 2.3″，半径、90% 置信，原文标注；距 LAT 位 7.1′）。(3) Trigger_Instrument 维持 Fermi/GBM（trigger 533194681 / 171124235；Swift 无 BAT 触发、仅 XRT ToO，GCN 22155/22165/22174）。(4) sub_tag 补 lgrb：t90=26.1765±0.923048 s（50-300 keV，FERMIGBRST 目录，按目录 t90 判 lgrb/sgrb）；Fermi-LAT 维持（GCN 22156：>10 个 >100 MeV 光子，2FLGC 样本成员）。(5) alias 更正——原文用名：GRB171124235、bn171124235（GCN 22164 原文 \"trigger 533194681 / 171124235\"；FERMIGBRST 目录 GRBNAME=GRB171124235、TRIGGER_NAME=bn171124235）；删除旧空格形 \"GRB 171124235\"（导入变体、无独立原文出处）。(6) 测光检索（2026-11-20）：GCN 官网站内检索 10 篇全部逐字读毕（22155/22156/22159/22164/22165/22168/22171/22174/22175/22210；含光学数值的仅 22159 MITSuME 三色上限与 22175 TShAO R 上限，均已入库）；文献检索：ADS 无 token 未用，OpenAlex 全文 9/12/0 命中（仅 8 篇 GCN 与 2FLGC=Ajello+2019）、arXiv API 0 命中、Crossref 无该暴专文、SIMBAD unavailable@2026-11-20、VizieR 无 J/ApJ/878/52 表；仓内 gcn/archive 当前不存在（SCHEMA §1 列为可再生成内容）；external 快照 rssgrbag/grbsn_webtool/uvot_grb 等无该暴记录，swiftgrbba 有 XRT X 射线数据（X 射线不入库）→ 补 0 行。(7) 文献：Ajello+2019 (2FLGC, ApJ 878, 52) 已入 articles；其 VoR（IOP）被 Radware+hCaptcha 整站拦截，mention-check 用 arXiv:1906.11403v1 完成（171124A 命中 5 处，均为目录表条目；无光学测光表，未取值入库）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "fermi_gbm": {
-        "other": {
-          "bii": -18.36608993,
-          "lii": 91.45866639,
-          "flux_256": 6.6225,
-          "flux_1024": 4.5102,
-          "t50_start": 4.41605,
-          "t90_start": -0.704048,
-          "error_radius": 0.2,
-          "fluence_batse": 2.0255e-06,
-          "flux_batse_64": 4.07628,
-          "flux_256_error": 0.573025,
-          "flux_batse_256": 3.39243,
-          "flnc_band_epeak": 1084.3325,
-          "flnc_comp_epeak": 1076.1934,
-          "flux_1024_error": 0.231922,
-          "flux_batse_1024": 2.02258,
-          "fluence_batse_error": 1.23742e-08,
-          "flux_batse_64_error": 0.701044,
-          "flux_batse_256_error": 0.291843,
-          "flux_batse_1024_error": 0.113439,
-          "flnc_band_epeak_neg_err": 148.14026,
-          "flnc_band_epeak_pos_err": 148.14026,
-          "flnc_best_fitting_model": "flnc_comp",
-          "flnc_comp_epeak_neg_err": 137.21912,
-          "flnc_comp_epeak_pos_err": 137.21912
-        },
-        "params": {
-          "t50": {
-            "v": 13.5043,
-            "err": 0.230772,
-            "band": "50-300 keV"
-          },
-          "t90": {
-            "v": 26.1765,
-            "err": 0.923048,
-            "band": "50-300 keV"
-          },
-          "epeak": {
-            "v": 1076.1934,
-            "err": [
-              137.21912,
-              137.21912
-            ],
-            "frame": "obs",
-            "model": "CPL"
-          },
-          "fluence": {
-            "v": 3.61655e-06,
-            "err": 2.19242e-08,
-            "band": "10-1000 keV"
-          },
-          "peak_flux": {
-            "v": 8.91516,
-            "dt": "64ms",
-            "err": 1.27913,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
-          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB171124235",
-          "GRB 171124.235",
-          "bn171124235"
-        ],
-        "trigger_time": "2017-11-24T05:37:56.505Z"
-      },
-      "fermi_lat": {
-        "other": {
-          "tl100": 317.88,
-          "tl100_error": 7.03,
-          "trigger_met": 533194681.51,
-          "error_radius": 0.2,
-          "like_best_ts": 191.939,
-          "like_best_fluence": 3.48501e-06,
-          "like_best_grbindex": -1.99302,
-          "ext_emission_max_ene": 3600.0,
-          "ext_emission_max_ene_t": 4.08,
-          "like_best_fluence_error": 1.95982e-06,
-          "like_best_grbindex_error": 0.214402
-        },
-        "params": {
-          "t90": {
-            "v": 26.176,
-            "err": 0.923,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 3.6166e-06,
-            "err": 2.1924e-08,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 171124.235"
-        ],
-        "trigger_time": "2017-11-24T05:37:55.998Z"
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 7856540000000000000000,
-          "xrt_ra": 335.476,
-          "comment": "Fermi: GCN 22156",
-          "xrt_dec": 35.33214,
-          "xrt_gamma": 2.7667,
-          "trigger_obs": "Fermi",
-          "xrt_lc_index": 0.06627,
-          "xrt_11hr_flux": 7.3321524e-13,
-          "xrt_24hr_flux": 7.7211903e-13,
-          "xrt_first_obs": 21800.0,
-          "xrt_error_radius": 2.3
-        },
-        "params": {},
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2017-11-24T05:37:56.500Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "XA": "y",
-          "IPN": "y",
-          "Error": "12",
-          "obs_date": "2017-11-24",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "22h22m05s +35° 13'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-20"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "bibtex": "@article{Ajello2019ApJ...878...52A,\n  author = {Ajello, M. and Arimoto, M. and Axelsson, M. and Baldini, L. and Barbiellini, G. and others},\n  title = {A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog},\n  journal = {The Astrophysical Journal},\n  year = {2019},\n  volume = {878},\n  pages = {52},\n  doi = {10.3847/1538-4357/ab1d4e}\n}",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
