@@ -6,8 +6,8 @@
   ],
   "ra": 288.607,
   "dec": 41.669244,
-  "T0": "2023-03-06T14:47:31Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2023-03-06T14:47:31.776Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2023-03-06 14:47:31.776；同值见 TNS 发现报告 #171906（2023TNSTR.494....1T，ATLAS，JD 2460010.11634）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -17,16 +17,21 @@
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告（ZTF/Yao, 2023TNSCR.962....1Y）＋AstroNote 2023-102（2023TNSAN.102....1Y，P200/DBSP 分类光谱宿主线）z=0.071；TDECat（Langis+2026, 2026A&A...707A.171L）目录行同值（CDS J/A+A/707/A171 交叉 0.07100000）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-20 Rusty-Harpoon@zcode 完成单源审核（PR #1118）并补光变 7660 行。\n\n【身份核验（2026-11-20，TNS 对象页 2023cvb＋TDECat 目录行＋ALeRCE/CDS 互证一致）】ra/dec 取 TDECat 目录行 19:14:25.680 +41:40:09.28（=288.607/+41.669244）；TNS 系统坐标 288.6069997/+41.6692434 与本库值一致；TNS 两份 AT 报告坐标：#171906（ATLAS_Bot1，2023-03-09 收到）19:14:25.647 +41:40:09.36（=288.606864/+41.669266）、#172108（ALeRCE，2023-03-13）19:14:25.680 +41:40:09.28；ATLAS 发现报告与 TNS 系统坐标互差约 0.4″（其标称定位误差 1″ 级），ALeRCE 报告与系统坐标同值；ALeRCE API meanra/meandec=288.6069990/41.6692548、firstmjd=60016.45247690007 与 TDECat 长精度首探测行同一瞬。alias 二名均有出处：ATLAS23dht＝TNS AT 报告 #171906 内部名（ATLAS_Bot1，2023-03-06 14:47:31.776，orange-ATLAS 17.33，发现证书同值）；ZTF23aadcbay＝TNS AT 报告 #172108（ALeRCE，2023-03-13 10:51:34.004，g-ZTF 17.1821，Host name 列 WISEA J191425.67+414009.4）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ATLAS-02 Haleakala）。TNS 类型 TDE（2025-01-26 管理员定名）；ZTF 分类报告 2023TNSCR.962....1Y（2023-04-28，P200/DBSP 2023-04-20 600s 光谱）：TDE z=0.071；AstroNote 2023-102（2023TNSAN.102....1Y，Yao/Qin/Guolo）：蓝连续谱、宿主星系线 z=0.071、宽 Hα 线宽约 20000 km/s（TDE-H 类，van Velzen+2021），Swift 2023-04-28 亮 UV 探测（host-subtracted uvm2−r=−0.8 mag）、XRT 无显著探测；TDECat spectral_classes.csv：TDE-H（备注 AstroNote 2023-102）。tags.json 无 TDE 子类受控词，sub_tag 留空。\n\n【T0 口径】TDE 按现行口径取发现时刻：TDECat 目录行 Discovery date=2023-03-06 14:47:31.776（ATLAS orange-ATLAS 17.33 首告警探测；TNS 对象页与发现证书 JD 2460010.11634 同值），本库 T0 由整秒 14:47:31Z 更正为 14:47:31.776Z（来源给到毫秒级且 TDECat/TNS 两入口一致，按 SCHEMA「T0 只写来源给到的精度」；亚秒差异直接改进 T0、不写 T0_offset）；发现时刻为约定锚点、非设备自动触发，T0_offset 不用。lc 全表 time 由 mjd−T0 换算（mjd 原样取自来源），mjd=time+T0 全表自洽（校验无新告警；本源 PR 前无 lc 文件，X 射线行对齐问题不存在）。\n\n【红移】z=0.071：DBSP 分类光谱宿主星系线（AstroNote 2023-102）＝ZTF 分类报告＝TNS 页＝TDECat 目录行（GitHub 与 CDS J/A+A/707/A171 双入口同值 0.07100000）→ redshift_type 由 value 改判 spec。\n\n【host_galaxy】宿主＝WISEA J191425.67+414009.4（TDECat 目录 Host name 列＝TNS ALeRCE 报告 #172108 Host name＝ATel 16055 一致）；坐标取 WISE 命名内嵌 J2000 位置 19:14:25.67 +41:40:09.4（=288.606958/+41.669278），NED 2026-11-20 检索该名 1 条命中（G，19h14m25.7s +41d40m09s），距瞬变位置 0.5″ 级以内（NED 坐标显示精度所限）；宿主光谱（DBSP 2023-04-20 宿主线）z=0.071；宿主测光未单独发表，档案段测光为宿主+核总流量口径（见 lc 行 comment）。\n\n【测光入库 7660 行】＝TDECat 官方补充仓库 target_AT2023cvb_photometry.csv（github.com/dlangis/TDECat Section 2，2026-11-20 下载）9190 行去同历元同值重复 1575 行（全部在 ZTF 族：zg 1241→702、zr 2259→1223，仅 Error 实现不同的双行留首现）、剔除 ATLAS(H) 歧义波段 3 行后 7612 行（ATLAS o 3213/c 1018、NEOWISE W1/W2 各 576、ALLWISE W1/W2 148/146、PTF R 6、PS1 g/r/i/z 各 1）＋TDECat UVOT 机读表 41 行（2023-04-28~2024-09-07 11 历元×W2/M2/W1/U/B/V，全为爆发段）＋TNS 对象页测光表 4 行（phot ID 331209 上限/331210 发现/331607 g/331608 r）＋ATel 16055 射电 3 行（VLA 13.5 GHz 2023-05-05/05-12 探测 673±9/878±9 μJy＋VLASS 2023-02-13 3 GHz 3σ 上限 465 μJy）。口径：TDECat/BHTOM 短精度行为总流量含宿（非差分）；长精度行（MJD>7 位小数，149 行全在爆发段）＝ALeRCE magpsf_corr 口径（参考图扣除，本审核与 ALeRCE API 逐行核对 149/149 吻合（mjd 精确、magpsf_corr 值差 ≤3.6e-5 mag；误差列为 TDECat 编译时口径，与今日 ALeRCE sigmapsf* 列不逐行同） 吻合）；TNS 行为差分成像原始 magpsf 口径；三类并存不互删（§3.4）。星等系统按 Langis+2026 §3.1 VoR 实读（ZTF 按 g−r=0 AB 校准、ATLAS/Pan-STARRS/iPTF=AB；NEOWISE/WISE/Swift=Vega）。UVOT 行已做银消光改正且未扣宿主（论文 §3.3 原文 All magnitudes were corrected for Galactic extinction … not host subtracted）→Gext_corr=y。本源 CSV 无 99.99/Error=-1 哨兵；ATLAS(H) 3 行（MJD 58622.511479/58651.516886/58651.517344，2019 档案段 17.147/17.401/17.8）波段标签无法唯一判读，按文献级卡指引不入库（见 PR 待决）。同历元近值双行（BHTOM 短精度 vs ALeRCE 长精度）按 §3.4 并存不删；档案段（PTF 2010、PS1 2011、ALLWISE 2010、NEOWISE 2014-2022、ATLAS/ZTF 耀发前至 2023-02）为宿主基线，爆发段为 2023-03 发现后，逐段在行 comment 注明；口径张力：TNS 331210 发现历元 17.33±0.09 vs 同历元 TDECat/ATLAS(o) 强制测光 16.336±0.028（差约 1 mag，并存，见 PR 待决）；TDECat 另有 Swift/XRT X 射线机读文件（AT2023cvb_xray_lightcurve.csv），按规则不入库（发现 X 射线数据，暂不处理）；P200/DBSP 分类光谱（TNS ascii，本仓 spectra/ 范围）不入 lc。\n\n【测光检索留证（2026-11-20）】①仓内：gcn/archive 全文 46198 篇按 AT2023cvb/AT 2023cvb/ATLAS23dht/ZTF23aadcbay（含片段 23dht/aadcbay/2023cvb/J191425）＝0 命中；external/rssgrbag/lightcurve.jsonl（140 行）与 external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准＝0 命中；③SciX API（token 可用）：AT2023cvb OR \"AT 2023cvb\" OR ATLAS23dht OR ZTF23aadcbay 命中 4 条＝2023TNSAN.102....1Y（AstroNote 2023-102 分类）、2023TNSTR.494....1T（ATLAS 发现报告）、2023TNSCR.962....1Y（ZTF 分类报告）、2023ATel16055....1G（VLA 射电探测，其 3 点已入库）；按宿主名 WISEA J191425 补查命中仍仅 ATel 16055；无期刊论文报道本源专属测光；④TNS 对象页（photometry 表 4 点、发现/分类证书）、AstroNote 2023-102、ATel 16055 全文已实际打开；TDECat GitHub 光度 CSV/UVOT CSV 已下载逐行核对；Langis+2026 VoR（A&A 707 A171 金 OA HTML，浏览器路线过 DataDome）已实读 §2/§3.1/§3.3/Data availability；CDS J/A+A/707/A171 主表（tdecat 表）经 vizier.cfa.harvard.edu 镜像查询成功，AT 2023cvb 行与 GitHub 目录行逐字段一致。结论：非零测光，补 7660 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "orange-ATLAS",
     "discovery_mag": "17.33",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
@@ -36,5 +41,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 288.606958,
+    "dec": 41.669278,
+    "redshift": 0.071,
+    "redshift_type": "spec",
+    "comment": "宿主＝WISEA J191425.67+414009.4（TDECat 目录 Host name 列＝TNS ALeRCE 报告 #172108 Host name＝ATel 16055 一致）；坐标取 WISE 命名内嵌 J2000 位置（19:14:25.67 +41:40:09.4），NED 2026-11-20 检索该名 1 条命中（G，19h14m25.7s +41d40m09s），距瞬变位置 0.5″ 级以内；宿主线红移 0.071（DBSP 2023-04-20 分类光谱，AstroNote 2023-102）；宿主测光未单独发表，档案段测光为宿主+核总流量口径（见 lc 行 comment）",
+    "source": "TNS AT 报告 #172108 Host name＋TDECat（Langis+2026）目录行＋NED＋ATel 16055"
+  }
 }
