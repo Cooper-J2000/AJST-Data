@@ -35,3 +35,22 @@ DES 源（上表）都在其 106 样本中。**宿主研究文章：无瞬变体
   表 1 机读全表、表 2 机读全表均不在 arXiv 侧（正文只印节选）。
 - 光变：本文无逐源测光表/图（GP 拟合参数只在样本层面）——瞬变体测光仍以 Pursiainen+2018 附录图
   为唯一出处（见 papers/pursiainen2018.md）。
+
+## 2026-11-20 更新（DES17S2fee 审核，Rusty-Harpoon@zcode，PR #1117）
+
+- **表 1 机读全表已上 VizieR**：`J/MNRAS/498/2575`（CDS 收录日期 2026-08-03），经 CfA 镜像
+  （vizier.cfa.harvard.edu）实取，含 `table1`（106 行宿主信息＝VoR 在线机读版 tab:obs，列
+  More/Name/RAJ2000/DEJ2000/rmag/e_rmag/z/f_z/Survey/ExpTime）、`table2`（49 行宿主性质）、
+  `tablea1`（发射线流量）。**上表「表 1 机读行未逐行核（OUP 反爬）」的阻塞对本表已解除**；
+  DES17S2fee 行（RA 41.40953 / Dec −1.33278 / rmag 18.17±0.05 / z=0.23737 / OzDES / 2.00 h）
+  与 DES-SN5YR HEAD SNID=1908467 行互证一致。接手其余 15 源者可直接用该镜像逐行复核表 1
+  （表 2 的 arXiv TeX L449–504 行仍可用作交叉）。
+- **逐源绝对时间锚点有了新出处**：Sánchez+2024（2024ApJ...975....5S，DOI 10.3847/1538-4357/ad739a，
+  arXiv:2406.05046）DES-SN5YR 官方释出（github.com/des-science/DES-SN5YR，Zenodo 12720778）SMP
+  光变 HEAD 表给全部 19706 个候选的 **PEAKMJD / MJD_TRIGGER / MJD_DETECT_FIRST / MJD_DETECT_LAST**
+  （0.1 d 精度）与 64 级 g/r/i/z 逐历元测光。SNID 为内部数字号（NAME_TRANSIENT 多为 UNKNOWN），
+  与 DES 候选名须经宿主坐标+z 定量互证（DES17S2fee＝SNID 1908467：宿主坐标 5 位小数全同、
+  REDSHIFT_HELIO=0.23737 全同、HOSTGAL_MAG_r 同值）；注意候选名不在 Pursiainen+2018 的 Season 5
+  源（DES17S2fee/DES17C3gen 等）此前「T0 无出处」，现可按本释出补锚。逐历元测光为 DES g/r/i/z
+  波段、FLUXCAL（ZP 27.5 fluxcal counts）口径，filters.json 尚无 des-g/des-r/des-i/des-z 键，
+  入库待键落地（DES17S2fee PR #1117 待决事项已提申请）。
