@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB051022A",
-  "alias": [],
-  "ra": 359.0,
-  "dec": 19.6,
-  "T0": "2005-10-22T13:08:25.298000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 051022",
+    "H3950"
+  ],
+  "ra": 359.017083,
+  "dec": 19.606722,
+  "T0": "2005-10-22T13:07:58.49Z",
+  "T0_ref": "GCN 4133(HETE-2 trigger 3950,trigger time 13:07:58.49 UT);互证:GCN 4131(HETE 团队 \"detected ... at 13:07:58\")、GCN 4132(ROTSE 首图 13:08:59.8 UT=burst+61.3 s→13:07:58.5)、GCN 4130(ART 13:09:49 UT=触发后 111 s→13:07:58)、Nakagawa+2006(PASJ 58, L35,HETE-2 团队论文 \"detected at 13:07:58\");Swift 目录 TRIG_UT=2005-295-13:07:58(仓内 uvot_grb/swift_grb/swiftgrbba 快照)。旧值 2005-10-22T13:08:25.298Z 为 Konus-Wind 自身触发时刻(GCN 4150 \"triggered Konus-Wind at T0=47305.298 s UT\"),非触发仪器 HETE-2 的时刻,弃用",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
@@ -12,12 +15,14 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 0.5,
+  "pos_ref": "GCN 4164(de Ugarte Postigo et al.,OSN 1.5m 深 V-band 美国海军天文台 USNO-A2.0 天测:RA 23:56:04.10 Dec +19:36:24.2 J2000,误差 0.5 角秒,置信水平原文未标注)",
+  "redshift_type": "spec",
+  "redshift_ref": "Castro-Tirado+2007, A&A, 475, 101(DOI 10.1051/0004-6361:20066748;宿主 [O II]6730.7/Hβ8806.3/[O III]9070.6 发射线,BTA 6m 谱 z=0.809±0.002;初报 Gal-Yam et al., GCN 4156 z=0.8)",
+  "comment": "身份:HETE-2 触发 GRB 051022(=H3950)。SXC 实时定位 23:56:00 +19d35'51\"(90%,2.5 角分半径,GCN 4131/4137),Swift/XRT 23:56:04.1 +19:36:25.1(4 角秒 90%,GCN 4141),Chandra 23:56:04.1 +19:36:23.9(0.7 角秒,GCN 4163),OSN 光学天测 23:56:04.10 +19:36:24.2(0.5 角秒,GCN 4164,采用为本源定位)。邻日甄别:2005-10-22 仅此一暴,与 GRB051021A(HETE H3947,10-21)无涉。\n\nT0:取触发仪器 HETE-2 触发时刻 13:07:58.49 UT(GCN 4133 给出亚秒值;GCN 4131/4130/4132 与 Nakagawa+2006 在整数秒上全部一致;ROTSE 独立反算 13:07:58.5)。旧 T0=13:08:25.298 为 Konus-Wind 触发时刻(GCN 4150),Konus 非触发仪器,弃用;整表 time/mjd 已按新 T0 重推。\n\n触发号笔误:GCN 4131 原文作「H3590」、Konus GCN 4150 亦作「#3590」,而 GCN 4130/4133/4137/4155 与 Swift 目录(swift_grb other_id=H3950)均作 3950,HETE 团队后继通告(GCN 4137)用 3950——判定 3590 为早期通告笔误,alias 只收 H3950,不收 H3590。\n\n分类:sub_tag=lgrb。依据:t90=153.792±2.211 s(Konus-Wind,20 keV–2 MeV,Tsvetkova+2021 目录,仓外快照 konus_wind/),目录 Type=II(Minaev+2020 亦归 II 型);另 GCN 4137「duration > 2-4 minutes」、HEND ~200 s(GCN 4139)、Nakagawa+2006「about 190 seconds」;按目录/文献分类判 lgrb,未自算 T90。\n\nWIYN 四行(GCN 4149)为误差圈内 4 个不同天体(A/B=DSS 检出延展源,B 即宿主星系;C=DSS 未检出候选,距 XRT 位 7 角秒,经 Chandra/射电/mm 定位否证;另有 B 西南更暗源 R=22.1),均非余辉测光,置 discard=y 并在行 comment 留证据链;余辉光学/nIR 波段从未被探测(Castro-Tirado+2007;Rol+2007 表 2 全为上限)。\n\n快照互证(不改 external):uvot_grb 快照 TRIGTIME=151679278 s(Swift MET,历元 2001-01-01 UTC)→ 2005-10-22T13:07:58,与 TRIG_UT=2005-295-13:07:58 一致,进一步佐证触发时刻;swiftgrbba/swift_grb 快照 trigger_time=13:07:58.000/.000Z;mpe_greiner 快照 trigger_time=null(其 X 射线位置 23h56m00s +19d36' 与 2.5' 误差与 GCN 一致)。\n\n测光检索(2026-11-20):①仓内 gcn/archive 全文 grep「051022」命中 31 篇(4130-4246、5079、9100,与本源足迹一致,逐篇读全文,无遗漏测光通告);②external/rssgrbag(lightcurve.jsonl 2 行+table4.dat 原行核对)、external/grbsn_webtool 无本源、external/mpe_greiner/konus_wind/uvot_grb/swift_grb/swiftgrbba 为目录级参数(heasarc_grbcat 快照 2005 年覆盖止于 GRB 050309,无本源行,不构成互证);③外部:OpenAlex 全文检索 \"GRB 051022\" 命中 91 篇,其中研究论文 Castro-Tirado+2007(A&A 475,101;表 1/2/3 已逐值入库,VoR 整站反爬以 arXiv 0708.3043 替代)、Rol+2007(ApJ 669,1098;表 1/2/3 已逐值入库,VoR 已核)、Nakagawa+2006(PASJ 58,L35;仅作 T0/身份佐证,无测光表)、GCN 4130-4158 各通告;样本类文章 van der Horst+2009(ApJ 699,1087)与 2021 ApJ 晚型射电文 IOP 反爬未取得,属已发表值汇编,无新增测光迹象;④ADS/SciX API 无 token(401),检索通道受限,已在 unverified.tsv 登记 source_id=*,status=search-limited。共补 19 行(Rol 表 3 射电 10 行+Castro-Tirado 表 2 毫米 9 行),删除 11 行确证转引/被发表值取代行,X 射线行 109 行仅重算 mjd(保 time)。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
@@ -63,7 +68,12 @@
         "v": 85.4
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
@@ -100,10 +110,16 @@
       "source": "bot",
       "title": "The dark nature of GRB 051022 and its host galaxy",
       "url": "https://ui.adsabs.harvard.edu/abs/2007arXiv07083043C/abstract"
+    },
+    {
+      "name": "Chandra & Frail 2012",
+      "url": "https://doi.org/10.1088/0004-637X/746/2/156",
+      "title": "A Radio-selected Sample of Gamma-Ray Burst Afterglows",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": {
-    "comment": "Savaglio+2009: GRB type in Table 1: long. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nPerley+2013: Perley+2013 Tables 1–2 identified host; Redshift method as published: nonphotometric_in_VizieR; Table 1 says GRB or host. Host coordinates use the RAH/DEH columns, not the afterglow RAJ2000/DEJ2000 columns. Table 3 magnitudes are uncorrected for foreground Galactic extinction; measurement errors are 1 sigma. Figure 3 describes the upper limits as 2 sigma.\nKrühler+2015: Host emission-line spectroscopy from the X-shooter sample; no per-source redshift uncertainty is stated in the CDS table. Coordinates are J2000 eq_FK5 positions from Simbad via the CDS/VizieR table, not new astrometry measured by this paper. The paper states that fluxes, spectra, and photometry are corrected for Galactic foreground reddening; incidental AB magnitudes therefore have gext_corr=true.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nKrühler+2015: Source access: CDS/VizieR J/A+A/581/A125 plus arXiv HTML for paper-only values and appendices; the A&A full-text route returned 403.\nMerged-field decision: host coordinates taken from Perley+2013 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Krühler+2015 according to the recency/method priority rule.",
+    "comment": "Savaglio+2009: GRB type in Table 1: long. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nPerley+2013: Perley+2013 Tables 1–2 identified host; Redshift method as published: nonphotometric_in_VizieR; Table 1 says GRB or host. Host coordinates use the RAH/DEH columns, not the afterglow RAJ2000/DEJ2000 columns. Table 3 magnitudes are uncorrected for foreground Galactic extinction; measurement errors are 1 sigma. Figure 3 describes the upper limits as 2 sigma.\nKrühler+2015: Host emission-line spectroscopy from the X-shooter sample; no per-source redshift uncertainty is stated in the CDS table. Coordinates are J2000 eq_FK5 positions from Simbad via the CDS/VizieR table, not new astrometry measured by this paper. The paper states that fluxes, spectra, and photometry are corrected for Galactic foreground reddening; incidental AB magnitudes therefore have gext_corr=true.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nKrühler+2015: Source access: CDS/VizieR J/A+A/581/A125 plus arXiv HTML for paper-only values and appendices; the A&A full-text route returned 403.\nMerged-field decision: host coordinates taken from Perley+2013 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Krühler+2015 according to the recency/method priority rule.\nCastro-Tirado+2007 (audit 2026-11-20): Table 3 宿主 UBVRIJKs 8 波段测光已补入 photometry(Vega 系统,未作银河消光改正——原文仅在 SED 拟合时自行扣除 E(B-V)=0.06,表值未改正);宿主 [O II]/Hβ/[O III] 谱线流量与 z=0.806±0.001/0.811 见原文表 4;GCN 4149(WIYN)对象 B 的 R=21.51 属宿主测光,未并入本表(单点、GCN 通告级)。",
     "dec": 19.606711111111114,
     "photometry": [
       {
@@ -293,6 +309,78 @@
         "mag_err": 0.09,
         "mag_sys": "Vega",
         "source": "Perley+2013 Table 3 recno 31 (Spitzer/IRAC; ref=not stated)",
+        "upperlimit": false
+      },
+      {
+        "band": "U",
+        "gext_corr": false,
+        "mag": 22.6,
+        "mag_err": 0.2,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "B",
+        "gext_corr": false,
+        "mag": 22.61,
+        "mag_err": 0.1,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "V",
+        "gext_corr": false,
+        "mag": 21.93,
+        "mag_err": 0.12,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "R",
+        "gext_corr": false,
+        "mag": 21.5,
+        "mag_err": 0.1,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "I",
+        "gext_corr": false,
+        "mag": 20.84,
+        "mag_err": 0.12,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "J",
+        "gext_corr": false,
+        "mag": 20.36,
+        "mag_err": 0.12,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "H",
+        "gext_corr": false,
+        "mag": 19.3,
+        "mag_err": 0.08,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
+        "upperlimit": false
+      },
+      {
+        "band": "Ks",
+        "gext_corr": false,
+        "mag": 18.15,
+        "mag_err": 0.23,
+        "mag_sys": "Vega",
+        "source": "Castro-Tirado+2007 Table 3(宿主星系孔径测光;光学定标 Henden 2005 Johnson-Cousins,nIR 定标 2MASS;表值为改正前原值)",
         "upperlimit": false
       }
     ],
