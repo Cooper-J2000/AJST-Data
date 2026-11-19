@@ -8,8 +8,8 @@
   ],
   "ra": 126.293167,
   "dec": 18.582639,
-  "T0": "2022-01-31T09:37:26Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2022-01-31T09:37:26.400Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2022-01-31 09:37:26.400；同值见 TNS 发现报告 #135407（ATLAS_Bot1，2022TNSTR.284....1T）发现证书",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -19,16 +19,21 @@
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec",
+  "redshift_ref": "TNS 分类报告（StarDestroyers, 2022TNSCR.511....1A）z=0.03782（FTN/FLOYDS-N 2022-02-23 分类光谱；AstroNote 2022-50 记窄线来自宿主 SDSS 档案光谱；ATel 15234 z=0.038 from the host's SDSS spectrum）；TDECat（Langis+2026）目录行同值（CDS J/A+A/707/A171 交叉）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-20 Rusty-Harpoon@zcode 完成单源审核（PR #1122）并补光变 4577 行。\n\n【身份核验（2026-11-20，TNS 对象页 2022bdw＋TDECat 目录行＋Gaia Alerts 页＋ALeRCE 互证一致）】ra/dec 取 TDECat 目录行 08:25:10.360 +18:34:57.50（=126.293167/+18.582639）；TNS 系统坐标同值（08:25:10.360 +18:34:57.50）；Gaia Alerts 页同位（126.29317 18.58264）；ALeRCE API meanra/meandec=126.29317303703704/18.58265378888889（与本库值差约 0.06″）。四别名均有出处：ATLAS22dth＝TNS AT 报告 #135407（ATLAS_Bot1，2022-02-03 06:44:45 提交，发现时刻 2022-01-31 09:37:26.400，orange-ATLAS 19.11，坐标 08:25:10.373 +18:34:57.70，与本库值互差约 0.27″，bibcode 2022TNSTR.284....1T；TDECat Discovery internal name 列同名）；ZTF22aaahtqz＝TNS AT 报告 #137076（ZTF_Bot1，C. Fremling，2022-02-17 10:09:12 提交，发现时刻 2022-02-12 06:59:02.400，r-ZTF 17.9，坐标 08:25:10.355 +18:34:57.55，互差约 0.09″；TDECat ZTF name 列；ALeRCE API oid 同名）；PS22avi＝TNS AT 报告 #135921（PS2_Bot1，2022-02-09 19:58:09 提交，发现时刻 2019-10-27 14:56:30.912＝PS2 档案栈探测回溯，w-P1 19.95，坐标 08:25:10.353 +18:34:57.62，互差约 0.16″；TDECat Alternative name 列）；Gaia22baj＝TNS AT 报告 #142434（Gaia_Bot1，2022-03-26 11:33:05 提交，发现时刻 2022-03-09 19:40:48.000，G-Gaia 17.59，坐标同系统值；TDECat Gaia alert name 列；Gaia Alerts 页 TNS ID 栏＝AT2022bdw；报告备注原文 Galaxy CGCG 089-021 brightens by 1 mag, Gaia detection of known TDE）。四报告同挂 TNS 2022bdw 对象页，坐标互差全部 <0.3″，身份成立。AstroNote 2022-50 以四别名并称（AT 2022bdw/ZTF22aaahtqz/PS22avi/ATLAS22dth）；ATel 15234 原文 ATLAS22dth＝AT2022bdw。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ATLAS）。\n\n【T0 口径】TDE 按现行口径取发现时刻：TDECat 目录行 Discovery date=2022-01-31 09:37:26.400＝TNS 对象页 Discovery Date 与发现证书 #135407 同值（ATLAS-02/Haleakala 首探测，orange-ATLAS 19.11 ABMag；Last non-detection 2022-01-30 09:48:58 限 19.63）；TNS phot 263521 JD 2459610.901 同一瞬。原库建源时截断了来源已给的毫秒精度（.400），本审核按 SCHEMA「T0 只写来源给到的精度」补足（先例 PR #1118 同做法）；T0_offset 不用（发现时刻为约定锚点、非设备自动触发）。\n\n【红移】z=0.03782：TDECat 目录行（GitHub 与 CDS J/A+A/707/A171 镜像双入口同值）＝TNS 对象页＝TNS 分类报告 #11965（StarDestroyers，2022TNSCR.511....1A，FTN/FLOYDS-N 2022-02-23 05:18:22 分类光谱）→ redshift_type 由 value 改判 spec。光谱证据链：FLOYDS-N 谱宽 He II 4686+宽 Hα 于蓝连续谱上（AstroNote 2022-50，2022TNSAN..50....1A：可能属 TDE H+He 类〔van Velzen+2020〕，窄 Hα 来自该位置 SDSS 档案光谱即宿主线；分类证书备注 possibly a H+He TDE, can not rule out an unusual SN II，TNS 管理员 2025-01-26 定名 TDE）；ATel 15234（KITS，Keck II+NIRES 2022-02-22 NIR 谱）独立给 z=0.038 并注明 Redshift is from the host's SDSS spectrum；NED 宿主汇编 SDSS 光谱 z=0.037817±1.30e-5。TDECat spectral_classes.csv：AT2022bdw=TDE-H+He（出处 AstroNote 2022-50）。tags.json 无 TDE 子类受控词，sub_tag 留空待决（先例 PR #888/#890/#1113 同判）。\n\n【host_galaxy】宿主＝CGCG 089-021（TDECat 目录 Host name 列）＝PGC 023627（TNS 对象页 Host Name）——NED 为同一对象（CGCG 089-021＝PGC 023627，Cross-IDs 13 项含 2MASX J08251034+1834571）；Gaia 报告备注同指 CGCG 089-021（三方一致，§3.10）。坐标取 NED Fiducial Position 08h25m10.3502s +18d34m57.370s（=126.293126/+18.582603，不确定度 0.175″），距瞬变位置约 0.2″（核瞬变）；宿主红移 0.037817±1.30e-5（NED 汇编 SDSS 光谱 2016SDSSD.C...0000）与 z=0.03782 一致。\n\n【测光入库 4577 行】＝①TDECat 官方光度 CSV（github.com/dlangis/TDECat Section 2，2026-11-20 下载）4319 行：原文件 5280 行→同历元同值重复 895 行（同 MJD 字符串＋设备＋波段＋星等，§3.4 保留首现）→4385→剔除 ATLAS(H) 歧义波段 3 行（MJD 58505.442448/58594.228821/58622.280634，无法唯一判读，PR 待决）→剔除 GSA(G) 63 行（与 Gaia Alerts 官方机读光变逐行比对 63/63 同历元同值，确证转引，按 §3.4 保留最初来源行，见③）＝4319 行。族构成：CRTS(CL) 1152、ATLAS(o) 994、ATLAS(c) 298、ASASSN(V) 352、ASASSN(g) 355、PTF(R) 220、NEOWISE W1/W2 136/135、ZTF(zr) 493、ZTF(zg) 66、ALLWISE W1/W2 44/44、SDSS u/g/r/i/z 6/6/5/4/5、PS1 g/r/i/z 各 1。全部为耀发前档案段（宿主基线，最晚 2019-12-25）；TDECat 编译行为总流量（含宿星系核，非差分）。band 映射与星等系统按 VoR §3.1 实读原文：ZTF(zg/zr)→g/r AB（原文 ZTF 按 g−r=0 校准 AB）；ATLAS(c/o)→atlas-cyan/atlas-orange AB；PTF(R)→R AB（原文 iPTF=AB）；PS1→g/r/i/z AB（原文 Pan-STARRS=AB）；SDSS→u/g/r/i/z AB（SDSS 原生 AB）；ASASSN(V)→V Vega、ASASSN(g)→g AB（原文 CRTS/ASAS-SN V/Swift/NEOWISE=Vega、ATLAS/iPTF/Pan-STARRS/ASAS-SN g=AB）；CRTS(CL)→G Vega（无滤光片宽口径 CL→band=G）；NEOWISE/ALLWISE→wise-w1/wise-w2 Vega。3 行 ASASSN(V) Error=-1.0 缺测哨兵→入库、误差留空（文献级卡口径）；SDSS/ALLWISE 同历元多实现行（54 组 114 行，SDSS 值差 ~1e-4-1e-2、ALLWISE 值差 ~0.1-0.4 mag，来源不明）非同值按 §3.4「拿不准就都保留」并存并逐行注明差值，取舍上报待决。②TDECat UVOT 机读表 AT2022bdw_uvot_lightcurve.csv 102 行＝18 历元（MJD 59639.34-59738.04，2022-03-01~04-12）×W2/M2/W1/U/B/V，末 3 历元 B/V 空缺；Vega（§3.1 原文 Swift=Vega）；已银消改正且未扣宿主（§3.3 原文 All magnitudes were corrected for Galactic extinction using reddening estimates from Schlafly & Finkbeiner (2011)…not host subtracted）→Gext_corr=y。③Gaia Alerts 官方机读光变 lightcurve.csv（gsaweb.ast.cam.ac.uk/alerts/alert/Gaia22baj/，2026-11-20 实取）120 行（untrusted/null 行未入库）：2014-09~2023-11，2022-03-09~06-10 为爆发段（G 17.47→18.62）；mag_system 留空（Gaia 内部定标非 AB 非 Vega，§3.1 原文）；averagemag 无误差列；mjd=JD(TCB)−2400000.5 直换（TCB−UTC 与探测→告警时延 ~1-2 min 级未分辨，对月尺度光变可忽略）；其 2022-03-09 行与 TNS phot 272689（G=17.59±0.2 ABMag，exp 60 s，Gaia_Bot1 转报）同过境同星等，按 §3.4 保留本行。④TNS 对象页 photometry 表 6 行（phot 272689 已按 §3.4 归并）：PS2 w-P1 19.95±0.08（2019-10-27，PS22avi 报告历元档案栈探测）、ZTF r 17.9/17.63（2022-02-12/17，差分纯瞬变，phot 表无误差列；与 ALeRCE 同探测 magpsf 全精度同值）、Gaia G 上限 21.5（2020-04-19 [Last non detection]）、ATLAS orange 19.11±0.153（发现历元）与上限 19.63（发现前 1 d）——全部带 JD 锚点，TNS Units=ABMag。⑤ALeRCE API（api.alerce.online，2026-11-20 实取）30 行：detections 27 行中 2 行与 TNS phot 266367/266368 为同一探测（magpsf=17.90348/17.626253 即 TNS 四舍五入源值）按 §3.4 删除保留 TNS 行，余 25 行（g 17/r 8）以 magpsf±sigmapsf 入库（magpsf_corr 多数行 sigmapsf_corr=100.0 哨兵未采用）；另 non_detections 5 行 diffmaglim 上限（upperlimit=y）。TDECat 另有 Swift/XRT X 射线机读文件（eRASS1/XMM/XRT 上限），按规则不入库（发现 X 射线数据，暂不处理）；FLOYDS-N 分类光谱 ascii 属光谱不入 lc。\n\n【测光检索留证（2026-11-20）】①仓内：gcn/archive 全文 46198 篇按 AT2022bdw/AT 2022bdw/ATLAS22dth/Gaia22baj/PS22avi/ZTF22aaahtqz（含片段 2022bdw/22dth/22baj/22avi/aaahtqz）＝0 命中；external/rssgrbag/lightcurve.jsonl（140 行）与 external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 46198 篇全文（同一 Circular 全库）为准＝0 命中；③SciX API（token 可用）：AT2022bdw OR \"AT 2022bdw\" OR ATLAS22dth OR ZTF22aaahtqz OR PS22avi OR Gaia22baj 命中 3 条＝2022TNSAN..50....1A（AstroNote 2022-50 分类注记）、2022TNSTR.284....1T（ATLAS 发现报告）、2022TNSCR.511....1A（StarDestroyers 分类报告）；宿主名 CGCG 089-021/PGC 023627 补查 0 条；无期刊论文报道本源测光；④ATel 站内全文检索（?reconfigure 检索表单，Keywords=2022bdw）命中 1 条＝ATel 15234（KITS NIR 分类光谱，无测光；Gaia Alerts 页 ATels 栏 None 互证）；⑤TNS 对象页（photometry 表 7 点＋分类报告＋发现/分类两证书）、AstroNote 2022-50、ATel 15234、Gaia Alerts 页与机读光变已实际打开；TDECat GitHub 全部机读文件已下载逐行核对；Langis+2026 VoR（A&A 707 A171 金 OA HTML，浏览器路线过 DataDome）已通读 §2.1/§3.1/§3.3/Data availability；CDS J/A+A/707/A171 主表经 vizier.cfa.harvard.edu 镜像查询成功（主站 cdsarc 不可达），AT 2022bdw 行与 GitHub 目录行逐字段一致（CDS 侧 Discovery date 截整秒）。结论：非零测光，补 4577 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "orange-ATLAS",
     "discovery_mag": "19.11",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
@@ -38,5 +43,12 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 126.293126,
+    "dec": 18.582603,
+    "redshift": 0.037817,
+    "redshift_type": "spec",
+    "comment": "宿主＝CGCG 089-021（TDECat 目录 Host name 列）＝PGC 023627（TNS 对象页 Host Name），NED 为同一对象（CGCG 089-021＝PGC 023627，Cross-IDs 13 项含 2MASX J08251034+1834571；Gaia 报告备注同指 CGCG 089-021）；坐标取 NED Fiducial Position 08h25m10.3502s +18d34m57.370s（不确定度 0.175″），距瞬变位置约 0.2″（核瞬变）；宿主红移 0.037817±1.30e-5（NED 汇编 SDSS 光谱 2016SDSSD.C...0000；AstroNote 2022-50 窄 Hα 来自宿主 SDSS 档案光谱、ATel 15234 z from the host's SDSS spectrum 同证），与瞬变 z=0.03782 一致；宿主测光未单独发表，档案段测光为宿主+核总流量口径（见 lc 行 comment）",
+    "source": "TDECat（Langis+2026）目录行 Host name＋TNS 对象页 Host Name＋NED（2026-11-20 检索）"
+  }
 }
