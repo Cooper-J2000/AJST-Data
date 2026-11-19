@@ -1,40 +1,64 @@
 {
   "transient_id": "SN2020ikq",
   "alias": [
-    "ZTF20aaxhzhc"
+    "ZTF20aaxhzhc",
+    "ATLAS20lfu",
+    "PS20ctw"
   ],
   "ra": 204.020875,
   "dec": 28.983361,
   "T0": "2020-05-02T07:12:00Z",
-  "T0_ref": "Ho+2023（2023ApJ...949..120H）表 1 Peak MJD（峰值时刻）",
+  "T0_ref": "Ho+2023（2023ApJ...949..120H）表 2（tab:sources_all）Peak MJD 58971.30（峰值时刻；bot 骨架原写「表 1」系表号笔误，行已逐字核对：ZTF20aaxhzhc，MJD 58971.30，Pmag 18.27±0.03）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "ZTF",
+  "Trigger_Instrument": null,
   "redshift": 0.042,
   "tag": [
     "fbot",
     "sn"
   ],
   "pos_error": null,
-  "pos_ref": "Ho+2023（2023ApJ...949..120H）表 1 坐标（J2000）",
+  "pos_ref": "Ho+2023（2023ApJ...949..120H）表 2 坐标（J2000，13:36:05.01 +28:59:00.1；与 TNS 204.020901072 +28.9833628928 一致至 ~0.1″）",
   "redshift_type": "spec",
-  "redshift_ref": "Ho+2023（2023ApJ...949..120H）表 1",
-  "comment": "2026-11-04 由 Ho+2023 ZTF FBOT 金样本（表 1）建源；仅基础元数据，光变待补",
+  "redshift_ref": "Ho+2023（2023ApJ...949..120H）表 2",
+  "comment": "2026-11-04 由 Ho+2023 ZTF FBOT 金样本（表 1）建源；仅基础元数据，光变待补。2026-11-20 审核（Rusty-Harpoon@zcode）：（1）身份：Ho+2023 表 2（tab:sources_all）行 20aaxhzhc＝SN 2020ikq（RA 13:36:05.01 Dec +28:59:00.1 → 本库坐标 204.020875/+28.983361 逐字一致），Peak MJD 58971.30、Pmag g=18.27±0.03、t½,g=11.8±1.8 d、g−r=−0.2、z=0.042、Nsp=6、Class=IIb、Ref=[29,30]、Np=62、Host=1；论文附录小节「SN2020ikq / ATLAS20lfu / ZTF20aaxhzhc / PS20ctw」给出四名并存；TNS 对象页（2026-11-19 取）坐标 204.020901072 +28.9833628928 一致至 ~0.1″，ATLAS20lfu＝ATLAS_Bot1 发现报告（TNS Internal name，TNSDR 2020-1158，Tonry+2020）、PS20ctw＝PS2_Bot1/YSE_Bot1 报告 Internal name，两别名按 §3.10 加入。建源 comment 所称「金样本（表 1）」实为表 2（38 候选表），T0_ref/pos_ref/redshift_ref 表号已更正。（2）T0：维持 Peak MJD 口径 58971.30（=2020-05-02T07:12:00Z，自核换算一致）。备选口径并列备查：ATLAS Discovery Date 2020-04-28 09:47:31.200（TNS phot 133620 cyan-ATLAS 18.959±0.087 发现帧）、ZTF 首探测 2020-04-29 07:07:52.896（g=18.42±0.08，TNS phot 134159）；Peak-MJD-vs-Discovery-Date 两口径并存的统一与同批 AT2020aexw PR 待决①同源，仍待维护者裁决，本 PR 维持现值。（3）分类/tag：fbot 成立（t½,g=11.8±1.8 d 过 1<t½,g<12 d 判据，峰色 g−r=−0.2 满足 FBOT 颜色判据）；IIb 双证（Ho+2023 表 2 Class=IIb；TNS 分类报告 2020-1392，Charlotte Angus，NOT+ALFOSC Gr4 2020-05-15，SNID+superfit 匹配 SN1993J post-max，bibcode 2020TNSCR1392....1A）→ tag=[fbot,sn]、sub_tag=[IIb] 维持（与库内已审同表源 SN2018gjx/SN2020xlt 一致）。Khakpash+2024（2024ApJS..275...37K）判读：SN2020ikq 实为带冲击冷却峰（SCE）的正常 IIb、其快速演化首峰触发了 Ho+2023 的 FBOT 选样；本 PR 不改 tag，判读记录备查。（4）Trigger_Instrument 置 null：ZTF 为巡天发现（ZUDS/警报流），无触发设备，与库内已审 FBOT 源一致（bot 骨架误填 ZTF）；TNS 侧首报实为 ATLAS（2020-04-28，早于 ZTF 首探测一日）。（5）红移：z=0.042 不变（Ho+2023 表 2；表 11 光谱日志 6 行 Target 全为 Transient：2020-04-29 P60+SEDM phase−3 / 05-03 P60+SEDM 0 / 05-10 LT+SPRAT 7 / 05-11 P60+SEDM 8 / 05-15 NOT+ALFOSC 12 / 05-17 P60+SEDM 14，红移类型维持 spec）。并列备查：TNS 对象页/分类报告 2020-1392 红移 0.037（NOT 谱 SNID/superfit 模板红移），Crawford+2025（2025ApJ...989..192C）表 1 亦录 0.037（转引 TNS）；按 §4 优先级（已发表研究文章＞TNS）字段维持 0.042，未采用值已列。（6）pos_error/pos_error_confidence：表 2 与 TNS 均未给定位误差与置信水平 → 均留空（来源未标注置信水平）。（7）宿主：host_galaxy 建档——TNS 对象页 Host Name=SDSSJ133605.01+285903.3（与瞬变体偏移 ~3.2″）；Ho+2023 表 12 宿主 SED 拟合确证宿主（χ²/n=8.57/16、M_B=−18.02、log M*=9.25(+0.07/−0.31)、log SFR=−0.53(+0.31/−0.07)、log Age=9.91(+0.12/−0.49)、E(B−V)=0.25(+0.06/−0.03)），详见 host_galaxy.comment。（8）测光检索（2026-11-20）：仓内 gcn/archive 46198 篇全文 grep「2020ikq」与「ZTF20aaxhzhc」（大小写不敏感）均 0 命中；坐标检索窄格式「13:36:05」命中 2 篇（GCN 29532＝GRB210218A MITSuME 通告内时刻字符串、GCN 24179＝S190425z Lick/KAIT 星系表内他源坐标）、「28:59:0」命中 8 篇（GRB050509b Chandra/Keck 源表，RA 12:36 不同）——抽验均为无关巧合；external/rssgrbag（140 行/74 源）、external/grbsn_webtool（63 事件）0 命中。外部：SciX 题录 (2020ikq OR ZTF20aaxhzhc) 命中 2 篇＝TNSCR 2020-1392 与 TNSTR 2020-1158（通告，不入 articles）；全文检索 full:(2020ikq OR ZTF20aaxhzhc OR ATLAS20lfu OR PS20ctw) 命中 7 篇＝Ho+2023、2 篇 TNS 通告、Khakpash+2024、Crawford+2025、Jones+2021（YSE 综述，提及 PS20ctw 发现）、Charalampopoulos+2025（A&A 700 A138，SN 2022lxg 文）——逐一查核：三篇研究文章均无本源机读测光表（Khakpash+2024 自 IPAC 重取更长时基 ZTF 力测光但仅以图呈现，Crawford+2025 光变仅图），无新增行；SIMBAD（cds.unistra.fr）页面不可用、CDS TAP DNS 不可达、simbad.harvard.edu 超时（通道受限，不据其下「无其他文献」结论——SciX 已覆盖题录与全文层）；ATel 站内搜索（?read=POST&s= 与 ?s=）需登录不可用；GCN 站为 SPA 无服务端检索结果，以仓内 Circular 全文检索为准。TNS 对象页 phot 13 行去重后 7 个独立测量（ATLAS orange 限量、ZTF r 限量、ATLAS cyan 发现帧、ZTF g、ZTF r、PS1 g、PS2 i）全部入库。（9）测光入库共 70 行：Ho+2023 表 4（tab:ztf-lc）力测光机读 62 行（P48 g23/r20/i11＋P60/SEDM r4＋LT/IO:O g1/r1/u1/i1；非探测 13 行＝原文 5σ 限量），取数路径＝CDS VizieR J/ApJ/949/120/table4（CfA 镜像，2026-11-19；IOP VoR 页 Radware 反爬 302→validate.perfdrive.com，CDS 归档的同一机读表按 §3.3 渠道分级第 2 级取用）逐值核对，且实测 Mag≡23.90−2.5lg(Flux μJy) 对 49 个探测点偏差 ≤0.005 mag（自洽校验通过）＝原始 AB、未做银消改正（CDS 机读列注记「not corrected for Milky Way extinction」；论文 §3.1 管线第 8 步「corrected for Milky Way extinction」文字与发表数值矛盾，以发表数值为准，Gext_corr=n）；TNS 7 行（band 映射：cyan/orange-ATLAS→atlas-cyan/atlas-orange、g-P1/i-P1→g/i〔先例 AT2019bhf〕、g-ZTF/r-ZTF→g/r；TNS 给曝光时长 27–45 s 行 time_err=半曝光；ATLAS 行 TNS 未声明 JD 为曝光中点或起点，已注）；表 8 VLASS 3 GHz 非探测 1 行（MJD 59109 整数日精度、RMS 130 μJy 照录，原文未声明限量倍数；arXiv v2 TeX 核对，CDS 无该表机读版——见 audit/unverified.tsv）。表 4 的 g/r 行（JD 2458968.80/2458968.87）与 TNS 警报流 g/r 行（JD 2458968.7971412/2458968.8707755）为警报测光与 IPAC 力测光两管线独立测量，数值不同按 §3.4 并存不互删；TNS 同帧重复上报行（134159=134986=133821、134160=134987、134158=134985=133820）去重保留 1 行、行号记于各行 comment。（10）派生量备查（不入库）：表 10（tab:lc-properties）g：峰 18.27±0.03、M_g=−18.10±0.03、t½ rise=2.88–5.8 d、fade=7.47±1.11 d；r：峰 18.51±0.05、M_r=−17.86±0.05、rise=2.73–5.67 d、fade=27.88±2.11 d；Crawford+2025 表：D=162.1 Mpc、A_g=0.0134、A_r=0.00928、M(a1)^g=−18.1、M(a1)^r=−17.6（其 z 取 TNS 0.037）。",
   "sub_tag": [
     "IIb"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_ho2023_tab1_20261104"
+    "ingest_source": "scix_ho2023_tab1_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
       "name": "Ho+2023",
       "source": "bot",
       "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
-      "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
+      "url": "https://doi.org/10.3847/1538-4357/acc533"
+    },
+    {
+      "name": "Khakpash+2024",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Multi-filter UV to NIR Data-driven Light Curve Templates for Stripped Envelope Supernovae",
+      "url": "https://doi.org/10.3847/1538-4365/ad7eaa"
+    },
+    {
+      "name": "Crawford+2025",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Peaky Finders: Characterizing Double-Peaked Type IIb Supernovae in Large-Scale Live-Stream Photometric Surveys",
+      "url": "https://doi.org/10.3847/1538-4357/adea3a"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.042,
+    "redshift_type": "spec",
+    "source": "Ho+2023（2023ApJ...949..120H）表 12（宿主 SED 拟合）＋表 9（宿主测光，z=0.042）；TNS 对象页 Host Name（SDSSJ133605.01+285903.3）",
+    "comment": "确定宿主：Ho+2023 对本源做了宿主 SED 拟合（表 12：χ²/n=8.57/16、M_B=−18.02、log M*/M☉=9.25(+0.07/−0.31)、log SFR=−0.53(+0.31/−0.07)、log Age/yr=9.91(+0.12/−0.49)、E(B−V)=0.25(+0.06/−0.03)），非仅坐标接近；TNS 对象页（2026-11-19 取）Host Name=SDSSJ133605.01+285903.3，与瞬变体坐标偏移 ~3.2″。红移 0.042 取自瞬变体光谱（表 11 六行全为 Transient；TNS 分类报告 2020-1392 给 0.037，见 info comment 并列），宿主自身谱未单独发表。宿主坐标原文未单独给出，暂缺。表 9 宿主多波段测光（GALEX FUV 0.0646/NUV 0.0773＋SDSS u 0.0986/g 0.220/r 0.2606/i 0.3012/z 0.2453＋PS1 g 0.2247/r 0.2951/i 0.3174/z 0.3571/y 0.3206＋2MASS Ks 0.3330＋WISE W1 0.4484/W2 0.1975/W3 0.1063，单位 mJy；AB、未改红化）在 CDS 机读表 J/ApJ/949/120/table9 中列标 *mag 实为 mJy 流量（先例 SN2018bcc 行对照核实），未自行换算星等、暂不入 photometry，需要时从 CDS 取用。"
+  }
 }
