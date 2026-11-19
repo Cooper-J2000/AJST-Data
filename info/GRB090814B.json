@@ -1,110 +1,62 @@
 {
   "transient_id": "GRB090814B",
-  "alias": [],
-  "ra": 64.7488,
-  "dec": 60.5796,
+  "alias": [
+    "GRB 090814B",
+    "GRB090814B"
+  ],
+  "ra": 64.75701,
+  "dec": 60.59133,
   "T0": "2009-08-14T01:21:33Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/BAT",
+  "T0_ref": "GCN 9795（IBAS 官方通告原文 at 01:21:33 UT on August 14th；无亚秒不自行补）",
+  "T0_offset": -19.0,
+  "T0_offset_ref": "Bosnjak+2014（A&A 561 A25 DOI 10.1051/0004-6361/201322256）Table 1：tstart=01:21:14.00 UT；比 GCN 9795 的 IBAS 自动触发 01:21:33 UT 提前 19 s，提前为负；Mereghetti+2013（PoS(INTEGRAL 2012)126）Table 1 start time 01:21:08 UT（-25 s）并列备查",
+  "Trigger_Instrument": "INTEGRAL",
   "redshift": null,
   "tag": [
     "grb"
   ],
-  "pos_error": 3.8,
-  "pos_ref": "GCN 9803",
+  "pos_error": 3.4,
+  "pos_ref": "UKSSDC Swift-XRT live catalogue（Evans+2009 在线目录；仓内 external/swift_xrt_live 快照 2026-07-21；2026-11-19 在线 https://www.swift.ac.uk/xrt_positions/00020107/ 复核同值）：RA=64.75701, Dec=+60.59133, 3.4 arcsec (radius, 90% confidence)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核链（fsy 2026-11-19）：[原值] T0=2009-08-14T01:21:33Z、T0_ref=null、Trigger_Instrument=Swift/BAT、ra/dec=64.7488/+60.5796、pos_error=3.8″（pos_ref=GCN 9803）、alias=[]、sub_tag=[]、articles=[]。[触发] GCN 9795 原文：『GRB 090814B: a long GRB localized by INTEGRAL』，IBAS（IBIS/ISGRI）于 『at 01:21:33 UT on August 14th』触发（无亚秒），位置 RA=64.7488 DEC=+60.5796（J2000，2.9 arcmin，90% c.l.）。T0=01:21:33Z 逐字核对无误、维持原值，T0_ref=GCN 9795（§3.8 优先级①触发仪器官方通告）。Swift/BAT 并未触发本暴（仓内 external/swift_bat 快照无 090814B 条目；swiftgrbba trigger_obs=INTEGRAL；GCN 9803 原文『The Swift-XRT observed the field of the INTEGRAL GRB 090814B』），Trigger_Instrument 已改 INTEGRAL；快照 UTC 触发时刻互证：swiftgrbba=2009-08-14T01:21:33.000Z、uvot_grb TRIG_UT=2009-226-01:21:33（MET/TRIGTIME 列未使用）。[T0_offset] -19 s：Bosnjak+2014（A&A 561 A25 DOI 10.1051/0004-6361/201322256）Table 1 tstart=01:21:14.00 UT（T90=51 s、X=Y 射线对应体、O=无光学），爆发开始早于 IBAS 自动触发，按 §3.2 提前为负；Mereghetti+2013（PoS(INTEGRAL 2012)126 arXiv:1302.5347）Table 1『approximate start time』=01:21:08 UT（T90=42 s；即 -25 s）并列备查；两值取来源级更高者（A&A 期刊 > PoS 会议录）。[定位] 原库为混串：ra/dec=64.7488/+60.5796 是 INTEGRAL/IBAS 位（GCN 9795，误差 2.9′ 90%），而 pos_error=3.8″ 是 GCN 9803 的 Swift-XRT 初测位（RA、Dec=64.7546、60.5901，3.8 arcsec radius、90% confidence）的误差——两定位被错拼。改判为 UKSSDC Swift-XRT 增强位 RA=64.75701、Dec=+60.59133、3.4″、90% c.l.（external/swift_xrt_live 快照=Evans+2009 在线目录 2026-07-21 获取；2026-11-19 在线 https://www.swift.ac.uk/xrt_positions/00020107/ 复核同值，3 处 overlap 加权平均、曝光 2723 s）；INTEGRAL 位与 XRT 初测位留此备查。GCN 9810 确认该 XRT 源为余辉（T0+48-60 ks 间衰减 alpha=0.7±0.3、0.11±0.03 count/s），未给新位置。[分类] GCN 9795 标题与正文『a long GRB』『duration of about 50 s』；T90 并列：Bosnjak+2014 Table 1 51 s、Mereghetti+2013 42 s、Higgins+2017 Table A1 42 s（注 IBAS）、uvot_grb HLSP 50 s（T90_REF=GCN9795）——按来源分类判 sub_tag=lgrb（§3.9）。[红移] 无任何来源值（HLSP Z=-1）→ null。[别名] 『GRB 090814B』（GCN 9795/9803/9806/9807/9808/9810 标题与正文用名；Mereghetti+2013 Table 1；Higgins+2017 Table A1；mpe_greiner 目录 name）；『GRB090814B』（uvot_grb HLSP OBJECT 列，Roming+2017 ApJS 228,13）。[测光检索（2026-11-19，§3.3 零测光义务四要素）] 检索日期=2026-11-19；入口与篇数：GCN 站内该暴通告 6 篇（9795/9803/9806/9807/9808/9810，光学数值仅 9806/9807/9808 三篇上限）；仓内快照 swift_bat 无本源、rssgrbag/grbsn_webtool 无记录、swiftgrbba/uvot_grb/mpe_greiner 仅目录级参数无光变表、gcn/archive 不存在于本基点；文献：ADS 无 token 走回退链（OpenAlex 全文检索 3 组共命中 9 项、Crossref/arXiv API 元数据、WebSearch 补漏；SIMBAD/VizieR unavailable@2026-11-19 CDS 整站维护），冻结清单 9 条（manifest sha256 a25bd161bdcd3128…，工作目录 D:/AIGen/AJDATA/_conv/lit-GRB090814B/）；逐篇取 arXiv 原文 pdftotext mention-check 程序化留痕，结论=文献无新增可用光学测光，补 GCN 9807 两条上限（新增 2 行）。要点：Gorosabel+2010（Adv. Astron. 2010:701534）仅复述 GCN 9808 组合上限（I=20.6、总曝光 9520 s、平均历元 Aug 14.1259，逐值一致=佐证）；Higgins+2017（MNRAS 470,314）Table A1 仅 T90=42 s 与 11h X 射线流量 2.4×10⁻¹² erg cm⁻² s⁻¹（0.3-10 keV；X 射线不入 lc；swiftgrbba xrt_11hr_flux=1.07×10⁻¹² 并列备查）；Roming+2017 HLSP grb-cat 行 FRST/PEAK=U 波段 8048.7 s、21.53±4.05、σ=0.74 次阈噪点未采（其 WH=White 列全空——本暴无 White 数据，Issue #384 的 uvot-white 键规则经核不适用）；Biltzinger+2023（A&A 675 A175）为 INTEGRAL/SPI 时变谱目录无光学测光（VoR DataDome 403、OpenAlex 全文命中）；两篇博士论文仅转述。[lc 处理] CAHA 4 行原导入误用窗口起点当 time 且缺 time_err（343/1544/2632/3514 s），按 §3.8 改窗口中点+半宽（917/2063.5/3032.5/7574.5 s）并重算 mjd；组合行 5985 s（原文平均历元）补 time_err=5644.5 s；LT 2 行表列 Mid Time 无误，补 time_err=300/270 s；telescope/instrument 列修正（望远镜名原误置 instrument 列）；UVOT 上限 2 行新增（band=uvot-u/uvot-uvw2；mag_system=Vega 按 GCN 9807 明示 UVOT photometric system=Poole+2008）；各上限行均未做银河消光改正（E(B-V)=1.10 UVOT / 1.14 LT，Schlegel+1998）→ Gext_corr 保持 n。X 射线行（10keV）3 行未动、行序未变。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "uvot_grb": {
-        "other": {
-          "OBJECT": "GRB090814B",
-          "BAT_PIT": null,
-          "DISC_BY": "INTEGRAL",
-          "POS_ERR": 3.799999952316284,
-          "POS_REF": "GCN9803",
-          "T90_REF": "GCN9795",
-          "TRIG_UT": "2009-226-01:21:33",
-          "TRIGTIME": 271905693.0
-        },
-        "params": {
-          "t90": {
-            "v": 50.0,
-            "err": null,
-            "band": null
-          }
-        },
-        "source": {
-          "url": "https://archive.stsci.edu/prepds/uvotgrb/",
-          "name": "Swift/UVOT GRB Afterglow Catalog (Roming+2017)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2009-08-14T01:21:33Z"
-      },
-      "swift_grb": {
-        "other": {
-          "det_flag": "O",
-          "target_id": "20107",
-          "bat_detection": "U",
-          "supernova_flag": "N"
-        },
-        "params": {},
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrb.html",
-          "name": "HEASARC SWIFTGRB",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "Swift 20107"
-        ],
-        "trigger_time": "2009-08-14T01:21:33Z"
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 5591910000000000000000,
-          "comment": "INTEGRAL: GCN 9795; UVOT: no detection",
-          "uvot_mag": "U>20.32; UVW2>20.30",
-          "xrt_gamma": 1.0026,
-          "trigger_obs": "INTEGRAL",
-          "xrt_lc_index": -0.6212,
-          "xrt_11hr_flux": 1.0729488e-12,
-          "xrt_24hr_flux": 6.6088092e-13,
-          "uvot_first_obs": 9000.0
-        },
-        "params": {},
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2009-08-14T01:21:33.000Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "XA": "y",
-          "Error": "3.2",
-          "obs_date": "2009-08-14",
-          "Instrument": "INTEGRAL",
-          "GRB X-ray position": "04h18m59s +60° 36'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-19"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x"
+    },
+    {
+      "name": "Gorosabel+2010",
+      "url": "https://doi.org/10.1155/2010/701534"
+    },
+    {
+      "name": "Mereghetti+2013",
+      "url": "https://arxiv.org/abs/1302.5347"
+    },
+    {
+      "name": "Bosnjak+2014",
+      "url": "https://doi.org/10.1051/0004-6361/201322256"
+    },
+    {
+      "name": "Higgins+2017",
+      "url": "https://doi.org/10.1093/mnras/stx1163"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13"
+    }
+  ],
   "host_galaxy": null
 }
