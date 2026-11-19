@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB080330A",
-  "alias": [],
-  "ra": 169.3,
-  "dec": 30.566667,
-  "T0": "2008-03-30T03:41:16Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080330",
+    "XRF 080330"
+  ],
+  "ra": 169.2695,
+  "dec": 30.62355,
+  "T0": "2008-03-30T03:41:16.872120Z",
+  "T0_ref": "GCN 7537 (Swift/BAT trigger 308041, 03:41:16 UT); Swift/BAT 官方目录 Trig_time_UTC=2008-03-30T03:41:16.872120(含 UTCF;external/swift_bat 快照 summary_general.txt = swift.gsfc.nasa.gov/results/batgrbcat;HEASARC swiftgrb 快照同值;官方 batgrbproduct 页 gcn.gsfc.nasa.gov/notices_s/308041/BA 同值,MET=228541279.552)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,16 +15,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 3.077,
-  "pos_ref": "GCN 7537",
-  "redshift_type": null,
+  "pos_error": 4.0,
+  "pos_ref": "GCN 7583",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 7544",
-  "comment": null,
+  "comment": "审核(wa1kmoon@zcode,2026-11-20)。身份:Swift/BAT 触发 308041(GCN 7537,03:41:16 UT);仓内 gcn/archive 当日 26 篇(eventId GRB 080330/080330A)均属同一事件,无 080330B/C 混淆。T0 取触发仪器亚秒值 03:41:16.872120:swift_bat 快照(BAT 目录,Trig_time_UTC,含 UTCF)、HEASARC swiftgrb 快照、官方 batgrbproduct 页(gcn.gsfc.nasa.gov/notices_s/308041/BA,MET=228541279.552)三方一致;GCN 7537 整秒 03:41:16 与 uvot_grb TRIGTIME 228541276(=03:41:16.000)为亚秒前精度,整数秒一致;swift_bat 目录 MET 列与 UTC 列存在秒级互差(目录内部口径,历元逐年漂移 ~2.4 s/类),以 UTC 列+BA 页为准。定位:GCN 7537 XRT 位置(±3.077″)被 GCN 7541 更正(星跟踪器漂移),GCN 7561 改进位置再被 GCN 7583 撤回;采用终版 XRT 精化位置 169.26950,+30.62355 ±4.0″(90%,136–311 s PC 重处理,GCN 7583);UKSSDC SPER 页(2026-11-20 实取)标注无 enhanced 位置;原库 ra/dec=169.3/30.566667 为 BAT onboard 坐标(MPE 目录口径)却挂 GCN 7537 的 XRT 误差,已改;UVOT FC 位置 169.2688,+30.6228 ±1.0″(1σ,GCN 7537)备查。红移 z=1.51:NOT 吸收线(C IV/Zn II/Fe II/Mg II,GCN 7544),HET 证实(GCN 7547),Guidorzi+2009 表 z=1.5101–1.5166,BAT 目录 z=1.5119;type=spec(余辉光谱吸收线)。sub_tag=XRF 维持:GCN 7549(BAT 团队)按 25–50/50–100 keV fluence 比 1.44>1.32 判 Epeak≲30 keV → XRF(Sakamoto+2008 arXiv:0801.4319 法);swiftgrbba 快照 comment 同;Guidorzi+2009 标题即「X-ray flash 080330」。alias:「GRB 080330」为 GCN 7537 等主题行用名;「XRF 080330」为 Guidorzi+2009(arXiv:0903.2958)标题与 Kann+2010 正文用名。lc:T0 精化后全表 time=UTC−T0_new(整秒历元行 time−=0.872120 s、mjd 不变;UT/MJD 锚行按源值重推,逐行 comment 留痕);本源 lc 无 X 射线行(全部光学/IR)。去重(§3.4)删 20 行转引:UVOT 同值转引 7 行(GCN7552 为初源)、PAIRITEL 3 行(Dainotti;7542 time 锚失真,初源 GCN7542)、SMARTS 2173 s 7 行(初源 GCN7553,B/V/J/H/K 已按其原文补行)、LOAO 1 行(Dainotti;7546 tel/time 误标,初源 GCN7546)、Terskol 2 行(Dainotti;Kann2010 tel 误标,初源 GCN7556);b@822–832 行 reference 按初源改 GCN7552。逐行核对:Guidorzi+2009 表 5 全部 210 行程序化比对通过(arXiv v1 TeX;VoR 被 DataDome 阻断,见 audit/unverified.tsv);Dainotti 文件系统性缺陷——原文「>」上限被丢成 err=0 探测行(本源各行已核回 upperlimit=y)、system 列为归一化标签非原文、FTN 仪器映射 MuSCAT3 系时代错置(已改)、部分 UVOT/TAROT 值多小数位(疑 VoR 值,差异留 comment);Kann+2010 表 18 行逐值核对通过(arXiv v4 TeX,IOP VoR 反爬);MAST noc-db 20 行逐值核对通过,其 MAG 为 V 归一标度量(仅 V 行为 UVOT 系统真星等,见 audit/leads/papers/roming2017.md)。GCN 7552 声明星跟踪器漂移致其星等应视为上限(可低估 0.7 mag)→ 相关行 upperlimit=y。GCN 7580 的 22.65 为拟合零点非实测(置 discard);其 AAVSO 报告首帧 16.48±0.2 与该拟合差 ~1.5 mag 且锚点存疑,新增行置 discard=y 留证待决。测光检索(2026-11-20):仓内 gcn/archive 26 篇全文(7536–7585)逐篇提取——7536 TAROT 首测、7538 ROTSE 2 点、7539 LT 首帧、7542 PAIRITEL 3 点、7543 TAROT 3 限/点、7545 GROND 2 点、7546 LOAO、7549 BAT 精化(XRF 判据)、7550 TNT、7552 UVOT 窗口表、7553 SMARTS 7 色、7554 REM(无数值)、7556 Terskol 2 点、7559 SAO、7560 PROMPT 3 点、7568 RAPTOR 6 点、7580 SIDT、7585 MAGIC(GeV 上限,非光学);7540=SDSS 前置场(无数值);rssgrbag 无记录、grbsn_webtool 无 080330;外部入口:GCN 站与 BA 分析页、UKSSDC SPER 实取;ADS 无 token(HTTP 401),以 arXiv API/Crossref/OpenAlex 完成文献检索与原文获取(Guidorzi+2009/Kann+2010/Roming+2017 noc-db/Dainotti+2024 均实取并逐值核对);新增 6 行(5 行 GCN7553 + 1 行 SIDT 存疑)、删除 20 行转引。E(B−V)=0.02(GCN 7537/7552)/0.017(Guidorzi+2009);全表 Gext_corr=n(未做银消改正)。mag_system 口径:SDSS 波段=AB;GROND J/H/K=AB(论文表5脚注 c);UVOT=Vega(Poole+2008/Breeveld+2011);Landolt/2MASS 定标=Vega 推定;NOT R=r′ 经 Krisciunas+98 转换(Vega 推定);USNO-B1/GSC 定标与 TAROT clear=未声明留空。",
   "sub_tag": [
     "XRF"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,15 +50,41 @@
         "v": 24.04940239043825
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "url": "https://doi.org/10.1093/mnras/stae1484",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n  author = {M. G. Dainotti and others},\n  title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n  journal = {MNRAS},\n  year = {2024},\n  volume = {533},\n  pages = {4023--4043},\n  doi = {10.1093/mnras/stae1484},\n  eprint = {2405.02263}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Guidorzi+2009",
+      "url": "https://doi.org/10.1051/0004-6361/200911719",
+      "title": "Rise and fall of the X-ray flash 080330: an off-axis jet?",
+      "bibtex": "@ARTICLE{2009A%26A...499..439G,\n  author = {C. Guidorzi and others},\n  title = {Rise and fall of the X-ray flash 080330: an off-axis jet?},\n  journal = {A\\&A},\n  year = {2009},\n  volume = {499},\n  pages = {439--453},\n  doi = {10.1051/0004-6361/200911719},\n  eprint = {0903.2958}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Kann+2010",
+      "url": "https://doi.org/10.1088/0004-637X/720/2/1513",
+      "title": "The Afterglows of Swift-era Gamma-Ray Bursts. I. Comparing Pre-Swift and Swift-era Long/Soft (Type II) GRB Optical Afterglows",
+      "bibtex": "@ARTICLE{2010ApJ...720.1513K,\n  author = {D. A. Kann and others},\n  title = {The Afterglows of Swift-era Gamma-Ray Bursts. I.},\n  journal = {ApJ},\n  year = {2010},\n  volume = {720},\n  pages = {1513--1558},\n  doi = {10.1088/0004-637X/720/2/1513},\n  eprint = {0712.2186}\n}",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "bibtex": "@ARTICLE{2017ApJS..228...13R,\n  author = {P. W. A. Roming and others},\n  title = {A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution},\n  journal = {ApJS},\n  year = {2017},\n  volume = {228},\n  pages = {13},\n  doi = {10.3847/1538-4365/228/2/13},\n  eprint = {1701.03713}\n}",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
