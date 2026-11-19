@@ -1,12 +1,12 @@
 {
   "transient_id": "GRB150627A",
   "alias": [
-    "GRB 150627183"
+    "GRB150627183"
   ],
-  "ra": 117.5,
-  "dec": -51.54999923706055,
-  "T0": "2015-06-27T04:23:26.680000Z",
-  "T0_ref": null,
+  "ra": 117.4706,
+  "dec": -51.49,
+  "T0": "2015-06-27T04:23:23.680Z",
+  "T0_ref": "GCN 17975（Fermi GBM Team 官方通告原文触发时刻 04:23:23.68 UT，2026-11-20 逐字核对）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -18,213 +18,42 @@
   "pos_ref": "GCN 17976",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 Fermi LAT 2FLGC 光变数据导入新建 (Ajello+2019)",
+  "comment": "审核 fsy@zcode（2026-11-20）。【触发/T0】Fermi/GBM trigger 457071806 / 150627183；GBM 官方通告 GCN 17975 原文 \"At 04:23:23.68 UT on 27 June 2015, the Fermi Gamma-Ray Burst Monitor triggered and located GRB 150627A (trigger 457071806 / 150627183)\"，GCN 17971（Fermi-LAT team）同值；HEASARC FERMIGBRST 快照（external/fermi_gbm，2026-07-19 提取）trigger_time MJD 57200.182912977 = 04:23:23.681 UTC，GBM 4B 目录论文表（von Kienlin+2020）同 04:23:23.6812；UKSSDC swiftgrbba 快照 04:23:23.680。T0 取 GCN 17975 值 04:23:23.680Z（触发仪器官方通告优先，§3.8 ①）；目录终值 .6812 与通告值差 1.2 ms，备查。旧 T0（04:23:26.680000Z）为 bot 将 trigigra（FERMILGRB/2FLGC 衍生表）MET 457071806.68 按 2001-01-01 纪元直除 86400 所得，漏扣 2006/2009/2012 三个跳秒（恰差 3.000 s）；该表 UTC 列 04:23:23.001 与其自带 MET 列自差 3.68 s，衍生目录内部不一致，弃用；按 §3.8 \"目录之间的换算口径差不算偏移\"，T0_offset=null（GBM t90_start=-5.312 s 仅为常规 T90 区间起点，无前兆通告证据，不记 offset）。lc 全部 65 行 Swift/XRT BA（band=10keV）按 §3.8 优先路径\"保 mjd、平移 time\"整体 +3.000 s 对齐新 T0（mjd 为来源发布绝对时刻，未动；逐行程序化自验通过）。【定位】原 ra/dec（117.5/-51.55）为 Fermi 目录粗位、却挂 XRT 3.5″ 误差，属混串；改判 Swift-XRT 增强位 GCN 17976：RA,Dec = 117.4706, -51.4900（J2000 07:49:52.94, -51:29:23.9），误差 3.5″ （radius, 90% confidence）→ pos_error_confidence=90。备查：swiftgrbba XRT 117.47058,-51.48997（3.5″）、UVOT 位 117.47108,-51.489417（1″，GCN 17977）、swift_xrt_live 目录 117.47064,-51.48957（Err90 2.0″）。【alias】\"GRB150627183\" 为 FERMIGBRST/GBM 4B 目录 name 字段原文用名（GCN 17971/17975 原文 trigger 150627183）；原 alias \"GRB 150627183\"（带空格拼接形）一并更正。【分类】t90 = 64.577±0.590 s（50-300 keV，FERMIGBRST 快照，GBM 4B 论文表逐字一致；GCN 17975 原文 \"duration (T90) of about 65 s (50-300 keV)\"）——按目录 t90 判 lgrb（§3.9）。LAT 有探测（GCN 17971：8.1 GeV 光子于触发后 259 s；sub_tag Fermi-LAT 沿用）。【新增光学测光（8 行）】Swift/UVOT 7 行检出（GCN 17977：white 33963-34289/39860-40112/45659-45863、v 34304-34601/40117-40346、u 33622-38243/43668-45654，mag 18.90-19.55）+ MASTER-SAAO 首帧 180 s 5σ 上限 16.87 mag（GCN 17978 值 + GCN 17979 更正时刻 16:32:07 UT）。【测光检索（2026-11-20，四要素）】入口与篇数：GCN 站 query \"GRB 150627A\" 命中 8 篇（17971/17972/17975/17976/17977/17978/17979/17982，全部打开核对，仅 17977 有 UVOT 测光、17978/17979 有 MASTER 上限）；OpenAlex 全文检索 4 组变体（\"GRB 150627A\" 命中 9 条、\"GRB150627A\" 1、\"150627183\" 2、\"150627.183\"/\"457071806\"/\"GRB150627.18\" 均 0）→ 去重后研究文章 6 篇 + 1 博士论文（排除）；Crossref bibliographic/title 各 1 轮无新增；arXiv API 题名检索得 Ajello+2019 = arXiv:1906.11403；仓内 gcn/archive 不在当前 main 树、rssgrbag/grbsn_webtool/uvot_grb 快照均无该源记录。结论：文献侧仅 Ershova+2020 含本暴 MASTER 光学观测（Table 20 行，mention 经 OpenAlex 摘要与 Springer VoR 落地页核实），其余 5 篇（Ajello+2019 2FLGC、von Kienlin+2020 GBM 4B、Prokhorov & Moraghan 2024 LAT 瞬变表、Liao+2025 GBM 谱线样本、Fraija+2026 SSC 模型）均 mention-only 无可用光学测光。补了几行：UVOT 7 行 + MASTER 上限 1 行 = 8 行。【Ershova+2020 未取值说明】Springer content/pdf 返回订阅 preview、Unpaywall is_oa=false、Semantic Scholar 与 INSPIRE 无 OA 副本、CDS/VizieR 当日整站不可达（均 2026-11-20 实测）→ 按 §3.3 第 4 级数值不入库，audit/unverified.tsv 登记 missing；MASTER 值取自其原始出处 GCN 17978/17979（tier 5 原始通告）。",
   "sub_tag": [
-    "Fermi-LAT"
+    "Fermi-LAT",
+    "lgrb"
   ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
-    "catalog_data": {
-      "fermi_gbm": {
-        "other": {
-          "bii": -12.55626881,
-          "lii": 264.8872496,
-          "flux_256": 75.7634,
-          "flux_1024": 65.2531,
-          "t50_start": 14.7202,
-          "t90_start": 5.31204,
-          "error_radius": 0.05,
-          "fluence_batse": 9.2955e-05,
-          "flux_batse_64": 37.6227,
-          "flux_256_error": 1.26172,
-          "flux_batse_256": 35.2546,
-          "flnc_band_epeak": 225.5229,
-          "flnc_comp_epeak": 294.68774,
-          "flux_1024_error": 0.598499,
-          "flux_batse_1024": 28.8326,
-          "fluence_batse_error": 2.0495e-07,
-          "flux_batse_64_error": 1.40694,
-          "flux_batse_256_error": 0.681739,
-          "flux_batse_1024_error": 0.307636,
-          "flnc_band_epeak_neg_err": 5.4924469,
-          "flnc_band_epeak_pos_err": 5.4924469,
-          "flnc_best_fitting_model": "flnc_band",
-          "flnc_comp_epeak_neg_err": 4.4908142,
-          "flnc_comp_epeak_pos_err": 4.4908142
-        },
-        "params": {
-          "t50": {
-            "v": 44.9287,
-            "err": 0.181019,
-            "band": "50-300 keV"
-          },
-          "t90": {
-            "v": 64.577,
-            "err": 0.590054,
-            "band": "50-300 keV"
-          },
-          "epeak": {
-            "v": 225.5229,
-            "err": [
-              5.4924469,
-              5.4924469
-            ],
-            "frame": "obs",
-            "model": "BAND"
-          },
-          "fluence": {
-            "v": 0.000179717,
-            "err": 3.82561e-07,
-            "band": "10-1000 keV"
-          },
-          "peak_flux": {
-            "v": 78.4556,
-            "dt": "64ms",
-            "err": 2.53165,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermigbrst.html",
-          "name": "Fermi GBM Burst Catalog (FERMIGBRST)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB150627183",
-          "GRB 150627.183",
-          "bn150627183"
-        ],
-        "trigger_time": "2015-06-27T04:23:23.681Z"
-      },
-      "fermi_lat": {
-        "other": {
-          "tl100": 5990.99023,
-          "lle_t90": 13.583,
-          "tl100_error": 1284.80005,
-          "trigger_met": 457071806.68,
-          "error_radius": 0.06,
-          "like_best_ts": 239.482,
-          "like_best_fluence": 4.06124e-05,
-          "like_best_grbindex": -1.67203,
-          "ext_emission_max_ene": 8100.0,
-          "ext_emission_max_ene_t": 258.66,
-          "like_best_fluence_error": 1.42441e-05,
-          "like_best_grbindex_error": 0.117723
-        },
-        "params": {
-          "t90": {
-            "v": 64.577,
-            "err": 0.59,
-            "band": "50-300 keV"
-          },
-          "fluence": {
-            "v": 0.00017972,
-            "err": 3.8256e-07,
-            "band": "10-1000 keV"
-          }
-        },
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/fermi/fermilgrb.html",
-          "name": "Fermi LAT 2nd GRB Catalog (2FLGC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB 150627.183"
-        ],
-        "trigger_time": "2015-06-27T04:23:23.001Z"
-      },
-      "agile_mcal": {
-        "other": {
-          "BKG": 471.0,
-          "LOC": "LAT",
-          "MET": 362463807.52,
-          "PHI": 190.18,
-          "MCAL": "I",
-          "Orbit": 42269.0,
-          "RM_AC": "Y",
-          "RM_SA": "Y",
-          "THETA": 10.18,
-          "f_T50": "*",
-          "f_T90": "*",
-          "l_T50": ">=",
-          "l_T90": ">=",
-          "RM_MCAL": "Y",
-          "BKGSUB_CTS_T50": 3993.0,
-          "BKGSUB_CTS_T90": 5034.0
-        },
-        "params": {
-          "t50": {
-            "v": 9.216,
-            "err": 0.512,
-            "band": "0.4-100 MeV",
-            "limit": ">="
-          },
-          "t90": {
-            "v": 41.984,
-            "err": 0.512,
-            "band": "0.4-100 MeV",
-            "limit": ">="
-          }
-        },
-        "source": {
-          "url": "https://www.ssdc.asi.it/mcal2grbcat/",
-          "name": "2nd AGILE-MCAL GRB Catalog (Ursi+2022)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [
-          "GRB150627A"
-        ],
-        "trigger_time": "2015-06-27T04:23:27Z"
-      },
-      "swiftgrbba": {
-        "other": {
-          "xrt_nh": 3500000000000000000000,
-          "xrt_ra": 117.47058,
-          "comment": "Fermi: GCN 17971",
-          "uvot_ra": 117.47108,
-          "xrt_dec": -51.48997,
-          "uvot_dec": -51.48942,
-          "uvot_mag": "White=19.11",
-          "uvot_vmag": 19.02,
-          "xrt_gamma": 1.99,
-          "trigger_obs": "Fermi",
-          "xrt_lc_index": -2.2,
-          "xrt_24hr_flux": 3.8e-12,
-          "xrt_first_obs": 4900.0,
-          "uvot_first_obs": 33622.0,
-          "xrt_error_radius": 3.5,
-          "uvot_error_radius": 1.0
-        },
-        "params": {},
-        "source": {
-          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/swift/swiftgrbba.html",
-          "name": "Swift GRB Compilation by Burst Advocate (HEASARC)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": "2015-06-27T04:23:23.680Z"
-      },
-      "mpe_greiner": {
-        "other": {
-          "OT": "y",
-          "XA": "y",
-          "IPN": "y",
-          "Error": "3",
-          "obs_date": "2015-06-27",
-          "Instrument": "Fermi",
-          "GRB X-ray position": "07h49m58s -51° 34'"
-        },
-        "params": {},
-        "source": {
-          "url": "https://www.mpe.mpg.de/~jcg/grbgen.html",
-          "name": "Greiner's GRB localization table (MPE)",
-          "retrieved": "2026-07-21"
-        },
-        "name_alt": [],
-        "trigger_time": null
-      }
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-20"
     }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Ajello+2019",
+      "url": "https://doi.org/10.3847/1538-4357/ab1d4e",
+      "title": "A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog",
+      "bibtex": "@ARTICLE{Ajello2019,\n       author = {Ajello, M. and Arimoto, M. and Axelsson, M. and Baldini, L. and Barbiellini, G. and Bastieri, D. and others},\n        title = \"A Decade of Gamma-Ray Bursts Observed by Fermi-LAT: The Second GRB Catalog\",\n      journal = {The Astrophysical Journal},\n         year = 2019,\n        volume = {878},\n         pages = {52},\n          doi = {10.3847/1538-4357/ab1d4e},\n}",
+      "source": "fsy"
+    },
+    {
+      "name": "von Kienlin+2020",
+      "url": "https://doi.org/10.3847/1538-4357/ab7a18",
+      "title": "The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data",
+      "bibtex": "@ARTICLE{vonKienlin2020,\n       author = {von Kienlin, A. and Meegan, C. A. and Paciesas, W. S. and Bhat, P. N. and Bissaldi, E. and Briggs, M. S. and others},\n        title = \"The Fourth Fermi-GBM Gamma-Ray Burst Catalog: A Decade of Data\",\n      journal = {The Astrophysical Journal},\n         year = 2020,\n        volume = {893},\n         pages = {46},\n          doi = {10.3847/1538-4357/ab7a18},\n}",
+      "source": "fsy"
+    },
+    {
+      "name": "Ershova+2020",
+      "url": "https://doi.org/10.1134/S1063772920020018",
+      "title": "Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University",
+      "bibtex": "@ARTICLE{Ershova2020,\n       author = {Ershova, O. A. and Lipunov, V. M. and Gorbovskoy, E. S. and Tyurina, N. and Kornilov, V. and Zimnukhov, D. S. and others},\n        title = \"Early Optical Observations of Gamma-Ray Bursts Compared with Their Gamma- and X-Ray Characteristics Using a MASTER Global Network of Robotic Telescopes from Lomonosov Moscow State University\",\n      journal = {Astronomy Reports},\n         year = 2020,\n        volume = {64},\n         pages = {126},\n          doi = {10.1134/S1063772920020018},\n}",
+      "source": "fsy"
+    }
+  ],
   "host_galaxy": null
 }
