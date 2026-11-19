@@ -115,7 +115,7 @@ Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+0
 | AT2022upj | target_AT2022upj_photometry.csv（原文记名 AT 2022upj） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2022wtn | target_AT2022wtn_photometry.csv（原文记名 AT 2022wtn） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2023clx | target_AT2023clx_photometry.csv（原文记名 AT 2023clx） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
-| AT2023cvb | target_AT2023cvb_photometry.csv（原文记名 AT 2023cvb） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
+| AT2023cvb | target_AT2023cvb_photometry.csv（原文记名 AT 2023cvb） | 本 PR #1118（已审核入库） | 已审核（2026-11-20） | 已按 24 列契约入库 7660 行（TDECat 7612＋UVOT 41＋TNS 4＋ATel 16055 射电 3）；口径与未收行判读见 info comment |
 | AT2023kvy | target_AT2023kvy_photometry.csv（原文记名 AT 2023kvy） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2023lli | target_AT2023lli_photometry.csv（原文记名 AT 2023lli） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2023mfm | target_AT2023mfm_photometry.csv（原文记名 AT 2023mfm） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
