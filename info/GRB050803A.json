@@ -1,27 +1,30 @@
 {
   "transient_id": "GRB050803A",
-  "alias": [],
-  "ra": 350.65,
-  "dec": 5.8,
-  "T0": "2005-08-03T19:14:00Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 050803",
+    "BAT 148833"
+  ],
+  "ra": 350.65767,
+  "dec": 5.78568,
+  "T0": "2005-08-03T19:14:00.344280Z",
+  "T0_ref": "Swift/BAT 触发（trigger 148833，GCN 3748/3757：19:14:00 UT 触发并定位）；亚秒取触发仪器官方目录 trigger_time=2005-08-03T19:14:00.344280Z（仓内 external/swift_bat 快照 Trig_time_UTC；external/konus_wind 快照 19:14:00.344、GCN 3755 原文 19:14:00.34 UT 互证）。该触发为 72 s image trigger，目录 Trig_time=积分窗起点（summary_trigger_index：criterion 20000/15-50 keV/72 s/start 0.0）",
+  "T0_offset": 55,
+  "T0_offset_ref": "GCN 3757：「the actual start of the burst occurred 19:14:55 UT」——72 s image trigger 积分窗前段为空窗（integration included ~15 sec of that first peak），实际爆发起点晚于触发时刻约 55 s；Swift/BAT 目录 T100 起点 59.584 s 互证（Tsvetkova+2021 t0_T100_start=59.592 s）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": 3.5,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": "GCN 3757",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 1.4,
+  "pos_ref": "UKSSDC Swift-XRT enhanced position（trigger 00148833，Goad et al. 2007/2008；https://www.swift.ac.uk/xrt_positions/00148833/ 2026-11-20 实测：RA=350.65767，Dec=5.78568，90% error radius 1.4″；与仓内 external/swiftgrbba、uvot_grb 快照 SGA 位一致）；备查：GCN 3752 XRT ground 350.6575,5.78486（6″，90%）、GCN 3757 BAT ground 350.658,+5.778（±3′，95%）、GCN 3748 BAT on-board 350.650,+5.800（±3′，90%）",
+  "redshift_type": "phot",
+  "redshift_ref": "Schulze et al. 2015（TOUGH VII，ApJ 808, 73；DOI 10.1088/0004-637X/808/1/73）Table 2 「New Photometric Redshifts」：z=3.5±0.5（Le Phare SED 拟合，footnote h：「The likely redshift of GRB 050803 is z ∼ 3.5」，正文 §3.3 给 z=3–4）；Swift/BAT 目录 GRBlist_redshift_BAT 同值同出处（其 method 代码 he=「spectroscopic from host」与原文 SED 拟合光测红移不符，系目录标注失真，备查）",
+  "comment": "身份确证：Swift/BAT trigger 148833=GRB050803（GCN 3748：19:14:00 UT 触发并定位）；仓内 gcn/archive 全文 grep「050803」命中 16 篇（GCN 3748/3750/3751/3752/3753/3754/3755/3757/3758/3759/3760/3763/3764/3774/3780/3783，逐篇通读，均指 trigger 148833）；Swift/BAT 目录 2005-08-03 前后无其他触发（GRB050802 为 08-02 10:08 UT，不相混）；GCN 3755 文首「GRB 050801 (Swift trigger 148833)」系原文笔误（148833=GRB050803）。alias「GRB 050803」=GCN subject/官方目录用名（external/swift_bat name 字段），「BAT 148833」=swift_bat/konus_wind 目录 name_alt 原文用名。T0：原库 T0=2005-08-03T19:14:00Z（T0_ref 空）整数秒与 GCN 3748/3757 一致，亚秒按触发仪器官方目录补至 19:14:00.344280Z（见 T0_ref）；T0_offset=+55 s 见 T0_offset_ref（image trigger 积分窗起点即触发时刻，实际爆发起点偏后；正=向后，|55|>1 s）。X 射线行（band=10keV，133 行，UKSSDC Swift Burst Analyser）：与仓外 UKSSDC burst_analyser/00148833 的 xrt_flux_wt_DENSITY_incbad.qdp（24 行）+xrt_flux_pc_DENSITY_incbad.qdp（109 行）逐行核对 133/133 一致；仅重算 mjd 列（mjd:=T0_new+time，§3.8 修法①：time 本为新 T0=精化触发时刻口径），其余列未动，tools/check_t0_timebase.py PASS。定位：原 ra/dec(350.65,5.8)=GCN 3748 BAT on-board 位（±3′，90%）而 pos_ref 误配 GCN 3757，已改 XRT enhanced（见 pos_ref）。红移：z=3.5 溯源为 TOUGH VII 光测红移 3.5±0.5（redshift_ref）；备查值——GCN 3758 Keck 对误差圈内延展天体光谱 z=0.422（Tsvetkova+2021 采信，Konus 目录 eiso 等参数按该 z 计算）：Minaev & Pozanenko 2020 勘误（MNRAS 504, 926，DOI 10.1093/mnras/stab1031）明言该 z「is the correct spectroscopic redshift of an incorrect target, this is not the host galaxy」；Perley+2016 宿主光测红移 4.3(+0.6/−2.4) 已在 host_galaxy（recency/method 规则取 Perley+2016 元组）。宿主测光：TOUGH VII Table 4（银消光已改正口径）与 Perley+2016 Table 4（未改正）同源异口径，为避免同测双行不重复入库 TOUGH VII 值，备查。sub_tag=lgrb：GCN 3748 标题「very long burst」；t90=88.124±10.19719 s（15-350 keV，Swift/BAT 目录）、GCN 3757 T90=85±10 s——按目录 t90 与来源分类判 lgrb（>2 s，无冲突）；Minaev & Pozanenko 2020（MNRAS 492, 1919，VoR）分类 Type II（erratum 确认分类不变）。光变核对（2026-11-20）：37 行非 X 射线行逐行回核 GCN 3748/3750/3751/3753/3754/3755/3759/3760/3763/3764/3774/3780/3783 原文+Dainotti+2024 MRT（github SLAC-Gamma-Rays/grbLC color-evolution 分支 grblc/data/mag_files/050803A_mag.txt，38 行）——①窗口/中点口径：MASTER（3755 表 UT+Exp）、TAROT（3751 表 Tmid 区间）、HCT（3774 历元+曝光序列）、RTT150（3763 窗口 20:00 UT–8/4 02:00 UT）、Tautenburg（3754 窗口 22:23–22:45 UT）均按 §3.8 中点/半宽重推（UT 墙钟锚行 time=UT−T0_new 重推，相对时长行仅重算 mjd）；②去重 8 行（转引/更正重发，保留最初出处或精化值）：GCN 3748 V>18.5@180 s（同一 100 s V 图像被 GCN 3759 精化为 18.8@235.09 s）、GCN 3750 14.5@1680 s（同图被 GCN 3755 精化为 14.6；3750 正文「28 min」系笔误应为 18.4 min）、GCN 3760 20.72±0.22@9360 s（被 GCN 3783 重标定为 22.10±0.10@10080 s）、Dainotti 转引 RTT150 22.2@2772 s（取观测起点、upperlimit 误标 y）、Dainotti 转引 Tautenburg I>19@10800 s（取「about 3 hrs」粗锚）、TAROT 端点时刻行 3 行（16.0@3654/17.8@5034/18.7@9366 s，同 coadd 中点行保留）；③口径勘误：Magellan I≈22@8/4.234 UT 为探测（upperlimit y→n）、UVOT 21 行 time_err=Exp/2（原 0.0）、原文未声明星等系统的行 mag_system 清空（TAROT/CrAO/HCT/PROMPT 系 USNO-B1 定标、其余未声明），UVOT 行保留 Vega（Breeveld+2011 惯例）、派生列按 §3.3 清空；VLA 8.5GHz 行原文只给观测起点 8/4.44 UT、未给曝光时长，中点不可恢复（time 记观测起点，待决）。测光检索（2026-11-20）：仓内 gcn/archive 全文 grep「050803」16 篇逐篇通读——上述全部测光已入库/勘误，无漏收测光行（GCN 3750 的 200 mm 光栅谱像 limit 9 m 非测光波段不入库；GCN 3758 仅报「several faint sources」无数值）；external/rssgrbag（74 源射电光变）无本源（radio_ag_flag=N）、external/grbsn_webtool（63 事件）无本源、external/uvot_grb（626 源）与 heasarc_grbcat 无本源光变；external/swift_bat/swiftgrbba/konus_wind/mpe_greiner 仅目录参数（身份/T0 互证）；外部检索：OpenAlex「GRB 050803」71 命中（GCN 题录+样本/统计类论文，无新增可入库测光；TOUGH VII 宿主数据属 host_galaxy 范畴），arXiv API 元数据检索无本源专文，ADS/SciX 无凭据（API 401，通道受限，已登记 audit/unverified.tsv source_id=*），不据此下「无文献/无测光」结论；新增测光 0 行。Dainotti+2024：VoR=MNRAS 533, 4023（DOI 10.1093/mnras/stae1484，2024-06-20），MRT 38 行逐行回核 GCN 原文，其 system 列（Vega/USNO）按通告原文判读，转引行 reference 归最初出处（本源文献级卡见 audit/leads/papers/dainotti2024.md）。线索卡：TOUGH VII（Schulze+2015）覆盖库内 67 源（Table 2 全样本+Table 3 HST 宿主），已建文献级索引卡 audit/leads/papers/schulze2015.md 与 GRB050922B 源级卡（Table 4 银消改正口径宿主测光），本源不建卡（数据已并入本次审核）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -79,29 +82,41 @@
         "v": 19.58311111111111
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2024},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
-      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
+      "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2020},\n       volume = {492},\n       pages = {1919--1936},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
       "name": "Minaev+2020",
       "source": "bot",
       "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+      "url": "https://doi.org/10.1093/mnras/stz3611"
     },
     {
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "name": "Tsvetkova+2021",
       "source": "bot",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+      "url": "https://doi.org/10.3847/1538-4357/abd569"
+    },
+    {
+      "bibtex": "@ARTICLE{2015ApJ...808...73S,\n       author = {S. Schulze and R. Chapman and J. Hjorth and A. J. Levan and P. Jakobsson and G. Bj{\\\"o}rnsson and D. A. Perley and T. Kr{\\\"u}hler and J. Gorosabel and N. R. Tanvir and A. de Ugarte Postigo and J. P. U. Fynbo and B. Milvang-Jensen and P. M{\\\"o}ller and D. J. Watson},\n       title = {The Optically Unbiased GRB Host (TOUGH) Survey. VII. The Host Galaxy Luminosity Function: Probing the Relationship between GRBs and Star Formation to Redshift {$\\sim$} 6},\n       journal = {The Astrophysical Journal},\n       year = {2015},\n       volume = {808},\n       pages = {73},\n       doi = {10.1088/0004-637X/808/1/73},\n       eprint = {1503.04246},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015ApJ...808...73S/abstract},\n}",
+      "name": "Schulze+2015",
+      "source": "wa1kmoon@zcode",
+      "title": "The Optically Unbiased GRB Host (TOUGH) Survey. VII. The Host Galaxy Luminosity Function: Probing the Relationship between GRBs and Star Formation to Redshift ~ 6",
+      "url": "https://doi.org/10.1088/0004-637X/808/1/73"
     }
   ],
   "host_galaxy": {
