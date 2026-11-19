@@ -3,8 +3,8 @@
   "alias": [],
   "ra": 41.40953,
   "dec": -1.33278,
-  "T0": null,
-  "T0_ref": null,
+  "T0": "2017-11-19T04:48:00Z",
+  "T0_ref": "Sánchez+2024（2024ApJ...975....5S，DOI 10.3847/1538-4357/ad739a）DES-SN5YR 官方数据释出（github.com/des-science/DES-SN5YR，0_DATA/DES-SN5YR_DES/DES-SN5YR_DES_HEAD.FITS）SNID=1908467 行 PEAKMJD=58076.2（MJD，原文 1 位小数=0.1 d 精度），换算 ISO UTC；该行 PEAKMJD 与 MJD_DETECT_FIRST 同值（首个 SMP 四波段探测历元，PHOT FITS 逐行核对），即峰值=首次探测时刻",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -13,15 +13,20 @@
     "fbot"
   ],
   "pos_error": null,
-  "pos_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1 坐标（J2000）",
+  "pos_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1 宿主星系坐标（J2000）",
   "redshift_type": "spec",
-  "redshift_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1（OzDES 光谱红移）",
-  "comment": "2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（Ho+2023 表 2 收录为文献 FBOT）；发现/峰值时刻未提取，待补；仅基础元数据",
+  "redshift_ref": "Wiseman+2020（2020MNRAS.498.2575W）表 1（OzDES 宿主光谱红移；VoR 机读表 J/MNRAS/498/2575/table1 行已核）",
+  "comment": "建源说明（留底）：2026-11-04 由 Wiseman+2020 DES 快演化暂现源宿主样本建源（Ho+2023 表 2 收录为文献 FBOT——建源说明里的「表 2」应为该文表 3「Literature FBOTs」，2026-11-20 审核以 arXiv:2105.08811v2 TeX 实读更正）；发现/峰值时刻未提取，待补；仅基础元数据。——以下为 2026-11-20 全文审核记录（Rusty-Harpoon@zcode）。身份：DES17S2fee 为 Wiseman+2020（2020MNRAS.498.2575W）106 源 RET 宿主样本成员、Ho+2023（2023ApJ...949..120H）表 3「Literature FBOTs with redshift measurements and well-sampled light curves」收录（z=0.24、class Unknown、r 波段、ref[7]=Pursiainen+2018）；不在 Pursiainen+2018（2018MNRAS.481..894P）72 事件样本中——VoR 机读表 J/MNRAS/481/894 table4 全 72 行 2026-11-20 实查 0 命中（该文仅覆盖 DES13–16，本源为 Season 5/新搜索法对象，与文献卡 papers/pursiainen2018.md 一致），其 DES 光变数值从未随期刊正文/附录发表（Ho+2023 表 3 脚注 d 言明 DES 光变由 M. Pursiainen 提供、峰值光度与 t_1/2 系该文自行近似 K 改正计算；脚注标记在 v2 TeX 中挂于 DES16E2pv 行，同批 DES 行同源）。无 TNS 名：TNS /object/DES17S2fee 2026-11-20 返回 404、站内 search name=DES17S2fee 返回 No results found；SIMBAD 本会话不可达（simbad.cfa.harvard.edu sim-id 与 TAP 反复 504、CDS 主站 Page unavailable，未能实查，unverified.tsv 通道级行）→ 无任何有出处外部别名，alias 保持空。DES-SN5YR 官方释出身份链（Sánchez+2024）：官方 SMP 光变 HEAD 表 SNID=1908467 行与本源三重定量吻合——HOSTGAL_RA/DEC=41.409526/−1.332784 与 Wiseman 表 1 宿主坐标 41.40953/−1.33278 全同（<0.1″）、REDSHIFT_HELIO=0.23737 与表 1 z=0.23737 全同（5 位小数，同出 OzDES GRC）、HOSTGAL_MAG_r=18.166 与表 1 rmag=18.17±0.05 同口径；全表 19706 行坐标交叉匹配此宿主仅此 1 条光变，且 SMP 64 历元光变呈快速上升-衰减蓝色暂现体形态（峰 MJD 58076.2、58097 后回落至本底），与 Ho+2023 表 3 本源 t_1/2 量级一致 → SNID 1908467 即本源。T0 判读：本源为 DES-SN 巡天发现、无触发时刻发表（Trigger_Instrument 保持空；Pursiainen+2018 无此源、无 t_peak 可用），唯一官方绝对时间锚点是 DES-SN5YR HEAD 表 PEAKMJD=58076.2（光变峰 MJD，0.1 d 精度），与 MJD_DETECT_FIRST=58076.2 同值，取 T0=2017-11-19T04:48:00Z；并列备查：MJD_TRIGGER=58082.176（DiffImg 实时触发历元，晚于 SMP 首探 5.98 d——SMP 深度更大、可先于实时触发，备查不判定）、MJD_DETECT_LAST=58097.15；T0_offset 不适用（无 >1 s 触发时刻调整证据）。坐标口径：info ra/dec=Wiseman+2020 表 1 宿主星系坐标（表题「Host galaxy information」；VoR 机读表 J/MNRAS/498/2575 table1 行 2026-11-20 实核一致 41.40953 −1.33278）；瞬变体自身位置为 DES-SN5YR HEAD RA/DEC=41.408218 −1.333436（SNSEP=5.26″，备查）；表 1 未给定位误差 → pos_error 留空、置信水平来源未标注。红移：z=0.23737（spec）为 OzDES 宿主光谱红移（Wiseman+2020 §4：49 宿主光谱红移出自 OzDES GRC v.2020_01_04 内部版，本源在其 49 宿主表 2 中），VoR 机读表行已核一致；DES-SN5YR HEAD REDSHIFT_HELIO=0.23737 同值互证、REDSHIFT_FINAL=0.236469 为 CMB 框架改值（备查）；同族 DES 源 redshift_type 均记 spec（宿主谱性质是否迁 spec-host 见 PR 待决事项）。原文口径并列备查（Wiseman+2020 表 2，arXiv:2005.08653v1 TeX 实读）：宿主 log(M*/M☉)=11.20(+0.22/−0.14)、log SFR=0.28(+0.70/−1.91) M☉/yr、log sSFR=−10.92(+0.48/−1.77) yr⁻¹、12+log(O/H) Best=8.75(+0.52/−0.47)、D16=8.55(+0.42/−0.48)、PP04 N2=8.95(+0.47/−0.45)；DES-SN5YR HEAD HOSTGAL_LOGMASS=10.917±0.082（不同 SED 管线，备查）。Ho+2023 表 3（r 波段；脚注 a 已做银消改正/假设宿主消光为零、脚注 b rest frame）：Mmax=−17.98±0.07、t_1/2,rise<3.27 d、t_1/2,fade=5.87±1.72 d（转引 Pursiainen 提供的 DES 光变；仅 comment 备查不入 lc；IoP VoR Radware 302 → unverified.tsv）。分类依据：Wiseman+2020 RET 选择（g−r 色 + r 波段上升时标 cut）+ Ho+2023 文献 FBOT 样本（class Unknown 无光谱分类）→ tag=[fbot]、sub_tag 留空（tags.json 无 RET/FBOT 细分受控词）。测光检索（2026-11-20）：仓内 gcn/archive 46198 篇全文 grep「S2fee」0 命中；external/ 全部快照（rssgrbag、grbsn_webtool 等）grep 0 命中。外部入口：GCN 站检索页为 JS 应用（curl 仅回 HTML 壳无法机检，以仓内全量快照 grep 为准，0 命中）；SciX（api.scixplorer.org token 实查）q=\"DES17S2fee\" 元数据 0 命中（body: 全文字段亦 0）；OpenAlex 全文检索命中 2 篇——Wiseman+2020（宿主研究、无瞬变体测光，已核）与 Pursiainen 2020 博士论文（eprints.soton.ac.uk/446970 OA PDF 返回 Anubis 401 拦截，与同族先例 DES14S2pli #1030、DES15E2nqh #1077 同拦截，未能通读，已登记 unverified.tsv）；TNS 404。结论：本源测光数值从未以期刊数值表形式发表，唯一机读出处是 Sánchez+2024 DES-SN5YR 官方释出（github.com/des-science/DES-SN5YR 0_DATA/DES-SN5YR_DES，Zenodo doi:10.5281/zenodo.12720778；2026-11-20 实下载 HEAD+PHOT FITS 逐行核对）：SMP 光变 64 历元（g/r/i/z 各 16 历元，MJD 58039.200–58134.096，FLUXCAL/FLUXCALERR 为 ZP=27.5 fluxcal counts 口径，BAND 列 g/r/i/z），峰前 24 行（6 历元组×4 波段，MJD 58039.200–58071.185）流量与 0 相容（|FLUXCAL|≤10.74 且 <1.95σ，如 r 58071.180=2.61±4.77），首个探测历元 MJD 58076.2 四波段 70–116 fluxcal（PHOTFLAG=12288）——属「有明确时间锚点的探测/非探测」，但 band 为 DES g/r/i/z 而 filters.json 无 des-g/des-r/des-i/des-z 键（库内 g/r/i/z 为 SLOAN/SDSS 口径），按 band 两车道规则本审不入库、不建 lc，新键申请见 PR 待决事项，键落地后由后续审核补入。未核实项：Wiseman+2020/Ho+2023/Sánchez+2024 出版社 VoR 正文（OUP Cloudflare 403 / IoP Radware 302，curl 实测）——W20 表 1 已改由 VoR 机读表（J/MNRAS/498/2575，CDS 2026-08-03 收录）逐值复核、Ho+2023 表 3 行与 Sánchez+2024 列定义取 arXiv TeX 实读；Pursiainen 2020 博士论文 Anubis 拦截未通读；SIMBAD 通道未通——均已登记 audit/unverified.tsv。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "scix_wiseman2020_20261104"
+    "ingest_source": "scix_wiseman2020_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
@@ -35,7 +40,19 @@
       "source": "bot",
       "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
       "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
+    },
+    {
+      "name": "Pursiainen+2018",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Rapidly evolving transients in the Dark Energy Survey",
+      "url": "https://doi.org/10.1093/mnras/sty2309"
+    },
+    {
+      "name": "Sanchez+2024",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The Dark Energy Survey Supernova Program: Light Curves and 5 Yr Data Release",
+      "url": "https://doi.org/10.3847/1538-4357/ad739a"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {"redshift": 0.23737, "redshift_type": "spec", "comment": "确定宿主：Wiseman+2020 表 1（OzDES 宿主光谱红移 z=0.23737，曝光 2.00 h）与 DES-SN5YR HEAD SNID=1908467 行（HOSTGAL_RA/DEC=41.409526/-1.332784、REDSHIFT_HELIO=0.23737、HOSTGAL_MAG_r=18.166）双重互证；瞬变体偏移 SNSEP=5.26″。家族先例 DES14S2pli/DES15E2nqh/DES16X3cxn 均建档，本源按同口径补建（复查建议3）。宿主星系坐标未单独取值（info ra/dec 即 Wiseman 表 1 宿主坐标），测光无。", "source": "Wiseman+2020 表 1（2020MNRAS.498.2575W）+ DES-SN5YR HEAD（Sánchez+2024，DOI 10.3847/1538-4357/ad739a）"}
 }
