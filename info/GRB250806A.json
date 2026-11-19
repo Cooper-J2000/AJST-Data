@@ -1,28 +1,49 @@
 {
   "transient_id": "GRB250806A",
-  "alias": [],
-  "ra": 348.40875,
-  "dec": 1.36639,
+  "alias": [
+    "GRB 250806A",
+    "sb25080601"
+  ],
+  "ra": 348.4298,
+  "dec": 1.355,
   "T0": "2025-08-06T07:58:14Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 41243（SVOM/ECLAIRs 官方触发通告）：「At 2025-08-06T07:58:14 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 250806A (SVOM burst-id sb25080601)」；GCN 41287（ECLAIRs 精化分析）复述 T0=2025-08-06T07:58:14 互证。GCN 41243 的 IMT 图像窗（20.48 s，起于 2025-08-06T07:58:04=Tb）为窗口起点、非触发时刻，不用；GCN 41260 把 MXT 观测起点 2025-08-06T08:00:11 误称「T0」，属原文笔误，不采用。原库 T0 与触发仪器官方值逐字一致，未改动。",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
-  "redshift": 0.51,
-  "tag": [],
+  "Trigger_Instrument": "SVOM/ECLAIRs",
+  "redshift": 0.367,
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.7,
   "pos_ref": "GCN 41249",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 41499（Sevilla et al.：Gemini North/GMOS-N 宿主候选光谱 Hβ、[O II]、[O III] 线，z=0.367）；GCN 41550（de Ugarte Postigo et al.，HiPERCAM/GTC）沿用同值",
+  "comment": "审核（fsy@zcode，2026-11-20）。【定位】ra/dec 改判为 Swift/XRT 精化位 RA=348.4298, Dec=+1.3550（误差 3.7″，radius, 90% C.L.，GCN 41249；UKSSDC xrt_products/00019983）；原库坐标 348.40875,+1.36639 实为 SVOM/MXT X-band 精化位（23h13m38.10s,+01d21m59.0s，90% C.L. 66″，GCN 41288）误配上 GCN 41249 的 3.7″ 误差，已拆开改判。备查：ECLAIRs 在轨位 348.4237,+1.3791（90% C.L. 7.62′，含 2′ 系统差，GCN 41243）；MXT 在轨位 348.4214,+1.3820（85″，GCN 41243）；MXT X-band 精化位在 XRT 位稍外但光变分析确认为同一源（GCN 41288）；EP-FXT 位 348.4308,+1.3556（10″，90%，GCN 41260）。【红移】spec z=0.367（GCN 41499）；原库 0.51 系宿主候选星系（Legacy Survey g=22.64, r=21.75, i=21.45, z=21.15）的 photo-z 0.51±0.09（GCN 41279），另 Mondy AZT-33IK photo-z ~0.3（GCN 41285）备查；宿主关联未定论（GCN 41550 明示 chance association 可能），host_galaxy 不建立。【分类】SVOM/ECLAIRs 精化分析判为 X-Ray Flash（4-120 keV 时均谱 PL 指数 -2.07±0.12，68% C.L.，T0±10 s 流量 1.2e-8 erg/cm^2/s，GCN 41287），按 tags.json 受控词表记 sub_tag=XRF；VHF 光变单峰、持续约 20 s（GCN 41243、41287 确认）；Eiso~8e49 erg（4-120 keV，按 z=0.367，GCN 41499 估计）。【alias】GRB 250806A（GCN 主题行用名）、sb25080601（GCN 41243 原文用名 \"SVOM burst-id sb25080601\"）。【Swift 观测】XRT trigger 00019983，PC 模式 343-1400 s，衰减指数 1.9±0.4，NH=1.7(+1.6,-1.2)e21 cm^-2（GCN 41249）；UVOT 于 T0+354 s 起 U 波段探测到余辉（GCN 41264）。【测光检索（2026-11-20，fsy@zcode）】GCN 事件页 16 篇全文逐篇核对（41243/41244/41245/41247/41249/41250/41251/41253/41260/41264/41279/41285/41287/41288/41499/41550；其中 10 篇含光学测光或上限，4 篇仅 X 射线/谱分析，41499 为宿主光谱）；仓内 external/ 快照 swift_bat、swift_grb、uvot_grb(626 源)、swift_xrt_live、heasarc_grbcat、fermi_gbm、fermi_lat、rssgrbag、grbsn_webtool 均 0 命中，mpe_greiner 与 swiftgrbba 各 1 条目录级记录（无光变表）；arXiv API（含 sb25080601 变体）与 OpenAlex 0 命中，Crossref 无独立研究论文；WebSearch 检出 5 篇 RAA 2026 SVOM 任务论文并做全文 mention-check（Li+2026 RAA 26,104025 / Wu+2026 26,104027 / Qiu+2026 26,104022 / Bai+2026 26,104005 / Cai+2026 26,104026，DOI 10.1088/1674-4527/ae75cd、ae75c8、ae75d1、ae75ba、ae75d0）：仅 Li+2026 表 3 转引 VT_R>22.9（0.105 h，与 GCN 41250 一致），其余 4 篇为仪器/响应示例，均无新测光。结论：新增 11 行光学测光/上限（KAIT、SVOM/VT 精化×4、UVOT u 探测与 white 上限、GRANDMA/Kilonova-Catcher×3、AZT-33IK 上限）；原 GCN 41285 行 R=21.27±0.22 实为宿主候选星系测光（非余辉探测），置 discard=y。同日 EP/WXT 独立事件 EP250806a（EP-WXT 触发 2025-08-06T09:18:20 UTC，RA=335.100, Dec=-26.886，GCN 41246；SVOM/VT ToO 探测 VT_R=22.6±0.2 于 8.19 h，GCN 41254）与本暴无关，未混入。X 射线数据（XRT/MXT/EP-FXT）不在本库 lc，无 X 射线行需随 T0 对齐。",
+  "sub_tag": [
+    "XRF"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
     "src": "gcn_llm_extract",
     "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
     "t0_basis": "meta_trigger",
-    "bot_created": true
+    "bot_created": true,
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-20"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd",
+      "title": "SVOM/VT: Overview of Data Processing and GRB Identifications with X-band Data",
+      "bibtex": "@article{Li2026RAA,\n  author = {Li, Hua-Li and Qiu, Yu-Lei and Xin, Li-Ping and others},\n  title = {SVOM/VT: Overview of Data Processing and GRB Identifications with X-band Data},\n  journal = {Research in Astronomy and Astrophysics},\n  year = {2026},\n  volume = {26},\n  pages = {104025},\n  doi = {10.1088/1674-4527/ae75cd}\n}",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
