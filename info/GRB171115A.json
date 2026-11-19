@@ -1,28 +1,46 @@
 {
   "transient_id": "GRB171115A",
-  "alias": [],
-  "ra": 278.3885,
-  "dec": 9.125,
-  "T0": "2017-11-16T08:54:06Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 171115A",
+    "BAT 790053"
+  ],
+  "ra": 278.3882,
+  "dec": 9.1251,
+  "T0": "2017-11-15T18:51:20.858340Z",
+  "T0_ref": "GCN 22124（Swift 团队 Tohuvavohu et al.）：「At 18:51:20 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 171115A (trigger=790053)」——原文仅整秒；亚秒 0.858340 取自触发仪器官方目录仓内快照 external/swift_bat（summary_general.txt Trig_time_UTC=2017-11-15T18:51:20.858340、normalized.jsonl trigger_time 同值；Trig_ID=790053 与 GCN trigger=790053 同源互证；MET 列 532464700.864 按审核口径弃用）。§3.2/§3.8：GCN① 整秒与触发仪器目录② 亚秒一致时取亚秒。external/swiftgrbba 快照 trigger_time=2017-11-15T18:51:20.000Z（整秒）备查互证。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.1,
   "pos_ref": "GCN 22125",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核（fsy 2026-11-20）。（1）T0 改正：bot 原值 2017-11-16T08:54:06Z 系 GCN 22128（MITSuME Akeno）「The observation started on 2017-11-16 08:54:06 UT」观测开始时刻误锚为触发时刻（Issue #84 形态）；官方触发值 2017-11-15T18:51:20.858340Z（依据见 T0_ref）。bot 原 extra_data：t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」与事实相反（原值留档本 comment）。原库 lc 6 行 time 系按误锚 T0 的差值（MID-UT−观测开始）已按新 T0 重算；mjd 为 GCN 表 MID-UT 绝对时刻、不变；全表 mjd=T0+time 自洽（Decimal 校验：MITSuME 行差 <1 µs、RATIR 行差 <0.1 µs）。（2）位置改判：bot 混串——坐标 278.3885/9.1250 来自 GCN 22124 XRT refined、而 pos_error=2.1″+pos_ref=GCN 22125 为增强位。现按 pos_ref 对齐 GCN 22125 增强位原文「RA, Dec = 278.38820, +9.12510」「an uncertainty of 2.1 arcsec (radius, 90% confidence)」：ra=278.3882、dec=9.1251、pos_error=2.1″、pos_error_confidence=90。并列备查：GCN 22124 XRT refined 278.3885/9.1250 ±2.3″ 90%；BAT onboard 278.413/+9.128 3′ 90%（GCN 22124）；BAT refined（Lien 目录 external/swift_bat）278.3918/+9.117711 1.529514′。（3）sub_tag=lgrb：按目录 t90 判——external/swift_bat 快照 t90=36.772±5.180241 s（15-350 keV）；GCN 22127（BAT 精化）T90=38.2±3.4 s（15-350 keV）；external/swiftgrbba t90=38.2 s（15-150 keV）；三值一致、数十秒、无冲突。（4）alias：「GRB 171115A」为 Swift 官方目录原文用名（external/swift_bat normalized.jsonl name 字段）；「BAT 790053」为同表 name_alt（GCN 22124 原文 trigger=790053）——§3.10 证据串豁免。（5）检索留证（§3.3）：检索日期 2026-11-20；入口与篇数——GCN 侧经 MPE 汇总页（mpe.mpg.de/~jcg/grb171115A.html）与 external/swiftgrbba ref 链清点共 7 篇通告（22124 Swift 检测/22125 增强 XRT 位/22126 XRT 精化/22127 BAT 精化/22128 MITSuME Akeno 上限/22129 MITSuME Okayama 上限/22130 RATIR 上限）；仓内 gcn/archive 目录不存在（origin/main 顶层无 gcn/）、external/rssgrbag 0 行、external/grbsn_webtool 0 事件；无 ADS token 走回退链（manifest 冻结于 _conv/lit-GRB171115A/manifest.jsonl）：arXiv API 4 变体 0 命中、OpenAlex search+fulltext 5 命中且全为 GCN 条目、Crossref 无专文、INSPIRE 0、SIMBAD unavailable@2026-11-20、WebSearch 两轮 → 唯一研究文献 Shrestha+2022（MNRAS 516,1584，articles 登记）mention-check：VoR（OUP HTML）表 1 行「171115A 278.38 9.12 OT=NO T−T0=211 s IO/RATCAM=YES LT GCN=–」无任何量值（arXiv:2208.01729 文本层交叉一致）→ 无已发表测光可补。本次补：RATIR 6 行 3σ 上限（GCN 22130、时间锚明确、窗口中点口径）；MITSuME 6 行按新 T0 重算。红移无报道；宿主星系未建立。（6）X 射线行：本源 lc 无能量串行、无增删。（7）Shrestha+2022 表 1 记 LT（RINGO3+IO:O）于 T−T0=211 s 观测、无对应体——原文无数值上限、不入库仅备查。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
+  "pos_error_confidence": "90",
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-20"
+    },
+    "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
-    "t0_basis": "meta_trigger",
-    "bot_created": true
+    "t0_basis": "swift_bat_trigger",
+    "t0_note": "T0=BAT 触发时刻 2017-11-15T18:51:20.858340Z（GCN 22124 整秒 + external/swift_bat 快照 Trig_time_UTC 亚秒）。bot 原值 2017-11-16T08:54:06Z 系 GCN 22128 MITSuME 观测开始时刻误锚；原 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」已失真，原值留档 info comment"
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Shrestha+2022",
+      "url": "https://doi.org/10.1093/mnras/stac2211"
+    }
+  ],
   "host_galaxy": null
 }
