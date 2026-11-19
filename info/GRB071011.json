@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB071011",
-  "alias": [],
-  "ra": 8.395,
-  "dec": 61.132,
-  "T0": "2007-10-11T12:40:13Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 071011",
+    "BAT 293924"
+  ],
+  "ra": 8.3878531109,
+  "dec": 61.1336694944,
+  "T0": "2007-10-11T12:40:13.844040Z",
+  "T0_ref": "GCN 6882(Swift/BAT 触发通告,原文 At 12:40:13 UT ... trigger=293924,整秒)+ Swift/BAT 官方目录(batgrbcat summary_general.txt,本库 external/swift_bat 快照)Trig_time_UTC=2007-10-11T12:40:13.844040(MET 213799216.128,trigger 293924);整秒一致、仅亚秒分歧,按触发仪器取亚秒(§3.8①②);互证:external/swift_grb 快照同值 12:40:13.844040、external/swiftgrbba 快照 12:40:13.000、external/uvot_grb 快照 TRIG_UT=2007-284-12:40:13、UKSSDC Burst Analyser 页(trigger 00293924,2026-11-20 取查,仅相对时轴无绝对时刻)",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,15 +15,42 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 4.4,
-  "pos_ref": "GCN 6891",
+  "pos_error": 3.9,
+  "pos_ref": "Swift-XRT GRB Catalogue(Evans+2009 在线版;external/swift_xrt_live 快照 2026-07-21):RA=8.3878531109,Dec=61.1336694944,Err90=3.9″(90% 置信)",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核(wa1kmoon@zcode,2026-11-20)。(1)T0:原值 2007-10-11T12:40:13Z(整秒、无 T0_ref)补亚秒——触发仪器 Swift/BAT 官方目录(batgrbcat,external/swift_bat 快照)Trig_time_UTC=12:40:13.844040(详见 T0_ref);整表 time/mjd 已随之统一(X 射线行保 time、重算 mjd=T0+time;光学/射电行 time=UT 墙钟锚−T0_new 重算)。(2)定位改判:原 ra/dec=8.395/61.132 是 BAT ground 精化位(GCN 6889,1.3′=90% 含系统误差),却配 pos_error=4.4″/pos_ref=GCN 6891(XRT 位),错配;链:BAT on-board(GCN 6882,8.400/+61.072,3′ 90%)→ BAT refined(GCN 6889,8.395/61.132,1.3′ 90%)→ XRT(GCN 6891,8.3887/61.1325,4.4″ 90%,并注明 BAT refined 圈不含 GCN 6883 候选体)→ XRT refined(GCN 6902,8.38816/61.13327,4.1″ 90%,原文注明近 FoV 边缘系统差可能低估)→ 现取 UKSSDC Swift-XRT Catalogue 在线版(external/swift_xrt_live 快照 2026-07-21,Evans+2009 管线,晚于并覆盖 6902)Err90=3.9″;pos_error_confidence=90 取自目录 Err90 列(非惯例推定);GCN 6883 的 Keck 候选体(00:33:47.412/+61:03:34.09)经 GCN 6891(BAT 圈排除)与 GCN 6898(13:01–14:22 UT 变化<0.1 mag,非余辉)否证,其位置不入库。(3)alias:『GRB 071011』(GCN 6882 等本源系列通告原文用名)、『BAT 293924』(Swift/BAT trigger 293924;external/swift_bat 快照 name_alt=BAT 293924)。(4)sub_tag=lgrb:按目录 t90 判 lgrb——t90=65.88±15.48 s(15-350 keV,Swift/BAT GRB Catalog,external/swift_bat 快照);并列备查:GCN 6889 原文 T90=61±1 s(15-350 keV)、external/swiftgrbba 快照 61 s(15-150 keV)、UKSSDC Burst Analyser 页 T90=72.2(-1.1 至 71.1 s,2026-11-20 取查),均远大于 2 s、来源间无冲突。(5)redshift=null 留证:本源 17 篇 GCN(6882/6883/6886/6887/6889/6891/6894/6895/6896/6898/6899/6900/6902/6904/6905/6914/6922,仓内全文逐篇读毕)无一给红移;external/swift_xrt_live 快照 Redshift 列=N/A;external/swift_bat/summary_GRBlist 实际无红移列表文件(README 称有 GRBlist_redshift_BAT.txt,目录中不存在);文献检索(见末段)未见红移测定;host_galaxy=null(无确定宿主,R~24.5 极限下无文献证认宿主)。(6)lc 修正 48→47 行:删 GCN 6886 行(R~22,被其更正通告 GCN 6900 表值 R=20.3±0.2 取代,循 GRB051021A 已审先例「取更正值、不录旧值」,链条在 6900 行 comment);TNT 5 行 band w→G(原 w 是 filters.json Pan-STARRS w 键,与 TNT White 白光误配;2026-10-12 无滤光片/白光→G 口径);窗口/coadd 行 time 改中点、time_err=半跨(§3.2/§3.8);VLA 行 4.03 UT 按十进制小时判读(=04:01:48 UT,循 GRB060707A/GRB070923 已审先例)并将 mJy 换算形改回原文 µJy;X 射线行(10keV,22 行)除 mjd:=T0+time 重算外一律未动(§3.3 例外,本行 time 本就是 UKSSDC 新 T0 口径)。(7)测光检索留证(2026-11-20):仓内 gcn/archive grep『071011』命中 18 篇,17 篇属本源(6881 为前日 GRB 071010,排除),全文逐篇读毕——可用测光已全部入库(GCN 6887/6896/6895/6904/6922/6900/6898/6899/6905/6914);GCN 6894(MARGE)未给数值极限、GCN 6883(候选体)被 6891/6898 否证、6882/6889/6891/6902 为定位/瞬时参数,均无可入库行;external/rssgrbag(Chandra & Frail 2012)无本源记录、external/grbsn_webtool 无本源;外部检索:OpenAlex『GRB 071011』15 条+『GRB071011』12 条(全部为 GCN 通告;OpenAlex 把 GCN 7007 标题错标为 071011,实为 GRB 071021)、arXiv API 4 组查询(all:『GRB 071011』/all:『GRB071011』/ti:『071011』/abs 组合)0 命中、Crossref bibliographic 3779 条模糊命中无本源专属文献;ADS/SciX 无 token(API 401)→ 通道记 search-limited(audit/unverified.tsv),不据此下『无文献』结论;补入行数:0(检索所得测光已全部在库)。(8)articles 登记 Evans+2007/2009(XRT 光变库/自动分析,lc X 射线行引用)与 Lien+2016(BAT 第三版目录,swift_bat 快照基础);GCN 通告不入 articles。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-20"
+    }
+  },
+  "articles": [
+    {
+      "name": "Evans+2007",
+      "url": "https://doi.org/10.1051/0004-6361:20077530",
+      "title": "An online repository of Swift/XRT light curves",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Evans+2009",
+      "url": "https://doi.org/10.1111/j.1365-2966.2009.14913.x",
+      "title": "Methods and results of an automatic analysis of a complete sample of Swift-XRT observations of GRBs",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Lien+2016",
+      "url": "https://doi.org/10.3847/0004-637X/829/1/7",
+      "title": "The Third Swift Burst Alert Telescope Gamma-Ray Burst Catalog",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
