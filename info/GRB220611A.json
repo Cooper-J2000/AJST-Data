@@ -1,29 +1,46 @@
 {
   "transient_id": "GRB220611A",
-  "alias": [],
+  "alias": [
+    "GRB 220611A"
+  ],
   "ra": 66.51418,
   "dec": -37.25899,
-  "T0": "2022-06-11T18:01:51Z",
-  "T0_ref": null,
+  "T0": "2022-06-11T18:01:51.178200Z",
+  "T0_ref": "GCN 32191（BAT 触发 18:01:51 UT，trigger=1110090）；亚秒取 Swift/BAT 官方目录 batgrbcat summary_general 的 Trig_time_UTC=2022-06-11T18:01:51.178200Z（external/swift_bat 快照，取数 2026-07-21）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": 0.049,
-  "tag": [],
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 2.3608,
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.9,
   "pos_ref": "GCN 32191",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 32595",
+  "comment": "2026-11-21 审核（wa1kmoon@zcode）。身份：Swift/BAT 于 2022-06-11 18:01:51 UT 触发并定位 GRB 220611A（trigger=1110090，GCN 32191）；BAT refined RA,Dec=66.505,−37.265（2.1′，sys+stat，90% containment，GCN 32197）；XRT enhanced RA,Dec=66.51418,−37.25899（1.9″ radius，90% containment，GCN 32191，本库 pos 取此值），GCN 32192 另给 astrometric corrected 66.51464,−37.26019（2.4″，90%）备查；Chandra/ACIS-S 亚角秒定位 04:26:03.57 −37:15:35.1（~0.5″，来源未标注置信水平，GCN 32262）备查；Gemini-South 探测源 04:26:03.56 −37:15:34.97（0.5″，GCN 32203）与 XRT/Chandra 一致。库内无同触发/邻日重复源。T0：整数秒 18:01:51 与 GCN 32191 一致；亚秒按触发仪器目录值 .1782；swiftgrbba 快照 trigger_time=2022-06-11T18:01:51.000Z 仅整秒、heasarc_grbcat/uvot_grb 快照无本源；较原库 T0（2022-06-11T18:01:51Z）+0.1782 s，全表 17 行 mjd 已按新 T0 程序化重算（无 X 射线行）。BAT 目录 summary_burst_durations T100_start=+0.52 s（T100=0.52–61.52 s）无前移，不设 T0_offset；GCN 32197 提到 ~T−90 至 ~T−85 s 或有前兆（~5σ in image），目录 T100 未含，仅记于此。t90=57.00±12.37 s（15–350 keV，GCN 32197；BAT 目录同值）→ 按目录 t90 判 lgrb；fluence=6.7±1.3×10⁻⁷ erg/cm²（15–150 keV，GCN 32197）。红移沿革：原库 z=0.049 来自 GCN 32191 视线向星系 MCG-06-10-007（S0，B=16.3，z~0.049）；GCN 32595 于 2022-09-23（触发后 104 d）以 VLT/X-shooter 对余辉位置的 Legacy Survey 暗源（GCN 32208 首次注意到）测得 Lyα、[O II] 3729、[O III] 4959/5007 共同红移 z=2.3608±0.0002，判明 GRB 与 MCG-06-10-007 无物理关联（视线偶然重叠）→ redshift 改 2.3608（spec）；VLT/MUSE 2022-08-24 光谱无特征线、与该红移一致。GCN 32262（Chandra，2022-06-23.92 UT 起 15 ks，~30 counts）为 X 射线数据，按 §7 暂不入库。测光检索（2026-11-21）：仓内 gcn/archive 全文命中 13 篇（32191/32192/32194/32195/32197/32201/32203/32208/32217/32222/32228/32262/32595，其中含本源测光或上限者 7 篇）；external/rssgrbag（140 行射电）与 external/grbsn_webtool 无本源记录；swift_bat/swiftgrbba/mpe_greiner/uvot_grb/heasarc_grbcat 快照仅目录级参数、无光变表；外部入口：GCN 站在线复核 GCN 32195/32201 与仓内快照逐值一致；arXiv API 检索 220611A 与 GRB 220611A 共 0 篇；OpenAlex 全文检索命中 6 篇（Yang+2026 arXiv:2609.20787、Hasan&Azzam+2024 IJAA 等），均为样本/统计类、未给出本源新测光——Yang+2026 Table A1 的 SN 1998bw 相对限值系按 z=0.049（已被 GCN 32595 否定）自 GCN 测光推算，未采用；Crossref 题名检索无本源专篇；CDS（SIMBAD/VizieR）自本网络不可达（Page unavailable — CDS）→ 结论：无本源专篇论文，已补 MASTER-OAFA 上限 3 行与 UVOT coadd 上限 2 行，原 12 行逐值核对修订。原文笔误：GCN 32222 初版误写 GRB 221106A，编辑注更正为 GRB 220611A（不列为 alias）。pos_error_confidence=90 系原文明确标注（GCN 32191：1.9″ radius，90% containment）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "T0=Swift/BAT 触发时刻（trigger 1110090），亚秒取 batgrbcat Trig_time_UTC=2022-06-11T18:01:51.178200Z；原 t0_basis=meta_trigger、原 t0_note：t0 为 meta trigger-time（真实触发时刻）、原 T0=2022-06-11T18:01:51Z",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 2.3608,
+    "redshift_err": 0.0002,
+    "redshift_type": "spec",
+    "comment": "宿主为余辉位置上的 Legacy Survey 暗源（GCN 32208 首次注意到、GCN 32262 确认余辉与该源重合）；VLT/X-shooter 2022-09-23 测得 Lyα/[O II]/[O III] 发射线 z=2.3608±0.0002、判为 star-forming galaxy（GCN 32595）；与视线向 MCG-06-10-007（z≈0.049）无物理关联。宿主中心坐标原文未单独给出，故不填 ra/dec",
+    "source": "GCN 32595（https://gcn.nasa.gov/circulars/32595）"
+  }
 }
