@@ -1,29 +1,103 @@
 {
   "transient_id": "GRB200907B",
-  "alias": [],
-  "ra": 89.02837,
-  "dec": 6.90752,
-  "T0": "2020-09-07T18:51:10Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 995004",
+    "GRB 200907BS"
+  ],
+  "ra": 89.02906,
+  "dec": 6.90625,
+  "T0": "2020-09-07T18:51:11.173040Z",
+  "T0_ref": "GCN 28384（Swift/BAT 触发通告：At 18:51:11 UT the Swift BAT triggered and located GRB 200907B，trigger=995004）；亚秒值取触发仪器官方目录快照 external/swift_bat（batgrbcat summary_general_info Trig_time_UTC=2020-09-07T18:51:11.173040，§3.8 亚秒以触发仪器为准）；swiftgrbba 快照 18:51:11.000Z 同秒、精度粗备查",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
-  "redshift": null,
-  "tag": [],
+  "Trigger_Instrument": "Swift/BAT",
+  "redshift": 0.56,
+  "redshift_type": "phot",
+  "redshift_ref": "Fong et al. 2022（BRIGHT I，ApJ 940，56；arXiv:2206.01763）表 1 宿主光测红移（Gold 级宿主关联，VoR 已核）",
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.8,
   "pos_ref": "GCN 28391",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "审核 wa1kmoon@zcode 2026-11-21。身份：Swift/BAT 触发短暴（trigger=995004，GCN 28384：At 18:51:11 UT the Swift BAT triggered and located GRB 200907B）；XRT 定位（GCN 28385 enhanced 2.2″、GCN 28391 refined 1.8″，均 90%）在 05:56:06.9 +06:54:23。同日 A/B 甄别：GRB 200907A 为 AGILE/MCAL 触发（T0=14:24:24.73 UT、IPN 盒 RA≈141.5° Dec≈−1.4°、无 Swift 探测，见 GRB200907A 审核记录），与本源触发号/坐标/仪器均不符；GCN 28387（GROWTH-India）初稿把本源一组观测误记在 200907A 名下（其文内定位区即本源 GCN 28385 的 2.2″ XRT 区、起测时刻为本源 T0+2.13 h 与其自称 ~2.1 hrs after Swift-BAT detection 相符、而与 200907A 的 T0 差 6.6 h），GCN 28388 更正归属本源——触发时刻+坐标双历元甄别成立。T0：bot 原值 2020-09-07T18:51:10Z（t0_basis=meta_trigger，原注「t0 为 meta trigger-time（真实触发时刻）」）与触发整数秒 18:51:11 不符，按 §3.8 改为触发仪器官方目录亚秒值 2020-09-07T18:51:11.173040Z（GCN 28384 整数秒一致；swiftgrbba 快照 18:51:11.000Z 同秒精度粗；heasarc_grbcat 无 2020 年 Swift 行）；差 1.173 s 系 T0 取值更正而非设备偏移，T0_offset 不设（BAT T100_start=−0.64 s，亚秒）；全表 mjd 已按新 T0 重算（本源 lc 无 X 射线行）。定位：bot 原值 ra/dec=89.02837/6.90752 系 GCN 28384 船上 XRT 位（3.8″，90%）而 pos_error/pos_ref 已是 GCN 28391（1.8″）——错配混串，按 §3.9 XRT enhanced 优先统一为 GCN 28391 astrometrically corrected 位 89.02906/+6.90625；定位链：28384 船上 3.8″ → 28385 enhanced 2.2″ → 28391 refined 1.8″（均 90%，原文显式标注 → pos_error_confidence=90）。alias：新增「BAT 995004」（Swift/BAT 官方目录快照 external/swift_bat name_alt 原文用名，触发号亦见 GCN 28384）、「GRB 200907BS」（MPE Greiner 目录快照 external/mpe_greiner name_alt 原文用名，S=短暴标记）。分类：sub_tag=sgrb——t90=0.83±0.13 s（15-350 keV，GCN 28398 BAT 精化分析）按目录 t90 判；Fong+2022（BRIGHT I）表 T90=0.83 s/SGRB、Curtin+2024 Sample 4 同判；AstroSat CZTI 独立测得 T90=1.60±0.01 s（40-200 keV，GCN 28395）并列备查。红移：z=0.56（phot）——BRIGHT I Gold 级宿主关联的宿主光测红移，区间 0.56(+1.39/−0.32)（不对称，redshift 字段取中心值、区间见此）；P_cc=9×10^−3、余辉（XRT 位）-宿主偏移 0.37±1.19″。host_galaxy：按 BRIGHT I 表 1 建立（宿主 05h56m06.951s +06°54′22.637″，i=23.936±0.108 AB；4 波段宿主测光 i/z/J/K 入 host_galaxy.photometry，i 值 VoR 表 1 已核、z/J/K 三行 VoR 机读表 403 取自 arXiv v1 表 4 并登记 unverified.tsv）；Chastain+2024 表 9 该宿主射电 3σ 上限 F_peak<22 μJy（12-16 h 深合成图）、SFR<18 M⊙/yr，属宿主非瞬变、不入 lc。lc：bot 原有 11 行逐行核对（GCN 28384/28400/28393 均实读原文）——GCN 28400 的 7 行 bot 记 time=T_start+50 s 与原文起点/中点均不符（导入残差），统一改原文窗口中点口径（§3.8）并补 time_err=半跨；UVOT 行补 mag_system=Vega（GCN 28400 原文 UVOT photometric system（Breeveld+2011））；MITSuME 3 行 time 按 MID-UT 重算 1716.82696 s、补 time_err=1050 s（原文 T0+[sec]=65 列对应序列起点 18:52:16 UT、MID-UT 19:19:48 才是堆叠中点，二者自洽非矛盾）；11 行数值与原文一致、无 discard 变更、无 X 射线行。新增 21 行：MASTER 3 行（GCN 28392 显式 Tmid-T0 锚）、GROWTH-India 1 行（GCN 28388 勘误链、线索卡采纳）、UVOT white_FC/u_FC 2 行（GCN 28400 表 bot 漏抽）、CHIME/FRB 1 行（Curtin+2024 表 3：−4.07 h/<8 Jy，transit 几何独立核验通过）、MeerKAT 5 行+ATCA 8 行+e-MERLIN 1 行（Chastain+2024 表 1/2/3，上限=3×rms 按论文图注自述口径；MeerKAT 前 4 历元观测起止取先发日志 Chastain+2023 表 1 绝对时刻；Ψ 附表 6/7/8 另列上限值与 3×rms 不一致且推导未说明，不采用仅备查）。测光检索（2026-11-21）：仓内 gcn/archive 快照 45890 篇（覆盖至 GCN 46010）按源名命中 10 篇（28384/28385/28388/28391/28392/28393/28394/28395/28398/28400）＋按触发号 995004 复核同集（45346 为数字巧合、CALET 260805C 事件），全部逐篇打开；external/rssgrbag 0 行、grbsn_webtool 无此事件、konus_wind/swift_xrt_live/uvot_grb 无本暴行、fermi_gbm 无本暴（同日 22:57 bn200907957 为另一事件 GRB 200907C）；外部：OpenAlex「GRB 200907B」13 命中（8 篇即上述 GCN；研究文献 4 篇——Chastain+2024（入库 14 行）、Fong+2022（宿主/红移）、Crab 硬X 论文 10.3847/1538-4357/adb70e（仅以本暴时段做 Crab 分析、无本暴测光）、PASJ 10.1093/pasj/psae053（Swift/XRT X 射线样本、不属审核范围）），「GRB200907B」2 命中（Chastain+2023（观测日志入库锚）、post-merger GW 理论 10.1093/mnras/stad3566（无测光））＋UNLV 2026 学位论文（无测光）；arXiv API all:「GRB 200907B」0 命中；ADS/SciX 无 token（API 401）→ audit/unverified.tsv 已登记 source_id=*、status=search-limited，不据此下无文献结论；GCN 官方站单篇核对未启用（archive 覆盖至 46010 已含全部命中）。VoR 通道：Curtin+2024 为 IOP 开放获取 VoR、HTML 全文实读；Fong+2022 IOP VoR HTML 实读（表 1/3/5 本源行已核、机读表 4 ASCII 403）；Chastain+2024/Chastain+2023 OUP 整站 403 反爬 → arXiv v1 官方 HTML＋UvA-DARE 机构库录用稿 PDF 双源逐值核对一致（均已在 unverified.tsv 登记 status=substituted）。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "Swift/BAT 触发时刻：GCN 28384 整数秒 18:51:11 UT＋官方目录快照 external/swift_bat 亚秒 2020-09-07T18:51:11.173040（Trig_time_UTC）",
+    "t0_note": "T0 为 Swift/BAT 触发时刻（trigger=995004）；bot 原注 t0_basis=meta_trigger／t0_note=「t0 为 meta trigger-time（真实触发时刻）」已按 §3.10 改写，bot 原值 2020-09-07T18:51:10Z 留 info comment 备查",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
-  "articles": [],
-  "host_galaxy": null
+  "articles": [
+    {
+      "name": "Curtin+2024",
+      "url": "https://doi.org/10.3847/1538-4357/ad5c65",
+      "title": "Constraining Near-simultaneous Radio Emission from Short Gamma-Ray Bursts Using CHIME/FRB",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Chastain+2024",
+      "url": "https://doi.org/10.1093/mnras/stae1568",
+      "title": "Constraints on short gamma-ray burst physics and their host galaxies from systematic radio follow-up campaigns",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Chastain+2023",
+      "url": "https://doi.org/10.1093/mnras/stad2714",
+      "title": "Commensal transient searches in eight short gamma-ray burst fields",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Fong+2022",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d0",
+      "title": "Short GRB Host Galaxies. I. Photometric and Spectroscopic Catalogs, Host Associations, and Galactocentric Offsets",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
+  "host_galaxy": {
+    "ra": 89.028963,
+    "dec": 6.906288,
+    "redshift": 0.56,
+    "redshift_type": "phot",
+    "photometry": [
+      {
+        "band": "i",
+        "mag": 23.936,
+        "mag_err": 0.108,
+        "mag_sys": "AB",
+        "source": "Fong et al. 2022（BRIGHT I）表 1，VoR 已核"
+      },
+      {
+        "band": "z",
+        "mag": 24.01,
+        "mag_err": 0.4,
+        "mag_sys": "AB",
+        "source": "Fong et al. 2022（BRIGHT I）表 4，arXiv v1（VoR 机读表 403）"
+      },
+      {
+        "band": "J",
+        "mag": 22.55,
+        "mag_err": 0.13,
+        "mag_sys": "AB",
+        "source": "Fong et al. 2022（BRIGHT I）表 4，arXiv v1（VoR 机读表 403）"
+      },
+      {
+        "band": "K",
+        "mag": 22.06,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "Fong et al. 2022（BRIGHT I）表 4，arXiv v1（VoR 机读表 403）"
+      }
+    ],
+    "comment": "BRIGHT I（Fong et al. 2022，ApJ 940，56）Gold 级宿主关联：P_cc=9×10^−3、余辉（XRT 位）-宿主偏移 0.37±1.19″（2.41±7.78 kpc @z=0.56）；宿主光测红移 0.56(+1.39/−0.32)（不对称区间，redshift 字段取中心值）；宿主射电 3σ 上限 F_peak<22 μJy、SFR<18 M⊙/yr（Chastain+2024 表 9，12-16 h 深合成图）属宿主非瞬变、不入 lc。",
+    "source": "Fong et al. 2022，ApJ 940，56（BRIGHT I；arXiv:2206.01763；DOI 10.3847/1538-4357/ac91d0）"
+  }
 }
