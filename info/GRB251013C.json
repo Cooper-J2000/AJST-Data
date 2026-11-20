@@ -1,33 +1,55 @@
 {
   "transient_id": "GRB251013C",
-  "alias": [],
+  "alias": [
+    "GRB 251013C",
+    "sb25101311",
+    "GRB251013736"
+  ],
   "ra": 345.8358,
   "dec": -0.21,
-  "T0": "2025-10-13T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2025-10-13T17:39:42Z",
+  "T0_ref": "GCN 42222",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": 0.572,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
+  "pos_error": 3.5,
+  "pos_ref": "GCN 42232",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 42227",
+  "comment": "身份：SVOM/ECLAIRs 于 2025-10-13T17:39:42 UTC 触发并定位（GCN 42222，SVOM burst-id sb25101311；CRT SNR=35.62，8-120 keV，10.24s 窗口；GRM 17:39:43 跟随触发），Fermi/GBM trigger 782069986（bn251013736）17:39:41.94 UT 联测（GCN 42221/42259；external/fermi_gbm 快照 T0=17:39:41.942、t90=12.29±1.05 s 50-300 keV），AstroSat/CZTI 峰值 17:39:42.75（GCN 42246），Swift-XRT/UVOT/EP-FXT/VT/ALMA/VLA/AMI 后随全部自洽。alias 出处：sb25101311（GCN 42222 原文用名 SVOM burst-id sb25101311）、GRB251013736（external/fermi_gbm 快照 name_alt；GCN 42221 原文用名 trigger 782069986.941944/251013736）、GRB 251013C（GCN 通告 subject 通名）。同日多暴甄别（双历元拟合：触发时刻+坐标）：251013A T0=08:04:05（RA 19.9 Dec −1.6，GCN 42213/42218/42214）、251013B T0=08:24:27（RA 356.5 +7.5，GCN 42215/42219/42234）、251013D T0=18:17:00.39（RA 44.4 +10.2，GCN 42224/42244/42258/42291/42299/42280），与本源 17:39:42（RA 345.88 −0.17）均不相干；仓内 archive 全部 71 篇含「251013」通告逐篇核验归属，其中 GCN 42236 系另一 Fermi 触发 782044789（GRB251013.44，16h21m −23d59m，非本源，未取数）、GCN 42240 的 eventId 误标「GRB 202510」（源 GRB202510 已按 duplicate 否证并入本源，audit/denied.tsv）、GCN 37359 为 GRB 240828B（grep 误命中）；其余 40 篇含测光通告逐篇核对本源触发时刻/位置/引用链后收录。T0：改判自占位符 2025-10-13T00:00:00Z（bot 残留，Issue #84 类；原 extra_data.t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」、T0_ref=null，原值留此备查）。新 T0=2025-10-13T17:39:42Z 取触发仪器 SVOM/ECLAIRs 官方通告值（GCN 42222），经 ECLAIRs 精化分析（GCN 42292）与 ECLAIRs-GRM 联合精化（GCN 42695）两路复核一致；Fermi GBM 17:39:41.94（GCN 42259/42221，亚秒源自触发号 782069986.941944）与本值差 0.06 s，按 §3.2 以触发仪器整秒值为准、不自行补亚秒；爆发起始 T0−0.4 s（GCN 42292）为亚秒级且 |offset|<1 s，不写 T0_offset。整表 time/mjd 已按新 T0 重推（每行 comment 记原文锚与换算），X 射线行本源无。定位：ra/dec=345.8358/−0.2100 为 Swift-XRT 定位（GCN 42232，误差 3.5″ 半径、90% 置信，pos_error_confidence=90 从原文）；其余定位并列备查：SVOM/VT 345.8356 −0.2103 ±0.5″（GCN 42223）、Swift/UVOT 345.83562 −0.21024 ±0.42″ 90%（GCN 42298）、EP-FXT 345.8356 −0.2103 ±10″ 90%（GCN 42247）、ALMA 23:03:20.56 −00:12:37.21（±0.02″/坐标，GCN 42243）、VLA 23:03:20.56 −00:12:37.22 ±0.03″（GCN 42312）、SVOM/MXT 345.8301 −0.2207 ±69″ 90%（GCN 42222）、ECLAIRs 345.8809 −0.1698 ±2.94′ 90%（GCN 42222，含 2′ 系统差）。红移 z=0.572 为 NOT/ALFOSC 光谱吸收线（Fe II 2600、Mg II 双线、Mg I、Ca II 双线）测得（GCN 42227），redshift_type=spec。sub_tag=lgrb 判据：Fermi GBM 通告原文 \"likely LONG GRB\"（GCN 42221）、CZTI 通告原文 \"long GRB\"（GCN 42246）；t90=19(−2/+5) s（ECLAIRs 4-120 keV，GCN 42695；GCN 42222 初值 17.1(+6.9/−1.5) s，按目录/通告 t90 判 lgrb）；GRM 50-300 keV t90=13(−1/+4) s（GCN 42695）、Fermi t90≈12 s（GCN 42259）、CZTI 20-200 keV t90=7.3(+0.7/−1.1) s（GCN 42246，能段不同备查）。其他物理量（不参与判定）：ECLAIRs 4-120 keV 注量（fluence）(1.95+0.02/−0.03)e-6 erg/cm²、谱光子指数 1.59±0.03（GCN 42292）；ECLAIRs-GRM 联合 10-1000 keV 注量 (4.58±0.18)e-6 erg/cm²、Epeak 95% 下限 ~480 keV（GCN 42695）；Eiso(1 keV-10 MeV rest)=5.6e51 erg、与 Amati 关系 type I 一致（GCN 42695）；Fermi 10-1000 keV 注量 (2.4±0.1)e-6 erg/cm²、Epeak=7291±4840 keV（GCN 42259）；XRT 平均流量 (8.71±0.30)e-11 erg/cm²/s 0.3-10 keV（GCN 42232）；Chandra 晚期 ~2.5e-15 erg/s/cm²、喷流破缺估计 6-10 d（GCN 42642，X 射线不入库）；AMI-LA 弱闪烁限源尺寸 <3.6e16 cm（Rhodes+2026）。第 12-13 天光变峰为可能 SN 成协（GCN 42736 推断，M_R>−20.3，未确证，不建 host_galaxy、不加 SN 标签）。勘误链：GCN 42295（errata corrige）将 GCN 42267 的 MarSEC Rc=16.813±0.08 更正为 17.581±0.09，取更正值、reference 指向 42295，被更正行已删（§3.3/§3.4）。导入缺陷修复：Bassano Bresciano 全部 39 行原导入 mjd 少 0.5 d（HJD→MJD 转换按 −2400001.0 而非 −2400000.5，39/39 行程序化确证），本次按原文 HJD 换算修复。业余台站 HJD 列义逐表用原文 stated 锚点裁定（日心改正 +411–413 s 方向与量值经独立太阳历法计算复核）：Leavitt（GCN 42333）列=真 HJD@mid-exposure（19:09:11/22:19:55 UT 双锚残差≤1 s）；Bassano（GCN 42262）列=真 HJD@合并结束时刻（stated start 19:26:42 检验 END 读数残差 ~+18 s、START 读数残差 ~+318 s，取 END，mid=END−150 s）；Calapai（GCN 42275，40 行=39×8×60s+1×11×60s，恰合原文「stacking 40 sets」）与 MarSEC（GCN 42267/42295）列=地心 JD 误标 HJD（按列值作 mid 直读残差 +7 s / 精确一致 0.001 s，按真 HJD 读数与 stated start/midpoint 矛盾），mid=列值直读不加日心改正。测光检索留证（2026-11-20）：①仓内 gcn/archive 全文 grep「251013」命中 71 篇，逐篇归属甄别后 40 篇含本源测光，新增 118 行（GCN 42225/42226/42231/42235/42240/42254/42275/42276/42298/42301/42396 等此前漏录的探测与上限+Rhodes+2026 AMI 目录 26 行），另对 42222（T0 锚）/42283/42294/42295/42736 等既有行重核重锚；②external/rssgrbag（射电余辉 74 源）与本源无记录；external/grbsn_webtool（63 事件）无本源；external/fermi_gbm、swiftgrbba、mpe_greiner 快照仅目录参数用于身份/T0 互证；③外部：arXiv API+OpenAlex+Crossref 检索（ADS/SciX 无 token 通道受限，audit/unverified.tsv 已留 source_id=* 行，不据此得出无文献结论）——命中研究论文 2 篇并入库使用：Konno+2026（arXiv:2609.25342，LAST 高采样光变；其机读测光表未随 arXiv 源发布、无 Zenodo/URL，unverified.tsv 登记 status=missing，论文级 LAST 数据未入库）、Rhodes+2026（AMI-LA 目录 II，arXiv:2608.13697）在线目录 ami-grb-catalogue.onrender.com 2026-11-20 实取 CSV（2026-11-21 复核：站点 503/超时不可达，以 2026-11-20 实取双份逐字节一致副本复核，并与 arXiv 电子源交叉：正文明确「1035 flux density measurements of 210 GRBs, 386 detections and 649 upper-limits」、库内交集 186 源、本源 26 行 22 探测+4 上限、专节 T0=17:39:41 UT（Fermi，GCN 42221）与本库换算差 −1 s；26 行数值换算程序化复核通过），本源 26 行（22 探测+4 上限）全部入库，并为该文覆盖的其他库内源留线索卡（papers/rhodes2026.md + 3 张源级卡：GRB210610B/GRB210704A/GRB240529A，另 24 个库外源见卡内 out_of_repo 一节）；GCN 站单篇抽查 42222 与仓内快照逐字一致。GCN 42236（另一触发 782044789）与 251013A/B/D 各通告的测光均不属本源、未取数。本次审核整表按新 T0 重推并修复上述锚点口径，删除 1 行（勘误被更正行），新增 118 行，总计 291 行。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "svom_eclairs_trigger_gcn42222",
+    "t0_note": "T0=2025-10-13T17:39:42Z 为 SVOM/ECLAIRs 触发时刻（GCN 42222，42292/42695 复核）；原占位符 2025-10-13T00:00:00Z 与旧 t0_basis=meta_trigger 已改判，原值留存于 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Konno+2026",
+      "url": "https://arxiv.org/abs/2609.25342",
+      "title": "Multi-scale variability in the optical afterglow of GRB 251013C from high-cadence LAST observations",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Rhodes+2026",
+      "url": "https://arxiv.org/abs/2608.13697",
+      "title": "The second Arcminute Microkelvin Imager - Large Array Gamma-ray burst radio afterglow catalog",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
