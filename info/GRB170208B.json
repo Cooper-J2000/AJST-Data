@@ -1,29 +1,48 @@
 {
   "transient_id": "GRB170208B",
-  "alias": [],
-  "ra": 127.14389,
-  "dec": -9.02979,
-  "T0": "2017-02-08T22:49:41Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "alias": [
+    "BAT 737463",
+    "GRB170208940"
+  ],
+  "ra": 127.14385,
+  "dec": -9.03002,
+  "T0": "2017-02-08T22:33:38.918640Z",
+  "T0_ref": "GCN 20632（Swift/BAT 触发通告：At 22:33:38 UT triggered，trigger=737463，整秒）；亚秒取触发仪器官方目录/产品页：external/swift_bat 快照（batgrbcat；Lien+2016）trigger_time=2017-02-08T22:33:38.918640Z，与 BAT 官方处理页 gcn.gsfc.nasa.gov/notices_s/737463/BA/（BAT Trigger Time 508286037.504 s MET；UTC 2017-02-08T22:33:38.918640 includes UTCF correction；2026-11-21 实取）一致；external/swiftgrbba 快照 22:33:38.000Z 为整秒舍入；GCN 20646（GBM 22:33:36.53）、GCN 20643（Konus 22:33:42.750）互证；XRT 起测 T0+61.8 s=22:34:40.6 UT（GCN 20632）锚点相合。§3.8：多触发仪器矛盾有 Swift 以 Swift 为准",
+  "T0_offset": -20,
+  "T0_offset_ref": "GCN 20654（BAT 精化分析 mask-weighted 光变：some weak emissions that start at ~T-20 s、prior to the first bright pulse——辐射早于自动触发，取负；原文为近似值；纯元数据不改光变时间轴；同型先例 GRB050827（−15 s）/GRB050410（−10 s）/GRB060211A（−180 s））",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.2,
   "pos_ref": "GCN 20635",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：Swift/BAT 触发 737463（GCN 20632：22:33:38 UT 触发；BAT on-board 位 127.155/−9.027，3′/90%）。同日兄弟暴甄别：GRB 170208A=触发 737438、T0 18:11:16.327540Z、位 166.54/−46.79（GCN 20631；external/swift_bat 快照），与 B 相距数十度；本源全部测光通告（20636/20638/20640/20647/20655/20657/20673/20674）eventId 均为 GRB 170208B，无 A 串污染；另 GRB 170208C（POLAR，GCN 20664）与本源无关。触发仪器互证：Fermi/GBM 22:33:36.53 UT（GCN 20646，trigger 508286021/170208940；FERMIGBRST bn170208940 trigger MJD 57792.940006159=22:33:36.532）、Konus-Wind 22:33:42.750 UT（GCN 20643）。T0：取触发时刻 2017-02-08T22:33:38.918640Z（整秒 GCN 20632；亚秒=触发仪器官方目录/产品页，见 T0_ref）。旧库 T0=2017-02-08T22:49:41Z 实为 GCN 20673 IRSF 观测起点 22:49:41 UT（=触发后 962 s；亦恰等于 GCN 20654 BAT 数据集端点 T+963 s），系 Issue #84 型「观测窗口时刻被误置为 T0」残留；原 extra_data t0_basis=meta_trigger、t0_note「t0 为 meta trigger-time（真实触发时刻）」失真，原值留此备查；全表 time/mjd 已按新 T0 重推（本源 lc 无 X 射线行）。定位：增强 XRT 位（GCN 20635，官方自动产品）：RA/Dec=127.14385/−9.03002，2.2″（radius，90% confidence，原文标注）→ ra/dec/pos_error/pos_error_confidence 同步取值；旧库 ra/dec=127.14389/−9.02979 为 GCN 20632 XRT 初测位（3.6″/90%），与 pos_ref=GCN 20635 混挂，已对齐。备查：BAT ground 位 127.145/−9.027（1.0′，90%，GCN 20654）；external/swiftgrbba 快照 xrt 位 127.14396/−9.02992（1.6″）；swift.ac.uk/xrt_positions 在线值（2026-11-21 实取）127.14391/−9.03009（2.2″/90%）；GCN 20640 称当时 90% 半径已缩至 1.6″。分类：sub_tag=lgrb 按目录 t90 判——t90=128.07±5.75 s（GCN 20654，15–350 keV；external/swift_bat 快照 128.136±5.719 s）；GCN 20643 原文称 long-duration GRB、GCN 20646 称 long GRB。红移：无测量值或上限（各通告与文献检索均未给出），保持 null；GCN 20647/20655 仅推测尘埃消光或高红移。宿主：GCN 20640 GROND 源为可能宿主候选（Pan-STARRS 档案已有边际探测→宁静源；dec 经 GCN 20651 更正为 −09:01:46.1）；GCN 20647 WHT K=21.1±0.1（AB）源为余辉候选；external/swiftgrbba host_galaxy=MPG: possible host——均未定论，host_galaxy 不建立。alias：新增「BAT 737463」（external/swift_bat 快照 name_alt）；新增「GRB170208940」（GCN 20646 原文用名 trigger 508286021 / 170208940；HEASARC FERMIGBRST trigger_name 同载）。测光检索（2026-11-21）：①仓内 gcn/archive 全文检索 170208B/737463/170208940 命中 15 篇（本暴全部通告，含勘误 20651），逐篇核对；②external/rssgrbag 140 行无本源、external/grbsn_webtool 63 事件无本源；③外部：OpenAlex 命中研究文献 3 项——Zouaoui+2021（MPLA 36 2150268；实取 arXiv:1911.07350 PDF 核读：仅用本暴 Swift/XRT X 射线光变做模型拟合，无光学测光，登记 articles）、Gendre+2019（RMxAC 51 9，VIRT 历史综述，实取 PDF：仅提及本暴观测，数值在 GCN 20636）、Lü & Liang 2022（ApJ 941 99，X 射线耀发样本，VoR PDF 被 IOP 反爬未取得；属 X 射线数据不在审核范围）；arXiv API（GRB 170208B/737463/170208940）0 命中、Crossref 无新增。结论：补入 UVOT 7 行（GCN 20657）+WHT K 探测 1 行（GCN 20647）+RATIR 4 行（GCN 20655）共 12 行；GROND 7 行经 GCN 20640/20651/20647 判为宁静源测光置 discard=y；无去重删除行。ADS/SciX 无 token 侧检索未覆盖，登记 audit/unverified.tsv（search-limited），不据此断言无更多文献。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_and_catalog_verified",
+    "t0_note": "t0=2017-02-08T22:33:38.918640Z 为 Swift/BAT 触发时刻（GCN 20632 整秒＋触发仪器官方目录/产品页亚秒，见 T0_ref）；审核前旧值 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=meta_trigger 已失真（旧 T0 实为 GCN 20673 IRSF 观测起点 22:49:41 UT），原值留 info.comment 备查",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Zouaoui+2021",
+      "url": "https://doi.org/10.1142/S0217732321502680",
+      "title": "A dynamical evolution of GRB-afterglows in a new generic model",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
