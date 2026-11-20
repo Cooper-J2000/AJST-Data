@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB090429A",
-  "alias": [],
-  "ra": 90.573,
-  "dec": -52.389,
-  "T0": "2009-04-29T04:53:39Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 090429A",
+    "GRB 090429",
+    "BAT 350853",
+    "Swift 350853"
+  ],
+  "ra": 90.55469,
+  "dec": -52.38758,
+  "T0": "2009-04-29T04:53:39.877600Z",
+  "T0_ref": "GCN 9280（Swift/BAT 触发通告：At 04:53:39 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 090429, trigger=350853；整秒与 GCN 9289 一致）；亚秒 .877600 取触发仪器官方目录（external/swift_bat 快照 trigger_time=2009-04-29T04:53:39.877600Z，对应 MET 262673619.8776；external/swift_grb/HEASARC SWIFTGRB 同值；swiftgrbba/uvot_grb 快照 04:53:39.000 为整秒舍入）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +21,34 @@
   "pos_ref": "GCN 9297",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核 2026-11-21（wa1kmoon@zcode）。身份：Swift/BAT 触发 350853，T0=2009-04-29T04:53:39.8776Z（GCN 9280 整秒 04:53:39 UT、GCN 9289 一致，亚秒取触发仪器官方目录 swift_bat/swift_grb 快照同值 .877600）。邻日暴甄别：GRB 090429B（trigger=350854，T0=05:30:03 UT，RA,Dec=210.704,+32.163，GCN 9281）为独立暴；文献中著名的测光红移 z≈9.4 属 GRB 090429B（Cucchiara+2011, ApJ 736, 7, arXiv:1105.4915 摘要明示 for the Swift-detected GRB 090429B；mpe_greiner/konus_wind 快照 z 值均记于 090429B 名下），本源无红移测定，redshift 保持 null。定位：取 Swift-XRT 增强位置 RA,Dec=90.55469,−52.38758 ±3.2″（radius，90% confidence，GCN 9297 原文明确标注置信水平，945 s PC 数据+1 UVOT 图），替换原库误配的 BAT 地面坐标 90.573,−52.389（原 pos_ref 已指 GCN 9297 而坐标系 BAT 值，坐标与引用混串）；备查：BAT 地面 ±1.7′ 90%（GCN 9289）、XRT 改正机载定位 90.5568,−52.3886 ±4.8″ 90%（GCN 9287，被 9297 取代）、swiftgrbba/uvot_grb 快照后续更新定位 90.55537,−52.38742 ±3.1″。t90=188±37 s（15–350 keV，GCN 9289），swift_bat 目录 t90=184±48.5 s、Greiner+2024 allgrbs L/S=L 互证，按通告/目录 t90 判 lgrb。别名：「GRB 090429」系 GCN 9280 原文用名（<GCN 9280> GRB 090429: Swift detection of a burst，通告标题与正文均用此名），「BAT 350853」「Swift 350853」系官方目录名（external/swift_bat、external/swift_grb 快照 name_alt）。X 射线行（113 行，band=10keV，UKSSDC Burst Analyser 导入，原 comment 记 由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)）按 §3.8 仅重算 mjd 对齐亚秒 T0（程序化实证旧 mjd−(T0_old+time)≡0，113 行 max 偏差 0.0 s，故保 time、重算 mjd:=T0_new+time）。测光检索（2026-11-21）：仓内 gcn/archive 命中 8 篇（9280/9287/9289/9297/9303/9304/9308/9318），其中 GCN 9303（GROND 7 带上限）、GCN 9308（UVOT 8 项上限，本次新增入库）、GCN 9318（ROVOR 限值）含光学测光并已全部入库；GCN 9304 为 XRT 谱/光变参数（X 射线，不入库）；rssgrbag 射电表、grbsn_webtool、heasarc_grbcat 无本源记录；外部：arXiv API 元数据检索 0 篇、OpenAlex 命中 9 条（5 篇本源 GCN+4 篇提及性论文，均无本源新光学测光）、Crossref 未命中、CDS/VizieR 网页与 TAP 反爬不可达（unverified.tsv search-limited）；Greiner+2024（A&A 691, A158）allgrbs 090429 行 Det.=n、无 Tab.1 测光（VoR 反爬，arXiv v1 实取，unverified.tsv substituted）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    },
+    "t0_basis": "T0=Swift/BAT 触发时刻：整秒 04:53:39 UT（GCN 9280/9289 一致）；亚秒 .877600 取触发仪器官方目录（external/swift_bat 快照 trigger_time=2009-04-29T04:53:39.877600Z，对应 MET 262673619.8776；external/swift_grb 同值；swiftgrbba/uvot_grb 快照 04:53:39.000 系整秒舍入）。原库 T0=2009-04-29T04:53:39Z 为整秒历元（精度不足，非锚定错误），按 §3.2/§3.8 补入触发仪器亚秒，ΔT0=+0.8776 s。",
+    "t0_note": "改 T0（+0.8776 s）后全表重推：X 射线行（113 行，band=10keV，UKSSDC Burst Analyser）time 为触发历元相对时不动、mjd:=T0_new+time（9 位小数，程序化逐行重算）；GROND 7 行锚定 UT 墙钟（观测起点 2009-04-30 01:06:15 UT，Greiner+2024 allgrbs Δt=72756 s 自洽；GCN 9303 原文 01:05 UT 分精度舍入）、按 §3.8 中点口径改算（7 带共用窗按较长积分 32 min，中点 01:22:15 UT，time_err=960 s）；ROVOR 行起点 03:46:50 UT、50 min 窗，中点 04:11:50 UT（time_err=1500 s），band w→G（与 filters.json Pan-STARRS w 撞名）；UVOT 8 行（GCN 9308）新增，time 系原文相对 BAT 触发的整秒相对时。"
+  },
+  "articles": [
+    {
+      "name": "Cucchiara+2011",
+      "url": "https://doi.org/10.1088/0004-637X/736/1/7",
+      "title": "A Photometric Redshift of z ~ 9.4 for GRB 090429B",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Greiner+2024",
+      "url": "https://doi.org/10.1051/0004-6361/202449659",
+      "title": "The GROND GRB sample: I. Overview and Statistics",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
