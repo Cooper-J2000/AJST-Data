@@ -44,7 +44,7 @@ AT2019bhf 行的表值（分类、t_peak、宿主质量）已在审核该源时�
 | AT2019vcb | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2020ddv | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2020ocn | 同上 | 无 | mention-only | 过门槛③：同上 |
-| AT2020opy | 同上 | 无 | mention-only | 过门槛③：同上 |
+| AT2020opy | 表 1（TDE-H+He，z=0.159，首分类 ATel #13944）；LCfittab（t_peak=59088.79(+0.62/−2.51) MJD）；host_tab；MBH_MStar；附录 A.23 | 已审核（2026-11-21，见该源 info comment 与 lc） | 已核对 | 表 1/附录 A.23/LCfittab/host_tab 值已写入该源 info comment 并采信（z=0.159 判 spec-host）；逐历元 ZTF 强制测光机读表未入库（2026-11-21 IOP VoR 可达但文内无该表下载项，正文声明与实际提供不符；本源测光已自 TDECat 官方仓库 3037 行入库） |
 | AT2020mot | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2020mbq | 同上 | 无 | mention-only | 过门槛③：同上 |
 | AT2020qhs | 同上 | 无 | mention-only | 过门槛③：同上 |

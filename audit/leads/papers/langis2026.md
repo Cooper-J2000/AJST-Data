@@ -62,7 +62,7 @@ Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+0
 | AT2020neh | target_AT2020neh_photometry.csv（原文记名 AT 2020neh） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2020nov | target_AT2020nov_photometry.csv（原文记名 AT 2020nov） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2020ocn | target_AT2020ocn_photometry.csv（原文记名 AT 2020ocn） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
-| AT2020opy | target_AT2020opy_photometry.csv（原文记名 AT 2020opy） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
+| AT2020opy | target_AT2020opy_photometry.csv（原文记名 AT 2020opy） | 本 PR #1134（已审核入库） | 已审核（2026-11-21） | 已按 24 列契约入库 3225 行（TDECat 3037＋UVOT 133＋TNS 6＋ALeRCE 上限 17＋Goodwin+2023 射电 32）；口径与未收行判读见 info comment |
 | AT2020pj | target_AT2020pj_photometry.csv（原文记名 AT 2020pj） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2020qhs | target_AT2020qhs_photometry.csv（原文记名 AT 2020qhs） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2020riz | target_AT2020riz_photometry.csv（原文记名 AT 2020riz） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
