@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB050724A",
-  "alias": [],
-  "ra": 246.2125,
-  "dec": -27.516667,
-  "T0": "2005-07-24T12:34:09Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 050724",
+    "GRB 050724A",
+    "GRB 050724S",
+    "BAT 147478"
+  ],
+  "ra": 246.184833,
+  "dec": -27.540972,
+  "T0": "2005-07-24T12:34:09.361840Z",
+  "T0_ref": "GCN 3665（触发通告 12:34:09 UT）；Swift BAT 精化目录（batgrbcat report.html：MET 143901249+UTCF=12:34:09.361840；external/swift_bat 快照同值）；Konus-Wind 目录（Tsvetkova+2021 表1）12:34:09.362 交叉验证（差 0.2ms）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,12 +17,15 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 3665",
-  "redshift_type": null,
-  "redshift_ref": "GCN 3679",
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 0.2,
+  "pos_ref": "GCN 3697",
+  "redshift_type": "spec-host",
+  "redshift_ref": "GCN 3700",
+  "comment": "身份四路互证：Swift/BAT 触发 147478（GCN 3665，2005-07-24 12:34:09 UT）＋BAT/XRT 位置链＋Chandra/VLA/NIR/OT 位一致（16:24:44.4 −27:32:27.5）＋宿主光谱 z≈0.258；2005-07-22/25 无同日邻暴记录；Lloyd-Ronning+2018 表1 把 GRB 150724A 误印为 050724A 之笔误不涉及本源、未采信。T0：原库整秒 12:34:09Z（GCN 3665 与 swiftgrbba 仅整秒）→按 §3.2 采纳触发仪器亚秒值 12:34:09.361840Z（Swift BAT 精化目录 MET 143901249+UTCF；Konus-Wind 目录 09.362 交叉验证差 0.2ms）；整表 mjd=time+T0 程序化重推（旧表 mjd−(T0_old+time)≡0 对 全部 265 行实证），UT 墙钟锚行 time=UT−T0_new 重推；BAT 目录 T100_start=−0.024s、Konus t0_T100_start=−0.056s 均 <1s，不写 T0_offset。定位：原库为 BAT on-board 位（GCN 3665，180″/90%，dec 曾丢秒差 26″）→改 Chandra 余辉位 16:24:44.36 −27:32:27.5（0.2″ 半径，GCN 3697；与 OT Malesani+2007 0.35″RMS、NIR Berger+2005 0.1″/坐标、VLA GCN 3696 0.2″、XRT enhanced 1.5″/90%（swiftgrbba）一致；GCN 3697 未标注置信水平，pos_error_confidence 留空）。红移：GCN 3700 Keck LRIS z=0.258±0.002（宿主吸收谱）⇒spec-host；并列 Berger+2005 GMOS 0.257±0.001、Malesani+2007 FORS1 0.2582±0.0003、Minaev+2020 0.2576；Fong+2022 表2/BRIGHT z=0.254±0.001 与上述三原始测量矛盾且其 z_ref 自标 Berger 2005（=0.257），判为该目录转录异常（详见 host_galaxy.comment）。分类：sgrb+EE——Fong+2022 表B2（依 Lien+2016）SGRB-EE（T90=98s）、Minaev+2020 type I+EE、Konus 目录 s、GCN 3665/3667 短暴（FWHM<0.25s，尖峰 T90=3±1s）；目录 t90=98.684±8.557 s（Swift BAT 精化目录 15-350keV）系含延展发射，按文献分类判 sgrb，非自算 T90。alias：GRB 050724（GCN/官方目录通用名）、GRB 050724A（Minaev+2020 表内用名）、GRB 050724S（MPE Greiner 目录用名）、BAT 147478（Swift BAT 目录用名）。测光检索留证（2026-11-21）：仓内 gcn/archive 全文 grep「050724|147478」命中 41 篇（050724 相关 26 篇全部通读：3665–3700、3892），rssgrbag/grbsn_webtool 无本源记录；外部：batgrbcat 在线 report、OpenAlex/Crossref 题录、arXiv 全文（Berger+2005、Malesani+2007、Fong+2022、Savaglio+2009 逐表核对）、BRIGHT 机读目录、CDS/VizieR（J/A+A/473/77 不存在，404）；新增 Berger+2005 表1 七行（K 探测/上限、I 探测×2/上限、VLA 8.46GHz×2）与 Fong+2016 表1 一行（VLA 6GHz 3σ 上限 <22.1μJy@9.6yr）；Lulin（GCN 3668）、RTT150（GCN 3671）无数值不入库。X 射线行（band=10keV，236 行）值未动；因 T0 亚秒化按 §3.8「保 time 重算 mjd」重推（time 为触发历元相对时，旧 mjd≡T0_old+time 已实证）。去重：删 Dainotti2024 转引行 4 条（3674/3673/3681×2，原值同 GCN）；GCN 3676 行（8.5GHz 0.17mJy）系 Berger+2005 表1 173±30μJy 同观测预发布值，按 §3.4+§4 删除；GCN 3690 I=20.85 与 GCN 3681 I=21.25/20.65 为被最终发表版取代的预发布值，置 discard=y 保留。lc 中 62.8h 的 I/J 行与 Jul 29 的 K 行为宿主星系测光（GCN 3694/3700），非 OT，行内 comment 已注明。未核实：ADS/SciX 无 token（search-limited，unverified.tsv）；Berger+2005/Malesani+2007 出版社 VoR 不可达，取值经 arXiv 全文核对（substituted，unverified.tsv）。",
+  "sub_tag": [
+    "sgrb",
+    "EE"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
@@ -77,7 +85,13 @@
         "v": 78.44515103338632
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "t0_basis": "T0 亚秒化与整表重推依据：触发仪器官方精化目录（batgrbcat report.html、external/swift_bat 快照 summary_general）MET 143901249+UTCF=2005-07-24T12:34:09.361840Z；Konus-Wind（Tsvetkova+2021 表1）T0=12:34:09.362 交叉验证（差 0.2ms）；GCN 3665 与 swiftgrbba 快照仅整秒 12:34:09。原库 T0=2005-07-24T12:34:09Z 与旧全表 mjd−(T0_old+time)≡0（265 行程序化实证），故按 §3.8 对全部行保 time 重算 mjd（X 射线行 9 位小数、光学行 7 位），UT 墙钟锚行 time=UT−T0_new 重推；原 T0 值留此备查。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
@@ -107,10 +121,34 @@
       "source": "bot",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
       "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+    },
+    {
+      "name": "Berger+2005",
+      "title": "The afterglow and elliptical host galaxy of the short gamma-ray burst GRB 050724",
+      "url": "https://doi.org/10.1038/nature04238",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Malesani+2007",
+      "title": "Multicolor observations of the afterglow of the short/hard GRB 050724",
+      "url": "https://doi.org/10.1051/0004-6361:20077868",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Fong+2022",
+      "title": "Short GRB Host Galaxies. I. Photometric and Spectroscopic Catalogs, Host Associations, and Galactocentric Offsets",
+      "url": "https://doi.org/10.3847/1538-4357/ac91d0",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Savaglio+2009",
+      "title": "The Galaxy Population Hosting Gamma-Ray Bursts",
+      "url": "https://doi.org/10.1088/0004-637X/691/1/182",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": {
-    "comment": "Savaglio+2009: GRB type in Table 1: short. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nFong+2022: Fong+2022 Table 2 Gold host association; Silver, Bronze, and Inconclusive associations were not imported. Host J2000 coordinates are from Table 2; Table A1 supplies the photometry. All magnitudes are AB and explicitly uncorrected for Galactic extinction in the burst direction. The table does not unambiguously identify the redshift method; redshift_type is null unless explicitly marked D. Host upper limits have no single uniformly stated confidence level; no 3-sigma label was invented.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nMerged-field decision: host coordinates taken from Fong+2022 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Fong+2022 according to the recency/method priority rule.",
+    "comment": "Savaglio+2009: GRB type in Table 1: short. Table 2 is pseudophotometry in AB magnitudes, corrected for Galactic extinction; it is not a complete list of all original observed photometry. No host coordinates, redshift uncertainty, or redshift method are reported in Tables 1-2.\nFong+2022: Fong+2022 Table 2 Gold host association; Silver, Bronze, and Inconclusive associations were not imported. Host J2000 coordinates are from Table 2; Table A1 supplies the photometry. All magnitudes are AB and explicitly uncorrected for Galactic extinction in the burst direction. The table does not unambiguously identify the redshift method; redshift_type is null unless explicitly marked D. Host upper limits have no single uniformly stated confidence level; no 3-sigma label was invented.\nSavaglio+2009: Source access: arXiv v3 Table 1–2 TeX was used after the IOP VoR/MRT route was blocked; this is a documented substitution.\nMerged-field decision: host coordinates taken from Fong+2022 according to the direct-measurement priority rule.\nMerged-field decision: redshift, error, and type taken as one tuple from Fong+2022 according to the recency/method priority rule.\n2026-11-21 audit（wa1kmoon@zcode）：坐标/测光已对 Fong+2022（arXiv:2206.01763）表2/A1 原文核对一致（16:24:44.410 −27:32:26.393；U>26.42/B/V/R/J/H/K/F450W/F814W）。红移改判：Fong+2022 表2/BRIGHT 机读目录 z=0.254±0.001（z_ref 自标 Berger 2005）与 Berger+2005 GMOS 0.257±0.001、Prochaska GCN 3700 Keck 0.258±0.002、Malesani+2007 FORS1 0.2582±0.0003 矛盾，判为转录异常，改取 Malesani+2007 0.2582±0.0003（spec；VoR 不可达，经 arXiv v2 全文核对）。表A1 的 I=19.01±0.20（引 Berger 2005）与 Berger+2005 原文图1说明 I=18.63±0.2（未改正）不符，photometry 已改 18.63±0.2，Fong 值 19.01±0.20 留此备查。Spitzer IRAC Ch2/Ch4（18.03/18.22）不在已发表 Table A1，出自 BRIGHT 机读目录（phot_err=0.01/0.09，原导入 0.05/0.01 系错位已改）。新增 Malesani+2007 宿主 V/R/I（20.45±0.01/19.47±0.01/18.59±0.01，后期最佳视像，Landolt⇒Vega 推定，未改正）。Savaglio+2009 表2 六值（B/V/F814/J/H/K）已对 arXiv:0803.2718 v3 原文核对一致（AB、已改正银消）。",
     "dec": -27.540664722222225,
     "photometry": [
       {
@@ -206,10 +244,10 @@
       {
         "band": "I",
         "gext_corr": false,
-        "mag": 19.01,
+        "mag": 18.63,
         "mag_err": 0.2,
         "mag_sys": "AB",
-        "source": "Fong+2022 Table A1 recno 24 (2005Natur.438..988B)",
+        "source": "Berger+2005 (2005Natur.438..988B) 图1说明，arXiv v2",
         "upperlimit": false
       },
       {
@@ -261,24 +299,52 @@
         "band": "Spitzer-IRAC.I2",
         "gext_corr": false,
         "mag": 18.03,
-        "mag_err": 0.05,
+        "mag_err": 0.01,
         "mag_sys": "AB",
-        "source": "Fong+2022 Table A1 recno 30 (This work)",
+        "source": "BRIGHT 机读目录（bright.ciera.northwestern.edu/media/json/GRB050724.json，Spitzer 档案，ref=BRIGHT）",
         "upperlimit": false
       },
       {
         "band": "Spitzer-IRAC.I4",
         "gext_corr": false,
         "mag": 18.22,
-        "mag_err": 0.01,
+        "mag_err": 0.09,
         "mag_sys": "AB",
-        "source": "Fong+2022 Table A1 recno 31 (This work)",
+        "source": "BRIGHT 机读目录（bright.ciera.northwestern.edu/media/json/GRB050724.json，Spitzer 档案，ref=BRIGHT）",
+        "upperlimit": false
+      },
+      {
+        "band": "V",
+        "gext_corr": false,
+        "mag": 20.45,
+        "mag_err": 0.01,
+        "mag_sys": "Vega",
+        "source": "Malesani+2007 (A&A 473,77) §2 后期最佳视像",
+        "upperlimit": false
+      },
+      {
+        "band": "R",
+        "gext_corr": false,
+        "mag": 19.47,
+        "mag_err": 0.01,
+        "mag_sys": "Vega",
+        "source": "Malesani+2007 (A&A 473,77) §2 后期最佳视像",
+        "upperlimit": false
+      },
+      {
+        "band": "I",
+        "gext_corr": false,
+        "mag": 18.59,
+        "mag_err": 0.01,
+        "mag_sys": "Vega",
+        "source": "Malesani+2007 (A&A 473,77) §2 后期最佳视像",
         "upperlimit": false
       }
     ],
     "ra": 246.18504166666665,
-    "redshift": 0.254,
-    "redshift_err": 0.001,
-    "source": "Savaglio+2009; Fong+2022"
+    "redshift": 0.2582,
+    "redshift_err": 0.0003,
+    "source": "Savaglio+2009; Fong+2022; Malesani+2007; Berger+2005",
+    "redshift_type": "spec"
   }
 }
