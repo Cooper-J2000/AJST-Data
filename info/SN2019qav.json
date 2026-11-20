@@ -8,7 +8,7 @@
   "ra": 252.053732,
   "dec": 48.080567,
   "T0": "2019-09-11T06:59:02Z",
-  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2019qav（2026-10-31 取）",
+  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2019qav（2026-10-31 取；2026-11-21 复核＝TNS phot 89532，PS1/GPC1 i-P1 19.5±0.04 发现帧，2019-09-11 06:59:02 UT）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -18,26 +18,47 @@
     "fbot"
   ],
   "pos_error": null,
-  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2019qav（2026-10-31 取）",
-  "redshift_type": "spec",
-  "redshift_ref": "TNS Redshift 字段：https://www.wis-tns.org/object/2019qav（2026-10-31 取）",
-  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）\n2026-11-04 SciX 补充：Ho+2023（2023ApJ...949..120H）FBOT 样本在列，补 fbot 标签与文献（仅元数据）。",
+  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2019qav（2026-10-31 取；2026-11-21 复核 252.053731953 +48.080566594）",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Ho+2023（2023ApJ...949..120H）正文：LRIS 宿主星系光谱（2021-04-14）强恒星形成发射线测 z=0.1353；TNS 分类报告 9502（2021TNSCR1335....1H）Redshift 字段同值；VoR 表 2 机读（CDS J/ApJ/949/120/table2）0.13530 一致",
+  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）\n2026-11-04 SciX 补充：Ho+2023（2023ApJ...949..120H）FBOT 样本在列，补 fbot 标签与文献（仅元数据）。\n2026-11-21 审核（Rusty-Harpoon@zcode，PR #1140）：\n① 光变补入 66 行：Ho+2023 表 4 机读 52 行（g34/r16/i6 含 P60/SEDM 7 行；探测 38＋5σ 限量 14；取数＝IOP VoR 机读表 apjacc533t4_mrt.txt 与 CDS J/ApJ/949/120/table4 逐行比对 52/52 一致，2026-11-21）；TNS 警报流 4 行（PS1 发现帧 i-P1 19.5±0.04＝T0 历元、ZTF g 探测 2 行、ZTF g [Last non detection] 1 行；TNS phot 同点双录 90727/91496、90728/91497、90729/91498，取前号）；UVOT 6 行（表 5，单历元 JD 2458755.88/89）；射电上限 4 行（表 7：NOEMA 90GHz <90 μJy、VLA 10GHz <18/<27 μJy，均 3×图像 RMS；表 8：VLASS 3GHz RMS 166 μJy）。表 4 发表值实测 Mag=23.90−2.5lg(Flux μJy)＝原始 AB 未银消改正（与论文管线第 8 步文字矛盾，以发表值为准，同 AT2020aexw 先例），全表 Gext_corr=n。ZTF g 的 TNS 警报流行与表 4 同历元力测光为两管线独立测量（AMPEL 警报 vs IPAC 强迫测光），按 §3.4 并存。UVOT/射电行 time 由绝对 JD 相对 T0 直接换算；表载 Δt 列自 first ZTF detection（锚点原文未给，由 JD−Δt 反推≈JD 2458737.64），仅备查。\n② 分类裁定：TNS 分类报告 9502（Ho, Gal-Yam, Sollerman, Fremling, Kool 2021-04-23，2021TNSCR1335....1H，ZTF 组）正式分类 SN Ibn、Redshift 0.1353，注记「与过渡型 Ibn/IIn 事件 SN2005la 光谱相似」；Ho+2023 表 2 Class 记 IIn/Ibn、正文图 10 称「we classify as a Type IIn/Ibn transitional object」；Farias+2026（A&A 708, A270）61 个 SNe Ibn 样本在列。原 sub_tag=[IIn,Ibn] 系导入时对「IIn/Ibn」字符串的机械拆分；按 TNS 正式分类＋Farias Ibn 样本归属裁定 sub_tag=[Ibn]，过渡型性质以本 comment 存档，IIn 标签移除。\n③ 红移：z=0.1353 改 redshift_type=spec-host（Ho+2023 正文：2021-04-14 LRIS 宿主光谱强恒星形成发射线）；早期瞬变体谱 LRIS 2019-09-24 曾给 z=0.137（Ho+2023 正文，弃用备查）。TNS 分类报告 0.1353、表 2 机读 0.13530、表 9 z=0.135、Farias+2026 z=0.135 一致。\n④ T0 保持 TNS Discovery Date 2019-09-11T06:59:02Z（PS1 发现帧，2026-11-21 复核）；派生峰值备查：Ho+2023 表 2 Peak MJD 58739.13（g，18.99±0.06）、表 3 峰值参数 M_g=−19.96±0.06/3.39±0.28 d 上升/7.38±0.38 d 下降；Farias+2026 r 波段 MJD_max 58741.9±0.4、M_peak=−19.90±0.09。\n⑤ 宿主：LRIS 宿主光谱＋表 9 宿主测光＋表 13 SED 拟合确证（见 host_galaxy）；宿主坐标原文未单独给出。\n⑥ 别名核对（TNS 实取）：SN 2019qav（IAU 名）＝PS19fbn（PS1 Bot1 报告 46766，2019TNSTR1814....1C，i=19.5 发现）＝ZTF19abyjzvd（ZTF AMPEL 报告 47291/47648，g=19.33）。\n⑦ X 射线：Ho+2023 表 6 Swift/XRT 1 行（JD 2458755.88，ct<4.05e-3 s⁻¹、flux<1.37e-13 erg/cm²/s、lum<71.12e41 erg/s）在库审核范围外，不入 lc。\n⑧ 测光检索留证（2026-11-21）：仓内 gcn/archive 46198 篇全文 grep「2019qav/ZTF19abyjzvd/PS19fbn」0 命中，external/rssgrbag（74 源）、external/grbsn_webtool（63 事件）均无本源；SciX 全文检索 full:\"2019qav\" 命中 5 篇＝TNS 分类报告＋PS1 发现报告＋Ho+2023＋Farias+2026（仅峰值参数表）＋Baer-Way+2025（ApJL 995 L49，SN 2023fyq 射电，转引 Ho+2023 上限、无新数据）；\"ZTF19abyjzvd\" 0 命中、\"PS19fbn\" 1 命中（PS1 发现报告）；GCN GSFC 存档页无命中（gcn.nasa.gov 检索 API 404）；ATel 网络检索 0 命中；TNS 对象页 photometry 全量＝g-ZTF 3 行＋i-P1 1 行（已全部入库）。共补 66 行（表 4 52＋TNS 4＋UVOT 6＋射电 4）。\n⑨ 线索卡 audit/leads/SN2019qav.md（#889 留）已逐值复核并全部采纳（表 2 摘要、表 5 六行、表 7 三行、表 8 一行均与 VoR 一致），本 PR 删除该卡。\n⑩ 未能取得：IOP 表 3/13 的 _ascii.txt 下载口 500（表 13 数值已自 VoR HTML typeset 表核对）；Farias+2026 样本表未含逐历元测光（仅 MJD_max/M_peak 派生行），无新增可入值。",
   "sub_tag": [
-    "IIn",
     "Ibn"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "hermes_list_20261031"
+    "ingest_source": "hermes_list_20261031",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
       "name": "Ho+2023",
-      "source": "bot",
+      "url": "https://doi.org/10.3847/1538-4357/acc533",
       "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
-      "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
+      "source": "bot"
+    },
+    {
+      "name": "Farias+2026",
+      "url": "https://doi.org/10.1051/0004-6361/202555954",
+      "title": "Characterization of Type Ibn Supernovae",
+      "source": "Rusty-Harpoon@zcode"
+    },
+    {
+      "name": "Baer-Way+2025",
+      "url": "https://doi.org/10.3847/2041-8213/ae1cb8",
+      "title": "The First Radio View of a Type Ibn Supernova in SN 2023fyq: Understanding the Mass-loss History in the Last Decade before the Explosion",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "redshift": 0.1353,
+    "redshift_type": "spec",
+    "source": "Ho+2023（2023ApJ...949..120H）正文：LRIS 宿主光谱（2021-04-14，强恒星形成发射线）＋表 9 宿主多波段测光（Seq 11）＋表 13 宿主 SED 拟合（CIGALE）",
+    "comment": "宿主经 LRIS 宿主光谱（强恒星形成发射线测 z=0.1353）确证（非仅坐标接近）。表 13（Summary of the Host Galaxy SED Modeling，VoR HTML 2026-11-21 取）派生量备查：χ²/n.o.f.=14.49/18、M_B=−19.83、log M*/M☉=9.87(+0.20/−0.16)、log SFR=0.60(+0.21/−0.25)、log Age/yr=9.66(+0.22/−0.50)、E(B−V)=0.25(+0.08/−0.04)。表 9 宿主测光（GALEX/SDSS/PS1/2MASS/WISE，AB、未改红化；CDS 机读列名 *mag 实为 mJy 流量，按先例 AT2019esf 不自行换算星等、暂不入 photometry）：GALEX FUV 0.022200±0.004927、NUV 0.03848±0.0035850；SDSS u 0.032240±0.008715、g 0.1040000±0.0043140、r 0.1581000±0.0069900、i 0.20890±0.011940；PS1 g 0.09446±0.0049610、r 0.15040±0.009842、i 0.19500±0.0129400、z 0.21220±0.014280、y 0.17950±0.04851；2MASS J 0.1937±0.06712、H 0.2360±0.09544、Ks 0.2057±0.1091；WISE W1 0.14070±0.012590、W2 0.100800±0.007251、W3 0.2524±0.03685、W4 0.6110±0.2563（均 mJy）。宿主坐标原文未单独给出，暂缺。"
+  }
 }
