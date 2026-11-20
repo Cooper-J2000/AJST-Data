@@ -2,12 +2,13 @@
   "transient_id": "SN2019jc",
   "alias": [
     "SN 2019jc",
-    "ATLAS19aep"
+    "ATLAS19aep",
+    "AT 2019jc"
   ],
   "ra": 328.920804,
   "dec": 24.905742,
   "T0": "2019-01-08T04:58:04Z",
-  "T0_ref": "TNS Discovery Date：https://www.wis-tns.org/object/2019jc（2026-10-31 取）",
+  "T0_ref": "TNS Discovery Date（即 TNS phot 行 50309 发现帧 obs-date，2019-01-08 04:58:04 UT）：https://www.wis-tns.org/object/2019jc（2026-11-20 复核）；ATel 12368 同点 MJD 58491.21；Pellegrino+2022（2022ApJ...938...73P）表 1 First Detection MJD 58491.21",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -17,31 +18,44 @@
     "fbot"
   ],
   "pos_error": null,
-  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2019jc（2026-10-31 取）",
+  "pos_ref": "TNS 坐标（J2000）：https://www.wis-tns.org/object/2019jc（2026-10-31 取，2026-11-20 复核）；与 ATel 12368（21:55:40.99 +24:54:20.6）、Pellegrino+2022 表 1（328.920804+24.905742）一致",
   "redshift_type": "spec",
-  "redshift_ref": "TNS Redshift 字段：https://www.wis-tns.org/object/2019jc（2026-10-31 取）",
-  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）\n2026-11-04 SciX 补充：Ho+2023（2023ApJ...949..120H）FBOT 样本在列，补 fbot 标签与文献（仅元数据）。",
+  "redshift_ref": "TNS Redshift 字段（Global SN Project 分类报告 2022TNSCR1233....1P，2026-10-31 取，2026-11-20 复核）；Pellegrino+2022（2022ApJ...938...73P）表 1 z=0.01948；SIMBAD 同值（D 2022ApJ...938...73P）",
+  "comment": "2026-10-31 按名单建源（仅元数据，光变待补）\n2026-11-04 SciX 补充：Ho+2023（2023ApJ...949..120H）FBOT 样本在列，补 fbot 标签与文献（仅元数据）。\n2026-11-20/21 审核（Rusty-Harpoon@zcode，PR #1130）：\n【身份】TNS 对象页（SN Icn，z=0.01948，ATLAS 发现，发现报告 2019TNSTR..45....1T 内名 ATLAS19aep、坐标 21:55:40.993 +24:54:20.67）＋发现 ATel 12368（ATLAS19aep/AT2019jc，MJD 58491.21，m_c=18.00±0.09 AB，宿主 UGC11849 偏移 28.4″N/10.1″E=30.10″）＋SIMBAD（Harvard 镜像，2026-11-20）识别符 3 个：ATLAS 19aep/AT 2019jc/SN 2019jc（ATLAS19aep 与 SN 2019jc 同一 OID）三方互证成立；别名 AT 2019jc 为 SIMBAD 识别符原文（ATel 标题写作 AT2019jc）。「SN2019jc 又名 AT2019jcb」疑问经 TNS 对象页否证：AT 2019jcb 位于 11:54:15.2 +01:21:20.7（2019-04-24，Pan-STARRS w-P1 发现），与本源（21:55:40.99 +24:54:20.6，2019-01-08 ATLAS）无关，不入别名。\n【分类】sub_tag=Icn 依据：TNS 分类报告 2022TNSCR1233....1P（Pellegrino/Global SN Project，2022-05-09，窄 C III/C IV 发射线、类似 SN 2021csp 早期谱）＋Pellegrino+2022（Icn 样本文，正文与 Ho+2023 表 3 均标 Icn）。\n【T0/z 口径】T0=TNS Discovery Date=发现帧 cyan-ATLAS 曝光中间时刻（TNS exp-time 30 s），与 ATel 12368（MJD 58491.21）、Pellegrino+2022 表 1 First Detection MJD 58491.21 一致，保持不变；z=0.01948 三源同值，保持。备查（均汇总值，不改口径）：Pellegrino+2022 表 2 t_max,g=MJD 58494.4±0.1、M_peak,g=−17.2±0.1（K-corrected）、t_1/2,rise=2.6±0.2 d、t_1/2,decl=3.1±0.1 d（观测框架）；Ho+2023 表 3（tab:literature）行 SN 2019jc z=0.01948/Icn/g −17.2±0.1/2.6±0.2/3.1±0.1（ref [26]=Pellegrino2022 转引，注 a 银消改正、注 b 静系）。\n【测光】lc 0→57 行：Pellegrino+2022 表 A1（Optical Photometry）IOP VoR 机读表 26 MRT 行拆 56 测量＋TNS phot 2 点−1 去重。Pellegrino 表 A1 为 ATLAS forced photometry server（正文 §2.2「not processed further」）＋LCO 0.4m SBIG/1.0m Sinistro（lcogtsnpipe，PSF 星等）；band c/o→库键 atlas-cyan/atlas-orange（AB），g/r/i→AB，B/V→Vega（表注「UBV Vega、gcroi AB」）；VoR HTML/ASCII 片段与 arXiv v1 表行交叉核对前 10 行，MRT 略尾零按 Fortran 格式复原（F5.2/F4.2，c 列 F4.1）。MRT 有 4 行合并伪影（行 4/14/18=Tel ATLAS 行混入 LCO B/V 值，行 13=Tel LCO 行混入 ATLAS o 值），已按望远镜波段物理复原为独立行（ATLAS 无 B/V/g/r/i，LCO 无 c/o；行 4 复原经 VoR ASCII 片段+arXiv v1 逐行验证；行 13 的 ATLAS o 取所在行 MJD 58495.1）。去重：Pellegrino 表 A1 c=18.0±0.15@MJD58491.2 与 TNS phot 50309（cyan 18.00±0.092，JD 2458491.7069907）同曝光同值（表 1 First Detection 同点），按 §3.4 保留最初来源（2019-01-08 TNS 发现值）删其转引行；同夜两行 LCO 数值不同（如 58492.2 g 17.82/17.70）为不同曝光独立测量，并存。Gext_corr=n 全表（原文发布值未做银消改正；ATel 12368 提及 A_g=0.22 系其绝对星等计算假设）。\n【零测光检索留证】（2026-11-20，审核人 Rusty-Harpoon@zcode）：① 仓内 gcn/archive 46198 篇全文（2019jc/AT2019jc/ATLAS19aep/ATLAS 19aep/UGC11849/UGC 11849 大小写不敏感）0 命中（sanity：AT2018cow 命中 5 篇）；② external/rssgrbag 140 行 0 命中、external/grbsn_webtool 63 事件 0 命中（近邻 GRB190114C-SN2019jrj/GRB190829A-AT2019oyw 为不同事件）；③ 外部 GCN 站 API 三种 URL 形式 404（SPA 需浏览器），以仓内全文快照为准；④ SciX：ATLAS19aep 2 篇（2019TNSTR..45....1T＋2019ATel12368....1S）、\"SN 2019jc\" 6 篇（Pellegrino+2022、2022TNSCR1233....1P、VizieR 目录 2024yCat..19380073P、Wang+2024 ApJL 967.45 及其 arXiv v1、2026 arXiv 理论文）、AT2019jc 2 篇、\"UGC 11849\"+supernova 1 篇；Wang+2024 arXiv 源码核查：其 SN2019jc 数据明言取自 Pellegrino+2022（无双曲线新表值）；⑤ ATel 站内 GET 搜索参数无效（返回索引页），ATel 12368 经 SIMBAD 坐标出处反查获得，仅发现摘要无逐历元测光；⑥ TNS phot 表 2 点（已入库）。结论：可用测光=Pellegrino+2022 表 A1＋TNS 2 点，共补 57 行（1 行去重删除）。\n【宿主】UGC 11849（Pellegrino+2022 正文「discovered ... in UGC 11849」「exploded on the outskirts of ... UGC 11849, at a projected distance of 11.2 kpc」；ATel 12368 偏移 30.10″），详见 host_galaxy。pos_error：TNS/ATel/Pellegrino 均未给定位误差，留空（来源未标注置信水平）。",
   "sub_tag": [
     "Icn"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
-    "ingest_source": "hermes_list_20261031"
+    "ingest_source": "hermes_list_20261031",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
       "name": "Pellegrino+2022",
       "source": "bot",
       "title": "The Diverse Properties of Type Icn Supernovae Point to Multiple Progenitor Channels",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...938...73P"
+      "url": "https://doi.org/10.3847/1538-4357/ac8ff6"
     },
     {
       "name": "Ho+2023",
       "source": "bot",
       "title": "A Search for Extragalactic Fast Blue Optical Transients in ZTF and the Rate of AT2018cow-like Transients",
-      "url": "https://ui.adsabs.harvard.edu/abs/2023ApJ...949..120H"
+      "url": "https://doi.org/10.3847/1538-4357/acc533"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 328.917725,
+    "dec": 24.897861,
+    "redshift": 0.019677,
+    "redshift_err": 1.3e-05,
+    "redshift_type": "spec",
+    "comment": "宿主 UGC 11849（SIMBAD 主 ID Z 472-16；亦名 LEDA 67648、2MASX J21554025+2453522、MCG+04-51-013；形态 SBc，2003A&A...412...45P）。坐标取 SIMBAD（Harvard 镜像 2026-11-20）IR 坐标 21:55:40.254 +24:53:52.30（2006AJ....131.1163S），与 ATel 12368 所报偏移（28.4″N/10.1″E=30.10″）和暂现体坐标自洽（本项目复算 30.1″），与 Pellegrino+2022 投影距离 11.2 kpc（H0=73）相符——SN 位于宿主外缘而非核区。宿主目录红移 z=0.019677±0.000013（SIMBAD，bibcode 2022ApJS..261...21Y）；暂现体谱窄线红移 0.01948（TNS/Pellegrino+2022 表 1）与宿主差 ~59 km/s（CSM 外流速度量级）。宿主质量 log(M*/M☉)=10.32±0.20（Pellegrino+2022 引 Durbala+2020）。SN 位置 SFR 密度（Pellegrino+2022，CFHT/MegaCam u' 档案堆栈、1.5 kpc 孔径）：3σ 面亮度 23.76±0.31 mag，改银消后 ΣSFR=−7.9(±2.5)×10⁻⁴ M☉/yr/kpc²（Kennicutt 1998 口径；CFHT 影像无逐历元时刻，无时间锚点不入 lc）。SIMBAD 宿主测光备查（未入 photometry，单位口径未逐项核对）：B=14.8（E）、J=11.560±0.055/H=10.950±0.073/K=10.713±0.095（2MASS）、g=14.0107±0.0027/r=13.3368±0.0029/z=12.8150±0.0030（2023ApJS..269....3M）。SIMBAD 对象类型标 AG?（AGN 候选）仅备查。",
+    "source": "Pellegrino+2022（2022ApJ...938...73P）正文宿主段；ATel 12368；SIMBAD（Harvard 镜像，2026-11-20 取）"
+  }
 }
