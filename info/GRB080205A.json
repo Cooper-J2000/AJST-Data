@@ -1,27 +1,30 @@
 {
   "transient_id": "GRB080205A",
-  "alias": [],
-  "ra": 98.220833,
-  "dec": 62.766667,
-  "T0": "2008-02-05T07:55:51Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080205",
+    "BAT 302506"
+  ],
+  "ra": 98.25223,
+  "dec": 62.79186,
+  "T0": "2008-02-05T07:55:51.751640Z",
+  "T0_ref": "GCN 7250(Swift/BAT 触发 07:55:51 UT,trigger 302506);亚秒值 .751640 取触发仪器官方产品 batgrbcat (report.html,含 UTCF 改正),external/swift_bat 与 swift_grb 快照同值,uvotgrb HLSP TRIG_UT=07:55:51.75 同证;KAIT 独立锚点(GCN 7251:'07:56:56, 64.3 s after the burst'⇒07:55:51.7)亦一致",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 2.72,
+  "redshift": 2.71,
   "tag": [
     "grb"
   ],
   "pos_error": 2.0,
   "pos_ref": "GCN 7252",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "phot",
+  "redshift_ref": "Perley+2016(SHOALS I), ApJ 817, 7, DOI 10.3847/0004-637X/817/1/7(宿主 SED 测光红移,uBV Riz+Spitzer 拟合)",
+  "comment": "身份:Swift/BAT 触发(trigger 302506),GCN 7250–7262/7275/7278/7332 全链通告一致,无同日兄弟暴(swiftgrbba 快照当日仅此一源);GCN 用名 'GRB 080205'、BAT 触发号 302506 收入 alias。定位:原库 ra/dec=98.220833/+62.766667 为 BAT on-board 位置(mpe_greiner 快照 '06h32m53s +62°46\\'' 字符串,3′),与 pos_ref=GCN 7252 的 XRT enhanced 位置错配,已改为 GCN 7252 值 98.25223/+62.79186(2.0″,radius,90% confidence,原文标注);并列值:UVOT GCN 7253 06:33:00.62/+62:47:31.98(±0.5″)、swiftgrbba 快照 xrt 98.25225/62.792±1.5″ 与 uvot 98.25258/62.79222±0.5″、BAT ground GCN 7257 98.261/62.782(1.5′,90%)。红移:宿主 SED 测光红移 z=2.71(+0.25/−0.69),上限 z<3.08(Perley+2016 SHOALS I §5.1);MPE Greiner 目录录 2.72(+0.24/−0.74)与其不一致,以文献原文为准(Greiner 值弃用,见 unverified.tsv);GCN 7253 的早期估计 z~4.0 已被 SHOALS I 的 B/u 波段宿主探测否定;GCN 7332 称 B 波段非探测证 z≲4。sub_tag=lgrb 按目录 t90 判:t90=106.296±4.935 s(Swift/BAT 目录,15-350 keV);GCN 7257:T90=106.5±5.0 s(15-350 keV)。测光检索(2026-11-20):仓内 gcn/archive 全文 grep 'GRB 080205' 命中 15 篇(7250/7251/7252/7253/7254/7255/7257/7258/7259/7260/7261/7262/7275/7278/7332),全部读毕并核对其测光;external/rssgrbag(Chandra & Frail 2012)与 external/grbsn_webtool 无本源记录;external/swiftgrbba、swift_bat、uvot_grb、mpe_greiner、swift_grb 快照用于身份/T0 互证;外部:OpenAlex 命中 18 条(13 篇 GCN+GCN Report 112.1+MASTER 2010+Evans+2009 XRT 样本+Perley+2016 SHOALS I),MASTER 2010 经 arXiv:0907.1036 读毕(080205 行=UL 19.5,与 GCN 7261 同值,无增量);SHOALS I 提供宿主 photo-z(已入库);Evans+2009 为 XRT 样本(X 射线不在范围);GCN Report 112.1 未追(Swift 结题报告,UVOT 终版已由 uvotgrb noc-db 覆盖);ADS/SciX 无 token(API 401),通道受限已登记 audit/unverified.tsv,不据此下「无文献」结论。lc 处理:T0 改亚秒后全表 mjd=T0+time 重算(68 行 10keV 为 UKSSDC Burst Analyser 行,仅动 mjd);去重 6 行(Dainotti2024 转录重复:7251/7275/7260/7258/7278×2);新增 5 行(GCN 7253 white/v 共加探测);9 行窗口/单时点观测按中点/半宽口径修正,MASTER 行按其错误历元平移 +1508.248 s;uvotgrb noc-db 39 行逐值核验一致(reference 改指 Roming et al. 2017 ApJS 228, 13 noc-db,time_err=EXPOSURE/2);USNO/NOMAD 定标行 mag_system 清空(原文未声明系统);详见 PR 说明。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,7 +50,12 @@
         "v": 28.574193548387097
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
@@ -55,7 +63,19 @@
       "name": "Dainotti+2024",
       "source": "bot",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "url": "https://doi.org/10.1093/mnras/stae1484"
+    },
+    {
+      "name": "Roming+2017",
+      "url": "https://doi.org/10.3847/1538-4365/228/2/13",
+      "title": "A Large Catalog of Homogeneous Ultra-Violet/Optical GRB Afterglows: Temporal and Spectral Evolution",
+      "source": "wa1kmoon@zcode"
+    },
+    {
+      "name": "Perley+2016",
+      "url": "https://doi.org/10.3847/0004-637X/817/1/7",
+      "title": "The Swift Gamma-Ray Burst Host Galaxy Legacy Survey. I. Sample Selection and Redshift Distribution",
+      "source": "wa1kmoon@zcode"
     }
   ],
   "host_galaxy": null
