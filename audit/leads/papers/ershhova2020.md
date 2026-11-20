@@ -62,7 +62,7 @@
 | GRB151021A | 表 4、表 20 | `audit/leads/GRB151021A.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 4），接手者须核专篇表是否含 GCN 拿不到的量 |
 | GRB151027B | 表 5、表 20 | `audit/leads/GRB151027B.md`（#126） | mention-only | **过门槛候选**：有专篇测光表（表 5），接手者须核专篇表是否含 GCN 拿不到的量 |
 | GRB151215A | 表 20 | `audit/leads/GRB151215A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
-| GRB160104A | 表 20 | `audit/leads/GRB160104A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
+| GRB160104A | 表 20 | ~~`audit/leads/GRB160104A.md`~~（#120 卡已随审核 PR #1131 删除） | 已审核（2026-11-21） | 转引型：仅表 20 汇总行；MASTER-Amur/Tunka 早检已按原始出处 GCN 18820 入库（17.0±0.3 / ~17 mag unfiltered），ISON-Ussuriysk 按 GCN 18890 入库，未从本表取任何数值；VoR 本会话整站不可达（Springer 证书/反爬，见 audit/unverified.tsv status=missing），表 20 行未逐值核对——与各 GCN 同源，无增量 |
 | GRB160117B | 表 20 | `audit/leads/GRB160117B.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB160131A | 表 20 | `audit/leads/GRB160131A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB160227A | 表 18、表 20 | `audit/leads/GRB160227A.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 18），接手者须核专篇表是否含 GCN 拿不到的量 |
