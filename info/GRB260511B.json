@@ -1,22 +1,26 @@
 {
   "transient_id": "GRB260511B",
-  "alias": [],
-  "ra": 192.5716,
-  "dec": 4.0528,
-  "T0": "2026-05-11T11:00:31Z",
-  "T0_ref": null,
+  "alias": [
+    "sb26051102",
+    "GRB 260511.459",
+    "bn260511459"
+  ],
+  "ra": 192.57345,
+  "dec": 4.05512,
+  "T0": "2026-05-11T11:00:32Z",
+  "T0_ref": "GCN 44543",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "SVOM/VT",
+  "Trigger_Instrument": "SVOM/ECLAIRs",
   "redshift": 2.006,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
+  "pos_error": 0.5,
   "pos_ref": "GCN 44547",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 44565",
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 44565",
+  "comment": "T0 改判:bot 原值 2026-05-11T11:00:31Z(t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time(真实触发时刻),按 GBM/GRM 触发秒),改判 SVOM/ECLAIRs 触发 2026-05-11T11:00:32Z——GCN 44543 原文明确 At 2026-05-11T11:00:32 UTC (T0), SVOM/ECLAIRs triggered and located the gamma-ray burst GRB 260511B (SVOM burst-id sb26051102);GCN 44552/44615 佐证同一 T0;SVOM 案先例 GRB251013C(#1125)取 ECLAIRs 整秒。lc 全表 51 行 time/mjd 已按新 T0 程序化重推(check_t0_timebase 自洽)。各触发仪器触发时刻备查:SVOM/GRM 11:00:31(GCN 44543)、Fermi/GBM 11:00:31.70(GCN 44554,trigger 800190036/bn260511459)、NuSTAR SINGS 11:00:31.7(GCN 44556)、Konus-Wind 11:00:35.267(GCN 44597);各仪器差值:GRM/GBM/NuSTAR 与 ECLAIRs T0 差均在 1 s 内,不满足 T0_offset 门槛(|offset|>1 s);Konus-Wind 11:00:35.267 系 Wind 星处触发时刻,差 3.3 s 系航天器位置(光行时)与触发口径所致,按提示词 §3.8 目录间换算口径差不算偏移,T0_offset 置 null。Trigger_Instrument 原 SVOM/VT 系误标(VT 为 SVOM 光学望远镜,非触发仪器),改 SVOM/ECLAIRs。定位改判:bot 原 ra/dec=192.5716/4.0528 实为 GCN 44592(Calapai 业余 14 英寸)坐标而 pos_ref 却写 GCN 44547,系错配;改用 GCN 44547 SVOM/C-GFT 精化位 192.57345/4.05512,误差 ~0.5″,来源未标注置信水平,pos_error_confidence 留空。多源定位并列备查:ECLAIRs 船载 192.606/4.094、90% C.L. 2.63′(含 2′ 系统,GCN 44543);SVOM/MXT 192.5735/4.0405、90% 32.02″(GCN 44543);EP-FXT 192.574/4.0549、~10″ 90%(统计+系统,GCN 44578);Fermi GBM on-ground 192.2/5.0、统计 1.4°(GCN 44542);MITSuME 192.5739/4.0554(GCN 44549);Calapai 192.5716/4.05283(GCN 44592)。红移:z=2.006±0.001(GTC/OSIRIS+ DLA+金属吸收线共同红移,GCN 44565,type=spec);Xinglong 2.16m ~2.006 确认(GCN 44571);OHP/T193 z=2.007±0.001(GCN 44573)。分类 lgrb:GBM likely LONG(GCN 44542)、NuSTAR long-duration(GCN 44556)、Konus-Wind long-duration(GCN 44597);t90=ECLAIRs 41.2 −0.6/+1.0 s(5-120 keV,GCN 44543)、GRM 54.2 −5.2/+5.1 s(8-1100 keV,GCN 44543)、GBM ≈41 s(50-300 keV,GCN 44554)、CZTI 39 +3/−2 s(GCN 44560)、FERMIGBRST 目录 40.70±0.92 s(50-300 keV,external/fermi_gbm bn260511459)。兄弟暴甄别:同日 GRB260511A 为另一库内条目,GBM 触发 06:13:30 UT、位 RA=199.1/Dec=−33.0(GCN 44529),ECLAIRs T0=06:13:32、位 197.929/−33.853(GCN 44532,sb26051101);与本源(11:00:32 触发、位 192.57/4.06、sb26051102)相距约 38°,本源全部测光行均对应 sb26051102 余辉,无 A/B 混淆。GCN 引用笔误备查(不影响数值):GCN 44571 误引 GCN 44544/44566(实为 GRB 260510C/260510B 通告)、GCN 44556/44567 误引 GCN 44532/44529(实为 GRB 260511A 通告)。别名出处:SVOM burst-id sb26051102 见 GCN 44543 原文用名;FERMIGBRST 目录原文用名 GRB 260511.459(GCN 44542 触发号 260511459,仓内 external/fermi_gbm 快照);bn260511459 为 HEASARC bn 形原文用名(GCN 44542 附件链接与 external/fermi_gbm 快照)。X 射线数据不入 lc:EP-FXT 0.3-10 keV 平均未吸收流量 2.07±0.05e-11 erg/s/cm2、内氢柱密度 3.8e21 cm-2、光子指数 2.10±0.04(GCN 44578),SVOM/MXT 探测(GCN 44543),按审核范围暂不处理。测光检索留证(2026-11-21):仓内 gcn/archive 全文 grep 260511B 命中 30 篇并全部通读,21 篇含光学/NIR 数值(全部已入库或核对);external/rssgrbag、grbsn_webtool、swiftgrbba、konus_wind、heasarc_grbcat、uvot_grb、fermi_lat 无记录,external/fermi_gbm 1 条(bn260511459,身份与 T0 互证)、mpe_greiner 1 条(z=2.006、OT/IPN 标记);外部入口:arXiv API 命中 0 篇、Crossref 无本源专属文献(模糊命中均无关)、OpenAlex 命中 2 篇(2026 年 GCN-LLM 抽取工具论文,非本源测光)、GCN 站单篇佐证(44543 网页版与仓内副本一致);新增 12 行(GOTO 1、FRAM 1、Calapai 2、SYSU J 8),修订 39 行(T0 重推+中点口径+mag_system 补正);ADS/SciX 无 token(0 字节,401),检索通道受限已登记 audit/unverified.tsv(source_id=*,status=search-limited),不据此得出「无文献/无测光」结论。",
   "sub_tag": [
     "lgrb"
   ],
@@ -25,8 +29,13 @@
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "eclairs_trigger_gcn44543",
+    "t0_note": "T0=SVOM/ECLAIRs 触发时刻 2026-05-11T11:00:32Z(GCN 44543 原文定义,GCN 44552/44615 佐证);bot 原值 t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time(真实触发时刻)、T0=2026-05-11T11:00:31Z,改判依据与原值留 info comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [],
   "host_galaxy": null
