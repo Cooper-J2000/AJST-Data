@@ -1,28 +1,35 @@
 {
   "transient_id": "IceCube-200916A",
-  "alias": [],
+  "alias": [
+    "IC200916A"
+  ],
   "ra": 109.78,
   "dec": 14.36,
-  "T0": "2020-09-16T20:40:30Z",
-  "T0_ref": null,
+  "T0": "2020-09-16T20:40:30.95Z",
+  "T0_ref": "GCN 28433（IceCube 官方通告 20:40:30.95 UT；AMON 134498_12605830 rev1 DISCOVERY_TIME 74430 SOD {20:40:30.95} UT 互证）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 3816.0,
+  "pos_ref": "AMON 134498_12605830 rev1：SRC_ERROR=63.60′（stat-only，90% containment）=3816″；精化位置（GCN 28433）RA 109.78/Dec 14.36，90% PSF containment 不对称包络 RA +1.08/-1.44、Dec +0.88/-0.85（deg）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "IceCube 高能中微子符合暂现源（track-like，ICECUBE_Astrotrack_Bronze 流，Bronze 天体物理纯度阈值 30%，FAR=2.4826 yr^-1，事件能量 1.1048e+02 TeV，signalness 0.32226——AMON 134498_12605830 rev1，非 SCHEMA 量备查）。[身份/触发链] 触发仪器由 bot 值 Fermi/LAT 改正为 IceCube：事件由 IceCube 探测并经 AMON 通告分发（GCN 28433）；GCN 28439（Fermi-GBM）明言 'There was no Fermi-GBM onboard trigger around the event time'（仅上限），GCN 28438（Fermi-LAT）为后续巡天数据分析（0.1-800 GeV 无显著新源，仅上限），LAT 非触发者。Gamma 对应体均未检出：GBM（28439）、INTEGRAL SPI-ACS/IBIS（28443）、HAWC（28448）、LAT（28438）、Swift-XRT 无源（28449，计数率上限 5-8e-3 ct/s）；ANTARES 无中微子符合（28446=ATel 14025）；IceCube 自身附加中微子搜索与大气本底一致（28452）。同日重名辨析：GRB 200916A=Fermi/GBM trigger 621977324（bn200916812，19:28:39 UT，RA=41.5/Dec=-4.7±8.0 deg，GCN 28431）、GRB 200916B=Konus-Wind/IPN 短暴（15:41:30 UT，RA≈224.7/Dec≈-39.1，GCN 28440，原文明言 'spatially and temporally inconsistent with the IceCube-200916A event'）——均与本源无关。[T0] bot 值 2020-09-16T20:40:30Z 为 AMON DISCOVERY_TIME 74430 SOD 的整秒截取（bot 原标记 t0_basis=meta_trigger、t0_note『t0 为 meta trigger-time（真实触发时刻）』保留于 extra_data），按触发仪器官方亚秒值补全为 20:40:30.95 UT：GCN 28433 原文 'On 20/09/16 at 20:40:30.95 UT'，AMON rev1 DISCOVERY_TIME {20:40:30.95} UT 互证，GCN 28438（LAT）亦以 2020-09-16 20:40:30.95 UTC 为其分析 T0；整秒与 GCN 28443（INTEGRAL）、GCN 28448（HAWC）所引 20:40:30 一致。[定位] ra/dec=109.78/14.36（GCN 28433 精化位置，J2000；AMON rev1 SRC_RA=109.7800/SRC_DEC=+14.3599 一致）；pos_error=3816″=63.60′（AMON rev1 SRC_ERROR，stat-only 90% containment，confidence=90），SRC_ERROR50=34.79′（=2087.4″）并列备查；GCN 28433 的 90% PSF containment 不对称包络 RA 109.78(+1.08/-1.44)、Dec 14.36(+0.88/-0.85)（deg）一并备查。[alias] 新增 IC200916A（GCN 28438、GCN 28465 原文用名）；GCN 28437（MASTER）另有 'IceCube Alert 200916.86'（AMON 事件名，日期+日分数形态，仅记于此不入 alias）。[tag] 中微子事件在 tags.json 受控词表无类目（库内 88 个 IceCube-* 源 tag 均空），tag 留 []；建议维护者扩表新增 neutrino 主标签（见 PR 待决事项）。[候选体与 lc] ZTF 巡视（GCN 28441，2020-09-17 11:23 UT 起，~14.7 h after event time，g/r 波段，覆盖 >99% 定位区）报两候选：ZTF20acaapwk/AT2020tno（r=19.24±0.06）与 ZTF20acaapwo/AT2020tnp（r=20.41±0.14），均 MJD 59109.49 同帧；AbAO AS-32 R 波段复测（GCN 28453）：AT2020tno R=16.88±0.02、AT2020tnp R=19.62±0.22（含宿主贡献，USNO-B1.0 R2 定标）。后续：AT2020tno 经 NOT+ALFOSC 光谱分类为 SN Ia（TNS，z=0.074），GCN 28465 明言 'thereby excluding any connection to IC200916A' → 其两行（GCN 28441/28453）置 discard=y；AT2020tnp 未分类仍为候选，保持 discard=n。lc 修正四行并新增两行（TNS AT2020tnp g=20.67±0.17 AB 发现帧；GCN 28437 MASTER-OAFA 误差框上限 17.6 mag，C=clear→band=G），详见各行 comment。[X 射线] 本源 lc 无 X 射线行；GCN 28449 Swift-XRT 仅计数率上限（3σ 5-8e-3 ct/s），按 §3.3 X 射线不入库。[测光检索（2026-11-21）] ①仓内 gcn/archive 全文检索 46198 篇（变体 200916A/200916/IC200916/AT2020tno/2020tnp/ZTF20acaapwk/ZTF20acaapwo/acaapwk/acaapwo/134498_12605830）：命中 16 篇（28431/28432/28433/28437/28438/28439/28440/28441/28443/28446/28448/28449/28451/28452/28453/28456），含本源光学数值/上限的仅 28441（ZTF r×2）、28453（AbAO R×2）、28437（MASTER C 上限×1）；28432/28456 为重名 GRB 200916A/B 误差框观测（非本源）；②external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData：无 200916 相关记录；③SciX（api.scixplorer.org）检索 'IceCube-200916A'（13 命中）、候选体名与 IC 变体（5 命中）、'200916A' 非 GCN/TNS bibstem（1 命中=ATel 14025，与 GCN 28446 同内容）：无同行评审研究文章涉及本事件 → articles 留空；④TNS 实查 SN2020tno（=AT2020tno，Type SN Ia，z=0.074）光度表 5 行：r=19.24±0.06（与 GCN 28441 同测量）、r 非探测 lim 19.6517（2020-08-24）、g=19.53±0.07 AB（发现帧）、ATLAS orange 18.894±0.137（2020-09-25）与 lim 18.66（2020-09-17）——属已排除 SN Ia 自身光变，不入本源仅记于此；AT2020tnp 光度表 2 行：r=20.41±0.14（与 GCN 同测量，不另立行）、g=20.67±0.17 AB（新增入库）；⑤GCN 官网 circulars/28433、28441、28453 页面实取与仓内存档一致；AMON 原始通告 notices_amon_g_b/134498_12605830.amon 实取（rev0+rev1）。结论：光学可用测光 6 行（原 4 行修正+新 2 行），补 2 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [],
   "host_galaxy": null
