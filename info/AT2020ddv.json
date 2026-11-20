@@ -1,40 +1,51 @@
 {
-  "transient_id": "AT2020ddv",
-  "alias": [
-    "ATLAS20gee",
-    "ZTF20aamqmfk"
-  ],
-  "ra": 149.639196,
-  "dec": 46.911358,
-  "T0": "2020-02-21T10:43:40Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": null,
-  "redshift": 0.16,
-  "tag": [
-    "tde"
-  ],
-  "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
-  "sub_tag": [],
-  "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": {
-    "discovery_filter": "cyan-ATLAS",
-    "discovery_mag": "19.667",
-    "ingest_source": "scix_tdecat_20261104"
-  },
-  "articles": [
-    {
-      "name": "Langis+2026",
-      "source": "bot",
-      "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
-    }
-  ],
-  "host_galaxy": null
+    "transient_id": "AT2020ddv",
+    "alias": [
+        "ATLAS20gee",
+        "ZTF20aamqmfk"
+    ],
+    "ra": 149.639196,
+    "dec": 46.911358,
+    "T0": "2020-02-21T10:43:40Z",
+    "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2020-02-21 10:43:40.000；同值见 TNS 发现证书与发现报告 #62538（ATLAS_Bot1，2020TNSTR.605....1T，JD 2458900.9469907）与发现点 TNS phot 122015（cyan-ATLAS 19.667）",
+    "T0_offset": null,
+    "T0_offset_ref": null,
+    "Trigger_Instrument": null,
+    "redshift": 0.16,
+    "tag": [
+        "tde"
+    ],
+    "pos_error": null,
+    "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
+    "redshift_type": "spec-host",
+    "redshift_ref": "Hammerstein+2023（2023ApJ...942....9H）表 1 z=0.160（表注：Redshifts were determined using host galaxy stellar absorption lines or narrow emission lines associated with star formation, namely Ca II H and K or narrow Hα emission）；TDECat 目录行（GitHub 与 CDS J/A+A/707/A171 recno 95 双入口 0.16000000）",
+    "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-21 Rusty-Harpoon@zcode 完成单源审核（PR #1147）并补光变 2126 行。\n\n【身份核验（2026-11-21，TNS 对象页 2020ddv＋TDECat 目录行＋ALeRCE/CDS/SIMBAD 互证一致）】ra/dec 取 TDECat 目录行 09:58:33.407 +46:54:40.89（=149.639196/+46.911358）；TNS 发现证书坐标同值（149.639197143/+46.9113585714，与本库值互差约 0.003″）；TNS 系统坐标 149.639026744/+46.911184456（09:58:33.366 +46:54:40.26，AT 报告 #63122 ZTF_AMPEL_COMPLETE 报告值，TNS 2020-02-28 依该报告更新，与本库值互差约 0.75″）；ALeRCE API meanra/meandec=149.63903579148933/46.91119200638299（互差约 0.72″）；各报告坐标互差全部 <0.8″（光学设备 1σ 级），身份成立。alias 二名均有出处：ATLAS20gee＝TNS 发现证书 Discoverer internal name＋发现报告 #62538（ATLAS_Bot1，2020-02-23 01:14:45 提交，发现时刻 2020-02-21 10:43:40.000，cyan-ATLAS 19.667±0.147，bibcode 2020TNSTR.605....1T）内部名＋TDECat Alternative name 与 Discovery internal name 列＋Hammerstein+2023 表 1 加粗发现名；ZTF20aamqmfk＝TNS AT 报告 #63122（ZTF_AMPEL_COMPLETE，J. Nordin, V. Brinnel, M. Giomi et al.，2020-02-28 18:12:56 提交，其发现时刻 2020-02-11 06:20:25.152 g-ZTF 19.62）内部名＋TDECat ZTF name 列＋ALeRCE API oid。Hammerstein+2023 表 1 GoT Name「Shae」为 ZTF TDE 工作组内部昵称，不作别名。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ATLAS-02 Haleakala，发现证书 Instrument: ATLAS-02/Telescope: ATLAS Haleakala）。TNS 对象页 Type/Redshift/Host Name 均空、Spectra 表与 Classification Reports 均 No Data（本源属 Hammerstein+2023 样本中 12 个未在 TNS 分类登记的 TDE 之一，Langis+2026 §2 实读原文列举）；TDECat spectral_classes.csv：TDE-He（comments 列记号 (2)＝Hammerstein+2023——编号按 Langis+2026 §4.2 所列三家顺序推定 1=van Velzen+2021/2=Hammerstein+2023/3=Yao+2023，经 AT2019bhf「(2)/TDE-H (1-3)」等改判记录交叉验证一致）；Hammerstein+2023 表 1 行 AT2020ddv/ZTF20aamqmfk/Shae/ATLAS20gee/ATel #13655/TDE-He/z=0.160，附录 A 原文 We classify AT2020ddv as a TDE-He object（P200/DBSP 2020-02-27 早段谱蓝连续谱、无可见宽 Balmer、He II 附近宽凸包；LDT/DeVeny 2020-06-09 晚段谱连续谱变平、He II 附近宽发射，光谱历元相位 −9 d/+93 d）；其首分类公开记录为 ATel 13655（Gezari, van Velzen, Goldstein, Cenko, Frederick, Ward, Hammerstein, Hung, Graham, Kulkarni，2020-04-22 19:20 UT，核瞬变＋宿主 Ca II H&K 吸收线＋蓝 UV-optical 颜色判为 TDE）。tags.json 无 TDE 子类受控词，sub_tag 留空（先例 PR #888/#890/#1113/#1118/#1122/#1134 同判）。\n\n【T0 口径】TDE 按现行口径取发现时刻：TDECat 目录行 Discovery date=2020-02-21 10:43:40.000＝TNS 对象页 Discovery Date 与发现证书同值（JD 2458900.9469907＝MJD 58900.4469907，同一瞬毫秒级互证；发现点 TNS phot 122015 cyan-ATLAS 19.667 ABMag，ATLAS-02 Haleakala，Last non-detection 2020-02-15 10:59:31 限 19.69 orange-ATLAS）；发现证书毫秒位 .000 为来源秒级值，按 SCHEMA「T0 只写来源给到的精度」记整秒、不自行补亚秒（同 AT2024kt/AT2020opy 先例）。ATel 13655 原文「discovered by ATLAS on UT 2020 Feb 23」实为其报告提交日（TNS 报告 #62538 received 2020-02-23 01:14:45），发现时刻以 TNS/TDECat 2020-02-21 10:43:40.000 为准（并列记录）；其「first detection of AT2020ddv by the ZTF MSIP Survey was made on UT 2020 Jan 25」与 ALeRCE API firstmjd=58873.37027780013（2020-01-25）同值。发现时刻为约定锚点、非设备自动触发，T0_offset 不用。lc 全表 time=(mjd−T0)×86400 换算（mjd 原样取自来源），mjd=time+T0 全表自洽（构建脚本校验 2126 行残差最大 0.0 s；本源 PR 前无 lc 文件，X 射线行对齐问题不存在）。\n\n【红移】z=0.16：Hammerstein+2023（VoR ApJ 942, 9，DOI 10.3847/1538-4357/aca283；本次经 arXiv:2203.01461 e-print tarball 实取 LaTeX 源逐值核对，表 1 与表注两入口一致）表 1 Redshift 列 0.160，表注明言 Redshifts were determined using host galaxy stellar absorption lines or narrow emission lines associated with star formation, namely Ca II H and K or narrow Hα emission——红移取自宿主星系谱线，→ redshift_type 由 value 改判 spec-host（同 AT2020opy 先例：同表同注）；TDECat 目录行 0.16（GitHub 与 CDS J/A+A/707/A171 recno 95 双入口 0.16000000）同值；ATel 13655 原文 P200/DBSP（2020-02-27）Ca II H,K 宿主恒星吸收线测得 z=0.152——与论文值差 0.008（早期通告初值 vs 论文定稿值，按 §3.10 并列记录，字段取论文值 0.16）。TNS 页无红移。\n\n【宿主（不建 host_galaxy）】TDECat 目录 Host name 列为空、TNS 对象页与两份 AT 报告 Host Name 均空——「三方一致」条件不成立，host_galaxy 留 null。文献宿主指认：ATel 13655 原文 in the center of galaxy SDSS J095833.41+465440.4；SIMBAD 2026-11-21 检索该名 1 条命中（G，09:58:33.4188 +46:54:40.431，距瞬变位置约 0.47″，核瞬变；交叉 ID Gaia DR3 822313515075144448；SDSS 光度 u 22.588/g 20.443/r 19.418/i 18.995/z 18.695〔2015ApJS..219...12A〕，SIMBAD 无红移）；Hammerstein+2023 host_tab lgMstar=10.3(+0.13/−0.16)。NED 2026-11-21 两次访问均不可达（byname 页为 JS 应用无静态数据、nph-objsearch CGI 503 Service Unavailable），未取得 NED 交叉，按约定以 SIMBAD 交叉替代并留痕——见 PR 待决①。TDECat 编译的宿主档案测光（SDSS/LINEAR/CRTS/PTF/ALLWISE/耀发前 ZTF/NEOWISE）已随逐源光度文件入库并在行 comment 注明档案段属性。\n\n【测光入库 2126 行】＝①TDECat 官方补充仓库 target_AT2020ddv_photometry.csv（github.com/dlangis/TDECat Section 2，2026-11-21 经 GitHub API git/blobs 端点 base64 完整下载，165050 字节，git blob sha1=e9a6483cc386a5be001c914ad793692853ace0c8 与远端树一致，3185 数据行）2018 行：3185→同历元同值重复（同 MJD 字符串＋设备＋波段＋星等、仅误差实现不同，§3.4 保留首现）1167 行（全部在 ZTF 族：zr 877、zg 210、zi 80）→2018 行。族构成（去重后）：ZTF 1260（zr 914/zg 262/zi 84）、CRTS(CL) 359→G Vega、LINEAR(CL) 63→G 系统留空、NEOWISE W1/W2 233/44、ALLWISE W1/W2 25/8→wise-w1/wise-w2 Vega、PTF(R) 18+PTF(g) 3→R/g AB、SDSS u/g/r/i/z 各 1（2001-12-20）。历元覆盖 2001-12-20～2024-10-27：档案段（耀发前，<MJD 58873.37＝2020-01-25）宿主基线（SDSS 2001-12-20、LINEAR 2003-01～2008-03、CRTS 2005-06～2016-04、PTF 2009-03～2011-11、ALLWISE 2010-04～11、ZTF 2018-04 起、NEOWISE 2014-04 起）；爆发段（58873.37～58989.58＝2020-01-25 ZTF 首告警探测～2020-05-20 末次耀发段 UVOT 历元）与后段（>58989.58，ZTF 至 60610、NEOWISE 至 2024-04、UVOT 2024 两历元）逐行注明。band 映射与星等系统按 Langis+2026 论文 §3.1 实读原文（本次通道：aanda.org DataDome 反爬 curl 403＋浏览器标签 getState 挂起超时 >2 分钟，改用 arXiv:2506.05476 HTML 全文实读，内容与 VoR 同文；CDS J/A+A/707/A171 recno 95 行与 GitHub 目录行逐字段一致）：ZTF(zg/zr/zi)→g/r/i AB（原文 ZTF magnitudes are calibrated using a source with colour g−r=0 in the AB photometric system）；PTF(R)/(g)→R/g AB（原文 ATLAS, iPTF, Pan-STARRS and ASAS-SN g-band photometry is provided in the AB system，P48 同机）；SDSS u/g/r/i/z→AB（SDSS 原生 asinh AB 定标，Fukugita+1996/Stoughton+2002；论文 §3.1 未逐字点名 SDSS，按 AT2024pvu 审核确证口径）；CRTS(CL)→G Vega（原文 CRTS…photometry is given in the Vega system；无滤光片 CL→band=G）；LINEAR(CL)→G、mag_system 留空（§3.1 未列 LINEAR，原文未声明系统）；NEOWISE/ALLWISE→wise-w1/wise-w2 Vega（原文 NEOWISE=Vega＋注 10 WISE IR 零点，WISE 同系统）。口径实证：TDECat 编译行为总流量含宿（非差分）——本源耀发前（2018-04～2020-01-24）ZTF 行中位数 zg 20.74/zr 19.74/zi 19.47 与宿主 SDSS 星等 g 20.443/r 19.418/i 18.995〔SIMBAD〕同水平（差 0.30-0.48 mag，PSF vs modelMag＋暗核噪声口径级）；长精度行（MJD 小数>9 位）＝ALeRCE magpsf_corr 口径，与 ALeRCE API detections 47 行逐行核对 42/42 有 corr 历元精确吻合（Δ<1e-4 mag；余 5 行 ALeRCE 现 API corr=None，其 TDECat 长精度行为编译期 corr 值）。同历元同曝光多实现行 31 组 62 行（长精度 magpsf_corr 行 vs 短精度 BHTOM 行，值差 0.0017-0.1703 mag）按 §3.4「拿不准就都保留」并存并逐行注明实际差值（先例 PR #1122 待决②/#1134 同判）。本源 CSV 无 99.99/Error=-1 哨兵、无 ATLAS 行（无 H/t 波段歧义）。②TDECat UVOT 机读表 AT2020ddv_uvot_lightcurve.csv（blob sha1=914a70b8ef99f7fd9650984c675543e88570c7d9 校验一致）42 行＝7 历元×W2/M2/W1/U/B/V（MJD 58961.159～58989.578＝2020-04-22～05-20 爆发段 5 历元＋60422.635/60487.505＝2024 后段 2 历元），Vega（§3.1 原文 Swift=Vega）；已银消光改正且未扣宿主（§3.3 原文 All magnitudes were corrected for Galactic extinction using reddening estimates from Schlafly & Finkbeiner (2011) and the extinction model from Fitzpatrick and Massa (2007). We note that these data are not host subtracted.）→Gext_corr=y；部分波段行来源误差列=0 原样保留（先例 PR #890/#1134/#1141 同）。③TNS 对象页 photometry 表 5 行（全部带 JD 锚点、TNS Units=ABMag、曝光 30 s→time_err=15 s）：122015 cyan-ATLAS 19.667±0.147＝发现历元（与 TDECat 目录 Discovery mag/flux 同值）、122014 orange-ATLAS 上限 19.69〔Last non detection，发现证书同值〕、123255 g-ZTF 19.62±0.25（2020-02-11＝ZTF 报告 #63122 发现历元）、123256 r-ZTF 20.12±0.23、123254 r-ZTF 上限 19.7352〔Last non detection〕；TNS ZTF 行为差分成像原始 magpsf 口径（ALeRCE API 同探测 magpsf=19.6159±0.249467/20.1249±0.228218 即 TNS 舍入源值），与同历元 TDECat 总流量行差 0.22-1.00 mag（口径张力，并存 §3.4 互注）。④ALeRCE API（api.alerce.online/ztf/v1，2026-11-21 实取，oid ZTF20aamqmfk）：detections 47 行中 42 行与 TDECat 长精度行 magpsf_corr 逐位重复（§3.4 不另入库）；5 行 magpsf_corr=None 以 magpsf±sigmapsf 差分口径入库（MJD 58873.370～58881.447，2020-01-25～02-02 耀发上升早期差分探测）；non_detections 57 行中 1 行与 TNS phot 123254 为同一 ZTF 告警限值（58886.2781944 diffmaglim=19.7352 同值，§3.4 保留 TNS 行），余 56 行 diffmaglim 差分上限入库（g 25/r 31）。⑤ATel 13655 叙述性数值的处置：其 peak on UT 2020 Mar 07 with g=19.25±0.21＝ALeRCE 同探测 magpsf=19.248434±0.209490（MJD 58915.20664）的舍入值、latest ZTF detection UT 2020 April 15 g=20.00±0.19＝magpsf=19.987879±0.190632（MJD 58954.17071）的舍入值——两历元已由 TDECat 长精度行（magpsf_corr 口径 19.0130/19.5633）覆盖入库，ATel 值系同一 ZTF 告警测光的转引、不再单列（§3.4）；Swift uvw2=18.72±0.11（2020-04-22）＝TDECat UVOT 同一 Swift 观测历元（MJD 58961.159，uvw2=17.109±0.058，银消改正未扣宿主总流量口径），ATel 值按先例 PR #1134（ATel 13944 同情形不另入库）不单列，两值口径差异已在 info comment 记录；ATel 13655 的 Swift 软 X 射线探测语句按规则不入库。TDECat 另有 Swift/XRT+XMM X 射线机读文件 AT2020ddv_xray_lightcurve.csv（blob sha1=39f64cd40882c2ad9911cc5a47aee7c38a84ce58 校验一致，9 历元 xrt/xmm/xmmcat），按规则不入库（发现 X 射线数据，暂不处理）；Hammerstein+2023 DBSP/LDT 分类光谱属 spectra/ 范围不入 lc。\n\n【测光检索留证（2026-11-21）】①仓内：gcn/archive 全文 46198 篇按 2020ddv/AT2020ddv/ATLAS20gee/ZTF20aamqmfk（含片段 20gee/aamqmfk）与坐标片段 095833/465440/149.639/46.911 检索＝0 命中；external/rssgrbag/lightcurve.jsonl（140 行）无记录；external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内同一 Circular 全库（46198 篇）全文为准＝0 命中；③SciX API（token 可用）：名称检索命中 2 篇＝2020TNSTR.605....1T（ATLAS 发现报告）＋2020ATel13655....1G（分类通告 ATel 13655）；宿主名 SDSS J095833.41+465440.4 补查仅命中同一 ATel；无期刊论文报道本源专属测光（Hammerstein+2023 为 30 源样本文章，其 ZTF 强制测光机读表未随文发布——同先例 PR #1134 记录，未据图读数补值）；④ATel 站内关键词检索（浏览器表单）2020ddv/ATLAS20gee/ZTF20aamqmfk → 0 Selected of 18163 Telegrams（该检索对含「AT2020ddv」标题的 ATel 13655 本身亦不命中，系其关键词索引未覆盖本源词；ATel 13655 经直链＋Hammerstein+2023 表 1 引用独立取得并全文实读）；⑤TNS 对象页＋发现证书已实际打开（photometry 表 5 点全部入库）。结论：非零测光——本 PR 补 2126 行；无其他带时间锚点的漏记测光。",
+    "sub_tag": [],
+    "pos_error_unit": "arcsec",
+    "pos_error_confidence": null,
+    "extra_data": {
+        "discovery_filter": "cyan-ATLAS",
+        "discovery_mag": "19.667",
+        "ingest_source": "scix_tdecat_20261104",
+        "audit": {
+            "status": "reviewed",
+            "auditor": "Rusty-Harpoon@zcode",
+            "date": "2026-11-21"
+        }
+    },
+    "articles": [
+        {
+            "name": "Langis+2026",
+            "source": "bot",
+            "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
+            "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+        },
+        {
+            "name": "Hammerstein+2023",
+            "source": "Rusty-Harpoon@zcode",
+            "title": "The Final Season Reimagined: 30 Tidal Disruption Events from the ZTF-I Survey",
+            "url": "https://doi.org/10.3847/1538-4357/aca283"
+        }
+    ],
+    "host_galaxy": null
 }
