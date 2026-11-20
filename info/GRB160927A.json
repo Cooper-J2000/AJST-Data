@@ -1,36 +1,45 @@
 {
   "transient_id": "GRB160927A",
   "alias": [],
-  "ra": 256.24288,
-  "dec": 17.33165,
+  "ra": 256.24259,
+  "dec": 17.33197,
   "T0": "2016-09-27T18:04:49.891880Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 19952（Swift/BAT trigger #713782，At 18:04:49 UT）；亚秒取触发仪器 BAT 目录 batgrbcat swift_bat 快照 summary_general_info 的 Trig_time_UTC=2016-09-27T18:04:49.891880；CALET GCN 20002 独立探测给 18:04:49.88（亚秒差 12 ms，有 Swift 以 Swift 为准）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 1.7,
   "pos_ref": "GCN 19957",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 160927A=Swift/BAT 触发 713782（GCN 19952，2016-09-27 18:04:49 UT，短硬暴，BAT 单峰约 0.5 s）；同日无其他命名事件，仓内 gcn/archive 与各快照均无重复条目；CALET-GBM 同历元地面探测（GCN 20002，T90(SGM)=0.35±0.11 s）互证。定位演进：BAT on-board 256.264/+17.311（3′，90%，GCN 19952）→ BAT ground 256.268/+17.334（1.8′，90%，GCN 19961 与 swift_bat 快照）→ XRT prompt 256.24288/+17.33165（3.7″，90%，GCN 19952）→ XRT prompt enhanced 256.2427/+17.3316（2.1″，90%，GCN 19953）→ XRT astrometrically corrected 256.24259/+17.33197（1.7″，90%，GCN 19957，采用，pos_error_confidence=90 为原文明示）；swiftgrbba 快照 xrt_ra/dec=256.24254/17.33197（1.7″）、swift_xrt_live 快照 256.24247/17.33201（2.3″，Err90 列）并列备查；原 ra/dec 256.24288/17.33165 系 GCN 19952 prompt 值与 pos_ref=GCN 19957 混串，已改配 19957 enhanced 值。分类：t90=0.48±0.10 s（GCN 19961，15-350 keV）；BAT 目录 t90=0.488±0.102 s（swift_bat 快照 summary_general_info）；CALET SGM t90=0.35±0.11 s（GCN 20002）；mpe_greiner 记 short（其原始名 160927AS 之 S 为该目录短暴记号、非独立别名，不进 alias）——按目录 t90 判 sgrb。T0 口径：唯一标准 T0=BAT 触发时刻；GCN 19952 的「XRT began observing 18:06:09.3 UT」为观测起点、不得当 T0；亚秒来自触发仪器目录（swiftgrbba 快照只给整秒 18:04:49.000，取更精的 batgrbcat 值）；T0_offset 不设——BAT 目录 Evt_start_sincetrig=−667 s 是事件数据窗口起点而非前兆辐射证据（GCN 19961 首峰 T−0.2 s 起）。原 extra_data.t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，改判为 batgrbcat 目录值，原值留此备查。lc 全表按该 T0 统一重推（UVOT/RTT150/TNG/D50 原导入把 GCN 相对时刻误减 T0 亚秒 0.891880 s，且窗口/coadd 行误用起点而非中点，已逐行改正；GTC 行历元两表述冲突取 26.52 h、Magellan 行取 5.94 h，见各行 comment）。测光检索留证（2026-11-21）：仓内 gcn/archive 全文命中 17 篇（19952–19964、19978、20002、20004）+ami_all.csv 4 行（0.0423/0.95566/1.95646/123.57692 d、0.168/0.132/0.111/0.138 mJy，与 GCN 19978 为不同分析版本且置信口径未声明，未入库，另其 123.58 d 深限行留待决）；external/rssgrbag 0 行、grbsn_webtool 无本事件、heasarc_grbcat/swift_grb/uvot_grb 快照无本源；外部 OpenAlex 命中 22 条（13 篇本源 GCN+9 篇论文）、Crossref、INSPIRE rec 1778802、CDS VizieR 关键词/邻域检索页均不可达（记 unverified.tsv）；Trcka+2019 全文已核（作者自存档稿，Wiley VoR OAuth 墙，记 unverified.tsv substituted）、O'Connor+2022（MNRAS 515,4890）A1.13 已核：补 5 行（UVOT w1/m2/w2 上限、Bassano Bresciano 上限、Trcka+2019 D50 7230 s coadd 探测）并改正 GTC/其他行历元；O'Connor+2022 Table 1 另给 2017-02-23 GTC r>26.1、2018-05-20 LDT r>24.3、2018-10-06 Keck G/R/Z>25.9/25.2/24.8、2020-08-01 GMOS-N i>26.0 等晚期宿主搜索限（仅日期级锚点、约束宿主而非瞬变体），未录入瞬变体 lc、留待决。X 射线：GCN 19958 有 XRT 谱与流量描述，但本源 lc 无能量串行，无需时间轴对齐。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "batgrbcat_summary_trig_utc",
+    "t0_note": "T0=BAT 触发时刻 2016-09-27T18:04:49.891880 UTC（external/swift_bat batgrbcat summary_general_info，trigger #713782；swiftgrbba 快照仅整秒 18:04:49.000）；GCN 19952 整秒一致，亚秒取触发仪器目录值、未自行补",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
       "bibtex": "@ARTICLE{2019AN....340..629T,\n       author = {{Tr{\\v{c}}ka}, {\\v{S}}. imon and {Jel{\\'\\i}nek}, Martin and {{\\v{S}}trobl}, Jan},\n        title = \"{The first observation of an optical counterpart to a short gamma{\\ensuremath{-}}ray burst from the Czech Republic: GRB 160927A}\",\n      journal = {Astronomische Nachrichten},\n         year = 2019,\n        month = aug,\n       volume = {340},\n       number = {7},\n        pages = {629-632},\n          doi = {10.1002/asna.201913667},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019AN....340..629T},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Trcka+2019",
       "source": "bot",
-      "title": "The first observation of an optical counterpart to a short gammaensuremath-ray burst from the Czech Republic: GRB 160927A",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019AN....340..629T"
+      "title": "The first observation of an optical counterpart to a short gamma-ray burst from the Czech Republic: GRB 160927A",
+      "url": "https://doi.org/10.1002/asna.201913667"
     }
   ],
   "host_galaxy": null
