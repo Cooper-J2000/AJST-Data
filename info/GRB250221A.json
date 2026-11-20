@@ -1,30 +1,39 @@
 {
   "transient_id": "GRB250221A",
-  "alias": [],
-  "ra": 59.46288,
-  "dec": -15.1335,
+  "alias": [
+    "GRB250221.15"
+  ],
+  "ra": 59.4629,
+  "dec": -15.13349,
   "T0": "2025-02-21T03:34:37.076040Z",
-  "T0_ref": null,
+  "T0_ref": "Swift/BAT 触发 1290305:2025-02-21T03:34:37.076040Z(MET 761801712.192,Swift/BAT 官方目录,仓内 external/swift_bat 快照);GCN 39396 与 Konus-Wind GCN 39423(T0(BAT)=03:34:37 UT)同秒互证",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.768,
   "tag": [
     "grb"
   ],
-  "pos_error": 1.9,
-  "pos_ref": "GCN 39396",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 39423",
-  "comment": null,
-  "sub_tag": [],
+  "pos_error": 2.5,
+  "pos_ref": "GCN 39404",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 39418(VLT/X-shooter);Angulo-Valdez+2026(DOI 10.1093/mnras/stag184)",
+  "comment": "身份核验(2026-11-21):Swift/BAT 于 2025-02-21 03:34:37 UT 触发(trigger 1290305,GCN 39396);BAT 精化位 59.476,-15.137(1.9',90%,GCN 39471)。T0 亚秒值取 Swift/BAT 官方目录(MET 761801712.192→2025-02-21T03:34:37.076040Z;仓内 external/swift_bat 快照),与 GCN 39396/39471 及 Konus-Wind GCN 39423 的 03:34:37 UT 同秒互证;extra_data.t0_basis 原值 meta_trigger、t0_note 原值「t0 为 meta trigger-time(真实触发时刻)」已改写为 swift_bat_catalog 口径,数值本身经核未变。Trigger_Instrument 原库误记 Swift/UVOT,已改为 Swift/BAT(UVOT 未参与触发)。alias 新增 GRB250221.15(GCN 39394/39395 MASTER 原文用名)。定位采用 GCN 39404 增强 XRT 位 59.46290,-15.13349(2.5',90%);原库 ra/dec=59.46288,-15.1335 与 39404 差 0.078' 且 pos_error=1.9/pos_ref=GCN 39396 系错配(39396 的 1.9' 位为 59.46251,-15.13379),已按 39404 统一;并列备查:GCN 39396 UVOT 位 59.46274,-15.13311(0.76',90%)、UKSSDC swiftgrbba 快照 XRT 位 59.46292,-15.13356(2.5')。红移 z=0.768 系 VLT/X-shooter 光谱(Hα/[O III]/Hβ/[O II] 发射线与 Mg II/Fe II 吸收线;GCN 39418;Angulo-Valdez+2026 同值),原 redshift_ref 误指 GCN 39423(该通告仅引用 39418 的值),已改。分类:t90=1.80±0.32 s(GCN 39471 BAT refined,15-350 keV;swift_bat 目录 1.80±0.31 s 一致),按目录 t90 判 sgrb;Tian+2026 与 Angulo-Valdez+2026 均称 short-duration;GCN 39501 行文称 long GRB、与 t90 及文献分类不一致,记档备查。宿主:Angulo-Valdez+2026 经余辉光谱吸收线无歧义认证 G2(59.4628,-15.1333,z=0.768)为宿主、SFR≈3 M☉/yr;前景 G1(photo-z=0.343±0.077)被吸收线排除。同日邻暴甄别:SVOM sb25022102 系 Sco X-1 边缘误触发(GCN 39398→39399 撤销)、Fermi GBM 250221909 非 GRB(GCN 39415)、Fermi 761805304=GRB250221.19 位于 RA 318.4/Dec -33.2 属另一暴(GCN 39416)、LIGO S250221eb/S250221gb 均撤回(GCN 39403/39411);库内无同日重复条目。测光核对:21 条已有行逐行打开 reference 原文重核——导入管线普遍以曝光起点或日期零点充当 time,已按 §3.3/§3.8 统一改为曝光中点/窗口中点并重算 mjd;AKO 行原文笔误 GRB 240221A 应为 250221A;TNOT 行原文 MJD 60698.5457 系笔误(应为 60729.5457=起始时刻)。新增 40 行:MASTER-OAFA(GCN 39395)、Swift/UVOT 8 行(GCN 39409;其中 u 波段 340-590 s 曝光与 GCN 39396 系同一测量,保留最初来源 39396、39409 值 17.78±0.07 记于该行 comment)、TAROT(GCN 39417)、VLA 10 GHz(GCN 39433)、AZT-33IK/AZT-20 的 3σ 上限 2 行(GCN 39424/39427)、Angulo-Valdez+2026 表 1 光学 26 行与 VLA 1 行(该文 VoR 不可得,取 arXiv v5 accepted 版,详见 audit/unverified.tsv)。去重:MASTER GCN 39394(限 18.9)与 39395(探测 16.5+限 18.4)系同一 20 s 曝光的先后通告,取含值通告 39395;ATCA 两历元与 VLA 首历元保留 GCN 原始通告行,论文表 1 转引(其 Mid Time 列实为窗口起点)记于 comment。E(B-V) 原文互相矛盾:GCN 39396 给 0.046、GCN 39409 给 0.332、Angulo-Valdez+2026 给 0.0473±0.0015;各行是否已银消改正以各自原文声明为准。X 射线数据(Swift/XRT 与 EP/FXT,GCN 39414/39491 与 Angulo-Valdez+2026 表 1)按 §3.3 暂不入库。测光检索(2026-11-21,wa1kmoon@zcode):仓内 gcn/archive 全文命中 250221A 相关通告 23 篇(逐篇打开,11 篇含本源测光数值,已补行)、external/rssgrbag 0 命中、external/grbsn_webtool 无本源、uvot_grb/heasarc_grbcat/swift_xrt_live 快照无本源;外部 arXiv(2 篇全文实取)+Crossref(2 个 DOI 题录实取)+CDS/VizieR(J/MNRAS/546/stag184 实测 404、无机读表)+GCN 站未另行检索(仓内 archive 已含至编号 46010 的全部相关通告)→ 共补 40 行、改 21 行;ADS/SciX 通道无 token 受限(见 audit/unverified.tsv search-limited 行),不据此作「无文献」结论。",
+  "sub_tag": [
+    "sgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_catalog",
+    "t0_note": "t0=Swift/BAT 官方目录触发时刻(trigger 1290305,MET 761801712.192→2025-02-21T03:34:37.076040Z),非观测窗口时刻;bot 原说明 t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time(真实触发时刻),数值经核与本口径一致",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
@@ -32,15 +41,52 @@
       "name": "Tian+2026",
       "source": "bot",
       "title": "Short-duration GRB 250221A Afterglow Driven by Two-component Jets from the Merger of a Compact Star",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1000....5T"
+      "url": "https://doi.org/10.3847/1538-4357/ae469e"
     },
     {
       "bibtex": "@ARTICLE{2026MNRAS.546ag184A,\n       author = {{Angulo-Valdez}, Camila and {Becerra}, Rosa L. and {Gill}, Ramandeep and {Globus}, No{\\'e}mie and {Lee}, William H. and {L{\\'o}pez-C{\\'a}mara}, Diego and {Mihalenko}, Cassidy and {Moreno M{\\'e}ndez}, Enrique and {Ricci}, Roberto and {Siellez}, Karelle and {Watson}, Alan M. and {Yadav}, Muskan and {Yang}, Yu-Han and {Akl}, Dalya and {Antier}, Sarah and {Atteia}, Jean-Luc and {Basa}, St{\\'e}phane and {Butler}, Nathaniel R. and {Dichiara}, Simone and {Dornic}, Damien and {Ducoin}, Jean-Gr{\\'e}goire and {Fortin}, Francis and {Garc{\\'\\i}a-Garc{\\'\\i}a}, Leonardo and {L{\\'o}pez}, Kin Ocelotl and {Magnani}, Francesco and {O'Connor}, Brendan and {Pereyra}, Margarita and {Rakotondrainibe}, Ny Avo and {S{\\'a}nchez-{\\'A}lvarez}, Fredd and {Schneider}, Benjamin and {Troja}, Eleonora and {de Ugarte Postigo}, Antonio},\n        title = \"{Evidence of energy injection in the short and distant GRB 250221A in a high density environment}\",\n      journal = {\\mnras},\n     keywords = {gamma-ray burst: individual: GRB 250221A, gamma-ray bursts, High Energy Astrophysical Phenomena},\n         year = 2026,\n        month = mar,\n       volume = {546},\n       number = {4},\n          eid = {stag184},\n        pages = {stag184},\n          doi = {10.1093/mnras/stag184},\narchivePrefix = {arXiv},\n       eprint = {2510.19132},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2026MNRAS.546ag184A},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Angulo-Valdez+2026",
       "source": "bot",
       "title": "Evidence of energy injection in the short and distant GRB 250221A in a high density environment",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026MNRAS.546ag184A"
+      "url": "https://doi.org/10.1093/mnras/stag184"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 59.4628,
+    "dec": -15.1333,
+    "redshift": 0.768,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "g",
+        "mag": 24.02,
+        "mag_err": 0.06,
+        "mag_sys": "AB",
+        "source": "Legacy Survey DR10,转引自 Angulo-Valdez+2026 §3.1"
+      },
+      {
+        "band": "r",
+        "mag": 24.09,
+        "mag_err": 0.08,
+        "mag_sys": "AB",
+        "source": "Legacy Survey DR10,转引自 Angulo-Valdez+2026 §3.1"
+      },
+      {
+        "band": "i",
+        "mag": 23.86,
+        "mag_err": 0.09,
+        "mag_sys": "AB",
+        "source": "Legacy Survey DR10,转引自 Angulo-Valdez+2026 §3.1"
+      },
+      {
+        "band": "z",
+        "mag": 24.21,
+        "mag_err": 0.26,
+        "mag_sys": "AB",
+        "source": "Legacy Survey DR10,转引自 Angulo-Valdez+2026 §3.1"
+      }
+    ],
+    "comment": "宿主 G2:角距最近(δR<7 kpc,投影offset<7(+12/-7) kpc);X-shooter 余辉光谱在余辉位置检出 Hα/[O III] 5007/[O III] 4959/Hβ/[O II] 3726/3729 发射线与 Mg II/Fe II 吸收线、共同 z=0.768,作者据此无歧义认证 G2 为宿主;SFR≈3 M☉/yr(Hα,L=3.8e41 erg/s);前景 G1(59.4625,-15.1331,photo-z=0.343±0.077)被吸收线排除。VoR 不可得,取自 arXiv v5(accepted 版)§3 与表 2",
+    "source": "Angulo-Valdez+2026(MNRAS 546, stag184)表 2 与 §3.2;arXiv 2510.19132v5"
+  }
 }
