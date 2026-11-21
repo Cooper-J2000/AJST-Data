@@ -1,14 +1,15 @@
 {
   "transient_id": "GRB171010A",
   "alias": [
-    "SN2017htp"
+    "SN2017htp",
+    "SN 2017htp"
   ],
   "ra": 66.58108333333334,
   "dec": -10.46275,
-  "T0": "2017-10-10T19:00:50.580000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "T0": "2017-10-10T19:00:50.58Z",
+  "T0_ref": "GCN 21992(Fermi GBM 触发通告,trigger 529354855/171010792)",
+  "T0_offset": -140.438,
+  "T0_offset_ref": "GCN 22003(Konus-Wind:主脉冲前 ~T0KW-150 s 辐射起点,KW T0=68460.142 s UT=19:01:00.142;换算至 GBM T0 口径)",
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": 0.3285,
   "tag": [
@@ -16,10 +17,10 @@
     "sn"
   ],
   "pos_error": 0.5,
-  "pos_ref": "https://www.wis-tns.org/object/2017htp",
-  "redshift_type": null,
-  "redshift_ref": "GCN 22002",
-  "comment": null,
+  "pos_ref": "GCN 21988(Izzo & Malesani,OT 位 04:26:19.46 -10:27:45.9);Melandri+2019 (DOI 10.1093/mnras/stz2900) 正文引同位",
+  "redshift_type": "spec-host",
+  "redshift_ref": "GCN 22096(VLT/X-shooter,宿主核窄发射线 z=0.3285)",
+  "comment": "身份:GRB 171010A=Fermi/GBM 触发(trigger 529354855/171010792,GCN 21992),Fermi/LAT 同时刻检测(GCN 21985)、AstroSat/CZTI(GCN 21990)、Konus-Wind(GCN 22003,原文首句 \"170410A\" 笔误经 GCN OPS 注记更正)证实;OT 与 SN 2017htp 光谱关联(GCN 22096 VLT/X-shooter 证认;Melandri+2019 标题即 GRB 171010A/SN 2017htp);同日 GRB 171010B 为独立事件(Swift/BAT trigger 778019,20:59:24.168 UT,RA=34.123 Dec=-54.410,GCN 21995),与本源无混入。||T0=19:00:50.58 UT 取自 GBM 触发通告 GCN 21992(权威级①,只写来源精度);FERMIGBRST 目录 trigger_time=19:00:50.576(external/fermi_gbm,差 4 ms、整数秒一致,备查,权威级②);Melandri+2019 给 19:00:50.6;LAT/AstroSat 同时刻。T0_offset=-140.438 s:GCN 22003 记主脉冲前 ~T0KW-150 s 已有较弱辐射(KW T0=19:01:00.142 UT),换算至 GBM T0 口径(19:01:00.142-150 s-19:00:50.58),原文带 ~ 为近似。||定位:ra/dec=OT 位 04:26:19.46 -10:27:45.9(=66.581083,-10.462750,GCN 21988 原文,Melandri+2019 正文引同位,TNS 2017htp 同位);pos_error=0.5\" 沿用原 TNS 登记精度(GCN 21988/Melandri 原文未给 OT 位误差,来源未标注置信水平,pos_error_confidence 留空);备查:XRT 增强位 66.58092,-10.46325 ±1.4\"(90%,GCN 21989)、MDM OT 位 ±0.4\"(GCN 21987)、VLA 射电位 04:26:19.4780+/-0.0005,-10:27:46.03+/-0.01(GCN 22014)。||红移:z=0.3285(spec-host)——VLT/X-shooter 宿主核窄发射线(GCN 22096);链条:GCN 22002(NTT 发射线 z=0.33,近似)→ GCN 22096(z=0.3285)→ Melandri+2019(引 z=0.33);原 redshift_ref=GCN 22002 只给 0.33,已改判 GCN 22096。||sub_tag:lgrb 按目录 t90=107.266+/-0.809543 s(50-300 keV,FERMIGBRST,external/fermi_gbm)判;GBM 通告 T90≈104 s、Konus≈155 s、CZTI T90=70.3 s(40-200 keV),均为长暴口径;SN-spec=VLT/X-shooter 光谱证认 SN 2017htp(Ic-bl,Mg II/Fe II/Si II vexp~13000-15000 km/s,GCN 22096+Melandri+2019 §3.2);Fermi-LAT=GCN 21985(7 GeV 光子于 T0+768 s)。||银消:各来源均未做银消改正(Melandri+2019 用 E(B-V)=0.13 Schlafly-Finkbeiner;GCN 22004 用 E(B-V)=0.15 Schlegel+98),lc 行 Gext_corr 均为 n(录入值未改正)。||SN/余辉分区:Melandri+2019 Fig.1 示 ~10 d 起光变偏离余辉衰减,为 SN 2017htp 增亮;其 Table 1 后期行含宿主贡献(未扣除);HCT(GCN 22012)注明宿主污染未扣除、RCT(GCN 22107)表列 Host+SN 混合星等、IKI(GCN 22113)后段为 host+OT;各行星 comment 已分别注明。||测光检索(2026-11-20):仓内 gcn/archive 26 篇含 \"171010\"(21 篇属本源、5 篇属同日 171010B),14 篇测光通告全文读取;external/grbsn_webtool/SourceData/GRB171010A-SN2017htp(Optical 92 行/UVOT 13 行/VLA 29 行/AMI 21 行/XRT LC/spectra,分别对应 Melandri+2019 Table 1-2 与 Bright+2019 Table 1-2)、external/rssgrbag(无本源记录)、external/fermi_gbm、swiftgrbba、mpe_greiner(目录级参数互证);外部:Melandri+2019(MNRAS 490,5366)、Bright+2019(MNRAS 486,2721)出版社 OUP 403 反爬、Kumar+2022(NewA 97,101889)ScienceDirect 403,VoR 均不可达 → arXiv PDF 实读核值(1910.14160/1904.00039v1/2206.00950),Crossref 题录交叉核验,VizieR(CFA 镜像)确认无 J/MNRAS/490/5366 机读表;TNS 网页被拦(仅返回 118 字节);Dainotti+2024 VoR=MNRAS 533,4023-4043(DOI 10.1093/mnras/stae1484,Crossref 已核;机读表=GitHub SLAC-Gamma-Rays/grbLC color-evolution 分支 mag_files/171010A_mag.txt,112 行=105 Melandri 转录+7 Kumar 转录,UVOT 13 行 system 误标 Vega 实为 AB,与 papers/dainotti2024.md 记录的 181110A 上游误标同类);ADS/SciX 无 token(HTTP 401)→ 记 search-limited,不据此下\"无文献\"结论;结论:库内已含全部可核来源的测光行,本次新增 0 行、删 17 行(13 行 UVOT Dainotti 转引+1 行 GCN 22013 初报+3 行 Kumar 重复)、修 213 行(窗口中点/半曝光 time_err/VLA 单位 mJy→uJy/t-T0 中点口径/reference 指向最初来源/UVOT 系统 AB 判定—Dainotti MRT 误标 Vega/DOT 时间按 JD 修正—MRT 时间与 Kumar 原文差数百秒),明细见各行星 comment 与 PR 说明。||X 射线:本源 lc 无 keV 行;Swift/XRT 数据存在(GCN 21989;grbsn 快照 xrtlc;Bright+2019 §2.2),按契约 X 射线测光不入库、不处理。||审核:wa1kmoon@zcode 2026-11-20,分支 audit/GRB171010A(PR #1120)。||articles:移除 Chand+2019(AstroSat-CZTI 偏振专文,ApJ 874,70,DOI 10.3847/1538-4357/ab0826)——本次审核所据数据(lc/params)未实际引用该文;专文信息保留于此备查。",
   "sub_tag": [
     "SN-spec",
     "lgrb",
@@ -103,16 +104,14 @@
         "v": 0.177
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
-    {
-      "bibtex": "@ARTICLE{2019ApJ...874...70C,\n       author = {{Chand}, Vikas and {Chattopadhyay}, Tanmoy and {Oganesyan}, Gor and {Rao}, A.~R. and {Vadawale}, Santosh V. and {Bhattacharya}, Dipankar and {Bhalerao}, V.~B. and {Misra}, Kuntal},\n        title = \"{AstroSat-CZTI Detection of Variable Prompt Emission Polarization in GRB 171010A}\",\n      journal = {\\apj},\n     keywords = {gamma-ray burst: general, gamma-ray burst: individual: GRB 171010A, polarization, radiation mechanisms: non-thermal, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2019,\n        month = mar,\n       volume = {874},\n       number = {1},\n          eid = {70},\n        pages = {70},\n          doi = {10.3847/1538-4357/ab0826},\narchivePrefix = {arXiv},\n       eprint = {1807.01737},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019ApJ...874...70C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Chand+2019",
-      "source": "bot",
-      "title": "AstroSat-CZTI Detection of Variable Prompt Emission Polarization in GRB 171010A",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...874...70C"
-    },
     {
       "bibtex": "@ARTICLE{2019MNRAS.486.2721B,\n       author = {{Bright}, J.~S. and {Horesh}, A. and {van der Horst}, A.~J. and {Fender}, R. and {Anderson}, G.~E. and {Motta}, S.~E. and {Cenko}, S.~B. and {Green}, D.~A. and {Perrott}, Y. and {Titterington}, D.},\n        title = \"{A detailed radio study of the energetic, nearby, and puzzling GRB 171010A}\",\n      journal = {\\mnras},\n     keywords = {gamma-ray burst: individual: GRB 171010A, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2019,\n        month = jun,\n       volume = {486},\n       number = {2},\n        pages = {2721-2729},\n          doi = {10.1093/mnras/stz1004},\narchivePrefix = {arXiv},\n       eprint = {1904.00039},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.2721B},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Bright+2019",
@@ -137,9 +136,9 @@
     {
       "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
+      "source": "bot;wa1kmoon@zcode(VoR URL 更正)",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
@@ -163,5 +162,21 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 66.5815,
+    "dec": -10.462722,
+    "redshift": 0.3285,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "i",
+        "mag": 20.31,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "GCN 21988(Pan-STARRS 档案测光,OT 西 ~1.3\" 的宿主候选)"
+      }
+    ],
+    "comment": "宿主=OT 西侧 ~1.3\" 的暗星系(GCN 21987 给 Pan-STARRS 位 04:26:19.56 -10:27:45.8;GCN 21988 报 i=20.31+/-0.05 AB);VLT/X-shooter 宿主核谱 z=0.3285(GCN 22096);Melandri+2019:LBT r/i 成像测宿主 r50=1.33\"(6.6 kpc)/r90=2.63\"(12.9 kpc)、轴比 0.9、GRB 相对宿主质心偏移 1.4\"≈6.8 kpc(以 VLA 位为参考);Table 4/5 给 GRB 区/宿主发射线物理量(SFR_host(Hα)=0.88+/-0.04 M⊙/yr,狭缝覆盖部分;12+log(O/H)_host≈8.5-8.9)",
+    "source": "GCN 21987;GCN 21988;GCN 22096;Melandri+2019 (DOI 10.1093/mnras/stz2900)"
+  }
 }
