@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB130912A",
-  "alias": [],
-  "ra": 47.606,
-  "dec": 13.999,
-  "T0": "2013-09-12T08:34:57Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 130912.358",
+    "bn130912358",
+    "BAT 570465"
+  ],
+  "ra": 47.59265,
+  "dec": 13.99703,
+  "T0": "2013-09-12T08:34:57.933280Z",
+  "T0_ref": "GCN 15212（Swift/BAT 触发 08:34:57 UT，trigger=570465，整秒精度）；亚秒取触发仪器官方目录 The Swift/BAT GRB Catalog（external/swift_bat 快照）Trig_time_UTC=2013-09-12T08:34:57.933280Z（rate trigger 条目，整数秒与 GCN 一致，按《数据审核提示词》§3.2/§3.8 触发仪器亚秒值优先，同 GRB130626A 先例）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,13 +20,19 @@
   "pos_ref": "GCN 15217",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。元数据修正：原 ra/dec=47.606/13.999 为 BAT 地面定位（GCN 15216，1.6 arcmin 90% containment），却配 pos_ref=GCN 15217 与 1.6 arcsec，坐标与误差出处错配；现改为 XRT 增强定位 RA,Dec=47.59265,+13.99703（1.6 arcsec，90% confidence，GCN 15217），pos_error_confidence=90。T0 亚秒精化 +0.933280 s 后，lc 非 X 射线行 time 已平移 −0.933280 s、mjd 保持不变（来源锚定绝对时刻口径），X 射线行（10keV，UKSSDC BA，共 21 行）按 §3.3/§7 由维护者对齐（保 mjd、平移 time）。sub_tag=sgrb：t90=0.28±0.03 s（15-350 keV，GCN 15216 Swift/BAT 精化分析），external/swift_bat 快照 t90=0.284±0.029 s 一致；Fermi/GBM t90≈0.5 s（50-300 keV，GCN 15219；external/fermi_gbm 快照 0.512±0.143）；按目录/GCN t90 判 sgrb，非自算。宿主：GROND/P60 早期源曾疑为宿主（GCN 15214/15222），RATIR 确认源变暗、为短暴余辉（GCN 15226），WHT 后期 g~25/i~24 显示宿主很暗（GCN 15224）；无确认宿主，host_galaxy 留空；Zhu+2015 建模假定 z=0.72 非实测红移。测光检索（2026-11-22）：仓内 gcn/archive 全文 16 篇逐篇核对（KAIT GCN 15213 上限行补入 lc）；external/rssgrbag、external/grbsn_webtool 无本源记录；SciX 检索 \"GRB 130912A\"/\"130912A\" 命中 18 篇＝研究文章 2 篇（Zhu+2015 表 1 四行全为 GCN 转引、按 §3.4 不入库；Knust+2016 LPI 会议文摘无数据表）+ GCN 16 篇；Fong+2015（ApJ 815,102，VoR IOP HTML 实取逐值核对）表 7 十行全为 GCN 15214/15222/15224/15226 同观测之银消改正 μJy 转写（§3.4 去重保留 GCN 行、行 comment 注明），表 8 两行 This work＝0.91 d 行与 GCN 15227 同团组同观测、3.10 d <42 μJy 行新入库 → 本 PR 补 2 行。别名证据：GRB 130912.358/bn130912358 为 FERMIGBRST 官方目录 name_alt（external/fermi_gbm 快照），GCN 15219 原文用名 130912358（trigger 400667700）；BAT 570465 为 Swift trigger id（GCN 15212，external/swift_bat 快照 name_alt）。",
   "sub_tag": [
     "sgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Harpoon@zcode",
+      "date": "2026-11-22"
+    }
+  },
   "articles": [
     {
       "bibtex": "@ARTICLE{2015A&A...576A..71Z,\n       author = {{Zhu}, Biao and {Zhang}, Fu-Wen and {Zhang}, Shuai and {Jin}, Zhi-Ping and {Wei}, Da-Ming},\n        title = \"{The long-lasting optical afterglow plateau of short burst GRB 130912A}\",\n      journal = {\\aap},\n     keywords = {gamma rays: general, X-rays: bursts, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2015,\n        month = apr,\n       volume = {576},\n          eid = {A71},\n        pages = {A71},\n          doi = {10.1051/0004-6361/201424993},\narchivePrefix = {arXiv},\n       eprint = {1501.05025},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015A&A...576A..71Z},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
@@ -30,6 +40,13 @@
       "source": "bot",
       "title": "The long-lasting optical afterglow plateau of short burst GRB 130912A",
       "url": "https://ui.adsabs.harvard.edu/abs/2015A&A...576A..71Z"
+    },
+    {
+      "bibtex": "@ARTICLE{2015ApJ...815..102F,\n       author = {{Fong}, Wen-fai and {Berger}, Edo and {Margutti}, Raffaella and {Zauderer}, B. Ashley},\n        title = \"{A Decade of Short-duration Gamma-Ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and Jet Opening Angles}\",\n      journal = {\\apj},\n         year = 2015,\n        month = dec,\n       volume = {815},\n          eid = {102},\n        pages = {102},\n          doi = {10.1088/0004-637X/815/2/102},\narchivePrefix = {arXiv},\n       eprint = {1509.02922},\n primaryClass = {astro-ph.HE}\n}",
+      "name": "Fong+2015",
+      "source": "Harpoon@zcode",
+      "title": "A Decade of Short-Duration Gamma-Ray Burst Broadband Afterglows: Energetics, Circumburst Densities, and Jet Opening Angles",
+      "url": "https://doi.org/10.1088/0004-637X/815/2/102"
     }
   ],
   "host_galaxy": null
