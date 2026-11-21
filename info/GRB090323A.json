@@ -1,28 +1,33 @@
 {
   "transient_id": "GRB090323A",
-  "alias": [],
-  "ra": 190.691667,
-  "dec": 17.083333,
+  "alias": [
+    "GRB 090323",
+    "GRB090323002",
+    "GRB 090323.002",
+    "bn090323002"
+  ],
+  "ra": 190.7094,
+  "dec": 17.0539,
   "T0": "2009-03-23T00:02:42.630000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 9021（Fermi/GBM 触发通告：At 00:02:42.63 UT on 23 March 2009, the Fermi Gamma-Ray Burst Monitor (GBM) triggered）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
-  "redshift": 3.57,
+  "redshift": 3.568,
   "tag": [
     "grb"
   ],
   "pos_error": 2.7,
   "pos_ref": "GCN 9024",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "Cenko+2011 (ApJ 732, 29)",
+  "comment": "身份：Fermi/GBM trigger 259459364 / 090323002，T0=00:02:42.63 UT（GCN 9021 原文，触发仪器通告）；FERMIGBRST bn090323002 trigger_time=00:02:42.627Z（external/fermi_gbm 快照，亚秒差 3 ms，取通告精度）；Konus-Wind 于 T0+174.632 s 自身触发（GCN 9030）非零点；Swift 为 TOO 跟测（19:27 UT 起，GCN 9024），lc 内 XRT 行 time 已按本 T0 自洽。T0_offset 不写（GBM 触发即设备自动触发）。alias 出处：'GRB 090323'、'GRB090323002'、'GRB 090323.002'、'bn090323002' 为 GCN 9021 原文用名（原文「triggered and located GRB 090323 (trigger 259459364 / 090323002)」）与 FERMIGBRST 目录 name_alt 形态（external/fermi_gbm 快照）。坐标：原 ra/dec=190.691667/17.083333 系 mpe_greiner 快照粗定位（other.Error=8），与 pos_error=2.7″/pos_ref=GCN 9024 张冠李戴；已改 GCN 9024 XRT enhanced 坐标 190.70940/17.05390（2.7″ radius, 90% confidence → confidence=90）；LAT 侦察定位 190.69/17.08（68%/90% 包含半径 0.09°/0.14°，GCN 9021）；GROND 190.70958/17.05322（±0.5″，GCN 9026）；UVOT 白光定位 ±0.8″（GCN 9032）；Swift SGA 目录 190.70955/17.053306 ±0.6″（external/swift_grb、uvot_grb 快照 POS_ERR=0.6）。红移：3.568±0.004（Gemini-South GMOS-S 窄线 C IV/O I/C II/Si IV，Cenko+2011 ApJ 732, 29 VoR）；GCN 9028 初报 z=3.57；Savaglio+2012（MNRAS 420, 627）主吸收体 G0 z=3.5673、G1 z=3.5774、单 Ly-α 拟合 3.5690；宿主发射线红移 3.5832（Krühler+2015 A&A 581, A125，见 host_galaxy；已核对 VizieR J/A+A/581/A125 行 47）。sub_tag：lgrb 按 t90=133.89±0.572 s（50-300 keV，FERMIGBRST 目录）判；Konus T90=132.992±1.642 s（Tsvetkova+2017）；GCN 9021 时标 ~150 s。Fermi-LAT：GCN 9021 LAT >5σ 侦测、能量达数 GeV、持续至千秒量级；external/fermi_lat 快照 tl100=5312 s、like_best_ts=392。params 补充：Eiso=5.81±0.44E54 erg（1-10^4 keV rest，Tsvetkova+2017 Konus）；Egamma,iso=(3.30±0.13)E54 erg（Cenko+2011）；fluence=2.02E-4 erg/cm2（20 keV-10 MeV，GCN 9030）；Epeak=697±51 keV（CPL，GCN 9035）；t90=133.89 s（FERMIGBRST）。测光检索（2026-11-22）：仓内 gcn/archive 命中 21 篇（GCN 9021-9063、9324 通告全文，另有 14576 转引）；external/rssgrbag 1 行（C&F 2012 拟合峰值，已置 discard）、external/grbsn_webtool 0、external/uvot_grb 无测光；SciX 检索「GRB 090323」命中 32 条（20 条 GCN + 12 条研究文献）；据此补 GCN 原值 5 行（9033/9034/9036/9041/9042）、Cenko+2011 T2 射电 20 行，删 Dainotti2024 转引 GROND 7 行（与 GCN 9026 同值去重）。UVOT white 7 行经 Roming+2017（ApJS 228, 13）官方数据产品 MAST HLSP UVOTGRB noc-db.fits 逐值核对全同（TIME/MAG/MAG_ERR；IOP suppdata 反爬、UKSSDC 维护中，HLSP 为目录官方分发渠道）；C&F 2012 逐次测量表仅在 IOP suppdata（反爬拦截）未取，射电已由 Cenko+2011 T2 全覆盖。X 射线 18 行（band=10keV，UKSSDC Burst Analyser）按范围豁免，未改未删。",
   "sub_tag": [
     "lgrb",
     "Fermi-LAT"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -83,7 +88,12 @@
         "v": 0.302
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
@@ -101,11 +111,11 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
-      "name": "Tsvetkova+2021",
+      "bibtex": "@ARTICLE{2017ApJ...850..161T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind Catalog of Gamma-Ray Bursts with Known Redshifts. I. Bursts Detected in the Triggered Mode},\n       journal = {ApJ, 850, 161 (2017)},\n       year = {2017},\n       doi = {10.3847/1538-4357/aa96af},\n       eprint = {1710.08746},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2017ApJ...850..161T/abstract},\n}",
+      "name": "Tsvetkova+2017",
       "source": "bot",
-      "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+      "title": "The Konus-Wind Catalog of Gamma-Ray Bursts with Known Redshifts. I. Bursts Detected in the Triggered Mode",
+      "url": "https://ui.adsabs.harvard.edu/abs/2017ApJ...850..161T/abstract"
     },
     {
       "bibtex": "@ARTICLE{2024A&A...690A.261G,\n       author = {C. Guidorzi and R. Maccary and A. Tsvetkova and S. Kobayashi and L. Amati and L. Bazzanini and M. Bulla and A. E. Camisasca and L. Ferro and D. Frederiks and F. Frontera and A. Lysenko and M. Maistrello and A. Ridnaia and D. Svinkin and M. Ulanov},\n       title = {New results on the gamma-ray burst variability-luminosity relation},\n       journal = {A&A, 690, A261 (2024)},\n       year = {2024},\n       doi = {10.1051/0004-6361/202451401},\n       eprint = {2409.01644},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract},\n}",
@@ -122,18 +132,46 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2010arXiv10024194B,\n       author = {Elisabetta Bissaldi},\n       title = {GRB 090323 and GRB 090328: two long high-energy GRBs detected with Fermi},\n       journal = {arXiv e-prints},\n       year = {2010},\n       eprint = {1002.4194},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010arXiv10024194B/abstract},\n}",
+      "bibtex": "@INPROCEEDINGS{2010AIPC.1223..183B,\n       author = {E. Bissaldi},\n       title = {The Fermi Gamma-Ray Burst Monitor: Results from the first year and spectral analysis of GRB 090323 and GRB 090328},\n       booktitle = {Gamma-Ray Bursts 2009: The Shocking Universe (AIPC 1223)},\n       year = {2010},\n       volume = {1223},\n       pages = {183},\n       doi = {10.1063/1.3395984},\n       eprint = {1002.4194},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010AIPC.1223..183B/abstract},\n}",
       "name": "Bissaldi+2010",
       "source": "bot",
-      "title": "GRB 090323 and GRB 090328: two long high-energy GRBs detected with Fermi",
-      "url": "https://ui.adsabs.harvard.edu/abs/2010arXiv10024194B/abstract"
+      "title": "The Fermi Gamma-Ray Burst Monitor: Results from the first year and spectral analysis of GRB 090323 and GRB 090328",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010AIPC.1223..183B/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2011arXiv11104642S,\n       author = {S. Savaglio and A. Rau and J. Greiner and T. Krühler and S. McBreen and D. H. Hartmann and A. C. Updike and R. Filgas and S. Klose and P. Afonso and C. Clemens and A. Küpcü Yoldaş and F. Olivares E. and V. Sudilovsky and G. Szokoly},\n       title = {Super-solar Metal Abundances in Two Galaxies at z ~ 3.57 revealed by the GRB 090323 Afterglow Spectrum},\n       journal = {arXiv e-prints},\n       year = {2011},\n       doi = {10.1111/j.1365-2966.2011.20074.x},\n       eprint = {1110.4642},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011arXiv11104642S/abstract},\n}",
-      "name": "Savaglio+2011",
+      "bibtex": "@ARTICLE{2012MNRAS.420..627S,\n       author = {S. Savaglio and A. Rau and J. Greiner and T. Krühler and S. McBreen and D. H. Hartmann and A. C. Updike and R. Filgas and S. Klose and P. Afonso and C. Clemens and A. Küpcü Yoldaş and F. Olivares E. and V. Sudilovsky and G. Szokoly},\n       title = {Super-solar metal abundances in two galaxies at z ∼ 3.57 revealed by the GRB 090323 afterglow spectrum},\n       journal = {MNRAS, 420, 627 (2012)},\n       year = {2012},\n       doi = {10.1111/j.1365-2966.2011.20074.x},\n       eprint = {1110.4642},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2012MNRAS.420..627S/abstract},\n}",
+      "name": "Savaglio+2012",
       "source": "bot",
-      "title": "Super-solar Metal Abundances in Two Galaxies at z ~ 3.57 revealed by the GRB 090323 Afterglow Spectrum",
-      "url": "https://ui.adsabs.harvard.edu/abs/2011arXiv11104642S/abstract"
+      "title": "Super-solar metal abundances in two galaxies at z ∼ 3.57 revealed by the GRB 090323 afterglow spectrum",
+      "url": "https://ui.adsabs.harvard.edu/abs/2012MNRAS.420..627S/abstract"
+    },
+    {
+      "bibtex": "@ARTICLE{2011ApJ...732...29C,\n       author = {S. B. Cenko and D. A. Frail and F. A. Harrison and J. B. Haislip and D. E. Reichart and N. R. Butler and B. E. Cobb and A. Cucchiara and E. Berger and J. S. Bloom and P. Chandra and D. B. Fox and others},\n       title = {Afterglow Observations of Fermi Large Area Telescope Gamma-ray Bursts and the Emerging Class of Hyper-energetic Events},\n       journal = {ApJ, 732, 29 (2011)},\n       year = {2011},\n       doi = {10.1088/0004-637X/732/1/29},\n       eprint = {1004.2900},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011ApJ...732...29C/abstract},\n}",
+      "name": "Cenko+2011",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Afterglow Observations of Fermi Large Area Telescope Gamma-ray Bursts and the Emerging Class of Hyper-energetic Events",
+      "url": "https://ui.adsabs.harvard.edu/abs/2011ApJ...732...29C/abstract"
+    },
+    {
+      "bibtex": "@ARTICLE{2010ApJ...720.1513K,\n       author = {D. A. Kann and S. Klose and B. Zhang and D. Malesani and E. Nakar and A. Pozanenko and A. C. Wilson and N. R. Butler and P. Jakobsson and S. Schulze and others},\n       title = {The Afterglows of Swift-era Gamma-ray Bursts. I. Comparing pre-Swift and Swift-era Long/Soft (Type II) GRB Optical Afterglows},\n       journal = {ApJ, 720, 1513 (2010)},\n       year = {2010},\n       doi = {10.1088/0004-637X/720/2/1513},\n       eprint = {0712.2186},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010ApJ...720.1513K/abstract},\n}",
+      "name": "Kann+2010",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The Afterglows of Swift-era Gamma-ray Bursts. I. Comparing pre-Swift and Swift-era Long/Soft (Type II) GRB Optical Afterglows",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010ApJ...720.1513K/abstract"
+    },
+    {
+      "bibtex": "@ARTICLE{2010A&A...516A..71M,\n       author = {S. McBreen and T. Krühler and A. Rau and J. Greiner and D. A. Kann and S. Savaglio and P. Afonso and C. Clemens and R. Filgas and S. Klose and A. Küpcü Yoldaş and F. Olivares E. and others},\n       title = {Optical and near-infrared follow-up observations of four Fermi/LAT GRBs: redshifts, afterglows, energetics, and host galaxies},\n       journal = {A&A, 516, A71 (2010)},\n       year = {2010},\n       doi = {10.1051/0004-6361/200913734},\n       eprint = {1003.3885},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010A&A...516A..71M/abstract},\n}",
+      "name": "McBreen+2010",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Optical and near-infrared follow-up observations of four Fermi/LAT GRBs: redshifts, afterglows, energetics, and host galaxies",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010A&A...516A..71M/abstract"
+    },
+    {
+      "bibtex": "@ARTICLE{2015A&A...581A.125K,\n       author = {T. Krühler and J. P. U. Fynbo and A. Rossi and others},\n       title = {GRB hosts through cosmic time. VLT/X-Shooter emission-line spectroscopy of 96 γ-ray-burst-selected galaxies at 0.1<z<3.6},\n       journal = {A&A, 581, A125 (2015)},\n       year = {2015},\n       doi = {10.1051/0004-6361/201425561},\n       eprint = {1505.06743},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2015A&A...581A.125K/abstract},\n}",
+      "name": "Krühler+2015",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "GRB hosts through cosmic time. VLT/X-Shooter emission-line spectroscopy of 96 γ-ray-burst-selected galaxies at 0.1<z<3.6",
+      "url": "https://ui.adsabs.harvard.edu/abs/2015A&A...581A.125K/abstract"
     }
   ],
   "host_galaxy": {
