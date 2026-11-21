@@ -24,7 +24,7 @@ WSRT），全部为**作者自有数据的正式发表表**（多数未单独发
 
 | 源 | 表号 | 源级卡 | status | 增量判读 |
 |---|---|---|---|---|
-| GRB090323A | Table 1（39 行光学）+ Table 2（22 行射电） | 无（本源已审，PR #1163 直接入库） | extracted（T1 39 行逐值核对；T2 22 行中 20 行非 GCN 重复行入库） | 类型 1+2；T1 与 GCN 值 +0.16 关系、T2 与 GCN 9043/9047 两行重复已处置 |
+| GRB090323A | Table 1（39 行光学）+ Table 2（22 行射电） | 无（本源已审，PR #1163 直接入库） | extracted（T1 46 行逐值核对（含 GROND g'r'i'z'JHKs @1.12 d 7 行，Reference 注 1=GCN.9026；Dainotti 转引行按 §3.4 同值去重删除）；T2 22 行中 20 行非 GCN 重复行入库） | 类型 1+2；T1 与 GCN 值 +0.16 关系、T2 与 GCN 9043/9047 两行重复已处置 |
 | GRB090328A | Table 3（光学）+ Table 4（VLA） | 无（该源已 reviewed） | mention-only | 类型 1 候选；该源审核时若未取用此表，可按 CDS/IOP 机读版补 |
 | GRB090902B | Table 5（光学，含 UVOT U）+ Table 6（射电，含 WSRT 4.8 GHz） | audit/leads/GRB090902B.md（mention-only） | mention-only | 类型 1 候选（P60 光变、UVOT U 表 GCN 未发布） |
 | GRB090926A | Table 7（光学/NIR） | audit/leads/GRB090926A.md（mention-only） | mention-only | 类型 1 候选 |
