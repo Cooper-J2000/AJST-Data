@@ -1,24 +1,26 @@
 {
   "transient_id": "GRB210731A",
   "alias": [
-    "AT2021umi"
+    "AT2021umi",
+    "GRB 210731.931",
+    "GRB 210731.93"
   ],
   "ra": 300.30454166666664,
   "dec": -28.061027777777777,
-  "T0": "2021-07-31T22:21:07Z",
-  "T0_ref": null,
+  "T0": "2021-07-31T22:21:08Z",
+  "T0_ref": "GCN 30568（Swift/BAT trigger 1062336）",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "Trigger_Instrument": "Swift/BAT+Fermi/GBM",
   "redshift": 1.2525,
   "tag": [
     "grb"
   ],
   "pos_error": 0.5,
   "pos_ref": "https://www.wis-tns.org/object/2021umi",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 30583",
-  "comment": null,
+  "comment": "身份：Swift/BAT 触发 1062336（GCN 30568，22:21:08 UT）与 Fermi/GBM 触发 649462872/210731931（GCN 30573，22:21:07 UT，比 BAT 早 1 s）为同一暴，双触发仪器矛盾按《数据审核提示词》§3.8 以 Swift 为准。T0 由 22:21:07Z（原 GBM 整秒值）改为 22:21:08Z；备查：BAT 目录 22:21:08.531520（image trigger）、swiftgrbba 22:21:08.000、FERMIGBRST 22:21:07.203，与所取值差 ≥60 ms 已在 PR 报告；deWet2023 与 Li2025 均以 BAT 触发为 T0。改 T0 后全表 mjd=T0+time 已程序化重推。定位：ra/dec=TNS AT2021umi（20:01:13.090 −28:03:39.70，公开页未标注误差置信水平→pos_error_confidence 留空；pos_error=0.5″ 为入库值、公开页未显示该字段；MASTER GCN 30578 原文 ±0.9″ 并列备查），与 XRT enhanced（GCN 30576，300.30466 −28.06096，2.2″ 90%）及 MeerLICHT OT（GCN 30570）互证。红移 z=1.2525 为 VLT/X-shooter 吸收红移（GCN 30583），redshift_type=spec。sub_tag=lgrb 按 t90=22.51±2.79 s（GCN 30580，BAT 15-350 keV）判定；GBM 目录 t90=25.86±5.28 s 备查。alias 新增：GRB 210731.931（FERMIGBRST trigger 名）与 GRB 210731.93（GCN 30567 subject 原文用名 Swift GRB210731.93）。GCN 30571 的 29 行 MASTER 上限实属 Swift trigger 1062273＝4U 1700-377 船上误触发（GCN 30565），观测窗口 07-31 16:47-22:02 UT 早于本暴触发，Dainotti MRT 误归本暴，已整组 discard=y。测光检索（2026-11-21）：仓内 gcn/archive 全文命中 16 篇（30561-30584 区段），其中 13 篇涉本暴（30567/30568/30569/30570/30572/30573/30574/30576/30578/30580/30582/30583/30584）、3 篇涉同日邻触发（30561=Fermi 649390368、30565/30571=Swift 1062273）；rssgrbag 0 命中、grbsn_webtool 无 210731 条目；swiftgrbba/swift_bat/fermi_gbm/heasarc_grbcat 目录互证；外部命中 deWet2023（A&A 671 A116）与 Li2025（ApJ 978 116，复用 deWet2023 数据、无新测光），补 11 行射电（MeerKAT 1.4 GHz 3 条 3σ 上限＋VLA 6/10 GHz 8 行探测，deWet2023 表B1）；发现 XRT 1 keV 测光 45 行系 X 射线数据，按范围约定不入库。文献通道：A&A VoR HTML/PDF 403（DataDome 反爬），数值取 CDS J/A+A/671/A116 tableb1（VoR 官方机读表）并与 arXiv 2301.11985 表逐值核对一致（已登记 audit/unverified.tsv）。",
   "sub_tag": [
     "lgrb"
   ],
@@ -65,7 +67,14 @@
         "v": 11.47906770255272
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    },
+    "t0_note": "原 T0=2021-07-31T22:21:07Z（Fermi/GBM 整秒值）；本审核按 §3.8 双触发矛盾以 Swift 为准改为 2021-07-31T22:21:08Z（GCN 30568），lc 全表 mjd 已程序化重推",
+    "t0_basis": "Swift/BAT trigger 1062336 @ 2021-07-31T22:21:08 UT（GCN 30568）；deWet2023 与 Li2025 均以 BAT 触发为 T0；备查 BAT 目录 22:21:08.531520、FERMIGBRST 22:21:07.203"
   },
   "articles": [
     {
