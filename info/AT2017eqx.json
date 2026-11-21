@@ -1,10 +1,12 @@
 {
   "transient_id": "AT2017eqx",
-  "alias": [],
+  "alias": [
+    "PS17dhz"
+  ],
   "ra": 336.701542,
   "dec": 17.147889,
   "T0": "2017-06-07T13:26:24Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2017-06-07 13:26:24.000；TNS 发现证书（Astronomical Transient Report No. 11999，ADS 2017TNSTR.646....1C，PS1_Bot1 2017-06-12 20:30:06 提交）同值（Discovery date 2017-06-07 13:26:24.000，JD 2457912.06，JD−2400000.5=57911.56 精确对齐）；Nicholl+2019（2019MNRAS.488.1878N, DOI 10.1093/mnras/stz1837）§2 原文 discovered by the PanSTARRS Survey for Transients on 2017 June 07 UT（日精度）同日；来源未给亚秒，T0 保持秒级精度",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -14,16 +16,21 @@
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec-host",
+  "redshift_ref": "Nicholl+2019（2019MNRAS.488.1878N, DOI 10.1093/mnras/stz1837）§2 原文 We also detect narrow absorption lines from the host galaxy, from which we measure the redshift z = 0.1089 ± 0.0005（Magellan/LDSS3 分类谱中宿主星系窄吸收线：Ca II H&K、Hδ、Hγ、Hβ、Mg I 5175、Na I D、Hα、Ca II NIR triplet）→ 宿主光谱红移；并列值：TDECat（Langis+2026）目录行与 CDS J/A+A/707/A171/tdecat 主表均 z=0.10890000；van Velzen+2021（2021ApJ...908....4V）表 4（tab:known）PS17dhz/AT2017eqx 行 z=0.1089；NED 0.5′ 锥搜 AT 2017eqx 本体 z=0.109000（UUN 质量旗标）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-21 Rusty-Harpoon@zcode 完成单源审核（PR #1141）并补光变 3276 行。\n\n【身份核验（2026-11-21，TNS 对象页 2017eqx＋TDECat 目录行＋Nicholl+2019 VoR＋SIMBAD 互证一致）】ra/dec 取 TDECat 目录行 22:26:48.370 +17:08:52.40（=336.701542/+17.147889，J2000）；TNS 发现证书与对象页坐标 336.701543422/+17.1478884031（与本库值互差约 0.005″/0.002″）；Nicholl+2019 §2 原文 discovered … at right ascension 22h 26m 48.370s, declination 17° 08' 52.40'' 同值；SIMBAD（simbad.cfa.harvard.edu 镜像，2026-11-21）坐标检索 10″ 内命中 AT 2017eqx（0.03″）与宿主 SDSS J222648.38+170852.3（0.26″），身份成立。alias 新增 PS17dhz＝TNS 发现证书 Discoverer internal name＋AT 报告 #11999 Internal name 列＋TDECat 目录行 Discovery internal name 列＋Nicholl+2019 §2 原文 (survey name, PS17dhz)＋van Velzen+2021 表 4 「PS17dhz/AT2017eqx」；TDECat 目录 ZTF/Gaia/eRASS name 列与 CDS AltName 列均空、TNS 分类报告与光谱表 No Data，无其他有出处别名。Trigger_Instrument 留空（TDE 无高能触发；发现设备 Pan-STARRS1/PSST——发现证书与 Nicholl+2019 §2 同证；Nicholl+2019 摘要另记 discovered by Pan-STARRS and ATLAS，ATLAS 自动管线未触发、仅作者事后 forced photometry）。TNS 对象页 Type/Redshift/Host Name 字段均空。\n\n【T0】保持 TDECat Discovery date=2017-06-07 13:26:24.000（见 T0_ref 四方互证）；发现证书与发现报告即该瞬现身首报（PS1 每日栈 i-P1 19.69）。来源未给亚秒，T0 保持秒级精度不自行拔高。\n\n【z 改判 value→spec-host】证据链见 redshift_ref（Nicholl+2019 §2 宿主窄吸收线 z=0.1089±0.0005 为最高权威）；并列值：TDECat/CDS 0.10890000、van Velzen+2021 表 4 0.1089、NED 0.109000（UUN）。【光谱分类（sub_tag 依据）】TDECat spectral_classes.csv（git blob sha1=352eda2a9650359d627a242e4df7af60e686290e 校验一致）：TDE-H+He，注记 (1)/Later changed to TDE-He Charalampopoulos et al 2022；Langis+2026 VoR §4.2 在替代分类列举 AT 2017eqx→TDE-He（据 Charalampopoulos et al. 2022, A&A 659, A34——该文 A&A 页本次 DataDome 反爬未打开，分类结论经 TDECat 机读文件与 Langis VoR 两路转述并注明出处），并记 AT 2017eqx 属随时间光谱演化三例之一（AT 2018hyz、ASASSN-14ae 同列，见 Charalampopoulos+2022 表 4）；van Velzen+2021 表 4 记 TDE-Bowen（Balmer+He II Bowen 荧光线体系，对应 TDE-H+He 类）。tags.json 无 TDE 光谱类受控词，sub_tag 留空（先例 PR #888/#890/#1113/#1122/#1134 同判）。\n\n【host_galaxy=null（「TDECat＋TNS＋NED 三方一致」不成立）】TDECat 目录行 Host name=SDSS J222648.38+170852.2；Nicholl+2019 §2 原文 The source was coincident with the centre of a galaxy catalogued in the SDSS as SDSS J222648.38+170852.2（g=20.99 mag, SDSS DR14；LDSS3 深场与 PS1 DR1 档案像几何对齐测得相对核偏移 0.06±0.08 arcsec，fully consistent with the nucleus；§6 宿主为 Balmer-strong absorption 星系，HδA=1.85 Å、Hα 仅吸收 EW 3.1 Å，Prospector SED 拟合 log(M*/M⊙)=9.36±0.1）；SIMBAD（2026-11-21，cfa 镜像）按名命中同一对象（主名 SDSS J222648.38+170852.3，.2 形为别名 ID；坐标 336.7016042/+17.1478611，距瞬变 0.26″；g 20.986±0.042/r 20.166±0.036/i 19.840±0.041/z 19.554±0.106〔2020ApJS..249....3A〕；SIMBAD 无红移）；但 TNS 对象页与 AT 报告 Host name 字段均空，NED 按名检索无 SDSS J222648.38+170852.2 对象（0.5′ 锥搜仅 AT 2017eqx 本体 z=0.109 与两个 WISEA 源〔距瞬变 0.325′/0.380′，非本宿主〕）→ 三方一致条件不成立，host_galaxy 留 null，文献宿主指认记录于此（先例 PR #1134 AT2020opy 同判）。宿主 g=20.99 与 TDECat 编译耀发前 ZTF(zg) 行同水平，为总流量含宿口径之实证。\n\n【测光入库 3276 行】＝①TDECat 官方光度 CSV（github.com/dlangis/TDECat Section 2，2026-11-21 经 GitHub API git/blobs 端点 base64 完整下载，145912 字节，git blob sha1=1aa59bef951d74fbba50d6fcc25961888baab78f 与远端树一致，3109 数据行）3106 行：剔除 ATLAS(H) 1 行＋ATLAS(t) 2 行（无法唯一判读的波段标签，PR 待决①；先例 PR #890 同判）；族构成：ATLAS(o) 2301〔ATLAS FPH 逐曝光 2294＋Nicholl 表 1 每晚 binning 7〕、ATLAS(c) 615、CRTS(CL) 69（band=G）、PTF(R) 41＋PTF(g) 2、ZTF(zg) 11＋ZTF(zi) 32、PS1 6（档案 g/r/i/z 各 1＋Nicholl 表 1 发现历元 i 2）、SDSS u/g/r/i/z 各 1（2010 档案）、ALLWISE W1 8、NEOWISE W1 11/W2 5；历元覆盖 2015-08～2025-10（ATLAS FPH 含耀发前基线与耀发后段）与档案巡天（CRTS 2007-2013、PTF 2009-2014、SDSS 2010、PS1 2011-2013、ALLWISE 2014，均耀发前宿主基线）；②TDECat UVOT 文件 AT2017eqx_uvot_lightcurve.csv（git blob sha1=7eaab48aaeda2ef3c5573f0ff3d9855eaba02897 校验一致）100 行＝22 历元×W2/M2/W1/U/B/V（Vega；§3.3 原文 All magnitudes were corrected for Galactic extinction … not host subtracted→Gext_corr=y；2017 爆发段 12 历元＋2020/2022/2024 段 10 历元，2024 历元多行误差=0 原样保留〔先例 PR #1134〕）；③Nicholl+2019 表 1（OUP VoR 2026-11-21 实读）未入 TDECat 编译文件的 63 行：Magellan/IMACS 4＋LDSS3 4（g/r/i/z，AB〔PS1 DR1 零点〕）、Keck/LRIS B/V/R/I 4（BVRI 系统、mag_system 留空〔PR 待决②〕）、FLWO48/Kepcam g/r/i 10（表 1 同 MJD 两 g 值并存）、Swope g/r/i 15（含 7 个「>」非探测上限 upperlimit=y）、Swift/UVOT U/W1/M2/W2 26（Vega；宿主扣减〔图 2 图注原文 Host fluxes have been removed by subtracting reference images〕；未提银消改正→Gext_corr=n）——与 TDECat UVOT 文件同夜行并存（两实现同夜同波段 17 对非零值差约 0.1–0.8 mag（实测 -0.32 至 +0.77），§3.4 不同口径并存互注）；④TNS 发现证书测光 1 行（i-P1 19.69 ABMag，MJD 57911.56＝T0）；⑤Nicholl+2019 表 3 VLA 射电上限 6 行（6.0/21.7 GHz；两历元 4 行＋Combined 2 行按 §3.8 coadd 口径取窗中点 57968.0±19.5 d；3σ 上限 upperlimit=y，μJy 原样）。TDECat 编译的 9 行（ATLAS o 7＋PS1 i 2）与 Nicholl+2019 表 1 同值逐位一致，按 §3.4 保留最初来源行、reference 指向 Nicholl+2019 并注明 TDECat 转引；Nicholl 表 1 ATLAS 值含作者所加 +0.31 mag 常数平移（§2 原文 To compensate, we added a constant shift of 0.31 mag to all ATLAS measurements）已逐行注明，与同夜 ATLAS(o) FPH 原生值（值差 0.6–1.2 mag）并存互注。X 射线数据不入库：TDECat X-ray 文件（AT2017eqx_xray_lightcurve.csv，24 历元 xrt/xmm 多为上限，git blob sha1=3e15bcde4754e9271d3bd4f78c852fe9be08a05a 校验一致）与 Nicholl+2019 表 4（XMM/XRT/Chandra 4 历元 3σ 上限）均按规则暂不处理（发现 X 射线数据，暂不处理）。全表 time=(mjd−T0)×86400 s、7 位小数；mjd 按来源精度原样写入（TDECat/UVOT 长精度行与 Nicholl 表 1 整日精度行均不补零）。去重：TDECat 光度 CSV 内部无同历元同值重复（逐行程序核验 0 组）；跨来源同历元近值行均为不同实现并存（逐行 comment 互注）。\n\n【测光检索留证（2026-11-21）】①仓内：gcn/archive 全文 46198 篇按 2017eqx/PS17dhz/2017 eqx/坐标片段 222648 检索＝0 命中；external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData（63 事件）无记录；②GCN 站在线检索页为 JS 应用、curl 仅回壳页，以仓内 gcn/archive 全文（同一 Circular 全库）为准＝0 命中；③SciX API（token 可用）：AT2017eqx OR \"AT 2017eqx\" OR PS17dhz 命中 3 条＝2017TNSTR.646....1C（TNS 发现报告）＋2019MNRAS.488.1878N（Nicholl+2019 专文，表 1/表 3 已入库）＋2016cxo..prop.5225N（Chandra 提案摘要，仅叙述性 X 射线极限 F_X<1e-13 erg/s/cm2，无带时间锚点的测光表，不入库）；④ATel 站内检索（?reconfigure 表单）：Keywords=2017eqx 与 PS17dhz 均 0 条；⑤TNS 对象页（photometry 表 1 点＋AT 报告 1 份＋发现证书）已实际打开；van Velzen+2021（arXiv v1 源码实读）仅表 4 一行（PS17dhz/AT2017eqx，TDE-Bowen，z=0.1089，转引 Nicholl+2019），data/ 无本源文件；TDECat 全部机读文件（光度/UVOT/X-ray/spectral_classes/主目录）已下载逐行核对；Langis+2026 VoR（A&A 707 A171 金 OA HTML，浏览器路线过 DataDome）已实读 §2.1/§3.1/§3.3/§4.2/附录 A；Nicholl+2019 VoR（OUP HTML）已实读 §2/§3.1/§3.3/§6＋表 1/表 3/表 4；CDS J/A+A/707/A171/tdecat 主表经 vizier.cfa.harvard.edu 镜像查询成功（主站 cdsarc 不可达），AT 2017eqx 行与 GitHub 目录行逐字段一致（CDS 侧 DiscDate 截整秒）。结论：非零测光源，补 3276 行。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "i-P1",
     "discovery_mag": "19.69",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
@@ -31,6 +38,18 @@
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+    },
+    {
+      "name": "Nicholl+2019",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "The tidal disruption event AT2017eqx: spectroscopic evolution from hydrogen rich to poor suggests an atmosphere and outflow",
+      "url": "https://doi.org/10.1093/mnras/stz1837"
+    },
+    {
+      "name": "van Velzen+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Seventeen Tidal Disruption Events from the First Half of ZTF Survey Observations: Entering a New Era of Population Studies",
+      "url": "https://doi.org/10.3847/1538-4357/abc258"
     }
   ],
   "host_galaxy": null
