@@ -1,10 +1,12 @@
 {
   "transient_id": "LSQ12dyw",
-  "alias": [],
+  "alias": [
+    "LSQ 12dyw"
+  ],
   "ra": 352.353417,
   "dec": -7.389,
   "T0": "2012-07-17T00:00:00Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）表 1 Discovery date（2012-07-17T00:00:00，日精度）＝ATel 4299（2012ATel.4299....1S）表列 Disc. Date 20120717；LSQ 巡天发现日期，非触发时刻（TDE 无触发），00:00:00 为日期填充",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -13,17 +15,22 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "ATel 4299（2012ATel.4299....1S）表列 RA/Dec(J2000) 23:29:24.82 -07:23:20.4＝TDECat 表 1＝SIMBAD LSQ 12dyw（OID 9382948）坐标一致",
+  "redshift_type": "spec",
+  "redshift_ref": "ATel 4329（2012ATel.4329....1I）PESSTO/NTT EFOSC2 光谱窄线 Halpha+[N II]6584 分辨出 z=0.09＝TDECat 表 1＝Charalampopoulos+2022 表 1（0.090）＝Pursiainen+2026 表 1（0.0900）",
+  "comment": "2026-11-04 由 TDECat（Langis+2026）批量建源；2026-11-21 Rusty-Harpoon@zcode 单源审核并补光变 1758 行。\n\n【身份核验（2026-11-21，ATel 4299/4329/4346 原文 + TDECat 表 1（CDS/VizieR J/A+A/707/A171 tdecat 表与官方 GitHub TDE_catalogue_all.csv 双通道一致）+ SIMBAD 互证】LSQ（La Silla Quest 巡天）2012 年发现的暂现源，无 TNS/IAU 名（TDECat 表 1 ATName 列空、Charalampopoulos+2022 表 1 IAU Name 列空；TNS 2015 年上线晚于发现）。ATel 4299（2012ATel.4299....1S）表列：RA/Dec(J2000) 23:29:24.82 -07:23:20.4（十进制 352.353417/-7.389，与本库一致）、Disc. Date 20120717、Disc. Mag 19.4、z 0.09?、初判 SN Ic-pec?（近无特征蓝连续谱，+0.8 mag/两周上升）；ATel 4329（2012ATel.4329....1I）：NTT/EFOSC2 2012-08-08 高 S/N 再观测，窄线分辨出 Halpha+[N II]6584 → z=0.09，两个极宽特征（疑 Halpha/Hbeta，FWHM~24000 km/s），与被动 z=0.09 星系 SDSS J232924.87-072320.5 成协，「2008es 型 SN 或潮汐撕裂事件」，峰值 M=-19.7；ATel 4346（2012ATel.4346....1R）：Swift/XRT TOO 2012-08-28 955 s 非探测（计数率 2.15E-3 c/s，Gamma=1.8 未吸收流量上限 ~8.2E-14 erg/cm2/s）；SIMBAD：主用名 LSQ 12dyw（OID 9382948，SN*），坐标/红移与 ATel 4299 一致。alias 仅收 SIMBAD 主用名形态（LSQ 12dyw）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 LSQ 巡天）。pos_error：来源未给定位误差，留空且来源未标注置信水平（§3.9 不自行声称）。\n\n【分类链】ATel 4299 初判 SN Ic-pec? → ATel 4329（窄线定宿主红移+极宽 Balmer+被动宿主）「2008es 型 SN 或 TDE」→ Charalampopoulos+2022（2022A&A...659A..34C）：「With the knowledge accumulated since 2012, it is possible to classify this event as a bona fide optical TDE」（其光谱测量：极宽 Halpha 盒形+红肩 profile 直积分拟合；He II 4686 无探测仅上限、全样本最低 T_BB 之一）→ TDECat 收录主表（134 光学 TDE，非候选表）。tag=tde 维持；光谱次类（H(He I)、无 He II）在 tags.json 无受控词条，sub_tag 留空（同批先例）。\n\n【T0 口径】TDE 无设备自动触发时刻，T0 取发现历元（同批 AT2019bhf 先例）：TDECat 表 1 DiscDate 2012-07-17T00:00:00＝ATel 4299 Disc. Date 20120717（日精度；00:00:00 为日期填充，非实测亚秒）；T0_mjd=56125.0，全表 time=(mjd-56125.0)x86400 s。T0_offset 不适用（TDE 无触发概念）。峰值历元备查：t_peak/max=MJD 56143.3（Charalampopoulos+2022 表 1，V-like LSQ 波段）≈2012-08-04（Pursiainen+2026 表 1 Peak Date 一致），发现后 ~18 d。\n\n【红移】z=0.09：ATel 4329 由暂现体光谱中宿主窄线 Halpha+[N II]6584 分辨测得＝TDECat 表 1＝Charalampopoulos+2022 表 1（0.090）＝Pursiainen+2026 表 1（0.0900）→ redshift_type 由 value 改判 spec（§3.5）；窄线为宿主星系发射线但测自暂现体光谱，无独立宿主光谱，不判 spec-host。备查：DL=414.2 Mpc、A_V(MW)=0.074 mag（Schlafly & Finkbeiner 2011，Charalampopoulos+2022 表 1）；入库星等未做银消改正（Gext_corr=n）。\n\n【测光入库 1758 行】＝TDECat 官方补充仓库 target_LSQ12dyw_photometry.csv（github.com/dlangis/TDECat Section 2: Photometry/Optical and Infrared；git/blobs base64 下载、git hash-object 校验 blob sha1=4b27ecaac74323e47dc8aeb1bac5bf6aa4113a9d 与 API 一致、2404 数据行核对，2026-11-21 取）2404 行 − 同历元同值双误差重复行 646 行（§3.4 去重保留首行；全部为 ZTF 行，两条误差实现差 ≤0.0019 mag）＝1758 行。构成：CRTS 499（CSS-V 334/MLS-V 89/SSS-V 76，MJD 53560.40-57362.10）、PTF(R) 34（55008.41-56911.36）、ALLWISE W1/W2 35（55358.37-55537.17）、NEOWISE W1/W2 471（56820.54-60472.59）、ZTF zg/zr/zi 719（58280.45-60607.31）。口径：TDECat/BHTOM 编译行为总流量含宿（非差分；CRTS 档案段 2005-2011 与 2013-2015 为宿主基线水平）；mag_system 按 Langis+2026 §3.1 原文（A&A VoR HTML 整站 DataDome 反爬、curl 与浏览器均未通读，见 audit/unverified.tsv；口径声明取 arXiv:2506.05476v2 §3.1）：CRTS/NEOWISE/WISE=Vega，ZTF=AB，PTF R=AB；CRTS 三站无滤光片 clear 孔径、星等按 V 定标（Drake et al. 2009），TDECat CSV 标签 CSS-V/MLS-V/SSS-V，band=G 承载（同批 AT2019bhf CRTS(CL) 先例）。耀发段 MJD 56128.66-56493.74 仅 CRTS 三站+PTF R 有探测（SSS-V 耀发段内首探 56128.66 mag 18.269±0.171=发现后 3.7 d（SSS 全表首探为 2008 档案点 MJD 53865.79）；CRTS/PTF 段最亮 CSS-V 17.948±0.113 @56189.35）；LSQ 巡天本身覆盖上升段的 V 测光（含 19.4 发现点）无机读表（Charalampopoulos+2022 明言含光变与宿主性质的 dedicated publication in preparation，截至 2026-11-21 未见发表）。TDECat 官方 X 射线文件 LSQ12dyw_xray_lightcurve.csv（Swift/XRT）按规则不入库（发现 X 射线数据，暂不处理）。\n\n【测光检索留证（2026-11-21）】①仓内 gcn/archive 46198 篇全文 grep LSQ12dyw＝0 命中（无 GCN 触发通告；T0/发现依据来自巡天发现通告 ATel，按提示词口径处理）；external/rssgrbag 与 external/grbsn_webtool 无该源记录（TDE 非 GRB 事件，符合预期）；②SciX 全文检索 full:\"LSQ12dyw\" 命中 7 篇＝2012ATel.4346、2022A&A...659A..34C、2026MNRAS.545f2093P、2026A&A...707A.171L、2026A&A...709A..28L（Langis+2026b 中微子关联）、2026JCAP...10..016M（IceCube）、2026arXiv260909725A（TDE 2025aarm）——其中携带本源数据的仅 TDECat 编译库（本 PR 入库 1758 行）与 Charalampopoulos+2022（纯光谱研究，无测光表，其表 1 元数据已核）；Pursiainen+2026 为宿主 IFU 研究（无瞬变测光），其余为样本/统计引用；③ATel 4299/4329/4346 原文逐字核对：无数值测光表；④TNS：无 IAU 名（TDECat ATName 列空+Charalampopoulos+2022 IAU Name 列空），无 TNS phot 行可取；⑤CRTS DR2（nesssi.cacr.caltech.edu/DataRelease/）为 TDECat CRTS 行的原始出处，TDECat 已转引，本库径用 VoR 官方补充机读表。结论：可用测光全部来自 TDECat 官方编译表，本 PR 补 1758 行。\n\n【宿主】SDSS J232924.87-072320.5（TDECat 表 1 Host name 列；ATel 4329 apparently passive z=0.09 galaxy，与暂现体成协）：host_galaxy 坐标取自宿主名（J2000 23:29:24.87 -07:23:20.5），Pursiainen+2026 表 1 宿主坐标 23:29:24.87 -07:23:20.39（dec 差 0.11\"）；logM_BH=5.67(+0.24/-0.24)（Pursiainen+2026 由 MUSE 核谱 Starlight sigma 用 M-sigma 关系估计，其表 5）；无足够宿主测光做核球建模（Pursiainen+2026）→ host_galaxy.photometry 留空。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "Johnson V (LSQ)",
     "discovery_mag": "19.4 (vega)",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
@@ -31,7 +38,26 @@
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+    },
+    {
+      "name": "Charalampopoulos+2022",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "A detailed spectroscopic study of tidal disruption events",
+      "url": "https://doi.org/10.1051/0004-6361/202142122"
+    },
+    {
+      "name": "Pursiainen+2026",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "MUSE IFU observations of galaxies hosting tidal disruption events",
+      "url": "https://doi.org/10.1093/mnras/staf2093"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 352.353625,
+    "dec": -7.389028,
+    "redshift": 0.09,
+    "redshift_type": "spec",
+    "comment": "宿主 SDSS J232924.87-072320.5（TDECat 表 1 Host name 列；ATel 4329 原文 apparently passive z=0.09 galaxy，与暂现体成协）；坐标取自宿主名截断位（J2000），Pursiainen+2026 表 1 宿主坐标 23:29:24.87 -07:23:20.39（dec 差 0.11\"）；logM_BH=5.67(+0.24/-0.24)（Pursiainen+2026 表 5，MUSE 核谱 Starlight sigma 的 M-sigma 关系）；无足够宿主测光做核球建模（Pursiainen+2026），photometry 留空",
+    "source": "TDECat（Langis+2026）表 1；ATel 4329（2012ATel.4329....1I）；Pursiainen+2026（2026MNRAS.545f2093P）"
+  }
 }
