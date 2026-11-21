@@ -1,25 +1,26 @@
 {
   "transient_id": "GRB030329A",
   "alias": [
-    "SN2003dh"
+    "SN2003dh",
+    "H2652"
   ],
   "ra": 161.2083708333333,
   "dec": 21.52161111111111,
   "T0": "2003-03-29T11:37:14.670000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 1997",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "HETE-2",
-  "redshift": 0.17,
+  "redshift": 0.1685,
   "tag": [
     "grb",
     "sn"
   ],
   "pos_error": 0.5,
   "pos_ref": "https://www.wis-tns.org/object/2003dh",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 2020",
-  "comment": null,
+  "comment": "T0=2003-03-29T11:37:14.67Z 取 HETE 官方触发通告 GCN 1997 原文(\"At 11:37:14.67 UTC ... detected event H2652\")；heasarc_grbcat 给 11:37:14.600Z，整数秒一致仅亚秒不同，按触发仪器口径取 .67（§3.2）。红移 z=0.1685（GCN 2020, VLT/UVES Greiner+UNAM）；heasarc_grbcat 收敛值 0.168541±0.000004 并列备查；SN 2003dh 关联由光谱证实（Stanek+2003/Matheson+2003, tag=sn+sub_tag=SN-spec 保持）。别名 H2652 系 HETE 触发编号（GCN 1997 原文用名 \"event H2652\"）。审核摘要（Rusty-Harpoon@zcode, 2026-11-20）：全表 4758 行逐行溯源核对。(1) Dainotti2024 管道残留 3334 行 reference 改指原论文：Lipkin+2004 2687 行（作者网站机读表逐行机对一致）、Torii+2003 277 行（arXiv 表 5 行锚定+webtool 转写互证；IOP VoR 被 Radware 反爬拦截，见 audit/unverified.tsv）、Resmi+2005 368 行（arXiv tex 表逐行机对；原文 t 列历元 11:36:57.6UT 比触发早 17.07s，time 已换算并回到中点口径）。(2) 空 reference 1434 行=GRBSN webtool 摄取残留，全部落名：Gorosabel+2006 427（arXiv 电子表 475 行全核）、Matheson+2003 93+2（tex 表 507 行全核）、Bloom+2004 19+33（tex 表 52 行全核）、射电 10 篇论文 277 行（Frail 61/vdH05 51/vdH08 50/Kuno 23/Kohno 12/Mesler13 22/Mesler12 9/Pihlstrom 10/Smith 4/Resmi 29，各论文 tex 表逐值机对）、Piro+2019 3。(3) 去重按 §3.4：Yatsugatake 277（=Torii 组重复）、Resmi 空拷贝 333（回收 8 行）、Lipkin obs41 35 行（=Bloom 帧，值差≤0.005 在舍入内，保留最初出处 Bloom+2004）；Lipkin 编译的 Matheson ±0.050 mag 与 Kyoto/RTT 重定标值系原文发表的跨仪器归一，非舍入内重复，双拷贝并存并在行 comment 注明。(4) GCN 组 89 通告逐通告核对：时间口径修正（Orosz 表 start→mid+time_err、亚秒取整复原、GCN2080/2299 t-t0 重算、夜均值约定锚点）、勘误链 8 行删除（2058→2104、2075→2276、2102→2112、2136→2228、2171→2172、2073→2268、2167=2122 转述、2243 宿主星等弃用）、补漏记测光 41 行与上限 9 帧（GCN2029/2030/2054/2063/2071/2001/2024/2083/2113/2217/2245 等）、CONCAM/全天巡视 4+9 帧上限按无滤光片规则记 G。(5) 检索留证（2026-11-20）：仓内 gcn/archive 全文区段 1999-2450（455 通告在手，全部读核）、external/grbsn_webtool+rssgrbag 快照、heasarc_grbcat/mpe_greiner 目录；外部 arXiv API 13 篇 e-print、VizieR(CFA) 13 目录查无、IOP 整站反爬、web.archive.org 网络不可达；GCN 通告区段未见未收录的有锚点测光。X 射线行 0 行，无 X 射线时间轴问题。",
   "sub_tag": [
     "SN-spec"
   ],
@@ -93,7 +94,12 @@
         "v": 0.18419658119658122
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-20"
+    }
   },
   "articles": [
     {
@@ -557,6 +563,12 @@
       "source": "bot",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
       "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+    },
+    {
+      "name": "Piro+2019",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ApJ...872...28P/abstract",
+      "title": "Observational Constraints on Late-time Radio Rebrightening of GRB/SN 2003dh",
+      "source": "Rusty-Harpoon@zcode"
     }
   ],
   "host_galaxy": {
@@ -623,6 +635,14 @@
         "mag_err": 0.24,
         "mag_sys": "AB",
         "source": "Savaglio et al. 2009, Table 2",
+        "upperlimit": false
+      },
+      {
+        "band": "V",
+        "mag": 22.7,
+        "mag_err": 0.3,
+        "mag_sys": "Vega",
+        "source": "Fruchter et al., GCN 2243 (HST ACS/WFC, OT 减除)",
         "upperlimit": false
       }
     ],
