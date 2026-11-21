@@ -48,7 +48,7 @@
 | GRB140512A | 表 14、表 20 | `audit/leads/GRB140512A.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 14），接手者须核专篇表是否含 GCN 拿不到的量 |
 | GRB140629A | 表 20 | `audit/leads/GRB140629A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB140801A | 表 20 | `audit/leads/GRB140801A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
-| GRB140907A | 表 20 | `audit/leads/GRB140907A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
+| GRB140907A | 表 20 | ~~`audit/leads/GRB140907A.md`~~（#120 卡已随审核 PR #1133 删除） | 已审核（2026-11-21） | 转引型：仅表 20 汇总行，VoR PDF 实核该行系 GCN 16806 混串转引（m_OT=19.0 归站点 Kislovodsk/ΔT=77s 实为 Blagoveschensk 7809s 检测），无 GCN 之外的增量 → 按新门槛不开卡 |
 | GRB140930B | 表 20 | `audit/leads/GRB140930B.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB141028A | 表 20 | `audit/leads/GRB141028A.md`（#120） | mention-only | 转引型：仅表 20 汇总行 → 按新门槛不开卡，接手时删卡读本卡 |
 | GRB141225A | 表 15、表 20 | `audit/leads/GRB141225A.md`（#126（同源另见 #120，按 audit/leads/README.md「冲突处理」合并保留）） | mention-only | **过门槛候选**：有专篇测光表（表 15），接手者须核专篇表是否含 GCN 拿不到的量 |
