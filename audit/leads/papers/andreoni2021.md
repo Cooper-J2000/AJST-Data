@@ -18,7 +18,7 @@
 | 源 | 表号 | 源级卡 | status | 增量判读 |
 |---|---|---|---|---|
 | ZTF20aajnksq（AT2020blt） | 表 3（Forced PSF photometry，P48+ZTF） | 无（该源已 reviewed，PR 内未见引用本表；wa1kmoon@zcode 审核用的是 Ho+2020 表 1） | mention-only | 强制测光 vs Ho+2020 表 1 是否有增量，接手者自行比对 |
-| ZTF20acozryr（AT2020yxz） | 表 4（Forced PSF photometry，P48+ZTF）；表 2 分类行（GRB 201103B，衰减 0.75/0.78 mag/d） | 无 | mention-only | 过条件 1（ZTF 巡天测光非 GCN 所载）；该源已 tag=grb/lgrb |
+| ZTF20acozryr（AT2020yxz） | 表 4（Forced PSF photometry，P48+ZTF）；表 2 分类行（GRB 201103B，衰减 0.75/0.78 mag/d） | 无（表 4 全部 45 行已由 GRB201103B 审核 PR #1168 逐值核对收录，勿再重复取值） | mention-only | 过条件 1（ZTF 巡天测光非 GCN 所载）；该源已 tag=grb/lgrb |
 | ZTF21aahifke（AT2021clk） | 表 5（Forced PSF photometry，P48+ZTF、GIT、LCO 1-m Sinistro）；表 2 分类行（Unknown，衰减 0.96 mag/d） | 无 | mention-only | 过条件 1 |
 | ZTF21aagwbjr（AT2021buv） | 表 6（Forced PSF photometry，P48+ZTF）；表 2 分类行（GRB 210204A，r 衰减 2.34 mag/d） | 无 | mention-only | 过条件 1；该源已 tag=grb |
 
