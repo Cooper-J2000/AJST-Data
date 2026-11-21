@@ -1,29 +1,49 @@
 {
   "transient_id": "GRB250823A",
-  "alias": [],
-  "ra": 297.4779,
-  "dec": -24.9958,
-  "T0": "2025-08-23T20:10:10Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/GBM",
+  "alias": [
+    "GRB250823840",
+    "GRB250823.84"
+  ],
+  "ra": 297.47814,
+  "dec": -24.99557,
+  "T0": "2025-08-23T20:10:07Z",
+  "T0_ref": "GCN 41511（Swift/BAT 触发 20:10:07 UT，trigger=1344586）；Fermi/GBM 给 20:10:10.67 UT（GCN 41510/41517），多触发仪器矛盾、有 Swift 以 Swift 为准；external/swiftgrbba 快照 trigger_time=2025-08-23T20:10:07Z 互证",
+  "T0_offset": -25,
+  "T0_offset_ref": "GCN 41539（BAT mask-weighted light curve 多峰辐射从 ~T-25 s 开始；原文为近似值，纯元数据不改写时间轴）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
-  "pos_error": 2.1,
-  "pos_ref": "GCN 41511",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 2.2,
+  "pos_ref": "GCN 41515",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "身份：GRB 250823A＝Swift/BAT trigger 1344586（GCN 41511，20:10:07 UT）＝Fermi/GBM trigger 777672615/bn250823840（GCN 41510/41517，20:10:10.67 UT），双机均真实触发、各 GCN 互相引用同一事件；Swift/XRT 余辉（GCN 41511/41515/41531）与光学对应体（LT GCN 41512、BOOTES-6 GCN 41513、LCOGT GCN 41514、NOT GCN 41520、SVOM/VT GCN 41523、COLIBRÍ GCN 41525）位置一致。T0：原 bot 值 2025-08-23T20:10:10Z（Fermi/GBM meta trigger，见 t0_note）改为 Swift/BAT 20:10:07Z（多触发仪器矛盾、有 Swift 以 Swift 为准），lc 全表 time/mjd 已按新 T0 重算；各通告相对时标均以 Swift 触发为锚（GCN 41513『157 s after trigger』与 20:12:44 UT−T0 精确吻合；GCN 41511 XRT 440.5 s、GCN 41509 MASTER 298 s、GCN 41523 0.48 h、GCN 41512 1.28 h、GCN 41514 3.12–3.65 h、GCN 41525 9.73–10.38 h 均核对吻合）；本源 lc 无能量串 band（无 X 射线行）。邻日多暴甄别：GRB 250824A（Fermi 11:24:18 UT）与 250824B（Fermi 13:38:13 UT）触发均晚于本源观测窗口结束（06:33 UT）且坐标不同（RA 312.0/248.3），无污染。定位：pos 由 GCN 41511 增强位置（RA 297.4779，Dec −24.9958，2.1″，90%）更新为 GCN 41515 天测改正 XRT 位置（RA 297.47814，Dec −24.99557，2.2″，radius, 90% confidence，原文标注置信水平）。t90=13 s（50–300 keV，Fermi/GBM，GCN 41517）；t90=193.60±10.19 s（15–350 keV，Swift/BAT refined，GCN 41539）；Fermi GBM Team GCN 41510 分类 likely LONG GRB——两 t90 均 ≫2 s，按通告/目录 t90 判 lgrb。alias：GRB250823840（FERMIGBRST trigger 名，external/fermi_gbm 快照 name_alt）；GRB250823.84（GCN 41509 MASTER 原文用名）。红移：无（仓内 gcn/archive 截止编号 46010 内亦无红移通告）。文献：Yu+2026（ApJ 1008, 103；arXiv:2610.09538）样本统计文含本源（Type I，pulse–flare 对，prompt interval 153–187 s），只给 prompt/X 射线拟合量、无光学测光，未据其新增 lc 行。测光检索（2026-11-07）：仓内 gcn/archive 全文命中 13 篇（GCN 41509–41539，其中 41509/41511/41512/41513/41514/41520/41521/41523/41525 共 9 篇含光学数值）；external/rssgrbag 命中 0、grbsn_webtool 无记录，mpe_greiner/fermi_gbm/swiftgrbba 仅目录参数；外部 arXiv API/Crossref/OpenAlex 命中 1 篇研究论文（Yu+2026，无可用光学测光）；ADS token 为空（HTTP 401，检索通道受限，见 audit/unverified.tsv）→ 补 9 行（MASTER 1、UVOT 7、BOOTES 1），原有 10 行全部按新 T0 重算（行值与原出处逐行核对无出入，仅时间历元/中点口径修正）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "swift_bat_trigger",
+    "t0_note": "T0 采用 Swift/BAT 触发时刻 2025-08-23T20:10:07Z（GCN 41511）；原 bot 值为 Fermi/GBM meta trigger 2025-08-23T20:10:10Z（GCN 41510），原 t0_basis=meta_trigger、t0_note=t0 为 meta trigger-time（真实触发时刻）——已按 2026-11-07 审核改写，原值留存于本 note 与 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-07"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Yu+2026",
+      "url": "https://doi.org/10.3847/1538-4357/ae9610",
+      "title": "Evidence for a Similar Physical Origin Between Prompt Emission and X-Ray Flares of Gamma-Ray Bursts",
+      "bibtex": "",
+      "source": "wa1kmoon@zcode"
+    }
+  ],
   "host_galaxy": null
 }
