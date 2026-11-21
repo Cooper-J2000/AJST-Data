@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB100115A",
-  "alias": [],
-  "ra": 3.333,
-  "dec": -0.817,
+  "alias": [
+    "GRB 100115A"
+  ],
+  "ra": 3.3673,
+  "dec": -0.8265,
   "T0": "2010-01-15T11:15:19Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 10325（触发仪器官方通告）：原文给出 BAT 于 2010-01-15 11:15:19 UT 在预计划 Swift slew 中检测到本暴，精度 1 s；swiftgrbba 快照 trigger_time=2010-01-15T11:15:19.000（亚秒 .000，不自行补亚秒）；HEASARC SWIFTGRB=2010-01-15T11:15:19；uvot_grb 快照 TRIG_UT=2010-015-11:15:19 且 TRIGTIME=285246919 s MET 与该 UTC 整秒吻合；GCN 站网页（2026-11-21 取）同值",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +18,19 @@
   "pos_ref": "GCN 10334",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)。审核（wa1kmoon@zcode，2026-11-21）。①身份：Swift BAT Slew Survey（BATSS）地面分析暴，T0=2010-01-15 11:15:19 UT（GCN 10325），BAT 粗位 RA 3.333、Dec −0.817（90% 半径 4′）；XRT 候选余辉（GCN 10326，ToO 始于触发后 40 ks）与衰减光学对应体（SARA R~22，GCN 10328 → Gemini r=21.37→21.86，GCN 10335）确证；邻日仅 GRB 100116A（Fermi，GCN 10330/10333）与 GRB 100117A（Swift，GCN 10336–10344），本暴通告集 10325/10326/10327/10328/10329/10331/10332/10334/10335/10352 与两者互不相交。②定位错配修正：原 ra/dec=3.333、−0.817 为 BAT ground 值，与 pos_error=4.0″/pos_ref=GCN 10334 混串；改按 GCN 10334 XRT enhanced RA,Dec=3.36730、−0.82650 ±4.0″（radius，90% confidence，故 pos_error_confidence=90）。并列备查：swiftgrbba 快照 xrt 3.36721、−0.82647 ±4.1″；HEASARC SWIFTGRB 同值，其 best position 另取 SARA 光学候选 3.366875、−0.825667 ±1″（pos_flag=G，引 GCN 10332）；UKSSDC xrt_positions 页 2026-11-21 在线值 3.36680、−0.82668 ±5.2″（90%）——均在误差内一致。③T0：唯一标准 T0=2010-01-15T11:15:19Z，多路互证见 T0_ref；来源仅给整秒，不自行补亚秒；无 T0_offset 依据。T0 未变，全表 time/mjd 未动（逐行 mjd−(T0+time) 程序核验=0.0000 s）。④t90=3.0±null s（GCN 10325 单 FRED 脉冲约 3 s；swiftgrbba/uvot_grb 目录 t90=3.0，15–150/15–350 keV），按目录 t90 判 lgrb。⑤alias「GRB 100115A」：GCN 10325 subject/eventId 与 HEASARC SWIFTGRB name 原文用名。⑥宿主：GCN 10331 天体 A（00:13:28.12、−00:49:32.6 ±2″）可能为余辉/宿主或两者组合，候选宿主不建 host_galaxy。⑦测光检索留证（2026-11-21）：仓内 gcn/archive 45890 篇全文 grep 100115 命中 12 文件，剔除伪命中（GCN 1099 命中系 createdOn 时间戳 1001158233000；GCN 37451 为 LIGO 目录内 WISE 源名 WISEA J155309.64-100115.7）后本暴通告 10 篇逐篇核对，光学/UV 可入库者已补：GCN 10327 UVOT 3σ 上限 4 条（窗口中点口径）、GCN 10328 SARA R~22 探测 1 条；GCN 10329 NOT i′≈24.0 为图像探测极限且天体 A 在像内被探测（延展、未测分量星等），非本源独立上限，不入库仅此处留证；GCN 10335 g 波段仅述「类似 ~0.5 mag 衰减」无数值，不入库；X 射线数据（GCN 10326/10352 计数率、衰减指数 −0.7±0.4）不属本次审核范围，未入库；external/rssgrbag 与 grbsn_webtool 均无该源，mpe_greiner/heasarc_swiftgrb/swiftgrbba/uvot_grb 快照仅目录参数。外部检索：ADS/SciX 无 token（HTTP 401），已在 audit/unverified.tsv 通道级登记 search-limited，不作「无文献」结论；OpenAlex 命中 9 条全为 GCN 类记录（无期刊论文；其中 2013GCN.14921 系 OpenAlex 误挂，实为 GRB130623A）、arXiv API 0 命中、Crossref 无本暴论文；SIMBAD/CDS 当日全通道不可达（CDS 整站拦截页、CFA 镜像数据库不可达、东京/IDIA/China-VO 镜像仅返回表单）。本次 lc 补 5 行、改 2 行（Gemini 两点补 time_err 与核对记录），X 射线 2 行（band=10keV）未审未动。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "wa1kmoon@zcode",
+      "date": "2026-11-21"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
