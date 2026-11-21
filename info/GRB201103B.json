@@ -1,12 +1,13 @@
 {
   "transient_id": "GRB201103B",
   "alias": [
-    "AT2020yxz"
+    "AT2020yxz",
+    "ZTF20acozryr"
   ],
   "ra": 42.18463333333333,
   "dec": 12.13725,
   "T0": "2020-11-03T18:06:45.360000Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 28831",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "AGILE",
@@ -15,16 +16,21 @@
     "grb"
   ],
   "pos_error": 0.5,
-  "pos_ref": "https://www.wis-tns.org/object/2020yxz",
-  "redshift_type": null,
+  "pos_ref": "GCN 28841",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 28847",
-  "comment": null,
+  "comment": "审核 2026-11-22（Rusty-Harpoon@zcode，PR #1168）。T0=2020-11-03T18:06:45.36Z 取触发仪器 AGILE 官方 Circular 原值（GCN 28831，+/-0.01 s）；备查：Konus-Wind 触发 65207.923 s UT=18:06:47.923（GCN 28872）、IPN 约 65207 s UT=18:06:47（GCN 28844），按提示词 3.8 触发仪器官方通告优先。坐标：ZTF 发现通告 GCN 28841（<0.5 arcsec，J2000），ra/dec=02:48:44.312 +12:08:14.10（TNS 对象页 AT2020yxz 同值）；Swift/XRT 42.1842/+12.1382、5.3 arcsec(90%) 距 ZTF 位置 3.8 arcsec 互证（GCN 28858）；pos_error 置信水平来源未标注（留空）。z=1.105 为 VLT/X-shooter 吸收线（C II/Mg II/Fe II）光谱红移（GCN 28847）。sub_tag=lgrb 判据：GCN 28844/28872 明言 long-duration，Konus-Wind 总时长约 105 s（GCN 28872），Andreoni+2021 称 long GRB 201103B；extra_data.params.t90_obs=3.904+/-0.032 s（agile_mcal）为主脉冲段口径、与全时长口径不同，不影响分类（params 为维护者管线产物未动）。alias：AT2020yxz=TNS 对象页用名；ZTF20acozryr=GCN 28841 subject/正文用名。宿主：无确定宿主——SIMBAD 5 arcmin 锥（2026-11-22，CFA 镜像）仅命中 GRB 201103B 自身与无关 NVSS 射电源（149 arcsec）；NED 同日同位置仅 AT2020yxz（z=1.105）与 GRB 201103B；候选宿主不建档，见 GCN 28841：Legacy Survey DR8 星系 42.1845/+12.1358（距 5.24 arcsec，g=24.38）与点源 42.1861/+12.1395（9.60 arcsec），均未确证。测光检索留证（2026-11-22）：仓内 gcn/archive 全文 19 篇含该源、12 篇含光学测光或上限（28831/28841/28844/28846/28847/28849/28854/28858/28861/28862/28863/28872/28875/28876/28880/28883/28886/28925/28926/29181，逐篇通读并含 28886→28925→29181 勘误链）；SciX 'GRB 201103B' 19 篇（17 GCN + Paek+2021 BKAS 46,49 会议摘要，仅光变图叙述无数值表）、'AT2020yxz/ZTF20acozryr' 21 篇（唯一研究文章 Andreoni+2021 ApJ 918,63）；无其他已发表测光表。lc 84→79 行：删 5 行目录转引重复（原行 16/18/21/63/83，保留指向最初来源的行）；45 行 Andreoni+2021 强迫 PSF 测光表逐值核对（值取 arXiv:2104.06352 v1 TeX 表，VoR 表格页不可得已登记 audit/unverified.tsv；LRIS 两行原文时刻 2021-01-11 06:57 UT 被误作 2020-11-11 已改正；ZTF 2020-11-13 07:25 点按论文表注 spurious 置 discard=y；09:44 上限 GCN 与论文不一致按论文取值）；GCN 链逐行核对：GMG 两行探测误标上限改 n；NEXT 两行 time 改用 T_mid_obs 至秒并补 time_err=60 s；Xinglong-2.16m 保留真中点行（GCN 自标 Tmid 实为起点）删目录转引行；CrAO/ZTSh 22.45+/-0.14 按 28886→28925→29181 勘误链取值、reference 指向 GCN 28925；GECKO 三行望远镜更正（AZT-8 误标改 KCT 等）；Z-1000 行目录误标 CrAO/ZTSH(2.6m) 已改 Zeiss-1000(TSHAO)；AZT-22 11-15 行 GCN 日期笔误注记；USNO 定标行 mag_system=Vega 系目录 system=USNO 惯例推定（USNO-B1 R2，原文未声明 AB/Vega）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    },
     "params": {
       "epeak_obs": {
         "err": null,
@@ -45,11 +51,25 @@
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {Dainotti, M. G. and De Simone, B. and Mohideen Malik, R. F. and Pasumarti, V. and Levine, D. and Saha, N. and Gendre, B. and Kido, D. and Watson, A. M. and Becerra, R. L. and Belkin, S. and Desai, S. and Pedreira, A. C. C. do E. S. and Das, U. and Li, L. and Oates, S. R. and Cenko, S. B. and Pozanenko, A. and Volnova, A. and Hu, Y.-D. and Castro-Tirado, A. J. and Orange, N. B. and Moriya, T. J. and Fraija, N. and Niino, Y. and Rinaldi, E. and Butler, N. R. and Gonzalez, J. d. J. G. and Kutyrev, A. S. and Lee, W. H. and Prochaska, X. and Ramirez-Ruiz, E. and Richer, M. and Siegel, M. H. and Misra, K. and Rossi, A. and Lopresti, C. and Quadri, U. and Strabla, L. and Ruocco, N. and Leonini, S. and Conti, M. and Rosi, P. and Ramirez, L. M. T. and Zola, S. and Jindal, I. and Kumar, R. and Chan, L. and Fuentes, M. and Lambiase, G. and Kalinowski, K. K. and Jamal, W.},\n       title = {An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution},\n       journal = {Monthly Notices of the Royal Astronomical Society},\n       year = {2024},\n       volume = {533},\n       pages = {4023},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "Rusty-Harpoon@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
+    },
+    {
+      "bibtex": "@ARTICLE{2021ApJ...918...63A,\n       author = {Andreoni, I. and Coughlin, M. W. and Kool, E. C. and Kasliwal, M. M. and Kumar, H. and Bhalerao, V. and Carracedo, A. S. and Ho, A. Y. Q. and Pang, P. T. H. and Saraogi, D. and Sharma, K. and Shenoy, V. and Burns, E. and Ahumada, T. and Anand, S. and Singer, L. P. and Perley, D. A. and De, K. and Fremling, U. C. and Bellm, E. and Bulla, M. and Crellin-Quick, A. and Dietrich, T. and Drake, A. and Duev, D. A. and Goobar, A. and Graham, M. and Kaplan, D. L. and Kulkarni, S. R. and Laher, R. R. and Mahabal, A. and Shupe, D. and Sollerman, J. and Walters, R. and Yao, Y.},\n       title = {Fast-transient Searches in Real Time with ZTFReST: Identification of Three Optically Discovered Gamma-Ray Burst Afterglows and New Constraints on the Kilonova Rate},\n       journal = {The Astrophysical Journal},\n       year = {2021},\n       volume = {918},\n       pages = {63},\n       doi = {10.3847/1538-4357/ac0bc7},\n       eprint = {2104.06352},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...918...63A/abstract},\n}",
+      "name": "Andreoni+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Fast-transient Searches in Real Time with ZTFReST: Identification of Three Optically Discovered Gamma-Ray Burst Afterglows and New Constraints on the Kilonova Rate",
+      "url": "https://doi.org/10.3847/1538-4357/ac0bc7"
+    },
+    {
+      "bibtex": "@INPROCEEDINGS{2021BKAS...46...49P,\n       author = {Paek, G. S. H. and Im, M. and Kim, J. and Lim, G. and Jeong, M. and Kang, W. and Kim, T. and Burkhonov, O. and Mirazaqulov, D. and Ehgamberdiev, S. A. and Seo, J. and Lee, C.-U. and Kim, S.-L. and Sung, H.-I.},\n       title = {Optical follow-up observation of three long GRBs with SomangNet facilities},\n       booktitle = {The Bulletin of the Korean Astronomical Society},\n       year = {2021},\n       volume = {46},\n       pages = {49.5},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021BKAS...46...49P/abstract},\n}",
+      "name": "Paek+2021",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Optical follow-up observation of three long GRBs with SomangNet facilities",
+      "url": "https://ui.adsabs.harvard.edu/abs/2021BKAS...46...49P/abstract"
     }
   ],
   "host_galaxy": null
