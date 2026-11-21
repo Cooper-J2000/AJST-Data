@@ -96,7 +96,7 @@ Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+0
 | AT2022aee | target_AT2022aee_photometry.csv（原文记名 AT 2022aee） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2022agi | target_AT2022agi_photometry.csv（原文记名 AT 2022agi） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2022arb | target_AT2022arb_photometry.csv（原文记名 AT 2022arb） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
-| AT2022bdw | target_AT2022bdw_photometry.csv（原文记名 AT 2022bdw） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
+| AT2022bdw | target_AT2022bdw_photometry.csv（原文记名 AT 2022bdw） | 本 PR #1122（已审核入库） | 已审核（2026-11-20；2026-11-21 复查修复） | 已按 24 列契约入库 8402 行（TDECat 完整文件〔10052 数据行，blob b74c5697〕8144＋UVOT 102＋Gaia Alerts LC 120＋TNS 6＋ALeRCE 30）；口径与未收行判读见 info comment |
 | AT2022csn | target_AT2022csn_photometry.csv（原文记名 AT 2022csn） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2022czy | target_AT2022czy_photometry.csv（原文记名 AT 2022czy） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2022dbl | target_AT2022dbl_photometry.csv（原文记名 AT 2022dbl） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
