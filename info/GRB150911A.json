@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB150911A",
-  "alias": [],
-  "ra": 67.428,
-  "dec": 5.731,
-  "T0": "2015-09-11T18:40:21Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 150911A"
+  ],
+  "ra": 67.43406,
+  "dec": 5.73533,
+  "T0": "2015-09-11T18:40:21.487220Z",
+  "T0_ref": "Swift/BAT 触发（trigger 655262，GCN 18280：At 18:40:21 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 150911A）；亚秒取触发仪器官方目录 external/swift_bat 快照 Trig_time_UTC=2015-09-11T18:40:21.487220，2026-11-22 live 官方目录（swift.gsfc.nasa.gov/results/batgrbcat summary_general.txt）再取同值互证；external/swiftgrbba 快照 trigger_time=18:40:21.000Z 为 BA 整秒显示口径（备查）。备查：swift_bat 目录 Trig_time_met=463689636.608 按任务历元折算为 18:40:36.608，与该目录 Trig_time_UTC 列存在 ~15.1 s 系统差（目录两列口径问题，2015 年暴约 15.1 s，同 PR #1160 GRB110719A 注记），以 Trig_time_UTC 列/GCN 为准",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,16 +15,22 @@
     "grb"
   ],
   "pos_error": 1.7,
-  "pos_ref": "GCN 18283",
+  "pos_ref": "GCN 18283 enhanced Swift-XRT position（RA,Dec=67.43406,+5.73533，1.7″，radius 90% confidence）；互证：external/swiftgrbba 快照 xrt_ra/xrt_dec=67.43392/5.73544（xrt_error_radius=1.4″，更多数据精化值，在 1.7″ 内）、SIMBAD「GRB 150911A」条目 67.43396/5.73544、GCN 18280 XRT 初步 enhanced 67.4331/5.7350（2.3″，均在互证内）；备查：GCN 18292 BAT ground 67.428/5.731（1.0′，90%，原库坐标系此位置误挂 GCN 18283 pos_ref）、GCN 18280 BAT on-board 67.424/+5.743（3′，90%）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
+  "comment": "身份确证：Swift/BAT trigger 655262=GRB150911A（GCN 18280：2015-09-11 18:40:21 UT 触发并定位，BAT on-board 67.424,+5.743）；仓内 gcn/archive 全文 grep「150911A」命中 14 篇（GCN 18280/18282/18283/18286/18290/18292/18293/18294/18303/18307/18308/18309/18313/18326，逐篇通读，均指 trigger 655262）；alias「GRB 150911A」=GCN subject/官方目录（swiftgrbba、mpe_greiner、SIMBAD）name 用名。T0：原库 2015-09-11T18:40:21Z（T0_ref 空）整数秒与 GCN 18280 一致，亚秒按触发仪器官方目录补至 18:40:21.487220Z（external/swift_bat 快照 Trig_time_UTC 与 live 官方目录 2026-11-22 两路同值；swiftgrbba 为整秒显示口径）；亚秒差异直接改进 T0，T0_offset 不适用。坐标：原库 ra/dec=67.428/5.731 系 GCN 18292 BAT ground 位置（1.0′，90%）且与 GCN 18280 BAT on-board 67.424/+5.743 不同源，挂在 pos_ref=GCN 18283（1.7″ XRT enhanced）下不自洽，改按 GCN 18283 enhanced Swift-XRT 位置（见 pos_ref）。t90=7.2±0.6 s（GCN 18292，15-350 keV）/7.136±0.600 s（external/swift_bat 目录快照，15-350 keV），按通告/目录 t90 判 lgrb；fluence=2.1±0.1×10^-6 erg/cm2（15-150 keV，90%）、Epeak=51.6±3.8 keV、1-s 峰值光子流量 5.2±0.3 ph/cm2/s（GCN 18292）；Konus-Wind waiting mode：fluence=3.13(+0.26/-0.20)×10^-6 erg/cm2（20-1000 keV）、单脉冲总时长 ~9 s、原文称 long-duration（GCN 18326，分发延迟 ~12 h）；XRT 精化分析见 GCN 18290（alpha=1.81，X 射线，不入库）。测光检索（2026-11-22）：仓内 gcn/archive 14 篇全读，其中 GCN 18282/18286/18293/18294/18303/18307/18308/18309/18313 含光学/UV 数值（本次逐行核对并补漏）；SciX 检索「GRB 150911A」命中 12 篇、「GRB150911A」命中 2 篇、「150911A」命中 12 篇（并集=全部 14 篇 GCN，无研究文章）；external/rssgrbag、grbsn_webtool、uvot_grb、heasarc_grbcat 0 命中；swift_grb 快照覆盖至 2012-12 不含本源；无该暴的专门研究文章，articles[] 留空（GCN 通告不入 articles）。宿主核查（2026-11-22）：SIMBAD TAP 30″ cone（harvard 镜像）仅 GRB 150911A 自身；NED TAP 30″ cone 共 4 天体=GRB 自身+3 个 WISEA 红外源（WISEA J042943.60+054421.7 / J042943.00+054357.8 / J042945.48+054415.7，分离 16.8-21.4″，均在 1.7″ XRT 误差圆外，无红移、无文献关联）→ 无确认宿主，host_galaxy 不建档；候选：GCN 18303 WHT 视场 Source 1（略延展，r=24.1，距 enhanced XRT 定位 ~2.1″、误差圆外，原文提示需第二历元判别）。红移：无任何测定（GCN 无 z 报道、external/swift_bat 目录 GRBlist_redshift_BAT 无此源），redshift 置 null。lc 逐行核对（2026-11-22）：108 行 10keV（UKSSDC Burst Analyser，Evans+2007,2009）按规则保持原样不审不重排、不参与去重；UVOT：GCN 18280 初报 white FC「typical 3-sigma upper limit ~19.6」行被 GCN 18293 UVOT 表 white_FC（82-232 s，>20.6）精化值取代，time 改窗中点并补 time_err=半宽，mag_system=Vega（GCN 18293 声明 UVOT photometric system，Breeveld+2011）；GCN 18293 另含 7 行 UVOT 上限（white 累积/u/u_FC/v/b/w1/w2）原库漏收，本次补入；MITSuME g/Rc/Ic（GCN 18286）time=MID-UT 18:57:10 口径不变、补 time_err=半曝光 690 s，原文未声明系统（GSC2.3 定标）；OAO Ks（GCN 18282）time 由 1359 s（MID-UT 整分口径）改原表 T0+=+1380 s、补 time_err=187.5 s；Terskol/Chuguev R（GCN 18308/18309）time 由窗起点改原表 t-T0(mid,d) 口径（19638.72/24226.56 s）、补 time_err=2400/990 s；Khureltogot 无滤光片 3-sigma 上限 20.9（GCN 18307）原库漏收，补入 1 行（band=G，t-T0(mid,d)=0.0351 d）；GROND 7 行（GCN 18313）time 由 43599 s（无原文口径依据）改原文 midtime T0+12.1 h=43560 s、按总曝光补 time_err（g'r'i'z' 990 s/JHK 1290 s，AB 系统原文声明）；P60 R>22.5（GCN 18294）time=叠加图中位数时刻 09:46 UT 口径不变，原文未给曝光时长 time_err 留空；WHT r=24.1/25.2 两行系 XRT 误差圆外视场源（GCN 18303 明确误差圆内无探测，两源距 enhanced XRT 定位 2.1″/2.9″），非 OT 探测，置 discard=y 留痕（Source 1 可作宿主候选）。X 射线行 mjd 与新 T0 差 0.487 s（BA 整秒口径 vs 目录亚秒），<1 s 容差，tools/check_t0_timebase.py PASS，无需平移。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
