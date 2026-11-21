@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB210406A",
-  "alias": [],
+  "alias": [
+    "GRB210406.72",
+    "GRB210406716"
+  ],
   "ra": 132.4589,
   "dec": 76.5322,
   "T0": "2021-04-06T17:11:22Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 29767",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "INTEGRAL",
@@ -12,21 +15,26 @@
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
+  "pos_error": 90,
+  "pos_ref": "GCN 29767",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核（Rusty-Harpoon@zcode，2026-11-22）。T0：INTEGRAL/IBAS 触发 17:11:22 UT 2021-04-06（GCN 29767，触发仪器官方通告，整秒精度、无亚秒来源可补）；备查：Konus-Wind 通告引 T0(IBIS/ISGRI)=17:11:28 UT（GCN 29772，与本库差 6 s），Fermi/GBM 触发 17:11:30.57 UT（GCN 29771；external/fermi_gbm 快照 trigger_time=2021-04-06T17:11:30.565Z）。坐标：IBAS refined R.A.=132.4589 Dec=+76.5322，误差 1.5 arcmin（90% c.l.，GCN 29767）→ pos_error=90 arcsec（confidence=90）；初始 IBAS 通告误差半径 0.0516667 deg 约 186 arcsec（MASTER GCN 29766 转述）。别名：GRB210406.72 ← GCN 29766 MASTER 原文用名「Integral GRB210406.72」；GRB210406716 ← FERMIGBRST trigger_name（external/fermi_gbm 快照，trigger 639421895；GCN 29771 原文「trigger 639421895 / 210406716」）。sub_tag=lgrb 依据：GCN 29767 subject「A long GRB detected by INTEGRAL」且正文「lasting about 60 s」；t90=21.7604±3.57 s（50-300 keV，FERMIGBRST 目录快照 external/fermi_gbm/normalized.jsonl，按目录 t90 判 lgrb），GCN 29771 另给 t90 约 17.4 s（50-300 keV）。宿主：host_galaxy=null（无确定宿主）；Swift/XRT 在 Mondy OT 候选位置（08:49:49.09 +76:33:20.2）无 X 射线源（3σ 上限 1.4e-3 ct/s，GCN 29785）；GTC r=22.45 与 Mondy epoch 2 一致、原文提示 potential host cannot be excluded（GCN 29799）；SIMBAD 锥查（2026-11-22，CDS 主站不可达，经 simbad.cfa.harvard.edu TAP）：INTEGRAL 位置 1.5 arcmin 内仅本源自身（gB 型，坐标同 GCN 29767），OT 位置 30 arcsec 内 0 命中。redshift 无测定，留 null。测光检索留证（2026-11-22）：仓内 gcn/archive 全文命中 12 篇（29766-29775、29785、29799、29803；其中 29773 为 GRB 210406B 另一暴、29803 经 GCN OPS 勘误实为 GRB 210411C），测光通告 6 篇（29766 MASTER、29768 BOOTES-4、29769 Konkoly、29770/29775 Mondy、29799 GTC）；external/rssgrbag、external/grbsn_webtool 无记录；SciX（api.scixplorer.org）检索 210406A 命中 11 篇、全部为 GCN 通告，无研究论文；TNS 站被 captcha 拦截（audit/unverified.tsv 行，未据其下任何结论）。本 PR 补 8 行（MASTER 7 上限 + BOOTES-4 1 上限）、改 6 行（曝光中点口径与 mjd=T0+time 重算）；Konkoly 21.9 AB 上限（GCN 29769，r'+i' 双滤光片单一限值未指明归属滤光片）不入库，待维护者裁决。X 射线：GCN 29785 为 Swift-XRT 测光通告，X 射线数据不入库（§3.3）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [],
   "host_galaxy": null
