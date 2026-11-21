@@ -20,13 +20,18 @@
   "pos_ref": "GCN 28841",
   "redshift_type": null,
   "redshift_ref": "gcn_llm:circulars_meta; GCN 28847",
-  "comment": "2026-11-04 SciX 补充：文献确认的光学发现 GRB 余辉（orphan afterglow），加 orphan-afterglow 标签与文献（仅元数据）。\n2026-11-04 SciX 补充：文献确认的光学发现 GRB 余辉（orphan afterglow），加 orphan-afterglow 标签与文献（仅元数据）。\n2026-11-04 SciX 补充：文献确认的光学发现 GRB 余辉（orphan afterglow），加 orphan-afterglow 标签与文献（仅元数据）。",
+  "comment": "重复条目否证（§3.7，审核 2026-11-22，Rusty-Harpoon@zcode，PR #1168 数据审核 + 本否证 PR）：本条与 GRB201103B 为同一事件。判定依据：同一光学余辉 ZTF20acozryr=AT2020yxz=GRB 201103B 的 OT（GCN 28841 ZTF 发现、GCN 28844 IPN 三角定位确认 OT 与暴关联、GCN 28847 VLT/X-shooter 光谱 z=1.105 确认余辉归属）；坐标同点（本条 42.1846/+12.1372 与 GRB201103B 的 42.184633/+12.137250 同一位置）；本条 alias 自带 GRB201103B。本条 T0=2020-11-03T09:44:00Z 为 ZTF 首报时刻而非触发时刻（触发 T0=2020-11-03T18:06:45.36 UT，GCN 28831 AGILE；且 GCN 28841 OPS 勘误已将首探测时刻改 2020-11-04 08:47 UT），t0_basis=meta_trigger 不可信（Issue #68 先例），不符合 T0 只能是触发时刻的口径。建议保留 GRB201103B 条目：其 lc 79 行已逐行审核（PR #1168），本条 22 行光变逐一比对后全部为保留条目中同一测量的转引（GCN28841x5、28875x4、28862x1、28876x2、28880x3、28883x2、29181x3、28886x1、28925x1、28926x1），无独有数据、0 行迁入；其中本条 GCN 28886 行（R=21.67+/-0.16）为勘误前误值（GCN 28925 更正为 22.45+/-0.14，保留条目已按勘误链取值）、GCN 28876 行（r=21.08+/-0.08）为 Andreoni+2021 论文再处理前的初步值（保留条目取论文值 20.97+/-0.13）。请维护者按 §3.7 删除本条目（文件+库+audit/denied.tsv 三处）。原 comment 保留：2026-11-04 SciX 补充：文献确认的光学发现 GRB 余辉（orphan afterglow），加 orphan-afterglow 标签与文献（仅元数据）。\n2026-11-04 SciX 补充：文献确认的光学发现 GRB 余辉（orphan afterglow），加 orphan-afterglow 标签与文献（仅元数据）。\n2026-11-04 SciX 补充：文献确认的光学发现 GRB 余辉（orphan afterglow），加 orphan-afterglow 标签与文献（仅元数据）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    },
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
