@@ -1,28 +1,38 @@
 {
   "transient_id": "GRB171007A",
-  "alias": [],
-  "ra": 135.6006,
-  "dec": 42.8195,
-  "T0": "2017-10-07T11:57:39Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 171007A",
+    "GRB171007498"
+  ],
+  "ra": 135.60048,
+  "dec": 42.8192,
+  "T0": "2017-10-07T11:57:38.277120Z",
+  "T0_ref": "Swift/BAT 官方目录快照（external/swift_bat）trigger 777215 trigger_time=2017-10-07T11:57:38.277120Z；GCN 21976 整秒 11:57:38 UT 互证；GBM 触发 11:57:39.90（GCN 21980；目录快照亚秒 39.904），多仪器矛盾时 Swift 优先",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.0,
   "pos_ref": "GCN 21979",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "审核 fsy@zcode 2026-11-22。T0 修正：原库 11:57:39Z 系 bot meta_trigger 假锚（Issue #68），偏差 +0.72 s；改判 BAT 目录亚秒触发时刻 11:57:38.277120Z（GCN 21976 整秒 11:57:38 互证；GBM 触发 11:57:39.90（GCN 21980 原文；目录快照亚秒 39.904）为另一仪器自身零点，Swift 优先）。全表 7 行按触发相对时刻重锚 mjd（无 X 射线行）。定位：GCN 21979 XRT 增强位 135.60048,+42.81920 ±2.0″(90%)（原库坐标 135.6006,42.8195 系 GCN 21976 值、误差却取 21979 的 2.0″——改判 21979 精确值）；备查：BAT onboard 135.544,+42.849 ±3′、BAT ground 135.635,42.930 ±3.6′（GCN 21981）、XRT refined 135.6008,42.8193 ±2.3″（GCN 21978）。tag/sub_tag：tag=[grb]；sub_tag 留空——来源冲突：BAT 目录 t90=68.424±19.329 s（15-350 keV，按目录 t90 判应为 lgrb）、GBM T90≈3.5 s（50-300 keV，GCN 21980，短）、GCN 21981 BAT refined 明示「短刺 ~3 s + 弱尾至 T+80 s，与短暴+扩展成协（EE）相似」并做 EE 分解——三来源分类互相矛盾，按 §3.9 留空待决（详见 PR 待决②）。alias「GRB171007498」证据串：GCN 21980 原文用名 trigger 529070264 / 171007498，GBM 目录（external/fermi_gbm 快照）原文用名 trigger_name=GRB171007498。lc：7 行（无 X 射线行）——GCN21976 prompt UVOT 行被 21984 white_FC 取代→discard；RATIR 6 行 time 改窗口中点 ≈1116 s（原 141 s 系 bot 以错误 T0 反推 12:00:00 所致）并补 telescope；按 GCN 21984（UVOT 官方 3σ 上限表，Breeveld 系统）新增 9 行。测光检索（2026-11-22）：仓内 gcn/archive 全文命中 7 篇（21976-21981、21984，逐篇核对）、rssgrbag 0、grbsn_webtool 0；arXiv API 元数据检索 0 篇命中 → GCN 为全部公开测光记录；ADS/SciX 无凭据（通道级 search-limited 限制；本源测光全部出自 GCN/官方目录，无 VoR 追取需求，不另设按源登记行）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "Swift/BAT catalog（external/swift_bat 快照 trigger 777215）；GCN 21976",
+    "t0_note": "T0 经 fsy@zcode 2026-11-22 审核修正为 BAT 触发时刻 2017-10-07T11:57:38.277120Z（目录亚秒；GCN 21976 整秒 11:57:38 互证）；原 bot 注记「t0 为 meta trigger-time（真实触发时刻）」系 meta_trigger 假锚（Issue #68），原值 T0=2017-10-07T11:57:39Z 留 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [],
   "host_galaxy": null
