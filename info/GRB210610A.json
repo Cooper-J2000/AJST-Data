@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB210610A",
-  "alias": [],
-  "ra": 204.283333,
-  "dec": 14.483333,
-  "T0": "2021-06-10T15:03:43Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 210610A",
+    "GRB210610628",
+    "MASTER OT J133707.60+142755.0"
+  ],
+  "ra": 204.28211,
+  "dec": 14.4654,
+  "T0": "2021-06-10T15:03:43.387320Z",
+  "T0_ref": "Swift/BAT 官方目录（仓内 external/swift_bat 快照）trigger 1054627 trigger_time=2021-06-10T15:03:43.387320Z；GCN 30160 整秒 15:03:43 UT、GCN 30197 Konus-Wind 引 T0(BAT)=15:03:43.387 互证",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,16 +16,16 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 2.2,
-  "pos_ref": "GCN 30160",
-  "redshift_type": null,
+  "pos_error": 2.3,
+  "pos_ref": "GCN 30165",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 30164",
-  "comment": null,
+  "comment": "审核 fsy@zcode 2026-11-22。定位改判 GCN 30165 XRT 增强位 204.28211,+14.46540 ±2.3″(90%)；备查：GCN 30160 XRT 初增强位 204.2823,+14.4652 ±2.2″(90%)、UVOT FC 位 204.28174,+14.46528 ±0.61″(90%)、GCN 30246 UVOT 精化位 204.28161,+14.46527 ±0.43″(90%)。z=3.54 spec：GCN 30164 Xinglong-2.16m Lyα+SiII/SiIV/CIV（GCN 30200 HCT z=3.5 证实）。sub_tag=lgrb 依据：t90=13.616±3.151 s（Swift/BAT 目录 15-350 keV，按目录 t90 判 lgrb）；GCN 30186 refined T90=13.62±3.15 s、GBM t90=8.192 s（50-300 keV）一致。alias「GRB210610628」证据串：GCN 30233 原文 trigger 645030227/210610628，FERMIGBRST trigger_name=GRB210610628；「MASTER OT J133707.60+142755.0」为 GCN 30166 原文用名。lc 逐行核对（2026-11-22）：138 行对仓内 gcn/archive 全文（27 篇：30160-30246、30775、30359 等）与 Dainotti+2024（MNRAS 533, 4023）数据发布（grbLC 210610A_mag.txt，113 行）逐值核对；24 行确证转引重复删除（保留 GCN 原始行、time 统一改按原文 mid 口径）；GCN30173 行（MASTER-Kislovodsk R=15.2）系 GRB 210610B 误归属→discard=y；GCN30160 UVOT prompt 行被 GCN 30246 精化值取代→discard=y；GCN30212 行经 GCN 30213 勘误（实为 210610B 观测）→discard=y；GCN30166 MASTER 4792 s 行按通告探测表述改 upperlimit=n；MeerLICHT 6 行 time 按中点口径 +30 s（原文给序列起点）；RATIR 行 time 取 GCN 30191 UTC 日期窗口中点（原文两种窗口表述互斥，见 PR 说明）；RATIR H 6 行（RosaBecerra）按 Dainotti 目录 extcorr=y 置 Gext_corr=y 并清空派生列；新增 JCMT SCUBA-2 850/450 μm 上限 2 行（GCN 30359）。测光检索（2026-11-22）：仓内 gcn/archive 全文命中 27 篇（逐篇核对）、rssgrbag 0、grbsn_webtool 0；arXiv API 元数据命中 2 篇（Zhang+2024 X 射线样本、Dainotti+2024 目录）→ 无更多可用光学测光；ADS/SciX 无凭据（search-limited，登记 audit/unverified.tsv）。本源无 X 射线行（band 无能量串）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -83,29 +87,34 @@
         "v": 1.8044052863436122
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
       "bibtex": "@ARTICLE{2024ApJ...977..206Z,\n       author = {{Zhang}, Biao and {Zhong}, Shu-Qing and {Li}, Long and {Dai}, Zi-Gao},\n        title = \"{Signature of Triaxially Precessing Magnetars in Gamma-Ray Burst X-Ray Afterglows}\",\n      journal = {\\apj},\n     keywords = {Gamma-ray bursts, Magnetars, 629, 992, Astrophysics - High Energy Astrophysical Phenomena, Astrophysics - Solar and Stellar Astrophysics},\n         year = 2024,\n        month = dec,\n       volume = {977},\n       number = {2},\n          eid = {206},\n        pages = {206},\n          doi = {10.3847/1538-4357/ad9005},\narchivePrefix = {arXiv},\n       eprint = {2411.15883},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024ApJ...977..206Z},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Zhang+2024",
-      "source": "bot",
+      "source": "fsy@zcode",
       "title": "Signature of Triaxially Precessing Magnetars in Gamma-Ray Burst X-Ray Afterglows",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024ApJ...977..206Z"
+      "url": "https://doi.org/10.3847/1538-4357/ad9005"
     },
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n        title = \"An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution\",\n      journal = {\\mnras},\n         year = 2024,\n        month = sep,\n       volume = {533},\n        pages = {4023-4043},\n          doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n archivePrefix = {arXiv},\n primaryClass = {astro-ph.HE}\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "fsy@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
-      "bibtex": "@ARTICLE{2022arXiv221112187L,\n       author = {Liang Li},\n       title = {Revisiting the Spectral-Energy Correlations of GRBs with \\it Fermi Data I: Model-wise Properties},\n       journal = {arXiv e-prints},\n       year = {2023},\n       doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract},\n}",
+      "bibtex": "@ARTICLE{2023ApJS..266...31L,\n       author = {Liang Li},\n        title = \"Revisiting the Spectral Energy Correlations of GRBs with Fermi Data. I. Model-wise Properties\",\n      journal = {\\apjs},\n         year = 2023,\n       volume = {266},\n       eid = {31},\n        pages = {31},\n          doi = {10.3847/1538-4365/acc867},\n       eprint = {2211.12187},\n archivePrefix = {arXiv},\n primaryClass = {astro-ph.HE}\n}",
       "name": "Li+2023",
-      "source": "bot",
-      "title": "Revisiting the Spectral-Energy Correlations of GRBs with {\\it Fermi} Data I: Model-wise Properties",
-      "url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221112187L/abstract"
+      "source": "fsy@zcode",
+      "title": "Revisiting the Spectral Energy Correlations of GRBs with Fermi Data. I. Model-wise Properties",
+      "url": "https://doi.org/10.3847/1538-4365/acc867"
     }
   ],
   "host_galaxy": null
