@@ -1,27 +1,30 @@
 {
   "transient_id": "GRB060502A",
-  "alias": [],
-  "ra": 240.858333,
-  "dec": 66.6,
+  "alias": [
+    "GRB 060502A",
+    "GRB 060502"
+  ],
+  "ra": 240.927,
+  "dec": 66.6007,
   "T0": "2006-05-02T03:03:32Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 5047：BAT 触发 2006-05-02 03:03:32 UT（trigger 208169）；Swift/BAT 官方目录快照 trigger_time=2006-05-02T03:03:32.144320Z（亚秒备查，按 GRB060116A/GRB140114A 先例维持整秒以保 82 行 X 射线块 mjd 自洽）；Konus 目录 03:03:33.119 为其自身时钟零点备查",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 1.51,
+  "redshift": 1.5026,
   "tag": [
     "grb"
   ],
-  "pos_error": 180.0,
-  "pos_ref": "GCN 5047",
-  "redshift_type": null,
-  "redshift_ref": "GCN 5052",
-  "comment": null,
+  "pos_error": 0.56,
+  "pos_ref": "GCN 5068",
+  "redshift_type": "spec",
+  "redshift_ref": "Fynbo+2009 (ApJS 185, 526)，经 external/swift_bat 与 konus_wind 双快照 z_ref 引用；GCN 5052（Gemini 谱 FeII/MgII/MgI z~1.51）初报备查",
+  "comment": "审核 fsy@zcode 2026-11-22。T0 维持整秒（03:03:32Z）：GCN 5047 BAT 触发时刻；BAT 目录亚秒 .144320 备查——本源含 82 行 UKSSDC Burst Analyser X 射线块，按 GRB060116A/GRB140114A 先例维持整秒保全表 mjd 自洽；若维护者裁定采纳亚秒 T0，本源 X 射线行需随 T0 对齐时间轴（保 mjd 平移 time −0.144 s），光学 81 行 mjd 重算。定位改判 GCN 5068 UVOT OT 位 240.927,+66.6007 ±0.56″(90%)（原库 240.858333,66.6 为 BAT onboard 粗值 ±3′）；备查：BAT onboard 240.858,+66.595 ±3′（GCN 5047）、XRT ground 240.92875,+66.59939 ±3.9″（GCN 5047）、XRT refined ±3.7″（GCN 5054）、FLWO OT ±0.7″（GCN 5070）。z=1.5026 spec：Fynbo+2009 (ApJS 185, 526)（swift_bat/konus_wind 双快照一致）；GCN 5052 Gemini 谱吸收系统 z~1.51 初报、GCN 5051 APO 暂定 z=0.099 已被取代。sub_tag=lgrb 依据：t90=28.448±9.861 s（Swift/BAT 目录 15-350 keV，按目录 t90 判 lgrb）。lc：82 行 X 射线（10keV，Burst Analyser）零改动不参与去重；81 行光学逐行核对（10 篇 GCN 全文 + Dainotti+2024 数据发布 72 行逐值吻合 + Cenko+2009 (ApJ 693, 1484) Table 1 经 arXiv:0808.3983 LaTeX 源替代口径逐格核对 30 行（IOP VoR 403 未通读，已登记 audit/unverified.tsv，核查补正项③））：GCN 5068 15 行补 time_err 与窗口 comment（1 处中点舍入差修正 6215→6214.5；UVW2 4987.5 原值已正确）；GCN 5047 FC 行（135 s、18.4）原被误挂 5068 窗口 comment 且误标上限——按原文改探测 n 并重写 comment，GCN 5068 FC 行（134 s、18.5±0.07）补 time_err（核查补正项①⑤）；GCN 5048 R~19.8 系探测估计（原库误标 upperlimit=y）→改 n；UVOT FC 行（GCN 5047 18.4）同理改 n；GCN 5195 R=22.5 探测行补 telescope/instrument/time_err、其 Dainotti 转引行（time 系原文 1.08 d 舍入值）删除；WHITE 4682-4882 行 prompt 值被 Roming+2017 精化值取代→discard；Cenko2009 30 行补 time_err（半曝光）与 source 署名（全部修改行补 source=fsy@zcode，核查补正项②）；TTT/LOTIS/P60/FLWO 行 mag_system 留空留证（原文未声明定标/系统；UVOT GCN5068 系 Vega 行按惯例推定保留并注明依据，核查补正项⑥⑦）。Roming2017=UVOT GRB Catalog II（Roming et al. 2017，NGSO/Swift/UVOT），29 行经 Dainotti+2024 数据发布逐值核对。测光检索（2026-11-22）：仓内 gcn/archive 全文命中 10 篇（5047/5048/5049/5051/5052/5054/5060/5068/5070/5195，逐篇核对）、rssgrbag 0、grbsn_webtool 0；arXiv 检索 Cenko+2009 (ApJ 693, 1484) 表 1 已核对；ADS/SciX 无凭据（通道级 search-limited）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -73,36 +76,48 @@
         "v": 11.333864541832671
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
       "bibtex": "@ARTICLE{2008A&A...478..409M,\n       author = {{Moretti}, A. and {Margutti}, R. and {Pasotti}, F. and {Beardmore}, A.~P. and {Campana}, S. and {Chincarini}, G. and {Covino}, S. and {Godet}, O. and {Guidorzi}, C. and {Osborne}, J.~P. and {Romano}, P. and {Tagliaferri}, G.},\n        title = \"{When GRB afterglows get softer, hard components come into play}\",\n      journal = {\\aap},\n     keywords = {gamma rays: bursts},\n         year = 2008,\n        month = feb,\n       volume = {478},\n       number = {2},\n        pages = {409-417},\n          doi = {10.1051/0004-6361:20078805},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2008A&A...478..409M},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
       "name": "Moretti+2008",
-      "source": "bot",
+      "source": "fsy@zcode",
       "title": "When GRB afterglows get softer, hard components come into play",
-      "url": "https://ui.adsabs.harvard.edu/abs/2008A&A...478..409M"
+      "url": "https://doi.org/10.1051/0004-6361:20078805"
     },
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n        title = \"An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution\",\n      journal = {\\mnras},\n         year = 2024,\n        month = sep,\n       volume = {533},\n        pages = {4023-4043},\n          doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n archivePrefix = {arXiv},\n primaryClass = {astro-ph.HE}\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "fsy@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
       "bibtex": "@ARTICLE{2019arXiv191209810M,\n       author = {P. Y. Minaev and A. S. Pozanenko},\n       title = {The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method},\n       journal = {arXiv e-prints},\n       year = {2020},\n       doi = {10.1093/mnras/stz3611},\n       eprint = {1912.09810},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract},\n}",
       "name": "Minaev+2020",
-      "source": "bot",
+      "source": "fsy@zcode",
       "title": "The Ep,i - Eiso correlation: type I gamma-ray bursts and the new classification method",
-      "url": "https://ui.adsabs.harvard.edu/abs/2019arXiv191209810M/abstract"
+      "url": "https://doi.org/10.1093/mnras/stz3611"
     },
     {
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "name": "Tsvetkova+2021",
-      "source": "bot",
+      "source": "fsy@zcode",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+      "url": "https://doi.org/10.3847/1538-4357/abd569"
+    },
+    {
+      "name": "Cenko+2009",
+      "url": "https://doi.org/10.1088/0004-637X/693/2/1484",
+      "title": "Dark Bursts in the Swift Era: The Palomar 60 inch-Swift Early Optical Afterglow Catalog",
+      "bibtex": "@ARTICLE{2009ApJ...693.1484C,\n       author = {{Cenko}, S. B. and {Kelemen}, J. and {Harrison}, F. A. and {Fox}, D. B. and {Kulkarni}, S. R. and {Kasliwal}, M. M. and {Ofek}, E. O. and {Rau}, A. and {Gal-Yam}, A. and {Frail}, D. A. and {Moon}, D.-S.},\n        title = \"Dark Bursts in the Swift Era: The Palomar 60 inch-Swift Early Optical Afterglow Catalog\",\n      journal = {\\apj},\n         year = 2009,\n       volume = {693},\n        pages = {1484-1493},\n          doi = {10.1088/0004-637X/693/2/1484},\n       eprint = {0808.3983},\n archivePrefix = {arXiv},\n primaryClass = {astro-ph.HE}\n}",
+      "source": "fsy@zcode"
     }
   ],
   "host_galaxy": null
