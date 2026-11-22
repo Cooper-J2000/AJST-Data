@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB071008",
-  "alias": [],
-  "ra": 151.571,
-  "dec": 44.303,
-  "T0": "2007-10-08T21:55:56Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 071008",
+    "BAT 293587",
+    "Swift 293587"
+  ],
+  "ra": 151.58851,
+  "dec": 44.3207,
+  "T0": "2007-10-08T21:55:56.761900Z",
+  "T0_ref": "Swift/BAT 触发仪器官方目录 batgrbcat（trigger 293587，Trig_time_UTC=2007-10-08T21:55:56.761900，仓内 external/swift_bat 快照）；external/swift_grb 快照 trigger_time 同值双证；GCN 6856 整秒 21:55:56 UT 一致；external/swiftgrbba 快照 trigger_time=21:55:56.000Z 为 BA 管线整秒显示口径（其 lc XRT 行时基同，备查）；swift_bat 目录 Trig_time_met=213573359.040 与 Trig_time_UTC 列存在 ~2.28 s 口径差（目录两列问题，外部快照不改动，以 UTC 列为准）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -12,17 +16,21 @@
   "tag": [
     "grb"
   ],
-  "pos_error": 120.0,
-  "pos_ref": "GCN 6869",
+  "pos_error": 5.8,
+  "pos_ref": "GCN 7113",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [
-    "sgrb"
-  ],
+  "comment": "身份确证：Swift/BAT trigger 293587=GRB071008（GCN 6856：2007-10-08 21:55:56 UT 触发并定位，BAT on-board 151.548,+44.334，3'）；仓内 gcn/archive 全文检索「071008」命中 6 篇（GCN 6856/6857/6866/6869/6874/7113，逐篇通读均指 trigger 293587）。T0：原库 2007-10-08T21:55:56Z（T0_ref 空）整秒与 GCN 6856 一致，亚秒按触发仪器官方目录补至 21:55:56.761900Z（external/swift_bat 与 external/swift_grb 快照同值双证，依据见 T0_ref）；亚秒差异直接改进 T0，T0_offset 不适用。坐标：原库 151.571/44.303 系 GCN 6869 BAT ground refined 位置（2.0'=120\"，sys+stat，90% 包含），与旧 pos_ref 同源自洽但精度低；GCN 7113（Swift-XRT 团队 2007-11-15/19 复观测）证认 X 射线余辉（源 1，两次观测间不再可测、chance probability<1E-4）并给位置 151.58851,44.3207（5.8\" 误差圆，90% 置信），改按 GCN 7113 并补 pos_error_confidence=90（原文声明 90%）；备查：external/swift_xrt_live 目录（UKSSDC XRT Catalogue，Evans+2009 在线版）该源 151.588813508,44.3214938（Err90=5.4\"），与 GCN 7113 相差约 3.0\"（互在对方误差圆内；库内惯例定位以 GCN XRT 通告为准，目录值并列备查）；GCN 6866 两 XRT 源中仅源 1（=余辉）位于 refined BAT 误差框内（GCN 7113）。t90=18±1 s（GCN 6869，15-350 keV，含系统误差）/17.984±5.139 s（external/swift_bat 目录快照，15-350 keV）/17.98 s（external/swift_grb 快照，15-150 keV），t50=5.312±2.788 s（swift_bat 快照）；fluence=2.4±0.4x10^-7 erg/cm2（15-150 keV，90%）、1-s 峰值光子流量 0.5±0.1 ph/cm2/s（GCN 6869）；Swift/BAT 目录 GRBlist_single_pulse_GRB 列其为单脉冲暴、未列入 short_GRB_with_EE。sub_tag：目录 t90=17.984 s 按「按目录 t90 判 lgrb/sgrb」应判 lgrb，而 GCN 6874 原文称「short GRB071008」（通告分类，判 sgrb）——目录 t90 与通告分类互相矛盾，按提示词 §3.9 sub_tag 留空待决（原库 [sgrb] 为导入标记，本次核实后清除）。测光检索（2026-11-22）：仓内 gcn/archive 6 篇全读，光学上限 2 篇——GCN 6857（IAC80 R<21.5，本次补入 1 行）、GCN 6874（CrAO Shajn 2.6m R<24.3，已在库、本次逐值核对并修正窗口中点口径）；GCN 6866/7113 为 XRT 定位通告（7113 的 7e-4 counts/s≈4e-14 erg/s/cm2 X 射线上限不入库，X 射线暂不审）；GCN 6874 的 S1/S2 为场天体非余辉测光不入库；external/rssgrbag、external/grbsn_webtool 0 命中；SciX 检索「GRB 071008」3 篇+「GRB071008」4 篇（并集=GCN 6856/6857/6866/6869/6874/7113 与 GCN Report 91.1 共 7 篇，全部为通告，无研究文章引用此暴）；TNS 检索无记录 → 共补 1 行。宿主核查（2026-11-22）：GCN 6874 于 XRT 源 1 误差圈内见星系 S1（SDSS 可检）原文称其位于 refined BAT 误差框外〔跨通告矛盾注记（§3.10 笔误机制）：GCN 7113 源 1 即余辉且几何复算距 refined BAT 框心 78.1″（<120″）、S1 距源 1 最远 84.6″，S1 实在框内，6874 该句应为笔误〕；原文对 S2 要求 second epoch 定 nature（非 S1），S1 坐标/星等原文未给，无红移、无文献确证 → 候选宿主不建档；S2 为边缘探测、属 XRT 源 2（非余辉，BAT 框外）；SIMBAD TAP（cds.unistra.fr / u-strasbg.fr / harvard 镜像）3 次尝试均整站不可达、NED（API 404、经典接口 45 s 超时）失败，锥查通道已登记 audit/unverified.tsv。红移：无任何测定（external/swift_bat GRBlist_redshift_BAT 无此源、文献无），redshift 保持 null。alias：「GRB 071008」=GCN subject 原文用名（GCN 6856 subject「GRB 071008: Swift detection of a burst」；swift_bat/swift_grb/uvot_grb/mpe_greiner 快照 name 列同）、「BAT 293587」=external/swift_bat 快照 name_alt、「Swift 293587」=external/swift_grb 快照 name_alt。lc：2 行 10keV（UKSSDC Burst Analyser，Evans+2007,2009）按规则保持原样不审不重排、不参与去重，其时基为 BA 整秒口径（swiftgrbba trigger_time=21:55:56.000Z 同，原 mjd=T0 整秒+time 精确自洽），与新 T0 差 0.762 s、<1 s 容差（tools/check_t0_timebase.py PASS，先例 PR #1160 同情形保持原样）；R 行（GCN 6874）逐值核对后改窗口中点口径并补 telescope/time_err/source（详见行 comment）。",
+  "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
