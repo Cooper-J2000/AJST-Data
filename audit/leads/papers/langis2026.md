@@ -135,7 +135,7 @@ Alternative name 直配 + Swift J1644+57→SwiftJ164449.3+573451、Swift J2058+0
 | AT2024eqp | target_AT2024eqp_photometry.csv（原文记名 AT 2024eqp） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2024gre | target_AT2024gre_photometry.csv（原文记名 AT 2024gre） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2024gxr | target_AT2024gxr_photometry.csv（原文记名 AT 2024gxr） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
-| AT2024kt | target_AT2024kt_photometry.csv（原文记名 AT 2024kt） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
+| AT2024kt | target_AT2024kt_photometry.csv（原文记名 AT 2024kt） | 本 PR #1113（已审核入库） | 已审核（2026-11-20） | 已按 24 列契约入库 2126 行（TDECat 2097＋TNS 7＋AstroNote 2024-29 DAO 1＋UVOT 21）；口径与未收行判读见 info comment |
 | AT2024lhc | target_AT2024lhc_photometry.csv（原文记名 AT 2024lhc） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2024mvz | target_AT2024mvz_photometry.csv（原文记名 AT 2024mvz） | 无 | mention-only | 过门槛①：逐源光度 CSV（库内检索拿不到的编译光变表），接手者须自行下载核对 |
 | AT2024pvu | target_AT2024pvu_photometry.csv（原文记名 AT 2024pvu） | 本 PR #890（已审核入库） | 已审核（2026-11-05） | 已按 24 列契约入库 9560 行；口径与未收行判读见 info comment |
