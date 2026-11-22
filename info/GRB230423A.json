@@ -1,28 +1,37 @@
 {
   "transient_id": "GRB230423A",
   "alias": [],
-  "ra": 122.58268,
-  "dec": -21.92529,
-  "T0": "2023-04-23T19:07:55Z",
-  "T0_ref": null,
+  "ra": 122.583,
+  "dec": -21.9259,
+  "T0": "2023-04-23T19:07:55.465280Z",
+  "T0_ref": "Swift-BAT 触发通告页 https://gcn.gsfc.nasa.gov/other/1165354.swift（TRIGGER_NUM 1165354，GRB_TIME 68875.46 SOD = 19:07:55.46 UT）；external/swift_bat 快照 summary_general.txt Trig_time_UTC = 2023-04-23T19:07:55.465280（亚秒取目录值 6 位小数）；GCN 33677 整秒 「At 19:07:55 UT」一致；GCN 33694 以 trigger #1165354 定名 GRB 230423A",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Swift/UVOT",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.7,
   "pos_ref": "GCN 33681",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "Swift/BAT rate trigger 1165354（触发通告页 RATE_SIGNIF 8.60σ、IMAGE_SIGNIF 7.30σ；GCN 33677 初报 7.3σ 边缘图像触发「probably not a GRB」，GCN 33694 精化分析确认其为 GRB 230423A 并定名）。T0=2023-04-23T19:07:55.465280 UT（external/swift_bat 快照 Trig_time_UTC；触发通告页 GRB_TIME 68875.46 SOD=19:07:55.46 UT 一致，亚秒差 ~5 ms 为通告 2 位小数截断，<60 ms 不另报；GCN 33677 整秒一致）；原库 T0=2023-04-23T19:07:55Z 仅整秒，按 §3.8 以触发仪器目录亚秒值精化，全表 mjd 已按 T0+time 重算（第 3 行 time 4910→4904.5 s 一并改正，见该行 comment）。T0_offset 未写：external/swift_bat 快照 T100_start=−2.252 s 为目录 bayesian-block 窗口边缘（T90_start=−0.66 s 未过 1 s 阈；GCN 33694 谱积分窗 T−2.25 s 与 T100 同源），无通告级「触发前已有辐射」证据，不满足 T0_offset 证据门槛。\n位置沿革：BAT on-board 122.605,−21.920（3′，90% containment，GCN 33677/触发通告页）→ BAT ground 122.618,−21.901（2.3′，GCN 33694；external/swift_bat RA_ground/DEC_ground 一致）→ XRT 余辉 122.58308,−21.92597（3.8″，90%，GCN 33679）→ XRT 精化 122.5830,−21.9259（3.7″，90% confidence，GCN 33681，本库 ra/dec/pos_error 采用）→ UKSSDC XRT live 目录 122.58268,−21.92529（2.6″，external/swift_xrt_live 快照；原库 ra/dec 即此值，属「坐标取目录、误差取通告」混串，现按 GCN 33681 统一，live 值备查）。t90=23.60±4.27 s（15-350 keV，GCN 33694）；external/swift_bat 快照 T90=23.604±4.2715 s 一致；按通告/目录 t90 判 lgrb。红移无任何文献/目录测定（保持 null）；无宿主星系候选。Fermi/GBM 未触发（IceCube GRBweb GBM_located=False），无其他仪器触发或独立定位；GCN 站检索共 5 篇（33677/33679/33681/33683/33694），均无勘误/更正链。本源 lc 无 X 射线行（XRT 数据未入库，X 射线不在审核范围），无「X 射线行随 T0 对齐」需求。\n原 bot 时间基准说明：t0_note='t0 为 meta trigger-time（真实触发时刻）'、t0_basis='meta_trigger'。\n测光检索（2026-11-17）：GCN 站内检索 query=230423A 命中 5 篇（上列，全部 Swift 系；唯一测光表为 GCN 33683 的 UVOT 五行 3σ 上限，即本表全部行）；仓内 external/ 全部文本 grep「230423」仅参数目录命中（swift_bat/swiftgrbba/mpe_greiner），external/rssgrbag 0 行、grbsn_webtool 无此事件、uvot_grb 无此源；arXiv API（all:\"GRB 230423A\"、all:230423A、abs:\"GRB 230423A\"+trigger 1165354）0 篇（对照查询 all:\"GRB 230307A\"=3 篇，API 正常）；OpenAlex search 与 fulltext.search 0 篇；Crossref query.bibliographic 50 条无题名命中；ADS/SciX 无 API token（通道级受限，检索未覆盖，不据此下「无文献」结论）；Web 另核 IceCube GRBweb 单暴页（参数目录，与 GCN 一致）、H.E.S.S. GRB 观测日志页（自动跟踪窗口 T0+0.02h→T0+2.22h，无探测/上限/引文）、MPE Greiner 时间线页——均无可入库测光 → 无新增行（0 行）。已发表研究论文 0 篇（arXiv/OpenAlex/Crossref/Web 四通道题录级 0 命中）。\n审查认领：2026-11-16 fsy@zcode（claim PR #1092）。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-16"
+    }
   },
   "articles": [],
   "host_galaxy": null
