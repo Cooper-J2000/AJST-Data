@@ -1,29 +1,41 @@
 {
   "transient_id": "IceCube-230724A",
-  "alias": [],
+  "alias": ["IC230724A"],
   "ra": 32.52,
   "dec": -1.87,
-  "T0": "2023-07-24T01:49:13Z",
-  "T0_ref": null,
+  "T0": "2023-07-24T01:49:13.380Z",
+  "T0_ref": "GCN 34265（IceCube 官方通告：On 2023-07-24 at 01:49:13.38 UT IceCube detected a track-like event）；AMON 初始通告 138181_66037171（notices_amon_g_b）DISCOVERY_TIME 6553 SOD {01:49:13.38} UT 同值；GCN 34278（Fermi-LAT）与 GCN 34273（IceCube 附加搜索）引同值 T0",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "IceCube",
   "redshift": null,
   "tag": [],
   "pos_error": null,
-  "pos_ref": null,
+  "pos_ref": "GCN 34265（IceCube 离线精化方向）：RA=32.52 (+0.58/-0.40 deg) Dec=-1.87 (+0.23/-0.33 deg)（90% PSF containment）——不对称误差不适配圆半径，pos_error 留空、值照录于此（沿用仓内已审 IceCube 条目惯例）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
+  "comment": "中微子轨迹事件（ICECUBE_Astrotrack_GOLD 流，平均天体物理纯度 50%，误报率 1.174/年，探测器正常状态；GCN 34265；AMON 初始通告信号度 0.5265、能量 ~191.4 TeV）。T0：bot 值 01:49:13Z 整数秒与通告一致，补通告亚秒 .38 → 01:49:13.380Z（源精度 2 位小数、写 3 位不虚增、兼容本地校验器）；extra_data 原注 t0_note=「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」改写留存。定位：bot ra/dec=32.52/-1.87 与 GCN 34265 精化值一致（初始 AMON 自动告警位 32.8295/-2.3369、SRC_ERROR 40.28 arcmin stat-only 90%，bot 值即精化值、无初值污染）；90% PSF containment 不对称（RA +0.58/−0.40°、Dec +0.23/−0.33°）→ pos_error 留空、值照录 pos_ref（沿用仓内已审 IceCube 条目惯例）、pos_error_confidence=90（原文明确 90% containment）。90% 定位区内无 Fermi 4FGL-DR3/3FHL 源（最近 4FGL J0212.2-0219，距 0.71°，GCN 34265）。同日 GRB 230724A（Fermi/GBM 01:10:29 UT 触发、trigger 711853834/230724049，RA 278.4 Dec 22.7±39.4° stat，GCN 34243）与本中微子事件（01:49:13.38 UT，RA 32.52）角距 112.9°（对 AMON 初始位 32.8295/−2.3369 为 113.4°）、无任何通告提出关联 → 非同源（各自独立条目，防混注记）。IceCat-2（Zegarelli+2025, arXiv:2507.06176；Kimura+2026 引用）给出改进重建区域中心 (33.22,−2.13)（50%/90% 区 0.42/1.18 deg²），与 GCN 34265 精化位相距约 0.94°——IceCube 官方数据发布页本网络 403 不可达、目录原件未打开，按「未打开不引用」不据此改判，并列备查（见 PR 待决事项①）。tag/sub_tag 留空（中微子事件，沿用仓内已审 IceCube 条目惯例）。lc 处置 2→61 行：①bot 2 行 ZTF g/r 保留为 upperlimit 行（GCN 34284：定位区覆盖巡天 typical depth 21.0 mag、起点 T0+8.4 h、无候选体——非源位置测光，按 220501A 先例 discard=n；time 按 T0 亚秒化重推=30166.62 s、绝对起点 10:12:00 UT 不变）；②新增 GCN 34246 MASTER-SAAO 52 行（上限表逐行转写，Tmid−T0=78-1586 s、Expt 10-180 s、Limit 15.7-18.0 mag；Filter P\\\\/P/ 为偏振分束半幅→band=G 按提示词无滤光片规则〔先例：MASTER-Tunka C 通道→G〕；区域逐指向搜索非源位置测光；time_err=Expt/2）；③新增 GCN 34312 JCMT/SCUBA-2 850 μm 5σ 上限 1 行（rms 7.7 mJy×5σ=38.5 mJy；日精度锚点→中点 2023-07-29 00:00 UT±1 d 约定口径；850 μm→353GHz 附录 A 换算；450 μm 未给限深不入行）；④新增 Kimura+2026（arXiv:2606.01158v2 表 1）Subaru/HSC 5σ 限深 6 行（g/r/i×两历元 24.4-25.9 mag；T0+18.39/18.46/18.52/31.37/31.43/31.49 d，0.01 d 精度→time_err=432 s；表列 Date 为 HST 当地夜标、Time 列为 UT 权威锚，自洽验证成立；差分成像扣宿主口径；mag_system=AB 推定依据见行 comment）。Fermi-LAT 伽马上限（GCN 34278，>100 MeV 能量串）与 IceCube 附加中微子搜索（GCN 34273）按范围不入库。测光检索留证（2026-11-22）：①仓内 gcn/archive 存档（当日重取 46,206 篇全文）grep 230724A/IceCube-230724/IC230724/66037171/138181：本源相关 6 篇（34246/34265/34273/34278/34284/34312，全部逐行核对）＋34243 属同日 GRB 230724A 异源；②external/rssgrbag（74 源射电光变）、external/grbsn_webtool（63 事件）无记录；③AMON 初始通告 notices_amon_g_b/138181_66037171 实取；④TNS 不适用（中微子事件非 AT/SN/CV 类）；⑤arXiv API 元数据检索：专文 Kimura+2026（arXiv:2606.01158，Deep Optical Follow-up Observations to IceCube Cosmic Neutrinos: a case for IC230724A with Subaru/HSC，全文 v2 HTML 实读 §II/§VI——结论 no TDE candidate is found）；Zegarelli+2025 IceCat-2（arXiv:2507.06176）经 WebSearch 定位但 icecube.wisc.edu 数据发布页 403 不可达；⑥WebSearch 补充核（无其他专文）；⑦ADS/SciX 无 API 凭据（HTTP 401），检索通道受限，已登记 audit/unverified.tsv（source_id=*，search-limited），不据此断言无文献。结论：2→61 行（改 2 行＋新增 59 行）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_circular",
+    "t0_note": "T0=IceCube 官方通告 2023-07-24 01:49:13.38 UT（GCN 34265 精化通告；AMON 初始通告 6553 SOD 同值）。bot 原值 2023-07-24T01:49:13Z 整数秒正确、补通告亚秒 .380（源精度 2 位小数）；原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」按 §3.10 改写，原值留档于本 note 与 info comment。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Kimura+2026",
+      "source": "fsy@zcode",
+      "title": "Deep Optical Follow-up Observations to IceCube Cosmic Neutrinos: a case for IC230724A with Subaru/HSC and prospects with Rubin/LSST",
+      "url": "https://arxiv.org/abs/2606.01158"
+    }
+  ],
   "host_galaxy": null
 }
