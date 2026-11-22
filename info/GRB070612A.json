@@ -1,59 +1,44 @@
 {
   "transient_id": "GRB070612A",
-  "alias": [],
-  "ra": 121.383333,
-  "dec": 37.266667,
-  "T0": "2007-06-12T02:38:41Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
-  "Trigger_Instrument": "Suzaku/WAM",
+  "alias": ["BAT 282066"],
+  "ra": 121.373375,
+  "dec": 37.270889,
+  "T0": "2007-06-12T02:38:45.983960Z",
+  "T0_ref": "GCN 6509（Swift/BAT 触发通告：At 02:38:45 UT the Swift BAT triggered and located GRB 070612, trigger=282066）＋Swift-BAT 官方目录（external/swift_bat 快照：trigger_time 2007-06-12T02:38:45.983960Z，MET 203308728.000）；Konus 目录（external/konus_wind，Tsvetkova+2021）trigger_time=02:38:45.984Z 同值互证。bot 原值 02:38:41Z 系 Suzaku/WAM 独立触发时刻（GCN 6533：triggered at 02:38:41 UT by the Suzaku WAM），非本事件命名触发（Swift/BAT #282066）——按 §3.8 有 Swift 以 Swift 为准改判",
+  "T0_offset": -20,
+  "T0_offset_ref": "GCN 6522（Swift-BAT 地面分析：The mask-weighted light curve shows two main overlapping peaks with the first starting at ~T-20 sec——爆发起点早于设备触发约 20 s，源值为约值）",
+  "Trigger_Instrument": "Swift/BAT",
   "redshift": 0.671,
-  "tag": [
-    "grb"
-  ],
-  "pos_error": 84.0,
-  "pos_ref": "GCN 6522",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [
-    "lgrb",
-    "ulgrb"
-  ],
+  "tag": ["grb"],
+  "pos_error": null,
+  "pos_ref": "GCN 6525（P60 确认余辉位：RA 08:05:29.61 Dec +37:16:15.2 J2000＝121.373375/37.270889；rssgrbag/Chandra & Frail 2012 目录同值 121.373375/37.27086）。并列备查：Swift-BAT 目录地面位 121.3528/37.26305（Image_position_err 1.3559 arcmin，external/swift_bat）；GCN 6522 地面位 121.355/37.258±1.4 arcmin（90% containment）；GCN 6509 星载位 121.385/37.266±3 arcmin；SARA 检测位 08:05:28.533/+37:16:09.57±1″（GCN 6515，与 P60 位差 ~14″，GCN 6525 自注）",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 6556（Gemini North GMOS 600 s 光谱，afterglow+host：强发射线 ~6229 Å 认证为 [O II] 3727 → z=0.671；Hβ 4861×1.671=8122 Å 落在光谱红端 8120 Å 自洽）",
+  "comment": "长暴（Swift/BAT trigger 282066，bot sub_tag 之一 ulgrb 无来源支持已移除——T90=370±10 s（GCN 6522，Swift/BAT）判 lgrb，GCN 6525 仅称 very long duration（t90~370 s）非超长暴量级；§3.9 按来源 T90 判）。T0 改判：bot 值 02:38:41Z 系 Suzaku/WAM 独立触发（GCN 6533，WAM 于 02:38:41 UT 触发、能段 50 keV-5 MeV、T90≈35 s、100-1000 keV fluence 8.2±2.4e-6 erg/cm²——仅覆盖 BAT 双峰的第一个硬峰）；事件命名与编号源自 Swift/BAT 触发（GCN 6509 trigger=282066），且全部 GCN 后随通告以 Swift 触发为基准 → 按 §3.8 有 Swift 以 Swift 为准改判 T0=02:38:45.983960Z（Swift-BAT 官方目录亚秒值）；lc 全表按新 T0 重推（原 time 列多数锚 WAM 触发、且 GCN 行 mjd 存在 bot 换算错误——SARA 二历元行 mjd=02:39:29 与原文 24 h 起点矛盾等）。T0_offset=-20 s：GCN 6522 地面分析自注 first peak starting at ~T-20 sec（爆发起点早于设备触发，源值为约值）。定位改判：bot ra/dec=121.383333/37.266667 系 GCN 6509 星载位（±3′）；P60 确认余辉位（GCN 6525，RA 08:05:29.61 Dec +37:16:15.2）为最精位置（无 XRT——Sun constraint 致 Swift 未 slew，GCN 6509），采纳之；BAT 目录位/GCN 6522 位/星载位/SARA 位并列备查（见 pos_ref）。redshift 改判 spec z=0.671：GCN 6556 原文笔误——文本称 z=0.617 但其自证线 [O II] 3727→6229 Å 算得 0.671、且 Hβ 4861×1.671=8122 Å 恰落在光谱红端 8120 Å（§3.10 原文笔误处置）；Swift-BAT/Konus/rssgrbag 目录沿用 0.617 系笔误传播，并列备查；早期 SDSS 光度红移 0.096±0.023 与 0.42±0.14（GCN 6525/6555）为宿主粗测、已被光谱值取代。host_galaxy 建立：宿主=SDSS 星系（GCN 6525：RA 08:05:29.64 Dec +37:16:14.6，与余辉重合；GCN 6510 供 SDSS 预爆发影像与定标数据），Gemini 联合谱（afterglow+host）测得 z=0.671，TNG（GCN 6558）Jun 18.89/19.90 两历元 R~21.4 恒定=宿主水平——确定宿主。lc 处置 29→24 行：删除 6 行 Dainotti+2024 转引重复行（§3.4：与 GCN 原始行同测量——6515/6525/6531/6530/6535/6555 转引行，其中多行 time/mjd 与原文矛盾且两行 16.97/16.27 被误标 upperlimit=y）、保留 10 行 Dainotti 行改判 reference=最初出处 GCN（6515/6526/6531/6566，§3.4）、修正 GCN 行 bot 时刻错误（SARA 二历元 02:39:29→02:46:15 中点、LOTIS 起点→03:45:00 中点、P60 2.2 h 行重推）、补 time_err（SARA 600/450 s、MITSuME 120 s、CAFOS 432 s（0.01 d 精度）、NOT 432 s、WSRT 21582/21330 s（窗口半跨）、GMRT 7778 s、ATA 43200 s（日精度→日中点±半日））、ATA 波段「14GHz」→1.4GHz（导入错误，原文 1.4 GHz）、新增 GCN 6600 VLA 4.88 GHz（C 波段）检测 189±56 μJy（Jun 30 20.66 UT，原库缺失）；VLA 8.46/4.86 GHz 两行（external/rssgrbag，Chandra & Frail 2012 峰值 fit 值 84.1±2.0/140.3±5.8 d）mjd 重算（bot 原行 mjd 与 time 差约 2.7 h）。mag_system：CAFOS=Vega（Landolt PG1633 定标，Landolt 系统即 Vega 惯例）；SARA/LOTIS/MDM/MITSuME/NOT 行移除 bot 无依据的 Vega → 留空（USNO-B1.0 定标、原文未声明系统，先例 GRB041217 同判）；P60=AB 推定（Sloan i' SDSS 型滤片＋GCN 6510 原文 to the extent that SDSS is an AB system）。bot 行自带的 Gext_Alambda/mag_Gextcor/flux_density_Gextcor* 派生缓存列随本次重建清空——SCHEMA 2026-11-06 维护者裁定：录入值未做银消改正时 Gext_corr=n、派生列由引擎按需计算，非数据丢失。WSRT 两历元合并图 53±19 μJy（2.8σ，GCN 6576）为两次观测统计合并不另立行（避免同数据双计，行 comment 注明）。Fermi-LAT/中微子类数据无。测光检索留证（2026-11-22）：①仓内 gcn/archive 存档（46,206 篇全文）grep 070612A/GRB 070612：本源相关 A 事件通告 21 篇（含 6509/6522；其中 6529 光谱 lag 分析、6534 快变衰减分析两篇无成行测光）＋B 事件（GRB 070612B，trigger 282073、06:21:17 UT、RA 261.7 Dec −8.7——另一 Swift 暴，防混）11 篇，A 事件全部逐行核对；②external/rssgrbag：2 行（8.46/4.86 GHz 峰值 fit 值，与 bot 行同源已核）；external/swift_bat、external/konus_wind：身份/T0/红移互证；external/grbsn_webtool 无本源；③GCN 站在线以仓内存档为准（同库）；④arXiv API 元数据检索 GRB 070612A 0 命中（无专文）；⑤TNS 不适用（GRB）；⑥ADS/SciX 无 API 凭据（HTTP 401），检索通道受限，已登记 audit/unverified.tsv（source_id=*，search-limited），不据此断言无文献。结论：29→24 行（删 6 重复＋补 1 漏收录 VLA 检测）。params 报备（只读未动）：eiso=2.719e52/lp_iso=1.68e51（src=konus_wind）系 z=0.617 口径下计算——本审核改判 z=0.671 后该两量口径待维护者管线更新；t90_rest=218.6 s 已按 0.671 计算。X 射线数据无（Swift 未 slew，GCN 6509）。",
+  "sub_tag": ["lgrb"],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
+    "bot_created": true,
+    "src": "gcn_llm_extract",
     "params": {
       "alpha": {
-        "err": [
-          0.09153000000000011,
-          0.0920399999999999
-        ],
+        "err": [0.09153000000000011, 0.0920399999999999],
         "src": "swift_bat",
         "v": -1.63995
       },
       "eiso": {
-        "err": [
-          2860000000000000000000000000000000000000000000000000,
-          2569999999999999700000000000000000000000000000000000
-        ],
+        "err": [2.86e51, 2.57e51],
         "src": "konus_wind",
-        "v": 27190000000000000000000000000000000000000000000000000
+        "v": 2.719e52
       },
       "ep_rest": {
-        "err": [
-          46.788000000000004,
-          35.091
-        ],
+        "err": [46.788000000000004, 35.091],
         "src": "konus_wind",
         "v": 243.966
       },
       "epeak_obs": {
-        "err": [
-          28.0,
-          21.0
-        ],
+        "err": [28.0, 21.0],
         "src": "konus_wind",
         "v": 146.0
       },
@@ -62,12 +47,9 @@
         "v": "II"
       },
       "lp_iso": {
-        "err": [
-          460000000000000000000000000000000000000000000000000,
-          460000000000000000000000000000000000000000000000000
-        ],
+        "err": [4.6e50, 4.6e50],
         "src": "konus_wind",
-        "v": 1680000000000000000000000000000000000000000000000000
+        "v": 1.68e51
       },
       "t90_obs": {
         "err": 51.6697,
@@ -85,30 +67,41 @@
         "v": 0.294
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "t0_basis": "gcn_circular",
+    "t0_note": "T0=Swift/BAT 触发 2007-06-12 02:38:45.983960 UT（external/swift_bat 目录 MET 203308728.000；GCN 6509 同值整秒）。bot 原值 02:38:41Z 系 Suzaku/WAM 独立触发时刻（GCN 6533）误标为触发仪器；原 t0_note「t0 为 meta trigger-time（真实触发时刻）」、t0_basis=「meta_trigger」按 §3.10 改写，原值留档于本 note 与 info comment。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
       "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "name": "Tsvetkova+2021",
       "source": "bot",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
       "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
     },
     {
-      "bibtex": "@ARTICLE{2024A&A...690A.261G,\n       author = {C. Guidorzi and R. Maccary and A. Tsvetkova and S. Kobayashi and L. Amati and L. Bazzanini and M. Bulla and A. E. Camisasca and L. Ferro and D. Frederiks and F. Frontera and A. Lysenko and M. Maistrello and A. Ridnaia and D. Svinkin and M. Ulanov},\n       title = {New results on the gamma-ray burst variability-luminosity relation},\n       journal = {A&A, 690, A261 (2024)},\n       year = {2024},\n       doi = {10.1051/0004-6361/202451401},\n       eprint = {2409.01644},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract},\n}",
       "name": "Guidorzi+2024",
       "source": "bot",
       "title": "New results on the gamma-ray burst variability-luminosity relation",
       "url": "https://ui.adsabs.harvard.edu/abs/2024A&A...690A.261G/abstract"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 121.3735,
+    "dec": 37.270722,
+    "redshift": 0.671,
+    "redshift_type": "spec",
+    "comment": "宿主=SDSS 星系（GCN 6525：RA 08:05:29.64 Dec +37:16:14.6，紧邻余辉；GCN 6510 供 SDSS 预爆发影像与 396 颗定星测光）；SDSS 光度红移两解 0.096±0.023 / 0.42±0.14（GCN 6525/6555）已被光谱值取代；Gemini GMOS 联合谱（afterglow+host，GCN 6556）[O II]+Hβ → z=0.671；TNG（GCN 6558）Jun 18.89/19.90 两历元 R~21.4 恒定=宿主水平（余辉已暗于宿主）",
+    "source": "GCN 6525/6556/6558"
+  }
 }
