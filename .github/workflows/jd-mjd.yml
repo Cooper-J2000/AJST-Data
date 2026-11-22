@@ -1,0 +1,27 @@
+name: jd-mjd
+
+# JD → MJD 换算守卫（2026-11-22 起）
+# 背景：作者把 `mjd = JD − 2400000` 当换算、少减 0.5 天，整行时刻晚 12 h，而 `validate.py`
+# 只查 |mjd−(T0+time)| ≤ 1 s 这条内部自洽性——mjd 与 time 一起错时它全绿（PR #922 的 CI 就是绿的，
+# 9 行错的进了评审）。唯一能抓住的是「拿 comment 里的原文 JD 反算」。
+# 判据与误报控制见 tools/check_jd_mjd.py 文件头；本守卫只认 ±0.5 d 指纹，其它偏差只告警。
+# 注意：本文件与 tools/check_jd_mjd.py 都不是契约文件（SCHEMA.md / 数据审核提示词.md / tools/validate.py），
+# 新增它们不会让已开分支的「分支基线」判据变红。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  jd-mjd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Selftest (离线判定用例)
+        run: python3 tools/check_jd_mjd.py --selftest
+      - name: JD→MJD 换算守卫
+        run: python3 tools/check_jd_mjd.py --strict
