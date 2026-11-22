@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB130511A",
-  "alias": [],
-  "ra": 196.6375,
-  "dec": 18.7,
-  "T0": "2013-05-11T11:30:47Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 130511A",
+    "BAT 555600"
+  ],
+  "ra": 196.64526,
+  "dec": 18.70977,
+  "T0": "2013-05-11T11:30:47.441540Z",
+  "T0_ref": "Swift/BAT 触发（trigger=555600，GCN 14620：At 11:30:47 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 130511A）；亚秒取触发仪器官方目录：external/swift_bat 快照 Trig_time_UTC=2013-05-11T11:30:47.441540，external/konus_wind 快照 trigger_time=2013-05-11T11:30:47.442Z（Tsvetkova+2021 Paper II J/ApJ/908/83 table1）同值互证；external/swiftgrbba 快照 trigger_time=11:30:47.000Z 为 BA 整秒显示口径（备查）；GCN 14620 XRT 起测 11:31:58.9 UT=触发后 71.6 s，反算 11:30:47.3（0.2 s 内一致；GCN 14620 自身 UT 时间戳与 71.6 s 表述相差约 0.3 s）；external/swift_grb 快照仅覆盖 2004-2012，不含本暴。备查：swift_bat 目录 Trig_time_met=389964657.984 naive 折算 11:30:57.984，与该目录 Trig_time_UTC 列差 10.54 s（leap second 口径系统差，随年份增长：2011 暴 ~7.2 s、2013 暴 ~10.5 s，见 PR #1160），目录两列口径问题，外部快照不改动；GCN 14620 整秒/BA 时基均支持 UTC 列。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -13,15 +16,15 @@
     "grb"
   ],
   "pos_error": 1.8,
-  "pos_ref": "GCN 14622",
-  "redshift_type": null,
+  "pos_ref": "GCN 14622 enhanced Swift-XRT position（RA,Dec=196.64526,+18.70977，1.8″，radius 90% confidence）；互证：external/swiftgrbba 快照 xrt_ra/xrt_dec=196.64542/18.70981（xrt_error_radius=1.4″，更多数据精化值，与本值差 0.6″）、SIMBAD GRB 130511A 条目 196.645375/+18.709944（差 0.6″）、NED GRB 130511A 条目 196.64533/+18.70992；备查：GCN 14620 UVOT FC 196.64567/+18.70999（0.64″，90%）、GCN 14624 BAT ground 196.654/18.709（2.3′，90%）、GCN 14620 BAT on-board 196.639/+18.698（3′，90%）；原库 ra/dec=196.6375/+18.7 系 mpe_greiner 快照粗定位（other.GRB X-ray position=13h06m33s +18°42'、Error=3′，即 BAT on-board 赤经的 sexagesimal 圆整值），与 pos_ref=GCN 14622（1.8″）不自谐，本 PR 纠正为 GCN 14622 原值",
+  "redshift_type": "spec",
   "redshift_ref": "GCN 14621",
-  "comment": null,
+  "comment": "身份确证：Swift/BAT trigger 555600=GRB130511A（GCN 14620：2013-05-11 11:30:47 UT 触发并定位，BAT on-board 196.639/+18.698）；仓内 gcn/archive 全文 grep「130511」命中 10 篇（GCN 14620/14621/14622/14623/14624/14625/14626/14627/14628/14652，逐篇通读，均指 trigger 555600）；SIMBAD 30″ 锥（harvard 镜像 TAP）仅 GRB 130511A 自身（gB，196.645375/+18.709944）。alias：「GRB 130511A」=GCN subject/官方目录 name 用名（GCN 14620/14624/14626 等）；「BAT 555600」=external/swift_bat 与 external/konus_wind 快照 name_alt 原文用名。T0：原库 2013-05-11T11:30:47Z 整数秒与 GCN 14620 一致，亚秒按触发仪器官方目录补至 11:30:47.441540Z（external/swift_bat 快照 Trig_time_UTC 与 external/konus_wind 快照 11:30:47.442 两路同值；swiftgrbba 为整秒显示口径；XRT 起测 71.6 s 反算 47.3 舍入内一致）；亚秒差异直接改进 T0，T0_offset 不适用。坐标：原库 ra/dec=196.6375/+18.7 系 mpe_greiner 快照粗定位（详见 pos_ref），改按 GCN 14622 enhanced Swift-XRT 位置 196.64526/+18.70977（1.8″，90%）。红移 z=1.3033 判 spec（GCN 14621 Gemini-North GMOS 2×900 s B600 光栅 5100-7900 Å，FeII/FeII*/FeI/MnII/MgII/MgI 吸收线共认红移 z=1.3033）。t90=2.74±0.40 s（external/swift_bat 目录快照，15-350 keV）与 5.43±2.22 s（GCN 14624 BAT refined，15-350 keV）并列，均 >2 s，按目录/通告 t90 判 lgrb；fluence=2.2±0.4×10^-7 erg/cm2、1-s 峰值光子流量 1.3±0.2 ph/cm2/s（GCN 14624，15-150 keV，90%）；Konus-Wind 参数见 params（Tsvetkova+2021）。XRT 精化分析见 GCN 14627（decay alpha=0.99±0.04；X 射线不入库）。测光检索（2026-11-22）：仓内 gcn/archive 全文 grep「130511」10 篇全读，其中 GCN 14620（UVOT white FC 19.18±0.15）、14623（TNT R~19.6 上限）、14625（MITSuME g'/Rc/Ic 上限）、14626（Kanata Rc 2 历元）、14628（SOAO R=20.78±0.13）、14652（SSO WiFeS r/i）含光学数值；external/rssgrbag、grbsn_webtool、uvot_grb 0 命中；SciX「GRB 130511A」命中 9 篇、「GRB130511A」命中 1 篇（合计=全部 10 篇 GCN，与仓内一致），无该暴的专门研究文章；Dainotti+2024 目录转引 8 行已逐行向底层 GCN 溯源（同值转引 4 行删除、4 行 reference 改回 GCN 最初来源，详见 lc comment 与 PR 说明；VoR 机读表不可得已登记 audit/unverified.tsv）。宿主核查（2026-11-22）：SIMBAD 30″ 锥仅 GRB 自身；NED 30″ 锥 10 天体=GRB 自身+NED「GRB 130511A HOST」占位条目（196.64567/+18.71000，即 GCN 14620 UVOT 位置，z=1.3033 继承自 Gemini 吸收线红移，非独立宿主证认）+8 个 SDSS/WISE 场源（分离 5.6″-26.7″，均在 1.8″ XRT 误差圆外，无红移、无文献关联）→ 无确认宿主，host_galaxy 不建档。lc 逐行核对（2026-11-22）：24 行 10keV（UKSSDC Burst Analyser，Evans+2007,2009）按规则保持原样不审不重排、不参与去重；uvot-white 2 行（GCN 14620 FC 同一曝光：原导入 74 s 为起点、Dainotti 转引 149 s 为中点）合并为 1 行，time=曝光中点 149 s、time_err=半宽 75 s、mag_system=Vega（UVOT 惯例 Poole+2008），保留 GCN 14620 来源；Kanata Rc 2 行（Dainotti 转引=GCN 14626 原值）reference 改回 GCN 14626、time_err=半曝光 300 s、mag_system 置空（USNO-B1.0 R2 定标原文未声明系统）；TNT R 行（Dainotti 转引=GCN 14623 上限）upperlimit=y 已对、flux_density_err 0.0 置空、time_err=2250 s（总曝光半宽）、mag_system 置空；SOAO R 行（Dainotti 转引=GCN 14628）time_err=半曝光 900 s、mag_system 置空、telescope 补 SOAO(0.6m)；SSO WiFeS r/i 2 行 time 由无从溯源的 3613 s 改为可重构窗中点 3283 s（起点 12:03 UTC+3×900 s）、time_err=1350 s；MITSuME 3 行（GCN14625）补 time_err=2970 s、g 行 mag_system=AB（SDSS 定标）、Rc/Ic 行置空，Dainotti 转引 3 行（t=13920 s 口径漂移、AB 系统无据）删除；改行派生列 Gext_* 一律置空（引擎域）。X 射线行 mjd 与新 T0 差 0.44 s（原导入整秒口径），<1 s 容差，tools/check_t0_timebase.py PASS，无需平移。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -79,22 +82,27 @@
         "v": 1.1895975339729954
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "bibtex": "@ARTICLE{2024MNRAS.533.4023D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = \"{An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution}\",\n       journal = {MNRAS},\n       year = 2024,\n       volume = {533},\n       pages = {4023-4044},\n       doi = {10.1093/mnras/stae1484},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.533.4023D/abstract},\n}",
       "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "source": "Rusty-Harpoon@zcode",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
     },
     {
       "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "name": "Tsvetkova+2021",
-      "source": "bot",
+      "source": "Rusty-Harpoon@zcode",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+      "url": "https://doi.org/10.3847/1538-4357/abd569"
     }
   ],
   "host_galaxy": null
