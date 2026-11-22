@@ -1,10 +1,13 @@
 {
   "transient_id": "GRB250521D",
-  "alias": [],
+  "alias": [
+    "GRB250521932",
+    "bn250521932"
+  ],
   "ra": 278.435083,
   "dec": 17.5896389,
-  "T0": "2025-05-21T01:24:41Z",
-  "T0_ref": null,
+  "T0": "2025-05-21T22:21:56.009Z",
+  "T0_ref": "GCN 40516（Fermi/GBM 触发 769558921.008874/250521932，22:21:56 UT）；亚秒取仓内 FERMIGBRST 快照 external/fermi_gbm bn250521932 trigger_time=2025-05-21T22:21:56.009Z（MET 769558921.008874 扣 5 闰秒=UTC）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -16,16 +19,36 @@
   "pos_ref": "GCN 40520",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "2026-11-17 审核（fsy@zcode）。\n【T0 改判】原 T0=2025-05-21T01:24:41Z 为 bot 误锚：该时刻实为 GOTO 对光学候选体的触发前 5σ 探测时刻（GCN 40522 原文 \"we have a pre-trigger 5-sigma detection of the source at 2025-05-21 01:24:41 (-20.95h pre-trigger)\"，22:21:56−01:24:41=20.95 h 吻合）。改判 T0=2025-05-21T22:21:56.009Z：GCN 40516（Fermi/GBM 官方）原文 \"At 22:21:56 UT on 21 May 2025, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 250521D (trigger 769558921.008874 / 250521932)\"；亚秒取仓内 FERMIGBRST 快照 bn250521932 trigger_time=2025-05-21T22:21:56.009Z（MET 769558921.008874 扣 2001 历元以来累计 5 次闰秒=UTC，与 GCN 整秒一致）。SVOM/GRM 亦触发，其 T0=2025-05-21T22:21:56.3 UTC（GCN 40561 原文），与 GBM 值差 0.29 s（亚秒级，按触发仪器 Fermi/GBM 为准）。bot 原值 t0_basis=\"meta_trigger\"、t0_note=\"t0 为 meta trigger-time（真实触发时刻）\" 留此备查。\n【身份/定位】GBM 触发名 bn250521932（FERMIGBRST name_alt：GRB250521932 / GRB 250521.932 / bn250521932），新增 alias GRB250521932、bn250521932（GCN 40516 原文用名 250521932）。GBM 定位 RA=281.6, Dec=21.3（J2000，statistical uncertainty 2.6 deg，GCN 40516）仅供误差盒参考。本 ra/dec 为 LAST 光学候选 AT 2025kze 坐标（GCN 40520 原文 \"RA, Dec = 278.4350830, 17.5896389 deg\"，距 GBM best-fit 1.95 deg）；GCN 40520 未标注候选体定位误差与置信水平，故 pos_error/pos_error_confidence 留空。三家光学团队均判该候选 likely unrelated：GOTO 触发前 20.95 h 已有 5σ 探测 L=19.38±0.19（GCN 40522 \"indicating this is likely an unrelated event\"）、SVOM/VT \"no significant fading\"（GCN 40530 \"we also suggest that this candidate is an unrelated object\"）——lc 光学行均为该争议候选体测光而非确证余辉；ra/dec 是否改回 GBM 误差盒中心待维护者裁定（PR 待决）。\n【分类】GCN 40516 \"likely LONG GRB\"；GCN 40561（SVOM/GRM）t90=12.1(+1.7/−5.4) s（15–5000 keV）且 \"consistent with Type I GRBs in the 'Amati' relation diagram although the duration is much longer than 2 seconds\"、\"a possible merger origin is suggested\"；Wang+2026（BREAKFAST，ApJ 997, 353，DOI 10.3847/1538-4357/ae2eae）§4.3 原文 \"The burst pattern is also used for searching Type IL GRBs in BREAKFAST, and two events have been identified, GRB 250521D (C.-W. Wang et al. 2025h) and GRB 250819A\"——正式发表文献将其列为 Type IL（长时标并合起源）。按 GRB230307A 先例（Type IL，sub_tag=lgrb）判 sub_tag=lgrb。\n【非 SCHEMA 物理量】t90=12.1(+1.7/−5.4) s（15–5000 keV，GCN 40561 SVOM/GRM）；FERMIGBRST 快照 t90=11.5652±0.395195 s（50–300 keV，bn250521932）并列备查。CPL 谱（T0−2 s 至 T0+15 s）：index=−0.9±0.1，Epeak=890(+302/−194) keV，fluence(10–1000 keV)=(1.02±0.06)E−5 erg/cm²（GCN 40561）。光变 \"multiple episodes, including a possible precursor, a main emission followed by a possible extended emission\"（GCN 40561）。\n【测光检索留证（2026-11-17）】入口与篇数：GCN 站内检索 \"250521D\" 命中 7 篇（40516/40520/40522/40524/40527/40530/40561），按触发号 \"250521932\" 复检命中 1 篇（40516，无新增）；仓内快照 external/fermi_gbm 有 bn250521932（触发时刻互证）、external/mpe_greiner 仅 GRB 250521B（SVOM X 射线位）、external/swift_bat/swift_xrt_live/uvot_grb/rssgrbag/grbsn_webtool 均无本源记录、gcn/archive 本机未随库分发（以 GCN 站内检索替代离线全文检索）；文献：Crossref/arXiv/OpenAlex/Semantic Scholar/网页检索命中已发表文 2 篇——Li+2026（RAA 26, 104025）表 3 行 22 转录 VT_R=19.45±0.02 @7.819 h 与 GCN 40530 逐值一致（VoR 与 arXiv v1 双版核对，无增量），Wang+2026（ApJ 997, 353）Type IL 认证（无测光表）；SIMBAD 双 host（simbad.cds.unistra.fr / simbad.u-strasbg.fr）整站拦截页+SSL 失败记 unavailable@2026-11-17（未据此下\"无文献\"结论，检索受限行见 PR 待决区）。结论：无更多可入库测光；本次补 10 行（LAST 4、GOTO 3、MASTER 3），未发现 X 射线新数据。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_and_catalog_verified",
+    "t0_note": "T0=GCN 40516 触发时刻 22:21:56 UT + FERMIGBRST 亚秒 .009（MET 769558921.008874 扣 5 闰秒=UTC）；bot 误锚值 2025-05-21T01:24:41Z（GOTO 对候选体的触发前探测时刻，GCN 40522）已改判，原值与证据链见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-17"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Li+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd",
+      "title": "SVOM/VT: Overview of Data Processing and GRB Identifications with X-band Data",
+      "source": "fsy@zcode"
+    },
+    {
+      "name": "Wang+2026",
+      "url": "https://doi.org/10.3847/1538-4357/ae2eae",
+      "title": "BREAKFAST: A Framework for General Joint Burst Advocate Duty and Follow-up Guidance of Multiple Gamma-Ray Monitors",
+      "source": "fsy@zcode"
+    }
+  ],
   "host_galaxy": null
 }
