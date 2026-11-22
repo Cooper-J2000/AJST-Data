@@ -4,7 +4,7 @@
 - paper: Andreoni et al. 2021, ApJ 918, 63（DOI 10.3847/1538-4357/ac0bc7；arXiv:2104.06352——本卡依据 arXiv v1 PDF 实取通读，2026-10-31；VoR 被 IOP/Radware 整站反爬拦截未通读，见 audit/unverified.tsv）
 - date: 2026-10-31
 - helper: Rusty-Harpoon@zcode（审核 ZTF21aaeyldq 时通读）
-- sources: ZTF20aajnksq, ZTF20acozryr, ZTF21aahifke, ZTF21aagwbjr
+- sources: ZTF20aajnksq, GRB201103B, ZTF21aahifke, ZTF21aagwbjr
 - out_of_repo: ZTF21aapkbav（new-source Issue #692）
 
 ## 为什么是文献级卡
