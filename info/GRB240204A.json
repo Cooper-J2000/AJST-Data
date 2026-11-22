@@ -1,28 +1,42 @@
 {
   "transient_id": "GRB240204A",
-  "alias": [],
-  "ra": 104.18079,
-  "dec": 1.02736,
-  "T0": "2024-02-04T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 240204A",
+    "GRB240204630",
+    "GRB 240204.630",
+    "bn240204630"
+  ],
+  "ra": 104.18139,
+  "dec": 1.02693,
+  "T0": "2024-02-04T15:07:38.677Z",
+  "T0_ref": "GCN 35680（Fermi/GBM 官方通告：15:07:38.68 UT，trigger 728752063/240204630）＋FERMIGBRST 官方目录快照 trigger_time=2024-02-04T15:07:38.677Z（external/fermi_gbm，MET 728752063.677；GCN 35664 整秒 15:07:38 UT 互证）。Swift/BAT 15:07:50.634（GCN 35688＋external/swift_bat trigger 1212898）、Konus-Wind 15:07:53.519（GCN 35714）为后至触发历元备查。原库 T0=2024-02-04T00:00:00Z 为日期占位符（bot t0_basis=meta_trigger），非触发时刻。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 2.5,
   "pos_ref": "GCN 35671",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "① T0：触发仪器为 Fermi/GBM（先于 Swift/BAT 11.96 s 触发；GCN 35664/35680），T0=2024-02-04T15:07:38.677Z（GBM 目录亚秒，GCN 35680 整秒+GBM MET 互证）；原库 T0=2024-02-04T00:00:00Z 为日期占位符（bot t0_basis=meta_trigger，Issue #68 已知不可信；原 t0_note=「t0 为 meta trigger-time（真实触发时刻）」逐字留档），全表 39 行 mjd=T0+time 重锚自洽。② 位置：GCN 35671 XRT 增强位 104.18139,+1.02693±2.5″（90% 置信，原文明确标注）；原库 ra/dec=104.18079,1.02736 逐位等于 GCN 35672 Montarrenti OT 光学位（06:56:43.39,+01:01:38.5），系光学坐标误挂 XRT 增强位误差的混串，改判为 XRT 增强位本体。③ t90：GBM 目录 15.87±0.81 s（50-300 keV，external/fermi_gbm 快照）；Swift/BAT 18.93±2.06 s（GCN 35688，15-350 keV，误差含系统效应估计；通告统称 quoted errors 90% c.l.）；AstroSat CZTI 10.5(+1.1/-2.5) s（GCN 35692）——均 ≫2 s，按目录/通告 t90 判 lgrb。④ 测光检索（2026-11-22）：GCN 官方站点搜索 '240204A'＋'GRB240204A' 合计命中 20 篇（35664-35922 段，35665/35676/35709 为同时段 IceCube-240204A 中微子事件通告——事件位 RA 348.4,+10.3 与 GRB 无关，无本源测光）全部读取；测光载于 GCN 35668（MASTER，上限但指位为 GBM 误差盒中心 06h45m,-03d12m、距 XRT 余辉位约 5.05°（MASTER 指位中心；距 GBM 定标位 5.18°）、不约束该源，未入库）/35670/35672/35673/35677/35678/35690/35691/35922/35705（UVOT 上限 7 行本次新增）；external/rssgrbag、external/grbsn_webtool 无本源记录。文献：arXiv 站内检索 'GRB 240204A' 0 篇、WebSearch 未发现专文（2026-11-22，ADS/SciX 无凭据 search-limited，不据此断言无文献）；本源测光现均为 GCN 通告来源。④a alias 增补 GRB240204630 / GRB 240204.630 / bn240204630：FERMIGBRST 官方目录 name_alt 原文用名（GCN 35664 原文 trigger 名 240204630；external/fermi_gbm 快照）。⑤ 新增 19 行：GCN 35705 UVOT 上限 7 行（BAT 相对窗口，时标平移至标准 GBM 锚 +11.957 s）＋GCN 35690 OHP T193/T120 12 行；既有 20 行逐行核对重锚（Mondy 6 行、LCOGT 2 行、LT 8 行按源发布 MJD、Montarrenti/Nastro Verde/VIRT 按窗口中点）。双保留 2 处：GCN 35670 速报 R~20.6 与 GCN 35691 精化 R=19.90±0.10 同帧（数值不一致不算确证重复，关系见行 comment）；Montarrenti 行原文表 MJD 60345.30597 与正文起点 18:58:44 UT 自相矛盾（后者对应意大利白天不可观测，判表值笔误），时轴取正文窗口中点。⑥ 宿主/红移：无红移测定与宿主报道，redshift=null 维持。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "fermi_gbm_catalog（FERMIGBRST bn240204630 trigger_time；GCN 35680 整秒＋MET 互证；Swift/BAT/Konus 后至触发历元备查）",
+    "t0_note": "T0=2024-02-04T15:07:38.677Z 为触发仪器 Fermi/GBM 官方目录值；原 bot 值 2024-02-04T00:00:00Z 为日期占位符（t0_basis=meta_trigger，已失真），原值与原 t0_note 已留在 info.comment 与本字段改写链。",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [],
   "host_galaxy": null
