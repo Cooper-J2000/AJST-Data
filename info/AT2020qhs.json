@@ -18,16 +18,21 @@
   ],
   "pos_error": null,
   "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "redshift_type": "spec",
+  "redshift_ref": "Hammerstein+2023（ApJ 942, 9；VizieR J/ApJ/942/9 table1 zspec=0.345，列定义 Spectroscopic redshift）；TDECat（Langis+2026, 2026A&A...707A.171L）同值",
+  "comment": "① 身份/T0：AT2020qhs=ZTF20abowque=ATLAS20upw=PS20krl（VizieR J/ApJ/942/9 table1 ONames 逐字；坐标 34.47479,-9.61411 与库值一致；Hammerstein+2023 分类 TDE-featureless，Somalwar+2025 表 1 同）。T0=2020-07-26T10:35:51Z 为 TDECat Discovery date（维持原 T0_ref）；TNS 站点本次 403 反爬不可达，发现时刻未能与 TNS 逐字互核（见 unverified.tsv 通道行），不据此改动 T0。② 红移：z=0.345，redshift_type 由 value 改判 spec（VizieR J/ApJ/942/9 table1 列 zspec 定义为 Spectroscopic redshift；TDE-featureless 分类下该红移应源自宿主光谱——推定，论文正文不可达未逐字确认）；Somalwar+2025 表 1 记 z=0.347，并列备查，字段取 0.345（VizieR 逐字值）。③ 测光检索（2026-11-22）：入口与命中——(a) 仓内快照：external/rssgrbag（Chandra & Frail 2012 射电表）、external/grbsn_webtool 递归检索 '2020qhs/ZTF20abowque/ATLAS20upw/PS20krl' 均无记录；仓内 gcn/archive 快照下载未完成（本网络慢速），以 GCN 官方站点全文搜索（实时、同语料）替代；(b) GCN 站点：'AT2020qhs'/'ZTF20abowque'/'ATLAS20upw' 三名称各 0 命中（TDE 无通告历史，正常）；(c) TNS：站点 403 反爬不可达，测光页未能核查（不作『TNS 无测光』结论）；(d) 文献：WebSearch＋arXiv 检索命中 Hammerstein+2023（ApJ 942, 9，本源分类/z/光变来源论文）与 Somalwar+2025（VLA 射电表）两篇，本次实际使用；Mummery+2024（MNRAS 527, 2452）、Lin+2022 等仅为引用/建模，无本源新测光。结论：入库 2 行——Somalwar+2025 表 tab:vla 的 VLA C 波段探测 2 行（2023-04-28.9 5.999GHz 14.7±3.4 μJy；2024-01-25.1 6.000GHz 21.4±4.5 μJy，均有明确时间锚点）；光学位类 ZTF g/r 测光（Hammerstein+2023 机读表）未入库：该表为 ApJ 期刊机读附件＋CDS 链接文件，本次四通道均不可得（CDS 主站 cdsarc/vizier.cds/vizier.u-strasbg 连接超时、CFA 镜像链接文件 404/getCatFile 302→CDS 超时、arXiv 源码包 673 MB 截断且无 main.tex、IOP VoR Radware 403×2、Zenodo/GitHub 无存档），已登记 audit/unverified.tsv（status=missing）。④ 分类：TDE-featureless（Hammerstein+2023 新引入的光谱子类；sub_tag 词表无对应词条，见 PR 待决事项）。⑤ 宿主：文献仅给宿主红移与 σ*/M_BH 派生值（Somalwar 表 1 σ*=188.69±37.86 km/s、log M_BH=8.38±0.48），无宿主坐标/测光，不建 host_galaxy；宿主黑洞量记于此备查（<量名>=<值>±<误差> <单位>（<来源>）：sigma*=188.69±37.86 km/s、logM_BH=8.38±0.48（Somalwar+2025 表 1，Appendix C 方法））。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "g-ZTF",
     "discovery_mag": "19.0565",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
@@ -35,6 +40,18 @@
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
       "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+    },
+    {
+      "name": "Hammerstein+2023",
+      "source": "fsy@zcode",
+      "title": "The Final Season Reimagined: 30 Tidal Disruption Events from the ZTF-I Survey",
+      "url": "https://doi.org/10.3847/1538-4357/aca283"
+    },
+    {
+      "name": "Somalwar+2025",
+      "source": "fsy@zcode",
+      "title": "Optically Overluminous Tidal Disruption Events: Outflow Properties and Implications for Extremely Relativistic Disruptions",
+      "url": "https://arxiv.org/abs/2507.06453"
     }
   ],
   "host_galaxy": null
