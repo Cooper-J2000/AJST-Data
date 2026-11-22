@@ -7,8 +7,8 @@
   ],
   "ra": 8.166167,
   "dec": 22.5489,
-  "T0": "2021-07-29T10:28:14Z",
-  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）Discovery date（发现时刻）",
+  "T0": "2021-07-29T10:28:14.998Z",
+  "T0_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行 Discovery date=2021-07-29 10:28:14.998（毫秒）；TNS 发现报告 2021TNSTR2648....1M（ALeRCE，AT 118881）发现帧 g-ZTF 2021-07-29 10:28:15（JD 2459424.9362847）＝同一时刻——两源一致给到毫秒，按 §3.2 采源精度写全（原 bot 值截断到秒）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": null,
@@ -17,25 +17,157 @@
     "tde"
   ],
   "pos_error": null,
-  "pos_ref": "TDECat（Langis+2026）坐标（J2000）",
-  "redshift_type": "value",
-  "redshift_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）",
-  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；仅基础元数据，光变待补",
+  "pos_ref": "TDECat（Langis+2026, 2026A&A...707A.171L）目录行坐标 00:32:39.880 +22:32:56.04（J2000）；与 TNS 对象页（8.166167/+22.5489）一致",
+  "redshift_type": "spec",
+  "redshift_ref": "Yao+2023（2023ApJ...955L...6Y, DOI 10.3847/2041-8213/acf216）表 1 行 30：z=0.106、光谱子类 TDE-H+He（其 TDE Report=Yao 2021，TNS 分类报告 2021TNSCR3411....1Y）；TNS 对象页分类（ZTF 组，Keck1/LRIS 光谱 2021-08-13/2021-09-07）同值；TDECat（Langis+2026）目录行同值 0.106",
+  "comment": "2026-11-04 由 TDECat（Langis+2026, SciX 检索确认 TDE 样本）建源；2026-11-21 Rusty-Harpoon@zcode 单源审核并补光变 8130 行。【身份核验（2026-11-21，TNS 对象页+TDECat 目录行+Yao+2023 表 1+NED 互证一致）】ra/dec＝TDECat 目录行 00:32:39.880 +22:32:56.04（J2000）＝TNS 对象页（8.166167/+22.5489）；Yao+2023 表 1 行 30 给 8.1661654/+22.5489257（与 TNS 差<0.2\"，取 TNS/TDECat 共识值）；NED 存有 AT2021uqv（00h32m39.9s +22d32m56s，z=0.106，PofG，2026-11-21 实查）。alias 三项均有出处：ZTF21abqhkjd＝TNS internal name＝TDECat 目录行 ZTF name/Discovery internal name（ALeRCE 发现报告），Gaia21drx＝TNS internal name＝TDECat 目录行 Gaia alert name（GaiaAlerts 报告 AT 119873 通告用名），ATLAS21beiz＝TNS internal name＝TDECat 目录行 Alternative name（ATLAS_Bot1 报告 AT 119670）。tag=tde：TNS 分类报告 2021TNSCR3411....1Y（Yao 2021，ZTF 组）判 TDE（TNS 对象页前缀 2025-01-26 由 AT 更为 TDE），Yao+2023 表 1 光谱子类 TDE-H+He（tags.json 无 TDE 光谱子类受控词，sub_tag 留空待决）；TNS AstroNote 2021-258（SciX 2021TNSAN.258....1Y，Yao/Gezari/vanVelzen/Hammerstein/Somalwar/Ravi）题名 X-ray Bright TDE（通告出处，不入 articles[]）。Trigger_Instrument 留空（TDE 无高能触发；发现设备 ZTF/P48，ALeRCE 通报）。【T0 口径】TDECat 目录行与 TNS 发现报告一致给 2021-07-29 10:28:14.998（毫秒），按 §3.2 采源精度写全（原 bot 值截断到秒）；本源为新建 lc（原零测光），无历史 X 射线行需随 T0 重算。【红移】z=0.106，redshift_type 由 value 改判 spec（分类光谱测得，三源同值）。【测光入库 8130 行】＝TDECat 官方补充仓库 target_AT2021uqv_photometry.csv（Section 2: Photometry/Optical and Infrared，2026-11-21 经 GitHub git/blobs base64 API 下载并 git hash-object 校验 blob sha1=90ef8ededc099deaeb828002a9ededf81e727441、行数 11273+表头）去同历元同值双误差行 3207（§3.4 保留首行）、剔除 ATLAS(t) 4 行（波段名无法唯一判读——ATLAS 公开滤光片仅 c/o 系列，见待决事项）、剔除 GSA(G) 1 行（MJD 59434.814040000085 18.88 与 TNS phot 233851 同值同测量，保留最初出处行 §3.4）后 8061 行；+ TDECat UVOT 机读表 AT2021uqv_uvot_lightcurve.csv（13 行×6 波段，有效值 53）；+ TNS 对象页 phot 表 11 行（ZTF r 探测 2+上限 1、g 探测 4（含发现帧 20.388）、Gaia G 探测 1+上限 1、ATLAS c 探测 1、o 上限 1；差分口径纯瞬变值，与 TDECat 总流量行并存不互删 §3.4 非同值）；+ Yao+2023 表 A1 正文示例行 5 行（UVOT uvw1/U/uvw2/uvm2 4 行+ZTF g 1 行，f_ν μJy，银消光改正前）。分设施保留量：ZTF zg/r/i 1355/1843/266（2018-2024，爆发前宿主+2021 爆发段）、ATLAS c/o 884/2582（2015-2024 同上）、Gaia GSA 63（2014-2023）、CRTS(CL) 419（2005-2016 档案宿主）、PTF(R) 33（2009-2014 档案宿主）、SDSS ugriz 8（2009 档案宿主）、PS1 griz 4（2012 档案宿主）、ALLWISE W1/W2 47（2010 档案宿主）、NEOWISE W1/W2 557（2013-2024，含 IR 回响段）。口径：星等系统按 Langis+2026 §3.1（arXiv:2506.05476v2 实读）：ZTF/ATLAS/iPTF/Pan-STARRS=AB，CRTS/NEOWISE=Vega，Gaia 内部定标留空（原文 The Gaia survey uses an internal calibration different from both the AB and Vega systems），SDSS=AB（巡天惯例推定，各行 comment 注明）；TDECat 编译行为总流量（含宿，非差分——爆发前长期宿主基线可证），TNS phot/Yao+2023 行为差分或纯瞬变值，两类并存不互删（§3.4 非同值）；UVOT 行已做银消光改正且未扣宿主（论文 §3.3 原文 All magnitudes were corrected for Galactic extinction、these data are not host subtracted）→ Gext_corr=y，其余行 Gext_corr=n；全表 time=(mjd−T0)×86400 s 自洽，mjd 直接来自来源按来源精度。【多波长备注】Langis+2026 §4.5 将 AT2021uqv 列为 18 个红外耀发 TDE 之一、§5.4 判定其 IR 发射相对光学延迟（与 AT 2019dsg 同组）。【检索留证（2026-11-21）】①仓内 gcn/archive 46198 篇全文检索 AT2021uqv/ATLAS21beiz/Gaia21drx/ZTF21abqhkjd 及片段 0 命中；external/rssgrbag/lightcurve.jsonl 与 external/grbsn_webtool/SourceData 无记录；②SciX API：q=AT2021uqv 命中 4 篇（TNS 发现/分类报告+AstroNote 258）、full:AT2021uqv 8 篇、full:ZTF21abqhkjd 3 篇、full:ATLAS21beiz 与 full:Gaia21drx 0 篇——逐篇判定：含本源测光表的研究文章仅 Yao+2023（ApJ 955 L6）表 A1（机读全表在 IOP 侧反爬未取，正文示例行 5 行已入库，已登记 unverified.tsv）；其余逐篇实读 arXiv TeX grep 为样本列举或拟合参数表（Alush & Stone 2025 arXiv:2510.24696、Mummery 2026 arXiv:2601.14483、Hu & Loeb 2024、Zhang & Shu 2026 为他源专文、NEEDLE 2024 分类样本），无本源测光；van Velzen+2021（2021ApJ...908....4V）/Charalampopoulos+2021（2021A&A...654A.149C）/Hammerstein+2023（2023ApJ...942....9H ZTF-I 样本）发表时点早于本源发现（2021-07-29）或不含其名，SciX 全文检索 0 命中；③TNS 对象页 phot 表 11 行已实取（WebFetch+curl 带 UA 两次核对一致）并逐值入库；TDECat GitHub 官方补充仓库（README 自证为论文 supplementary repository）4 个文件已按反截断协议下载逐行核对；Langis+2026 口径自 arXiv:2506.05476v2 §3.1/§3.3/§4.5/§5.4 实读（A&A VoR DataDome 不可达，已登记 unverified.tsv）；Yao+2023 表 1/A1/宿主表自 arXiv:2303.06523 TeX 实读（IOP VoR Radware 反爬，已登记 unverified.tsv）。结论：可用测光＝TDECat 机读表+UVOT 表+TNS phot 表+Yao+2023 表 A1，补 8130 行。【宿主】SDSS J003239.88+223256.0（TDECat 目录行 Host name；TNS GaiaAlerts 通告备注 1 mag rise in Gaia source coincident with SDSS galaxy SDSS J003239.88+223256.0）；host_galaxy 建档：坐标取自 SDSS 记名 00:32:39.88 +22:32:56.0，红移 0.106（spec）；Yao+2023 表 hostphot1/hostphot2（ID 30）爆前宿主测光 16 值入 host_galaxy.photometry（GALEX FUV/NUV、SDSS ugriz、WISE W1/W2、PS1 grizy、2MASS JH；2MASS Ks 该表缺测）。【SIMBAD/NED】simbad.cds.unistra.fr 2026-11-21 整站 404（CDS 服务降级，与 unverified.tsv 通道级行同因），未核；NED 已核（见上）。【未入库】TDECat X-ray 机读文件 AT2021uqv_xray_lightcurve.csv（Swift/XRT 13 行，MJD 56707-60457）——发现 X 射线数据，按 §3.3/§7 暂不处理；TDECat ATLAS(t) 4 行（见待决事项）；Yao+2023 表 A1 机读全表（IOP 反爬，登记 unverified.tsv）。",
   "sub_tag": [],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
   "extra_data": {
     "discovery_filter": "g-ZTF",
     "discovery_mag": "20.388",
-    "ingest_source": "scix_tdecat_20261104"
+    "ingest_source": "scix_tdecat_20261104",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "Rusty-Harpoon@zcode",
+      "date": "2026-11-21"
+    }
   },
   "articles": [
     {
       "name": "Langis+2026",
       "source": "bot",
       "title": "Repeating flares, X-ray outbursts and delayed infrared emission: A comprehensive compilation of optical tidal disruption events: TDECat",
-      "url": "https://ui.adsabs.harvard.edu/abs/2026A&A...707A.171L"
+      "url": "https://doi.org/10.1051/0004-6361/202554882"
+    },
+    {
+      "name": "Yao+2023",
+      "source": "Rusty-Harpoon@zcode",
+      "title": "Tidal Disruption Event Demographics with the Zwicky Transient Facility: Volumetric Rates, Luminosity Function, and Implications for the Local Black Hole Mass Function",
+      "url": "https://doi.org/10.3847/2041-8213/acf216"
     }
   ],
-  "host_galaxy": null
+  "host_galaxy": {
+    "ra": 8.166167,
+    "dec": 22.548889,
+    "redshift": 0.106,
+    "redshift_type": "spec",
+    "photometry": [
+      {
+        "band": "fuv",
+        "mag": 21.76,
+        "mag_err": 0.39,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（GALEX，爆前）"
+      },
+      {
+        "band": "nuv",
+        "mag": 20.76,
+        "mag_err": 0.13,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（GALEX，爆前）"
+      },
+      {
+        "band": "u",
+        "mag": 20.33,
+        "mag_err": 0.39,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（SDSS，爆前）"
+      },
+      {
+        "band": "g",
+        "mag": 18.79,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（SDSS，爆前）"
+      },
+      {
+        "band": "r",
+        "mag": 18.14,
+        "mag_err": 0.05,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（SDSS，爆前）"
+      },
+      {
+        "band": "i",
+        "mag": 17.78,
+        "mag_err": 0.04,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（SDSS，爆前）"
+      },
+      {
+        "band": "z",
+        "mag": 17.62,
+        "mag_err": 0.07,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot1（SDSS，爆前）"
+      },
+      {
+        "band": "wise-w1",
+        "mag": 17.72,
+        "mag_err": 0.06,
+        "mag_sys": "Vega",
+        "source": "Yao+2023 表 hostphot1（WISE，爆前）"
+      },
+      {
+        "band": "wise-w2",
+        "mag": 18.16,
+        "mag_err": 0.07,
+        "mag_sys": "Vega",
+        "source": "Yao+2023 表 hostphot1（WISE，爆前）"
+      },
+      {
+        "band": "g",
+        "mag": 18.79,
+        "mag_err": 0.03,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot2（PS1，爆前）"
+      },
+      {
+        "band": "r",
+        "mag": 18.19,
+        "mag_err": 0.03,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot2（PS1，爆前）"
+      },
+      {
+        "band": "i",
+        "mag": 17.88,
+        "mag_err": 0.01,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot2（PS1，爆前）"
+      },
+      {
+        "band": "z",
+        "mag": 17.78,
+        "mag_err": 0.04,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot2（PS1，爆前）"
+      },
+      {
+        "band": "y",
+        "mag": 17.53,
+        "mag_err": 0.11,
+        "mag_sys": "AB",
+        "source": "Yao+2023 表 hostphot2（PS1，爆前）"
+      },
+      {
+        "band": "J",
+        "mag": 17.35,
+        "mag_err": 0.13,
+        "mag_sys": "Vega",
+        "source": "Yao+2023 表 hostphot2（2MASS，爆前）"
+      },
+      {
+        "band": "H",
+        "mag": 17.29,
+        "mag_err": 0.17,
+        "mag_sys": "Vega",
+        "source": "Yao+2023 表 hostphot2（2MASS，爆前）"
+      }
+    ],
+    "comment": "宿主星系 SDSS J003239.88+223256.0（TDECat 目录行 Host name；TNS GaiaAlerts 报告 AT 119873 备注瞬变与该 SDSS 星系重合且 Gaia 源增亮 1 mag）。坐标 00:32:39.88 +22:32:56.0 由 SDSS 记名换算（瞬变体坐标与其核区一致，差<0.2\"）；红移 0.106 由 Yao+2023 分类光谱（Keck1/LRIS）测得。爆前宿主测光取 Yao+2023 表 hostphot1（GALEX/SDSS/WISE）与 hostphot2（PS1/2MASS）ID 30 行：GALEX/SDSS/PS1 为 AB、WISE/2MASS 为 Vega（巡天惯例）；2MASS Ks 在该表缺测。备查量：Yao+2023 表 3 行 30 log(M_gal/M☉)=10.14(+0.08/−0.11)、log(M_BH/M☉)=6.27±0.39（宿主标度关系推算）、σ*=62.3±7.1 km/s。",
+    "source": "Yao+2023（2023ApJ...955L...6Y）表 1/表 3/hostphot1/hostphot2；TDECat（Langis+2026）目录行；TNS 对象页"
+  }
 }
