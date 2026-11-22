@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB111008A",
-  "alias": [],
-  "ra": 60.454167,
-  "dec": -32.683333,
-  "T0": "2011-10-08T22:13:01.676000Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 111008A"
+  ],
+  "ra": 60.45094,
+  "dec": -32.70947,
+  "T0": "2011-10-08T22:12:58.280940Z",
+  "T0_ref": "GCN 12423（触发仪器 Swift/BAT 官方通告：22:12:58 UT，trigger 505054）；Swift/BAT 官方目录 trigger_time=2011-10-08T22:12:58.280940（external/swift_bat 在线快照，Lien+2016 第三版目录）。原库 T0=22:13:01.676000 系 Konus-Wind 自身触发时刻（GCN 12433：T0=79981.676 s UT），非触发仪器值，按《数据审核提示词》§3.8 锚定优先级改判。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +16,14 @@
   ],
   "pos_error": 1.7,
   "pos_ref": "GCN 12425",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 12431（VLT/X-shooter 吸收红移 z=4.9898）；GCN 12429（Gemini z~5）一致",
+  "comment": "① T0：Swift/BAT 触发 22:12:58 UT（GCN 12423，trigger 505054），官方目录亚秒值 2011-10-08T22:12:58.280940 采纳（external/swift_bat 快照）；原库 T0=22:13:01.676000 系 Konus-Wind 自身触发时刻（GCN 12433：T0=79981.676 s UT），按触发仪器优先级改判；全表 237 行 mjd=T0+time 已重算自洽（X 射线 217 行只重算 mjd、保留 BA 原始相对时标，其余 20 行按各自来源口径，见 lc comment）。② 位置：GCN 12425 XRT 增强位 60.45094,-32.70947±1.7″（90% 置信，原文明确标注）；原库 ra/dec=60.454167,-32.683333 与 mpe_greiner 快照 BAT on-board 位一致，系误挂 XRT 误差。③ 红移 z=4.9898（GCN 12431 VLT/X-shooter 吸收谱），type=spec。④ t90=63.46±2.19 s（GCN 12424，15-350 keV，90% c.l.），按通告 t90 判 lgrb；BAT 目录 t90=62.848±2.259 s（external/swift_bat）一致。⑤ 测光检索（2026-11-22）：GCN 官方站点全文搜索 '111008A' 命中 14 篇（12423-12437 连续段，其中 12435 属邻暴 GRB 111005A）全部读取，光学/NIR 测光载于 GCN 12423/12426/12427/12428/12432/12434/12437；仓内 gcn/archive 快照本次会话不可用（不随仓库分发、下载未完成），以官方站点全文搜索（同语料、实时）替代；external/rssgrbag（Chandra & Frail 2012 射电光变表）与 external/grbsn_webtool 均无本源记录。文献：Sparre+2014（ApJ 785,150，arXiv 1309.2940）仅宿主丰度/精细结构线 2 张表、无余辉测光表（ar5iv 全文核查）；EVLA 22 GHz 有探测（GCN 12436，触发后 1.4 d）但通告未发布流量值，无法入库。结论：本源非 X 射线测光 26 行→删 6 行 Dainotti+2024 目录转引重复（时间轴 1 h/分钟级失真、3 行探测误标上限），核改保留 20 行，新增 0 行（站点检索未发现 GCN 未载的测光）。Dainotti+2024（MNRAS 533,4023）机读表四个通道均不可得（CDS 主站/CFA/NAOJ/China 镜像不可达、arXiv 源码无表、OUP VoR 反爬），已登记 audit/unverified.tsv；其保留行数值均已核对其所引 GCN 原文。⑥ 宿主：Sparre+2014 分析余辉光谱宿主吸收系统（DLA、Fe II 精细结构线），未给出独立宿主成像探测/坐标，不建 host_galaxy。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -78,7 +80,12 @@
         "v": 0.453
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
