@@ -7,6 +7,31 @@
 - helper: wa1kmoon@zcode
 - date: 2026-11-06
 
+## 增补（2026-11-21，来自 Ho+2020 The Koala 的 VLASS 射电非探测上限）
+
+- paper: Ho+2020, ApJ 895, 49（DOI 10.3847/1538-4357/ab8bcf；arXiv:2003.01222）表 tab:vlass
+  「Radio limits for rapidly evolving transients」（Drout2014+Pursiainen2018 两样本的 VLASS 归档检索，全部非探测）
+- status: extracted（本增补节；文献级索引卡 papers/ho2020.md）
+- pr: #1158（DES15C3mgq 审核 PR）
+- helper: Rusty-Harpoon@zcode
+- date: 2026-11-21
+
+### 原文口径（原样，未换算）
+
+VLASS（VLA Sky Survey，2-4 GHz S 波段，正文以「3 GHz」指称上限）；Limit 单位 μJy；上限 = 12″ 切片内
+像素值 3σ 裁剪后的标准差；Δt = Pursiainen+2018 所列 t_peak（整数 MJD）到该场 VLASS 观测历元的天数（整数）；
+VLASS 观测历元本身未给出。
+
+### 本源行（VoR HTML 2026-11-21 逐值核）
+
+z = 0.76；RA = 02:21:22.87；Dec = −04:31:32.64；Δt = 365 d；Limit = 152 μJy
+
+### 提示
+
+带时间锚点（Δt 相对 t_peak）的已发表射电上限，接手者按提示词 §3.3 历史上限条评估入库
+（同表 DES15C3mgq 行已按此入库，见其 lc 与 PR #1158）；Δt 与 t_peak 均为整数天/MJD，
+等效不确定度约 ±0.5 d 建议写入 time_err；band 用频率串（VLASS 中心 3 GHz），不进 filters.json。
+
 ## 版本状态
 
 - VoR（OUP）Cloudflare 反爬 403 不可达，CDS/VizieR 三镜像超时（见 audit/unverified.tsv，DES16X3cxn 行）；
