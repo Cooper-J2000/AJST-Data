@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB120224A",
-  "alias": [],
-  "ra": 40.937,
-  "dec": -17.779,
-  "T0": "2012-02-24T04:39:56Z",
-  "T0_ref": null,
+  "alias": [
+    "BAT 515976"
+  ],
+  "ra": 40.94221,
+  "dec": -17.7613,
+  "T0": "2012-02-24T04:39:56.492380Z",
+  "T0_ref": "GCN 12980（Swift/BAT 触发通告：At 04:39:56 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 120224A (trigger=515976)，整数秒）+ Swift/BAT 官方目录 external/swift_bat summary_general_info/summary_general.txt（trigger 515976：Trig_time_UTC=2012-02-24T04:39:56.492380，按快照约定以 UTC 列为准，MET 列弃用）——整秒两源一致，亚秒值取触发仪器官方目录",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,13 +16,42 @@
   ],
   "pos_error": 1.8,
   "pos_ref": "GCN 12981",
-  "redshift_type": null,
-  "redshift_ref": "catalog:mpe_greiner",
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "redshift_type": "spec-host",
+  "redshift_ref": "Krühler et al. 2015, A&A, 581, A125（DOI 10.1051/0004-6361/201425561，Table 5 Balmer break）＋ Selsing et al. 2019, A&A, 623, A92（DOI 10.1051/0004-6361/201832835，附录 C.43 Hα z=1.10 佐证）",
+  "comment": "【身份】Swift/BAT 触发 515976（GCN 12980 原文 \"At 04:39:56 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 120224A (trigger=515976)\"）；BAT 精化分析（GCN 12983）与仓内 external/swift_bat、external/swiftgrbba 快照互证一致，无同日混淆源。【定位】定位链：BAT on-board 40.975/-17.793（3 arcmin、90% containment，GCN 12980）→ XRT 初步位 40.94380/-17.75959（3.9 arcsec、90% containment，GCN 12980）→ 增强定位 40.94221/-17.76130（1.8 arcsec、radius、90% confidence，GCN 12981，XRT-UVOT 对准 + USNO-B1 星表匹配；Goad et al. 2007, A&A, 476, 1401; Evans et al. 2009, MNRAS, 397, 1177），本条目采用——bot 原库 ra/dec=40.937/-17.779 系 GCN 12983 的 BAT 地面精化位（2.4 arcmin、90% containment）却配了 GCN 12981 的 1.8 arcsec 误差与 pos_ref（混串），本次改判为增强位：ra/dec 40.937/-17.779→40.94221/-17.76130，pos_error=1.8 与 pos_ref=GCN 12981 不变（至此与原文一致），pos_error_confidence 填 90 → BAT 地面精化 40.937/-17.779（2.4 arcmin、90%，GCN 12983，备查）→ GROND 探测源 40.94230/-17.76169±0.5 arcsec（GCN 12988）位于增强位误差圈内（佐证）。【T0】触发时刻：GCN 12980 整秒 04:39:56 UT，亚秒 .492380 取自 Swift/BAT 官方目录（external/swift_bat summary_general_info/summary_general.txt，trigger 515976，Trig_time_UTC=2012-02-24T04:39:56.492380，按快照约定一律以 UTC 列为准，MET 列弃用）；bot 原值 2012-02-24T04:39:56Z 系 GCN 通告整秒精度，亚秒按触发仪器目录补全；lc 全部 92 行已按新 T0 重算 mjd（X 射线行系 UKSSDC Burst Analyser T−T0 历元，仅 mjd 机械重算、time 未动——2026-10-31 维护者裁定例外）。【触发前辐射/T0_offset】GCN 12983 BAT 光变双峰：弱峰 ~T-20 s 起、~T-6 s 峰，主峰（更强）~T-3 s 起、~T+1 s 峰、~T+13 s 止；swift_bat 目录 summary_burst_durations T100_start/T90_start=-1.416 s——触发前确有辐射，但两源给出的起始量不一致（目录阈值化窗口起点 vs 通告弱峰起点），T0_offset 暂不设，留待维护者裁定（PR 待决①）。【分类】sub_tag=XRR：Li & Mao 2022（ApJ, 928, 152）Table 1 行 \"120224A XRR 1.1 7.00 p\"（IOP VoR 全文实读；其分类采 Bi et al. 2018 的 XRF/XRR/C-GRB 方案、Sakamoto et al. 2008 流量比判据）；旁备：t90=7.0±2.236 s（15-350 keV，external/swift_bat summary_general.txt）与 GCN 12983 t90=8.13±1.99 s（15-350 keV）按 2 s 阈值亦可判 lgrb——已发表分类优先于 t90 推断（§3.9），如维护者倾向 lgrb 请裁定（PR 待决②）。备查：fluence=2.4±0.5 e-7 erg/cm2（15-150 keV，GCN 12983）/ external/swift_bat（T100、PL）15-150 keV 2.16(+0.51/-0.48) e-7、15-350 keV 2.62(+0.93/-0.73) e-7；1s 峰值光子流量 0.9±0.2 ph/cm2/s（T+0.24 s，15-150 keV，GCN 12983）；partial coding 29%；XRT 精化分析（GCN 12986，发现 X 射线数据，暂不处理）。【红移】z=1.1：Krühler et al. 2015（A&A, 581, A125）Table 5 行 \"GRB 120224A | 1.1±0.2 | Balmer break\"（VoR 表页实读）＋附录 A.3：X-shooter 谱红端连续谱、无发射线，Balmer break at z~1.1，zphot 90% 区间 0.9<z<1.3，宿主称 \"plausible GRB host candidate\"；Selsing et al. 2019（A&A, 623, A92）附录 C.43 \"GRB 120224A (z = 1.10)\"：X-shooter 2.4 ks 谱 ~2σ Hα 发射线给 z=1.10，支持 Krühler zphot——redshift_type=spec-host（宿主光谱 Balmer break 为主判据）；bot 原引用 redshift_ref=catalog:mpe_greiner 系目录转引，改指原始文献，z 值 1.1 不变。【宿主候选】GROND 探测源（40.94230/-17.76169±0.5 arcsec，GCN 12988）：Greiner et al. 2024（A&A, 691, A158）附录 A.18——2012-02-26T00:48（1.84 d）与 2012-08-26T07:10（~6 月后）两历元亮度一致：g'=25.75±0.28, r'=24.00±0.09, i'=23.00±0.08, z'=22.45±0.06, J=20.86±0.09, H=20.95±0.19, K=19.94±0.12（恒源、宿主 SED，z~1 与 Balmer break 一致）；Krühler 2015 仍称 \"plausible GRB host candidate\"，两文均未完全定论 → 不建 host_galaxy（§3.10），候选依据留于此；lc GROND J 行（1.84 d 探测）按 §3.10 在行 comment 区分宿主/瞬变体。【别名】新增 \"BAT 515976\"（external/swift_bat 快照 name_alt；GCN 12980 原文用名 trigger=515976）。【测光检索（2026-11-19）】仓内：gcn/archive 目录不存在（origin/main 无 gcn/ 树）；external/rssgrbag、external/grbsn_webtool、external/uvot_grb 全目录扫描 \"120224\" 0 命中；GCN 站内：事件页 gcn.nasa.gov/circulars/events/grb-120224a 命中 9 篇（12980/12981/12982/12983/12984/12986/12988/12990/12991），全部实开（.json 原文），其中光学上限/探测 4 篇（12982 FTN、12988 GROND、12990 Mondy、12991 X-shooter）对应行已在库并逐行核对修正，12984 UVOT 8 行在库核对修正，12980/12981/12983 用于身份/T0/定位，12986 为 X 射线精化分析（发现 X 射线数据，暂不处理）；文献检索：Crossref 0 直接命中 → arXiv API（all:\"GRB 120224A\" / \"GRB120224A\" / \"120224A\"）0 命中 → OpenAlex 全文索引命中 19 条（6 GCN + 13 文献）逐一判读：取 VoR 实读核验 4 篇（Krühler 2015、Selsing 2019、Greiner 2024、Li & Mao 2022——分别为宿主红移/X 射线谱 z/X 射线宿主 SED/XRR 分类，均无本源瞬变体光学测光行）、mention-only 9 篇（FRB 搜索 2014、X-ray re-brightening 2024、z-obs time 2012、IR-bright hosts 2018、L-z 分布 2021、初始洛伦兹因子 2025、Kerr-Newman GeV 2018、2 篇学位论文——均无可入库数值）→ 网页全文检索（WebSearch）无新增测光文献（其提示的 GROND 样本文即 Greiner+2024 已核）；SIMBAD/CDS unavailable@2026-11-19；ADS/SciX 无 token 未检索（search-limited，登记行文本见 PR 正文待决区）。结论：现有可达渠道未发现本源瞬变体光学测光的已发表文献表（XS-GRB Table A.1 的 R=22.3 系 GCN 12991 同一测量之转引，按 §3.4 保留 GCN 原始行）；因 ADS/SciX 与 SIMBAD 通道受限，不作绝对无文献结论。本次审核：修正 13 个非 X 射线行（UVOT white_FC/u_FC/b 3 行中点滑步 + 8 行补 time_err、FTN 2 行补 time_err、AZT 行中点改 0.3518 d、X-shooter 行中点改 00:36:15 UT、GROND J 行改曝光中点）并按新 T0 重算全部行 mjd（X 射线行仅 mjd 机械重算）。",
+  "sub_tag": [
+    "XRR"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
-  "articles": [],
-  "host_galaxy": null
+  "pos_error_confidence": "90",
+  "articles": [
+    {
+      "name": "Krühler+2015",
+      "title": "GRB hosts through cosmic time: VLT/X-Shooter emission-line spectroscopy of 96 gamma-ray-burst-selected galaxies at 0.1 < z < 3.6",
+      "url": "https://doi.org/10.1051/0004-6361/201425561"
+    },
+    {
+      "name": "Selsing+2019",
+      "title": "The X-shooter GRB afterglow legacy sample (XS-GRB)",
+      "url": "https://doi.org/10.1051/0004-6361/201832835"
+    },
+    {
+      "name": "Greiner+2024",
+      "title": "The GROND gamma-ray burst sample: I. Overview and statistics",
+      "url": "https://doi.org/10.1051/0004-6361/202449659"
+    },
+    {
+      "name": "Li+2022",
+      "title": "Temporal Analysis of GRB Precursors in the Third Swift-BAT Catalog",
+      "url": "https://doi.org/10.3847/1538-4357/ac4af2"
+    }
+  ],
+  "host_galaxy": null,
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-19"
+    }
+  }
 }
