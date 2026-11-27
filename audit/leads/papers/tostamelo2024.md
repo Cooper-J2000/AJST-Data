@@ -18,7 +18,7 @@ GRANDMA 网络 2022 年春八周 Swift GRB 跟随训练 campaign 的正式发表
 | GRB220325A | B.2（3 行） | `audit/leads/GRB220325A.md`（#1093） | extracted | **过门槛**：NOWT 4.72 h 20.9 / KAO 8.11 h 21.5 R / KAO 10.16 h 21.6 R 均不在库内 lc |
 | GRB220408A | B.2（2 行） | `audit/leads/GRB220408A.md`（#1093） | extracted | **过门槛**：UBAI/AZT-22 R 19.3（1.82 h）/20.6（4.95 h）不在库内 lc（32 行） |
 | GRB220412A | B.2（3 行）+ §5.1 小节 | 无（PR #1093 已直接采纳入库） | extracted | PR #1093 已把 C2PU-Omicron r>21.7、Xinglong-TNT Clear>20.5/r>20.3 入库；本卡仅索引 |
-| GRB220427A | B.1（12 行）+ B.2（2 行） | `audit/leads/GRB220427A.md`（#1093） | extracted | **过门槛**：KNC-T-CAT/TAROT 12 行探测/上限不在库内 lc（10 行）；论文 §5.2 光度红移 z=0.82±0.09（非本卡范围，接手者回原文） |
+| GRB220427A | B.1（12 行）+ B.2（2 行） | 无（PR #1105 已按本条线索入库：TAROT/TRE 8 行 + Les Makes/T60 4 行） | extracted | B.1 探测行已全部入库，卡随审核 PR #1105 删除 |
 | GRB220430A | B.2（3 行） | `audit/leads/GRB220430A.md`（#1093） | extracted | **过门槛**：SNOVA 17.74 h Clear 19.3 / TRT-SRO 6.59 h R 20.3 / GMG-2.4 3.22 h Clear 18.7 不在库内 lc（12 行） |
 | GRB220501A | §5.1 小节（r>16.0，触发后 ~30 min 起，业余镜） | 无 | mention-only | **不过门槛**：同测量已入库（GCN 31984 GRANDMA/TJML r 16.0 行），纯转引 |
 | GRB220514A | B.1（7 行）+ B.2（3 行） | `audit/leads/GRB220514A.md`（#1093） | extracted | **过门槛**：TAROT/TRE、Les Makes/T60、VIRT 各行不在库内 lc（11 行） |
