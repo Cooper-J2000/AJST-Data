@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB180404A",
-  "alias": [],
-  "ra": 83.5625,
-  "dec": -37.166667,
-  "T0": "2018-04-04T00:45:35Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 180404A"
+  ],
+  "ra": 83.54906,
+  "dec": -37.16807,
+  "T0": "2018-04-04T00:45:35.686520Z",
+  "T0_ref": "GCN 22589（触发仪器 Swift/BAT 官方通告：00:45:35 UT，trigger 821881）＋Swift/BAT 官方目录 trigger_time=2018-04-04T00:45:35.686520（external/swift_bat 快照，MET 544495556.416）。原库 T0=2018-04-04T00:45:35Z 为整秒历元，按 §3.2/§3.8 补入触发仪器目录亚秒。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +16,14 @@
   ],
   "pos_error": 2.0,
   "pos_ref": "GCN 22592",
-  "redshift_type": null,
+  "redshift_type": "spec",
   "redshift_ref": "GCN 22591",
-  "comment": null,
+  "comment": "① T0：Swift/BAT 触发 00:45:35 UT（GCN 22589，trigger 821881），官方目录亚秒值 2018-04-04T00:45:35.686520 采纳（external/swift_bat 快照）；原库 T0=2018-04-04T00:45:35Z 为整秒历元，补入亚秒（ΔT0=+0.686520 s），全表 27 行 mjd=T0+time 重锚自洽（X 射线 12 行只重算 mjd、保留 BA 原始相对时标；其余 15 行按各自来源口径，见 lc comment）。② 位置：GCN 22592 XRT 增强位 83.54906,-37.16807±2.0″（90% 置信，原文明确标注）；原库 ra/dec=83.5625,-37.166667（=05h34m15.0s,-37d10'00.0\"）系 BAT on-board 位（GCN 22589 83.564,-37.170）圆整值误挂 XRT 误差，改判为 XRT 增强位本体。③ 红移：z=1.000（GCN 22591：VLT/X-shooter 吸收线 Al III、Fe II、Mg II、Mg I 共同红移），type=spec。④ t90：Swift/BAT 目录 36.28±5.35 s（15-350 keV，external/swift_bat 快照）；GCN 22599 35.2±5.3 s（误差含系统效应估计）——均 ≫2 s，按目录/通告 t90 判 lgrb。⑤ 测光检索（2026-11-22）：GCN 站点搜索 '180404A' 命中 8 篇（22589/22591/22592/22593/22599/22602/22603/22605）全部读取，测光载于 22589/22591/22593/22603/22605；external/swift_bat、external/swiftgrbba 快照互证（T0/t90/UVOT 星等）；external/rssgrbag、external/grbsn_webtool 无本源记录；arXiv 站内检索 'GRB 180404A' 0 篇专文（2026-11-22，ADS/SciX 无凭据 search-limited，不据此断言无文献）；Dainotti+2024 目录转引行均已逐值核对其所引 GCN 原文，reference 改指 GCN 原始出处。⑥ lc 修正要点：MASTER 行拆分——bot 原行混装（探测星等 19.8＋首组 10 s 曝光上限的时标 48 s＋upperlimit=y 误标），按 GCN 22593 原文拆为两行：首组 10 s 曝光 5σ 上限 17.4（mid 48 s）＋660 s summary image 探测 m_OT=19.8（mid 373.25 s，起点 00:46:18.938 UT）；UVOT 10 行为 GCN 22605 逐值转引（中点口径全对，原表 10 行），reference 改指 GCN22605（各行 Gext_corr 本已为 n，与原文声明未消光一致，无转变）；GCN 22589 white FC 速报行改中点口径（164±75 s）；LCO 双保留行去重——Dainotti 转引行与 GCN 22603 行同测量（21.3±0.3、mid 0.37 d 一致），删 Dainotti 行、保 GCN 行并修正时标。⑦ 宿主：GCN 22591 仅给吸收线系统红移，无宿主成像/坐标/测光，不建 host_galaxy。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -84,7 +86,12 @@
         "v": 0.069
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-22"
+    }
   },
   "articles": [
     {
