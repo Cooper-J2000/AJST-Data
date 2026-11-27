@@ -1,15 +1,18 @@
 time,time_err,time_unit,mjd,band,flux_density,flux_density_err,flux_density_unit,mag_system,Gext_corr,upperlimit,Gext_Alambda,mag_Gextcor,mag_Gextcor_err,flux_density_Gextcor,flux_density_Gextcor_err,flux_density_Gextcor_unit,weights,discard,telescope,instrument,reference,comment,source
-2823.0,,s,56339.96,15GHz,0.78,0.08,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN14248,,
-7052.0,,s,56340.00894675926,R,15.1,,magnitude,,n,y,,,,,,,1.0,n,,TAROT/La Silla,GCN14228,,
-7243.0,,s,56340.01115740741,R,16.2,,magnitude,,n,y,,,,,,,1.0,n,,TAROT/La Silla,GCN14228,,
-7243.0,,s,56340.01115740741,R,17.7,,magnitude,,n,y,,,,,,,1.0,n,,TAROT/La Silla,GCN14228,,
-22533.0,,s,56340.188125,Ks,18.7,,magnitude,,n,y,,,,,,,1.0,n,,WIRC/Palomar 200-inch,GCN14230,,
-60031.0,,s,56340.62212962963,Rc,19.7,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME/Murikabushi 1m,GCN14233,,
-60031.0,,s,56340.62212962963,g,20.1,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME/Murikabushi 1m,GCN14233,,
-60031.0,,s,56340.62212962963,Ic,18.9,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME/Murikabushi 1m,GCN14233,,
-160071.0,,s,56341.78,15GHz,0.8,0.04,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN14248,,
-226599.0,,s,56342.55,4.8GHz,1.11,0.09,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,,
-258999.0,,s,56342.925,4.8GHz,1.15,0.06,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,,
-314727.0,,s,56343.57,4.8GHz,0.92,0.07,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,,
-316963.0,,s,56343.59587962963,uvot-uvw1,22.2,,magnitude,,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14254,,
-347559.0,,s,56343.950000000004,4.8GHz,1.09,0.08,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,,
+2819.38,1728.0,s,56339.96,15GHz,0.78,0.08,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN14248,GCN 14248 表 Epoch Feb 16.94-16.98（Delta T 0.03d 为原文粗值）：time=窗中点 Feb 16.96、time_err=半窗 0.02d；AMI 一小时观测始于 22:28 UT（GCN 14234）；AMI 中心频率 15.7GHz（原文记 15GHz）。该射电源 04:31:34 +14:39:36 ±2″ 平稳，原作者判非对应体（possibly a radio galaxy or AGN，巧合概率约 2%），Anderson+2017 VoR 归 coincident steady source；是否置 discard 待维护者裁定（PR 待决①）,fsy
+7138.3,90.0,s,56340.0099875,R,15.1,,magnitude,,n,y,,,,,,,1.0,n,,TAROT/La Silla,GCN14228,GCN 14228：首帧 trailed 180s（原文 t0+7048.3~7228.3s），time=曝光中点、time_err=半曝光；R>15.1 为上限；TAROT t0=2013-02-16T22:15:24.620（与标准 T0 差 2.8ms）；USNO-B1 检校，未声明系统；未做银消改正（A_R≈0.3mag，Schlegel 1998）,fsy
+7328.9,90.0,s,56340.0121936,R,16.2,,magnitude,,n,y,,,,,,,1.0,n,,TAROT/La Silla,GCN14228,GCN 14228：第二帧 tracked 180s（原文 t0+7238.9~7418.9s），time=曝光中点、time_err=半曝光；R>16.2 为上限；检校与银消改正同 R>15.1 行,fsy
+7818.95,580.05,s,56340.0178654,R,17.7,,magnitude,,n,y,,,,,,,1.0,n,,TAROT/La Silla,GCN14228,GCN 14228：coadd（原文 t0+7238.9~8399.0s），time=窗口中点、time_err=半窗（约定口径）；R>17.7 为上限,fsy
+22518.0,5346.0,s,56340.1879933,Ks,18.7,,magnitude,,n,y,,,,,,,1.0,n,,WIRC/Palomar 200-inch,GCN14230,GCN 14230：Ks >~ 18.7 mag（5σ）variability limit between 4.77 and 7.74 hours after the BAT trigger；两历元 2013-02-17 02:56–03:08 UT（9×60s）与 05:46–06:13 UT（18×60s）；time=原文窗口中点、time_err=半窗（约定口径）；相对 2MASS 检校，未声明系统,fsy
+60027.38,780.0,s,56340.62212962963,Rc,19.7,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME/Murikabushi 1m,GCN14233,GCN 14233：3σ 上限；原文表 T0+=0.69477d、MID-UT 14:55:52 UT、T-EXP 1560s；time=MID-UT−T0、time_err=T-EXP/2；GSC2.3 检校，未声明系统；refined BAT 误差圈内无新点源,fsy
+60027.38,780.0,s,56340.62212962963,g,20.1,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME/Murikabushi 1m,GCN14233,GCN 14233：3σ 上限，同 Rc 行（同一 MID-UT/T-EXP）；GSC2.3 检校，未声明系统,fsy
+60027.38,780.0,s,56340.62212962963,Ic,18.9,,magnitude,,n,y,,,,,,,1.0,n,,MITSuME/Murikabushi 1m,GCN14233,GCN 14233：3σ 上限，同 Rc 行（同一 MID-UT/T-EXP）；GSC2.3 检校，未声明系统,fsy
+160067.38,19872.0,s,56341.78,15GHz,0.8,0.04,mJy,,n,n,,,,,,,1.0,n,,AMI-LA,GCN14248,GCN 14248 表 Epoch Feb 18.55-19.01（11 小时 AMI 观测）：time=窗中点 Feb 18.78、time_err=半窗 0.23d。该射电源 04:31:34 +14:39:36 ±2″ 平稳，原作者判非对应体（possibly a radio galaxy or AGN，巧合概率约 2%），Anderson+2017 VoR 归 coincident steady source；是否置 discard 待维护者裁定（PR 待决①）,fsy
+226595.38,3456.0,s,56342.55,4.8GHz,1.11,0.09,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,GCN 14248 表 Epoch Feb 19.51-19.59：time=窗中点、time_err=半窗 0.04d；WSRT 4.8GHz。该射电源 04:31:34 +14:39:36 ±2″ 平稳，原作者判非对应体（possibly a radio galaxy or AGN，巧合概率约 2%），Anderson+2017 VoR 归 coincident steady source；是否置 discard 待维护者裁定（PR 待决①）,fsy
+258995.38,5616.0,s,56342.925,4.8GHz,1.15,0.06,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,GCN 14248 表 Epoch Feb 19.86-19.99：time=窗中点、time_err=半窗 0.065d；WSRT 4.8GHz。该射电源 04:31:34 +14:39:36 ±2″ 平稳，原作者判非对应体（possibly a radio galaxy or AGN，巧合概率约 2%），Anderson+2017 VoR 归 coincident steady source；是否置 discard 待维护者裁定（PR 待决①）,fsy
+314723.38,6048.0,s,56343.57,4.8GHz,0.92,0.07,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,GCN 14248 表 Epoch Feb 20.50-20.64：time=窗中点、time_err=半窗 0.07d；WSRT 4.8GHz。该射电源 04:31:34 +14:39:36 ±2″ 平稳，原作者判非对应体（possibly a radio galaxy or AGN，巧合概率约 2%），Anderson+2017 VoR 归 coincident steady source；是否置 discard 待维护者裁定（PR 待决①）,fsy
+332085.0,14861.0,s,56343.7709447,uvot-uvw1,22.2,,magnitude,Vega,n,y,,,,,,,1.0,n,,Swift/UVOT,GCN14254,"GCN 14254：w1 滤片 T_start=317224s ~ T_stop=346946s（总曝光 7959s，多次指向拼接），time=窗口中点、time_err=半窗（约定口径）；3σ 上限 22.2；原文用 UVOT photometric system（Breeveld et al. 2011, AIP Conf. Proc. 1358, 373）→ mag_system=Vega；未做银消改正（E(B-V)=0.49，Schlegel 1998）；观测因 Moon 约束延迟至触发后 3.67d 开始",fsy
+347555.38,3456.0,s,56343.95,4.8GHz,1.09,0.08,mJy,,n,n,,,,,,,1.0,n,,WSRT,GCN14248,GCN 14248 表 Epoch Feb 20.91-20.99：time=窗中点、time_err=半窗 0.04d；WSRT 4.8GHz。该射电源 04:31:34 +14:39:36 ±2″ 平稳，原作者判非对应体（possibly a radio galaxy or AGN，巧合概率约 2%），Anderson+2017 VoR 归 coincident steady source；是否置 discard 待维护者裁定（PR 待决①）,fsy
+1920.0,,s,56339.9495905,Ic,20.0,,magnitude,,n,y,,,,,,,1.0,n,,OSN 1.5m,GCN14224,GCN 14224：1.5m OSN I-band，starting 32 min post burst（原文只给起始时刻、无曝光时长，time=起始时刻非中点）；down to I about 20（约值上限）；band 取 Ic（filters.json OSN/Johnson.Cousins_I2 对应该望远镜）；未声明系统；3′（onboard）BAT 误差圈内无新/变源,fsy
+27.65,,s,56339.9276883,G,8.0,,magnitude,,n,y,,,,,,,1.0,n,,MASTER-VWF,GCN14238,GCN 14238：MASTER-VWF（Kislovodsk，FOV 400 sq deg 覆盖 Swift 误差框）指向时刻 2013-02-16 22:15:52.273 UT（GRB 后 31s，按 FERMI 坐标 GCN 14236）；5σ 上限约 8 mag（原文 about 8 mag）；原文未给曝光时长与波段口径：time=指向时刻（非中点）、band=G,fsy
+641.61,60.0,s,56339.9347944,G,14.0,,magnitude,,n,y,,,,,,,1.0,n,,MASTER II,GCN14238,GCN 14238：MASTER II（Kislovodsk）指向时刻 22:25:06.231 UT（SWIFT 误差框，GCN 14223；原文自述 582s after GRB time，按其 UTC 实算为 584.8s）；首组曝光 120s：time=指向+60s、time_err=60s；5σ 上限约 14.0 mag（原文 about 14.0 mag）；原文未给波段口径 band=G；高天顶距、坏天气,fsy
