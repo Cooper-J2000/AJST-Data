@@ -1,10 +1,15 @@
 {
   "transient_id": "GRB250309B",
-  "alias": [],
+  "alias": [
+    "GRB 250309318",
+    "AT2025dws",
+    "AT 2025dws",
+    "ZTF25aaitvjt"
+  ],
   "ra": 210.801761,
   "dec": -8.502842,
-  "T0": "2025-03-09T00:00:00Z",
-  "T0_ref": null,
+  "T0": "2025-03-09T07:38:30.660Z",
+  "T0_ref": "GCN 39642（McDermott et al., Fermi/GBM）：\"At 07:38:30.66 UT on 09 March 2025, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 250309B (trigger 763198715/250309318)\"（触发仪器官方通告，逐字；入库 .660 为同值 3 位小数表示）；GBM 团队自动通告 GCN 39635 同值同精度；external/fermi_gbm 快照（FERMIGBRST）trigger_time=2025-03-09T07:38:30.663Z、external/swiftgrbba 快照 07:38:30.660Z 互证（差 ≤3 ms）；GECAM-B 2025-03-09T07:38:31.050 UTC（GCN 39648）、Konus-Wind T0=27513.791 s UT（GCN 39655）备查",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Fermi/GBM",
@@ -13,21 +18,31 @@
     "grb"
   ],
   "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta; GCN 39648",
-  "comment": null,
+  "pos_ref": "GCN 39639（ZTF 光学对应体 ZTF25aaitvjt/AT2025dws 位）",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 39647（Malesani et al., GTC/OSIRIS+ 吸收光谱 z=1.898；另有 intervening z=1.634）",
+  "comment": "审核（fsy@zcode，2026-11-20）：(1) 身份：Fermi/GBM trigger 763198715/250309318 于 2025-03-09T07:38:30.66 UT 触发并定位 GRB 250309B（GCN 39642 逐字；GBM 团队 GCN 39635 同值）；GECAM-B 07:38:31.050 UTC（GCN 39648）、Konus-Wind T0=27513.791 s UT（GCN 39655，其光变起于 ~T0−0.5 s 仍晚于 GBM 触发）、BALROG 07:38:30 整秒（GCN 39629）互证；external/fermi_gbm 快照 trigger_time=2025-03-09T07:38:30.663Z、external/swiftgrbba 07:38:30.660Z（差 ≤3 ms）。z=1.898 光谱（GCN 39647）+ 多台站光学余辉 AT2025dws/ZTF25aaitvjt（GCN 39639）证实同一事件。IceCube-250309A（GCN 39631）时域相合 145.91 s，但 IPN 盒（GCN 39652）与 GBM sub-threshold 检索（GCN 39657）均判定与中微子不相关——仅历史关联，不入 alias。(2) T0：原值 2025-03-09T00:00:00Z 为导入日期占位（bot t0_basis=meta_trigger、t0_note='t0 为 meta trigger-time（真实触发时刻）'均失真，原值存此），改写为触发仪器官方值（见 T0_ref；无 >1 s 的 T0_offset 证据）。T90=6.40011±0.389297 s（50–300 keV，FERMIGBRST 快照；GCN 39642 约 6.4 s；GECAM-B 6.74±0.15 s，GCN 39648；GCN 39635 称 likely LONG GRB）→ sub_tag=lgrb 维持。(3) 定位：ra/dec 为 GCN 39639 的 ZTF 位（210.801761/−8.502842）；XRT 精化位 210.80129/−8.50302（3.0″ radius, 90% confidence，GCN 39649）距 1.8″、EP/WXT 210.800/−8.500（3.1′, 90%，GCN 39791）、GBM 干到位 210.58/−10.86（1.2°，GCN 39635）、BALROG 210.5/−7.6（1σ 1.3°+系统 1°，GCN 39629）、IPN 3σ 盒中心 208.8101/−12.9141（1.3 sq.deg，GCN 39652）备查，不混串。pos_error 留空：ZTF 通告未给误差半径与置信水平（来源未标注）。(4) 红移：z=1.898 为 GTC/OSIRIS+ 吸收光谱证认（SiII/SiIV/OI/CII/CIV/FeII/AlII/AlIII/ZnII/MnII，另有 intervening z=1.634，GCN 39647）→ redshift_type=spec；redshift_ref 原值 'gcn_llm:circulars_meta; GCN 39648' 为转引（39648 引 39647），改指 GCN 39647。(5) alias 新增「GRB 250309318」（GCN 39629 原文用名；GCN 39642 'trigger 763198715/250309318'；FERMIGBRST 快照 name_alt='GRB250309318'）、「AT2025dws」（GCN 39639 表 IAU 名）、「AT 2025dws」（GCN 39643/39650 主题行空格形原文用名）、「ZTF25aaitvjt」（GCN 39639 表 ZTF 名）。(6) 测光检索（2026-11-20）：GCN 站内检索 '250309B' 命中 29 篇（全部抓取逐字核对；含交叉引用链外的 39634 更正通告、39705 PRIME 第二历元上限、39791 ZTF+EP）；仓内 external/fermi_gbm、mpe_greiner、swiftgrbba 命中本源但仅目录级（无测光表），rssgrbag/grbsn_webtool 无该事件，gcn/archive 快照未随分支检出；外部文献：OpenAlex（5 写法 2 命中）/Crossref DOI 精查/arXiv API（5 写法 0 命中）/WebSearch 两轮收敛 → 3 篇：Li+2026（RAA 26,104025，SVOM/VT 综述；表3 本暴行 20.04±0.04 @23.376 h 与 GCN 39661 的 20.20±0.04 同历元不一致，判转写差异，保留最初来源 GCN 值；VoR 被 IOP Radware 整站墙拦未核，据 arXiv:2604.24266 备查，未入库其数值）；Wang+2026（ApJ 997,353，BREAKFAST）纯提及 2 处（正文例句+参考文献条目）无测光；arXiv:2511.14858 与本暴无关（HTML 全文仅 1 处元数据重述：附表引 GCN 39647 记本暴 z=1.898，无测光）。本 PR 新增 8 行（SVOM/VT_B+VT_R、ATCA 首轮 5.5/9 GHz 5σ 上限、PRIME J 探测、PRIME 第二历元 J/H 上限、ATCA 16.7 GHz 上限），19 行全部换锚新 T0（time=mjd_abs−T0 重算）并修正 5 处中点口径（LCO 用 UT 起点未+90 s、COLIBRÍ 用窗口起点、RC-10 用起点未用原文中位时刻 12.260 h、SAO 两历元未用作者 t-T0 中点、DFOT 按 7200 s/2 推中点），mjd 全列重算。未入库备查：ZTF 探测 r=18.48±0.107（GCN 39639，该点无自身时刻，仅巡天起 07:51 UT）；ATLAS 强测光上限 m>19.2 @T0−1.67 h（GCN 39639，未说明 cyan/orange 波段）；MASTER-Kislovodsk 17.4 mag C(clear) @T0+53269 s（GCN 39641，指向 209.88/−13.76 距对应体 ~5.3°，非对应体测量）；Swift-XRT 与 EP/WXT X 射线数据不入库（§3.3）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
   "pos_error_confidence": null,
+  "articles": [
+    {
+      "name": "Li+2026",
+      "url": "https://doi.org/10.1088/1674-4527/ae75cd"
+    }
+  ],
+  "host_galaxy": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
-  },
-  "articles": [],
-  "host_galaxy": null
+    "t0_basis": "GCN 39642（McDermott et al., Fermi/GBM）：\"At 07:38:30.66 UT on 09 March 2025, the Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 250309B (trigger 763198715/250309318)\"；GBM 团队通告 GCN 39635 同值；external/fermi_gbm 快照 trigger_time=2025-03-09T07:38:30.663Z、external/swiftgrbba 07:38:30.660Z 互证",
+    "t0_note": "T0=2025-03-09T07:38:30.660Z 为 Fermi/GBM 星上触发时刻（.66 的 3 位小数同值表示）；原 bot 注 't0 为 meta trigger-time（真实触发时刻）' 与占位值 2025-03-09T00:00:00Z 已失真，原值见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-20"
+    }
+  }
 }
