@@ -1,27 +1,68 @@
 {
   "transient_id": "GRB071010A",
-  "alias": [],
-  "ra": 288.1,
-  "dec": -32.383333,
-  "T0": "2007-10-10T20:45:48.490000Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 071010A",
+    "GRB 071010"
+  ],
+  "ra": 288.06083,
+  "dec": -32.40201,
+  "T0": "2007-10-10T03:41:12.855120Z",
+  "T0_ref": "触发仪器 Swift/BAT 官方值：external/swift_bat 快照 summary_general.txt Trig_time_UTC 列 2007-10-10T03:41:12.855120（trigger 293707；同表 MET 列纪元换算有缺陷，弃用）；GCN 6859 逐字 \"At 03:41:12 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 071010 (trigger=293707)\" 整秒一致；external/uvot_grb、external/swiftgrbba 快照 trigger_time=03:41:12Z 互证；Covino+2008 VoR §2 \"detected by Swift on 2007 October 10 at 03:41:12 (Moretti et al. 2007)\"、Kong+2010 §4 同值",
+  "T0_offset": -1.144,
+  "T0_offset_ref": "external/swift_bat 快照 summary_general_info/summary_burst_durations.txt T100_start=-1.144 s（T100 窗口起点早于自动触发时刻 1.144 s，|offset|>1 s；GCN 6868 光变描述 \"single peak starting near T-10 s\" 与谱提取窗 T-1.1 至 T+5.9 s 同向佐证）",
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 0.99,
+  "redshift": 0.985,
   "tag": [
     "grb"
   ],
-  "pos_error": 150.0,
-  "pos_ref": "GCN 6868",
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 3.6,
+  "pos_ref": "UKSSDC Swift-XRT GRB Catalogue（swift.ac.uk/xrt_live_cat/，Evans+2009 在线版；external/swift_xrt_live 快照 2026-07-21：RA=288.0608296839, Dec=-32.4020113699, Err90=3.6″，90% 包含半径）",
+  "redshift_type": "spec",
+  "redshift_ref": "Covino+2008 (MNRAS 388, 347, DOI 10.1111/j.1365-2966.2008.13393.x) VoR §2：D'Elia et al. 精化 z=0.985±0.005（1σ，最高红移吸收系统）；GCN 6864（Prochaska+，Keck/LRIS）初测 Mg II/Fe II 吸收 z≈0.98；Kann+2010 与 swift_bat 快照 GRBlist_redshift_BAT 同 0.985",
+  "comment": "审核 fsy@zcode（2026-11-19/20），lc 全表按 VoR 重建（详见各行 comment 与 PR 说明）。(1) 身份：Swift/BAT 触发 293707（GCN 6859）；后缀 A 区分同日 GRB 071010B（trigger 293795）/071010C（293804）；Covino+2008、Kann+2010、Kong+2010、UKSSDC 目录均以 GRB 071010A 指认本源；定位互证：TAROT（GCN 6860，19:12:14.73 -32:24:07.1±3″）、Keck（GCN 6861，19:12:14.624 -32:24:07.16±300mas）、XRT 首轨（GCN 6870，288.06008,-32.40172±5.3″）。(2) T0：原值 2007-10-10T20:45:48.49Z 为导入管线错锚（任何来源均无此值，Issue #84 同族），改触发仪器官方值 03:41:12.855120（见 T0_ref）；T100_start=-1.144 s>1 s → T0_offset=-1.144。(3) 定位：原 ra/dec=288.1,-32.383333±150″ 为 GCN 6859 BAT 星上位（3′），而 pos_ref 标 GCN 6868（BAT 地面位 288.040,-32.385±2.5′，90%），字段与出处不一致；改判 UKSSDC XRT 目录位 288.06083,-32.40201±3.6″（90%）——链条 GCN 6859 → GCN 6868 → GCN 6870（XRT 5.3″）→ xrt_live（3.6″），XRT 增强位优先于 BAT 位（库内先例）。(4) 红移：原 0.99 无出处；Covino+2008 VoR §2 精化 z=0.985±0.005（吸收光谱，D'Elia et al.），GCN 6864 初测 z≈0.98，Kann+2010 同值；改 0.985（spec）。宿主候选：余辉东侧 1″ 延展源（Covino §4.3 R=23.22±0.06；GCN 6934 \"may be a bright elongated host galaxy, a compact host galaxy with the afterglow offset from the center, or a foreground star\"）未定论，host_galaxy 不建。(5) sub_tag=lgrb 留痕：t90=6.324±1.866 s（external/swift_bat 快照 summary_general.txt T90 列；GCN 6868 \"6±1 sec\"）>2 s，按目录 t90 判 lgrb。(6) 测光重建：lc 117 行 = Covino+2008 VoR 表1 全 83 行 + Cenko+2009 VoR 表1 全 10 行 + GCN 6862 PROMPT I~17.5@T+156 s + GCN 6934 精化 R=19.82±0.02 + GCN 6934 复合体 R=22.5 + GCN 6901 VLA 8.46GHz 上限 + UKSSDC Burst Analyser XRT 20 行。原行 time/mjd 为 Dainotti2024 目录链路错锚污染值（管线按错误 T0 20:45:48.49 派生），逐行按 VoR 重建；Cenko 10 行中 7 行星等被同一链路系统性污染（+0.34/+0.44 mag，误差列不变）已按 VoR 修正。删除 2 行：GCN 6885 初报 R=19.42（其作者 GCN 6934 精化为 R=19.82±0.02，保留行已在库）、GCN 6934 R>23.3 上限（同帧 VoR 检测值 24.03±0.05，Covino 表1 Oct 16.20948）；TAROT 4 行 filter=R 改 band=Rc（原 band=G），clear 行保持 G 并注明原文口径；XRT 20 行按 §3.8 \"保 time、重算 mjd=T0+time\" 对齐（time 为 UKSSDC 发布的真触发历元值，GCN 6870 \"34-40 ks\" 佐证首行）。(7) 测光检索留证（2026-11-19/20）：仓内 gcn/archive 全文检索 45908 篇，命中含 071010 共 48 篇（071010A 相关 15 篇全部逐张核对）；external/rssgrbag 无 071010A（仅 071010B）、external/grbsn_webtool 无此事件；GCN 站内搜索 query 拆词泛命中不可用，改 archive 全文+gcn.nasa.gov/circulars/<n> 指定直取（6859/6860/6861/6862/6863/6864/6865/6868/6870/6872/6876/6880/6881/6885/6901/6934 共 16 篇）；OpenAlex 命中 83 条，文献 mention-check 程序化留痕：Klotz+2009 表 1 仅汇总参数行（峰值 CR=17.5 等，无逐点测光）、Kann+2010 为 Covino/Cenko 数据再分析（无新测光）、Kong+2010 建模论文（无新测光）→ 无新增文献行。ADS/SciX 无 API token，走 OpenAlex/Crossref/Unpaywall 回退链（阶段一 manifest 冻结 sha256 85c2c2a9733e7fa3c146ff21431bc4302f11a7302b59a4a25457620ea9c65676）。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
+  "articles": [
+    {
+      "bibtex": "@ARTICLE{2008MNRAS.388..347C,\n       author = {{Covino}, S. and {D'Avanzo}, P. and {Klotz}, A. and {Perley}, D.~A. and {Amati}, L. and {Campana}, S. and {Chincarini}, G. and {Cucchiara}, A. and {D'Elia}, V. and {Guetta}, D. and {Guidorzi}, C. and {Kann}, D.~A. and {K{\\\"u}pc{\\\"u} Yolda{\\textcommabelow s}}, A. and {Misra}, K. and {Olofsson}, G. and {Tagliaferri}, G. and {Antonelli}, L.~A. and {Berger}, E. and {Bloom}, J.~S. and {B{\\\"o}er}, M. and {Clemens}, C. and {D'Alessio}, F. and {Della Valle}, M. and {di Serego Alighieri}, S. and {Filippenko}, A.~V. and {Foley}, R.~J. and {Fox}, D.~B. and {Fugazza}, D. and {Fynbo}, J. and {Gendre}, B. and {Goldoni}, P. and {Greiner}, J. and {Kocevksi}, D. and {Maiorano}, E. and {Masetti}, N. and {Meurs}, E. and {Modjaz}, M. and {Molinari}, E. and {Moretti}, A. and {Palazzi}, E. and {Pandey}, S.~B. and {Piranomonte}, S. and {Poznanski}, D. and {Primak}, N. and {Romano}, P. and {Rossi}, E. and {Roy}, R. and {Silverman}, J.~M. and {Stella}, L. and {Stratta}, G. and {Testa}, V. and {Vergani}, S.~D. and {Vitali}, F. and {Zerbi}, F.},\n        title = \"{The complex light curve of the afterglow of GRB071010A}\",\n      journal = {\\mnras},\n     keywords = {methods: observational, gamma-rays: bursts, X-rays: individual: GRB071010A, Astrophysics},\n         year = 2008,\n        month = jul,\n       volume = {388},\n       number = {1},\n        pages = {347-356},\n          doi = {10.1111/j.1365-2966.2008.13393.x},\narchivePrefix = {arXiv},\n       eprint = {0804.4367},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2008MNRAS.388..347C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "name": "Covino+2008",
+      "source": "bot",
+      "title": "The complex light curve of the afterglow of GRB071010A",
+      "url": "https://ui.adsabs.harvard.edu/abs/2008MNRAS.388..347C"
+    },
+    {
+      "bibtex": "@ARTICLE{2010MNRAS.402..409K,\n       author = {{Kong}, S.~W. and {Wong}, A.~Y.~L. and {Huang}, Y.~F. and {Cheng}, K.~S.},\n        title = \"{Variation of microphysics in wind bubbles: an alternative mechanism for explaining the rebrightenings in Gamma-ray burst afterglows}\",\n      journal = {\\mnras},\n     keywords = {stars: mass loss, ISM: jets and outflows, gamma rays: bursts, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2010,\n        month = feb,\n       volume = {402},\n       number = {1},\n        pages = {409-416},\n          doi = {10.1111/j.1365-2966.2009.15886.x},\narchivePrefix = {arXiv},\n       eprint = {0910.3444},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010MNRAS.402..409K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
+      "name": "Kong+2010",
+      "source": "bot",
+      "title": "Variation of microphysics in wind bubbles: an alternative mechanism for explaining the rebrightenings in Gamma-ray burst afterglows",
+      "url": "https://ui.adsabs.harvard.edu/abs/2010MNRAS.402..409K"
+    },
+    {
+      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
+      "name": "Dainotti+2024",
+      "source": "bot",
+      "title": "An optical gamma-ray burst catalogue with measured redshift - I. Data release of 535 gamma-ray bursts and colour evolution",
+      "url": "https://doi.org/10.1093/mnras/stae1484"
+    },
+    {
+      "name": "Cenko+2009",
+      "source": "fsy",
+      "title": "Dark Bursts in the Swift Era: The Palomar 60 Inch-Swift Early Optical Afterglow Catalog",
+      "url": "https://doi.org/10.1088/0004-637X/693/2/1484",
+      "bibtex": "@ARTICLE{2009ApJ...693.1484C,\n       author = {{Cenko}, S.~B. and {Kelemen}, J. and {Harrison}, F.~A. and {Fox}, D.~B. and {Kulkarni}, S.~R. and {Kasliwal}, M.~M. and {Ofek}, E.~O. and {Rau}, A. and {Gal-Yam}, A. and {Frail}, D.~A. and {Moon}, D.-S.},\n        title = \"{Dark Bursts in the Swift Era: The Palomar 60 Inch-Swift Early Optical Afterglow Catalog}\",\n      journal = {\\apj},\n         year = 2009,\n        month = mar,\n       volume = {693},\n       number = {2},\n        pages = {1484-1493},\n          doi = {10.1088/0004-637X/693/2/1484},\narchivePrefix = {arXiv},\n       eprint = {0808.3983},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2009ApJ...693.1484C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}"
+    },
+    {
+      "name": "Kann+2010",
+      "source": "fsy",
+      "title": "The Afterglows of Swift-era Gamma-ray Bursts. I. Comparing Pre-Swift and Swift-era Long/Soft (Type II) GRB Optical Afterglows",
+      "url": "https://doi.org/10.1088/0004-637X/720/2/1513",
+      "bibtex": "@ARTICLE{2010ApJ...720.1513K,\n       author = {{Kann}, D.~A. and {Klose}, S. and {Zhang}, B. and {Malesani}, D. and {Nakar}, E. and {Pozanenko}, A. and {and others}},\n        title = \"{The Afterglows of Swift-era Gamma-ray Bursts. I. Comparing pre-Swift and Swift-era Long/Soft (Type II) GRB Optical Afterglows}\",\n      journal = {\\apj},\n         year = 2010,\n        month = sep,\n       volume = {720},\n       number = {2},\n        pages = {1513-1558},\n          doi = {10.1088/0004-637X/720/2/1513},\narchivePrefix = {arXiv},\n       eprint = {0712.2186},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010ApJ...720.1513K}\n}"
+    }
+  ],
+  "host_galaxy": null,
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,30 +88,11 @@
         "v": 3.1778894472361805
       }
     },
-    "params_computed": "2026-11-04"
-  },
-  "articles": [
-    {
-      "bibtex": "@ARTICLE{2008MNRAS.388..347C,\n       author = {{Covino}, S. and {D'Avanzo}, P. and {Klotz}, A. and {Perley}, D.~A. and {Amati}, L. and {Campana}, S. and {Chincarini}, G. and {Cucchiara}, A. and {D'Elia}, V. and {Guetta}, D. and {Guidorzi}, C. and {Kann}, D.~A. and {K{\\\"u}pc{\\\"u} Yolda{\\textcommabelow s}}, A. and {Misra}, K. and {Olofsson}, G. and {Tagliaferri}, G. and {Antonelli}, L.~A. and {Berger}, E. and {Bloom}, J.~S. and {B{\\\"o}er}, M. and {Clemens}, C. and {D'Alessio}, F. and {Della Valle}, M. and {di Serego Alighieri}, S. and {Filippenko}, A.~V. and {Foley}, R.~J. and {Fox}, D.~B. and {Fugazza}, D. and {Fynbo}, J. and {Gendre}, B. and {Goldoni}, P. and {Greiner}, J. and {Kocevksi}, D. and {Maiorano}, E. and {Masetti}, N. and {Meurs}, E. and {Modjaz}, M. and {Molinari}, E. and {Moretti}, A. and {Palazzi}, E. and {Pandey}, S.~B. and {Piranomonte}, S. and {Poznanski}, D. and {Primak}, N. and {Romano}, P. and {Rossi}, E. and {Roy}, R. and {Silverman}, J.~M. and {Stella}, L. and {Stratta}, G. and {Testa}, V. and {Vergani}, S.~D. and {Vitali}, F. and {Zerbi}, F.},\n        title = \"{The complex light curve of the afterglow of GRB071010A}\",\n      journal = {\\mnras},\n     keywords = {methods: observational, gamma-rays: bursts, X-rays: individual: GRB071010A, Astrophysics},\n         year = 2008,\n        month = jul,\n       volume = {388},\n       number = {1},\n        pages = {347-356},\n          doi = {10.1111/j.1365-2966.2008.13393.x},\narchivePrefix = {arXiv},\n       eprint = {0804.4367},\n primaryClass = {astro-ph},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2008MNRAS.388..347C},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Covino+2008",
-      "source": "bot",
-      "title": "The complex light curve of the afterglow of GRB071010A",
-      "url": "https://ui.adsabs.harvard.edu/abs/2008MNRAS.388..347C"
-    },
-    {
-      "bibtex": "@ARTICLE{2010MNRAS.402..409K,\n       author = {{Kong}, S.~W. and {Wong}, A.~Y.~L. and {Huang}, Y.~F. and {Cheng}, K.~S.},\n        title = \"{Variation of microphysics in wind bubbles: an alternative mechanism for explaining the rebrightenings in Gamma-ray burst afterglows}\",\n      journal = {\\mnras},\n     keywords = {stars: mass loss, ISM: jets and outflows, gamma rays: bursts, Astrophysics - High Energy Astrophysical Phenomena},\n         year = 2010,\n        month = feb,\n       volume = {402},\n       number = {1},\n        pages = {409-416},\n          doi = {10.1111/j.1365-2966.2009.15886.x},\narchivePrefix = {arXiv},\n       eprint = {0910.3444},\n primaryClass = {astro-ph.HE},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2010MNRAS.402..409K},\n      adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}",
-      "name": "Kong+2010",
-      "source": "bot",
-      "title": "Variation of microphysics in wind bubbles: an alternative mechanism for explaining the rebrightenings in Gamma-ray burst afterglows",
-      "url": "https://ui.adsabs.harvard.edu/abs/2010MNRAS.402..409K"
-    },
-    {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
-      "name": "Dainotti+2024",
-      "source": "bot",
-      "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy",
+      "date": "2026-11-19"
     }
-  ],
-  "host_galaxy": null
+  }
 }
