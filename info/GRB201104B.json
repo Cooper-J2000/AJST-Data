@@ -1,10 +1,14 @@
 {
   "transient_id": "GRB201104B",
-  "alias": [],
-  "ra": 5.216667,
-  "dec": 7.816667,
+  "alias": [
+    "GRB 201104B",
+    "BAT 1004168",
+    "Swift 1004168"
+  ],
+  "ra": 5.21441,
+  "dec": 7.84185,
   "T0": "2020-11-04T17:33:46Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 28825",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -14,14 +18,14 @@
   ],
   "pos_error": 2.3,
   "pos_ref": "GCN 28850",
-  "redshift_type": null,
-  "redshift_ref": "GCN 29198",
-  "comment": null,
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 28840",
+  "comment": "2026-11-16 审核（fsy@zcode）：① T0=2020-11-04T17:33:46 UT 据 GCN 28825 原文「At 17:33:46 UT, the Swift Burst Alert Telescope (BAT) triggered and located GRB 201104B (trigger=1004168)」，内部自洽（XRT 17:35:28.2 起观测=触发后 102s；UVOT settled 56s 后开始；MASTER GCN 28826 亦记 Ttrig=17:33:46；GCN 28851 各曝光 T_start/T_stop 相对触发反算均吻合）；external/swiftgrbba 快照 trigger_time=2020-11-04T17:33:46.000Z 一致；external/swift_bat 目录快照 Trig_time_UTC=2020-11-04T17:32:54.779360 与官方触发通告差 51.2s、且与其自身 MET 列换算亦差约 11s，不采信（目录快照缺陷，已报 PR 待决事项，不改 external）。② 定位改判：ra/dec 由 5.216667/7.816667（MPE 表 arcmin 级 X-ray 位 00h20m52s +07°49′ 与 XRT 误差半径 2.3″ 混串）改为 GCN 28850 XRT 增强位 RA,Dec=5.21441,+7.84185（原文 with an uncertainty of 2.3 arcsec (radius, 90% confidence)→pos_error_confidence=90）。备查并列：UVOT 位（GCN 28827）RA=5.21520 Dec=7.84150±0.43″（90%）；UKSSDC XRT live 目录快照（2026-07-21）RA=5.21456 Dec=7.84191 Err90=3.0″（自动目录、较 GCN 28850 晚、二者相容）；BAT 地面位（GCN 28839）5.215/7.834±1.0′（90%）；BAT 板上位（GCN 28825）5.217/7.820±3′（90%）。③ z=1.954 为 VLT/X-shooter 吸收+发射谱线测定（GCN 28840 Vielfaure et al.，SiII/CII/SiIV/CIV/FeII/[O II]/Hbeta/[O III]/Halpha），redshift_ref 由 GCN 29198（转引）改指 GCN 28840，redshift_type=spec。④ T90=8.66±0.16 s（15-350 keV，GCN 28839；external/swift_bat 快照同值）>2s→sub_tag=lgrb 维持；T50=5.272±0.211 s；fluence(15-150keV)=1.8±0.1e-6 erg/cm2；峰值光子流量 4.1±0.3 ph/cm2/s（T-8.52s）；谱指数 1.47±0.07（均 GCN 28839，90% 置信）。⑤ 新增 alias「GRB 201104B」「BAT 1004168」「Swift 1004168」（GCN 28825 原文用名 GRB 201104B、trigger=1004168；external/swift_bat 快照 name_alt=[\"BAT 1004168\"]；「Swift <触发号>」形按先例 GRB050410 等）。⑥ 测光检索（2026-11-16）：GCN 站事件页（gcn.nasa.gov/circulars/events/grb-201104b）命中 13 篇（28825/28826/28827/28839/28840/28850/28851/28852/28856/28860/28870/28871/29198）全部逐字打开核对、交叉引用链闭合；arXiv API 与站内检索 0 命中、OpenAlex 全文 9 条（4 篇论文均为样本表提及、无光学测光）、Crossref 模糊 0 直接命中、SIMBAD unavailable@2026-11-16；无专文。Dainotti+2024（arXiv 2405.02263）逐暴数据经其官方机读库 grbLC（github.com/SLAC-Gamma-Rays/grbLC）201104B_mag.txt 逐行核对。处置：补 GCN 28826 MASTER 非探测上限 1 行（mlim=16.1、G 波段）；去重删除 grbLC/Dainotti 转引行 9 行（UVOT×4、Kitab Alexei 二次归约×1、DFOT×1、Tien Shan×1、AZT-22×1、ZTSh×1）；GCN 行时间口径修正 13 行（UVOT 4 行按 T_start/T_stop→中点；grbLC 行 5 行 reference 改指 GCN 原始出处；IKI/DFOT 行 4 行按原文 t-T0(mid) 列改中点、原导入误用 UT 起始）；MITSuME 3 行维持 discard=y（grbLC flag=yes/X/Y outlier，先例 GRB201020B 同型）；检索净补行数 1。详见 PR。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -47,7 +51,12 @@
         "v": 2.9316181448882874
       }
     },
-    "params_computed": "2026-11-04"
+    "params_computed": "2026-11-04",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-16"
+    }
   },
   "articles": [
     {
