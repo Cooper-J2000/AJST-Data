@@ -1,29 +1,49 @@
 {
   "transient_id": "GRB240414A",
-  "alias": [],
-  "ra": 184.7837,
-  "dec": 56.74127,
-  "T0": "2024-04-14T02:20:36Z",
-  "T0_ref": null,
-  "T0_offset": null,
-  "T0_offset_ref": null,
+  "alias": [
+    "GRB 240414A",
+    "GRB240414098"
+  ],
+  "ra": 184.78364,
+  "dec": 56.74056,
+  "T0": "2024-04-14T02:20:36.430320Z",
+  "T0_ref": "GCN 36083（Swift/BAT 触发 02:20:36 UT，trigger=1221714，整秒）；亚秒逐字取触发仪器官方目录快照 external/swift_bat summary_general.txt Trig_time_UTC=2024-04-14T02:20:36.430320（整秒一致）；该表 MET 列与 UTC 列自差约 33 s，弃用",
+  "T0_offset": -35,
+  "T0_offset_ref": "GCN 36140（BAT 精化分析：multiple pulses starting at T0-35 s，触发前已有辐射）",
   "Trigger_Instrument": "Swift/BAT",
   "redshift": 1.833,
-  "tag": [],
+  "tag": [
+    "grb"
+  ],
   "pos_error": 3.2,
   "pos_ref": "GCN 36102",
-  "redshift_type": null,
-  "redshift_ref": "gcn_llm:circulars_meta",
-  "comment": null,
-  "sub_tag": [],
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 36085; GCN 36087",
+  "comment": "审核 fsy@zcode 2026-11-20。T0：逐字取触发仪器官方目录快照 external/swift_bat summary_general.txt 的 Trig_time_UTC=2024-04-14T02:20:36.430320（GCN 36083 整秒 02:20:36 一致；该表 MET 列 734754069.696 与 UTC 列自差约 33 s，系已知换算缺陷，弃用）。T0_offset=-35 s：GCN 36140 BAT 精化分析 mask-weighted 光变「multiple pulses starting at T0-35 s」——触发前已有辐射（数据窗口起于 T0-61 s，onset 可能更早）；GBM 目录 t90_start=-44.8 s（external/fermi_gbm）佐证；纯元数据不改时间轴。定位改判：ra/dec 取 GCN 36102 XRT 增强位 184.78364,+56.74056 ±3.2 arcsec（90%）——原值 184.7837/56.74127 实为 GCN 36115 的UVOT 初步位（±0.4″,90%），系混串，已改正；external/swift_xrt_live 快照 184.78377,+56.74056 ±3.1″ 互证；UVOT 初步位备查。z=1.833 判 spec（吸收线）：GCN 36085（OHP/MISTRAL，AlII/AlIII/FeII/MnII/MgII 共同吸收系统）+ GCN 36087（GTC/OSIRIS+ 确认，另报 z=1.703 与 z=1.067 中间系统）；swift_bat GRBlist_redshift_BAT 同值。tag=grb/sub_tag=lgrb 按目录 t90 判：swift_bat summary_general T90=39.888±5.279 s；GCN 36140 T90(15-350 keV)=88.28±50.41 s；FERMIGBRST t90=82.176±4.128 s（50-300 keV，external/fermi_gbm）；GCN 36120 约 82 s（50-300 keV）。alias：GRB 240414A 为 26 篇相关 GCN 的 eventId 用名；GRB240414098（external/fermi_gbm FERMIGBRST trigger_name，GCN 36120 原文用名 trigger 734754044/240414098）；GCN 36120 另称事件曾被误标 GRB 240414B（其括注 GCN 36612 实为无关事件 Swift 1232755 的通告），误标名不入 alias、仅此处留证。光变复核（详见各行 comment 与 PR）：全表统一本 T0 逐行改算；Skynet（GCN36097）原文表 46 行、bot 漏录 10 行（其中 2 行与在库行完全相同，按同一测量只录一次、不重复入库），实际补录 8 行，原文 MJD 仅 3 位小数（量化 86.4 s），time_err=43.2 s；UVOT 6 行 time 由 GCN36115 表列 T_start/T_stop 窗口中点重算（bot 原值与原文不符）；MITSuME/AZT-33IK/AS-32/WINTER/CAFOS/VLA/AMI-LA 各行按原文中点或 T_mid 口径改正 time/time_err（GMG 行原文无曝光时长、保持起点并在行 comment 注明）；新增 MASTER（GCN36095）、MarSEC（GCN36100）、OHP 二期（GCN36101，r'/g' 两行）、GAD（GCN36133）、LBT（GCN36228）、LOFAR（Hennessy+2025, MNRAS 544, 53，VoR 已核）共 9 行（与补录 8 行合计 +17）；bot 把设备名写在 instrument 列、telescope 空，已按 SCHEMA 语义归位。NOEMA ~55 µJy 检测（GCN36318）未入库：原文仅给日期 2024-04-23 无时刻、且为 74+90 GHz 双边带合成无法单值归带。文献检索（2026-11-20）：GCN 站逐篇 JSON 抓取+引用图回溯共 31 篇（eventId=GRB 240414A 者 26 篇，含全部测光/上限通告）；Crossref 2 查询 0 题名命中；OpenAlex 5 查询（\"GRB 240414A\"→Hennessy+2025 MNRAS 544,53；\"GRB240414A\"→Leicester 数据集 10.25392/leicester.data.32769945，type=dataset 不入 articles；其余命中均为 EP240414a——另一事件）；arXiv API 超时 2 次；ADS/SciX 无 token（search-limited，不据此判无文献）；仓内 gcn/archive 目录不存在，external/rssgrbag、grbsn_webtool、guidorzi2025、liang2023、wang2022、minaev2020 均 0 命中。结论：未发现本暴逐点光学测光的发表表（逐值测光全部出自 GCN 通告，第 5 类）；射电上限出自 Hennessy+2025 表 3（第 1 类，VoR 已核）。发现 Swift/XRT X 射线数据（GCN 36104、swift.ac.uk Burst Analyser），本源 lc 现无 X 射线行，按审核范围暂不处理。EP240414a（Einstein Probe，RA 191.5/Dec -9.7；GCN 36094/36105/36130）与 GCN 36093（GRB 240410A）均为其他事件，未混入。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
+  "articles": [
+    {
+      "name": "Hennessy+2025",
+      "url": "https://doi.org/10.1093/mnras/staf1640",
+      "title": "A LOFAR search for coherent radio emission accompanying prompt engine activity in gamma-ray bursts",
+      "bibtex": "@article{Hennessy2025MNRAS.544...53H,\n  author = {Hennessy, A. and Starling, R. L. C. and Rowlinson, A. and de Ruiter, I. and van der Horst, A. J. and Anderson, G. E. and Tanvir, N. R. and ter Veen, S. and Wiersema, K. and Wijers, R. A. M. J.},\n  title = {A LOFAR search for coherent radio emission accompanying prompt engine activity in gamma-ray bursts},\n  journal = {Monthly Notices of the Royal Astronomical Society},\n  year = 2025,\n  volume = 544,\n  pages = {53-66},\n  doi = {10.1093/mnras/staf1640}\n}",
+      "source": "fsy@zcode"
+    }
+  ],
+  "host_galaxy": null,
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
     "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
-  },
-  "articles": [],
-  "host_galaxy": null
+    "t0_note": "t0 为 meta trigger-time（真实触发时刻）；2026-11-20 审核补亚秒与 T0_offset，详见 comment",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-20"
+    }
+  }
 }
