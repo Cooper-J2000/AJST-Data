@@ -1,29 +1,47 @@
 {
   "transient_id": "GRB220921A",
-  "alias": [],
-  "ra": 66.79,
-  "dec": -40.25,
-  "T0": "2022-09-21T00:00:00Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB220921462",
+    "AT2022vjw",
+    "MASTER OT J042553.42-402420.7"
+  ],
+  "ra": 66.47227,
+  "dec": -40.40553,
+  "T0": "2022-09-21T11:05:59.071Z",
+  "T0_ref": "GCN 32574（Fermi GBM Team：\"At 11:05:59.071 UT on 21 September 2022, the Fermi Gamma-Ray Burst Monitor (GBM) triggered and located GRB 220921A (trigger 685451164/ 220921462)\"）；FERMIGBRST 目录（external/fermi_gbm）trigger_time MJD 59843.462489251 → 11:05:59.071 一致；GCN 32568（LAT 团队）与 MASTER GCN 32570 给 11:05:59.07（2 位小数舍入，同值）；GECAM-C 交叉定标论文（arXiv:2303.00698）记 11:05:59.070（ms 级管道差，备查）。闰秒核查（Issue #67 族）：直接采用 FERMIGBRST UTC 列（HEASARC 已换算），未自行 MET→UTC 推算，无闰秒问题",
   "T0_offset": null,
   "T0_offset_ref": null,
-  "Trigger_Instrument": "Fermi/LAT",
+  "Trigger_Instrument": "Fermi/GBM",
   "redshift": null,
-  "tag": [],
-  "pos_error": null,
-  "pos_ref": "GCN 32568",
+  "tag": [
+    "grb"
+  ],
+  "pos_error": 3.6,
+  "pos_ref": "GCN 32571；UKSSDC Swift-XRT Live Catalog（external/swift_xrt_live，2026-07-21 快照）",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": null,
-  "sub_tag": [],
+  "comment": "【通告集清点】GCN 检索（gcn.gsfc.nasa.gov 经典归档 LI 索引 grep 220921 + gcn.nasa.gov 逐篇打开）命中 13 篇并全部核对：32567（Tiled Swift 启动，无测光）/32568（LAT 探测）/32569（MASTER 上限表 2 行）/32570（MASTER 发现）/32571（Swift-XRT）/32572（MeerLICHT 6 带）/32574（GBM 触发通告）/32575（Konus-Wind，仅谱）/32576（DDOTI）/32577（ALMA）/32582（MeerLICHT 第二历元）/32596（LCOGT 2 站）/32618（ATCA 4 频）。仓内 gcn/archive 本地缺失（main 无 gcn/ 目录，符号链接仅维护者本机）；external/rssgrbag（74 源）、external/grbsn_webtool（63 事件）无本源记录（grep 验证）。【身份】Fermi GBM trigger 685451164/bn220921462 触发并定位（GCN 32574 原文；FERMIGBRST external/fermi_gbm name_alt GRB220921462/GRB 220921.462，ra=66.85 dec=−40.0，1σ 1°）；LAT 未触发、伴探探测（69° 偏轴，GCN 32568），其地面位 66.79/−40.25（0.42°，90%）＝info 原 ra/dec 来源；Swift-XRT（ToO）66.47255/−40.4057（3.8″，90%，GCN 32571）与 UKSSDC live 目录 66.47227/−40.40553（3.6″，90%，external/swift_xrt_live）一致——info 改采 UKSSDC 值（目录晚于通告、精化位）；光学/毫米/射电位互证：MASTER OT J042553.42-402420.7＝AT2022vjw（GCN 32570）、ALMA 04:25:53.42/−40:24:20.25（GCN 32577）、ATCA 04:25:53.4/−40:24:20.5（GCN 32618）。Trigger_Instrument 原「Fermi/LAT」改「Fermi/GBM」（触发器为 GBM，LAT 系伴探）。【T0】原值 2022-09-21T00:00:00Z 系日期占位误锚（Issue #84 同型；原 extra_data t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」，原 20 行 mjd 均=T0_old+time 自洽，证实整表按占位 T0 生成）。改 T0=2022-09-21T11:05:59.071Z（GCN 32574 + FERMIGBRST 双证，见 T0_ref）。T0_offset 无（Konus-Wind 自身触发 11:06:01.714 系 KW 阈值滞后，GCN 32575，非触发时刻调整）。全 lc 行按 Δ=−39959.071 s 重锚定（mjd 为绝对时刻、按各自行口径处理，见行 comment）。【分类】t90=209.988±5.185 s（50–300 keV，FERMIGBRST）按目录 t90 判 lgrb；GCN 32574「duration (T90) of about 210 s」与 GCN 32575「bright, long-duration」一致；Epeak=129.98±2.13 keV（BAND，obs，FERMIGBRST）；GCN 32574 并列 Epeak=142±4 keV（Band 函数，T0–T0+40 s 时间平均谱，同页 fluence 出处）；GBM fluence=(5.92±0.04)E−5 erg/cm²（10–1000 keV，GCN 32574）；LAT 100 MeV–1 GeV 光子流量 (3.1±0.1)E−6 ph/cm²/s（T0–T0+2000 s）、最高光子 866 MeV @T0+935 s（GCN 32568）；Konus fluence=9.71(−2.95,+2.35)E−5 erg/cm²（20 keV–10 MeV，GCN 32575）备查。【红移/宿主】无红移记录；GCN 32570 提及 VizieR DES 可能宿主（r=24.3）——仅候选，不建 host_galaxy。【别名】GRB220921462（FERMIGBRST trigger_name；证据串：GCN 32574 原文「trigger 685451164/ 220921462」——豁免 §3.10 伪形普查）；AT2022vjw、MASTER OT J042553.42-402420.7（GCN 32570 原文用名）。【逐行核对与去重】lc 20→26 行：① 全 20 行重锚定（原 time 系占位 T0 误锚，Δ=−39959.071 s）；② LCOGT 4 行改窗口中点+补 time_err（原导入取窗口起点）；③ MeerLICHT GCN32582 6 行改「起点+总曝光/2」中点口径（time_err=900 s）；④ ALMA 行值 0.7→4.579±0.006 mJy：GCN 32577 初报让位 Laskar+2026 （arXiv:2607.20604v1）Table 1 终值，同一次测量（2021.1.00657.T，2022-09-23），reference 随值改 Laskar2026；第二历元（t=6.75 d）新增行（见⑥）；⑤ ATCA band 90GHz→9.0GHz（band 误录，GCN 32618 表列 9.0 GHz 364±17 μJy/beam）；⑥ 新增 6 行：MASTER 上限 15.4/16.0（GCN 32569）、MASTER 发现 17.8（GCN 32570）、ATCA 16.7/21.2 GHz （GCN 32618 漏录）、ALMA 97.5 GHz 第二历元 1.556±0.006 mJy（t=6.75 d=2022-09-28，Laskar+2026 表 1，preprint-only，VoR 回代待决）。X 射线行：本源 lc 无能量串 band 行。mag_system：MeerLICHT GCN32582 6 行推定 AB（依据同仪器 GCN 32572 显式 AB），LCOGT/DDOTI/MASTER 行原文未声明 → 留空。【检索留证】测光检索（2026-11-16）：GCN 13 篇全开（上列，8 篇含测光：32569/32570/32572/32576/32577/32582/32596/32618）；external/rssgrbag、grbsn_webtool 无记录；文献检索：Crossref 模糊 20 条无一相关、arXiv（两种写法）各 1 条、OpenAlex 3 条中 1 相关、Web 搜索收敛一致；SIMBAD 两主机 SSL 失败（unavailable@2026-11-16）；实际取原文 1 篇（Laskar+2026，preprint-only：Crossref/OpenAlex 无正式发表版）→ 改 1 行、增 2 行（97.5 GHz 两历元）；GECAM-C 交叉定标（arXiv:2303.00698）打开核验：GRB 220921A 仅用于 prompt 谱探测器交叉定标（原文 §2.2.1），无余辉测光 → 排除。净增 6 行。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "bot_created": true,
     "src": "gcn_llm_extract",
-    "t0_basis": "meta_trigger",
-    "t0_note": "t0 为 meta trigger-time（真实触发时刻）"
+    "t0_basis": "gcn_trigger",
+    "t0_note": "t0=Fermi/GBM 触发时刻 2022-09-21T11:05:59.071 UT（GCN 32574 原文 + FERMIGBRST 目录 MJD 59843.462489251 双证）；原 bot 值 t0_basis=meta_trigger、t0_note=「t0 为 meta trigger-time（真实触发时刻）」对应日期占位 T0 2022-09-21T00:00:00Z（Issue #84 同型），已废弃",
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-16"
+    }
   },
-  "articles": [],
+  "articles": [
+    {
+      "name": "Laskar+2026",
+      "url": "https://arxiv.org/abs/2607.20604"
+    }
+  ],
   "host_galaxy": null
 }
