@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB080802",
-  "alias": [],
-  "ra": 270.729,
-  "dec": -32.329,
-  "T0": "2008-08-02T15:12:21Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 080802"
+  ],
+  "ra": 270.72692,
+  "dec": -32.33395,
+  "T0": "2008-08-02T15:12:21.075860Z",
+  "T0_ref": "GCN 8051（触发仪器 Swift/BAT 官方通告：15:12:21 UT，trigger 318832）＋Swift/BAT 官方目录 trigger_time=2008-08-02T15:12:21.075860（external/swift_bat 快照，MET 239382744.064）。原库 T0=2008-08-02T15:12:21Z 为整秒历元，按 §3.2/§3.8 补入触发仪器目录亚秒。",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,11 +18,19 @@
   "pos_ref": "GCN 8051",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "① T0：Swift/BAT 触发 15:12:21 UT（GCN 8051，trigger 318832），官方目录亚秒值 2008-08-02T15:12:21.075860 采纳（external/swift_bat 快照）；原库 T0=2008-08-02T15:12:21Z 为整秒历元，补入亚秒（ΔT0=+0.075860 s），全表 44 行 mjd=T0+time 重锚自洽（X 射线 33 行只重算 mjd、保留 BA 原始相对时标；其余 11 行按各自来源口径改中点/半宽，见 lc comment）。② 位置：GCN 8051 XRT 初位 270.72692,-32.33395±3.1″（90% 置信，原文明确标注）采纳；原库 ra/dec=270.729,-32.329 逐值等于 GCN 8052 BAT 地面位（±1.6′）——系 BAT 地面位坐标误挂 XRT 初位误差与 GCN 8051 引用的混串（external/swiftgrbba 快照 BA 页 ra/dec 同为 270.729,-32.329，证实该值系 BAT 地面位）；本源无增强 XRT 位通告（GCN 8054 为 XRT 精化分析、无定位），XRT 初位即为最佳可用定位。③ t90：GCN 8052 T90=176±50 s（15-350 keV，误差含系统效应估计）；Swift/BAT 目录 179.504±22.805 s（external/swift_bat 快照）——均 ≫2 s，按目录/通告 t90 判 lgrb。④ 身份注意：GCN 8051/8052 原文提示本源位于银心方向/bulge（GCN 8051 原文 near the Galactic center；GCN 8052 原文 in the bulge，均未给坐标数值），可能为银河系局部暂现源而非宇宙学 GRB（'may be a local transient rather than a cosmological GRB'），但 GCN 8052 亦声明 all other factors point to a GRB；维持 tag=grb，警示记档。银河系前景消光极大（E(B-V)=0.80 Schlegel+1998，GCN 8055 原文声明），各处光学非探测与其一致。⑤ 测光检索（2026-11-29）：GCN 站点搜索 '080802' 命中 5 篇（8051/8052/8053/8054/8055）全部读取，测光载于 8051（white FC 上限 18.5）/8053（UVI R 上限 18.5）/8055（UVOT 上限表 9 行）；external/swiftgrbba 快照（BA 页 trigger 15:12:21.000、ra/dec=BAT 地面位）互证；external/rssgrbag（Chandra & Frail 2012 射电表）、external/grbsn_webtool 递归检索 '080802' 均无记录；arXiv 站内检索 'GRB 080802' 0 篇专文（ADS/SciX 无凭据 search-limited，不据此断言无文献）。本源光变 11 行全部为上限、无任何探测，与其高消光位置一致；各行均已按中点/半宽口径修正。⑥ 宿主：无任何宿主信息（红移未测定、无宿主成像报道），不建 host_galaxy；红移维持 null。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
-  "extra_data": null,
+  "pos_error_confidence": "90",
+  "extra_data": {
+    "audit": {
+      "status": "reviewed",
+      "auditor": "fsy@zcode",
+      "date": "2026-11-29"
+    }
+  },
   "articles": [],
   "host_galaxy": null
 }
