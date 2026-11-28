@@ -1,10 +1,12 @@
 {
   "transient_id": "GRB080701",
-  "alias": [],
-  "ra": 45.944,
-  "dec": 75.481,
+  "alias": [
+    "GRB 080701A"
+  ],
+  "ra": 45.83882,
+  "dec": 75.47479,
   "T0": "2008-07-01T10:13:37Z",
-  "T0_ref": null,
+  "T0_ref": "GCN 7910：BAT 触发 2008-07-01 10:13:37 UT（trigger 315615）；Swift/BAT 官方目录快照 trigger_time=2008-07-01T10:13:37.636600Z（亚秒备查，按 GRB060116A/GRB140114A/GRB060502A 先例维持整秒以保 11 行 X 射线块 mjd 自洽）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
@@ -16,10 +18,12 @@
   "pos_ref": "GCN 7914",
   "redshift_type": null,
   "redshift_ref": null,
-  "comment": "由 UKSSDC Burst Analyser XRT 光变导入新建 (Evans+2007,2009)",
-  "sub_tag": [],
+  "comment": "审核 fsy@zcode 2026-11-29。T0 维持整秒（10:13:37Z）：GCN 7910 BAT 触发时刻；BAT 目录亚秒 .636600 备查——本源含 11 行 UKSSDC Burst Analyser X 射线块，按 GRB060116A/GRB140114A/GRB060502A 先例维持整秒保全表 mjd 自洽；若维护者裁定采纳亚秒 T0，本源 X 射线行需随 T0 对齐时间轴（保 mjd 平移 time −0.637 s）。定位改判 GCN 7914 XRT 增强位 45.83882,+75.47479 ±1.7″(90%)（原库 45.944,75.481 系 GCN 7913 BAT 地面位 ±1.4′，该位与增强位角距 97.5″（1.63′，vincenty），为 ground 自身 90% 半径（84″）的 1.16 倍；矛盾证据链：GCN 7911 XRT prompt 位 45.83937,+75.47535 ±3.1″ 与 ground 位角距 96.6″≈31×其 ±3.1″（ground↔onboard 104.3″<3′ 在圈内、不构成矛盾）——以增强位为准，ground 位偏移留证备查）。sub_tag=lgrb 依据：t90=17.816±6.720 s（Swift/BAT 目录 15-350 keV，按目录 t90 判 lgrb）；GCN 7913 refined T90=18±9 s 一致。本源为零光学测光源（lc 仅 11 行 X 射线）：测光检索（2026-11-29）：仓内 gcn/archive 全文命中 12 篇，其中 10 篇为本源通告（7910/7911/7913/7914/7915/7916/7917/7918/7919/7928，逐篇核对；早期通告用名无 A 后缀；26276/36299 为数字巧合误匹配——IceCube-191122A 与 GRANDMA S240422ed，与本源无关）、external/rssgrbag 0、grbsn_webtool 无真实测光记录（2 处数值巧合 0.080701/3.080701E-15 已排除）、fermi_gbm/konus_wind 目录无此触发、arXiv API 元数据检索「GRB 080701」/「GRB 080701A」0 篇命中；光学测光全部为上限：GCN 7916 UVOT 8 行、7928 RAPTOR 8 行（窄场 7+全天 1）、7915 Super-LOTIS 1 行、7917 TLS 1 行、7918 VATT 1 行——均有明确时间锚，已入库 19 行；→ 无探测、无其他可用光学测光；ADS/SciX 无凭据（通道级 search-limited）。另：GCN 7913 BAT 地面位（45.944,75.481）相对 XRT 增强位偏移 97.5″（1.16×ground 自身 90% 半径 84″）、相对 XRT prompt 位偏移 96.6″（31.2×其 ±3.1″）——ground 位与 XRT 定位谱系不符，属该通告定位偏移，留证备查不另立待决。",
+  "sub_tag": [
+    "lgrb"
+  ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": null,
   "articles": [],
   "host_galaxy": null
