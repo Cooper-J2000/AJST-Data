@@ -1,27 +1,30 @@
 {
   "transient_id": "GRB081029A",
-  "alias": [],
-  "ra": 346.704167,
-  "dec": -68.166667,
-  "T0": "2008-10-29T01:43:56Z",
-  "T0_ref": null,
+  "alias": [
+    "GRB 081029",
+    "BAT 332931"
+  ],
+  "ra": 346.77229,
+  "dec": -68.15549,
+  "T0": "2008-10-29T01:43:56.788020Z",
+  "T0_ref": "GCN 8435（Swift/BAT 触发通告：At 01:43:56 UT the Swift BAT triggered and located GRB 081029, trigger=332931）＋Swift-BAT 官方目录（external/swift_bat 快照：trigger_time 2008-10-29T01:43:56.788020Z，MET 246937440.000）",
   "T0_offset": null,
   "T0_offset_ref": null,
   "Trigger_Instrument": "Swift/BAT",
-  "redshift": 3.85,
+  "redshift": 3.8479,
   "tag": [
     "grb"
   ],
-  "pos_error": null,
-  "pos_ref": null,
-  "redshift_type": null,
-  "redshift_ref": null,
-  "comment": null,
+  "pos_error": 0.5,
+  "pos_ref": "GCN 8450（Swift/UVOT 精化源位：RA 23:07:05.35＝346.77229 Dec −68:09:19.8＝−68.15549，0.5 arcsec radius, 90% confidence, statistical+systematic）。并列备查：Swift-XRT 增强位 346.7729/−68.1561±1.5″（GCN 8443）；BAT 地面位 346.776/−68.179±2.2′（GCN 8447）；BAT 星载位 346.704/−68.160±3′（GCN 8435，bot 原值）；ROTSE 检测位 23:07:05.36/−68:09:19.74±1″（GCN 8436）",
+  "redshift_type": "spec",
+  "redshift_ref": "GCN 8438（VLT/UVES 吸收光谱：SiII/OI/CII 等宿主吸收线组 → z=3.8479±0.0002）；GCN 8448（Gemini-South GMOS：DLA z=3.847 及同红移金属吸收线组确认）",
+  "comment": "长暴（Swift/BAT trigger 332931，image trigger；T90=270±45 s，GCN 8447；bot sub_tag=lgrb 保持）。T0 精化：bot 值 01:43:56Z 整秒与 GCN 8435 一致，亚秒 .788020 取自 Swift-BAT 官方目录（external/swift_bat，MET 246937440.000）→ 01:43:56.788020Z；lc 全表 752 行 time 按 T0 亚秒化统一重锚（−0.788020 s）、mjd 不变（绝对时刻保持）。定位改判：bot ra/dec=346.704167/−68.166667 系 GCN 8435 星载位（±3′）；采纳 GCN 8450 UVOT 精化源位（346.77229/−68.15549，0.5″/90%）——比 XRT 增强位（GCN 8443，±1.5″）更精；BAT 地面位（GCN 8447）与 ROTSE 位（GCN 8436，±1″）并列备查。redshift 改判 spec z=3.8479：bot 值 3.85 为舍入值且 redshift_type 空；UVES/VLT（GCN 8438）z=3.8479±0.0002（SiII/OI/CII 宿主吸收线组）＋Gemini-South（GCN 8448）DLA z=3.847 及同红移金属线确认；GROND g' 波段检出 → z<3.5 一说（GCN 8437）与 UVES 精化值不矛盾（g' 检出于早期余辉）。alias 新增 GRB 081029＝13 篇 GCN 通告事件用名（无字母后缀形）、BAT 332931＝Swift-BAT/Konus 目录 trigger_name。lc 处置 759→752 行：①X 射线 76 行（10keV，UKSSDC Burst Analyser）按范围跳过核对、仅随 T0 亚秒化平移 time（§3.3 T0 例外条款），不改/不删/不新增、行序保持；②GCN8452 21 行（SMARTS/ANDICAM Cobb）：其中 B/V 各 3 行与 R/I 各 2 行（epoch 1/3，其中 e3 R=17.66 与 Holland 表 17.65 差 0.01 在 ±0.02 误差内判同一测量）为 Holland+2011（arXiv:1111.6484）ANDICAM 表同行转引重复 → 删除（§3.4，保留经 Dainotti 编译的 Holland 表行——其 t−t0 精确）；R/I epoch 2 两行（R=17.50 vs 论文 17.65；I=16.94 vs 17.15）为处理版本差异非重复 → 两版并存互注（§3.10）；J/H/K 三历元行为 GCN 8452 独有数值（Holland+2011 ANDICAM 表有 J/H/K 列：e1 与 GCN 完全同值、e2/e3 差 ≤0.02——但 Dainotti+2024 编译未含 JHK 列，故保留 GCN8452 行以免丢数据）→ 保留；全部 21 行 time_err 补 90/60 s（BRIJK 180 s/HV 120 s 半宽）、mag_system=Vega（Landolt+2MASS 推定）；③新增 Holland+2011 ANDICAM 表 epoch 4 的 J/H/K 3σ 上限 3 行（>18.2/>17.8/>17.8 @t−t0=90951 s——原库缺失；R=21.43±0.02 与 I=20.84±0.03 epoch 4 检测行已在库〔Rc/Ic〕）；④REM/ROTSE/UVOT 经 Dainotti 编译行（36+35+30）与 GCN 8436/8437/8441/8634 散点行全部保留：ROTSE 首行 time 重推（01:45:22.8 UT）、GROND 首行改 4 min 积分中点（01:54:00 UT）＋time_err=120 s、REM 行 time 统一为 T0+150 s（原 mjd/time 互差 11 s）、ATCA 行改窗口中点（11-24/25 观测）±半跨；UVOT 30 行 time_err 补半曝光（表列 Exposure）；⑤Roming et al. 2017（ApJS 228, 13，UVOT GRB afterglow catalog）18 行保留（IOP 机读表与 MAST 本网络不可达未逐行核 VoR 表，float32 导入精度残差原样保留——已登记 audit/unverified.tsv）。Dainotti 编译 GROND 行 523 行（Nardini+2011 数据）保留：mjd/time 自洽 0 违例、mag_system=g'r'i'z' AB＋JHKs Vega（GROND 惯例 Greiner+2008）；GROND on-line material 与 Nardini2011 机读表未可达（已登记 unverified.tsv）。测光检索留证（2026-11-29）：①仓内 gcn/archive 存档（46,206 篇全文）grep 081029A 0 命中、GRB 081029 命中 13 篇（8435-8634，全部逐行核对）；②external/rssgrbag/grbsn_webtool 无本源记录；external/swift_bat（trigger_time/位置/T90/红移互证）；③TNS 不适用（GRB）；④arXiv API 元数据检索 GRB 081029A 0 命中（无专文；Nardini+2011 arXiv:1105.0917 与 Holland+2011 arXiv:1111.6484 两文全文 tex 实读）；⑤ADS/SciX 无 API 凭据（HTTP 401），检索通道受限，已登记 audit/unverified.tsv（source_id=*，search-limited），不据此断言无文献。结论：759→752 行（删 10 转引重复＋补 3 行 ANDICAM epoch-4 上限）。X 射线数据（76 行 10keV）按范围跳过核对不入库不改删。",
   "sub_tag": [
     "lgrb"
   ],
   "pos_error_unit": "arcsec",
-  "pos_error_confidence": null,
+  "pos_error_confidence": "90",
   "extra_data": {
     "params": {
       "alpha": {
@@ -81,34 +84,41 @@
     },
     "params_computed": "2026-11-04"
   },
+  "t0_basis": "gcn_circular",
+  "t0_note": "T0=Swift/BAT 触发 2008-10-29 01:43:56.788020 UT（external/swift_bat 目录 MET 246937440.000；GCN 8435 同值整秒）。bot 原值 01:43:56Z 整秒正确、补目录亚秒；原 t0_note/t0_basis（meta_trigger）按 §3.10 改写，原值留档。",
+  "audit": {
+    "status": "reviewed",
+    "auditor": "fsy@zcode",
+    "date": "2026-11-29"
+  },
   "articles": [
     {
-      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}",
       "name": "Dainotti+2024",
       "source": "bot",
       "title": "An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution",
-      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract"
+      "url": "https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract",
+      "bibtex": "@ARTICLE{2024arXiv240502263D,\n       author = {M. G. Dainotti and B. De Simone and R. F. Mohideen Malik and V. Pasumarti and D. Levine and N. Saha and B. Gendre and D. Kido and A. M. Watson and R. L. Becerra and S. Belkin and S. Desai and A. C. C. do E. S. Pedreira and U. Das and L. Li and S. R. Oates and S. B. Cenko and A. Pozanenko and A. Volnova and Y. -D. Hu and A. J. Castro-Tirado and N. B. Orange and T. J. Moriya and N. Fraija and Y. Niino and E. Rinaldi and N. R. Butler and J. d. J. G. Gonzalez and A. S. Kutyrev and W. H. Lee and X. Prochaska and E. Ramirez-Ruiz and M. Richer and M. H. Siegel and K. Misra and A. Rossi and C. Lopresti and U. Quadri and L. Strabla and N. Ruocco and S. Leonini and M. Conti and P. Rosi and L. M. T. Ramirez and S. Zola and I. Jindal and R. Kumar and L. Chan and M. Fuentes and G. Lambiase and K. K. Kalinowski and W. Jamal},\n       title = {An Optical Gamma-Ray Burst Catalogue with Measured Redshift PART I: Data Release of 535 Gamma-Ray Bursts and Colour Evolution},\n       journal = {arXiv e-prints},\n       year = {2024},\n       eprint = {2405.02263},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240502263D/abstract},\n}"
     },
     {
-      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}",
       "name": "Tsvetkova+2021",
       "source": "bot",
       "title": "The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT",
-      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract"
+      "url": "https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract",
+      "bibtex": "@ARTICLE{2021ApJ...908...83T,\n       author = {A. Tsvetkova and D. Frederiks and D. Svinkin and R. Aptekar and T. L. Cline and S. Golenetskii and K. Hurley and A. Lysenko and A. Ridnaia and M. Ulanov},\n       title = {The Konus-Wind catalog of gamma-ray bursts with known redshifts. II. Waiting mode bursts simultaneously detected by Swift/BAT},\n       journal = {ApJ 908 83 (2021)},\n       year = {2021},\n       doi = {10.3847/1538-4357/abd569},\n       eprint = {2012.14849},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...908...83T/abstract},\n}"
     },
     {
-      "bibtex": "@ARTICLE{2011arXiv11050917N,\n       author = {M. Nardini and J. Greiner and T. Kruehler and R. Filgas and S. Klose and P. Afonso and C. Clemens and A. Nicuesa Guelbenzu and F. Olivares E. and A. Rau and A. Rossi and A. Updike and A. Kupcu Yoldas and A. Yoldas and D. Burlon and J. Elliott and D. A. Kann},\n       title = {On the nature of the extremely fast optical rebrightening of the afterglow of GRB 081029},\n       journal = {arXiv e-prints},\n       year = {2011},\n       doi = {10.1051/0004-6361/201116814},\n       eprint = {1105.0917},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011arXiv11050917N/abstract},\n}",
       "name": "Nardini+2011",
       "source": "bot",
       "title": "On the nature of the extremely fast optical rebrightening of the afterglow of GRB 081029",
-      "url": "https://ui.adsabs.harvard.edu/abs/2011arXiv11050917N/abstract"
+      "url": "https://ui.adsabs.harvard.edu/abs/2011arXiv11050917N/abstract",
+      "bibtex": "@ARTICLE{2011arXiv11050917N,\n       author = {M. Nardini and J. Greiner and T. Kruehler and R. Filgas and S. Klose and P. Afonso and C. Clemens and A. Nicuesa Guelbenzu and F. Olivares E. and A. Rau and A. Rossi and A. Updike and A. Kupcu Yoldas and A. Yoldas and D. Burlon and J. Elliott and D. A. Kann},\n       title = {On the nature of the extremely fast optical rebrightening of the afterglow of GRB 081029},\n       journal = {arXiv e-prints},\n       year = {2011},\n       doi = {10.1051/0004-6361/201116814},\n       eprint = {1105.0917},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011arXiv11050917N/abstract},\n}"
     },
     {
-      "bibtex": "@ARTICLE{2011arXiv11116484H,\n       author = {Stephen T. Holland and Massimiliano De Pasquale and Jirong Mao and Takanori Sakamoto and Patricia Schady and Stefano Covino and Yi-Zhong Fan and Zhi Ping Jin and Paolo D'Avanzo and Angelo Antonelli and Valerio D'Elia and Guido Chincarini and Fabrizio Fiore and Shashi Bhushan Pandey and Bethany E. Cobb},\n       title = {GRB 081029: A Gamma-Ray Burst with a Multi-Component Afterglow},\n       journal = {arXiv e-prints},\n       year = {2011},\n       doi = {10.1088/0004-637X/745/1/41},\n       eprint = {1111.6484},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011arXiv11116484H/abstract},\n}",
       "name": "Holland+2011",
       "source": "bot",
       "title": "GRB 081029: A Gamma-Ray Burst with a Multi-Component Afterglow",
-      "url": "https://ui.adsabs.harvard.edu/abs/2011arXiv11116484H/abstract"
+      "url": "https://ui.adsabs.harvard.edu/abs/2011arXiv11116484H/abstract",
+      "bibtex": "@ARTICLE{2011arXiv11116484H,\n       author = {Stephen T. Holland and Massimiliano De Pasquale and Jirong Mao and Takanori Sakamoto and Patricia Schady and Stefano Covino and Yi-Zhong Fan and Zhi Ping Jin and Paolo D'Avanzo and Angelo Antonelli and Valerio D'Elia and Guido Chincarini and Fabrizio Fiore and Shashi Bhushan Pandey and Bethany E. Cobb},\n       title = {GRB 081029: A Gamma-Ray Burst with a Multi-Component Afterglow},\n       journal = {arXiv e-prints},\n       year = {2011},\n       doi = {10.1088/0004-637X/745/1/41},\n       eprint = {1111.6484},\n       archivePrefix = {arXiv},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2011arXiv11116484H/abstract},\n}"
     }
   ],
   "host_galaxy": null
